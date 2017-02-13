@@ -8,7 +8,7 @@
 from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustrySecondary(id='tyre_plant',
-                    processed_cargos_and_output_ratios=[('RUBR', 6), ('RFPR', 2)],
+                    processed_cargos_and_output_ratios=[('RUBR', 6), ('SULP', 2)],
                     combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['VPTS'],

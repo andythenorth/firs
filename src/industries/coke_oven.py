@@ -8,7 +8,7 @@
 from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustrySecondary(id='coke_oven',
-                    processed_cargos_and_output_ratios=[('COAL', 6)],
+                    processed_cargos_and_output_ratios=[('COAL', 8)],
                     combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['COKE'],
@@ -32,7 +32,7 @@ industry = IndustrySecondary(id='coke_oven',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].prod_cargo_types=['COKE']
+industry.economy_variations['STEELTOWN'].prod_cargo_types=['COKE', 'SULP']
 
 industry.add_tile(id='coke_oven_tile_1',
                   animation_length=7,
