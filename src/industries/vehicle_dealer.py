@@ -28,9 +28,10 @@ industry = IndustryTertiary(id='vehicle_dealer',
                     name='string(STR_IND_VEHICLE_DEALER)',
                     fund_cost_multiplier='8',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    intro_year=1900 )
+                    intro_year=1900)
 
-industry.economy_variations['STEELTOWN'].enabled = True
+# not currently used
+#industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='vehicle_dealer_tile_1',
                   location_checks=TileLocationChecks(require_road_adjacent=True,

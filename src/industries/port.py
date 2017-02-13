@@ -58,7 +58,7 @@ industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[14, 12]'
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['VEHI', 'SESP']
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['RUBR', 'NFML']
-industry.economy_variations['STEELTOWN'].prod_multiplier = '[14, 12]'
+industry.economy_variations['STEELTOWN'].prod_multiplier = '[15, 19]'
 
 industry.add_tile(id='port_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
