@@ -105,8 +105,8 @@ manganese.cargo.register()
 from cargos import manufacturing_supplies
 manufacturing_supplies.cargo.register()
 
-from cargos import marine_supplies
-marine_supplies.cargo.register()
+#from cargos import marine_supplies
+#marine_supplies.cargo.register()
 
 from cargos import metal
 metal.cargo.register()
@@ -152,9 +152,6 @@ plant_fibres.cargo.register()
 
 from cargos import potash
 potash.cargo.register()
-
-from cargos import powertrain_components
-powertrain_components.cargo.register()
 
 from cargos import pyrite_ore
 pyrite_ore.cargo.register()

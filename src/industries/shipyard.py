@@ -8,7 +8,7 @@
 from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustrySecondary(id='shipyard',
-                    processed_cargos_and_output_ratios=[('STEL', 8), ('POWR', 8)],
+                    processed_cargos_and_output_ratios=[('STEL', 8)],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['SESP'],
                     layouts='AUTO',
@@ -30,7 +30,8 @@ industry = IndustrySecondary(id='shipyard',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     override_default_construction_states=True)
 
-industry.economy_variations['STEELTOWN'].enabled = True
+# not currently used
+#industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='shipyard_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
