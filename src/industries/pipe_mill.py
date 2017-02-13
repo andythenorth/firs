@@ -31,8 +31,8 @@ industry = IndustrySecondary(id='pipe_mill',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     intro_year=1832 )
 
-industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['BDMT', 'PIPE']
+# not currently in use
+#industry.economy_variations['STEELTOWN'].enabled = True
 
 
 industry.add_tile(id='pipe_mill_tile_1',

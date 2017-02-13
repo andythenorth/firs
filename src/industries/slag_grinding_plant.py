@@ -10,7 +10,7 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 industry = IndustrySecondary(id='slag_grinding_plant',
                     processed_cargos_and_output_ratios=[('SLAG', 8)],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
-                    prod_cargo_types=['BDMT', 'FMSP'],
+                    prod_cargo_types=['CMNT', 'FMSP'],
                     layouts='AUTO',
                     prob_in_game='3',
                     prob_random='5',
@@ -27,7 +27,7 @@ industry = IndustrySecondary(id='slag_grinding_plant',
                     prospect_chance='0.75',
                     name='string(STR_IND_SLAG_GRINDING_PLANT)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_REFINERY))',
-                    fund_cost_multiplier='100',
+                    fund_cost_multiplier='100 ',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 industry.economy_variations['STEELTOWN'].enabled = True

@@ -19,6 +19,9 @@ building_materials.cargo.register()
 from cargos import cassava
 cassava.cargo.register()
 
+from cargos import cement
+cement.cargo.register()
+
 from cargos import chemicals
 chemicals.cargo.register()
 
