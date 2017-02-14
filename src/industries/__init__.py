@@ -172,6 +172,9 @@ sheep_farm.industry.register()
 from industries import slag_grinding_plant
 slag_grinding_plant.industry.register()
 
+from industries import soda_ash_mine
+soda_ash_mine.industry.register()
+
 from industries import smithy_forge
 smithy_forge.industry.register()
 
