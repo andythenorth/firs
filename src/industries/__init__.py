@@ -244,9 +244,6 @@ paper_mill.industry.register()
 from industries import phosphate_mine
 phosphate_mine.industry.register()
 
-from industries import pipe_mill
-pipe_mill.industry.register()
-
 from industries import potash_mine
 potash_mine.industry.register()
 
@@ -270,9 +267,6 @@ tyre_plant.industry.register()
 
 from industries import vehicle_factory
 vehicle_factory.industry.register()
-
-from industries import vehicle_dealer
-vehicle_dealer.industry.register()
 
 from industries import vineyard
 vineyard.industry.register()
