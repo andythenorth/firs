@@ -256,9 +256,6 @@ pyrite_smelter.industry.register()
 from industries import sawmill
 sawmill.industry.register()
 
-from industries import shipyard
-shipyard.industry.register()
-
 from industries import supply_yard
 supply_yard.industry.register()
 

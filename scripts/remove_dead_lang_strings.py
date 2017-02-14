@@ -13,7 +13,7 @@ sys.path.append(os.path.join('src')) # add to the module search path
 dead_strings = ["STR_CARGO_NAME_POWERTRAIN_COMPONENTS",
                 "STR_CARGO_UNIT_POWERTRAIN_COMPONENTS",
                 "STR_CID_POWERTRAIN_COMPONENTS",
-                "STR_CARGO_UNIT_ALUMINIUM"]
+                "STR_IND_SHIPYARD"]
 
 def delete_string(dead_string):
     for filename in os.listdir(os.path.join('lang')):
