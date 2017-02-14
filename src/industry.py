@@ -561,6 +561,8 @@ class Industry(object):
         self.template = kwargs.get('template', None) # template will be set by subcass, and/or by individual industry instances
 
     def register(self):
+        if len([i for i in self.economy_variations if self.economy_variations[i].enabled is True]) == 0:
+            utils.echo_message(self.id + ' is not used in any economy')
         registered_industries.append(self)
 
     def add_tile(self, *args, **kwargs):
