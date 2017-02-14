@@ -78,4 +78,6 @@ class Cargo(object):
         return property_name + ': ' + str(value) + ';'
 
     def register(self):
+        if len(self.economy_variations) == 0:
+            utils.echo_message(self.id + ' is not used in any economy')
         registered_cargos.append(self)
