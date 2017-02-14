@@ -4,9 +4,6 @@ registered_cargos = []
 from cargos import alcohol
 alcohol.cargo.register()
 
-from cargos import aluminium
-aluminium.cargo.register()
-
 from cargos import bauxite
 bauxite.cargo.register()
 
@@ -121,9 +118,6 @@ nickel.cargo.register()
 
 from cargos import nitrates
 nitrates.cargo.register()
-
-from cargos import non_ferrous_metals
-non_ferrous_metals.cargo.register()
 
 from cargos import nuts
 nuts.cargo.register()
