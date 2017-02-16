@@ -11,8 +11,8 @@ industry = IndustryPrimaryOrganic(id='basic_farm',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
                     prod_cargo_types=['GRAI', 'LVST'],
                     layouts='AUTO',
-                    prob_in_game='3',
-                    prob_random='11',
+                    prob_in_game='4',
+                    prob_random='7',
                     prod_multiplier='[14, 13]',
                     substitute='0',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
@@ -37,7 +37,7 @@ industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types=['MAIZ', 'LVST']
 industry.economy_variations['MISTAH_KURTZ'].prob_random = '14'
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['FOOD']
-industry.economy_variations['STEELTOWN'].prod_multiplier = '[19]'
+industry.economy_variations['STEELTOWN'].prod_multiplier = '[17]'
 
 industry.add_tile(id='basic_farm_tile_1',
                   location_checks=TileLocationChecks(disallow_steep_slopes=True,
