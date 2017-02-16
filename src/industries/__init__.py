@@ -88,6 +88,9 @@ food_market.industry.register()
 from industries import food_processor
 food_processor.industry.register()
 
+from industries import foundry
+foundry.industry.register()
+
 from industries import furniture_factory
 furniture_factory.industry.register()
 
