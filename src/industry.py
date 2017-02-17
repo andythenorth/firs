@@ -773,7 +773,7 @@ class Industry(object):
     def get_another_industry(self, id):
         return get_another_industry(id)
 
-    def get_expression_for_num_output_cargos_per_economy(self, economy):
+    def get_output_ratio(self, economy):
         # returns a string that is used to push 1 or 2 to temp storage as the number of industry output cargos
         # (secondary industries may have 1 or 2 output cargos; 0 is not a relevant option here)
         return len(self.get_property('prod_cargo_types', economy))
