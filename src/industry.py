@@ -759,7 +759,11 @@ class Industry(object):
             return result
 
     def get_prod_cargo_types(self, economy):
-        # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed
+        # method used here for (1) unfortunate magic (2) guarding against invalid values
+        # the magic is applied to prod_cargo_types, which industries can define as
+        # (a) list of 1 or 2 labels ['GOOD', 'ENSP'] etc, in which case output is split 4:4 (evenly)
+        # (b) list of 1 or 2 2-tuples [('GOOD', 6), ('ENSP', 2)], in which case output is split 6:2 unevenly)
+        # the uneven case is much rarer, and should only be used for balancing industries where one cargo is strictly a by-product
         prod_cargo_types = self.get_property('prod_cargo_types', economy)
         if prod_cargo_types is None:
             # returning None causes some things to explode in docs, which I should fix, but haven't, this patches it with jank
@@ -778,8 +782,11 @@ class Industry(object):
                     else:
                         result.append((i, 8))
                 else:
-                    # assume it's a two tuple (no guards here right now)
+                    # assume it's a two tuple (no guards against other types here right now)
                     result.append(i)
+                    # do guard against explicitly defining 4:4 splits (e.g. copy-paste-adjust mistakes), because that's pointless and makes any future migration harder
+                    if i[1] == 4:
+                        utils.echo_message("Explictly defining output ratio of 4 is pointless for industry " + self.id + ' in economy ' + economy.id + ".  4 is the default if no value is defined.")
             # guard against ratios that don't add up to 8 (values other than 8 make no sense)
             if len(prod_cargo_types) > 0:
                 sum_of_output_ratios = 0
@@ -792,12 +799,13 @@ class Industry(object):
     def get_another_industry(self, id):
         return get_another_industry(id)
 
-    def get_output_ratio(self, economy):
-        # (secondary industries may have 1 or 2 output cargos; 0 is not a relevant option here)
-        if len(self.get_property('prod_cargo_types', economy)) == 2:
-            return 4
-        else:
+    def get_output_ratio(self, cargo_num, economy):
+        prod_cargo_types = self.get_prod_cargo_types(economy)
+        if cargo_num > len(prod_cargo_types):
+            # cargo isn't defined, just return 8, does no harm and prevents upstream code choking (returning 0 might lead to a divide-by-zero)
             return 8
+        else:
+            return prod_cargo_types[cargo_num - 1][1]
 
     def unpack_switch_or_spritelayout(self, switch_or_spritelayout, industry):
         if isinstance(switch_or_spritelayout, GraphicsSwitch):
