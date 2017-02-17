@@ -121,7 +121,7 @@ class DocHelper(object):
         if cargo in economy_schemas[economy]['enabled_cargos']:
             for industry in economy_schemas[economy]['enabled_industries']:
                 cargo_list = industry.get_prod_cargo_types(economy)
-                for cargo_label in cargo_list:
+                for cargo_label, output_ratio in cargo_list:
                     if cargo.cargo_label == cargo_label:
                         result.add(industry)
         result = sorted(result, key=self.get_industry_name)
@@ -174,7 +174,7 @@ class DocHelper(object):
         return result
 
     def cargos_produced_by_industry(self, industry, economy):
-        result = self.get_cargo_objects_from_labels(industry.get_prod_cargo_types(economy))
+        result = self.get_cargo_objects_from_labels([label for label, output_ratio in industry.get_prod_cargo_types(economy)])
         result = self.filter_cargos_by_active_in_economy(result, economy)
         result = sorted(result, key=self.get_cargo_name)
         return result

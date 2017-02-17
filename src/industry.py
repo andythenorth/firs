@@ -684,7 +684,7 @@ class Industry(object):
 
     def get_expression_for_extra_text_industry_cargo_details(self, economy):
         accept_cargos_with_ratios = self.get_property('processed_cargos_and_output_ratios', economy)
-        prod_cargos = self.get_prod_cargo_types(economy) # !! might be needed to get the number of produced cargos - or delete if not
+        prod_cargos = self.get_prod_cargo_types(economy) # !! unused !! might be needed to get the number of produced cargos - or delete if not
 
         extra_text_template = PageTemplate(
             "STORE_TEMP(${cargo_label} | " \
@@ -743,7 +743,7 @@ class Industry(object):
 
     def get_prod_cargo_types_declaration(self, economy):
         # special handling to reformat python list as nml property declaration
-        result = ','.join(['cargotype("' + label + '")' for label in self.get_prod_cargo_types(economy)])
+        result = ','.join(['cargotype("' + label + '")' for label, output_ratio in self.get_prod_cargo_types(economy)])
         return 'prod_cargo_types: [' + result + '];'
 
     def get_accept_cargo_types(self, economy):
@@ -760,14 +760,33 @@ class Industry(object):
 
     def get_prod_cargo_types(self, economy):
         # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed
-        result = self.get_property('prod_cargo_types', economy)
-        if result is None:
+        prod_cargo_types = self.get_property('prod_cargo_types', economy)
+        if prod_cargo_types is None:
             # returning None causes some things to explode in docs, which I should fix, but haven't, this patches it with jank
             return []
         else:
             # guard against too many cargos being defined
-            if len(result) > 2:
+            if len(prod_cargo_types) > 2:
                 utils.echo_message("Too many produced cargos defined for " + self.id + ' in economy ' + economy.id)
+            # now do some magic to support occasionally using output ratios other than 50:50;
+            # magic is bad, but so is manually adjusting more than 80 industries :|
+            result = []
+            for i in prod_cargo_types:
+                if isinstance(i, str):
+                    if len(prod_cargo_types) == 2:
+                        result.append((i, 4))
+                    else:
+                        result.append((i, 8))
+                else:
+                    # assume it's a two tuple (no guards here right now)
+                    result.append(i)
+            # guard against ratios that don't add up to 8 (values other than 8 make no sense)
+            if len(prod_cargo_types) > 0:
+                sum_of_output_ratios = 0
+                for label, output_ratio in result:
+                    sum_of_output_ratios += output_ratio
+                if sum_of_output_ratios != 8:
+                    utils.echo_message("Sum of output ratios must be 8: sum is " + str(sum_of_output_ratios) + " for industry " + self.id + ' in economy ' + economy.id)
             return result
 
     def get_another_industry(self, id):

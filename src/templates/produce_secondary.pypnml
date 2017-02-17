@@ -57,7 +57,7 @@ produce (${industry.id}_simple_produce,
     switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_economy_${economy.numeric_id},
             [
             /* Store number of output cargos */
-            STORE_TEMP(${len(industry.get_property('prod_cargo_types', economy))}, num_output_cargos),
+            STORE_TEMP(${len(industry.get_prod_cargo_types(economy))}, num_output_cargos),
             /* Store the ratio of total production assigned to each output cargo (typically 4/8 and 4/8, but varies in some cases) */
             STORE_TEMP(${industry.get_output_ratio(economy)}, var_output_ratio_1),
             STORE_TEMP(${industry.get_output_ratio(economy)}, var_output_ratio_2),
