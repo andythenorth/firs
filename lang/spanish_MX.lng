@@ -36,6 +36,7 @@ STR_CARGO_NAME_BAUXITE                                                          
 STR_CARGO_NAME_BEANS                                                            :{G=m}Frijoles
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=m}Materiales de construcción
 STR_CARGO_NAME_CASSAVA                                                          :{G=f}Tapioca
+STR_CARGO_NAME_CEMENT                                                           :{G=m}Cemento
 STR_CARGO_NAME_CHEMICALS                                                        :{G=m}Químicos
 STR_CARGO_NAME_CLAY                                                             :{G=f}Arcilla
 STR_CARGO_NAME_COFFEE                                                           :{G=m}Café
@@ -49,7 +50,7 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=m}Suministros agrícolas
 STR_CARGO_NAME_FERTILISER                                                       :{G=m}Fertilizante
 STR_CARGO_NAME_FRUITS                                                           :{G=f}Fruta
-STR_CARGO_NAME_GALVANISED_STEEL                                                 :{G=m}Acero galvanizado
+STR_CARGO_NAME_GALVANISED_STEEL                                                 :{G=m}Chasis de vehículos
 STR_CARGO_NAME_QUICKLIME                                                        :{G=f}Cal
 STR_CARGO_NAME_LUMBER                                                           :{G=f}Madera
 STR_CARGO_NAME_METAL                                                            :{G=m}Metal
@@ -70,6 +71,7 @@ STR_CARGO_NAME_RECYCLABLES                                                      
 STR_CARGO_NAME_SAND                                                             :{G=m}Arena
 STR_CARGO_NAME_SCRAP_METAL                                                      :{G=f}Chatarra
 STR_CARGO_NAME_SLAG                                                             :{G=f}Escoria
+STR_CARGO_NAME_SODA_ASH                                                         :{G=f}Carbonado de sodio
 STR_CARGO_NAME_STEEL                                                            :{G=m}Acero
 STR_CARGO_NAME_STONE                                                            :{G=f}Piedra
 STR_CARGO_NAME_SUGAR_BEET                                                       :{G=f}Remolacha azucarera
@@ -84,6 +86,7 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} de frijoles
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} de materiales de construcción
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} de tapioca
+STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} de cemento
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de químicos
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} de arcilla
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} costal{P 0 "" es} de café
@@ -97,7 +100,7 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} de pescado
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros agrícolas
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} de fruta
-STR_CARGO_UNIT_GALVANISED_STEEL                                                 :{WEIGHT} de acero galvanizado
+STR_CARGO_UNIT_GALVANISED_STEEL                                                 :{WEIGHT} de chasis de vehículos
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de madera
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} de manganeso
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de metal
@@ -118,6 +121,7 @@ STR_CARGO_UNIT_RECYCLABLES                                                      
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} de arena
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} de chatarra
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} de escoria
+STR_CARGO_UNIT_SODA_ASH                                                          :{WEIGHT} de carbonato de sodio
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} de acero
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} de piedra
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} de remolacha azucarera
@@ -132,6 +136,7 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BEANS                                                                   :{TINYFONT}FJ
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
 STR_CID_CASSAVA                                                                 :{TINYFONT}TA
+STR_CID_CEMENT                                                                  :{TINYFONT}CM
 STR_CID_CHEMICALS                                                               :{TINYFONT}QM
 STR_CID_CLAY                                                                    :{TINYFONT}AR
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
@@ -144,7 +149,7 @@ STR_CID_FARM_SUPPLIES                                                           
 STR_CID_FERTILISER                                                              :{TINYFONT}FE
 STR_CID_FIBRES                                                                  :{TINYFONT}FV
 STR_CID_FISH                                                                    :{TINYFONT}PE
-STR_CID_GALVANISED_STEEL                                                        :{TINYFONT}AG
+STR_CID_GALVANISED_STEEL                                                        :{TINYFONT}CS
 STR_CID_LUMBER                                                                  :{TINYFONT}MA
 STR_CID_MANGANESE                                                               :{TINYFONT}MG
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}SM
@@ -165,6 +170,7 @@ STR_CID_RECYCLABLES                                                             
 STR_CID_SAND                                                                    :{TINYFONT}AN
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}CH
 STR_CID_SLAG                                                                    :{TINYFONT}ES
+STR_CID_SODA_ASH                                                                :{TINYFONT}SO
 STR_CID_STEEL                                                                   :{TINYFONT}AO
 STR_CID_STONE                                                                   :{TINYFONT}PI
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}RA
@@ -219,6 +225,7 @@ STR_IND_FISHING_VILLAGE                                                         
 STR_IND_FLOUR_MILL                                                              :{G=f}Harinera
 STR_IND_FOOD_MARKET                                                             :{G=f}Tienda de abarrotes
 STR_IND_FOOD_PROCESSOR                                                          :{G=f}Planta procesadora de alimentos
+STR_IND_FOUNDRY                                                                 :{G=f}Fundidora
 STR_IND_FURNITURE_FACTORY                                                       :{G=f}Fábrica de muebles
 STR_IND_GENERAL_STORE                                                           :{G=m}Supermercado
 STR_IND_GLASS_WORKS                                                             :{G=f}Cristalería
@@ -254,6 +261,8 @@ STR_IND_REINDEER_FARM                                                           
 STR_IND_SHEEPFARM                                                               :{G=f}Granja ovina
 STR_IND_SLAG_GRINDING_PLANT                                                     :{G=f}Planta trituradora de escoria
 STR_IND_SMITHY_FORGE                                                            :{G=f}Fragua
+STR_IND_SODA_ASH_MINE                                                           :{G=f}Mina de carbonato de sodio
+STR_IND_STEEL_FINISHING_PLANT                                                   :{G=f}Planta de acabados de acero
 STR_IND_STOCKYARD                                                               :{G=m}Rastro
 STR_IND_SUGAR_PLANTATION                                                        :{G=f}Plantación de azúcar
 STR_IND_SUGAR_REFINERY                                                          :{G=f}Refinería de azúcar
@@ -261,7 +270,7 @@ STR_IND_SUPPLY_YARD                                                             
 STR_IND_TEXTILE_MILL                                                            :{G=f}Maquiladora textil
 STR_IND_TRADING_POST                                                            :{G=m}Establecimiento comercial
 STR_IND_TYRE_PLANT                                                              :{G=f}Fábrica de llantas
-STR_IND_VEHICLE_FACTORY                                                         :{G=f}Planta automotriz
+STR_IND_VEHICLE_FACTORY                                                         :{G=f}Ensambladora
 STR_IND_VINEYARD                                                                :{G=m}Viñedo
 
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produce artículos de cristal tales como botellas, jarras y ventanas.
