@@ -26,26 +26,30 @@
 /* granularity of production. That amount of input (per cargo) is needed in order to be processed */
 #define MAX_SUM_PROD_RATIO 8
 
-/* Temporary variables used within this template (these are the temp register numbers) */
+/* Temp variables used within this template (these are TEMP register numbers _not_ PERM) */
 #define var_received_timely_1       0
 #define var_received_timely_2       1
 #define var_received_timely_3       2
-#define var_output_ratio_1          3
-#define var_output_ratio_2          4
+#define num_output_cargos           3
+#define var_output_ratio_1          4
+#define var_output_ratio_2          5
 
-produce (${industry.id}_simple_produce, waiting_cargo_1, waiting_cargo_2, waiting_cargo_3,
-			LOAD_PERM(var_leftover_cargo_1) / MAX_SUM_PROD_RATIO / LOAD_TEMP(var_output_ratio_1) * LOAD_PERM(var_ratio_cargo_1) +
-			LOAD_PERM(var_leftover_cargo_2) / MAX_SUM_PROD_RATIO / LOAD_TEMP(var_output_ratio_1) * LOAD_PERM(var_ratio_cargo_2) +
-			LOAD_PERM(var_leftover_cargo_3) / MAX_SUM_PROD_RATIO / LOAD_TEMP(var_output_ratio_1) * LOAD_PERM(var_ratio_cargo_3),
+produce (${industry.id}_simple_produce,
+            waiting_cargo_1,
+            waiting_cargo_2,
+            waiting_cargo_3,
+			LOAD_PERM(var_leftover_cargo_1) * LOAD_PERM(var_ratio_cargo_1) * LOAD_TEMP(var_output_ratio_1) / (8 * MAX_SUM_PROD_RATIO) +
+			LOAD_PERM(var_leftover_cargo_2) * LOAD_PERM(var_ratio_cargo_2) * LOAD_TEMP(var_output_ratio_1) / (8 * MAX_SUM_PROD_RATIO) +
+			LOAD_PERM(var_leftover_cargo_3) * LOAD_PERM(var_ratio_cargo_3) * LOAD_TEMP(var_output_ratio_1) / (8 * MAX_SUM_PROD_RATIO),
 
-			LOAD_PERM(var_leftover_cargo_1) / MAX_SUM_PROD_RATIO / LOAD_TEMP(var_output_ratio_2) * LOAD_PERM(var_ratio_cargo_1) +
-			LOAD_PERM(var_leftover_cargo_2) / MAX_SUM_PROD_RATIO / LOAD_TEMP(var_output_ratio_2) * LOAD_PERM(var_ratio_cargo_2) +
-			LOAD_PERM(var_leftover_cargo_3) / MAX_SUM_PROD_RATIO / LOAD_TEMP(var_output_ratio_2) * LOAD_PERM(var_ratio_cargo_3),
+			LOAD_PERM(var_leftover_cargo_1) * LOAD_PERM(var_ratio_cargo_1) * LOAD_TEMP(var_output_ratio_2) / (8 * MAX_SUM_PROD_RATIO) +
+			LOAD_PERM(var_leftover_cargo_2) * LOAD_PERM(var_ratio_cargo_2) * LOAD_TEMP(var_output_ratio_2) / (8 * MAX_SUM_PROD_RATIO) +
+			LOAD_PERM(var_leftover_cargo_3) * LOAD_PERM(var_ratio_cargo_3) * LOAD_TEMP(var_output_ratio_2) / (8 * MAX_SUM_PROD_RATIO),
 			[
 			/* Remove any remainder */
-			STORE_PERM( LOAD_PERM(var_leftover_cargo_1) % (MAX_SUM_PROD_RATIO * LOAD_TEMP(var_output_ratio_1)), var_leftover_cargo_1),
-			STORE_PERM( LOAD_PERM(var_leftover_cargo_2) % (MAX_SUM_PROD_RATIO * LOAD_TEMP(var_output_ratio_1)), var_leftover_cargo_2),
-			STORE_PERM( LOAD_PERM(var_leftover_cargo_3) % (MAX_SUM_PROD_RATIO * LOAD_TEMP(var_output_ratio_1)), var_leftover_cargo_3),
+			STORE_PERM(LOAD_PERM(var_leftover_cargo_1) % (MAX_SUM_PROD_RATIO / LOAD_TEMP(num_output_cargos)), var_leftover_cargo_1),
+			STORE_PERM(LOAD_PERM(var_leftover_cargo_2) % (MAX_SUM_PROD_RATIO / LOAD_TEMP(num_output_cargos)), var_leftover_cargo_2),
+			STORE_PERM(LOAD_PERM(var_leftover_cargo_3) % (MAX_SUM_PROD_RATIO / LOAD_TEMP(num_output_cargos)), var_leftover_cargo_3),
 			0
 			]
 );
@@ -53,6 +57,8 @@ produce (${industry.id}_simple_produce, waiting_cargo_1, waiting_cargo_2, waitin
 <tal:economies repeat="economy economies">
     switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_economy_${economy.numeric_id},
             [
+            /* Store number of output cargos */
+            STORE_TEMP(${len(industry.get_property('prod_cargo_types', economy))}, num_output_cargos),
             /* Store the ratio of total production assigned to each output cargo (typically 4/8 and 4/8, but varies in some cases) */
             STORE_TEMP(${industry.get_output_ratio(economy)}, var_output_ratio_1),
             STORE_TEMP(${industry.get_output_ratio(economy)}, var_output_ratio_2),

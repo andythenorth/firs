@@ -774,9 +774,11 @@ class Industry(object):
         return get_another_industry(id)
 
     def get_output_ratio(self, economy):
-        # returns a string that is used to push 1 or 2 to temp storage as the number of industry output cargos
         # (secondary industries may have 1 or 2 output cargos; 0 is not a relevant option here)
-        return len(self.get_property('prod_cargo_types', economy))
+        if len(self.get_property('prod_cargo_types', economy)) == 2:
+            return 4
+        else:
+            return 8
 
     def unpack_switch_or_spritelayout(self, switch_or_spritelayout, industry):
         if isinstance(switch_or_spritelayout, GraphicsSwitch):
