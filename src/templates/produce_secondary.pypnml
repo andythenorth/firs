@@ -13,7 +13,6 @@
  * It uses the following permanent storages:
  *
  * var_date_received_1, var_date_received_2, var_date_received_3
- * var_input_cargo_1, var_input_cargo_2, var_input_cargo_3
  * var_ratio_cargo_1, var_ratio_cargo_2, var_ratio_cargo_3
  * var_production_span
  *
@@ -68,11 +67,6 @@ produce (${industry.id}_simple_produce,
             STORE_PERM( max(LOAD_PERM(var_date_received_3),(waiting_cargo_3 > 0) * current_date), var_date_received_3),
             /* Reset the closure countdown */
             STORE_PERM( (waiting_cargo_1 == 0 && waiting_cargo_2 == 0 && waiting_cargo_3 == 0) * LOAD_PERM(var_closure_counter), var_closure_counter),
-
-            /* Store the delivered cargo permanently (for debugging purposes only, reset at beginning of month) */
-            STORE_PERM( LOAD_PERM(var_input_cargo_1) + waiting_cargo_1, var_input_cargo_1),
-            STORE_PERM( LOAD_PERM(var_input_cargo_2) + waiting_cargo_2, var_input_cargo_2),
-            STORE_PERM( LOAD_PERM(var_input_cargo_3) + waiting_cargo_3, var_input_cargo_3),
 
             /* Check whether the cargos were delivered within the time frame to be considered delivered concurrently */
             STORE_TEMP( (current_date - LOAD_PERM(var_date_received_1)) <= PRODUCTION_SPAN, var_received_timely_1),
