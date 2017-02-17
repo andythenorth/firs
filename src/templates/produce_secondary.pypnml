@@ -45,7 +45,7 @@ produce (${industry.id}_simple_produce,
 			LOAD_PERM(var_leftover_cargo_2) * LOAD_PERM(var_ratio_cargo_2) * LOAD_TEMP(var_output_ratio_2) / (8 * MAX_SUM_PROD_RATIO) +
 			LOAD_PERM(var_leftover_cargo_3) * LOAD_PERM(var_ratio_cargo_3) * LOAD_TEMP(var_output_ratio_2) / (8 * MAX_SUM_PROD_RATIO),
 			[
-			/* Remove any remainder */
+			/* Account for cargo 'wasted' in output calc (due to integer division discarding fractional values) - keep it for next production cycle */
 			STORE_PERM(LOAD_PERM(var_leftover_cargo_1) % (MAX_SUM_PROD_RATIO / LOAD_TEMP(num_output_cargos)), var_leftover_cargo_1),
 			STORE_PERM(LOAD_PERM(var_leftover_cargo_2) % (MAX_SUM_PROD_RATIO / LOAD_TEMP(num_output_cargos)), var_leftover_cargo_2),
 			STORE_PERM(LOAD_PERM(var_leftover_cargo_3) % (MAX_SUM_PROD_RATIO / LOAD_TEMP(num_output_cargos)), var_leftover_cargo_3),
