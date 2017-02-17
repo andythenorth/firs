@@ -50,14 +50,12 @@ produce (${industry.id}_simple_produce, waiting_cargo_1, waiting_cargo_2, waitin
 			]
 );
 
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_num_output_cargos, [STORE_TEMP(${industry.get_expression_for_num_output_cargos_per_economy()}, var_output_ratio_1),
-                                                                 STORE_TEMP(${industry.get_expression_for_num_output_cargos_per_economy()}, var_output_ratio_2)]) {
-    ${industry.id}_simple_produce;
-}
-
 <tal:economies repeat="economy economies">
     switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_economy_${economy.numeric_id},
             [
+            /* Store the ratio of total production assigned to each output cargo (typically 4/8 and 4/8, but varies in some cases) */
+            STORE_TEMP(${industry.get_expression_for_num_output_cargos_per_economy()}, var_output_ratio_1),
+            STORE_TEMP(${industry.get_expression_for_num_output_cargos_per_economy()}, var_output_ratio_2),
             /* Update the 'last delivery date' for the three input cargos */
             STORE_PERM( max(LOAD_PERM(var_date_received_1),(waiting_cargo_1 > 0) * current_date), var_date_received_1),
             STORE_PERM( max(LOAD_PERM(var_date_received_2),(waiting_cargo_2 > 0) * current_date), var_date_received_2),
@@ -99,7 +97,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_num_output_cargos, [STORE_TEMP(${in
 
             1
             ]) {
-        ${industry.id}_num_output_cargos;
+        ${industry.id}_simple_produce;
     }
 </tal:economies>
 
