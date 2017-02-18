@@ -6,7 +6,6 @@
 """
 
 from collections import deque
-from string import Template # python builtin templater might be used in some utility cases
 
 import os.path
 currentdir = os.curdir
@@ -24,7 +23,6 @@ industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), fo
 
 from economies import registered_economies
 from industries import registered_industries
-from cargos import registered_cargos
 
 def get_another_industry(id):
     # utility function so that we can provide numeric ids in nml output, rather than relying identifiers
@@ -687,7 +685,6 @@ class Industry(object):
 
     def get_expression_for_extra_text_industry_cargo_details(self, economy):
         accept_cargos_with_ratios = self.get_property('processed_cargos_and_output_ratios', economy)
-        prod_cargos = self.get_prod_cargo_types(economy) # !! unused !! might be needed to get the number of produced cargos - or delete if not
 
         extra_text_template = PageTemplate(
             "STORE_TEMP(${cargo_label} | " \

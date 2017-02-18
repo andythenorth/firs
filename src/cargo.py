@@ -11,7 +11,6 @@ currentdir = os.curdir
 # add to the module search path
 src_path = os.path.join(currentdir, 'src')
 
-import global_constants as global_constants
 import utils as utils
 
 from chameleon import PageTemplateLoader # chameleon used in most template cases

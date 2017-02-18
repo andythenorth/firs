@@ -1,5 +1,4 @@
 from economies import registered_economies
-import utils
 
 class Economy(object):
     """ class to hold economies, this comment is pointless eh? """
