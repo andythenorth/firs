@@ -48,7 +48,6 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Landbouwmaterialen
 STR_CARGO_NAME_FERTILISER                                                       :Kunstmest
 STR_CARGO_NAME_FRUITS                                                           :Groente en fruit
-STR_CARGO_NAME_GALVANISED_STEEL                                                 :Gegalvaniseerd staal
 STR_CARGO_NAME_QUICKLIME                                                        :Calciumoxide
 STR_CARGO_NAME_LUMBER                                                           :Gezaagd hout
 STR_CARGO_NAME_METAL                                                            :Metaal
@@ -95,7 +94,6 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} vis
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} krat{P 0 "" ten} landbouwmaterialen
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} groente en fruit
-STR_CARGO_UNIT_GALVANISED_STEEL                                                 :{WEIGHT} gegalvaniseerd staal
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} gezaagd hout
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} mangaan
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metaal
@@ -141,7 +139,6 @@ STR_CID_FARM_SUPPLIES                                                           
 STR_CID_FERTILISER                                                              :{TINYFONT}KM
 STR_CID_FIBRES                                                                  :{TINYFONT}KT
 STR_CID_FISH                                                                    :{TINYFONT}VS
-STR_CID_GALVANISED_STEEL                                                        :{TINYFONT}GS
 STR_CID_LUMBER                                                                  :{TINYFONT}HT
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}PH
@@ -260,7 +257,6 @@ STR_IND_VEHICLE_FACTORY                                                         
 STR_IND_VINEYARD                                                                :Wijngaard
 
 
-STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              :{BLACK}{STRING}{}Heeft nodig:{} {YELLOW}{CARGO_NAME} {STRING}
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Huidige productie: {YELLOW}Normaal{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} eenheden vracht om {WHITE}verhoogd{BLACK} productieniveau te verkrijgen{}Lever {SIGNED_WORD} eenheden vracht voor {WHITE}gepassioneerde{BLACK} productie
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Huidige productie: {YELLOW}Verhoogd{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} kratten constructie-, landbouw- of productiematerialen af om dit productieniveau te handhaven{}Voor {WHITE}gepassioneerde{BLACK} productie, lever {SIGNED_WORD} eenheden
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Huidige productie: {YELLOW}Gepassioneerd{}{}{BLACK}Lever binnen drie maanden {SKIP}{SIGNED_WORD} kratten constructie-, landbouw- of productiematerialen af om dit productieniveau te handhaven.

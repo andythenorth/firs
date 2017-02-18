@@ -10,12 +10,6 @@ arable_farm.industry.register()
 from industries import basic_farm
 basic_farm.industry.register()
 
-"""
-# not currently used
-from industries import bauxite_mine
-bauxite_mine.industry.register()
-"""
-
 from industries import basic_oxygen_furnace
 basic_oxygen_furnace.industry.register()
 
@@ -72,12 +66,6 @@ electric_arc_furnace.industry.register()
 
 from industries import fertiliser_plant
 fertiliser_plant.industry.register()
-
-"""
-# not currently used
-from industries import fibre_crop_farm
-fibre_crop_farm.industry.register()
-"""
 
 from industries import flour_mill
 flour_mill.industry.register()
@@ -184,12 +172,6 @@ smithy_forge.industry.register()
 from industries import stockyard
 stockyard.industry.register()
 
-"""
-# not currently used
-from industries import sugar_plantation
-sugar_plantation.industry.register()
-"""
-
 from industries import sugar_refinery
 sugar_refinery.industry.register()
 
@@ -201,12 +183,6 @@ trading_post.industry.register()
 
 from industries import clay_pit
 clay_pit.industry.register()
-
-"""
-# not currently used
-from industries import factory
-factory.industry.register()
-"""
 
 from industries import fishing_grounds
 fishing_grounds.industry.register()
@@ -237,9 +213,6 @@ oil_refinery.industry.register()
 
 from industries import oil_rig
 oil_rig.industry.register()
-
-from industries import ore_terminal
-ore_terminal.industry.register()
 
 from industries import paper_mill
 paper_mill.industry.register()

@@ -50,7 +50,6 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=f}Forniture agricole
 STR_CARGO_NAME_FERTILISER                                                       :Fertilizzante
 STR_CARGO_NAME_FRUITS                                                           :{G=f}Frutta
-STR_CARGO_NAME_GALVANISED_STEEL                                                 :Acciaio zincato
 STR_CARGO_NAME_QUICKLIME                                                        :Calce viva
 STR_CARGO_NAME_LUMBER                                                           :{G=m}Prodotti in legno
 STR_CARGO_NAME_METAL                                                            :{G=m}Metalli
@@ -97,7 +96,6 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} di pesce
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} cass{P 0 a e} di forniture agricole
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} di frutta e verdura
-STR_CARGO_UNIT_GALVANISED_STEEL                                                 :{WEIGHT} d'acciaio zincato
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} di prodotti in legno
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} di manganese
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} di metalli
@@ -143,7 +141,6 @@ STR_CID_FARM_SUPPLIES                                                           
 STR_CID_FERTILISER                                                              :{TINYFONT}FL
 STR_CID_FIBRES                                                                  :{TINYFONT}FT
 STR_CID_FISH                                                                    :{TINYFONT}PE
-STR_CID_GALVANISED_STEEL                                                        :{TINYFONT}AG
 STR_CID_LUMBER                                                                  :{TINYFONT}PL
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}FI
@@ -266,7 +263,6 @@ STR_IND_VINEYARD                                                                
 STR_EXTRA_TEXT_SECONDARY_TWO_CARGO_BOOST                                        :{}{}La produzione incrementa consegnando entrambe le merci entro 3 mesi una dall'altra.
 STR_EXTRA_TEXT_SECONDARY_THREE_CARGO_BOOST                                      :{}{}La produzione incrementa consegnando due o più merci entro 3 mesi una dall'altra.
 STR_EXTRA_TEXT_SECONDARY_MNSP_BOOST                                             :{BLACK}La produzione incrementa consegnando le forniture entro 3 mesi dall'altre merci
-STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              :{BLACK}{STRING}{}{}Produzione:{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}{}{GOLD}{STRING}
 STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}{}Produzione:{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}{}{GOLD}{STRING}
 STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}{}Produzione:{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}{}{GOLD}{STRING}
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produzione attuale: {YELLOW}Normale{}{}{BLACK}Il livello di produzione {WHITE}Elevato {BLACK} si raggiunge consegnando {SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al livello {WHITE}Gung ho {BLACK} si devono consegnare {SIGNED_WORD} casse

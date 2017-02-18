@@ -70,11 +70,6 @@ fruits.cargo.register()
 from cargos import vehicle_bodies
 vehicle_bodies.cargo.register()
 
-"""
-from cargos import gold
-gold.cargo.register()
-"""
-
 from cargos import goods
 goods.cargo.register()
 

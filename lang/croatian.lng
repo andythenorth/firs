@@ -50,7 +50,6 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Poljoprivredne potrepštine
 STR_CARGO_NAME_FERTILISER                                                       :Gnojivo
 STR_CARGO_NAME_FRUITS                                                           :Voće
-STR_CARGO_NAME_GALVANISED_STEEL                                                 :Karoserija vozila
 STR_CARGO_NAME_QUICKLIME                                                        :Živo vapno
 STR_CARGO_NAME_LUMBER                                                           :Drvo
 STR_CARGO_NAME_METAL                                                            :Metal
@@ -98,7 +97,6 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} ribe
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} kutij{P 0 a e e} poljoprivrednih potrepština
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} voća
-STR_CARGO_UNIT_GALVANISED_STEEL                                                 :{WEIGHT} galvaniziranog čelika
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} drva
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} mangana
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metala
@@ -145,7 +143,6 @@ STR_CID_FARM_SUPPLIES                                                           
 STR_CID_FERTILISER                                                              :{TINYFONT}GN
 STR_CID_FIBRES                                                                  :{TINYFONT}BV
 STR_CID_FISH                                                                    :{TINYFONT}RI
-STR_CID_GALVANISED_STEEL                                                        :{TINYFONT}GČ
 STR_CID_LUMBER                                                                  :{TINYFONT}DR
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}PP
@@ -271,7 +268,6 @@ STR_EXTRA_TEXT_SECONDARY_CARGO_DELIVERED                                        
 STR_EXTRA_TEXT_SECONDARY_TWO_CARGO_BOOST                                        :{}{}Proizvodnja se povećava ako se oba tereta dostave unutar tri mjeseca jedan od drugog.
 STR_EXTRA_TEXT_SECONDARY_THREE_CARGO_BOOST                                      :{}{}Proizvodnja se povećava ako se dva ili više tereta dostave unutar tri mjeseca jedan od drugog.
 STR_EXTRA_TEXT_SECONDARY_MNSP_BOOST                                             :{BLACK}Proizvodnja se povećava ako se proizvodne potrepštine dostave unutar tri mjeseca od dostave drugih tereta.
-STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              :{BLACK}{STRING}{}Potrebuje:{}  {YELLOW}{CARGO_NAME} {STRING}
 STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}Potrebuje:{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}{}{BLACK}Trenutna efikasnost: {YELLOW}Ne proizvodi{}{BLACK}Za {WHITE}Najveću {BLACK}efikasnost dostavite oba tereta unutar tri mjeseca jedan od drugoga
 STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}Potrebuje:{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}{}{BLACK}Trenutna efikasnost: {YELLOW}Nula{}{BLACK}Za {WHITE}Najveću {BLACK}efikasnost dostavite sva tri tereta unutar tri mjeseca jedan od drugoga
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna{}{}{BLACK}Za povećavanje proizvodnje na {WHITE}Unaprijeđenu{BLACK} dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{}Za povećavanje proizvodnje na {WHITE}Masovnu{BLACK} dostavite {SIGNED_WORD} kutija
