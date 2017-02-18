@@ -18,7 +18,6 @@ industry = IndustryPrimaryExtractive(id='quarry',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='195',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
-                    min_cargo_distr='5',
                     spec_flags='0',
                     # allow longer distance on clustering than usual, and more clusters, as industry is hard to locate
                     location_checks=IndustryLocationChecks(require_cluster=['quarry', [20, 90, 1, 4]],

@@ -513,7 +513,7 @@ class IndustryProperties(object):
         self.accept_cargo_types = kwargs.get('accept_cargo_types', None)
         self.prod_cargo_types = kwargs.get('prod_cargo_types', None)
         self.prod_multiplier = kwargs.get('prod_multiplier', None)
-        self.min_cargo_distr = kwargs.get('min_cargo_distr', None)
+        self.min_cargo_distr = '5' # just use the most common value from default OTTD industries, this property needs set but has little use
         #  input multipliers must be explicitly 0 unless set, don't rely on sensible defaults
         self.input_multiplier_1 = kwargs.get('input_multiplier_1', '[0, 0]')
         self.input_multiplier_2 = kwargs.get('input_multiplier_2', '[0, 0]')
@@ -907,15 +907,12 @@ class IndustrySecondary(Industry):
     """ Processing industries: input cargo(s) -> output cargo(s) """
     def __init__(self, **kwargs):
         kwargs['life_type'] = 'IND_LIFE_TYPE_PROCESSING'
-        # !! this will need to handle economy variations also...might be non-viable in current form
-        # - do that after snakebite, the CPP templating doesn't handle economy variations either
-        """
-        self.processed_cargos_and_output_ratios = kwargs['processed_cargos_and_output_ratios'] # this kw is required, error if missing - no .get()
-        kwargs['accept_cargo_types'] = [i[0] for i in self.processed_cargos_and_output_ratios]
-        """
         super(IndustrySecondary, self).__init__(**kwargs)
         self.template = kwargs.get('template', 'industry_secondary.pypnml')
         self.combined_cargos_boost_prod = kwargs.get('combined_cargos_boost_prod', False)
+        # guard against prospect chance kword being set, it's pure cruft for secondary industry (harmless, but needless)
+        if 'prospect_chance' in kwargs:
+            utils.echo_message("prospect_chance passed in kwargs for " + self.id + "; secondary industries should not set prospect_chance")
 
     def get_prod_ratio(self, cargo_num, economy):
         if cargo_num > len(self.get_property('processed_cargos_and_output_ratios', economy)):
