@@ -9,16 +9,13 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 
 industry = IndustrySecondary(id='chemical_plant',
                     processed_cargos_and_output_ratios=[('OIL_', 6), ('NITR', 6)],
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['RFPR'],
                     layouts='AUTO',
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='191',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='0',
                     location_checks=IndustryLocationChecks(incompatible={'chemical_plant': 56,
                                                                          'oil_wells': 16,
@@ -26,8 +23,7 @@ industry = IndustrySecondary(id='chemical_plant',
                     remove_cost_multiplier='0',
                     name='string(STR_IND_CHEMICAL_PLANT)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
-                    fund_cost_multiplier='170',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    fund_cost_multiplier='170')
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 

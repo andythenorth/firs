@@ -9,16 +9,13 @@ from industry import IndustryTertiary, TileLocationChecks, IndustryLocationCheck
 
 industry = IndustryTertiary(id='builders_yard',
                     accept_cargo_types=['BDMT'],
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=[],
                     layouts='AUTO',
                     prob_in_game='12',
                     prob_random='18',
                     prod_multiplier='[0, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='15',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     life_type='IND_LIFE_TYPE_BLACK_HOLE',
                     location_checks=IndustryLocationChecks(incompatible={'builders_yard': 20,
                                                                          'hardware_store': 16}),
@@ -26,8 +23,7 @@ industry = IndustryTertiary(id='builders_yard',
                     prospect_chance='0.75',
                     name='string(STR_IND_BUILDERS_YARD)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
-                    fund_cost_multiplier='16',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS' )
+                    fund_cost_multiplier='16' )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True

@@ -9,16 +9,13 @@ from industry import IndustryTertiary, TileLocationChecks, IndustryLocationCheck
 
 industry = IndustryTertiary(id='power_plant',
                     accept_cargo_types=['COAL'],
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=[],
                     layouts='AUTO',
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='14',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     life_type='IND_LIFE_TYPE_BLACK_HOLE',
                     location_checks=IndustryLocationChecks(incompatible={'power_plant': 56,
                                                                          'coal_mine': 16}),
@@ -27,7 +24,6 @@ industry = IndustryTertiary(id='power_plant',
                     name='string(STR_IND_POWER_PLANT)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_TOWN))',
                     fund_cost_multiplier='15',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     intro_year=1900)
 
 industry.economy_variations['FIRS'].enabled = True

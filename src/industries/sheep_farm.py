@@ -8,16 +8,13 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryOrganic(id='sheep_farm',
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
                     prod_cargo_types=['LVST', 'WOOL'],
                     layouts='AUTO',
                     prob_in_game='4',
                     prob_random='11',
                     prod_multiplier='[12, 14]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='14',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='0',
                     location_checks=IndustryLocationChecks(require_cluster=['sheep_farm', [20, 72, 1, 4]],
                                                            incompatible={'stockyard': 16,
@@ -26,8 +23,7 @@ industry = IndustryPrimaryOrganic(id='sheep_farm',
                     prospect_chance='0.75',
                     name='string(STR_IND_SHEEPFARM)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_FARM))',
-                    fund_cost_multiplier='45',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS' )
+                    fund_cost_multiplier='45' )
 
 industry.economy_variations['FIRS'].enabled = True
 

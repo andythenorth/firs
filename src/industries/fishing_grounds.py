@@ -9,16 +9,13 @@ from industry import IndustryPrimary, IndustryLocationChecks
 
 industry = IndustryPrimary(id='fishing_grounds',
                     accept_cargo_types=[],
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['FISH'],
                     layouts='[tilelayout_fishing_grounds_1, tilelayout_fishing_grounds_2, tilelayout_fishing_grounds_3, tilelayout_fishing_grounds_4]',
                     prob_in_game='14',
                     prob_random='14',
                     prod_multiplier='[7, 0]',
                     substitute='5',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='158',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     life_type='IND_LIFE_TYPE_EXTRACTIVE',
                     spec_flags='bitmask(IND_FLAG_BUILT_ON_WATER, IND_FLAG_NO_PRODUCTION_INCREASE, IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES)',
                     location_checks=IndustryLocationChecks(require_cluster=['fishing_grounds', [20, 84, 1, 5]],
@@ -29,7 +26,6 @@ industry = IndustryPrimary(id='fishing_grounds',
                     name='string(STR_IND_FISHING_GROUND)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_WATER))',
                     fund_cost_multiplier='88',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     template="industry_fishing_grounds.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True

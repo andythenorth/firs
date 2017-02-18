@@ -10,23 +10,19 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 industry = IndustrySecondary(id='furniture_factory',
                     processed_cargos_and_output_ratios=[('MNSP', 3), ('WDPR', 5)],
                     combined_cargos_boost_prod=True,
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['GOOD'],
                     layouts='AUTO',
                     prob_in_game='7',
                     prob_random='8',
                     prod_multiplier='[0, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='186',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='0',
                     location_checks=IndustryLocationChecks(incompatible={'furniture_factory': 56}),
                     remove_cost_multiplier='0',
                     name='string(STR_IND_FURNITURE_FACTORY)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
-                    fund_cost_multiplier='95',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    fund_cost_multiplier='95')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

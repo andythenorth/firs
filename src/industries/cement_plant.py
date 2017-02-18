@@ -10,16 +10,13 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 industry = IndustrySecondary(id='cement_plant',
                     processed_cargos_and_output_ratios=[('COAL', 2), ('CLAY', 2), ('GRVL', 4)],
                     combined_cargos_boost_prod=True,
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['BDMT'],
                     layouts='AUTO',
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='19',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
                     location_checks=IndustryLocationChecks(incompatible={'cement_plant': 56,
                                                                          'coal_mine': 16,
@@ -28,8 +25,7 @@ industry = IndustrySecondary(id='cement_plant',
                     remove_cost_multiplier='0',
                     name='string(STR_IND_CEMENT_PLANT)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
-                    fund_cost_multiplier='203',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    fund_cost_multiplier='203')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True

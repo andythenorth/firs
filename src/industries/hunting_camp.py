@@ -9,16 +9,13 @@ from industry import IndustryPrimaryNoSupplies, TileLocationChecks, IndustryLoca
 
 industry = IndustryPrimaryNoSupplies(id='hunting_camp',
                     accept_cargo_types=[],
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['FOOD'],
                     layouts='AUTO',
                     prob_in_game='14',
                     prob_random='14',
                     prod_multiplier='[5, 0]',
                     substitute='5',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='158',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     life_type='IND_LIFE_TYPE_EXTRACTIVE',
                     spec_flags='bitmask(IND_FLAG_NO_PRODUCTION_INCREASE)',
                     location_checks=IndustryLocationChecks(incompatible={'hunting_camp': 56}),
@@ -26,8 +23,7 @@ industry = IndustryPrimaryNoSupplies(id='hunting_camp',
                     prospect_chance='0.75',
                     name='string(STR_IND_HUNTING_CAMP)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_HUNTING_CAMP))',
-                    fund_cost_multiplier='88',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    fund_cost_multiplier='88')
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 

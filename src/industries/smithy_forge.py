@@ -9,23 +9,19 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 
 industry = IndustrySecondary(id='smithy_forge',
                     processed_cargos_and_output_ratios=[('METL', 8)],
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['ENSP', 'FMSP'],
                     layouts='AUTO',
                     prob_in_game='2',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='133',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='bitmask(IND_FLAG_ONLY_IN_TOWNS)',
                     location_checks=IndustryLocationChecks(incompatible={'smithy_forge': 56}),
                     remove_cost_multiplier='0',
                     name='string(STR_IND_SMITHY_FORGE)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='63',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     expiry_year=1948 )
 
 industry.economy_variations['FIRS'].enabled = True

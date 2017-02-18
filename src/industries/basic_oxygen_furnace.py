@@ -10,16 +10,13 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 industry = IndustrySecondary(id='basic_oxygen_furnace',
                     processed_cargos_and_output_ratios=[('IRON', 4), ('MNO2', 2), ('QLME', 2)],
                     combined_cargos_boost_prod=True,
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=[('STEL', 6), ('SLAG', 2)],
                     layouts='AUTO',
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='48',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
                     # hack abusing clusters to locate this near blast furnaces
                     location_checks=IndustryLocationChecks(require_cluster=['blast_furnace', [24, 48, 1, 1]],
@@ -27,8 +24,7 @@ industry = IndustrySecondary(id='basic_oxygen_furnace',
                     remove_cost_multiplier='0',
                     name='string(STR_IND_BASIC_OXYGEN_FURNACE)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
-                    fund_cost_multiplier='160',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    fund_cost_multiplier='160')
 
 industry.economy_variations['STEELTOWN'].enabled = True
 

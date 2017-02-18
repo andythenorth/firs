@@ -8,16 +8,12 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryOrganic(id='forest',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     prob_in_game='3',
                     prob_random='10',
                     map_colour='81',
                     prospect_chance='0.75',
                     layouts='[tilelayout_forest_1, tilelayout_forest_2, tilelayout_forest_3]',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['WOOD'],
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     location_checks=IndustryLocationChecks(require_cluster=['forest', [20, 72, 1, 3]],
                                                            incompatible={'sawmill': 16,
                                                                          'paper_mill': 16}),

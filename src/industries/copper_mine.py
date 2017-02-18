@@ -8,16 +8,13 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryExtractive(id='copper_mine',
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['CORE'],
                     layouts='AUTO',
                     prob_in_game='7',
                     prob_random='7',
                     prod_multiplier='[20, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='9',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='0',
                     location_checks=IndustryLocationChecks(require_cluster=['copper_mine', [20, 60, 1, 3]],
                                                            incompatible={'copper_refinery': 16}),
@@ -26,8 +23,7 @@ industry = IndustryPrimaryExtractive(id='copper_mine',
                     name='TTD_STR_INDUSTRY_NAME_COPPER_ORE_MINE',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MINE))',
                     fund_cost_multiplier='238',
-                    intro_year=1800,
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS' )
+                    intro_year=1800 )
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True

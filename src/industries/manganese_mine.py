@@ -8,16 +8,13 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryExtractive(id='manganese_mine',
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['MNO2'],
                     layouts='AUTO',
                     prob_in_game='4',
                     prob_random='7',
                     prod_multiplier='[20, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='16',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='0',
                     location_checks=IndustryLocationChecks(require_cluster=['manganese_mine', [20, 70, 1, 3]],
                                                            incompatible={'bulk_terminal': 16}),
@@ -25,8 +22,7 @@ industry = IndustryPrimaryExtractive(id='manganese_mine',
                     prospect_chance='0.75',
                     name='string(STR_IND_MANGANESE_MINE)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MINE))',
-                    fund_cost_multiplier='232',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    fund_cost_multiplier='232')
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 

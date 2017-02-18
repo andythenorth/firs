@@ -8,16 +8,13 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryExtractive(id='clay_pit',
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['CLAY'],
                     layouts='AUTO',
                     prob_in_game='4',
                     prob_random='7',
                     prod_multiplier='[16, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='46',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='0',
                     # allow longer distance on clustering than usual, and more clusters, as industry is hard to locate
                     location_checks=IndustryLocationChecks(require_cluster=['clay_pit', [20, 90, 1, 4]],
@@ -29,7 +26,6 @@ industry = IndustryPrimaryExtractive(id='clay_pit',
                     name='string(STR_IND_CLAY_PIT)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PIT))',
                     fund_cost_multiplier='200',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     template="refactor_primary_waterpit.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True

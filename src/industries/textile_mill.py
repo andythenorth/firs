@@ -10,16 +10,13 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 industry = IndustrySecondary(id='textile_mill',
                     processed_cargos_and_output_ratios=[('MNSP', 2), ('WOOL', 3), ('FICR', 3)],
                     combined_cargos_boost_prod=True,
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['GOOD'],
                     layouts='AUTO',
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='37',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='0',
                     location_checks=IndustryLocationChecks(incompatible={'textile_mill': 56,
                                                                          'mixed_farm': 16,
@@ -27,8 +24,7 @@ industry = IndustrySecondary(id='textile_mill',
                     remove_cost_multiplier='0',
                     name='string(STR_IND_TEXTILE_MILL)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_REFINERY))',
-                    fund_cost_multiplier='120',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    fund_cost_multiplier='120')
 
 industry.economy_variations['FIRS'].enabled = True
 

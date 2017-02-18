@@ -8,16 +8,13 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryExtractive(id='junk_yard',
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['SCMT'],
                     layouts='AUTO',
                     prob_in_game='3',
                     prob_random='7',
                     prod_multiplier='[12, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='36',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='0',
                     location_checks=IndustryLocationChecks(town_distance=(0, 144)),
                     remove_cost_multiplier='0',
@@ -25,7 +22,6 @@ industry = IndustryPrimaryExtractive(id='junk_yard',
                     name='string(STR_IND_JUNKYARD)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='101',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     graphics_change_dates = [1949, 1960, 1980, 2000],
                     intro_year=1850 )
 

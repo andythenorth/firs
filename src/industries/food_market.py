@@ -9,16 +9,13 @@ from industry import IndustryTertiary, TileLocationChecks, IndustryLocationCheck
 
 industry = IndustryTertiary(id='food_market',
                     accept_cargo_types=['FOOD', 'FRUT', 'BEER'],
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=[],
                     layouts='AUTO',
                     prob_in_game='12',
                     prob_random='24',
                     prod_multiplier='[0, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='191',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     life_type='IND_LIFE_TYPE_BLACK_HOLE',
                     spec_flags='bitmask(IND_FLAG_ONLY_IN_TOWNS)',
                     location_checks=IndustryLocationChecks(incompatible={'food_market': 20,
@@ -28,8 +25,7 @@ industry = IndustryTertiary(id='food_market',
                     prospect_chance='0.75',
                     name='string(STR_IND_FOOD_MARKET)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_TOWN))',
-                    fund_cost_multiplier='15',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS' )
+                    fund_cost_multiplier='15' )
 
 industry.economy_variations['FIRS'].enabled = True
 

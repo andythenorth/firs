@@ -9,16 +9,13 @@ from industry import IndustryPrimaryPort, TileLocationChecks, IndustryLocationCh
 
 industry = IndustryPrimaryPort(id='bulk_terminal',
                     accept_cargo_types=['FOOD', 'FRUT', 'BEER'],
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=[],
                     layouts='AUTO',
                     prob_in_game='2',
                     prob_random='6',
                     prod_multiplier='[9, 9]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='175',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='bitmask(IND_FLAG_BUILT_ON_WATER)',
                     location_checks=IndustryLocationChecks(incompatible={'bulk_terminal': 48}),
                     remove_cost_multiplier='0',
@@ -26,7 +23,6 @@ industry = IndustryPrimaryPort(id='bulk_terminal',
                     name='string(STR_IND_BULK_TERMINAL)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_HARBOUR))',
                     fund_cost_multiplier='152',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     override_default_construction_states=True)
 
 industry.economy_variations['FIRS'].enabled = True

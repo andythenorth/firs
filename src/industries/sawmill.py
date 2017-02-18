@@ -9,22 +9,18 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 
 industry = IndustrySecondary(id='sawmill',
                     processed_cargos_and_output_ratios=[('WOOD', 6)],
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['WDPR'],
                     prob_in_game='3',
                     prob_random='5',
                     layouts='AUTO',
                     prod_multiplier='[0, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='194',
                     spec_flags='0',
                     location_checks=IndustryLocationChecks(require_cluster=['forest', [16, 60, 5, 4]]),
                     remove_cost_multiplier='0',
                     name='TTD_STR_INDUSTRY_NAME_SAWMILL',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
-                    fund_cost_multiplier='97',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    fund_cost_multiplier='97')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True

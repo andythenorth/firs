@@ -9,16 +9,13 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 
 industry = IndustrySecondary(id='coke_oven',
                     processed_cargos_and_output_ratios=[('COAL', 8)],
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=[('COKE', 6), ('SULP', 2)],
                     layouts='AUTO',
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='163',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='0',
                     location_checks=IndustryLocationChecks(incompatible={'coke_oven': 56,
                                                                          'coal_mine': 16,
@@ -26,8 +23,7 @@ industry = IndustrySecondary(id='coke_oven',
                     remove_cost_multiplier='0',
                     name='string(STR_IND_COKE_OVEN)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PIT))',
-                    fund_cost_multiplier='120',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    fund_cost_multiplier='120')
 
 industry.economy_variations['STEELTOWN'].enabled = True
 

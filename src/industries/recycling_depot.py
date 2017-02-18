@@ -9,23 +9,19 @@ from industry import IndustryPrimaryTownProducer
 
 industry = IndustryPrimaryTownProducer(id='recycling_depot',
                     accept_cargo_types=[],
-                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['RCYC'],
                     layouts='AUTO',
                     prob_in_game='20',
                     prob_random='20',
                     prod_multiplier='[0, 0]',
                     substitute='0',
-                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='191',
-                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     life_type='IND_LIFE_TYPE_EXTRACTIVE',
                     spec_flags='0',
                     remove_cost_multiplier='0',
                     name='string(STR_IND_RECYCLING_DEPOT)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='118',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     intro_year=1978)
 
 industry.economy_variations['FIRS'].enabled = True
