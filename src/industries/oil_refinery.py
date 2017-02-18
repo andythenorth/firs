@@ -27,7 +27,6 @@ industry = IndustrySecondary(id='oil_refinery',
                     fund_cost_multiplier='200',
                     name='TTD_STR_INDUSTRY_NAME_OIL_REFINERY',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_REFINERY))',
-                    extra_text_industry='STR_EXTRA_OIL_REFINERY',
                     intro_year=1830)
 
 industry.economy_variations['FIRS'].enabled = True

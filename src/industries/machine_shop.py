@@ -28,7 +28,6 @@ industry = IndustrySecondary(id='machine_shop',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_HEAVY_INDUSTRY))',
                     fund_cost_multiplier='145',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_MACHINE_SHOP',
                     intro_year=1790,
                     graphics_change_dates = [1920, 1945, 1970, 1990, 2010] )
 

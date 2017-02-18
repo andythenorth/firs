@@ -272,19 +272,6 @@ STR_IND_TYRE_PLANT                                                              
 STR_IND_VEHICLE_FACTORY                                                         :Assembly Plant
 STR_IND_VINEYARD                                                                :Vineyard
 
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produces glass items such as bottles, jars and window panes.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produces items such as poles and fence posts.
-STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Builds and services machinery.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produces painted metal components.
-STR_EXTRA_METAL_WORKSHOP                                                        :{BLACK}Produces plated metal items such as tin cans, hardware and household goods.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Processes crude oil into petroleum fuels and chemicals.
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Pulps wood to produce paper and cardboard.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produces plastic items such as packaging and household goods.
-STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}Processes pyrite ore into metal and chemicals.
-STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Processes recyclables for reuse.
-STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Production is proportional to town population.
-STR_EXTRA_SAWMILL                                                               :{BLACK}Chops wood.
-STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produces metal items like tools, ploughs, gates, shovels and horseshoes.
 
 STR_EXTRA_TEXT_SECONDARY_CARGO_REQUIRED                                         :
 STR_EXTRA_TEXT_SECONDARY_CARGO_DELIVERED                                        :{GREEN}{TICK}
@@ -295,6 +282,7 @@ STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              
 STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}{BLACK}For maximum production rate, supply all accepted cargos at least once every three months:{} {YELLOW}{CARGO_NAME} {STRING}{} {YELLOW}{CARGO_NAME} {STRING}
 STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}{BLACK}For maximum production rate, supply all accepted cargos at least once every three months:{} {YELLOW}{CARGO_NAME} {STRING}{} {YELLOW}{CARGO_NAME} {STRING}{} {YELLOW}{CARGO_NAME} {STRING}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximum production reached
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Production is proportional to town population.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} crates of supplies within three months{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this level, deliver {SIGNED_WORD} crates of supplies within three months{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} crates of supplies within three months

@@ -29,8 +29,7 @@ industry = IndustrySecondary(id='pyrite_smelter',
                     name='string(STR_IND_PYRITE_SMELTER)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
                     fund_cost_multiplier='120',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_PYRITE_SMELTER' )
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 

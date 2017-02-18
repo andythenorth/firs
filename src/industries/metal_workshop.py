@@ -29,7 +29,6 @@ industry = IndustrySecondary(id='metal_workshop',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='120',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_METAL_WORKSHOP',
                     intro_year=1800)
 
 industry.economy_variations['FIRS'].enabled = True
