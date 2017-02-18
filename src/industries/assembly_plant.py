@@ -46,11 +46,7 @@ spriteset_1 = industry.add_spriteset(
     sprites = [(10, 10, 64, 80, -31, -49)],
     zextent = 32
 )
-spriteset_2 = industry.add_spriteset(
-    id = 'assembly_plant_spriteset_2',
-    sprites = [(80, 10, 64, 80, -31, -49)],
-    zextent = 32
-)
+# spriteset_2 was deprecated
 spriteset_3 = industry.add_spriteset(
     id = 'assembly_plant_spriteset_3',
     sprites = [(150, 10, 64, 80, -31, -49)],
@@ -113,13 +109,6 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_1],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'assembly_plant_spritelayout_rear_assembly_hall_doors',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_2],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
