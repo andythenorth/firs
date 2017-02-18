@@ -48,7 +48,6 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Landbouwmaterialen
 STR_CARGO_NAME_FERTILISER                                                       :Kunstmest
 STR_CARGO_NAME_FRUITS                                                           :Groente en fruit
-STR_CARGO_NAME_QUICKLIME                                                        :Calciumoxide
 STR_CARGO_NAME_LUMBER                                                           :Gezaagd hout
 STR_CARGO_NAME_METAL                                                            :Metaal
 STR_CARGO_NAME_MILK                                                             :Melk
@@ -63,6 +62,7 @@ STR_CARGO_NAME_PIG_IRON                                                         
 STR_CARGO_NAME_PIPE                                                             :Pijp
 STR_CARGO_NAME_POTASH                                                           :Potas
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyriet
+STR_CARGO_NAME_QUICKLIME                                                        :Calciumoxide
 STR_CARGO_NAME_RECYCLABLES                                                      :Kringloopgoederen
 STR_CARGO_NAME_SAND                                                             :Zand
 STR_CARGO_NAME_SCRAP_METAL                                                      :Schroot
@@ -253,6 +253,8 @@ STR_IND_ASSEMBLY_PLANT                                                         :
 STR_IND_VINEYARD                                                                :Wijngaard
 
 
+# STR_EXTRA_TEXT_SECONDARY_CARGO_DELIVERED                                        :{GREEN}{TICK}
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Productie is evenredig met het aantal inwoners in the stad.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Huidige productie: {YELLOW}Normaal{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} eenheden vracht om {WHITE}verhoogd{BLACK} productieniveau te verkrijgen{}Lever {SIGNED_WORD} eenheden vracht voor {WHITE}gepassioneerde{BLACK} productie
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Huidige productie: {YELLOW}Verhoogd{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} kratten constructie-, landbouw- of productiematerialen af om dit productieniveau te handhaven{}Voor {WHITE}gepassioneerde{BLACK} productie, lever {SIGNED_WORD} eenheden
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Huidige productie: {YELLOW}Gepassioneerd{}{}{BLACK}Lever binnen drie maanden {SKIP}{SIGNED_WORD} kratten constructie-, landbouw- of productiematerialen af om dit productieniveau te handhaven.

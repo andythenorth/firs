@@ -50,7 +50,6 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Poljoprivredne potrepštine
 STR_CARGO_NAME_FERTILISER                                                       :Gnojivo
 STR_CARGO_NAME_FRUITS                                                           :Voće
-STR_CARGO_NAME_QUICKLIME                                                        :Živo vapno
 STR_CARGO_NAME_LUMBER                                                           :Drvo
 STR_CARGO_NAME_METAL                                                            :Metal
 STR_CARGO_NAME_MILK                                                             :Mlijeko
@@ -66,6 +65,7 @@ STR_CARGO_NAME_PIPE                                                             
 STR_CARGO_NAME_POTASH                                                           :Potaša
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pirit
 STR_CARGO_NAME_PULPWOOD                                                         :Drvo za celulozu
+STR_CARGO_NAME_QUICKLIME                                                        :Živo vapno
 STR_CARGO_NAME_RECYCLABLES                                                      :Reciklažni materijal
 STR_CARGO_NAME_SAND                                                             :Pijesak
 STR_CARGO_NAME_SCRAP_METAL                                                      :Otpadni metal
@@ -261,11 +261,13 @@ STR_IND_VINEYARD                                                                
 
 STR_EXTRA_TEXT_SECONDARY_CARGO_REQUIRED                                         :{BLACK}(potrebno)
 STR_EXTRA_TEXT_SECONDARY_CARGO_DELIVERED                                        :{BLACK}(dostavljeno unutar tri mjeseca)
+# STR_EXTRA_TEXT_SECONDARY_CARGO_DELIVERED                                        :{GREEN}{TICK}
 STR_EXTRA_TEXT_SECONDARY_TWO_CARGO_BOOST                                        :{}{}Proizvodnja se povećava ako se oba tereta dostave unutar tri mjeseca jedan od drugog.
 STR_EXTRA_TEXT_SECONDARY_THREE_CARGO_BOOST                                      :{}{}Proizvodnja se povećava ako se dva ili više tereta dostave unutar tri mjeseca jedan od drugog.
 STR_EXTRA_TEXT_SECONDARY_MNSP_BOOST                                             :{BLACK}Proizvodnja se povećava ako se proizvodne potrepštine dostave unutar tri mjeseca od dostave drugih tereta.
 STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}Potrebuje:{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}{}{BLACK}Trenutna efikasnost: {YELLOW}Ne proizvodi{}{BLACK}Za {WHITE}Najveću {BLACK}efikasnost dostavite oba tereta unutar tri mjeseca jedan od drugoga
 STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}Potrebuje:{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}{}{BLACK}Trenutna efikasnost: {YELLOW}Nula{}{BLACK}Za {WHITE}Najveću {BLACK}efikasnost dostavite sva tri tereta unutar tri mjeseca jedan od drugoga
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Proizvodnja je proporcionalna populaciji grada.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna{}{}{BLACK}Za povećavanje proizvodnje na {WHITE}Unaprijeđenu{BLACK} dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{}Za povećavanje proizvodnje na {WHITE}Masovnu{BLACK} dostavite {SIGNED_WORD} kutija
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Unaprijeđena{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{}Za povećavanje proizvodnje na {WHITE}Masovnu{BLACK} dostavite {SIGNED_WORD} kutija
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Masovna{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SIGNED_WORD} kutija potrepština unutar tri mjeseca

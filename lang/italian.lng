@@ -50,7 +50,6 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=f}Forniture agricole
 STR_CARGO_NAME_FERTILISER                                                       :Fertilizzante
 STR_CARGO_NAME_FRUITS                                                           :{G=f}Frutta
-STR_CARGO_NAME_QUICKLIME                                                        :Calce viva
 STR_CARGO_NAME_LUMBER                                                           :{G=m}Prodotti in legno
 STR_CARGO_NAME_METAL                                                            :{G=m}Metalli
 STR_CARGO_NAME_MILK                                                             :{G=m}Latte
@@ -65,6 +64,7 @@ STR_CARGO_NAME_PIG_IRON                                                         
 STR_CARGO_NAME_PIPE                                                             :Tubo
 STR_CARGO_NAME_POTASH                                                           :Potassa
 STR_CARGO_NAME_PYRITE_ORE                                                       :Minerale di pirite
+STR_CARGO_NAME_QUICKLIME                                                        :Calce viva
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=m}Prodotti riciclati
 STR_CARGO_NAME_SAND                                                             :{G=f}Sabbia
 STR_CARGO_NAME_SCRAP_METAL                                                      :{G=m}Metalli di scarto
@@ -256,11 +256,13 @@ STR_IND_ASSEMBLY_PLANT                                                         :
 STR_IND_VINEYARD                                                                :{G=f}Vigna
 
 
+# STR_EXTRA_TEXT_SECONDARY_CARGO_DELIVERED                                        :{GREEN}{TICK}
 STR_EXTRA_TEXT_SECONDARY_TWO_CARGO_BOOST                                        :{}{}La produzione incrementa consegnando entrambe le merci entro 3 mesi una dall'altra.
 STR_EXTRA_TEXT_SECONDARY_THREE_CARGO_BOOST                                      :{}{}La produzione incrementa consegnando due o più merci entro 3 mesi una dall'altra.
 STR_EXTRA_TEXT_SECONDARY_MNSP_BOOST                                             :{BLACK}La produzione incrementa consegnando le forniture entro 3 mesi dall'altre merci
 STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}{}Produzione:{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}{}{GOLD}{STRING}
 STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}{}Produzione:{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}{}{GOLD}{STRING}
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La quantità di prodotto dipende dalle dimensioni della città.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produzione attuale: {YELLOW}Normale{}{}{BLACK}Il livello di produzione {WHITE}Elevato {BLACK} si raggiunge consegnando {SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al livello {WHITE}Gung ho {BLACK} si devono consegnare {SIGNED_WORD} casse
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produzione attuale: {YELLOW}Elevata{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al livello {WHITE}Gung ho{BLACK} consegna {SIGNED_WORD} casse
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Produzione attuale: {YELLOW}Gung-ho{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SKIP}{SIGNED_WORD} casse di forniture entro 3 mesi

@@ -50,7 +50,6 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Gårdsutstyr
 STR_CARGO_NAME_FERTILISER                                                       :Gjødsel
 STR_CARGO_NAME_FRUITS                                                           :Frukt
-STR_CARGO_NAME_QUICKLIME                                                        :Ulesket kalk
 STR_CARGO_NAME_LUMBER                                                           :Trelast
 STR_CARGO_NAME_METAL                                                            :Metall
 STR_CARGO_NAME_MILK                                                             :Melk
@@ -65,6 +64,7 @@ STR_CARGO_NAME_PIG_IRON                                                         
 STR_CARGO_NAME_PIPE                                                             :Rør
 STR_CARGO_NAME_POTASH                                                           :Kalium
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrittmalm
+STR_CARGO_NAME_QUICKLIME                                                        :Ulesket kalk
 STR_CARGO_NAME_RECYCLABLES                                                      :Gjenvinningsgods
 STR_CARGO_NAME_SAND                                                             :Sand
 STR_CARGO_NAME_SCRAP_METAL                                                      :Skrapmetall
@@ -255,6 +255,8 @@ STR_IND_ASSEMBLY_PLANT                                                         :
 STR_IND_VINEYARD                                                                :{G=masculine}Vingård
 
 
+# STR_EXTRA_TEXT_SECONDARY_CARGO_DELIVERED                                        :{GREEN}{TICK}
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produksjonen er proporsjonal med byens innbyggertall.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produserer nå: {YELLOW}Normal{}{}{BLACK}For {WHITE}Forbedret produksjon{BLACK} må du levere {SIGNED_WORD} kasser utstyr innen tre måneder{}For {WHITE}Gung-ho {BLACK}produksjon lever {SIGNED_WORD} kasser
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produserer nå: {YELLOW}Forbedret{}{}{BLACK}For å opprettholde dette nivået, lever {SIGNED_WORD} kasser utstyr innen tre måneder{}For {WHITE}Gung-ho {BLACK}produksjon lever {SIGNED_WORD} kasser
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Produserer nå: {YELLOW}Gung-ho{}{}{BLACK}For å opprettholde dette nivået, lever {SKIP}{SIGNED_WORD} kasser utstyr innen tre måneder
