@@ -916,7 +916,6 @@ class IndustrySecondary(Industry):
         super(IndustrySecondary, self).__init__(**kwargs)
         self.template = kwargs.get('template', 'industry_secondary.pypnml')
         self.combined_cargos_boost_prod = kwargs.get('combined_cargos_boost_prod', False)
-        self.mnsp_boosts_production_jank = kwargs.get('mnsp_boosts_production_jank', False) # jank jank jank
 
     def get_prod_ratio(self, cargo_num, economy):
         if cargo_num > len(self.get_property('processed_cargos_and_output_ratios', economy)):
