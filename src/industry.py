@@ -513,7 +513,7 @@ class IndustryProperties(object):
         self.accept_cargo_types = kwargs.get('accept_cargo_types', None)
         self.prod_cargo_types = kwargs.get('prod_cargo_types', None)
         self.prod_multiplier = kwargs.get('prod_multiplier', None)
-        self.min_cargo_distr = kwargs.get('min_cargo_distr', None)
+        self.min_cargo_distr = '5' # just use the most common value from default OTTD industries, this property needs set but has little use
         #  input multipliers must be explicitly 0 unless set, don't rely on sensible defaults
         self.input_multiplier_1 = kwargs.get('input_multiplier_1', '[0, 0]')
         self.input_multiplier_2 = kwargs.get('input_multiplier_2', '[0, 0]')

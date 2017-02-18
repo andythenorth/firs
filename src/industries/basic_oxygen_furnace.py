@@ -20,7 +20,6 @@ industry = IndustrySecondary(id='basic_oxygen_furnace',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='48',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
-                    min_cargo_distr='5',
                     spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
                     # hack abusing clusters to locate this near blast furnaces
                     location_checks=IndustryLocationChecks(require_cluster=['blast_furnace', [24, 48, 1, 1]],
