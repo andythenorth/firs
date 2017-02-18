@@ -13,6 +13,7 @@ industry = IndustryPrimaryExtractive(id='soda_ash_mine',
                     prob_in_game='4',
                     prob_random='7',
                     prod_multiplier='[18]',
+                    substitute='0',
                     map_colour='39',
                     spec_flags='0',
                     location_checks=IndustryLocationChecks(require_cluster=['soda_ash_mine', [20, 70, 1, 3]],
@@ -21,7 +22,7 @@ industry = IndustryPrimaryExtractive(id='soda_ash_mine',
                     prospect_chance='0.75',
                     name='string(STR_IND_SODA_ASH_MINE)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MINE))',
-                    fund_cost_multiplier='180' )
+                    fund_cost_multiplier='180')
 
 industry.economy_variations['STEELTOWN'].enabled = True
 
