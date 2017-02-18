@@ -534,7 +534,6 @@ class IndustryProperties(object):
         self.enabled = kwargs.get('enabled', False)
         self.processed_cargos_and_output_ratios = kwargs.get('processed_cargos_and_output_ratios', None)
         self.override_default_construction_states = kwargs.get('override_default_construction_states', False)
-        self.extra_text_industry = kwargs.get('extra_text_industry', None) # value is string(s) to return for corresponding nml cb
         self.extra_text_fund = kwargs.get('extra_text_fund', None)
         # nml properties we want to prevent being set for one reason or another
         if 'conflicting_ind_types' in kwargs:
@@ -857,7 +856,6 @@ class IndustryPrimaryExtractive(IndustryPrimary):
     def __init__(self, **kwargs):
         kwargs['accept_cargo_types'] = ['ENSP']
         kwargs['life_type'] = 'IND_LIFE_TYPE_EXTRACTIVE'
-        kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
         super(IndustryPrimaryExtractive, self).__init__(**kwargs)
         self.supply_requirements = [0, 'PRIMARY', 1] # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
 
@@ -870,7 +868,6 @@ class IndustryPrimaryOrganic(IndustryPrimary):
     def __init__(self, **kwargs):
         kwargs['accept_cargo_types'] = ['FMSP']
         kwargs['life_type'] = 'IND_LIFE_TYPE_ORGANIC'
-        kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
         super(IndustryPrimaryOrganic, self).__init__(**kwargs)
         self.supply_requirements = [0, 'PRIMARY', 1] # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
 
@@ -882,7 +879,6 @@ class IndustryPrimaryPort(IndustryPrimary):
     """
     def __init__(self, **kwargs):
         kwargs['life_type'] = 'IND_LIFE_TYPE_BLACK_HOLE'
-        kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
         super(IndustryPrimaryPort, self).__init__(**kwargs)
         self.supply_requirements = [0, 'PORT', 8] # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
 
