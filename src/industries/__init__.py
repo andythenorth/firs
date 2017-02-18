@@ -238,8 +238,8 @@ supply_yard.industry.register()
 from industries import tyre_plant
 tyre_plant.industry.register()
 
-from industries import vehicle_factory
-vehicle_factory.industry.register()
+from industries import assembly_plant
+assembly_plant.industry.register()
 
 from industries import vineyard
 vineyard.industry.register()
