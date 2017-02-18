@@ -67,8 +67,8 @@ food.cargo.register()
 from cargos import fruits
 fruits.cargo.register()
 
-from cargos import galvanised_steel
-galvanised_steel.cargo.register()
+from cargos import vehicle_bodies
+vehicle_bodies.cargo.register()
 
 """
 from cargos import gold
