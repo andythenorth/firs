@@ -9,7 +9,6 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 
 industry = IndustrySecondary(id='pyrite_smelter',
                     processed_cargos_and_output_ratios=[('PORE', 8)],
-                    combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['NICK', 'SULP'],
                     layouts='AUTO',

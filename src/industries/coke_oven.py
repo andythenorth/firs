@@ -9,7 +9,6 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 
 industry = IndustrySecondary(id='coke_oven',
                     processed_cargos_and_output_ratios=[('COAL', 8)],
-                    combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=[('COKE', 6), ('SULP', 2)],
                     layouts='AUTO',
