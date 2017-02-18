@@ -19,6 +19,7 @@ dead_strings = ["STR_EXTRA_GLASS_WORKS",
                 "STR_EXTRA_PAPER_MILL",
                 "STR_EXTRA_SMITHY_FORGE",
                 "STR_EXTRA_SAWMILL",
+                "STR_EXTRA_MAX_PRODUCTION",
                 "STR_EXTRA_PYRITE_SMELTER",
                 "STR_EXTRA_PLASTICS_PLANT",
                 "STR_EXTRA_METAL_FABRICATION_PLANT"]
