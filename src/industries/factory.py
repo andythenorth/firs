@@ -27,8 +27,7 @@ industry = IndustrySecondary(id='factory',
                     name='string(STR_IND_FACTORY)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='95',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_FACTORY' )
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 industry.add_tile(id='factory_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,
