@@ -671,31 +671,11 @@ class Industry(object):
                 # !! this currently triggers on Fertiliser Plant for Extreme, which is more incentive to adjust that industry
                 utils.echo_message(self.id + ' has combined_cargos_boost_prod flag set True, but only 1 cargo defined in economy ' + economy.id)
                 extra_text_string = 'STR_EMPTY'
-            if len(accept_cargos_with_ratios) == 2:
-                extra_text_string = 'STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS'
-            if len(accept_cargos_with_ratios) == 3:
-                extra_text_string = 'STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS'
+            else:
+                extra_text_string = 'STR_EXTRA_TEXT_SECONDARY_COMBINATORY'
         else:
             extra_text_string = 'STR_EMPTY'
-        # there is faff here assembling compile time strings for industry general info, whilst text stack handles cargo production ratio info
-        # this is because compile time strings barf on 'TTD_XXX' strings...
-        # ...meanwhile text stack only has 24 bytes, and all are consumed by cargo ratio info (and it can't be packed tighter afaict)
-        # ^^ this might be outdated after simplifying strings Feb 2017
         return 'string(' + extra_text_string + ')'
-
-    def get_expression_for_extra_text_industry_cargo_details(self, economy):
-        accept_cargos_with_ratios = self.get_property('processed_cargos_and_output_ratios', economy)
-
-        extra_text_template = PageTemplate(
-            "STORE_TEMP(${cargo_label} | " \
-            "(current_date - LOAD_PERM(var_date_received_${cargo_num}) > 90 ? string(STR_EXTRA_TEXT_SECONDARY_CARGO_REQUIRED) : string(STR_EXTRA_TEXT_SECONDARY_CARGO_DELIVERED)) << 16, ${255 + cargo_num})"
-        )
-        extra_text_expressions = []
-        for i in range (len(accept_cargos_with_ratios)):
-            extra_text_expressions.append(extra_text_template(cargo_label=accept_cargos_with_ratios[i][0],
-                                                              cargo_num=i+1))
-        result = ', '.join(extra_text_expressions)
-        return result
 
     def get_intro_year(self, economy):
         # simple wrapper to get_property(), which sanitises intro_year from None to 0 if unspecified by economy

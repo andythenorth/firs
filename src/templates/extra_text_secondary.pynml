@@ -5,24 +5,37 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
- * This template prints extra texts in the industry view
- */
-
-<tal:economies repeat="economy economies">
-    <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
-        switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_${economy.id},
-                [${industry.get_expression_for_extra_text_industry_cargo_details(economy)}]) {
-            return ${industry.get_extra_text_string(economy)};
-        }
-    </tal:industry_on_or_off>
-</tal:economies>
-
+/* Extra text in the industry window (callback 3A) */
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, economy) {
     <tal:economies repeat="economy economies">
         <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
-            ${economy.numeric_id}: ${industry.id}_extra_text_${economy.id};
+            ${economy.numeric_id}: return ${industry.get_extra_text_string(economy)};
         </tal:industry_on_or_off>
     </tal:economies>
+}
+
+
+/* Additional text after the cargos in the industry window (callback 37) */
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_1, [current_date - LOAD_PERM(var_date_received_1) > 90]) {
+    0: return string(STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED);
+    1: return string(STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_REQUIRED);
+}
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_2, [current_date - LOAD_PERM(var_date_received_2) > 90]) {
+    0: return string(STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED);
+    1: return string(STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_REQUIRED);
+}
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_3, [current_date - LOAD_PERM(var_date_received_3) > 90]) {
+    0: return string(STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED);
+    1: return string(STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_REQUIRED);
+}
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display, getbits(extra_callback_info2, 0, 8)) {
+    0: ${industry.id}_cargo_subtype_display_cargo_1;
+    1: ${industry.id}_cargo_subtype_display_cargo_2;
+    2: ${industry.id}_cargo_subtype_display_cargo_3;
+    return CB_RESULT_NO_TEXT;
 }
