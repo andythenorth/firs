@@ -37,6 +37,7 @@ STR_CARGO_NAME_BAUXITE                                                          
 STR_CARGO_NAME_BEANS                                                            :Grah
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Građevni materijal
 STR_CARGO_NAME_CASSAVA                                                          :Manioka
+STR_CARGO_NAME_CEMENT                                                           :Cement
 STR_CARGO_NAME_CHEMICALS                                                        :Kemikalije
 STR_CARGO_NAME_CLAY                                                             :Glina
 STR_CARGO_NAME_COFFEE                                                           :Kava
@@ -70,11 +71,13 @@ STR_CARGO_NAME_RECYCLABLES                                                      
 STR_CARGO_NAME_SAND                                                             :Pijesak
 STR_CARGO_NAME_SCRAP_METAL                                                      :Otpadni metal
 STR_CARGO_NAME_SLAG                                                             :Šljaka
+STR_CARGO_NAME_SODA_ASH                                                         :Soda
 STR_CARGO_NAME_STEEL                                                            :Čelik
 STR_CARGO_NAME_STONE                                                            :Kamen
 STR_CARGO_NAME_SUGAR_BEET                                                       :Šećerna repa
 STR_CARGO_NAME_SUGARCANE                                                        :Šećerna trska
 STR_CARGO_NAME_SULPHUR                                                          :Sumpor
+STR_CARGO_NAME_VEHICLE_BODIES                                                   :Karoserije vozila
 STR_CARGO_NAME_VEHICLE_PARTS                                                    :Dijelovi za vozila
 STR_CARGO_NAME_VEHICLES                                                         :Vozila
 STR_CARGO_NAME_WOOL                                                             :Vuna
@@ -84,6 +87,7 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} graha
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} građevnog materijala
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} manioke
+STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} cementa
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kemikalija
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} gline
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} vreć{P a e e} kave
@@ -97,6 +101,7 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} ribe
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} kutij{P 0 a e e} poljoprivrednih potrepština
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} voća
+STR_CARGO_UNIT_VEHICLE_BODIES                                                 :{WEIGHT} karoserija
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} drva
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} mangana
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metala
@@ -117,6 +122,7 @@ STR_CARGO_UNIT_RECYCLABLES                                                      
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} pijeska
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} otpadnog metala
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} šljake
+STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} sode
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} čelika
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kamena
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} šećerne repe
@@ -131,6 +137,7 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BEANS                                                                   :{TINYFONT}GH
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}GM
 STR_CID_CASSAVA                                                                 :{TINYFONT}MA
+STR_CID_CEMENT                                                                  :{TINYFONT}CE
 STR_CID_CHEMICALS                                                               :{TINYFONT}KM
 STR_CID_CLAY                                                                    :{TINYFONT}GL
 STR_CID_COFFEE                                                                  :{TINYFONT}KV
@@ -143,6 +150,7 @@ STR_CID_FARM_SUPPLIES                                                           
 STR_CID_FERTILISER                                                              :{TINYFONT}GN
 STR_CID_FIBRES                                                                  :{TINYFONT}BV
 STR_CID_FISH                                                                    :{TINYFONT}RI
+STR_CID_VEHICLE_BODIES                                                        :{TINYFONT}KA
 STR_CID_LUMBER                                                                  :{TINYFONT}DR
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}PP
@@ -163,6 +171,7 @@ STR_CID_RECYCLABLES                                                             
 STR_CID_SAND                                                                    :{TINYFONT}PI
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}OM
 STR_CID_SLAG                                                                    :{TINYFONT}ŠLJ
+STR_CID_SODA_ASH                                                                :{TINYFONT}SO
 STR_CID_STEEL                                                                   :{TINYFONT}ČE
 STR_CID_STONE                                                                   :{TINYFONT}KA
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}ŠR
@@ -215,6 +224,7 @@ STR_IND_FISHING_VILLAGE                                                         
 STR_IND_FLOUR_MILL                                                              :Mlin za brašno
 STR_IND_FOOD_MARKET                                                             :Prehrambena tržnica
 STR_IND_FOOD_PROCESSOR                                                          :Tvornica za preradu hrane
+STR_IND_FOUNDRY                                                                 :Ljevaonica
 STR_IND_FURNITURE_FACTORY                                                       :Tvornica namještaja
 STR_IND_GENERAL_STORE                                                           :Trgovina općom robom
 STR_IND_GLASS_WORKS                                                             :Staklarna
@@ -249,6 +259,8 @@ STR_IND_REINDEER_FARM                                                           
 STR_IND_SHEEPFARM                                                               :Ovčja farma
 STR_IND_SLAG_GRINDING_PLANT                                                     :Postrojenje za mljevenje šljake
 STR_IND_SMITHY_FORGE                                                            :Kovačnica
+STR_IND_SODA_ASH_MINE                                                           :Rudnik sode
+STR_IND_STEEL_FINISHING_PLANT                                                   :Tvornica za doradu čelika
 STR_IND_STOCKYARD                                                               :Stočno dvorište
 STR_IND_SUGAR_REFINERY                                                          :Šećerana
 STR_IND_SUPPLY_YARD                                                             :Dostavno skladište
