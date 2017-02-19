@@ -20,7 +20,6 @@ industry = IndustryPrimaryExtractive(id='oil_wells',
                     layouts='AUTO',
                     fund_cost_multiplier='230',
                     prod_multiplier='[28]',
-                    substitute='0',
                     template="refactor_oil_wells.pypnml",
                     intro_year=1830)
 

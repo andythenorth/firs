@@ -13,7 +13,6 @@ industry = IndustryPrimaryExtractive(id='phosphate_mine',
                     prob_in_game='4',
                     prob_random='7',
                     prod_multiplier='[16, 10]',
-                    substitute='0',
                     map_colour='46',
                     spec_flags='0',
                     # allow longer distance on clustering than usual, and more clusters, as industry is hard to locate

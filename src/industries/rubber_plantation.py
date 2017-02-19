@@ -20,7 +20,6 @@ industry = IndustryPrimaryOrganic(id='rubber_plantation',
                     prod_cargo_types=['RUBR'],
                     fund_cost_multiplier='54',
                     prod_multiplier='[16]',
-                    substitute='0',
                     template="refactor_rubber_plantation.pypnml" )
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True

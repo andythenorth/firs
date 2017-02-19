@@ -501,8 +501,8 @@ class IndustryProperties(object):
     """ Base class to hold properties corresponding to nml industry item properties """
     def __init__(self, **kwargs):
         # nml item properties, most of these should be provided as strings for insertion into nml.  See nml docs for meaning + acceptable values.
-        self.substitute = kwargs.get('substitute', None)
-        self.override = kwargs.get('override', None)
+        self.substitute = kwargs.get('substitute', '0') # '0' is safe default, most industries don't need to set this prop explicitly, but the prop must have *a* value or industry won't appear in game
+        self.override = kwargs.get('override', '0') # industries should only set this explicitly when re-using a default industry, otherwise '0' is a safe default
         self.name = kwargs.get('name', None)
         self.nearby_station_name = kwargs.get('nearby_station_name', None)
         self.intro_year = kwargs.get('intro_year', None)

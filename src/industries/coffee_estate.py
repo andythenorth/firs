@@ -20,7 +20,6 @@ industry = IndustryPrimaryOrganic(id='coffee_estate',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PLANTATION))',
                     fund_cost_multiplier='54',
                     prod_multiplier='[11, 8]',
-                    substitute='0',
                     template="refactor_coffee_estate.pypnml" )
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True

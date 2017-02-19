@@ -15,7 +15,6 @@ industry = IndustrySecondary(id='basic_oxygen_furnace',
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
-                    substitute='0',
                     map_colour='48',
                     spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
                     # hack abusing clusters to locate this near blast furnaces
