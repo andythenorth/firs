@@ -271,13 +271,17 @@ STR_IND_ASSEMBLY_PLANT                                                         :
 STR_IND_VINEYARD                                                                :Vinograd
 
 
+STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_REQUIRED                              :
+STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(dostavljeno)
+STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Proizvodi na najvećem nivou ako se dostavi {WHITE}bilo koji {BLACK}potrebni teret.
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}Za najveći nivo proizvodnje, dostavite {WHITE}sve {BLACK}potrebne terete barem jednom svaka tri mjeseca.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Proizvodnja je proporcionalna populaciji grada.
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna{}{}{BLACK}Za povećavanje proizvodnje na {WHITE}Unaprijeđenu{BLACK} dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{}Za povećavanje proizvodnje na {WHITE}Masovnu{BLACK} dostavite {SIGNED_WORD} kutija
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Unaprijeđena{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{}Za povećavanje proizvodnje na {WHITE}Masovnu{BLACK} dostavite {SIGNED_WORD} kutija
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Masovna{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SIGNED_WORD} kutija potrepština unutar tri mjeseca
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna{}{}{BLACK}Za povećavanje proizvodnje na {WHITE}Unaprijeđenu{BLACK} dostavite {SIGNED_WORD} jedinica tereta unutar tri mjeseca{}Za povećavanje proizvodnje na {WHITE}Masovnu{BLACK} dostavite {SIGNED_WORD} jedinica tereta
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Unaprijeđena{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SIGNED_WORD} jedinica tereta unutar tri mjeseca{}Za povećavanje proizvodnje na {WHITE}Masovnu{BLACK} dostavite {SIGNED_WORD} jedinica tereta
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Masovna{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SIGNED_WORD} jedinica tereta unutar tri mjeseca
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna{}{}{BLACK}Za povećavanje proizvodnje na {WHITE}Unaprijeđenu{BLACK} dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{}Za povećavanje proizvodnje na {WHITE}Masovnu{BLACK} dostavite {SIGNED_WORD} kutija.
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Unaprijeđena{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{}Za povećavanje proizvodnje na {WHITE}Masovnu{BLACK} dostavite {SIGNED_WORD} kutija.
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Masovna{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SIGNED_WORD} kutija potrepština unutar tri mjeseca.
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna{}{}{BLACK}Za {WHITE}Unaprijeđenu{BLACK}proizvodnju dostavite {SIGNED_WORD} jedinica tereta unutar tri mjeseca.{}Za {WHITE}Masovnu {BLACK}proizvodnju dostavite {SIGNED_WORD} jedinica tereta.
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Unaprijeđena{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SIGNED_WORD} jedinica tereta unutar tri mjeseca{}Za povećavanje proizvodnje na {WHITE}Masovnu{BLACK} dostavite {SIGNED_WORD} jedinica tereta.
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Masovna{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SIGNED_WORD} jedinica tereta unutar tri mjeseca.
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
