@@ -5,8 +5,6 @@
 # See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with NML build framework. If not, see <http://www.gnu.org/licenses/>.
 #
 
-SHELL=/bin/bash
-
 -include Makefile.config
 
 ##################################################################
@@ -25,10 +23,10 @@ REPO_NAME           ?= My NewGRF
 BASE_FILENAME       ?= mynewgrf
 
 # Documentation files
-DOC_FILES := docs/readme.txt docs/license.txt docs/changelog.txt
+DOC_FILES ?= docs/readme.txt docs/license.txt docs/changelog.txt
 
 # Directory structure
-SCRIPT_DIR          := build-common
+SCRIPT_DIR          ?= build-common
 
 # Uncomment in order to make use of gimp scripting. See the file
 # for a description of the format
@@ -50,12 +48,19 @@ NML_FILE            := $(BASE_FILENAME).nml
 # uncomment MAIN_SRC_FILE if you do not want any preprocessing to happen to your source file
 MAIN_SRC_FILE       := $(BASE_FILENAME).pnml
 
+GENERATE_NML        ?= nml
+GENERATE_LNG        ?= lng
+GENERATE_PNML       ?= pnml
+GENERATE_DOC        ?= doc
+GENERATE_GRF        ?= grf
+GENERATE_GFX        ?= gfx
+
 # List of all files which will get shipped
 # documentation files: readme, changelog and license, usually $(DOC_FILES)
 # grf file: the above defined grf file, usualls $(GRF_FILE)
 # Add any additional, not usual files here, too, including
 # their relative path to the root of the repository
-BUNDLE_FILES           := $(GRF_FILE) $(DOC_FILES)
+BUNDLE_FILES           ?= $(GRF_FILE) $(DOC_FILES)
 
 # Replacement strings in the source and in the documentation
 # You may only change the values, not add new definitions
@@ -65,21 +70,12 @@ REPLACE_GRFID       := {{GRF_ID}}
 REPLACE_REVISION    := {{REPO_REVISION}}
 REPLACE_FILENAME    := {{FILENAME}}
 
-GENERATE_GRF  := grf
-GENERATE_PNML := pnml
-GENERATE_NML  := nml
-GENERATE_GFX  := gfx
-GENERATE_DOC  := doc
-GENERATE_LNG  := lng
-
 # target 'all' must be first target
 all: $(GENERATE_GRF) $(GENERATE_DOC) bundle_tar
 
--include Makefile.in
-
 # general definitions (no rules!)
 -include Makefile.dist
-.PHONY: all clean distclean doc bundle bundle_bsrc bundle_bzip bundle_gsrc bundle_src bundle_tar bundle_xsrc bundle_xz bundle_zip bundle_zsrc check
+.PHONY: all clean distclean doc test bundle bundle_bsrc bundle_bzip bundle_gsrc bundle_src bundle_tar bundle_xsrc bundle_xz bundle_zip bundle_zsrc check
 
 # We want to disable the default rules. It's not c/c++ anyway
 .SUFFIXES:
@@ -91,11 +87,11 @@ all: $(GENERATE_GRF) $(GENERATE_DOC) bundle_tar
 ################################################################
 # Programme definitions / search paths
 ################################################################
-MAKE           := make
-MAKE_FLAGS     := -r
+MAKE           ?= make
+MAKE_FLAGS     ?= -r
 
-NML            := time $(shell which nmlc 2>/dev/null)
-NML_FLAGS      := -c
+NML            ?= $(shell which nmlc 2>/dev/null)
+NML_FLAGS      ?= -c
 ifdef REQUIRED_NML_BRANCH
 	NML_BRANCH = $(shell nmlc --version | head -n1 | cut -d. -f1-2)
 endif
@@ -104,20 +100,18 @@ ifdef MIN_NML_REVISION
 endif
 
 ifdef MAIN_SRC_FILE
-	CC             := $(shell which gcc 2>/dev/null)
-	CC_FLAGS       := -C -E -nostdinc -x c-header
+	CC             ?= $(shell which gcc 2>/dev/null)
+	CC_FLAGS       ?= -C -E -nostdinc -x c-header
 endif
 
-AWK            := awk
+AWK            ?= awk
 
-GREP           := grep
+GREP           ?= grep
 
-HG             := $(shell hg st >/dev/null 2>/dev/null && which hg 2>/dev/null)
+HG             ?= $(shell hg st >/dev/null 2>/dev/null && which hg 2>/dev/null)
 
-PYTHON         := python
-
-UNIX2DOS       := $(shell which unix2dos 2>/dev/null)
-UNIX2DOS_FLAGS := $(shell [ -n $(UNIX2DOS) ] && $(UNIX2DOS) -q --version 2>/dev/null && echo "-q" || echo "")
+UNIX2DOS       ?= $(shell which unix2dos 2>/dev/null)
+UNIX2DOS_FLAGS ?= $(shell [ -n $(UNIX2DOS) ] && $(UNIX2DOS) -q --version 2>/dev/null && echo "-q" || echo "")
 
 ################################################################
 # Get the Repository revision, tags and the modified status
@@ -129,39 +123,26 @@ UNIX2DOS_FLAGS := $(shell [ -n $(UNIX2DOS) ] && $(UNIX2DOS) -q --version 2>/dev/
 # This must be conditional declarations, or building from the tar.gz won't work anymore
 DEFAULT_BRANCH_NAME ?=
 
-# If no branch version is given, set it to 0. And use simply the date info as newgrf's version
-REPO_BRANCH_VERSION ?= 0
-
 # HG revision
-REPO_REVISION  := $(shell HGPLAIN= $(HG) id -n | cut -d+ -f1)
-
-# HG Hash
-REPO_HASH            := $(shell HGPLAIN= $(HG) id -i | cut -d+ -f1)
-
-# Days of commit since 2000-1-1 00-00
-REPO_DATE            := $(shell HGPLAIN= $(HG) log -r$(REPO_HASH) --template='{time|shortdate}')
-REPO_DAYS_SINCE_2000 := $(shell $(PYTHON2) -c "from datetime import date; print (date(`echo "$(REPO_DATE)" | sed s/-/,/g | sed s/,0/,/g`)-date(2000,1,1)).days")
+REPO_REVISION  ?= $(shell $(HG) id -n | cut -d+ -f1)
 
 # Whether there are local changes
-REPO_MODIFIED  := $(shell [ "`HGPLAIN= $(HG) id | cut -c13`" = "+" ] && echo "M" || echo "")
+REPO_MODIFIED  ?= $(shell [ "`$(HG) id | cut -c13`" = "+" ] && echo "M" || echo "")
 
 # Branch name
-REPO_BRANCH    := $(shell HGPLAIN= $(HG) id -b | sed "s/default/$(DEFAULT_BRANCH_NAME)/")
+REPO_BRANCH    ?= $(shell $(HG) id -b | sed "s/default/$(DEFAULT_BRANCH_NAME)/")
 
 # Any tag which is not 'tip'
-REPO_TAGS      := $(shell HGPLAIN= $(HG) id -t | grep -v "tip")
+REPO_TAGS      ?= $(shell $(HG) id -t | grep -v "tip")
 
 # Filename addition, if we're not building the default branch
-REPO_BRANCH_STRING := $(shell if [ "$(REPO_BRANCH)" = "$(DEFAULT_BRANCH_NAME)" ]; then echo ""; else echo "-$(REPO_BRANCH)"; fi)
-
-# The version reported to OpenTTD. Usually days since 2000 + branch offset
-NEWGRF_VERSION := $(shell let x="$(REPO_DAYS_SINCE_2000) + 65536 * $(REPO_BRANCH_VERSION)"; echo "$$x")
+REPO_BRANCH_STRING ?= $(shell if [ "$(REPO_BRANCH)" = "$(DEFAULT_BRANCH_NAME)" ]; then echo ""; else echo "$(REPO_BRANCH)-"; fi)
 
 # The shown version is either a tag, or in the absence of a tag the revision.
-REPO_VERSION_STRING := $(shell [ -n "$(REPO_TAGS)" ] && echo $(REPO_TAGS)$(REPO_MODIFIED) || echo $(REPO_DATE)$(REPO_BRANCH_STRING) \($(NEWGRF_VERSION):$(REPO_HASH)$(REPO_MODIFIED)\))
+REPO_VERSION_STRING ?= $(shell [ -n "$(REPO_TAGS)" ] && echo $(REPO_TAGS)$(REPO_MODIFIED) || echo $(REPO_BRANCH_STRING)r$(REPO_REVISION)$(REPO_MODIFIED))
 
 # The title consists of name and version
-REPO_TITLE     := $(REPO_NAME) $(REPO_VERSION_STRING)
+REPO_TITLE     ?= $(REPO_NAME) $(REPO_VERSION_STRING)
 
 # Remove the @ when you want a more verbose output.
 _V ?= @
@@ -170,17 +151,24 @@ _E ?= @echo
 distclean:: clean
 maintainer-clean:: distclean
 
+################################################################
+# Include custom targets
+################################################################
+-include Makefile.in
+
+
 # target nml
 ################################################################
 # Pre-processing and generation of $(NML_FILE)
 ################################################################
 
-# ifdef $(MAIN_SRC_FILE)
+# ifdef $(MAIN_SRC_FILE).
+# Dummy target. By default that file exists and is not generated
 pnml:
 
 nml: $(GENERATE_PNML)
 	$(_E) "[CPP] $(NML_FILE)"
-	$(_V) $(CC) -D REPO_REVISION=$(NEWGRF_VERSION) $(CC_FLAGS) -o $(NML_FILE) $(MAIN_SRC_FILE)
+	$(_V) $(CC) -D REPO_REVISION=$(REPO_REVISION) $(CC_FLAGS) -o $(NML_FILE) $(MAIN_SRC_FILE)
 
 clean::
 	$(_E) "[CLEAN NML]"
@@ -234,17 +222,11 @@ endif
 #####################################################
 lng: custom_tags.txt
 
-custom_tags.txt: nml
+custom_tags.txt: $(GENERATE_NML)
 	$(_E) "[LNG] $@"
-	$(_V) echo "VERSION        :$(REPO_VERSION_STRING)" > $@
-	$(_V) echo "VERSION_STRING :$(REPO_VERSION_STRING)" >> $@
-	$(_V) echo "TITLE          :$(REPO_TITLE)" >> $@
-	$(_V) echo "FILENAME       :$(GRF_FILE)" >> $@
-	$(_V) echo "REPO_DATE      :$(REPO_DATE)" >> $@
-	$(_V) echo "REPO_HASH      :$(REPO_HASH)" >> $@
-	$(_V) echo "REPO_BRANCH    :$(REPO_BRANCH)" >> $@
-	$(_V) echo "NEWGRF_VERSION :$(NEWGRF_VERSION)" >> $@
-	$(_V) echo "DAYS_SINCE_2K  :$(REPO_DAYS_SINCE_2000)" >> $@
+	$(_V) echo "VERSION  :$(REPO_VERSION_STRING)" > $@
+	$(_V) echo "TITLE    :$(REPO_TITLE)" >> $@
+	$(_V) echo "FILENAME :$(GRF_FILE)" >> $@
 
 clean::
 	$(_E) "[CLEAN LNG]"
@@ -257,10 +239,6 @@ clean::
 
 $(GRF_FILE): $(GENERATE_GFX) $(GENERATE_NML) $(GENERATE_LNG)
 	$(_E) "[NML] $(GRF_FILE)"
-ifeq ($(NML),)
-	$(_E) "No NML compiler found!"
-	$(_V) false
-endif
 ifdef REQUIRED_NML_BRANCH
 ifneq ($(REQUIRED_NML_BRANCH),$(NML_BRANCH))
 	$(_E) "Wrong NML version. This NewGRF requires an NML from the $(REQUIRED_NML_BRANCH) branch, but $(NML_BRANCH) found."
@@ -298,12 +276,12 @@ maintainer-clean::
 	$(_V) cat $< \
 		| sed -e "s/$(REPLACE_TITLE)/$(REPO_TITLE)/" \
 		| sed -e "s/$(REPLACE_GRFID)/$(GRF_ID)/" \
-		| sed -e "s/$(REPLACE_REVISION)/$(NEWGRF_VERSION)/" \
+		| sed -e "s/$(REPLACE_REVISION)/$(REPO_REVISION)/" \
 		| sed -e "s/$(REPLACE_FILENAME)/$(OUTPUT_FILENAME)/" \
 		> $@
 	$(_V) [ -z "$(UNIX2DOS)" ] || $(UNIX2DOS) $(UNIX2DOS_FLAGS) $@
 
-doc: $(DOC_FILES) grf
+doc: $(DOC_FILES)
 
 clean::
 	$(_E) "[CLEAN DOC]"
@@ -348,8 +326,8 @@ GRFID_FLAGS    ?= -m
 # followed by an M, if the source repository is not a clean version.
 
 # Common to all filenames
-DIR_NAME           := $(shell [ -n "$(REPO_TAGS)" ] && echo $(BASE_FILENAME)-$(NEWGRF_VERSION) || echo $(BASE_FILENAME))
-VERSIONED_FILENAME := $(BASE_FILENAME)-$(NEWGRF_VERSION)
+DIR_NAME           := $(shell [ -n "$(REPO_TAGS)" ] && echo $(BASE_FILENAME)-$(REPO_VERSION_STRING) || echo $(BASE_FILENAME))
+VERSIONED_FILENAME := $(BASE_FILENAME)-$(REPO_VERSION_STRING)
 DIR_NAME_SRC       := $(VERSIONED_FILENAME)-source
 
 TAR_FILENAME       := $(DIR_NAME).tar
@@ -366,7 +344,7 @@ MD5_SRC_FILENAME   := $(DIR_NAME).check.md5
 	$(_V) $(GRFID) $(GRFID_FLAGS) $< > $@
 
 # Bundle directory
-$(DIR_NAME): $(GENERATE_GRF) $(GENERATE_DOC)
+$(DIR_NAME): grf doc
 	$(_E) "[BUNDLE] $@"
 	$(_V) if [ -e $@ ]; then rm -rf $@; fi
 	$(_V) mkdir $@
@@ -524,15 +502,15 @@ endif
 help:
 	$(_E) "all:         Build the entire NewGRF and its documentation"
 	$(_E) "install:     Install into the default NewGRF directory ($(INSTALL_DIR))"
-	$(_E) "$(GENERATE_DOC):         Build the documentation ($(DOC_FILES))"
+	$(_E) "doc:         Build the documentation ($(DOC_FILES))"
 ifdef GFX_SCRIPT_LIST_FILES
-	$(_E) "$(GENERATE_GFX):         Build the graphics dependencies"
+	$(_E) "gfx:         Build the graphics dependencies"
 endif
-	$(_E) "$(GENERATE_GRF):         Build the grf file only ($(GRF_FILE))"
+	$(_E) "grf:         Build the grf file only ($(GRF_FILE))"
 ifdef MAIN_SRC_FILE
-	$(_E) "$(GENERATE_NML):         Generate the combined nml file only ($(NML_FILE))"
+	$(_E) "nml:         Generate the combined nml file only ($(NML_FILE))"
 endif
-	$(_E) "$(GENERATE_LNG):         Generate the language file(s) and custom_tags.txt"
+	$(_E) "lng:         Generate the language file(s) and custom_tags.txt"
 	$(_E)
 	$(_E) "clean:       Clean all built files"
 	$(_E) "distclean:   Clean really everything"
