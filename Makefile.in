@@ -52,10 +52,10 @@ $(DOC_FILES): html_docs
 # Definitions which extend the common rules
 ################################################################
 clean::
-	$(_E) "[CLEAN PNML]"
-	$(_V)-rm -rf $(NML_FILE)a
-	$(_V)-rm -r chameleon_cache
-	$(_V)-rm -r generated
-	$(_E) "[CLEAN DOCS]"
 	$(_V)-rm -r docs
+	$(_V)-rm -r .chameleon_cache
+	$(_V)-rm -r generated
+	$(_V)-rm -r .nmlcache
+	$(_V)-rm -r src/__pycache__
+	$(_V)-rm -r src/*/__pycache__
 

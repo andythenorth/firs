@@ -205,7 +205,7 @@ tile_numeric_ids = dict(soda_ash_mine_tile_1 = 142,
                         fishing_village_tile_2 = 253,
                         chemical_plant_tile_2 = 254)
 
-chameleon_cache_dir =  'chameleon_cache'
+chameleon_cache_dir =  '.chameleon_cache'
 
 # specify location for intermediate files generated during build (nml, graphics, lang etc)
 generated_files_dir =  'generated'
