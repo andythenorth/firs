@@ -175,14 +175,8 @@ stone.cargo.register()
 from cargos import sulphur
 sulphur.cargo.register()
 
-from cargos import sugar
-sugar.cargo.register()
-
 from cargos import sugar_beet
 sugar_beet.cargo.register()
-
-from cargos import sugarcane
-sugarcane.cargo.register()
 
 from cargos import vehicle_parts
 vehicle_parts.cargo.register()
