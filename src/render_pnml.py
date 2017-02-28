@@ -51,7 +51,7 @@ def render_industry(industry):
 
 def main():
     start = time()
-    # extension is included due to partial migration from pypnaml to pynml; it should ideally be standard and concatenated within the repeat
+    # ! extension is included due to partial migration from pypnaml to pynml; it should ideally be standard and concatenated within the repeat
     header_items = ['defines.pypnml', 'checks.pypnml','header.pynml','firs.pypnml','parameters.pynml']
     for header_item in header_items:
         template = templates[header_item]
@@ -63,7 +63,9 @@ def main():
                                                                   sys=sys,
                                                                   generated_pnml_path=generated_pnml_path))
         # save the results of templating
-        pnml_file_path = os.path.join(generated_pnml_path, header_item + '.pnml')
+        # ! clunky split to get rid of the extension - temporary artefact of migrating away from CPP
+        header_item_name = header_item.split('.')[0]
+        pnml_file_path = os.path.join(generated_pnml_path, header_item_name + '.pnml')
         pnml = codecs.open(pnml_file_path, 'w','utf8')
         pnml.write(templated_pnml)
         pnml.close()
