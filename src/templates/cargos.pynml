@@ -1,7 +1,7 @@
 cargotable {
-<tal:build_cargo_table repeat="cargo registered_cargos">
-    ${cargo.cargo_label},
-</tal:build_cargo_table>
+    <tal:build_cargo_table repeat="cargo registered_cargos">
+        ${cargo.cargo_label},
+    </tal:build_cargo_table>
 }
 
 /* disable all default cargos, will then re-enable the ones we need explicitly */
