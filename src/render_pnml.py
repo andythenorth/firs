@@ -52,7 +52,7 @@ def render_industry(industry):
 def main():
     start = time()
     # extension is included due to partial migration from pypnaml to pynml; it should ideally be standard and concatenated within the repeat
-    header_items = ['defines.pypnml', 'checks.pypnml','header.pynml','firs.pypnml','parameters.pypnml']
+    header_items = ['defines.pypnml', 'checks.pypnml','header.pynml','firs.pypnml','parameters.pynml']
     for header_item in header_items:
         template = templates[header_item]
         templated_pnml = utils.unescape_chameleon_output(template(registered_industries=registered_industries,
