@@ -35,6 +35,7 @@ STR_CARGO_NAME_BAUXITE                                                          
 STR_CARGO_NAME_BEANS                                                            :大豆
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :建筑材料
 STR_CARGO_NAME_CASSAVA                                                          :木薯
+STR_CARGO_NAME_CEMENT                                                           :水泥
 STR_CARGO_NAME_CHEMICALS                                                        :化工品
 STR_CARGO_NAME_CLAY                                                             :粘土
 STR_CARGO_NAME_COFFEE                                                           :咖啡
@@ -68,10 +69,12 @@ STR_CARGO_NAME_RECYCLABLES                                                      
 STR_CARGO_NAME_SAND                                                             :沙子
 STR_CARGO_NAME_SCRAP_METAL                                                      :废金属
 STR_CARGO_NAME_SLAG                                                             :矿渣
+STR_CARGO_NAME_SODA_ASH                                                         :碱粉
 STR_CARGO_NAME_STEEL                                                            :钢材
 STR_CARGO_NAME_STONE                                                            :石料
 STR_CARGO_NAME_SUGAR_BEET                                                       :甜菜
 STR_CARGO_NAME_SULPHUR                                                          :硫磺
+STR_CARGO_NAME_VEHICLE_BODIES                                                   :车身
 STR_CARGO_NAME_VEHICLE_PARTS                                                    :车辆零件
 STR_CARGO_NAME_VEHICLES                                                         :车辆
 STR_CARGO_NAME_WOOL                                                             :羊毛
@@ -81,6 +84,7 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} 吨大豆
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} 建筑材料
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} 吨木薯
+STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} 吨水泥
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} 化工品
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} 粘土
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} 袋咖啡
@@ -94,6 +98,7 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} 鱼
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} 箱 农用物资
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} 水果
+STR_CARGO_UNIT_VEHICLE_BODIES                                                 :{WEIGHT} 辆车身
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} 木料
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} 吨锰矿
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} 金属
@@ -114,6 +119,7 @@ STR_CARGO_UNIT_RECYCLABLES                                                      
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} 沙子
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} 废金属
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} 吨 矿渣
+STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} 吨碱粉
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} 吨 钢材
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} 石料
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} 甜菜
@@ -127,6 +133,7 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BEANS                                                                   :{TINYFONT}豆
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}建
 STR_CID_CASSAVA                                                                 :{TINYFONT}薯
+STR_CID_CEMENT                                                                  :{TINYFONT}泥
 STR_CID_CHEMICALS                                                               :{TINYFONT}化
 STR_CID_CLAY                                                                    :{TINYFONT}粘
 STR_CID_COFFEE                                                                  :{TINYFONT}啡
@@ -139,6 +146,7 @@ STR_CID_FARM_SUPPLIES                                                           
 STR_CID_FERTILISER                                                              :{TINYFONT}肥
 STR_CID_FIBRES                                                                  :{TINYFONT}纤
 STR_CID_FISH                                                                    :{TINYFONT}鱼
+STR_CID_VEHICLE_BODIES                                                        :{TINYFONT}车
 STR_CID_LUMBER                                                                  :{TINYFONT}料
 STR_CID_MANGANESE                                                               :{TINYFONT}锰
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}工
@@ -159,6 +167,7 @@ STR_CID_RECYCLABLES                                                             
 STR_CID_SAND                                                                    :{TINYFONT}沙
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}废
 STR_CID_SLAG                                                                    :{TINYFONT}渣
+STR_CID_SODA_ASH                                                                :{TINYFONT}碱
 STR_CID_STEEL                                                                   :{TINYFONT}钢
 STR_CID_STONE                                                                   :{TINYFONT}石
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}甜
@@ -210,6 +219,7 @@ STR_IND_FISHING_VILLAGE                                                         
 STR_IND_FLOUR_MILL                                                              :磨坊
 STR_IND_FOOD_MARKET                                                             :杂货店
 STR_IND_FOOD_PROCESSOR                                                          :食品加工厂
+STR_IND_FOUNDRY                                                                 :铸造厂
 STR_IND_FURNITURE_FACTORY                                                       :家具厂
 STR_IND_GENERAL_STORE                                                           :综合商店
 STR_IND_GLASS_WORKS                                                             :玻璃制品厂
@@ -244,6 +254,8 @@ STR_IND_REINDEER_FARM                                                           
 STR_IND_SHEEPFARM                                                               :牧羊场
 STR_IND_SLAG_GRINDING_PLANT                                                     :磨渣场
 STR_IND_SMITHY_FORGE                                                            :铁匠铺
+STR_IND_SODA_ASH_MINE                                                           :碱矿
+STR_IND_STEEL_FINISHING_PLANT                                                   :钢材精轧厂
 STR_IND_STOCKYARD                                                               :肉联厂
 STR_IND_SUGAR_REFINERY                                                          :制糖厂
 STR_IND_SUPPLY_YARD                                                             :供货场
@@ -254,6 +266,10 @@ STR_IND_ASSEMBLY_PLANT                                                         :
 STR_IND_VINEYARD                                                                :葡萄园
 
 
+STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_REQUIRED                              :？
+STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(已供应)
+STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :如果{WHITE}任意 {BLACK}所需的货物供应，则{BLACK}产率达到最大
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}为达到最大产率, 需至少三个月内供应 {WHITE}所有 {BLACK}所需货物。
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}生产量正比于城镇人口。
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}当前产率: {YELLOW}标准{}{}{BLACK}为达到{WHITE}增强{BLACK}需三个月内交付 {SIGNED_WORD}箱物资。{}为达到{WHITE}工合 {BLACK}需交付 {SIGNED_WORD} 箱
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}当前产率: {YELLOW}增强{}{}{BLACK}为保持此水准，需三个月内交付 {SIGNED_WORD}{}为保持{WHITE}工合 {BLACK}需交付 {SIGNED_WORD}箱
