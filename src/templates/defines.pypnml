@@ -22,9 +22,6 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 #define GROUNDTILE_SLABS          1420
 #define GROUNDTILE_HALF_BROWN     3962
 
-// used for secondary industry production
-#define PRODUCTION_SPAN ${global_constants.secondary_production_span}
-
 /* Permanent storage locations - uses different defines for different classes of industry */
 // on 10th Nov 2012 I verified that all permanent storage operations were using identifiers for storage, not numbers - Andy
 
@@ -73,7 +70,7 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 #define var_date_received_1        10 // date of last cargo 1 delivered
 #define var_date_received_2        11 // date of last cargo 2 delivered
 #define var_date_received_3        12 // date of last cargo 3 delivered
-#define var_production_span        13 // time to consider a cargo usable for production boost (not yet used)
+//                                 13 // unused
 
 //                                 14 // unused
 //#define var_closure_counter      15 // months without delivery, same as primary industries
