@@ -38,11 +38,9 @@ industry.add_tile(id='petrol_pump_tile_1',
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_SLABS',
-    sprite_number_snow = 'GROUNDTILE_SLABS',
 )
 sprite_ground_overlay = industry.add_sprite(
     sprite_number = 'GROUNDTILE_SLABS',
-    sprite_number_snow = 'GROUNDTILE_SLABS',
 )
 spriteset_1 = industry.add_spriteset(
     id = 'petrol_pump_spriteset_1',

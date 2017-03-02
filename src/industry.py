@@ -290,8 +290,13 @@ class TileLocationCheckFounder(object):
 class Sprite(object):
     """Base class to hold simple sprites (using numbers from a base set)"""
     def __init__(self, sprite_number, sprite_number_snow='', xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16, zextent=16, always_draw=0):
-        self.sprite_number = sprite_number # can also provide raw nml with the sprite number for things like controlling animation frame
-        self.sprite_number_snow = (sprite_number, sprite_number_snow)[sprite_number_snow!=''] # set a snow sprite explicitly (optional).
+        # there are few shorthand constants for specific sprite numbers (legacy from CPP templating, kind of useful to keep)
+        sprite_constants = {'GROUNDTILE_MUD_TRACKS': 2022, 'GROUNDTILE_SLABS': 1420}
+        if sprite_number in sprite_constants.keys():
+            self.sprite_number = sprite_constants[sprite_number]
+        else:
+            self.sprite_number = sprite_number # can also provide raw nml with the sprite number for things like controlling animation frame
+        self.sprite_number_snow = (self.sprite_number, sprite_number_snow)[sprite_number_snow!=''] # set a snow sprite explicitly (optional).
         # optional parameters for offsets and extents for the *spritelayout* to use with this sprite (read nml spritelayout docs to see use)
         self.xoffset = xoffset
         self.yoffset = yoffset

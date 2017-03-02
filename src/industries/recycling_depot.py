@@ -29,7 +29,6 @@ industry.add_tile(id='recycling_depot_tile')
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_SLABS',
-    sprite_number_snow = 'GROUNDTILE_SLABS',
 )
 spriteset_ground_overlay = industry.add_spriteset(
     id = 'recycling_depot_spriteset_ground_overlay',
