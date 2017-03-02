@@ -243,7 +243,7 @@ TILE_ALLOW_PLAYER         (tile_player_check, ${industry.id}_tile_nearby_industr
 TILE_DISALLOW_TERRAIN     (tile_desert_check, TILETYPE_DESERT, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_player_check)
 TILE_CHECK_HEIGHT         (tile_location_check, 0, snowline_height, ${industry.id}_tile_desert_check, return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_orchard, TILE_ORCHARD_PIGGERY_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_orchard, ${global_constants.tile_numeric_ids['orchard_piggery_tile_1']}) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -257,7 +257,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_orchard, TILE_ORCHARD_PIGGERY_1) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_buildings, TILE_ORCHARD_PIGGERY_2) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_buildings, ${global_constants.tile_numeric_ids['orchard_piggery_tile_2']}) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
