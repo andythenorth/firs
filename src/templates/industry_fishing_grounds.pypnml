@@ -5,8 +5,6 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
-
 /* uses templated spritesets, but not templated layouts - no need for snow, construction states etc */
 
 <tal:include metal:use-macro="load: spritesets.pynml" />
