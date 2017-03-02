@@ -5,14 +5,6 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define MARKET_TREE_TEMPERATE 1639
-#define MARKET_TREE_TROPICAL 1891
-#define MARKET_TREE_ARCTIC 1737
-market_tree = MARKET_TREE_TEMPERATE;
-if (climate == CLIMATE_ARCTIC) { market_tree = MARKET_TREE_ARCTIC; }
-if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
-#define MARKET_TREE_SNOW 1793
-
 /* Permanent storage locations - uses different defines for different classes of industry */
 // on 10th Nov 2012 I verified that all permanent storage operations were using identifiers for storage, not numbers - Andy
 

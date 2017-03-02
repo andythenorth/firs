@@ -24,3 +24,11 @@ if (marine_industry_max_coastal_distance == 0) {
 // but we need them as bonus amounts, to be added on top of base production, so net off 100
 primary_level1_bonus = primary_level1_produced_percent - 100;
 primary_level2_bonus = primary_level2_produced_percent - 100;
+
+// the tree for the food market is a climate-dependent special case, re-using base set sprites
+// it has to be handled here as a parameter, no elegant way to include it in the industry
+market_tree = 1639;
+if (climate == CLIMATE_ARCTIC) { market_tree = 1737; }
+if (climate == CLIMATE_TROPICAL) { market_tree = 1891; }
+market_tree_snow = 1793;
+
