@@ -97,7 +97,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_layout, layout_num) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_FISHINGGROUNDS_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, ${global_constants.tile_numeric_ids['fishing_grounds_tile_1']}) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [];
