@@ -909,21 +909,21 @@ class IndustrySecondary(Industry):
         self.template = kwargs.get('template', 'industry_secondary.pypnml')
         self.combined_cargos_boost_prod = kwargs.get('combined_cargos_boost_prod', False)
         self.perm_storage = IndustryPermStorage(['unused',
-                                                'ratio_cargo_1', # output per 8 units input of cargo 1; can be made temporary
-                                                'ratio_cargo_2', # output per 8 units input of cargo 2; can be made temporary
-                                                'ratio_cargo_3', # output per 8 units input of cargo 3; can be made temporary
+                                                'ratio_input_1', # output per 8 units input of cargo 1; can be made temporary
+                                                'ratio_input_2', # output per 8 units input of cargo 2; can be made temporary
+                                                'ratio_input_3', # output per 8 units input of cargo 3; can be made temporary
                                                 'leftover_cargo_1', # non-processed cargo 1
                                                 'leftover_cargo_2', # non-processed cargo 2
                                                 'leftover_cargo_3', # non-processed cargo 3
                                                 'unused',
                                                 'unused',
                                                 'unused',
-                                                'var_date_received_1', # date of last cargo 1 delivery
-                                                'var_date_received_2', # date of last cargo 2 delivery
-                                                'var_date_received_3', # date of last cargo 2 delivery
+                                                'date_received_1', # date of last cargo 1 delivery
+                                                'date_received_2', # date of last cargo 2 delivery
+                                                'date_received_3', # date of last cargo 2 delivery
                                                 'unused',
                                                 'unused',
-                                                'var_closure_counter' # months without delivery, same as primary industries
+                                                'closure_counter' # months without delivery, same as primary industries
                                                 ])
         # guard against prospect chance kword being set, it's pure cruft for secondary industry (harmless, but needless)
         if 'prospect_chance' in kwargs:
