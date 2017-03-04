@@ -974,4 +974,4 @@ class IndustryTertiary(Industry):
     def __init__(self, **kwargs):
         super(IndustryTertiary, self).__init__(**kwargs)
         self.template = 'industry_tertiary.pypnml'
-
+        # no perm_storage needed currently
