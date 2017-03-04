@@ -54,16 +54,16 @@
                 STORE_TEMP(${industry.get_output_ratio(1, economy)}, var_output_ratio_1),
                 STORE_TEMP(${industry.get_output_ratio(2, economy)}, var_output_ratio_2),
                 /* Update the 'last delivery date' for the three input cargos */
-                STORE_PERM( max(LOAD_PERM(var_date_received_1),(waiting_cargo_1 > 0) * current_date), var_date_received_1),
-                STORE_PERM( max(LOAD_PERM(var_date_received_2),(waiting_cargo_2 > 0) * current_date), var_date_received_2),
-                STORE_PERM( max(LOAD_PERM(var_date_received_3),(waiting_cargo_3 > 0) * current_date), var_date_received_3),
+                STORE_PERM( max(LOAD_PERM(${perm_storage.var_date_received_1}),(waiting_cargo_1 > 0) * current_date), ${perm_storage.var_date_received_1}),
+                STORE_PERM( max(LOAD_PERM(${perm_storage.var_date_received_2}),(waiting_cargo_2 > 0) * current_date), ${perm_storage.var_date_received_2}),
+                STORE_PERM( max(LOAD_PERM(${perm_storage.var_date_received_3}),(waiting_cargo_3 > 0) * current_date), ${perm_storage.var_date_received_3}),
                 /* Reset the closure countdown */
                 STORE_PERM( (waiting_cargo_1 == 0 && waiting_cargo_2 == 0 && waiting_cargo_3 == 0) * LOAD_PERM(${perm_storage.var_closure_counter}), ${perm_storage.var_closure_counter}),
 
                 /* Check whether the cargos were delivered within the time frame to be considered delivered concurrently */
-                STORE_TEMP( (current_date - LOAD_PERM(var_date_received_1)) <= ${global_constants.secondary_production_span}, var_received_timely_1),
-                STORE_TEMP( (current_date - LOAD_PERM(var_date_received_2)) <= ${global_constants.secondary_production_span}, var_received_timely_2),
-                STORE_TEMP( (current_date - LOAD_PERM(var_date_received_3)) <= ${global_constants.secondary_production_span}, var_received_timely_3),
+                STORE_TEMP( (current_date - LOAD_PERM(${perm_storage.var_date_received_1})) <= ${global_constants.secondary_production_span}, var_received_timely_1),
+                STORE_TEMP( (current_date - LOAD_PERM(${perm_storage.var_date_received_2})) <= ${global_constants.secondary_production_span}, var_received_timely_2),
+                STORE_TEMP( (current_date - LOAD_PERM(${perm_storage.var_date_received_3})) <= ${global_constants.secondary_production_span}, var_received_timely_3),
 
                 /* Calculate current production ratios for the individual cargos */
                 STORE_PERM( ${industry.get_prod_ratio(1,economy)} +

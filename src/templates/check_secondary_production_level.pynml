@@ -24,9 +24,9 @@
     switch(FEAT_INDUSTRIES, SELF, ${industry.id}_check_secondary_production_level, [
                 transported_last_month_1 > 0 ||
                 transported_last_month_2 > 0 ||
-                (current_date - LOAD_PERM(var_date_received_1)) < 30 ||
-                (current_date - LOAD_PERM(var_date_received_2)) < 30 ||
-                (current_date - LOAD_PERM(var_date_received_3)) < 30
+                (current_date - LOAD_PERM(${perm_storage.var_date_received_1})) < 30 ||
+                (current_date - LOAD_PERM(${perm_storage.var_date_received_2})) < 30 ||
+                (current_date - LOAD_PERM(${perm_storage.var_date_received_3})) < 30
                 ]
             ) {
         0: ${industry.id}_secondary_increase_closure_counter;
