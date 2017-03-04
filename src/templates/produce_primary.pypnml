@@ -31,6 +31,3 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
 		]) {
 	${industry.id}_production_256;
 }
-
-#undef SUPPLY_BOOST_DOUBLE
-#undef SUPPLY_BOOST_QUADRUPLE
