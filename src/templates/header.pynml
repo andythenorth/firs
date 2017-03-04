@@ -111,3 +111,7 @@ if (param[6] == 0) { param[6] = 100; }
 if (param[7] == 0) { param[7] = 100; }
 if (param[8] == 0) { param[8] = 400; }
 if (param[9] == 0) { param[9] = 300; }
+
+//disable the default industries
+disable_item(FEAT_INDUSTRIES, 0, 36);
+

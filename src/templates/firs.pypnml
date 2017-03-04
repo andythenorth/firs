@@ -8,10 +8,6 @@
 
 #include "cargos.pnml"
 
-//disable the default industries
-disable_item(FEAT_INDUSTRIES, 0, 36);
-
-
 <tal:include metal:use-macro="load: ../templates/sprite_templates.pynml" />
 
 #include "../../src/templates/tile_fences.pnml"
