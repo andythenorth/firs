@@ -402,6 +402,8 @@ class IndustryLocationChecks(object):
         self.town_distance = kwargs.get('town_distance', None)
         self.coast_distance = kwargs.get('coast_distance', None)
         self.require_cluster = kwargs.get('require_cluster', None)
+        self.location_macros = templates["industry_location_macros.pynml"].macros
+
         # this is custom to grain mill, can be made generic if needed
         self.flour_mill_layouts_by_date = kwargs.get('flour_mill_layouts_by_date', None)
 
@@ -435,6 +437,7 @@ class IndustryLocationCheckTownDistance(object):
         self.max_distance = town_distance[1]
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = 'town_distance'
+        self.legacy = True
 
     def render(self, **kwargs):
         return 'CHECK_TOWN_DISTANCE (' + self.switch_entry_point + ', ' + str(self.min_distance) + ',' + str(self.max_distance) + ',' + self.switch_result + ')'
@@ -449,6 +452,7 @@ class IndustryLocationCheckRequireCluster(object):
         self.arbitrary_numbers = require_cluster[1] # not really arbitrary, I'm just being pissy because I don't know what div/mult do
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = str(self.industry_type_numeric_id)
+        self.legacy = True
 
     def render(self, **kwargs):
         return 'CHECK_NEARBY_CLUSTER(' + self.switch_entry_point + ', ' + str(self.industry_type_numeric_id) + ', ' +  ','.join([str(i) for i in self.arbitrary_numbers]) + ',' + 'return CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
@@ -463,6 +467,7 @@ class IndustryLocationCheckIncompatible(object):
         self.distance = distance
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = str(self.industry_type_numeric_id)
+        self.legacy = True
 
     def render(self, **kwargs):
         return 'CHECK_INCOMPATIBLE(' + self.switch_entry_point + ', ' + str(self.industry_type_numeric_id) + ', ' + str(self.distance) + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
@@ -473,6 +478,7 @@ class IndustryLocationCheckFounder(object):
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = 'check_founder'
+        self.legacy = True
 
     def render(self, **kwargs):
         return 'CHECK_FOUNDER (' + self.switch_entry_point + ',' + self.switch_result + ')'
@@ -483,6 +489,7 @@ class IndustryLocationCheckCoastDistance(object):
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = 'coast_distance'
+        self.legacy = True
 
     def render(self, industry):
         return 'CHECK_COAST_DISTANCE(' + self.switch_entry_point + ', 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
@@ -493,13 +500,8 @@ class IndustryLocationCheckGrainMillLayoutsByDate(object):
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = 'check_date'
-
-    def render(self, **kwargs):
-        template = templates["industry_location_macros.pynml"]
-        return template(conditions=['flour_mill_layouts_by_date'],
-                        switch_result=self.switch_result,
-                        switch_entry_point=self.switch_entry_point,
-                        industry=kwargs['industry'])
+        self.legacy = False
+        self.macro = 'flour_mill_layouts_by_date'
 
 
 class IndustryPermStorage(object):
