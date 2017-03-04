@@ -5,34 +5,6 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* Permanent storage locations - uses different defines for different classes of industry */
-// on 10th Nov 2012 I verified that all permanent storage operations were using identifiers for storage, not numbers - Andy
-
-// to remove CPP here, simply move all of these to the relevant industry class, either in a structure (dict) or directly as properties
-
-/* **************************************************************************
- * persistent storage for primary industries (template produce_primary)
- * **************************************************************************/
-#define var_num_supplies_delivered  0 // amount of supplies delivered this month
-#define var_num_supplies_delivered_last 1
-#define var_num_supplies_delivered_bef_last 2
-#define var_current_supplies_prod_factor 3
-
-//                                  3 // unused
-//                                  4 // unused
-//                                  5 // unused
-//                                  6 // unused
-//                                  7 // unused
-//                                  8 // unused
-//                                  9 // unused
-//                                 10 // unused
-//                                 11 // unused
-//                                 12 // unused
-//                                 13 // unused
-//                                 14 // unused
-//                                 15 // unused
-
-
 /* **************************************************************************
  * temporary storage for sprite layout templates
  * **************************************************************************/

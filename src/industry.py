@@ -851,6 +851,23 @@ class IndustryPrimary(Industry):
         super(IndustryPrimary, self).__init__(**kwargs)
         self.template = kwargs.get('template', 'industry_primary.pypnml')
         self.supply_requirements = None # default None, set appropriately by subclasses
+        self.perm_storage = IndustryPermStorage(['var_num_supplies_delivered', # amount of supplies delivered this month
+                                                 'var_num_supplies_delivered_last',
+                                                 'var_num_supplies_delivered_bef_last',
+                                                 'var_current_supplies_prod_factor',
+                                                 'unused',
+                                                 'unused',
+                                                 'unused',
+                                                 'unused',
+                                                 'unused',
+                                                 'unused',
+                                                 'unused',
+                                                 'unused',
+                                                 'unused',
+                                                 'unused',
+                                                 'unused',
+                                                 'unused'])
+
 
 class IndustryPrimaryExtractive(IndustryPrimary):
     """
