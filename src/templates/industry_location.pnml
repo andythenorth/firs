@@ -8,54 +8,9 @@
 /* ========= Industry Checks ========== */
 
 /*
- * Check for minimum distance to the coast
- *
- *
- * Parameters:
- * switchname:   Name of this switch
- * mindistance:  Minimum distance from coast
- * maxdistance:  Maximum distance from coast
- * errtext:      deny construction: text for error message or CB_RESULT_LOCATION_DISALLOW
- * next:         allow construction: name of next switch or "return CB_RESULT_LOCATION_ALLOW"
- */
-#define CHECK_COAST_DISTANCE(switchname, mindistance, maxdistance, errtext, next) \
-switch (FEAT_INDUSTRIES, SELF, switchname, water_distance) { \
-	mindistance .. maxdistance: next; \
-	return errtext; \
-}
-
-/*
- * Check for ratio to related industry cluster
- * *
- * Parameters:
- * switchname:   Name of this switch
- * related:      name of industry to check
- * mindistance:  minimum required separation
- * maxdistance:  maximum allowed separation
- * next:         allow construction: name of next or "return CB_RESULT_LOCATION_ALLOW"
- * errtext:      deny construction: text for error message or "return CB_RESULT_LOCATION_DISALLOW"
- */
-
-#define CHECK_NEARBY_CLUSTER(switchname, related, mindistance, maxdistance, mult, div, errtext, next) \
-switch (FEAT_INDUSTRIES, SELF, switchname, \
-			industry_count(related) * mult / div / industry_clusters != 0 && \
-			(	industry_distance(related) < mindistance || \
-				industry_distance(related) > maxdistance) \
-		) { \
-	1: errtext; \
-	next; \
-}
-
-
-/*
  * Check for a minimum distance to another industry type
  *
- * Parameters:
- * switchname:   name of this switch
- * incompatible: name of conflicting industry
- * distance:     minimum required separation
- * errtext:      return value: text for error message or CB_RESULT_LOCATION_DISALLOW
- * next:         name of next switch or "return CB_RESULT_LOCATION_ALLOW"
+ * !! ported to python macro, but legacy CPP version still used by Oil Rig
  */
 
 #define CHECK_INCOMPATIBLE(switchname, incompatible, distance, errtext, next) \
@@ -69,14 +24,8 @@ switch (FEAT_INDUSTRIES, SELF, switchname, industry_distance(incompatible)) { \
  * Check for count of industry type per town
  * *
  * Usage:        CHECK_INDUSTRY_TOWN_COUNT(switchname, industry_type, mincount, maxcount, errtext, next)
- *
- * Parameters:
- * switchname:   name of this switch. Suggested: town_distance
- * errtext:      return value: text for error message or CB_RESULT_LOCATION_DISALLOW
- * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
- * industry_type name of industry type to check for
- * mincount      minimum number of industry type
- * maxcount      maximum number of industry type
+* !! used in industry_primary_town_producer.pypnml, which needs migrating to standard methods
+* !! port this to python in industry_location_macros.pynml
  */
 
 #define CHECK_INDUSTRY_TOWN_COUNT(switchname, industry_type, mincount, maxcount, errtext, next) \
@@ -85,51 +34,23 @@ switch (FEAT_INDUSTRIES, SELF, switchname, industry_town_count(industry_type)) {
 	return errtext; \
 }
 
-
 /*
- * Check whether an industry is within a certain distance from a town centre
- * *
- * Usage:        CHECK_TOWN_DISTANCE(switchname, min_distance, max_distance, next)
+ * Check for minimum distance to the coast
  *
- * Parameters:
- * switchname:   name of this switch. Suggested: town_distance
- * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
- * mindistance   minimum distance to town centre
- * maxdistance   maximum distance to town centre
+ * !! migrated to python, but used still by oil rig (needs refactored)
  */
-
-#define CHECK_TOWN_DISTANCE(switchname, mindistance, maxdistance, next) \
-switch (FEAT_INDUSTRIES, SELF, switchname, town_euclidean_dist(0, 0)) { \
+#define CHECK_COAST_DISTANCE(switchname, mindistance, maxdistance, errtext, next) \
+switch (FEAT_INDUSTRIES, SELF, switchname, water_distance) { \
 	mindistance .. maxdistance: next; \
-	return CB_RESULT_LOCATION_DISALLOW; \
+	return errtext; \
 }
 
 
-/*
- * Check whether an industry is within a certain town zone
- * *
- * Usage:        CHECK_TOWN_ZONE(switchname, zone, next)
- *
- * Parameters:
- * switchname    name of this switch. Suggested: town_distance
- * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
- * minzone       minimum zone
- * maxzone       maximum zone
- */
-
-#define CHECK_TOWN_ZONE(switchname, minzone, maxzone, next) \
-switch (FEAT_INDUSTRIES, SELF, switchname, town_zone(0, 0)) { \
-    minzone .. maxzone: next; \
-	return CB_RESULT_LOCATION_DISALLOW; \
-}
 
 /*
  * Check whether a certain location is suitable for building the industry
  * Restrictions apply only to industries funded by the game.
- * *
- * Parameters:
- * switchname          name of this switch.
- * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
+ * !! ported to python macro, but legacy CPP version still used by Oil Rig
  */
 
 /* founder == FOUNDER_GAME means founded by the game, 0 .. 15 are player companies */

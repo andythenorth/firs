@@ -1,8 +1,59 @@
-<!--!
-      Not actually chameleon macros because I couldn't figure out
-      the implementation to call them from python without a use-macro in a template,
-      and I didn't want to read chameleon source, so they're conditionals.
-  -->
+<metal:coast_distance metal:define-macro="coast_distance">
+    <!--! Check for minimum distance to the coast -->
+    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, water_distance) {
+        0 .. param_max_coastal_distance: ${location_check.switch_result};
+        return CB_RESULT_LOCATION_DISALLOW;
+    }
+</metal:coast_distance>
+
+
+<metal:town_distance metal:define-macro="town_distance">
+    <!--! Check whether an industry is within a certain distance from a town centre -->
+    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, town_euclidean_dist(0, 0)) {
+        ${location_check.min_distance} .. ${location_check.max_distance}: ${location_check.switch_result};
+        return CB_RESULT_LOCATION_DISALLOW;
+    }
+</metal:town_distance>
+
+
+<metal:check_incompatible metal:define-macro="check_incompatible">
+    <!--! Check for a minimum distance to another industry type -->
+    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, industry_distance(${location_check.industry_type_numeric_id})) {
+        0 .. ${location_check.distance}: return CB_RESULT_LOCATION_DISALLOW;
+        ${location_check.switch_result};
+    }
+</metal:check_incompatible>
+
+
+<metal:require_cluster metal:define-macro="require_cluster">
+    <!--! Check for distance to related industry cluster -->
+    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
+                industry_count(${location_check.industry_type_numeric_id}) * ${location_check.mult} / ${location_check.div} / industry_clusters != 0 &&
+                (industry_distance(${location_check.industry_type_numeric_id}) < ${location_check.min_distance} ||
+                 industry_distance(${location_check.industry_type_numeric_id}) > ${location_check.max_distance})
+            ) {
+        1: return CB_RESULT_LOCATION_DISALLOW;
+        ${location_check.switch_result};
+    }
+</metal:require_cluster>
+
+
+<metal:check_founder metal:define-macro="check_founder">
+    <!--!
+        Check whether a certain location is suitable for building the industry
+        Restrictions apply only to industries funded by the game.
+        founder == FOUNDER_GAME means founded by the game, 0 .. 15 are player companies */
+    -->
+    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, (
+                (extra_callback_info2 == IND_CREATION_FUND) ||
+                (extra_callback_info2 == IND_CREATION_PROSPECT)
+                )
+            ) {
+        1: return CB_RESULT_LOCATION_ALLOW;
+        ${location_check.switch_result};
+    }
+</metal:check_founder>
+
 
 <metal:flour_mill_layouts_by_date metal:define-macro="flour_mill_layouts_by_date">
     <!--!

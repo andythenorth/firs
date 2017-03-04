@@ -1,8 +1,3 @@
 <tal:industry_location_checks define="location_checks industry.location_checks.get_render_tree(industry.id+'_')" repeat="location_check location_checks">
-    <tal:legacy condition="location_check.legacy">
-        ${location_check.render(industry=industry)}
-    </tal:legacy>
-    <tal:new condition="not:location_check.legacy"
-             metal:use-macro="industry.location_checks.location_macros[location_check.macro]">
-    </tal:new>
+    <tal:location_check_macro metal:use-macro="location_check.macro" />
 </tal:industry_location_checks>

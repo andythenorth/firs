@@ -402,8 +402,6 @@ class IndustryLocationChecks(object):
         self.town_distance = kwargs.get('town_distance', None)
         self.coast_distance = kwargs.get('coast_distance', None)
         self.require_cluster = kwargs.get('require_cluster', None)
-        self.location_macros = templates["industry_location_macros.pynml"].macros
-
         # this is custom to grain mill, can be made generic if needed
         self.flour_mill_layouts_by_date = kwargs.get('flour_mill_layouts_by_date', None)
 
@@ -430,35 +428,39 @@ class IndustryLocationChecks(object):
         return list(reversed(result))
 
 
-class IndustryLocationCheckTownDistance(object):
+class IndustryLocationCheck(object):
+    """ sparse base class for industry location checks """
+    @property
+    def macro(self):
+        return templates["industry_location_macros.pynml"].macros[self.macro_name]
+
+
+class IndustryLocationCheckTownDistance(IndustryLocationCheck):
     """ Require location within min, max distance of a town """
     def __init__(self, town_distance):
         self.min_distance = town_distance[0]
         self.max_distance = town_distance[1]
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = 'town_distance'
-        self.legacy = True
-
-    def render(self, **kwargs):
-        return 'CHECK_TOWN_DISTANCE (' + self.switch_entry_point + ', ' + str(self.min_distance) + ',' + str(self.max_distance) + ',' + self.switch_result + ')'
+        self.macro_name = 'town_distance'
 
 
-class IndustryLocationCheckRequireCluster(object):
+class IndustryLocationCheckRequireCluster(IndustryLocationCheck):
     """ Require industries to locate in n clusters """
     def __init__(self, require_cluster):
         self.industry_type = require_cluster[0]
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
         self.industry_type_numeric_id = get_another_industry(self.industry_type).get_numeric_id()
-        self.arbitrary_numbers = require_cluster[1] # not really arbitrary, I'm just being pissy because I don't know what div/mult do
+        self.min_distance = require_cluster[1][0]
+        self.max_distance = require_cluster[1][1]
+        self.mult = require_cluster[1][2]
+        self.div = require_cluster[1][3]
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = str(self.industry_type_numeric_id)
-        self.legacy = True
-
-    def render(self, **kwargs):
-        return 'CHECK_NEARBY_CLUSTER(' + self.switch_entry_point + ', ' + str(self.industry_type_numeric_id) + ', ' +  ','.join([str(i) for i in self.arbitrary_numbers]) + ',' + 'return CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
+        self.macro_name = 'require_cluster'
 
 
-class IndustryLocationCheckIncompatible(object):
+class IndustryLocationCheckIncompatible(IndustryLocationCheck):
     """ Prevent locating near incompatible industry types """
     def __init__(self, industry_type, distance):
         self.industry_type = industry_type
@@ -467,41 +469,31 @@ class IndustryLocationCheckIncompatible(object):
         self.distance = distance
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = str(self.industry_type_numeric_id)
-        self.legacy = True
-
-    def render(self, **kwargs):
-        return 'CHECK_INCOMPATIBLE(' + self.switch_entry_point + ', ' + str(self.industry_type_numeric_id) + ', ' + str(self.distance) + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
+        self.macro_name = 'check_incompatible'
 
 
-class IndustryLocationCheckFounder(object):
+class IndustryLocationCheckFounder(IndustryLocationCheck):
     """ Ensures player can build irrespective of _industry_ location checks (tile checks still apply) """
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = 'check_founder'
-        self.legacy = True
-
-    def render(self, **kwargs):
-        return 'CHECK_FOUNDER (' + self.switch_entry_point + ',' + self.switch_result + ')'
+        self.macro_name = 'check_founder'
 
 
-class IndustryLocationCheckCoastDistance(object):
+class IndustryLocationCheckCoastDistance(IndustryLocationCheck):
     """ Maximum distance to coast (player can vary this with parameter) """
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = 'coast_distance'
-        self.legacy = True
-
-    def render(self, industry):
-        return 'CHECK_COAST_DISTANCE(' + self.switch_entry_point + ', 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
+        self.macro_name = 'coast_distance'
 
 
-class IndustryLocationCheckGrainMillLayoutsByDate(object):
+class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
     """ Custom check for Grain mill, layouts are restricted by date; this is a one-off, but could be made generic if needed """
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = 'check_date'
-        self.legacy = False
-        self.macro = 'flour_mill_layouts_by_date'
+        self.macro_name = 'flour_mill_layouts_by_date'
 
 
 class IndustryPermStorage(object):
