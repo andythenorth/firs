@@ -515,8 +515,6 @@ class IndustryPermStorage(object):
                 self.unused.append(register_num)
             else:
                 setattr(self, identifier, register_num)
-        if 'var_closure_counter' in identifiers:
-            utils.echo_message('var_closure_counter is used by global templates, and removing the CPP define for it is not figured out yet')
 
 
 class IndustryProperties(object):

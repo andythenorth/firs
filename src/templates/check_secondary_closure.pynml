@@ -16,7 +16,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_secondary_close_random, (extra_call
 }
 
 /* Check whether sufficient time expired to close it */
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_secondary_had_produced_check, LOAD_PERM(var_closure_counter)) {
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_secondary_had_produced_check, LOAD_PERM(${industry.perm_storage.var_closure_counter})) {
 	0..60: return CB_RESULT_IND_PROD_NO_CHANGE;     // 60 month we accept receiving or delivering nothing
 	${industry.id}_secondary_close_random;
 }

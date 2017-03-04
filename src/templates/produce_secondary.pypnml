@@ -24,7 +24,7 @@
 #define var_output_ratio_2          5
 
 <tal:block define="perm_storage industry.perm_storage">
-    <!--! ^ I don't like this indirection, but perm_storage makes calculations below even harder to read than otherwise -->
+    <!--! ^ I don't like this indirection, but industry.perm_storage makes calculations below even harder to read than otherwise so shorten it -->
     produce (${industry.id}_simple_produce,
                 waiting_cargo_1,
                 waiting_cargo_2,

@@ -12,22 +12,24 @@
  * switch name:  check_secondary_production_level
  */
 
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_secondary_increase_closure_counter,
-       STORE_PERM((1 + LOAD_PERM(var_closure_counter)), var_closure_counter)) {
-	return 0;
-}
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_secondary_reset_closure_counter, [STORE_PERM(0, var_closure_counter), 1]) {
-	return 0;
-}
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_check_secondary_production_level, [
-			transported_last_month_1 > 0 ||
-			transported_last_month_2 > 0 ||
-			(current_date - LOAD_PERM(var_date_received_1)) < 30 ||
-			(current_date - LOAD_PERM(var_date_received_2)) < 30 ||
-			(current_date - LOAD_PERM(var_date_received_3)) < 30
-			]
-		) {
-	0: ${industry.id}_secondary_increase_closure_counter;
-	${industry.id}_secondary_reset_closure_counter;
-}
-
+<tal:block define="perm_storage industry.perm_storage">
+    <!--! ^ I don't like this indirection, but makes code below easier to read -->
+    switch(FEAT_INDUSTRIES, SELF, ${industry.id}_secondary_increase_closure_counter,
+           STORE_PERM((1 + LOAD_PERM(${perm_storage.var_closure_counter})), ${perm_storage.var_closure_counter})) {
+        return 0;
+    }
+    switch(FEAT_INDUSTRIES, SELF, ${industry.id}_secondary_reset_closure_counter, [STORE_PERM(0, ${perm_storage.var_closure_counter}), 1]) {
+        return 0;
+    }
+    switch(FEAT_INDUSTRIES, SELF, ${industry.id}_check_secondary_production_level, [
+                transported_last_month_1 > 0 ||
+                transported_last_month_2 > 0 ||
+                (current_date - LOAD_PERM(var_date_received_1)) < 30 ||
+                (current_date - LOAD_PERM(var_date_received_2)) < 30 ||
+                (current_date - LOAD_PERM(var_date_received_3)) < 30
+                ]
+            ) {
+        0: ${industry.id}_secondary_increase_closure_counter;
+        ${industry.id}_secondary_reset_closure_counter;
+    }
+</tal:block>
