@@ -42,7 +42,7 @@
 #define var_date_received_2        11 // date of last cargo 2 delivered
 #define var_date_received_3        12 // date of last cargo 3 delivered
 
-#define var_closure_counter        15 // months without delivery, same as primary industries
+#define var_closure_counter        15 // months without delivery, same as primary industries, non-trivial to move to python as used in a single shared switch
 
 /* **************************************************************************
  * persistent storage for blackhole industries (no template)
