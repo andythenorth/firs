@@ -32,6 +32,8 @@
 
 <tal:include metal:use-macro="load: produce_secondary.pypnml" />
 
+<tal:include metal:use-macro="load: check_secondary_closure.pynml" />
+
 <tal:include metal:use-macro="load: extra_text_secondary.pynml" />
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
@@ -49,7 +51,7 @@
                     construction_probability: ${industry.id}_check_availability;
                     produce_cargo_arrival:    ${industry.id}_produce;
                     monthly_prod_change:      check_secondary_production_level;
-                    random_prod_change:       check_secondary_closure;
+                    random_prod_change:       ${industry.id}_check_secondary_closure;
                     location_check:           ${industry.id}_check_location;
                     extra_text_fund:          ${industry.get_extra_text_fund(economy)};
                     extra_text_industry:      ${industry.id}_extra_text;
