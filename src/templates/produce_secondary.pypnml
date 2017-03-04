@@ -21,24 +21,26 @@
                    var_num_output_cargos 3;
                    var_output_ratio_1 4;
                    var_output_ratio_2 5;
+                   var_output_ratio_max_sum 8;
+                   var_input_ratio_max_sum 8;
                    perm_storage industry.perm_storage;">
 <!--! ^ I don't like the indirection of perm_storage, but industry.perm_storage makes calculations below even harder to read than otherwise so shorten it -->
     produce (${industry.id}_simple_produce,
                 waiting_cargo_1,
                 waiting_cargo_2,
                 waiting_cargo_3,
-                LOAD_PERM(${perm_storage.leftover_cargo_1}) * LOAD_PERM(${perm_storage.ratio_input_1}) * LOAD_TEMP(${var_output_ratio_1}) / (8 * MAX_SUM_PROD_RATIO) +
-                LOAD_PERM(${perm_storage.leftover_cargo_2}) * LOAD_PERM(${perm_storage.ratio_input_2}) * LOAD_TEMP(${var_output_ratio_1}) / (8 * MAX_SUM_PROD_RATIO) +
-                LOAD_PERM(${perm_storage.leftover_cargo_3}) * LOAD_PERM(${perm_storage.ratio_input_3}) * LOAD_TEMP(${var_output_ratio_1}) / (8 * MAX_SUM_PROD_RATIO),
+                LOAD_PERM(${perm_storage.leftover_cargo_1}) * LOAD_PERM(${perm_storage.ratio_input_1}) * LOAD_TEMP(${var_output_ratio_1}) / (${var_input_ratio_max_sum * var_output_ratio_max_sum}) +
+                LOAD_PERM(${perm_storage.leftover_cargo_2}) * LOAD_PERM(${perm_storage.ratio_input_2}) * LOAD_TEMP(${var_output_ratio_1}) / (${var_input_ratio_max_sum * var_output_ratio_max_sum}) +
+                LOAD_PERM(${perm_storage.leftover_cargo_3}) * LOAD_PERM(${perm_storage.ratio_input_3}) * LOAD_TEMP(${var_output_ratio_1}) / (${var_input_ratio_max_sum * var_output_ratio_max_sum}),
 
-                LOAD_PERM(${perm_storage.leftover_cargo_1}) * LOAD_PERM(${perm_storage.ratio_input_1}) * LOAD_TEMP(${var_output_ratio_2}) / (8 * MAX_SUM_PROD_RATIO) +
-                LOAD_PERM(${perm_storage.leftover_cargo_2}) * LOAD_PERM(${perm_storage.ratio_input_2}) * LOAD_TEMP(${var_output_ratio_2}) / (8 * MAX_SUM_PROD_RATIO) +
-                LOAD_PERM(${perm_storage.leftover_cargo_3}) * LOAD_PERM(${perm_storage.ratio_input_3}) * LOAD_TEMP(${var_output_ratio_2}) / (8 * MAX_SUM_PROD_RATIO),
+                LOAD_PERM(${perm_storage.leftover_cargo_1}) * LOAD_PERM(${perm_storage.ratio_input_1}) * LOAD_TEMP(${var_output_ratio_2}) / (${var_input_ratio_max_sum * var_output_ratio_max_sum}) +
+                LOAD_PERM(${perm_storage.leftover_cargo_2}) * LOAD_PERM(${perm_storage.ratio_input_2}) * LOAD_TEMP(${var_output_ratio_2}) / (${var_input_ratio_max_sum * var_output_ratio_max_sum}) +
+                LOAD_PERM(${perm_storage.leftover_cargo_3}) * LOAD_PERM(${perm_storage.ratio_input_3}) * LOAD_TEMP(${var_output_ratio_2}) / (${var_input_ratio_max_sum * var_output_ratio_max_sum}),
                 [
                 /* Account for cargo 'wasted' in output calc (due to integer division discarding fractional values) - keep it for next production cycle */
-                STORE_PERM(LOAD_PERM(${perm_storage.leftover_cargo_1}) % (MAX_SUM_PROD_RATIO / LOAD_TEMP(${var_num_output_cargos})), ${perm_storage.leftover_cargo_1}),
-                STORE_PERM(LOAD_PERM(${perm_storage.leftover_cargo_2}) % (MAX_SUM_PROD_RATIO / LOAD_TEMP(${var_num_output_cargos})), ${perm_storage.leftover_cargo_2}),
-                STORE_PERM(LOAD_PERM(${perm_storage.leftover_cargo_3}) % (MAX_SUM_PROD_RATIO / LOAD_TEMP(${var_num_output_cargos})), ${perm_storage.leftover_cargo_3}),
+                STORE_PERM(LOAD_PERM(${perm_storage.leftover_cargo_1}) % (${var_input_ratio_max_sum} / LOAD_TEMP(${var_num_output_cargos})), ${perm_storage.leftover_cargo_1}),
+                STORE_PERM(LOAD_PERM(${perm_storage.leftover_cargo_2}) % (${var_input_ratio_max_sum} / LOAD_TEMP(${var_num_output_cargos})), ${perm_storage.leftover_cargo_2}),
+                STORE_PERM(LOAD_PERM(${perm_storage.leftover_cargo_3}) % (${var_input_ratio_max_sum} / LOAD_TEMP(${var_num_output_cargos})), ${perm_storage.leftover_cargo_3}),
                 0
                 ]
     );
@@ -97,5 +99,3 @@
         </tal:economies>
     }
 </tal:block>
-
-#undef MAX_SUM_PROD_RATIO
