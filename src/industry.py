@@ -502,6 +502,21 @@ class IndustryLocationCheckGrainMillLayoutsByDate(object):
                         industry=kwargs['industry'])
 
 
+class IndustryPermStorageNums(object):
+    """ sparse class mapping properties names to int numbers 1-16, used to aid readability when using STORE_TEMP and LOAD_TEMP"""
+    def __init__(self, identifiers):
+        # should be passed a list of length 16, with 'unused' string in empty slots
+        # doesn't need any numbers, just don't mess with positions of identifiers (or bump savegame version if you do)
+        if len(identifiers) is not 16:
+            utils.echo_message("IndustryPermStorageNums must be passed a list of 16 registers containing var names as strings, or 'unused'")
+        self.unused = []
+        for register_num, identifier in enumerate(identifiers):
+            if identifier is 'unused':
+                self.unused.append(register_num)
+            else:
+                setattr(self, identifier, register_num)
+
+
 class IndustryProperties(object):
     """ Base class to hold properties corresponding to nml industry item properties """
     def __init__(self, **kwargs):
@@ -893,6 +908,23 @@ class IndustrySecondary(Industry):
         super(IndustrySecondary, self).__init__(**kwargs)
         self.template = kwargs.get('template', 'industry_secondary.pypnml')
         self.combined_cargos_boost_prod = kwargs.get('combined_cargos_boost_prod', False)
+        self.perm_register_nums = IndustryPermStorageNums(['unused',
+                                                           'var_ratio_cargo_1', # output per 8 units input of cargo 1; can be made temporary
+                                                           'var_ratio_cargo_2', # output per 8 units input of cargo 2; can be made temporary
+                                                           'var_ratio_cargo_3', # output per 8 units input of cargo 3; can be made temporary
+                                                           'var_leftover_cargo_1', # non-processed cargo 1
+                                                           'var_leftover_cargo_2', # non-processed cargo 2
+                                                           'var_leftover_cargo_3', # non-processed cargo 3
+                                                           'unused',
+                                                           'unused',
+                                                           'unused',
+                                                           'var_date_received_1', # date of last cargo 1 delivery
+                                                           'var_date_received_2', # date of last cargo 2 delivery
+                                                           'var_date_received_3', # date of last cargo 2 delivery
+                                                           'unused',
+                                                           'unused',
+                                                           'var_closure_counter' # months without delivery, same as primary industries
+                                                           ])
         # guard against prospect chance kword being set, it's pure cruft for secondary industry (harmless, but needless)
         if 'prospect_chance' in kwargs:
             utils.echo_message("prospect_chance passed in kwargs for " + self.id + "; secondary industries should not set prospect_chance")
