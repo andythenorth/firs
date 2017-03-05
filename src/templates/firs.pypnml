@@ -13,7 +13,6 @@
 #include "../../src/templates/tile_fences.pnml"
 #include "../../src/templates/tile_location.pnml"
 #include "../../src/templates/tile_ground_sprite.pnml"
-#include "../../src/templates/industry_location.pnml"
 
 <tal:include metal:use-macro="load: ../templates/randomise_primary_production_on_build.pynml" />
 <tal:include metal:use-macro="load: ../templates/construction_states.pynml" />
