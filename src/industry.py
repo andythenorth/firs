@@ -153,7 +153,15 @@ class TileLocationChecks(object):
         return list(reversed(result))
 
 
-class TileLocationCheckDisallowSlopes(object):
+class TileLocationCheck(object):
+    """ Sparse class to base TileLocationCheck subclasses on """
+
+    @property
+    def macro(self):
+        print('TileLocationCheck.macro not implemented yet')
+
+
+class TileLocationCheckDisallowSlopes(TileLocationCheck):
     """
         Prevent building on all slopes
         Not to be confused with TileLocationCheckRequireEffectivelyFlat
@@ -166,7 +174,7 @@ class TileLocationCheckDisallowSlopes(object):
         return 'TILE_DISALLOW_SLOPES(' + self.switch_entry_point + ', CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
 
 
-class TileLocationCheckDisallowSteepSlopes(object):
+class TileLocationCheckDisallowSteepSlopes(TileLocationCheck):
     """ Prevent building on steep slopes (but not normal slopes) """
     def __init__(self):
         self.switch_result = None # no default value for this check, it may not be the last check in a chain
@@ -176,7 +184,7 @@ class TileLocationCheckDisallowSteepSlopes(object):
         return 'TILE_DISALLOW_STEEP_SLOPE(' + self.switch_entry_point + ', string(STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE),' + self.switch_result + ')'
 
 
-class TileLocationCheckDisallowIndustryAdjacent(object):
+class TileLocationCheckDisallowIndustryAdjacent(TileLocationCheck):
     """
         Prevent directly adjacent to another industry, used by most industries, but not all
         1. Makes it too hard for the game to find a location for some types (typically large flat industries)
@@ -190,7 +198,7 @@ class TileLocationCheckDisallowIndustryAdjacent(object):
         return 'TILE_DISALLOW_NEARBY_CLASS(' + self.switch_entry_point + ', TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
 
 
-class TileLocationCheckRequireEffectivelyFlat(object):
+class TileLocationCheckRequireEffectivelyFlat(TileLocationCheck):
     """
         Check that the highest corner of all tiles is equal to the highest corner of the north tile
         This permits building on slopes with foundations,
@@ -205,7 +213,7 @@ class TileLocationCheckRequireEffectivelyFlat(object):
         return 'TILE_REQUIRE_EFFECTIVELY_FLAT(' + self.switch_entry_point + ', CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
 
 
-class TileLocationCheckRequireHousesNearby(object):
+class TileLocationCheckRequireHousesNearby(TileLocationCheck):
     """ Requires houses at offset x, y (to be fed by circular tile search) """
     def __init__(self, search_offsets):
         self.search_offsets = search_offsets
@@ -216,7 +224,7 @@ class TileLocationCheckRequireHousesNearby(object):
         return 'CHECK_HOUSES_NEARBY(' + self.switch_entry_point + ',' + ','.join(str(i) for i in self.search_offsets) + ',' + self.switch_result + ')'
 
 
-class TileLocationCheckRequireRoadAdjacent(object):
+class TileLocationCheckRequireRoadAdjacent(TileLocationCheck):
     """ Requires road on adjacent tile(s), with configurable directions """
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
@@ -226,7 +234,7 @@ class TileLocationCheckRequireRoadAdjacent(object):
         return 'CHECK_ROAD_ADJACENT(' + self.switch_entry_point + ', ' + self.switch_result + ')'
 
 
-class TileLocationCheckRequireSea(object):
+class TileLocationCheckRequireSea(TileLocationCheck):
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = None
@@ -235,7 +243,7 @@ class TileLocationCheckRequireSea(object):
         return 'TILE_REQUIRE_SEA(' + self.switch_entry_point + ', ' + self.switch_result + ')'
 
 
-class TileLocationCheckRequireSlope(object):
+class TileLocationCheckRequireSlope(TileLocationCheck):
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = None
@@ -244,7 +252,7 @@ class TileLocationCheckRequireSlope(object):
         return 'TILE_CHECK_FLAT(' + self.switch_entry_point + ', return CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
 
 
-class TileLocationCheckDisallowDesert(object):
+class TileLocationCheckDisallowDesert(TileLocationCheck):
     """ Prevent building on desert tiles """
     def __init__(self):
         self.switch_result = None # no default value for this check, it may not be the last check in a chain
@@ -254,7 +262,7 @@ class TileLocationCheckDisallowDesert(object):
         return 'TILE_DISALLOW_TERRAIN(' + self.switch_entry_point + ',TILETYPE_DESERT, CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
 
 
-class TileLocationCheckDisallowCoast(object):
+class TileLocationCheckDisallowCoast(TileLocationCheck):
     """ Prevent building on desert tiles """
     def __init__(self):
         self.switch_result = None # no default value for this check, it may not be the last check in a chain
@@ -264,7 +272,7 @@ class TileLocationCheckDisallowCoast(object):
         return 'TILE_DISALLOW_COAST('  + self.switch_entry_point + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
 
 
-class TileLocationCheckDisallowAboveSnowline(object):
+class TileLocationCheckDisallowAboveSnowline(TileLocationCheck):
     """ Prevent building above snowline """
     def __init__(self):
         self.switch_result = None # no default value for this check, it may not be the last check in a chain
@@ -274,7 +282,7 @@ class TileLocationCheckDisallowAboveSnowline(object):
         return 'TILE_CHECK_HEIGHT(' + self.switch_entry_point + ', 0, snowline_height, ' + self.switch_result + ', return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))'
 
 
-class TileLocationCheckFounder(object):
+class TileLocationCheckFounder(TileLocationCheck):
     """
         Used to over-ride non-essential checks when player is building
         Some tile checks relating to landscape are essential and are placed before player check
@@ -408,16 +416,22 @@ class IndustryLocationChecks(object):
     def get_render_tree(self, switch_prefix):
         # this could be reimplemented to just use numeric switch suffixes, as per tile location check tree
         result = deque([IndustryLocationCheckFounder()])
+
         if self.require_cluster:
             result.append(IndustryLocationCheckRequireCluster(self.require_cluster))
+
         if self.town_distance:
             result.append(IndustryLocationCheckTownDistance(self.town_distance))
+
         if self.coast_distance:
             result.append(IndustryLocationCheckCoastDistance())
+
         if self.flour_mill_layouts_by_date:
             result.appendleft(IndustryLocationCheckGrainMillLayoutsByDate())
+
         for industry_type, distance in self.incompatible.items():
             result.append(IndustryLocationCheckIncompatible(industry_type, distance))
+
         prev = None
         for lc in reversed(result):
             lc.switch_entry_point = switch_prefix + lc.switch_entry_point
