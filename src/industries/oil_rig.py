@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryExtractive
+from industry import IndustryPrimaryExtractive, IndustryLocationChecks
 
 industry = IndustryPrimaryExtractive(id='oil_rig',
                     prod_cargo_types=['OIL_', 'PASS'],
@@ -15,6 +15,8 @@ industry = IndustryPrimaryExtractive(id='oil_rig',
                     substitute='5',
                     map_colour='152',
                     spec_flags='bitmask(IND_FLAG_BUILT_ON_WATER, IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES)',
+                    location_checks=IndustryLocationChecks(incompatible={'oil_refinery': 16},
+                                                           coast_distance=True),
                     prospect_chance='0.75',
                     name='TTD_STR_INDUSTRY_NAME_OIL_RIG',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_WATER))',
