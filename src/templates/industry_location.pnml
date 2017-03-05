@@ -33,21 +33,3 @@ switch (FEAT_INDUSTRIES, SELF, switchname, industry_town_count(industry_type)) {
 	mincount .. maxcount: next; \
 	return errtext; \
 }
-
-
-/*
- * Check whether a certain location is suitable for building the industry
- * Restrictions apply only to industries funded by the game.
- * !! ported to python macro, but legacy CPP version still used by Oil Rig
- */
-
-/* founder == FOUNDER_GAME means founded by the game, 0 .. 15 are player companies */
-#define CHECK_FOUNDER(switchname, next) \
-switch (FEAT_INDUSTRIES, SELF, switchname, ( \
-			(extra_callback_info2 == IND_CREATION_FUND) || \
-			(extra_callback_info2 == IND_CREATION_PROSPECT) \
-			) \
-		) { \
-	1: return CB_RESULT_LOCATION_ALLOW; \
-	next; \
-}
