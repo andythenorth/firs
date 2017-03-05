@@ -1,0 +1,12 @@
+<metal:render_tree metal:define-macro="render_tree">
+    <tal:tile_location_checks repeat="tile industry.tiles">
+        <tal:tile define="location_checks tile.location_checks.get_render_tree(tile.id, industry.id)" repeat="location_check location_checks">
+            <tal:legacy condition="location_check.legacy">
+                ${location_check.render()}
+            </tal:legacy>
+            <tal:not_legacy condition="not:location_check.legacy">
+                FOO
+            </tal:not_legacy>
+        </tal:tile>
+    </tal:tile_location_checks>
+</metal:render_tree>

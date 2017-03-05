@@ -15,7 +15,8 @@
 
 <tal:include metal:use-macro="load: spritelayouts.pynml" />
 
-<tal:include metal:use-macro="load: tile_location_checks.pynml" />
+<tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
+             metal:use-macro="location_checks_tile.macros['render_tree']" />
 
 <tal:include metal:use-macro="load: tile_animation_switches.pynml" />
 

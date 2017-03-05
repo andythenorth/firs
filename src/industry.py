@@ -169,6 +169,7 @@ class TileLocationCheckDisallowSlopes(TileLocationCheck):
     def __init__(self):
         self.switch_result = None # no default value for this check, it may not be the last check in a chain
         self.switch_entry_point = None
+        self.legacy = True
 
     def render(self):
         return 'TILE_DISALLOW_SLOPES(' + self.switch_entry_point + ', CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
@@ -179,6 +180,7 @@ class TileLocationCheckDisallowSteepSlopes(TileLocationCheck):
     def __init__(self):
         self.switch_result = None # no default value for this check, it may not be the last check in a chain
         self.switch_entry_point = None
+        self.legacy = True
 
     def render(self):
         return 'TILE_DISALLOW_STEEP_SLOPE(' + self.switch_entry_point + ', string(STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE),' + self.switch_result + ')'
@@ -193,6 +195,7 @@ class TileLocationCheckDisallowIndustryAdjacent(TileLocationCheck):
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = None
+        self.legacy = True
 
     def render(self):
         return 'TILE_DISALLOW_NEARBY_CLASS(' + self.switch_entry_point + ', TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
@@ -208,6 +211,7 @@ class TileLocationCheckRequireEffectivelyFlat(TileLocationCheck):
     def __init__(self):
         self.switch_result = None # no default value for this check, it may not be the last check in a chain
         self.switch_entry_point = None
+        self.legacy = True
 
     def render(self):
         return 'TILE_REQUIRE_EFFECTIVELY_FLAT(' + self.switch_entry_point + ', CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
@@ -219,6 +223,7 @@ class TileLocationCheckRequireHousesNearby(TileLocationCheck):
         self.search_offsets = search_offsets
         self.switch_result = 'return CB_RESULT_LOCATION_DISALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = None
+        self.legacy = True
 
     def render(self):
         return 'CHECK_HOUSES_NEARBY(' + self.switch_entry_point + ',' + ','.join(str(i) for i in self.search_offsets) + ',' + self.switch_result + ')'
@@ -229,6 +234,7 @@ class TileLocationCheckRequireRoadAdjacent(TileLocationCheck):
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = None
+        self.legacy = True
 
     def render(self):
         return 'CHECK_ROAD_ADJACENT(' + self.switch_entry_point + ', ' + self.switch_result + ')'
@@ -238,6 +244,7 @@ class TileLocationCheckRequireSea(TileLocationCheck):
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = None
+        self.legacy = True
 
     def render(self):
         return 'TILE_REQUIRE_SEA(' + self.switch_entry_point + ', ' + self.switch_result + ')'
@@ -247,6 +254,7 @@ class TileLocationCheckRequireSlope(TileLocationCheck):
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = None
+        self.legacy = True
 
     def render(self):
         return 'TILE_CHECK_FLAT(' + self.switch_entry_point + ', return CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
@@ -257,6 +265,7 @@ class TileLocationCheckDisallowDesert(TileLocationCheck):
     def __init__(self):
         self.switch_result = None # no default value for this check, it may not be the last check in a chain
         self.switch_entry_point = None
+        self.legacy = True
 
     def render(self):
         return 'TILE_DISALLOW_TERRAIN(' + self.switch_entry_point + ',TILETYPE_DESERT, CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
@@ -267,6 +276,7 @@ class TileLocationCheckDisallowCoast(TileLocationCheck):
     def __init__(self):
         self.switch_result = None # no default value for this check, it may not be the last check in a chain
         self.switch_entry_point = None
+        self.legacy = True
 
     def render(self):
         return 'TILE_DISALLOW_COAST('  + self.switch_entry_point + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
@@ -277,6 +287,7 @@ class TileLocationCheckDisallowAboveSnowline(TileLocationCheck):
     def __init__(self):
         self.switch_result = None # no default value for this check, it may not be the last check in a chain
         self.switch_entry_point = None
+        self.legacy = True
 
     def render(self):
         return 'TILE_CHECK_HEIGHT(' + self.switch_entry_point + ', 0, snowline_height, ' + self.switch_result + ', return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))'
@@ -290,6 +301,7 @@ class TileLocationCheckFounder(TileLocationCheck):
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = None
+        self.legacy = True
 
     def render(self):
         return 'TILE_ALLOW_PLAYER (' + self.switch_entry_point + ',' + self.switch_result + ')'
