@@ -456,7 +456,7 @@ class IndustryLocationCheck(object):
     """ sparse base class for industry location checks """
     @property
     def macro(self):
-        return templates["location_macros_industry.pynml"].macros[self.macro_name]
+        return templates["location_check_macros_industry.pynml"].macros[self.macro_name]
 
 
 class IndustryLocationCheckTownDistance(IndustryLocationCheck):

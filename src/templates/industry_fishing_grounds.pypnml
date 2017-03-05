@@ -338,7 +338,8 @@ tilelayout tilelayout_fishing_grounds_4 {
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
 
-<tal:include metal:use-macro="load: location_checks_industry.pynml" />
+<tal:include define="location_checks_industry load: location_check_macros_industry.pynml"
+             metal:use-macro="location_checks_industry.macros['render_tree']" />
 
 /* industry specific switch to randomise initial production; as Fishing Grounds never changes production, go for a wide range of productions*/
 random_switch(FEAT_INDUSTRIES, SELF, ${industry.id}_randomise_primary_production_on_build) {

@@ -1,3 +1,19 @@
+<!--!
+    Location checks are defined as macros, to use these load the template as an object and call the macro from the macros dict
+    e.g. foo.macros[macro_name] where foo has been loaded in a python script or in a chameleon template
+-->
+
+<!--! Loop to render the location checks tree -->
+
+<metal:render_tree metal:define-macro="render_tree">
+    <tal:location_checks_industry define="location_checks industry.location_checks.get_render_tree(industry.id+'_')" repeat="location_check location_checks">
+        <tal:location_check_macro metal:use-macro="location_check.macro" />
+    </tal:location_checks_industry>
+</metal:render_tree>
+
+
+<!--! Location check macros -->
+
 <metal:coast_distance metal:define-macro="coast_distance">
     <!--! Check for minimum distance to the coast -->
     switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, water_distance) {

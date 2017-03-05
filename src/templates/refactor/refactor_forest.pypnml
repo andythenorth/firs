@@ -336,7 +336,8 @@ tilelayout tilelayout_forest_3 {
  * Definition of the industry
  * *************************************************/
 
-<tal:include metal:use-macro="load: location_checks_industry.pynml" />
+<tal:include define="location_checks_industry load: location_check_macros_industry.pynml"
+             metal:use-macro="location_checks_industry.macros['render_tree']" />
 
 <tal:include metal:use-macro="load: extra_text_primary.pynml" />
 
