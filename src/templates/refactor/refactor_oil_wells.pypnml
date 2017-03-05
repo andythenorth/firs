@@ -106,7 +106,7 @@ item(FEAT_INDUSTRYTILES, oil_wells_tile_building, ${global_constants.tile_numeri
  * Definition of the industry
  * *************************************************/
 
-<tal:include metal:use-macro="load: industry_location_checks.pynml" />
+<tal:include metal:use-macro="load: location_checks_industry.pynml" />
 
 <tal:include metal:use-macro="load: extra_text_primary.pynml" />
 

@@ -64,7 +64,7 @@ TILE_ALLOW_PLAYER         (tile_location_check, ${industry.id}_tile_nearby_indus
  * Definition of the industry
  * *************************************************/
 
-<tal:include metal:use-macro="load: industry_location_checks.pynml" />
+<tal:include metal:use-macro="load: location_checks_industry.pynml" />
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
 

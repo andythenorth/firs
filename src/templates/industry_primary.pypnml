@@ -37,7 +37,7 @@
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
 
-<tal:include metal:use-macro="load: industry_location_checks.pynml" />
+<tal:include metal:use-macro="load: location_checks_industry.pynml" />
 
 <tal:include metal:use-macro="load: industry_properties.pynml" />
 

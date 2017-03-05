@@ -113,7 +113,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_8), 71) {
 
 <tal:include metal:use-macro="load: produce_secondary.pypnml" />
 
-<tal:include metal:use-macro="load: industry_location_checks.pynml" />
+<tal:include metal:use-macro="load: location_checks_industry.pynml" />
 
 <tal:include metal:use-macro="load: extra_text_secondary.pynml" />
 
