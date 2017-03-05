@@ -25,8 +25,7 @@ industry = IndustryPrimaryExtractive(id='quarry',
                     prospect_chance='0.75',
                     name='string(STR_IND_QUARRY)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_QUARRY))',
-                    fund_cost_multiplier='210',
-                    template="refactor/refactor_primary_waterpit.pypnml" )
+                    fund_cost_multiplier='210')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True

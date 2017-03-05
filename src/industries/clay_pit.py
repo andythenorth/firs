@@ -24,8 +24,7 @@ industry = IndustryPrimaryExtractive(id='clay_pit',
                     prospect_chance='0.75',
                     name='string(STR_IND_CLAY_PIT)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PIT))',
-                    fund_cost_multiplier='200',
-                    template="refactor/refactor_primary_waterpit.pypnml" )
+                    fund_cost_multiplier='200')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

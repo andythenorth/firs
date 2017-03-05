@@ -22,8 +22,7 @@ industry = IndustryPrimaryExtractive(id='phosphate_mine',
                     prospect_chance='0.75',
                     name='string(STR_IND_PHOSPHATE_MINE)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PIT))',
-                    fund_cost_multiplier='200',
-                    template="refactor/refactor_primary_waterpit.pypnml" )
+                    fund_cost_multiplier='200')
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
