@@ -34,18 +34,6 @@ switch (FEAT_INDUSTRIES, SELF, switchname, industry_town_count(industry_type)) {
 	return errtext; \
 }
 
-/*
- * Check for minimum distance to the coast
- *
- * !! migrated to python, but used still by oil rig (needs refactored)
- */
-#define CHECK_COAST_DISTANCE(switchname, mindistance, maxdistance, errtext, next) \
-switch (FEAT_INDUSTRIES, SELF, switchname, water_distance) { \
-	mindistance .. maxdistance: next; \
-	return errtext; \
-}
-
-
 
 /*
  * Check whether a certain location is suitable for building the industry
