@@ -110,4 +110,4 @@ switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [STORE_TEMP(((population
     }
 </tal:build_economies>
 
-#include "../../src/templates/undefs.pnml"
+#include "../src/templates/undefs.pnml"

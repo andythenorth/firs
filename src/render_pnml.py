@@ -37,46 +37,47 @@ repo_vars = utils.get_repo_vars(sys)
 
 def render_header_item_nml(header_item):
     template = templates[header_item]
-    templated_nml = utils.unescape_chameleon_output(template(registered_industries=registered_industries,
+    result = utils.unescape_chameleon_output(template(registered_industries=registered_industries,
                                                               registered_cargos=registered_cargos,
                                                               economies=registered_economies,
                                                               global_constants=global_constants,
                                                               repo_vars=repo_vars,
                                                               utils=utils,
                                                               sys=sys))
-    # save the results of templating
+    # write the nml per vehicle to disk, it aids debugging
     # ! clunky split to get rid of the extension - temporary artefact of migrating away from CPP
     header_item_name = header_item.split('.')[0]
-    nml_file_path = os.path.join(generated_nml_path, header_item_name + '.nml')
-    nml = codecs.open(nml_file_path, 'w','utf8')
-    nml.write(templated_nml)
+    nml_file = os.path.join(generated_nml_path, header_item_name + '.nml')
+    nml = codecs.open(nml_file, 'w','utf8')
+    nml.write(result)
     nml.close()
+    # also return the nml directly for writing to the concatenated nml, don't faff around opening the generated nml files from disk
+    return result
 
 def render_industry_nml(industry):
-    nml_file = codecs.open(os.path.join(generated_nml_path, industry.id + '.nml'), 'w','utf8')
     only_build_test_industry = repo_vars.get('test_industry', None)
     if not only_build_test_industry or only_build_test_industry == industry.id:
         result = industry.render_pnml()
     else:
         result = ''
+    # write the nml per vehicle to disk, it aids debugging
+    nml_file = codecs.open(os.path.join(generated_nml_path, industry.id + '.nml'), 'w','utf8')
     nml_file.write(result)
     nml_file.close()
+    # also return the nml directly for writing to the concatenated nml, don't faff around opening the generated nml files from disk
+    return result
 
 def main():
     start = time()
+    grf_nml = codecs.open(os.path.join(firs.generated_files_path, 'firs.pnml'),'w','utf8')
     # ! extension is included due to partial migration from pypnaml to pynml; it should ideally be standard and concatenated within the repeat
-    header_items = ['defines.pypnml', 'checks.pypnml','header.pynml','parameters.pynml','cargos.pynml']
+    header_items = ['defines.pypnml','header.pynml','checks.pypnml','parameters.pynml','cargos.pynml', 'firs.pypnml']
     for header_item in header_items:
-        render_header_item_nml(header_item)
+        grf_nml.write(render_header_item_nml(header_item))
 
     # multiprocessing was tried here and removed as it was empirically slower in testing (due to overhead of starting extra pythons probably)
     for industry in registered_industries:
-        render_industry_nml(industry)
-
-    template = templates['firs.pypnml']
-    grf_nml = codecs.open(os.path.join(firs.generated_files_path, 'firs.pnml'),'w','utf8')
-    grf_nml.write(utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants,
-                                                  utils=utils, sys=sys)))
+        grf_nml.write(render_industry_nml(industry))
     grf_nml.close()
     # eh, how long does this take anyway?
     print(format((time() - start), '.2f')+'s')
