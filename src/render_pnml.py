@@ -55,7 +55,7 @@ def main():
     header_items = ['defines.pypnml', 'checks.pypnml','header.pynml','firs.pypnml','parameters.pynml','cargos.pynml']
     for header_item in header_items:
         template = templates[header_item]
-        templated_pnml = utils.unescape_chameleon_output(template(registered_industries=registered_industries,
+        templated_nml = utils.unescape_chameleon_output(template(registered_industries=registered_industries,
                                                                   registered_cargos=registered_cargos,
                                                                   economies=registered_economies,
                                                                   global_constants=global_constants,
@@ -66,28 +66,22 @@ def main():
         # save the results of templating
         # ! clunky split to get rid of the extension - temporary artefact of migrating away from CPP
         header_item_name = header_item.split('.')[0]
-        pnml_file_path = os.path.join(generated_pnml_path, header_item_name + '.pnml')
-        pnml = codecs.open(pnml_file_path, 'w','utf8')
-        pnml.write(templated_pnml)
-        pnml.close()
+        nml_file_path = os.path.join(generated_pnml_path, header_item_name + '.nml')
+        nml = codecs.open(nml_file_path, 'w','utf8')
+        nml.write(templated_nml)
+        nml.close()
 
-    if repo_vars.get('no_mp', None) != 'False':
-        utils.echo_message('Multiprocessing disabled: (use NO_MP=False to enable it)')
-        for industry in registered_industries:
-            render_industry(industry)
-    else:
-        pool = Pool(processes=16) # 16 is an arbitrary amount that appears to be fast without blocking the system
-        pool.map(render_industry, registered_industries)
-        pool.close()
-        pool.join()
+    # multiprocessing was tried here and removed as it was empirically slower in testing (due to overhead of starting extra pythons probably)
+    for industry in registered_industries:
+        render_industry(industry)
 
     # linker
     print("Linking pnml")
     template = templates['firs.pypnml']
-    firs_pnml = codecs.open(os.path.join(firs.generated_files_path, 'firs.pnml'), 'w','utf8')
-    firs_pnml.write(utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants,
+    grf_nml = codecs.open(os.path.join(firs.generated_files_path, 'firs.pnml'),'w','utf8')
+    grf_nml.write(utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants,
                                                 utils=utils, sys=sys, generated_pnml_path=generated_pnml_path)))
-    firs_pnml.close()
+    grf_nml.close()
     # eh, how long does this take anyway?
     print(format((time() - start), '.2f')+'s')
 

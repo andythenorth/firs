@@ -1,12 +1,12 @@
-#include "header.pnml"
+#include "header.nml"
 
-#include "parameters.pnml"
+#include "parameters.nml"
 
-#include "defines.pnml"
+#include "defines.nml"
 
-#include "checks.pnml"
+#include "checks.nml"
 
-#include "cargos.pnml"
+#include "cargos.nml"
 
 <tal:include metal:use-macro="load: ../templates/sprite_templates.pynml" />
 
