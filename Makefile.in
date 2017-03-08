@@ -11,7 +11,7 @@ CC_FLAGS ?= -D TEST_INDUSTRY=$(TEST_INDUSTRY) -C -E -nostdinc -x c-header
 GVPR ?= $(shell which gvpr)
 DOT  ?= $(shell which dot)
 
-MAIN_SRC_FILE := generated/pnml/firs.pnml
+MAIN_SRC_FILE := generated/nml/firs.nml
 NML_FILE := generated/firs.nml
 
 GENERATE_PNML = $(MAIN_SRC_FILE)
@@ -24,7 +24,7 @@ TEMPLATES = $(wildcard src/templates/*)
 CONSTANTS = src/templates/defines.pypnml src/global_constants.py
 MODULES = src/cargo.py src/economy.py src/firs.py src/industry.py src/render_pnml.py src/utils.py
 
-generated/pnml/firs.pnml: $(INDUSTRY_SOURCES) $(CARGO_SOURCES) $(ECONOMY_SOURCES) $(TEMPLATES) $(CONSTANTS) $(MODULES)
+generated/nml/firs.nml: $(INDUSTRY_SOURCES) $(CARGO_SOURCES) $(ECONOMY_SOURCES) $(TEMPLATES) $(CONSTANTS) $(MODULES)
 	$(_E) [GENERATE PNML]
 	$(_V) python src/render_pnml.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
 

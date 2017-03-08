@@ -28,9 +28,6 @@ from chameleon import PageTemplateLoader # chameleon used in most template cases
 templates = PageTemplateLoader(os.path.join(src_path, 'templates'), format='text')
 industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), format='text')
 
-generated_pnml_path = os.path.join(firs.generated_files_path, 'pnml')
-if not os.path.exists(generated_pnml_path):
-    os.mkdir(generated_pnml_path)
 generated_nml_path = os.path.join(firs.generated_files_path, 'nml')
 if not os.path.exists(generated_nml_path):
     os.mkdir(generated_nml_path)
@@ -38,49 +35,50 @@ if not os.path.exists(generated_nml_path):
 # get args passed by makefile
 repo_vars = utils.get_repo_vars(sys)
 
+def render_header_item_nml(header_item):
+    template = templates[header_item]
+    templated_nml = utils.unescape_chameleon_output(template(registered_industries=registered_industries,
+                                                              registered_cargos=registered_cargos,
+                                                              economies=registered_economies,
+                                                              global_constants=global_constants,
+                                                              repo_vars=repo_vars,
+                                                              utils=utils,
+                                                              sys=sys))
+    # save the results of templating
+    # ! clunky split to get rid of the extension - temporary artefact of migrating away from CPP
+    header_item_name = header_item.split('.')[0]
+    nml_file_path = os.path.join(generated_nml_path, header_item_name + '.nml')
+    nml = codecs.open(nml_file_path, 'w','utf8')
+    nml.write(templated_nml)
+    nml.close()
 
-def render_industry(industry):
-    pnml_file = codecs.open(os.path.join(generated_pnml_path, industry.id + '.pnml'), 'w','utf8')
+def render_industry_nml(industry):
+    nml_file = codecs.open(os.path.join(generated_nml_path, industry.id + '.nml'), 'w','utf8')
     only_build_test_industry = repo_vars.get('test_industry', None)
     if not only_build_test_industry or only_build_test_industry == industry.id:
         result = industry.render_pnml()
     else:
         result = ''
-    pnml_file.write(result)
-    pnml_file.close()
+    nml_file.write(result)
+    nml_file.close()
 
 def main():
     start = time()
     # ! extension is included due to partial migration from pypnaml to pynml; it should ideally be standard and concatenated within the repeat
     header_items = ['defines.pypnml', 'checks.pypnml','header.pynml','firs.pypnml','parameters.pynml','cargos.pynml']
     for header_item in header_items:
-        template = templates[header_item]
-        templated_nml = utils.unescape_chameleon_output(template(registered_industries=registered_industries,
-                                                                  registered_cargos=registered_cargos,
-                                                                  economies=registered_economies,
-                                                                  global_constants=global_constants,
-                                                                  repo_vars=repo_vars,
-                                                                  utils=utils,
-                                                                  sys=sys,
-                                                                  generated_pnml_path=generated_pnml_path))
-        # save the results of templating
-        # ! clunky split to get rid of the extension - temporary artefact of migrating away from CPP
-        header_item_name = header_item.split('.')[0]
-        nml_file_path = os.path.join(generated_pnml_path, header_item_name + '.nml')
-        nml = codecs.open(nml_file_path, 'w','utf8')
-        nml.write(templated_nml)
-        nml.close()
+        render_header_item_nml(header_item)
 
     # multiprocessing was tried here and removed as it was empirically slower in testing (due to overhead of starting extra pythons probably)
     for industry in registered_industries:
-        render_industry(industry)
+        render_industry_nml(industry)
 
     # linker
     print("Linking pnml")
     template = templates['firs.pypnml']
     grf_nml = codecs.open(os.path.join(firs.generated_files_path, 'firs.pnml'),'w','utf8')
     grf_nml.write(utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants,
-                                                utils=utils, sys=sys, generated_pnml_path=generated_pnml_path)))
+                                                  utils=utils, sys=sys)))
     grf_nml.close()
     # eh, how long does this take anyway?
     print(format((time() - start), '.2f')+'s')
