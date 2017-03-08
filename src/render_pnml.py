@@ -52,12 +52,13 @@ def render_industry(industry):
 def main():
     start = time()
     # ! extension is included due to partial migration from pypnaml to pynml; it should ideally be standard and concatenated within the repeat
-    header_items = ['defines.pypnml', 'checks.pypnml','header.pynml','firs.pypnml','parameters.pynml']
+    header_items = ['defines.pypnml', 'checks.pypnml','header.pynml','firs.pypnml','parameters.pynml','cargos.pynml']
     for header_item in header_items:
         template = templates[header_item]
         templated_pnml = utils.unescape_chameleon_output(template(registered_industries=registered_industries,
-                                                                  global_constants=global_constants,
+                                                                  registered_cargos=registered_cargos,
                                                                   economies=registered_economies,
+                                                                  global_constants=global_constants,
                                                                   repo_vars=repo_vars,
                                                                   utils=utils,
                                                                   sys=sys,
@@ -69,15 +70,6 @@ def main():
         pnml = codecs.open(pnml_file_path, 'w','utf8')
         pnml.write(templated_pnml)
         pnml.close()
-
-    template = templates['cargos.pynml']
-    templated_pnml = utils.unescape_chameleon_output(template(registered_cargos=registered_cargos,
-                                                              economies=registered_economies,
-                                                              global_constants=global_constants))
-    # save the results of templating
-    pnml = codecs.open(os.path.join(generated_pnml_path, 'cargos.pnml'), 'w','utf8')
-    pnml.write(templated_pnml)
-    pnml.close()
 
     if repo_vars.get('no_mp', None) != 'False':
         utils.echo_message('Multiprocessing disabled: (use NO_MP=False to enable it)')
