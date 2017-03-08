@@ -65,7 +65,7 @@ def render_industry_nml(industry):
 def main():
     start = time()
     # ! extension is included due to partial migration from pypnaml to pynml; it should ideally be standard and concatenated within the repeat
-    header_items = ['defines.pypnml', 'checks.pypnml','header.pynml','firs.pypnml','parameters.pynml','cargos.pynml']
+    header_items = ['defines.pypnml', 'checks.pypnml','header.pynml','parameters.pynml','cargos.pynml']
     for header_item in header_items:
         render_header_item_nml(header_item)
 
@@ -73,8 +73,6 @@ def main():
     for industry in registered_industries:
         render_industry_nml(industry)
 
-    # linker
-    print("Linking pnml")
     template = templates['firs.pypnml']
     grf_nml = codecs.open(os.path.join(firs.generated_files_path, 'firs.pnml'),'w','utf8')
     grf_nml.write(utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants,
