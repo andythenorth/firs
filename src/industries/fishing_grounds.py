@@ -33,6 +33,13 @@ industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
+sprite_ground = industry.add_sprite(
+    sprite_number = 'GROUNDSPRITE_WATER',
+)
+spriteset_ground_empty = industry.add_spriteset(
+    id = 'fishing_grounds_spriteset_ground_empty',
+    type = 'empty'
+)
 spriteset_1 = industry.add_spriteset(
     id = 'fishing_grounds_spriteset_1',
     sprites = [(10, 10, 64, 31, -31, 0)],
@@ -57,4 +64,29 @@ spriteset_5 = industry.add_spriteset(
     id = 'fishing_grounds_spriteset_5',
     sprites = [(290, 10, 64, 31, -31, -32)],
     zextent = 16
+)
+
+industry.add_spritelayout(
+    id = 'fishing_grounds_spritelayout_1',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_1]
+)
+industry.add_spritelayout(
+    id = 'fishing_grounds_spritelayout_2',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_2]
+)
+industry.add_spritelayout(
+    id = 'fishing_grounds_spritelayout_3',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_3]
+)
+industry.add_spritelayout(
+    id = 'fishing_grounds_spritelayout_4',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_5,
+    building_sprites = [spriteset_4]
 )

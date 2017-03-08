@@ -9,52 +9,7 @@
 
 <tal:include metal:use-macro="load: spritesets.pynml" />
 
-spritelayout fishing_grounds_spritelayout_1 {
-	ground {
-		sprite: GROUNDSPRITE_WATER;
-	}
-	building {
-		sprite: fishing_grounds_spriteset_1_0;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-spritelayout fishing_grounds_spritelayout_2 {
-	ground {
-		sprite: GROUNDSPRITE_WATER;
-	}
-	building {
-		sprite: fishing_grounds_spriteset_2_0;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-spritelayout fishing_grounds_spritelayout_3 {
-	ground {
-		sprite: GROUNDSPRITE_WATER;
-	}
-	building {
-		sprite: fishing_grounds_spriteset_3_0;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-spritelayout ${industry.id}_spritelayout_4 {
-	ground {
-		sprite: GROUNDSPRITE_WATER;
-	}
-	childsprite {
-		sprite: ${industry.id}_spriteset_5_0;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		always_draw: 1;
-	}
-	building {
-		sprite: ${industry.id}_spriteset_4_0;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
+<tal:include metal:use-macro="load: spritelayouts.pynml" />
 
 switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_layout_1, relative_pos) {
 	relative_coord(3, 2): ${industry.id}_spritelayout_1;
