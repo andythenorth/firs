@@ -5,9 +5,9 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimary, TileLocationChecks, IndustryLocationChecks
+from industry import IndustryPrimaryNoSupplies, TileLocationChecks, IndustryLocationChecks
 
-industry = IndustryPrimary(id='fishing_grounds',
+industry = IndustryPrimaryNoSupplies(id='fishing_grounds',
                     accept_cargo_types=[],
                     prod_cargo_types=['FISH'],
                     layouts='AUTO',
@@ -25,8 +25,7 @@ industry = IndustryPrimary(id='fishing_grounds',
                     prospect_chance='0.75',
                     name='string(STR_IND_FISHING_GROUND)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_WATER))',
-                    fund_cost_multiplier='88',
-                    template="industry_fishing_grounds.pypnml" )
+                    fund_cost_multiplier='88')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
