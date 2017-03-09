@@ -1,15 +1,10 @@
 random_switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build) {
-	1: return 7;
 	1: return 8;
-	1: return 9;
-	1: return 11;
-	2: return 12;
-	2: return 14;
-	2: return 16;
-	1: return 18;
-	1: return 20;
-	1: return 22;
-	1: return 24;
+	1: return 12;
+	3: return 16;
+	2: return 20;
+	2: return 24;
 	1: return 28;
 	1: return 32;
+	1: return 36;
 }
