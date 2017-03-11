@@ -221,3 +221,21 @@ FARM_MINE_SUPPLY_REQUIREMENT = 16
 
 # time window (days) for delivery of combinatory cargos to secondary industries
 secondary_production_span = 90
+
+temp_storage_graphics_chain = dict(var_default_ground = 0,  # currently unused - sprite ID of default ground tile in the place of the tile
+                                   var_fencesprite_ne = 1, # fence sprite to use on the NE border
+                                   var_fencesprite_nw = 2, # fence sprite to use on the NW border
+                                   var_fencesprite_se = 3, # fence sprite to use on the SE border
+                                   var_fencesprite_sw = 4, # fence sprite to use on the SW border
+                                   var_fence_offset_ne = 5, # y-offset for fence sprite to use on the NE border
+                                   var_fence_offset_nw = 6, # y-offset for fence sprite to use on the NW border
+                                   var_fence_offset_se = 7, # y-offset for fence sprite to use on the SE border
+                                   var_fence_offset_sw = 8, # y-offset for fence sprite to use on the SW border
+                                   var_use_fence_ne = 9, # draw fence in the NE
+                                   var_use_fence_nw = 10, # draw fence in the NW
+                                   var_use_fence_se = 11, # draw fence in the SE
+                                   var_use_fence_sw = 12, # draw fence in the SW
+                                   var_terrain_is_snow = 13, # must be set to 1 (true) or 0 (false)
+                                   var_random_bits = 14, # some random bits to use as required
+                                )  # max register number must be 235; registers 236-255 are reserved for building sprite hide/show values
+

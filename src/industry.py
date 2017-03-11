@@ -682,7 +682,8 @@ class Industry(object):
             return 'spritelayout_default_construction_states'
 
     def get_date_conditions_for_hide_sprites(self, date_variation_index):
-        random_offset = "5 * LOAD_TEMP(0) / 0x10000" # random is in nml at run-time, not compile-time python, so this is a string
+        temp_store_random_bits = global_constants.temp_storage_graphics_chain['var_random_bits']
+        random_offset = "5 * LOAD_TEMP(" + str(temp_store_random_bits) + ") / 0x10000" # random is in nml at run-time, not compile-time python, so this is a string
         if len(self.graphics_change_dates) == 0:
             return "0" # no date variations, just one set of graphics, never hide
         elif date_variation_index == 0:

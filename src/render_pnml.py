@@ -71,7 +71,7 @@ def main():
     start = time()
     grf_nml = codecs.open(os.path.join(firs.generated_files_path, 'firs.pnml'),'w','utf8')
     # ! extension is included due to partial migration from pypnaml to pynml; it should ideally be standard and concatenated within the repeat
-    header_items = ['defines.pypnml','header.pynml','checks.pypnml','parameters.pynml','cargos.pynml', 'firs.pypnml']
+    header_items = ['header.pynml','checks.pypnml','parameters.pynml','cargos.pynml', 'firs.pypnml']
     for header_item in header_items:
         grf_nml.write(render_header_item_nml(header_item))
 
