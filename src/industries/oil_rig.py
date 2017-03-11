@@ -29,4 +29,14 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 # industry uses layouts and sprites from default game, no custom layouts etc
-
+"""
+To-do
+- put tile in
+- get sprite numbers of default sprites using in-game tools
+- put spritesets in
+- put spritelayouts in
+- figure out where the station tiles are
+- put industry layouts in, as per https://newgrf-specs.tt-wiki.net/wiki/IndustryDefaultProps
+- set layouts flag to 'AUTO'
+- remove custom template from filesystem, and the property declaring it here
+"""
