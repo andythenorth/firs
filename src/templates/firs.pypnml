@@ -1,7 +1,1 @@
-<tal:include metal:use-macro="load: ../templates/sprite_templates.pynml" />
-
 #include "../src/templates/tile_location.pnml"
-
-<tal:include metal:use-macro="load: ../templates/randomise_primary_production_on_build.pynml" />
-<tal:include metal:use-macro="load: ../templates/construction_states.pynml" />
-<tal:include metal:use-macro="load: ../templates/colour.pynml" />
