@@ -30,33 +30,6 @@ switch (FEAT_INDUSTRYTILES, SELF, name, [ \
 	next; \
 }
 
-
-/* Draw no fences around a tile
- *
- * name:   name of this switch
- * next:   name of next switch of spritelayout
- */
-#define ADD_NO_FENCES(name, next) \
-switch (FEAT_INDUSTRYTILES, SELF, name, [ \
-			STORE_TEMP( 0, var_fencesprite_ne), \
-			STORE_TEMP( 0, var_fencesprite_nw), \
-			STORE_TEMP( 0, var_fencesprite_se), \
-			STORE_TEMP( 0, var_fencesprite_sw), \
-\
-			STORE_TEMP( 0, var_use_fence_ne), \
-			STORE_TEMP( 0, var_use_fence_nw), \
-			STORE_TEMP( 0, var_use_fence_se), \
-			STORE_TEMP( 0, var_use_fence_sw), \
-\
-			STORE_TEMP( 0, var_fence_offset_ne), \
-			STORE_TEMP( 0, var_fence_offset_nw), \
-			STORE_TEMP( 0, var_fence_offset_se), \
-			STORE_TEMP( 0, var_fence_offset_sw), \
-			]) { \
-	next; \
-}
-
-
 /* Add fences to a flat tile
  *
  * name:   name of this switch
