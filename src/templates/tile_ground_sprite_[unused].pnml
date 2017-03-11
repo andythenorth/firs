@@ -1,3 +1,6 @@
+// not currently used; retained because the implementation here is preferable to the ground-tile implementation in spritelayouts.pynml
+// it would be better to use switches, too much logic in spritelayouts is bad, makes them slow to expand at compile + also hard to read + change
+
 #define GROUNDSPRITE_SWITCH(name, target) \
 switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_decide_arctic), \
 		[ \
