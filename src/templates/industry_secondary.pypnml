@@ -33,9 +33,7 @@
 
 <tal:include metal:use-macro="load: produce_secondary.pypnml" />
 
-<tal:include metal:use-macro="load: check_secondary_production_level.pynml" />
-
-<tal:include metal:use-macro="load: check_secondary_closure.pynml" />
+<tal:include metal:use-macro="load: closure_secondary.pynml" />
 
 <tal:include metal:use-macro="load: extra_text_secondary.pynml" />
 

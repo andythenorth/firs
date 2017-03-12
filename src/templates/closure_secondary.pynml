@@ -1,19 +1,17 @@
-/*
+ /*
  * This file is part of FIRS Industry Set for OpenTTD.
  * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
  * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
- * Checks for transported and received cargo the last month and increases the 'closure counter'
- * if nothing was transported or received. Otherwise it resets the closure_counter.
- *
- * switch name:  check_secondary_production_level
- */
+
+<!--! ==== Monthly prod. change callback checks delivered cargo ==== -->
 
 <tal:block define="perm_storage industry.perm_storage">
     <!--! ^ I don't like this indirection, but makes code below easier to read -->
+
+    <!--!  Increase closure counter if nothing was transported or received; otherwise reset closure_counter -->
     switch(FEAT_INDUSTRIES, SELF, ${industry.id}_secondary_increase_closure_counter,
            STORE_PERM((1 + LOAD_PERM(${perm_storage.closure_counter})), ${perm_storage.closure_counter})) {
         return 0;
@@ -21,6 +19,7 @@
     switch(FEAT_INDUSTRIES, SELF, ${industry.id}_secondary_reset_closure_counter, [STORE_PERM(0, ${perm_storage.closure_counter}), 1]) {
         return 0;
     }
+    <!--! date_received storages are populated when cargo arrives at the industry (handled by secondary production template) -->
     switch(FEAT_INDUSTRIES, SELF, ${industry.id}_check_secondary_production_level, [
                 transported_last_month_1 > 0 ||
                 transported_last_month_2 > 0 ||
@@ -33,3 +32,26 @@
         ${industry.id}_secondary_reset_closure_counter;
     }
 </tal:block>
+
+
+<!--! ===== Random prod. change callback handles closing the industry (or not) ===== -->
+
+<!--! 50 : 50 chance that we actually close down (extra_callback_info2 contains random bits) -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_secondary_close_random, (extra_callback_info2 & 32)) {
+	0: return CB_RESULT_IND_PROD_CLOSE;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+<!--! No closure if cargo delivered in last 60 months -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_secondary_had_produced_check, LOAD_PERM(${industry.perm_storage.closure_counter})) {
+	0..60: return CB_RESULT_IND_PROD_NO_CHANGE;
+	${industry.id}_secondary_close_random;
+}
+
+<!--! Parameter lets player choose whether to allow secondary closure at all -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_check_secondary_closure, allow_close_secondary) {
+	1..255: ${industry.id}_secondary_had_produced_check;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+
