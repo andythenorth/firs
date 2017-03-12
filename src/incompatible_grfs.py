@@ -9,13 +9,7 @@ class DwordGrfID(object):
         self.grfid_as_dword = grfid # keep the grfid around in case it's wanted for docs etc (as yet unknown)
         # split to bytes
         split = [self.grfid_as_dword[i:i+2] for i in range(0, len(self.grfid_as_dword), 2)]
-        result = []
-        for byte in split:
-            result.append(chr(int(byte,16)))  # convert the char from the byte in base 16
-        joined = repr("".join(result)) # call repr() on the result to get the literal string for nml
-        no_quotes_for_nml = ''.join(joined.split("'"))
-        no_x_chars_for_nml = ''.join(no_quotes_for_nml.split("x"))
-        self.grfid = no_x_chars_for_nml
+        self.grfid = '\\' + '\\'.join(split) # note the leading '\' that nml requires (escaped as double \\ for python)
 
 class LiteralGrfID(object):
     """
@@ -23,6 +17,7 @@ class LiteralGrfID(object):
         but most grfids are found in the wild as dwords, in which case it's simpler to use the class for dword grfids instead ;)
     """
     def __init__(self, grfid):
+        # grfid should be passed using r"literal", to avoid python interpreting \ chars as escapes
         self.grfid = grfid
 
 
@@ -39,9 +34,7 @@ class IncompatibleGRF(object):
 
 # add incompatible grfs here (note that some properties are optional, allowing simple or extended checks)
 
-#IncompatibleGRF(DwordGrfID("F1250005"), "FIRS v1")
-IncompatibleGRF(DwordGrfID("45480101"), "CETS")
-
+IncompatibleGRF(DwordGrfID("F1250005"), "FIRS v1")
 IncompatibleGRF(LiteralGrfID(r"Meo\81"), "New Cargos")
 IncompatibleGRF(LiteralGrfID(r"Meo\82"), "New Cargos Petrol + Tourists")
 IncompatibleGRF(LiteralGrfID(r"Meo\91"), "ECS Town VectoLiteralGrfID(r")
