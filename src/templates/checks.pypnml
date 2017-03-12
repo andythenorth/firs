@@ -6,76 +6,18 @@ if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(1, 6, 
 	exit;
 }
 
-#define INCOMPATIBLE_GRF(grfid, name) \
-if (grf_future_status(grfid)) {\
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET, name));\
-}
+<tal:incompatible_grfs repeat="incompatible_grf incompatible_grfs">
+    if (grf_future_status("${incompatible_grf.grfid}")) {
+        error(FATAL, string(STR_ERR_INCOMPATIBLE_SET, "${incompatible_grf.grfname}"));
+    }
+</tal:incompatible_grfs>
 
-INCOMPATIBLE_GRF("Meo\81", "New Cargos")
 
-INCOMPATIBLE_GRF("Meo\82", "New Cargos Petrol + Tourists")
-
-INCOMPATIBLE_GRF("Meo\91", "ECS Town Vector")
-
-INCOMPATIBLE_GRF("Meo\92", "ECS Basic Vector")
-
-INCOMPATIBLE_GRF("Meo\93", "ECS Chemical Vector")
-
-INCOMPATIBLE_GRF("Meo\94", "ECS Machinery Vector")
-
-INCOMPATIBLE_GRF("Meo\95", "ECS Wood Vector")
-
-INCOMPATIBLE_GRF("Meo\96", "ECS Construction Vector")
-
-INCOMPATIBLE_GRF("Meo\97", "ECS Agricultural Vector")
-
-INCOMPATIBLE_GRF("Meo\98", "ECS Basic for Arctic")
-
-INCOMPATIBLE_GRF("Meo\99", "ECS Basic for Tropic")
-
-INCOMPATIBLE_GRF("Meo\9A", "ECS Machinery for Tropic")
-
-INCOMPATIBLE_GRF("Meo\9B", "ECS Construction Vector by Pikkabird")
-
-INCOMPATIBLE_GRF("Meo\9C", "ECS Chemical Vector II")
-
-INCOMPATIBLE_GRF("\f1\25\00\05", "FIRS v1")
-
-INCOMPATIBLE_GRF("SK\05\01", "Luukland Citybuilder")
-
-INCOMPATIBLE_GRF("JS\0A\02", "Luukland Citybuilder")
-
-INCOMPATIBLE_GRF("JS\0A\03", "Luukland Citybuilder")
-
-INCOMPATIBLE_GRF("JS\0A\04", "Luukland Citybuilder")
-
-INCOMPATIBLE_GRF("JS\0A\05", "Luukland Citybuilder")
-
-INCOMPATIBLE_GRF("EX\01\02", "Ex Citybuilder")
-
-INCOMPATIBLE_GRF("EX\01\03", "Ex Citybuilder")
-
-INCOMPATIBLE_GRF("DD\06\01", "UKRS Industries")
-
-INCOMPATIBLE_GRF("frMI", "Manual Industries")
-
-INCOMPATIBLE_GRF("SLTU", "Tourist Set")
-
-INCOMPATIBLE_GRF("SZ\13D", "Oil well decrease neutralizer")
-
-INCOMPATIBLE_GRF("EH\01\01", "Experts hard industries")
-
-INCOMPATIBLE_GRF("DD\06\03", "UKRS Brick Chain")
-
-INCOMPATIBLE_GRF("DD\06\02", "Pikka Basic Industries")
-
-INCOMPATIBLE_GRF("mb\08\00", "NewCargos by Michael Blunck")
-
+/* this one might not survive as artic-only
 if (climate == CLIMATE_ARCTIC) {
-	INCOMPATIBLE_GRF("mb\07\00", "Alpine Climate")
+	INCOMPATIBLE_GRF("mb\07\00", "Alpine Climate");
 }
-
-INCOMPATIBLE_GRF("AL\01\01", "Nearby Station Names")
+*/
 
 if (grf_future_status("MG\08\00", "\FF\FF\FF\00")) {
 	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET, "Lumber Mill"));

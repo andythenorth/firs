@@ -18,6 +18,7 @@ from time import time
 
 import global_constants
 import utils
+from incompatible_grfs import incompatible_grfs
 import firs
 registered_cargos = firs.registered_cargos
 registered_industries = firs.registered_industries
@@ -38,12 +39,13 @@ repo_vars = utils.get_repo_vars(sys)
 def render_header_item_nml(header_item):
     template = templates[header_item]
     result = utils.unescape_chameleon_output(template(registered_industries=registered_industries,
-                                                              registered_cargos=registered_cargos,
-                                                              economies=registered_economies,
-                                                              global_constants=global_constants,
-                                                              repo_vars=repo_vars,
-                                                              utils=utils,
-                                                              sys=sys))
+                                                      registered_cargos=registered_cargos,
+                                                      economies=registered_economies,
+                                                      incompatible_grfs=incompatible_grfs,
+                                                      global_constants=global_constants,
+                                                      repo_vars=repo_vars,
+                                                      utils=utils,
+                                                      sys=sys))
     # write the nml per vehicle to disk, it aids debugging
     # ! clunky split to get rid of the extension - temporary artefact of migrating away from CPP
     header_item_name = header_item.split('.')[0]
