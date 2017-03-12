@@ -58,7 +58,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_4, 28) {
 
 <tal:include metal:use-macro="load: availability.pynml" />
 
-<tal:include metal:use-macro="load: industry_properties.pynml" />
+<tal:include metal:use-macro="load: properties_industry.pynml" />
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {

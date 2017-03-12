@@ -88,7 +88,7 @@ switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [STORE_TEMP(((population
 }
 
 
-<tal:include metal:use-macro="load: industry_properties.pynml" />
+<tal:include metal:use-macro="load: properties_industry.pynml" />
 
 <!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
 <tal:build_economies repeat="economy economies">

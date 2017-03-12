@@ -116,7 +116,7 @@ item(FEAT_INDUSTRYTILES, oil_wells_tile_building, ${global_constants.tile_numeri
 
 <tal:include metal:use-macro="load: availability.pynml" />
 
-<tal:include metal:use-macro="load: industry_properties.pynml" />
+<tal:include metal:use-macro="load: properties_industry.pynml" />
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {

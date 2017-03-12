@@ -22,7 +22,7 @@
 
 <tal:include metal:use-macro="load: tile_animation_switches.pynml" />
 
-<tal:include metal:use-macro="load: tile_properties.pynml" />
+<tal:include metal:use-macro="load: properties_tile.pynml" />
 
 
 /* *************************************************
@@ -36,7 +36,7 @@
 <tal:include define="location_checks_industry load: location_check_macros_industry.pynml"
              metal:use-macro="location_checks_industry.macros['render_tree']" />
 
-<tal:include metal:use-macro="load: industry_properties.pynml" />
+<tal:include metal:use-macro="load: properties_industry.pynml" />
 
 <!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
 <tal:build_economies repeat="economy economies">
