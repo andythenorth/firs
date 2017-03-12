@@ -22,7 +22,7 @@ CARGO_SOURCES = $(wildcard src/cargos/[a-z]*.py)
 ECONOMY_SOURCES = $(wildcard src/economies/[a-z]*.py)
 TEMPLATES = $(wildcard src/templates/*)
 CONSTANTS = src/global_constants.py
-MODULES = src/cargo.py src/economy.py src/firs.py src/industry.py src/render_pnml.py src/utils.py
+MODULES = src/cargo.py src/economy.py src/firs.py src/industry.py src/render_pnml.py src/utils.py src/incompatible_grfs.py
 
 generated/firs.pnml: $(INDUSTRY_SOURCES) $(CARGO_SOURCES) $(ECONOMY_SOURCES) $(TEMPLATES) $(CONSTANTS) $(MODULES)
 	$(_E) [GENERATE PNML]
