@@ -67,7 +67,7 @@ TILE_ALLOW_PLAYER         (tile_location_check, ${industry.id}_tile_nearby_indus
 <tal:include define="location_checks_industry load: location_check_macros_industry.pynml"
              metal:use-macro="location_checks_industry.macros['render_tree']" />
 
-<tal:include metal:use-macro="load: check_availability.pynml" />
+<tal:include metal:use-macro="load: availability.pynml" />
 
 /* We have a special production code here:
  * Production depends on the town population: population / 12 is output

@@ -114,7 +114,7 @@ item(FEAT_INDUSTRYTILES, oil_wells_tile_building, ${global_constants.tile_numeri
 <tal:include metal:use-macro="load: produce_primary.pypnml" />
 <tal:include metal:use-macro="load: check_primary_supplies_delivered.pypnml" />
 
-<tal:include metal:use-macro="load: check_availability.pynml" />
+<tal:include metal:use-macro="load: availability.pynml" />
 
 <tal:include metal:use-macro="load: industry_properties.pynml" />
 

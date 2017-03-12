@@ -56,7 +56,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_4, 28) {
 
 <tal:include metal:use-macro="load: check_primary_supplies_delivered.pypnml" />
 
-<tal:include metal:use-macro="load: check_availability.pynml" />
+<tal:include metal:use-macro="load: availability.pynml" />
 
 <tal:include metal:use-macro="load: industry_properties.pynml" />
 
