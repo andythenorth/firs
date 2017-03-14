@@ -155,10 +155,9 @@ class TileLocationChecks(object):
 
 class TileLocationCheck(object):
     """ Sparse class to base TileLocationCheck subclasses on """
-
     @property
     def macro(self):
-        print('TileLocationCheck.macro not implemented yet')
+        return templates["location_check_macros_tile.pynml"].macros[self.macro_name]
 
 
 class TileLocationCheckDisallowSlopes(TileLocationCheck):
@@ -244,10 +243,8 @@ class TileLocationCheckRequireSea(TileLocationCheck):
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = None
-        self.legacy = True
-
-    def render(self):
-        return 'TILE_REQUIRE_SEA(' + self.switch_entry_point + ', ' + self.switch_result + ')'
+        self.macro_name = 'require_sea_tile'
+        self.legacy = False
 
 
 class TileLocationCheckRequireSlope(TileLocationCheck):

@@ -16,7 +16,7 @@
 
         graphics {
     		<tal:tile_check_location condition="len(tile.location_checks.get_render_tree(tile.id, industry.id)) > 0">
-    		    tile_check: ${industry.id}_${tile.id}_lc_0;
+    		    tile_check: ${tile.location_checks.get_render_tree(tile.id, industry.id)[-1].switch_entry_point};
             </tal:tile_check_location>
             <tal:anim_next_frame condition="tile.custom_animation_next_frame">
                 anim_next_frame: return ${tile.custom_animation_next_frame};
