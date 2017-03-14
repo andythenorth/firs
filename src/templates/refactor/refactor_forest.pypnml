@@ -12,223 +12,222 @@
  * tile_trees
  * *************/
 
-#define TREE_TEMPERATE_A 1593
-#define TREE_TEMPERATE_B 1586
+<tal:spritelayout define="tree_temperate_a 1593; tree_temperate_b 1586">
+    SLOPE_AWARE_SPRITELAYOUT(${industry.id}_tree_tile_layout)
+        building {
+            sprite: ${tree_temperate_b};
+            xoffset: 2;
+            yoffset: 2;
+            xextent: 13;
+            yextent: 13;
+            hide_sprite: climate != CLIMATE_TEMPERATE;
+        }
+        building {
+            sprite: ${tree_temperate_a};
+            xoffset: 8;
+            yoffset: 2;
+            xextent: 7;
+            yextent: 13;
+            hide_sprite: climate != CLIMATE_TEMPERATE;
+        }
+        building {
+            sprite: ${tree_temperate_a};
+            yoffset: 7;
+            yextent: 8;
+            hide_sprite: climate != CLIMATE_TEMPERATE;
+        }
+        building {
+            sprite: ${tree_temperate_b};
+            xoffset: 8;
+            yoffset: 7;
+            xextent: 7;
+            yextent: 8;
+            hide_sprite: climate != CLIMATE_TEMPERATE;
+        }
 
-SLOPE_AWARE_SPRITELAYOUT(${industry.id}_tree_tile_layout)
-	building {
-		sprite: TREE_TEMPERATE_B;
-		xoffset: 2;
-		yoffset: 2;
-		xextent: 13;
-		yextent: 13;
-		hide_sprite: climate != CLIMATE_TEMPERATE;
-	}
-	building {
-		sprite: TREE_TEMPERATE_A;
-		xoffset: 8;
-		yoffset: 2;
-		xextent: 7;
-		yextent: 13;
-		hide_sprite: climate != CLIMATE_TEMPERATE;
-	}
-	building {
-		sprite: TREE_TEMPERATE_A;
-		yoffset: 7;
-		yextent: 8;
-		hide_sprite: climate != CLIMATE_TEMPERATE;
-	}
-	building {
-		sprite: TREE_TEMPERATE_B;
-		xoffset: 8;
-		yoffset: 7;
-		xextent: 7;
-		yextent: 8;
-		hide_sprite: climate != CLIMATE_TEMPERATE;
-	}
+        building {
+            sprite: 1817;
+            xoffset: 2;
+            yoffset: 2;
+            xextent: 13;
+            yextent: 13;
+            hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) < snowline_height;
+        }
+        building {
+            sprite: 1775;
+            xoffset: 8;
+            yoffset: 2;
+            xextent: 7;
+            yextent: 13;
+            hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) < snowline_height;
+        }
+        building {
+            sprite: 1817;
+            yoffset: 7;
+            yextent: 8;
+            hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) < snowline_height;
+        }
+        building {
+            sprite: 1775;
+            xoffset: 8;
+            yoffset: 7;
+            xextent: 7;
+            yextent: 8;
+            hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) < snowline_height;
+        }
 
-	building {
-		sprite: 1817;
-		xoffset: 2;
-		yoffset: 2;
-		xextent: 13;
-		yextent: 13;
-		hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) < snowline_height;
-	}
-	building {
-		sprite: 1775;
-		xoffset: 8;
-		yoffset: 2;
-		xextent: 7;
-		yextent: 13;
-		hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) < snowline_height;
-	}
-	building {
-		sprite: 1817;
-		yoffset: 7;
-		yextent: 8;
-		hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) < snowline_height;
-	}
-	building {
-		sprite: 1775;
-		xoffset: 8;
-		yoffset: 7;
-		xextent: 7;
-		yextent: 8;
-		hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) < snowline_height;
-	}
+        building {
+            sprite: 1760;
+            xoffset: 2;
+            yoffset: 2;
+            xextent: 13;
+            yextent: 13;
+            hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) >= snowline_height;
+        }
+        building {
+            sprite: 1719;
+            xoffset: 8;
+            yoffset: 2;
+            xextent: 7;
+            yextent: 13;
+            hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) >= snowline_height;
+        }
+        building {
+            sprite: 1760;
+            yoffset: 7;
+            yextent: 8;
+            hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) >= snowline_height;
+        }
+        building {
+            sprite: 1719;
+            xoffset: 8;
+            yoffset: 7;
+            xextent: 7;
+            yextent: 8;
+            hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) >= snowline_height;
+        }
 
-	building {
-		sprite: 1760;
-		xoffset: 2;
-		yoffset: 2;
-		xextent: 13;
-		yextent: 13;
-		hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) >= snowline_height;
-	}
-	building {
-		sprite: 1719;
-		xoffset: 8;
-		yoffset: 2;
-		xextent: 7;
-		yextent: 13;
-		hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) >= snowline_height;
-	}
-	building {
-		sprite: 1760;
-		yoffset: 7;
-		yextent: 8;
-		hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) >= snowline_height;
-	}
-	building {
-		sprite: 1719;
-		xoffset: 8;
-		yoffset: 7;
-		xextent: 7;
-		yextent: 8;
-		hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) >= snowline_height;
-	}
+        building {
+            sprite: 1915;
+            xoffset: 2;
+            yoffset: 2;
+            xextent: 13;
+            yextent: 13;
+            hide_sprite: climate != CLIMATE_TROPICAL || nearby_tile_terrain_type(0, 0) != TILETYPE_DESERT;
+        }
+        building {
+            sprite: 1923;
+            xoffset: 8;
+            yoffset: 2;
+            xextent: 7;
+            yextent: 13;
+            hide_sprite: climate != CLIMATE_TROPICAL || nearby_tile_terrain_type(0, 0) != TILETYPE_DESERT;
+        }
+        building {
+            sprite: 1923;
+            yoffset: 7;
+            yextent: 8;
+            hide_sprite: climate != CLIMATE_TROPICAL || nearby_tile_terrain_type(0, 0) != TILETYPE_DESERT;
+        }
+        building {
+            sprite: 1915;
+            xoffset: 8;
+            yoffset: 7;
+            xextent: 7;
+            yextent: 8;
+            hide_sprite: climate != CLIMATE_TROPICAL || nearby_tile_terrain_type(0, 0) != TILETYPE_DESERT;
+        }
 
-	building {
-		sprite: 1915;
-		xoffset: 2;
-		yoffset: 2;
-		xextent: 13;
-		yextent: 13;
-		hide_sprite: climate != CLIMATE_TROPICAL || nearby_tile_terrain_type(0, 0) != TILETYPE_DESERT;
-	}
-	building {
-		sprite: 1923;
-		xoffset: 8;
-		yoffset: 2;
-		xextent: 7;
-		yextent: 13;
-		hide_sprite: climate != CLIMATE_TROPICAL || nearby_tile_terrain_type(0, 0) != TILETYPE_DESERT;
-	}
-	building {
-		sprite: 1923;
-		yoffset: 7;
-		yextent: 8;
-		hide_sprite: climate != CLIMATE_TROPICAL || nearby_tile_terrain_type(0, 0) != TILETYPE_DESERT;
-	}
-	building {
-		sprite: 1915;
-		xoffset: 8;
-		yoffset: 7;
-		xextent: 7;
-		yextent: 8;
-		hide_sprite: climate != CLIMATE_TROPICAL || nearby_tile_terrain_type(0, 0) != TILETYPE_DESERT;
-	}
+        building {
+            sprite: 1845;
+            xoffset: 2;
+            yoffset: 2;
+            xextent: 13;
+            yextent: 13;
+            hide_sprite: climate != CLIMATE_TROPICAL || (climate == CLIMATE_TROPICAL && nearby_tile_terrain_type(0, 0) == TILETYPE_DESERT);
+        }
+        building {
+            sprite: 1866;
+            xoffset: 8;
+            yoffset: 2;
+            xextent: 7;
+            yextent: 13;
+            hide_sprite: climate != CLIMATE_TROPICAL || (climate == CLIMATE_TROPICAL && nearby_tile_terrain_type(0, 0) == TILETYPE_DESERT);
+        }
+        building {
+            sprite: 1845;
+            yoffset: 7;
+            yextent: 8;
+            hide_sprite: climate != CLIMATE_TROPICAL || (climate == CLIMATE_TROPICAL && nearby_tile_terrain_type(0, 0) == TILETYPE_DESERT);
+        }
+        building {
+            sprite: 1866;
+            xoffset: 8;
+            yoffset: 7;
+            xextent: 7;
+            yextent: 8;
+            hide_sprite: climate != CLIMATE_TROPICAL || (climate == CLIMATE_TROPICAL && nearby_tile_terrain_type(0, 0) == TILETYPE_DESERT);
+        }
+    }
 
-	building {
-		sprite: 1845;
-		xoffset: 2;
-		yoffset: 2;
-		xextent: 13;
-		yextent: 13;
-		hide_sprite: climate != CLIMATE_TROPICAL || (climate == CLIMATE_TROPICAL && nearby_tile_terrain_type(0, 0) == TILETYPE_DESERT);
-	}
-	building {
-		sprite: 1866;
-		xoffset: 8;
-		yoffset: 2;
-		xextent: 7;
-		yextent: 13;
-		hide_sprite: climate != CLIMATE_TROPICAL || (climate == CLIMATE_TROPICAL && nearby_tile_terrain_type(0, 0) == TILETYPE_DESERT);
-	}
-	building {
-		sprite: 1845;
-		yoffset: 7;
-		yextent: 8;
-		hide_sprite: climate != CLIMATE_TROPICAL || (climate == CLIMATE_TROPICAL && nearby_tile_terrain_type(0, 0) == TILETYPE_DESERT);
-	}
-	building {
-		sprite: 1866;
-		xoffset: 8;
-		yoffset: 7;
-		xextent: 7;
-		yextent: 8;
-		hide_sprite: climate != CLIMATE_TROPICAL || (climate == CLIMATE_TROPICAL && nearby_tile_terrain_type(0, 0) == TILETYPE_DESERT);
-	}
-}
+    /* **************
+     * tile_equipment
+     * *************/
 
-/* **************
- * tile_equipment
- * *************/
+    spriteset(spriteset_crane, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(10, 10, 78, -45) }
+    spriteset(spriteset_bulldozer, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(80, 10, 78, -45) }
+    spriteset(spriteset_tracks_snowtile, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(220, 10, 78, -45) }
 
-spriteset(spriteset_crane, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(10, 10, 78, -45) }
-spriteset(spriteset_bulldozer, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(80, 10, 78, -45) }
-spriteset(spriteset_tracks_snowtile, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(220, 10, 78, -45) }
+    spritelayout ${industry.id}_tile_equipment_nonsnow_spritelayout {
+        ground {
+            sprite: 2022;
+        }
+        building {
+            sprite: spriteset_crane;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: 0;
+            xextent: 7;
+            yextent: 7;
+            zextent: 7;
+            always_draw: 1;
+        }
+        building {
+            sprite: spriteset_bulldozer;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: 0;
+            xextent: 7;
+            yextent: 7;
+            zextent: 7;
+            always_draw: 1;
+        }
+    }
 
-spritelayout ${industry.id}_tile_equipment_nonsnow_spritelayout {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_crane;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		xextent: 7;
-		yextent: 7;
-		zextent: 7;
-		always_draw: 1;
-	}
-	building {
-		sprite: spriteset_bulldozer;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		xextent: 7;
-		yextent: 7;
-		zextent: 7;
-		always_draw: 1;
-	}
-}
-
-spritelayout ${industry.id}_tile_equipment_snow_spritelayout {
-	ground {
-		sprite: spriteset_tracks_snowtile;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_crane;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		xextent: 7;
-		yextent: 7;
-		zextent: 7;
-		always_draw: 1;
-	}
-	building {
-		sprite: spriteset_bulldozer;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		xextent: 7;
-		yextent: 7;
-		zextent: 7;
-		always_draw: 1;
-	}
-}
+    spritelayout ${industry.id}_tile_equipment_snow_spritelayout {
+        ground {
+            sprite: spriteset_tracks_snowtile;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: 0;
+        }
+        building {
+            sprite: spriteset_crane;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: 0;
+            xextent: 7;
+            yextent: 7;
+            zextent: 7;
+            always_draw: 1;
+        }
+        building {
+            sprite: spriteset_bulldozer;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: 0;
+            xextent: 7;
+            yextent: 7;
+            zextent: 7;
+            always_draw: 1;
+        }
+    }
+</tal:spritelayout>
 
 <!--! !! this was a hax migration when removing CPP from tile location checks, as the spritelayouts chain was repurposing a
       tile location check switch with parameters.
