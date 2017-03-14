@@ -5,15 +5,13 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-// possibly legacy, only in limited use, ground awareness can probably be folded into standard spritelayouts?
-#include "../src/templates/spritelayouts_groundaware.pnml"
-
 /* **************
  * tile_trees
  * *************/
 
 <tal:spritelayout define="tree_temperate_a 1593; tree_temperate_b 1586">
-    SLOPE_AWARE_SPRITELAYOUT(${industry.id}_tree_tile_layout)
+    // ground awareness of spritelayout can probably be folded into standard spritelayouts? (only forest uses that template)
+    <tal:include metal:use-macro="load: spritelayouts_groundaware.pynml" />
         building {
             sprite: ${tree_temperate_b};
             xoffset: 2;
@@ -226,7 +224,7 @@
             zextent: 7;
             always_draw: 1;
         }
-    }
+    } <!--! note orphaned trailing bracket due to way spritelayouts_groundaware template is constructed -->
 </tal:spritelayout>
 
 <!--! !! this was a hax migration when removing CPP from tile location checks, as the spritelayouts chain was repurposing a
