@@ -91,7 +91,6 @@
 
 <metal:require_houses_nearby metal:define-macro="require_houses_nearby">
     <!--!  Check whether an industry *tile* is within a certain distance of houses -->
-    #define CHECK_HOUSES_NEARBY(name, x, y, next)
     switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}, nearby_tile_class(${location_check.x}, ${location_check.y})) {
         <!--! 'ALLOW' looks dubious below, usually we return disallow or 'next' switch; in a checks tree this could lead to allowing building when other checks would want to forbid it -->
         TILE_CLASS_HOUSE: return CB_RESULT_LOCATION_ALLOW;

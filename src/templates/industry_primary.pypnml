@@ -5,8 +5,6 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
-
 /* ******************************************************************
  * Definition of the industry tile, its callbacks, and graphics chain
  * ******************************************************************/
@@ -66,5 +64,3 @@
         </tal:industry_on_or_off>
     }
 </tal:build_economies>
-
-#include "../src/templates/undefs.pnml"

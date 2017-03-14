@@ -78,7 +78,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_6, 105) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -89,7 +89,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_7, 106) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -100,7 +100,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_8, 107) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -111,7 +111,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_9, 108) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -122,7 +122,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_10, 109) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -133,7 +133,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_11, 110) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -144,7 +144,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_12, 111) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -155,7 +155,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_13, 112) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -166,7 +166,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_14, 113) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -177,7 +177,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_15, 114) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -188,7 +188,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_16, 115) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -221,5 +221,3 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		colour:                  switch_colour;
 	}
 }
-
-#include "../src/templates/undefs.pnml"
