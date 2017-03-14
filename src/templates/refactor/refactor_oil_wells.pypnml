@@ -6,8 +6,6 @@
  */
 
 
-#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
-
 <tal:include metal:use-macro="load: spritesets.pynml" />
 
 <tal:include metal:use-macro="load: spritelayouts.pynml" />
@@ -19,9 +17,8 @@
  * Definition of the industry tiles and their callbacks
  * ***************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_location_check, ${industry.id}_tile_nearby_industry)
-
+<tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
+             metal:use-macro="location_checks_tile.macros['render_tree']" />
 
 switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_oil_well_stop_anim, animation_frame) {
 	1: return 11; // jump to the 'stop animation cycle' when triggered and currently animated
@@ -76,7 +73,7 @@ item(FEAT_INDUSTRYTILES, oil_wells_tile_pump, ${global_constants.tile_numeric_id
 		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
 	}
 	graphics {
-		tile_check:         ${industry.id}_tile_location_check;
+		tile_check:         ${industry.id}_tile_1_lc_0;
 		anim_control:       ${industry.id}_tile_oil_well_random_trigger;
 		anim_next_frame:    ${industry.id}_tile_oil_well_anim_next_frame;
 		random_trigger:     ${industry.id}_tile_oil_well_random_trigger;
@@ -91,7 +88,7 @@ item(FEAT_INDUSTRYTILES, oil_wells_tile_building, ${global_constants.tile_numeri
 		land_shape_flags: 0;
 	}
 	graphics {
-		tile_check:   ${industry.id}_tile_location_check;
+		tile_check:   ${industry.id}_tile_2_lc_0;
 		${industry.id}_tile_fences;
 	}
 }
@@ -132,4 +129,3 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		colour:                  switch_colour;
 	}
 }
-#include "../src/templates/undefs.pnml"

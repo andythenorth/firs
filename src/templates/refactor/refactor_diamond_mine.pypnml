@@ -10,15 +10,12 @@
     When new sprites are ready, convert to primary template and bin this.
 -->
 
-#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
-
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_player_check, ${industry.id}_tile_nearby_industry)
-TILE_DISALLOW_SLOPES      (tile_location_check, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_player_check)
+<tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
+             metal:use-macro="location_checks_tile.macros['render_tree']" />
 
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, 91) {
 	property {
@@ -27,7 +24,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, 91) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: ${industry.id}_tile_location_check;
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -38,7 +35,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, 92) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: ${industry.id}_tile_location_check;
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -49,7 +46,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_3, 93) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: ${industry.id}_tile_location_check;
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -60,7 +57,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_4, 94) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: ${industry.id}_tile_location_check;
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -71,7 +68,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_5, 95) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: ${industry.id}_tile_location_check;
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -82,7 +79,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_6, 96) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: ${industry.id}_tile_location_check;
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -93,7 +90,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_7, 97) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: ${industry.id}_tile_location_check;
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -104,7 +101,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_8, 98) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: ${industry.id}_tile_location_check;
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -115,7 +112,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_9, 99) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: ${industry.id}_tile_location_check;
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
@@ -148,5 +145,3 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		colour:                  switch_colour;
 	}
 }
-
-#include "../src/templates/undefs.pnml"

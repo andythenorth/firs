@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryOrganic, IndustryLocationChecks
+from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryOrganic(id='vineyard',
                     map_colour='86',
@@ -24,6 +24,23 @@ industry = IndustryPrimaryOrganic(id='vineyard',
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[9, 9]'
+
+
+industry.add_tile(id='vineyard_tile_1',
+                  location_checks=TileLocationChecks(disallow_above_snowline=True,
+                                                     disallow_desert=True,
+                                                     disallow_industry_adjacent=True))
+industry.add_tile(id='vineyard_tile_2', # house
+                  location_checks=TileLocationChecks(disallow_above_snowline=True,
+                                                     disallow_desert=True,
+                                                     disallow_industry_adjacent=True))
+# HAX - this additional tile is only used because I wanted to avoid layout checks
+# house + shed can share same tile once refactore to standard layout methods
+industry.add_tile(id='vineyard_tile_3', # shed
+                  location_checks=TileLocationChecks(disallow_above_snowline=True,
+                                                     disallow_desert=True,
+                                                     disallow_industry_adjacent=True))
+
 
 building_0 = industry.add_sprite(
     sprite_number = 1633,

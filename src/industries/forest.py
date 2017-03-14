@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryOrganic, IndustryLocationChecks
+from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryOrganic(id='forest',
                     prob_in_game='3',
@@ -29,6 +29,15 @@ industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['WOOD', 'PULP']
 industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[18, 18]'
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
+
+industry.add_tile(id='forest_tile_1',
+                  location_checks=TileLocationChecks(disallow_desert=True,
+                                                     disallow_coast=True,
+                                                     disallow_industry_adjacent=True))
+industry.add_tile(id='forest_tile_2',
+                  location_checks=TileLocationChecks(disallow_desert=True,
+                                                     disallow_coast=True,
+                                                     disallow_industry_adjacent=True))
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 

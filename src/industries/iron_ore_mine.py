@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryExtractive, IndustryLocationChecks
+from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryExtractive(id='iron_ore_mine',
                     map_colour='55',
@@ -26,6 +26,11 @@ industry = IndustryPrimaryExtractive(id='iron_ore_mine',
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['STEELTOWN'].enabled = True
+
+# !! legacy template has 9 tiles but the industry only needs one (added already to make tile location checks work as hax)
+industry.add_tile(id='iron_ore_mine_tile_1',
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     disallow_industry_adjacent=True))
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 

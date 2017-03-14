@@ -5,8 +5,6 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) vineyard_ ## __VA_ARGS__
-
 <tal:include metal:use-macro="load: spritelayouts.pynml" />
 
 switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_616, nearby_tile_slope(0,0)) {
@@ -251,10 +249,8 @@ spritelayout ${industry.id}_tile_shed_spritelayout {
  * Definition of the industry tiles and their callbacks
  * ***************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(tile_plantation_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_plantation_player_check, ${industry.id}_tile_plantation_nearby_industry)
-TILE_DISALLOW_TERRAIN     (tile_plantation_desert_check, TILETYPE_DESERT, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_plantation_player_check)
-TILE_CHECK_HEIGHT         (tile_plantation_location_check, 0, snowline_height, ${industry.id}_tile_plantation_desert_check, return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
+<tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
+             metal:use-macro="location_checks_tile.macros['render_tree']" />
 
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile_plantation, ${global_constants.tile_numeric_ids['vineyard_tile_1']}) {
 	property {
@@ -265,16 +261,10 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_plantation, ${global_constants.tile
 	graphics {
 		foundations: return CB_RESULT_NO_FOUNDATIONS;
 		autoslope:   return CB_RESULT_NO_AUTOSLOPE;
-		tile_check:  ${industry.id}_tile_plantation_location_check;
+		tile_check:  ${industry.id}_tile_1_lc_0;
 		${industry.id}_tile_plantation_spritelayout;
 	}
 }
-
-
-TILE_DISALLOW_NEARBY_CLASS(tile_house_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_house_player_check, ${industry.id}_tile_house_nearby_industry)
-TILE_DISALLOW_TERRAIN     (tile_house_desert_check, TILETYPE_DESERT, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_house_player_check)
-TILE_CHECK_HEIGHT         (tile_house_location_check, 0, snowline_height, ${industry.id}_tile_house_desert_check, return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
 
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile_house, ${global_constants.tile_numeric_ids['vineyard_tile_2']}) {
 	property {
@@ -284,7 +274,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_house, ${global_constants.tile_nume
 	}
 	graphics {
 		autoslope:  return CB_RESULT_AUTOSLOPE;
-		tile_check: ${industry.id}_tile_house_location_check;
+		tile_check: ${industry.id}_tile_2_lc_0;
 		${industry.id}_tile_house_spritelayout;
 	}
 }
@@ -298,7 +288,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_shed, ${global_constants.tile_numer
 	}
 	graphics {
 		autoslope:  return CB_RESULT_AUTOSLOPE;
-		tile_check: ${industry.id}_tile_house_location_check;
+		tile_check: ${industry.id}_tile_3_lc_0;
 		${industry.id}_tile_shed_spritelayout;
 	}
 }
@@ -416,5 +406,3 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		colour:                  switch_colour;
 	}
 }
-
-#include "../src/templates/undefs.pnml"

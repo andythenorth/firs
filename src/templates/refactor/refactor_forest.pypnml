@@ -5,8 +5,6 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
-
 // possibly legacy, only in limited use, ground awareness can probably be folded into standard spritelayouts?
 #include "../src/templates/spritelayouts_groundaware.pnml"
 
@@ -17,7 +15,7 @@
 #define TREE_TEMPERATE_A 1593
 #define TREE_TEMPERATE_B 1586
 
-SLOPE_AWARE_SPRITELAYOUT(THIS_ID(tree_tile_layout))
+SLOPE_AWARE_SPRITELAYOUT(${industry.id}_tree_tile_layout)
 	building {
 		sprite: TREE_TEMPERATE_B;
 		xoffset: 2;
@@ -182,7 +180,7 @@ spriteset(spriteset_crane, "src/graphics/industries/forest_1.png") { tmpl_buildi
 spriteset(spriteset_bulldozer, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(80, 10, 78, -45) }
 spriteset(spriteset_tracks_snowtile, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(220, 10, 78, -45) }
 
-spritelayout THIS_ID(tile_equipment_nonsnow_spritelayout) {
+spritelayout ${industry.id}_tile_equipment_nonsnow_spritelayout {
 	ground {
 		sprite: 2022;
 	}
@@ -206,7 +204,7 @@ spritelayout THIS_ID(tile_equipment_nonsnow_spritelayout) {
 	}
 }
 
-spritelayout THIS_ID(tile_equipment_snow_spritelayout) {
+spritelayout ${industry.id}_tile_equipment_snow_spritelayout {
 	ground {
 		sprite: spriteset_tracks_snowtile;
 		recolour_mode: RECOLOUR_REMAP;
@@ -232,21 +230,28 @@ spritelayout THIS_ID(tile_equipment_snow_spritelayout) {
 	}
 }
 
-TILE_CHECK_HEIGHT(tile_equipment_height_check,  0, snowline_height,  THIS_ID(tile_equipment_nonsnow_spritelayout), THIS_ID(tile_equipment_snow_spritelayout))
+<!--! !! this was a hax migration when removing CPP from tile location checks, as the spritelayouts chain was repurposing a
+      tile location check switch with parameters.
+      Not sure it's actually useful, snow sprite switching is handled in standardised spritelayout (or will be moved to a graphics chain switch)
+      Think it's just a legacy artefact of CPP templating -->
+<!--!  Check that the tile is within a certain height range (repurposeable for multiple checks, e.g. above or below snowline etc)
+       uses more efficient code for (nearby_tile_height(0,0) <= maxh) && (nearby_tile_height(0,0) >= minh) -->
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_equipment_height_check, UCMP(nearby_tile_height(0, 0) - 0, snowline_height - 0)) {
+    0..1: ${industry.id}_tile_equipment_nonsnow_spritelayout;
+    ${industry.id}_tile_equipment_snow_spritelayout;
+}
 
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_equipment_spritelayout), climate) {
-	CLIMATE_ARCTIC: THIS_ID(tile_equipment_height_check);
-	THIS_ID(tile_equipment_nonsnow_spritelayout);
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_equipment_spritelayout, climate) {
+	CLIMATE_ARCTIC: ${industry.id}_tile_equipment_height_check;
+	${industry.id}_tile_equipment_nonsnow_spritelayout;
 }
 
 /* ****************************************************
  * Definition of the industry tiles and their callbacks
  * ***************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(tile_trees_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,      return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_trees_player_check,                                                                 THIS_ID(tile_trees_nearby_industry))
-TILE_CHECK_WATER          (tile_trees_water_check,                          string(STR_ERR_LOCATION_NOT_ON_WATER),  THIS_ID(tile_trees_player_check))
-TILE_DISALLOW_TERRAIN     (tile_trees_location_check,  TILETYPE_DESERT,     string(STR_ERR_LOCATION_NOT_IN_DESERT), THIS_ID(tile_trees_water_check))
+<tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
+             metal:use-macro="location_checks_tile.macros['render_tree']" />
 
 item(FEAT_INDUSTRYTILES, tile_trees, ${global_constants.tile_numeric_ids['forest_tile_1']}) {
 	property {
@@ -257,15 +262,10 @@ item(FEAT_INDUSTRYTILES, tile_trees, ${global_constants.tile_numeric_ids['forest
 	graphics {
 		foundations: return CB_RESULT_NO_FOUNDATIONS;
 		autoslope:   return CB_RESULT_NO_AUTOSLOPE;
-		tile_check:  THIS_ID(tile_trees_location_check);
-		THIS_ID(tree_tile_layout);
+		tile_check: ${industry.id}_tile_1_lc_0;
+		${industry.id}_tree_tile_layout;
 	}
 }
-
-
-TILE_DISALLOW_NEARBY_CLASS(tile_equipment_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_equipment_player_check,                                                            THIS_ID(tile_equipment_nearby_industry))
-TILE_CHECK_WATER          (tile_equipment_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_equipment_player_check))
 
 item(FEAT_INDUSTRYTILES, tile_equipment, ${global_constants.tile_numeric_ids['forest_tile_2']}) {
 	property {
@@ -274,8 +274,8 @@ item(FEAT_INDUSTRYTILES, tile_equipment, ${global_constants.tile_numeric_ids['fo
 		land_shape_flags: 0;
 	}
 	graphics {
-		tile_check:   THIS_ID(tile_equipment_location_check);
-		THIS_ID(tile_equipment_spritelayout);
+		tile_check: ${industry.id}_tile_2_lc_0;
+		${industry.id}_tile_equipment_spritelayout;
 	}
 }
 
@@ -350,17 +350,15 @@ tilelayout tilelayout_forest_3 {
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
 		location_check:          ${industry.id}_check_location;
-		produce_256_ticks:       THIS_ID(produce_256_ticks);
-		monthly_prod_change:     THIS_ID(monthly_update);
+		produce_256_ticks:       ${industry.id}_produce_256_ticks;
+		monthly_prod_change:     ${industry.id}_monthly_update;
         random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		build_prod_change:       randomise_primary_production_on_build;
 		extra_text_fund:         return string(STR_FUND_FOREST);
-		extra_text_industry:     THIS_ID(extra_text);
+		extra_text_industry:     ${industry.id}_extra_text;
 		colour:                  switch_colour;
 	}
 }
-
-#include "../src/templates/undefs.pnml"

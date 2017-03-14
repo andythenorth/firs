@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryOrganic, IndustryLocationChecks
+from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryOrganic(id='orchard_piggery',
                     map_colour='86',
@@ -24,6 +24,15 @@ industry = IndustryPrimaryOrganic(id='orchard_piggery',
                     template="refactor/refactor_orchard_piggery.pypnml" )
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+
+industry.add_tile(id='orchard_piggery_tile_1',
+                  location_checks=TileLocationChecks(disallow_above_snowline=True,
+                                                     disallow_desert=True,
+                                                     disallow_industry_adjacent=True))
+industry.add_tile(id='orchard_piggery_tile_2',
+                  location_checks=TileLocationChecks(disallow_above_snowline=True,
+                                                     disallow_desert=True,
+                                                     disallow_industry_adjacent=True))
 
 building_0 = industry.add_sprite(
     sprite_number = 1633,

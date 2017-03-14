@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryExtractive, IndustryLocationChecks
+from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryExtractive(id='diamond_mine',
                     map_colour='69',
@@ -24,5 +24,9 @@ industry = IndustryPrimaryExtractive(id='diamond_mine',
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
-# industry uses layouts and sprites from default game, no custom layouts etc
+# !! legacy template has 9 tiles but the industry only needs one (added already to make tile location checks work as hax)
+industry.add_tile(id='diamond_mine_tile_1',
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     disallow_industry_adjacent=True))
 
+# industry uses layouts and sprites from default game, no custom layouts etc

@@ -27,7 +27,8 @@ industry = IndustryPrimaryTownProducer(id='recycling_depot',
                     fund_cost_multiplier='118',
                     intro_year=1978)
 
-industry.economy_variations['FIRS'].enabled = True
+print('Recycling Depot disabled, and location checks commented out in town producer template due to faff with tile location checks, all needs migrated and re-enabled')
+#industry.economy_variations['FIRS'].enabled = True
 
 industry.add_tile(id='recycling_depot_tile')
 

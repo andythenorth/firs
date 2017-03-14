@@ -10,71 +10,68 @@
     When new sprites are ready, convert to primary template and bin this.
 -->
 
-#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
-
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_player_check, THIS_ID(tile_nearby_industry))
-TILE_DISALLOW_SLOPES      (tile_location_check, CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+<tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
+             metal:use-macro="location_checks_tile.macros['render_tree']" />
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 100) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, 100) {
 	property {
 		substitute: 100;
 		override: 100;
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 101) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, 101) {
 	property {
 		substitute: 101;
 		override: 101;
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 102) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_3, 102) {
 	property {
 		substitute: 102;
 		override: 102;
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 103) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_4, 103) {
 	property {
 		substitute: 103;
 		override: 103;
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 104) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_5, 104) {
 	property {
 		substitute: 104;
 		override: 104;
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_1_lc_0; <!--! all tiles use same location check (industry needs migrating, should just use 1 tile) -->
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 105) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_6, 105) {
 	property {
 		substitute: 105;
 		override: 105;
@@ -85,7 +82,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 105) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 106) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_7, 106) {
 	property {
 		substitute: 106;
 		override: 106;
@@ -96,7 +93,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 106) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_8), 107) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_8, 107) {
 	property {
 		substitute: 107;
 		override: 107;
@@ -107,7 +104,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_8), 107) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_9), 108) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_9, 108) {
 	property {
 		substitute: 108;
 		override: 108;
@@ -118,7 +115,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_9), 108) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_10), 109) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_10, 109) {
 	property {
 		substitute: 109;
 		override: 109;
@@ -129,7 +126,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_10), 109) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_11), 110) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_11, 110) {
 	property {
 		substitute: 110;
 		override: 110;
@@ -140,7 +137,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_11), 110) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_12), 111) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_12, 111) {
 	property {
 		substitute: 111;
 		override: 111;
@@ -151,7 +148,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_12), 111) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_13), 112) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_13, 112) {
 	property {
 		substitute: 112;
 		override: 112;
@@ -162,7 +159,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_13), 112) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_14), 113) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_14, 113) {
 	property {
 		substitute: 113;
 		override: 113;
@@ -173,7 +170,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_14), 113) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_15), 114) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_15, 114) {
 	property {
 		substitute: 114;
 		override: 114;
@@ -184,7 +181,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_15), 114) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_16), 115) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_16, 115) {
 	property {
 		substitute: 115;
 		override: 115;
@@ -213,14 +210,14 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_16), 115) {
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
 		location_check:          ${industry.id}_check_location;
-		produce_256_ticks:       THIS_ID(produce_256_ticks);
-		monthly_prod_change:     THIS_ID(monthly_update);
+		produce_256_ticks:       ${industry.id}_produce_256_ticks;
+		monthly_prod_change:     ${industry.id}_monthly_update;
         random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		build_prod_change:       randomise_primary_production_on_build;
-		extra_text_industry:     THIS_ID(extra_text);
+		extra_text_industry:     ${industry.id}_extra_text;
 		colour:                  switch_colour;
 	}
 }

@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryExtractive, IndustryLocationChecks
+from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryExtractive(id='oil_wells',
                     prob_in_game='6',
@@ -27,8 +27,10 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
-industry.add_tile(id='oil_wells_tile_pump')
-industry.add_tile(id='oil_wells_tile_building')
+industry.add_tile(id='oil_wells_tile_pump',
+                  location_checks=TileLocationChecks(disallow_industry_adjacent=True))
+industry.add_tile(id='oil_wells_tile_building',
+                  location_checks=TileLocationChecks(disallow_industry_adjacent=True))
 
 spriteset_ground_pump = industry.add_spriteset(
     id = 'oil_wells_spriteset_ground_pump',
