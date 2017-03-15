@@ -17,3 +17,12 @@ generated/firs.nml: custom_tags.txt
 
 firs.grf: generated/firs.nml custom_tags.txt
 	nmlc -c -l src/lang --grf firs.grf generated/firs.nml
+
+clean::
+	$(_V)-rm -r docs
+	$(_V)-rm -r .chameleon_cache
+	$(_V)-rm -r generated
+	$(_V)-rm -r .nmlcache
+	$(_V)-rm -r src/__pycache__
+	$(_V)-rm -r src/*/__pycache__
+
