@@ -1,0 +1,171 @@
+#!/usr/bin/env python3
+"""
+Construct an archive from a set of files.
+"""
+import sys, getopt, tarfile, zipfile, os
+
+def make_tar_archive(dest_file, file_format, base_dir, input_files, flatten):
+    """
+    Construct a (possibly compressed) tar archive file containing the
+    L{input_files}. If L{base_dir} is non-empty, an additional root directory
+    level is inserted in the archive with that name. If L{flatten} is
+    specified, directory paths of the input files are discarded.
+    """
+    modes = {'tar' : 'w', 'tar-gz': 'w:gz', 'tar-bz2': 'w:bz2', 'tar-xz': 'w:xz'}
+    mode = modes[file_format]
+
+    tar_file = tarfile.open(dest_file, mode)
+    for path in input_files:
+        if flatten:
+            fname = os.path.basename(path)
+        else:
+            fname = path
+
+        if base_dir != '':
+            fname = os.path.join(base_dir, fname)
+
+        print("Adding {} as {}".format(path, fname))
+        tar_file.add(path, fname, recursive=False)
+
+    tar_file.close()
+
+def make_zip_archive(dest_file, file_format, base_dir, input_files, flatten):
+    """
+    Construct a compressed zip archive file containing the
+    L{input_files}. If L{base_dir} is non-empty, an additional root directory
+    level is inserted in the archive with that name. If L{flatten} is
+    specified, directory paths of the input files are discarded.
+    """
+    assert file_format == 'zip'
+
+    zip_file = zipfile.ZipFile(dest_file, 'w', compression = zipfile.ZIP_DEFLATED)
+    for path in input_files:
+        if flatten:
+            fname = os.path.basename(path)
+        else:
+            fname = path
+
+        if base_dir != '':
+            fname = os.path.join(base_dir, fname)
+
+        zip_file.write(path, fname)
+
+    zip_file.close()
+
+def check_uniq_filenames(input_files, flatten):
+    """
+    Do some sanity checking on files to archive. Return an error, or C{None}
+    """
+    file_set = set()
+    for path in input_files:
+        if not os.path.isfile(path):
+            if not os.path.exists(path):
+                return "File '{}' not found".format(path)
+            return "Path '{}' is not a file".format(path)
+
+        if flatten:
+            fname = os.path.basename(path)
+        else:
+            fname = path
+
+        if fname == '':
+            return "Empty filename"
+
+        if fname in file_set:
+            return "File '{}' added more than once".format(fname)
+
+        file_set.add(fname)
+
+    return None
+
+def usage():
+    print("Usage: mk-archive [options] file ...")
+    print("Construct an archive file from the given input files")
+    print("Options:")
+    print("  -h, --help                    This online help")
+    print("  -b BASE, --base-dir=BASE      Additional root directory inserted in the archive")
+    print("  --tar                         Construct an uncompressed tar archive")
+    print("  --tar-gz                      Construct a gzip compressed tar archive")
+    print("  --tar-bz2                     Construct a bzip2 compressed tar archive")
+    print("  --tar-xz                      Construct a lzma compressed tar archive")
+    print("  --zip                         Construct a deflated zip archive, is default archive format")
+    print("  -o ARCHIVE, --output ARCHIVE  Name of the created archive, obligatory")
+    print("  -f, --flatten                 Remove the path prefixes of the input files")
+
+def run():
+    short_opts = 'hb:o:f'
+    long_opts = ['help', 'tar', 'zip', 'tar-gz', 'tar-bz2', 'tar-xz',
+                 'base-dir=', 'output=', 'flatten']
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], short_opts, long_opts)
+    except getopt.GetoptError as ex:
+        print("mk-archive ERROR: {}".format(ex))
+        sys.exit(1)
+
+    file_format = None
+    dest_file = None
+    flatten = False
+    base_dir = ''
+    for opt, opt_val in opts:
+        if opt in ('-h', '--help'):
+            usage()
+            sys.exit(0)
+
+        if opt == '--tar':
+            file_format = 'tar'
+            continue
+
+        if opt == '--zip':
+            file_format = 'zip'
+            continue
+
+        if opt == '--tar-gz':
+            file_format = 'tar-gz'
+            continue
+
+        if opt == '--tar-bz2':
+            file_format = 'tar-bz2'
+            continue
+
+        if opt == '--tar-xz':
+            file_format = 'tar-zx'
+            continue
+
+        if opt in ('-b', '--base-dir'):
+            base_dir = opt_val
+            continue
+
+        if opt in ('-o', '--output'):
+            dest_file = opt_val
+            continue
+
+        if opt in ('-f', '--flatten'):
+            flatten = True
+            continue
+
+        assert False, "Unexpected option {} found".format((opt, opt_val))
+
+    if file_format is None:
+        file_format = 'zip'
+
+    if dest_file is None:
+        print("mk-archive ERROR: No destination archive filename given, use --output or -o")
+        sys.exit(1)
+
+    if len(args) == 0:
+        print("mk-archive ERROR: Cowardly refusing to make an empty archive")
+        sys.exit(1)
+
+    err = check_uniq_filenames(args, flatten)
+    if err is not None:
+        print("mk-archive ERROR: {}".format(err))
+        sys.exit(1)
+
+    if file_format == 'zip':
+        make_zip_archive(dest_file, file_format, base_dir, args, flatten)
+    else:
+        make_tar_archive(dest_file, file_format, base_dir, args, flatten)
+    sys.exit(0)
+
+if __name__ == '__main__':
+    run()

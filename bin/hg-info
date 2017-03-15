@@ -1,0 +1,210 @@
+#!/usr/bin/env python3
+"""
+Get repository information
+"""
+import subprocess, getopt, os, sys
+
+dump_commands = False # Whether to display executed commands.
+
+HG = 'hg'
+OUTPUT_OPTS = {
+    "id-modified": "               Output numeric id, 'M' appended if source is modified",
+    "num-id": "                    Output numeric id without modification indication",
+    "branch": "                    Output branch, empty string if default branch",
+    "version": "                   Output version indication, for appending to grf name",
+              }
+
+def escape_name(text):
+    """
+    Make the text reasonably safe to use at the command line.
+    """
+    if len(text) == 0:
+        return '""' # Empty arguments should not disappear.
+
+    # ('look for', 'replace by', 'do replace') triplets
+    replacements = [('\\', '\\\\', True), (' ', '\\ ', False), ('!', '\\!', True),
+                    ('&', '\\&', True), ('[', '\\[', True), ('"', '\\"', True) ]
+
+    safe = True
+    for repl in replacements:
+        if repl[0] in text:
+            safe = False
+            break
+
+    if safe:
+        return text # Already safe by itself
+
+    # Apply replacements to make the text safe.
+    for repl in replacements:
+        if repl[2]:
+            text = text.replace(repl[0], repl[1])
+    return '"' + text + '"'
+
+def exe_cmd(cmd, env=None):
+    """
+    Execute a shell command.
+
+    @param cmd: List of command-line arguments.
+    @param env: Environment variables to set (dict of key/value pairs)
+    @return: Lines of output.
+    @note: If command fails, program is aborted.
+    """
+    if dump_commands:
+        print("CMD: {}".format(" ".join(escape_name(arg) for arg in cmd)))
+
+    if env is not None:
+        new_env = os.environ.copy()
+        new_env.update(env)
+    else:
+        new_env = None
+
+    if sys.version_info.minor < 5:
+        # Pre 3.5 has no subprocess.run
+        output = subprocess.check_output(cmd, env=new_env, universal_newlines=True)
+    else:
+        output = subprocess.run(cmd, env=new_env, check=True, stdout=subprocess.PIPE,
+                                universal_newlines=True).stdout
+
+    lines = output.splitlines()
+    return lines
+
+def get_hg_info():
+    """
+    Get the numeric revision of the repository.
+
+    @return: Numeric revision number as string,
+             modified flag ('M' or ''),
+             branch name (could be 'default').
+             tags (0 or more tag names, 'tip' is never returned).
+    """
+    cmd = [HG, 'id', '-n', '-b', '-t']
+    lines = exe_cmd(cmd, {'HGPLAIN': ''})
+
+    assert len(lines) == 1
+    words = lines[0].split()
+    numeric = words[0]
+    branch = words[1]
+    tags = [w for w in words[2:] if w != 'tip']
+
+    if numeric[-1] == '+':
+        numeric = numeric[:-1]
+        modified = 'M'
+    else:
+        modified = ''
+
+    return numeric, modified, branch, tags
+
+def compute_outputs(output_names, default_branch):
+    """
+    Compute all requested output texts.
+    """
+    numeric, modified, branch, tags = get_hg_info()
+
+    def make_branch_name(branch, default_branch):
+        if branch == default_branch:
+            return ''
+        return branch
+
+    outputs = []
+    for name in output_names:
+        if name == "num-id":
+            text = numeric
+            outputs.append(text)
+            continue
+
+        if name == "id-modified":
+            text = numeric + modified
+            outputs.append(text)
+            continue
+
+        if name == "branch":
+            outputs.append(make_branch_name(branch, default_branch))
+            continue
+
+        if name == "version":
+            if len(tags) > 0:
+                outputs.append("{}{}".format(tags[0], modified))
+                continue
+            branch = make_branch_name(branch, default_branch)
+            if branch == '':
+                outputs.append("r{}{}".format(numeric, modified))
+                continue
+            outputs.append("{}-r{}{}".format(branch, numeric, modified))
+            continue
+
+        assert False, "Unknown output option '{}'".format(name)
+
+    return outputs
+
+def usage():
+    print("Usage: hg-info [options]")
+    print("Extracts repository information, and builds branch and version suffixes from it")
+    print("Options (settings):")
+    print("  -h, --help                  This online help")
+    print("  -v, --verbose               Dump executed commands to the output")
+    print("  -m HG, --mercurial=HG       Path to the 'hg' binary, default is 'hg'")
+    print("  -b BRANCH, --branch=BRANCH  Name of the default branch, default is 'default'")
+    print("Options (output):")
+    for output_opt in sorted(OUTPUT_OPTS.items()):
+        print("  --{}{}".format(output_opt[0], output_opt[1]))
+    print("")
+    print("Output is a single line with all output requests in the same order")
+    print("")
+    print("In a GNU Makefile, splitting the output can be done like")
+    print("  REPO_INFO = $(shell $(HG_INFO) --num-id --version)")
+    print("  REPO_REVISION = $(word 1,$(REPO_INFO))")
+    print("  REPO_VERSION = $(word 2,$(REPO_INFO))")
+
+def run():
+    global HG, dump_commands
+
+    short_opts = 'hvm:b:g:'
+    long_opts = ['help', "verbose", "mercurial=", "branch=", "grf="] + \
+                list(OUTPUT_OPTS.keys())
+
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], short_opts, long_opts)
+    except getopt.GetoptError as ex:
+        print("hg-info ERROR: {}".format(ex))
+        sys.exit(1)
+
+    if len(args) > 0:
+        print("hg-info ERROR: Command does not accept arguments")
+        sys.exit(1)
+
+    grf_name = None
+    default_branch = 'default'
+    output_names = []
+    for opt, opt_val in opts:
+        if opt in ('-h', '--help'):
+            usage()
+            sys.exit(0)
+
+        if opt in ('-g', '--grf'):
+            grf_name = optval
+            continue
+
+        if opt in ('-v', '--verbose'):
+            dump_commands = True
+            continue
+
+        if opt in ('-m', '--mercurial'):
+            HG = opt_val
+            continue
+
+        if opt in ('-b', '--branch'):
+            default_branch = opt_val
+            continue
+
+        if opt.startswith("--") and opt[2:] in OUTPUT_OPTS:
+            output_names.append(opt[2:])
+            continue
+
+        assert False, "Unexpected option value {}".format((opt, opt_val))
+
+    outputs = compute_outputs(output_names, default_branch)
+    print("{}".format(" ".join(escape_name(out) for out in outputs)))
+    sys.exit(0)
+
+if __name__ == '__main__':
+    run()

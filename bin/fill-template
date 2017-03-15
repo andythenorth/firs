@@ -1,0 +1,95 @@
+#!/usr/bin/env python3
+
+import sys, getopt, os, string
+
+def usage():
+    print("Usage: fill-template [options] key=value ..")
+    print("Perform text substitutions in a template using the supplied key/value pairs.")
+    print("Options:")
+    print("  -h, --help                        This online help")
+    print("  -t TEMPLATE, --template TEMPLATE  Template file to use")
+    print("  -o DEST, --output DEST            Destination of the filled template")
+    print("  --dos                             Write DOS line endings")
+    print("")
+    print("Templates should contain ${key} patterns. The pattern is replaced by the ")
+    print("value of the matching 'key=value' pair at the command line.")
+    print("'key' must be a Python identifier, value may be any (ascii) text, but")
+    print("keep in mind that the shell interprets the pairs as well.")
+
+def run():
+    short_opts = "ht:o:"
+    long_opts = ['help', 'template=', 'output=', 'dos']
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], short_opts, long_opts)
+    except getopt.GetoptError as ex:
+        print("fill-template ERROR: {}".format(ex))
+        sys.exit(1)
+
+    output = None
+    template = None
+    dos = False
+    for opt, opt_val in opts:
+        if opt in ('-h', '--help'):
+            usage()
+            sys.exit(1)
+
+        if opt in ('-t', '--template'):
+            template = opt_val
+            continue
+
+        if opt in ('-o', '--output'):
+            output = opt_val
+            continue
+
+        if opt == '--dos':
+            dos = True
+            continue
+
+        assert False, "Unexpected option {} found".format((opt, opt_val))
+
+    if template is None:
+        print("fill-template ERROR: Missing template file (use --template=TEMPLATE)")
+        sys.exit(1)
+
+    if output is None:
+        print("fill-template ERROR: Missing output file (use --output=FILE)")
+        sys.exit(1)
+
+    key_values = {}
+    for idx, arg in enumerate(args):
+        i = arg.find('=')
+        if i < 0:
+            msg = "fill-template ERROR: Argument number {} (with text \"{}\") " + \
+                  "has no '=' between the key and its value"
+            print(msg.format(idx + 1, arg))
+            sys.exit(1)
+
+        key, value = arg[:i].strip(), arg[i+1:]
+        if key == '':
+            msg = "fill-template ERROR: Key of argument number {} is empty"
+            print(msg.format(idx + 1))
+            sys.exit(1)
+
+        key_values[key] = value
+
+    if not os.path.isfile(template):
+        print("fill-template ERROR: Templare file '{}' not found".format(template))
+        sys.exit(1)
+
+    handle = open(template, 'rt')
+    data = handle.read()
+    handle.close()
+
+    t = string.Template(data)
+    data = t.safe_substitute(key_values)
+
+    if dos:
+        lines = data.splitlines()
+        data = "\r\n".join(lines) + "\r\n"
+
+    handle = open(output, 'wt')
+    handle.write(data)
+    handle.close()
+
+if __name__ == '__main__':
+    run()

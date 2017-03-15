@@ -1,0 +1,95 @@
+#!/usr/bin/env python3
+"""
+Find source files.
+"""
+import sys, getopt, os
+
+def escape_name(text):
+    """
+    Make the text reasonably safe to use at the command line.
+    """
+    if len(text) == 0:
+        return '""' # Empty arguments should not disappear.
+
+    # ('look for', 'replace by', 'do replace') triplets
+    replacements = [('\\', '\\\\', True), (' ', '\\ ', False), ('!', '\\!', True),
+                    ('&', '\\&', True), ('[', '\\[', True), ('"', '\\"', True) ]
+
+    safe = True
+    for repl in replacements:
+        if repl[0] in text:
+            safe = False
+            break
+
+    if safe:
+        return text # Already safe by itself
+
+    # Apply replacements to make the text safe.
+    for repl in replacements:
+        if repl[2]:
+            text = text.replace(repl[0], repl[1])
+    return '"' + text + '"'
+
+def collect_files(root, exts):
+    def has_ext(path, exts):
+        if exts is None:
+            return True
+        for ext in exts:
+            if path.endswith(ext):
+                return True
+        return False
+
+    if os.path.isfile(root):
+        if has_ext(root):
+            yield root
+
+    elif os.path.isdir(root):
+        for dirpath, dirnames, filenames in os.walk(root):
+            for fname in filenames:
+                path = os.path.join(dirpath, fname)
+                if has_ext(path, exts):
+                    yield path
+
+def usage():
+    print("Usage: find-files [options] directory ..")
+    print("Find files in the provided directories.")
+    print("Options:")
+    print("  -h, --help         This online help")
+    print("  -e EXT, --ext=EXT  Only return files with EXT extension")
+    print("")
+    print("It is recommended that the leading dot of an extension is provided.")
+    print("Specifying multiple extensions matches all files that have at least one match")
+
+def run():
+    short_opts = 'he:'
+    long_opts = ['help', 'ext=']
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], short_opts, long_opts)
+    except getopt.GetoptError as ex:
+        print("find-files ERROR: {}".format(ex))
+        sys.exit(1)
+
+    exts = []
+    for opt, opt_val in opts:
+        if opt in ('-h', '--help'):
+            usage()
+            sys.exit(1)
+
+        if opt in ('-e', '--ext'):
+            exts.append(opt_val)
+            continue
+
+        assert False, "Unexpected option {} found".format((opt, opt_val))
+
+    if len(args) == 0:
+        print("find-files ERROR: Missing start directories")
+        sys.exit(1)
+
+    if len(exts) == 0:
+        exts = None
+    for arg in args:
+        for fname in collect_files(arg, exts):
+            print(escape_name(fname))
+
+if __name__ == '__main__':
+    run()
