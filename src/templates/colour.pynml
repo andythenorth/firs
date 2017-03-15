@@ -9,22 +9,22 @@
  * Template which maps the random colour of an industry to an actual
  * colour
  */
-switch(FEAT_INDUSTRIES, SELF, switch_colour, colour) { \
-	0: return 0; \
-	1: return 1; \
-	2: return 2; \
-	3: return 13; \
-	4: return 2; \
-	5: return 5; \
-	6: return 1; \
-	7: return 1; \
-	8: return 0; \
-	9: return 14; \
-	10: return 10; \
-	11: return 11; \
-	12: return 13; \
-	13: return 13; \
-	14: return 14; \
-	15: return 14; \
-	return 0; \
+switch(FEAT_INDUSTRIES, SELF, switch_colour, colour) {
+	0: return 0;
+	1: return 1;
+	2: return 2;
+	3: return 13;
+	4: return 2;
+	5: return 5;
+	6: return 1;
+	7: return 1;
+	8: return 0;
+	9: return 14;
+	10: return 10;
+	11: return 11;
+	12: return 13;
+	13: return 13;
+	14: return 14;
+	15: return 14;
+	return 0;
 }
