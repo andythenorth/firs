@@ -253,7 +253,7 @@ spritelayout ${industry.id}_tile_shed_spritelayout {
              metal:use-macro="location_checks_tile.macros['render_tree']" />
 
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_plantation, ${global_constants.tile_numeric_ids['coffee_plantation_tile_1']}) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_plantation, ${global_constants.tile_numeric_ids['coffee_estate_tile_1']}) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -267,7 +267,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_plantation, ${global_constants.tile
 	}
 }
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_house, ${global_constants.tile_numeric_ids['coffee_plantation_tile_2']}) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_house, ${global_constants.tile_numeric_ids['coffee_estate_tile_2']}) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -281,7 +281,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_house, ${global_constants.tile_nume
 }
 <!--! HAX - this additional tile is only used because I wanted to avoid layout checks
       house + shed can share same tile once refactore to standard layout methods -->
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_shed, ${global_constants.tile_numeric_ids['coffee_plantation_tile_3']}) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_shed, ${global_constants.tile_numeric_ids['coffee_estate_tile_3']}) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];

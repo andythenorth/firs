@@ -37,7 +37,7 @@ class Tile(object):
     """ Base class to hold industry tiles"""
     def __init__(self, industry_id, id, **kwargs):
         self.id = id
-        self.numeric_id = global_constants.tile_numeric_ids.get(self.id, None) # use of get() here is temporary during migrations, not needed otherwise
+        self.numeric_id = global_constants.tile_numeric_ids[self.id] # don't fail this silently, tile id must be defined
         self.land_shape_flags = kwargs.get('land_shape_flags', '0')
         self.location_checks = kwargs.get('location_checks')
         # check for setting both land_shape_flags and location_checks

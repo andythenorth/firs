@@ -28,9 +28,9 @@ industry = IndustryPrimaryTownProducer(id='recycling_depot',
                     intro_year=1978)
 
 print('Recycling Depot disabled, and location checks commented out in town producer template due to faff with tile location checks, all needs migrated and re-enabled')
-#industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['FIRS'].enabled = True
 
-industry.add_tile(id='recycling_depot_tile')
+industry.add_tile(id='recycling_depot_tile_1')
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_SLABS',
