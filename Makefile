@@ -3,7 +3,10 @@ FILL_TEMPLATE=bin/fill-template
 
 VERSION=$(shell $(HG_INFO) --version)
 
-all: firs.grf
+all: firs.grf docs
+
+docs:
+	python src/render_docs.py
 
 custom_tags.txt: custom_tags.template
 	$(FILL_TEMPLATE) --template=custom_tags.template --output=custom_tags.txt \
