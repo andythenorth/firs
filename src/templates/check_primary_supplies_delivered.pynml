@@ -14,7 +14,6 @@
 /* Production change evaluated monthly */
 /* =================================== */
 <tal:block define="perm_storage industry.perm_storage">
-    #ifndef CUSTOM_MONTHLY_PROD_CHECK
     switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_update, [
         STORE_PERM(LOAD_PERM(${perm_storage.var_num_supplies_delivered_last}), ${perm_storage.var_num_supplies_delivered_bef_last}),
         STORE_PERM(LOAD_PERM(${perm_storage.var_num_supplies_delivered}), ${perm_storage.var_num_supplies_delivered_last}),
@@ -22,5 +21,4 @@
     ]) {
         return CB_RESULT_IND_PROD_NO_CHANGE;
     }
-    #endif
 </tal:block>
