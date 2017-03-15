@@ -261,7 +261,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, ${global_constants.tile_numeric_
 	}
 	graphics {
 		autoslope:  return CB_RESULT_AUTOSLOPE;
-		tile_check: ${industry.id}_tile_1_lc_0;
+		tile_check: ${industry.id}_tile_2_lc_0;
 		${industry.id}_tile_house_spritelayout;
 	}
 }
