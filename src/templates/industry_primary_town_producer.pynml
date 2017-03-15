@@ -5,54 +5,23 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* ******************************************************************
+ * Definition of the industry tile, its callbacks, and graphics chain
+ * ******************************************************************/
+
 <tal:include metal:use-macro="load: spritesets.pynml" />
 
 <tal:include metal:use-macro="load: spritelayouts.pynml" />
 
 <tal:include metal:use-macro="load: graphics_switches.pynml" />
 
+<tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
+             metal:use-macro="location_checks_tile.macros['render_tree']" />
 
-/* *************************************************
- * Definition of the industry tile and its callbacks
- * *************************************************/
+<tal:include define="animation_macros load: animation_macros.pynml"
+             metal:use-macro="animation_macros.macros['tile_animation']" />
 
-<!--!
-CHECK_HOUSES_NEARBY     (tile_houses_15, -4, -4, return CB_RESULT_LOCATION_DISALLOW)
-CHECK_HOUSES_NEARBY     (tile_houses_14, -4, 4, ${industry.id}_tile_houses_15)
-CHECK_HOUSES_NEARBY     (tile_houses_13, 4, -4, ${industry.id}_tile_houses_14)
-CHECK_HOUSES_NEARBY     (tile_houses_12, 4, 4, ${industry.id}_tile_houses_13)
-CHECK_HOUSES_NEARBY     (tile_houses_11, -3, -3, ${industry.id}_tile_houses_12)
-CHECK_HOUSES_NEARBY     (tile_houses_10, -3, 3, ${industry.id}_tile_houses_11)
-CHECK_HOUSES_NEARBY     (tile_houses_9, 3, -3, ${industry.id}_tile_houses_10)
-CHECK_HOUSES_NEARBY     (tile_houses_8, 3, 3, ${industry.id}_tile_houses_9)
-CHECK_HOUSES_NEARBY     (tile_houses_7, -2, 2, ${industry.id}_tile_houses_8)
-CHECK_HOUSES_NEARBY     (tile_houses_6, 2, -2, ${industry.id}_tile_houses_7)
-CHECK_HOUSES_NEARBY     (tile_houses_5, 2, 2,  ${industry.id}_tile_houses_6)
-CHECK_HOUSES_NEARBY     (tile_houses_4, -3, 0, ${industry.id}_tile_houses_5)
-CHECK_HOUSES_NEARBY     (tile_houses_3, 0, -3, ${industry.id}_tile_houses_4)
-CHECK_HOUSES_NEARBY     (tile_houses_2, 3, 0,  ${industry.id}_tile_houses_3)
-CHECK_HOUSES_NEARBY     (tile_houses_1, 0, 3, ${industry.id}_tile_houses_2)
-TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_houses_1)
-TILE_ALLOW_PLAYER         (tile_location_check, ${industry.id}_tile_nearby_industry)
--->
-
-<!--! this repeat is hax whilst refactoring CPP stuff out
-      it should be possible to just use the standard tile properties template,
-      but the industry needs configured correctly to do that, which is not in scope for the CPP removal work
--->
-<tal:tiles repeat="tile industry.tiles">
-    item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
-        property {
-            substitute:       0;
-            accepted_cargos:  [];
-            land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-        }
-        graphics {
-            <!--!tile_check: ${industry.id}_tile_location_check;-->
-            ${industry.id}_tile_fences;
-        }
-    }
-</tal:tiles>
+<tal:include metal:use-macro="load: properties_tile.pynml" />
 
 /* *************************************************
  * Definition of the industry layouts

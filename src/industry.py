@@ -123,8 +123,8 @@ class TileLocationChecks(object):
             result.append(TileLocationCheckRequireSlope())
 
         if self.require_houses_nearby:
-            # !! possibly could be done simpler with a town zone check instead of a tile search
-            # but didn't want to unpick CPP templating as part of snakebite
+            # possibly could be done simpler with a town zone check instead of a tile search, but eh, it's done and works
+            # note that this automates the provision of tile locations for the search radius, no option to declare that per-industry
             search_points = [(0, 3), (3, 0), (0, -3), (-3, 0), (2, 2), (2, -2), (-2, 2), (3, 3),
                              (3, -3), (-3, 3), (-3, -3), (4, 4), (4, -4), (-4, 4), (-4, 4)]
             for search_offsets in search_points:

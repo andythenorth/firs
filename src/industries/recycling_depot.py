@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryTownProducer, IndustryLocationChecks
+from industry import IndustryPrimaryTownProducer, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryTownProducer(id='recycling_depot',
                     accept_cargo_types=[],
@@ -27,10 +27,12 @@ industry = IndustryPrimaryTownProducer(id='recycling_depot',
                     fund_cost_multiplier='118',
                     intro_year=1978)
 
-print('Recycling Depot disabled, and location checks commented out in town producer template due to faff with tile location checks, all needs migrated and re-enabled')
 industry.economy_variations['FIRS'].enabled = True
 
-industry.add_tile(id='recycling_depot_tile_1')
+industry.add_tile(id='recycling_depot_tile_1',
+                  location_checks=TileLocationChecks(always_allow_founder=False,
+                                                    require_houses_nearby=True,
+                                                     disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_SLABS',
@@ -64,10 +66,10 @@ industry.add_spritelayout(
 )
 industry.add_industry_layout(
     id = 'recycling_depot_industry_layout',
-    layout = [(0, 0, 'recycling_depot_tile', 'recycling_depot_spritelayout_hut'),
-              (0, 1, 'recycling_depot_tile', 'recycling_depot_spritelayout_no_hut'),
-              (1, 0, 'recycling_depot_tile', 'recycling_depot_spritelayout_no_hut'),
-              (1, 1, 'recycling_depot_tile', 'recycling_depot_spritelayout_no_hut')
+    layout = [(0, 0, 'recycling_depot_tile_1', 'recycling_depot_spritelayout_hut'),
+              (0, 1, 'recycling_depot_tile_1', 'recycling_depot_spritelayout_no_hut'),
+              (1, 0, 'recycling_depot_tile_1', 'recycling_depot_spritelayout_no_hut'),
+              (1, 1, 'recycling_depot_tile_1', 'recycling_depot_spritelayout_no_hut')
     ]
 )
 
