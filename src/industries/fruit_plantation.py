@@ -21,7 +21,7 @@ industry = IndustryPrimaryOrganic(id='fruit_plantation',
                     prod_cargo_types=['FRUT'],
                     fund_cost_multiplier='54',
                     prod_multiplier='[16]',
-                    template="refactor/refactor_fruit_plantation.pypnml" )
+                    template="refactor/refactor_fruit_plantation.pynml" )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True

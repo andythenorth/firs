@@ -20,7 +20,7 @@ industry = IndustryPrimaryOrganic(id='vineyard',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PLANTATION))',
                     fund_cost_multiplier='54',
                     prod_multiplier='[11, 8]',
-                    template="refactor/refactor_vineyard.pypnml" )
+                    template="refactor/refactor_vineyard.pynml" )
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[9, 9]'

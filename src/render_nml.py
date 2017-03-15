@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-print("[PYTHON] render pnml")
+print("[PYTHON] render nml")
 
 import codecs # used for writing files - more unicode friendly than standard open() module
 
@@ -59,7 +59,7 @@ def render_header_item_nml(header_item):
 def render_industry_nml(industry):
     only_build_test_industry = repo_vars.get('test_industry', None)
     if not only_build_test_industry or only_build_test_industry == industry.id:
-        result = industry.render_pnml()
+        result = industry.render_nml()
     else:
         result = ''
     # write the nml per vehicle to disk, it aids debugging
@@ -73,7 +73,7 @@ def main():
     start = time()
     grf_nml = codecs.open(os.path.join(firs.generated_files_path, 'firs.pnml'),'w','utf8')
     # ! extension is included due to partial migration from pypnaml to pynml; it should ideally be standard and concatenated within the repeat
-    header_items = ['header.pynml','checks.pypnml','parameters.pynml', 'sprite_templates.pynml', 'cargos.pynml', 'construction_states.pynml', 'colour.pynml', 'randomise_primary_production_on_build.pynml']
+    header_items = ['header.pynml','checks.pynml','parameters.pynml', 'sprite_templates.pynml', 'cargos.pynml', 'construction_states.pynml', 'colour.pynml', 'randomise_primary_production_on_build.pynml']
     for header_item in header_items:
         grf_nml.write(render_header_item_nml(header_item))
 

@@ -847,20 +847,20 @@ class Industry(object):
         if isinstance(sprite_or_spriteset, Sprite):
             return getattr(sprite_or_spriteset, 'sprite_number' + suffix)
 
-    def render_pnml(self):
+    def render_nml(self):
         industry_template = templates[self.template]
-        templated_pnml = utils.unescape_chameleon_output(industry_template(industry=self,
+        templated_nml = utils.unescape_chameleon_output(industry_template(industry=self,
                                                          global_constants=global_constants,
                                                          economies=registered_economies,
                                                          utils=utils))
-        return templated_pnml
+        return templated_nml
 
 
 class IndustryPrimary(Industry):
     """ Industries that produce cargo and (optionally) boost production if supplies are delivered """
     def __init__(self, **kwargs):
         super(IndustryPrimary, self).__init__(**kwargs)
-        self.template = kwargs.get('template', 'industry_primary.pypnml')
+        self.template = kwargs.get('template', 'industry_primary.pynml')
         self.supply_requirements = None # default None, set appropriately by subclasses
         self.perm_storage = IndustryPermStorage(['var_num_supplies_delivered', # amount of supplies delivered this month
                                                  'var_num_supplies_delivered_last',
@@ -919,14 +919,14 @@ class IndustryPrimaryNoSupplies(Industry):
     """ Industry that does not accept supplies and does not change production amounts during game """
     def __init__(self, **kwargs):
         super(IndustryPrimaryNoSupplies, self).__init__(**kwargs)
-        self.template = kwargs.get('template', 'industry_primary_no_supplies.pypnml')
+        self.template = kwargs.get('template', 'industry_primary_no_supplies.pynml')
 
 
 class IndustryPrimaryTownProducer(Industry):
     """ Industry that locates near towns, with production amount related to town population """
     def __init__(self, **kwargs):
         super(IndustryPrimaryTownProducer, self).__init__(**kwargs)
-        self.template = kwargs.get('template', 'industry_primary_town_producer.pypnml')
+        self.template = kwargs.get('template', 'industry_primary_town_producer.pynml')
         self.supply_requirements = None # supplies do not boost this type of primary
 
 class IndustrySecondary(Industry):
@@ -934,7 +934,7 @@ class IndustrySecondary(Industry):
     def __init__(self, **kwargs):
         kwargs['life_type'] = 'IND_LIFE_TYPE_PROCESSING'
         super(IndustrySecondary, self).__init__(**kwargs)
-        self.template = kwargs.get('template', 'industry_secondary.pypnml')
+        self.template = kwargs.get('template', 'industry_secondary.pynml')
         self.combined_cargos_boost_prod = kwargs.get('combined_cargos_boost_prod', False)
         self.perm_storage = IndustryPermStorage(['unused',
                                                  'ratio_input_1', # output per 8 units input of cargo 1; can be made temporary
@@ -984,5 +984,5 @@ class IndustryTertiary(Industry):
     """ Industries that consume cargo and don't produce much (or anything), typically black holes in or near towns """
     def __init__(self, **kwargs):
         super(IndustryTertiary, self).__init__(**kwargs)
-        self.template = 'industry_tertiary.pypnml'
+        self.template = 'industry_tertiary.pynml'
         # no perm_storage needed currently

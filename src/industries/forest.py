@@ -22,7 +22,7 @@ industry = IndustryPrimaryOrganic(id='forest',
                     prod_multiplier='[19]',
                     substitute='INDUSTRYTYPE_FOREST',
                     graphics_change_dates = [1935],
-                    template="refactor/refactor_forest.pypnml" )
+                    template="refactor/refactor_forest.pynml" )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

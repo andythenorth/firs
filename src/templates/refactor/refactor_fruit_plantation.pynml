@@ -205,7 +205,7 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_775, terrain_type) {
 	${industry.id}_750;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_orchard_spritelayout, climate) {
+switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_tile_plantation_spritelayout, climate) {
 	CLIMATE_TEMPERATE: ${industry.id}_616;
 	CLIMATE_ARCTIC: ${industry.id}_730;
 	CLIMATE_TROPIC: ${industry.id}_775;
@@ -216,13 +216,27 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_orchard_spritelayout, clima
  * tile with house
  * ***************/
 
-spriteset(spriteset_47929, "src/graphics/industries/${industry.id}_1.png") { tmpl_building_sprite(150, 10, 59, -28) }
+spriteset(${industry.id}_spriteset_792, "src/graphics/industries/${industry.id}_1.png") { tmpl_building_sprite(10, 10, 59, -28) }
 spritelayout ${industry.id}_tile_house_spritelayout {
 	ground {
 		sprite: 2022;
 	}
 	building {
-		sprite: spriteset_47929;
+		sprite: ${industry.id}_spriteset_792;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		xextent: 7;
+		yextent: 7;
+		zextent: 7;
+	}
+}
+spriteset(${industry.id}_spriteset_shed, "src/graphics/industries/${industry.id}_1.png") { tmpl_building_sprite(80, 10, 59, -28) }
+spritelayout ${industry.id}_tile_shed_spritelayout {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: ${industry.id}_spriteset_shed;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 		xextent: 7;
@@ -231,7 +245,6 @@ spritelayout ${industry.id}_tile_house_spritelayout {
 	}
 }
 
-
 /* ****************************************************
  * Definition of the industry tiles and their callbacks
  * ***************************************************/
@@ -239,7 +252,7 @@ spritelayout ${industry.id}_tile_house_spritelayout {
 <tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
              metal:use-macro="location_checks_tile.macros['render_tree']" />
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_orchard, ${global_constants.tile_numeric_ids['orchard_piggery_tile_1']}) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_plantation, ${global_constants.tile_numeric_ids['fruit_plantation_tile_1']}) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -249,11 +262,11 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_orchard, ${global_constants.tile_nu
 		foundations: return CB_RESULT_NO_FOUNDATIONS;
 		autoslope:   return CB_RESULT_NO_AUTOSLOPE;
 		tile_check:  ${industry.id}_tile_1_lc_0;
-		${industry.id}_tile_orchard_spritelayout;
+		${industry.id}_tile_plantation_spritelayout;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_buildings, ${global_constants.tile_numeric_ids['orchard_piggery_tile_2']}) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_house, ${global_constants.tile_numeric_ids['fruit_plantation_tile_2']}) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -261,8 +274,22 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_buildings, ${global_constants.tile_
 	}
 	graphics {
 		autoslope:  return CB_RESULT_AUTOSLOPE;
-		tile_check: ${industry.id}_tile_1_lc_0;
+		tile_check: ${industry.id}_tile_2_lc_0;
 		${industry.id}_tile_house_spritelayout;
+	}
+}
+<!--! HAX - this additional tile is only used because I wanted to avoid layout checks
+      house + shed can share same tile once refactore to standard layout methods -->
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_shed, ${global_constants.tile_numeric_ids['fruit_plantation_tile_3']}) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[FMSP, 8]];
+		land_shape_flags: 0;
+	}
+	graphics {
+		autoslope:  return CB_RESULT_AUTOSLOPE;
+		tile_check: ${industry.id}_tile_3_lc_0;
+		${industry.id}_tile_shed_spritelayout;
 	}
 }
 
@@ -270,7 +297,84 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_buildings, ${global_constants.tile_
  * Definition of the industry layouts
  * *************************************************/
 
-<tal:include metal:use-macro="load: layouts.pynml" />
+<!--! could use templated layouts here using <tal:include metal:use-macro="load: layouts.pynml" />
+      but there's no gain as the graphics chain doesn't use a layout check (so no repeating of data) -->
+
+tilelayout ${industry.id}_tilelayout_1 {
+	0, 0: ${industry.id}_tile_plantation;
+	0, 1: ${industry.id}_tile_plantation;
+	0, 2: ${industry.id}_tile_plantation;
+	1, 0: ${industry.id}_tile_plantation;
+	1, 1: ${industry.id}_tile_plantation;
+	1, 2: ${industry.id}_tile_plantation;
+	2, 1: ${industry.id}_tile_shed;
+	2, 2: ${industry.id}_tile_house;
+}
+
+tilelayout ${industry.id}_tilelayout_2 {
+	0, 0: ${industry.id}_tile_plantation;
+	0, 1: ${industry.id}_tile_plantation;
+	0, 2: ${industry.id}_tile_plantation;
+	0, 3: ${industry.id}_tile_shed;
+	1, 1: ${industry.id}_tile_plantation;
+	1, 2: ${industry.id}_tile_plantation;
+	1, 3: ${industry.id}_tile_plantation;
+	1, 4: ${industry.id}_tile_house;
+}
+
+tilelayout ${industry.id}_tilelayout_3 {
+	0, 0: ${industry.id}_tile_plantation;
+	0, 1: ${industry.id}_tile_plantation;
+	1, 0: ${industry.id}_tile_plantation;
+	1, 1: ${industry.id}_tile_plantation;
+	2, 0: ${industry.id}_tile_plantation;
+	2, 1: ${industry.id}_tile_shed;
+	3, 0: ${industry.id}_tile_plantation;
+	3, 1: ${industry.id}_tile_house;
+}
+
+tilelayout ${industry.id}_tilelayout_4 {
+	0, 0: ${industry.id}_tile_plantation;
+	0, 1: ${industry.id}_tile_plantation;
+	0, 3: ${industry.id}_tile_plantation;
+	0, 4: ${industry.id}_tile_plantation;
+	1, 0: ${industry.id}_tile_plantation;
+	1, 1: ${industry.id}_tile_plantation;
+	1, 3: ${industry.id}_tile_plantation;
+	1, 4: ${industry.id}_tile_plantation;
+	3, 0: ${industry.id}_tile_plantation;
+	3, 1: ${industry.id}_tile_shed;
+	3, 3: ${industry.id}_tile_plantation;
+	3, 4: ${industry.id}_tile_plantation;
+	4, 0: ${industry.id}_tile_plantation;
+	4, 1: ${industry.id}_tile_house;
+	4, 3: ${industry.id}_tile_plantation;
+	4, 4: ${industry.id}_tile_plantation;
+}
+
+tilelayout ${industry.id}_tilelayout_5 {
+	0, 1: ${industry.id}_tile_plantation;
+	0, 2: ${industry.id}_tile_plantation;
+	0, 3: ${industry.id}_tile_plantation;
+	0, 4: ${industry.id}_tile_plantation;
+	1, 0: ${industry.id}_tile_plantation;
+	1, 1: ${industry.id}_tile_plantation;
+	1, 2: ${industry.id}_tile_plantation;
+	1, 3: ${industry.id}_tile_plantation;
+	1, 4: ${industry.id}_tile_plantation;
+	1, 5: ${industry.id}_tile_plantation;
+	3, 0: ${industry.id}_tile_plantation;
+	3, 1: ${industry.id}_tile_plantation;
+	3, 2: ${industry.id}_tile_plantation;
+	3, 3: ${industry.id}_tile_plantation;
+	3, 4: ${industry.id}_tile_shed;
+	3, 5: ${industry.id}_tile_house;
+	4, 1: ${industry.id}_tile_plantation;
+	4, 2: ${industry.id}_tile_plantation;
+	4, 3: ${industry.id}_tile_plantation;
+	4, 4: ${industry.id}_tile_plantation;
+}
+
 
 /* *************************************************
  * Definition of the industry
@@ -281,8 +385,8 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_buildings, ${global_constants.tile_
 
 <tal:include metal:use-macro="load: extra_text_primary.pynml" />
 
-<tal:include metal:use-macro="load: produce_primary.pypnml" />
-<tal:include metal:use-macro="load: check_primary_supplies_delivered.pypnml" />
+<tal:include metal:use-macro="load: produce_primary.pynml" />
+<tal:include metal:use-macro="load: check_primary_supplies_delivered.pynml" />
 
 <tal:include metal:use-macro="load: availability.pynml" />
 
@@ -297,7 +401,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		monthly_prod_change:     ${industry.id}_monthly_update;
         random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		build_prod_change:       randomise_primary_production_on_build;
-		extra_text_fund:         return string(STR_FUND_ORCHARD_PIGGERY);
+		extra_text_fund:         return string(STR_FUND_FRUIT_PLANTATION);
 		extra_text_industry:     ${industry.id}_extra_text;
 		colour:                  switch_colour;
 	}

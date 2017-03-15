@@ -108,8 +108,8 @@ item(FEAT_INDUSTRYTILES, oil_wells_tile_2, ${global_constants.tile_numeric_ids['
 
 <tal:include metal:use-macro="load: extra_text_primary.pynml" />
 
-<tal:include metal:use-macro="load: produce_primary.pypnml" />
-<tal:include metal:use-macro="load: check_primary_supplies_delivered.pypnml" />
+<tal:include metal:use-macro="load: produce_primary.pynml" />
+<tal:include metal:use-macro="load: check_primary_supplies_delivered.pynml" />
 
 <tal:include metal:use-macro="load: availability.pynml" />
 
