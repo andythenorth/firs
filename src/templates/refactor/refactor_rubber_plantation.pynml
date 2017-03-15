@@ -253,7 +253,7 @@ spritelayout ${industry.id}_tile_shed_spritelayout {
 <tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
              metal:use-macro="location_checks_tile.macros['render_tree']" />
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_plantation, ${global_constants.tile_numeric_ids['rubber_plantation_tile_1']}) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, ${global_constants.tile_numeric_ids['rubber_plantation_tile_1']}) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -268,7 +268,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_plantation, ${global_constants.tile
 }
 
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_house, ${global_constants.tile_numeric_ids['rubber_plantation_tile_2']}) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, ${global_constants.tile_numeric_ids['rubber_plantation_tile_2']}) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -282,7 +282,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_house, ${global_constants.tile_nume
 }
 <!--! HAX - this additional tile is only used because I wanted to avoid layout checks
       house + shed can share same tile once refactore to standard layout methods -->
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_shed, ${global_constants.tile_numeric_ids['rubber_plantation_tile_3']}) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_3, ${global_constants.tile_numeric_ids['rubber_plantation_tile_3']}) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -303,80 +303,80 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_shed, ${global_constants.tile_numer
       but there's no gain as the graphics chain doesn't use a layout check (so no repeating of data) -->
 
 tilelayout ${industry.id}_tilelayout_1 {
-	0, 0: ${industry.id}_tile_plantation;
-	0, 1: ${industry.id}_tile_plantation;
-	0, 2: ${industry.id}_tile_plantation;
-	1, 0: ${industry.id}_tile_plantation;
-	1, 1: ${industry.id}_tile_plantation;
-	1, 2: ${industry.id}_tile_shed;
-	2, 1: ${industry.id}_tile_plantation;
-	2, 2: ${industry.id}_tile_house;
+	0, 0: ${industry.id}_tile_1;
+	0, 1: ${industry.id}_tile_1;
+	0, 2: ${industry.id}_tile_1;
+	1, 0: ${industry.id}_tile_1;
+	1, 1: ${industry.id}_tile_1;
+	1, 2: ${industry.id}_tile_3;
+	2, 1: ${industry.id}_tile_1;
+	2, 2: ${industry.id}_tile_2;
 }
 
 tilelayout ${industry.id}_tilelayout_2 {
-	0, 0: ${industry.id}_tile_plantation;
-	0, 1: ${industry.id}_tile_plantation;
-	0, 2: ${industry.id}_tile_shed;
-	0, 3: ${industry.id}_tile_plantation;
-	1, 1: ${industry.id}_tile_plantation;
-	1, 2: ${industry.id}_tile_plantation;
-	1, 3: ${industry.id}_tile_plantation;
-	1, 4: ${industry.id}_tile_house;
+	0, 0: ${industry.id}_tile_1;
+	0, 1: ${industry.id}_tile_1;
+	0, 2: ${industry.id}_tile_3;
+	0, 3: ${industry.id}_tile_1;
+	1, 1: ${industry.id}_tile_1;
+	1, 2: ${industry.id}_tile_1;
+	1, 3: ${industry.id}_tile_1;
+	1, 4: ${industry.id}_tile_2;
 }
 
 tilelayout ${industry.id}_tilelayout_3 {
-	0, 0: ${industry.id}_tile_plantation;
-	0, 1: ${industry.id}_tile_plantation;
-	1, 0: ${industry.id}_tile_plantation;
-	1, 1: ${industry.id}_tile_plantation;
-	2, 0: ${industry.id}_tile_plantation;
-	2, 1: ${industry.id}_tile_plantation;
-	3, 0: ${industry.id}_tile_shed;
-	3, 1: ${industry.id}_tile_plantation;
-	4, 0: ${industry.id}_tile_plantation;
-	4, 1: ${industry.id}_tile_house;
+	0, 0: ${industry.id}_tile_1;
+	0, 1: ${industry.id}_tile_1;
+	1, 0: ${industry.id}_tile_1;
+	1, 1: ${industry.id}_tile_1;
+	2, 0: ${industry.id}_tile_1;
+	2, 1: ${industry.id}_tile_1;
+	3, 0: ${industry.id}_tile_3;
+	3, 1: ${industry.id}_tile_1;
+	4, 0: ${industry.id}_tile_1;
+	4, 1: ${industry.id}_tile_2;
 }
 
 tilelayout ${industry.id}_tilelayout_4 {
-	0, 0: ${industry.id}_tile_plantation;
-	0, 1: ${industry.id}_tile_plantation;
-	0, 3: ${industry.id}_tile_plantation;
-	0, 4: ${industry.id}_tile_plantation;
-	1, 0: ${industry.id}_tile_plantation;
-	1, 1: ${industry.id}_tile_plantation;
-	1, 3: ${industry.id}_tile_plantation;
-	1, 4: ${industry.id}_tile_plantation;
-	3, 0: ${industry.id}_tile_plantation;
-	3, 1: ${industry.id}_tile_shed;
-	3, 3: ${industry.id}_tile_plantation;
-	3, 4: ${industry.id}_tile_plantation;
-	4, 0: ${industry.id}_tile_plantation;
-	4, 1: ${industry.id}_tile_house;
-	4, 3: ${industry.id}_tile_plantation;
-	4, 4: ${industry.id}_tile_plantation;
+	0, 0: ${industry.id}_tile_1;
+	0, 1: ${industry.id}_tile_1;
+	0, 3: ${industry.id}_tile_1;
+	0, 4: ${industry.id}_tile_1;
+	1, 0: ${industry.id}_tile_1;
+	1, 1: ${industry.id}_tile_1;
+	1, 3: ${industry.id}_tile_1;
+	1, 4: ${industry.id}_tile_1;
+	3, 0: ${industry.id}_tile_1;
+	3, 1: ${industry.id}_tile_3;
+	3, 3: ${industry.id}_tile_1;
+	3, 4: ${industry.id}_tile_1;
+	4, 0: ${industry.id}_tile_1;
+	4, 1: ${industry.id}_tile_2;
+	4, 3: ${industry.id}_tile_1;
+	4, 4: ${industry.id}_tile_1;
 }
 
 tilelayout ${industry.id}_tilelayout_5 {
-	0, 1: ${industry.id}_tile_plantation;
-	0, 2: ${industry.id}_tile_plantation;
-	0, 4: ${industry.id}_tile_plantation;
-	0, 5: ${industry.id}_tile_plantation;
-	1, 0: ${industry.id}_tile_plantation;
-	1, 1: ${industry.id}_tile_plantation;
-	1, 2: ${industry.id}_tile_shed;
-	1, 4: ${industry.id}_tile_plantation;
-	1, 5: ${industry.id}_tile_plantation;
-	1, 6: ${industry.id}_tile_plantation;
-	2, 0: ${industry.id}_tile_plantation;
-	2, 1: ${industry.id}_tile_plantation;
-	2, 2: ${industry.id}_tile_house;
-	2, 4: ${industry.id}_tile_plantation;
-	2, 5: ${industry.id}_tile_plantation;
-	2, 6: ${industry.id}_tile_plantation;
-	3, 1: ${industry.id}_tile_plantation;
-	3, 2: ${industry.id}_tile_plantation;
-	3, 4: ${industry.id}_tile_plantation;
-	3, 5: ${industry.id}_tile_plantation;
+	0, 1: ${industry.id}_tile_1;
+	0, 2: ${industry.id}_tile_1;
+	0, 4: ${industry.id}_tile_1;
+	0, 5: ${industry.id}_tile_1;
+	1, 0: ${industry.id}_tile_1;
+	1, 1: ${industry.id}_tile_1;
+	1, 2: ${industry.id}_tile_3;
+	1, 4: ${industry.id}_tile_1;
+	1, 5: ${industry.id}_tile_1;
+	1, 6: ${industry.id}_tile_1;
+	2, 0: ${industry.id}_tile_1;
+	2, 1: ${industry.id}_tile_1;
+	2, 2: ${industry.id}_tile_2;
+	2, 4: ${industry.id}_tile_1;
+	2, 5: ${industry.id}_tile_1;
+	2, 6: ${industry.id}_tile_1;
+	3, 1: ${industry.id}_tile_1;
+	3, 2: ${industry.id}_tile_1;
+	3, 4: ${industry.id}_tile_1;
+	3, 5: ${industry.id}_tile_1;
 }
 /* *************************************************
  * Definition of the industry

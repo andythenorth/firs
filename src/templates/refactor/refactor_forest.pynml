@@ -6,7 +6,7 @@
  */
 
 /* **************
- * tile_trees
+ * _tile_1
  * *************/
 
 <tal:spritelayout define="tree_temperate_a 1593; tree_temperate_b 1586">
@@ -169,7 +169,7 @@
     }
 
     /* **************
-     * tile_equipment
+     * _tile_2
      * *************/
 
     spriteset(spriteset_crane, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(10, 10, 78, -45) }
@@ -250,7 +250,7 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_equipment_spritelayout, cli
 <tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
              metal:use-macro="location_checks_tile.macros['render_tree']" />
 
-item(FEAT_INDUSTRYTILES, tile_trees, ${global_constants.tile_numeric_ids['forest_tile_1']}) {
+item(FEAT_INDUSTRYTILES, _tile_1, ${global_constants.tile_numeric_ids['forest_tile_1']}) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -264,7 +264,7 @@ item(FEAT_INDUSTRYTILES, tile_trees, ${global_constants.tile_numeric_ids['forest
 	}
 }
 
-item(FEAT_INDUSTRYTILES, tile_equipment, ${global_constants.tile_numeric_ids['forest_tile_2']}) {
+item(FEAT_INDUSTRYTILES, _tile_2, ${global_constants.tile_numeric_ids['forest_tile_2']}) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -281,52 +281,52 @@ item(FEAT_INDUSTRYTILES, tile_equipment, ${global_constants.tile_numeric_ids['fo
  * *************************************************/
 
 tilelayout tilelayout_forest_1 {
-	0, 0: tile_trees;
-	0, 1: tile_trees;
-	0, 2: tile_trees;
-	1, 0: tile_trees;
-	1, 1: tile_trees;
-	1, 2: tile_trees;
-	2, 1: tile_trees;
-	2, 2: tile_equipment;
+	0, 0: _tile_1;
+	0, 1: _tile_1;
+	0, 2: _tile_1;
+	1, 0: _tile_1;
+	1, 1: _tile_1;
+	1, 2: _tile_1;
+	2, 1: _tile_1;
+	2, 2: _tile_2;
 }
 
 tilelayout tilelayout_forest_2 {
-	0, 0: tile_trees;
-	0, 1: tile_trees;
-	0, 2: tile_trees;
-	1, 0: tile_trees;
-	1, 1: tile_trees;
-	1, 2: tile_trees;
-	3, 0: tile_trees;
-	3, 1: tile_trees;
-	3, 2: tile_equipment;
-	4, 0: tile_trees;
-	4, 1: tile_trees;
-	4, 2: tile_trees;
+	0, 0: _tile_1;
+	0, 1: _tile_1;
+	0, 2: _tile_1;
+	1, 0: _tile_1;
+	1, 1: _tile_1;
+	1, 2: _tile_1;
+	3, 0: _tile_1;
+	3, 1: _tile_1;
+	3, 2: _tile_2;
+	4, 0: _tile_1;
+	4, 1: _tile_1;
+	4, 2: _tile_1;
 }
 
 tilelayout tilelayout_forest_3 {
-	0, 1: tile_trees;
-	0, 2: tile_trees;
-	0, 3: tile_trees;
-	1, 0: tile_trees;
-	1, 1: tile_trees;
-	1, 2: tile_trees;
-	1, 3: tile_trees;
-	1, 4: tile_trees;
-	2, 0: tile_trees;
-	2, 1: tile_trees;
-	2, 2: tile_trees;
-	2, 3: tile_trees;
-	3, 0: tile_trees;
-	3, 1: tile_trees;
-	3, 2: tile_equipment;
-	4, 0: tile_trees;
-	4, 1: tile_trees;
-	5, 0: tile_trees;
-	5, 1: tile_trees;
-	5, 2: tile_trees;
+	0, 1: _tile_1;
+	0, 2: _tile_1;
+	0, 3: _tile_1;
+	1, 0: _tile_1;
+	1, 1: _tile_1;
+	1, 2: _tile_1;
+	1, 3: _tile_1;
+	1, 4: _tile_1;
+	2, 0: _tile_1;
+	2, 1: _tile_1;
+	2, 2: _tile_1;
+	2, 3: _tile_1;
+	3, 0: _tile_1;
+	3, 1: _tile_1;
+	3, 2: _tile_2;
+	4, 0: _tile_1;
+	4, 1: _tile_1;
+	5, 0: _tile_1;
+	5, 1: _tile_1;
+	5, 2: _tile_1;
 }
 
 /* *************************************************

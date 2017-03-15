@@ -239,7 +239,7 @@ spritelayout ${industry.id}_tile_house_spritelayout {
 <tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
              metal:use-macro="location_checks_tile.macros['render_tree']" />
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_orchard, ${global_constants.tile_numeric_ids['orchard_piggery_tile_1']}) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, ${global_constants.tile_numeric_ids['orchard_piggery_tile_1']}) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -253,7 +253,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_orchard, ${global_constants.tile_nu
 	}
 }
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_buildings, ${global_constants.tile_numeric_ids['orchard_piggery_tile_2']}) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, ${global_constants.tile_numeric_ids['orchard_piggery_tile_2']}) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
