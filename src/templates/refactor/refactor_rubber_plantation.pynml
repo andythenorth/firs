@@ -394,17 +394,4 @@ tilelayout ${industry.id}_tilelayout_5 {
 
 <tal:include metal:use-macro="load: properties_industry.pynml" />
 
-item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
-	graphics {
-		produce_cargo_arrival:   ${industry.id}_produce;
-		construction_probability:${industry.id}_check_availability;
-		location_check:          ${industry.id}_check_location;
-		produce_256_ticks:       ${industry.id}_produce_256_ticks;
-		monthly_prod_change:     ${industry.id}_monthly_update;
-        random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
-		build_prod_change:       randomise_primary_production_on_build;
-		extra_text_fund:         return string(STR_FUND_RUBBER_PLANTATION);
-		extra_text_industry:     ${industry.id}_extra_text;
-		colour:                  switch_colour;
-	}
-}
+<tal:include metal:use-macro="load: graphics_block_sloped_organic_temp.pynml" />

@@ -70,7 +70,7 @@ switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [STORE_TEMP(((population
                     location_check:          ${industry.id}_check_location;
                     monthly_prod_change:     CB_RESULT_IND_PROD_NO_CHANGE;
                     random_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
-                    extra_text_fund:          ${industry.get_extra_text_fund(economy)};
+                    extra_text_fund:         ${industry.get_extra_text_fund(economy)};
                     extra_text_industry:     return string(STR_EXTRA_RECYCLING_DEPOT);
                     colour:                  switch_colour;
                 }
