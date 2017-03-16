@@ -15,7 +15,7 @@ industry = IndustryPrimaryOrganic(id='rubber_plantation',
                     name='TTD_STR_INDUSTRY_NAME_RUBBER_PLANTATION',
                     extra_text_fund='string(STR_FUND_RUBBER_PLANTATION)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PLANTATION))',
-                    layouts='[rubber_plantation_tilelayout_1, rubber_plantation_tilelayout_2, rubber_plantation_tilelayout_3, rubber_plantation_tilelayout_4, rubber_plantation_tilelayout_5]',
+                    layouts='AUTO',
                     spec_flags='0',
                     location_checks=IndustryLocationChecks(require_cluster=['rubber_plantation', [20, 72, 1, 4]]),
                     prod_cargo_types=['RUBR'],
@@ -1431,3 +1431,85 @@ industry.add_spritelayout(
 )
 
 
+industry.add_industry_layout(
+    id = 'rubber_plantation_layout_1',
+    layout = [(0, 0, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (0, 1, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (0, 2, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 0, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 1, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 2, 'rubber_plantation_tile_3', 'rubber_plantation_tile_3_spritelayout'),
+              (2, 1, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (2, 2, 'rubber_plantation_tile_2', 'rubber_plantation_tile_2_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'rubber_plantation_layout_2',
+    layout = [(0, 0, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (0, 1, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (0, 2, 'rubber_plantation_tile_3', 'rubber_plantation_tile_3_spritelayout'),
+              (0, 3, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 1, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 2, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 3, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 4, 'rubber_plantation_tile_2', 'rubber_plantation_tile_2_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'rubber_plantation_layout_3',
+    layout = [(0, 0, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (0, 1, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 0, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 1, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (2, 0, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (2, 1, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (3, 0, 'rubber_plantation_tile_3', 'rubber_plantation_tile_3_spritelayout'),
+              (3, 1, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (4, 0, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (4, 1, 'rubber_plantation_tile_2', 'rubber_plantation_tile_2_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'rubber_plantation_layout_4',
+    layout = [(0, 0, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (0, 1, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (0, 3, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (0, 4, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 0, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 1, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 3, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 4, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (3, 0, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (3, 1, 'rubber_plantation_tile_3', 'rubber_plantation_tile_3_spritelayout'),
+              (3, 3, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (3, 4, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (4, 0, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (4, 1, 'rubber_plantation_tile_2', 'rubber_plantation_tile_2_spritelayout'),
+              (4, 3, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (4, 4, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'rubber_plantation_layout_5',
+    layout = [(0, 1, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (0, 2, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (0, 4, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (0, 5, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 0, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 1, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 2, 'rubber_plantation_tile_3', 'rubber_plantation_tile_3_spritelayout'),
+              (1, 4, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 5, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (1, 6, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (2, 0, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (2, 1, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (2, 2, 'rubber_plantation_tile_2', 'rubber_plantation_tile_2_spritelayout'),
+              (2, 4, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (2, 5, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (2, 6, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (3, 1, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (3, 2, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (3, 5, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+              (3, 5, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),
+    ]
+)
