@@ -1430,7 +1430,6 @@ industry.add_spritelayout(
     fences = [],
 )
 
-
 industry.add_industry_layout(
     id = 'rubber_plantation_layout_1',
     layout = [(0, 0, 'rubber_plantation_tile_1', 'rubber_plantation_tile_1_spritelayout'),

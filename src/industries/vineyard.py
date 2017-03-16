@@ -14,7 +14,7 @@ industry = IndustryPrimaryOrganic(id='vineyard',
                     prospect_chance='0.75',
                     name='string(STR_IND_VINEYARD)',
                     extra_text_fund='string(STR_FUND_VINEYARD)',
-                    layouts='[vineyard_tilelayout_1, vineyard_tilelayout_2, vineyard_tilelayout_3, vineyard_tilelayout_4, vineyard_tilelayout_5]',
+                    layouts='AUTO',
                     spec_flags='0',
                     location_checks=IndustryLocationChecks(require_cluster=['vineyard', [20, 72, 1, 4]]),
                     prod_cargo_types=['BEER', 'FRUT'],
@@ -1433,4 +1433,83 @@ industry.add_spritelayout(
     fences = [],
 )
 
-
+industry.add_industry_layout(
+    id = 'vineyard_layout_1',
+    layout = [(0, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (0, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (0, 2, 'vineyard_tile_3', 'vineyard_tile_3_spritelayout'),
+              (1, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 2, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (2, 1, 'vineyard_tile_2', 'vineyard_tile_2_spritelayout'),
+              (2, 2, 'vineyard_tile_2', 'vineyard_tile_2_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'vineyard_layout_2',
+    layout = [(0, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (0, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (0, 2, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (0, 3, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 2, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 3, 'vineyard_tile_2', 'vineyard_tile_2_spritelayout'),
+              (1, 4, 'vineyard_tile_3', 'vineyard_tile_3_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'vineyard_layout_3',
+    layout = [(0, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (0, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 1, 'vineyard_tile_3', 'vineyard_tile_3_spritelayout'),
+              (2, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (2, 1, 'vineyard_tile_2', 'vineyard_tile_2_spritelayout'),
+              (3, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (3, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'vineyard_layout_4',
+    layout = [(0, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (0, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (0, 3, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (0, 4, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 3, 'vineyard_tile_3', 'vineyard_tile_3_spritelayout'),
+              (1, 4, 'vineyard_tile_2', 'vineyard_tile_2_spritelayout'),
+              (3, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (3, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (3, 3, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (3, 4, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (4, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (4, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (4, 3, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (4, 4, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'vineyard_layout_5',
+    layout = [(0, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (0, 2, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (0, 3, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (0, 4, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 2, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 3, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 4, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (1, 5, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (2, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (2, 1, 'vineyard_tile_2', 'vineyard_tile_2_spritelayout'),
+              (2, 2, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (2, 3, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (2, 4, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (2, 5, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (3, 1, 'vineyard_tile_3', 'vineyard_tile_3_spritelayout'),
+              (3, 2, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (3, 3, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+              (3, 4, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
+    ]
+)
