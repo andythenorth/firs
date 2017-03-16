@@ -14,7 +14,7 @@ industry = IndustryPrimaryOrganic(id='coffee_estate',
                     prospect_chance='0.75',
                     name='string(STR_IND_COFFEE_ESTATE)',
                     extra_text_fund='string(STR_FUND_COFFEE_ESTATE)',
-                    layouts='[coffee_estate_tilelayout_1, coffee_estate_tilelayout_2, coffee_estate_tilelayout_3, coffee_estate_tilelayout_4, coffee_estate_tilelayout_5]',
+                    layouts='AUTO',
                     spec_flags='0',
                     location_checks=IndustryLocationChecks(require_cluster=['coffee_estate', [20, 72, 1, 4]]),
                     prod_cargo_types=['JAVA', 'FRUT'],
@@ -1434,4 +1434,83 @@ industry.add_spritelayout(
     fences = [],
 )
 
-
+industry.add_industry_layout(
+    id = 'coffee_estate_layout_1',
+    layout = [(0, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (0, 1, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (0, 2, 'coffee_estate_tile_3', 'coffee_estate_tile_3_spritelayout'),
+              (1, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (1, 1, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
+              (1, 2, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (2, 1, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
+              (2, 2, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'coffee_estate_layout_2',
+    layout = [(0, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (0, 1, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (0, 2, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (0, 3, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (1, 1, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (1, 2, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (1, 3, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
+              (1, 4, 'coffee_estate_tile_3', 'coffee_estate_tile_3_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'coffee_estate_layout_3',
+    layout = [(0, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (0, 1, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (1, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (1, 1, 'coffee_estate_tile_3', 'coffee_estate_tile_3_spritelayout'),
+              (2, 0, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
+              (2, 1, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
+              (3, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (3, 1, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'coffee_estate_layout_4',
+    layout = [(0, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (0, 1, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (0, 3, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (0, 4, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (1, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (1, 1, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (1, 3, 'coffee_estate_tile_3', 'coffee_estate_tile_3_spritelayout'),
+              (1, 4, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
+              (3, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (3, 1, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (3, 3, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (3, 4, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (4, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (4, 1, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (4, 3, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (4, 4, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'coffee_estate_layout_5',
+    layout = [(0, 1, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (0, 2, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (0, 3, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (0, 4, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (1, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (1, 1, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (1, 2, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (1, 3, 'coffee_estate_tile_3', 'coffee_estate_tile_3_spritelayout'),
+              (1, 4, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
+              (1, 5, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
+              (2, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (2, 1, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
+              (2, 2, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (2, 3, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (2, 4, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (2, 5, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (3, 1, 'coffee_estate_tile_3', 'coffee_estate_tile_3_spritelayout'),
+              (3, 2, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (3, 3, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (3, 4, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+    ]
+)
