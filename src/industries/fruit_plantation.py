@@ -15,7 +15,7 @@ industry = IndustryPrimaryOrganic(id='fruit_plantation',
                     name='TTD_STR_INDUSTRY_NAME_FRUIT_PLANTATION',
                     extra_text_fund='string(STR_FUND_FRUIT_PLANTATION)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PLANTATION))',
-                    layouts='[fruit_plantation_tilelayout_1, fruit_plantation_tilelayout_2, fruit_plantation_tilelayout_3, fruit_plantation_tilelayout_4, fruit_plantation_tilelayout_5]',
+                    layouts='AUTO',
                     spec_flags='0',
                     location_checks=IndustryLocationChecks(require_cluster=['fruit_plantation', [20, 72, 1, 4]],
                                                            incompatible={'brewery': 16}),
@@ -1432,4 +1432,83 @@ industry.add_spritelayout(
     fences = [],
 )
 
-
+industry.add_industry_layout(
+    id = 'fruit_plantation_layout_1',
+    layout = [(0, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (0, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (0, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (2, 1, 'fruit_plantation_tile_3', 'fruit_plantation_tile_3_spritelayout'),
+              (2, 2, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'fruit_plantation_layout_2',
+    layout = [(0, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (0, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (0, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (0, 3, 'fruit_plantation_tile_3', 'fruit_plantation_tile_3_spritelayout'),
+              (1, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 4, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'fruit_plantation_layout_3',
+    layout = [(0, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (0, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (2, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (2, 1, 'fruit_plantation_tile_3', 'fruit_plantation_tile_3_spritelayout'),
+              (3, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (3, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'fruit_plantation_layout_4',
+    layout = [(0, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (0, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (0, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (0, 4, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 4, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (3, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (3, 1, 'fruit_plantation_tile_3', 'fruit_plantation_tile_3_spritelayout'),
+              (3, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (3, 4, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (4, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (4, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
+              (4, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (4, 4, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'fruit_plantation_layout_5',
+    layout = [(0, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (0, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (0, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (0, 4, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 4, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (1, 5, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (3, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (3, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (3, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (3, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (3, 4, 'fruit_plantation_tile_3', 'fruit_plantation_tile_3_spritelayout'),
+              (3, 5, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
+              (4, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (4, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (4, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+              (4, 4, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
+    ]
+)
