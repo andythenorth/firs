@@ -205,7 +205,7 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_775, terrain_type) {
 	${industry.id}_750;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_plantation_spritelayout, climate) {
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_1_spritelayout, climate) {
 	CLIMATE_TEMPERATE: ${industry.id}_616;
 	CLIMATE_ARCTIC: ${industry.id}_730;
 	CLIMATE_TROPIC: ${industry.id}_775;
@@ -252,45 +252,8 @@ spritelayout ${industry.id}_tile_shed_spritelayout {
 <tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
              metal:use-macro="location_checks_tile.macros['render_tree']" />
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, ${global_constants.tile_numeric_ids['vineyard_tile_1']}) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [[FMSP, 8]];
-		land_shape_flags: 0;
-	}
-	graphics {
-		foundations: return CB_RESULT_NO_FOUNDATIONS;
-		autoslope:   return CB_RESULT_NO_AUTOSLOPE;
-		tile_check:  ${industry.id}_tile_1_lc_0;
-		${industry.id}_tile_plantation_spritelayout;
-	}
-}
+<tal:include metal:use-macro="load: graphics_switches.pynml" />
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, ${global_constants.tile_numeric_ids['vineyard_tile_2']}) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [[FMSP, 8]];
-		land_shape_flags: 0;
-	}
-	graphics {
-		autoslope:  return CB_RESULT_AUTOSLOPE;
-		tile_check: ${industry.id}_tile_2_lc_0;
-		${industry.id}_tile_house_spritelayout;
-	}
-}
-<!--! HAX - this additional tile is only used because I wanted to avoid layout checks
-      house + shed can share same tile once refactore to standard layout methods -->
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_3, ${global_constants.tile_numeric_ids['vineyard_tile_3']}) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [[FMSP, 8]];
-		land_shape_flags: 0;
-	}
-	graphics {
-		autoslope:  return CB_RESULT_AUTOSLOPE;
-		tile_check: ${industry.id}_tile_3_lc_0;
-		${industry.id}_tile_shed_spritelayout;
-	}
-}
+<tal:include metal:use-macro="load: properties_tile.pynml" />
 
 <tal:include metal:use-macro="load: common_temp.pynml" />

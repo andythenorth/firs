@@ -27,10 +27,13 @@ industry = IndustryPrimaryOrganic(id='orchard_piggery',
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
 industry.add_tile(id='orchard_piggery_tile_1',
+                  foundations='return CB_RESULT_NO_FOUNDATIONS',
+                  autoslope='return CB_RESULT_NO_AUTOSLOPE',
                   location_checks=TileLocationChecks(disallow_above_snowline=True,
                                                      disallow_desert=True,
                                                      disallow_industry_adjacent=True))
 industry.add_tile(id='orchard_piggery_tile_2',
+             	  autoslope='return CB_RESULT_AUTOSLOPE',
                   location_checks=TileLocationChecks(disallow_above_snowline=True,
                                                      disallow_desert=True,
                                                      disallow_industry_adjacent=True))

@@ -28,20 +28,16 @@ industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[9, 9]'
 
 
 industry.add_tile(id='vineyard_tile_1',
+                  foundations='return CB_RESULT_NO_FOUNDATIONS',
+                  autoslope='return CB_RESULT_NO_AUTOSLOPE',
                   location_checks=TileLocationChecks(disallow_above_snowline=True,
                                                      disallow_desert=True,
                                                      disallow_industry_adjacent=True))
 industry.add_tile(id='vineyard_tile_2', # house
+             	  autoslope='return CB_RESULT_AUTOSLOPE',
                   location_checks=TileLocationChecks(disallow_above_snowline=True,
                                                      disallow_desert=True,
                                                      disallow_industry_adjacent=True))
-# HAX - this additional tile is only used because I wanted to avoid layout checks
-# house + shed can share same tile once refactore to standard layout methods
-industry.add_tile(id='vineyard_tile_3', # shed
-                  location_checks=TileLocationChecks(disallow_above_snowline=True,
-                                                     disallow_desert=True,
-                                                     disallow_industry_adjacent=True))
-
 
 building_0 = industry.add_sprite(
     sprite_number = 1633,
@@ -1437,12 +1433,12 @@ industry.add_industry_layout(
     id = 'vineyard_layout_1',
     layout = [(0, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (0, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
-              (0, 2, 'vineyard_tile_3', 'vineyard_tile_3_spritelayout'),
+              (0, 2, 'vineyard_tile_2', 'vineyard_tile_shed_spritelayout'),
               (1, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (1, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (1, 2, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
-              (2, 1, 'vineyard_tile_2', 'vineyard_tile_2_spritelayout'),
-              (2, 2, 'vineyard_tile_2', 'vineyard_tile_2_spritelayout'),
+              (2, 1, 'vineyard_tile_2', 'vineyard_tile_house_spritelayout'),
+              (2, 2, 'vineyard_tile_2', 'vineyard_tile_house_spritelayout'),
     ]
 )
 industry.add_industry_layout(
@@ -1453,8 +1449,8 @@ industry.add_industry_layout(
               (0, 3, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (1, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (1, 2, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
-              (1, 3, 'vineyard_tile_2', 'vineyard_tile_2_spritelayout'),
-              (1, 4, 'vineyard_tile_3', 'vineyard_tile_3_spritelayout'),
+              (1, 3, 'vineyard_tile_2', 'vineyard_tile_house_spritelayout'),
+              (1, 4, 'vineyard_tile_2', 'vineyard_tile_shed_spritelayout'),
     ]
 )
 industry.add_industry_layout(
@@ -1462,9 +1458,9 @@ industry.add_industry_layout(
     layout = [(0, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (0, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (1, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
-              (1, 1, 'vineyard_tile_3', 'vineyard_tile_3_spritelayout'),
+              (1, 1, 'vineyard_tile_2', 'vineyard_tile_shed_spritelayout'),
               (2, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
-              (2, 1, 'vineyard_tile_2', 'vineyard_tile_2_spritelayout'),
+              (2, 1, 'vineyard_tile_2', 'vineyard_tile_house_spritelayout'),
               (3, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (3, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
     ]
@@ -1477,8 +1473,8 @@ industry.add_industry_layout(
               (0, 4, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (1, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (1, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
-              (1, 3, 'vineyard_tile_3', 'vineyard_tile_3_spritelayout'),
-              (1, 4, 'vineyard_tile_2', 'vineyard_tile_2_spritelayout'),
+              (1, 3, 'vineyard_tile_2', 'vineyard_tile_shed_spritelayout'),
+              (1, 4, 'vineyard_tile_2', 'vineyard_tile_house_spritelayout'),
               (3, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (3, 1, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (3, 3, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
@@ -1502,12 +1498,12 @@ industry.add_industry_layout(
               (1, 4, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (1, 5, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (2, 0, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
-              (2, 1, 'vineyard_tile_2', 'vineyard_tile_2_spritelayout'),
+              (2, 1, 'vineyard_tile_2', 'vineyard_tile_house_spritelayout'),
               (2, 2, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (2, 3, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (2, 4, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (2, 5, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
-              (3, 1, 'vineyard_tile_3', 'vineyard_tile_3_spritelayout'),
+              (3, 1, 'vineyard_tile_2', 'vineyard_tile_shed_spritelayout'),
               (3, 2, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (3, 3, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),
               (3, 4, 'vineyard_tile_1', 'vineyard_tile_1_spritelayout'),

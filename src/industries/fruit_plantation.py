@@ -28,16 +28,13 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='fruit_plantation_tile_1',
+                  foundations='return CB_RESULT_NO_FOUNDATIONS',
+                  autoslope='return CB_RESULT_NO_AUTOSLOPE',
                   location_checks=TileLocationChecks(disallow_above_snowline=True,
                                                      disallow_coast=True,
                                                      disallow_industry_adjacent=True))
 industry.add_tile(id='fruit_plantation_tile_2', # house
-                  location_checks=TileLocationChecks(disallow_above_snowline=True,
-                                                     disallow_coast=True,
-                                                     disallow_industry_adjacent=True))
-# HAX - this additional tile is only used because I wanted to avoid layout checks
-# house + shed can share same tile once refactore to standard layout methods
-industry.add_tile(id='fruit_plantation_tile_3', # shed
+             	  autoslope='return CB_RESULT_AUTOSLOPE',
                   location_checks=TileLocationChecks(disallow_above_snowline=True,
                                                      disallow_coast=True,
                                                      disallow_industry_adjacent=True))
@@ -1440,7 +1437,7 @@ industry.add_industry_layout(
               (1, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (1, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (1, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
-              (2, 1, 'fruit_plantation_tile_3', 'fruit_plantation_tile_3_spritelayout'),
+              (2, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
               (2, 2, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
     ]
 )
@@ -1449,7 +1446,7 @@ industry.add_industry_layout(
     layout = [(0, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (0, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (0, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
-              (0, 3, 'fruit_plantation_tile_3', 'fruit_plantation_tile_3_spritelayout'),
+              (0, 3, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
               (1, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (1, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (1, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
@@ -1463,7 +1460,7 @@ industry.add_industry_layout(
               (1, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (1, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (2, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
-              (2, 1, 'fruit_plantation_tile_3', 'fruit_plantation_tile_3_spritelayout'),
+              (2, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
               (3, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (3, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
     ]
@@ -1479,7 +1476,7 @@ industry.add_industry_layout(
               (1, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (1, 4, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (3, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
-              (3, 1, 'fruit_plantation_tile_3', 'fruit_plantation_tile_3_spritelayout'),
+              (3, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
               (3, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (3, 4, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (4, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
@@ -1504,7 +1501,7 @@ industry.add_industry_layout(
               (3, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (3, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (3, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
-              (3, 4, 'fruit_plantation_tile_3', 'fruit_plantation_tile_3_spritelayout'),
+              (3, 4, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
               (3, 5, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
               (4, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (4, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
