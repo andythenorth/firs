@@ -21,6 +21,10 @@ generated/firs.nml: custom_tags.txt
 firs.grf: generated/firs.nml custom_tags.txt
 	nmlc -c -l src/lang --grf firs.grf generated/firs.nml
 
+# this is a macOS-specifc install location; the pre-2017 Makefile handled multiple platforms, that could be restored if needed
+install: firs.grf
+	cp firs.grf ~/Documents/OpenTTD/newgrf/
+
 clean::
 	$(_V)-rm -r docs
 	$(_V)-rm -r .chameleon_cache
