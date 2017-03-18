@@ -217,7 +217,7 @@ switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_tile_1_spritelayout, climate) 
  * ***************/
 
 spriteset(${industry.id}_spriteset_792, "src/graphics/industries/${industry.id}_1.png") { tmpl_building_sprite(10, 10, 59, -28) }
-spritelayout ${industry.id}_tile_2_spritelayout {
+spritelayout ${industry.id}_tile_house_spritelayout {
 	ground {
 		sprite: 2022;
 	}
@@ -231,7 +231,7 @@ spritelayout ${industry.id}_tile_2_spritelayout {
 	}
 }
 spriteset(${industry.id}_spriteset_shed, "src/graphics/industries/${industry.id}_1.png") { tmpl_building_sprite(80, 10, 59, -28) }
-spritelayout ${industry.id}_tile_3_spritelayout {
+spritelayout ${industry.id}_tile_shed_spritelayout {
 	ground {
 		sprite: 2022;
 	}

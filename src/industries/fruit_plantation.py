@@ -1437,8 +1437,8 @@ industry.add_industry_layout(
               (1, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (1, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (1, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
-              (2, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
-              (2, 2, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
+              (2, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_house_spritelayout'),
+              (2, 2, 'fruit_plantation_tile_2', 'fruit_plantation_tile_shed_spritelayout'),
     ]
 )
 industry.add_industry_layout(
@@ -1446,11 +1446,11 @@ industry.add_industry_layout(
     layout = [(0, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (0, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (0, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
-              (0, 3, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
+              (0, 3, 'fruit_plantation_tile_2', 'fruit_plantation_tile_house_spritelayout'),
               (1, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (1, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (1, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
-              (1, 4, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
+              (1, 4, 'fruit_plantation_tile_2', 'fruit_plantation_tile_shed_spritelayout'),
     ]
 )
 industry.add_industry_layout(
@@ -1460,9 +1460,9 @@ industry.add_industry_layout(
               (1, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (1, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (2, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
-              (2, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
+              (2, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_shed_spritelayout'),
               (3, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
-              (3, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
+              (3, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_house_spritelayout'),
     ]
 )
 industry.add_industry_layout(
@@ -1476,11 +1476,11 @@ industry.add_industry_layout(
               (1, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (1, 4, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (3, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
-              (3, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
+              (3, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_shed_spritelayout'),
               (3, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (3, 4, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (4, 0, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
-              (4, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
+              (4, 1, 'fruit_plantation_tile_2', 'fruit_plantation_tile_house_spritelayout'),
               (4, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (4, 4, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
     ]
@@ -1501,8 +1501,8 @@ industry.add_industry_layout(
               (3, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (3, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (3, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
-              (3, 4, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
-              (3, 5, 'fruit_plantation_tile_2', 'fruit_plantation_tile_2_spritelayout'),
+              (3, 4, 'fruit_plantation_tile_2', 'fruit_plantation_tile_shed_spritelayout'),
+              (3, 5, 'fruit_plantation_tile_2', 'fruit_plantation_tile_house_spritelayout'),
               (4, 1, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (4, 2, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
               (4, 3, 'fruit_plantation_tile_1', 'fruit_plantation_tile_1_spritelayout'),
