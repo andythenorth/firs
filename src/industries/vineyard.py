@@ -39,7 +39,6 @@ industry.add_tile(id='vineyard_tile_2', # house
                                                      disallow_desert=True,
                                                      disallow_industry_adjacent=True))
 
-
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS'
 )
