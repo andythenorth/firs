@@ -329,20 +329,4 @@ tilelayout tilelayout_forest_3 {
 	5, 2: _tile_1;
 }
 
-/* *************************************************
- * Definition of the industry
- * *************************************************/
-
-<tal:include define="location_checks_industry load: location_check_macros_industry.pynml"
-             metal:use-macro="location_checks_industry.macros['render_tree']" />
-
-<tal:include metal:use-macro="load: extra_text_primary.pynml" />
-
-<tal:include metal:use-macro="load: produce_primary.pynml" />
-<tal:include metal:use-macro="load: check_primary_supplies_delivered.pynml" />
-
-<tal:include metal:use-macro="load: availability.pynml" />
-
-<tal:include metal:use-macro="load: properties_industry.pynml" />
-
-<tal:include metal:use-macro="load: graphics_block_common_temp.pynml" />
+<tal:include metal:use-macro="load: common_temp_2.pynml" />
