@@ -307,7 +307,7 @@ industry.add_spritelayout(
     building_sprites = [building_4, building_10, building_5, building_8],
 )
 
-slope_switch_1 =industry.add_slope_graphics_switch(slope_switch_1,
+slope_switch_1 = industry.add_slope_graphics_switch('orchard_piggery_slope_switch_1',
                                                     slope_spritelayout_mapping={0: 'orchard_piggery_597',
                                                                                 1: 'orchard_piggery_598',
                                                                                 2: 'orchard_piggery_599',
