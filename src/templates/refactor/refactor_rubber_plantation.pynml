@@ -245,16 +245,4 @@ spritelayout ${industry.id}_tile_shed_spritelayout {
 	}
 }
 
-
-/* ****************************************************
- * Definition of the industry tiles and their callbacks
- * ***************************************************/
-
-<tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
-             metal:use-macro="location_checks_tile.macros['render_tree']" />
-
-<tal:include metal:use-macro="load: graphics_switches.pynml" />
-
-<tal:include metal:use-macro="load: properties_tile.pynml" />
-
 <tal:include metal:use-macro="load: common_temp.pynml" />

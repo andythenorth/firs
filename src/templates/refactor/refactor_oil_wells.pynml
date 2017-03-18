@@ -93,4 +93,10 @@ item(FEAT_INDUSTRYTILES, oil_wells_tile_2, ${global_constants.tile_numeric_ids['
 	}
 }
 
-<tal:include metal:use-macro="load: common_temp.pynml" />
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
+
+<tal:include metal:use-macro="load: layouts.pynml" />
+
+<tal:include metal:use-macro="load: common_temp_2.pynml" />
