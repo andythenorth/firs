@@ -1446,8 +1446,8 @@ industry.add_industry_layout(
               (1, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
               (1, 1, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
               (1, 2, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
-              (2, 1, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
-              (2, 2, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
+              (2, 1, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (2, 2, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
     ]
 )
 industry.add_industry_layout(
@@ -1468,7 +1468,7 @@ industry.add_industry_layout(
               (0, 1, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
               (1, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
               (1, 1, 'coffee_estate_tile_3', 'coffee_estate_tile_3_spritelayout'),
-              (2, 0, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
+              (2, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
               (2, 1, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
               (3, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
               (3, 1, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
@@ -1503,9 +1503,9 @@ industry.add_industry_layout(
               (1, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
               (1, 1, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
               (1, 2, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
-              (1, 3, 'coffee_estate_tile_3', 'coffee_estate_tile_3_spritelayout'),
-              (1, 4, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
-              (1, 5, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
+              (1, 3, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (1, 4, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
+              (1, 5, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
               (2, 0, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
               (2, 1, 'coffee_estate_tile_2', 'coffee_estate_tile_2_spritelayout'),
               (2, 2, 'coffee_estate_tile_1', 'coffee_estate_tile_1_spritelayout'),
