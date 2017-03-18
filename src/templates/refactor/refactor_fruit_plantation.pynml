@@ -5,6 +5,8 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
+<tal:include metal:use-macro="load: spritesets.pynml" />
+
 <tal:include metal:use-macro="load: spritelayouts.pynml" />
 
 switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_616, nearby_tile_slope(0,0)) {
@@ -210,39 +212,6 @@ switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_tile_1_spritelayout, climate) 
 	CLIMATE_ARCTIC: ${industry.id}_730;
 	CLIMATE_TROPIC: ${industry.id}_775;
 	${industry.id}_616;
-}
-
-/* ***************
- * tile with house
- * ***************/
-
-spriteset(${industry.id}_spriteset_792, "src/graphics/industries/${industry.id}_1.png") { tmpl_building_sprite(10, 10, 59, -28) }
-spritelayout ${industry.id}_tile_house_spritelayout {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: ${industry.id}_spriteset_792;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		xextent: 7;
-		yextent: 7;
-		zextent: 7;
-	}
-}
-spriteset(${industry.id}_spriteset_shed, "src/graphics/industries/${industry.id}_1.png") { tmpl_building_sprite(80, 10, 59, -28) }
-spritelayout ${industry.id}_tile_shed_spritelayout {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: ${industry.id}_spriteset_shed;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		xextent: 7;
-		yextent: 7;
-		zextent: 7;
-	}
 }
 
 <tal:include metal:use-macro="load: common_temp.pynml" />
