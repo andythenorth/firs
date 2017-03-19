@@ -351,13 +351,14 @@ class Spriteset(object):
 
 class SpriteLayout(object):
     """ Base class to hold spritelayouts for industry spritelayouts """
-    def __init__(self, id, ground_sprite, ground_overlay, building_sprites, smoke_sprites=[], fences=[], terrain_aware_ground=False):
+    def __init__(self, id, ground_sprite, ground_overlay, building_sprites, smoke_sprites=[], fences=[], magic_trees=[], terrain_aware_ground=False):
         self.id = id
         self.ground_sprite = ground_sprite
         self.ground_overlay = ground_overlay
         self.building_sprites = building_sprites
         self.smoke_sprites = smoke_sprites
         self.fences = fences # a simple list of keywords.  Valid values: 'ne', 'se', 'sw', 'nw'.  Order is arbitrary.
+        self.magic_trees = magic_trees
         self.terrain_aware_ground = terrain_aware_ground # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
 
 
@@ -618,7 +619,9 @@ class Industry(object):
         self.spritelayouts.append(new_spritelayout)
         return new_spritelayout # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
-    def add_magic_spritelayout(self, type, id, config):
+    def add_magic_spritelayout(self, type, base_id, config):
+        # sometimes magic is the only way
+        # this is for very specific spritelayout patterns that repeat across multiple industries and require long declarations and extra switches
         if type == 'slope_aware_trees':
             # tile has 4 tree positions, so 4 tree sprites/spritesets are required, just repeat as necessary if some positions use same sprite
             # trees can be ints (sprite numbers for baseset), or lists of tuples (for spritesets, with optional animation)
@@ -626,12 +629,109 @@ class Industry(object):
             for tree in config['trees']:
                 if isinstance(tree, int): # we have a sprite
                     print('sprite')
-                    trees.append(self.add_sprite(sprite_number=1633, xoffset=8,yoffset=7))
+                    trees.append(self.add_sprite(sprite_number=tree, xoffset=8,yoffset=7))
                 if isinstance(tree, list):
                     print('tree is spriteset: not implemented yet')
                     # extend spriteset support here (noting that spritesets are lists of tuples as they can be animated also)
                     # my intent was simply to pass the offsets to this, as that should be all that is needed
+            # !! ground sprites are slaved to sprite numbers currently, needs extending for spritesets
+            ground_sprite = self.add_sprite(sprite_number=str(config['ground_sprite']) + ' + slope_to_sprite_offset(nearby_tile_slope(0,0))')
 
+            # there are 19 slopes to handle, as per https://newgrf-specs.tt-wiki.net/wiki/VariationalAction2/Industry_Tiles#Land_info_of_nearby_tiles_.2860.29
+            slopes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 23, 27, 29, 30]
+            id_slope_mapping = {base_id + str(slope): slope for slope in slopes}
+
+            for id in id_slope_mapping.keys():
+                self.add_spritelayout(id = id,
+                                      ground_sprite = ground_sprite,
+                                      ground_overlay = ground_sprite, # slight hax, assume we can just reuse ground for overlay
+                                      magic_trees = [(trees[0]), (trees[1]), (trees[2]), (trees[3])],
+                                      building_sprites = [])
+
+            self.add_slope_graphics_switch(base_id,
+                                           default_result = base_id + '0',
+                                           slope_spritelayout_mapping = {slope: slope_id for slope_id, slope in id_slope_mapping.items()})
+
+
+            """
+            building_0 = industry.add_sprite(
+                sprite_number = 1633,
+                xoffset = 2,
+                yoffset = 2,
+                xextent = 13,
+                yextent = 13,
+            )
+            building_1 = industry.add_sprite(
+                sprite_number = 1689,
+                xoffset = 8,
+                yoffset = 2,
+                xextent = 7,
+                yextent = 13,
+            )
+            building_2 = industry.add_sprite(
+                sprite_number = 1620,
+                yoffset = 7,
+                yextent = 8,
+            )
+            building_3 = industry.add_sprite(
+                sprite_number = 1633,
+                xoffset = 8,
+                yoffset = 7,
+                xextent = 7,
+                yextent = 8,
+            )
+            building_4 = industry.add_sprite(
+                sprite_number = 1620,
+                xoffset = 2,
+                yoffset = 2,
+                xextent = 13,
+                yextent = 13,
+            )
+            building_5 = industry.add_sprite(
+                sprite_number = 1633,
+                yoffset = 7,
+                yextent = 8,
+            )
+            building_6 = industry.add_sprite(
+                sprite_number = 1620,
+                xoffset = 8,
+                yoffset = 7,
+                xextent = 7,
+                yextent = 8,
+            )
+            building_7 = industry.add_sprite(
+                sprite_number = 1633,
+                xoffset = 8,
+                yoffset = 2,
+                xextent = 7,
+                yextent = 13,
+            )
+            building_8 = industry.add_sprite(
+                sprite_number = 1689,
+                xoffset = 8,
+                yoffset = 7,
+                xextent = 7,
+                yextent = 8,
+            )
+            building_9 = industry.add_sprite(
+                sprite_number = 1689,
+                xoffset = 2,
+                yoffset = 2,
+                xextent = 13,
+                yextent = 13,
+            )
+            building_10 = industry.add_sprite(
+                sprite_number = 1620,
+                xoffset = 8,
+                yoffset = 2,
+                xextent = 7,
+                yextent = 13,
+            )
+            building_11 = industry.add_sprite(
+                sprite_number = 1689,
+                yoffset = 7,
+                yextent = 8,
+            )"""
 
     def add_slope_graphics_switch(self, *args, **kwargs):
         new_graphics_switch = GraphicsSwitchSlopes(*args, **kwargs)

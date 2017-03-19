@@ -54,142 +54,6 @@ spriteset_2 = industry.add_spriteset(
     id = 'coffee_estate_shed',
     sprites = [(80, 10, 64, 59, -31, -28)],
 )
-building_0 = industry.add_sprite(
-    sprite_number = 1633,
-    xoffset = 2,
-    yoffset = 2,
-    xextent = 13,
-    yextent = 13,
-)
-building_1 = industry.add_sprite(
-    sprite_number = 1689,
-    xoffset = 8,
-    yoffset = 2,
-    xextent = 7,
-    yextent = 13,
-)
-building_2 = industry.add_sprite(
-    sprite_number = 1620,
-    yoffset = 7,
-    yextent = 8,
-)
-building_3 = industry.add_sprite(
-    sprite_number = 1633,
-    xoffset = 8,
-    yoffset = 7,
-    xextent = 7,
-    yextent = 8,
-)
-building_4 = industry.add_sprite(
-    sprite_number = 1620,
-    xoffset = 2,
-    yoffset = 2,
-    xextent = 13,
-    yextent = 13,
-)
-building_5 = industry.add_sprite(
-    sprite_number = 1633,
-    yoffset = 7,
-    yextent = 8,
-)
-building_6 = industry.add_sprite(
-    sprite_number = 1620,
-    xoffset = 8,
-    yoffset = 7,
-    xextent = 7,
-    yextent = 8,
-)
-building_7 = industry.add_sprite(
-    sprite_number = 1633,
-    xoffset = 8,
-    yoffset = 2,
-    xextent = 7,
-    yextent = 13,
-)
-building_8 = industry.add_sprite(
-    sprite_number = 1689,
-    xoffset = 8,
-    yoffset = 7,
-    xextent = 7,
-    yextent = 8,
-)
-building_9 = industry.add_sprite(
-    sprite_number = 1689,
-    xoffset = 2,
-    yoffset = 2,
-    xextent = 13,
-    yextent = 13,
-)
-building_10 = industry.add_sprite(
-    sprite_number = 1620,
-    xoffset = 8,
-    yoffset = 2,
-    xextent = 7,
-    yextent = 13,
-)
-building_11 = industry.add_sprite(
-    sprite_number = 1689,
-    yoffset = 7,
-    yextent = 8,
-)
-sprite_ground_4164 = industry.add_sprite(
-    sprite_number = 4164
-)
-sprite_ground_4165 = industry.add_sprite(
-    sprite_number = 4165
-)
-sprite_ground_4166 = industry.add_sprite(
-    sprite_number = 4166
-)
-sprite_ground_4167 = industry.add_sprite(
-    sprite_number = 4167
-)
-sprite_ground_4168 = industry.add_sprite(
-    sprite_number = 4168
-)
-sprite_ground_4169 = industry.add_sprite(
-    sprite_number = 4169
-)
-sprite_ground_4170 = industry.add_sprite(
-    sprite_number = 4170
-)
-sprite_ground_4171 = industry.add_sprite(
-    sprite_number = 4171
-)
-sprite_ground_4172 = industry.add_sprite(
-    sprite_number = 4172
-)
-sprite_ground_4173 = industry.add_sprite(
-    sprite_number = 4173
-)
-sprite_ground_4174 = industry.add_sprite(
-    sprite_number = 4174
-)
-sprite_ground_4175 = industry.add_sprite(
-    sprite_number = 4175
-)
-sprite_ground_4176 = industry.add_sprite(
-    sprite_number = 4176
-)
-sprite_ground_4177 = industry.add_sprite(
-    sprite_number = 4177
-)
-sprite_ground_4178 = industry.add_sprite(
-    sprite_number = 4178
-)
-sprite_ground_4179 = industry.add_sprite(
-    sprite_number = 4179
-)
-sprite_ground_4180 = industry.add_sprite(
-    sprite_number = 4180
-)
-sprite_ground_4181 = industry.add_sprite(
-    sprite_number = 4181
-)
-sprite_ground_4182 = industry.add_sprite(
-    sprite_number = 4182
-)
-
 industry.add_spritelayout(
     id = 'coffee_estate_house_spritelayout',
     ground_sprite = sprite_ground,
@@ -204,10 +68,11 @@ industry.add_spritelayout(
 )
 industry.add_magic_spritelayout(
     type = 'slope_aware_trees',
-    id = 'coffee_estate_slope_aware_ground_with_trees',
-    config = {'trees': [1620, 1633, 1689, 1620]}
+    base_id = 'coffee_estate_slope_aware_ground_with_trees',
+    config = {'ground_sprite': 4164,
+              'trees': [1620, 1633, 1689, 1620]}
 )
-
+"""
 industry.add_spritelayout(
     id = 'coffee_estate_597',
     ground_sprite = sprite_ground_4164,
@@ -321,107 +186,85 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_4, building_10, building_5, building_8],
-)
-
-slope_switch_1 = industry.add_slope_graphics_switch('coffee_estate_slope_switch_1',
-                                                    slope_spritelayout_mapping={0: 'coffee_estate_597',
-                                                                                1: 'coffee_estate_598',
-                                                                                2: 'coffee_estate_599',
-                                                                                3: 'coffee_estate_600',
-                                                                                4: 'coffee_estate_601',
-                                                                                5: 'coffee_estate_602',
-                                                                                6: 'coffee_estate_603',
-                                                                                7: 'coffee_estate_604',
-                                                                                8: 'coffee_estate_605',
-                                                                                9: 'coffee_estate_606',
-                                                                                10: 'coffee_estate_607',
-                                                                                11: 'coffee_estate_608',
-                                                                                12: 'coffee_estate_609',
-                                                                                13: 'coffee_estate_610',
-                                                                                14: 'coffee_estate_611',
-                                                                                29: 'coffee_estate_612',
-                                                                                23: 'coffee_estate_613',
-                                                                                27: 'coffee_estate_614',
-                                                                                30: 'coffee_estate_615'},
-                                                    default_result='coffee_estate_597')
+)"""
 
 industry.add_industry_layout(
     id = 'coffee_estate_layout_1',
-    layout = [(0, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (0, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
+    layout = [(0, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (0, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
               (0, 2, 'coffee_estate_tile_2', 'coffee_estate_shed_spritelayout'),
-              (1, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
+              (1, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
               (1, 1, 'coffee_estate_tile_2', 'coffee_estate_house_spritelayout'),
-              (1, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (2, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (2, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
+              (1, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (2, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (2, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
     ]
 )
 industry.add_industry_layout(
     id = 'coffee_estate_layout_2',
-    layout = [(0, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (0, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (0, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (0, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (1, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (1, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
+    layout = [(0, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (0, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (0, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (0, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (1, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (1, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
               (1, 3, 'coffee_estate_tile_2', 'coffee_estate_shed_spritelayout'),
               (1, 4, 'coffee_estate_tile_2', 'coffee_estate_house_spritelayout'),
     ]
 )
 industry.add_industry_layout(
     id = 'coffee_estate_layout_3',
-    layout = [(0, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (0, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (1, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
+    layout = [(0, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (0, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (1, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
               (1, 1, 'coffee_estate_tile_2', 'coffee_estate_house_spritelayout'),
-              (2, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
+              (2, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
               (2, 1, 'coffee_estate_tile_2', 'coffee_estate_shed_spritelayout'),
-              (3, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (3, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
+              (3, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (3, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
     ]
 )
 industry.add_industry_layout(
     id = 'coffee_estate_layout_4',
-    layout = [(0, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (0, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (0, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (0, 4, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (1, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (1, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
+    layout = [(0, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (0, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (0, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (0, 4, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (1, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (1, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
               (1, 3, 'coffee_estate_tile_2', 'coffee_estate_house_spritelayout'),
               (1, 4, 'coffee_estate_tile_2', 'coffee_estate_shed_spritelayout'),
-              (3, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (3, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (3, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (3, 4, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (4, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (4, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (4, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (4, 4, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
+              (3, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (3, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (3, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (3, 4, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (4, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (4, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (4, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (4, 4, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
     ]
 )
 industry.add_industry_layout(
     id = 'coffee_estate_layout_5',
-    layout = [(0, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (0, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (0, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (0, 4, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (1, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (1, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (1, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (1, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (1, 4, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (1, 5, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (2, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
+    layout = [(0, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (0, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (0, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (0, 4, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (1, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (1, 1, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (1, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (1, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (1, 4, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (1, 5, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (2, 0, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
               (2, 1, 'coffee_estate_tile_2', 'coffee_estate_shed_spritelayout'),
-              (2, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (2, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (2, 4, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (2, 5, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
+              (2, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (2, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (2, 4, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (2, 5, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
               (3, 1, 'coffee_estate_tile_2', 'coffee_estate_house_spritelayout'),
-              (3, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (3, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
-              (3, 4, 'coffee_estate_tile_1', 'coffee_estate_slope_switch_1'),
+              (3, 2, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (3, 3, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
+              (3, 4, 'coffee_estate_tile_1', 'coffee_estate_slope_aware_ground_with_trees'),
     ]
 )
