@@ -628,12 +628,12 @@ class Industry(object):
             trees = [] # we'll add sprites or spritesets for the trees here, using config data
             for tree in config['trees']:
                 if isinstance(tree, int): # we have a sprite
-                    print('sprite')
                     trees.append(self.add_sprite(sprite_number=tree, xoffset=8,yoffset=7))
                 if isinstance(tree, list):
                     print('tree is spriteset: not implemented yet')
                     # extend spriteset support here (noting that spritesets are lists of tuples as they can be animated also)
                     # my intent was simply to pass the offsets to this, as that should be all that is needed
+            print(config.get('trees_tropic', None))
             # !! ground sprites are slaved to sprite numbers currently, needs extending for spritesets
             ground_sprite = self.add_sprite(sprite_number=str(config['ground_sprite']) + ' + slope_to_sprite_offset(nearby_tile_slope(0,0))')
 
@@ -651,87 +651,6 @@ class Industry(object):
             self.add_slope_graphics_switch(base_id,
                                            default_result = base_id + '0',
                                            slope_spritelayout_mapping = {slope: slope_id for slope_id, slope in id_slope_mapping.items()})
-
-
-            """
-            building_0 = industry.add_sprite(
-                sprite_number = 1633,
-                xoffset = 2,
-                yoffset = 2,
-                xextent = 13,
-                yextent = 13,
-            )
-            building_1 = industry.add_sprite(
-                sprite_number = 1689,
-                xoffset = 8,
-                yoffset = 2,
-                xextent = 7,
-                yextent = 13,
-            )
-            building_2 = industry.add_sprite(
-                sprite_number = 1620,
-                yoffset = 7,
-                yextent = 8,
-            )
-            building_3 = industry.add_sprite(
-                sprite_number = 1633,
-                xoffset = 8,
-                yoffset = 7,
-                xextent = 7,
-                yextent = 8,
-            )
-            building_4 = industry.add_sprite(
-                sprite_number = 1620,
-                xoffset = 2,
-                yoffset = 2,
-                xextent = 13,
-                yextent = 13,
-            )
-            building_5 = industry.add_sprite(
-                sprite_number = 1633,
-                yoffset = 7,
-                yextent = 8,
-            )
-            building_6 = industry.add_sprite(
-                sprite_number = 1620,
-                xoffset = 8,
-                yoffset = 7,
-                xextent = 7,
-                yextent = 8,
-            )
-            building_7 = industry.add_sprite(
-                sprite_number = 1633,
-                xoffset = 8,
-                yoffset = 2,
-                xextent = 7,
-                yextent = 13,
-            )
-            building_8 = industry.add_sprite(
-                sprite_number = 1689,
-                xoffset = 8,
-                yoffset = 7,
-                xextent = 7,
-                yextent = 8,
-            )
-            building_9 = industry.add_sprite(
-                sprite_number = 1689,
-                xoffset = 2,
-                yoffset = 2,
-                xextent = 13,
-                yextent = 13,
-            )
-            building_10 = industry.add_sprite(
-                sprite_number = 1620,
-                xoffset = 8,
-                yoffset = 2,
-                xextent = 7,
-                yextent = 13,
-            )
-            building_11 = industry.add_sprite(
-                sprite_number = 1689,
-                yoffset = 7,
-                yextent = 8,
-            )"""
 
     def add_slope_graphics_switch(self, *args, **kwargs):
         new_graphics_switch = GraphicsSwitchSlopes(*args, **kwargs)
