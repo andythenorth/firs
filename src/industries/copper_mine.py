@@ -43,7 +43,6 @@ sprite_ground_overlay = industry.add_sprite(
 )
 sprite_1 = industry.add_sprite(
     sprite_number = 2039,
-    zextent= 12,
 )
 # there is no sprite 2 for this industry, spritelayout_2 doesn't need a building sprite
 sprite_3_anim = industry.add_sprite(
@@ -52,15 +51,12 @@ sprite_3_anim = industry.add_sprite(
     yoffset= 3,
     xextent= 13,
     yextent= 12,
-    zextent= 12,
 )
 sprite_4 = industry.add_sprite(
     sprite_number = 2036,
-    zextent= 12,
 )
 sprite_5 = industry.add_sprite(
     sprite_number = 2033,
-    zextent= 12,
 )
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type = 'dark_smoke_small',

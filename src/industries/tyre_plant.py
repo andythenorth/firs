@@ -45,42 +45,34 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_1',
     sprites = [(10, 10, 64, 90, -31, -58)],
-    zextent = 32
 )
 spriteset_2 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_2',
     sprites = [(80, 10, 64, 90, -31, -58)],
-    zextent = 32
 )
 spriteset_3 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_3',
     sprites = [(150, 10, 64, 90, -31, -58)],
-    zextent = 32
 )
 spriteset_4 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_4',
     sprites = [(220, 10, 64, 90, -31, -58)],
-    zextent = 32
 )
 spriteset_5 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_5',
     sprites = [(290, 10, 64, 64, -31, -32)],
-    zextent = 32
 )
 spriteset_6 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_6',
     sprites = [(360, 10, 64, 64, -31, -32)],
-    zextent = 32
 )
 spriteset_7 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_7',
     sprites = [(430, 10, 64, 31, -31, 0)],
-    zextent = 32
 )
 spriteset_8 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_8',
     sprites = [(500, 10, 64, 31, -31, 0)],
-    zextent = 32
 )
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_small',

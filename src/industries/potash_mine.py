@@ -64,7 +64,6 @@ sprite_ground_overlay = industry.add_sprite(
 spriteset_headgear_animated = industry.add_spriteset(
     id = 'potash_mine_spriteset_headgear_animated',
     sprites = [(10, 310, 64, 122, -31, -88), (80, 310, 64, 122, -31, -88), (150, 310, 64, 122, -31, -88)],
-    zextent = 48,
     animation_rate = 1,
     custom_sprite_selector = '(animation_frame % 3)',
 )
@@ -77,43 +76,35 @@ spriteset_exit_trestle_animated = industry.add_spriteset(
                (640, 160, 64, 122, -31, -88), (710, 160, 64, 122, -31, -88), (780, 160, 64, 122, -31, -88),
                (850, 160, 64, 122, -31, -88), (920, 160, 64, 122, -31, -88), (990, 160, 64, 122, -31, -88),
                (1060, 160, 64, 122, -31, -88)],
-    zextent = 48,
     animation_rate = 1,
 )
 spriteset_crusher_front_part = industry.add_spriteset(
     id = 'potash_mine_spriteset_crusher_front_part',
     sprites = [(10, 10, 64, 122, -31, -90)],
-    zextent = 48,
 )
 spriteset_crusher_rear_part = industry.add_spriteset(
     id = 'potash_mine_spriteset_crusher_rear_part',
     sprites = [(80, 10, 64, 122, -31, -74)],
-    zextent = 48,
 )
 spriteset_hut_vents = industry.add_spriteset(
     id = 'potash_mine_spriteset_hut_vents',
     sprites = [(150, 10, 64, 122, -31, -90)],
-    zextent = 16,
 )
 spriteset_ore_1 = industry.add_spriteset(
     id = 'potash_mine_spriteset_ore_1',
     sprites = [(220, 10, 64, 122, -31, -90)],
-    zextent = 16,
 )
 spriteset_ore_2 = industry.add_spriteset(
     id = 'potash_mine_spriteset_ore_2',
     sprites = [(290, 10, 64, 122, -31, -90)],
-    zextent = 16,
 )
 spriteset_winding_house = industry.add_spriteset(
     id = 'potash_mine_spriteset_winding_house',
     sprites = [(360, 10, 64, 122, -31, -90)],
-    zextent = 16,
 )
 spriteset_exit_shed_rear = industry.add_spriteset(
     id = 'potash_mine_spriteset_exit_shed_rear',
     sprites = [(430, 10, 64, 122, -31, -90)],
-    zextent = 16,
 )
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'dark_smoke_small',

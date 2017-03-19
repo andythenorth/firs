@@ -45,27 +45,22 @@ spriteset_ground_empty = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'fishing_grounds_spriteset_1',
     sprites = [(10, 10, 64, 31, -31, 0)],
-    zextent = 16
 )
 spriteset_2 = industry.add_spriteset(
     id = 'fishing_grounds_spriteset_2',
     sprites = [(80, 10, 64, 31, -31, 0)],
-    zextent = 16
 )
 spriteset_3 = industry.add_spriteset(
     id = 'fishing_grounds_spriteset_3',
     sprites = [(150, 10, 64, 31, -31, 0)],
-    zextent = 16
 )
 spriteset_4 = industry.add_spriteset(
     id = 'fishing_grounds_spriteset_4',
     sprites = [(220, 10, 64, 31, -31, 0)],
-    zextent = 16
 )
 spriteset_5 = industry.add_spriteset(
     id = 'fishing_grounds_spriteset_5',
     sprites = [(290, 10, 64, 31, -31, -32)],
-    zextent = 16
 )
 
 industry.add_spritelayout(

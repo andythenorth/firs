@@ -52,61 +52,49 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_1',
     sprites = [(10, 10, 64, 64, -31, -31)],
-    zextent = 64
 )
 spriteset_2 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_2',
     sprites = [(80, 10, 64, 64, -31, -26)],
-    zextent = 64
 )
 spriteset_3 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_3',
     sprites = [(150, 10, 64, 64, -31, -31)],
-    zextent = 64
 )
 spriteset_4 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_4',
     sprites = [(220, 10, 64, 128, -31, -95)],
-    zextent = 128
 )
 spriteset_5 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_5',
     sprites = [(290, 10, 64, 128, -31, -95)],
-    zextent = 55
 )
 spriteset_6 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_6',
     sprites = [(360, 10, 64, 128, -31, -95)],
-    zextent = 55
 )
 spriteset_7 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_7',
     sprites = [(430, 10, 64, 56, -31, -26)],
-    zextent = 32
 )
 spriteset_8 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_8',
     sprites = [(500, 10, 64, 56, -31, -26)],
-    zextent = 32
 )
 spriteset_9 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_9',
     sprites = [(570, 10, 64, 64, -31, -31)],
-    zextent = 64
 )
 spriteset_10 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_10',
     sprites = [(640, 10, 64, 64, -31, -31)],
-    zextent = 64
 )
 spriteset_11 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_11',
     sprites = [(710, 10, 64, 110, -31, -61)],
-    zextent = 90
 )
 sprite_transformer = industry.add_sprite(
     sprite_number = 2054,
-    zextent= 90
 )
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',

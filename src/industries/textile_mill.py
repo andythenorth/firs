@@ -45,27 +45,22 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_large_chimney = industry.add_spriteset(
     id = 'textile_mill_spriteset_large_chimney',
     sprites = [(10, 60, 64, 103, -31, -74)],
-    zextent = 64
 )
 spriteset_large_building_lh_part = industry.add_spriteset(
     id = 'textile_mill_spriteset_large_building_lh_part',
     sprites = [(80, 60, 64, 103, -31, -72)],
-    zextent = 64
 )
 spriteset_large_building_rh_part = industry.add_spriteset(
     id = 'textile_mill_spriteset_large_building_rh_part',
     sprites = [(150, 60, 64, 103, -31, -72)],
-    zextent = 64
 )
 spriteset_crates_greeble = industry.add_spriteset(
     id = 'textile_mill_spriteset_crates_greeble',
     sprites = [(220, 60, 64, 103, -31, -72)],
-    zextent = 64
 )
 spriteset_small_warehouse = industry.add_spriteset(
     id = 'textile_mill_spriteset_small_warehouse',
     sprites = [(290, 60, 64, 103, -31, -72)],
-    zextent = 48
 )
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',

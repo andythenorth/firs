@@ -60,32 +60,26 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'iron_works_spriteset_1',
     sprites = [(10, 10, 64, 70, -31, -40)],
-    zextent = 32
 )
 spriteset_2 = industry.add_spriteset(
     id = 'iron_works_spriteset_2',
     sprites = [(80, 10, 64, 70, -31, -39)],
-    zextent = 32
 )
 spriteset_3 = industry.add_spriteset(
     id = 'iron_works_spriteset_3',
     sprites = [(150, 10, 64, 70, -31, -39)],
-    zextent = 32
 )
 spriteset_4 = industry.add_spriteset(
     id = 'iron_works_spriteset_4',
     sprites = [(430, 10, 64, 70, -31, -39)],
-    zextent = 24
 )
 spriteset_5 = industry.add_spriteset(
     id = 'iron_works_spriteset_5',
     sprites = [(500, 10, 64, 70, -31, -39)],
-    zextent = 24
 )
 spriteset_iron_pigs_anim = industry.add_spriteset(
     id = 'iron_works_spriteset_iron_pigs_1',
     sprites = [(220, 10, 64, 70, -31, -39), (290, 10, 64, 70, -31, -39), (360, 10, 64, 70, -31, -39)],
-    zextent = 32,
     animation_rate = 1
 )
 spriteset_ground_pigs = industry.add_spriteset(

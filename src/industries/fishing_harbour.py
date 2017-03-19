@@ -53,34 +53,28 @@ spriteset_1 = industry.add_spriteset(
 spriteset_2 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_2',
     sprites = [(10, 60, 64, 39, -31, -7)],
-    zextent = 7,
     always_draw = 1,
 )
 spriteset_3 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_3',
     sprites = [(80, 60, 64, 39, -31, -7)],
-    zextent = 7,
     always_draw = 1
 )
 spriteset_4 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_4',
     sprites = [(150, 60, 64, 39, -31, -7)],
-    zextent = 7
 )
 spriteset_5 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_5',
     sprites = [(220, 60, 64, 39, -31, -7)],
-    zextent = 7
 )
 spriteset_6 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_6',
     sprites = [(290, 60, 64, 39, -31, -7)],
-    zextent = 7
 )
 spriteset_7 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_7',
     sprites = [(360, 60, 64, 39, -31, -7)],
-    zextent = 7
 )
 spriteset_8 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_8',

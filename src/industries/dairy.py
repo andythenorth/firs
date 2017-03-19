@@ -55,13 +55,11 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'dairy_spriteset_1',
     sprites = [(10, 10, 64, 94, -31, -63)],
-    zextent = 32
 )
 spriteset_flag_anim = industry.add_spriteset(
     id = 'dairy_spriteset_flag_anim',
     sprites = [(220, 120, 64, 64, -31, -65), (10, 120, 64, 64, -31, -65), (80, 120, 64, 64, -31, -65),
                (150, 120, 64, 64, -31, -65), (80, 120, 64, 64, -31, -65), (10, 120, 64, 64, -31, -65)],
-    zextent = 32,
     animation_rate = 1
 )
 spriteset_ground_anim = industry.add_spriteset(
@@ -77,38 +75,31 @@ spriteset_ground_overlay_anim = industry.add_spriteset(
 spriteset_2 = industry.add_spriteset(
     id = 'dairy_spriteset_2',
     sprites = [(80, 10, 64, 94, -31, -63)],
-    zextent = 32,
     num_sprites_to_autofill = len(spriteset_flag_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_3 = industry.add_spriteset(
     id = 'dairy_spriteset_3',
     sprites = [(150, 10, 64, 94, -31, -62)],
-    zextent = 32
 )
 spriteset_4 = industry.add_spriteset(
     id = 'dairy_spriteset_4',
     sprites = [(220, 10, 64, 94, -31, -43)],
-    zextent = 24
 )
 spriteset_5 = industry.add_spriteset(
     id = 'dairy_spriteset_5',
     sprites = [(290, 10, 64, 94, -31, -43)],
-    zextent = 24
 )
 spriteset_6 = industry.add_spriteset(
     id = 'dairy_spriteset_6',
     sprites = [(360, 10, 64, 94, -31, -43)],
-    zextent = 24
 )
 spriteset_7 = industry.add_spriteset(
     id = 'dairy_spriteset_7',
     sprites = [(430, 10, 64, 94, -31, -43)],
-    zextent = 48
 )
 spriteset_8 = industry.add_spriteset(
     id = 'dairy_spriteset_8',
     sprites = [(500, 10, 64, 94, -31, -63)],
-    zextent = 16
 )
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',

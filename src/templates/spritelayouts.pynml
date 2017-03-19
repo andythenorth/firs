@@ -118,7 +118,6 @@
                     zoffset:  LOAD_TEMP(${temp_storage.var_fence_offset_nw}) * 8;
                     xextent: 16;
                     yextent: 1;
-                    zextent: 6;
                     recolour_mode: RECOLOUR_REMAP;
                     palette:       PALETTE_USE_DEFAULT;
                 }
@@ -225,7 +224,6 @@
                     zoffset:  LOAD_TEMP(${temp_storage.var_fence_offset_se}) * 8;
                     xextent: 16;
                     yextent: 1;
-                    zextent: 6;
                     recolour_mode: RECOLOUR_REMAP;
                     palette:       PALETTE_USE_DEFAULT;
                 }
@@ -239,7 +237,6 @@
                     zoffset:  LOAD_TEMP(${temp_storage.var_fence_offset_sw}) * 8;
                     xextent: 1;
                     yextent: 16;
-                    zextent: 6;
                     recolour_mode: RECOLOUR_REMAP;
                     palette:       PALETTE_USE_DEFAULT;
                 }

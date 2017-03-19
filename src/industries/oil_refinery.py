@@ -41,27 +41,22 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'oil_refinery_spriteset_1',
     sprites = [(10, 10, 64, 66, -31, -35)],
-    zextent = 48
 )
 spriteset_2 = industry.add_spriteset(
     id = 'oil_refinery_spriteset_2',
     sprites = [(80, 10, 64, 128, -31, -96)],
-    zextent = 48
 )
 spriteset_3 = industry.add_spriteset(
     id = 'oil_refinery_spriteset_3',
     sprites = [(150, 10, 64, 128, -31, -96)],
-    zextent = 48
 )
 spriteset_4 = industry.add_spriteset(
     id = 'oil_refinery_spriteset_4',
     sprites = [(220, 10, 64, 128, -31, -96)],
-    zextent = 48
 )
 spriteset_5 = industry.add_spriteset(
     id = 'oil_refinery_spriteset_5',
     sprites = [(290, 10, 64, 66, -31, -35)],
-    zextent = 48
 )
 
 industry.add_spritelayout(

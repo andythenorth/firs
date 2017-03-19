@@ -53,42 +53,34 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_horizontal_tanks = industry.add_spriteset(
     id = 'chemical_plant_spriteset_horizontal_tanks',
     sprites = [(150, 10, 64, 114, -31, -83)],
-    zextent = 60
 )
 spriteset_frac_columns = industry.add_spriteset(
     id = 'chemical_plant_spriteset_frac_columns',
     sprites = [(220, 10, 64, 114, -31, -83)],
-    zextent = 95
 )
 spriteset_drop_tower_and_thin_chimney = industry.add_spriteset(
     id = 'chemical_plant_spriteset_drop_tower_and_thin_chimney',
     sprites = [(290, 10, 64, 114, -31, -83)],
-    zextent = 127
 )
 spriteset_large_building = industry.add_spriteset(
     id = 'chemical_plant_spriteset_large_building',
     sprites = [(360, 10, 64, 114, -31, -83)],
-    zextent = 70
 )
 spriteset_fat_chimney = industry.add_spriteset(
     id = 'chemical_plant_spriteset_fat_chimney',
     sprites = [(430, 10, 64, 114, -31, -83)],
-    zextent = 90
 )
 spriteset_spherical_tanks = industry.add_spriteset(
     id = 'chemical_plant_spriteset_spherical_tanks',
     sprites = [(500, 10, 64, 66, -31, -35)],
-    zextent = 48
 )
 spriteset_vertical_tanks = industry.add_spriteset(
     id = 'chemical_plant_spriteset_vertical_tanks',
     sprites = [(570, 10, 64, 66, -31, -35)],
-    zextent = 48
 )
 spriteset_barrels = industry.add_spriteset(
     id = 'chemical_plant_spriteset_barrels',
     sprites = [(710, 10, 64, 66, -31, -35)],
-    zextent = 48
 )
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',

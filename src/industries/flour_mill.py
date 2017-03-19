@@ -70,19 +70,16 @@ spriteset_2 = industry.add_spriteset(
 spriteset_3 = industry.add_spriteset(
     id = 'flour_mill_spriteset_3',
     sprites = [(150, 60, 64, 82, -31, -51)],
-    zextent = 48 # optional zextent value, will default to 16 if this param is omitted
 )
 spriteset_4 = industry.add_spriteset(
     id = 'flour_mill_spriteset_4',
     sprites = [(220, 60, 64, 82, -31, -51)],
-    zextent = 48 # optional zextent value, will default to 16 if this param is omitted
 )
 # animated spriteset defined first so others can copy num. frames
 spriteset_windmill_anim = industry.add_spriteset(
     id = 'flour_mill_spriteset_windmill_anim',
     sprites = [(10, 200, 64, 82, -31, -52), (80, 200, 64, 82, -31, -52), (150, 200, 64, 82, -31, -52),
                (220, 200, 64, 82, -31, -52), (290, 200, 64, 82, -31, -52), (360, 200, 64, 82, -31, -52)],
-    zextent = 24, # optional zextent value, will default to 16 if this param is omitted
     animation_rate = 1
 )
 spriteset_ground_windmill = industry.add_spriteset(

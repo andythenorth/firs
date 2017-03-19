@@ -42,12 +42,10 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'smithy_forge_spriteset_1',
     sprites = [(10, 10, 64, 80, -31, -49)],
-    zextent = 48
 )
 spriteset_2 = industry.add_spriteset(
     id = 'smithy_forge_spriteset_2',
     sprites = [(80, 10, 64, 80, -31, -49)],
-    zextent = 48
 )
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type = 'dark_smoke_small',

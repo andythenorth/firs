@@ -42,22 +42,18 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'food_processor_spriteset_1',
     sprites = [(10, 10, 64, 87, -31, -56)],
-    zextent = 64
 )
 spriteset_2 = industry.add_spriteset(
     id = 'food_processor_spriteset_2',
     sprites = [(80, 10, 64, 87, -31, -56)],
-    zextent = 64
 )
 spriteset_3 = industry.add_spriteset(
     id = 'food_processor_spriteset_3',
     sprites = [(150, 10, 64, 87, -31, -56)],
-    zextent = 32
 )
 spriteset_4 = industry.add_spriteset(
     id = 'food_processor_spriteset_4',
     sprites = [(220, 10, 64, 87, -31, -56)],
-    zextent = 32
 )
 
 industry.add_spritelayout(

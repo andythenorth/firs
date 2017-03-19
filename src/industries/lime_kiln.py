@@ -49,27 +49,22 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'lime_kiln_spriteset_1',
     sprites = [(10, 10, 64, 110, -31, -70)],
-    zextent = 48
 )
 spriteset_2 = industry.add_spriteset(
     id = 'lime_kiln_spriteset_2',
     sprites = [(80, 10, 64, 110, -31, -70)],
-    zextent = 48
 )
 spriteset_3 = industry.add_spriteset(
     id = 'lime_kiln_spriteset_3',
     sprites = [(150, 10, 64, 64, -31, -31)],
-    zextent = 48
 )
 spriteset_4 = industry.add_spriteset(
     id = 'lime_kiln_spriteset_4',
     sprites = [(220, 10, 64, 92, -31, -60)],
-    zextent = 48
 )
 spriteset_5 = industry.add_spriteset(
     id = 'lime_kiln_spriteset_5',
     sprites = [(290, 10, 64, 64, -31, -31)],
-    zextent = 48
 )
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',

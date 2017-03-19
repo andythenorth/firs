@@ -49,32 +49,26 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'brick_works_spriteset_1',
     sprites = [(10, 10, 64, 101, -31, -64)],
-    zextent = 12
 )
 spriteset_2 = industry.add_spriteset(
     id = 'brick_works_spriteset_2',
     sprites = [(80, 10, 64, 101, -31, -59)],
-    zextent = 12
 )
 spriteset_3 = industry.add_spriteset(
     id = 'brick_works_spriteset_3',
     sprites = [(150, 10, 64, 101, -31, -71)],
-    zextent = 12
 )
 spriteset_4 = industry.add_spriteset(
     id = 'brick_works_spriteset_4',
     sprites = [(220, 10, 64, 101, -31, -69)],
-    zextent = 12
 )
 spriteset_sand_staithe = industry.add_spriteset(
     id = 'brick_works_spriteset_sand_staithe',
     sprites = [(290, 10, 64, 31, -31, 0)],
-    zextent = 12
 )
 spriteset_clay_staithe = industry.add_spriteset(
     id = 'brick_works_spriteset_clay_staithe',
     sprites = [(360, 10, 64, 31, -31, 0)],
-    zextent = 12
 )
 sprite_smoke_boilerhouse = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',

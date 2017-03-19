@@ -61,14 +61,12 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'brewery_spriteset_1',
     sprites = [(10, 60, 64, 91, -31, -60)],
-    zextent = 48
 )
 # building with animated flags
 spriteset_2_anim = industry.add_spriteset(
     id = 'brewery_spriteset_2_anim',
     sprites = [(80, 390, 64, 91, -31, -60), (80, 60, 64, 91, -31, -60), (80, 170, 64, 91, -31, -60),
                (80, 280, 64, 91, -31, -60), (80, 170, 64, 91, -31, -60), (80, 60, 64, 91, -31, -60)],
-    zextent = 48,
     animation_rate = 1
 )
 spriteset_ground_anim = industry.add_spriteset(
@@ -84,7 +82,6 @@ spriteset_ground_overlay_anim = industry.add_spriteset(
 spriteset_3 = industry.add_spriteset(
     id = 'brewery_spriteset_3',
     sprites = [(150, 60, 64, 91, -31, -60)],
-    zextent = 48
 )
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_small',

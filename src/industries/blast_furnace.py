@@ -67,42 +67,34 @@ spriteset_ground_tile_dark = industry.add_spriteset(
 spriteset_greeble = industry.add_spriteset(
     id = 'blast_furnace_spriteset_greeble',
     sprites = [(150, 10, 64, 122, -31, -91)],
-    zextent = 12
 )
 spriteset_blast_furnace_2 = industry.add_spriteset(
     id = 'blast_furnace_spriteset_blast_furnace_2',
     sprites = [(10, 10, 64, 144, -31, -114)],
-    zextent = 130
 )
 spriteset_blast_furnace_1 = industry.add_spriteset(
     id = 'blast_furnace_spriteset_blast_furnace_1',
     sprites = [(80, 10, 64, 122, -31, -91)],
-    zextent = 12
 )
 spriteset_small_shed = industry.add_spriteset(
     id = 'blast_furnace_spriteset_small_shed',
     sprites = [(220, 10, 64, 122, -31, -91)],
-    zextent = 32
 )
 spriteset_ladle_transporter = industry.add_spriteset(
     id = 'blast_furnace_spriteset_ladle_transporter',
     sprites = [(290, 10, 64, 122, -31, -91)],
-    zextent = 12
 )
 spriteset_brick_building = industry.add_spriteset(
     id = 'blast_furnace_spriteset_brick_building',
     sprites = [(360, 10, 64, 122, -31, -91)],
-    zextent = 12
 )
 spriteset_small_tanks = industry.add_spriteset(
     id = 'blast_furnace_spriteset_small_tanks',
     sprites = [(430, 10, 64, 122, -31, -91)],
-    zextent = 12
 )
 spriteset_large_shed_rear_part = industry.add_spriteset(
     id = 'blast_furnace_spriteset_large_shed_rear_part',
     sprites = [(570, 10, 64, 122, -31, -91)],
-    zextent = 12
 )
 spriteset_large_shed_front_part_animated = industry.add_spriteset(
     id = 'blast_furnace_spriteset_large_shed_front_part_animated',
@@ -110,7 +102,6 @@ spriteset_large_shed_front_part_animated = industry.add_spriteset(
                (220, 160, 64, 122, -31, -91), (290, 160, 64, 122, -31, -91), (360, 160, 64, 122, -31, -91),
                (430, 160, 64, 122, -31, -91), (500, 160, 64, 122, -31, -91), (570, 160, 64, 122, -31, -91),
                (640, 160, 64, 122, -31, -91)],
-    zextent = 32,
     animation_rate = 1,
     custom_sprite_selector = '(animation_frame < 10) ? (animation_frame % 10) : 0',
 )
@@ -125,7 +116,6 @@ spriteset_casting_shed_animated = industry.add_spriteset(
                (220, 310, 64, 122, -31, -91), (290, 310, 64, 122, -31, -91), (360, 310, 64, 122, -31, -91),
                (430, 310, 64, 122, -31, -91), (500, 310, 64, 122, -31, -91), (570, 310, 64, 122, -31, -91),
                (640, 310, 64, 122, -31, -91)],
-    zextent = 32,
     animation_rate = 1,
     custom_sprite_selector = '(animation_frame < 10) ? (animation_frame % 10) : 0',
 )

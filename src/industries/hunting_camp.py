@@ -46,22 +46,18 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'hunting_camp_spriteset_1',
     sprites = [(10, 10, 64, 52, -31, -21)],
-    zextent = 32
 )
 spriteset_1_ground = industry.add_spriteset(
     id = 'hunting_camp_spriteset_1_ground',
     sprites = [(10, 70, 64, 52, -31, -21)],
-    zextent = 32
 )
 spriteset_2 = industry.add_spriteset(
     id = 'hunting_camp_spriteset_2',
     sprites = [(80, 10, 64, 52, -31, -21)],
-    zextent = 32
 )
 spriteset_2_ground = industry.add_spriteset(
     id = 'hunting_camp_spriteset_2_ground',
     sprites = [(80, 70, 64, 52, -31, -21)],
-    zextent = 32
 )
 
 industry.add_spritelayout(

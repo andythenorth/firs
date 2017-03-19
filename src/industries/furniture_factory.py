@@ -42,32 +42,26 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'furniture_factory_spriteset_1',
     sprites = [(10, 60, 64, 88, -31, -42)],
-    zextent = 92
 )
 spriteset_2 = industry.add_spriteset(
     id = 'furniture_factory_spriteset_2',
     sprites = [(80, 60, 64, 88, -31, -44)],
-    zextent = 64
 )
 spriteset_3 = industry.add_spriteset(
     id = 'furniture_factory_spriteset_3',
     sprites = [(150, 60, 64, 88, -31, -42)],
-    zextent = 64
 )
 spriteset_4 = industry.add_spriteset(
     id = 'furniture_factory_spriteset_4',
     sprites = [(220, 60, 64, 88, -31, -42)],
-    zextent = 64
 )
 spriteset_5 = industry.add_spriteset(
     id = 'furniture_factory_spriteset_5',
     sprites = [(290, 60, 64, 88, -31, -42)],
-    zextent = 64
 )
 spriteset_6 = industry.add_spriteset(
     id = 'furniture_factory_spriteset_6',
     sprites = [(360, 60, 64, 88, -31, -41)],
-    zextent = 32
 )
 
 industry.add_spritelayout(

@@ -328,7 +328,7 @@ class Spriteset(object):
     """ Base class to hold industry spritesets """
     # !! arguably this should be two different classes, one for building/feature spritesets, and one for ground spritesets
     def __init__(self, id, sprites=[], type='', xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16,
-                 zextent=16, animation_rate=0, custom_sprite_selector=None, always_draw=0, num_sprites_to_autofill=1):
+                 animation_rate=0, custom_sprite_selector=None, always_draw=0, num_sprites_to_autofill=1):
         self.id = id
         self.sprites = sprites # a list of sprites 6-tuples in format (x, y, w, h, xoffs, yoffs)
         self.type = type # set to ground or other special types, or omit for default (building, greeble, foundations etc - graphics from png named same as industry)
@@ -342,7 +342,7 @@ class Spriteset(object):
         self.zoffset = zoffset
         self.xextent = xextent # set extents to x/y/z sizes of largest sprite in spriteset, or omit for default (16)
         self.yextent = yextent
-        self.zextent = zextent
+        self.zextent = 32 # it's of limited use setting zextent, just make it 32 and be done with it
         self.always_draw = always_draw
 
     def get_ground_tile_x_start(self, type):

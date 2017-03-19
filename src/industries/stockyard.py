@@ -49,57 +49,46 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'stockyard_spriteset_1',
     sprites = [(10, 10, 64, 44, -31, -13)],
-    zextent = 32
 )
 spriteset_2 = industry.add_spriteset(
     id = 'stockyard_spriteset_2',
     sprites = [(80, 10, 64, 74, -31, -43)],
-    zextent = 32
 )
 spriteset_3 = industry.add_spriteset(
     id = 'stockyard_spriteset_3',
     sprites = [(150, 10, 64, 88, -31, -57)],
-    zextent = 32
 )
 spriteset_4 = industry.add_spriteset(
     id = 'stockyard_spriteset_4',
     sprites = [(220, 10, 64, 85, -31, -54)],
-    zextent = 32
 )
 spriteset_5 = industry.add_spriteset(
     id = 'stockyard_spriteset_5',
     sprites = [(290, 10, 64, 104, -31, -73)],
-    zextent = 96
 )
 spriteset_6 = industry.add_spriteset(
     id = 'stockyard_spriteset_6',
     sprites = [(360, 10, 64, 91, -31, -60)],
-    zextent = 64
 )
 spriteset_7 = industry.add_spriteset(
     id = 'stockyard_spriteset_7',
     sprites = [(430, 10, 64, 98, -31, -67)],
-    zextent = 64
 )
 spriteset_8 = industry.add_spriteset(
     id = 'stockyard_spriteset_8',
     sprites = [(500, 10, 64, 54, -31, -23)],
-    zextent = 48
 )
 spriteset_9 = industry.add_spriteset(
     id = 'stockyard_spriteset_9',
     sprites = [(570, 10, 64, 76, -31, -45)],
-    zextent = 48
 )
 spriteset_10 = industry.add_spriteset(
     id = 'stockyard_spriteset_10',
     sprites = [(640, 10, 64, 32, -31, -1)],
-    zextent = 48
 )
 spriteset_11 = industry.add_spriteset(
     id = 'stockyard_spriteset_11',
     sprites = [(710, 10, 64, 49, -31, -18)],
-    zextent = 8
 )
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',

@@ -56,34 +56,28 @@ spriteset_concrete = industry.add_spriteset(
 spriteset_jetty_se_nw = industry.add_spriteset(
     id = 'liquids_terminal_spriteset_jetty_se_nw',
     sprites = [(10, 60, 64, 39, -31, -7)],
-    zextent = 7,
     always_draw = 1,
 )
 spriteset_jetty_ne_sw = industry.add_spriteset(
     id = 'liquids_terminal_spriteset_jetty_ne_sw',
     sprites = [(80, 60, 64, 39, -31, -7)],
-    zextent = 7,
     always_draw = 1
 )
 spriteset_jetty_slope_nw_se = industry.add_spriteset(
     id = 'liquids_terminal_spriteset_jetty_slope_nw_se',
     sprites = [(150, 60, 64, 39, -31, -7)],
-    zextent = 7
 )
 spriteset_jetty_slope_ne_sw = industry.add_spriteset(
     id = 'liquids_terminal_spriteset_jetty_slope_ne_sw',
     sprites = [(220, 60, 64, 39, -31, -7)],
-    zextent = 7
 )
 spriteset_jetty_slope_se_nw = industry.add_spriteset(
     id = 'liquids_terminal_spriteset_jetty_slope_se_nw',
     sprites = [(290, 60, 64, 39, -31, -7)],
-    zextent = 7
 )
 spriteset_jetty_slope_sw_ne = industry.add_spriteset(
     id = 'liquids_terminal_spriteset_jetty_slope_sw_ne',
     sprites = [(360, 60, 64, 39, -31, -7)],
-    zextent = 7
 )
 spriteset_small_tanks = industry.add_spriteset(
     id = 'liquids_terminal_spriteset_small_tanks',

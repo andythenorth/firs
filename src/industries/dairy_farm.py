@@ -49,32 +49,26 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_barn1 = industry.add_spriteset(
     id = 'dairy_farm_spriteset_barn1',
     sprites = [(10, 10, 64, 52, -31, -21)],
-    zextent = 32
 )
 spriteset_silo = industry.add_spriteset(
     id = 'dairy_farm_spriteset_silo',
     sprites = [(80, 10, 64, 52, -31, -21)],
-    zextent = 48
 )
 spriteset_barn2 = industry.add_spriteset(
     id = 'dairy_farm_spriteset_barn2',
     sprites = [(150, 10, 64, 52, -31, -21)],
-    zextent = 32
 )
 spriteset_house = industry.add_spriteset(
     id = 'dairy_farm_spriteset_house',
     sprites = [(220, 10, 64, 52, -31, -21)],
-    zextent = 32
 )
 spriteset_cows_bw = industry.add_spriteset(
     id = 'dairy_farm_spriteset_cows_bw',
     sprites = [(290, 10, 64, 52, -31, -21)],
-    zextent = 32
 )
 spriteset_cows_brown = industry.add_spriteset(
     id = 'dairy_farm_spriteset_cows_brown',
     sprites = [(360, 10, 64, 52, -31, -21)],
-    zextent = 32
 )
 
 industry.add_spritelayout(

@@ -41,27 +41,22 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'ranch_spriteset_1',
     sprites = [(10, 10, 64, 52, -31, -21)],
-    zextent = 24
 )
 spriteset_2 = industry.add_spriteset(
     id = 'ranch_spriteset_2',
     sprites = [(80, 10, 64, 52, -31, -19)],
-    zextent = 24
 )
 spriteset_3 = industry.add_spriteset(
     id = 'ranch_spriteset_3',
     sprites = [(150, 10, 64, 52, -31, -21)],
-    zextent = 24
 )
 spriteset_4 = industry.add_spriteset(
     id = 'ranch_spriteset_4',
     sprites = [(220, 10, 64, 52, -31, -21)],
-    zextent = 8
 )
 spriteset_5 = industry.add_spriteset(
     id = 'ranch_spriteset_5',
     sprites = [(290, 10, 64, 52, -31, -21)],
-    zextent = 8
 )
 
 industry.add_spritelayout(

@@ -49,12 +49,10 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(
     id = 'coffee_estate_house',
     sprites = [(10, 10, 64, 59, -31, -28)],
-    zextent = 32
 )
 spriteset_2 = industry.add_spriteset(
     id = 'coffee_estate_shed',
     sprites = [(80, 10, 64, 59, -31, -28)],
-    zextent = 32
 )
 building_0 = industry.add_sprite(
     sprite_number = 1633,
