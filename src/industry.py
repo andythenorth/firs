@@ -282,7 +282,7 @@ class Sprite(object):
             self.sprite_number = sprite_constants[sprite_number]
         else:
             self.sprite_number = sprite_number # can also provide raw nml with the sprite number for things like controlling animation frame
-        self.sprite_number_snow = (self.sprite_number, sprite_number_snow)[sprite_number_snow!=''] # set a snow sprite explicitly (optional).
+        self.sprite_number_snow = sprite_number_snow if sprite_number_snow != '' else self.sprite_number  # set a snow sprite explicitly (optional).
         # optional parameters for offsets and extents for the *spritelayout* to use with this sprite (read nml spritelayout docs to see use)
         self.xoffset = xoffset
         self.yoffset = yoffset
