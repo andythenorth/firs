@@ -69,7 +69,7 @@ industry.add_magic_spritelayout(
     type = 'slope_aware_trees',
     base_id = 'rubber_plantation_slope_aware_ground_with_trees',
     config = {'ground_sprite': 4145,
-              'trees': [1909, 1907, 1908, 1909]}
+              'trees_default': [1909, 1907, 1908, 1909]}
 )
 
 industry.add_industry_layout(

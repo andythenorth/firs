@@ -203,11 +203,11 @@
             <tal:magic_trees condition="len(spritelayout.magic_trees) > 0" repeat="magic_tree spritelayout.magic_trees">
                 // magic trees, magically added by industry.add_magic_spritelayout()
                 building {
-                    sprite: ${industry.unpack_sprite_or_spriteset(magic_tree[0]['default'], construction_state_num=3)};
+                    sprite: ${magic_tree.default};
                     recolour_mode: RECOLOUR_REMAP;
                     palette: PALETTE_USE_DEFAULT;
-                    xoffset: ${magic_tree[1][0]};
-                    yoffset: ${magic_tree[1][1]};
+                    xoffset: ${magic_tree.xoffset};
+                    yoffset: ${magic_tree.yoffset};
                     <!--!zoffset: ${building_sprite.zoffset};
                     xextent: ${building_sprite.xextent};
                     yextent: ${building_sprite.yextent};
@@ -215,11 +215,11 @@
                     hide_sprite: climate == CLIMATE_TROPIC; <!--! !! check needs extending for snow also -->
                 }
                 building {
-                    sprite: ${industry.unpack_sprite_or_spriteset(magic_tree[0]['tropic'], construction_state_num=3)};
+                    sprite: ${magic_tree.tropic};
                     recolour_mode: RECOLOUR_REMAP;
                     palette: PALETTE_USE_DEFAULT;
-                    xoffset: ${magic_tree[1][0]};
-                    yoffset: ${magic_tree[1][1]};
+                    xoffset: ${magic_tree.xoffset};
+                    yoffset: ${magic_tree.yoffset};
                     <!--!zoffset: ${building_sprite.zoffset};
                     xextent: ${building_sprite.xextent};
                     yextent: ${building_sprite.yextent};

@@ -70,7 +70,7 @@ industry.add_magic_spritelayout(
     type = 'slope_aware_trees',
     base_id = 'fruit_plantation_slope_aware_ground_with_trees',
     config = {'ground_sprite': 4164,
-              'trees': [1620, 1633, 1689, 1620],
+              'trees_default': [1620, 1633, 1689, 1620],
               'trees_tropic': [1832, 1830, 1831, 1832]}
 )
 
