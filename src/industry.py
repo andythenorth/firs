@@ -395,10 +395,9 @@ class MagicSpritelayoutSlopeAwareTrees(object):
 
         # tile has 4 tree positions, so 4 tree sprites/spritesets are required, just repeat as necessary if some positions use same sprite
         # trees can be ints (sprite numbers for baseset), or lists of tuples (for spritesets, with optional animation)
-
         trees_default = config['trees_default']
-        trees_snow = config.get('trees_snow', trees_default)
-        trees_tropic = config.get('trees_tropic', trees_default)
+        trees_snow = config.get('trees_snow', trees_default) # defining snow trees is optional
+        trees_tropic = config.get('trees_tropic', trees_default) # defining tropic trees is optional
 
         trees = {}
         for terrain, tree_config in {'default': trees_default, 'snow': trees_snow, 'tropic': trees_tropic}.items():
