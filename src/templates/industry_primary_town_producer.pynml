@@ -61,8 +61,8 @@ switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [STORE_TEMP(((population
 
 <!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
 <tal:build_economies repeat="economy economies">
-    if (economy==${economy.numeric_id}) {
-        <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+    <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+        if (economy==${economy.numeric_id}) {
             item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
                 graphics {
                     produce_256_ticks:       ${industry.id}_produce;
@@ -75,6 +75,6 @@ switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [STORE_TEMP(((population
                     colour:                  switch_colour;
                 }
             }
-        </tal:industry_on_or_off>
-    }
+        }
+    </tal:industry_on_or_off>
 </tal:build_economies>

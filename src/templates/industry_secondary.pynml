@@ -45,8 +45,8 @@
 
 <!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
 <tal:build_economies repeat="economy economies">
-    if (economy==${economy.numeric_id}) {
-        <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+    <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+        if (economy==${economy.numeric_id}) {
             item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
                 graphics {
                     construction_probability: ${industry.id}_check_availability;
@@ -60,6 +60,6 @@
                     cargo_subtype_display:    ${industry.id}_cargo_subtype_display;
                 }
             }
-        </tal:industry_on_or_off>
-    }
+        }
+    </tal:industry_on_or_off>
 </tal:build_economies>
