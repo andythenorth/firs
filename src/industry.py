@@ -369,7 +369,7 @@ class GraphicsSwitch(object):
 class GraphicsSwitchSlopes(GraphicsSwitch):
     """ Class from which a slope-checking graphics switch can be generated, routing to appropriate spritelayout per slope type """
     def __init__(self, id, slope_spritelayout_mapping, default_result):
-        super(GraphicsSwitchSlopes, self).__init__(id)
+        super().__init__(id)
         self.slope_spritelayout_mapping = slope_spritelayout_mapping
         self.default_result = default_result
 
@@ -853,7 +853,7 @@ class Industry(object):
 class IndustryPrimary(Industry):
     """ Industries that produce cargo and (optionally) boost production if supplies are delivered """
     def __init__(self, **kwargs):
-        super(IndustryPrimary, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         self.template = kwargs.get('template', 'industry_primary.pynml')
         self.supply_requirements = None # default None, set appropriately by subclasses
         self.perm_storage = IndustryPermStorage(['var_num_supplies_delivered', # amount of supplies delivered this month
@@ -882,7 +882,7 @@ class IndustryPrimaryExtractive(IndustryPrimary):
     def __init__(self, **kwargs):
         kwargs['accept_cargo_types'] = ['ENSP']
         kwargs['life_type'] = 'IND_LIFE_TYPE_EXTRACTIVE'
-        super(IndustryPrimaryExtractive, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         self.supply_requirements = [0, 'PRIMARY', 1] # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
 
 
@@ -894,7 +894,7 @@ class IndustryPrimaryOrganic(IndustryPrimary):
     def __init__(self, **kwargs):
         kwargs['accept_cargo_types'] = ['FMSP']
         kwargs['life_type'] = 'IND_LIFE_TYPE_ORGANIC'
-        super(IndustryPrimaryOrganic, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         self.supply_requirements = [0, 'PRIMARY', 1] # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
 
 
@@ -905,21 +905,21 @@ class IndustryPrimaryPort(IndustryPrimary):
     """
     def __init__(self, **kwargs):
         kwargs['life_type'] = 'IND_LIFE_TYPE_BLACK_HOLE'
-        super(IndustryPrimaryPort, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         self.supply_requirements = [0, 'PORT', 8] # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
 
 
 class IndustryPrimaryNoSupplies(Industry):
     """ Industry that does not accept supplies and does not change production amounts during game """
     def __init__(self, **kwargs):
-        super(IndustryPrimaryNoSupplies, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         self.template = kwargs.get('template', 'industry_primary_no_supplies.pynml')
 
 
 class IndustryPrimaryTownProducer(Industry):
     """ Industry that locates near towns, with production amount related to town population """
     def __init__(self, **kwargs):
-        super(IndustryPrimaryTownProducer, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         self.template = kwargs.get('template', 'industry_primary_town_producer.pynml')
         self.supply_requirements = None # supplies do not boost this type of primary
 
@@ -927,7 +927,7 @@ class IndustrySecondary(Industry):
     """ Processing industries: input cargo(s) -> output cargo(s) """
     def __init__(self, **kwargs):
         kwargs['life_type'] = 'IND_LIFE_TYPE_PROCESSING'
-        super(IndustrySecondary, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         self.template = kwargs.get('template', 'industry_secondary.pynml')
         self.combined_cargos_boost_prod = kwargs.get('combined_cargos_boost_prod', False)
         self.perm_storage = IndustryPermStorage(['unused',
@@ -977,6 +977,6 @@ class IndustrySecondary(Industry):
 class IndustryTertiary(Industry):
     """ Industries that consume cargo and don't produce much (or anything), typically black holes in or near towns """
     def __init__(self, **kwargs):
-        super(IndustryTertiary, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         self.template = 'industry_tertiary.pynml'
         # no perm_storage needed currently
