@@ -625,15 +625,25 @@ class Industry(object):
         if type == 'slope_aware_trees':
             # tile has 4 tree positions, so 4 tree sprites/spritesets are required, just repeat as necessary if some positions use same sprite
             # trees can be ints (sprite numbers for baseset), or lists of tuples (for spritesets, with optional animation)
-            trees = [] # we'll add sprites or spritesets for the trees here, using config data
-            for tree in config['trees']:
+            trees = [{}, {}, {}, {}] # we'll add sprites or spritesets for the trees here, using config data
+            for index, tree in enumerate(config['trees']):
                 if isinstance(tree, int): # we have a sprite
-                    trees.append(self.add_sprite(sprite_number=tree, xoffset=8,yoffset=7))
+                    trees[index]['default'] = self.add_sprite(sprite_number=tree, xoffset=8,yoffset=7)
                 if isinstance(tree, list):
                     print('tree is spriteset: not implemented yet')
                     # extend spriteset support here (noting that spritesets are lists of tuples as they can be animated also)
                     # my intent was simply to pass the offsets to this, as that should be all that is needed
-            print(config.get('trees_tropic', None))
+            if len(config.get('trees_tropic', [])) is not 0:
+                for index, tree in enumerate(config.get('trees_tropic', [])):
+                    if isinstance(tree, int): # we have a sprite
+                        trees[index]['tropic'] = self.add_sprite(sprite_number=tree, xoffset=8,yoffset=7)
+                    if isinstance(tree, list):
+                        print('tree is spriteset: not implemented yet')
+                        # extend spriteset support here (noting that spritesets are lists of tuples as they can be animated also)
+                        # my intent was simply to pass the offsets to this, as that should be all that is needed
+            else:
+                 for tree in trees:
+                    tree['tropic'] = tree['default']
             # !! ground sprites are slaved to sprite numbers currently, needs extending for spritesets
             ground_sprite = self.add_sprite(sprite_number=str(config['ground_sprite']) + ' + slope_to_sprite_offset(nearby_tile_slope(0,0))')
 
