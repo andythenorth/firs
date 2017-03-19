@@ -645,7 +645,7 @@ class Industry(object):
                 self.add_spritelayout(id = id,
                                       ground_sprite = ground_sprite,
                                       ground_overlay = ground_sprite, # slight hax, assume we can just reuse ground for overlay
-                                      magic_trees = [(trees[0]), (trees[1]), (trees[2]), (trees[3])],
+                                      magic_trees = [(trees[0],(8,2)), (trees[1],(2,2)), (trees[2],(2,8)), (trees[3],(8,8))],
                                       building_sprites = [])
 
             self.add_slope_graphics_switch(base_id,

@@ -200,6 +200,32 @@
                 </tal:build_building_sprites>
             </tal:date_variations>
 
+            <tal:magic_trees condition="len(spritelayout.magic_trees) > 0" repeat="magic_tree spritelayout.magic_trees">
+                // magic trees, magically added by industry.add_magic_spritelayout()
+                building {
+                    sprite: ${industry.unpack_sprite_or_spriteset(magic_tree[0], construction_state_num=3)};
+                    recolour_mode: RECOLOUR_REMAP;
+                    palette: PALETTE_USE_DEFAULT;
+                    xoffset: ${magic_tree[1][0]};
+                    yoffset: ${magic_tree[1][1]};
+                    <!--!zoffset: ${building_sprite.zoffset};
+                    xextent: ${building_sprite.xextent};
+                    yextent: ${building_sprite.yextent};
+                    zextent: ${building_sprite.zextent};-->
+                }
+                building {
+                    sprite: ${industry.unpack_sprite_or_spriteset(magic_tree[0], construction_state_num=3, terrain_type='snow')};
+                    recolour_mode: RECOLOUR_REMAP;
+                    palette: PALETTE_USE_DEFAULT;
+                    xoffset: ${magic_tree[1][0]};
+                    yoffset: ${magic_tree[1][1]};
+                    <!--!zoffset: ${building_sprite.zoffset};
+                    xextent: ${building_sprite.xextent};
+                    yextent: ${building_sprite.yextent};
+                    zextent: ${building_sprite.zextent};-->
+                }
+            </tal:magic_trees>
+
             <tal:optional_smoke repeat="smoke_sprite spritelayout.smoke_sprites">
                 // smoke sprites
                 building {
