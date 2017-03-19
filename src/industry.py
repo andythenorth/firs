@@ -368,7 +368,26 @@ class MagicSpritelayoutSlopeAwareTrees(object):
     # Class attributes eh?  Might as well, these aren't supposed to be mutable
 
     # there are 19 slopes to handle, as per https://newgrf-specs.tt-wiki.net/wiki/VariationalAction2/Industry_Tiles#Land_info_of_nearby_tiles_.2860.29
-    slopes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 23, 27, 29, 30]
+    # format is slope_num: (tuples of x, y for 4 trees)
+    slopes = {0: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              1: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              2: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              3: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              4: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              5: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              6: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              7: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              8: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              9: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              10: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              11: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              12: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              13: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              14: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              23: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              27: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              29: ((8, 2), (2, 2), (2, 8), (8, 8)),
+              30: ((8, 2), (2, 2), (2, 8), (8, 8))}
 
     def __init__(self, industry, base_id, config):
         # !! ground sprites are slaved to sprite numbers currently, needs extending for spritesets
@@ -392,17 +411,17 @@ class MagicSpritelayoutSlopeAwareTrees(object):
                     # extend spriteset support here (noting that spritesets are lists of tuples as they can be animated also)
                     # my intent was simply to pass the offsets to this, as that should be all that is needed
 
-        id_slope_mapping = {base_id + str(slope): slope for slope in self.slopes}
-        for id in id_slope_mapping.keys():
-            industry.add_spritelayout(id = id,
+        for slope, offsets in self.slopes.items():
+            industry.add_spritelayout(id = base_id + str(slope),
                                   ground_sprite = ground_sprite,
                                   ground_overlay = ground_sprite, # slight hax, assume we can just reuse ground for overlay
-                                  magic_trees = [MagicTree(trees, tree=0, xoffset=8, yoffset=2),
-                                                 MagicTree(trees, tree=1, xoffset=2, yoffset=2),
-                                                 MagicTree(trees, tree=2, xoffset=2, yoffset=8),
-                                                 MagicTree(trees, tree=3, xoffset=8, yoffset=8)],
+                                  magic_trees = [MagicTree(trees, offsets, tree_num=0),
+                                                 MagicTree(trees, offsets, tree_num=1),
+                                                 MagicTree(trees, offsets, tree_num=2),
+                                                 MagicTree(trees, offsets, tree_num=3)],
                                   building_sprites = [])
 
+        id_slope_mapping = {base_id + str(slope): slope for slope in self.slopes} # easier to match to format of slope switch in nml
         industry.add_slope_graphics_switch(base_id,
                                        default_result = base_id + '0',
                                        slope_spritelayout_mapping = {slope: slope_id for slope_id, slope in id_slope_mapping.items()})
@@ -410,12 +429,12 @@ class MagicSpritelayoutSlopeAwareTrees(object):
 
 class MagicTree(object):
     """ Stubby class used in MagicSpriteLayoutSlopeAwareTrees; I just prefer object attribute access over an equivalent dict - Andy"""
-    def __init__(self, trees, tree, xoffset, yoffset):
-        self.default = trees['default'][tree]
-        self.snow = trees['snow'][tree]
-        self.tropic = trees['tropic'][tree]
-        self.xoffset = xoffset
-        self.yoffset = yoffset
+    def __init__(self, trees, offsets, tree_num):
+        self.default = trees['default'][tree_num]
+        self.snow = trees['snow'][tree_num]
+        self.tropic = trees['tropic'][tree_num]
+        self.xoffset = offsets[tree_num][0]
+        self.yoffset = offsets[tree_num][1]
 
 
 class GraphicsSwitch(object):
