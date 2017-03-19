@@ -617,6 +617,9 @@ class Industry(object):
         self.spritelayouts.append(new_spritelayout)
         return new_spritelayout # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
+    def add_magic_spritelayout(self, type, id, config):
+        print(type, id, config)
+
     def add_slope_graphics_switch(self, *args, **kwargs):
         new_graphics_switch = GraphicsSwitchSlopes(*args, **kwargs)
         self.extra_graphics_switches.append(new_graphics_switch)

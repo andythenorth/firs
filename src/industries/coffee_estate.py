@@ -204,6 +204,12 @@ industry.add_spritelayout(
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_2],
 )
+industry.add_magic_spritelayout(
+    type = 'slope_aware_trees',
+    id = 'coffee_estate_slope_aware_ground_with_trees',
+    config = {'trees': [1620, 1633, 1689, 1620]}
+)
+
 industry.add_spritelayout(
     id = 'coffee_estate_597',
     ground_sprite = sprite_ground_4164,
