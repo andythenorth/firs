@@ -336,6 +336,7 @@ class Spriteset(object):
         self.custom_sprite_selector = custom_sprite_selector
         self.num_sprites_to_autofill = num_sprites_to_autofill # create n sprites per sprite passed (optional convenience method for use where spriteset sizes must match; set value to same as size of largest spriteset)
         # optional parameters for offsets and extents for the *spritelayout* to use with this sprite (read nml spritelayout docs to see use)
+        # (more convenient to store on the sprite, even though consumed by spritelayout, as they tend to be constant in most cases where the sprite is used)
         self.xoffset = xoffset
         self.yoffset = yoffset
         self.zoffset = zoffset
