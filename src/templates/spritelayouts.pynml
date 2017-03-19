@@ -125,7 +125,8 @@
             </tal:optional_fence>
 
             // construction stages - optional
-            <tal:optional_construction_sprites repeat="building_sprite spritelayout.building_sprites">
+            <tal:optional_construction_sprites condition="industry.default_industry_properties.override_default_construction_states"
+                                               repeat="building_sprite spritelayout.building_sprites">
                 // construction states (no snow awareness)
                 building {
                     sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=0)};
