@@ -44,7 +44,7 @@
 
 
     <tal:construction_states condition="spriteset.type == '' and industry.default_industry_properties.override_default_construction_states==True">
-        /* Construction states */
+        <!--! Construction states -->
         <tal:each_state repeat="state_num range(3)">
             spriteset(${spriteset.id}_spriteset_default_construction_state_${state_num}) {
                 <tal:autofill_sprites repeat="autosprite_num range(spriteset.num_sprites_to_autofill)">

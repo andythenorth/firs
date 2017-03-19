@@ -1,17 +1,12 @@
-/* Production template for secondary industries with equal output to all output cargos
- * *
- * It accepts up to three input cargos and produces up to two output cargos
- * It uses the following permanent storages:
- * *
- */
-
+<!--!
+    Production template for secondary industries with equal output to all output cargos
+    Accepts up to three input cargos and produces up to two output cargos
+-->
 
 <!--!
     var_output_ratio_max_sum and var_input_ratio_max_sum are constants, both 8, used in cargo output calculation
     they relate to industry prod_cargo_types ratio and processed_cargos_and_output_ratios (which must sum to 8 or less)
 -->
-
-
 <tal:block define="var_received_timely_1 0;
                    var_received_timely_2 1;
                    var_received_timely_3 2;
@@ -34,7 +29,7 @@
                 LOAD_PERM(${perm_storage.leftover_cargo_2}) * LOAD_PERM(${perm_storage.ratio_input_2}) * LOAD_TEMP(${var_output_ratio_2}) / (${var_input_ratio_max_sum * var_output_ratio_max_sum}) +
                 LOAD_PERM(${perm_storage.leftover_cargo_3}) * LOAD_PERM(${perm_storage.ratio_input_3}) * LOAD_TEMP(${var_output_ratio_2}) / (${var_input_ratio_max_sum * var_output_ratio_max_sum}),
                 [
-                /* Account for cargo 'wasted' in output calc (due to integer division discarding fractional values) - keep it for next production cycle */
+                <!--! Account for cargo 'wasted' in output calc (due to integer division discarding fractional values) - keep it for next production cycle -->
                 STORE_PERM(LOAD_PERM(${perm_storage.leftover_cargo_1}) % (${var_input_ratio_max_sum} / LOAD_TEMP(${var_num_output_cargos})), ${perm_storage.leftover_cargo_1}),
                 STORE_PERM(LOAD_PERM(${perm_storage.leftover_cargo_2}) % (${var_input_ratio_max_sum} / LOAD_TEMP(${var_num_output_cargos})), ${perm_storage.leftover_cargo_2}),
                 STORE_PERM(LOAD_PERM(${perm_storage.leftover_cargo_3}) % (${var_input_ratio_max_sum} / LOAD_TEMP(${var_num_output_cargos})), ${perm_storage.leftover_cargo_3}),
@@ -45,24 +40,24 @@
     <tal:economies repeat="economy economies">
         switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_economy_${economy.numeric_id},
                 [
-                /* Store number of output cargos */
+                <!--! Store number of output cargos -->
                 STORE_TEMP(${len(industry.get_prod_cargo_types(economy))}, ${var_num_output_cargos}),
-                /* Store the ratio of total production assigned to each output cargo (typically 4/8 and 4/8, but varies in some cases) */
+                <!--! Store the ratio of total production assigned to each output cargo (typically 4/8 and 4/8, but varies in some cases) -->
                 STORE_TEMP(${industry.get_output_ratio(1, economy)}, ${var_output_ratio_1}),
                 STORE_TEMP(${industry.get_output_ratio(2, economy)}, ${var_output_ratio_2}),
-                /* Update the 'last delivery date' for the three input cargos */
+                <!--! Update the 'last delivery date' for the three input cargos -->
                 STORE_PERM( max(LOAD_PERM(${perm_storage.date_received_1}),(waiting_cargo_1 > 0) * current_date), ${perm_storage.date_received_1}),
                 STORE_PERM( max(LOAD_PERM(${perm_storage.date_received_2}),(waiting_cargo_2 > 0) * current_date), ${perm_storage.date_received_2}),
                 STORE_PERM( max(LOAD_PERM(${perm_storage.date_received_3}),(waiting_cargo_3 > 0) * current_date), ${perm_storage.date_received_3}),
-                /* Reset the closure countdown */
+                <!--! Reset the closure countdown -->
                 STORE_PERM( (waiting_cargo_1 == 0 && waiting_cargo_2 == 0 && waiting_cargo_3 == 0) * LOAD_PERM(${perm_storage.closure_counter}), ${perm_storage.closure_counter}),
 
-                /* Check whether the cargos were delivered within the time frame to be considered delivered concurrently */
+                <!--! Check whether the cargos were delivered within the time frame to be considered delivered concurrently -->
                 STORE_TEMP( (current_date - LOAD_PERM(${perm_storage.date_received_1})) <= ${global_constants.secondary_production_span}, ${var_received_timely_1}),
                 STORE_TEMP( (current_date - LOAD_PERM(${perm_storage.date_received_2})) <= ${global_constants.secondary_production_span}, ${var_received_timely_2}),
                 STORE_TEMP( (current_date - LOAD_PERM(${perm_storage.date_received_3})) <= ${global_constants.secondary_production_span}, ${var_received_timely_3}),
 
-                /* Calculate current production ratios for the individual cargos */
+                <!--! Calculate current production ratios for the individual cargos -->
                 STORE_PERM( ${industry.get_prod_ratio(1,economy)} +
                             LOAD_TEMP(${var_received_timely_2}) * ${industry.get_boost(2,1,economy)} +
                             LOAD_TEMP(${var_received_timely_3}) * ${industry.get_boost(3,1,economy)},
@@ -79,7 +74,7 @@
                     ${perm_storage.ratio_input_3}
                 ),
 
-                /* Add the remainder to the current leftover cargos */
+                <!--! Add the remainder to the current leftover cargos -->
                 STORE_PERM( LOAD_PERM(${perm_storage.leftover_cargo_1}) + waiting_cargo_1, ${perm_storage.leftover_cargo_1}),
                 STORE_PERM( LOAD_PERM(${perm_storage.leftover_cargo_2}) + waiting_cargo_2, ${perm_storage.leftover_cargo_2}),
                 STORE_PERM( LOAD_PERM(${perm_storage.leftover_cargo_3}) + waiting_cargo_3, ${perm_storage.leftover_cargo_3}),

@@ -1,4 +1,4 @@
-/* Extra text in the industry window (callback 3A) */
+<!--! Extra text in the industry window (callback 3A) -->
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, economy) {
     <tal:economies repeat="economy economies">
@@ -9,8 +9,10 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, economy) {
 }
 
 
-/* Additional text after the cargos in the industry window (callback 37) */
-/* The 0x3800 expressions here are related to using extended cb 37 before nml support was added, and can be removed when nml is updated */
+<!--!
+    Additional text after the cargos in the industry window (callback 37)
+    The 0x3800 expressions here are related to using extended cb 37 before nml support was added, and can be removed when nml is updated
+-->
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_1, [current_date - LOAD_PERM(${industry.perm_storage.date_received_1}) > 90]) {
     0: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED);

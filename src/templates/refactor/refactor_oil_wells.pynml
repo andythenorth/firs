@@ -58,7 +58,7 @@ item(FEAT_INDUSTRYTILES, oil_wells_tile_1, ${global_constants.tile_numeric_ids['
 		substitute:         0;
 		accepted_cargos:    [[ENSP, 8]];
 		land_shape_flags:   0;
-		/* Animation. */
+		<!--! Animation -->
 		animation_info:     [ANIMATION_LOOPING, 20];
 		animation_speed:    3;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP);

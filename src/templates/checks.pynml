@@ -1,11 +1,11 @@
-//TODO: add check for debug parameter to disable the checks below
+<!--! !! TODO: add check for debug parameter to disable the checks below -->
 
 <!--!
     !! The version checks should be moved to header file, it's safe.
     This file should then be renamed to incompatible_grfs, as that is its purpose.
 -->
 
-/* Version for long date string codes */
+<!--! Version for long date string codes -->
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(1, 6, 0, 27279)) {
 	error(FATAL, REQUIRES_OPENTTD, string(STR_ERR_OPENTTD_VERSION));
 	exit;
