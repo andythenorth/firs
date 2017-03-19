@@ -662,6 +662,8 @@ class Industry(object):
     def get_industry_layouts_as_property(self):
         # supports auto-magic layouts from layout objects, or layouts simply declared as a string for nml
         # or no layout declaration if over-riding a default industry
+        if self.default_industry_properties.layouts != 'AUTO':
+            print(self.id + ' does not use AUTO layouts')
         if self.default_industry_properties.layouts == 'AUTO':
             # automagic case
             result = [industry_layout.id + '_tilelayout' for industry_layout in self.industry_layouts]
