@@ -361,7 +361,7 @@ class SpriteLayout(object):
 
 
 class GraphicsSwitch(object):
-    """ base class for extra graphics switches - used to make special-case handling in templates easier via type-checking """
+    """ base class for extra graphics switches """
     def __init__(self, id, **kwargs):
         self.id = id
 
@@ -818,12 +818,6 @@ class Industry(object):
             return 8
         else:
             return prod_cargo_types[cargo_num - 1][1]
-
-    def unpack_switch_or_spritelayout(self, switch_or_spritelayout, industry):
-        if isinstance(switch_or_spritelayout, GraphicsSwitch):
-            return switch_or_spritelayout.id
-        else:
-            return switch_or_spritelayout
 
     def unpack_sprite_or_spriteset(self, sprite_or_spriteset, construction_state_num=3, terrain_type='', date_variation_num='0'):
         date_variation_suffix = '_' + str(date_variation_num)

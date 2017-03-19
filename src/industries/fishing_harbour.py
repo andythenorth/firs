@@ -395,12 +395,12 @@ slope_switch_2 = industry.add_slope_graphics_switch('fishing_harbour_slope_switc
 industry.add_industry_layout(
     id = 'fishing_harbour_industry_layout_1',
     layout = [(0, 3, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_27'),
-              (0, 4, 'fishing_harbour_tile_2', slope_switch_1),
+              (0, 4, 'fishing_harbour_tile_2', 'fishing_harbour_slope_switch_1'),
               (1, 0, '255', 'fishing_harbour_spritelayout_null'),
               (1, 1, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_11'),
               (1, 2, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_29'),
               (1, 3, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_11'),
-              (1, 4, 'fishing_harbour_tile_2', slope_switch_2),
+              (1, 4, 'fishing_harbour_tile_2', 'fishing_harbour_slope_switch_2'),
               (2, 1, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_24'),
               (2, 2, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_24'),
     ]
@@ -417,15 +417,15 @@ industry.add_industry_layout(
               (2, 1, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_12'),
               (2, 2, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_21'),
               (2, 255, '255', 'fishing_harbour_spritelayout_null'),
-              (3, 1, 'fishing_harbour_tile_2', slope_switch_2),
-              (3, 2, 'fishing_harbour_tile_2', slope_switch_1),
+              (3, 1, 'fishing_harbour_tile_2', 'fishing_harbour_slope_switch_2'),
+              (3, 2, 'fishing_harbour_tile_2', 'fishing_harbour_slope_switch_1'),
     ]
 )
 industry.add_industry_layout(
     id = 'fishing_harbour_industry_layout_3',
-    layout = [(0, 0, 'fishing_harbour_tile_2', slope_switch_2),
-              (0, 1, 'fishing_harbour_tile_2', slope_switch_2),
-              (0, 2, 'fishing_harbour_tile_2', slope_switch_2),
+    layout = [(0, 0, 'fishing_harbour_tile_2', 'fishing_harbour_slope_switch_2'),
+              (0, 1, 'fishing_harbour_tile_2', 'fishing_harbour_slope_switch_2'),
+              (0, 2, 'fishing_harbour_tile_2', 'fishing_harbour_slope_switch_2'),
               (1, 0, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_24'),
               (1, 2, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_2'),
               (2, 1, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_26'),
@@ -438,13 +438,13 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'fishing_harbour_industry_layout_4',
-    layout = [(0, 0, 'fishing_harbour_tile_2', slope_switch_2),
+    layout = [(0, 0, 'fishing_harbour_tile_2', 'fishing_harbour_slope_switch_2'),
               (0, 1, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_11'),
               (0, 2, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_1'),
               (0, 3, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_1'),
               (0, 4, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_28'),
               (0, 5, '255', 'fishing_harbour_spritelayout_null'),
-              (1, 0, 'fishing_harbour_tile_2', slope_switch_1),
+              (1, 0, 'fishing_harbour_tile_2', 'fishing_harbour_slope_switch_1'),
               (1, 1, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_31'),
               (1, 2, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_32'),
               (1, 4, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_25'),
@@ -456,7 +456,7 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'fishing_harbour_industry_layout_5',
-    layout = [(0, 0, 'fishing_harbour_tile_2', slope_switch_1),
+    layout = [(0, 0, 'fishing_harbour_tile_2', 'fishing_harbour_slope_switch_1'),
               (1, 0, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_land_tile_1_3'),
               (1, 2, '255', 'fishing_harbour_spritelayout_null'),
               (2, 0, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_land_tile_1_3'),

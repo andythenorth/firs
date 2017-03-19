@@ -348,11 +348,11 @@ slope_switch_2 = industry.add_slope_graphics_switch('trading_post_slope_switch_2
 industry.add_industry_layout(
     id = 'trading_post_industry_layout_1',
     layout = [(0, 2, 'trading_post_tile_1', 'trading_post_spritelayout_27'),
-              (0, 3, 'trading_post_tile_2', slope_switch_1),
+              (0, 3, 'trading_post_tile_2', 'trading_post_slope_switch_1'),
               (1, 0, '255', 'trading_post_spritelayout_null'),
               (1, 1, 'trading_post_tile_1', 'trading_post_spritelayout_11'),
               (1, 2, 'trading_post_tile_1', 'trading_post_spritelayout_29'),
-              (1, 3, 'trading_post_tile_2', slope_switch_2),
+              (1, 3, 'trading_post_tile_2', 'trading_post_slope_switch_2'),
               (2, 1, 'trading_post_tile_1', 'trading_post_spritelayout_24'),
               (2, 2, 'trading_post_tile_1', 'trading_post_spritelayout_24'),
     ]
@@ -369,15 +369,15 @@ industry.add_industry_layout(
               (2, 1, 'trading_post_tile_1', 'trading_post_spritelayout_12'),
               (2, 2, 'trading_post_tile_1', 'trading_post_spritelayout_21'),
               (2, 255, '255', 'trading_post_spritelayout_null'),
-              (3, 1, 'trading_post_tile_2', slope_switch_2),
-              (3, 2, 'trading_post_tile_2', slope_switch_1),
+              (3, 1, 'trading_post_tile_2', 'trading_post_slope_switch_2'),
+              (3, 2, 'trading_post_tile_2', 'trading_post_slope_switch_1'),
     ]
 )
 industry.add_industry_layout(
     id = 'trading_post_industry_layout_3',
-    layout = [(0, 0, 'trading_post_tile_2', slope_switch_2),
-              (0, 1, 'trading_post_tile_2', slope_switch_2),
-              (0, 2, 'trading_post_tile_2', slope_switch_1),
+    layout = [(0, 0, 'trading_post_tile_2', 'trading_post_slope_switch_2'),
+              (0, 1, 'trading_post_tile_2', 'trading_post_slope_switch_2'),
+              (0, 2, 'trading_post_tile_2', 'trading_post_slope_switch_1'),
               (1, 0, 'trading_post_tile_1', 'trading_post_spritelayout_24'),
               (1, 2, 'trading_post_tile_1', 'trading_post_spritelayout_30'),
               (2, 1, 'trading_post_tile_1', 'trading_post_spritelayout_26'),
@@ -390,13 +390,13 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'trading_post_industry_layout_4',
-    layout = [(0, 0, 'trading_post_tile_2', slope_switch_2),
+    layout = [(0, 0, 'trading_post_tile_2', 'trading_post_slope_switch_2'),
               (0, 1, '255', 'trading_post_spritelayout_null'),
-              (1, 0, 'trading_post_tile_2', slope_switch_2),
+              (1, 0, 'trading_post_tile_2', 'trading_post_slope_switch_2'),
               (1, 1, 'trading_post_tile_1', 'trading_post_spritelayout_29'),
               (1, 2, 'trading_post_tile_1', 'trading_post_spritelayout_30'),
               (1, 3, '255', 'trading_post_spritelayout_null'),
-              (2, 0, 'trading_post_tile_2', slope_switch_1),
+              (2, 0, 'trading_post_tile_2', 'trading_post_slope_switch_1'),
               (2, 1, 'trading_post_tile_1', 'trading_post_spritelayout_25'),
               (2, 2, '255', 'trading_post_spritelayout_null'),
               (3, 2, '255', 'trading_post_spritelayout_null'),
@@ -405,8 +405,8 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'trading_post_industry_layout_5',
-    layout = [(0, 0, 'trading_post_tile_2', slope_switch_1),
-              (1, 0, 'trading_post_tile_2', slope_switch_2),
+    layout = [(0, 0, 'trading_post_tile_2', 'trading_post_slope_switch_1'),
+              (1, 0, 'trading_post_tile_2', 'trading_post_slope_switch_2'),
               (1, 2, '255', 'trading_post_spritelayout_null'),
               (2, 0, 'trading_post_tile_1', 'trading_post_spritelayout_13'),
               (2, 1, 'trading_post_tile_1', 'trading_post_spritelayout_29'),

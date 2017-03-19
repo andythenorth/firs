@@ -389,12 +389,12 @@ slope_switch_2 = industry.add_slope_graphics_switch('port_slope_switch_2',
 industry.add_industry_layout(
     id = 'port_industry_layout_1',
     layout = [(0, 3, 'port_tile_1', 'port_spritelayout_27'),
-              (0, 4, 'port_tile_2', slope_switch_1),
+              (0, 4, 'port_tile_2', 'port_slope_switch_1'),
               (1, 0, '255', 'port_spritelayout_null'),
               (1, 1, 'port_tile_1', 'port_spritelayout_11'),
               (1, 2, 'port_tile_1', 'port_spritelayout_29'),
               (1, 3, 'port_tile_1', 'port_spritelayout_11'),
-              (1, 4, 'port_tile_2', slope_switch_2),
+              (1, 4, 'port_tile_2', 'port_slope_switch_2'),
               (2, 1, 'port_tile_1', 'port_spritelayout_24'),
               (2, 2, 'port_tile_1', 'port_spritelayout_24'),
     ]
@@ -411,15 +411,15 @@ industry.add_industry_layout(
               (2, 1, 'port_tile_1', 'port_spritelayout_12'),
               (2, 2, 'port_tile_1', 'port_spritelayout_21'),
               (2, 255, '255', 'port_spritelayout_null'),
-              (3, 1, 'port_tile_2', slope_switch_2),
-              (3, 2, 'port_tile_2', slope_switch_1),
+              (3, 1, 'port_tile_2', 'port_slope_switch_2'),
+              (3, 2, 'port_tile_2', 'port_slope_switch_1'),
     ]
 )
 industry.add_industry_layout(
     id = 'port_industry_layout_3',
-    layout = [(0, 0, 'port_tile_2', slope_switch_2),
-              (0, 1, 'port_tile_2', slope_switch_2),
-              (0, 2, 'port_tile_2', slope_switch_2),
+    layout = [(0, 0, 'port_tile_2', 'port_slope_switch_2'),
+              (0, 1, 'port_tile_2', 'port_slope_switch_2'),
+              (0, 2, 'port_tile_2', 'port_slope_switch_2'),
               (1, 0, 'port_tile_1', 'port_spritelayout_24'),
               (1, 2, 'port_tile_1', 'port_spritelayout_2'),
               (2, 1, 'port_tile_1', 'port_spritelayout_26'),
@@ -432,13 +432,13 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'port_industry_layout_4',
-    layout = [(0, 0, 'port_tile_2', slope_switch_2),
+    layout = [(0, 0, 'port_tile_2', 'port_slope_switch_2'),
               (0, 1, 'port_tile_1', 'port_spritelayout_2'),
               (0, 2, 'port_tile_1', 'port_spritelayout_29'),
               (0, 3, 'port_tile_1', 'port_spritelayout_11'),
               (0, 4, 'port_tile_1', 'port_spritelayout_28'),
               (0, 5, '255', 'port_spritelayout_null'),
-              (1, 0, 'port_tile_2', slope_switch_2),
+              (1, 0, 'port_tile_2', 'port_slope_switch_2'),
               (1, 1, 'port_tile_1', 'port_spritelayout_28'),
               (1, 2, 'port_tile_1', 'port_spritelayout_25'),
               (1, 4, 'port_tile_1', 'port_spritelayout_25'),
@@ -450,7 +450,7 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'port_industry_layout_5',
-    layout = [(0, 0, 'port_tile_2', slope_switch_2),
+    layout = [(0, 0, 'port_tile_2', 'port_slope_switch_2'),
               (1, 0, 'port_tile_1', 'port_spritelayout_12'),
               (1, 2, '255', 'port_spritelayout_null'),
               (2, 0, 'port_tile_1', 'port_spritelayout_12'),
