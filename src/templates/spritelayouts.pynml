@@ -63,8 +63,8 @@
                 }
             </tal:optional_terrain_aware_ground>
 
-            // industry-specific ground (snow aware)
-            // normal
+            // Industry-specific ground (snow aware)
+            // non-snow
             childsprite {
                 sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
                 recolour_mode: RECOLOUR_REMAP;
@@ -94,8 +94,8 @@
                 hide_sprite: (!LOAD_TEMP(${temp_storage.var_terrain_is_snow}));
                 always_draw: 1;
             }
-            // fences NE and NW
             <tal:optional_fence condition="'ne' in spritelayout.fences">
+                // fences NE
                 building {
                     sprite: 1302 + LOAD_TEMP(${temp_storage.var_fencesprite_ne});
                     hide_sprite: (LOAD_TEMP(${temp_storage.var_use_fence_ne}) == 0);
@@ -110,6 +110,7 @@
                 }
             </tal:optional_fence>
             <tal:optional_fence condition="'nw' in spritelayout.fences">
+                // fences NW
                 building {
                     sprite: 1301 + LOAD_TEMP(${temp_storage.var_fencesprite_nw});
                     hide_sprite: (LOAD_TEMP(${temp_storage.var_use_fence_nw}) == 0);
@@ -124,10 +125,9 @@
                 }
             </tal:optional_fence>
 
-            // construction stages - optional
             <tal:optional_construction_sprites condition="industry.default_industry_properties.override_default_construction_states"
                                                repeat="building_sprite spritelayout.building_sprites">
-                // construction states (no snow awareness)
+                // construction states - optional (no snow awareness)
                 building {
                     sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=0)};
                     recolour_mode: RECOLOUR_REMAP;
@@ -168,9 +168,9 @@
                     hide_sprite: (construction_state != 2);
                 }
             </tal:optional_construction_sprites>
-            // buildings (snow aware)
             <tal:date_variations repeat="date_variation_num range(len(industry.graphics_change_dates)+1)"><!--! +1 because we need to run repeat at least once -->
                 <tal:build_building_sprites repeat="building_sprite spritelayout.building_sprites">
+                    // buildings (snow aware)
                     building {
                         sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3, date_variation_num=date_variation_num)};
                         recolour_mode: RECOLOUR_REMAP;
@@ -200,8 +200,8 @@
                 </tal:build_building_sprites>
             </tal:date_variations>
 
-            // smoke sprites
             <tal:optional_smoke repeat="smoke_sprite spritelayout.smoke_sprites">
+                // smoke sprites
                 building {
                     sprite: ${smoke_sprite.sprite_number};
                     recolour_mode: RECOLOUR_REMAP;
@@ -216,8 +216,8 @@
                 }
             </tal:optional_smoke>
 
-            // fences SE and SW
             <tal:optional_fence condition="'se' in spritelayout.fences">
+                // fences SE
                 building {
                     sprite: 1301 + LOAD_TEMP(${temp_storage.var_fencesprite_se});
                     hide_sprite: (LOAD_TEMP(${temp_storage.var_use_fence_se}) == 0);
@@ -232,6 +232,7 @@
                 }
             </tal:optional_fence>
             <tal:optional_fence condition="'sw' in spritelayout.fences">
+                // fences SW
                 building {
                     sprite: 1302 + LOAD_TEMP(${temp_storage.var_fencesprite_sw});
                     hide_sprite: (LOAD_TEMP(${temp_storage.var_use_fence_sw}) == 0);
