@@ -367,7 +367,7 @@ class MagicSpritelayoutSlopeAwareTrees(object):
 
     # Class attributes eh?  Might as well, these aren't supposed to be mutable
 
-    # there are 19 slopes to handle, as per https://newgrf-specs.tt-wiki.net/wiki/VariationalAction2/Industry_Tiles#Land_info_of_nearby_tiles_.2860.29
+    # there are 19 slopes to handle, as per https://newgrf-specs.tt-wiki.net/wiki/NML:List_of_tile_slopes
     # format is slope_num: (tuples of x, y for 4 trees)
     slopes = {0: ((8, 2), (2, 2), (2, 8), (8, 8)),
               1: ((8, 2), (2, 2), (2, 8), (8, 8)),
