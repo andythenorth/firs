@@ -54,6 +54,7 @@ spriteset_2 = industry.add_spriteset(
     id = 'coffee_estate_shed',
     sprites = [(80, 10, 64, 59, -31, -28)],
 )
+
 industry.add_spritelayout(
     id = 'coffee_estate_house_spritelayout',
     ground_sprite = sprite_ground,
