@@ -212,7 +212,7 @@
                     xextent: ${building_sprite.xextent};
                     yextent: ${building_sprite.yextent};
                     zextent: ${building_sprite.zextent};-->
-                    hide_sprite: climate == CLIMATE_TROPIC; <!--! !! check needs extending for snow also -->
+                    hide_sprite: climate == CLIMATE_TROPIC || nearby_tile_height(0, 0) >= snowline_height; <!--! !! check needs extending for snow also -->
                 }
                 building {
                     sprite: ${magic_tree.tropic};
@@ -226,17 +226,18 @@
                     zextent: ${building_sprite.zextent};-->
                     hide_sprite: climate != CLIMATE_TROPIC;
                 }
-                <!--!building {
-                    sprite: ${industry.unpack_sprite_or_spriteset(magic_tree[0], construction_state_num=3, terrain_type='snow')};
+                building {
+                    sprite: ${magic_tree.snow};
                     recolour_mode: RECOLOUR_REMAP;
                     palette: PALETTE_USE_DEFAULT;
-                    xoffset: ${magic_tree[1][0]};
-                    yoffset: ${magic_tree[1][1]};
-                    zoffset: ${building_sprite.zoffset};
+                    xoffset: ${magic_tree.xoffset};
+                    yoffset: ${magic_tree.yoffset};
+                    <!--!zoffset: ${building_sprite.zoffset};
                     xextent: ${building_sprite.xextent};
                     yextent: ${building_sprite.yextent};
-                    zextent: ${building_sprite.zextent};
-                }-->
+                    zextent: ${building_sprite.zextent};-->
+                    hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) < snowline_height;
+                }
             </tal:magic_trees>
 
             <tal:optional_smoke repeat="smoke_sprite spritelayout.smoke_sprites">

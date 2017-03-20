@@ -22,8 +22,7 @@ industry = IndustryPrimaryOrganic(id='forest',
                     fund_cost_multiplier='95',
                     prod_multiplier='[19]',
                     substitute='INDUSTRYTYPE_FOREST',
-                    graphics_change_dates = [1935],
-                    template="refactor/refactor_forest.pynml" )
+                    graphics_change_dates = [1935])
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
@@ -42,6 +41,42 @@ industry.add_tile(id='forest_tile_2',
                                                      disallow_coast=True,
                                                      disallow_industry_adjacent=True))
 
+sprite_ground = industry.add_sprite(
+    sprite_number = 'GROUNDTILE_MUD_TRACKS'
+)
+spriteset_ground_overlay = industry.add_spriteset(
+    id = 'forest_spriteset_ground_overlay',
+    type = 'empty'
+)
+spriteset_1 = industry.add_spriteset(
+    id = 'forest_equipment_1',
+    sprites = [(10, 10, 64, 59, -31, -28)],
+)
+spriteset_2 = industry.add_spriteset(
+    id = 'forest_equipment_2',
+    sprites = [(80, 10, 64, 59, -31, -28)],
+)
+"""
+    xoffsets and yoffsets might be needed from these
+    spriteset(spriteset_crane, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(10, 10, 78, -45) }
+    spriteset(spriteset_bulldozer, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(80, 10, 78, -45) }
+    spriteset(spriteset_tracks_snowtile, "src/graphics/industries/forest_1_snow.png") { tmpl_building_sprite(220, 10, 78, -45) }
+"""
+
+industry.add_spritelayout(
+    id = 'forest_equipment_spritelayout',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_1, spriteset_2],
+)
+industry.add_magic_spritelayout(
+    type = 'slope_aware_trees',
+    base_id = 'forest_slope_aware_ground_with_trees',
+    config = {'ground_sprite': 'GROUNDSPRITE_NORMAL',
+              'trees_default': [1593, 1593, 1689, 1586],
+              'trees_tropic': [1923, 1915, 1923, 1586],
+              'trees_snow': [1811, 1809, 1811, 1809]}
+)
 
 industry.add_industry_layout(
     id = 'forest_layout_1',
