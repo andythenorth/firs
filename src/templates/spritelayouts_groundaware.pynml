@@ -19,7 +19,7 @@
 -->
 
 
-spritelayout ${industry.id}_tree_tile_layout {
+spritelayout ${industry.id}_slope_aware_ground_with_trees {
     ground {
         sprite: GROUNDSPRITE_NORMAL + slope_to_sprite_offset(nearby_tile_slope(0, 0));
         recolour_mode: RECOLOUR_REMAP;

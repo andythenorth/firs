@@ -169,7 +169,7 @@
     spriteset(spriteset_bulldozer, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(80, 10, 78, -45) }
     spriteset(spriteset_tracks_snowtile, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(220, 10, 78, -45) }
 
-    spritelayout ${industry.id}_tile_equipment_nonsnow_spritelayout {
+    spritelayout ${industry.id}_equipment_spritelayout {
         ground {
             sprite: 2022;
         }
@@ -190,7 +190,7 @@
             always_draw: 1;
         }
     }
-
+    <!--! now unused - needs migration
     spritelayout ${industry.id}_tile_equipment_snow_spritelayout {
         ground {
             sprite: spriteset_tracks_snowtile;
@@ -213,7 +213,7 @@
             yextent: 7;
             always_draw: 1;
         }
-    } <!--! note orphaned trailing bracket due to way spritelayouts_groundaware template is constructed -->
+    } -->
 </tal:spritelayout>
 
 <!--! !! this was a hax migration when removing CPP from tile location checks, as the spritelayouts chain was repurposing a
@@ -222,100 +222,24 @@
       Think it's just a legacy artefact of CPP templating -->
 <!--!  Check that the tile is within a certain height range (repurposeable for multiple checks, e.g. above or below snowline etc)
        uses more efficient code for (nearby_tile_height(0,0) <= maxh) && (nearby_tile_height(0,0) >= minh) -->
+<!--!
 switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_equipment_height_check, UCMP(nearby_tile_height(0, 0) - 0, snowline_height - 0)) {
     0..1: ${industry.id}_tile_equipment_nonsnow_spritelayout;
     ${industry.id}_tile_equipment_snow_spritelayout;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_equipment_spritelayout, climate) {
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_equipment_spritelayout, climate) {
 	CLIMATE_ARCTIC: ${industry.id}_tile_equipment_height_check;
 	${industry.id}_tile_equipment_nonsnow_spritelayout;
-}
+}-->
 
-/* ****************************************************
- * Definition of the industry tiles and their callbacks
- * ***************************************************/
+<tal:include metal:use-macro="load: graphics_switches.pynml" />
 
 <tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
              metal:use-macro="location_checks_tile.macros['render_tree']" />
 
-item(FEAT_INDUSTRYTILES, _tile_1, ${global_constants.tile_numeric_ids['forest_tile_1']}) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [[FMSP, 8]];
-		land_shape_flags: 0;
-	}
-	graphics {
-		foundations: return CB_RESULT_NO_FOUNDATIONS;
-		autoslope:   return CB_RESULT_NO_AUTOSLOPE;
-		tile_check: ${industry.id}_tile_1_lc_0;
-		${industry.id}_tree_tile_layout;
-	}
-}
+<tal:include metal:use-macro="load: properties_tile.pynml" />
 
-item(FEAT_INDUSTRYTILES, _tile_2, ${global_constants.tile_numeric_ids['forest_tile_2']}) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [[FMSP, 8]];
-		land_shape_flags: 0;
-	}
-	graphics {
-		tile_check: ${industry.id}_tile_2_lc_0;
-		${industry.id}_tile_equipment_spritelayout;
-	}
-}
-
-/* *************************************************
- * Definition of the industry layouts
- * *************************************************/
-
-tilelayout tilelayout_forest_1 {
-	0, 0: _tile_1;
-	0, 1: _tile_1;
-	0, 2: _tile_1;
-	1, 0: _tile_1;
-	1, 1: _tile_1;
-	1, 2: _tile_1;
-	2, 1: _tile_1;
-	2, 2: _tile_2;
-}
-
-tilelayout tilelayout_forest_2 {
-	0, 0: _tile_1;
-	0, 1: _tile_1;
-	0, 2: _tile_1;
-	1, 0: _tile_1;
-	1, 1: _tile_1;
-	1, 2: _tile_1;
-	3, 0: _tile_1;
-	3, 1: _tile_1;
-	3, 2: _tile_2;
-	4, 0: _tile_1;
-	4, 1: _tile_1;
-	4, 2: _tile_1;
-}
-
-tilelayout tilelayout_forest_3 {
-	0, 1: _tile_1;
-	0, 2: _tile_1;
-	0, 3: _tile_1;
-	1, 0: _tile_1;
-	1, 1: _tile_1;
-	1, 2: _tile_1;
-	1, 3: _tile_1;
-	1, 4: _tile_1;
-	2, 0: _tile_1;
-	2, 1: _tile_1;
-	2, 2: _tile_1;
-	2, 3: _tile_1;
-	3, 0: _tile_1;
-	3, 1: _tile_1;
-	3, 2: _tile_2;
-	4, 0: _tile_1;
-	4, 1: _tile_1;
-	5, 0: _tile_1;
-	5, 1: _tile_1;
-	5, 2: _tile_1;
-}
+<tal:include metal:use-macro="load: layouts.pynml" />
 
 <tal:include metal:use-macro="load: common_temp_2.pynml" />
