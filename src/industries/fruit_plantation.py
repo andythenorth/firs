@@ -21,7 +21,8 @@ industry = IndustryPrimaryOrganic(id='fruit_plantation',
                                                            incompatible={'brewery': 16}),
                     prod_cargo_types=['FRUT'],
                     fund_cost_multiplier='54',
-                    prod_multiplier='[16]')
+                    prod_multiplier='[16]',
+                    override_default_construction_states=True)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True

@@ -20,7 +20,8 @@ industry = IndustryPrimaryOrganic(id='rubber_plantation',
                     location_checks=IndustryLocationChecks(require_cluster=['rubber_plantation', [20, 72, 1, 4]]),
                     prod_cargo_types=['RUBR'],
                     fund_cost_multiplier='54',
-                    prod_multiplier='[16]')
+                    prod_multiplier='[16]',
+                    override_default_construction_states=True)
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 

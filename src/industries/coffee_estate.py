@@ -20,7 +20,8 @@ industry = IndustryPrimaryOrganic(id='coffee_estate',
                     prod_cargo_types=['JAVA', 'FRUT'],
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PLANTATION))',
                     fund_cost_multiplier='54',
-                    prod_multiplier='[11, 8]')
+                    prod_multiplier='[11, 8]',
+                    override_default_construction_states=True)
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
