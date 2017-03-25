@@ -56,6 +56,10 @@ spriteset_2 = industry.add_spriteset(
     id = 'forest_equipment_2',
     sprites = [(80, 10, 64, 78, -31, -45)],
 )
+spriteset_3 = industry.add_spriteset(
+    id = 'forest_wood_stack',
+    sprites = [(150, 10, 64, 78, -31, -45)],
+)
 
 industry.add_spritelayout(
     id = 'forest_equipment_spritelayout',
@@ -63,64 +67,107 @@ industry.add_spritelayout(
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_1, spriteset_2],
 )
+industry.add_spritelayout(
+    id = 'forest_wood_stack_spritelayout',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_3],
+)
 industry.add_magic_spritelayout(
     type = 'slope_aware_trees',
-    base_id = 'forest_slope_aware_ground_with_trees',
+    base_id = 'forest_slope_aware_ground_with_trees_uniform',
     config = {'ground_sprite': 3943,
-              'trees_default': [1593, 1593, 1689, 1586],
-              'trees_tropic': [1923, 1915, 1923, 1586],
-              'trees_snow': [1811, 1809, 1811, 1809]}
+              'trees_default': [1712, 1712, 1712, 1712, 1712, 1712, 1712, 1712, 1712],
+              'trees_snow': [1768, 1768, 1768, 1768, 1768, 1768, 1768, 1768, 1768],
+              'trees_tropic': [1838, 1838, 1838, 1838, 1838, 1838, 1838, 1838, 1838]}
 )
+industry.add_magic_spritelayout(
+    type = 'slope_aware_trees',
+    base_id = 'forest_slope_aware_ground_with_trees_dying',
+    config = {'ground_sprite': 3943,
+              'trees_default': [1710, 1715, 1595, 1714],
+              'trees_snow': [1766, 1771, 1767, 1770],
+              'trees_tropic': [1873, 1870, 1839, 1836]}
+)
+
 
 industry.add_industry_layout(
     id = 'forest_layout_1',
-    layout = [(0, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (0, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (0, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (1, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (1, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (1, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (2, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (2, 2, 'forest_tile_2', 'forest_equipment_spritelayout'),
+    layout = [(0, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (0, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (0, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (1, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (1, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (1, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying'),
+              (2, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (2, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (2, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying'),
+              (3, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying'),
+              (3, 1, 'forest_tile_2', 'forest_wood_stack_spritelayout'),
+              (3, 2, 'forest_tile_2', 'forest_equipment_spritelayout')
     ]
 )
 industry.add_industry_layout(
     id = 'forest_layout_2',
-    layout = [(0, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (0, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (0, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (1, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (1, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (1, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (3, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (3, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (3, 2, 'forest_tile_2', 'forest_equipment_spritelayout'),
-              (4, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (4, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (4, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
+    layout = [(0, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (0, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (0, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (0, 3, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (0, 4, 'forest_tile_2', 'forest_equipment_spritelayout'),
+              (1, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (1, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (1, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (1, 3, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying'),
+              (1, 4, 'forest_tile_2', 'forest_wood_stack_spritelayout'),
+              (2, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (2, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (2, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (2, 3, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying'),
+              (2, 4, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying')
     ]
 )
 industry.add_industry_layout(
     id = 'forest_layout_3',
-    layout = [(0, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (0, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (0, 3, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (1, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (1, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (1, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (1, 3, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (1, 4, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (2, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (2, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (2, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (2, 3, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (3, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (3, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
+    layout = [(0, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (0, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (0, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (0, 3, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (1, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (1, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (1, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (1, 3, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (2, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (2, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying'),
+              (2, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying'),
+              (2, 3, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying'),
+              (3, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying'),
+              (3, 1, 'forest_tile_2', 'forest_wood_stack_spritelayout'),
               (3, 2, 'forest_tile_2', 'forest_equipment_spritelayout'),
-              (4, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (4, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (5, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (5, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
-              (5, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees'),
+              (3, 3, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying')
+    ]
+)
+industry.add_industry_layout(
+    id = 'forest_layout_4',
+    layout = [(0, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (0, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (0, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (0, 3, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (1, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (1, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (1, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (1, 3, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying'),
+              (2, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (2, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (2, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying'),
+              (2, 3, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying'),
+              (3, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (3, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying'),
+              (3, 2, 'forest_tile_2', 'forest_equipment_spritelayout'),
+              (4, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (4, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (4, 2, 'forest_tile_2', 'forest_wood_stack_spritelayout'),
+              (5, 0, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (5, 1, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_uniform'),
+              (5, 2, 'forest_tile_1', 'forest_slope_aware_ground_with_trees_dying')
     ]
 )

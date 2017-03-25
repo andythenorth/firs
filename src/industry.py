@@ -368,8 +368,9 @@ class MagicSpritelayoutSlopeAwareTrees(object):
     # Class attributes eh?  Might as well, these aren't supposed to be mutable
 
     # there are 19 slopes to handle, as per https://newgrf-specs.tt-wiki.net/wiki/NML:List_of_tile_slopes
-    # format is slope_num: (tuples of x, y for 4 trees)
-    slopes = {0: ((8, 2), (2, 2), (2, 8), (8, 8)),
+    # format is slope_num: (tuples of x, y for 4 or 9 trees)
+
+    slopes_4 = {0: ((8, 2), (2, 2), (2, 8), (8, 8)),
               1: ((8, 2), (2, 2), (2, 8), (8, 8)),
               2: ((8, 2), (2, 2), (2, 8), (8, 8)),
               3: ((8, 2), (2, 2), (2, 8), (8, 8)),
@@ -389,15 +390,42 @@ class MagicSpritelayoutSlopeAwareTrees(object):
               29: ((8, 2), (2, 2), (2, 8), (8, 8)),
               30: ((8, 2), (2, 2), (2, 8), (8, 8))}
 
+    slopes_9 = {0: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          1: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          2: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          3: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          4: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          5: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          6: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          7: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          8: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          9: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          10: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          11: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          12: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          13: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          14: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          23: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          27: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          29: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12)),
+          30: ((0, 0), (0, 6), (0, 12), (6, 0), (6, 6), (6, 12), (12, 0), (12, 6), (12, 12))}
+
     def __init__(self, industry, base_id, config):
         # !! ground sprites are slaved to sprite numbers currently, needs extending for spritesets
         ground_sprite = industry.add_sprite(sprite_number=str(config['ground_sprite']) + ' + slope_to_sprite_offset(nearby_tile_slope(0,0))')
 
-        # tile has 4 tree positions, so 4 tree sprites/spritesets are required, just repeat as necessary if some positions use same sprite
+        # tile has 4 or 9 tree positions, so 4 or 9 tree sprites/spritesets are required, just repeat as necessary if some positions use same sprite
         # trees can be ints (sprite numbers for baseset), or lists of tuples (for spritesets, with optional animation)
         trees_default = config['trees_default']
         trees_snow = config.get('trees_snow', trees_default) # defining snow trees is optional
         trees_tropic = config.get('trees_tropic', trees_default) # defining tropic trees is optional
+        if len(trees_snow) != len(trees_default):
+            raise Exception("Number of snow trees needs to match number of default trees for " + industry.id)
+        if len(trees_tropic) != len(trees_default):
+            raise Exception("Number of tropic trees needs to match number of default trees for " + industry.id)
+
+        num_trees = len(trees_default) # whether 4 or 9 trees are used is determined by number of default trees passed
+        slopes = {4: self.slopes_4, 9: self.slopes_9}[num_trees]
 
         trees = {}
         for terrain, tree_config in {'default': trees_default, 'snow': trees_snow, 'tropic': trees_tropic}.items():
@@ -410,17 +438,14 @@ class MagicSpritelayoutSlopeAwareTrees(object):
                     # extend spriteset support here (noting that spritesets are lists of tuples as they can be animated also)
                     # my intent was simply to pass the offsets to this, as that should be all that is needed
 
-        for slope, offsets in self.slopes.items():
+        for slope, offsets in slopes.items():
             industry.add_spritelayout(id = base_id + str(slope),
                                   ground_sprite = ground_sprite,
                                   ground_overlay = ground_sprite, # slight hax, assume we can just reuse ground for overlay
-                                  magic_trees = [MagicTree(trees, offsets, tree_num=0),
-                                                 MagicTree(trees, offsets, tree_num=1),
-                                                 MagicTree(trees, offsets, tree_num=2),
-                                                 MagicTree(trees, offsets, tree_num=3)],
+                                  magic_trees = [MagicTree(trees, offsets, tree_num=tree_num) for tree_num in range(num_trees)],
                                   building_sprites = [])
 
-        id_slope_mapping = {base_id + str(slope): slope for slope in self.slopes} # easier to match to format of slope switch in nml
+        id_slope_mapping = {base_id + str(slope): slope for slope in slopes} # easier to match to format of slope switch in nml
         industry.add_slope_graphics_switch(base_id,
                                        default_result = base_id + '0',
                                        slope_spritelayout_mapping = {slope: slope_id for slope_id, slope in id_slope_mapping.items()})
