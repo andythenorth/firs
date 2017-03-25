@@ -50,11 +50,11 @@ spriteset_ground_overlay = industry.add_spriteset(
 )
 spriteset_1 = industry.add_spriteset(
     id = 'forest_equipment_1',
-    sprites = [(10, 10, 64, 59, -31, -28)],
+    sprites = [(10, 10, 64, 78, -31, -45)],
 )
 spriteset_2 = industry.add_spriteset(
     id = 'forest_equipment_2',
-    sprites = [(80, 10, 64, 59, -31, -28)],
+    sprites = [(80, 10, 64, 78, -31, -45)],
 )
 """
     xoffsets and yoffsets might be needed from these
@@ -72,7 +72,7 @@ industry.add_spritelayout(
 industry.add_magic_spritelayout(
     type = 'slope_aware_trees',
     base_id = 'forest_slope_aware_ground_with_trees',
-    config = {'ground_sprite': 'GROUNDSPRITE_NORMAL',
+    config = {'ground_sprite': 3962, #'GROUNDSPRITE_NORMAL',
               'trees_default': [1593, 1593, 1689, 1586],
               'trees_tropic': [1923, 1915, 1923, 1586],
               'trees_snow': [1811, 1809, 1811, 1809]}
