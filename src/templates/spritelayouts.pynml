@@ -208,10 +208,10 @@
                     palette: PALETTE_USE_DEFAULT;
                     xoffset: ${magic_tree.xoffset};
                     yoffset: ${magic_tree.yoffset};
-                    <!--!zoffset: ${building_sprite.zoffset};
-                    xextent: ${building_sprite.xextent};
-                    yextent: ${building_sprite.yextent};
-                    zextent: ${building_sprite.zextent};-->
+                    <!--!zoffset: ${building_sprite.zoffset};-->
+                    xextent: 8;<!--!${building_sprite.xextent};-->
+                    yextent: 8;<!--!${building_sprite.yextent};-->
+                    zextent: 32;<!--!${building_sprite.zextent};-->
                     hide_sprite: climate == CLIMATE_TROPIC || nearby_tile_height(0, 0) >= snowline_height; <!--! !! check needs extending for snow also -->
                 }
                 building {
@@ -220,10 +220,10 @@
                     palette: PALETTE_USE_DEFAULT;
                     xoffset: ${magic_tree.xoffset};
                     yoffset: ${magic_tree.yoffset};
-                    <!--!zoffset: ${building_sprite.zoffset};
-                    xextent: ${building_sprite.xextent};
-                    yextent: ${building_sprite.yextent};
-                    zextent: ${building_sprite.zextent};-->
+                    <!--!zoffset: ${building_sprite.zoffset};-->
+                    xextent: 8;<!--!${building_sprite.xextent};-->
+                    yextent: 8;<!--!${building_sprite.yextent};-->
+                    zextent: 32;<!--!${building_sprite.zextent};-->
                     hide_sprite: climate != CLIMATE_TROPIC;
                 }
                 building {
@@ -232,10 +232,10 @@
                     palette: PALETTE_USE_DEFAULT;
                     xoffset: ${magic_tree.xoffset};
                     yoffset: ${magic_tree.yoffset};
-                    <!--!zoffset: ${building_sprite.zoffset};
-                    xextent: ${building_sprite.xextent};
-                    yextent: ${building_sprite.yextent};
-                    zextent: ${building_sprite.zextent};-->
+                    <!--!zoffset: ${building_sprite.zoffset};-->
+                    xextent: 8;<!--!${building_sprite.xextent};-->
+                    yextent: 8;<!--!${building_sprite.yextent};-->
+                    zextent: 32;<!--!${building_sprite.zextent};-->
                     hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) < snowline_height;
                 }
             </tal:magic_trees>
