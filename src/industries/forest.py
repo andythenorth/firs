@@ -56,12 +56,6 @@ spriteset_2 = industry.add_spriteset(
     id = 'forest_equipment_2',
     sprites = [(80, 10, 64, 78, -31, -45)],
 )
-"""
-    xoffsets and yoffsets might be needed from these
-    spriteset(spriteset_crane, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(10, 10, 78, -45) }
-    spriteset(spriteset_bulldozer, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(80, 10, 78, -45) }
-    spriteset(spriteset_tracks_snowtile, "src/graphics/industries/forest_1_snow.png") { tmpl_building_sprite(220, 10, 78, -45) }
-"""
 
 industry.add_spritelayout(
     id = 'forest_equipment_spritelayout',
@@ -72,7 +66,7 @@ industry.add_spritelayout(
 industry.add_magic_spritelayout(
     type = 'slope_aware_trees',
     base_id = 'forest_slope_aware_ground_with_trees',
-    config = {'ground_sprite': 3962, #'GROUNDSPRITE_NORMAL',
+    config = {'ground_sprite': 3943,
               'trees_default': [1593, 1593, 1689, 1586],
               'trees_tropic': [1923, 1915, 1923, 1586],
               'trees_snow': [1811, 1809, 1811, 1809]}
