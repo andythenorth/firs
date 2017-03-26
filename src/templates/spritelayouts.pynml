@@ -209,8 +209,9 @@
                     xoffset: ${magic_tree.xoffset};
                     yoffset: ${magic_tree.yoffset};
                     <!--!zoffset: ${building_sprite.zoffset};-->
-                    xextent: 8;
-                    yextent: 8;
+                    <!--! x and y extents need to be 4 or so for trees to prevent flickering -->
+                    xextent: 4;
+                    yextent: 4;
                     zextent: 32;
                     hide_sprite: climate == CLIMATE_TROPIC || nearby_tile_height(0, 0) >= snowline_height || construction_state == 0;
                 }
@@ -221,8 +222,8 @@
                     xoffset: ${magic_tree.xoffset};
                     yoffset: ${magic_tree.yoffset};
                     <!--!zoffset: ${building_sprite.zoffset};-->
-                    xextent: 8;
-                    yextent: 8;
+                    xextent: 4;
+                    yextent: 4;
                     zextent: 32;
                     hide_sprite: climate != CLIMATE_TROPIC || construction_state == 0;
                 }
@@ -233,8 +234,8 @@
                     xoffset: ${magic_tree.xoffset};
                     yoffset: ${magic_tree.yoffset};
                     <!--!zoffset: ${building_sprite.zoffset};-->
-                    xextent: 8;
-                    yextent: 8;
+                    xextent: 4;
+                    yextent: 4;
                     zextent: 32;
                     hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) < snowline_height || construction_state == 0;
                 }
