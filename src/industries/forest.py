@@ -86,9 +86,9 @@ industry.add_magic_spritelayout(
     type = 'slope_aware_trees',
     base_id = 'forest_slope_aware_ground_with_trees_dying',
     config = {'ground_sprite': 3943,
-              'trees_default': [1710, 1715, 1595, 1714],
-              'trees_snow': [1766, 1771, 1767, 1770],
-              'trees_tropic': [1873, 1870, 1839, 1836]}
+              'trees_default': [1715, 1595, 1710, 1714],
+              'trees_snow': [1771, 1767, 1766, 1770],
+              'trees_tropic': [1870, 1839, 1873, 1836]}
 )
 
 
