@@ -39,7 +39,7 @@ industry.add_tile(id='rubber_plantation_tile_2', # house
 
 
 sprite_ground = industry.add_sprite(
-    sprite_number = 'GROUNDTILE_MUD_TRACKS'
+    sprite_number = 3962
 )
 spriteset_ground_overlay = industry.add_spriteset(
     id = 'rubber_plantation_spriteset_ground_overlay',

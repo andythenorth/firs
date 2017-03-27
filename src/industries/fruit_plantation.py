@@ -40,7 +40,7 @@ industry.add_tile(id='fruit_plantation_tile_2', # house
                                                      disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(
-    sprite_number = 'GROUNDTILE_MUD_TRACKS'
+    sprite_number = 3962
 )
 spriteset_ground_overlay = industry.add_spriteset(
     id = 'fruit_plantation_spriteset_ground_overlay',
