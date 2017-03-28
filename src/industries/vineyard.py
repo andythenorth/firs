@@ -40,7 +40,7 @@ industry.add_tile(id='vineyard_tile_2', # house
                                                      disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(
-    sprite_number = 'GROUNDTILE_MUD_TRACKS'
+    sprite_number = 3962
 )
 spriteset_ground_overlay = industry.add_spriteset(
     id = 'vineyard_spriteset_ground_overlay',
@@ -82,7 +82,7 @@ industry.add_industry_layout(
               (1, 0, 'vineyard_tile_1', 'vineyard_slope_aware_ground_with_trees'),
               (1, 1, 'vineyard_tile_1', 'vineyard_slope_aware_ground_with_trees'),
               (1, 2, 'vineyard_tile_1', 'vineyard_slope_aware_ground_with_trees'),
-              (2, 1, 'vineyard_tile_2', 'vineyard_house_spritelayout'),
+              (2, 1, 'vineyard_tile_1', 'vineyard_slope_aware_ground_with_trees'),
               (2, 2, 'vineyard_tile_2', 'vineyard_house_spritelayout'),
     ]
 )
