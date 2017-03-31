@@ -1,4 +1,4 @@
-<!--! extra text -->
+<!--! Extra text in the industry window (callback 3A) -->
 
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, [
 	STORE_TEMP((primary_level1_requirement * ${industry.supply_requirements[2]}) |
@@ -8,4 +8,13 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, [
 	primary_level2_bonus: return string(STR_${industry.supply_requirements[1]}_PRODUCTION_4X);
 	primary_level1_bonus: return string(STR_${industry.supply_requirements[1]}_PRODUCTION_2X);
 	return string(STR_${industry.supply_requirements[1]}_PRODUCTION_1X);
+}
+
+<!--!
+    Additional text after the cargos in the industry window (callback 37)
+    The 0x3800 expressions here are related to using extended cb 37 before nml support was added, and can be removed when nml is updated
+-->
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display, 1) {
+    return 0x3800 + string(STR_EMPTY);
 }
