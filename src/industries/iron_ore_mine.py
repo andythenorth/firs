@@ -107,6 +107,10 @@ spriteset_exit_shed_rear = industry.add_spriteset(
     id = 'iron_ore_mine_spriteset_exit_shed_rear',
     sprites = [(430, 10, 64, 122, -31, -90)],
 )
+spriteset_thickening_tank = industry.add_spriteset(
+    id = 'iron_ore_mine_spriteset_thickening_tank',
+    sprites = [(500, 10, 64, 122, -31, -90)],
+)
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'dark_smoke_small',
     xoffset= -1,
@@ -169,6 +173,12 @@ industry.add_spritelayout(
     building_sprites = [spriteset_ore_2],
 )
 industry.add_spritelayout(
+    id = 'iron_ore_mine_spritelayout_thickening_tank',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_thickening_tank],
+)
+industry.add_spritelayout(
     id = 'iron_ore_mine_spritelayout_winding_house',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
@@ -184,77 +194,21 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'iron_ore_mine_industry_layout_1',
-    layout = [(0, 1, 'iron_ore_mine_tile_1', 'iron_ore_mine_spritelayout_headgear_animated'),
-              (0, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_winding_house'),
-              (1, 0, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_crusher_rear_part'),
-              (1, 1, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_exit_shed_rear'),
-              (1, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_hut_vents'),
-              (2, 0, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_tile_empty'),
-              (2, 1, 'iron_ore_mine_tile_3', 'iron_ore_mine_spritelayout_exit_trestle_animated'),
-              (2, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_tile_empty'),
-              (3, 0, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_crusher_front_part'),
-              (3, 1, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_ore_1'),
-              (3, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_ore_2')
-    ]
-)
-
-industry.add_industry_layout(
-    id = 'iron_ore_mine_industry_layout_2',
-    layout = [(0, 0, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_crusher_rear_part'),
+    layout = [(0, 0, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_winding_house'),
               (0, 1, 'iron_ore_mine_tile_1', 'iron_ore_mine_spritelayout_headgear_animated'),
-              (0, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_winding_house'),
-              (0, 3, 'iron_ore_mine_tile_1', 'iron_ore_mine_spritelayout_headgear_animated'),
-              (0, 4, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_winding_house'),
-              (1, 0, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_tile_empty'),
-              (1, 1, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_exit_shed_rear'),
-              (1, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_tile_empty'),
-              (1, 3, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_exit_shed_rear'),
-              (1, 4, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_hut_vents'),
-              (2, 0, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_crusher_front_part'),
-              (2, 1, 'iron_ore_mine_tile_3', 'iron_ore_mine_spritelayout_exit_trestle_animated'),
-              (2, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_ore_1'),
-              (2, 3, 'iron_ore_mine_tile_3', 'iron_ore_mine_spritelayout_exit_trestle_animated'),
-              (2, 4, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_ore_2')
-    ]
-)
-
-industry.add_industry_layout(
-    id = 'iron_ore_mine_industry_layout_3',
-    layout = [(0, 0, 'iron_ore_mine_tile_1', 'iron_ore_mine_spritelayout_headgear_animated'),
-              (0, 1, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_winding_house'),
-              (1, 0, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_exit_shed_rear'),
-              (1, 1, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_ore_2'),
-              (1, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_tile_empty'),
-              (2, 0, 'iron_ore_mine_tile_3', 'iron_ore_mine_spritelayout_exit_trestle_animated'),
-              (2, 1, 'iron_ore_mine_tile_1', 'iron_ore_mine_spritelayout_headgear_animated'),
-              (2, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_winding_house'),
-              (3, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_hut_vents'),
-              (3, 1, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_exit_shed_rear'),
-              (3, 0, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_crusher_rear_part'),
-              (4, 0, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_tile_empty'),
-              (4, 1, 'iron_ore_mine_tile_3', 'iron_ore_mine_spritelayout_exit_trestle_animated'),
-              (4, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_ore_2'),
-              (5, 0, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_crusher_front_part'),
-              (5, 1, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_ore_1')
-    ]
-)
-
-industry.add_industry_layout(
-    id = 'iron_ore_mine_industry_layout_4',
-    layout = [(0, 0, 'iron_ore_mine_tile_1', 'iron_ore_mine_spritelayout_headgear_animated'),
-              (0, 1, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_winding_house'),
-              (0, 2, 'iron_ore_mine_tile_1', 'iron_ore_mine_spritelayout_headgear_animated'),
-              (0, 3, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_winding_house'),
-              (0, 4, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_crusher_rear_part'),
-              (1, 0, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_exit_shed_rear'),
-              (1, 1, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_ore_2'),
-              (1, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_exit_shed_rear'),
-              (1, 3, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_tile_empty'),
-              (1, 4, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_tile_empty'),
-              (2, 0, 'iron_ore_mine_tile_3', 'iron_ore_mine_spritelayout_exit_trestle_animated'),
-              (2, 1, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_hut_vents'),
-              (2, 2, 'iron_ore_mine_tile_3', 'iron_ore_mine_spritelayout_exit_trestle_animated'),
-              (2, 3, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_ore_1'),
-              (2, 4, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_crusher_front_part')
+              (0, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_crusher_rear_part'),
+              (0, 3, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_thickening_tank'),
+              (1, 0, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_winding_house'),
+              (1, 1, 'iron_ore_mine_tile_1', 'iron_ore_mine_spritelayout_headgear_animated'),
+              (1, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_crusher_rear_part'),
+              (1, 3, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_thickening_tank'),
+              (2, 0, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_hut_vents'),
+              (2, 1, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_exit_shed_rear'),
+              (2, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_tile_empty'),
+              (2, 3, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_tile_empty'),
+              (3, 0, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_ore_1'),
+              (3, 1, 'iron_ore_mine_tile_3', 'iron_ore_mine_spritelayout_exit_trestle_animated'),
+              (3, 2, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_crusher_front_part'),
+              (3, 3, 'iron_ore_mine_tile_2', 'iron_ore_mine_spritelayout_ore_2'),
     ]
 )
