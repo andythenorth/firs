@@ -14,7 +14,6 @@ industry = IndustryPrimaryExtractive(id='clay_pit',
                     prob_random='7',
                     prod_multiplier='[16, 0]',
                     map_colour='46',
-                    spec_flags='0',
                     # allow longer distance on clustering than usual, and more clusters, as industry is hard to locate
                     location_checks=IndustryLocationChecks(require_cluster=['clay_pit', [20, 90, 1, 4]],
                                                            incompatible={'brick_works': 16,
