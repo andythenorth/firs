@@ -25,11 +25,10 @@ firs.grf: generated/firs.nml custom_tags.txt
 install: firs.grf
 	cp firs.grf ~/Documents/OpenTTD/newgrf/
 
-clean::
-	$(_V)-rm -r docs
-	$(_V)-rm -r .chameleon_cache
-	$(_V)-rm -r generated
-	$(_V)-rm -r .nmlcache
-	$(_V)-rm -r src/__pycache__
-	$(_V)-rm -r src/*/__pycache__
-
+clean:
+	for f in .chameleon_cache .nmlcache src/__pycache__ src/*/__pycache__ docs generated \
+	$(GRF_FILE) $(TAR_FILE) $(ZIP_FILE) $(MD5_FILE) $(BUNDLE_DIR) $(SOURCE_NAME).tar;\
+	do if test -e $$f;\
+	   then rm -r $$f;\
+	   fi;\
+	done
