@@ -111,6 +111,10 @@ spriteset_boiler_house = industry.add_spriteset(
     id = 'iron_ore_mine_spriteset_boiler_house',
     sprites = [(500, 10, 64, 122, -31, -90)],
 )
+spriteset_silo = industry.add_spriteset(
+    id = 'iron_ore_mine_spriteset_silo',
+    sprites = [(570, 10, 64, 122, -31, -90)],
+)
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
     xoffset= 5,
@@ -179,6 +183,12 @@ industry.add_spritelayout(
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_boiler_house],
     smoke_sprites = [sprite_smoke_1, sprite_smoke_2],
+)
+industry.add_spritelayout(
+    id = 'iron_ore_mine_spritelayout_silo',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_silo],
 )
 industry.add_spritelayout(
     id = 'iron_ore_mine_spritelayout_winding_house',
