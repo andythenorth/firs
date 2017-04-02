@@ -19,7 +19,6 @@ industry = IndustrySecondary(id='sugar_refinery',
                     spec_flags='bitmask(IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE)',
                     location_checks=dict(incompatible={'sugar_refinery': 56,
                                                                          'arable_farm': 16}),
-                    remove_cost_multiplier='0',
                     name='string(STR_IND_SUGAR_REFINERY)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_REFINERY))',
                     fund_cost_multiplier='140')

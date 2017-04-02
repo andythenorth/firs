@@ -15,7 +15,6 @@ industry = IndustrySecondary(id='sawmill',
                     layouts='AUTO',
                     prod_multiplier='[0, 0]',
                     map_colour='194',
-                    remove_cost_multiplier='0',
                     name='TTD_STR_INDUSTRY_NAME_SAWMILL',
                     fund_cost_multiplier='97')
 

@@ -17,7 +17,6 @@ industry = IndustrySecondary(id='cement_plant',
                     prod_multiplier='[0, 0]',
                     map_colour='19',
                     spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
-                    remove_cost_multiplier='0',
                     name='string(STR_IND_CEMENT_PLANT)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='203')

@@ -17,7 +17,6 @@ industry = IndustrySecondary(id='blast_furnace',
                     prod_multiplier='[0, 0]',
                     map_colour='9',
                     spec_flags='bitmask()',
-                    remove_cost_multiplier='0',
                     name='TTD_STR_INDUSTRY_NAME_STEEL_MILL', # default to steel mill
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_POWERHUNGRY))',
                     fund_cost_multiplier='190',

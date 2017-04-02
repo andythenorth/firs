@@ -15,7 +15,6 @@ industry = IndustrySecondary(id='coke_oven',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
                     map_colour='163',
-                    remove_cost_multiplier='0',
                     name='string(STR_IND_COKE_OVEN)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PIT))',
                     fund_cost_multiplier='120')

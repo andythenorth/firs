@@ -19,7 +19,6 @@ industry = IndustrySecondary(id='textile_mill',
                     location_checks=dict(incompatible={'textile_mill': 56,
                                                                          'mixed_farm': 16,
                                                                          'sheep_farm': 16}),
-                    remove_cost_multiplier='0',
                     name='string(STR_IND_TEXTILE_MILL)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_REFINERY))',
                     fund_cost_multiplier='120')

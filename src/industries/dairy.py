@@ -17,7 +17,6 @@ industry = IndustrySecondary(id='dairy',
                     prod_multiplier='[0, 0]',
                     map_colour='15',
                     spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
-                    remove_cost_multiplier='0',
                     name='string(STR_IND_DAIRY)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
                     fund_cost_multiplier='45')

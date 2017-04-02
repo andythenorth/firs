@@ -18,7 +18,6 @@ industry = IndustrySecondary(id='flour_mill',
                     map_colour='48',
                     location_checks=dict(flour_mill_layouts_by_date=True,
                                          town_distance=(0, 144)),
-                    remove_cost_multiplier='0',
                     name='string(STR_IND_FLOUR_MILL)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
                     fund_cost_multiplier='50')

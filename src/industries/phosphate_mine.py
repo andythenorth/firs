@@ -17,7 +17,6 @@ industry = IndustryPrimaryExtractive(id='phosphate_mine',
                     # allow longer distance on clustering than usual, and more clusters, as industry is hard to locate
                     location_checks=dict(require_cluster=['phosphate_mine', [20, 90, 1, 4]],
                                                            incompatible={'bulk_terminal': 16}),
-                    remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_PHOSPHATE_MINE)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PIT))',

@@ -666,7 +666,7 @@ class IndustryProperties(object):
         self.life_type = kwargs.get('life_type', None)
         self.spec_flags = kwargs.get('spec_flags', '0')
         self.fund_cost_multiplier = kwargs.get('fund_cost_multiplier', None)
-        self.remove_cost_multiplier = kwargs.get('remove_cost_multiplier', None)
+        self.remove_cost_multiplier = kwargs.get('remove_cost_multiplier', '0')
         # not nml properties
         self.enabled = kwargs.get('enabled', False)
         self.processed_cargos_and_output_ratios = kwargs.get('processed_cargos_and_output_ratios', None)

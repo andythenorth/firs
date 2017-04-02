@@ -21,7 +21,6 @@ industry = IndustrySecondary(id='stockyard',
                                                                          'mixed_farm': 16,
                                                                          'sheep_farm': 16,
                                                                          'dairy_farm': 16}),
-                    remove_cost_multiplier='0',
                     name='string(STR_IND_STOCKYARD)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_ANIMALS))',
                     fund_cost_multiplier='115')

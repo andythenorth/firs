@@ -17,7 +17,6 @@ industry = IndustrySecondary(id='brewery',
                     prod_multiplier='[0, 0]',
                     map_colour='191',
                     location_checks=dict(town_distance=(0, 72)),
-                    remove_cost_multiplier='0',
                     name='string(STR_IND_BREWERY)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_TOWN))',
                     fund_cost_multiplier='50')

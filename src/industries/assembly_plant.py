@@ -16,7 +16,6 @@ industry = IndustrySecondary(id='assembly_plant',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
                     map_colour='141',
-                    remove_cost_multiplier='0',
                     name='string(STR_IND_ASSEMBLY_PLANT)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_HEAVY_INDUSTRY))',
                     fund_cost_multiplier='145')
