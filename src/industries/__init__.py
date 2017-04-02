@@ -243,5 +243,3 @@ assembly_plant.industry.register()
 
 from industries import vineyard
 vineyard.industry.register()
-
-

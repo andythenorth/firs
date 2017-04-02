@@ -28,3 +28,44 @@ import industries
 registered_industries = industries.registered_industries
 import economies
 registered_economies = economies.registered_economies
+
+
+industries_producing_cargo = {}
+for cargo in registered_cargos:
+    industries_producing_cargo[cargo.cargo_label] = []
+
+for industry in registered_industries:
+    produced = []
+    for economy in registered_economies:
+        for cargo_label, ratio in industry.get_prod_cargo_types(economy):
+            produced.append(cargo_label)
+    for cargo_label in set(produced):
+        industries_producing_cargo[cargo_label].append(industry)
+
+industries_accepting_cargo = {}
+for cargo in registered_cargos:
+    industries_accepting_cargo[cargo.cargo_label] = []
+
+for industry in registered_industries:
+    accepted = []
+    for economy in registered_economies:
+        for cargo_label in industry.get_accept_cargo_types(economy):
+            accepted.append(cargo_label)
+    for cargo_label in set(accepted):
+        industries_accepting_cargo[cargo_label].append(industry)
+
+incompatible_industries = {}
+for industry in registered_industries:
+    incompatible = []
+    # special case supplies, pax, mail to exclude them (not useful in checks)
+    excluded_cargos = ["ENSP", "FMSP", "PASS", "MAIL"]
+    for cargo, prod_industries in industries_producing_cargo.items():
+        if cargo not in excluded_cargos:
+            if industry in prod_industries:
+                incompatible.extend(industries_accepting_cargo[cargo])
+    for cargo, accept_industries in industries_accepting_cargo.items():
+        # special case supplies, pax, mail to exclude them (not useful in checks)
+        if cargo not in excluded_cargos:
+            if industry in accept_industries:
+                incompatible.extend(industries_producing_cargo[cargo])
+    incompatible_industries[industry] = set(incompatible)

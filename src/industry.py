@@ -23,7 +23,6 @@ industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), fo
 
 from economies import registered_economies
 from industries import registered_industries
-from cargos import registered_cargos
 
 def get_another_industry(id):
     # utility function so that we can provide numeric ids in nml output, rather than relying identifiers
@@ -32,52 +31,6 @@ def get_another_industry(id):
         if industry.id == id:
             return industry
     # if none found, that's an error, don't handle the error, just blow up
-
-def get_industries_producing_cargo():
-    result = {}
-    for cargo in registered_cargos:
-        result[cargo.cargo_label] = []
-
-    for industry in registered_industries:
-        produced = []
-        for economy in registered_economies:
-            for cargo_label, ratio in industry.get_prod_cargo_types(economy):
-                produced.append(cargo_label)
-        for cargo_label in set(produced):
-            result[cargo_label].append(industry)
-    return result
-
-def get_industries_accepting_cargo():
-    result = {}
-    for cargo in registered_cargos:
-        result[cargo.cargo_label] = []
-
-    for industry in registered_industries:
-        accepted = []
-        for economy in registered_economies:
-            for cargo_label in industry.get_accept_cargo_types(economy):
-                accepted.append(cargo_label)
-        for cargo_label in set(accepted):
-            result[cargo_label].append(industry)
-    return result
-
-def get_incompatible_industries():
-    result = {}
-    for industry in registered_industries:
-        incompatible = []
-        # special case supplies, pax, mail to exclude them (not useful in checks)
-        excluded_cargos = ["ENSP", "FMSP", "PASS", "MAIL"]
-        for cargo, prod_industries in get_industries_producing_cargo().items():
-            if cargo not in excluded_cargos:
-                if industry in prod_industries:
-                    incompatible.extend(get_industries_accepting_cargo()[cargo])
-        for cargo, accept_industries in get_industries_accepting_cargo().items():
-            # special case supplies, pax, mail to exclude them (not useful in checks)
-            if cargo not in excluded_cargos:
-                if industry in accept_industries:
-                    incompatible.extend(get_industries_producing_cargo()[cargo])
-        result[industry] = set(incompatible)
-    return result
 
 
 class Tile(object):
@@ -542,7 +495,7 @@ class IndustryLocationChecks(object):
         # this is custom to grain mill, can be made generic if needed
         self.flour_mill_layouts_by_date = location_args.get('flour_mill_layouts_by_date', None)
 
-    def get_render_tree(self):
+    def get_render_tree(self, incompatible_industries):
         switch_prefix = self.industry.id + '_'
         # this could be reimplemented to just use numeric switch suffixes, as per tile location check tree
         result = deque([])
@@ -552,8 +505,10 @@ class IndustryLocationChecks(object):
         if not self.prevent_player_founding:
             result.append(IndustryLocationCheckFounder())
 
+        """
         if self.require_cluster:
             result.append(IndustryLocationCheckRequireCluster(self.require_cluster))
+        """
 
         if self.town_distance:
             result.append(IndustryLocationCheckTownDistance(self.town_distance))
@@ -567,8 +522,14 @@ class IndustryLocationChecks(object):
         if self.flour_mill_layouts_by_date:
             result.appendleft(IndustryLocationCheckGrainMillLayoutsByDate())
 
+        """
         for industry_type, distance in self.incompatible.items():
             result.append(IndustryLocationCheckIncompatible(industry_type, distance))
+        """
+
+        for industry in set(incompatible_industries[self.industry]):
+            print(industry.id)
+            result.append(IndustryLocationCheckIncompatible(industry.id, 16))
 
         prev = None
         for lc in reversed(result):
@@ -1005,12 +966,14 @@ class Industry(object):
         if isinstance(sprite_or_spriteset, Sprite):
             return getattr(sprite_or_spriteset, 'sprite_number' + suffix)
 
-    def render_nml(self):
+    def render_nml(self, incompatible_industries):
+        # incompatible industries isn't known at init time, only at compile time, so it has to be passed in
         industry_template = templates[self.template]
         templated_nml = utils.unescape_chameleon_output(industry_template(industry=self,
-                                                         global_constants=global_constants,
-                                                         economies=registered_economies,
-                                                         utils=utils))
+                                                                          global_constants=global_constants,
+                                                                          incompatible_industries=incompatible_industries,
+                                                                          economies=registered_economies,
+                                                                          utils=utils))
         return templated_nml
 
 

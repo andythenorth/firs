@@ -23,6 +23,7 @@ import firs
 registered_cargos = firs.registered_cargos
 registered_industries = firs.registered_industries
 registered_economies = firs.registered_economies
+incompatible_industries = firs.incompatible_industries
 
 from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
@@ -59,7 +60,7 @@ def render_header_item_nml(header_item):
 def render_industry_nml(industry):
     only_build_test_industry = repo_vars.get('test_industry', None)
     if not only_build_test_industry or only_build_test_industry == industry.id:
-        result = industry.render_nml()
+        result = industry.render_nml(incompatible_industries=incompatible_industries)
     else:
         result = ''
     # write the nml per vehicle to disk, it aids debugging
