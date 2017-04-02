@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryTownProducer, TileLocationChecks, IndustryLocationChecks
+from industry import IndustryPrimaryTownProducer, TileLocationChecks
 
 industry = IndustryPrimaryTownProducer(id='recycling_depot',
                     accept_cargo_types=[],
@@ -16,7 +16,7 @@ industry = IndustryPrimaryTownProducer(id='recycling_depot',
                     prod_multiplier='[0, 0]',
                     map_colour='191',
                     life_type='IND_LIFE_TYPE_EXTRACTIVE',
-                    location_checks=IndustryLocationChecks(incompatible={'recycling_plant': 16,
+                    location_checks=dict(incompatible={'recycling_plant': 16,
                                                                          'recycling_depot': 20},
                                                            town_industry_count=['recycling_depot', 0, 0],
                                                            prevent_player_founding=True),

@@ -23,6 +23,7 @@ industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), fo
 
 from economies import registered_economies
 from industries import registered_industries
+from cargos import registered_cargos
 
 def get_another_industry(id):
     # utility function so that we can provide numeric ids in nml output, rather than relying identifiers
@@ -31,6 +32,52 @@ def get_another_industry(id):
         if industry.id == id:
             return industry
     # if none found, that's an error, don't handle the error, just blow up
+
+def get_industries_producing_cargo():
+    result = {}
+    for cargo in registered_cargos:
+        result[cargo.cargo_label] = []
+
+    for industry in registered_industries:
+        produced = []
+        for economy in registered_economies:
+            for cargo_label, ratio in industry.get_prod_cargo_types(economy):
+                produced.append(cargo_label)
+        for cargo_label in set(produced):
+            result[cargo_label].append(industry)
+    return result
+
+def get_industries_accepting_cargo():
+    result = {}
+    for cargo in registered_cargos:
+        result[cargo.cargo_label] = []
+
+    for industry in registered_industries:
+        accepted = []
+        for economy in registered_economies:
+            for cargo_label in industry.get_accept_cargo_types(economy):
+                accepted.append(cargo_label)
+        for cargo_label in set(accepted):
+            result[cargo_label].append(industry)
+    return result
+
+def get_incompatible_industries():
+    result = {}
+    for industry in registered_industries:
+        incompatible = []
+        # special case supplies, pax, mail to exclude them (not useful in checks)
+        excluded_cargos = ["ENSP", "FMSP", "PASS", "MAIL"]
+        for cargo, prod_industries in get_industries_producing_cargo().items():
+            if cargo not in excluded_cargos:
+                if industry in prod_industries:
+                    incompatible.extend(get_industries_accepting_cargo()[cargo])
+        for cargo, accept_industries in get_industries_accepting_cargo().items():
+            # special case supplies, pax, mail to exclude them (not useful in checks)
+            if cargo not in excluded_cargos:
+                if industry in accept_industries:
+                    incompatible.extend(get_industries_producing_cargo()[cargo])
+        result[industry] = set(incompatible)
+    return result
 
 
 class Tile(object):
@@ -484,17 +531,19 @@ class IndustryLayout(object):
 
 class IndustryLocationChecks(object):
     """ Class to hold location checks for an industry """
-    def __init__(self, **kwargs):
-        self.prevent_player_founding = kwargs.get('prevent_player_founding', False)
-        self.incompatible = kwargs.get('incompatible', {})
-        self.town_distance = kwargs.get('town_distance', None)
-        self.town_industry_count = kwargs.get('town_industry_count', None)
-        self.coast_distance = kwargs.get('coast_distance', None)
-        self.require_cluster = kwargs.get('require_cluster', None)
+    def __init__(self, industry, location_args):
+        self.industry = industry
+        self.prevent_player_founding = location_args.get('prevent_player_founding', False)
+        self.incompatible = location_args.get('incompatible', {})
+        self.town_distance = location_args.get('town_distance', None)
+        self.town_industry_count = location_args.get('town_industry_count', None)
+        self.coast_distance = location_args.get('coast_distance', None)
+        self.require_cluster = location_args.get('require_cluster', None)
         # this is custom to grain mill, can be made generic if needed
-        self.flour_mill_layouts_by_date = kwargs.get('flour_mill_layouts_by_date', None)
+        self.flour_mill_layouts_by_date = location_args.get('flour_mill_layouts_by_date', None)
 
-    def get_render_tree(self, switch_prefix):
+    def get_render_tree(self):
+        switch_prefix = self.industry.id + '_'
         # this could be reimplemented to just use numeric switch suffixes, as per tile location check tree
         result = deque([])
 
@@ -682,11 +731,11 @@ class Industry(object):
         self.extra_graphics_switches = []
         self.industry_layouts = []
         self.default_industry_properties = IndustryProperties(**kwargs)
-        self.location_checks = kwargs.get('location_checks')
         self.economy_variations = {}
         for economy in registered_economies:
             self.add_economy_variation(economy)
         self.template = kwargs.get('template', None) # template will be set by subcass, and/or by individual industry instances
+        self.location_checks = IndustryLocationChecks(self, kwargs.get('location_checks'))
 
     def register(self):
         if len([i for i in self.economy_variations if self.economy_variations[i].enabled is True]) == 0:
@@ -920,6 +969,11 @@ class Industry(object):
 
     def get_another_industry(self, id):
         return get_another_industry(id)
+
+    @property
+    def incompatible_industries(self):
+        print(get_incompatible_industries())
+        print('Incompatible industries not implemented in industry.py')
 
     def get_output_ratio(self, cargo_num, economy):
         prod_cargo_types = self.get_prod_cargo_types(economy)

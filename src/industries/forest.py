@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
+from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='forest',
                     prob_in_game='3',
@@ -14,7 +14,7 @@ industry = IndustryPrimaryOrganic(id='forest',
                     prospect_chance='0.75',
                     layouts='AUTO',
                     prod_cargo_types=['WOOD'],
-                    location_checks=IndustryLocationChecks(require_cluster=['forest', [20, 72, 1, 3]],
+                    location_checks=dict(require_cluster=['forest', [20, 72, 1, 3]],
                                                            incompatible={'sawmill': 16,
                                                                          'paper_mill': 16}),
                     name='TTD_STR_INDUSTRY_NAME_FOREST',

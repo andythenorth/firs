@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
+from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='flour_mill',
                     processed_cargos_and_output_ratios=[('MNSP', 2), ('GRAI', 6)],
@@ -16,7 +16,7 @@ industry = IndustrySecondary(id='flour_mill',
                     prob_in_game='10',
                     prod_multiplier='[0, 0]',
                     map_colour='48',
-                    location_checks=IndustryLocationChecks(flour_mill_layouts_by_date=True,
+                    location_checks=dict(flour_mill_layouts_by_date=True,
                                                            town_distance=(0, 144),
                                                            incompatible={'flour_mill': 56,
                                                                          'arable_farm': 16,

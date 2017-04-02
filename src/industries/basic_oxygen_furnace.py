@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
+from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='basic_oxygen_furnace',
                     processed_cargos_and_output_ratios=[('IRON', 4), ('MNO2', 2), ('QLME', 2)],
@@ -18,7 +18,7 @@ industry = IndustrySecondary(id='basic_oxygen_furnace',
                     map_colour='48',
                     spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
                     # hack abusing clusters to locate this near blast furnaces
-                    location_checks=IndustryLocationChecks(require_cluster=['blast_furnace', [24, 48, 1, 1]],
+                    location_checks=dict(require_cluster=['blast_furnace', [24, 48, 1, 1]],
                                                            incompatible={'basic_oxygen_furnace': 56}),
                     remove_cost_multiplier='0',
                     name='string(STR_IND_BASIC_OXYGEN_FURNACE)',

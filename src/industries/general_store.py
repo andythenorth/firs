@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryTertiary, TileLocationChecks, IndustryLocationChecks
+from industry import IndustryTertiary, TileLocationChecks
 
 industry = IndustryTertiary(id='general_store',
                     accept_cargo_types=['FOOD', 'GOOD', 'BEER'],
@@ -17,7 +17,7 @@ industry = IndustryTertiary(id='general_store',
                     map_colour='14',
                     life_type='IND_LIFE_TYPE_BLACK_HOLE',
                     spec_flags='bitmask(IND_FLAG_ONLY_IN_TOWNS)',
-                    location_checks=IndustryLocationChecks(incompatible={'general_store': 20,
+                    location_checks=dict(incompatible={'general_store': 20,
                                                                          'petrol_pump': 16,
                                                                          'hotel': 16}),
                     remove_cost_multiplier='0',

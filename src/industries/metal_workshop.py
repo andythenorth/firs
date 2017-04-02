@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
+from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='metal_workshop',
                     processed_cargos_and_output_ratios=[('METL', 6), ('RFPR', 2)],
@@ -16,7 +16,7 @@ industry = IndustrySecondary(id='metal_workshop',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
                     map_colour='123',
-                    location_checks=IndustryLocationChecks(incompatible={'metal_workshop': 56}),
+                    location_checks=dict(incompatible={'metal_workshop': 56}),
                     remove_cost_multiplier='0',
                     name='string(STR_IND_METAL_WORKSHOP)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',

@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
+from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='oil_refinery',
                     processed_cargos_and_output_ratios=[('OIL_', 6)],
@@ -16,7 +16,7 @@ industry = IndustrySecondary(id='oil_refinery',
                     prod_multiplier='[0, 0]',
                     map_colour='191',
                     spec_flags='bitmask(IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE)',
-                    location_checks=IndustryLocationChecks(incompatible={'oil_refinery': 56,
+                    location_checks=dict(incompatible={'oil_refinery': 56,
                                                                          'oil_rig': 16,
                                                                          'oil_wells': 16}),
                     fund_cost_multiplier='200',

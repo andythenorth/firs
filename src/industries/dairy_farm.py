@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
+from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='dairy_farm',
                     prod_cargo_types=['LVST', 'MILK'],
@@ -14,7 +14,7 @@ industry = IndustryPrimaryOrganic(id='dairy_farm',
                     prob_random='11',
                     prod_multiplier='[12, 14]',
                     map_colour='164',
-                    location_checks=IndustryLocationChecks(require_cluster=['dairy_farm', [20, 72, 1, 4]],
+                    location_checks=dict(require_cluster=['dairy_farm', [20, 72, 1, 4]],
                                                            incompatible={'stockyard': 16,
                                                                          'dairy': 16}),
                     remove_cost_multiplier='0',

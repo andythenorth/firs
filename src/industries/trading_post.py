@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryPort, TileLocationChecks, IndustryLocationChecks
+from industry import IndustryPrimaryPort, TileLocationChecks
 
 industry = IndustryPrimaryPort(id='trading_post',
                     accept_cargo_types=['FOOD', 'FRUT', 'BEER'],
@@ -16,7 +16,7 @@ industry = IndustryPrimaryPort(id='trading_post',
                     prod_multiplier='[7, 6]',
                     map_colour='36',
                     spec_flags='bitmask(IND_FLAG_BUILT_ON_WATER)',
-                    location_checks=IndustryLocationChecks(incompatible={'trading_post': 48}),
+                    location_checks=dict(incompatible={'trading_post': 48}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_TRADING_POST)',
