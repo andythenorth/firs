@@ -30,6 +30,8 @@ import economies
 registered_economies = economies.registered_economies
 
 
+# cargo production and incompatibility lists have to be done after all industries, economies and cargos are registered
+# this means they have to live here, which isn't ideal, but eh
 industries_producing_cargo = {}
 for cargo in registered_cargos:
     industries_producing_cargo[cargo.cargo_label] = []
