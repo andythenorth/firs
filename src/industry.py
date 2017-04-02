@@ -484,7 +484,7 @@ class IndustryLayout(object):
 
 class IndustryLocationChecks(object):
     """ Class to hold location checks for an industry """
-    def __init__(self, industry, location_args):
+    def __init__(self, industry, location_args={}):
         self.industry = industry
         self.prevent_player_founding = location_args.get('prevent_player_founding', False)
         self.incompatible = location_args.get('incompatible', {})
@@ -505,10 +505,11 @@ class IndustryLocationChecks(object):
         if not self.prevent_player_founding:
             result.append(IndustryLocationCheckFounder())
 
-        """
         if self.require_cluster:
             result.append(IndustryLocationCheckRequireCluster(self.require_cluster))
-        """
+        else:
+            # enforce a distance to other industries of same type
+            result.append(IndustryLocationCheckIncompatible(self.industry.id, 56))
 
         if self.town_distance:
             result.append(IndustryLocationCheckTownDistance(self.town_distance))
@@ -522,14 +523,11 @@ class IndustryLocationChecks(object):
         if self.flour_mill_layouts_by_date:
             result.appendleft(IndustryLocationCheckGrainMillLayoutsByDate())
 
-        """
-        for industry_type, distance in self.incompatible.items():
-            result.append(IndustryLocationCheckIncompatible(industry_type, distance))
-        """
-
+        # prevent locating very near industries in the same accept / produce chain
         for industry in set(incompatible_industries[self.industry]):
-            print(industry.id)
-            result.append(IndustryLocationCheckIncompatible(industry.id, 16))
+            # don't check for self type, we have other ways to do that (occasionally economy cargo variations trigger this)
+            if industry.id != self.industry.id:
+                result.append(IndustryLocationCheckIncompatible(industry.id, 16))
 
         prev = None
         for lc in reversed(result):
@@ -696,7 +694,7 @@ class Industry(object):
         for economy in registered_economies:
             self.add_economy_variation(economy)
         self.template = kwargs.get('template', None) # template will be set by subcass, and/or by individual industry instances
-        self.location_checks = IndustryLocationChecks(self, kwargs.get('location_checks'))
+        self.location_checks = IndustryLocationChecks(self, kwargs.get('location_checks', {}))
 
     def register(self):
         if len([i for i in self.economy_variations if self.economy_variations[i].enabled is True]) == 0:
