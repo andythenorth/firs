@@ -16,8 +16,6 @@ industry = IndustrySecondary(id='pyrite_smelter',
                     prod_multiplier='[0, 0]',
                     map_colour='43',
                     spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
-                    location_checks=dict(incompatible={'pyrite_smelter': 56,
-                                                                         'pyrite_mine': 16}),
                     name='string(STR_IND_PYRITE_SMELTER)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
                     fund_cost_multiplier='120')
