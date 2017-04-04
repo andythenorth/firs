@@ -306,9 +306,8 @@ industry.add_spritelayout(
 industry.add_magic_spritelayout(
     type = 'harbour_coast_foundations',
     base_id = 'bulk_terminal_spritelayout_coast_tanks',
-    config = {'ground_sprite': spriteset_ground_empty,
-              'ground_sprite_overlay': spriteset_ground_empty,
-              'building_sprites': [spriteset_tanks],
+    config = {'ground_sprite': spriteset_ground_empty, # should alqways be empty for this magic spritelayout
+              'building_sprites': [spriteset_concrete, spriteset_tanks],
               'foundation_sprites': {'ne_sw': spriteset_jetty_ne_sw,
                                      'se_nw': spriteset_jetty_se_nw,
                                      'slope_nw_se': spriteset_jetty_slope_nw_se,
@@ -319,9 +318,8 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type = 'harbour_coast_foundations',
     base_id = 'bulk_terminal_spritelayout_coast_warehouse',
-    config = {'ground_sprite': spriteset_ground_empty,
-              'ground_sprite_overlay': spriteset_ground_empty,
-              'building_sprites': [spriteset_warehouse],
+    config = {'ground_sprite': spriteset_ground_empty, # should alqways be empty for this magic spritelayout
+              'building_sprites': [spriteset_concrete, spriteset_warehouse],
               'foundation_sprites': {'ne_sw': spriteset_jetty_ne_sw,
                                      'se_nw': spriteset_jetty_se_nw,
                                      'slope_nw_se': spriteset_jetty_slope_nw_se,

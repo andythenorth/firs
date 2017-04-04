@@ -486,8 +486,8 @@ class MagicSpritelayoutHarbourCoastFoundations(object):
             building_sprites = [config['foundation_sprites'][foundation_sprites] for foundation_sprites in foundations]
             building_sprites.extend(config['building_sprites'])
             industry.add_spritelayout(id = base_id + str(spritelayout_num),
-                                  ground_sprite = config['ground_sprite'],
-                                  ground_overlay = config['ground_sprite_overlay'],
+                                  ground_sprite = config['ground_sprite'], # should always be empty sprite for this magic layout
+                                  ground_overlay = config['ground_sprite'], # should always be empty sprite for this magic layout
                                   building_sprites = building_sprites)
         id_slope_mapping = {slope: base_id + str(spritelayout_num) for slope, spritelayout_num in self.slope_spritelayout_nums.items()}
         industry.add_slope_graphics_switch(base_id,
