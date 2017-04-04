@@ -79,7 +79,7 @@ $(HTML_DOCS):
 	$(PYTHON3) src/render_docs.py $(ARGS)
 
 $(NML_FILE): $(SOURCES)
-	$(PYTHON3) src/render_nml.py '$(REPO_TITLE)' '$(REPO_REVISION)' '$(PW)' '$(ROSTER)'
+	$(PYTHON3) src/render_nml.py $(ARGS)
 
 $(GRF_FILE): $(GRAPHICS_DIR) $(LANG_DIR) $(NML_FILE)
 	$(NMLC) $(NML_FLAGS) --grf=$(GRF_FILE) $(NML_FILE)
