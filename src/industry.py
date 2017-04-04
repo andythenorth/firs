@@ -461,6 +461,40 @@ class MagicTree(object):
         self.yoffset = offsets[tree_num][1]
 
 
+class MagicSpritelayoutHarbourCoastFoundations(object):
+    """
+        Occasionally we need magic.  If we're going magic, let's go full on magic.
+        This one makes provides the slope-aware foundations needed for coast tiles.
+        Possibly could be used generically for all slopes, there's nothing specific to coasts in it, but other cases weren't needed when writing it.
+    """
+    # Class attributes eh?  Might as well, these aren't supposed to be mutable
+
+    slope_spritelayout_nums = {0: '1', 1: '4', 2: '8', 3: '2', 4: '6', 5: '5', 6: '7', 7: '1',
+                               8: '3', 9: '4', 10: '8', 11: '2', 12: '6', 13: '5', 14: '7'}
+
+    spritelayout_foundations = {'1': ['sw_ne'],
+                                '2': [],
+                                '3': ['se_nw', 'ne_sw'],
+                                '4': ['ne_sw', 'nw_se'],
+                                '5': ['ne_sw', 'nw_se'],
+                                '6': ['ne_sw', 'se_nw'],
+                                '7': ['se_nw'],
+                                '8': ['se_nw', 'sw_ne']}
+
+    def __init__(self, industry, base_id, config):
+        for slope, spritelayout_num in self.slope_spritelayout_nums.items():
+            building_sprites = [config['foundation_sprites'][spritelayout_num] for spritelayout_num in self.spritelayout_foundations[spritelayout_num]]
+            building_sprites.extend(config['building_sprites'])
+            industry.add_spritelayout(id = base_id + str(slope),
+                                  ground_sprite = config['ground_sprite'],
+                                  ground_overlay = config['ground_sprite_overlay'],
+                                  building_sprites = building_sprites)
+        id_slope_mapping = {slope: base_id + str(spritelayout_num) for slope, spritelayout_num in self.slope_spritelayout_nums.items()}
+        industry.add_slope_graphics_switch(base_id,
+                                       default_result = base_id + '0',
+                                       slope_spritelayout_mapping = {slope_id: slope for slope_id, slope in id_slope_mapping.items()})
+
+
 class GraphicsSwitch(object):
     """ base class for extra graphics switches """
     def __init__(self, id, **kwargs):
@@ -731,6 +765,8 @@ class Industry(object):
         # this is for very specific spritelayout patterns that repeat across multiple industries and require long declarations and extra switches
         if type == 'slope_aware_trees':
             MagicSpritelayoutSlopeAwareTrees(self, base_id, config)
+        if type == 'harbour_coast_foundations':
+            MagicSpritelayoutHarbourCoastFoundations(self, base_id, config)
 
 
     def add_slope_graphics_switch(self, *args, **kwargs):
