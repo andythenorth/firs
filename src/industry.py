@@ -472,26 +472,26 @@ class MagicSpritelayoutHarbourCoastFoundations(object):
     slope_spritelayout_nums = {0: '1', 1: '4', 2: '8', 3: '2', 4: '6', 5: '5', 6: '7', 7: '1',
                                8: '3', 9: '4', 10: '8', 11: '2', 12: '6', 13: '5', 14: '7'}
 
-    spritelayout_foundations = {'1': ['sw_ne'],
-                                '2': [],
+    spritelayout_foundations = {'1': [],
+                                '2': ['slope_sw_ne'],
                                 '3': ['se_nw', 'ne_sw'],
-                                '4': ['ne_sw', 'nw_se'],
-                                '5': ['ne_sw', 'nw_se'],
-                                '6': ['ne_sw', 'se_nw'],
-                                '7': ['se_nw'],
-                                '8': ['se_nw', 'sw_ne']}
+                                '4': ['ne_sw', 'slope_nw_se'],
+                                '5': ['slope_ne_sw', 'slope_nw_se'],
+                                '6': ['slope_ne_sw', 'se_nw'],
+                                '7': ['slope_se_nw'],
+                                '8': ['slope_se_nw', 'slope_sw_ne']}
 
     def __init__(self, industry, base_id, config):
-        for slope, spritelayout_num in self.slope_spritelayout_nums.items():
-            building_sprites = [config['foundation_sprites'][spritelayout_num] for spritelayout_num in self.spritelayout_foundations[spritelayout_num]]
+        for spritelayout_num, foundations in self.spritelayout_foundations.items():
+            building_sprites = [config['foundation_sprites'][foundation_sprites] for foundation_sprites in foundations]
             building_sprites.extend(config['building_sprites'])
-            industry.add_spritelayout(id = base_id + str(slope),
+            industry.add_spritelayout(id = base_id + str(spritelayout_num),
                                   ground_sprite = config['ground_sprite'],
                                   ground_overlay = config['ground_sprite_overlay'],
                                   building_sprites = building_sprites)
         id_slope_mapping = {slope: base_id + str(spritelayout_num) for slope, spritelayout_num in self.slope_spritelayout_nums.items()}
         industry.add_slope_graphics_switch(base_id,
-                                       default_result = base_id + '0',
+                                       default_result = base_id + '1',
                                        slope_spritelayout_mapping = {slope_id: slope for slope_id, slope in id_slope_mapping.items()})
 
 

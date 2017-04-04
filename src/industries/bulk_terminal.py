@@ -309,10 +309,12 @@ industry.add_magic_spritelayout(
     config = {'ground_sprite': spriteset_ground_empty,
               'ground_sprite_overlay': spriteset_ground_empty,
               'building_sprites': [spriteset_tanks],
-              'foundation_sprites': {'nw_se': spriteset_jetty_slope_nw_se,
-                                     'ne_sw': spriteset_jetty_slope_ne_sw,
-                                     'se_nw': spriteset_jetty_slope_se_nw,
-                                     'sw_ne': spriteset_jetty_slope_sw_ne}}
+              'foundation_sprites': {'ne_sw': spriteset_jetty_ne_sw,
+                                     'se_nw': spriteset_jetty_se_nw,
+                                     'slope_nw_se': spriteset_jetty_slope_nw_se,
+                                     'slope_ne_sw': spriteset_jetty_slope_ne_sw,
+                                     'slope_se_nw': spriteset_jetty_slope_se_nw,
+                                     'slope_sw_ne': spriteset_jetty_slope_sw_ne}}
 )
 industry.add_magic_spritelayout(
     type = 'harbour_coast_foundations',
@@ -320,10 +322,12 @@ industry.add_magic_spritelayout(
     config = {'ground_sprite': spriteset_ground_empty,
               'ground_sprite_overlay': spriteset_ground_empty,
               'building_sprites': [spriteset_warehouse],
-              'foundation_sprites': {'nw_se': spriteset_jetty_slope_nw_se,
-                                     'ne_sw': spriteset_jetty_slope_ne_sw,
-                                     'se_nw': spriteset_jetty_slope_se_nw,
-                                     'sw_ne': spriteset_jetty_slope_sw_ne}}
+              'foundation_sprites': {'ne_sw': spriteset_jetty_ne_sw,
+                                     'se_nw': spriteset_jetty_se_nw,
+                                     'slope_nw_se': spriteset_jetty_slope_nw_se,
+                                     'slope_ne_sw': spriteset_jetty_slope_ne_sw,
+                                     'slope_se_nw': spriteset_jetty_slope_se_nw,
+                                     'slope_sw_ne': spriteset_jetty_slope_sw_ne}}
 )
 
 industry.add_industry_layout(
