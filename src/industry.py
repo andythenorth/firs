@@ -521,7 +521,7 @@ class IndustryLocationChecks(object):
     def __init__(self, industry, location_args={}):
         self.industry = industry
         self.prevent_player_founding = location_args.get('prevent_player_founding', False)
-        self.incompatible = location_args.get('incompatible', {})
+        self.same_type_distance = location_args.get('same_type_distance', None)
         self.town_distance = location_args.get('town_distance', None)
         self.town_industry_count = location_args.get('town_industry_count', None)
         self.coast_distance = location_args.get('coast_distance', None)
@@ -541,8 +541,11 @@ class IndustryLocationChecks(object):
 
         if self.require_cluster:
             result.append(IndustryLocationCheckRequireCluster(self.require_cluster))
+        elif self.same_type_distance:
+            # industries can over-ride the default distance to others of same type
+            result.append(IndustryLocationCheckIncompatible(self.industry.id, self.same_type_distance))
         else:
-            # enforce a distance to other industries of same type
+            # enforce a default distance to other industries of same type
             result.append(IndustryLocationCheckIncompatible(self.industry.id, 56))
 
         if self.town_distance:
