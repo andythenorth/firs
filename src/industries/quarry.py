@@ -8,7 +8,7 @@ industry = IndustryPrimaryExtractive(id='quarry',
                     prod_multiplier='[14, 14]',
                     map_colour='195',
                     # allow longer distance on clustering than usual, and more clusters, as industry is hard to locate
-                    location_checks=dict(require_cluster=['quarry', [20, 90, 1, 4]]),
+                    location_checks=dict(require_cluster=['quarry', [20, 90, 4]]),
                     prospect_chance='0.75',
                     name='string(STR_IND_QUARRY)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_QUARRY))',

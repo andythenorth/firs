@@ -615,8 +615,7 @@ class IndustryLocationCheckRequireCluster(IndustryLocationCheck):
         self.industry_type_numeric_id = get_another_industry(self.industry_type).get_numeric_id()
         self.min_distance = require_cluster[1][0]
         self.max_distance = require_cluster[1][1]
-        self.mult = require_cluster[1][2]
-        self.div = require_cluster[1][3]
+        self.div = require_cluster[1][2]
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = str(self.industry_type_numeric_id)
         self.macro_name = 'require_cluster'
