@@ -522,10 +522,10 @@ class IndustryLocationChecks(object):
         self.industry = industry
         self.prevent_player_founding = location_args.get('prevent_player_founding', False)
         self.same_type_distance = location_args.get('same_type_distance', None)
+        self.same_type_cluster = location_args.get('same_type_cluster', None)
         self.town_distance = location_args.get('town_distance', None)
         self.town_industry_count = location_args.get('town_industry_count', None)
         self.coast_distance = location_args.get('coast_distance', None)
-        self.require_cluster = location_args.get('require_cluster', None)
         # this is custom to grain mill, can be made generic if needed
         self.flour_mill_layouts_by_date = location_args.get('flour_mill_layouts_by_date', None)
 
@@ -539,8 +539,9 @@ class IndustryLocationChecks(object):
         if not self.prevent_player_founding:
             result.append(IndustryLocationCheckFounder())
 
-        if self.require_cluster:
-            result.append(IndustryLocationCheckRequireCluster(self.require_cluster))
+        if self.same_type_cluster:
+            # if clustering is used, ignore other same_type distance checks
+            result.append(IndustryLocationCheckRequireCluster(self.industry.id, self.same_type_cluster))
         elif self.same_type_distance:
             # industries can over-ride the default distance to others of same type
             result.append(IndustryLocationCheckIncompatible(self.industry.id, self.same_type_distance))
@@ -609,16 +610,15 @@ class IndustryLocationCheckTownIndustryCount(IndustryLocationCheck):
 
 class IndustryLocationCheckRequireCluster(IndustryLocationCheck):
     """ Require industries to locate in n clusters """
-    def __init__(self, require_cluster):
-        self.industry_type = require_cluster[0]
+    def __init__(self, industry_type, same_type_cluster):
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
-        self.industry_type_numeric_id = get_another_industry(self.industry_type).get_numeric_id()
-        self.min_distance = require_cluster[1][0]
-        self.max_distance = require_cluster[1][1]
-        self.div = require_cluster[1][2]
+        self.industry_type_numeric_id = industry_type
+        self.min_distance = same_type_cluster[0]
+        self.max_distance = same_type_cluster[1]
+        self.div = same_type_cluster[2]
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = str(self.industry_type_numeric_id)
-        self.macro_name = 'require_cluster'
+        self.macro_name = 'same_type_cluster'
 
 
 class IndustryLocationCheckIncompatible(IndustryLocationCheck):
