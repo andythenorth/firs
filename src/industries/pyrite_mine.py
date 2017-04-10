@@ -135,11 +135,11 @@ industry.add_industry_layout(
 industry.add_industry_layout(
     id = 'pyrite_mine_industry_layout_3',
     layout = [(0, 0, 'pyrite_mine_tile_1', 'pyrite_mine_spritelayout_4'),
-              (1, 0, 'pyrite_mine_tile_1', 'pyrite_mine_spritelayout_4'),
+              (1, 0, 'pyrite_mine_tile_1', 'pyrite_mine_spritelayout_6'),
               (1, 1, 'pyrite_mine_tile_1', 'pyrite_mine_spritelayout_1'),
               (1, 2, 'pyrite_mine_tile_1', 'pyrite_mine_spritelayout_2'),
-              (2, 0, 'pyrite_mine_tile_1', 'pyrite_mine_spritelayout_6'),
-              (2, 2, 'pyrite_mine_tile_1', 'pyrite_mine_spritelayout_5')
+              (2, 0, 'pyrite_mine_tile_1', 'pyrite_mine_spritelayout_5'),
+              (2, 2, 'pyrite_mine_tile_1', 'pyrite_mine_spritelayout_4')
     ]
 )
 industry.add_industry_layout(
