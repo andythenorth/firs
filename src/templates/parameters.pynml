@@ -3,7 +3,7 @@
 // map_size is total number of tiles on the map
 // compute relative size of the map, compared to 256*256
 relative_map_size = map_size / (256 * 256);
-// number of industry closures is proportional to map size
+// number of industry closures is proportional to map size (maps <= 256x256 will have 1 cluster)
 industry_clusters = (relative_map_size / 2) + 1;
 
 param_max_coastal_distance = marine_industry_max_coastal_distance;
