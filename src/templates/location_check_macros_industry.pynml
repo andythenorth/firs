@@ -41,12 +41,11 @@
 </metal:check_incompatible>
 
 
-<metal:require_cluster metal:define-macro="same_type_cluster">
+<metal:require_cluster metal:define-macro="cluster">
     <!--! Check for distance to related industry cluster -->
     switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
-                industry_count(${location_check.industry_type_numeric_id}) / ${location_check.div} / industry_clusters != 0 &&
-                (industry_distance(${location_check.industry_type_numeric_id}) < ${location_check.min_distance} ||
-                 industry_distance(${location_check.industry_type_numeric_id}) > ${location_check.max_distance})
+                industry_count(${location_check.industry_type_numeric_id}) >= (${location_check.div} * industry_clusters) &&
+                industry_distance(${location_check.industry_type_numeric_id}) > ${location_check.max_distance}
             ) {
         1: return CB_RESULT_LOCATION_DISALLOW;
         ${location_check.switch_result};
