@@ -8,7 +8,7 @@ industry = IndustryPrimaryOrganic(id='basic_farm',
                     prod_multiplier='[14, 13]',
                     map_colour='95',
                     spec_flags='bitmask(IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT)',
-                    location_checks=dict(cluster=[72, 4]),
+                    # basic farm doesn't cluster, by design - no location checks needed
                     prospect_chance='0.75',
                     name='string(STR_IND_BASICFARM)',
                     extra_text_fund='string(STR_FUND_BASIC_FARM)',
