@@ -616,7 +616,8 @@ class IndustryLocationCheckCluster(IndustryLocationCheck):
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
         self.industry_type_numeric_id = industry_type
         self.max_distance = cluster[0]
-        self.div = cluster[1]
+        # cluster factor is a fudge, theoretically determines number of clusters per 256x256 section of map, but often irrelevant due to industry counts in any given combination of map/setting/economy/randomisation
+        self.cluster_factor = cluster[1]
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = str(self.industry_type_numeric_id)
         self.macro_name = 'cluster'
