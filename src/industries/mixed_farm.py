@@ -23,6 +23,7 @@ industry.economy_variations['MISTAH_KURTZ'].prod_multiplier = '[14, 13]'
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['FOOD']
 industry.economy_variations['STEELTOWN'].prod_multiplier = '[17]'
+industry.economy_variations['STEELTOWN'].name = 'string(STR_IND_BASICFARM)'
 
 industry.add_tile(id='mixed_farm_tile_1',
                   location_checks=TileLocationChecks(disallow_steep_slopes=True,
