@@ -32,16 +32,16 @@
 </metal:town_distance>
 
 
-<metal:check_incompatible metal:define-macro="check_incompatible">
+<metal:check_industry_min_distance metal:define-macro="check_industry_min_distance">
     <!--! Check for a minimum distance to another industry type -->
     switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, industry_distance(${location_check.industry_type_numeric_id})) {
         0 .. ${location_check.distance}: return CB_RESULT_LOCATION_DISALLOW;
         ${location_check.switch_result};
     }
-</metal:check_incompatible>
+</metal:check_industry_min_distance>
 
 
-<metal:require_cluster metal:define-macro="cluster">
+<metal:cluster metal:define-macro="cluster">
     <!--! Check for distance to related industry cluster -->
     switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
                 industry_count(${location_check.industry_type_numeric_id}) >= (${location_check.cluster_factor} * industry_clusters) &&
@@ -50,7 +50,7 @@
         1: return CB_RESULT_LOCATION_DISALLOW;
         ${location_check.switch_result};
     }
-</metal:require_cluster>
+</metal:cluster>
 
 
 <metal:town_industry_count metal:define-macro="town_industry_count">
