@@ -7,9 +7,6 @@ aluminium_plant.industry.register()
 from industries import arable_farm
 arable_farm.industry.register()
 
-from industries import basic_farm
-basic_farm.industry.register()
-
 from industries import basic_oxygen_furnace
 basic_oxygen_furnace.industry.register()
 
