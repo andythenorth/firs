@@ -41,6 +41,15 @@
 </metal:check_industry_min_distance>
 
 
+<metal:check_industry_max_distance metal:define-macro="check_industry_max_distance">
+    <!--! Check for a minimum distance to another industry type -->
+    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, industry_distance(${location_check.industry_type_numeric_id})) {
+        0 .. ${location_check.distance}: ${location_check.switch_result};
+        return CB_RESULT_LOCATION_DISALLOW;
+    }
+</metal:check_industry_max_distance>
+
+
 <metal:cluster metal:define-macro="cluster">
     <!--! Check for distance to related industry cluster -->
     switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},

@@ -522,6 +522,7 @@ class IndustryLocationChecks(object):
         self.industry = industry
         self.prevent_player_founding = location_args.get('prevent_player_founding', False)
         self.same_type_distance = location_args.get('same_type_distance', None)
+        self.industry_max_distance = location_args.get('industry_max_distance', None)
         self.cluster = location_args.get('cluster', None)
         self.town_distance = location_args.get('town_distance', None)
         self.town_industry_count = location_args.get('town_industry_count', None)
@@ -550,6 +551,9 @@ class IndustryLocationChecks(object):
         else:
             # enforce a default min distance to other industries of same type
             result.append(IndustryLocationCheckIndustryMinDistance(self.industry.id, 56))
+
+        if self.industry_max_distance:
+            result.append(IndustryLocationCheckIndustryMaxDistance(self.industry_max_distance))
 
         if self.town_distance:
             result.append(IndustryLocationCheckTownDistance(self.town_distance))
@@ -619,19 +623,9 @@ class IndustryLocationCheckCluster(IndustryLocationCheck):
         # cluster factor is a fudge, theoretically determines number of clusters per 256x256 section of map, but often irrelevant due to industry counts in any given combination of map/setting/economy/randomisation
         self.cluster_factor = cluster[1]
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
-        self.switch_entry_point = str(self.industry_type_numeric_id)
+        self.switch_entry_point = 'cluster_' + str(self.industry_type_numeric_id)
         self.macro_name = 'cluster'
 
-class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
-    """ Prevent locating near incompatible industry types """
-    def __init__(self, industry_type, distance):
-        self.industry_type = industry_type
-        # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
-        self.industry_type_numeric_id = get_another_industry(industry_type).get_numeric_id()
-        self.distance = distance
-        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
-        self.switch_entry_point = str(self.industry_type_numeric_id)
-        self.macro_name = 'check_industry_max_distance'
 
 class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
     """ Prevent locating near incompatible industry types """
@@ -641,8 +635,20 @@ class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
         self.industry_type_numeric_id = get_another_industry(industry_type).get_numeric_id()
         self.distance = distance
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
-        self.switch_entry_point = str(self.industry_type_numeric_id)
+        self.switch_entry_point = 'min_distance_' + str(self.industry_type_numeric_id)
         self.macro_name = 'check_industry_min_distance'
+
+
+class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
+    """ Prevent locating near incompatible industry types """
+    def __init__(self, industry_max_distance):
+        self.industry_type = industry_max_distance[0]
+        # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
+        self.industry_type_numeric_id = get_another_industry(self.industry_type).get_numeric_id()
+        self.distance = industry_max_distance[1]
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = 'max_distance_' + str(self.industry_type_numeric_id)
+        self.macro_name = 'check_industry_max_distance'
 
 
 class IndustryLocationCheckFounder(IndustryLocationCheck):
