@@ -81,7 +81,7 @@ $(HTML_DOCS):
 $(NML_FILE): $(SOURCES)
 	$(PYTHON3) src/render_nml.py $(ARGS)
 
-$(GRF_FILE): $(GRAPHICS_DIR) $(LANG_DIR) $(NML_FILE)
+$(GRF_FILE): $(GRAPHICS_DIR) $(LANG_DIR) $(NML_FILE) custom_tags.txt
 	$(NMLC) $(NML_FLAGS) --grf=$(GRF_FILE) $(NML_FILE)
 
 $(TAR_FILE): $(GRF_FILE)
