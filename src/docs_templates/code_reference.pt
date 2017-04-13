@@ -79,6 +79,7 @@
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Station Name</th>
                     <th nowrap="true" class="number">ID <span class="muted">(decimal)</span></th>
                     <th nowrap="true" class="number">Available From</th>
                     <th nowrap="true" class="number">Map Colour</th>
@@ -91,6 +92,7 @@
                             <td>
                                 <a href="industries.html#${industry.id}">${' / '.join(doc_helper.get_industry_all_names(industry))}</a>
                             </td>
+                            <td>${doc_helper.get_nearby_station_name(industry)}</td>
                             <td class="number">${global_constants.industry_numeric_ids[industry.id]}</td>
                             <td class="number">${industry.get_intro_year(None)}</td>
                             <td class="number">${industry.get_property('map_colour', None)}</td>

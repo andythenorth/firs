@@ -91,6 +91,9 @@ class DocHelper(object):
             result.append(base_lang_strings.get(name_string, 'NO NAME ' + name_string + ' ' + industry.id))
         return set(result)
 
+    def get_nearby_station_name(self, industry):
+        return industry.get_property('nearby_station_name', None)
+
     def get_registered_cargo_sorted_by_name(self):
         # cargos don't store the name as a python attr, but we often need to iterate over their names in A-Z order
         result = dict((self.get_cargo_name(cargo), cargo) for cargo in registered_cargos)
