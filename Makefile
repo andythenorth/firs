@@ -85,7 +85,7 @@ $(GRF_FILE): $(GRAPHICS_DIR) $(LANG_DIR) $(NML_FILE) custom_tags.txt
 	$(NMLC) $(NML_FLAGS) --grf=$(GRF_FILE) $(NML_FILE)
 
 $(TAR_FILE): $(GRF_FILE)
-	$(MK_ARCHIVE) --tar --output=$(TAR_FILE) --verbose --base=$(PROJECT_VERSIONED_NAME) docs $(GRF_FILE)
+	$(MK_ARCHIVE) --tar --output=$(TAR_FILE) --base=$(PROJECT_VERSIONED_NAME) docs $(GRF_FILE)
 
 $(ZIP_FILE): $(TAR_FILE)
 	$(ZIP) -9rq $(ZIP_FILE) $(TAR_FILE) >/dev/null
