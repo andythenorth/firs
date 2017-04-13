@@ -111,7 +111,7 @@ install: firs.grf
 
 clean:
 	for f in .chameleon_cache .nmlcache src/__pycache__ src/*/__pycache__ docs generated \
-	$(GRF_FILE) $(TAR_FILE) $(ZIP_FILE) $(MD5_FILE) $(BUNDLE_DIR) $(SOURCE_NAME).tar;\
+	$(GRF_FILE) $(TAR_FILE) $(ZIP_FILE) $(MD5_FILE) $(BUNDLE_DIR) $(SOURCE_NAME).tar custom_tags.txt;\
 	do if test -e $$f;\
 	   then rm -r $$f;\
 	   fi;\
