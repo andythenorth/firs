@@ -160,3 +160,25 @@ industry.add_industry_layout(
               (4, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_3')
     ]
 )
+industry.add_industry_layout(
+    id = 'paper_mill_industry_layout_2',
+    layout = [(0, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_2'),
+              (0, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_1'),
+              (0, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_10'),
+              (1, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_2'),
+              (1, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_1'),
+              (1, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_10'),
+              (2, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_10'),
+              (2, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_7'),
+              (2, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_9'),
+              (3, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_8'),
+              (3, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_6'),
+              (3, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_10'),
+              (4, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_5'),
+              (4, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_4'),
+              (4, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_3'),
+              (5, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_5'),
+              (5, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_4'),
+              (5, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_3')
+    ]
+)
