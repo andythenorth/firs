@@ -61,8 +61,8 @@ dredging_site.industry.register()
 from industries import electric_arc_furnace
 electric_arc_furnace.industry.register()
 
-from industries import fertiliser_plant
-fertiliser_plant.industry.register()
+from industries import fertiliser_and_explosives_plant
+fertiliser_and_explosives_plant.industry.register()
 
 from industries import flour_mill
 flour_mill.industry.register()
