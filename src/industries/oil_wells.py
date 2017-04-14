@@ -9,7 +9,6 @@ industry = IndustryPrimaryExtractive(id='oil_wells',
                     prod_cargo_types=['OIL_'],
                     fund_cost_multiplier='230',
                     prod_multiplier='[28]',
-                    template="refactor/refactor_oil_wells.pynml",
                     intro_year=1830)
 
 industry.economy_variations['FIRS'].enabled = True
@@ -17,7 +16,29 @@ industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='oil_wells_tile_1',
-                  location_checks=TileLocationChecks(disallow_industry_adjacent=True))
+                  location_checks=TileLocationChecks(disallow_industry_adjacent=True),
+                  animation_length=20,
+                  animation_looping=True,
+                  animation_speed=3,
+                  special_flags='bitmask(INDTILE_FLAG_RANDOM_ANIMATION)',
+                  random_trigger = 'oil_wells_tile_1_anim_control',
+                  custom_animation_next_frame='oil_wells_tile_1_anim_next_frame',
+                  custom_animation_control={'macro':'oil_wells',
+                                            'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP)'},
+)
+"""
+item(FEAT_INDUSTRYTILES, oil_wells_tile_1, ${global_constants.tile_numeric_ids['oil_wells_tile_1']}) {
+	property {
+		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
+	}
+	graphics {
+		anim_control:       ${industry.id}_tile_oil_well_random_trigger;
+		random_trigger:     ${industry.id}_tile_oil_well_random_trigger;
+		${industry.id}_tile_fences;
+	}
+}
+
+"""
 industry.add_tile(id='oil_wells_tile_2',
                   location_checks=TileLocationChecks(disallow_industry_adjacent=True))
 

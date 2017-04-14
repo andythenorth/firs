@@ -4,12 +4,15 @@
         property {
             substitute:         0;
             land_shape_flags:   ${tile.land_shape_flags};
+            <tal:special_flags condition="tile.special_flags is not None">
+                special_flags: ${tile.special_flags};
+            </tal:special_flags>
             <!--! conditionally setting animation props might result in undefined behaviour? -->
             <tal:animation_info condition="tile.animation_length > 1">
-                animation_info:     [${'ANIMATION_LOOPING' if tile.animation_looping else 'ANIMATION_NON_LOOPING'}, ${tile.animation_length}];
+                animation_info: [${'ANIMATION_LOOPING' if tile.animation_looping else 'ANIMATION_NON_LOOPING'}, ${tile.animation_length}];
             </tal:animation_info>
             <tal:animation_speed condition="tile.animation_speed > 0">
-                animation_speed:    ${tile.animation_speed};
+                animation_speed: ${tile.animation_speed};
             </tal:animation_speed>
             animation_triggers: ${tile.get_animation_triggers()};
         }
@@ -24,6 +27,9 @@
     		<tal:anim_control condition="tile.custom_animation_control is not None">
     		    anim_control: ${tile.id}_anim_control;
     		</tal:anim_control>
+            <tal:random_trigger condition="tile.random_trigger is not None">
+                random_trigger: ${tile.random_trigger};
+            </tal:random_trigger>
     		<tal:foundations condition="tile.foundations is not None">
                 foundations: ${tile.foundations};
             </tal:foundations>

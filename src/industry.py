@@ -45,7 +45,7 @@ class Tile(object):
         # 'janky_industry_id_string' because an industry ID is needed, and I don't trivially have one here
         if self.land_shape_flags is not '0' and len(self.location_checks.get_render_tree(self.id, industry_id)) > 0:
             raise Exception("Tile " + self.id + ": land_shape_flags are set but will be ignored because the tile also uses location_checks cb.  Only set one of these attributes.")
-
+        self.special_flags = kwargs.get('special_flags', None)
         self.foundations = kwargs.get('foundations', None)
         self.autoslope = kwargs.get('autoslope', None)
         # animation length (int), looping (bool), speed (int) should be set for all animations
@@ -65,6 +65,7 @@ class Tile(object):
         self.animation_speed = kwargs.get('animation_speed', 0)
         self.custom_animation_next_frame = kwargs.get('custom_animation_next_frame', None)
         self.custom_animation_control = kwargs.get('custom_animation_control', None)
+        self.random_trigger = kwargs.get('random_trigger', None)
 
     def get_expression_for_tile_acceptance(self, industry, economy):
         result = []
