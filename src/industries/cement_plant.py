@@ -27,75 +27,58 @@ industry.add_tile(id='cement_plant_tile_1',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    id = 'cement_plant_spriteset_ground',
     type ='concrete',
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'cement_plant_spriteset_ground_overlay',
     type ='empty',
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'cement_plant_spriteset_1',
     sprites = [(80, 10, 64, 113, -31, -82)],
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'cement_plant_spriteset_2',
     sprites = [(150, 10, 64, 113, -31, -82)],
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'cement_plant_spriteset_3',
     sprites = [(220, 10, 64, 113, -31, -82)],
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'cement_plant_spriteset_4',
     sprites = [(290, 10, 64, 113, -31, -82)],
 )
 spriteset_5 = industry.add_spriteset(
-    id = 'cement_plant_spriteset_5',
     sprites = [(220, 130, 64, 113, -31, -82), (290, 130, 64, 113, -31, -82), (360, 130, 64, 113, -31, -82), (430, 130, 64, 113, -31, -82),
                (500, 130, 64, 113, -31, -82), (570, 130, 64, 113, -31, -82), (640, 130, 64, 113, -31, -82)],
     animation_rate = 1,
 )
 spriteset_ground_5 = industry.add_spriteset(
-    id = 'cement_plant_spriteset_ground_5',
     type ='concrete',
     num_sprites_to_autofill = len(spriteset_5.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_ground_overlay_5 = industry.add_spriteset(
-    id = 'cement_plant_spriteset_ground_overlay_5',
     type ='empty',
     num_sprites_to_autofill = len(spriteset_5.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_6 = industry.add_spriteset(
-    id = 'cement_plant_spriteset_6',
     sprites = [(430, 10, 64, 113, -31, -82)],
 )
 spriteset_7 = industry.add_spriteset(
-    id = 'cement_plant_spriteset_7',
     sprites = [(500, 10, 64, 113, -31, -82)],
 )
 spriteset_8 = industry.add_spriteset(
-    id = 'cement_plant_spriteset_8',
     sprites = [(570, 10, 64, 113, -31, -82)],
 )
 spriteset_9 = industry.add_spriteset(
-    id = 'cement_plant_spriteset_9',
     sprites = [(640, 10, 64, 113, -31, -82)],
 )
 spriteset_10 = industry.add_spriteset(
-    id = 'cement_plant_spriteset_10',
     sprites = [(710, 10, 64, 113, -31, -82)],
 )
 spriteset_11 = industry.add_spriteset(
-    id = 'cement_plant_spriteset_11',
     sprites = [(780, 10, 64, 113, -31, -82)],
 )
 spriteset_clay_staithe = industry.add_spriteset(
-    id = 'cement_plant_spriteset_clay_staithe',
     sprites = [(80, 130, 64, 31, -31, 0)],
 )
 spriteset_stone_staithe = industry.add_spriteset(
-    id = 'cement_plant_spriteset_stone_staithe',
     sprites = [(150, 130, 64, 31, -31, 0)],
 )
 sprite_smoke_1 = industry.add_smoke_sprite(

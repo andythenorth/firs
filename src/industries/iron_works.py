@@ -38,45 +38,35 @@ industry.add_tile(id='iron_works_tile_3',
 
 
 spriteset_ground = industry.add_spriteset(
-    id = 'iron_works_spriteset_ground',
     type='cobble',
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'iron_works_spriteset_ground_overlay',
     type='empty',
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'iron_works_spriteset_1',
     sprites = [(10, 10, 64, 70, -31, -40)],
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'iron_works_spriteset_2',
     sprites = [(80, 10, 64, 70, -31, -39)],
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'iron_works_spriteset_3',
     sprites = [(150, 10, 64, 70, -31, -39)],
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'iron_works_spriteset_4',
     sprites = [(430, 10, 64, 70, -31, -39)],
 )
 spriteset_5 = industry.add_spriteset(
-    id = 'iron_works_spriteset_5',
     sprites = [(500, 10, 64, 70, -31, -39)],
 )
 spriteset_iron_pigs_anim = industry.add_spriteset(
-    id = 'iron_works_spriteset_iron_pigs_1',
     sprites = [(220, 10, 64, 70, -31, -39), (290, 10, 64, 70, -31, -39), (360, 10, 64, 70, -31, -39)],
     animation_rate = 1
 )
 spriteset_ground_pigs = industry.add_spriteset(
-    id = 'iron_works_spriteset_ground_pigs',
     type='cobble',
     num_sprites_to_autofill = len(spriteset_iron_pigs_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_ground_overlay_pigs = industry.add_spriteset(
-    id = 'iron_works_spriteset_ground_overlay_pigs',
     type='empty',
     num_sprites_to_autofill = len(spriteset_iron_pigs_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )

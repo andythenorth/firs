@@ -23,15 +23,12 @@ industry.add_tile(id='hardware_store_tile_1',
                   location_checks=TileLocationChecks(require_road_adjacent=True))
 
 hardware_store_spriteset_ground = industry.add_spriteset(
-    id = 'hardware_store_spriteset_ground',
     type='slab',
 )
 hardware_store_spriteset_ground_overlay = industry.add_spriteset(
-    id = 'hardware_store_spriteset_ground_overlay',
     type = 'empty',
 )
 hardware_store_spriteset = industry.add_spriteset(
-    id = 'hardware_store_spriteset',
     sprites = [(0, 0, 64, 64, -31, -33)]
 )
 

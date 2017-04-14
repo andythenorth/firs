@@ -23,30 +23,24 @@ industry.add_tile(id='hunting_camp_tile_1',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    id = 'hunting_camp_spriteset_ground',
     type = 'empty'
 )
 sprite_ground_mud = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_CLEARED'
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'hunting_camp_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'hunting_camp_spriteset_1',
     sprites = [(10, 10, 64, 52, -31, -21)],
 )
 spriteset_1_ground = industry.add_spriteset(
-    id = 'hunting_camp_spriteset_1_ground',
     sprites = [(10, 70, 64, 52, -31, -21)],
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'hunting_camp_spriteset_2',
     sprites = [(80, 10, 64, 52, -31, -21)],
 )
 spriteset_2_ground = industry.add_spriteset(
-    id = 'hunting_camp_spriteset_2_ground',
     sprites = [(80, 70, 64, 52, -31, -21)],
 )
 

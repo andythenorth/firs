@@ -43,7 +43,6 @@ industry.add_tile(id='oil_wells_tile_2',
                   location_checks=TileLocationChecks(disallow_industry_adjacent=True))
 
 spriteset_ground_pump = industry.add_spriteset(
-    id = 'oil_wells_spriteset_ground_pump',
     type='empty',
 )
 sprite_ground_overlay_pump = industry.add_sprite(
@@ -65,14 +64,12 @@ industry.add_spritelayout(
 )
 
 spriteset_ground_building = industry.add_spriteset(
-    id = 'oil_wells_spriteset_ground_overlay_building',
     type='empty',
 )
 sprite_ground_overlay_building = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS',
 )
 spriteset_building = industry.add_spriteset(
-    id = 'oil_wells_spriteset_building',
     sprites = [(10, 10, 64, 38, -31, -9)],
     xoffset= 1,
     yoffset= 2,

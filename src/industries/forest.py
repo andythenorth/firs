@@ -36,19 +36,15 @@ sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS'
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'forest_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'forest_equipment_1',
     sprites = [(10, 10, 64, 78, -31, -45)],
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'forest_equipment_2',
     sprites = [(80, 10, 64, 78, -31, -45)],
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'forest_wood_stack',
     sprites = [(150, 10, 64, 78, -31, -45)],
 )
 

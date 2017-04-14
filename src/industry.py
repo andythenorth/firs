@@ -328,9 +328,9 @@ class SmokeSprite(object):
 class Spriteset(object):
     """ Base class to hold industry spritesets """
     # !! arguably this should be two different classes, one for building/feature spritesets, and one for ground spritesets
-    def __init__(self, new_id, id, sprites=[], type='', xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16,
+    def __init__(self, id, sprites=[], type='', xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16,
                  animation_rate=0, custom_sprite_selector=None, always_draw=0, num_sprites_to_autofill=1):
-        self.id = new_id
+        self.id = id
         self.sprites = sprites # a list of sprites 6-tuples in format (x, y, w, h, xoffs, yoffs)
         self.type = type # set to ground or other special types, or omit for default (building, greeble, foundations etc - graphics from png named same as industry)
         self.animation_rate = animation_rate # (must be int) optional multiplier to tile's animation rate, set to 1 for same as tile, >1 for faster; leave default (0) to disable animation; < 1 isn't valid and nml won't compile it
@@ -772,7 +772,7 @@ class Industry(object):
 
     def add_spriteset(self, *args, **kwargs):
         id = self.id + '_spriteset_' + str(len(self.spritesets))
-        new_spriteset = Spriteset(new_id=id, *args, **kwargs)
+        new_spriteset = Spriteset(id=id, *args, **kwargs)
         self.spritesets.append(new_spriteset)
         return new_spriteset # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 

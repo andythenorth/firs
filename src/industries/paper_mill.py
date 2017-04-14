@@ -26,47 +26,36 @@ industry.add_tile(id='paper_mill_tile_1',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    id = 'paper_mill_spriteset_ground',
     type = 'concrete'
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'paper_mill_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'paper_mill_spriteset_1',
     sprites = [(10, 10, 64, 62, -31, -31)],
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'paper_mill_spriteset_2',
     sprites = [(80, 10, 64, 62, -31, -31)],
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'paper_mill_spriteset_3',
     sprites = [(150, 10, 64, 55, -31, -24)],
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'paper_mill_spriteset_4',
     sprites = [(220, 10, 64, 55, -31, -24)],
 )
 spriteset_5 = industry.add_spriteset(
-    id = 'paper_mill_spriteset_5',
     sprites = [(290, 10, 64, 55, -31, -24)],
 )
 spriteset_6 = industry.add_spriteset(
-    id = 'paper_mill_spriteset_6',
     sprites = [(360, 10, 64, 87, -31, -56)],
 )
 spriteset_7 = industry.add_spriteset(
-    id = 'paper_mill_spriteset_7',
     sprites = [(430, 10, 64, 87, -31, -56)],
 )
 spriteset_8 = industry.add_spriteset(
-    id = 'paper_mill_spriteset_8',
     sprites = [(500, 10, 64, 87, -31, -56)],
 )
 spriteset_9 = industry.add_spriteset(
-    id = 'paper_mill_spriteset_9',
     sprites = [(570, 10, 64, 55, -31, -24)],
 )
 

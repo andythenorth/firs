@@ -23,68 +23,52 @@ industry.add_tile(id='machine_shop_tile_1',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    id = 'machine_shop_spriteset_ground',
     type = 'concrete',
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'machine_shop_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'machine_shop_spriteset_1',
     sprites = [(10, 10, 64, 31, -31, 0)],
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'machine_shop_spriteset_2',
     sprites = [(80, 10, 64, 31, -31, 0)],
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'machine_shop_spriteset_3',
     sprites = [(150, 10, 64, 78, -25, -12)],
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'machine_shop_spriteset_4',
     sprites = [(220, 10, 64, 78, -48, -28)],
 )
 spriteset_5 = industry.add_spriteset(
-    id = 'machine_shop_spriteset_5',
     sprites = [(290, 10, 64, 78, -31, -47)],
 )
 spriteset_6 = industry.add_spriteset(
-    id = 'machine_shop_spriteset_6',
     sprites = [(360, 10, 64, 78, -31, -47)],
 )
 spriteset_7 = industry.add_spriteset(
-    id = 'machine_shop_spriteset_7',
     sprites = [(430, 10, 64, 78, -31, -47)],
 )
 spriteset_8 = industry.add_spriteset(
-    id = 'machine_shop_spriteset_8',
     sprites = [(500, 10, 64, 85, -31, -54)],
 )
 spriteset_9 = industry.add_spriteset(
-    id = 'machine_shop_spriteset_9',
     sprites = [(570, 10, 64, 85, -31, -54)],
 )
 spriteset_10 = industry.add_spriteset(
-    id = 'machine_shop_spriteset_10',
     sprites = [(640, 10, 64, 85, -31, -54)],
 )
 spriteset_11 = industry.add_spriteset(
-    id = 'machine_shop_spriteset_11',
     sprites = [(780, 10, 64, 31, -35, 2)],
 )
 spriteset_12 = industry.add_spriteset(
-    id = 'machine_shop_spriteset_12',
     sprites = [(850, 10, 64, 31, -35, 2)],
 )
 spriteset_13 = industry.add_spriteset(
-    id = 'machine_shop_spriteset_13',
     sprites = [(920, 10, 64, 49, -39, -15)],
 )
 # out of sequence for historical reasons
 spriteset_14 = industry.add_spriteset(
-    id = 'machine_shop_spriteset_14',
     sprites = [(710, 10, 64, 31, -28, -1)],
 )
 sprite_smoke = industry.add_smoke_sprite(

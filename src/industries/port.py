@@ -56,47 +56,37 @@ sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_WATER'
 )
 spriteset_ground_empty = industry.add_spriteset(
-    id = 'port_spriteset_ground',
     type = 'empty'
 )
 spriteset_concrete = industry.add_spriteset(
-    id = 'port_spriteset_concrete',
     sprites = [(10, 10, 64, 39, -31, -8)],
     always_draw = 1,
 )
 spriteset_jetty_se_nw = industry.add_spriteset(
-    id = 'port_spriteset_jetty_se_nw',
     sprites = [(10, 60, 64, 39, -31, -7)],
     always_draw = 1,
 )
 spriteset_jetty_ne_sw = industry.add_spriteset(
-    id = 'port_spriteset_jetty_ne_sw',
     sprites = [(80, 60, 64, 39, -31, -7)],
     always_draw = 1
 )
 spriteset_jetty_slope_nw_se = industry.add_spriteset(
-    id = 'port_spriteset_jetty_slope_nw_se',
     sprites = [(150, 60, 64, 39, -31, -7)],
 )
 spriteset_jetty_slope_ne_sw = industry.add_spriteset(
-    id = 'port_spriteset_jetty_slope_ne_sw',
     sprites = [(220, 60, 64, 39, -31, -7)],
 )
 spriteset_jetty_slope_se_nw = industry.add_spriteset(
-    id = 'port_spriteset_jetty_slope_se_nw',
     sprites = [(290, 60, 64, 39, -31, -7)],
 )
 spriteset_jetty_slope_sw_ne = industry.add_spriteset(
-    id = 'port_spriteset_jetty_slope_sw_ne',
     sprites = [(360, 60, 64, 39, -31, -7)],
 )
 spriteset_warehouse = industry.add_spriteset(
-    id = 'port_spriteset_warehouse',
     sprites = [(440, 10, 64, 74, -31, -34)],
     zoffset = 18
 )
 spriteset_9 = industry.add_spriteset(
-    id = 'port_spriteset_9',
     sprites = [(150, 10, 64, 39, -31, 0)],
     yoffset = 4,
     zoffset = 27,
@@ -104,7 +94,6 @@ spriteset_9 = industry.add_spriteset(
 
 )
 spriteset_9b = industry.add_spriteset(
-    id = 'port_spriteset_9b',
     sprites = [(150, 10, 64, 39, -31, 0)],
     xoffset = 5,
     zoffset = 40,
@@ -112,38 +101,30 @@ spriteset_9b = industry.add_spriteset(
 
 )
 spriteset_10 = industry.add_spriteset(
-    id = 'port_spriteset_10',
     sprites = [(220, 10, 64, 39, -31, -7)],
     yoffset = 4,
     zoffset = 27,
     yextent = 12,
 )
 spriteset_11 = industry.add_spriteset(
-    id = 'port_spriteset_11',
     sprites = [(10, 110, 64, 39, -35, -15)],
 )
 spriteset_12 = industry.add_spriteset(
-    id = 'port_spriteset_12',
     sprites = [(80, 110, 64, 39, -31, -14)],
 )
 spriteset_13 = industry.add_spriteset(
-    id = 'port_spriteset_13',
     sprites = [(150, 110, 64, 39, -31, -8)],
 )
 spriteset_14 = industry.add_spriteset(
-    id = 'port_spriteset_14',
     sprites = [(220, 110, 64, 39, -27, -12)],
 )
 spriteset_15 = industry.add_spriteset(
-    id = 'port_spriteset_15',
     sprites = [(290, 110, 64, 39, -15, -11)],
 )
 spriteset_16 = industry.add_spriteset(
-    id = 'port_spriteset_16',
     sprites = [(360, 110, 64, 39, -45, -15)],
 )
 spriteset_truck = industry.add_spriteset(
-    id = 'port_spriteset_truck',
     sprites = [(360, 10, 64, 39, -31, 0)],
     zoffset = 18,
 )

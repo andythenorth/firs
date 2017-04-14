@@ -37,11 +37,9 @@ industry.add_tile(id='quarry_tile_2',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    id = 'quarry_spriteset_ground',
     type = 'empty'
 )
 spriteset_animated_dozer = industry.add_spriteset(
-    id = 'quarry_spriteset_animated_dozer',
     sprites = [(440, 90, 64, 31, -31, 0), (510, 90, 64, 31, -31, 0), (580, 90, 64, 31, -31, 0),
                (650, 90, 64, 31, -31, 0), (720, 90, 64, 31, -31, 0), (790, 90, 64, 31, -31, 0),
                (790, 90, 64, 31, -31, 0), (720, 90, 64, 31, -31, 0), (650, 90, 64, 31, -31, 0),
@@ -50,92 +48,74 @@ spriteset_animated_dozer = industry.add_spriteset(
     custom_sprite_selector = '(animation_frame < 36) ? (animation_frame % 12) : 0',
 )
 spriteset_ground_animated_tile = industry.add_spriteset(
-    id = 'quarry_spriteset_ground_animated_tile',
     type = 'empty',
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'quarry_spriteset_1',
     sprites = [(10, 90, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'quarry_spriteset_2',
     sprites = [(80, 90, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'quarry_spriteset_4',
     sprites = [(150, 90, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_5 = industry.add_spriteset(
-    id = 'quarry_spriteset_5',
     sprites = [(220, 90, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_6 = industry.add_spriteset(
-    id = 'quarry_spriteset_6',
     sprites = [(290, 90, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_7 = industry.add_spriteset(
-    id = 'quarry_spriteset_7',
     sprites = [(10, 50, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_8 = industry.add_spriteset(
-    id = 'quarry_spriteset_8',
     sprites = [(80, 50, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_10 = industry.add_spriteset(
-    id = 'quarry_spriteset_10',
     sprites = [(150, 50, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_11 = industry.add_spriteset(
-    id = 'quarry_spriteset_11',
     sprites = [(220, 50, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_12 = industry.add_spriteset(
-    id = 'quarry_spriteset_12',
     sprites = [(290, 50, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_19 = industry.add_spriteset(
-    id = 'quarry_spriteset_19',
     sprites = [(10, 10, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_20 = industry.add_spriteset(
-    id = 'quarry_spriteset_20',
     sprites = [(80, 10, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_22 = industry.add_spriteset(
-    id = 'quarry_spriteset_22',
     sprites = [(150, 10, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_23 = industry.add_spriteset(
-    id = 'quarry_spriteset_23',
     sprites = [(220, 10, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_24 = industry.add_spriteset(
-    id = 'quarry_spriteset_24',
     sprites = [(290, 10, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_pile = industry.add_spriteset(
-    id = 'quarry_spriteset_pile',
     sprites = [(360, 50, 64, 31, -63, -16)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_crane_1 = industry.add_spriteset(
-    id = 'quarry_spriteset_crane_1',
     sprites = [(440, 10, 64, 71, -48, -55), (440, 10, 64, 71, -48, -55), (510, 10, 64, 71, -48, -55),
                (580, 10, 64, 71, -48, -55), (650, 10, 64, 71, -48, -55), (650, 10, 64, 71, -48, -55),
                (650, 10, 64, 71, -48, -55), (580, 10, 64, 71, -48, -55), (510, 10, 64, 71, -48, -55),
@@ -144,52 +124,41 @@ spriteset_crane_1 = industry.add_spriteset(
     custom_sprite_selector = '(animation_frame > 32) ? (animation_frame % 12) : 0',
 )
 spriteset_pit_conveyor_0 = industry.add_spriteset(
-    id = 'quarry_spriteset_pit_conveyor_0',
     sprites = [(10, 130, 64, 64, -31, -22)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_pit_conveyor_1 = industry.add_spriteset(
-    id = 'quarry_spriteset_pit_conveyor_1',
     sprites = [(80, 130, 64, 64, -31, -22)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_pit_conveyor_2 = industry.add_spriteset(
-    id = 'quarry_spriteset_pit_conveyor_2',
     sprites = [(150, 130, 64, 64, -31, -22)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_pit_conveyor_3 = industry.add_spriteset(
-    id = 'quarry_spriteset_pit_conveyor_3',
     sprites = [(220, 130, 64, 64, -31, -22)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_pit_conveyor_4 = industry.add_spriteset(
-    id = 'quarry_spriteset_pit_conveyor_4',
     sprites = [(290, 130, 64, 64, -31, -22)],
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_39 = industry.add_spriteset(
-    id = 'quarry_spriteset_39',
     sprites = [(870, 10, 64, 31, -31, 0)],
 )
 spriteset_40 = industry.add_spriteset(
-    id = 'quarry_spriteset_40',
     sprites = [(940, 10, 64, 31, -31, 0)],
 )
 spriteset_41 = industry.add_spriteset(
-    id = 'quarry_spriteset_41',
     sprites = [(1010, 10, 64, 34, -31, -3)],
 )
 spriteset_silo = industry.add_spriteset(
-    id = 'quarry_spriteset_silo',
     sprites = [(870, 50, 64, 64, -31, -35)],
 )
 spriteset_conveyor_2 = industry.add_spriteset(
-    id = 'quarry_spriteset_conveyor_2',
     sprites = [(940, 50, 64, 64, -31, -35)],
 )
 spriteset_crusher = industry.add_spriteset(
-    id = 'quarry_spriteset_crusher',
     sprites = [(1010, 50, 64, 64, -31, -33)],
 )
 

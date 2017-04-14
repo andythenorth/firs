@@ -29,27 +29,21 @@ sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_WATER',
 )
 spriteset_ground_empty = industry.add_spriteset(
-    id = 'fishing_grounds_spriteset_ground_empty',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'fishing_grounds_spriteset_1',
     sprites = [(10, 10, 64, 31, -31, 0)],
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'fishing_grounds_spriteset_2',
     sprites = [(80, 10, 64, 31, -31, 0)],
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'fishing_grounds_spriteset_3',
     sprites = [(150, 10, 64, 31, -31, 0)],
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'fishing_grounds_spriteset_4',
     sprites = [(220, 10, 64, 31, -31, 0)],
 )
 spriteset_5 = industry.add_spriteset(
-    id = 'fishing_grounds_spriteset_5',
     sprites = [(290, 10, 64, 31, -31, -32)],
 )
 

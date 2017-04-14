@@ -22,43 +22,33 @@ industry.add_tile(id='slag_grinding_plant_tile_1',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    id = 'slag_grinding_plant_spriteset_ground',
     type = 'concrete',
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'slag_grinding_plant_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'slag_grinding_plant_spriteset_1',
     sprites = [(500, 10, 64, 66, -31, -35)],
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'slag_grinding_plant_spriteset_2',
     sprites = [(570, 10, 64, 66, -31, -35)],
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'slag_grinding_plant_spriteset_3',
     sprites = [(710, 10, 64, 66, -31, -35)],
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'slag_grinding_plant_spriteset_4',
     sprites = [(80, 10, 64, 88, -31, -58)],
 )
 spriteset_5 = industry.add_spriteset(
-    id = 'slag_grinding_plant_spriteset_5',
     sprites = [(150, 10, 64, 88, -31, -59)],
 )
 spriteset_6 = industry.add_spriteset(
-    id = 'slag_grinding_plant_spriteset_6',
     sprites = [(220, 10, 64, 88, -31, -64)],
 )
 spriteset_7 = industry.add_spriteset(
-    id = 'slag_grinding_plant_spriteset_7',
     sprites = [(360, 10, 64, 73, -31, -45)],
 )
 spriteset_8 = industry.add_spriteset(
-    id = 'slag_grinding_plant_spriteset_8',
     sprites = [(430, 10, 64, 66, -31, -38)],
 )
 sprite_smoke_1 = industry.add_smoke_sprite(

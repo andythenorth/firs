@@ -36,73 +36,57 @@ sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_WATER'
 )
 spriteset_ground_empty = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_ground',
     type = 'empty'
 )
 spriteset_concrete = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_concrete',
     sprites = [(10, 10, 64, 39, -31, -8)],
     always_draw = 1,
 )
 spriteset_jetty_se_nw = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_jetty_se_nw',
     sprites = [(10, 60, 64, 39, -31, -7)],
     always_draw = 1,
 )
 spriteset_jetty_ne_sw = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_jetty_ne_sw',
     sprites = [(80, 60, 64, 39, -31, -7)],
     always_draw = 1
 )
 spriteset_jetty_slope_nw_se = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_jetty_slope_nw_se',
     sprites = [(150, 60, 64, 39, -31, -7)],
 )
 spriteset_jetty_slope_ne_sw = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_jetty_slope_ne_sw',
     sprites = [(220, 60, 64, 39, -31, -7)],
 )
 spriteset_jetty_slope_se_nw = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_jetty_slope_se_nw',
     sprites = [(290, 60, 64, 39, -31, -7)],
 )
 spriteset_jetty_slope_sw_ne = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_jetty_slope_sw_ne',
     sprites = [(360, 60, 64, 39, -31, -7)],
 )
 spriteset_small_tanks = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_small_tanks',
     sprites = [(440, 110, 64, 84, -31, -43)],
     zoffset = 18,
 )
 spriteset_office = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_spriteset_office',
     sprites = [(440, 10, 64, 84, -31, -43)],
     zoffset = 18
 )
 spriteset_spherical_tank = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_spherical_tank',
     sprites = [(510, 10, 64, 84, -35, -61)],
 )
 spriteset_large_cylinder_tank = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_large_cylinder_tank',
     sprites = [(510, 110, 64, 84, -31, -43)],
     zoffset = 18,
 )
 spriteset_boat_1 = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_boat_1',
     sprites = [(10, 110, 64, 39, -35, -15)],
 )
 spriteset_boat_2 = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_boat_2',
     sprites = [(80, 110, 64, 39, -40, -12)],
 )
 spriteset_boat_3 = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_boat_3',
     sprites = [(150, 110, 64, 39, -13, -19)],
 )
 spriteset_boat_4 = industry.add_spriteset(
-    id = 'liquids_terminal_spriteset_boat_4',
     sprites = [(220, 110, 64, 39, -27, -12)],
 )
 industry.add_spritelayout(

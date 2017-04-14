@@ -27,15 +27,12 @@ sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_SLABS',
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'recycling_depot_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_hut = industry.add_spriteset(
-    id = 'recycling_depot_spriteset_hut',
     sprites = [(10, 10, 64, 31, -31, 0)]
 )
 spriteset_no_hut = industry.add_spriteset(
-    id = 'recycling_depot_spriteset_no_hut',
     sprites = [(80, 10, 64, 31, -31, 0)]
 )
 

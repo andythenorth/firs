@@ -26,7 +26,6 @@ sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_WATER',
 )
 spriteset_ground_empty = industry.add_spriteset(
-    id = 'oil_rig_spriteset_ground_empty',
     type = 'empty'
 )
 sprite_1 = industry.add_sprite(

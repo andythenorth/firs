@@ -22,7 +22,6 @@ sprite_ground = industry.add_sprite(
 )
 
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'sawmill_spriteset_ground_overlay',
     type = 'empty'
 )
 sprite_hut_1 = industry.add_sprite(

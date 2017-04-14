@@ -24,28 +24,22 @@ sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS' # ground tile same as overlay tile
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'coke_oven_spriteset_ground_overlay',
     type = 'empty'
 )
 
 spriteset_1 = industry.add_spriteset(
-    id = 'coke_oven_spriteset_1',
     sprites = [(10, 10, 64, 110, -31, -70)],
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'coke_oven_spriteset_2',
     sprites = [(80, 10, 64, 110, -31, -70)],
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'coke_oven_spriteset_3',
     sprites = [(150, 10, 64, 64, -31, -31)],
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'coke_oven_spriteset_4',
     sprites = [(220, 10, 64, 92, -31, -60)],
 )
 spriteset_5 = industry.add_spriteset(
-    id = 'coke_oven_spriteset_5',
     sprites = [(290, 10, 64, 64, -31, -31)],
 )
 sprite_smoke_1 = industry.add_smoke_sprite(

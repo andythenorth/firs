@@ -32,62 +32,48 @@ industry.add_tile(id='mixed_farm_tile_1',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    id = 'mixed_farm_spriteset_ground',
     type = 'empty'
 )
 sprite_ground_mud = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_CLEARED'
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'mixed_farm_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'mixed_farm_spriteset_1',
     sprites = [(10, 10, 64, 52, -31, -21)],
 )
 spriteset_1_ground = industry.add_spriteset(
-    id = 'mixed_farm_spriteset_1_ground',
     sprites = [(10, 70, 64, 52, -31, -21)],
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'mixed_farm_spriteset_2',
     sprites = [(80, 10, 64, 52, -31, -21)],
 )
 spriteset_2_ground = industry.add_spriteset(
-    id = 'mixed_farm_spriteset_2_ground',
     sprites = [(80, 70, 64, 52, -31, -21)],
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'mixed_farm_spriteset_3',
     sprites = [(150, 10, 64, 52, -31, -21)],
 )
 spriteset_3_ground = industry.add_spriteset(
-    id = 'mixed_farm_spriteset_3_ground',
     sprites = [(150, 70, 64, 52, -31, -21)],
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'mixed_farm_spriteset_4',
     sprites = [(220, 10, 64, 52, -31, -21)],
 )
 spriteset_4_ground = industry.add_spriteset(
-    id = 'mixed_farm_spriteset_4_ground',
     sprites = [(220, 70, 64, 52, -31, -21)],
 )
 spriteset_5 = industry.add_spriteset(
-    id = 'mixed_farm_spriteset_5',
     sprites = [(290, 10, 64, 52, -31, -21)],
 )
 spriteset_6 = industry.add_spriteset(
-    id = 'mixed_farm_spriteset_6',
     sprites = [(360, 10, 64, 52, -31, -21)],
 )
 spriteset_7 = industry.add_spriteset(
-    id = 'mixed_farm_spriteset_7',
     sprites = [(430, 10, 64, 52, -31, -21)],
 )
 spriteset_8 = industry.add_spriteset(
-    id = 'mixed_farm_spriteset_8',
     sprites = [(500, 10, 64, 52, -31, -21)],
 )
 

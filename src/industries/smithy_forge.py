@@ -26,15 +26,12 @@ sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS',
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'smithy_forge_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'smithy_forge_spriteset_1',
     sprites = [(10, 10, 64, 80, -31, -49)],
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'smithy_forge_spriteset_2',
     sprites = [(80, 10, 64, 80, -31, -49)],
 )
 sprite_smoke = industry.add_smoke_sprite(

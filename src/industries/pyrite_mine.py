@@ -32,33 +32,27 @@ sprite_ground_overlay = industry.add_sprite(
 )
 
 spriteset_1 = industry.add_spriteset(
-    id = 'pyrite_mine_spriteset_1a',
     sprites = [(10, 10, 64, 110, -31, -70), (10, 130, 64, 110, -31, -70), (10, 250, 64, 110, -31, -70)],
     animation_rate = 1,
     custom_sprite_selector = '(animation_frame % 3)',
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'pyrite_mine_spriteset_2',
     sprites = [(80, 10, 64, 110, -31, -70)],
     num_sprites_to_autofill = len(spriteset_1.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'pyrite_mine_spriteset_3',
     sprites = [(150, 10, 64, 64, -31, -30)],
     num_sprites_to_autofill = len(spriteset_1.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'pyrite_mine_spriteset_4',
     sprites = [(220, 10, 64, 64, -31, -33)],
     num_sprites_to_autofill = len(spriteset_1.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_5 = industry.add_spriteset(
-    id = 'pyrite_mine_spriteset_5',
     sprites = [(290, 10, 64, 64, -31, -33)],
     num_sprites_to_autofill = len(spriteset_1.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_6 = industry.add_spriteset(
-    id = 'pyrite_mine_spriteset_6',
     sprites = [(360, 10, 64, 64, -31, -33)],
     num_sprites_to_autofill = len(spriteset_1.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )

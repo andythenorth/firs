@@ -27,80 +27,63 @@ industry.add_tile(id='flour_mill_tile_1',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground_bakery = industry.add_spriteset(
-    id = 'flour_mill_spriteset_ground_bakery',
     type='cobble',
 )
 spriteset_ground_overlay_1 = industry.add_spriteset(
-    id = 'flour_mill_spriteset_ground_overlay_1',
     sprites = [(10, 10, 64, 31, -31, 0)],
 )
 spriteset_ground_overlay_2 = industry.add_spriteset(
-    id = 'flour_mill_spriteset_ground_overlay_2',
     sprites = [(80, 10, 64, 31, -31, 0)]
 )
 spriteset_ground_overlay_3 = industry.add_spriteset(
-    id = 'flour_mill_spriteset_ground_overlay_3',
     sprites = [(150, 10, 64, 31, -31, 0)]
 )
 spriteset_ground_overlay_4 = industry.add_spriteset(
-    id = 'flour_mill_spriteset_ground_overlay_4',
     sprites = [(220, 10, 64, 31, -31, 0)]
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'flour_mill_spriteset_1',
     sprites = [(10, 10, 64, 31, -31, 0)]
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'flour_mill_spriteset_2',
     sprites = [(80, 10, 64, 31, -31, 0)]
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'flour_mill_spriteset_3',
     sprites = [(150, 60, 64, 82, -31, -51)],
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'flour_mill_spriteset_4',
     sprites = [(220, 60, 64, 82, -31, -51)],
 )
 # animated spriteset defined first so others can copy num. frames
 spriteset_windmill_anim = industry.add_spriteset(
-    id = 'flour_mill_spriteset_windmill_anim',
     sprites = [(10, 200, 64, 82, -31, -52), (80, 200, 64, 82, -31, -52), (150, 200, 64, 82, -31, -52),
                (220, 200, 64, 82, -31, -52), (290, 200, 64, 82, -31, -52), (360, 200, 64, 82, -31, -52)],
     animation_rate = 1
 )
 spriteset_ground_windmill = industry.add_spriteset(
-    id = 'flour_mill_spriteset_ground_windmill',
     type = 'empty',
     num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_ground_overlay_windmill = industry.add_spriteset(
-    id = 'flour_mill_spriteset_ground_overlay_windmill',
     sprites = [(150, 160, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_ground_overlay_windmill_granary = industry.add_spriteset(
-    id = 'flour_mill_spriteset_ground_overlay_windmill_granary',
     sprites = [(80, 160, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_windmill_granary = industry.add_spriteset(
-    id = 'flour_mill_spriteset_windmill_granary',
     sprites = [(80, 60, 64, 82, -31, -52)],
     num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_ground_overlay_windmill_shed = industry.add_spriteset(
-    id = 'flour_mill_spriteset_ground_overlay_windmill_shed',
     sprites = [(10, 160, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_windmill_shed = industry.add_spriteset(
-    id = 'flour_mill_spriteset_windmill_shed',
     sprites = [(10, 60, 64, 82, -31, -52)],
     num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_ground_overlay_windmill_greeble = industry.add_spriteset(
-    id = 'flour_mill_spriteset_ground_overlay_windmill_greeble',
     sprites = [(220, 160, 64, 31, -31, 0)],
     num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )

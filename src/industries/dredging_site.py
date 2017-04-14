@@ -25,20 +25,16 @@ sprite_ground = industry.add_sprite(
 )
 
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'dredging_site_spriteset_ground_overlay',
     type='empty',
 )
 
 spriteset_platform = industry.add_spriteset(
-    id = 'dredging_site_spriteset_platform',
     sprites = [(10, 10, 64, 100, -31, -65)],
 )
 spriteset_greeble = industry.add_spriteset(
-    id = 'dredging_site_spriteset_greeble',
     sprites = [(80, 10, 64, 39, -31, -10)],
 )
 spriteset_crane_animated = industry.add_spriteset(
-    id = 'dredging_site_spriteset_spriteset_crane_animated',
     sprites = [(150, 10, 64, 64, -33, -35)],
 )
 

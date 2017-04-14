@@ -25,36 +25,28 @@ industry.add_tile(id='brick_works_tile_1',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    id = 'brick_works_spriteset_ground',
     type='cobble',
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'brick_works_spriteset_ground_overlay',
     type='empty',
 )
 
 spriteset_1 = industry.add_spriteset(
-    id = 'brick_works_spriteset_1',
     sprites = [(10, 10, 64, 101, -31, -64)],
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'brick_works_spriteset_2',
     sprites = [(80, 10, 64, 101, -31, -59)],
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'brick_works_spriteset_3',
     sprites = [(150, 10, 64, 101, -31, -71)],
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'brick_works_spriteset_4',
     sprites = [(220, 10, 64, 101, -31, -69)],
 )
 spriteset_sand_staithe = industry.add_spriteset(
-    id = 'brick_works_spriteset_sand_staithe',
     sprites = [(290, 10, 64, 31, -31, 0)],
 )
 spriteset_clay_staithe = industry.add_spriteset(
-    id = 'brick_works_spriteset_clay_staithe',
     sprites = [(360, 10, 64, 31, -31, 0)],
 )
 sprite_smoke_boilerhouse = industry.add_smoke_sprite(

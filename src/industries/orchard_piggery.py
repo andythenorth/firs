@@ -33,11 +33,9 @@ sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS'
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'orchard_piggery_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'orchard_piggery_house',
     sprites = [(10, 10, 64, 59, -31, -28)],
 )
 

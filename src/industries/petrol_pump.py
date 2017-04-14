@@ -30,11 +30,9 @@ sprite_ground_overlay = industry.add_sprite(
     sprite_number = 'GROUNDTILE_SLABS',
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'petrol_pump_spriteset_1',
     sprites = [(10, 60, 64, 59, -31, -28)]
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'petrol_pump_spriteset_2',
     sprites = [(80, 60, 64, 59, -31, -28)]
 )
 

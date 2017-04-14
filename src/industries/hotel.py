@@ -28,7 +28,6 @@ sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_CLEARED'
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'hotel_spriteset_ground',
     type='empty',
 )
 sprite_building_1 = industry.add_sprite(

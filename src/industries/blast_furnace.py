@@ -43,47 +43,36 @@ sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS' # ground tile same as overlay tile
 )
 sprite_ground_overlay = industry.add_spriteset(
-    id = 'blast_furnace_sprite_ground_overlay',
     type='empty',
 )
 spriteset_ground_tile_dark = industry.add_spriteset(
-    id = 'blast_furnace_spriteset_ground_tile_dark',
     sprites = [(500, 10, 64, 122, -31, -91)],
 )
 spriteset_greeble = industry.add_spriteset(
-    id = 'blast_furnace_spriteset_greeble',
     sprites = [(150, 10, 64, 122, -31, -91)],
 )
 spriteset_blast_furnace_2 = industry.add_spriteset(
-    id = 'blast_furnace_spriteset_blast_furnace_2',
     sprites = [(10, 10, 64, 144, -31, -114)],
 )
 spriteset_blast_furnace_1 = industry.add_spriteset(
-    id = 'blast_furnace_spriteset_blast_furnace_1',
     sprites = [(80, 10, 64, 122, -31, -91)],
 )
 spriteset_small_shed = industry.add_spriteset(
-    id = 'blast_furnace_spriteset_small_shed',
     sprites = [(220, 10, 64, 122, -31, -91)],
 )
 spriteset_ladle_transporter = industry.add_spriteset(
-    id = 'blast_furnace_spriteset_ladle_transporter',
     sprites = [(290, 10, 64, 122, -31, -91)],
 )
 spriteset_brick_building = industry.add_spriteset(
-    id = 'blast_furnace_spriteset_brick_building',
     sprites = [(360, 10, 64, 122, -31, -91)],
 )
 spriteset_small_tanks = industry.add_spriteset(
-    id = 'blast_furnace_spriteset_small_tanks',
     sprites = [(430, 10, 64, 122, -31, -91)],
 )
 spriteset_large_shed_rear_part = industry.add_spriteset(
-    id = 'blast_furnace_spriteset_large_shed_rear_part',
     sprites = [(570, 10, 64, 122, -31, -91)],
 )
 spriteset_large_shed_front_part_animated = industry.add_spriteset(
-    id = 'blast_furnace_spriteset_large_shed_front_part_animated',
     sprites = [(10, 160, 64, 122, -31, -91), (80, 160, 64, 122, -31, -91), (150, 160, 64, 122, -31, -91),
                (220, 160, 64, 122, -31, -91), (290, 160, 64, 122, -31, -91), (360, 160, 64, 122, -31, -91),
                (430, 160, 64, 122, -31, -91), (500, 160, 64, 122, -31, -91), (570, 160, 64, 122, -31, -91),
@@ -92,12 +81,10 @@ spriteset_large_shed_front_part_animated = industry.add_spriteset(
     custom_sprite_selector = '(animation_frame < 10) ? (animation_frame % 10) : 0',
 )
 spriteset_ground_tile_dark_animated = industry.add_spriteset(
-    id = 'blast_furnace_spriteset_ground_tile_dark_animated',
     sprites = [(500, 10, 64, 122, -31, -91)],
     num_sprites_to_autofill = len(spriteset_large_shed_front_part_animated.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_casting_shed_animated = industry.add_spriteset(
-    id = 'blast_furnace_spriteset_casting_shed_animated',
     sprites = [(10, 310, 64, 122, -31, -91), (80, 310, 64, 122, -31, -91), (150, 310, 64, 122, -31, -91),
                (220, 310, 64, 122, -31, -91), (290, 310, 64, 122, -31, -91), (360, 310, 64, 122, -31, -91),
                (430, 310, 64, 122, -31, -91), (500, 310, 64, 122, -31, -91), (570, 310, 64, 122, -31, -91),

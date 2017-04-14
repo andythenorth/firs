@@ -36,36 +36,29 @@ industry.add_tile(id='brewery_tile_2',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    id = 'brewery_spriteset_ground',
     type = 'cobble',
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'brewery_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'brewery_spriteset_1',
     sprites = [(10, 60, 64, 91, -31, -60)],
 )
 # building with animated flags
 spriteset_2_anim = industry.add_spriteset(
-    id = 'brewery_spriteset_2_anim',
     sprites = [(80, 390, 64, 91, -31, -60), (80, 60, 64, 91, -31, -60), (80, 170, 64, 91, -31, -60),
                (80, 280, 64, 91, -31, -60), (80, 170, 64, 91, -31, -60), (80, 60, 64, 91, -31, -60)],
     animation_rate = 1
 )
 spriteset_ground_anim = industry.add_spriteset(
-    id = 'brewery_spriteset_ground_anim',
     type = 'cobble',
     num_sprites_to_autofill = len(spriteset_2_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_ground_overlay_anim = industry.add_spriteset(
-    id = 'brewery_spriteset_ground_overlay_anim',
     type = 'empty',
     num_sprites_to_autofill = len(spriteset_2_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'brewery_spriteset_3',
     sprites = [(150, 60, 64, 91, -31, -60)],
 )
 sprite_smoke = industry.add_smoke_sprite(

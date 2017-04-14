@@ -21,27 +21,21 @@ industry.add_tile(id='food_processor_tile_1',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    id = 'food_processor_spriteset_ground',
     type = 'concrete'
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'food_processor_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'food_processor_spriteset_1',
     sprites = [(10, 10, 64, 87, -31, -56)],
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'food_processor_spriteset_2',
     sprites = [(80, 10, 64, 87, -31, -56)],
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'food_processor_spriteset_3',
     sprites = [(150, 10, 64, 87, -31, -56)],
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'food_processor_spriteset_4',
     sprites = [(220, 10, 64, 87, -31, -56)],
 )
 

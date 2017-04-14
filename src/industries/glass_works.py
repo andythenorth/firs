@@ -32,35 +32,27 @@ industry.add_tile(id='glass_works_tile_1',
 
 
 spriteset_ground = industry.add_spriteset(
-    id = 'glass_works_spriteset_ground',
     type='cobble',
 )
 spriteset_ground_overlay_1 = industry.add_spriteset(
-    id = 'glass_works_spriteset_ground_overlay_1',
     sprites = [(10, 10, 64, 31, -31, 0)],
 )
 spriteset_ground_overlay_2 = industry.add_spriteset(
-    id = 'glass_works_spriteset_ground_overlay_2',
     sprites = [(80, 10, 64, 31, -31, 0)],
 )
 spriteset_ground_overlay_3 = industry.add_spriteset(
-    id = 'glass_works_spriteset_ground_overlay_3',
     sprites = [(150, 10, 64, 31, -31, 0)],
 )
 spriteset_ground_overlay_4 = industry.add_spriteset(
-    id = 'glass_works_spriteset_ground_overlay_4',
     sprites = [(220, 10, 64, 31, -31, 0)],
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'glass_works_spriteset_1',
     sprites = [(10, 60, 64, 90, -31, -59)],
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'glass_works_spriteset_2',
     sprites = [(80, 60, 64, 90, -31, -71)],
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'glass_works_spriteset_3',
     sprites = [(150, 60, 64, 90, -31, -59)],
 )
 sprite_smoke = industry.add_smoke_sprite(

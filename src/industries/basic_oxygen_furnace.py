@@ -30,43 +30,33 @@ sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS' # ground tile same as overlay tile
 )
 sprite_ground_overlay = industry.add_spriteset(
-    id = 'basic_oxygen_furnace_sprite_ground_overlay',
     type='empty',
 )
 spriteset_greeble = industry.add_spriteset(
-    id = 'basic_oxygen_furnace_spriteset_greeble',
     sprites = [(570, 10, 64, 122, -31, -90)],
 )
 spriteset_roaster_1 = industry.add_spriteset(
-    id = 'basic_oxygen_furnace_spriteset_roaster_1',
     sprites = [(80, 10, 64, 122, -31, -90)],
 )
 spriteset_roaster_2 = industry.add_spriteset(
-    id = 'basic_oxygen_furnace_spriteset_roaster_2',
     sprites = [(150, 10, 64, 122, -31, -90)],
 )
 spriteset_chimney = industry.add_spriteset(
-    id = 'basic_oxygen_furnace_spriteset_chimney',
     sprites = [(220, 10, 64, 130, -31, -110)],
 )
 spriteset_acid_plant_1 = industry.add_spriteset(
-    id = 'basic_oxygen_furnace_spriteset_acid_plant_1',
     sprites = [(290, 10, 64, 122, -31, -90)],
 )
 spriteset_acid_plant_2 = industry.add_spriteset(
-    id = 'basic_oxygen_furnace_spriteset_acid_plant_2',
     sprites = [(360, 10, 64, 122, -31, -90)],
 )
 spriteset_metal_1 = industry.add_spriteset(
-    id = 'basic_oxygen_furnace_spriteset_acid_metal_1',
     sprites = [(430, 10, 64, 122, -31, -90)],
 )
 spriteset_metal_2 = industry.add_spriteset(
-    id = 'basic_oxygen_furnace_spriteset_acid_metal_2',
     sprites = [(500, 10, 64, 122, -31, -90)],
 )
 spriteset_office = industry.add_spriteset(
-    id = 'basic_oxygen_furnace_spriteset_office',
     sprites = [(640, 10, 64, 122, -31, -90)],
 )
 sprite_smoke_big_chimney = industry.add_smoke_sprite(

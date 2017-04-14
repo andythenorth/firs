@@ -23,27 +23,21 @@ industry.add_tile(id='builders_yard_tile_1',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    id = 'builders_yard_spriteset_ground',
     type = 'concrete',
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'builders_yard_spriteset_ground_overlay',
     type = 'empty'
 )
 stacks_1 = industry.add_spriteset(
-    id = 'builders_yard_spriteset_1',
     sprites = [(10, 10, 64, 56, -31, -26)],
 )
 shed = industry.add_spriteset(
-    id = 'builders_yard_spriteset_2',
     sprites = [(80, 10, 64, 56, -31, -26)],
 )
 silo = industry.add_spriteset(
-    id = 'builders_yard_spriteset_3',
     sprites = [(220, 10, 64, 64, -31, -34)],
 )
 stacks_2 = industry.add_spriteset(
-    id = 'builders_yard_spriteset_4',
     sprites = [(150, 10, 64, 56, -31, -26)],
 )
 industry.add_spritelayout(

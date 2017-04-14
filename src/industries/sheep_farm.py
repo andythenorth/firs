@@ -19,31 +19,24 @@ industry.add_tile(id='sheep_farm_tile_1',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    id = 'sheep_farm_spriteset_ground',
     type = 'empty'
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'sheep_farm_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'sheep_farm_spriteset_1',
     sprites = [(10, 10, 64, 52, -31, -21)],
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'sheep_farm_spriteset_2',
     sprites = [(80, 10, 64, 52, -31, -19)],
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'sheep_farm_spriteset_3',
     sprites = [(150, 10, 64, 52, -31, -21)],
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'sheep_farm_spriteset_4',
     sprites = [(220, 10, 64, 52, -31, -21)],
 )
 spriteset_5 = industry.add_spriteset(
-    id = 'sheep_farm_spriteset_5',
     sprites = [(290, 10, 64, 52, -31, -21)],
 )
 

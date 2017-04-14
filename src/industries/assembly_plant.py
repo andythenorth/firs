@@ -22,56 +22,43 @@ industry.add_tile(id='assembly_plant_tile_1',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    id = 'assembly_plant_spriteset_ground',
     type = 'concrete',
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'assembly_plant_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'assembly_plant_spriteset_1',
     sprites = [(10, 10, 64, 80, -31, -49)],
 )
 # spriteset_2 was deprecated
 spriteset_3 = industry.add_spriteset(
-    id = 'assembly_plant_spriteset_3',
     sprites = [(150, 10, 64, 80, -31, -49)],
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'assembly_plant_spriteset_4',
     sprites = [(220, 10, 64, 80, -31, -49)],
 )
 spriteset_5 = industry.add_spriteset(
-    id = 'assembly_plant_spriteset_5',
     sprites = [(290, 10, 64, 80, -31, -49)],
 )
 spriteset_6 = industry.add_spriteset(
-    id = 'assembly_plant_spriteset_6',
     sprites = [(360, 10, 64, 80, -31, -49)],
 )
 spriteset_7 = industry.add_spriteset(
-    id = 'assembly_plant_spriteset_7',
     sprites = [(430, 10, 64, 80, -31, -49)],
 )
 spriteset_8 = industry.add_spriteset(
-    id = 'assembly_plant_spriteset_8',
     sprites = [(500, 10, 64, 80, -31, -49)],
 )
 spriteset_9 = industry.add_spriteset(
-    id = 'assembly_plant_spriteset_9',
     sprites = [(570, 10, 64, 80, -31, -49)],
 )
 spriteset_10 = industry.add_spriteset(
-    id = 'assembly_plant_spriteset_10',
     sprites = [(640, 10, 64, 80, -31, -49)],
 )
 spriteset_11 = industry.add_spriteset(
-    id = 'assembly_plant_spriteset_11',
     sprites = [(710, 10, 64, 80, -31, -49)],
 )
 spriteset_12 = industry.add_spriteset(
-    id = 'assembly_plant_spriteset_12',
     sprites = [(640, 100, 64, 80, -31, -49)],
 )
 sprite_smoke = industry.add_smoke_sprite(

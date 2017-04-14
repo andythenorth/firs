@@ -22,15 +22,12 @@ industry.add_tile(id='food_market_tile_1',
                   location_checks=TileLocationChecks(require_road_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    id = 'food_market_spriteset_ground',
     type='slab',
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'food_market_spriteset_ground_overlay',
     sprites = [(10, 10, 64, 31, -31, 0)],
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'food_market_spriteset',
     sprites = [(10, 60, 64, 36, -31, -4)]
 )
 sprite_tree_1 = industry.add_sprite(

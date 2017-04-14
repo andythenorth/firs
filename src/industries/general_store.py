@@ -26,15 +26,12 @@ industry.add_tile(id='general_store_tile_1',
                   location_checks=TileLocationChecks(road_adjacent=['nw', 'ne', 'sw', 'se']))
 
 spriteset_ground = industry.add_spriteset(
-    id = 'general_store_spriteset_ground',
     type='slab',
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'general_store_spriteset_ground_overlay',
     sprites = [(10, 10, 64, 31, -31, 0)],
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'general_store_spriteset',
     sprites = [(10, 60, 64, 48, -31, -18)]
 )
 industry.add_spritelayout(

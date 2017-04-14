@@ -32,36 +32,28 @@ sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS'
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'lumber_yard_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'lumber_yard_spriteset_1',
     sprites = [(80, 10, 64, 64, -31, -40)]
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'lumber_yard_spriteset_2',
     sprites = [(150, 10, 64, 64, -31, -34)]
 )
 # no spriteset 3 for this industry, historical reasons
 spriteset_4 = industry.add_spriteset(
-    id = 'lumber_yard_spriteset_4',
     sprites = [(290, 10, 64, 64, -31, -35)]
 )
 spriteset_5 = industry.add_spriteset(
-    id = 'lumber_yard_spriteset_5',
     sprites = [(10, 10, 64, 64, -31, -26)]
 )
 spriteset_6 = industry.add_spriteset(
-    id = 'lumber_yard_spriteset_6',
     sprites = [(150, 90, 64, 31, -31, -4)]
 )
 spriteset_7 = industry.add_spriteset(
-    id = 'lumber_yard_spriteset_7',
     sprites = [(220, 90, 64, 31, -31, -4)]
 )
 spriteset_8 = industry.add_spriteset(
-    id = 'lumber_yard_spriteset_8',
     sprites = [(290, 90, 64, 31, -31, -4)]
 )
 sprite_smoke = industry.add_smoke_sprite(
