@@ -3,7 +3,6 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(id='food_processor',
                     processed_cargos_and_output_ratios=[('BEAN', 6), ('FRUT', 6)],
                     prod_cargo_types=['FOOD'],
-                    layouts='AUTO',
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[0, 0]',

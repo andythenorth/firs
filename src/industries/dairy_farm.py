@@ -2,7 +2,6 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='dairy_farm',
                     prod_cargo_types=['LVST', 'MILK'],
-                    layouts='AUTO',
                     prob_in_game='3',
                     prob_random='11',
                     prod_multiplier='[12, 14]',

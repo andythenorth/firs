@@ -3,7 +3,6 @@ from industry import IndustryPrimaryPort, TileLocationChecks
 industry = IndustryPrimaryPort(id='liquids_terminal',
                     accept_cargo_types=['OIL_'],
                     prod_cargo_types=['PETR', 'RFPR'],
-                    layouts='AUTO',
                     prob_in_game='2',
                     prob_random='6',
                     prod_multiplier='[9, 9]',

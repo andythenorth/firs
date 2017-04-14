@@ -3,7 +3,6 @@ from industry import IndustryTertiary, TileLocationChecks
 industry = IndustryTertiary(id='hotel',
                     accept_cargo_types=['FOOD', 'BEER', 'PASS'],
                     prod_cargo_types=['PASS'],
-                    layouts='AUTO',
                     prob_in_game='15',
                     prob_random='10',
                     prod_multiplier='[17, 0]',

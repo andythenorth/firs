@@ -700,7 +700,6 @@ class IndustryProperties(object):
         self.nearby_station_name = kwargs.get('nearby_station_name', None)
         self.intro_year = kwargs.get('intro_year', None)
         self.expiry_year = kwargs.get('expiry_year', None)
-        self.layouts = kwargs.get('layouts', None) # automatic layout handling can be specified for this using 'AUTO' as the value
         self.accept_cargo_types = kwargs.get('accept_cargo_types', None)
         self.prod_cargo_types = kwargs.get('prod_cargo_types', None)
         self.prod_multiplier = kwargs.get('prod_multiplier', None)
@@ -832,18 +831,8 @@ class Industry(object):
             return "(current_year + " + random_offset + ") < " + str(self.graphics_change_dates[date_variation_index - 1]) + " || (current_year + " + random_offset + ") >= " + str(self.graphics_change_dates[date_variation_index])
 
     def get_industry_layouts_as_property(self):
-        # supports auto-magic layouts from layout objects, or layouts simply declared as a string for nml
-        # or no layout declaration if over-riding a default industry
-        if self.default_industry_properties.layouts != 'AUTO':
-            print(self.id + ' does not use AUTO layouts')
-        if self.default_industry_properties.layouts == 'AUTO':
-            # automagic case
-            result = [industry_layout.id + '_tilelayout' for industry_layout in self.industry_layouts]
-            return 'layouts: [' + ','.join(result) + '];'
-        elif self.default_industry_properties.layouts != None:
-            return 'layouts: ' + self.default_industry_properties.layouts + ';' # simple case
-        else:
-            return
+        result = [industry_layout.id + '_tilelayout' for industry_layout in self.industry_layouts]
+        return 'layouts: [' + ','.join(result) + '];'
 
     def get_extra_text_fund(self, economy):
         # some fund text options are orthogonal, there is no support for combining them currently

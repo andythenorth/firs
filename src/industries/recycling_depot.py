@@ -3,7 +3,6 @@ from industry import IndustryPrimaryTownProducer, TileLocationChecks
 industry = IndustryPrimaryTownProducer(id='recycling_depot',
                     accept_cargo_types=[],
                     prod_cargo_types=['RCYC'],
-                    layouts='AUTO',
                     prob_in_game='20',
                     prob_random='20',
                     prod_multiplier='[0, 0]',

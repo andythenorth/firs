@@ -2,7 +2,6 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(id='quarry',
                     prod_cargo_types=['SAND', 'GRVL'],
-                    layouts='AUTO',
                     prob_in_game='4',
                     prob_random='7',
                     prod_multiplier='[14, 14]',

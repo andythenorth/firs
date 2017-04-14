@@ -3,7 +3,6 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(id='smithy_forge',
                     processed_cargos_and_output_ratios=[('METL', 8)],
                     prod_cargo_types=['ENSP', 'FMSP'],
-                    layouts='AUTO',
                     prob_in_game='2',
                     prob_random='5',
                     prod_multiplier='[0, 0]',

@@ -3,7 +3,6 @@ from industry import IndustryPrimaryPort, TileLocationChecks
 industry = IndustryPrimaryPort(id='port',
                     accept_cargo_types=['FOOD', 'FRUT', 'BEER'],
                     prod_cargo_types=[],
-                    layouts='AUTO',
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[9, 9]',

@@ -3,7 +3,6 @@ from industry import IndustryPrimaryNoSupplies, TileLocationChecks
 industry = IndustryPrimaryNoSupplies(id='fishing_grounds',
                     accept_cargo_types=[],
                     prod_cargo_types=['FISH'],
-                    layouts='AUTO',
                     prob_in_game='14',
                     prob_random='14',
                     prod_multiplier='[7, 0]',
