@@ -977,8 +977,9 @@ class Industry(object):
 
     @property
     def incompatible_industries(self):
-        print(get_incompatible_industries())
-        print('Incompatible industries not implemented in industry.py')
+        # there's no sensible way to get incompatible_industries from here, it has to be passed in when rendering templates
+        # there are genuine performance reasons to have incompatibility calculated once and only once by firs.py
+        print('Incompatible industries not implemented in industry.py, must be passed from firs.py at render time')
 
     def get_output_ratio(self, cargo_num, economy):
         prod_cargo_types = self.get_prod_cargo_types(economy)
