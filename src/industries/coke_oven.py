@@ -37,16 +37,19 @@ spriteset_quench_tower = industry.add_spriteset(
     sprites = [(150, 10, 64, 122, -31, -91)],
 )
 spriteset_chimney = industry.add_spriteset(
-    sprites = [(220, 10, 64, 136, -31, -101)],
+    sprites = [(220, 10, 64, 136, -31, -109)],
 )
 spriteset_gas_plant_1 = industry.add_spriteset(
     sprites = [(290, 10, 64, 122, -31, -91)],
 )
+spriteset_gas_plant_2 = industry.add_spriteset(
+    sprites = [(360, 10, 64, 122, -31, -91)],
+)
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
-    xoffset= 10,
+    xoffset= 9,
     yoffset= 5,
-    zoffset= 105,
+    zoffset= 123,
 )
 
 industry.add_spritelayout(
@@ -92,19 +95,26 @@ industry.add_spritelayout(
     building_sprites = [spriteset_gas_plant_1],
     fences = ['nw','ne','se','sw']
 )
+industry.add_spritelayout(
+    id = 'coke_oven_spritelayout_gas_plant_2',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_gas_plant_2],
+    fences = ['nw','ne','se','sw']
+)
 
 industry.add_industry_layout(
     id = 'coke_oven_industry_layout_1',
     layout = [(0, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_empty'),
               (0, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_empty'),
               (0, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_quench_tower'),
-              (1, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_gas_plant_1'),
+              (1, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_empty'),
               (1, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery'),
               (1, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_shed'),
               (2, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_gas_plant_1'),
               (2, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery'),
               (2, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_shed'),
-              (3, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_gas_plant_1'),
+              (3, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_gas_plant_2'),
               (3, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery'),
               (3, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_shed'),
               (4, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_chimney'),
