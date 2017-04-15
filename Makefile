@@ -39,7 +39,7 @@ endif
 
 REPO_TITLE = "$(PROJECT_NAME) $(REPO_VERSION)"
 PROJECT_VERSIONED_NAME = $(PROJECT_NAME)-$(REPO_VERSION)
-ARGS = '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
+ARGS = '${REPO_REVISION}' '${REPO_VERSION}' '${TEST_INDUSTRY}' '${NO_MP}'
 
 GRF_FILE = $(PROJECT_NAME).grf
 TAR_FILE = $(PROJECT_NAME).tar
@@ -70,7 +70,7 @@ html_docs: $(HTML_DOCS)
 
 custom_tags.txt: custom_tags.template
 	$(FILL_TEMPLATE) --template=custom_tags.template --output=custom_tags.txt \
-		version=$(VERSION)
+		version=$(REPO_VERSION)
 
 # determining deps reliably for graphics generation is hard, as graphics processor depends on many things so always rebuild all
 $(GRAPHICS_DIR):
