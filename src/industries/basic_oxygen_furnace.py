@@ -13,7 +13,8 @@ industry = IndustrySecondary(id='basic_oxygen_furnace',
                     location_checks=dict(industry_max_distance=['blast_furnace', 72]),
                     name='string(STR_IND_BASIC_OXYGEN_FURNACE)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
-                    fund_cost_multiplier='160')
+                    fund_cost_multiplier='160',
+                    intro_year=1850) # intro year needs to >= Blast Furnace intro year, otherwise location restriction means no BOFs are built
 
 industry.economy_variations['STEELTOWN'].enabled = True
 
