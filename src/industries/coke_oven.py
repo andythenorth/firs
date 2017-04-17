@@ -40,6 +40,12 @@ spriteset_pusher_rails_base = industry.add_spriteset(
 spriteset_pipe_gantry = industry.add_spriteset(
     sprites = [(220, 10, 64, 122, -31, -91)],
 )
+spriteset_coal_handling_front = industry.add_spriteset(
+    sprites = [(290, 10, 64, 122, -31, -91)],
+)
+spriteset_coal_handling_rear = industry.add_spriteset(
+    sprites = [(360, 10, 64, 122, -31, -91)],
+)
 spriteset_chimney = industry.add_spriteset(
     sprites = [(430, 10, 64, 136, -31, -109)],
 )
@@ -61,68 +67,73 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [],
-    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'coke_oven_spritelayout_oven_battery',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_oven_battery],
-    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'coke_oven_spritelayout_silo',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_chimney, spriteset_silo],
+    smoke_sprites = [sprite_smoke_1],
+)
+industry.add_spritelayout(
+    id = 'coke_oven_spritelayout_pusher_rails_empty',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_pusher_rails_base, spriteset_pipe_gantry],
 )
 industry.add_spritelayout(
     id = 'coke_oven_spritelayout_pusher_rails',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_pusher_rails_base, spriteset_pipe_gantry],
-    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'coke_oven_spritelayout_quench_tower',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_quench_tower],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'coke_oven_spritelayout_chimney',
-    ground_sprite = sprite_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_chimney],
-    smoke_sprites = [sprite_smoke_1],
-    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'coke_oven_spritelayout_gas_plant_1',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_gas_plant_1],
-    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'coke_oven_spritelayout_silo',
+    id = 'coke_oven_spritelayout_coal_handling_front',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_silo],
-    fences = ['nw','ne','se','sw']
+    building_sprites = [spriteset_coal_handling_front],
+)
+industry.add_spritelayout(
+    id = 'coke_oven_spritelayout_coal_handling_rear',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_coal_handling_rear],
 )
 
 industry.add_industry_layout(
     id = 'coke_oven_industry_layout_1',
     layout = [(0, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_silo'),
-              (0, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails'),
-              (0, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_empty'),
+              (0, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails_empty'),
+              (0, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_coal_handling_rear'),
               (1, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery'),
-              (1, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails'),
-              (1, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_empty'),
+              (1, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails_empty'),
+              (1, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_coal_handling_front'),
               (2, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery'),
-              (2, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails'),
+              (2, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails_empty'),
               (2, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_gas_plant_1'),
               (3, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery'),
-              (3, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails'),
+              (3, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails_empty'),
               (3, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_empty'),
               (4, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_quench_tower'),
-              (4, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_chimney'),
+              (4, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_empty'),
               (4, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_empty'),
     ]
 )
