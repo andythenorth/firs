@@ -27,23 +27,27 @@ spriteset_ground_overlay = industry.add_spriteset(
     type = 'empty'
 )
 
-spriteset_oven_battery_rear = industry.add_spriteset(
+spriteset_silo = industry.add_spriteset(
     sprites = [(10, 10, 64, 122, -31, -91)],
 )
-spriteset_oven_battery_front = industry.add_spriteset(
+spriteset_oven_battery = industry.add_spriteset(
     sprites = [(80, 10, 64, 122, -31, -91)],
 )
-spriteset_quench_tower = industry.add_spriteset(
+spriteset_pusher_rails_base = industry.add_spriteset(
     sprites = [(150, 10, 64, 122, -31, -91)],
+    yextent = 8 # prevents gantry flickering
+)
+spriteset_pipe_gantry = industry.add_spriteset(
+    sprites = [(220, 10, 64, 122, -31, -91)],
 )
 spriteset_chimney = industry.add_spriteset(
-    sprites = [(220, 10, 64, 136, -31, -109)],
+    sprites = [(430, 10, 64, 136, -31, -109)],
 )
 spriteset_gas_plant_1 = industry.add_spriteset(
-    sprites = [(290, 10, 64, 122, -31, -91)],
+    sprites = [(570, 10, 64, 122, -31, -91)],
 )
-spriteset_silo = industry.add_spriteset(
-    sprites = [(360, 10, 64, 122, -31, -91)],
+spriteset_quench_tower = industry.add_spriteset(
+    sprites = [(500, 10, 64, 122, -31, -91)],
 )
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
@@ -60,17 +64,17 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'coke_oven_spritelayout_oven_battery_rear',
+    id = 'coke_oven_spritelayout_oven_battery',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_oven_battery_rear],
+    building_sprites = [spriteset_oven_battery],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'coke_oven_spritelayout_oven_battery_front',
+    id = 'coke_oven_spritelayout_pusher_rails',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_oven_battery_front],
+    building_sprites = [spriteset_pusher_rails_base, spriteset_pipe_gantry],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
@@ -106,19 +110,19 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id = 'coke_oven_industry_layout_1',
     layout = [(0, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_silo'),
-              (0, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_chimney'),
+              (0, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails'),
               (0, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_empty'),
-              (1, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery_rear'),
-              (1, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery_front'),
+              (1, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery'),
+              (1, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails'),
               (1, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_empty'),
-              (2, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery_rear'),
-              (2, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery_front'),
+              (2, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery'),
+              (2, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails'),
               (2, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_gas_plant_1'),
-              (3, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery_rear'),
-              (3, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery_front'),
+              (3, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery'),
+              (3, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails'),
               (3, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_empty'),
               (4, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_quench_tower'),
-              (4, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_empty'),
+              (4, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_chimney'),
               (4, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_empty'),
     ]
 )
