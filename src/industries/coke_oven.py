@@ -49,6 +49,9 @@ spriteset_pusher_rails_base = industry.add_spriteset(
     sprites = [(150, 10, 64, 122, -31, -91)],
     yextent = 8 # prevents gantry flickering
 )
+spriteset_pusher_car = industry.add_spriteset(
+    sprites = [(10, 234, 64, 64, -31, -32)],
+)
 spriteset_pipe_gantry = industry.add_spriteset(
     sprites = [(220, 10, 64, 122, -31, -91)],
 )
@@ -128,10 +131,10 @@ industry.add_spritelayout(
     building_sprites = [spriteset_pusher_rails_base, spriteset_pipe_gantry],
 )
 industry.add_spritelayout(
-    id = 'coke_oven_spritelayout_pusher_rails',
+    id = 'coke_oven_spritelayout_pusher_rails_animated',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_pusher_rails_base, spriteset_pipe_gantry],
+    building_sprites = [spriteset_pusher_rails_base, spriteset_pusher_car, spriteset_pipe_gantry],
 )
 industry.add_spritelayout(
     id = 'coke_oven_spritelayout_pusher_rails_with_house',
@@ -175,7 +178,7 @@ industry.add_industry_layout(
               (1, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails_with_house'),
               (2, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_coal_handling_rear'),
               (2, 1, 'coke_oven_tile_2', 'coke_oven_spritelayout_oven_battery_animated'),
-              (2, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails_empty'),
+              (2, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails_animated'),
               (3, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_coal_handling_front'),
               (3, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery_empty'),
               (3, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails_with_house'),
@@ -194,6 +197,6 @@ industry.add_industry_layout(
               (2, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails_with_house'),
               (3, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_coal_handling_front'),
               (3, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_silo'),
-              (3, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails_empty'),
+              (3, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails_animated'),
     ]
 )
