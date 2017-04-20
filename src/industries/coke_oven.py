@@ -22,6 +22,13 @@ industry.add_tile(id='coke_oven_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
+industry.add_tile(id='coke_oven_tile_2',
+                  animation_length=47,
+                  animation_looping=True,
+                  animation_speed=2,
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
+                                                     disallow_industry_adjacent=True))
+
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS'
 )
@@ -47,6 +54,7 @@ spriteset_pipe_gantry = industry.add_spriteset(
 )
 spriteset_pipe_gantry_house = industry.add_spriteset(
     sprites = [(290, 10, 64, 122, -31, -91)],
+    yextent = 32
 )
 spriteset_coal_handling_front = industry.add_spriteset(
     sprites = [(360, 10, 64, 122, -31, -91)],
@@ -60,18 +68,32 @@ spriteset_quench_tower = industry.add_spriteset(
 spriteset_gas_plant_1 = industry.add_spriteset(
     sprites = [(570, 10, 64, 122, -31, -91)],
 )
-sprite_smoke_1 = industry.add_smoke_sprite(
+sprite_smoke_big_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
     xoffset= 8,
     yoffset= 5,
     zoffset= 104,
 )
-sprite_smoke_2 = industry.add_smoke_sprite(
+sprite_smoke_big_2 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
     xoffset= 0,
     yoffset= 7,
     zoffset= 76,
 )
+sprite_smoke_small_1 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_small',
+    xoffset= 0,
+    yoffset= 0,
+    zoffset= 16,
+)
+sprite_smoke_small_2 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_small',
+    xoffset= 0,
+    yoffset= 5,
+    zoffset= 16,
+    animation_frame_offset = 4,
+)
+
 
 industry.add_spritelayout(
     id = 'coke_oven_spritelayout_empty',
@@ -90,13 +112,14 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_oven_battery, spriteset_larry_car],
+    smoke_sprites = [sprite_smoke_small_1, sprite_smoke_small_2]
 )
 industry.add_spritelayout(
     id = 'coke_oven_spritelayout_silo',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_silo],
-    smoke_sprites = [sprite_smoke_1],
+    smoke_sprites = [sprite_smoke_big_1],
 )
 industry.add_spritelayout(
     id = 'coke_oven_spritelayout_pusher_rails_empty',
@@ -121,7 +144,7 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_quench_tower],
-    smoke_sprites = [sprite_smoke_2]
+    smoke_sprites = [sprite_smoke_big_2]
 )
 industry.add_spritelayout(
     id = 'coke_oven_spritelayout_gas_plant_1',
@@ -151,7 +174,7 @@ industry.add_industry_layout(
               (1, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery_empty'),
               (1, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails_with_house'),
               (2, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_coal_handling_rear'),
-              (2, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery_animated'),
+              (2, 1, 'coke_oven_tile_2', 'coke_oven_spritelayout_oven_battery_animated'),
               (2, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails_empty'),
               (3, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_coal_handling_front'),
               (3, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery_empty'),
@@ -164,7 +187,7 @@ industry.add_industry_layout(
               (0, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery_empty'),
               (0, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails_with_house'),
               (1, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_gas_plant_1'),
-              (1, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery_animated'),
+              (1, 1, 'coke_oven_tile_2', 'coke_oven_spritelayout_oven_battery_animated'),
               (1, 2, 'coke_oven_tile_1', 'coke_oven_spritelayout_pusher_rails_empty'),
               (2, 0, 'coke_oven_tile_1', 'coke_oven_spritelayout_coal_handling_rear'),
               (2, 1, 'coke_oven_tile_1', 'coke_oven_spritelayout_oven_battery_empty'),
