@@ -97,13 +97,6 @@ sprite_smoke_small_2 = industry.add_smoke_sprite(
     animation_frame_offset = 4,
 )
 
-
-industry.add_spritelayout(
-    id = 'coke_oven_spritelayout_empty',
-    ground_sprite = sprite_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [],
-)
 industry.add_spritelayout(
     id = 'coke_oven_spritelayout_oven_battery_empty',
     ground_sprite = sprite_ground,
