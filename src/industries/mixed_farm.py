@@ -15,6 +15,10 @@ industry = IndustryPrimaryOrganic(id='mixed_farm',
                     fund_cost_multiplier='49' )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['FOOD']
+industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[13]'
+industry.economy_variations['BASIC_ARCTIC'].name = 'string(STR_IND_BASICFARM)'
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types=['MAIZ', 'LVST']
 industry.economy_variations['MISTAH_KURTZ'].prob_random = '14'
