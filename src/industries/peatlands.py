@@ -1,6 +1,6 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks
 
-industry = IndustryPrimaryExtractive(id='peat_bog',
+industry = IndustryPrimaryExtractive(id='peatlands',
                     prod_cargo_types=['PEAT'],
                     prob_in_game='4',
                     prob_random='7',
@@ -9,19 +9,19 @@ industry = IndustryPrimaryExtractive(id='peat_bog',
                     # allow longer distance on clustering than usual, and more clusters, as industry is hard to locate
                     location_checks=dict(cluster=[90, 4]),
                     prospect_chance='0.75',
-                    name='string(STR_IND_PEAT_BOG)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_PEAT_BOG))',
+                    name='string(STR_IND_PEATLANDS)',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_PEATLANDS))',
                     fund_cost_multiplier='210')
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 # 2 tiles for this industry: pit outer tile cannot be on slopes; pit inner tiles and processor tiles can be
 # cases for both tiles ensure that tiles can only be built at same height as north tile
-industry.add_tile(id='peat_bog_tile_1',
+industry.add_tile(id='peatlands_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_desert=True,
                                                      disallow_industry_adjacent=True))
-industry.add_tile(id='peat_bog_tile_2',
+industry.add_tile(id='peatlands_tile_2',
                   animation_length=56,
                   animation_looping=True,
                   animation_speed=4,
@@ -161,7 +161,7 @@ spriteset_crusher = industry.add_spriteset(
 )
 
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_1',
+    id = 'peatlands_spritelayout_1',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_1,
     building_sprites = [],
@@ -169,7 +169,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_2',
+    id = 'peatlands_spritelayout_2',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_2,
     building_sprites = [spriteset_pit_conveyor_0],
@@ -177,7 +177,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_4',
+    id = 'peatlands_spritelayout_4',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_4,
     building_sprites = [],
@@ -185,7 +185,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_5',
+    id = 'peatlands_spritelayout_5',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_5,
     building_sprites = [spriteset_crane_1, spriteset_pile],
@@ -193,7 +193,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_6',
+    id = 'peatlands_spritelayout_6',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_6,
     building_sprites = [],
@@ -201,7 +201,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_7',
+    id = 'peatlands_spritelayout_7',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_7,
     building_sprites = [],
@@ -209,7 +209,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_8',
+    id = 'peatlands_spritelayout_8',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_8,
     building_sprites = [spriteset_animated_dozer],
@@ -217,7 +217,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_10',
+    id = 'peatlands_spritelayout_10',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_10,
     building_sprites = [],
@@ -225,7 +225,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_11',
+    id = 'peatlands_spritelayout_11',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_11,
     building_sprites = [],
@@ -233,7 +233,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_12',
+    id = 'peatlands_spritelayout_12',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_12,
     building_sprites = [],
@@ -241,7 +241,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_19',
+    id = 'peatlands_spritelayout_19',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_19,
     building_sprites = [],
@@ -249,7 +249,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_20',
+    id = 'peatlands_spritelayout_20',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_20,
     building_sprites = [spriteset_pit_conveyor_1],
@@ -257,7 +257,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_22',
+    id = 'peatlands_spritelayout_22',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_22,
     building_sprites = [spriteset_pit_conveyor_2],
@@ -265,7 +265,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_23',
+    id = 'peatlands_spritelayout_23',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_23,
     building_sprites = [spriteset_pit_conveyor_3],
@@ -273,7 +273,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_24',
+    id = 'peatlands_spritelayout_24',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_24,
     building_sprites = [spriteset_pit_conveyor_4],
@@ -281,7 +281,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_39',
+    id = 'peatlands_spritelayout_39',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_39,
     building_sprites = [spriteset_silo],
@@ -289,7 +289,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_40',
+    id = 'peatlands_spritelayout_40',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_40,
     building_sprites = [spriteset_conveyor_2],
@@ -297,7 +297,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'peat_bog_spritelayout_41',
+    id = 'peatlands_spritelayout_41',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_41,
     building_sprites = [spriteset_crusher],
@@ -307,47 +307,47 @@ industry.add_spritelayout(
 
 
 industry.add_industry_layout(
-    id = 'peat_bog_layout_1',
-    layout = [(0, 1, 'peat_bog_tile_2', 'peat_bog_spritelayout_24'),
-              (0, 2, 'peat_bog_tile_2', 'peat_bog_spritelayout_12'),
-              (0, 3, 'peat_bog_tile_2', 'peat_bog_spritelayout_6'),
-              (1, 0, 'peat_bog_tile_1', 'peat_bog_spritelayout_41'),
-              (1, 1, 'peat_bog_tile_2', 'peat_bog_spritelayout_23'),
-              (1, 2, 'peat_bog_tile_1', 'peat_bog_spritelayout_11'),
-              (1, 3, 'peat_bog_tile_2', 'peat_bog_spritelayout_5'),
-              (2, 0, 'peat_bog_tile_1', 'peat_bog_spritelayout_40'),
-              (2, 1, 'peat_bog_tile_2', 'peat_bog_spritelayout_22'),
-              (2, 2, 'peat_bog_tile_1', 'peat_bog_spritelayout_10'),
-              (2, 3, 'peat_bog_tile_2', 'peat_bog_spritelayout_4'),
-              (3, 0, 'peat_bog_tile_1', 'peat_bog_spritelayout_39'),
-              (3, 1, 'peat_bog_tile_2', 'peat_bog_spritelayout_20'),
-              (3, 2, 'peat_bog_tile_2', 'peat_bog_spritelayout_8'),
-              (3, 3, 'peat_bog_tile_2', 'peat_bog_spritelayout_2'),
-              (4, 1, 'peat_bog_tile_2', 'peat_bog_spritelayout_19'),
-              (4, 2, 'peat_bog_tile_2', 'peat_bog_spritelayout_7'),
-              (4, 3, 'peat_bog_tile_2', 'peat_bog_spritelayout_1'),
+    id = 'peatlands_layout_1',
+    layout = [(0, 1, 'peatlands_tile_2', 'peatlands_spritelayout_24'),
+              (0, 2, 'peatlands_tile_2', 'peatlands_spritelayout_12'),
+              (0, 3, 'peatlands_tile_2', 'peatlands_spritelayout_6'),
+              (1, 0, 'peatlands_tile_1', 'peatlands_spritelayout_41'),
+              (1, 1, 'peatlands_tile_2', 'peatlands_spritelayout_23'),
+              (1, 2, 'peatlands_tile_1', 'peatlands_spritelayout_11'),
+              (1, 3, 'peatlands_tile_2', 'peatlands_spritelayout_5'),
+              (2, 0, 'peatlands_tile_1', 'peatlands_spritelayout_40'),
+              (2, 1, 'peatlands_tile_2', 'peatlands_spritelayout_22'),
+              (2, 2, 'peatlands_tile_1', 'peatlands_spritelayout_10'),
+              (2, 3, 'peatlands_tile_2', 'peatlands_spritelayout_4'),
+              (3, 0, 'peatlands_tile_1', 'peatlands_spritelayout_39'),
+              (3, 1, 'peatlands_tile_2', 'peatlands_spritelayout_20'),
+              (3, 2, 'peatlands_tile_2', 'peatlands_spritelayout_8'),
+              (3, 3, 'peatlands_tile_2', 'peatlands_spritelayout_2'),
+              (4, 1, 'peatlands_tile_2', 'peatlands_spritelayout_19'),
+              (4, 2, 'peatlands_tile_2', 'peatlands_spritelayout_7'),
+              (4, 3, 'peatlands_tile_2', 'peatlands_spritelayout_1'),
     ]
 )
 
 industry.add_industry_layout(
-    id = 'peat_bog_layout_2',
-    layout = [(0, 0, 'peat_bog_tile_2', 'peat_bog_spritelayout_24'),
-              (0, 1, 'peat_bog_tile_2', 'peat_bog_spritelayout_12'),
-              (0, 2, 'peat_bog_tile_2', 'peat_bog_spritelayout_6'),
-              (1, 0, 'peat_bog_tile_2', 'peat_bog_spritelayout_23'),
-              (1, 1, 'peat_bog_tile_1', 'peat_bog_spritelayout_11'),
-              (1, 2, 'peat_bog_tile_2', 'peat_bog_spritelayout_5'),
-              (1, 3, 'peat_bog_tile_1', 'peat_bog_spritelayout_41'),
-              (2, 0, 'peat_bog_tile_2', 'peat_bog_spritelayout_22'),
-              (2, 1, 'peat_bog_tile_1', 'peat_bog_spritelayout_10'),
-              (2, 2, 'peat_bog_tile_2', 'peat_bog_spritelayout_4'),
-              (2, 3, 'peat_bog_tile_1', 'peat_bog_spritelayout_40'),
-              (3, 0, 'peat_bog_tile_2', 'peat_bog_spritelayout_20'),
-              (3, 1, 'peat_bog_tile_2', 'peat_bog_spritelayout_8'),
-              (3, 2, 'peat_bog_tile_2', 'peat_bog_spritelayout_2'),
-              (3, 3, 'peat_bog_tile_1', 'peat_bog_spritelayout_39'),
-              (4, 0, 'peat_bog_tile_2', 'peat_bog_spritelayout_19'),
-              (4, 1, 'peat_bog_tile_2', 'peat_bog_spritelayout_7'),
-              (4, 2, 'peat_bog_tile_2', 'peat_bog_spritelayout_1'),
+    id = 'peatlands_layout_2',
+    layout = [(0, 0, 'peatlands_tile_2', 'peatlands_spritelayout_24'),
+              (0, 1, 'peatlands_tile_2', 'peatlands_spritelayout_12'),
+              (0, 2, 'peatlands_tile_2', 'peatlands_spritelayout_6'),
+              (1, 0, 'peatlands_tile_2', 'peatlands_spritelayout_23'),
+              (1, 1, 'peatlands_tile_1', 'peatlands_spritelayout_11'),
+              (1, 2, 'peatlands_tile_2', 'peatlands_spritelayout_5'),
+              (1, 3, 'peatlands_tile_1', 'peatlands_spritelayout_41'),
+              (2, 0, 'peatlands_tile_2', 'peatlands_spritelayout_22'),
+              (2, 1, 'peatlands_tile_1', 'peatlands_spritelayout_10'),
+              (2, 2, 'peatlands_tile_2', 'peatlands_spritelayout_4'),
+              (2, 3, 'peatlands_tile_1', 'peatlands_spritelayout_40'),
+              (3, 0, 'peatlands_tile_2', 'peatlands_spritelayout_20'),
+              (3, 1, 'peatlands_tile_2', 'peatlands_spritelayout_8'),
+              (3, 2, 'peatlands_tile_2', 'peatlands_spritelayout_2'),
+              (3, 3, 'peatlands_tile_1', 'peatlands_spritelayout_39'),
+              (4, 0, 'peatlands_tile_2', 'peatlands_spritelayout_19'),
+              (4, 1, 'peatlands_tile_2', 'peatlands_spritelayout_7'),
+              (4, 2, 'peatlands_tile_2', 'peatlands_spritelayout_1'),
     ]
 )
