@@ -121,6 +121,9 @@ paper.cargo.register()
 from cargos import passengers
 passengers.cargo.register()
 
+from cargos import peat
+peat.cargo.register()
+
 from cargos import petrol
 petrol.cargo.register()
 
