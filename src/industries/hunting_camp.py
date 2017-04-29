@@ -19,6 +19,7 @@ industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 industry.add_tile(id='hunting_camp_tile_1',
                   location_checks=TileLocationChecks(disallow_desert=True,
+                                                     disallow_below_snowline=True,
                                                      disallow_coast=True,
                                                      disallow_industry_adjacent=True))
 

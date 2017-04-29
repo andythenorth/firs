@@ -97,6 +97,7 @@ class TileLocationChecks(object):
         self.require_road_adjacent = kwargs.get('require_road_adjacent', False)
         self.require_coast = kwargs.get('require_coast', False)
         self.disallow_above_snowline = kwargs.get('disallow_above_snowline', False)
+        self.disallow_below_snowline = kwargs.get('disallow_below_snowline', False)
         self.disallow_desert = kwargs.get('disallow_desert', False)
         self.disallow_coast = kwargs.get('disallow_coast', False)
 
@@ -136,6 +137,9 @@ class TileLocationChecks(object):
 
         if self.disallow_above_snowline:
             result.appendleft(TileLocationCheckDisallowAboveSnowline())
+
+        if self.disallow_below_snowline:
+            result.appendleft(TileLocationCheckDisallowBelowSnowline())
 
         if self.disallow_desert:
             result.appendleft(TileLocationCheckDisallowDesert())
@@ -260,6 +264,17 @@ class TileLocationCheckDisallowAboveSnowline(TileLocationCheck):
         self.minh = 0
         self.maxh = 'snowline_height'
         self.outrange = 'return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE)'
+        self.macro_name = 'require_height_range'
+
+
+class TileLocationCheckDisallowBelowSnowline(TileLocationCheck):
+    """ Prevent building above snowline """
+    def __init__(self):
+        self.switch_result = None # no default value for this check, it may not be the last check in a chain
+        self.switch_entry_point = None
+        self.minh = 'snowline_height'
+        self.maxh = 255
+        self.outrange = 'return string(STR_ERR_LOCATION_NOT_BELOW_SNOWLINE)'
         self.macro_name = 'require_height_range'
 
 
