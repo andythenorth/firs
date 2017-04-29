@@ -133,8 +133,8 @@ oil_wells.industry.register()
 from industries import orchard_piggery
 orchard_piggery.industry.register()
 
-from industries import peat_bog
-peat_bog.industry.register()
+from industries import peatlands
+peatlands.industry.register()
 
 from industries import petrol_pump
 petrol_pump.industry.register()
