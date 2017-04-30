@@ -91,8 +91,8 @@ hardware_store.industry.register()
 from industries import hotel
 hotel.industry.register()
 
-from industries import hunting_camp
-hunting_camp.industry.register()
+from industries import herding_coop
+herding_coop.industry.register()
 
 from industries import iron_works
 iron_works.industry.register()
