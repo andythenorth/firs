@@ -1,17 +1,16 @@
-from industry import IndustryPrimaryNoSupplies, TileLocationChecks
+from industry import IndustryPrimaryOrganic, TileLocationChecks
 
-industry = IndustryPrimaryNoSupplies(id='hunting_camp',
-                    accept_cargo_types=[],
+industry = IndustryPrimaryOrganic(id='hunting_camp',
                     prod_cargo_types=['FOOD'],
                     prob_in_game='14',
                     prob_random='14',
                     prod_multiplier='[5, 0]',
-                    substitute='5',
                     map_colour='158',
-                    life_type='IND_LIFE_TYPE_EXTRACTIVE',
                     spec_flags='bitmask(IND_FLAG_NO_PRODUCTION_INCREASE)',
+                    # hunting_camp doesn't cluster, by design - no industry location checks needed
                     prospect_chance='0.75',
                     name='string(STR_IND_HUNTING_CAMP)',
+                    extra_text_fund='string(STR_FUND_HUNTING_CAMP)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_HUNTING_CAMP))',
                     fund_cost_multiplier='88')
 
