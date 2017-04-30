@@ -98,7 +98,7 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} of fish
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of farm supplies
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} of fruit
-STR_CARGO_UNIT_VEHICLE_BODIES                                                 :{WEIGHT} of vehicle bodies
+STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} of vehicle bodies
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} of timber
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} of manganese
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} of metal
@@ -225,7 +225,7 @@ STR_IND_GENERAL_STORE                                                           
 STR_IND_GLASS_WORKS                                                             :Glass Works
 STR_IND_HARDWARE_STORE                                                          :Hardware Store
 STR_IND_HOTEL                                                                   :Hotel
-STR_IND_HUNTING_CAMP                                                            :Hunting Camp
+STR_IND_HUNTING_CAMP                                                            :Herding Co-op
 STR_IND_IRON_WORKS                                                              :Iron Works
 STR_IND_JUNKYARD                                                                :Scrap Yard
 STR_IND_LIME_KILN                                                               :Lime Kiln
@@ -263,7 +263,7 @@ STR_IND_SUPPLY_YARD                                                             
 STR_IND_TEXTILE_MILL                                                            :Textile Mill
 STR_IND_TRADING_POST                                                            :Trading Post
 STR_IND_TYRE_PLANT                                                              :Tyre Plant
-STR_IND_ASSEMBLY_PLANT                                                         :Assembly Plant
+STR_IND_ASSEMBLY_PLANT                                                          :Assembly Plant
 STR_IND_VINEYARD                                                                :Vineyard
 
 
@@ -280,14 +280,14 @@ STR_PORT_PRODUCTION_2X                                                          
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} units of cargo within three months.
 STR_GENERIC_NEWLINE                                                             :{}
 
-STR_FUND_BASIC_FARM                                                             :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
-STR_FUND_MIXED_FARM                                                             :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
-STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
 STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
-STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
 STR_FUND_FOREST                                                                 :{}{BLACK}Location: {YELLOW}Cannot be funded in deserts.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Location: {YELLOW}Cannot be funded on snow.
+STR_FUND_HUNTING_CAMP                                                           :{}{BLACK}Location: {YELLOW}Can only be funded on snow.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
 STR_FUND_VINEYARD                                                               :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
 
