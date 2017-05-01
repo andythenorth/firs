@@ -26,7 +26,7 @@ industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['ENSP']
 industry.economy_variations['BASIC_TEMPERATE'].prod_multiplier = '[19, 0]'
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'NICK']
+industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'ZINC']
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP', 'MNSP']
 industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[9, 12]'
 
