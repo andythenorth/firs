@@ -5,7 +5,7 @@ industry = IndustryPrimaryOrganic(id='herding_coop',
                     prob_in_game='14',
                     prob_random='14',
                     prod_multiplier='[5, 0]',
-                    map_colour='86',
+                    map_colour='207',
                     spec_flags='bitmask(IND_FLAG_NO_PRODUCTION_INCREASE)',
                     # herding_coop doesn't cluster, by design - no industry location checks needed
                     prospect_chance='0.75',
@@ -71,21 +71,5 @@ industry.add_industry_layout(
               (0, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_1'),
               (1, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_2'),
               (1, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_2'),
-    ]
-)
-industry.add_industry_layout(
-    id = 'herding_coop_industry_layout_2',
-    layout = [(0, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_2'),
-              (0, 1, 'herding_coop_tile_1', 'herding_coop_spritelayout_2'),
-              (0, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_1'),
-              (1, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_3'),
-    ]
-)
-industry.add_industry_layout(
-    id = 'herding_coop_industry_layout_3',
-    layout = [(0, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_2'),
-              (0, 1, 'herding_coop_tile_1', 'herding_coop_spritelayout_1'),
-              (1, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_2'),
-              (1, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_3'),
     ]
 )

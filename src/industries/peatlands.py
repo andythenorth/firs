@@ -5,7 +5,7 @@ industry = IndustryPrimaryExtractive(id='peatlands',
                     prob_in_game='4',
                     prob_random='7',
                     prod_multiplier='[14, 14]',
-                    map_colour='95',
+                    map_colour='93',
                     # allow longer distance on clustering than usual, and more clusters, as industry is hard to locate
                     location_checks=dict(cluster=[90, 4]),
                     prospect_chance='0.75',
