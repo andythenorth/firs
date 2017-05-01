@@ -6,7 +6,7 @@ economy = Economy(id = "BASIC_ARCTIC",
                   # keep the rest of the cargos alphabetised
                   # bump the min. compatible version if this list changes
                   cargos = ['passengers',
-                            'clay',
+                            'kaolin',
                             'mail',
                             'engineering_supplies',
                             'farm_supplies',
