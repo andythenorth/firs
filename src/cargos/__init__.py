@@ -139,8 +139,10 @@ pipe.cargo.register()
 from cargos import plant_fibres
 plant_fibres.cargo.register()
 
+"""
 from cargos import potash
 potash.cargo.register()
+"""
 
 from cargos import pyrite_ore
 pyrite_ore.cargo.register()

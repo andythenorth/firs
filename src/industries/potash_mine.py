@@ -12,7 +12,7 @@ industry = IndustryPrimaryExtractive(id='potash_mine',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MINE))',
                     fund_cost_multiplier='232')
 
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
+#industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 industry.add_tile(id='potash_mine_tile_1',
                   animation_length=81,

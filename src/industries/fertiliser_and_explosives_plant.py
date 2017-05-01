@@ -16,7 +16,7 @@ industry = IndustrySecondary(id='fertiliser_and_explosives_plant',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].processed_cargos_and_output_ratios = [('SULP', 4), ('POTA', 4)]
+industry.economy_variations['BASIC_ARCTIC'].processed_cargos_and_output_ratios = [('SULP', 4), ('PHOS', 4)]
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['FERT', 'BOOM']
 
 industry.add_tile(id='fertiliser_and_explosives_plant_tile_1',
