@@ -85,7 +85,7 @@ $(NML_FILE): $(SOURCES)
 $(GRF_FILE): $(GRAPHICS_DIR) $(LANG_DIR) $(NML_FILE) custom_tags.txt $(HTML_DOCS)
 	$(NMLC) $(NML_FLAGS) --grf=$(GRF_FILE) $(NML_FILE)
 
-$(HTML_DOCS):
+$(HTML_DOCS): $(SOURCES)
 	$(PYTHON3) src/render_docs.py $(ARGS)
 # Insane trick to check whether both DOT and GVPR are not empty.
 ifeq ($(DOT)$(GVPR),$(GVPR)$(DOT))
