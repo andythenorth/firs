@@ -160,7 +160,7 @@ STR_IND_STOCKYARD                                                               
 STR_IND_SUGAR_REFINERY                                                          :{G=Femenin}Sucreria
 STR_IND_TEXTILE_MILL                                                            :{G=Femenin}Fàbrica tèxtil
 STR_IND_TRADING_POST                                                            :Botiga de queviures
-STR_IND_ASSEMBLY_PLANT                                                         :Fàbrica de vehicles
+STR_IND_ASSEMBLY_PLANT                                                          :Fàbrica de vehicles
 
 
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La producció és proporcional a la població de la localitat.
@@ -172,14 +172,13 @@ STR_PORT_PRODUCTION_2X                                                          
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Producció actual: {YELLOW}Gung ho (quàdruple){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu {SKIP}{SIGNED_WORD} unitats de càrrega en tres mesos
 STR_GENERIC_NEWLINE                                                             :{}
 
-STR_FUND_BASIC_FARM                                                             :{}{BLACK}Ubicació: {YELLOW}No es pot fundar en terreny nevat ni en deserts.
-STR_FUND_MIXED_FARM                                                             :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu ni al desert.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu ni al desert.
-STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Ubicació: {YELLOW}No es pot fundar en terreny nevat ni en deserts.
 STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Ubicació: {YELLOW}No es pot fundar en terreny nevat ni en deserts.
-STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Ubicació: {YELLOW}No es pot fundar en terreny nevat ni en deserts.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Ubicació: {YELLOW}No es pot fundar en terreny nevat ni en deserts.
 STR_FUND_FOREST                                                                 :{}{BLACK}Localització: {YELLOW}No es pot situar al desert.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu ni al desert.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Ubicació: {YELLOW}No es pot fundar en terreny nevat ni en deserts.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Ubicació: {YELLOW}No es pot fundar en terreny nevat ni en deserts.
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponible des de: {YELLOW}{COMMA}

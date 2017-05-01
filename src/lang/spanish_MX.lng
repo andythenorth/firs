@@ -98,7 +98,7 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} de pescado
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros agrícolas
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} de fruta
-STR_CARGO_UNIT_VEHICLE_BODIES                                                 :{WEIGHT} de chasis de vehículos
+STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} de chasis de vehículos
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de madera
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} de manganeso
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de metal
@@ -258,7 +258,7 @@ STR_IND_SUPPLY_YARD                                                             
 STR_IND_TEXTILE_MILL                                                            :{G=f}Maquiladora textil
 STR_IND_TRADING_POST                                                            :{G=m}Establecimiento comercial
 STR_IND_TYRE_PLANT                                                              :{G=f}Fábrica de llantas
-STR_IND_ASSEMBLY_PLANT                                                         :{G=f}Ensambladora
+STR_IND_ASSEMBLY_PLANT                                                          :{G=f}Ensambladora
 STR_IND_VINEYARD                                                                :{G=m}Viñedo
 
 
@@ -272,14 +272,13 @@ STR_PORT_PRODUCTION_2X                                                          
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Producción actual: {YELLOW}Abundante{}{}{BLACK}Se deben entregar {SKIP}{SIGNED_WORD} unidades de cargamento dentro de tres meses para mantener este nivel
 STR_GENERIC_NEWLINE                                                             :{}
 
-STR_FUND_BASIC_FARM                                                             :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
-STR_FUND_MIXED_FARM                                                             :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
-STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
 STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
-STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
 STR_FUND_FOREST                                                                 :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre desierto.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
 STR_FUND_VINEYARD                                                               :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
 

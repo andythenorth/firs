@@ -59,6 +59,7 @@ STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           
 STR_CARGO_NAME_NICKEL                                                           :Nikl
 STR_CARGO_NAME_NITRATES                                                         :Nitrati
 STR_CARGO_NAME_NUTS                                                             :Orasi
+STR_CARGO_NAME_PEAT                                                             :Treset
 STR_CARGO_NAME_PETROL                                                           :Benzin
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosfati
 STR_CARGO_NAME_PIG_IRON                                                         :Sirovo željezo
@@ -99,7 +100,7 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} ribe
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} kutij{P 0 a e e} poljoprivrednih potrepština
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} voća
-STR_CARGO_UNIT_VEHICLE_BODIES                                                 :{WEIGHT} karoserija
+STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} karoserija
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} drva
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} mangana
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metala
@@ -108,6 +109,7 @@ STR_CARGO_UNIT_NICKEL                                                           
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} nitrata
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} vreć{P a e e} oraha
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} kutij{P 0 a e e} proizvodnih potrepština
+STR_CARGO_UNIT_PEAT                                                             :{WEIGHT} treseta
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzina
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} fosfata
 STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} sirovog željeza
@@ -155,6 +157,7 @@ STR_CID_MILK                                                                    
 STR_CID_NICKEL                                                                  :{TINYFONT}NK
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_NUTS                                                                    :{TINYFONT}OR
+STR_CID_PEAT                                                                    :{TINYFONT}TR
 STR_CID_PETROL                                                                  :{TINYFONT}BE
 STR_CID_PIG_IRON                                                                :{TINYFONT}SŽ
 STR_CID_PIPE                                                                    :{TINYFONT}CI
@@ -183,6 +186,7 @@ STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           
 STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS zahtijeva OpenTTD 1.6.0 / trunk r27279 ili višu verziju. {YELLOW}Provjerite FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :mora biti smješteno ispod linije snijega.
+STR_ERR_LOCATION_NOT_BELOW_SNOWLINE                                             :mora biti smješteno iznad linije snijega.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :mora biti smješteno na kopnu.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :ne smije biti smješteno u pustinji.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :ne može biti smješteno na nagibima.
@@ -236,6 +240,7 @@ STR_IND_METAL_WORKSHOP                                                          
 STR_IND_MIXEDFARM                                                               :Miješana farma
 STR_IND_NITRATE_MINE                                                            :Rudnik nitrata
 STR_IND_ORCHARD_PIGGERY                                                         :Voćnjak i svinjac
+STR_IND_PEATLANDS                                                               :Tresetišta
 STR_IND_PETROLPUMP                                                              :Benzinska pumpa
 STR_IND_PHOSPHATE_MINE                                                          :Rudnik fosfata
 STR_IND_PLASTICS_PLANT                                                          :Tvornica plastike
@@ -260,7 +265,7 @@ STR_IND_SUPPLY_YARD                                                             
 STR_IND_TEXTILE_MILL                                                            :Tvornica tekstila
 STR_IND_TRADING_POST                                                            :Trgovačka kuća
 STR_IND_TYRE_PLANT                                                              :Tvornica guma
-STR_IND_ASSEMBLY_PLANT                                                         :Tvornica vozila
+STR_IND_ASSEMBLY_PLANT                                                          :Tvornica vozila
 STR_IND_VINEYARD                                                                :Vinograd
 
 
@@ -277,14 +282,14 @@ STR_PORT_PRODUCTION_2X                                                          
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Masovna{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SIGNED_WORD} jedinica tereta unutar tri mjeseca.
 STR_GENERIC_NEWLINE                                                             :{}
 
-STR_FUND_BASIC_FARM                                                             :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
-STR_FUND_MIXED_FARM                                                             :{}{BLACK}Lokacija: {YELLOW}Ne može se financirati na snijegu ili u pustinji ili na oštrim padinama.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Lokacija: {YELLOW}Ne može se financirati na snijegu ili u pustinji ili na padinama.
-STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
 STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
-STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
 STR_FUND_FOREST                                                                 :{}{BLACK}Lokacija: {YELLOW}Ne može se financirati u pustinji.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Lokacija: {YELLOW}Ne može se financirati na snijegu.
+STR_FUND_HERDING_COOP                                                           :{}{BLACK}Lokacija: {YELLOW}Mora se financirati na snijegu.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Lokacija: {YELLOW}Ne može se financirati na snijegu ili u pustinji ili na oštrim padinama.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
 STR_FUND_VINEYARD                                                               :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
 

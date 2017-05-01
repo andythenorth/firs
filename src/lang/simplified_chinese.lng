@@ -97,7 +97,7 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} 鱼
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} 箱 农用物资
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} 水果
-STR_CARGO_UNIT_VEHICLE_BODIES                                                 :{WEIGHT} 辆车身
+STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} 辆车身
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} 木料
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} 吨锰矿
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} 金属
@@ -258,7 +258,7 @@ STR_IND_SUPPLY_YARD                                                             
 STR_IND_TEXTILE_MILL                                                            :纺织厂
 STR_IND_TRADING_POST                                                            :贸易站
 STR_IND_TYRE_PLANT                                                              :轮胎工厂
-STR_IND_ASSEMBLY_PLANT                                                         :车辆厂
+STR_IND_ASSEMBLY_PLANT                                                          :车辆厂
 STR_IND_VINEYARD                                                                :葡萄园
 
 
@@ -275,14 +275,13 @@ STR_PORT_PRODUCTION_2X                                                          
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}当前产率: {YELLOW}工合{}{}{BLACK}为保持此产率，需三个月内交付{SKIP}{SIGNED_WORD} 单位货物
 STR_GENERIC_NEWLINE                                                             :{}
 
-STR_FUND_BASIC_FARM                                                             :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。
-STR_FUND_MIXED_FARM                                                             :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。
-STR_FUND_DAIRY_FARM                                                             :{}{BLACK}位置: {YELLOW}不能修建于雪地或者沙漠。
 STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。
-STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}位置: {YELLOW}不能修建于雪地或者沙漠。
 STR_FUND_FOREST                                                                 :{}{BLACK}位置: {YELLOW}不得在沙漠修建。
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}位置: {YELLOW}不得在雪地修建。
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。
 STR_FUND_VINEYARD                                                               :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。.
 

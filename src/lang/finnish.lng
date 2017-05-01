@@ -88,7 +88,7 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} kalaa
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} laatikko{P 0 "" a} maataloustarvikkeita
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} hedelmiä
-STR_CARGO_UNIT_VEHICLE_BODIES                                                 :{WEIGHT} ajoneuvojen koreja
+STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} ajoneuvojen koreja
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} puutavaraa
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} mangaania
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metallia
@@ -228,7 +228,7 @@ STR_IND_SUPPLY_YARD                                                             
 STR_IND_TEXTILE_MILL                                                            :Tekstiilitehdas
 STR_IND_TRADING_POST                                                            :Kauppa-asema
 STR_IND_TYRE_PLANT                                                              :Rengastehdas
-STR_IND_ASSEMBLY_PLANT                                                         :Ajoneuvotehdas
+STR_IND_ASSEMBLY_PLANT                                                          :Ajoneuvotehdas
 STR_IND_VINEYARD                                                                :Viinitarha
 
 
@@ -241,14 +241,13 @@ STR_PORT_PRODUCTION_2X                                                          
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Nykyinen tuotanto: {YELLOW}Gung ho (nelinkertainen){}{}{BLACK}Kuljeta {SKIP}{SIGNED_WORD} yksikköä tavaroita kolmen kuukauden sisällä pitääksesi tämän tason
 STR_GENERIC_NEWLINE                                                             :{}
 
-STR_FUND_BASIC_FARM                                                             :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
-STR_FUND_MIXED_FARM                                                             :{}{BLACK}Sijainti: {YELLOW}Ei voida sijoittaa lumeen, aavikoille eikä jyrkkiin rinteisiin.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Sijainti: {YELLOW}Ei voida sijoittaa lumeen, aavikoille eikä rinteisiin.
-STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
 STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
-STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
 STR_FUND_FOREST                                                                 :{}{BLACK}Sijainti: {YELLOW}Ei voida sijoittaa aavikoille.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Sijainti: {YELLOW}Ei voida sijoittaa lumeen.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Sijainti: {YELLOW}Ei voida sijoittaa lumeen, aavikoille eikä jyrkkiin rinteisiin.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
 STR_FUND_VINEYARD                                                               :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
 
