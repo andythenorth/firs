@@ -81,6 +81,7 @@ STR_CARGO_UNIT_COFFEE                                                           
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} Koffer
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} Speiseueleg
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} Këscht{P 0 "" en} Ersatzdeeler
+STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} Dünger
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} Balle Planzefaser
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} Fësch
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} Këscht{P 0 "" en} Akerbaumëttel
@@ -97,6 +98,7 @@ STR_CARGO_UNIT_PHOSPHATE                                                        
 STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} réit Eisen
 STR_CARGO_UNIT_PIPE                                                             :{WEIGHT} Faser
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} Pyritäerz
+STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} Ätzkalk
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} Recyclingmaterial
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} Sand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} Schrott
@@ -134,6 +136,7 @@ STR_CID_MILK                                                                    
 STR_CID_NICKEL                                                                  :{TINYFONT}NK
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_NUTS                                                                    :{TINYFONT}NE
+STR_CID_PEAT                                                                    :{TINYFONT}TO
 STR_CID_PETROL                                                                  :{TINYFONT}PT
 STR_CID_PIG_IRON                                                                :{TINYFONT}RE
 STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
@@ -160,6 +163,7 @@ STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           
 STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS braucht OpenTTD 1.6.0 / trunk r27279 oder méi héich. {YELLOW}Lies de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :muss ënnert der Schnéilinn gebaut ginn.
+STR_ERR_LOCATION_NOT_BELOW_SNOWLINE                                             :muss iwwert der Schnéilinn gebaut ginn.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :dierf net op Waasser gebaut ginn.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :dierf net d'Wüst gesat ginn.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kann net op schiefen Häng gebaut ginn.
@@ -183,17 +187,20 @@ STR_IND_COKE_OVEN                                                               
 STR_IND_COPPER_REFINERY                                                         :Kofferraffinerie
 STR_IND_DAIRY                                                                   :Molkerei
 STR_IND_DREDGING_SITE                                                           :Baggersite
+STR_IND_ELECTRIC_ARC_FURNACE                                                    :Elektrouewen
 STR_IND_FISHING_GROUND                                                          :Fëschgrënn
 STR_IND_FISHING_HARBOUR                                                         :Fëscherhafen
 STR_IND_FISHING_VILLAGE                                                         :Fëscherduerf
 STR_IND_FLOUR_MILL                                                              :Mielmillen
 STR_IND_FOOD_MARKET                                                             :Epicerie
 STR_IND_FOOD_PROCESSOR                                                          :Liewensmëttelfabrik
+STR_IND_FOUNDRY                                                                 :Schmelz
 STR_IND_FURNITURE_FACTORY                                                       :Miwwelfabrik
 STR_IND_GENERAL_STORE                                                           :Buttek
 STR_IND_GLASS_WORKS                                                             :Glasmécherbetrib
 STR_IND_HARDWARE_STORE                                                          :Baumaart
 STR_IND_HOTEL                                                                   :Hotel
+STR_IND_HERDING_COOP                                                            :Herde Co-Op
 STR_IND_IRON_WORKS                                                              :Eisewierk
 STR_IND_JUNKYARD                                                                :Schrottplaz
 STR_IND_LIME_KILN                                                               :Kallekbrennerei
