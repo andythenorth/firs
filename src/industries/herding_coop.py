@@ -100,5 +100,8 @@ industry.add_industry_layout(
               (1, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_brown_hut'),
               (1, 1, 'herding_coop_tile_1', 'herding_coop_spritelayout_two_brown_huts'),
               (1, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_bare_ground'),
+              (2, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_brown_hut'),
+              (2, 1, 'herding_coop_tile_1', 'herding_coop_spritelayout_two_brown_huts'),
+              (2, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_paddock_1'),
     ]
 )
