@@ -32,142 +32,113 @@ spriteset_ground_overlay = industry.add_spriteset(
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    sprites = [(10, 10, 64, 62, -31, -31)],
+    sprites = [(10, 10, 64, 64, -31, -33)],
 )
 spriteset_2 = industry.add_spriteset(
-    sprites = [(80, 10, 64, 62, -31, -31)],
+    sprites = [(80, 10, 64, 64, -31, -33)],
 )
 spriteset_3 = industry.add_spriteset(
-    sprites = [(150, 10, 64, 55, -31, -24)],
+    sprites = [(150, 10, 64, 64, -31, -33)],
 )
 spriteset_4 = industry.add_spriteset(
-    sprites = [(220, 10, 64, 55, -31, -24)],
+    sprites = [(220, 10, 64, 64, -31, -33)],
 )
 spriteset_5 = industry.add_spriteset(
-    sprites = [(290, 10, 64, 55, -31, -24)],
+    sprites = [(290, 10, 64, 64, -31, -33)],
 )
 spriteset_6 = industry.add_spriteset(
-    sprites = [(360, 10, 64, 87, -31, -56)],
+    sprites = [(10, 84, 64, 120, -31, -89)],
 )
 spriteset_7 = industry.add_spriteset(
-    sprites = [(430, 10, 64, 87, -31, -56)],
+    sprites = [(80, 84, 64, 120, -31, -89)],
 )
 spriteset_8 = industry.add_spriteset(
-    sprites = [(500, 10, 64, 87, -31, -56)],
+    sprites = [(150, 84, 64, 120, -31, -89)],
 )
 spriteset_9 = industry.add_spriteset(
-    sprites = [(570, 10, 64, 55, -31, -24)],
+    sprites = [(220, 84, 64, 120, -31, -89)],
+)
+spriteset_10 = industry.add_spriteset(
+    sprites = [(290, 84, 64, 120, -31, -89)],
 )
 
 industry.add_spritelayout(
-    id = 'paper_mill_spritelayout_1',
+    id = 'paper_mill_spritelayout_office',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_1],
-    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'paper_mill_spritelayout_2',
+    id = 'paper_mill_spritelayout_paper_store_empty',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_2],
-    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'paper_mill_spritelayout_3',
+    id = 'paper_mill_spritelayout_paper_store_full',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_3],
-    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'paper_mill_spritelayout_4',
+    id = 'paper_mill_spritelayout_wood_store_empty',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_4],
-    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'paper_mill_spritelayout_5',
+    id = 'paper_mill_spritelayout_wood_store_full',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_5],
-    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'paper_mill_spritelayout_6',
+    id = 'paper_mill_spritelayout_tall_building_1',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_6],
-    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'paper_mill_spritelayout_7',
+    id = 'paper_mill_spritelayout_tall_building_2',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_7],
-    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'paper_mill_spritelayout_8',
+    id = 'paper_mill_spritelayout_pulp_processor',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_8],
-    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'paper_mill_spritelayout_9',
+    id = 'paper_mill_spritelayout_boilerhouse',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_9],
-    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'paper_mill_spritelayout_10',
+    id = 'paper_mill_spritelayout_warehouse',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [],
-    fences = ['nw','ne','se','sw']
+    building_sprites = [spriteset_10],
 )
 
 industry.add_industry_layout(
     id = 'paper_mill_industry_layout_1',
-    layout = [(0, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_2'),
-              (0, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_1'),
-              (0, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_10'),
-              (1, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_2'),
-              (1, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_1'),
-              (1, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_10'),
-              (2, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_10'),
-              (2, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_7'),
-              (2, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_9'),
-              (3, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_8'),
-              (3, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_6'),
-              (3, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_10'),
-              (4, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_5'),
-              (4, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_4'),
-              (4, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_3')
-    ]
-)
-industry.add_industry_layout(
-    id = 'paper_mill_industry_layout_2',
-    layout = [(0, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_2'),
-              (0, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_1'),
-              (0, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_10'),
-              (1, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_2'),
-              (1, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_1'),
-              (1, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_10'),
-              (2, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_10'),
-              (2, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_7'),
-              (2, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_9'),
-              (3, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_8'),
-              (3, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_6'),
-              (3, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_10'),
-              (4, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_5'),
-              (4, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_4'),
-              (4, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_3'),
-              (5, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_5'),
-              (5, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_4'),
-              (5, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_3')
+    layout = [(0, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_tall_building_2'),
+              (0, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_pulp_processor'),
+              (0, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_paper_store_full'),
+              (1, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_tall_building_1'),
+              (1, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_office'),
+              (1, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_paper_store_empty'),
+              (2, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_office'),
+              (2, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_paper_store_full'),
+              (2, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_office'),
+              (3, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_boilerhouse'),
+              (3, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_full'),
+              (3, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_full'),
+              (4, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_office'),
+              (4, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_full'),
+              (4, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_empty')
     ]
 )
