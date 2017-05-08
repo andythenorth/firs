@@ -49,6 +49,7 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :农用物资
 STR_CARGO_NAME_FERTILISER                                                       :化肥
 STR_CARGO_NAME_FRUITS                                                           :水果
+STR_CARGO_NAME_KAOLIN                                                           :高岭土
 STR_CARGO_NAME_LUMBER                                                           :木料
 STR_CARGO_NAME_METAL                                                            :金属
 STR_CARGO_NAME_MILK                                                             :牛奶
@@ -57,6 +58,7 @@ STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           
 STR_CARGO_NAME_NICKEL                                                           :镍
 STR_CARGO_NAME_NITRATES                                                         :硝酸盐
 STR_CARGO_NAME_NUTS                                                             :坚果
+STR_CARGO_NAME_PEAT                                                             :泥煤
 STR_CARGO_NAME_PETROL                                                           :石油燃料
 STR_CARGO_NAME_PHOSPHATE                                                        :磷酸矿
 STR_CARGO_NAME_PIG_IRON                                                         :生铁
@@ -77,6 +79,7 @@ STR_CARGO_NAME_VEHICLE_BODIES                                                   
 STR_CARGO_NAME_VEHICLE_PARTS                                                    :车辆零件
 STR_CARGO_NAME_VEHICLES                                                         :车辆
 STR_CARGO_NAME_WOOL                                                             :羊毛
+STR_CARGO_NAME_ZINC                                                             :锌
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} 酒
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} 铝土
@@ -97,6 +100,7 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} 鱼
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} 箱 农用物资
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} 水果
+STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} 吨高岭土
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} 木料
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} 吨锰矿
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} 金属
@@ -105,6 +109,7 @@ STR_CARGO_UNIT_NICKEL                                                           
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} 吨硝酸盐
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} 麻袋坚果
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} 箱 工业物资
+STR_CARGO_UNIT_PEAT                                                             :{WEIGHT} 吨泥煤
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} 升石油燃料
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} 吨磷酸盐
 STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} 吨 生铁
@@ -125,6 +130,7 @@ STR_CARGO_UNIT_VEHICLE_BODIES                                                   
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} 箱车辆零件
 STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} 车辆
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} 包 羊毛
+STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} 吨锌
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}酒
 STR_CID_BAUXITE                                                                 :{TINYFONT}铝
@@ -144,6 +150,7 @@ STR_CID_FARM_SUPPLIES                                                           
 STR_CID_FERTILISER                                                              :{TINYFONT}肥
 STR_CID_FIBRES                                                                  :{TINYFONT}纤
 STR_CID_FISH                                                                    :{TINYFONT}鱼
+STR_CID_KAOLIN                                                                  :{TINYFONT}岭
 STR_CID_LUMBER                                                                  :{TINYFONT}料
 STR_CID_MANGANESE                                                               :{TINYFONT}锰
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}工
@@ -152,6 +159,7 @@ STR_CID_MILK                                                                    
 STR_CID_NICKEL                                                                  :{TINYFONT}镍
 STR_CID_NITRATES                                                                :{TINYFONT}硝
 STR_CID_NUTS                                                                    :{TINYFONT}坚
+STR_CID_PEAT                                                                    :{TINYFONT}泥
 STR_CID_PETROL                                                                  :{TINYFONT}汽
 STR_CID_PIG_IRON                                                                :{TINYFONT}生
 STR_CID_PIPE                                                                    :{TINYFONT}轧
@@ -172,6 +180,7 @@ STR_CID_VEHICLE_BODIES                                                          
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}零
 STR_CID_VEHICLES                                                                :{TINYFONT}车
 STR_CID_WOOL                                                                    :{TINYFONT}毛
+STR_CID_ZINC                                                                    :{TINYFONT}锌
 
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS不兼容于Toyland climate
@@ -182,6 +191,7 @@ STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           
 STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS要求OpenTTD版本是 1.6.0 / trunk r27279或者更高. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :须置于雪线以下
+STR_ERR_LOCATION_NOT_BELOW_SNOWLINE                                             :必须置于雪线以上
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :须置于干燥土地
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :不得置于沙漠
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :不能置于陡坡
@@ -235,6 +245,7 @@ STR_IND_METAL_WORKSHOP                                                          
 STR_IND_MIXEDFARM                                                               :综合农场
 STR_IND_NITRATE_MINE                                                            :硝酸盐矿山
 STR_IND_ORCHARD_PIGGERY                                                         :生态农场
+STR_IND_PEATLANDS                                                               :泥煤地
 STR_IND_PETROLPUMP                                                              :加油站
 STR_IND_PHOSPHATE_MINE                                                          :磷矿山
 STR_IND_PLASTICS_PLANT                                                          :塑料厂
@@ -281,6 +292,7 @@ STR_FUND_COFFEE_ESTATE                                                          
 STR_FUND_DAIRY_FARM                                                             :{}{BLACK}位置: {YELLOW}不能修建于雪地或者沙漠。
 STR_FUND_FOREST                                                                 :{}{BLACK}位置: {YELLOW}不得在沙漠修建。
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}位置: {YELLOW}不得在雪地修建。
+STR_FUND_HERDING_COOP                                                           :{}{BLACK}位置: {YELLOW}只能修建于雪地
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。
