@@ -8,6 +8,7 @@ industry = IndustrySecondary(id='sawmill',
                     prod_multiplier='[0, 0]',
                     map_colour='194',
                     name='TTD_STR_INDUSTRY_NAME_SAWMILL',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
                     fund_cost_multiplier='97')
 
 industry.economy_variations['FIRS'].enabled = True
