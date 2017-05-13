@@ -43,9 +43,16 @@
 
 <metal:check_industry_max_distance metal:define-macro="check_industry_max_distance">
     <!--! Check for a minimum distance to another industry type -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, industry_distance(${location_check.industry_type_numeric_id})) {
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_industry_max_distance_2, industry_distance(${location_check.industry_type_numeric_id})) {
         0 .. ${location_check.distance}: ${location_check.switch_result};
         return CB_RESULT_LOCATION_DISALLOW;
+    }
+    <!--! Don't check distance if there are none of the target industries on the map,
+          as that causes pathological cases on small maps, or low industry counts.
+          This makes the max distance check ineffective in some cases, but the alternative is red messages to players at game start -->
+    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, industry_count(${location_check.industry_type_numeric_id})) {
+        0: ${location_check.switch_result};
+        ${industry.id}_check_industry_max_distance_2;
     }
 </metal:check_industry_max_distance>
 
