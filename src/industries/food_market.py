@@ -12,7 +12,7 @@ industry = IndustryTertiary(id='food_market',
                     location_checks=dict(same_type_distance=16),
                     prospect_chance='0.75',
                     name='string(STR_IND_FOOD_MARKET)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_TOWN))',
+                    nearby_station_name='string(STR_STATION_TOWN)',
                     fund_cost_multiplier='15' )
 
 industry.economy_variations['FIRS'].enabled = True

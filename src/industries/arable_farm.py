@@ -11,7 +11,7 @@ industry = IndustryPrimaryOrganic(id='arable_farm',
                     prospect_chance='0.75',
                     name='string(STR_IND_ARABLE_FARM)',
                     extra_text_fund='string(STR_FUND_ARABLE_FARM)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_FARM))',
+                    nearby_station_name='string(STR_STATION_FARM)',
                     fund_cost_multiplier='55',
                     graphics_change_dates = [1928] )
 

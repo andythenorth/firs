@@ -9,7 +9,7 @@ industry = IndustryPrimaryExtractive(id='copper_mine',
                     location_checks=dict(cluster=[60, 3]),
                     prospect_chance='0.75',
                     name='TTD_STR_INDUSTRY_NAME_COPPER_ORE_MINE',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MINE))',
+                    nearby_station_name='string(STR_STATION_MINE)',
                     fund_cost_multiplier='238',
                     intro_year=1800 )
 

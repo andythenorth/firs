@@ -9,7 +9,7 @@ industry = IndustrySecondary(id='lime_kiln',
                     prod_multiplier='[0, 0]',
                     map_colour='209',
                     name='string(STR_IND_LIME_KILN)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PIT))',
+                    nearby_station_name='string(STR_STATION_PIT)',
                     fund_cost_multiplier='45',
                     graphics_change_dates = [1952, 1978] )
 

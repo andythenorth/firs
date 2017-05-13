@@ -11,7 +11,7 @@ industry = IndustrySecondary(id='fishing_harbour',
                     spec_flags='bitmask(IND_FLAG_BUILT_ON_WATER)',
                     location_checks=dict(industry_max_distance=['fishing_grounds', 72]),
                     name='string(STR_IND_FISHING_HARBOUR)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_FISHMARKET))',
+                    nearby_station_name='string(STR_STATION_FISHMARKET)',
                     fund_cost_multiplier='150',
                     override_default_construction_states=True)
 

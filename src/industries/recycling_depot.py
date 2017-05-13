@@ -12,7 +12,7 @@ industry = IndustryPrimaryTownProducer(id='recycling_depot',
                                          town_industry_count=['recycling_depot', 0, 0],
                                          prevent_player_founding=True),
                     name='string(STR_IND_RECYCLING_DEPOT)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
+                    nearby_station_name='string(STR_STATION_INDUSTRY_ESTATE)',
                     fund_cost_multiplier='118',
                     intro_year=1978)
 

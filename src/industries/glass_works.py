@@ -10,7 +10,7 @@ industry = IndustrySecondary(id='glass_works',
                     map_colour='151',
                     spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
                     name='string(STR_IND_GLASS_WORKS)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
+                    nearby_station_name='string(STR_STATION_INDUSTRY_ESTATE)',
                     fund_cost_multiplier='95')
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

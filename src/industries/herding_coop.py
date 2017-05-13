@@ -11,7 +11,7 @@ industry = IndustryPrimaryOrganic(id='herding_coop',
                     prospect_chance='0.75',
                     name='string(STR_IND_HERDING_COOP)',
                     extra_text_fund='string(STR_FUND_HERDING_COOP)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_HERDING_COOP))',
+                    nearby_station_name='string(STR_STATION_HERDING_COOP)',
                     fund_cost_multiplier='88')
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

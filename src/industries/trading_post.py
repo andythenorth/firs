@@ -11,7 +11,7 @@ industry = IndustryPrimaryPort(id='trading_post',
                     location_checks=dict(same_type_distance=16),
                     prospect_chance='0.75',
                     name='string(STR_IND_TRADING_POST)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_HARBOUR))',
+                    nearby_station_name='string(STR_STATION_INDUSTRY_HARBOUR)',
                     fund_cost_multiplier='152',
                     override_default_construction_states=True)
 

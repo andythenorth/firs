@@ -8,7 +8,7 @@ industry = IndustrySecondary(id='food_processor',
                     prod_multiplier='[0, 0]',
                     map_colour='195',
                     name='TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_FOOD_PROCESSOR))',
+                    nearby_station_name='string(STR_IND_FOOD_PROCESSOR)',
                     fund_cost_multiplier='65')
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True

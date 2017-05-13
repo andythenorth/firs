@@ -12,7 +12,7 @@ industry = IndustryPrimaryOrganic(id='forest',
                     fund_cost_multiplier='95',
                     prod_multiplier='[19]',
                     substitute='INDUSTRYTYPE_FOREST',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_FOREST))',
+                    nearby_station_name='string(STR_STATION_FOREST)',
                     graphics_change_dates = [1935, 1990],
                     override_default_construction_states=True)
 

@@ -9,7 +9,7 @@ industry = IndustrySecondary(id='lumber_yard',
                     prod_multiplier='[0, 0]',
                     map_colour='42',
                     name='string(STR_IND_LUMBER_YARD)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
+                    nearby_station_name='string(STR_STATION_INDUSTRY_ESTATE)',
                     fund_cost_multiplier='35')
 
 industry.economy_variations['FIRS'].enabled = True

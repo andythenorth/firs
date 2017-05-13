@@ -9,7 +9,7 @@ industry = IndustryPrimaryExtractive(id='junk_yard',
                     location_checks=dict(town_distance=(0, 144)),
                     prospect_chance='0.75',
                     name='string(STR_IND_JUNKYARD)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
+                    nearby_station_name='string(STR_STATION_INDUSTRY_ESTATE)',
                     fund_cost_multiplier='101',
                     graphics_change_dates = [1949, 1960, 1980, 2000],
                     intro_year=1850 )

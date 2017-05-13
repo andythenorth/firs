@@ -10,7 +10,7 @@ industry = IndustryPrimaryExtractive(id='dredging_site',
                     location_checks=dict(coast_distance=True),
                     prospect_chance='0.75',
                     name='string(STR_IND_DREDGING_SITE)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_WATER))',
+                    nearby_station_name='string(STR_STATION_WATER)',
                     fund_cost_multiplier='180',
                     graphics_change_dates = [1906, 1945])
 

@@ -7,7 +7,7 @@ industry = IndustryPrimaryOrganic(id='fruit_plantation',
                     prospect_chance='0.75',
                     name='TTD_STR_INDUSTRY_NAME_FRUIT_PLANTATION',
                     extra_text_fund='string(STR_FUND_FRUIT_PLANTATION)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PLANTATION))',
+                    nearby_station_name='string(STR_STATION_PLANTATION)',
                     # fruit plantation doesn't cluster, by design - no industry location checks needed
                     prod_cargo_types=['FRUT'],
                     fund_cost_multiplier='54',

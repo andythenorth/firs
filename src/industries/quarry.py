@@ -10,7 +10,7 @@ industry = IndustryPrimaryExtractive(id='quarry',
                     location_checks=dict(cluster=[90, 4]),
                     prospect_chance='0.75',
                     name='string(STR_IND_QUARRY)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_QUARRY))',
+                    nearby_station_name='string(STR_IND_QUARRY)',
                     fund_cost_multiplier='210')
 
 industry.economy_variations['FIRS'].enabled = True

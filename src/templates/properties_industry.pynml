@@ -37,10 +37,10 @@
     </tal:industry_on_or_off>
 </tal:build_economies>
 
-if (nearby_station_name==1) {
+if (nearby_station_name==0) {
     item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
         property {
-           ${industry.get_property_declaration('nearby_station_name')}
+           ${industry.get_nearby_station_name_declaration()}
         }
     }
 }

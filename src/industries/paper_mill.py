@@ -10,7 +10,7 @@ industry = IndustrySecondary(id='paper_mill',
                     substitute='14',
                     map_colour='163',
                     fund_cost_multiplier='120',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
+                    nearby_station_name='string(STR_STATION_MILL)',
                     name='TTD_STR_INDUSTRY_NAME_PAPER_MILL',
                     override='14')
 

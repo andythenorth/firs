@@ -9,7 +9,7 @@ industry = IndustryPrimaryExtractive(id='pyrite_mine',
                     location_checks=dict(cluster=[70, 3]),
                     prospect_chance='0.75',
                     name='string(STR_IND_PYRITE_MINE)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MINE))',
+                    nearby_station_name='string(STR_STATION_MINE)',
                     fund_cost_multiplier='252')
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

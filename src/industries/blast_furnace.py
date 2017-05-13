@@ -10,7 +10,7 @@ industry = IndustrySecondary(id='blast_furnace',
                     map_colour='9',
                     spec_flags='bitmask()',
                     name='TTD_STR_INDUSTRY_NAME_STEEL_MILL', # default to steel mill
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_POWERHUNGRY))',
+                    nearby_station_name='string(STR_STATION_POWERHUNGRY)',
                     fund_cost_multiplier='190',
                     intro_year=1850)
 

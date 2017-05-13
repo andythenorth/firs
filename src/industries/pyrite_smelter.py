@@ -9,7 +9,7 @@ industry = IndustrySecondary(id='pyrite_smelter',
                     map_colour='20',
                     spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
                     name='string(STR_IND_PYRITE_SMELTER)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
+                    nearby_station_name='string(STR_STATION_MILL)',
                     fund_cost_multiplier='120')
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

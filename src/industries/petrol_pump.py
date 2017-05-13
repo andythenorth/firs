@@ -11,7 +11,7 @@ industry = IndustryTertiary(id='petrol_pump',
                     location_checks=dict(same_type_distance=16),
                     prospect_chance='0.75',
                     name='string(STR_IND_PETROLPUMP)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_TOWN_ALT))',
+                    nearby_station_name='string(STR_STATION_TOWN_ALT)',
                     fund_cost_multiplier='8',
                     intro_year=1900 )
 

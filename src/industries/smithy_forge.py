@@ -9,7 +9,7 @@ industry = IndustrySecondary(id='smithy_forge',
                     map_colour='133',
                     spec_flags='bitmask(IND_FLAG_ONLY_IN_TOWNS)',
                     name='string(STR_IND_SMITHY_FORGE)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
+                    nearby_station_name='string(STR_STATION_INDUSTRY_ESTATE)',
                     fund_cost_multiplier='63',
                     expiry_year=1948 )
 

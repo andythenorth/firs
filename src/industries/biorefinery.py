@@ -9,7 +9,7 @@ industry = IndustrySecondary(id='biorefinery',
                     map_colour='186',
                     spec_flags='bitmask(IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE)',
                     name='string(STR_IND_BIOREFINERY)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_REFINERY))',
+                    nearby_station_name='string(STR_STATION_REFINERY)',
                     fund_cost_multiplier='170',
                     intro_year=2001 )
 

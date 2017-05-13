@@ -10,7 +10,7 @@ industry = IndustrySecondary(id='stockyard',
                     map_colour='176',
                     spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
                     name='string(STR_IND_STOCKYARD)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_ANIMALS))',
+                    nearby_station_name='string(STR_STATION_ANIMALS)',
                     fund_cost_multiplier='115')
 
 industry.economy_variations['FIRS'].enabled = True

@@ -9,7 +9,7 @@ industry = IndustryPrimaryExtractive(id='oil_wells',
                     prod_cargo_types=['OIL_'],
                     fund_cost_multiplier='230',
                     prod_multiplier='[28]',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_WELLS))',
+                    nearby_station_name='string(STR_STATION_WELLS)',
                     intro_year=1830)
 
 industry.economy_variations['FIRS'].enabled = True

@@ -10,7 +10,7 @@ industry = IndustrySecondary(id='oil_refinery',
                     spec_flags='bitmask(IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE)',
                     fund_cost_multiplier='200',
                     name='TTD_STR_INDUSTRY_NAME_OIL_REFINERY',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_REFINERY))',
+                    nearby_station_name='string(STR_STATION_REFINERY)',
                     intro_year=1830)
 
 industry.economy_variations['FIRS'].enabled = True

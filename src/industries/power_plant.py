@@ -10,7 +10,7 @@ industry = IndustryTertiary(id='power_plant',
                     life_type='IND_LIFE_TYPE_BLACK_HOLE',
                     prospect_chance='0.75',
                     name='string(STR_IND_POWER_PLANT)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_TOWN))',
+                    nearby_station_name='string(STR_STATION_POWERHUNGRY)',
                     fund_cost_multiplier='15',
                     intro_year=1900)
 

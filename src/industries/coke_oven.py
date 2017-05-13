@@ -8,7 +8,7 @@ industry = IndustrySecondary(id='coke_oven',
                     prod_multiplier='[0, 0]',
                     map_colour='163',
                     name='string(STR_IND_COKE_OVEN)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PIT))',
+                    nearby_station_name='string(STR_STATION_PIT)',
                     fund_cost_multiplier='120')
 
 industry.economy_variations['STEELTOWN'].enabled = True

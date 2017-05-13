@@ -9,7 +9,7 @@ industry = IndustryPrimaryOrganic(id='orchard_piggery',
                     extra_text_fund='string(STR_FUND_ORCHARD_PIGGERY)',
                     location_checks=dict(cluster=[72, 4]),
                     prod_cargo_types=['FRUT','LVST'],
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_ANIMALS))',
+                    nearby_station_name='string(STR_STATION_ANIMALS)',
                     fund_cost_multiplier='54',
                     prod_multiplier='[9, 8]',
                     override_default_construction_states=True)

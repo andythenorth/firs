@@ -10,7 +10,7 @@ industry = IndustryPrimaryExtractive(id='phosphate_mine',
                     location_checks=dict(cluster=[90, 4]),
                     prospect_chance='0.75',
                     name='string(STR_IND_PHOSPHATE_MINE)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PIT))',
+                    nearby_station_name='string(STR_STATION_PIT)',
                     fund_cost_multiplier='200')
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True

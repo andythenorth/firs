@@ -928,6 +928,9 @@ class Industry(object):
         else:
             return property_name + ': ' + value + ';'
 
+    def get_nearby_station_name_declaration(self):
+        return 'nearby_station_name: string(STR_STATION, string(STR_TOWN),' + self.get_property('nearby_station_name', None) + ');'
+
     def get_accept_cargo_types_declaration(self, economy):
         # special handling to reformat python list as nml property declaration
         result = ','.join(['cargotype("' + label + '")' for label in self.get_accept_cargo_types(economy)])
