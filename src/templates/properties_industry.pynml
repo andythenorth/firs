@@ -18,7 +18,6 @@
                     conflicting_ind_types: []; // set this prop empty, FIRS has it's own better checks for this
                     <!--! following props may optionally vary per economy, or use industry default -->
                     ${industry.get_property_declaration('name', economy)}
-                    ${industry.get_property_declaration('nearby_station_name', economy)}
                     ${industry.get_property_declaration('prod_multiplier', economy)}
                     ${industry.get_property_declaration('input_multiplier_1', economy)}
                     ${industry.get_property_declaration('input_multiplier_2', economy)}
@@ -37,3 +36,11 @@
         }
     </tal:industry_on_or_off>
 </tal:build_economies>
+
+if (nearby_station_name==1) {
+    item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+        property {
+           ${industry.get_property_declaration('nearby_station_name')}
+        }
+    }
+}
