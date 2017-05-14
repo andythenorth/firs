@@ -9,7 +9,7 @@ industry = IndustrySecondary(id='fertiliser_and_explosives_plant',
                     prod_multiplier='[0, 0]',
                     map_colour='174',
                     name='string(STR_IND_FERTILISER_AND_EXPLOSIVES_PLANT)',
-                    nearby_station_name='string(STR_STATION_INDUSTRY_ESTATE)',
+                    nearby_station_name='string(STR_STATION_INDUSTRY_ESTATE_1)',
                     fund_cost_multiplier='170',
                     intro_year=1890,
                     graphics_change_dates=[1952])

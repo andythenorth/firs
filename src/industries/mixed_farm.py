@@ -11,7 +11,7 @@ industry = IndustryPrimaryOrganic(id='mixed_farm',
                     prospect_chance='0.75',
                     name='string(STR_IND_MIXEDFARM)',
                     extra_text_fund='string(STR_FUND_MIXED_FARM)',
-                    nearby_station_name='string(STR_STATION_FARM)',
+                    nearby_station_name='string(STR_STATION_FARM_1)',
                     fund_cost_multiplier='49' )
 
 industry.economy_variations['FIRS'].enabled = True

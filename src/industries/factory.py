@@ -9,7 +9,7 @@ industry = IndustrySecondary(id='factory',
                     map_colour='186',
                     prospect_chance='0.75',
                     name='string(STR_IND_FACTORY)',
-                    nearby_station_name='string(STR_STATION_INDUSTRY_ESTATE)',
+                    nearby_station_name='string(STR_STATION_INDUSTRY_ESTATE_1)',
                     fund_cost_multiplier='95')
 
 industry.add_tile(id='factory_tile_1',

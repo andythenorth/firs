@@ -9,7 +9,7 @@ industry = IndustrySecondary(id='slag_grinding_plant',
                     map_colour='194',
                     spec_flags='bitmask(IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE)',
                     name='string(STR_IND_SLAG_GRINDING_PLANT)',
-                    nearby_station_name='string(STR_STATION_REFINERY)',
+                    nearby_station_name='string(STR_STATION_SILO)',
                     fund_cost_multiplier='100 ')
 
 industry.economy_variations['STEELTOWN'].enabled = True

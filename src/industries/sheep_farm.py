@@ -9,7 +9,7 @@ industry = IndustryPrimaryOrganic(id='sheep_farm',
                     location_checks=dict(cluster=[72, 4]),
                     prospect_chance='0.75',
                     name='string(STR_IND_SHEEPFARM)',
-                    nearby_station_name='string(STR_STATION_FARM)',
+                    nearby_station_name='string(STR_STATION_FARM_1)',
                     fund_cost_multiplier='45' )
 
 industry.economy_variations['FIRS'].enabled = True

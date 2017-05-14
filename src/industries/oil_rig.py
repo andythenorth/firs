@@ -11,7 +11,7 @@ industry = IndustryPrimaryExtractive(id='oil_rig',
                     location_checks=dict(coast_distance=True),
                     prospect_chance='0.75',
                     name='TTD_STR_INDUSTRY_NAME_OIL_RIG',
-                    nearby_station_name='string(STR_STATION_WATER)',
+                    nearby_station_name='string(STR_STATION_OIL_RIG)',
                     fund_cost_multiplier='255',
                     override='5',
                     intro_year=1967)

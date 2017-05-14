@@ -12,7 +12,7 @@ industry = IndustryTertiary(id='general_store',
                     location_checks=dict(same_type_distance=16),
                     prospect_chance='0.75',
                     name='string(STR_IND_GENERAL_STORE)',
-                    nearby_station_name='string(STR_STATION_TOWN)',
+                    nearby_station_name='string(STR_STATION_TOWN_3)',
                     fund_cost_multiplier='15' )
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
