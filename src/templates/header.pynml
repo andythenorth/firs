@@ -98,18 +98,6 @@ grf {
 			};
 		}
 	}
-	param 10 {
-		nearby_station_name {
-			name: string(STR_PARAM_NAME_STATION_NAME);
-			desc: string(STR_PARAM_DESC_STATION_NAME);
-			min_value: 0;
-			max_value: 1;
-			names: {
-			    0: string(STR_PARAM_VALUE_STATION_NAME_FIRS);
-			    1: string(STR_PARAM_VALUE_STATION_NAME_DEFAULT);
-			};
-		}
-	}
 }
 
 basecost {
