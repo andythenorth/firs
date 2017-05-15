@@ -92,7 +92,8 @@ class DocHelper(object):
         return set(result)
 
     def get_nearby_station_name(self, industry):
-        return industry.get_property('nearby_station_name', None)
+        station_name = utils.unwrap_nml_string_declaration(industry.get_property('nearby_station_name', None))
+        return base_lang_strings[station_name]
 
     def get_registered_cargo_sorted_by_name(self):
         # cargos don't store the name as a python attr, but we often need to iterate over their names in A-Z order
