@@ -12,7 +12,7 @@ industry = IndustryPrimaryExtractive(id='diamond_mine',
                     prod_cargo_types=['DIAM'],
                     substitute='INDUSTRYTYPE_DIAMOND_MINE',
                     name='TTD_STR_INDUSTRY_NAME_DIAMOND_MINE',
-                    nearby_station_name='string(STR_STATION_MINE)',
+                    nearby_station_name='string(STR_STATION_KIMBERLITE_DEPOSITS)',
                     fund_cost_multiplier='232')
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True

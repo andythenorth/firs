@@ -9,7 +9,7 @@ industry = IndustrySecondary(id='textile_mill',
                     prod_multiplier='[0, 0]',
                     map_colour='37',
                     name='string(STR_IND_TEXTILE_MILL)',
-                    nearby_station_name='string(STR_STATION_MILL)',
+                    nearby_station_name='string(STR_STATION_WEAVE_AND_DYE)',
                     fund_cost_multiplier='120')
 
 industry.economy_variations['FIRS'].enabled = True

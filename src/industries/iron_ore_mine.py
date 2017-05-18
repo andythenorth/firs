@@ -9,7 +9,7 @@ industry = IndustryPrimaryExtractive(id='iron_ore_mine',
                     location_checks=dict(cluster=[70, 3]),
                     prod_multiplier='[20]',
                     prod_cargo_types=['IORE'],
-                    nearby_station_name='string(STR_STATION_MINE)',
+                    nearby_station_name='string(STR_STATION_IRONSTONE)',
                     fund_cost_multiplier='232')
 
 industry.economy_variations['FIRS'].enabled = True

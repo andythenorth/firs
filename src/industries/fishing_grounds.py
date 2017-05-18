@@ -14,7 +14,7 @@ industry = IndustryPrimaryNoSupplies(id='fishing_grounds',
                                          coast_distance=True),
                     prospect_chance='0.75',
                     name='string(STR_IND_FISHING_GROUND)',
-                    nearby_station_name='string(STR_STATION_WATER)',
+                    nearby_station_name='string(STR_STATION_SHOALS)',
                     fund_cost_multiplier='88')
 
 industry.economy_variations['FIRS'].enabled = True
