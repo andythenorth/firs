@@ -9,7 +9,7 @@ industry = IndustrySecondary(id='foundry',
                     prod_multiplier='[0, 0]',
                     map_colour='123',
                     name='string(STR_IND_FOUNDRY)',
-                    nearby_station_name='string(STR_STATION_INDUSTRY_ESTATE_1)',
+                    nearby_station_name='string(STR_STATION_CASTINGS)',
                     fund_cost_multiplier='120',
                     intro_year=1762)
 

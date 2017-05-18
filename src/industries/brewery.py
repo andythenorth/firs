@@ -10,7 +10,7 @@ industry = IndustrySecondary(id='brewery',
                     map_colour='191',
                     location_checks=dict(town_distance=(0, 72)),
                     name='string(STR_IND_BREWERY)',
-                    nearby_station_name='string(STR_STATION_TOWN_1)',
+                    nearby_station_name='string(STR_STATION_BARREL_AND_KEG)',
                     fund_cost_multiplier='50')
 
 industry.economy_variations['FIRS'].enabled = True
