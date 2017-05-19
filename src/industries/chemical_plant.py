@@ -1,8 +1,9 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='chemical_plant',
-                    processed_cargos_and_output_ratios=[('OIL_', 6), ('NITR', 6)],
+                    processed_cargos_and_output_ratios=[('OIL_', 4), ('NITR', 4)],
                     prod_cargo_types=['RFPR'],
+                    combined_cargos_boost_prod=True,
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
@@ -12,6 +13,9 @@ industry = IndustrySecondary(id='chemical_plant',
                     fund_cost_multiplier='170')
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].processed_cargos_and_output_ratios = [('SULP', 4), ('PHOS', 4)]
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['FERT', 'BOOM']
 
 industry.add_tile(id='chemical_plant_tile_1',
                   animation_length=7,

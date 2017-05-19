@@ -2,7 +2,6 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='fertiliser_and_explosives_plant',
                     processed_cargos_and_output_ratios=[('RFPR', 8)],
-                    combined_cargos_boost_prod=True,
                     prod_cargo_types=['FMSP', 'ENSP'],
                     prob_in_game='3',
                     prob_random='5',
@@ -15,9 +14,6 @@ industry = IndustrySecondary(id='fertiliser_and_explosives_plant',
                     graphics_change_dates=[1952])
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].processed_cargos_and_output_ratios = [('SULP', 4), ('PHOS', 4)]
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['FERT', 'BOOM']
 
 industry.add_tile(id='fertiliser_and_explosives_plant_tile_1',
                   animation_length=7,
