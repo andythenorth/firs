@@ -8,7 +8,7 @@ industry = IndustrySecondary(id='plastics_plant',
                     prod_multiplier='[0, 0]',
                     map_colour='208',
                     name='string(STR_IND_PLASTICS_PLANT)',
-                    nearby_station_name='string(STR_IND_PLASTICS_PLANT)',
+                    nearby_station_name='string(STR_STATION_MOULDINGS)',
                     fund_cost_multiplier='125',
                     intro_year='1931' )
 
