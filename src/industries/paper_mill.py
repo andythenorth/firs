@@ -22,6 +22,9 @@ industry.economy_variations['BASIC_ARCTIC'].processed_cargos_and_output_ratios =
 # industry uses layouts and sprites from default game, no custom layouts etc
 
 industry.add_tile(id='paper_mill_tile_1',
+                  animation_length=7,
+                  animation_looping=True,
+                  animation_speed=3,
                   location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
@@ -60,6 +63,19 @@ spriteset_9 = industry.add_spriteset(
 )
 spriteset_10 = industry.add_spriteset(
     sprites = [(220, 84, 64, 120, -31, -89)],
+)
+sprite_smoke_1 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
+    xoffset= 10,
+    yoffset= 0,
+    zoffset= 78,
+)
+sprite_smoke_2 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
+    xoffset= 6,
+    yoffset= 0,
+    zoffset= 69,
+    animation_frame_offset = 1
 )
 
 industry.add_spritelayout(
@@ -121,6 +137,7 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_10],
+    smoke_sprites = [sprite_smoke_1, sprite_smoke_2]
 )
 
 industry.add_industry_layout(
