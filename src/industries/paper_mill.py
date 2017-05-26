@@ -66,13 +66,13 @@ sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
     xoffset= 10,
     yoffset= 0,
-    zoffset= 82,
+    zoffset= 93,
 )
 sprite_smoke_2 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
     xoffset= 6,
     yoffset= 0,
-    zoffset= 73,
+    zoffset= 79,
     animation_frame_offset = 1
 )
 
