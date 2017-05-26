@@ -34,9 +34,7 @@ spriteset_ground = industry.add_spriteset(
 spriteset_ground_overlay = industry.add_spriteset(
     type = 'empty'
 )
-spriteset_1 = industry.add_spriteset(
-    sprites = [(10, 10, 64, 64, -31, -33)],
-)
+#spriteset_1 deprecated
 spriteset_2 = industry.add_spriteset(
     sprites = [(80, 10, 64, 64, -31, -33)],
 )
@@ -68,22 +66,16 @@ sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
     xoffset= 10,
     yoffset= 0,
-    zoffset= 78,
+    zoffset= 82,
 )
 sprite_smoke_2 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
     xoffset= 6,
     yoffset= 0,
-    zoffset= 69,
+    zoffset= 73,
     animation_frame_offset = 1
 )
 
-industry.add_spritelayout(
-    id = 'paper_mill_spritelayout_office',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_1],
-)
 industry.add_spritelayout(
     id = 'paper_mill_spritelayout_paper_store_empty',
     ground_sprite = spriteset_ground,
@@ -146,11 +138,11 @@ industry.add_industry_layout(
               (0, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_pulp_processor'),
               (0, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_paper_store_full'),
               (1, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_tall_building_1'),
-              (1, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_chemical_tanks'),
+              (1, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_tall_building_1'),
               (1, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_paper_store_empty'),
-              (2, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_chemical_tanks'),
-              (2, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_paper_store_full'),
-              (2, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_office'),
+              (2, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_tall_building_2'),
+              (2, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_chemical_tanks'),
+              (2, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_paper_store_full'),
               (3, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_boilerhouse'),
               (3, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_full'),
               (3, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_full'),
