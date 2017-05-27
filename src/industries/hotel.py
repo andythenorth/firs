@@ -12,7 +12,7 @@ industry = IndustryTertiary(id='hotel',
                     location_checks=dict(same_type_distance=16),
                     prospect_chance='0.75',
                     name='string(STR_IND_HOTEL)',
-                    nearby_station_name='string(STR_STATION_TOWN_1)',
+                    nearby_station_name='string(STR_STATION_BAR_GRILL_AND_ROOMS)',
                     fund_cost_multiplier='101' )
 
 industry.economy_variations['FIRS'].enabled = True
