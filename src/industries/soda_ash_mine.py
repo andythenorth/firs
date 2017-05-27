@@ -73,28 +73,28 @@ spriteset_exit_shed_rear = industry.add_spriteset(
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
     xoffset= 0,
-    yoffset= 3,
-    zoffset= 64,
+    yoffset= 2,
+    zoffset= 61,
 )
 sprite_smoke_2 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
     xoffset= 0,
     yoffset= 5,
-    zoffset= 64,
-    animation_frame_offset = 4,
+    zoffset= 62,
+    animation_frame_offset = 1,
 )
 sprite_smoke_3 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
-    xoffset= 0,
-    yoffset= 9,
-    zoffset= 78,
+    xoffset= 9,
+    yoffset= 0,
+    zoffset= 67,
 )
 sprite_smoke_4 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
-    xoffset= 0,
-    yoffset= 9,
-    zoffset= 78,
-    animation_frame_offset = 4,
+    xoffset= 12,
+    yoffset= 0,
+    zoffset= 67,
+    animation_frame_offset = 1,
 )
 
 
@@ -111,7 +111,7 @@ industry.add_spritelayout(
     building_sprites = [spriteset_headgear_animated],
 )
 industry.add_spritelayout(
-    id = 'soda_ash_mine_spritelayout_exit_trestle_animated',
+    id = 'soda_ash_mine_spritelayout_silos',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_exit_trestle],
@@ -152,10 +152,10 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_winding_house],
-    smoke_sprites = [sprite_smoke_1, sprite_smoke_2],
+    #smoke_sprites = [sprite_smoke_1, sprite_smoke_2],
 )
 industry.add_spritelayout(
-    id = 'soda_ash_mine_spritelayout_exit_shed_rear',
+    id = 'soda_ash_mine_spritelayout_silo_conveyor',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_exit_shed_rear],
@@ -163,17 +163,18 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'soda_ash_mine_industry_layout_1',
-    layout = [(0, 1, 'soda_ash_mine_tile_1', 'soda_ash_mine_spritelayout_headgear_animated'),
+    layout = [(0, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_crusher_rear_part'),
+              (0, 1, 'soda_ash_mine_tile_1', 'soda_ash_mine_spritelayout_headgear_animated'),
               (0, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_winding_house'),
-              (1, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_crusher_rear_part'),
-              (1, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_exit_shed_rear'),
+              (1, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_tile_empty'),
+              (1, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_ore_2'),
               (1, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_hut_vents'),
-              (2, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_tile_empty'),
-              (2, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_exit_trestle_animated'),
+              (2, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_crusher_front_part'),
+              (2, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_ore_1'),
               (2, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_tile_empty'),
-              (3, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_crusher_front_part'),
-              (3, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_ore_1'),
-              (3, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_ore_2')
+              (3, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_silos'),
+              (3, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_silo_conveyor'),
+              (3, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_ore_1'),
     ]
 )
 
@@ -185,14 +186,14 @@ industry.add_industry_layout(
               (0, 3, 'soda_ash_mine_tile_1', 'soda_ash_mine_spritelayout_headgear_animated'),
               (0, 4, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_winding_house'),
               (1, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_tile_empty'),
-              (1, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_exit_shed_rear'),
+              (1, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_silo_conveyor'),
               (1, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_tile_empty'),
-              (1, 3, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_exit_shed_rear'),
+              (1, 3, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_silo_conveyor'),
               (1, 4, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_hut_vents'),
               (2, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_crusher_front_part'),
-              (2, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_exit_trestle_animated'),
+              (2, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_silos'),
               (2, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_ore_1'),
-              (2, 3, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_exit_trestle_animated'),
+              (2, 3, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_silos'),
               (2, 4, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_ore_2')
     ]
 )
@@ -201,17 +202,17 @@ industry.add_industry_layout(
     id = 'soda_ash_mine_industry_layout_3',
     layout = [(0, 0, 'soda_ash_mine_tile_1', 'soda_ash_mine_spritelayout_headgear_animated'),
               (0, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_winding_house'),
-              (1, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_exit_shed_rear'),
+              (1, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_silo_conveyor'),
               (1, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_ore_2'),
               (1, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_tile_empty'),
-              (2, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_exit_trestle_animated'),
+              (2, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_silos'),
               (2, 1, 'soda_ash_mine_tile_1', 'soda_ash_mine_spritelayout_headgear_animated'),
               (2, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_winding_house'),
-              (3, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_hut_vents'),
-              (3, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_exit_shed_rear'),
               (3, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_crusher_rear_part'),
+              (3, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_silo_conveyor'),
+              (3, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_hut_vents'),
               (4, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_tile_empty'),
-              (4, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_exit_trestle_animated'),
+              (4, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_silos'),
               (4, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_ore_2'),
               (5, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_crusher_front_part'),
               (5, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_ore_1')
@@ -225,15 +226,15 @@ industry.add_industry_layout(
               (0, 2, 'soda_ash_mine_tile_1', 'soda_ash_mine_spritelayout_headgear_animated'),
               (0, 3, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_winding_house'),
               (0, 4, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_crusher_rear_part'),
-              (1, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_exit_shed_rear'),
+              (1, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_ore_1'),
               (1, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_ore_2'),
-              (1, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_exit_shed_rear'),
+              (1, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_ore_1'),
               (1, 3, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_tile_empty'),
               (1, 4, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_tile_empty'),
-              (2, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_exit_trestle_animated'),
-              (2, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_hut_vents'),
-              (2, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_exit_trestle_animated'),
-              (2, 3, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_ore_1'),
+              (2, 0, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_silos'),
+              (2, 1, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_silo_conveyor'),
+              (2, 2, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_silos'),
+              (2, 3, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_silo_conveyor'),
               (2, 4, 'soda_ash_mine_tile_2', 'soda_ash_mine_spritelayout_crusher_front_part')
     ]
 )
