@@ -30,8 +30,6 @@ industry.add_tile(id='soda_ash_mine_tile_2',
                   animation_length=71,
                   animation_looping=True,
                   animation_speed=2,
-                  custom_animation_control={'macro':'random_first_frame',
-                                            'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
                   location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
@@ -44,12 +42,9 @@ sprite_ground_overlay = industry.add_sprite(
 )
 
 spriteset_headgear_animated = industry.add_spriteset(
-    sprites = [(10, 310, 64, 122, -31, -88), (80, 310, 64, 122, -31, -88), (150, 310, 64, 122, -31, -88)],
+    sprites = [(10, 160, 64, 122, -31, -88), (80, 160, 64, 122, -31, -88), (150, 160, 64, 122, -31, -88)],
     animation_rate = 1,
     custom_sprite_selector = '(animation_frame % 3)',
-)
-spriteset_exit_trestle = industry.add_spriteset(
-    sprites = [(10, 160, 64, 122, -31, -88)],
 )
 spriteset_crusher_front_part = industry.add_spriteset(
     sprites = [(10, 10, 64, 122, -31, -90)],
@@ -69,21 +64,39 @@ spriteset_ore_2 = industry.add_spriteset(
 spriteset_winding_house = industry.add_spriteset(
     sprites = [(360, 10, 64, 122, -31, -90)],
 )
+spriteset_exit_trestle = industry.add_spriteset(
+    sprites = [(430, 10, 64, 122, -31, -88)],
+)
 spriteset_exit_shed_rear = industry.add_spriteset(
-    sprites = [(430, 10, 64, 122, -31, -90)],
+    sprites = [(500, 10, 64, 122, -31, -90)],
 )
 sprite_smoke_1 = industry.add_smoke_sprite(
-    smoke_type = 'dark_smoke_small',
-    xoffset= -1,
-    yoffset= 2,
-    zoffset= 38,
+    smoke_type = 'white_smoke_big',
+    xoffset= 0,
+    yoffset= 3,
+    zoffset= 64,
 )
 sprite_smoke_2 = industry.add_smoke_sprite(
-    smoke_type = 'dark_smoke_small',
-    xoffset= -1,
-    yoffset= 6,
-    zoffset= 38,
+    smoke_type = 'white_smoke_big',
+    xoffset= 0,
+    yoffset= 5,
+    zoffset= 64,
+    animation_frame_offset = 4,
 )
+sprite_smoke_3 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
+    xoffset= 0,
+    yoffset= 9,
+    zoffset= 78,
+)
+sprite_smoke_4 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
+    xoffset= 0,
+    yoffset= 9,
+    zoffset= 78,
+    animation_frame_offset = 4,
+)
+
 
 industry.add_spritelayout(
     id = 'soda_ash_mine_spritelayout_tile_empty',
@@ -114,6 +127,7 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_crusher_rear_part],
+    smoke_sprites = [sprite_smoke_3, sprite_smoke_4],
 )
 industry.add_spritelayout(
     id = 'soda_ash_mine_spritelayout_hut_vents',
