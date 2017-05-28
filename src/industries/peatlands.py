@@ -25,40 +25,86 @@ industry.add_tile(id='peatlands_tile_1',
 sprite_ground = industry.add_sprite(
     sprite_number = '4126'
 )
+sprite_ground_tracks = industry.add_sprite(
+    sprite_number = 'GROUNDTILE_MUD_TRACKS'
+)
 spriteset_1 = industry.add_spriteset(
-    sprites = [(10, 90, 64, 31, -31, 0)],
+    sprites = [(10, 10, 64, 64, -31, -31)],
 )
 spriteset_2 = industry.add_spriteset(
-    sprites = [(80, 90, 64, 31, -31, 0)],
+    sprites = [(80, 10, 64, 64, -31, -31)],
+)
+spriteset_3 = industry.add_spriteset(
+    sprites = [(150, 10, 64, 64, -31, -31)],
+)
+spriteset_4 = industry.add_spriteset(
+    sprites = [(220, 10, 64, 64, -31, -31)],
+)
+spriteset_5 = industry.add_spriteset(
+    sprites = [(290, 10, 64, 64, -31, -31)],
+)
+spriteset_6 = industry.add_spriteset(
+    sprites = [(360, 10, 64, 64, -31, -31)],
+)
+spriteset_7 = industry.add_spriteset(
+    sprites = [(430, 10, 64, 64, -31, -31)],
 )
 industry.add_spritelayout(
-    id = 'peatlands_spritelayout_1',
+    id = 'peatlands_spritelayout_bare_ground',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground,
     building_sprites = [],
-    terrain_aware_ground = True,
-    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'peatlands_spritelayout_tractor',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground,
+    building_sprites = [spriteset_3],
+)
+industry.add_spritelayout(
+    id = 'peatlands_spritelayout_harvester',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground,
+    building_sprites = [spriteset_4],
+)
+industry.add_spritelayout(
+    id = 'peatlands_spritelayout_nissen_hut',
+    ground_sprite = sprite_ground_tracks,
+    ground_overlay = sprite_ground_tracks,
+    building_sprites = [spriteset_2],
+)
+industry.add_spritelayout(
+    id = 'peatlands_spritelayout_crane',
+    ground_sprite = sprite_ground_tracks,
+    ground_overlay = sprite_ground_tracks,
+    building_sprites = [spriteset_6, spriteset_5],
+)
+industry.add_spritelayout(
+    id = 'peatlands_spritelayout_peat_pile',
+    ground_sprite = sprite_ground_tracks,
+    ground_overlay = sprite_ground_tracks,
+    building_sprites = [spriteset_7],
 )
 
 industry.add_industry_layout(
     id = 'peatlands_layout_1',
-    layout = [(0, 1, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (0, 2, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (0, 3, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (1, 0, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (1, 1, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (1, 2, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (1, 3, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (2, 0, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (2, 1, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (2, 2, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (2, 3, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (3, 0, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (3, 1, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (3, 2, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (3, 3, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (4, 1, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (4, 2, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
-              (4, 3, 'peatlands_tile_1', 'peatlands_spritelayout_1'),
+    layout = [(0, 1, 'peatlands_tile_1', 'peatlands_spritelayout_nissen_hut'),
+              (0, 2, 'peatlands_tile_1', 'peatlands_spritelayout_peat_pile'),
+              (0, 3, 'peatlands_tile_1', 'peatlands_spritelayout_crane'),
+              (1, 0, 'peatlands_tile_1', 'peatlands_spritelayout_bare_ground'),
+              (1, 1, 'peatlands_tile_1', 'peatlands_spritelayout_bare_ground'),
+              (1, 2, 'peatlands_tile_1', 'peatlands_spritelayout_bare_ground'),
+              (1, 3, 'peatlands_tile_1', 'peatlands_spritelayout_bare_ground'),
+              (2, 0, 'peatlands_tile_1', 'peatlands_spritelayout_tractor'),
+              (2, 1, 'peatlands_tile_1', 'peatlands_spritelayout_bare_ground'),
+              (2, 2, 'peatlands_tile_1', 'peatlands_spritelayout_bare_ground'),
+              (2, 3, 'peatlands_tile_1', 'peatlands_spritelayout_harvester'),
+              (3, 0, 'peatlands_tile_1', 'peatlands_spritelayout_bare_ground'),
+              (3, 1, 'peatlands_tile_1', 'peatlands_spritelayout_bare_ground'),
+              (3, 2, 'peatlands_tile_1', 'peatlands_spritelayout_harvester'),
+              (3, 3, 'peatlands_tile_1', 'peatlands_spritelayout_bare_ground'),
+              (4, 1, 'peatlands_tile_1', 'peatlands_spritelayout_bare_ground'),
+              (4, 2, 'peatlands_tile_1', 'peatlands_spritelayout_bare_ground'),
+              (4, 3, 'peatlands_tile_1', 'peatlands_spritelayout_bare_ground'),
     ]
 )
