@@ -14,8 +14,6 @@ industry = IndustryPrimaryExtractive(id='soda_ash_mine',
 
 industry.economy_variations['STEELTOWN'].enabled = True
 
-
-
 industry.add_tile(id='soda_ash_mine_tile_1',
                   animation_length=81,
                   animation_looping=True,
@@ -32,7 +30,6 @@ industry.add_tile(id='soda_ash_mine_tile_2',
                   animation_speed=2,
                   location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
-
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS'
