@@ -115,3 +115,40 @@ industry.add_industry_layout(
               (2, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_paddock_1'),
     ]
 )
+industry.add_industry_layout(
+    id = 'herding_coop_industry_layout_2',
+    layout = [(0, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_two_brown_huts'),
+              (0, 1, 'herding_coop_tile_1', 'herding_coop_spritelayout_paddock_1'),
+              (0, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_paddock_2'),
+              (1, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_brown_hut'),
+              (1, 1, 'herding_coop_tile_1', 'herding_coop_spritelayout_two_brown_huts'),
+              (1, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_brown_hut'),
+              (2, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_paddock_1'),
+              (2, 1, 'herding_coop_tile_1', 'herding_coop_spritelayout_large_hut'),
+              (2, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_small_hut_logs'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'herding_coop_industry_layout_3',
+    layout = [(0, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_two_brown_huts'),
+              (0, 1, 'herding_coop_tile_1', 'herding_coop_spritelayout_large_hut'),
+              (0, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_paddock_2'),
+              (0, 3, 'herding_coop_tile_1', 'herding_coop_spritelayout_small_hut_logs'),
+              (1, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_brown_hut'),
+              (1, 1, 'herding_coop_tile_1', 'herding_coop_spritelayout_two_brown_huts'),
+              (1, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_brown_hut'),
+              (1, 3, 'herding_coop_tile_1', 'herding_coop_spritelayout_paddock_1'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'herding_coop_industry_layout_4',
+    layout = [(0, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_two_brown_huts'),
+              (0, 1, 'herding_coop_tile_1', 'herding_coop_spritelayout_paddock_1'),
+              (1, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_brown_hut'),
+              (1, 1, 'herding_coop_tile_1', 'herding_coop_spritelayout_two_brown_huts'),
+              (2, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_paddock_2'),
+              (2, 1, 'herding_coop_tile_1', 'herding_coop_spritelayout_small_hut_logs'),
+              (3, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_brown_hut'),
+              (3, 1, 'herding_coop_tile_1', 'herding_coop_spritelayout_large_hut'),
+    ]
+)
