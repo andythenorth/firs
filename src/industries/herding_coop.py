@@ -17,6 +17,9 @@ industry = IndustryPrimaryOrganic(id='herding_coop',
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 industry.add_tile(id='herding_coop_tile_1',
+                  animation_length=71,
+                  animation_looping=True,
+                  animation_speed=2,
                   location_checks=TileLocationChecks(disallow_desert=True,
                                                      disallow_coast=True,
                                                      disallow_industry_adjacent=True))
@@ -48,12 +51,19 @@ spriteset_5 = industry.add_spriteset(
 spriteset_6 = industry.add_spriteset(
     sprites = [(360, 10, 64, 52, -31, -21)],
 )
+sprite_smoke_1 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_small',
+    xoffset= 1,
+    yoffset= 0,
+    zoffset= 12,
+)
 
 industry.add_spritelayout(
     id = 'herding_coop_spritelayout_large_hut',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_1],
+    smoke_sprites = [sprite_smoke_1],
     terrain_aware_ground = True
 )
 industry.add_spritelayout(
@@ -85,7 +95,7 @@ industry.add_spritelayout(
     terrain_aware_ground = True
 )
 industry.add_spritelayout(
-    id = 'herding_coop_spritelayout_bare_ground',
+    id = 'herding_coop_spritelayout_small_hut_logs',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_6],
@@ -99,7 +109,7 @@ industry.add_industry_layout(
               (0, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_large_hut'),
               (1, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_brown_hut'),
               (1, 1, 'herding_coop_tile_1', 'herding_coop_spritelayout_two_brown_huts'),
-              (1, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_bare_ground'),
+              (1, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_small_hut_logs'),
               (2, 0, 'herding_coop_tile_1', 'herding_coop_spritelayout_brown_hut'),
               (2, 1, 'herding_coop_tile_1', 'herding_coop_spritelayout_two_brown_huts'),
               (2, 2, 'herding_coop_tile_1', 'herding_coop_spritelayout_paddock_1'),
