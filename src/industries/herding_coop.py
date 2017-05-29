@@ -28,7 +28,7 @@ spriteset_ground = industry.add_spriteset(
     type = 'empty'
 )
 sprite_ground_mud = industry.add_sprite(
-    sprite_number = 'GROUNDSPRITE_CLEARED'
+    sprite_number = 3943
 )
 spriteset_ground_overlay = industry.add_spriteset(
     type = 'empty'
