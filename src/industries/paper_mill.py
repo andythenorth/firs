@@ -89,7 +89,7 @@ industry.add_spritelayout(
     building_sprites = [spriteset_3],
 )
 industry.add_spritelayout(
-    id = 'paper_mill_spritelayout_wood_store_empty',
+    id = 'paper_mill_spritelayout_wood_store_forklift',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_4],
@@ -144,11 +144,11 @@ industry.add_industry_layout(
               (2, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_chemical_tanks'),
               (2, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_paper_store_full'),
               (3, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_tall_building_2'),
-              (3, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_empty'),
+              (3, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_forklift'),
               (3, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_full'),
               (4, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_boilerhouse'),
               (4, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_full'),
-              (4, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_empty')
+              (4, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_forklift')
     ]
 )
 industry.add_industry_layout(
@@ -162,8 +162,43 @@ industry.add_industry_layout(
               (2, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_boilerhouse'),
               (2, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_pulp_processor'),
               (2, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_paper_store_full'),
-              (3, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_empty'),
+              (3, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_forklift'),
               (3, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_full'),
               (3, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_full'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'paper_mill_industry_layout_3',
+    layout = [(0, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_tall_building_1'),
+              (0, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_tall_building_1'),
+              (0, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_pulp_processor'),
+              (0, 3, 'paper_mill_tile_1', 'paper_mill_spritelayout_chemical_tanks'),
+              (1, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_tall_building_2'),
+              (1, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_tall_building_2'),
+              (1, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_boilerhouse'),
+              (1, 3, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_forklift'),
+              (2, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_paper_store_full'),
+              (2, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_paper_store_empty'),
+              (2, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_forklift'),
+              (2, 3, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_full'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'paper_mill_industry_layout_4',
+    layout = [(0, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_tall_building_1'),
+              (0, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_tall_building_1'),
+              (0, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_tall_building_2'),
+              (0, 3, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_forklift'),
+              (1, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_tall_building_2'),
+              (1, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_tall_building_2'),
+              (1, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_boilerhouse'),
+              (1, 3, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_full'),
+              (2, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_pulp_processor'),
+              (2, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_paper_store_full'),
+              (2, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_forklift'),
+              (2, 3, 'paper_mill_tile_1', 'paper_mill_spritelayout_wood_store_full'),
+              (3, 0, 'paper_mill_tile_1', 'paper_mill_spritelayout_chemical_tanks'),
+              (3, 1, 'paper_mill_tile_1', 'paper_mill_spritelayout_paper_store_empty'),
+              (3, 2, 'paper_mill_tile_1', 'paper_mill_spritelayout_paper_store_full'),
     ]
 )
