@@ -54,26 +54,14 @@ spriteset_crusher_front_part = industry.add_spriteset(
 spriteset_crusher_rear_part = industry.add_spriteset(
     sprites = [(80, 10, 64, 122, -31, -74)],
 )
-spriteset_misc_building_tanks = industry.add_spriteset(
+spriteset_misc_building = industry.add_spriteset(
     sprites = [(150, 10, 64, 122, -31, -90)],
 )
-spriteset_ore_1 = industry.add_spriteset(
+spriteset_vents_shed = industry.add_spriteset(
     sprites = [(220, 10, 64, 122, -31, -90)],
 )
-spriteset_ore_2 = industry.add_spriteset(
-    sprites = [(290, 10, 64, 122, -31, -90)],
-)
 spriteset_winding_house = industry.add_spriteset(
-    sprites = [(360, 10, 64, 122, -31, -90)],
-)
-spriteset_exit_trestle = industry.add_spriteset(
-    sprites = [(430, 10, 64, 122, -31, -88)],
-)
-spriteset_exit_silo_conveyor = industry.add_spriteset(
-    sprites = [(500, 10, 64, 122, -31, -90)],
-)
-spriteset_truck = industry.add_spriteset(
-    sprites = [(570, 10, 64, 122, -31, -90)],
+    sprites = [(290, 10, 64, 122, -31, -90)],
 )
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_small',
@@ -97,13 +85,6 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'diamond_mine_spritelayout_silos',
-    ground_sprite = sprite_ground,
-    ground_overlay = sprite_ground_overlay,
-    building_sprites = [spriteset_exit_trestle],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
     id = 'diamond_mine_spritelayout_crusher_front_part',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
@@ -119,24 +100,17 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'diamond_mine_spritelayout_misc_building_tanks',
+    id = 'diamond_mine_spritelayout_misc_building',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
-    building_sprites = [spriteset_misc_building_tanks],
+    building_sprites = [spriteset_misc_building],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'diamond_mine_spritelayout_ore_1',
+    id = 'diamond_mine_spritelayout_vents_shed',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
-    building_sprites = [spriteset_ore_1],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'diamond_mine_spritelayout_ore_2',
-    ground_sprite = sprite_ground,
-    ground_overlay = sprite_ground_overlay,
-    building_sprites = [spriteset_ore_2],
+    building_sprites = [spriteset_vents_shed],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
@@ -146,20 +120,6 @@ industry.add_spritelayout(
     building_sprites = [spriteset_winding_house],
     fences = ['nw','ne','se','sw']
 )
-industry.add_spritelayout(
-    id = 'diamond_mine_spritelayout_silo_conveyor',
-    ground_sprite = sprite_ground,
-    ground_overlay = sprite_ground_overlay,
-    building_sprites = [spriteset_exit_silo_conveyor],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'diamond_mine_spritelayout_truck',
-    ground_sprite = sprite_ground,
-    ground_overlay = sprite_ground_overlay,
-    building_sprites = [spriteset_truck],
-    fences = ['nw','ne','se','sw']
-)
 
 industry.add_industry_layout(
     id = 'diamond_mine_industry_layout_1',
@@ -167,14 +127,11 @@ industry.add_industry_layout(
               (0, 1, 'diamond_mine_tile_1', 'diamond_mine_spritelayout_headgear_animated'),
               (0, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_winding_house'),
               (1, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_tile_empty'),
-              (1, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_ore_2'),
-              (1, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_misc_building_tanks'),
+              (1, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_misc_building'),
+              (1, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_misc_building'),
               (2, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_crusher_front_part'),
-              (2, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_ore_1'),
+              (2, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_vents_shed'),
               (2, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_tile_empty'),
-              (3, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_silos'),
-              (3, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_silo_conveyor'),
-              (3, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_truck'),
     ]
 )
 
@@ -183,40 +140,35 @@ industry.add_industry_layout(
     layout = [(0, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_crusher_rear_part'),
               (0, 1, 'diamond_mine_tile_1', 'diamond_mine_spritelayout_headgear_animated'),
               (0, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_winding_house'),
-              (0, 3, 'diamond_mine_tile_1', 'diamond_mine_spritelayout_headgear_animated'),
-              (0, 4, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_winding_house'),
+              (0, 3, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_vents_shed'),
               (1, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_tile_empty'),
-              (1, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_ore_2'),
-              (1, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_misc_building_tanks'),
-              (1, 3, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_truck'),
-              (1, 4, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_ore_2'),
+              (1, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_misc_building'),
+              (1, 2, 'diamond_mine_tile_1', 'diamond_mine_spritelayout_headgear_animated'),
+              (1, 3, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_winding_house'),
               (2, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_crusher_front_part'),
-              (2, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_ore_1'),
-              (2, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_silos'),
-              (2, 3, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_silo_conveyor'),
-              (2, 4, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_ore_1')
+              (2, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_vents_shed'),
+              (2, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_tile_empty'),
+              (2, 3, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_misc_building')
     ]
 )
 
 industry.add_industry_layout(
     id = 'diamond_mine_industry_layout_3',
-    layout = [(0, 0, 'diamond_mine_tile_1', 'diamond_mine_spritelayout_headgear_animated'),
-              (0, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_winding_house'),
-              (1, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_silos'),
-              (1, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_silo_conveyor'),
-              (1, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_misc_building_tanks'),
-              (2, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_misc_building_tanks'),
-              (2, 1, 'diamond_mine_tile_1', 'diamond_mine_spritelayout_headgear_animated'),
-              (2, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_winding_house'),
-              (3, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_crusher_rear_part'),
-              (3, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_crusher_rear_part'),
-              (3, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_ore_2'),
-              (4, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_tile_empty'),
-              (4, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_tile_empty'),
-              (4, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_ore_1'),
-              (5, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_crusher_front_part'),
-              (5, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_crusher_front_part'),
-              (5, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_truck')
+    layout = [(0, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_misc_building'),
+              (0, 1, 'diamond_mine_tile_1', 'diamond_mine_spritelayout_headgear_animated'),
+              (0, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_winding_house'),
+              (1, 0, 'diamond_mine_tile_1', 'diamond_mine_spritelayout_headgear_animated'),
+              (1, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_winding_house'),
+              (1, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_vents_shed'),
+              (2, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_crusher_rear_part'),
+              (2, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_crusher_rear_part'),
+              (2, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_misc_building'),
+              (3, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_tile_empty'),
+              (3, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_tile_empty'),
+              (3, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_vents_shed'),
+              (4, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_crusher_front_part'),
+              (4, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_crusher_front_part'),
+              (4, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_tile_empty'),
     ]
 )
 
@@ -226,17 +178,17 @@ industry.add_industry_layout(
               (0, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_winding_house'),
               (0, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_crusher_rear_part'),
               (0, 3, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_crusher_rear_part'),
-              (0, 4, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_ore_2'),
-              (1, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_misc_building_tanks'),
-              (1, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_tile_empty'),
+              (0, 4, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_misc_building'),
+              (1, 0, 'diamond_mine_tile_1', 'diamond_mine_spritelayout_headgear_animated'),
+              (1, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_winding_house'),
               (1, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_tile_empty'),
               (1, 3, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_tile_empty'),
-              (1, 4, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_ore_1'),
-              (2, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_silos'),
-              (2, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_silo_conveyor'),
+              (1, 4, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_tile_empty'),
+              (2, 0, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_misc_building'),
+              (2, 1, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_vents_shed'),
               (2, 2, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_crusher_front_part'),
               (2, 3, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_crusher_front_part'),
-              (2, 4, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_truck')
+              (2, 4, 'diamond_mine_tile_2', 'diamond_mine_spritelayout_vents_shed'),
     ]
 )
 
