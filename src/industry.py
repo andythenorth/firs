@@ -125,10 +125,14 @@ class TileLocationChecks(object):
             result.append(TileLocationCheckRequireSlope())
 
         if self.require_houses_nearby:
+            # generates circular tile search points automatically
             # possibly could be done simpler with a town zone check instead of a tile search, but eh, it's done and works
             # note that this automates the provision of tile locations for the search radius, no option to declare that per-industry
-            search_points = [(0, 3), (3, 0), (0, -3), (-3, 0), (2, 2), (2, -2), (-2, 2), (3, 3),
-                             (3, -3), (-3, 3), (-3, -3), (4, 4), (4, -4), (-4, 4), (-4, 4)]
+            distance = 7
+            search_points = []
+            for x in range(-1 * distance, distance+1):
+                for y in range(-1 * distance, distance+1):
+                    search_points.append((x, y))
             for search_offsets in search_points:
                 result.append(TileLocationCheckRequireHousesNearby(search_offsets))
 
