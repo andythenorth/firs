@@ -8,7 +8,6 @@ industry = IndustryTertiary(id='hotel',
                     prod_multiplier='[17, 0]',
                     map_colour='66',
                     life_type='IND_LIFE_TYPE_BLACK_HOLE',
-                    spec_flags='bitmask(IND_FLAG_BUILT_NEAR_TOWN)',
                     location_checks=dict(same_type_distance=16),
                     prospect_chance='0.75',
                     name='string(STR_IND_HOTEL)',
@@ -22,7 +21,8 @@ industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='hotel_tile_1',
-                  location_checks=TileLocationChecks(require_effectively_flat=True))
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
+                                                     require_houses_nearby=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_CLEARED'
