@@ -23,15 +23,6 @@
 </metal:coast_distance>
 
 
-<metal:town_distance metal:define-macro="town_distance">
-    <!--! Check whether an industry is within a certain distance from a town centre -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, town_euclidean_dist(0, 0)) {
-        ${location_check.min_distance} .. ${location_check.max_distance}: ${location_check.switch_result};
-        return CB_RESULT_LOCATION_DISALLOW;
-    }
-</metal:town_distance>
-
-
 <metal:check_industry_min_distance metal:define-macro="check_industry_min_distance">
     <!--! Check for a minimum distance to another industry type -->
     switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, industry_distance(${location_check.industry_type_numeric_id})) {

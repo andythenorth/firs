@@ -544,7 +544,6 @@ class IndustryLocationChecks(object):
         self.same_type_distance = location_args.get('same_type_distance', None)
         self.industry_max_distance = location_args.get('industry_max_distance', None)
         self.cluster = location_args.get('cluster', None)
-        self.town_distance = location_args.get('town_distance', None)
         self.town_industry_count = location_args.get('town_industry_count', None)
         self.coast_distance = location_args.get('coast_distance', None)
         # this is custom to grain mill, can be made generic if needed
@@ -574,9 +573,6 @@ class IndustryLocationChecks(object):
 
         if self.industry_max_distance:
             result.append(IndustryLocationCheckIndustryMaxDistance(self.industry_max_distance))
-
-        if self.town_distance:
-            result.append(IndustryLocationCheckTownDistance(self.town_distance))
 
         if self.town_industry_count:
             result.append(IndustryLocationCheckTownIndustryCount(self.town_industry_count))
@@ -608,16 +604,6 @@ class IndustryLocationCheck(object):
     @property
     def macro(self):
         return templates["location_check_macros_industry.pynml"].macros[self.macro_name]
-
-
-class IndustryLocationCheckTownDistance(IndustryLocationCheck):
-    """ Require location within min, max distance of a town """
-    def __init__(self, town_distance):
-        self.min_distance = town_distance[0]
-        self.max_distance = town_distance[1]
-        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
-        self.switch_entry_point = 'town_distance'
-        self.macro_name = 'town_distance'
 
 
 class IndustryLocationCheckTownIndustryCount(IndustryLocationCheck):
