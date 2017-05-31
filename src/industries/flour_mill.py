@@ -8,8 +8,7 @@ industry = IndustrySecondary(id='flour_mill',
                     prob_in_game='10',
                     prod_multiplier='[0, 0]',
                     map_colour='48',
-                    location_checks=dict(flour_mill_layouts_by_date=True,
-                                         town_distance=(0, 144)),
+                    location_checks=dict(flour_mill_layouts_by_date=True),
                     name='string(STR_IND_FLOUR_MILL)',
                     nearby_station_name='string(STR_STATION_MILL)',
                     fund_cost_multiplier='50')
@@ -24,6 +23,7 @@ industry.add_tile(id='flour_mill_tile_1',
                   animation_looping=True,
                   animation_speed=3,
                   location_checks=TileLocationChecks(require_effectively_flat=True,
+                                                     require_houses_nearby=True,
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground_bakery = industry.add_spriteset(

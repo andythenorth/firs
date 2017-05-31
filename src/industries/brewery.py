@@ -8,7 +8,7 @@ industry = IndustrySecondary(id='brewery',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
                     map_colour='191',
-                    location_checks=dict(town_distance=(0, 72)),
+                    # no industry location checks for brewery, by design
                     name='string(STR_IND_BREWERY)',
                     nearby_station_name='string(STR_STATION_BARREL_AND_KEG)',
                     fund_cost_multiplier='50')
@@ -27,6 +27,7 @@ industry.add_tile(id='brewery_tile_1',
                   custom_animation_control={'macro':'random_first_frame',
                                             'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
                   location_checks=TileLocationChecks(require_effectively_flat=True,
+                                                     require_houses_nearby=True,
                                                      disallow_industry_adjacent=True))
 industry.add_tile(id='brewery_tile_2',
                   animation_length=71,

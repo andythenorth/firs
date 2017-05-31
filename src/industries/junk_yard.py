@@ -6,7 +6,7 @@ industry = IndustryPrimaryExtractive(id='junk_yard',
                     prob_random='7',
                     prod_multiplier='[12, 0]',
                     map_colour='36',
-                    location_checks=dict(town_distance=(0, 144)),
+                    # no industry location checks for junk yard, by design
                     prospect_chance='0.75',
                     name='string(STR_IND_JUNKYARD)',
                     nearby_station_name='string(STR_STATION_BONEYARD)',
@@ -20,6 +20,7 @@ industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='junk_yard_tile_1',
                   location_checks=TileLocationChecks(disallow_steep_slopes=True,
+                                                     require_houses_nearby=True,
                                                      disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(
