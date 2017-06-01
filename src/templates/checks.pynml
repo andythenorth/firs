@@ -6,7 +6,7 @@
 -->
 
 <!--! Version for long date string codes -->
-if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(1, 6, 0, 27279)) {
+if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(1, 7, 0, 27769)) {
 	error(FATAL, REQUIRES_OPENTTD, string(STR_ERR_OPENTTD_VERSION));
 	exit;
 }
