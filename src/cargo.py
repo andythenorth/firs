@@ -31,8 +31,8 @@ class Cargo(object):
         self.type_abbreviation = kwargs['type_abbreviation']
         self.sprite = kwargs['sprite']
         self.weight = kwargs['weight']
-        self.station_list_colour = kwargs['station_list_colour']
         self.cargo_payment_list_colour = kwargs['cargo_payment_list_colour']
+        self.station_list_colour = self.cargo_payment_list_colour # use same value for both cargo colour properties
         self.is_freight = kwargs['is_freight']
         self.cargo_classes = kwargs['cargo_classes']
         self.town_growth_effect = kwargs['town_growth_effect']

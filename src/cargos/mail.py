@@ -6,7 +6,6 @@ cargo = Cargo(id = 'mail',
               type_abbreviation = 'TTD_STR_ABBREV_MAIL',
               sprite = 'NEW_CARGO_SPRITE',
               weight = '0.25',
-              station_list_colour = '15',
               cargo_payment_list_colour = '15',
               is_freight = '0', # mail is not freight - consistent with default mail (setting '1' gives 'wrong' livery for mail cars)
               cargo_classes = 'bitmask(CC_MAIL)',
