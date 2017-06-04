@@ -22,11 +22,11 @@
                 <a href="cargos.html#${cargo.id}">
                    <span style="background-color:rgb${doc_helper.get_cargo_colour(cargo)};
                                  border:solid 1px #000;
-                                 width:11px;
-                                 height:11px;
+                                 width:9px;
+                                 height:9px;
                                  display:inline-block;
                                  vertical-align:top;
-                                 margin-top:3px;
+                                 margin-top:4px;
                                  margin-left:2px;">
                     </span>
                     ${doc_helper.get_cargo_name(cargo)}${(',', '')[repeat.cargo.end]}
