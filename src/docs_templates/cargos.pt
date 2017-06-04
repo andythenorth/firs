@@ -16,15 +16,6 @@
         <tal:cargo define="name item[0]; cargo item[1]">
             <div id="${cargo.id}">
                 <h3>${doc_helper.get_cargo_name(cargo)} <small>Cargo</small></h3>
-                <span style="background-color:rgb${doc_helper.get_cargo_colour(cargo)};
-                             border:solid 1px #000;
-                             width:100%;
-                             height:5px;
-                             display:inline-block;
-                             vertical-align:top;
-                             margin-top:-2px;
-                             margin-left:2px;">
-                </span>
                 <p class="muted">${doc_helper.get_cargo_extra_info(cargo)}</p>
                 <tal:unused condition="doc_helper.cargo_is_unused_in_any_economy(cargo) and cargo.id != 'mail'">
                     <p>This cargo is currently unused in FIRS</p>
