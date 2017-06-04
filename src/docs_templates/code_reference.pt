@@ -110,7 +110,18 @@
                             </td>
                             <td class="number">${global_constants.industry_numeric_ids[industry.id]}</td>
                             <td class="number">${industry.get_intro_year(None)}</td>
-                            <td class="number">${industry.get_property('map_colour', None)}</td>
+                            <td class="number">
+                                ${industry.get_property('map_colour', None)}
+                                <span style="background-color:rgb${doc_helper.get_industry_colour(industry)};
+                                             border:solid 1px #000;
+                                             width:16px;
+                                             height:16px;
+                                             display:inline-block;
+                                             vertical-align:top;
+                                             margin-top:1px;
+                                             margin-left:2px;">
+                                </span>
+                            </td>
                             <td class="number">${doc_helper.get_nearby_station_name(industry)}</td>
                         </tr>
                     </tal:industry>
