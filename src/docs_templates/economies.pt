@@ -18,20 +18,11 @@
             <p>${structure:doc_helper.get_economy_extra_info(economy)}</p>
             <br />
             <h4>${len(economy_schemas[economy].enabled_cargos)} Cargos</h4>
-            <tal:industries repeat="cargo sorted(economy_schemas[economy].enabled_cargos, key=doc_helper.get_cargo_name)">
+            <tal:cargos repeat="cargo sorted(economy_schemas[economy].enabled_cargos, key=doc_helper.get_cargo_name)">
                 <a href="cargos.html#${cargo.id}">
-                   <span style="background-color:rgb${doc_helper.get_cargo_colour(cargo)};
-                                 border:solid 1px #000;
-                                 width:9px;
-                                 height:9px;
-                                 display:inline-block;
-                                 vertical-align:top;
-                                 margin-top:4px;
-                                 margin-left:2px;">
-                    </span>
                     ${doc_helper.get_cargo_name(cargo)}${(',', '')[repeat.cargo.end]}
                 </a>
-            </tal:industries>
+            </tal:cargos>
 
             <h4>${len(economy_schemas[economy].enabled_industries)} Industries</h4>
             <tal:industries repeat="industry sorted(economy_schemas[economy].enabled_industries, key=doc_helper.get_industry_name)">
