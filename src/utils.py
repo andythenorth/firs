@@ -1,3 +1,5 @@
+from PIL import Image
+
 def get_repo_vars(sys):
     # get args passed by makefile
     if len(sys.argv) > 1:
@@ -54,3 +56,12 @@ def echo_message(message):
     # use to raise messages from templates to standard out (can't print directly from template render)
     # magically wraps these messages in ANSI colour to make them visible - they are only intended for noticeable messages, not general output
     print('\033[33m' + message + '\033[0m')
+
+
+def dos_palette_to_rgb():
+    palette_sample = Image.open("palette_key.png").getpalette()
+    # getpalette returns a flattened list of rgb values, convert that into a list of 3-tuples
+    result = []
+    for i in range(0, len(palette_sample), 3):
+        result.append((palette_sample[i], palette_sample[i+1], palette_sample[i+2]))
+    return result

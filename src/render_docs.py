@@ -50,6 +50,8 @@ registered_cargos = sorted(firs.registered_cargos, key=lambda registered_cargos:
 registered_industries = sorted(firs.registered_industries, key=lambda registered_industries: registered_industries.id)
 registered_economies = firs.registered_economies
 economy_schemas = {}
+palette = utils.dos_palette_to_rgb()
+
 
 class DocHelper(object):
     # dirty class to help do some doc formatting
@@ -188,6 +190,9 @@ class DocHelper(object):
         result = self.filter_cargos_by_active_in_economy(result, economy)
         result = sorted(result, key=self.get_cargo_name)
         return result
+
+    def get_cargo_colour(self, cargo):
+        return palette[int(cargo.cargo_payment_list_colour)]
 
     def get_cargoflow_banned_cargos(self):
         return ['mail', 'passengers']
