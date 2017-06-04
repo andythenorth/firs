@@ -67,7 +67,15 @@
                             <td class="number">${cargo.capacity_multiplier}</td>
                             <td class="number" nowrap="nowrap">
                                 <span style="vertical-align:top;">${cargo.cargo_payment_list_colour}</span>
-                                <span style="background-color:rgb${doc_helper.get_cargo_colour(cargo)}; width:16px; height:16px; display:inline-block; vertical-align:top; margin-top:1px; margin-left:2px;"></span>
+                                <span style="background-color:rgb${doc_helper.get_cargo_colour(cargo)};
+                                             border:solid 1px #000;
+                                             width:16px;
+                                             height:16px;
+                                             display:inline-block;
+                                             vertical-align:top;
+                                             margin-top:1px;
+                                             margin-left:2px;">
+                                </span>
                             </td>
                             <td class="text">${cargo.town_growth_effect}</td>
                         </tr>
