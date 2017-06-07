@@ -98,8 +98,8 @@ STR_CARGO_NAME_PIPE                                                             
 STR_CARGO_NAME_PIPE.t                                                           :csöveket
 STR_CARGO_NAME_POTASH                                                           :Hamuzsír
 STR_CARGO_NAME_POTASH.t                                                         :hamuzsírt
-STR_CARGO_NAME_PYRITE_ORE                                                       :Pirit
-STR_CARGO_NAME_PYRITE_ORE.t                                                     :piritet
+STR_CARGO_NAME_PYRITE_ORE                                                       :Piritérc
+STR_CARGO_NAME_PYRITE_ORE.t                                                     :piritércet
 STR_CARGO_NAME_QUICKLIME                                                        :Égetett mész
 STR_CARGO_NAME_QUICKLIME.t                                                      :égetett meszet
 STR_CARGO_NAME_RECYCLABLES                                                      :Újrahasznosítható áru
@@ -164,7 +164,7 @@ STR_CARGO_UNIT_PHOSPHATE                                                        
 STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} nyersvas
 STR_CARGO_UNIT_PIPE                                                             :{WEIGHT} cső
 STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} hamuzsír
-STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pirit
+STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} piritérc
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} égetett mész
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} újrahasznosítható áru
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} homok
@@ -177,7 +177,7 @@ STR_CARGO_UNIT_SUGAR_BEET                                                       
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} kén
 STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} karosszéria elem
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} láda járműalkatrész
-STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} jármű
+STR_CARGO_UNIT_VEHICLES                                                         :{WEIGHT} jármű
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bála gyapjú
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} cink
 
@@ -201,11 +201,11 @@ STR_CID_FIBRES                                                                  
 STR_CID_FISH                                                                    :{TINYFONT}HL
 STR_CID_KAOLIN                                                                  :{TINYFONT}KA
 STR_CID_LUMBER                                                                  :{TINYFONT}FÜ
-STR_CID_MANGANESE                                                               :{TINYFONT}Mn
+STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}GS
 STR_CID_METAL                                                                   :{TINYFONT}FM
 STR_CID_MILK                                                                    :{TINYFONT}TJ
-STR_CID_NICKEL                                                                  :{TINYFONT}Ni
+STR_CID_NICKEL                                                                  :{TINYFONT}NI
 STR_CID_NITRATES                                                                :{TINYFONT}SL
 STR_CID_NUTS                                                                    :{TINYFONT}DI
 STR_CID_PEAT                                                                    :{TINYFONT}TZ
@@ -229,7 +229,7 @@ STR_CID_VEHICLE_BODIES                                                          
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}JA
 STR_CID_VEHICLES                                                                :{TINYFONT}JM
 STR_CID_WOOL                                                                    :{TINYFONT}GY
-STR_CID_ZINC                                                                    :{TINYFONT}Zn
+STR_CID_ZINC                                                                    :{TINYFONT}CN
 
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}A FIRS nem a játékvilág tájhoz lett tervezve.
@@ -315,8 +315,8 @@ STR_IND_HARDWARE_STORE                                                          
 STR_IND_HARDWARE_STORE.t                                                        :barkácsboltot
 STR_IND_HOTEL                                                                   :Szálloda
 STR_IND_HOTEL.t                                                                 :szállodát
-STR_IND_HERDING_COOP                                                            :Tenyészgazdaság
-STR_IND_HERDING_COOP.t                                                          :tenyészgazdaságot
+STR_IND_HERDING_COOP                                                            :Baromfigazdaság
+STR_IND_HERDING_COOP.t                                                          :baromfigazdaságot
 STR_IND_IRON_WORKS                                                              :Vaskohó
 STR_IND_IRON_WORKS.t                                                            :vaskohót
 STR_IND_JUNKYARD                                                                :Roncstelep
@@ -355,8 +355,8 @@ STR_IND_POTASH_MINE                                                             
 STR_IND_POTASH_MINE.t                                                           :hamuzsírbányát
 STR_IND_PYRITE_MINE                                                             :Piritbánya
 STR_IND_PYRITE_MINE.t                                                           :piritbányát
-STR_IND_PYRITE_SMELTER                                                          :Piritfeldolgozó
-STR_IND_PYRITE_SMELTER.t                                                        :piritfeldolgozót
+STR_IND_PYRITE_SMELTER                                                          :Piritolvasztó
+STR_IND_PYRITE_SMELTER.t                                                        :piritolvasztót
 STR_IND_POWER_PLANT                                                             :Erőmű
 STR_IND_POWER_PLANT.t                                                           :erőművet
 STR_IND_QUARRY                                                                  :Kőfejtő
@@ -425,16 +425,70 @@ STR_FUND_AVAILABLE_UNTIL                                                        
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
 
-STR_STATION_ANIMALS                                                             :Lópiac
+STR_STATION_ANIMALS                                                             :Hentes
+STR_STATION_AUTOMOTIVE                                                          :Automotív
+STR_STATION_BAR_GRILL_AND_ROOMS                                                 :Szálló
+STR_STATION_BARNS                                                               :Istállók
+STR_STATION_BARREL_AND_KEG                                                      :Szeszfőzde
+STR_STATION_BASE                                                                :Telep
+STR_STATION_BONEYARD                                                            :Roncstelep
+STR_STATION_BANK_TOP                                                            :Kokszoló
+STR_STATION_CASTINGS                                                            :Öntöde
+STR_STATION_COLLIERY                                                            :Szénbánya
+STR_STATION_COPPER_LODE                                                         :Rézlelőhely
+STR_STATION_CREOSOTING                                                          :Fatelep
+STR_STATION_DAIRY_LANE                                                          :Tejüzem
+STR_STATION_ESTATE                                                              :Birtok
+STR_STATION_EXCHANGE                                                            :Átrakó
+STR_STATION_FARM_1                                                              :Tanya
+STR_STATION_FARM_2                                                              :Legelő
+STR_STATION_FARM_3                                                              :Major
 STR_STATION_FISHMARKET                                                          :Halpiac
-STR_STATION_HERDING_COOP                                                        :Tanya
+STR_STATION_FOOD_CORPORATION                                                    :Konzervgyár
+STR_STATION_FOREST                                                              :Favágótelep
+STR_STATION_FORGE                                                               :Műhely
+STR_STATION_FURNACE                                                             :Kohó
+STR_STATION_HEAVY_EQUIPMENT_YARD                                                :Nehézgéptelep
+STR_STATION_HEAVY_INDUSTRY_2                                                    :Művek
+STR_STATION_HERDING_COOP                                                        :Tyúkól
+STR_STATION_INDUSTRY_ESTATE_1                                                   :Ipari park
+STR_STATION_INDUSTRY_HARBOUR_1                                                  :Ipari kikötő
+STR_STATION_INDUSTRY_HARBOUR_2                                                  :Part
+STR_STATION_INDUSTRY_HARBOUR_3                                                  :Kereskedő
+STR_STATION_IRONSTONE                                                           :Vasércbánya
+STR_STATION_JOINERS_SHOP                                                        :Asztalos
+STR_STATION_KILNS                                                               :Égető
+STR_STATION_KIMBERLITE_DEPOSITS                                                 :Gyémántlelőhely
+STR_STATION_MANGANESE_MINES                                                     :Mangánbánya
 STR_STATION_MARKET                                                              :Piac
+STR_STATION_MERCHANTS_LANE                                                      :Újváros
 STR_STATION_MILL                                                                :Malom
 STR_STATION_MINE                                                                :Tímár út
-STR_STATION_PIT                                                                 :Gödör
+STR_STATION_MOULDINGS                                                           :Műanyaggyár
+STR_STATION_OIL_RIG                                                             :Olajmező
+STR_STATION_ORCHARDS                                                            :Gyümölcsös
+STR_STATION_PIT                                                                 :Fejtés
 STR_STATION_PLANTATION                                                          :Ültetvény
 STR_STATION_POWERHUNGRY                                                         :Erőmű
-STR_STATION_POWERHUNGRY.ba                                                      :Erőműbe
-STR_STATION_POWERHUNGRY.t                                                       :Erőművet
+STR_STATION_PUMPS                                                               :Pumpa
+STR_STATION_PYRITES                                                             :Piritlelőhely
 STR_STATION_REFINERY                                                            :Finomító
-STR_STATION_WATER                                                               :Mederkotrás
+STR_STATION_RUBBER_COMPANY                                                      :Gumigyár
+STR_STATION_SALTPETER_WORKS                                                     :Salétrombánya
+STR_STATION_SHARP_STREET                                                        :Üveggyár
+STR_STATION_SHEEP_FOLD                                                          :Birkafarm
+STR_STATION_SHOALS                                                              :Halászterület
+STR_STATION_SILO                                                                :Siló
+STR_STATION_SMELTER                                                             :Olvasztó
+STR_STATION_STAMP_AND_PLATE                                                     :Lakatos
+STR_STATION_SUGAR_COMPANY                                                       :Cukorfinomító
+STR_STATION_TANK_FARM                                                           :Tartálytelep
+STR_STATION_TAPPERS_SHED                                                        :Gumifa ültetvény
+STR_STATION_TOWN_1                                                              :Régi városháza
+STR_STATION_TOWN_2                                                              :Fő út
+STR_STATION_TOWN_3                                                              :Áruház
+STR_STATION_TRONA_BEDS                                                          :Szikvidék
+STR_STATION_WATER                                                               :Zátony
+STR_STATION_WEAVE_AND_DYE                                                       :Szabóság
+STR_STATION_WELLS                                                               :Olajkút
+STR_STATION_WINERY                                                              :Borászat
