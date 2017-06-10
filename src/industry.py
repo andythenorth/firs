@@ -721,7 +721,7 @@ class IndustryProperties(object):
         self.prob_in_game = kwargs.get('prob_in_game', None)
         self.prob_random = kwargs.get('prob_random', None)
         self.prospect_chance = kwargs.get('prospect_chance', None)
-        self.map_colour = kwargs.get('map_colour', None)
+        #self.map_colour = # kwargs.get('map_colour', None)
         self.life_type = kwargs.get('life_type', None)
         self.spec_flags = kwargs.get('spec_flags', '0')
         self.fund_cost_multiplier = kwargs.get('fund_cost_multiplier', None)
@@ -899,6 +899,11 @@ class Industry(object):
         # does magic to get the property from the defaults if not set
         # that enables economies to over-ride selected properties and not bother setting others
         # doesn't try to handle failure case of property not found at all: don't look up props that don't exist
+
+        # !! map colour is now automated
+        if property_name is 'map_colour':
+            return str(self.get_map_colour())
+
         default_value = getattr(self.default_industry_properties, property_name)
         if economy is None:
             value = default_value
@@ -917,6 +922,9 @@ class Industry(object):
             return
         else:
             return property_name + ': ' + value + ';'
+
+    def get_map_colour(self):
+        return global_constants.industry_map_colours[self.get_numeric_id()]
 
     def get_nearby_station_name_declaration(self):
         return 'nearby_station_name: string(STR_STATION, string(STR_TOWN),' + self.get_property('nearby_station_name', None) + ');'
