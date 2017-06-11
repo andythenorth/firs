@@ -13,7 +13,6 @@ import sys
 import os
 currentdir = os.curdir
 src_path = os.path.join(currentdir, 'src')
-from multiprocessing import Pool
 from time import time
 
 import global_constants
