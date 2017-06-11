@@ -37,6 +37,7 @@ STR_CARGO_NAME_BAUXITE                                                          
 STR_CARGO_NAME_BEANS                                                            :{G=m}Fagioli
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=m}Materiali per edilizia
 STR_CARGO_NAME_CASSAVA                                                          :Manioca
+STR_CARGO_NAME_CEMENT                                                           :Cemento
 STR_CARGO_NAME_CHEMICALS                                                        :{G=m}Prodotti chimici
 STR_CARGO_NAME_CLAY                                                             :{G=f}Argilla
 STR_CARGO_NAME_COFFEE                                                           :{G=m}Caffé
@@ -95,6 +96,7 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} di pesce
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} cass{P 0 a e} di forniture agricole
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} di frutta e verdura
+STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} di caolinite
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} di prodotti in legno
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} di manganese
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} di metalli
@@ -103,6 +105,7 @@ STR_CARGO_UNIT_NICKEL                                                           
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} di nitrati
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} sacc{P 0 o hi} di noci
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} cass{P 0 a e} di forniture industriali
+STR_CARGO_UNIT_PEAT                                                             :{WEIGHT} di torba
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} di carburante
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} di fosfato
 STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} di ghisa
@@ -114,6 +117,7 @@ STR_CARGO_UNIT_RECYCLABLES                                                      
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} di sabbia
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} di metalli di scarto
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} di scorie
+STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} di carbonato di sodio
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} d'acciaio
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} di pietre
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} di barbabietola da zucchero
@@ -227,6 +231,7 @@ STR_IND_METAL_WORKSHOP                                                          
 STR_IND_MIXEDFARM                                                               :{G=f}Azienda agricola
 STR_IND_NITRATE_MINE                                                            :{G=f}Miniera di nitrati
 STR_IND_ORCHARD_PIGGERY                                                         :{G=m}Frutteto e porcile
+STR_IND_PEATLANDS                                                               :Giacimento di torba
 STR_IND_PETROLPUMP                                                              :{G=f}Pompa di benzina
 STR_IND_PHOSPHATE_MINE                                                          :Miniera di fosfato
 STR_IND_PLASTICS_PLANT                                                          :{G=f}Fabbrica di prodotti in plastica
@@ -253,6 +258,7 @@ STR_IND_ASSEMBLY_PLANT                                                          
 STR_IND_VINEYARD                                                                :{G=f}Vigna
 
 
+STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Raggiunge il massimo livello di produzione se {WHITE}una qualsiasi {BLACK}delle merci richieste viene consegnata.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La quantità di prodotto dipende dalle dimensioni della città.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produzione attuale: {YELLOW}Normale{}{}{BLACK}Il livello di produzione {WHITE}Elevato {BLACK} si raggiunge consegnando {SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al livello {WHITE}Gung ho {BLACK} si devono consegnare {SIGNED_WORD} casse
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produzione attuale: {YELLOW}Elevata{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al livello {WHITE}Gung ho{BLACK} consegna {SIGNED_WORD} casse
@@ -279,6 +285,7 @@ STR_TOWN                                                                        
 STR_STATION                                                                     :{STRING} {STRING}
 
 STR_STATION_ANIMALS                                                             :Mercato del bestiame
+STR_STATION_CREOSOTING                                                          :Creosoto
 STR_STATION_FARM_1                                                              :Fattorie
 STR_STATION_FISHMARKET                                                          :Mercato del pesce
 STR_STATION_INDUSTRY_ESTATE_1                                                   :Zona industriale
@@ -289,6 +296,7 @@ STR_STATION_MINE                                                                
 STR_STATION_PIT                                                                 :Scavo
 STR_STATION_PLANTATION                                                          :Piantagioni
 STR_STATION_POWERHUNGRY                                                         :Centrale
+STR_STATION_PUMPS                                                               :Pompe
 STR_STATION_REFINERY                                                            :Raffinerie
 STR_STATION_TOWN_1                                                              :Piazza del municipio
 STR_STATION_WATER                                                               :Riva
