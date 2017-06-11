@@ -84,18 +84,14 @@ class DocHelper(object):
         for economy in economy_schemas:
             name = industry.get_property('name', economy)
             result.append(utils.unwrap_nml_string_declaration(name))
-        # sort so that industry names appear in correct order in lists etc
-        # ! this sorts on the string IDs not the actual names so either:
-        # 1) keep string IDs alphabetised same as actual names
-        # 2) fix this to use the actual strings as keys on a lambda sort
-        return sorted(set(result))
+        return set(result)
 
     def get_industry_all_names(self, industry):
         # names can vary in each economy
         result = []
         for name_string in self.get_industry_all_name_strings(industry):
             result.append(base_lang_strings.get(name_string, 'NO NAME ' + name_string + ' ' + industry.id))
-        return set(result)
+        return sorted(set(result))
 
     def get_nearby_station_name(self, industry):
         station_name = utils.unwrap_nml_string_declaration(industry.get_property('nearby_station_name', None))
@@ -108,7 +104,7 @@ class DocHelper(object):
 
     def get_registered_industries_sorted_by_name(self):
         # industries don't store the name as a python attr, but we often need to iterate over their names in A-Z order
-        result = dict((self.get_industry_name(industry), industry) for industry in registered_industries)
+        result = dict((self.get_industry_all_names(industry)[0], industry) for industry in registered_industries)
         return sorted(result.items())
 
     def get_economy_extra_info(self, economy):
