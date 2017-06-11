@@ -3,8 +3,6 @@ currentdir = os.curdir
 
 import codecs
 
-import sys
-
 # this script is a one-off to mass-remove ids from spritesets, they're deprecated
 ignore_files = ['.DS_Store', '__init__.py', '__pycache__']
 
