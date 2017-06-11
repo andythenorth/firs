@@ -1,14 +1,13 @@
 Changelog
 =========
 
-
-!!!!!! r5052 was 2.15 !!!!!!
-
 --------------
 3.0.0 Release
 --------------
 
-**FIRS 2.0.0 is not savegame-compatible with any previous version of FIRS.**
+**FIRS 3.0.0 is not savegame-compatible with any previous version of FIRS.**
+
+FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 
 *Improved Economies*
 
@@ -50,6 +49,10 @@ Changelog
     - Rubber Plantation
     - Vineyard
 Diamond Mine: no longer uses graphics from base set, and has additional layouts
+Fishing Grounds / Fishing Harbour:
+    - better clustering and co-location behaviour for this chain
+    - where possible, Fishing Harbours will be built within a sensible distance of Fishing Grounds
+    - this isn't always possible, good luck!
 Iron Ore Mine: no longer uses graphics from base set, and has additional layouts
 Fertiliser Plant:
     - renamed to Fertiliser and Explosives Plant
@@ -84,6 +87,9 @@ Vehicle Factory
     - Sulphur
     - Vehicle Bodies
     - Zinc
+- Vehicles cargo:
+    - now uses 'tonnes' (or equivalent localised weight) as unit, rather than 'vehicles'
+    - simpler for vehicle newgrf authors to deal with, no special treatment needed for Vehicles cargo
 
 *General Improvements*
 
@@ -106,10 +112,15 @@ Vehicle Factory
 - industry 'nearby station' names are expanded and reworked
     - more industries set unique names for nearby stations
     - existing names reworked
+- adjusted all cargo colours:
+    - all cargo colours now unique within FIRS
+    - each cargo now uses same colour everywhere (charts, station list, cargo flow view) etc.
+- (Experimental) rework of industry map colours
 - updated online docs with images for new and changed industries
 - docs show hints about many cargos, to aid vehicle set authors
 - docs show cargo colours and industry map colours (Code Reference page)
 - docs no longer show cargos that are not used (including Sugar and Sugarcane)
+- more variety in randomised banner images for docs
 
 *Translations*
 
@@ -117,6 +128,9 @@ Vehicle Factory
 
 *Codechanges*
 
+- grfid bumped, v3 is different enough to v2 to justify a new grfid
+- improved/fixed display of repo revision in filenames etc
+- move lang dir into src for consistency with Iron Horse etc
 - new Makefile, much simplified (Alberth)
 - remove all use of C-Pre-Processor templates
     - FIRS templating is now 100% python
@@ -125,7 +139,6 @@ Vehicle Factory
 - only render 'if economy=x' when needed, saving ~1k lines in output, and slightly faster compile
 - only include construction states in spritelayout if needed
 - stop setting zextents, it's not useful, and may have caused some sprite flickering bugs which now seem resolved
-- Metal cargo label now 'METL' not 'STEL', cargo labels must be unique per cargo, cannot be reused inside FIRS
 - remove secondary industry debug text; use the newgrf debug to read storages instead
 - processing industries with two outputs now have option to produce in ratios other than 50:50
 - stopped setting multiple unnecessary properties for industries and cargos
@@ -133,13 +146,17 @@ Vehicle Factory
 - removed files and imports for some unused industries and cargos
 - rename templates on the filesystem for consistency and ease of navigation
 - clean up usage and documentation of industry permanent storage
+- remove manually declared ids from spritesets, much less boilerplate and find-replace for industry spritsets
+- don't fail silently if tile numeric IDs are not defined; fix a bunch of missing tile numeric IDs
 - minor code refactoring in many other places, simplifying where possible
+- GPL notice is not required imho for every source file, remove them widely
 - magic templates:
     - for industries with trees, including terrain and slope support
     - for harbours
 - automated incompatible industry checks
+- require_houses_nearby check circular tile search range increased to 7 (and uses automated generator for the ranges)
 - set random_sound_effects to empty array to prevent spurious sounds due to default industry properties
-- grfid bumped, v3 is different enough to v2 to justify a new grfid
+- Metal cargo label now 'METL' not 'STEL', cargo labels must be unique per cargo, cannot be reused inside FIRS
 
 
 --------------
