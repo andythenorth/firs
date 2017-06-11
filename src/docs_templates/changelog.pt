@@ -1,6 +1,143 @@
 Changelog
 =========
 
+
+!!!!!! r5052 was 2.15 !!!!!!
+
+--------------
+3.0.0 Release
+--------------
+
+**FIRS 2.0.0 is not savegame-compatible with any previous version of FIRS.**
+
+*Improved Economies*
+
+- 'Arctic Basic' economy
+    - totally reworked, inspired by Finland, Northern Canada and Northern Siberia
+    - mixed economy, based on natural resources extraction and processing
+    - multiple new chains and cargo types, including Explosives, Peat, Sulphur and Zinc
+    - new industries include Herding Co-op and Peatlands
+    - includes fish as important food source
+- 'Steeltown' economy
+    - highly industrial economy, dominated by Iron and Steel chain
+    - multiple new chains and cargo types, including Coke, Quicklime, Pig Iron, Pipe, Soda Ash and Slag
+    - new industries include Basic Oxygen Furnace, Coke Oven, Soda Ash Mine and Electric Arc Furnace
+    - a complex economy with 28 cargos and 23 industries
+    - highly focussed on industrial production
+    - most chains connect to ultimately produce Vehicles and Engineering Supplies
+    - use with any climate
+
+*Improved Industries*
+
+- new industry types:
+    - Basic Oxygen Furnace
+    - Coke Oven
+    - Electric Arc Furnace
+    - Farm
+    - Foundry
+    - Herding Co-op
+    - Farm / Mixed Farm
+    - Peatlands
+    - Slag Grinding Plant
+    - Soda Ash Mine
+- improved industry graphics and layouts:
+    - Coffee Estate
+    - Forest
+    - Fruit Plantation
+    - Orchard and Piggery
+    - Paper Mill
+    - Pyrite Mine
+    - Rubber Plantation
+    - Vineyard
+Diamond Mine: no longer uses graphics from base set, and has additional layouts
+Iron Ore Mine: no longer uses graphics from base set, and has additional layouts
+Fertiliser Plant:
+    - renamed to Fertiliser and Explosives Plant
+    - now produces Engineering Supplies (civil explosives) in addition to Farm Supplies
+Lime Kiln: production ratios improved, industry output was previously nerfed, not intentionally
+Metal Fabrication Plant:
+    - name varies by economy, either Metal Fabrication Plant or Steel Finishing Plant
+Mixed Farm:
+    - name varies by economy, either Farm or Mixed Farm
+Steel Mill
+    - name varies by economy, either Blast Furnace or Steel Mill
+    - Blast Furnace variant requires Coke, Iron Ore, Stone, produces Pig Iron and Slag
+    - Steel Mill variant unchanged, requires Coal, Iron Ore, Scrap Metal, produces Metal
+Vehicle Factory
+    - renamed to Assembly Plant
+
+*Improved Cargos*
+
+- new cargo types
+    - Cement
+    - Coke
+    - Explosives
+    - Fertiliser
+    - Kaolin
+    - Peat
+    - Pig Iron
+    - Pipe
+    - Quicklime
+    - Slag
+    - Soda Ash
+    - Steel
+    - Sulphur
+    - Vehicle Bodies
+    - Zinc
+
+*General Improvements*
+
+- Brewery, Flour Mill, Hotel and Junk Yard now check for nearby houses, instead of distance to town sign, thhis will improve game placement of these industries in large cities
+
+- Docs no longer show cargos that are not used (including Sugar and Sugarcane)
+
+
+- adjusted clustering behaviour for most primary industries
+    - clusters are less dense, making it much easier to place stations
+    - especially easier for placing supply delivery stations that should not overlap multiple industries
+- adjusted industry production rates for most primary industries
+    - production is generally adjusted upwards, especially for farms
+    - revised production allows pickup of sensible amounts from a single industry instead of needing to aggregate several industries
+    - amount of supplies required now same for farms and mines
+- industry probability revised to better distribute numbers of each industry type
+- processing industries that combine cargo now have a three-month delivery window instead of one month for increased output
+    - this supports a wider range of transport types and play-styles, for example infrequent deliveries with ships
+- added missing boost behaviour at some processing industries
+- for many industries, allow location on a wider range of slopes, for better distribution on map gen
+    - instead of simply disallowing all slopes, require 'effectively level' land, where only the highest corner of each tile must match the highest corner of the industry north tile
+    - the benefit of this is that industries are no longer mostly crowded into flat valleys by map generator
+- removed gaps in layouts from multiple industries, they look unsightly and aren't actually useful for building routes/stations
+- explicitly preserve cargo slots (IDs) for passengers, mail, goods and food, default OTTD houses need them
+- removed custom station rating parameter
+- added parameters for adjusting 'Enhanced' and 'Gung-Ho' production behaviour at primary industries
+    - amount of supplies required for each level can be set
+    - increased production at each level can be set
+    - affects farm-type and mine-type industries
+    - port-type industries are also affected, with requirements at 10x the parameter value
+- explicitly set the order of economies in parameter menu and docs (progression is from basic to more complex)
+- updated online docs with images for new and changed industries
+- docs now include charts showing cargo flow
+- docs had some broken html
+- updated translations page of docs, linking to newgrf translator
+- updated readme.txt with newer vehicle sets
+
+*Translations*
+
+- multiple languages updated
+
+*Codechanges*
+
+- Metal cargo now uses METL label
+
+- converted significant number of legacy C-Pre-Processor templates to python templates
+- removed a large number of redundant industry templates, code is now much easier to maintain
+- reduced compile time substantially (from > 2 mins to < 1 min on the test machine)
+- support for single-industry compiles using make argument 'TEST_INDUSTRY=clay_pit' (swap 'clay_pit' to the required industry id)
+    - single-industry compiles take around 5s on the test machine
+- take advantage of increased industry limit in OpenTTD and stop trying to stuff > 64 industries into 64 slots
+- grfid bumped, v2 is different enough to v1 to justify a new grfid
+
+
 --------------
 2.1.5 Release
 --------------
@@ -145,7 +282,6 @@ Changelog
     - renamed 'FIRS' to 'Extreme'
     - added Power Plant
     - tip: try 'Extreme' with the Busy Bee Game Script which provides cargo delivery goals
-
 
 *Improved Industries*
 
