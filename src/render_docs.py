@@ -84,7 +84,7 @@ class DocHelper(object):
         for economy in economy_schemas:
             name = industry.get_property('name', economy)
             result.append(utils.unwrap_nml_string_declaration(name))
-        return set(result)
+        return sorted(set(result))
 
     def get_industry_all_names(self, industry):
         # names can vary in each economy
