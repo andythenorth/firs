@@ -138,10 +138,10 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 - only render extra text switches for economies where industry is active (aids compile speed)
 - only render 'if economy=x' when needed, saving ~1k lines in output, and slightly faster compile
 - only include construction states in spritelayout if needed
-- stop setting zextents, it's not useful, and may have caused some sprite flickering bugs which now seem resolved
+- don't set zextents, it's not useful, and may have caused some sprite flickering bugs which now seem resolved
 - remove secondary industry debug text; use the newgrf debug to read storages instead
 - processing industries with two outputs now have option to produce in ratios other than 50:50
-- stopped setting multiple unnecessary properties for industries and cargos
+- don't set multiple unnecessary properties for industries and cargos
 - fixed minor linting issues found by pyflakes
 - removed files and imports for some unused industries and cargos
 - rename templates on the filesystem for consistency and ease of navigation
