@@ -45,7 +45,7 @@ Changelog
     - Forest
     - Fruit Plantation
     - Orchard and Piggery
-    - Paper Mill
+    - Paper Mill (DanMacK)
     - Pyrite Mine
     - Rubber Plantation
     - Vineyard
@@ -87,39 +87,29 @@ Vehicle Factory
 
 *General Improvements*
 
+- reworked industry window text for processing industries
+    - dropped 'produces x output per y delivered' text
+    - was hard to understand, frequently had mistakes, and made much work for translators
+    - now simplified, taking advantage of new features in OpenTTD 1.7.0
+    - cargos are simply shown as 'required'
+    - 'supplied' will be shown if a cargo has been delivered within the last 90 days
+- industries accepting Manufacturing Supplies:
+    - these industries now use same production boost behaviour as all other processing industries when combining cargo
+    - previously these industries had special boost behaviour which was hard to explain
+- tweaks to industry probabilities for game balance and consistency
+- primary industry production levels
+    - adjusted production levels at some primary industries for game balance
+    - adjusted initial randomisation of these production levels for game balance
+- distance checks to incompatible industries now applied consistently
+- adjusted clustering behaviour for some primary industries
 - Brewery, Flour Mill, Hotel and Junk Yard now check for nearby houses, instead of distance to town sign, thhis will improve game placement of these industries in large cities
-
-- Docs no longer show cargos that are not used (including Sugar and Sugarcane)
-
-
-- adjusted clustering behaviour for most primary industries
-    - clusters are less dense, making it much easier to place stations
-    - especially easier for placing supply delivery stations that should not overlap multiple industries
-- adjusted industry production rates for most primary industries
-    - production is generally adjusted upwards, especially for farms
-    - revised production allows pickup of sensible amounts from a single industry instead of needing to aggregate several industries
-    - amount of supplies required now same for farms and mines
-- industry probability revised to better distribute numbers of each industry type
-- processing industries that combine cargo now have a three-month delivery window instead of one month for increased output
-    - this supports a wider range of transport types and play-styles, for example infrequent deliveries with ships
-- added missing boost behaviour at some processing industries
-- for many industries, allow location on a wider range of slopes, for better distribution on map gen
-    - instead of simply disallowing all slopes, require 'effectively level' land, where only the highest corner of each tile must match the highest corner of the industry north tile
-    - the benefit of this is that industries are no longer mostly crowded into flat valleys by map generator
-- removed gaps in layouts from multiple industries, they look unsightly and aren't actually useful for building routes/stations
-- explicitly preserve cargo slots (IDs) for passengers, mail, goods and food, default OTTD houses need them
-- removed custom station rating parameter
-- added parameters for adjusting 'Enhanced' and 'Gung-Ho' production behaviour at primary industries
-    - amount of supplies required for each level can be set
-    - increased production at each level can be set
-    - affects farm-type and mine-type industries
-    - port-type industries are also affected, with requirements at 10x the parameter value
-- explicitly set the order of economies in parameter menu and docs (progression is from basic to more complex)
+- industry 'nearby station' names are expanded and reworked
+    - more industries set unique names for nearby stations
+    - existing names reworked
 - updated online docs with images for new and changed industries
-- docs now include charts showing cargo flow
-- docs had some broken html
-- updated translations page of docs, linking to newgrf translator
-- updated readme.txt with newer vehicle sets
+- docs show hints about many cargos, to aid vehicle set authors
+- docs show cargo colours and industry map colours (Code Reference page)
+- docs no longer show cargos that are not used (including Sugar and Sugarcane)
 
 *Translations*
 
@@ -127,15 +117,29 @@ Vehicle Factory
 
 *Codechanges*
 
-- Metal cargo now uses METL label
-
-- converted significant number of legacy C-Pre-Processor templates to python templates
-- removed a large number of redundant industry templates, code is now much easier to maintain
-- reduced compile time substantially (from > 2 mins to < 1 min on the test machine)
-- support for single-industry compiles using make argument 'TEST_INDUSTRY=clay_pit' (swap 'clay_pit' to the required industry id)
-    - single-industry compiles take around 5s on the test machine
-- take advantage of increased industry limit in OpenTTD and stop trying to stuff > 64 industries into 64 slots
-- grfid bumped, v2 is different enough to v1 to justify a new grfid
+- new Makefile, much simplified (Alberth)
+- remove all use of C-Pre-Processor templates
+    - FIRS templating is now 100% python
+    - no longer requires GCC-compatible compiler to build FIRS
+- only render extra text switches for economies where industry is active (aids compile speed)
+- only render 'if economy=x' when needed, saving ~1k lines in output, and slightly faster compile
+- only include construction states in spritelayout if needed
+- stop setting zextents, it's not useful, and may have caused some sprite flickering bugs which now seem resolved
+- Metal cargo label now 'METL' not 'STEL', cargo labels must be unique per cargo, cannot be reused inside FIRS
+- remove secondary industry debug text; use the newgrf debug to read storages instead
+- processing industries with two outputs now have option to produce in ratios other than 50:50
+- stopped setting multiple unnecessary properties for industries and cargos
+- fixed minor linting issues found by pyflakes
+- removed files and imports for some unused industries and cargos
+- rename templates on the filesystem for consistency and ease of navigation
+- clean up usage and documentation of industry permanent storage
+- minor code refactoring in many other places, simplifying where possible
+- magic templates:
+    - for industries with trees, including terrain and slope support
+    - for harbours
+- automated incompatible industry checks
+- set random_sound_effects to empty array to prevent spurious sounds due to default industry properties
+- grfid bumped, v3 is different enough to v2 to justify a new grfid
 
 
 --------------
