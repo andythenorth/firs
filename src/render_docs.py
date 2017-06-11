@@ -84,6 +84,10 @@ class DocHelper(object):
         for economy in economy_schemas:
             name = industry.get_property('name', economy)
             result.append(utils.unwrap_nml_string_declaration(name))
+        # sort so that industry names appear in correct order in lists etc
+        # ! this sorts on the string IDs not the actual names so either:
+        # 1) keep string IDs alphabetised same as actual names
+        # 2) fix this to use the actual strings as keys on a lambda sort
         return sorted(set(result))
 
     def get_industry_all_names(self, industry):
