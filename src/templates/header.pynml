@@ -1,10 +1,10 @@
 grf {
-	grfid: "\F1%\00\06";
+	grfid: "\F1%\00\07";
 	name: string(STR_GRF_NAME);
 	desc: string(STR_GRF_DESC);
 	url: string(STR_GRF_URL);
 	version: ${repo_vars.repo_revision};
-	min_compatible_version: 5613;
+	min_compatible_version: 5668;
 	param 0 {
 	    <!--! 'economy_selection' is remapped to 'economy' later because we can't control order and value separately here -->
 		economy_selection {
