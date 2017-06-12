@@ -59,6 +59,7 @@ STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           
 STR_CARGO_NAME_NICKEL                                                           :Nichel
 STR_CARGO_NAME_NITRATES                                                         :{G=m}Nitrati
 STR_CARGO_NAME_NUTS                                                             :{G=f}Noci
+STR_CARGO_NAME_PEAT                                                             :Torba
 STR_CARGO_NAME_PETROL                                                           :{G=m}Carburante
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosfato
 STR_CARGO_NAME_PIG_IRON                                                         :Ghisa
@@ -74,7 +75,8 @@ STR_CARGO_NAME_STEEL                                                            
 STR_CARGO_NAME_STONE                                                            :{G=f}Pietre
 STR_CARGO_NAME_SUGAR_BEET                                                       :{G=f}Barbabietole da zucchero
 STR_CARGO_NAME_SULPHUR                                                          :Zolfo
-STR_CARGO_NAME_VEHICLE_PARTS                                                    :{G=m}Parti di veicoli
+STR_CARGO_NAME_VEHICLE_BODIES                                                   :{G=f}Parti di carrozzerie
+STR_CARGO_NAME_VEHICLE_PARTS                                                    :{G=f}Parti meccaniche
 STR_CARGO_NAME_VEHICLES                                                         :Veicoli
 STR_CARGO_NAME_WOOL                                                             :{G=f}Lana
 
@@ -83,6 +85,7 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} di fagioli
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} di materiali per edilizia
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} di manioca
+STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} di cemento
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} di prodotti chimici
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} di argilla
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sacc{P 0 o hi} di caffé
@@ -122,7 +125,8 @@ STR_CARGO_UNIT_STEEL                                                            
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} di pietre
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} di barbabietola da zucchero
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} di zolfo
-STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} cass{P 0 a e} di parti per veicoli
+STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} di parti di carrozzerie
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} cass{P 0 a e} di parti meccaniche
 STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} veicol{P 0 o i}
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} ball{P 0 a e} di lana
 
@@ -231,12 +235,12 @@ STR_IND_METAL_WORKSHOP                                                          
 STR_IND_MIXEDFARM                                                               :{G=f}Azienda agricola
 STR_IND_NITRATE_MINE                                                            :{G=f}Miniera di nitrati
 STR_IND_ORCHARD_PIGGERY                                                         :{G=m}Frutteto e porcile
-STR_IND_PEATLANDS                                                               :Giacimento di torba
+STR_IND_PEATLANDS                                                               :{G=f} Torbiera
 STR_IND_PETROLPUMP                                                              :{G=f}Pompa di benzina
-STR_IND_PHOSPHATE_MINE                                                          :Miniera di fosfato
+STR_IND_PHOSPHATE_MINE                                                          :{G=f}Miniera di fosfato
 STR_IND_PLASTICS_PLANT                                                          :{G=f}Fabbrica di prodotti in plastica
 STR_IND_PORT                                                                    :{G=m}Porto
-STR_IND_POTASH_MINE                                                             :Miniera di potassa
+STR_IND_POTASH_MINE                                                             :{G=f}Miniera di potassa
 STR_IND_PYRITE_MINE                                                             :{G=f}Miniera di pirite
 STR_IND_PYRITE_SMELTER                                                          :{G=f}Fonderia di pirite
 STR_IND_POWER_PLANT                                                             :Centrale elettrica
@@ -248,6 +252,7 @@ STR_IND_REINDEER_FARM                                                           
 STR_IND_SHEEPFARM                                                               :{G=m}Allevamento di ovini
 STR_IND_SLAG_GRINDING_PLANT                                                     :Stabilimento per macinazione scorie
 STR_IND_SMITHY_FORGE                                                            :{G=f}Piccola fucina
+STR_IND_SODA_ASH_MINE                                                           :{G=f}Miniera di carbonato di sodio
 STR_IND_STOCKYARD                                                               :{G=m}Macello
 STR_IND_SUGAR_REFINERY                                                          :{G=f}Raffineria di zucchero
 STR_IND_SUPPLY_YARD                                                             :{G=m}Deposito di forniture
@@ -258,7 +263,9 @@ STR_IND_ASSEMBLY_PLANT                                                          
 STR_IND_VINEYARD                                                                :{G=f}Vigna
 
 
+STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(consegnato)
 STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Raggiunge il massimo livello di produzione se {WHITE}una qualsiasi {BLACK}delle merci richieste viene consegnata.
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}Il massimo livello di produzione si raggiunge consegnando {WHITE}tutti {BLACK}i tipi di merce richiesti almeno una volta ogni tre mesi.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La quantità di prodotto dipende dalle dimensioni della città.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produzione attuale: {YELLOW}Normale{}{}{BLACK}Il livello di produzione {WHITE}Elevato {BLACK} si raggiunge consegnando {SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al livello {WHITE}Gung ho {BLACK} si devono consegnare {SIGNED_WORD} casse
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produzione attuale: {YELLOW}Elevata{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al livello {WHITE}Gung ho{BLACK} consegna {SIGNED_WORD} casse
@@ -273,6 +280,7 @@ STR_FUND_COFFEE_ESTATE                                                          
 STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
 STR_FUND_FOREST                                                                 :{}{BLACK}Luogo: {YELLOW}Non si può fondare nel deserto.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve.
+STR_FUND_HERDING_COOP                                                           :{}{BLACK}Luogo: {YELLOW}Si può solo fondare sulla neve.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
@@ -285,18 +293,44 @@ STR_TOWN                                                                        
 STR_STATION                                                                     :{STRING} {STRING}
 
 STR_STATION_ANIMALS                                                             :Mercato del bestiame
+STR_STATION_BASE                                                                :Campo base
+STR_STATION_BONEYARD                                                            :{G=m}Deposito rottami di aerei
+STR_STATION_CASTINGS                                                            :Fonderie
+STR_STATION_COLLIERY                                                            :Miniere
 STR_STATION_CREOSOTING                                                          :Creosoto
+STR_STATION_DAIRY_LANE                                                          :Industrie del Latte
+STR_STATION_EXCHANGE                                                            :Parco merci
 STR_STATION_FARM_1                                                              :Fattorie
+STR_STATION_FARM_2                                                              :Prati
 STR_STATION_FISHMARKET                                                          :Mercato del pesce
+STR_STATION_FOREST                                                              :Foreste
+STR_STATION_FORGE                                                               :{G=f}Fucina
+STR_STATION_HEAVY_INDUSTRY_2                                                    :Fabbriche
+STR_STATION_HERDING_COOP                                                        :Capanne
 STR_STATION_INDUSTRY_ESTATE_1                                                   :Zona industriale
 STR_STATION_INDUSTRY_HARBOUR_1                                                  :Porto industriale
+STR_STATION_INDUSTRY_HARBOUR_3                                                  :Caricamento
+STR_STATION_IRONSTONE                                                           :Miniere
+STR_STATION_JOINERS_SHOP                                                        :Mobilifici
+STR_STATION_KILNS                                                               :Fabbriche
 STR_STATION_MARKET                                                              :Mercato
+STR_STATION_MERCHANTS_LANE                                                      :Via dei Mercanti
 STR_STATION_MILL                                                                :Mulino
 STR_STATION_MINE                                                                :Miniere
+STR_STATION_MOULDINGS                                                           :Fabbriche
+STR_STATION_OIL_RIG                                                             :Giacimenti
+STR_STATION_ORCHARDS                                                            :Frutteti
 STR_STATION_PIT                                                                 :Scavo
 STR_STATION_PLANTATION                                                          :Piantagioni
 STR_STATION_POWERHUNGRY                                                         :Centrale
 STR_STATION_PUMPS                                                               :Pompe
 STR_STATION_REFINERY                                                            :Raffinerie
+STR_STATION_SALTPETER_WORKS                                                     :Miniere
+STR_STATION_SHOALS                                                              :Area di pesca
+STR_STATION_SILO                                                                :Silos
+STR_STATION_STAMP_AND_PLATE                                                     :Presse
+STR_STATION_TAPPERS_SHED                                                        :Piantagione
 STR_STATION_TOWN_1                                                              :Piazza del municipio
+STR_STATION_TRONA_BEDS                                                          :Miniere
 STR_STATION_WATER                                                               :Riva
+STR_STATION_WEAVE_AND_DYE                                                       :Lanifici
