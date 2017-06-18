@@ -22,8 +22,9 @@ DOCS_DIR = docs
 GRAPHICS_DIR = src/graphics
 # lang is not copied to generated currently in FIRS, unlike RH, IH etc - could be changed
 LANG_DIR = src/lang
+CUSTOM_TAGS = generated/custom_tags.txt
 NML_FILE = generated/firs.nml
-NML_FLAGS =-c -l $(LANG_DIR)
+NML_FLAGS =-c -l $(LANG_DIR) -t $(CUSTOM_TAGS)
 
 EXPORTED = no
 ifeq ($(strip $(EXPORTED)),no)
@@ -67,8 +68,8 @@ grf: $(GRF_FILE)
 tar: $(TAR_FILE)
 html_docs: $(HTML_DOCS)
 
-custom_tags.txt: src/templates/custom_tags.template
-	$(FILL_TEMPLATE) --template=src/templates/custom_tags.template --output=custom_tags.txt \
+$(CUSTOM_TAGS): src/templates/custom_tags.template
+	$(FILL_TEMPLATE) --template=src/templates/custom_tags.template --output=$(CUSTOM_TAGS) \
 		version=$(REPO_VERSION)
 
 # determining deps reliably for graphics generation is hard, as graphics processor depends on many things so always rebuild all
@@ -81,7 +82,7 @@ $(LANG_DIR):
 $(NML_FILE): $(SOURCES)
 	$(PYTHON3) src/render_nml.py $(ARGS)
 
-$(GRF_FILE): $(GRAPHICS_DIR) $(LANG_DIR) $(NML_FILE) custom_tags.txt $(HTML_DOCS)
+$(GRF_FILE): $(GRAPHICS_DIR) $(LANG_DIR) $(NML_FILE) $(CUSTOM_TAGS) $(HTML_DOCS)
 	$(NMLC) $(NML_FLAGS) --grf=$(GRF_FILE) $(NML_FILE)
 
 $(HTML_DOCS): $(SOURCES)
