@@ -124,6 +124,7 @@ bundle_src: $(MD5_FILE)
 		`$(FIND_FILES) $(BUNDLE_DIR)/src` $(MD5_FILE)
 
 # this is a macOS-specifc install location; the pre-2017 Makefile handled multiple platforms, that could be restored if needed
+# currently only copies the grf, could move all of the contents of PROJECT_VERSIONED_NAME, but that is only created on-demand for the tar right now
 install: $(GRF_FILE)
 	cp $(GRF_FILE) ~/Documents/OpenTTD/newgrf/
 
