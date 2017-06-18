@@ -67,8 +67,8 @@ grf: $(GRF_FILE)
 tar: $(TAR_FILE)
 html_docs: $(HTML_DOCS)
 
-custom_tags.txt: custom_tags.template
-	$(FILL_TEMPLATE) --template=custom_tags.template --output=custom_tags.txt \
+custom_tags.txt: src/templates/custom_tags.template
+	$(FILL_TEMPLATE) --template=src/templates/custom_tags.template --output=custom_tags.txt \
 		version=$(REPO_VERSION)
 
 # determining deps reliably for graphics generation is hard, as graphics processor depends on many things so always rebuild all
