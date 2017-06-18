@@ -98,12 +98,15 @@ endif
 
 $(TAR_FILE): $(GRF_FILE)
 # the goal here is a sparse tar that bananas will accept; bananas can't accept html docs etc, hence they're not included
+	# create an intermediate dir, and copy in what we need for bananas
 	mkdir $(PROJECT_VERSIONED_NAME)
 	cp docs/readme.txt $(PROJECT_VERSIONED_NAME)
 	cp docs/license.txt $(PROJECT_VERSIONED_NAME)
 	cp docs/changelog.txt $(PROJECT_VERSIONED_NAME)
 	cp $(GRF_FILE) $(PROJECT_VERSIONED_NAME)
 	$(MK_ARCHIVE) --tar --output=$(TAR_FILE) --base=$(PROJECT_VERSIONED_NAME) $(PROJECT_VERSIONED_NAME)
+	# delete the intermediate dir
+	rm -r $(PROJECT_VERSIONED_NAME)
 
 $(ZIP_FILE): $(TAR_FILE)
 	$(ZIP) -9rq $(ZIP_FILE) $(TAR_FILE) >/dev/null
@@ -130,7 +133,7 @@ install: $(GRF_FILE)
 
 clean:
 	for f in .chameleon_cache .nmlcache src/__pycache__ src/*/__pycache__ docs generated \
-	$(GRF_FILE) $(TAR_FILE) $(ZIP_FILE) $(MD5_FILE) $(BUNDLE_DIR) $(SOURCE_NAME).tar custom_tags.txt;\
+	$(TAR_FILE) $(ZIP_FILE) $(MD5_FILE) $(BUNDLE_DIR) $(SOURCE_NAME).tar;\
 	do if test -e $$f;\
 	   then rm -r $$f;\
 	   fi;\
