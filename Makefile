@@ -96,6 +96,7 @@ else
 endif
 
 $(TAR_FILE): $(GRF_FILE)
+# the goal here is a sparse tar that bananas will accept; bananas can't accept html docs etc, hence they're not included
 	mkdir $(PROJECT_VERSIONED_NAME)
 	cp docs/readme.txt $(PROJECT_VERSIONED_NAME)
 	cp docs/license.txt $(PROJECT_VERSIONED_NAME)
