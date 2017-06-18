@@ -42,7 +42,7 @@ REPO_TITLE = "$(PROJECT_NAME) $(REPO_VERSION)"
 PROJECT_VERSIONED_NAME = $(PROJECT_NAME)-$(REPO_VERSION)
 ARGS = '${REPO_REVISION}' '${REPO_VERSION}' '${TEST_INDUSTRY}' '${NO_MP}'
 
-GRF_FILE = $(PROJECT_NAME).grf
+GRF_FILE = generated/$(PROJECT_NAME).grf
 TAR_FILE = $(PROJECT_VERSIONED_NAME).tar
 ZIP_FILE = $(PROJECT_VERSIONED_NAME).zip
 MD5_FILE = $(PROJECT_NAME).check.md5
@@ -124,8 +124,8 @@ bundle_src: $(MD5_FILE)
 		`$(FIND_FILES) $(BUNDLE_DIR)/src` $(MD5_FILE)
 
 # this is a macOS-specifc install location; the pre-2017 Makefile handled multiple platforms, that could be restored if needed
-install: firs.grf
-	cp firs.grf ~/Documents/OpenTTD/newgrf/
+install: $(GRF_FILE)
+	cp $(GRF_FILE) ~/Documents/OpenTTD/newgrf/
 
 clean:
 	for f in .chameleon_cache .nmlcache src/__pycache__ src/*/__pycache__ docs generated \
