@@ -251,7 +251,7 @@ def main():
 
     # render standard docs from a list
     html_docs = ['get_started', 'code_reference','economies', 'cargos', 'industries', 'translations']
-    txt_docs = ['license', 'readme', 'test_docs']
+    txt_docs = ['license', 'readme']
     markdown_docs = ['changelog']
     graph_docs = ['cargoflow']
     stylesheets = ['cargoflow_styles']
