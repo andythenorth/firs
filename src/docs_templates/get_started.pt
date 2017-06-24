@@ -20,7 +20,6 @@
                     <li><i class="fa fa-check-circle-o"></i> ${len(economy_schemas)} economies - choose simple or complex gameplay</li>
                     <li><i class="fa fa-check-circle-o"></i> Primary industries don't close</li>
                     <li><i class="fa fa-check-circle-o"></i> Optional secondary industry closure</li>
-                    <li><i class="fa fa-check-circle-o"></i> Parameter for improved station ratings</li>
                     <li><i class="fa fa-check-circle-o"></i> Snow for buildings above snowline</li>
                     <li><i class="fa fa-check-circle-o"></i> Beautiful hand-drawn pixels</li>
                     <li><i class="fa fa-check-circle-o"></i> GPL v2 license</li>
@@ -74,8 +73,7 @@
                 <div class="row">
                     <div class="span9">
                         <h3>Gameplay Parameters</h3>
-                        <p>FIRS has a number of parameters for gameplay behaviour.
-                        These cover things like economy choice, industry closure and station ratings.
+                        <p>FIRS has parameters to choose which economy is used, and to set options like industry closure.
                         Parameters include help text explaining how they work.</p>
                         <p><strong>Tip: parameters <a href="http://wiki.openttd.org/Newgrf#Activating_NewGRFs">need to be set</a>
                          before starting a game.</strong>  Parameters cannot be changed during a game.</p>
