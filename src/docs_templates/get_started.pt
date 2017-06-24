@@ -46,26 +46,13 @@
             <div id="download-firs">
                 <h3>1. Download FIRS</h3>
                 <p>
-                    FIRS is available from the content service in OpenTTD, as a zip for manual installation,
-                    or as a source checkout for compiling locally (requires mercurial and various python dependencies).
-                </p>
-                <div class="row">
-                    <div class="span3">
-                        <h3>Download in OpenTTD</h3>
-                        <p><strong>Easiest</strong>: get FIRS from the OpenTTD content service (Bananas).</p>
-                        <a class="btn btn-primary" href="http://wiki.openttd.org/Content_downloading">Instructions</a>
-                    </div>
-                    <div class="span3">
-                        <h3>Download Zip</h3>
-                        <p>Get the latest FIRS release for <a href="http://wiki.openttd.org/Newgrf#Manual_install">manual install</a>.</p>
-                        <a class="btn btn-info" href="http://bundles.openttdcoop.org/firs/releases/LATEST/">Download FIRS</a>
-                    </div>
-                    <div class="span3">
-                        <h3>Download Source</h3>
-                        <p>Checkout source code and <a href="code_reference.html">compile your own FIRS</a>.</p>
-                        <a class="btn" href="${metadata['repo_url']}">FIRS Source Repo</a>
-                    </div>
-                </div>
+                    FIRS is available:
+                <p>
+                <ul>
+                    <li><strong>From the content service (Bananas) in OpenTTD (<em>recommended</em>)</strong>. <a href="http://wiki.openttd.org/Content_downloading">Instructions</a>.</li>
+                    <li>As a zip/tar for manual installation. <a href="http://bundles.openttdcoop.org/firs/releases/LATEST/">Download FIRS zip/tar</a>.</li>
+                    <li>As a source checkout for compiling. <a href="code_reference.html">How to checkout and compile</a>.</li>
+                </ul>
             </div>
             <hr />
             <div id="vehicles">
