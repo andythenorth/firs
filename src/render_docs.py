@@ -31,6 +31,7 @@ docs_templates = PageTemplateLoader(docs_src, format='text')
 
 import global_constants as global_constants
 import utils as utils
+from incompatible_grfs import incompatible_grfs
 import markdown
 
 # get args passed by makefile
@@ -215,6 +216,7 @@ def render_docs(doc_list, file_type, use_markdown=False):
                        registered_industries=registered_industries,
                        registered_economies=registered_economies,
                        economy_schemas=economy_schemas,
+                       incompatible_grfs=incompatible_grfs,
                        global_constants=global_constants,
                        repo_vars=repo_vars,
                        metadata=metadata,

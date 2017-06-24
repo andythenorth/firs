@@ -5,6 +5,7 @@
     <li><a href="#compiling">Compiling</a></li>
     <li><a href="#cargos">Cargos (${len(registered_cargos)})</a></li>
     <li><a href="#industries">Industries (${len(registered_industries)})</a></li>
+    <li><a href="#incompatible-grfs">Incompatible NewGRFs (${len(incompatible_grfs)})</a></li>
 </div>
 
 <div metal:fill-slot='body'>
@@ -126,6 +127,33 @@
                         </tr>
                     </tal:industry>
                 </tal:industries>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <hr />
+    <br />
+
+    <div id="incompatible-grfs">
+        <h3>Incompatible NewGRFs (${len(incompatible_grfs)}) <small>Code Reference</small></h3>
+        <table class="table table-striped tablesorter">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th nowrap="true" class="number">GRFID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tal:incompatible repeat="incompatible_grf incompatible_grfs">
+                    <tr>
+                        <td>
+                            ${incompatible_grf.grfname}
+                        </td>
+                        <td>
+                            ${incompatible_grf.grfid}
+                        </td>
+                    </tr>
+                </tal:incompatible>
             </tbody>
         </table>
     </div>
