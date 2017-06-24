@@ -43,17 +43,8 @@
                 </ul>
             </div>
             <hr />
-            <div id="new-to-newgrfs">
-                <h3>1. New to NewGRFs?</h3>
-                <p>NewGRFs are add-ons which provide extra content in OpenTTD.</p>
-                <p>
-                    If you're not sure how to add NewGRFs, or set their parameters,
-                    try the <a href="http://wiki.openttd.org/Newgrf">OpenTTD guide to NewGRFs</a>.
-                </p>
-            </div>
-            <hr />
             <div id="download-firs">
-                <h3>2. Download FIRS</h3>
+                <h3>1. Download FIRS</h3>
                 <p>
                     FIRS is available from the content service in OpenTTD, as a zip for manual installation,
                     or as a source checkout for compiling locally (requires mercurial and various python dependencies).
@@ -78,14 +69,14 @@
             </div>
             <hr />
             <div id="vehicles">
-                <h3>3. FIRS Needs NewGRF Vehicles</h3>
+                <h3>2. FIRS Needs NewGRF Vehicles</h3>
                 <p>Many FIRS cargos are <strong>not</strong> transportable using the default OpenTTD vehicles.</p>
                 <p>Fortunately there are lots of great NewGRF vehicle sets with FIRS support.</p>
                 <p>The OpenTTD content service (Bananas) is a good place to find these.</p>
             </div>
             <hr />
             <div id="choose-economy">
-                <h3>4. Choose an Economy</h3>
+                <h3>3. Activate FIRS and Choose an Economy</h3>
                 <p>
                     FIRS offers <a href="economies.html">${len(economy_schemas)} economies</a>.
                     The 'Basic' economies are simple and offer a good starting point for players new to FIRS.
@@ -99,7 +90,7 @@
             </div>
             <hr />
             <div>
-                <h3>5. Advanced FIRS Parameters</h3>
+                <h3>4. Advanced FIRS Parameters</h3>
                 <p>
                     In addition to the economy parameter, FIRS provides a number of other parameters.
                 </p>
@@ -110,7 +101,7 @@
             </div>
             <hr />
             <div id="conflicts">
-                <h3>6. Conflict Detection</h3>
+                <h3>5. Conflict Detection</h3>
                 <p>
                     When you begin a new OpenTTD game, FIRS will disable itself if certain other newgrfs are detected.
                 </p>
