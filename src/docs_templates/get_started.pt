@@ -7,8 +7,6 @@
                 <li><a href="#download-firs">Download FIRS</a></li>
                 <li><a href="#setting-up">Setting up a Game with FIRS</a></li>
                 <li><a href="#firs-gameplay">FIRS Gameplay</a></li>
-                <li><a href="#what-next">What Next?</a></li>
-                <li><a href="#firs-changes">FIRS Changes</a></li>
             </ul>
         </div>
         <div class="span9">
@@ -25,16 +23,25 @@
                     <li><i class="fa fa-check-circle-o"></i> GPL v2 license</li>
                 </ul>
             </div>
+            <div id="new-to-newgrfs">
+                <h3>1. New to NewGRFs?</h3>
+                <p>NewGRFs are add-ons which provide extra content in OpenTTD.</p>
+                <p>
+                    If you're not sure how to add NewGRFs, or set their parameters,
+                    try the <a href="http://wiki.openttd.org/Newgrf">OpenTTD guide to NewGRFs</a>.
+                </p>
+            </div>
+            <hr />
             <div id="download-firs">
-                <h2>1. Download FIRS</h2>
-                <p class="lead">
+                <h3>2. Download FIRS</h3>
+                <p>
                     FIRS is available from the content service in OpenTTD, as a zip for manual installation,
                     or as a source checkout for compiling locally (requires mercurial and various python dependencies).
                 </p>
                 <div class="row">
                     <div class="span3">
                         <h3>Download in OpenTTD</h3>
-                        <p><strong>Easiest</strong>: get FIRS from the OpenTTD content service.</p>
+                        <p><strong>Easiest</strong>: get FIRS from the OpenTTD content service (Bananas).</p>
                         <a class="btn btn-primary" href="http://wiki.openttd.org/Content_downloading">Instructions</a>
                     </div>
                     <div class="span3">
@@ -49,42 +56,53 @@
                     </div>
                 </div>
             </div>
-            <br />
             <hr />
-            <br />
-            <div id="setting-up">
-                <h2>2. Setting Up a Game with FIRS</h2>
-                <p class="lead">
-                    A few things to know before setting up a FIRS game...
-                <div class="row">
-                    <div class="span4">
-                        <h3>Conflict Detection</h3>
-                        <p>To avoid conflicts that could break your game, FIRS will disable itself if certain other newgrfs are
-                        detected in the current game.  You'll see a message if this happens.</p>
-                        <p>Conflicting newgrfs include other industry sets, such as ECS and PBI.</p>
-                    </div>
-                    <div class="span4 offset1">
-                        <h3>Vehicle Support</h3>
-                        <p>Many FIRS cargos are not transportable using the default vehicles.
-                        Fortunately there are lots of great NewGRF vehicle sets with FIRS support.</p>
-                        <p>The in-game content service is a good place to find these.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="span9">
-                        <h3>Gameplay Parameters</h3>
-                        <p>FIRS has parameters to choose which economy is used, and to set options like industry closure.
-                        Parameters include help text explaining how they work.</p>
-                        <p><strong>Tip: parameters <a href="http://wiki.openttd.org/Newgrf#Activating_NewGRFs">need to be set</a>
-                         before starting a game.</strong>  Parameters cannot be changed during a game.</p>
-                    </div>
-                </div>
+            <div id="vehicles">
+                <h3>3. FIRS Needs NewGRF Vehicles</h3>
+                <p>Many FIRS cargos are <strong>not</strong> transportable using the default OpenTTD vehicles.</p>
+                <p>Fortunately there are lots of great NewGRF vehicle sets with FIRS support.</p>
+                <p>The OpenTTD content service (Bananas) is a good place to find these.</p>
             </div>
-            <br />
             <hr />
-            <br />
+            <div id="choose-economy">
+                <h3>4. Choose an Economy</h3>
+                <p>
+                    FIRS offers <a href="economies.html">${len(economy_schemas)} economies</a>.
+                    The 'Basic' economies are simple and offer a good starting point for players new to FIRS.
+                    Other economies are more complex and challenging.
+                </p>
+                <ul>
+                    <li>Activate FIRS via the <a href="https://wiki.openttd.org/NewGRF#Activating_NewGRFs">NewGRF settings window</a>.</li>
+                    <li>Choose which economy you want using the parameter settings window.</li>
+                    <li>Only one economy can be active at once.</li>
+                    <li>ECONOMIES WORK IN ALL CLIMATES - HOW TO EXPLAIN?</li>
+            </div>
+            <hr />
+            <div>
+                <h3>5. Advanced FIRS Parameters</h3>
+                <p>
+                    In addition to the economy parameter, FIRS provides a number of other parameters.
+                </p>
+                <p>
+                    It's fine to leave these on the defaults, they're provided for advanced players
+                    who want to adjust certain aspects of FIRS gameplay.
+                </p>
+            </div>
+            <hr />
+            <div id="conflicts">
+                <h3>6. Conflict Detection</h3>
+                <p>
+                    When you begin a new OpenTTD game, FIRS will disable itself if certain other newgrfs are detected.
+                </p>
+                <p>
+                    This is to avoid conflicts that can cause FIRS to NOT WORK RIGHT.
+                    You'll see a message if this happens.
+                </p>
+                <p>Conflicting newgrfs include other industry sets, such as ECS and PBI.</p>
+            </div>
+            <hr />
             <div id="firs-gameplay">
-                <h2>3. FIRS Gameplay</h2>
+                <h3>7. FIRS Gameplay</h3>
                 <p class="lead">You can jump right into FIRS gameplay.</p>
                 <ul>
                     <li>There are familiar industries and cargos you'll recognise from default OpenTTD.</li>
@@ -101,25 +119,6 @@
                     <li>Some industries are available from year 0. Some industries (and the cargos
                         they use) are only available after a certain date.</li>
                 </ul>
-            </div>
-            <br />
-            <hr />
-            <br />
-            <div id="what-next">
-                <h2>4. What Next?</h2>
-
-                <p class="lead">Find out more about FIRS.  Or try it out in OpenTTD!</p>
-                <a class="btn btn-large btn-primary" href="economies.html">FIRS Economies</a>
-                <a class="btn btn-large btn-primary" href="cargos.html">FIRS Cargos</a>
-                <a class="btn btn-large btn-primary" href="industries.html">FIRS Industries</a>
-                <a class="btn btn-large" href="code_reference.html">Code Reference</a>
-            </div>
-            <hr />
-            <br />
-            <div id="firs-changes">
-                <h2>5. Changes in FIRS</h2>
-                <p class="lead">FIRS is updated and improved quite often.</p>
-                <p>The <a href="changelog.html"><strong>FIRS changelog</strong></a> keeps track of changes, including new features, bug fixes and updates to translations.</p>
             </div>
             <br />
             <br />
