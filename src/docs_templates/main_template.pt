@@ -50,6 +50,9 @@
                     <li class="${doc_helper.get_active_nav(doc_name, 'code_reference')}">
                         <a href="code_reference.html">Code Reference</a>
                     </li>
+                    <li class="${doc_helper.get_active_nav(doc_name, 'changelog')}">
+                        <a href="changelog.html">Changelog</a>
+                    </li>
                 </ul>
                 <ul class="nav pull-right">
                     <li class="${doc_helper.get_active_nav(doc_name, 'translations')}">
