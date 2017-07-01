@@ -25,10 +25,8 @@ static_dir_src = os.path.join(docs_src, 'html', 'static')
 static_dir_dst = os.path.join(docs_output_path, 'html', 'static')
 shutil.copytree(static_dir_src, static_dir_dst)
 shutil.copy(os.path.join(docs_src,'index.html'), docs_output_path)
-
 # we'll be processing some extra images and saving them into the img dir
 images_dir_dst = os.path.join(static_dir_dst, 'img')
-shutil.copy(os.path.join('src','graphics', 'other', 'cargoicons.png'), images_dir_dst)
 
 from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
@@ -38,6 +36,8 @@ import global_constants as global_constants
 import utils as utils
 from incompatible_grfs import incompatible_grfs
 import markdown
+
+from PIL import Image
 
 # get args passed by makefile
 repo_vars = utils.get_repo_vars(sys)
@@ -249,12 +249,19 @@ def render_docs(doc_list, file_type, use_markdown=False):
         doc_file.write(doc)
         doc_file.close()
 
-
 def main():
     for economy in registered_economies:
         enabled_cargos = [cargo for cargo in registered_cargos if cargo.id in economy.cargos]
         enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy.id].enabled]
         economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
+
+    # copy the cargo icons to an oversized image so they're legible
+    cargo_icons_src = os.path.join(currentdir, 'src', 'graphics', 'other', 'cargoicons.png')
+    cargo_icons_spritesheet = Image.open(os.path.join(cargo_icons_src))
+    processed_cargo_icons_spritesheet = cargo_icons_spritesheet.resize((2 * cargo_icons_spritesheet.size[0], 2 * cargo_icons_spritesheet.size[1]),
+                                                                        resample=Image.NEAREST)
+    output_path = os.path.join(images_dir_dst, 'cargoicons.png')
+    processed_cargo_icons_spritesheet.save(output_path, optimize=True, transparency=0)
 
     # render standard docs from a list
     html_docs = ['get_started', 'code_reference','economies', 'cargos', 'industries', 'translations']
