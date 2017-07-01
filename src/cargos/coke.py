@@ -18,7 +18,7 @@ cargo = Cargo(id = 'coke',
               single_penalty_length = '255',
               price_factor = '74.2692947388',
               capacity_multiplier = '1',
-              icon_indices = (1, 0))
+              icon_indices = (1, 3))
 
 
 
