@@ -18,7 +18,7 @@ cargo = Cargo(id = 'peat',
               single_penalty_length = '255',
               price_factor = '75.4852294922',
               capacity_multiplier = '1',
-              icon_indices = (13, 2))
+              icon_indices = (6, 3))
 
 
 

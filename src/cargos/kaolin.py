@@ -18,7 +18,7 @@ cargo = Cargo(id = 'kaolin',
               single_penalty_length = '255',
               price_factor = '72.9804039001',
               capacity_multiplier = '1',
-              icon_indices = (9, 1))
+              icon_indices = (5, 3))
 
 
 

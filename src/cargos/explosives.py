@@ -18,5 +18,5 @@ cargo = Cargo(id = 'explosives',
               single_penalty_length = '36',
               price_factor = '140.58637619',
               capacity_multiplier = '1',
-              icon_indices = (11, 1))
+              icon_indices = (2, 3))
 

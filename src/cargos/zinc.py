@@ -18,7 +18,7 @@ cargo = Cargo(id = 'zinc',
               single_penalty_length = '255',
               capacity_multiplier = '1',
               price_factor = '126.165390015',
-              icon_indices = (8, 2))
+              icon_indices = (15, 3))
 
 
 

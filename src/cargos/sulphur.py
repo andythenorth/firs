@@ -18,7 +18,7 @@ cargo = Cargo(id = 'sulphur',
               single_penalty_length = '255',
               price_factor = '95.5862884521',
               capacity_multiplier = '1',
-              icon_indices = (10, 2))
+              icon_indices = (13, 3))
 
 
 

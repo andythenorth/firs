@@ -18,6 +18,6 @@ cargo = Cargo(id = 'soda_ash',
               single_penalty_length = '255',
               price_factor = '117.945671082',
               capacity_multiplier = '1',
-              icon_indices = (10, 1))
+              icon_indices = (12, 3))
 
 
