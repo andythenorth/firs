@@ -2,7 +2,7 @@
                define="banned_cargos doc_helper.get_cargoflow_banned_cargos(); supply_cargos doc_helper.get_cargoflow_supply_cargos()">
 digraph ${doc_helper.get_economy_name_char_safe(economy)} {
     fontname="sans-serif"
-    stylesheet="cargoflow_styles.css"
+    stylesheet="static/css/cargoflow_styles.css"
     rankdir="LR"
     tooltip="${doc_helper.get_economy_name(economy)}"
 

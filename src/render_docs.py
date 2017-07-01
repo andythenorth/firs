@@ -24,6 +24,11 @@ shutil.copy(os.path.join(docs_src,'index.html'), docs_output_path)
 static_dir_src = os.path.join(docs_src, 'html', 'static')
 static_dir_dst = os.path.join(docs_output_path, 'html', 'static')
 shutil.copytree(static_dir_src, static_dir_dst)
+shutil.copy(os.path.join(docs_src,'index.html'), docs_output_path)
+
+# we'll be processing some extra images and saving them into the img dir
+images_dir_dst = os.path.join(static_dir_dst, 'img')
+shutil.copy(os.path.join('src','graphics', 'other', 'cargoicons.png'), images_dir_dst)
 
 from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
@@ -236,7 +241,7 @@ def render_docs(doc_list, file_type, use_markdown=False):
         if file_type == 'html':
             subdir = 'html'
         elif file_type == 'css':
-            subdir = 'html' # don't put generated files into static dir, it's a bit confusing, dump them in with the html
+            subdir = os.path.join('html', 'static', 'css')
         else:
             subdir = ''
         # save the results of templating
