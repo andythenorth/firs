@@ -32,7 +32,7 @@
 
 <!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
 <!--! no economy support currently -->
-item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
 	graphics {
 		construction_probability:${industry.id}_check_availability;
         build_prod_change:       randomise_primary_production_on_build;

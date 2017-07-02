@@ -610,7 +610,7 @@ class IndustryLocationCheckTownIndustryCount(IndustryLocationCheck):
     """ Require specific count of industry type in a town """
     def __init__(self, town_industry_count):
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
-        self.industry_type_numeric_id = get_another_industry(town_industry_count[0]).get_numeric_id()
+        self.industry_type_numeric_id = get_another_industry(town_industry_count[0]).numeric_id
         self.min_count = town_industry_count[1]
         self.max_count = town_industry_count[2]
         if self.min_count != 0 or self.max_count != 0:
@@ -638,7 +638,7 @@ class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
     def __init__(self, industry_type, distance):
         self.industry_type = industry_type
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
-        self.industry_type_numeric_id = get_another_industry(industry_type).get_numeric_id()
+        self.industry_type_numeric_id = get_another_industry(industry_type).numeric_id
         self.distance = distance
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = 'min_distance_' + str(self.industry_type_numeric_id)
@@ -650,7 +650,7 @@ class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
     def __init__(self, industry_max_distance):
         self.industry_type = industry_max_distance[0]
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
-        self.industry_type_numeric_id = get_another_industry(self.industry_type).get_numeric_id()
+        self.industry_type_numeric_id = get_another_industry(self.industry_type).numeric_id
         self.distance = industry_max_distance[1]
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = 'max_distance_' + str(self.industry_type_numeric_id)
@@ -808,7 +808,8 @@ class Industry(object):
     def add_economy_variation(self, economy):
         self.economy_variations[economy.id] = IndustryProperties()
 
-    def get_numeric_id(self):
+    @property
+    def numeric_id(self):
         return global_constants.industry_numeric_ids[self.id]
 
     def get_graphics_file_path(self, date_variation_num=None, terrain='', construction_state_num=None):
@@ -924,7 +925,7 @@ class Industry(object):
             return property_name + ': ' + value + ';'
 
     def get_map_colour(self):
-        return global_constants.industry_map_colours[self.get_numeric_id()]
+        return global_constants.industry_map_colours[self.numeric_id]
 
     def get_nearby_station_name_declaration(self):
         return 'nearby_station_name: string(STR_STATION, string(STR_TOWN),' + self.get_property('nearby_station_name', None) + ');'
