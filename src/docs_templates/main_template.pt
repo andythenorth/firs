@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<!--!<?xml version="1.0" encoding="iso-8859-1"?>-->
 <tal:block metal:define-macro="main">
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <title >FIRS Industry Replacement Set</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta http-equiv="Content-Type" content="text/html;" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
-    <link type="text/css" href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/bootstrap-theme.min.css" rel="stylesheet">
     <link type="text/css" href="static/css/style.css" rel="stylesheet">
     <link href="static/css/font-awesome.min.css" rel="stylesheet">
 
@@ -17,6 +17,8 @@
     <script type="text/javascript" src="static/js/jquery.metadata.js"></script>
     <script type="text/javascript" src="static/js/jquery.tablesorter.min.js"></script>
     <script type="text/javascript" src="static/js/jquery.tablesorter.widgets.min.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function(){
             $('.tablesorter').tablesorter({
@@ -31,12 +33,21 @@
 </head>
 
 <body>
-    <div class="navbar navbar-inverse navbar-static-top" style="border-bottom:1px solid #000;">
-        <div class="navbar-inner">
-            <div class="container">
-                <ul class="nav pull-left">
+    <div class="navbar navbar-inverse" style="border-bottom:1px solid #000; border-radius:0;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#firs-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="get_started.html">FIRS</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="firs-navbar-collapse-1">
+                <ul class="nav navbar-nav">
                     <li class="${doc_helper.get_active_nav(doc_name, 'get_started')}">
-                        <a href="get_started.html">FIRS</a>
                     </li>
                     <li class="${doc_helper.get_active_nav(doc_name, 'economies')}">
                         <a href="economies.html">Economies</a>
@@ -54,7 +65,7 @@
                         <a href="changelog.html">Changelog</a>
                     </li>
                 </ul>
-                <ul class="nav pull-right">
+                <ul class="nav navbar-nav navbar-right">
                     <li class="${doc_helper.get_active_nav(doc_name, 'translations')}">
                         <a href="translations.html"><i class="fa fa-globe icon-white"></i> Help Translate FIRS</a>
                     </li>
