@@ -278,5 +278,15 @@ def main():
     render_docs(graph_docs, 'dotall')
     render_docs(stylesheets, 'css')
 
+    # cargoflow wrappers are just different enough to not fit generic render_docs() case without making it painfully convoluted
+    for economy in registered_economies:
+        template = docs_templates['cargoflow_wrapper.pt']
+        result = template(economy=economy,
+                          doc_helper=DocHelper())
+        doc_name = 'cargoflow_' + DocHelper().get_economy_name_char_safe(economy)
+        doc_file = codecs.open(os.path.join(docs_output_path, 'html', doc_name + '.html'), 'w','utf8')
+        doc_file.write(result)
+        doc_file.close()
+
 if __name__ == '__main__':
     main()
