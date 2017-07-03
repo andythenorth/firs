@@ -1,4 +1,4 @@
-offset<tal:page_with_sidebar_template metal:use-macro="load: main_template.pt">
+<tal:page_with_sidebar_template metal:use-macro="load: main_template.pt">
 
 <div metal:fill-slot='body'>
     <div class="row">
