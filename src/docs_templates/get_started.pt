@@ -1,4 +1,4 @@
-<tal:main_template define="main_template load: main_template.pt" metal:use-macro="main_template">
+<tal:main_template metal:use-macro="load: main_template.pt">
 <div metal:fill-slot='body'>
     <div class="row">
         <div class="span3">

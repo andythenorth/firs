@@ -40,7 +40,7 @@
 <tal:build_economies repeat="economy economies">
     <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
         if (economy==${economy.numeric_id}) {
-            item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+            item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
                 graphics {
                     construction_probability: ${industry.id}_check_availability;
                     produce_cargo_arrival:    ${industry.id}_produce;

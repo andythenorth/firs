@@ -1,14 +1,14 @@
-<tal:main_template define="main_template load: main_template.pt" metal:use-macro="main_template">
+<tal:main_template metal:use-macro="load:main_template.pt">
 <div metal:fill-slot='body'>
     <div class="row">
-        <div class="span3">
+        <div class="col-xs-12 col-sm-3 col-sm-push-9">
             <ul class="nav nav-list well">
                 <metal:block define-slot="sidebar_nav">
                     <p>Ooooops - there is no content for some reason. Something has probably gone nuts in the build. </p>
                 </metal:block>
             </ul>
         </div>
-        <div class="span9">
+        <div class="col-xs-12 col-sm-9 col-sm-pull-3">
             <metal:block define-slot="body">
                 <p>Ooooops - there is no content for some reason. Something has probably gone nuts in the build. </p>
             </metal:block>
