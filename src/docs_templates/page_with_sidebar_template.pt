@@ -1,4 +1,4 @@
-<tal:main_template metal:use-macro="load:main_template.pt">
+<tal:main_template metal:use-macro="load: main_template.pt">
 <div metal:fill-slot='body'>
     <div class="row">
         <div class="col-xs-12 col-sm-3 col-sm-push-9">
