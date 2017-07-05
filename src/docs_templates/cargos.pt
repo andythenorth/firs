@@ -10,7 +10,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-3" style="margin-top:22px;">
-            <ul>
+            <ul class="list-unstyled">
                 <tal:cargos repeat="item doc_helper.get_registered_cargo_sorted_by_name()">
                     <tal:cargo define="name item[0]; cargo item[1]">
                         <li><a href="#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a></li>
