@@ -1,18 +1,20 @@
-<tal:page_with_sidebar_template metal:use-macro="load: page_with_sidebar_template.pt">
-<div metal:fill-slot='sidebar_nav'>
-    <li class="nav-header">Code Reference</li>
-    <li><a href="#source">Obtaining Source</a></li>
-    <li><a href="#compiling">Compiling</a></li>
-    <li><a href="#cargos">Cargos (${len(registered_cargos)})</a></li>
-    <li><a href="#industries">Industries (${len(registered_industries)})</a></li>
-    <li><a href="#incompatible-grfs">Incompatible NewGRFs (${len(incompatible_grfs)})</a></li>
-</div>
-
+<tal:page_with_sidebar_template metal:use-macro="load: main_template.pt">
 <div metal:fill-slot='body'>
-    <div class="page-header">
-        <h2>Code Reference</h2>
-    </div>
-    <div id="source">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header text-center">
+                <h2>Code Reference</h2>
+                <ul class="list-inline">
+                    <li class="nav-header">Code Reference</li>
+                    <li><a href="#source">Obtaining Source</a></li>
+                    <li><a href="#compiling">Compiling</a></li>
+                    <li><a href="#cargos">Cargos (${len(registered_cargos)})</a></li>
+                    <li><a href="#industries">Industries (${len(registered_industries)})</a></li>
+                    <li><a href="#incompatible-grfs">Incompatible NewGRFs (${len(incompatible_grfs)})</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>    <div id="source">
         <h3>Obtaining Source</h3>
         <p>Source checkout available from <a href="${metadata['repo_url']}">the FIRS Repo</a> (mercurial / hg).</p>
         <p>FIRS is licensed under <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPL(v2)</a>.</p>
@@ -43,7 +45,7 @@
     <div id="cargos">
         <h3>Cargos (${len(registered_cargos)}) <small>Code Reference</small></h3>
         <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/NML:Cargos#Cargo_IDs">&#187; Reference for NewGRF cargo IDs</a>
-        <table class="table table-striped tablesorter">
+        <table class="table table-striped tablesorter firs-table">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -99,14 +101,14 @@
     <div id="industries">
         <h3>Industries (${len(registered_industries)}) <small>Code Reference</small></h3>
         <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/IndustryDefaultProps">&#187; Reference for NewGRF industry IDs</a></p>
-        <table class="table table-striped tablesorter">
+        <table class="table table-striped tablesorter firs-table">
             <thead>
                 <tr>
                     <th>Name</th>
                     <th nowrap="true" class="number">ID <span class="muted">(decimal)</span></th>
                     <th nowrap="true" class="number">Available From</th>
                     <th nowrap="true" class="number">Map Colour</th>
-                    <th nowrap="true" class="number">Station Name</th>
+                    <th nowrap="true">Station Name</th>
                 </tr>
             </thead>
             <tbody>
@@ -130,7 +132,7 @@
                                              margin-left:2px;">
                                 </span>
                             </td>
-                            <td class="number">${doc_helper.get_nearby_station_name(industry)}</td>
+                            <td>${doc_helper.get_nearby_station_name(industry)}</td>
                         </tr>
                     </tal:industry>
                 </tal:industries>
@@ -143,7 +145,7 @@
 
     <div id="incompatible-grfs">
         <h3>Incompatible NewGRFs (${len(incompatible_grfs)}) <small>Code Reference</small></h3>
-        <table class="table table-striped tablesorter">
+        <table class="table table-striped tablesorter firs-table">
             <thead>
                 <tr>
                     <th>Name</th>
