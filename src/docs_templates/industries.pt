@@ -25,7 +25,7 @@
                             border-top: solid 1px #eee; border-bottom: solid 1px #eee; margin-bottom:20px;">&nbsp;</div>
                 <tal:industry define="name item[0]; industry item[1]">
                     <div id="${industry.id}" style="clear:both; padding-bottom:20px;">
-                        <h3>${' / '.join(doc_helper.get_industry_all_names(industry))} <small>Industry</small></h3>
+                        <h3>${' / '.join(doc_helper.get_industry_all_names(industry))}</h3>
                         <p class="muted" tal:condition="len(doc_helper.get_industry_all_names(industry)) > 1">Industry name varies by economy.</p>
                         <p class="muted">${doc_helper.get_industry_extra_info(industry)}</p>
                         <div style="overflow:hidden;">

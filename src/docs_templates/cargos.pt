@@ -22,7 +22,7 @@
             <tal:cargos repeat="item doc_helper.get_registered_cargo_sorted_by_name()">
                 <tal:cargo define="name item[0]; cargo item[1]">
                     <div id="${cargo.id}">
-                        <h3>${doc_helper.get_cargo_name(cargo)} <small>Cargo</small></h3>
+                        <h3>${doc_helper.get_cargo_name(cargo)}</h3>
                         <p class="muted">${doc_helper.get_cargo_extra_info(cargo)}</p>
                         <tal:unused condition="doc_helper.cargo_is_unused_in_any_economy(cargo) and cargo.id != 'mail'">
                             <p>This cargo is currently unused in FIRS</p>
