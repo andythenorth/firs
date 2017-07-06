@@ -1,30 +1,35 @@
 <tal:page_with_sidebar_template metal:use-macro="load: main_template.pt">
 
 <div metal:fill-slot='body'>
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="page-header text-center">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-xs-12 col-sm-5">
                 <h2>Industries (${len(registered_industries)})</h2>
-
-                <script type="text/javascript">
-                    <!--
-                    function MM_jumpMenu(targ,selObj,restore){ //v3.0
-                    eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
-                    if (restore) selObj.selectedIndex=0;
-                    }
-                    //-->
-                </script>
-                <label for="jumpmenu">Jump to Industry:</label>
-                <select id="jumpmenu" name="jumpmenu" onchange="MM_jumpMenu('parent',this,1)">
-                    <tal:industries repeat="item doc_helper.get_registered_industries_sorted_by_name()">
-                        <tal:industry define="name item[0]; industry item[1]">
-                            <option value="#${industry.id}">${' / '.join(doc_helper.get_industry_all_names(industry))}</option>
-                        </tal:industry>
-                    </tal:industries>
-                </select>
+            </div>
+            <div class="col-xs-12 col-sm-7">
+                <div class="text-right" style="margin-top:22px;">
+                    <script type="text/javascript">
+                        <!--
+                        function MM_jumpMenu(targ,selObj,restore){ //v3.0
+                        eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+                        if (restore) selObj.selectedIndex=0;
+                        }
+                        //-->
+                    </script>
+                    <label for="jumpmenu">Jump to industry:</label>
+                    <select id="jumpmenu" name="jumpmenu" onchange="MM_jumpMenu('parent',this,1)">
+                        <option value="#">Choose industry...</option>
+                        <tal:industries repeat="item doc_helper.get_registered_industries_sorted_by_name()">
+                            <tal:industry define="name item[0]; industry item[1]">
+                                <option value="#${industry.id}">${' / '.join(doc_helper.get_industry_all_names(industry))}</option>
+                            </tal:industry>
+                        </tal:industries>
+                    </select>
+                </div>
             </div>
         </div>
     </div>
+    <br />
     <tal:industries repeat="item doc_helper.get_registered_industries_sorted_by_name()">
         <tal:industry define="name item[0]; industry item[1]">
             <div class="row" id="${industry.id}" style="padding-bottom:20px;">
