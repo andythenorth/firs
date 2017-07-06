@@ -9,7 +9,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-3" style="margin-top:22px;">
+        <!--! drop the nav on small viewports -->
+        <div class="hidden-xs col-sm-3" style="margin-top:22px;">
             <ul class="list-unstyled">
                 <tal:industries repeat="item doc_helper.get_registered_industries_sorted_by_name()">
                     <tal:industry define="name item[0]; industry item[1]">
