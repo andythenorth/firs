@@ -84,7 +84,7 @@
             <br />
             <br />
             <script language="JavaScript">
-            function random_img(){
+            function random_img(num_images){
                 var images=new Array("arable_farm",
                                      "biorefinery",
                                      "blast_furnace",
@@ -111,14 +111,12 @@
                                      "sugar_refinery",
                                      "tyre_plant");
 
-                var random_image=images[Math.floor(Math.random()*images.length)];
-                document.write('<a href="industries.html#' + random_image + '"><img style="margin-top:-30px; margin-bottom:0;" width="20%" src="static/img/industries/'+ random_image +'.png"></a>')
+                for(i = 0; i < num_images; i++){
+                    var random_image = images.splice(Math.floor(Math.random()*images.length), 1);
+                    document.write('<a href="industries.html#' + random_image + '"><img style="margin-top:-30px; margin-bottom:0;" width="20%" src="static/img/industries/'+ random_image +'.png"></a>')
+                }
             }
-            random_img()
-            random_img()
-            random_img()
-            random_img()
-            random_img()
+            random_img(5)
             </script>
         </div>
     </div>
