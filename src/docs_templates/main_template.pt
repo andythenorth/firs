@@ -85,31 +85,7 @@
             <br />
             <script language="JavaScript">
             function random_img(num_images){
-                var images=new Array("arable_farm",
-                                     "biorefinery",
-                                     "blast_furnace",
-                                     "brewery",
-                                     "brick_works",
-                                     "cement_plant",
-                                     "chemical_plant",
-                                     "copper_refinery",
-                                     "dairy",
-                                     "dairy_farm",
-                                     "dredging_site",
-                                     "fishing_harbour",
-                                     "food_market",
-                                     "furniture_factory",
-                                     "glass_works",
-                                     "flour_mill",
-                                     "lumber_yard",
-                                     'manganese_mine',
-                                     "metal_fabrication_plant",
-                                     'phosphate_mine',
-                                     'pyrite_smelter',
-                                     "quarry",
-                                     "recycling_plant",
-                                     "sugar_refinery",
-                                     "tyre_plant");
+                var images=new Array(${','.join(["'" + i[1].id + "'" for i in doc_helper.get_registered_industries_sorted_by_name()])});
 
                 for(i = 0; i < num_images; i++){
                     var random_image = images.splice(Math.floor(Math.random()*images.length), 1);
