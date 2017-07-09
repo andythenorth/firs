@@ -5,7 +5,7 @@ cargo = Cargo(id = 'alcohol',
               unit_name = 'string(STR_CARGO_NAME_ALCOHOL)',
               type_abbreviation = 'string(STR_CID_ALCOHOL)',
               sprite = 'NEW_CARGO_SPRITE',
-              weight = '1.0',
+              weight = '1.1', # such realism - I looked up the weight of 1L of beer, heavier than water :P
               cargo_payment_list_colour = '180',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_EXPRESS, CC_PIECE_GOODS, CC_LIQUID)',
