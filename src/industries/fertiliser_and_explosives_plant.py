@@ -1,5 +1,9 @@
 from industry import IndustrySecondary, TileLocationChecks
 
+# this industry overlaps with chemical plant somewhat, but lacks combinatorial processing
+# so only use it when there is only one input
+# also the name is unwieldy, 'chemical plant' is shorter :P
+
 industry = IndustrySecondary(id='fertiliser_and_explosives_plant',
                     processed_cargos_and_output_ratios=[('RFPR', 8)],
                     prod_cargo_types=['FMSP', 'ENSP'],
