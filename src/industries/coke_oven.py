@@ -6,7 +6,7 @@ industry = IndustrySecondary(id='coke_oven',
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
-                    map_colour='163',
+                    map_colour='164',
                     name='string(STR_IND_COKE_OVEN)',
                     nearby_station_name='string(STR_STATION_BANK_TOP)',
                     fund_cost_multiplier='120')

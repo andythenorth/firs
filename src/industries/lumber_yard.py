@@ -7,7 +7,7 @@ industry = IndustrySecondary(id='lumber_yard',
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
-                    map_colour='42',
+                    map_colour='43',
                     name='string(STR_IND_LUMBER_YARD)',
                     nearby_station_name='string(STR_STATION_CREOSOTING)',
                     fund_cost_multiplier='35')

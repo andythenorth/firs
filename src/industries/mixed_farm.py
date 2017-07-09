@@ -5,7 +5,7 @@ industry = IndustryPrimaryOrganic(id='mixed_farm',
                     prob_in_game='3',
                     prob_random='11',
                     prod_multiplier='[13, 14]',
-                    map_colour='103',
+                    map_colour='209',
                     spec_flags='bitmask(IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT)',
                     # mixed farm doesn't cluster, by design - no industry location checks needed
                     prospect_chance='0.75',
