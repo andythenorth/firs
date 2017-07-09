@@ -1,7 +1,7 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='rubber_plantation',
-                    map_colour='39',
+                    map_colour='121',
                     prob_in_game='4',
                     prob_random='11',
                     prospect_chance='0.75',

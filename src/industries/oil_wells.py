@@ -3,7 +3,7 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 industry = IndustryPrimaryExtractive(id='oil_wells',
                     prob_in_game='6',
                     prob_random='8',
-                    map_colour='152',
+                    map_colour='151',
                     prospect_chance='0.75',
                     name='TTD_STR_INDUSTRY_NAME_OIL_WELLS',
                     prod_cargo_types=['OIL_'],

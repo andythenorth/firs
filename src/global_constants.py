@@ -244,7 +244,7 @@ temp_storage_graphics_chain = dict(var_default_ground = 0,  # currently unused -
                                    var_random_bits = 14, # some random bits to use as required
                                 )  # max register number must be 235; registers 236-255 are reserved for building sprite hide/show values
 
-# industry map colours automated, using an algorithm to ensure contrast against green / dark green / purple minimaps
+# valid industry map colours, derived from an algorithm to ensure contrast against green / dark green / purple minimaps
 # based on work by frosch, https://devs.openttd.org/~frosch/texts/industrymap_green_darkgreen_violet.html
 
-industry_map_colours = (183, 64, 61, 166, 45, 151, 157, 191, 141, 178, 189, 55, 186, 43, 148, 5, 116, 160, 127, 143, 170, 49, 37, 146, 214, 8, 172, 177, 181, 194, 24, 168, 155, 210, 169, 70, 119, 26, 69, 85, 56, 19, 121, 105, 125, 144, 209, 164, 16, 63, 111, 65, 10, 126, 62, 104, 207, 190, 83, 142, 72, 33, 162, 173, 149, 167, 47, 153, 35, 52, 68, 78, 3, 30, 152, 38, 18, 163, 196, 165, 150, 44, 114, 140, 6, 137, 57, 81, 28, 109, 187, 185, 20, 159, 124, 12, 147, 117, 22, 46, 180, 192, 48, 86, 29, 7, 34, 41, 154, 184, 76, 115, 195, 208, 21, 182, 201, 156, 17, 84, 87, 27, 79, 171, 139, 9, 174, 213, 202, 25, 14, 53, 110, 42, 200, 82, 120, 4, 197, 138, 206, 108, 60, 193, 161, 211, 123, 2, 212, 145, 136, 77, 59, 175, 176, 80, 36, 199, 15, 11, 179, 118, 158, 51, 112, 71, 107, 66, 113, 198, 13, 204, 58, 32, 54, 205, 203, 75, 122, 188, 50, 67, 73, 23, 74, 106, 40)
+valid_industry_map_colours = (183, 64, 61, 166, 45, 151, 157, 191, 141, 178, 189, 55, 186, 43, 148, 5, 116, 160, 127, 143, 170, 49, 37, 146, 214, 8, 172, 177, 181, 194, 24, 168, 155, 210, 169, 70, 119, 26, 69, 85, 56, 19, 121, 105, 125, 144, 209, 164, 16, 63, 111, 65, 10, 126, 62, 104, 207, 190, 83, 142, 72, 33, 162, 173)

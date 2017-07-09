@@ -7,7 +7,7 @@ industry = IndustrySecondary(id='basic_oxygen_furnace',
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
-                    map_colour='48',
+                    map_colour='49',
                     spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
                     # it's rare to force co-location of secondaries, but this one is near blast furnace by design
                     location_checks=dict(industry_max_distance=['blast_furnace', 72]),
