@@ -6,7 +6,7 @@ def get_repo_vars(sys):
         repo_vars = {'repo_revision' : sys.argv[1], 'repo_version' : sys.argv[2],
                      'test_industry': sys.argv[3], 'no_mp': sys.argv[4]}
     else: # provide some defaults so templates don't explode when testing python script without command line args
-        repo_vars = {'repo_title' : 'FIRS - compiled without makefile', 'repo_version' : 0}
+        repo_vars = {'repo_revision' : 0, 'repo_version' : 0}
     return repo_vars
 
 
