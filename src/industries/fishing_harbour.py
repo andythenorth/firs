@@ -1,8 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='fishing_harbour',
-                    processed_cargos_and_output_ratios=[('MNSP', 3), ('FISH', 5)],
-                    combined_cargos_boost_prod=True,
+                    processed_cargos_and_output_ratios=[('FISH', 6)],
                     prod_cargo_types=['FOOD'],
                     prob_in_game='10',
                     prob_random='10',
