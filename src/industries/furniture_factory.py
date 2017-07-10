@@ -1,8 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='furniture_factory',
-                    processed_cargos_and_output_ratios=[('MNSP', 3), ('WDPR', 5)],
-                    combined_cargos_boost_prod=True,
+                    processed_cargos_and_output_ratios=[('WDPR', 6)],
                     prod_cargo_types=['GOOD'],
                     prob_in_game='7',
                     prob_random='8',
