@@ -3,7 +3,7 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(id='glass_works',
                     processed_cargos_and_output_ratios=[('SAND', 6), ('RFPR', 2)],
                     combined_cargos_boost_prod=True,
-                    prod_cargo_types=['BDMT', 'MNSP'],
+                    prod_cargo_types=['BDMT', 'GOOD'],
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
@@ -14,7 +14,7 @@ industry = IndustrySecondary(id='glass_works',
                     fund_cost_multiplier='95')
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['GOOD', 'MNSP']
+industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['GOOD']
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['STEELTOWN'].enabled = True
