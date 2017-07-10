@@ -16,7 +16,7 @@ industry = IndustryPrimaryPort(id='port',
                     override_default_construction_states=True)
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['FIRS'].accept_cargo_types = ['GOOD', 'FRUT']
+industry.economy_variations['FIRS'].accept_cargo_types = ['GOOD', 'FRUT', 'MNSP']
 industry.economy_variations['FIRS'].prod_cargo_types = ['ENSP', 'FMSP']
 industry.economy_variations['FIRS'].prod_multiplier = '[9, 7]'
 
@@ -27,7 +27,7 @@ industry.economy_variations['BASIC_TEMPERATE'].prod_multiplier = '[19, 0]'
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'ZINC']
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP']
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP', 'MNSP']
 industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[9, 12]'
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
@@ -37,7 +37,7 @@ industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[8, 17]'
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['WDPR', 'COPR', 'FRUT']
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['GOOD']
+industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['GOOD', 'MNSP']
 industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[14, 12]'
 
 industry.economy_variations['STEELTOWN'].enabled = True
