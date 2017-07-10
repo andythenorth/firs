@@ -208,7 +208,7 @@ class DocHelper(object):
         return ['mail', 'passengers']
 
     def get_cargoflow_supply_cargos(self):
-        return ['farm_supplies', 'engineering_supplies', 'manufacturing_supplies']
+        return ['farm_supplies', 'engineering_supplies']
 
     def get_active_nav(self, doc_name, nav_link):
         return ('','active')[doc_name == nav_link]
