@@ -868,10 +868,6 @@ class Industry(object):
     def get_extra_text_string(self, economy):
         accept_cargos_with_ratios = self.get_property('processed_cargos_and_output_ratios', economy)
         if len(accept_cargos_with_ratios) == 1:
-            if self.combined_cargos_boost_prod:
-                # guard against 1 cargo - if combined_cargos_boost_prod is True with 1 cargo, configuration is flawed for this industry
-                # !! this currently triggers on Fertiliser Plant for Extreme, which is more incentive to adjust that industry
-                utils.echo_message(self.id + ' has combined_cargos_boost_prod flag set True, but only 1 cargo defined in economy ' + economy.id)
             extra_text_string = 'STR_EMPTY' # nothing useful to show where just one cargo is accepted eh
         else:
             if self.combined_cargos_boost_prod:

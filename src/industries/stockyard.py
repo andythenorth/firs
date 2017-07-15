@@ -15,8 +15,11 @@ industry = IndustrySecondary(id='stockyard',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].processed_cargos_and_output_ratios = [('LVST', 6)]
 industry.economy_variations['BASIC_TROPIC'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].processed_cargos_and_output_ratios = [('LVST', 6)]
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('LVST', 6)]
 
 industry.add_tile(id='stockyard_tile_1',
                   animation_length=7,

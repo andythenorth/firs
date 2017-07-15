@@ -16,9 +16,9 @@ industry = IndustrySecondary(id='brewery',
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].name = 'string(STR_IND_CIDER_MILL)'
-industry.economy_variations['BASIC_TEMPERATE'].processed_cargos_and_output_ratios = [('MNSP', 2), ('FRUT', 6)]
+industry.economy_variations['BASIC_TEMPERATE'].processed_cargos_and_output_ratios = [('FRUT', 6)]
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('MNSP', 2), ('FRUT', 3), ('MAIZ', 3)]
+industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('FRUT', 4), ('MAIZ', 4)]
 
 industry.add_tile(id='brewery_tile_1',
                   animation_length=6,

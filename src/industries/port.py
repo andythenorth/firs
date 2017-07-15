@@ -27,8 +27,8 @@ industry.economy_variations['BASIC_TEMPERATE'].prod_multiplier = '[19, 0]'
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'ZINC']
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP', 'MNSP']
-industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[9, 12]'
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP']
+industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[9]'
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['COPR', 'JAVA', 'WOOL']
@@ -37,8 +37,8 @@ industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[8, 17]'
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['WDPR', 'COPR', 'FRUT']
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['GOOD', 'MNSP']
-industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[14, 12]'
+industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'GOOD']
+industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[17, 14]'
 
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['VEHI', 'GOOD']

@@ -21,7 +21,6 @@ economy = Economy(id = "BASIC_TROPIC",
                             'fruits',
                             'grain',
                             'livestock',
-                            'manufacturing_supplies',
                             'nitrates',
                             'oil',
                             'wool'])

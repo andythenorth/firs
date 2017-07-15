@@ -15,6 +15,7 @@ industry = IndustrySecondary(id='dairy',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].processed_cargos_and_output_ratios = [('MILK', 6)]
 
 # tile with animation for flag
 industry.add_tile(id='dairy_tile_1',
