@@ -97,8 +97,8 @@ maize.cargo.register()
 from cargos import manganese
 manganese.cargo.register()
 
-from cargos import manufacturing_supplies
-manufacturing_supplies.cargo.register()
+from cargos import packaging
+packaging.cargo.register()
 
 from cargos import metal
 metal.cargo.register()
