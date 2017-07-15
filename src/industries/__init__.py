@@ -4,6 +4,9 @@ registered_industries = []
 from industries import aluminium_plant
 aluminium_plant.industry.register()
 
+from industries import ammonia_plant
+ammonia_plant.industry.register()
+
 from industries import arable_farm
 arable_farm.industry.register()
 
@@ -60,9 +63,6 @@ dredging_site.industry.register()
 
 from industries import electric_arc_furnace
 electric_arc_furnace.industry.register()
-
-from industries import fertiliser_and_explosives_plant
-fertiliser_and_explosives_plant.industry.register()
 
 from industries import flour_mill
 flour_mill.industry.register()
