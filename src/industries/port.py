@@ -23,7 +23,7 @@ industry.economy_variations['FIRS'].prod_multiplier = '[9, 7]'
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].accept_cargo_types = ['BEER', 'GOOD']
 industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['ENSP']
-industry.economy_variations['BASIC_TEMPERATE'].prod_multiplier = '[19, 0]'
+industry.economy_variations['BASIC_TEMPERATE'].prod_multiplier = '[19]'
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'ZINC']
