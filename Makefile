@@ -15,7 +15,7 @@ MK_ARCHIVE = bin/mk-archive
 
 # Project details
 PROJECT_NAME = firs
-SOURCES=$(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.png --ext=.lng src)
+SOURCES=$(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.pt ext=.png --ext=.lng src)
 
 DOCS_DIR = docs
 # graphics is not copied to generated currently in FIRS, unlike RH, IH etc - could be changed
