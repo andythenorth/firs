@@ -115,7 +115,10 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 - adjusted all cargo colours:
     - all cargo colours now unique within FIRS
     - each cargo now uses same colour everywhere (charts, station list, cargo flow view) etc.
-- (Experimental) rework of industry map colours
+- adjusted multiple cargo payment curges
+    - fix issue where some cargos overlapped each other on cargo payment chart in-game
+    - rebalance some cargos for gameplay reasons
+- rework of industry map colours for better legibility on all 3 map colours (green, dark green, violet)
 - updated online docs with images for new and changed industries
 - docs show hints about many cargos, to aid vehicle set authors
 - docs show cargo colours and industry map colours (Code Reference page)
