@@ -67,4 +67,4 @@ IncompatibleGRF(LiteralGrfID(r"DD\06\02"), "Pikka Basic Industries")
 IncompatibleGRF(LiteralGrfID(r"mb\08\00"), "NewCargos by Michael Blunck")
 IncompatibleGRF(LiteralGrfID(r"AL\01\01"), "Nearby Station Names")
 IncompatibleGRF(LiteralGrfID(r"mb\07\00"), "Alpine Climate")
-
+IncompatibleGRF(LiteralGrfID(r"OG+3"), "OpenGFX+ Industries")
