@@ -15,9 +15,9 @@ cargo = Cargo(id = 'milk',
               units_of_cargo = '82',
               items_of_cargo = 'string(STR_CARGO_UNIT_MILK)',
               penalty_lowerbound = '0',
-              single_penalty_length = '20',
+              single_penalty_length = '16',
               capacity_multiplier = '1',
-              price_factor = '134.579658508',
+              price_factor = '135',
               icon_indices = (13, 0))
 
 

@@ -14,10 +14,10 @@ cargo = Cargo(id = 'steel',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
               items_of_cargo = 'string(STR_CARGO_UNIT_STEEL)',
-              penalty_lowerbound = '7',
+              penalty_lowerbound = '14',
               single_penalty_length = '255',
               capacity_multiplier = '1',
-              price_factor = '126.165390015',
+              price_factor = '126',
               icon_indices = (10, 0))
 
 

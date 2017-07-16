@@ -15,8 +15,8 @@ cargo = Cargo(id = 'livestock',
               units_of_cargo = 'TTD_STR_ITEMS',
               items_of_cargo = 'TTD_STR_QUANTITY_LIVESTOCK',
               penalty_lowerbound = '0',
-              single_penalty_length = '22',
-              price_factor = '124.073982239',
+              single_penalty_length = '16',
+              price_factor = '123',
               capacity_multiplier = '1',
               icon_indices = (4, 0))
 

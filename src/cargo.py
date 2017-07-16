@@ -54,6 +54,10 @@ class Cargo(object):
                     if self.cargo_label == key and numeric_id != value:
                         raise Exception("Economy " + economy.id + ": has cargo " + self.id + " in position " + str(numeric_id) + "; needs to be in position " + str(value))
                 self.economy_variations[economy] = {'numeric_id': numeric_id}
+        # guard against overlapping price factors, which obscures cargos on the payment curves chart
+        for cargo in registered_cargos:
+            if cargo.price_factor == self.price_factor:
+                utils.echo_message("Cargo " + self.id + " has overlapping price_factor with cargo " + cargo.id)
 
         # icon indices relate to position of icon in cargo icons spritesheet
         self.icon_indices = kwargs['icon_indices']

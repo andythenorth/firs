@@ -14,9 +14,9 @@ cargo = Cargo(id = 'fish',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
               items_of_cargo = 'string(STR_CARGO_UNIT_FISH)',
-              penalty_lowerbound = '12',
-              single_penalty_length = '30',
-              price_factor = '143.869400024',
+              penalty_lowerbound = '0',
+              single_penalty_length = '18',
+              price_factor = '138',
               capacity_multiplier = '1',
               icon_indices = (15, 0))
 

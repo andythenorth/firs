@@ -14,9 +14,9 @@ cargo = Cargo(id = 'fertiliser',
               town_growth_multiplier = '1.0',
               units_of_cargo = '84',
               items_of_cargo = 'string(STR_CARGO_UNIT_FERTILISER)',
-              penalty_lowerbound = '6',
+              penalty_lowerbound = '20',
               single_penalty_length = '36',
-              price_factor = '128.11088562',
+              price_factor = '128',
               capacity_multiplier = '1',
               icon_indices = (3, 3))
 

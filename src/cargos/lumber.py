@@ -14,9 +14,9 @@ cargo = Cargo(id = 'lumber',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
               items_of_cargo = 'string(STR_CARGO_UNIT_LUMBER)',
-              penalty_lowerbound = '12',
+              penalty_lowerbound = '18',
               single_penalty_length = '255',
-              price_factor = '125.533103943',
+              price_factor = '124',
               capacity_multiplier = '1',
               icon_indices = (6, 1))
 

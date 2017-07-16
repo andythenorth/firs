@@ -17,7 +17,7 @@ cargo = Cargo(id = 'recyclables',
               penalty_lowerbound = '10',
               single_penalty_length = '128',
               capacity_multiplier = '1',
-              price_factor = '104.570388794',
+              price_factor = '100',
               icon_indices = (10, 3))
 
 

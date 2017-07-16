@@ -16,7 +16,7 @@ cargo = Cargo(id = 'mail',
               items_of_cargo = 'TTD_STR_QUANTITY_MAIL',
               penalty_lowerbound = '6',
               single_penalty_length = '24',
-              price_factor = '143.869400024',
+              price_factor = '144',
               capacity_multiplier = '2',
               icon_indices = (2, 0))
 

@@ -15,10 +15,10 @@ cargo = Cargo(id = 'pig_iron',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
               items_of_cargo = 'string(STR_CARGO_UNIT_PIG_IRON)',
-              penalty_lowerbound = '7',
+              penalty_lowerbound = '15',
               single_penalty_length = '255',
               capacity_multiplier = '1',
-              price_factor = '126.165390015',
+              price_factor = '121',
               icon_indices = (4, 3))
 
 

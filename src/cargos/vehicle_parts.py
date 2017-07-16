@@ -14,9 +14,9 @@ cargo = Cargo(id = 'vehicle_parts',
               town_growth_multiplier = '1.0',
               units_of_cargo = '84',
               items_of_cargo = 'string(STR_CARGO_UNIT_VEHICLE_PARTS)',
-              penalty_lowerbound = '8',
-              single_penalty_length = '60',
-              price_factor = '134.506702423',
+              penalty_lowerbound = '7',
+              single_penalty_length = '255',
+              price_factor = '139',
               capacity_multiplier = '1',
               icon_indices = (14, 2))
 

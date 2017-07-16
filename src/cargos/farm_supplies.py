@@ -16,7 +16,7 @@ cargo = Cargo(id = 'farm_supplies',
               items_of_cargo = 'string(STR_CARGO_UNIT_FMSP)',
               penalty_lowerbound = '6',
               single_penalty_length = '36',
-              price_factor = '128.11088562',
+              price_factor = '152',
               capacity_multiplier = '1',
               icon_indices = (8, 1))
 
