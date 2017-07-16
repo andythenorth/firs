@@ -13,12 +13,12 @@ basic_arctic.economy.register()
 from economies import basic_tropic
 basic_tropic.economy.register()
 
+from economies import steeltown
+steeltown.economy.register()
+
 from economies import mistah_kurtz
 mistah_kurtz.economy.register()
 
 from economies import firs
 firs.economy.register()
-
-from economies import steeltown
-steeltown.economy.register()
 
