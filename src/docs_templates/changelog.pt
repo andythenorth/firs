@@ -55,7 +55,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
     - this isn't always possible, good luck!
 - Iron Ore Mine: no longer uses graphics from base set, and has additional layouts
 - Fertiliser Plant:
-    - renamed to Fertiliser and Explosives Plant
+    - renamed to Ammonia Plant
     - now produces Engineering Supplies (civil explosives) in addition to Farm Supplies
 - Lime Kiln: production ratios improved, industry output was previously nerfed, not intentionally
 - Metal Fabrication Plant:
@@ -90,6 +90,9 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 - Vehicles cargo:
     - now uses 'tonnes' (or equivalent localised weight) as unit, rather than 'vehicles'
     - simpler for vehicle newgrf authors to deal with, no special treatment needed for Vehicles cargo
+- Packaging cargo:
+    - renamed from Manufacturing Supplies to avoid confusion between this ordinary cargo and Engineering Supplies / Farm Supplies which have special behaviour
+    - uses 'tonnes' (or equivalent localised weight) as unit, rather than 'crates'
 
 *General Improvements*
 
@@ -99,9 +102,11 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
     - now simplified, taking advantage of new features in OpenTTD 1.7.0
     - cargos are simply shown as 'required'
     - 'supplied' will be shown if a cargo has been delivered within the last 90 days
-- industries accepting Manufacturing Supplies:
+- industries accepting Packaging (previously Manufacturing Supplies):
     - these industries now use same production boost behaviour as all other processing industries when combining cargo
     - previously these industries had special boost behaviour which was hard to explain
+    - Packaging only available in Extreme economy
+    - Packaging dropped from some industries entirely
 - tweaks to industry probabilities for game balance and consistency
 - primary industry production levels
     - adjusted production levels at some primary industries for game balance
@@ -115,15 +120,26 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 - adjusted all cargo colours:
     - all cargo colours now unique within FIRS
     - each cargo now uses same colour everywhere (charts, station list, cargo flow view) etc.
-- adjusted multiple cargo payment curges
+- adjusted multiple cargo payment curves
     - fix issue where some cargos overlapped each other on cargo payment chart in-game
     - rebalance some cargos for gameplay reasons
-- rework of industry map colours for better legibility on all 3 map colours (green, dark green, violet)
-- updated online docs with images for new and changed industries
-- docs show hints about many cargos, to aid vehicle set authors
-- docs show cargo colours and industry map colours (Code Reference page)
+- adjusted cargo weights
+- rework of industry map colours for better legibility on all 3 map colours (green, dark green, violet) - based on work by Frosch
+- added check for incompatible OpenGFX+Industries grf
+- adjusted order of economies in parameter menu and docs
+
+*Online Docs*
+
+- updated with images for new and changed industries
+- Cargos page shows hints about many cargos, to aid vehicle set authors
+- Code Reference page shows cargo colours and industry map colours
 - docs no longer show cargos that are not used (including Sugar and Sugarcane)
-- more variety in randomised banner images for docs
+- much more variety in randomised banner images for docs
+- upgrade UI library to Boostrap 3
+- all pages now use a responsive grid and should work across a wide range of devices
+- page layouts redesigned to be more legible and more visually appealing
+- zoom-and-pan tools to view 'larger' version of cargo-flow graphs (may not work in all browsers, sorry, 3rd-party plugin for this is not 100% reliable)
+- improved readme, removing confusing and/or outdated info, and linking to main docs
 
 *Translations*
 
