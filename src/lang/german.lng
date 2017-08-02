@@ -32,13 +32,16 @@ STR_CARGO_NAME_CASSAVA                                                          
 STR_CARGO_NAME_CHEMICALS                                                        :{G=p}Chemikalien
 STR_CARGO_NAME_CLAY                                                             :{G=p}Ton
 STR_CARGO_NAME_COFFEE                                                           :{G=m}Kaffee
+STR_CARGO_NAME_COKE                                                             :Koks
 STR_CARGO_NAME_COPPER                                                           :{G=n}Kupfer
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Speiseöl
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=p}Ersatzteile
+STR_CARGO_NAME_EXPLOSIVES                                                       :Sprengstoffe
 STR_CARGO_NAME_FIBRES                                                           :{G=p}Pflanzenfasern
 STR_CARGO_NAME_FISH                                                             :{G=m}Fisch
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=p}landw. Betriebsmittel
 STR_CARGO_NAME_FRUITS                                                           :{G=p}Früchte und Gemüse
+STR_CARGO_NAME_KAOLIN                                                           :Kaolin
 STR_CARGO_NAME_LUMBER                                                           :{G=n}Schnittholz
 STR_CARGO_NAME_METAL                                                            :{G=n}Metall
 STR_CARGO_NAME_MILK                                                             :{G=w}Milch
@@ -48,14 +51,20 @@ STR_CARGO_NAME_NUTS                                                             
 STR_CARGO_NAME_PETROL                                                           :{G=m}Treibstoff
 STR_CARGO_NAME_PHOSPHATE                                                        :Phosphat
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrit
+STR_CARGO_NAME_QUICKLIME                                                        :Branntkalk
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=p}Wertstoffe
 STR_CARGO_NAME_SAND                                                             :{G=m}Sand
 STR_CARGO_NAME_SCRAP_METAL                                                      :{G=n}Altmetall
+STR_CARGO_NAME_SLAG                                                             :Schlacke
+STR_CARGO_NAME_SODA_ASH                                                         :Natriumkarbonat
+STR_CARGO_NAME_STEEL                                                            :Stahl
 STR_CARGO_NAME_STONE                                                            :{G=p}Steine
 STR_CARGO_NAME_SUGAR_BEET                                                       :{G=p}Zuckerrüben
+STR_CARGO_NAME_VEHICLE_BODIES                                                   :Karosserien
 STR_CARGO_NAME_VEHICLE_PARTS                                                    :Fahrzeugteile
 STR_CARGO_NAME_VEHICLES                                                         :Fahrzeuge
 STR_CARGO_NAME_WOOL                                                             :{G=w}Wolle
+STR_CARGO_NAME_ZINC                                                             :Zink
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} Spirituosen
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} Bauxit
@@ -78,8 +87,11 @@ STR_CARGO_UNIT_METAL                                                            
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} Milch
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} Nitrate
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} S{P 0 ack äcke} Nüsse
+STR_CARGO_UNIT_PEAT                                                             :{WEIGHT} Torf
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} Treibstoff
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} Phosphat
+STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} Roheisen
+STR_CARGO_UNIT_PIPE                                                             :{WEIGHT} des Rohres
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} Pyrit
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} Wertstoffe
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} Sand
@@ -131,6 +143,7 @@ STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Inkompatible Version: {ORANGE}Total Town Replacement Set: Für FIRS-Kompatibilität Version 3.11 oder höher erforderlich. {YELLOW}Siehe FIRS Readme: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :muss unterhalb der Schneegrenze errichtet werden.
+STR_ERR_LOCATION_NOT_BELOW_SNOWLINE                                             :muss oberhalb der Schneegrenze errichtet werden.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :muss an Land errichtet werden.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :kann nicht in Wüsten errichtet werden.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kann nicht an Steilhängen errichtet werden.
@@ -139,6 +152,7 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 STR_IND_ALUMINIUM_PLANT                                                         :{G=w}Aluminiumhütte
 STR_IND_ARABLE_FARM                                                             :{G=m}Bauernhof (Ackerbau)
 STR_IND_BASICFARM                                                               :{G=m}Bauernhof
+STR_IND_BASIC_OXYGEN_FURNACE                                                    :Einfacher Frischofen
 STR_IND_BIOREFINERY                                                             :{G=w}Bioraffinerie
 STR_IND_BREWERY                                                                 :{G=w}Brauerei
 STR_IND_CIDER_MILL                                                              :{G=w}Brennerei
@@ -151,7 +165,10 @@ STR_IND_CLAY_PIT                                                                
 STR_IND_COFFEE_ESTATE                                                           :{G=w}Kaffeeplantage
 STR_IND_COPPER_REFINERY                                                         :{G=w}Kupferraffinerie
 STR_IND_DAIRY                                                                   :{G=w}Molkerei
+STR_IND_DAIRY_FARM                                                              :Meierei
 STR_IND_DREDGING_SITE                                                           :{G=w}Baggerstelle
+STR_IND_ELECTRIC_ARC_FURNACE                                                    :Elektroofen
+STR_IND_FACTORY                                                                 :Fabrik
 STR_IND_FISHING_GROUND                                                          :{G=p}Fischgründe
 STR_IND_FISHING_HARBOUR                                                         :{G=m}Fischereihafen
 STR_IND_FISHING_VILLAGE                                                         :Fischerdorf
@@ -171,6 +188,7 @@ STR_IND_LUMBER_YARD                                                             
 STR_IND_MACHINE_SHOP                                                            :{G=m}Maschinenbaubetrieb
 STR_IND_MANGANESE_MINE                                                          :Braunsteinmine
 STR_IND_METAL_FABRICATION_PLANT                                                 :{G=w}Metallwarenfabrik
+STR_IND_METAL_WORKSHOP                                                          :Metallwarenhandel
 STR_IND_MIXEDFARM                                                               :{G=m}Bauernhof
 STR_IND_NITRATE_MINE                                                            :Nitrat-Mine
 STR_IND_ORCHARD_PIGGERY                                                         :{G=m}Obstgarten und Schweinezucht
@@ -179,14 +197,16 @@ STR_IND_PHOSPHATE_MINE                                                          
 STR_IND_PLASTICS_PLANT                                                          :{G=w}Plastikfabrik
 STR_IND_PORT                                                                    :{G=m}Hafen
 STR_IND_PYRITE_MINE                                                             :Pyritmine
-STR_IND_PYRITE_SMELTER                                                          :Schmelzofen
+STR_IND_PYRITE_SMELTER                                                          :Pyritschmelzofen
 STR_IND_POWER_PLANT                                                             :Kraftwerk
 STR_IND_QUARRY                                                                  :{G=m}Steinbruch
 STR_IND_RANCH                                                                   :{G=w}Ranch
 STR_IND_RECYCLING_DEPOT                                                         :{G=m}Wertstoffhof
 STR_IND_RECYCLING_PLANT                                                         :{G=w}Recyclingfabrik
 STR_IND_SHEEPFARM                                                               :{G=m}Bauernhof (Schafhaltung)
+STR_IND_SLAG_GRINDING_PLANT                                                     :Schlackemühle
 STR_IND_SMITHY_FORGE                                                            :{G=w}Schmiede
+STR_IND_SODA_ASH_MINE                                                           :Natriumkarbonatmine
 STR_IND_STOCKYARD                                                               :{G=m}Schlachthof
 STR_IND_SUGAR_REFINERY                                                          :{G=w}Zuckerraffinerie
 STR_IND_SUPPLY_YARD                                                             :{G=m}Landmaschinenhandel
@@ -223,16 +243,27 @@ STR_TOWN                                                                        
 STR_STATION                                                                     :{STRING} {STRING}
 
 STR_STATION_ANIMALS                                                             :Viehmarkt
+STR_STATION_CASTINGS                                                            :Gussstücke
+STR_STATION_COPPER_LODE                                                         :Kupferader
 STR_STATION_FARM_1                                                              :Landsitz
+STR_STATION_FARM_3                                                              :Viehzuchtbetrieb
 STR_STATION_FISHMARKET                                                          :Fischmarkt
+STR_STATION_FORGE                                                               :Schmiede
+STR_STATION_HEAVY_INDUSTRY_2                                                    :{G=n}Werk
+STR_STATION_HERDING_COOP                                                        :Hütte
 STR_STATION_INDUSTRY_ESTATE_1                                                   :Gewerbegebiet
 STR_STATION_INDUSTRY_HARBOUR_1                                                  :Industriehafen
+STR_STATION_MANGANESE_MINES                                                     :Manganmine
 STR_STATION_MARKET                                                              :Marktplatz
 STR_STATION_MILL                                                                :Mühlenviertel
 STR_STATION_MINE                                                                :Bergwerk
+STR_STATION_MOULDINGS                                                           :Formteile
 STR_STATION_PIT                                                                 :Haltestelle
 STR_STATION_PLANTATION                                                          :Plantage
 STR_STATION_POWERHUNGRY                                                         :Kraftwerk
+STR_STATION_PUMPS                                                               :Pumpen
+STR_STATION_PYRITES                                                             :Pyritvorräte
 STR_STATION_REFINERY                                                            :Chemiepark
+STR_STATION_SMELTER                                                             :Scmelzofen
 STR_STATION_TOWN_1                                                              :Mitte
 STR_STATION_WATER                                                               :Sandbank
