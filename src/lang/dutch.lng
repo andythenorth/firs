@@ -48,6 +48,7 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Landbouwmaterialen
 STR_CARGO_NAME_FERTILISER                                                       :Kunstmest
 STR_CARGO_NAME_FRUITS                                                           :Groente en fruit
+STR_CARGO_NAME_KAOLIN                                                           :Kaolien
 STR_CARGO_NAME_LUMBER                                                           :Gezaagd hout
 STR_CARGO_NAME_METAL                                                            :Metaal
 STR_CARGO_NAME_MILK                                                             :Melk
@@ -55,6 +56,7 @@ STR_CARGO_NAME_MANGANESE                                                        
 STR_CARGO_NAME_NICKEL                                                           :Nikkel
 STR_CARGO_NAME_NITRATES                                                         :Nitraten
 STR_CARGO_NAME_NUTS                                                             :Noten
+STR_CARGO_NAME_PEAT                                                             :Turf
 STR_CARGO_NAME_PETROL                                                           :Benzine
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosfaat
 STR_CARGO_NAME_PIG_IRON                                                         :Ruwijzer
@@ -70,6 +72,7 @@ STR_CARGO_NAME_STEEL                                                            
 STR_CARGO_NAME_STONE                                                            :Grind
 STR_CARGO_NAME_SUGAR_BEET                                                       :Suikerbieten
 STR_CARGO_NAME_SULPHUR                                                          :Zwavel
+STR_CARGO_NAME_VEHICLE_BODIES                                                   :Carrosserieën
 STR_CARGO_NAME_VEHICLE_PARTS                                                    :Voertuigonderdelen
 STR_CARGO_NAME_VEHICLES                                                         :Voertuigen
 STR_CARGO_NAME_WOOL                                                             :Wol
@@ -79,6 +82,7 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} van bonen
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} bouwmaterialen
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} cassava
+STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} cement
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicaliën
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} klei
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} zak{P 0 "" ken} koffie
@@ -110,10 +114,12 @@ STR_CARGO_UNIT_RECYCLABLES                                                      
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} zand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} schroot
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} slak
+STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} natriumcarbonaat
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} staal
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} grind
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} suikerbieten
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} zwavel
+STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} carrosserieën
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} krat{P 0 "" ten} voertuigonderdelen
 STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} voertuig{P 0 "" en}
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} ba{P 0 al len} wol
@@ -123,6 +129,7 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BEANS                                                                   :{TINYFONT}BN
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
 STR_CID_CASSAVA                                                                 :{TINYFONT}CA
+STR_CID_CEMENT                                                                  :{TINYFONT}CE
 STR_CID_CHEMICALS                                                               :{TINYFONT}CM
 STR_CID_CLAY                                                                    :{TINYFONT}KL
 STR_CID_COFFEE                                                                  :{TINYFONT}KF
@@ -135,6 +142,7 @@ STR_CID_FARM_SUPPLIES                                                           
 STR_CID_FERTILISER                                                              :{TINYFONT}KM
 STR_CID_FIBRES                                                                  :{TINYFONT}KT
 STR_CID_FISH                                                                    :{TINYFONT}VS
+STR_CID_KAOLIN                                                                  :{TINYFONT}KA
 STR_CID_LUMBER                                                                  :{TINYFONT}HT
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_METAL                                                                   :{TINYFONT}MT
@@ -153,6 +161,7 @@ STR_CID_RECYCLABLES                                                             
 STR_CID_SAND                                                                    :{TINYFONT}ZD
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}ST
 STR_CID_SLAG                                                                    :{TINYFONT}SK
+STR_CID_SODA_ASH                                                                :{TINYFONT}Natriumcarbonaat
 STR_CID_STEEL                                                                   :{TINYFONT}SL
 STR_CID_STONE                                                                   :{TINYFONT}GD
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
@@ -160,6 +169,7 @@ STR_CID_SULPHUR                                                                 
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}VO
 STR_CID_VEHICLES                                                                :{TINYFONT}VN
 STR_CID_WOOL                                                                    :{TINYFONT}WL
+STR_CID_ZINC                                                                    :{TINYFONT}Zn
 
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS is niet ontworpen om in het speelgoedlandschap gebruikt te worden.
@@ -170,6 +180,7 @@ STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Onbruikbare versie: {ORANGE}Total Town Replacement Set moet versie 3.11 of nieuwer zijn. {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt.
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :moet onder de sneeuwgrens geplaatst worden.
+STR_ERR_LOCATION_NOT_BELOW_SNOWLINE                                             :moet boven de sneeuwgrens geplaatst worden.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :moet op droog land geplaatst worden.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :moet niet in de woestijn geplaatst worden.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kan niet op een steile helling geplaatst worden.
@@ -195,7 +206,7 @@ STR_IND_COPPER_REFINERY                                                         
 STR_IND_DAIRY                                                                   :Zuivelfabriek
 STR_IND_DAIRY_FARM                                                              :Veehouderij
 STR_IND_DREDGING_SITE                                                           :Baggermolen
-STR_IND_ELECTRIC_ARC_FURNACE                                                    :Electrischeboogoven
+STR_IND_ELECTRIC_ARC_FURNACE                                                    :Vlamboogoven
 STR_IND_FACTORY                                                                 :Fabriek
 STR_IND_FISHING_GROUND                                                          :Visgebied
 STR_IND_FISHING_HARBOUR                                                         :Vissershaven
@@ -203,6 +214,7 @@ STR_IND_FISHING_VILLAGE                                                         
 STR_IND_FLOUR_MILL                                                              :Graanmolen
 STR_IND_FOOD_MARKET                                                             :Kruidenier
 STR_IND_FOOD_PROCESSOR                                                          :Voedselfabriek
+STR_IND_FOUNDRY                                                                 :Metaalgieterij
 STR_IND_FURNITURE_FACTORY                                                       :Meubelfabriek
 STR_IND_GENERAL_STORE                                                           :Winkel
 STR_IND_GLASS_WORKS                                                             :Glasfabriek
@@ -236,6 +248,7 @@ STR_IND_REINDEER_FARM                                                           
 STR_IND_SHEEPFARM                                                               :Schapenhouderij
 STR_IND_SLAG_GRINDING_PLANT                                                     :Slakmaalfabriek
 STR_IND_SMITHY_FORGE                                                            :Smederij
+STR_IND_SODA_ASH_MINE                                                           :Zoutmijn
 STR_IND_STOCKYARD                                                               :Slachterij
 STR_IND_SUGAR_REFINERY                                                          :Suikerfabriek
 STR_IND_SUPPLY_YARD                                                             :Shovels and bulldozers verkoper
@@ -246,6 +259,8 @@ STR_IND_ASSEMBLY_PLANT                                                          
 STR_IND_VINEYARD                                                                :Wijngaard
 
 
+STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK} Produceert op maximaal niveau als {WHITE}een van de {BLACK} benodigde goederen wordt geleverd.
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}Lever {WHITE}alle {BLACK} benodigde goederen minimaal 1 keer per 3 maanden om maximale productie te halen.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Productie is evenredig met het aantal inwoners in the stad.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Huidige productie: {YELLOW}Normaal{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} eenheden vracht om {WHITE}verhoogd{BLACK} productieniveau te verkrijgen{}Lever {SIGNED_WORD} eenheden vracht voor {WHITE}gepassioneerde{BLACK} productie
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Huidige productie: {YELLOW}Verhoogd{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} kratten constructie-, landbouw- of productiematerialen af om dit productieniveau te handhaven{}Voor {WHITE}gepassioneerde{BLACK} productie, lever {SIGNED_WORD} eenheden
@@ -260,6 +275,7 @@ STR_FUND_COFFEE_ESTATE                                                          
 STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
 STR_FUND_FOREST                                                                 :{}{BLACK}Plaats: {YELLOW}Kan niet in woestijnen gebouwd worden.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens gebouwd worden.
+STR_FUND_HERDING_COOP                                                           :{}{BLACK}Plaats: {YELLOW}Kan alleen op sneeuw geplaatst worden.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
@@ -272,16 +288,38 @@ STR_TOWN                                                                        
 STR_STATION                                                                     :{STRING} {STRING}
 
 STR_STATION_ANIMALS                                                             :Paardenmarkt
+STR_STATION_BAR_GRILL_AND_ROOMS                                                 :Hotel
+STR_STATION_BONEYARD                                                            :Boneyard
+STR_STATION_COLLIERY                                                            :Kolenmijn
+STR_STATION_COPPER_LODE                                                         :Kopermijn
+STR_STATION_DAIRY_LANE                                                          :Zuivelfabriek
 STR_STATION_FARM_1                                                              :Landhuis
+STR_STATION_FARM_2                                                              :Weiden
 STR_STATION_FISHMARKET                                                          :Vismarkt
+STR_STATION_FOOD_CORPORATION                                                    :Voedselfabriek
+STR_STATION_FOREST                                                              :Bosweg
+STR_STATION_FURNACE                                                             :Hoogovens
 STR_STATION_INDUSTRY_ESTATE_1                                                   :Park
 STR_STATION_INDUSTRY_HARBOUR_1                                                  :Haven
+STR_STATION_INDUSTRY_HARBOUR_2                                                  :Havengebied
+STR_STATION_INDUSTRY_HARBOUR_3                                                  :Rede
+STR_STATION_IRONSTONE                                                           :IJzermijn
+STR_STATION_KIMBERLITE_DEPOSITS                                                 :Kimberlietpijp
+STR_STATION_MANGANESE_MINES                                                     :Mangaanmijn
 STR_STATION_MARKET                                                              :Markt
 STR_STATION_MILL                                                                :Molenweg
-STR_STATION_MINE                                                                :Tannerweg
+STR_STATION_MINE                                                                :Mijnschacht
 STR_STATION_PIT                                                                 :Groeve
 STR_STATION_PLANTATION                                                          :Plantage
 STR_STATION_POWERHUNGRY                                                         :Centrale
 STR_STATION_REFINERY                                                            :Raffinaderij
+STR_STATION_RUBBER_COMPANY                                                      :Rubberfabriek
+STR_STATION_SALTPETER_WORKS                                                     :Salpetergroeve
+STR_STATION_SHEEP_FOLD                                                          :Schapenstal
+STR_STATION_STAMP_AND_PLATE                                                     :Staalpers
+STR_STATION_SUGAR_COMPANY                                                       :Bietenbrug
+STR_STATION_TANK_FARM                                                           :Olieterminal
 STR_STATION_TOWN_1                                                              :Centrum
 STR_STATION_WATER                                                               :Zandbank
+STR_STATION_WEAVE_AND_DYE                                                       :Weverij
+STR_STATION_WINERY                                                              :Château
