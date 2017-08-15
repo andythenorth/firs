@@ -18,13 +18,19 @@ STR_PARAM_NAME_NO_OPENINGS                                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Povolit uzavření sekundárního průmyslu
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Bez limitu
 
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Krabic zásob potřebných pro Zvýšenou primární produkci (výchozí 16)
 STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Krabic zásob potřebných pro Gung-ho primární produkci (výchozí 80)
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Produkce farem, dolů a podobného průmyslu se zvýší v případě dodání krabic se zásobami. Nejprve na {SILVER}Zvýšenou{BLACK}, a poté na {SILVER}Gung-ho{BLACK}, produkci, pokud je doručen dostatek zásob.{}{}Výchozí nastavení jsou dobrá, ale v případě potřeby je zde možné tyto hodnoty změnit.{}{}Požadavky na náklad jsou u přístavních typů průmyslu jsou znásobeny 8x.
 STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Vylepšená základní úroveň produkce (%)
 STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Gung-ho primární úroveň produkce (%)
 STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Produkce farem, dolů a podobného průmyslu v případě dodání požadovaného množství zásob (procento {SILVER}Normální {BLACK}úrovně produkce).
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Základní mírná
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Základní arktická
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Základní tropická
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Extrémní
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :V subtropech
+STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Ocelové město
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauxit
@@ -130,27 +136,60 @@ STR_CARGO_UNIT_ZINC                                                             
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BEANS                                                                   :{TINYFONT}FA
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CID_CASSAVA                                                                 :{TINYFONT}MA
+STR_CID_CEMENT                                                                  :{TINYFONT}CE
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}CL
+STR_CID_COFFEE                                                                  :{TINYFONT}KA
+STR_CID_COKE                                                                    :{TINYFONT}KO
+STR_CID_COPPER                                                                  :{TINYFONT}MD
+STR_CID_EDIBLE_OIL                                                              :{TINYFONT}PO
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
+STR_CID_EXPLOSIVES                                                              :{TINYFONT}EX
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
+STR_CID_FERTILISER                                                              :{TINYFONT}HN
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
 STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_KAOLIN                                                                  :{TINYFONT}KA
 STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_METAL                                                                   :{TINYFONT}ML
 STR_CID_MILK                                                                    :{TINYFONT}MK
+STR_CID_NICKEL                                                                  :{TINYFONT}NK
+STR_CID_NITRATES                                                                :{TINYFONT}LE
+STR_CID_NUTS                                                                    :{TINYFONT}OŘ
+STR_CID_PACKAGING                                                               :{TINYFONT}BZ
+STR_CID_PEAT                                                                    :{TINYFONT}RA
 STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_PIG_IRON                                                                :{TINYFONT}SŽ
+STR_CID_PIPE                                                                    :{TINYFONT}TR
+STR_CID_PHOSPHATE                                                               :{TINYFONT}FT
+STR_CID_POTASH                                                                  :{TINYFONT}PO
+STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
+STR_CID_QUICKLIME                                                               :{TINYFONT}NV
+STR_CID_RECYCLABLES                                                             :{TINYFONT}RM
 STR_CID_SAND                                                                    :{TINYFONT}SA
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
+STR_CID_SLAG                                                                    :{TINYFONT}ST
+STR_CID_SODA_ASH                                                                :{TINYFONT}SO
+STR_CID_STEEL                                                                   :{TINYFONT}OL
 STR_CID_STONE                                                                   :{TINYFONT}ST
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}CŘ
+STR_CID_SULPHUR                                                                 :{TINYFONT}SI
+STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}KV
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}DV
+STR_CID_VEHICLES                                                                :{TINYFONT}VO
 STR_CID_WOOL                                                                    :{TINYFONT}WL
+STR_CID_ZINC                                                                    :{TINYFONT}ZN
 
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS není navržen pro použití v Zemi hraček
 STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS vyžaduje verzi OpenTTD 1.7.0 (nebo trunk build r27769)
 STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}INekompatibilní set: {ORANGE}{STRING} {YELLOW}Viz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Nekompatibilní parametr: {ORANGE}CanSet parametr 2 musí být 0 pro fungování s FIRS. {YELLOW}Viz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Nekompatibilní parametr: {ORANGE}NA City Set parametr 2 musí být 0 pro fungování s FIRS. {YELLOW}Viz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Nekompatibilní verze: {ORANGE}Total Town Replacement Set musí být ve verzi 3.11 nebo novější. {YELLOW}Viz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :musí být umístěn pod sněžnou čarou
@@ -175,6 +214,7 @@ STR_IND_CEMENT_PLANT                                                            
 STR_IND_CHEMICAL_PLANT                                                          :Chemička
 STR_IND_CLAY_PIT                                                                :Jílový důl
 STR_IND_COFFEE_ESTATE                                                           :Kávová plantáž
+STR_IND_COKE_OVEN                                                               :Koksová pec
 STR_IND_COPPER_REFINERY                                                         :Slévárna mědi
 STR_IND_DAIRY                                                                   :Mlékárna
 STR_IND_DAIRY_FARM                                                              :Mléčná farma
@@ -188,6 +228,7 @@ STR_IND_FLOUR_MILL                                                              
 STR_IND_FOOD_MARKET                                                             :Obchod
 STR_IND_FOUNDRY                                                                 :Slévárna
 STR_IND_FURNITURE_FACTORY                                                       :Truhlářství
+STR_IND_GENERAL_STORE                                                           :Obchod se smíšeným zbožím
 STR_IND_GLASS_WORKS                                                             :Sklárna
 STR_IND_HARDWARE_STORE                                                          :Železářství
 STR_IND_HOTEL                                                                   :Hotel
@@ -217,10 +258,12 @@ STR_IND_QUARRY                                                                  
 STR_IND_RANCH                                                                   :Ranč
 STR_IND_RECYCLING_DEPOT                                                         :Sklad tříděného odpadu
 STR_IND_RECYCLING_PLANT                                                         :Třídírna odpadů
+STR_IND_REINDEER_FARM                                                           :Sobí farma
 STR_IND_SHEEPFARM                                                               :Ovčí farma
 STR_IND_SLAG_GRINDING_PLANT                                                     :Drtič strusky
 STR_IND_SMITHY_FORGE                                                            :Kovárna
 STR_IND_SODA_ASH_MINE                                                           :Důl na sodu
+STR_IND_STEEL_FINISHING_PLANT                                                   :Úpravna oceli
 STR_IND_STOCKYARD                                                               :Masokombinát
 STR_IND_SUGAR_REFINERY                                                          :Cukrovar
 STR_IND_SUPPLY_YARD                                                             :Sklad zásob
@@ -236,6 +279,8 @@ STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produkce je úměrná městské populaci.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Aktuální produkce: {YELLOW}Normální{}{}{BLACK}Pro {WHITE}Zvýšenou {BLACK}produkci je třeba doručit {SIGNED_WORD} krabic spotřebního materiálu během tří měsíců.{}Pro {WHITE}Gung-ho {BLACK}produkci je třeba doručit {SIGNED_WORD} krabic.
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Aktuální produkce: {YELLOW}Zvýšená{}{}{BLACK}Pro udržení této úrovně je třeba doručit {SIGNED_WORD} krabic zásob během tří měsíců.{}Pro {WHITE}Gung-ho {BLACK}produkci je třeba doručit{SIGNED_WORD} krabic.
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Aktuální produkce: {YELLOW}Gung-ho{}{}{BLACK}Pro udržení této úrovně je třeba doručit {SKIP}{SIGNED_WORD} krabic zásob během tří měsíců.
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Aktuální produkce: {YELLOW}Normální{}{}{BLACK}Pro {WHITE}Zvýšenou {BLACK}produkc je třeba doručit {SIGNED_WORD} jednotek nákladu během tří měsíců.{}Pro {WHITE}Gung-ho {BLACK}produkci je třeba doručit {SIGNED_WORD} jednotek.
 STR_PORT_PRODUCTION_2X                                                          :{BLACK}Aktuální produkce: {YELLOW}Zvýšená{}{}{BLACK}Pro udržení této úrovně je třeba doručit {SIGNED_WORD} jednotek nákladu během tří měsíců.{}Pro {WHITE}Gung-ho {BLACK}produkci je třeba doručit {SIGNED_WORD} jednotek.
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Aktuální produkce: {YELLOW}Gung-ho{}{}{BLACK}Pro udržení této úrovně je třeba doručit {SKIP}{SIGNED_WORD} jednotek nákladu během tří měsíců.
 STR_GENERIC_NEWLINE                                                             :{}
@@ -258,10 +303,13 @@ STR_TOWN                                                                        
 STR_STATION                                                                     :{STRING} {STRING}
 
 STR_STATION_ANIMALS                                                             :Koňský trh
+STR_STATION_AUTOMOTIVE                                                          :Automobilka
 STR_STATION_BARNS                                                               :Stodoly
 STR_STATION_BANK_TOP                                                            :Koksovna
+STR_STATION_CASTINGS                                                            :Slévárny
 STR_STATION_COLLIERY                                                            :Jáma
 STR_STATION_COPPER_LODE                                                         :Měděná žíla
+STR_STATION_CREOSOTING                                                          :Kreosování
 STR_STATION_DAIRY_LANE                                                          :Mlékárenská
 STR_STATION_ESTATE                                                              :Plantáž
 STR_STATION_EXCHANGE                                                            :Přeložiště
@@ -269,6 +317,7 @@ STR_STATION_FARM_2                                                              
 STR_STATION_FARM_3                                                              :Ranč
 STR_STATION_FISHMARKET                                                          :Rybí trh
 STR_STATION_FOOD_CORPORATION                                                    :Potravinářská Společnost
+STR_STATION_FOREST                                                              :Skladiště klád
 STR_STATION_FORGE                                                               :Kovárna
 STR_STATION_FURNACE                                                             :Pece
 STR_STATION_HEAVY_EQUIPMENT_YARD                                                :Sklad Těžkého vybavení
@@ -276,12 +325,16 @@ STR_STATION_HEAVY_INDUSTRY_2                                                    
 STR_STATION_INDUSTRY_ESTATE_1                                                   :Průmyslová zóna
 STR_STATION_INDUSTRY_HARBOUR_3                                                  :Přístavní můstek
 STR_STATION_IRONSTONE                                                           :Železná ruda
+STR_STATION_JOINERS_SHOP                                                        :Spojovací materiál
 STR_STATION_KILNS                                                               :Pece
 STR_STATION_KIMBERLITE_DEPOSITS                                                 :Uložiště kimberlitu
 STR_STATION_MANGANESE_MINES                                                     :Manganové doly
+STR_STATION_MARKET                                                              :Trh
 STR_STATION_MERCHANTS_LANE                                                      :Obchodní ulice
 STR_STATION_MILL                                                                :Mlýn
 STR_STATION_MINE                                                                :Koželužna
+STR_STATION_MOULDINGS                                                           :Litiny
+STR_STATION_OIL_RIG                                                             :Ropná pole
 STR_STATION_ORCHARDS                                                            :Sady
 STR_STATION_PIT                                                                 :Důl
 STR_STATION_PLANTATION                                                          :Plantáž
