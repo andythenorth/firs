@@ -51,7 +51,7 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Gårdsutstyr
 STR_CARGO_NAME_FERTILISER                                                       :Gjødsel
 STR_CARGO_NAME_FRUITS                                                           :Frukt
-STR_CARGO_NAME_KAOLIN                                                           :kaolin
+STR_CARGO_NAME_KAOLIN                                                           :Kaolin
 STR_CARGO_NAME_LUMBER                                                           :Trelast
 STR_CARGO_NAME_METAL                                                            :Metall
 STR_CARGO_NAME_MILK                                                             :Melk
@@ -59,7 +59,7 @@ STR_CARGO_NAME_MANGANESE                                                        
 STR_CARGO_NAME_NICKEL                                                           :Nikkel
 STR_CARGO_NAME_NITRATES                                                         :Nitrater
 STR_CARGO_NAME_NUTS                                                             :Nøtter
-STR_CARGO_NAME_PACKAGING                                                        :emballasje
+STR_CARGO_NAME_PACKAGING                                                        :Emballasje
 STR_CARGO_NAME_PEAT                                                             :Torv
 STR_CARGO_NAME_PETROL                                                           :Bensin
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosfat
@@ -129,8 +129,8 @@ STR_CARGO_UNIT_STONE                                                            
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} sukkerroe
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} svovel
 STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} karosserier
-STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} kasse{P 0 "" r} kjøretøydeler
-STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} kjøretøy
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{WEIGHT} kjøretøydeler
+STR_CARGO_UNIT_VEHICLES                                                         :{WEIGHT} kjøretøy
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} balle{P 0 "" r} ull
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} sink
 
@@ -139,6 +139,7 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BEANS                                                                   :{TINYFONT}BN
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
 STR_CID_CASSAVA                                                                 :{TINYFONT}CA
+STR_CID_CEMENT                                                                  :{TINYFONT}CE
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}CY
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
@@ -151,6 +152,7 @@ STR_CID_FARM_SUPPLIES                                                           
 STR_CID_FERTILISER                                                              :{TINYFONT}FL
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
 STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_KAOLIN                                                                  :{TINYFONT}KA
 STR_CID_LUMBER                                                                  :{TINYFONT}LU
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_METAL                                                                   :{TINYFONT}MT
@@ -158,6 +160,8 @@ STR_CID_MILK                                                                    
 STR_CID_NICKEL                                                                  :{TINYFONT}NK
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_NUTS                                                                    :{TINYFONT}NT
+STR_CID_PACKAGING                                                               :{TINYFONT}PK
+STR_CID_PEAT                                                                    :{TINYFONT}PE
 STR_CID_PETROL                                                                  :{TINYFONT}PT
 STR_CID_PIG_IRON                                                                :{TINYFONT}PI
 STR_CID_PIPE                                                                    :{TINYFONT}PP
@@ -169,17 +173,20 @@ STR_CID_RECYCLABLES                                                             
 STR_CID_SAND                                                                    :{TINYFONT}SA
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
 STR_CID_SLAG                                                                    :{TINYFONT}SG
+STR_CID_SODA_ASH                                                                :{TINYFONT}SO
 STR_CID_STEEL                                                                   :{TINYFONT}SL
 STR_CID_STONE                                                                   :{TINYFONT}ST
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
 STR_CID_SULPHUR                                                                 :{TINYFONT}SU
+STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}VB
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}VP
 STR_CID_VEHICLES                                                                :{TINYFONT}VS
 STR_CID_WOOL                                                                    :{TINYFONT}WL
+STR_CID_ZINC                                                                    :{TINYFONT}ZN
 
 
-STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS er ikke laget for å brukes i Lekeland
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS krever OpenTTD 1.6.0 / trunk r27279 eller høyere. {YELLOW}Sjekk FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS er ikke laget for bruk i Lekeland
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS krever OpenTTD versjon 1.7.0 eller trunk r27699.
 STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Inkompatibelt sett: {ORANGE}{STRING} {YELLOW}Sjekk FIRS LesMeg: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Inkompatibel parameter: {ORANGE}CanSet parameter 2 må være 0 for å virke med FIRS. {YELLOW}Se FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Inkompatibel parameter: {ORANGE}NA City Set parameter 2 må være 0 for å virke med FIRS. {YELLOW}Se FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
@@ -193,7 +200,7 @@ STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :kun en industri av denne typen er tillatt pr. by.
 
 STR_IND_ALUMINIUM_PLANT                                                         :{G=neuter}Aluminiumsverk
-STR_IND_AMMONIA_PLANT                                                           :ammoniakkfabrikk
+STR_IND_AMMONIA_PLANT                                                           :{G=masculine}Ammoniakkfabrikk
 STR_IND_ARABLE_FARM                                                             :{G=masculine}Jordbruksgård
 STR_IND_BASICFARM                                                               :{G=masculine}Gård
 STR_IND_BASIC_OXYGEN_FURNACE                                                    :{G=masculine}Enkel smelteovn
@@ -216,17 +223,18 @@ STR_IND_DREDGING_SITE                                                           
 STR_IND_ELECTRIC_ARC_FURNACE                                                    :{G=masculine}Elektrobueovn
 STR_IND_FACTORY                                                                 :{G=neuter}Fabrikk
 STR_IND_FISHING_GROUND                                                          :{G=masculine}Fiskebanke
-STR_IND_FISHING_HARBOUR                                                         :{G=feminine}Fiskehavn
+STR_IND_FISHING_HARBOUR                                                         :{G=neuter}Fiskemottak
 STR_IND_FISHING_VILLAGE                                                         :{G=masculine}Fiskerlandsby
 STR_IND_FLOUR_MILL                                                              :{G=feminine}Mølle
 STR_IND_FOOD_MARKET                                                             :{G=masculine}Matbutikk
 STR_IND_FOOD_PROCESSOR                                                          :{G=masculine}Hermetikkfabrikk
+STR_IND_FOUNDRY                                                                 :{G=neuter}Valseverk
 STR_IND_FURNITURE_FACTORY                                                       :{G=masculine}Møbelfabrikk
 STR_IND_GENERAL_STORE                                                           :{G=masculine}Landhandel
 STR_IND_GLASS_WORKS                                                             :{G=neuter}Glassverk
 STR_IND_HARDWARE_STORE                                                          :{G=masculine}Jernvarehandel
 STR_IND_HOTEL                                                                   :{G=neuter}Hotell
-STR_IND_HERDING_COOP                                                            :{G=masculine}Jaktleir
+STR_IND_HERDING_COOP                                                            :{G=neuter}Utmarksbeite
 STR_IND_IRON_WORKS                                                              :{G=neuter}Jernverk
 STR_IND_JUNKYARD                                                                :{G=masculine}Skraphandel
 STR_IND_LIME_KILN                                                               :{G=masculine}Kalkovn
@@ -235,11 +243,11 @@ STR_IND_LUMBER_YARD                                                             
 STR_IND_MACHINE_SHOP                                                            :{G=neuter}Mekanisk verksted
 STR_IND_MANGANESE_MINE                                                          :{G=feminine}Mangangruve
 STR_IND_METAL_FABRICATION_PLANT                                                 :{G=neuter}Metallverk
-STR_IND_METAL_WORKSHOP                                                          :metallverksted
+STR_IND_METAL_WORKSHOP                                                          :{G=neuter}Valseverk
 STR_IND_MIXEDFARM                                                               :{G=masculine}Blandingsgård
 STR_IND_NITRATE_MINE                                                            :{G=feminine}Nitratgruve
 STR_IND_ORCHARD_PIGGERY                                                         :{G=masculine}Frukt- og grisegård
-STR_IND_PEATLANDS                                                               :torvmyr
+STR_IND_PEATLANDS                                                               :{G=feminine}Torvmyr
 STR_IND_PETROLPUMP                                                              :{G=masculine}Bensinstasjon
 STR_IND_PHOSPHATE_MINE                                                          :{G=feminine}Fosfatgruve
 STR_IND_PLASTICS_PLANT                                                          :{G=masculine}Plastfabrikk
@@ -256,7 +264,8 @@ STR_IND_REINDEER_FARM                                                           
 STR_IND_SHEEPFARM                                                               :{G=masculine}Sauegård
 STR_IND_SLAG_GRINDING_PLANT                                                     :{G=neuter}Slaggknuseverk
 STR_IND_SMITHY_FORGE                                                            :{G=feminine}Smie
-STR_IND_SODA_ASH_MINE                                                           :sodagruve
+STR_IND_SODA_ASH_MINE                                                           :{G=feminine}Natriumgruve
+STR_IND_STEEL_FINISHING_PLANT                                                   :{G=masculine}Stålhammer
 STR_IND_STOCKYARD                                                               :{G=neuter}Slakteri
 STR_IND_SUGAR_REFINERY                                                          :{G=neuter}Sukkerraffineri
 STR_IND_SUPPLY_YARD                                                             :{G=neuter}Utstyrslager
@@ -271,12 +280,12 @@ STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             
 STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Produserer maksimalt hvis {WHITE}hvilken som helst {BLACK}nødvendig vare leveres.
 STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}For maksimal produksjon, lever {WHITE}alle {BLACK}nødvendige varesorter minst hver tredje måned.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produksjonen er proporsjonal med byens innbyggertall.
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produserer nå: {YELLOW}Normal{}{}{BLACK}For {WHITE}Forbedret produksjon{BLACK} må du levere {SIGNED_WORD} kasser utstyr innen tre måneder{}For {WHITE}Gung-ho {BLACK}produksjon lever {SIGNED_WORD} kasser
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produserer nå: {YELLOW}Forbedret{}{}{BLACK}For å opprettholde dette nivået, lever {SIGNED_WORD} kasser utstyr innen tre måneder{}For {WHITE}Gung-ho {BLACK}produksjon lever {SIGNED_WORD} kasser
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Produserer nå: {YELLOW}Gung-ho{}{}{BLACK}For å opprettholde dette nivået, lever {SKIP}{SIGNED_WORD} kasser utstyr innen tre måneder
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Produserer nå: {YELLOW}Normal{}{}{BLACK}For {WHITE}Forbedret produksjon{BLACK} må du levere {SIGNED_WORD} vareenheter innen tre måneder{}For {WHITE}Gung-ho {BLACK}produksjon lever {SIGNED_WORD} vareenheter
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Produserer nå: {YELLOW}Forbedret{}{}{BLACK}For å opprettholde dette nivået, lever {SIGNED_WORD} vareenheter innen tre måneder{}For {WHITE}Gung-ho {BLACK}produksjon lever {SIGNED_WORD} vareenheter
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Produserer nå: {YELLOW}Gung-ho{}{}{BLACK}For å opprettholde dette nivået, lever {SKIP}{SIGNED_WORD} vareenheter innen tre måneder
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produserer nå: {YELLOW}Normal{}{}{BLACK}For {WHITE}Forbedret produksjon{BLACK} må du levere {SIGNED_WORD} kasser utstyr innen tre måneder.{}For {WHITE}Gung-ho {BLACK}produksjon lever {SIGNED_WORD} kasser.
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produserer nå: {YELLOW}Forbedret{}{}{BLACK}For å opprettholde dette nivået, lever {SIGNED_WORD} kasser utstyr innen tre måneder{}For {WHITE}Gung-ho {BLACK}produksjon lever {SIGNED_WORD} kasser.
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Produserer nå: {YELLOW}Gung-ho{}{}{BLACK}For å opprettholde dette nivået, lever {SKIP}{SIGNED_WORD} kasser utstyr innen tre måneder.
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Produserer nå: {YELLOW}Normal{}{}{BLACK}For {WHITE}Forbedret {BLACK}produksjon må du levere {SIGNED_WORD} vareenheter innen tre måneder.{}For {WHITE}Gung-ho {BLACK}produksjon lever {SIGNED_WORD} vareenheter.
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Produserer nå: {YELLOW}Forbedret{}{}{BLACK}For å opprettholde dette nivået, lever {SIGNED_WORD} vareenheter innen tre måneder{}For {WHITE}Gung-ho {BLACK}produksjon lever {SIGNED_WORD} vareenheter.
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Produserer nå: {YELLOW}Gung-ho{}{}{BLACK}For å opprettholde dette nivået, lever {SKIP}{SIGNED_WORD} vareenheter innen tre måneder.
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Plassering: {YELLOW}Kan ikke startes i snø eller ørken.
@@ -297,34 +306,69 @@ STR_TOWN                                                                        
 STR_STATION                                                                     :{STRING} {STRING}
 
 STR_STATION_ANIMALS                                                             :Hestemarked
-STR_STATION_COLLIERY                                                            :kullgruve
-STR_STATION_COPPER_LODE                                                         :kobberåre
+STR_STATION_AUTOMOTIVE                                                          :Kjøretøy
+STR_STATION_BAR_GRILL_AND_ROOMS                                                 :Motell
+STR_STATION_BARNS                                                               :Låver
+STR_STATION_BARREL_AND_KEG                                                      :Stykkgods
+STR_STATION_BASE                                                                :Base
+STR_STATION_BONEYARD                                                            :Huggeri
+STR_STATION_BANK_TOP                                                            :Grunne
+STR_STATION_CASTINGS                                                            :Støpegods
+STR_STATION_COLLIERY                                                            :Kullgruve
+STR_STATION_COPPER_LODE                                                         :Kobberåre
+STR_STATION_CREOSOTING                                                          :Kreosot
+STR_STATION_DAIRY_LANE                                                          :Meierigate
+STR_STATION_ESTATE                                                              :Plantasje
+STR_STATION_EXCHANGE                                                            :Knutepunkt
 STR_STATION_FARM_1                                                              :Hovedgård
-STR_STATION_FARM_2                                                              :gårdsbruk
+STR_STATION_FARM_2                                                              :Gårdsbruk
+STR_STATION_FARM_3                                                              :Ranch
 STR_STATION_FISHMARKET                                                          :Fiskemottak
-STR_STATION_FOREST                                                              :tømmerstasjon
-STR_STATION_FORGE                                                               :smie
+STR_STATION_FOOD_CORPORATION                                                    :Fødevare
+STR_STATION_FOREST                                                              :Tømmerdeponi
+STR_STATION_FORGE                                                               :Smie
+STR_STATION_FURNACE                                                             :Ovn
+STR_STATION_HEAVY_EQUIPMENT_YARD                                                :Tungtransport
 STR_STATION_HEAVY_INDUSTRY_2                                                    :Verk
+STR_STATION_HERDING_COOP                                                        :Hytte
 STR_STATION_INDUSTRY_ESTATE_1                                                   :Industripark
 STR_STATION_INDUSTRY_HARBOUR_1                                                  :Industrihavn
-STR_STATION_MANGANESE_MINES                                                     :mangangruve
+STR_STATION_INDUSTRY_HARBOUR_2                                                  :Kai
+STR_STATION_INDUSTRY_HARBOUR_3                                                  :Flytekai
+STR_STATION_IRONSTONE                                                           :Jernmalm
+STR_STATION_JOINERS_SHOP                                                        :Trevare
+STR_STATION_KILNS                                                               :Ovner
+STR_STATION_KIMBERLITE_DEPOSITS                                                 :Kimberlittleie
+STR_STATION_MANGANESE_MINES                                                     :Mangangruve
 STR_STATION_MARKET                                                              :Marked
-STR_STATION_MERCHANTS_LANE                                                      :Kjøpmannsgata
+STR_STATION_MERCHANTS_LANE                                                      :Kjøpmannsgate
 STR_STATION_MILL                                                                :Mølle
 STR_STATION_MINE                                                                :Gruve
-STR_STATION_OIL_RIG                                                             :felt
+STR_STATION_MOULDINGS                                                           :Støperi
+STR_STATION_OIL_RIG                                                             :Oljefelt
+STR_STATION_ORCHARDS                                                            :Frukthage
 STR_STATION_PIT                                                                 :Grop
 STR_STATION_PLANTATION                                                          :Plantasje
 STR_STATION_POWERHUNGRY                                                         :Verk
+STR_STATION_PUMPS                                                               :Pumper
 STR_STATION_PYRITES                                                             :Pyrittåre
 STR_STATION_REFINERY                                                            :Raffineri
-STR_STATION_SALTPETER_WORKS                                                     :salpeterverk
-STR_STATION_SHOALS                                                              :banke
-STR_STATION_SILO                                                                :silo
-STR_STATION_SMELTER                                                             :smelteverk
-STR_STATION_SUGAR_COMPANY                                                       :sukkerfabrikk
+STR_STATION_RUBBER_COMPANY                                                      :Gummifabrikk
+STR_STATION_SALTPETER_WORKS                                                     :Salpeterverk
+STR_STATION_SHARP_STREET                                                        :Industrivei
+STR_STATION_SHEEP_FOLD                                                          :Sauekve
+STR_STATION_SHOALS                                                              :Banke
+STR_STATION_SILO                                                                :Silo
+STR_STATION_SMELTER                                                             :Smelteverk
+STR_STATION_STAMP_AND_PLATE                                                     :Skiltverksted
+STR_STATION_SUGAR_COMPANY                                                       :Sukkerfabrikk
+STR_STATION_TANK_FARM                                                           :Tankgård
+STR_STATION_TAPPERS_SHED                                                        :Tapperi
 STR_STATION_TOWN_1                                                              :Sentrum
+STR_STATION_TOWN_2                                                              :Hovedvei
+STR_STATION_TOWN_3                                                              :Marked
+STR_STATION_TRONA_BEDS                                                          :Natronleie
 STR_STATION_WATER                                                               :Sandbanke
-STR_STATION_WEAVE_AND_DYE                                                       :veveri
-STR_STATION_WELLS                                                               :brønner
-STR_STATION_WINERY                                                              :vingård
+STR_STATION_WEAVE_AND_DYE                                                       :Veveri
+STR_STATION_WELLS                                                               :Brønner
+STR_STATION_WINERY                                                              :Vingård
