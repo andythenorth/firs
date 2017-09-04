@@ -88,9 +88,11 @@ STR_CARGO_NAME_EDIBLE_OIL.b                                                     
 STR_CARGO_NAME_EDIBLE_OIL.c                                                     :olejowi jadalnemu
 STR_CARGO_NAME_EDIBLE_OIL.d                                                     :oleju jadalnego
 STR_CARGO_NAME_EDIBLE_OIL.n                                                     :olejem jadalnym
-STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=f}Maszyny
-STR_CARGO_NAME_ENGINEERING_SUPPLIES.b                                           :maszyny
-STR_CARGO_NAME_ENGINEERING_SUPPLIES.d                                           :maszyn
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=n}Zaopatrzenie techniczne
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.c                                           :zaopatrzeniu technicznemu
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.d                                           :zaopatrzenia technicznego
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.m                                           :zaopatrzeniu technicznym
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.n                                           :zaopatrzeniem technicznym
 STR_CARGO_NAME_EXPLOSIVES                                                       :Materiały wybuchowe
 STR_CARGO_NAME_EXPLOSIVES.c                                                     :materiałom wybuchowym
 STR_CARGO_NAME_EXPLOSIVES.d                                                     :materiałów wybuchowych
@@ -108,8 +110,11 @@ STR_CARGO_NAME_FISH.d                                                           
 STR_CARGO_NAME_FISH.m                                                           :rybach
 STR_CARGO_NAME_FISH.n                                                           :rybami
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=m}Sprzęt rolniczy
-STR_CARGO_NAME_FARM_SUPPLIES.b                                                  :sprzęt rolniczy
+STR_CARGO_NAME_FARM_SUPPLIES.c                                                  :sprzętowi rolniczemu
 STR_CARGO_NAME_FARM_SUPPLIES.d                                                  :sprzętu rolniczego
+STR_CARGO_NAME_FARM_SUPPLIES.m                                                  :sprzęcie rolniczym
+STR_CARGO_NAME_FARM_SUPPLIES.n                                                  :sprzętem rolniczym
+STR_CARGO_NAME_FARM_SUPPLIES.w                                                  :sprzęcie rolniczy
 STR_CARGO_NAME_FERTILISER                                                       :Nawóz
 STR_CARGO_NAME_FERTILISER.c                                                     :nawozowi
 STR_CARGO_NAME_FERTILISER.d                                                     :nawozu
@@ -286,7 +291,7 @@ STR_CARGO_UNIT_COFFEE                                                           
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} koksu
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} miedzi
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} oleju jadalnego
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} maszy{P 0 na ny n}
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} skrzy{P 0 nia nie ń} zaopatrzenia technicznego
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} skrzy{P 0 nia nie ń} materiałów wybuchowych
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} nawozu
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bel{P 0 a e i} włókien roślinnych
@@ -423,6 +428,12 @@ STR_IND_BLAST_FURNACE.w                                                         
 STR_IND_BREWERY                                                                 :{G=m}Browar
 STR_IND_BREWERY.d                                                               :browaru
 STR_IND_CIDER_MILL                                                              :{G=f}Wytwórnia cydru
+STR_IND_CIDER_MILL.b                                                            :wytwórnię cydru
+STR_IND_CIDER_MILL.c                                                            :wytwórni cydru
+STR_IND_CIDER_MILL.d                                                            :wytwórni cydru
+STR_IND_CIDER_MILL.m                                                            :wytwórni cydru
+STR_IND_CIDER_MILL.n                                                            :wytwórnią cydru
+STR_IND_CIDER_MILL.w                                                            :wytwórnio cydru
 STR_IND_BRICK_WORKS                                                             :{G=f}Cegielnia
 STR_IND_BRICK_WORKS.d                                                           :cegielni
 STR_IND_BUILDERS_YARD                                                           :{G=f}Spółka budowlana
@@ -465,7 +476,18 @@ STR_IND_DAIRY_FARM.w                                                            
 STR_IND_DREDGING_SITE                                                           :{G=f}Pogłębiarka
 STR_IND_DREDGING_SITE.d                                                         :pogłębiarki
 STR_IND_ELECTRIC_ARC_FURNACE                                                    :Piec łukowy
+STR_IND_ELECTRIC_ARC_FURNACE.c                                                  :piecowi łukowemu
+STR_IND_ELECTRIC_ARC_FURNACE.d                                                  :pieca łukowego
+STR_IND_ELECTRIC_ARC_FURNACE.m                                                  :piecu łukowym
+STR_IND_ELECTRIC_ARC_FURNACE.n                                                  :piecem łukowym
+STR_IND_ELECTRIC_ARC_FURNACE.w                                                  :piecu łukowy
 STR_IND_FACTORY                                                                 :Fabryka
+STR_IND_FACTORY.b                                                               :fabrykę
+STR_IND_FACTORY.c                                                               :fabryce
+STR_IND_FACTORY.d                                                               :fabryki
+STR_IND_FACTORY.m                                                               :fabryce
+STR_IND_FACTORY.n                                                               :fabryką
+STR_IND_FACTORY.w                                                               :fabryko
 STR_IND_FISHING_GROUND                                                          :{G=n}Łowisko
 STR_IND_FISHING_GROUND.d                                                        :łowiska
 STR_IND_FISHING_HARBOUR                                                         :{G=m}Port rybacki
@@ -514,11 +536,12 @@ STR_IND_JUNKYARD                                                                
 STR_IND_JUNKYARD.d                                                              :złomowiska
 STR_IND_LIME_KILN                                                               :{G=m}Wapiennik
 STR_IND_LIME_KILN.d                                                             :wapiennika
-STR_IND_LIQUIDS_TERMINAL                                                        :Port handlowy cieczy
-STR_IND_LIQUIDS_TERMINAL.b                                                      :port handlowy cieczy
-STR_IND_LIQUIDS_TERMINAL.c                                                      :porowi handlowemu cieczy
-STR_IND_LIQUIDS_TERMINAL.d                                                      :portu handlowego cieczy
-STR_IND_LIQUIDS_TERMINAL.n                                                      :portem handlowym cieczy
+STR_IND_LIQUIDS_TERMINAL                                                        :{G=m}Terminal płynów
+STR_IND_LIQUIDS_TERMINAL.c                                                      :terminalowi płynów
+STR_IND_LIQUIDS_TERMINAL.d                                                      :terminala płynów
+STR_IND_LIQUIDS_TERMINAL.m                                                      :terminalu płynów
+STR_IND_LIQUIDS_TERMINAL.n                                                      :terminalem płynów
+STR_IND_LIQUIDS_TERMINAL.w                                                      :terminalu płynów
 STR_IND_LUMBER_YARD                                                             :{G=f}Stolarnia
 STR_IND_LUMBER_YARD.d                                                           :stolarni
 STR_IND_MACHINE_SHOP                                                            :{G=f}Fabryka maszyn
@@ -580,14 +603,25 @@ STR_IND_POWER_PLANT.b                                                           
 STR_IND_POWER_PLANT.c                                                           :elektrowni
 STR_IND_POWER_PLANT.d                                                           :elektrowni
 STR_IND_POWER_PLANT.n                                                           :elektrownią
-STR_IND_QUARRY                                                                  :{G=m}Kamieniołomy
+STR_IND_QUARRY                                                                  :{G=m}Kamieniołom
+STR_IND_QUARRY.c                                                                :kamieniołomowi
 STR_IND_QUARRY.d                                                                :kamieniołomu
+STR_IND_QUARRY.m                                                                :kamieniołomie
+STR_IND_QUARRY.n                                                                :kamieniołomem
+STR_IND_QUARRY.w                                                                :kamieniołomie
 STR_IND_RANCH                                                                   :{G=n}Ranczo
 STR_IND_RANCH.d                                                                 :rancza
-STR_IND_RECYCLING_DEPOT                                                         :{G=n}Wysypisko
-STR_IND_RECYCLING_DEPOT.d                                                       :wysypiska
-STR_IND_RECYCLING_PLANT                                                         :{G=f}Przetwórnia odpadów
-STR_IND_RECYCLING_PLANT.d                                                       :przetwórni odpadów
+STR_IND_RECYCLING_DEPOT                                                         :{G=n}Składowisko odpadów
+STR_IND_RECYCLING_DEPOT.c                                                       :składowisku odpadów
+STR_IND_RECYCLING_DEPOT.d                                                       :składowiska odpadów
+STR_IND_RECYCLING_DEPOT.m                                                       :składowisku odpadów
+STR_IND_RECYCLING_DEPOT.n                                                       :składowiskiem odpadów
+STR_IND_RECYCLING_PLANT                                                         :{G=m}Zakład recyklingu
+STR_IND_RECYCLING_PLANT.c                                                       :zakładowi recyklingu
+STR_IND_RECYCLING_PLANT.d                                                       :zakładu recyklingu
+STR_IND_RECYCLING_PLANT.m                                                       :zakładzie recyklingu
+STR_IND_RECYCLING_PLANT.n                                                       :zakładem recyklingu
+STR_IND_RECYCLING_PLANT.w                                                       :zakładzie recyklingu
 STR_IND_REINDEER_FARM                                                           :{G=f}Farma reniferów
 STR_IND_REINDEER_FARM.b                                                         :farmę reniferów
 STR_IND_REINDEER_FARM.c                                                         :farmie reniferów
@@ -598,6 +632,11 @@ STR_IND_REINDEER_FARM.w                                                         
 STR_IND_SHEEPFARM                                                               :{G=f}Ferma owiec
 STR_IND_SHEEPFARM.d                                                             :fermy owiec
 STR_IND_SLAG_GRINDING_PLANT                                                     :{G=m}Zakład obróbki żużlu
+STR_IND_SLAG_GRINDING_PLANT.c                                                   :zakładowi obróbki żużlu
+STR_IND_SLAG_GRINDING_PLANT.d                                                   :zakładu obróbki żużlu
+STR_IND_SLAG_GRINDING_PLANT.m                                                   :zakładzie obróbki żużlu
+STR_IND_SLAG_GRINDING_PLANT.n                                                   :zakładem obróbki żużlu
+STR_IND_SLAG_GRINDING_PLANT.w                                                   :zakładzie obróbki żużlu
 STR_IND_SMITHY_FORGE                                                            :{G=f}Kuźnia
 STR_IND_SMITHY_FORGE.d                                                          :kuźni
 STR_IND_SODA_ASH_MINE                                                           :{G=f}Kopalnia węglanu sodu
@@ -702,7 +741,7 @@ STR_STATION_FURNACE                                                             
 STR_STATION_HEAVY_EQUIPMENT_YARD                                                :Skład sprzętu ciężkiego
 STR_STATION_HEAVY_INDUSTRY_2                                                    :Zakłady
 STR_STATION_INDUSTRY_ESTATE_1                                                   :Fabryka
-STR_STATION_INDUSTRY_HARBOUR_1                                                  :Nabrzeże
+STR_STATION_INDUSTRY_HARBOUR_1                                                  :Pływająca stocznia
 STR_STATION_INDUSTRY_HARBOUR_2                                                  :Nabrzeże
 STR_STATION_INDUSTRY_HARBOUR_3                                                  :Pomost
 STR_STATION_IRONSTONE                                                           :Żelaziak
@@ -724,8 +763,9 @@ STR_STATION_PUMPS                                                               
 STR_STATION_PYRITES                                                             :Złoża pirytu
 STR_STATION_REFINERY                                                            :Rafineria
 STR_STATION_RUBBER_COMPANY                                                      :Zakład kauczukowy
+STR_STATION_SHARP_STREET                                                        :Ostra Ulica
 STR_STATION_SHEEP_FOLD                                                          :Owczarnia
-STR_STATION_SHOALS                                                              :Mielizny
+STR_STATION_SHOALS                                                              :Łowisko
 STR_STATION_SILO                                                                :Silos
 STR_STATION_SMELTER                                                             :Huta
 STR_STATION_SUGAR_COMPANY                                                       :{G=f}Cukrownia

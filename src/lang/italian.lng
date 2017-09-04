@@ -59,6 +59,7 @@ STR_CARGO_NAME_MANGANESE                                                        
 STR_CARGO_NAME_NICKEL                                                           :Nichel
 STR_CARGO_NAME_NITRATES                                                         :{G=m}Nitrati
 STR_CARGO_NAME_NUTS                                                             :{G=f}Noci
+STR_CARGO_NAME_PACKAGING                                                        :Imballaggi
 STR_CARGO_NAME_PEAT                                                             :Torba
 STR_CARGO_NAME_PETROL                                                           :{G=m}Carburante
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosfato
@@ -109,6 +110,7 @@ STR_CARGO_UNIT_MILK                                                             
 STR_CARGO_UNIT_NICKEL                                                           :{WEIGHT} di nichel
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} di nitrati
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} sacc{P 0 o hi} di noci
+STR_CARGO_UNIT_PACKAGING                                                        :{WEIGHT} di imballaggi
 STR_CARGO_UNIT_PEAT                                                             :{WEIGHT} di torba
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} di carburante
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} di fosfato
@@ -127,7 +129,7 @@ STR_CARGO_UNIT_STONE                                                            
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} di barbabietola da zucchero
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} di zolfo
 STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} di parti di carrozzerie
-STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} cass{P 0 a e} di parti meccaniche
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{WEIGHT} di parti meccaniche
 STR_CARGO_UNIT_VEHICLES                                                         :{WEIGHT} di veicoli
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} ball{P 0 a e} di lana
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} di zinco
@@ -158,6 +160,7 @@ STR_CID_MILK                                                                    
 STR_CID_NICKEL                                                                  :{TINYFONT}NK
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_NUTS                                                                    :{TINYFONT}NC
+STR_CID_PACKAGING                                                               :{TINYFONT}IM
 STR_CID_PEAT                                                                    :{TINYFONT}TO
 STR_CID_PETROL                                                                  :{TINYFONT}CR
 STR_CID_PIG_IRON                                                                :{TINYFONT}GH
@@ -197,6 +200,7 @@ STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :si può costruire solo un'industria di questo tipo per ogni città
 
 STR_IND_ALUMINIUM_PLANT                                                         :{G=f}Fabbrica di alluminio
+STR_IND_AMMONIA_PLANT                                                           :{G=f}Fabbrica di ammonia
 STR_IND_ARABLE_FARM                                                             :{G=m}Podere agricolo
 STR_IND_BASICFARM                                                               :{G=f}Fattoria
 STR_IND_BASIC_OXYGEN_FURNACE                                                    :{G=f}Fornace basica all'ossigeno
