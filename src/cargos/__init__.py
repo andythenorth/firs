@@ -88,6 +88,9 @@ lumber.cargo.register()
 from cargos import kaolin
 kaolin.cargo.register()
 
+from cargos import limestone
+limestone.cargo.register()
+
 from cargos import mail
 mail.cargo.register()
 
