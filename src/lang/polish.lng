@@ -130,7 +130,7 @@ STR_CARGO_NAME_KAOLIN.d                                                         
 STR_CARGO_NAME_KAOLIN.m                                                         :kaolinicie
 STR_CARGO_NAME_KAOLIN.n                                                         :kaolinitem
 STR_CARGO_NAME_KAOLIN.w                                                         :kaolinicie
-STR_CARGO_NAME_LIMESTONE                                                        :Kamień
+STR_CARGO_NAME_LIMESTONE                                                        :Wapień
 STR_CARGO_NAME_LUMBER                                                           :{G=f}Deski
 STR_CARGO_NAME_LUMBER.b                                                         :deski
 STR_CARGO_NAME_LUMBER.d                                                         :desek
@@ -183,20 +183,20 @@ STR_CARGO_NAME_PHOSPHATE.b                                                      
 STR_CARGO_NAME_PHOSPHATE.c                                                      :fosforanowi
 STR_CARGO_NAME_PHOSPHATE.d                                                      :fosforanu
 STR_CARGO_NAME_PHOSPHATE.n                                                      :fosforanem
-STR_CARGO_NAME_PIG_IRON                                                         :{G=f}Surówka hutnicza
-STR_CARGO_NAME_PIG_IRON.b                                                       :surówkę hutniczą
-STR_CARGO_NAME_PIG_IRON.c                                                       :surówce hutniczej
-STR_CARGO_NAME_PIG_IRON.d                                                       :surówki hutniczej
-STR_CARGO_NAME_PIG_IRON.m                                                       :surówce hutniczej
-STR_CARGO_NAME_PIG_IRON.n                                                       :surówką hutniczą
-STR_CARGO_NAME_PIG_IRON.w                                                       :surówko hutnicza
-STR_CARGO_NAME_PIPE                                                             :{G=f}Rura
-STR_CARGO_NAME_PIPE.b                                                           :rurę
-STR_CARGO_NAME_PIPE.c                                                           :rurze
-STR_CARGO_NAME_PIPE.d                                                           :rury
-STR_CARGO_NAME_PIPE.m                                                           :rurze
-STR_CARGO_NAME_PIPE.n                                                           :rurą
-STR_CARGO_NAME_PIPE.w                                                           :ruro
+STR_CARGO_NAME_PIG_IRON                                                         :{G=f}Żeliwo
+STR_CARGO_NAME_PIG_IRON.b                                                       :żeliwo
+STR_CARGO_NAME_PIG_IRON.c                                                       :żeliwu
+STR_CARGO_NAME_PIG_IRON.d                                                       :żeliwa
+STR_CARGO_NAME_PIG_IRON.m                                                       :żeliwie
+STR_CARGO_NAME_PIG_IRON.n                                                       :żeliwem
+STR_CARGO_NAME_PIG_IRON.w                                                       :żeliwo
+STR_CARGO_NAME_PIPE                                                             :{G=f}Rury
+STR_CARGO_NAME_PIPE.b                                                           :rur
+STR_CARGO_NAME_PIPE.c                                                           :rurom
+STR_CARGO_NAME_PIPE.d                                                           :rur
+STR_CARGO_NAME_PIPE.m                                                           :rurach
+STR_CARGO_NAME_PIPE.n                                                           :rurami
+STR_CARGO_NAME_PIPE.w                                                           :rury
 STR_CARGO_NAME_POTASH                                                           :{G=m}Potaż
 STR_CARGO_NAME_POTASH.c                                                         :potażowi
 STR_CARGO_NAME_POTASH.d                                                         :potażu
@@ -300,7 +300,7 @@ STR_CARGO_UNIT_FISH                                                             
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} skrzy{P 0 nia nie ń} sprzętu rolniczego
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} owoców
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} kaolinitu
-STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} kamienia
+STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} wapienia
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} desek
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} manganu
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metalu
@@ -538,12 +538,12 @@ STR_IND_JUNKYARD                                                                
 STR_IND_JUNKYARD.d                                                              :złomowiska
 STR_IND_LIME_KILN                                                               :{G=m}Wapiennik
 STR_IND_LIME_KILN.d                                                             :wapiennika
-STR_IND_LIQUIDS_TERMINAL                                                        :{G=m}Terminal płynów
-STR_IND_LIQUIDS_TERMINAL.c                                                      :terminalowi płynów
-STR_IND_LIQUIDS_TERMINAL.d                                                      :terminala płynów
-STR_IND_LIQUIDS_TERMINAL.m                                                      :terminalu płynów
-STR_IND_LIQUIDS_TERMINAL.n                                                      :terminalem płynów
-STR_IND_LIQUIDS_TERMINAL.w                                                      :terminalu płynów
+STR_IND_LIQUIDS_TERMINAL                                                        :{G=m}Port ładunków ciekłych
+STR_IND_LIQUIDS_TERMINAL.c                                                      :Portowi ładunków ciekłych
+STR_IND_LIQUIDS_TERMINAL.d                                                      :Portu ładunków ciekłych
+STR_IND_LIQUIDS_TERMINAL.m                                                      :Porcie ładunków ciekłych
+STR_IND_LIQUIDS_TERMINAL.n                                                      :Portem ładunków ciekłych
+STR_IND_LIQUIDS_TERMINAL.w                                                      :Port ładunków ciekłych
 STR_IND_LUMBER_YARD                                                             :{G=f}Stolarnia
 STR_IND_LUMBER_YARD.d                                                           :stolarni
 STR_IND_MACHINE_SHOP                                                            :{G=f}Fabryka maszyn
@@ -595,11 +595,11 @@ STR_IND_PYRITE_MINE.b                                                           
 STR_IND_PYRITE_MINE.c                                                           :kopalni pirytu
 STR_IND_PYRITE_MINE.d                                                           :kopalni pirytu
 STR_IND_PYRITE_MINE.n                                                           :kopalnią pirytu
-STR_IND_PYRITE_SMELTER                                                          :{G=f}Huta pirytu
-STR_IND_PYRITE_SMELTER.b                                                        :hutę pirytu
-STR_IND_PYRITE_SMELTER.c                                                        :hucie pirytu
-STR_IND_PYRITE_SMELTER.d                                                        :huty pirytu
-STR_IND_PYRITE_SMELTER.n                                                        :hutą pirytu
+STR_IND_PYRITE_SMELTER                                                          :{G=f}Prażalnia pirytu
+STR_IND_PYRITE_SMELTER.b                                                        :prażalnię pirytu
+STR_IND_PYRITE_SMELTER.c                                                        :prażalni pirytu
+STR_IND_PYRITE_SMELTER.d                                                        :prażalni pirytu
+STR_IND_PYRITE_SMELTER.n                                                        :prażalnią pirytu
 STR_IND_POWER_PLANT                                                             :Elektrownia
 STR_IND_POWER_PLANT.b                                                           :elektrownię
 STR_IND_POWER_PLANT.c                                                           :elektrowni
@@ -714,13 +714,14 @@ STR_TOWN                                                                        
 STR_STATION                                                                     :{STRING} {STRING}
 
 STR_STATION_ANIMALS                                                             :Oborniki
-STR_STATION_AUTOMOTIVE                                                          :Motoryzacja
+STR_STATION_AUTOMOTIVE                                                          :Montownia
 STR_STATION_BAR_GRILL_AND_ROOMS                                                 :Hotel
 STR_STATION_BARNS                                                               :Stodoły
-STR_STATION_BARREL_AND_KEG                                                      :Beczka i keg
-STR_STATION_BASE                                                                :Baza
-STR_STATION_BONEYARD                                                            :Wrakowisko
-STR_STATION_CASTINGS                                                            :Odlewy
+STR_STATION_BARREL_AND_KEG                                                      :Gorzelnia
+STR_STATION_BASE                                                                :Baza sprzętu
+STR_STATION_BONEYARD                                                            :Złomowisko
+STR_STATION_BANK_TOP                                                            :Hałdy
+STR_STATION_CASTINGS                                                            :Odlewnia
 STR_STATION_COLLIERY                                                            :Kopalnia węgla
 STR_STATION_COLLIERY.b                                                          :kopalnię węgla
 STR_STATION_COLLIERY.c                                                          :kopalni węgla
@@ -728,28 +729,29 @@ STR_STATION_COLLIERY.d                                                          
 STR_STATION_COLLIERY.m                                                          :kopalni węgla
 STR_STATION_COLLIERY.n                                                          :kopalnią węgla
 STR_STATION_COLLIERY.w                                                          :kopalnio węgla
-STR_STATION_COPPER_LODE                                                         :Żyła miedzi
-STR_STATION_CREOSOTING                                                          :Kreozotowanie
+STR_STATION_COPPER_LODE                                                         :Odkrywka miedzi
+STR_STATION_CREOSOTING                                                          :Napawalnia
+STR_STATION_DAIRY_LANE                                                          :Mleczarnia
 STR_STATION_ESTATE                                                              :Posiadłość
 STR_STATION_EXCHANGE                                                            :Wymiana
 STR_STATION_FARM_1                                                              :Folwark
 STR_STATION_FARM_2                                                              :Łąki
 STR_STATION_FARM_3                                                              :{G=n}Ranczo
 STR_STATION_FISHMARKET                                                          :Targ Rybny
-STR_STATION_FOOD_CORPORATION                                                    :Korporacja spożywcza
-STR_STATION_FOREST                                                              :Skład drewna
+STR_STATION_FOOD_CORPORATION                                                    :Zakłady Spożywcze
+STR_STATION_FOREST                                                              :Polanka
 STR_STATION_FORGE                                                               :{G=f}Kuźnia
-STR_STATION_FURNACE                                                             :Piec
+STR_STATION_FURNACE                                                             :Wielki Piec
 STR_STATION_HEAVY_EQUIPMENT_YARD                                                :Skład sprzętu ciężkiego
 STR_STATION_HEAVY_INDUSTRY_2                                                    :Zakłady
 STR_STATION_HERDING_COOP                                                        :Koliba
 STR_STATION_INDUSTRY_ESTATE_1                                                   :Fabryka
-STR_STATION_INDUSTRY_HARBOUR_1                                                  :Pływająca stocznia
-STR_STATION_INDUSTRY_HARBOUR_2                                                  :Nabrzeże
-STR_STATION_INDUSTRY_HARBOUR_3                                                  :Pomost
-STR_STATION_IRONSTONE                                                           :Żelaziak
-STR_STATION_JOINERS_SHOP                                                        :Sklep stolarski
-STR_STATION_KILNS                                                               :Piece
+STR_STATION_INDUSTRY_HARBOUR_1                                                  :Nabrzeże Górnicze
+STR_STATION_INDUSTRY_HARBOUR_2                                                  :Molo
+STR_STATION_INDUSTRY_HARBOUR_3                                                  :Przystań
+STR_STATION_IRONSTONE                                                           :Rudawa
+STR_STATION_JOINERS_SHOP                                                        :Stolarnia
+STR_STATION_KILNS                                                               :Wapiennik
 STR_STATION_KIMBERLITE_DEPOSITS                                                 :Złoża kimberlitu
 STR_STATION_MANGANESE_MINES                                                     :Kopalnie manganu
 STR_STATION_MARKET                                                              :Targowisko
@@ -757,7 +759,7 @@ STR_STATION_MERCHANTS_LANE                                                      
 STR_STATION_MILL                                                                :Młyny
 STR_STATION_MINE                                                                :Zagłębie
 STR_STATION_MOULDINGS                                                           :Sztukateria
-STR_STATION_OIL_RIG                                                             :Pole
+STR_STATION_OIL_RIG                                                             :Pole naftowe
 STR_STATION_ORCHARDS                                                            :Sady
 STR_STATION_PIT                                                                 :Wyrobisko
 STR_STATION_PLANTATION                                                          :Plantacja
@@ -765,17 +767,20 @@ STR_STATION_POWERHUNGRY                                                         
 STR_STATION_PUMPS                                                               :Pompy
 STR_STATION_PYRITES                                                             :Złoża pirytu
 STR_STATION_REFINERY                                                            :Rafineria
-STR_STATION_RUBBER_COMPANY                                                      :Zakład kauczukowy
+STR_STATION_RUBBER_COMPANY                                                      :Fabryka opon
 STR_STATION_SALTPETER_WORKS                                                     :Azoty
 STR_STATION_SHARP_STREET                                                        :Ostra Ulica
 STR_STATION_SHEEP_FOLD                                                          :Owczarnia
 STR_STATION_SHOALS                                                              :Łowisko
-STR_STATION_SILO                                                                :Silos
+STR_STATION_SILO                                                                :Silosy
 STR_STATION_SMELTER                                                             :Huta
+STR_STATION_STAMP_AND_PLATE                                                     :Walcownia
 STR_STATION_SUGAR_COMPANY                                                       :{G=f}Cukrownia
+STR_STATION_TANK_FARM                                                           :Naftoport
 STR_STATION_TOWN_1                                                              :Stare Miasto
-STR_STATION_TOWN_2                                                              :Szosa
-STR_STATION_TOWN_3                                                              :Sklepy
+STR_STATION_TOWN_2                                                              :Krzyżówka
+STR_STATION_TOWN_3                                                              :Centrum handlowe
+STR_STATION_TRONA_BEDS                                                          :Żupniki
 STR_STATION_WATER                                                               :Zatoka
 STR_STATION_WEAVE_AND_DYE                                                       :Roszarnia
 STR_STATION_WELLS                                                               :Studnie
