@@ -19,7 +19,7 @@ economy = Economy(id = "BASIC_TEMPERATE",
                             'food',
                             'iron_ore',
                             'livestock',
-                            'metal',
                             'milk',
                             'sand',
-                            'scrap_metal'])
+                            'scrap_metal',
+                            'steel'])
