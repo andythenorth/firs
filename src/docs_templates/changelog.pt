@@ -91,6 +91,8 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 - Vehicles cargo:
     - now uses 'tonnes' (or equivalent localised weight) as unit, rather than 'vehicles'
     - simpler for vehicle newgrf authors to deal with, no special treatment needed for Vehicles cargo
+- Vehicle Parts cargo:
+    - removed incorrect 'express' cargo class
 - Packaging cargo:
     - renamed from Manufacturing Supplies to avoid confusion between this ordinary cargo and Engineering Supplies / Farm Supplies which have special behaviour
     - uses 'tonnes' (or equivalent localised weight) as unit, rather than 'crates'
