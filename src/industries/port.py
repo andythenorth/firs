@@ -38,7 +38,12 @@ industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[8, 17]'
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['WDPR', 'COPR', 'FRUT']
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'GOOD']
-industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[17, 14]'
+industry.economy_variations['MISTAH_KURTZ'].prod_multiplier = '[17, 14]'
+
+industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FOOD']
+industry.economy_variations['STEELTOWN'].prod_cargo_types = ['ZINC', 'COPR']
+industry.economy_variations['STEELTOWN'].prod_multiplier = '[14]'
 
 industry.add_tile(id='port_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
