@@ -20,7 +20,7 @@ industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['OIL_', 'EOIL'
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['PETR', 'RFPR']
 industry.economy_variations['MISTAH_KURTZ'].prod_multiplier = '[7, 11]'
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].accept_cargo_types = ['SULP', 'PIPE']
+industry.economy_variations['STEELTOWN'].accept_cargo_types = ['PIPE', 'SULP']
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['PETR', 'RFPR']
 industry.economy_variations['STEELTOWN'].prod_multiplier = '[24, 24]'
 

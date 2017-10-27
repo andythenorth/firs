@@ -19,6 +19,8 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].prob_random = '8'
 industry.economy_variations['MISTAH_KURTZ'].prob_in_game = '8'
+industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].accept_cargo_types = ['VEHI']
 
 industry.add_tile(id='petrol_pump_tile_1',
                   location_checks=TileLocationChecks(require_road_adjacent=True,
