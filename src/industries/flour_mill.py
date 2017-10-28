@@ -17,8 +17,6 @@ industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].processed_cargos_and_output_ratios = [('GRAI', 6)]
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('CASS', 6), ('MAIZ', 6)]
-industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios = [('GRAI', 6)]
 
 industry.add_tile(id='flour_mill_tile_1',
                   animation_length=6,

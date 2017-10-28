@@ -14,6 +14,7 @@ industry = IndustryPrimaryOrganic(id='sheep_farm',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].prod_cargo_types=['FOOD', 'WOOL']
 
 industry.add_tile(id='sheep_farm_tile_1',
                   location_checks=TileLocationChecks(disallow_coast=True,
