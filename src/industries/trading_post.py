@@ -22,12 +22,6 @@ industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['DIAM', 'JAVA', 'RUBR']
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'FMSP']
 
-industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].accept_cargo_types = ['GOOD']
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['RUBR','ENSP']
-industry.economy_variations['STEELTOWN'].prod_multiplier = '[19, 9]'
-
-
 industry.add_tile(id='trading_post_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
                   location_checks=TileLocationChecks(always_allow_founder=False))
