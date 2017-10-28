@@ -13,6 +13,7 @@ industry = IndustryPrimaryOrganic(id='sheep_farm',
                     fund_cost_multiplier='45' )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='sheep_farm_tile_1',
                   location_checks=TileLocationChecks(disallow_coast=True,
