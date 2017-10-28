@@ -32,7 +32,7 @@ industry_numeric_ids = dict(coal_mine = 0,
                             fruit_plantation = 30,
                             fishing_harbour = 31,
                             fishing_grounds = 32,
-                            # unused = 33,
+                            vehicle_dealer = 33,
                             flour_mill = 34,
                             brewery = 35,
                             dairy = 36,
@@ -90,8 +90,9 @@ industry_numeric_ids = dict(coal_mine = 0,
 
 
 # Definition of industry tile numeric IDs
-# tiles 0-133 currently vacant
-tile_numeric_ids = dict(limestone_mine_tile_1 = 134,
+# tiles 0-132 currently vacant
+tile_numeric_ids = dict(vehicle_dealer_tile_1 = 133,
+                        limestone_mine_tile_1 = 134,
                         limestone_mine_tile_2 = 135,
                         limestone_mine_tile_3 = 136,
                         foundry_tile_1 = 137,

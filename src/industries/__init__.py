@@ -246,5 +246,8 @@ tyre_plant.industry.register()
 from industries import assembly_plant
 assembly_plant.industry.register()
 
+from industries import vehicle_dealer
+vehicle_dealer.industry.register()
+
 from industries import vineyard
 vineyard.industry.register()

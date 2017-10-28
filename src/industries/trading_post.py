@@ -24,7 +24,7 @@ industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'FMSP']
 
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['GOOD']
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['RUBR','BOOM']
+industry.economy_variations['STEELTOWN'].prod_cargo_types = ['RUBR','ENSP']
 industry.economy_variations['STEELTOWN'].prod_multiplier = '[19, 9]'
 
 

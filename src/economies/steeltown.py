@@ -6,7 +6,7 @@ economy = Economy(id = "STEELTOWN",
                   # keep the rest of the cargos alphabetised
                   # bump the min. compatible version if this list changes
                   cargos = ['passengers',
-                            'explosives',
+                            'zinc',
                             'mail',
                             'chemicals',
                             'engineering_supplies',
@@ -32,7 +32,5 @@ economy = Economy(id = "STEELTOWN",
                             'scrap_metal',
                             'soda_ash',
                             'vehicle_parts',
-                            'vehicles',
-                            'zinc',
-                            'wool'])
+                            'vehicles'])
 
