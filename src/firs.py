@@ -29,6 +29,12 @@ registered_industries = industries.registered_industries
 import economies
 registered_economies = economies.registered_economies
 
+# guard against mistakes with cargo ids in economies
+known_cargo_ids = [cargo.id for cargo in registered_cargos]
+for economy in registered_economies:
+    for cargo_id in economy.cargos:
+         if cargo_id not in known_cargo_ids:
+            raise Exception(economy.id + ' economy includes cargo ID "' + cargo_id + '" which does not exist')
 
 # cargo production and incompatibility lists have to be done after all industries, economies and cargos are registered
 # this means they have to live here, which isn't ideal, but eh
