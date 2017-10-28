@@ -17,7 +17,6 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['SAND', 'LIME']
-industry.economy_variations['STEELTOWN'].prod_multiplier = '[14, 20]'
 
 
 # 2 tiles for this industry: pit outer tile cannot be on slopes; pit inner tiles and processor tiles can be

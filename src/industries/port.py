@@ -42,7 +42,7 @@ industry.economy_variations['MISTAH_KURTZ'].prod_multiplier = '[17, 14]'
 
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FRUT']
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['ZINC', 'COPR']
+industry.economy_variations['STEELTOWN'].prod_cargo_types = ['ZINC']
 industry.economy_variations['STEELTOWN'].prod_multiplier = '[14]'
 
 industry.add_tile(id='port_tile_1',
