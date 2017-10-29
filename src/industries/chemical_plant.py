@@ -18,10 +18,6 @@ industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].processed_cargos_and_output_ratios = [('SULP', 4), ('PHOS', 4)]
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['FERT', 'BOOM']
 
-industry.economy_variations['BRINE'].enabled = True
-industry.economy_variations['BRINE'].processed_cargos_and_output_ratios = [('RFPR', 8)]
-industry.economy_variations['BRINE'].prod_cargo_types = ['FERT', 'BOOM']
-
 industry.add_tile(id='chemical_plant_tile_1',
                   animation_length=7,
                   animation_looping=True,
