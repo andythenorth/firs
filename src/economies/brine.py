@@ -19,5 +19,6 @@ economy = Economy(id = "BRINE",
                             'food',
                             'soda_ash',
                             'oil',
-                            'chemicals'])
+                            'chemicals',
+                            'copper'])
 

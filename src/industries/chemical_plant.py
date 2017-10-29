@@ -13,9 +13,12 @@ industry = IndustrySecondary(id='chemical_plant',
                     fund_cost_multiplier='170')
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
+
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].processed_cargos_and_output_ratios = [('SULP', 4), ('PHOS', 4)]
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['FERT', 'BOOM']
+
+industry.economy_variations['BRINE'].enabled = True
 industry.economy_variations['BRINE'].processed_cargos_and_output_ratios = [('RFPR', 8)]
 industry.economy_variations['BRINE'].prod_cargo_types = ['FERT', 'BOOM']
 
