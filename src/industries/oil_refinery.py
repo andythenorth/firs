@@ -14,6 +14,8 @@ industry = IndustrySecondary(id='oil_refinery',
                     intro_year=1830)
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BRINE'].enabled = True
+industry.economy_variations['BRINE'].prod_cargo_types = ['PETR', 'RFPR']
 
 industry.add_tile(id='oil_refinery_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,

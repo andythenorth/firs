@@ -13,6 +13,8 @@ industry = IndustrySecondary(id='plastics_plant',
                     intro_year='1900' )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BRINE'].enabled = True
+industry.economy_variations['BRINE'].prod_cargo_types = [('VPTS', 6), ('GOOD', 2)]
 
 industry.add_tile(id='plastics_plant_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,

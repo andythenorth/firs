@@ -18,7 +18,6 @@ industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['SAND', 'LIME']
 
-
 # 2 tiles for this industry: pit outer tile cannot be on slopes; pit inner tiles and processor tiles can be
 # cases for both tiles ensure that tiles can only be built at same height as north tile
 industry.add_tile(id='quarry_tile_1',

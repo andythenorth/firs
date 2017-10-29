@@ -16,6 +16,9 @@ basic_tropic.economy.register()
 from economies import steeltown
 steeltown.economy.register()
 
+from economies import brine
+brine.economy.register()
+
 from economies import mistah_kurtz
 mistah_kurtz.economy.register()
 

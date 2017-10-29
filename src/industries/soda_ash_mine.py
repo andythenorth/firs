@@ -12,8 +12,7 @@ industry = IndustryPrimaryExtractive(id='soda_ash_mine',
                     nearby_station_name='string(STR_STATION_TRONA_BEDS)',
                     fund_cost_multiplier='180')
 
-# disabled currently
-#industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['BRINE'].enabled = True
 
 industry.add_tile(id='soda_ash_mine_tile_1',
                   animation_length=81,

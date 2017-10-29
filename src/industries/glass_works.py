@@ -18,6 +18,9 @@ industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['GOOD']
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['BDMT', 'GOOD']
+industry.economy_variations['BRINE'].enabled = True
+industry.economy_variations['BRINE'].processed_cargos_and_output_ratios = [('SAND', 6), ('SASH', 2)]
+industry.economy_variations['BRINE'].prod_cargo_types = [('VPTS', 6), ('GOOD', 2)]
 
 industry.add_tile(id='glass_works_tile_1',
                   animation_length=71,

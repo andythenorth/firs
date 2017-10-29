@@ -45,6 +45,11 @@ industry.economy_variations['STEELTOWN'].accept_cargo_types = ['GOOD']
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['ZINC','ENSP']
 industry.economy_variations['STEELTOWN'].prod_multiplier = '[19, 9]'
 
+industry.economy_variations['BRINE'].enabled = True
+industry.economy_variations['BRINE'].accept_cargo_types = ['VEHI', 'ENSP']
+industry.economy_variations['BRINE'].prod_cargo_types = ['COPR']
+industry.economy_variations['BRINE'].prod_multiplier = '[19, 9]'
+
 industry.add_tile(id='port_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
                   location_checks=TileLocationChecks(always_allow_founder=False))
