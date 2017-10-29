@@ -46,6 +46,9 @@ diamonds.cargo.register()
 from cargos import edible_oil
 edible_oil.cargo.register()
 
+from cargos import electrical_machines
+electrical_machines.cargo.register()
+
 from cargos import engineering_supplies
 engineering_supplies.cargo.register()
 
