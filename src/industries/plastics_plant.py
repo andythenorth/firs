@@ -13,9 +13,6 @@ industry = IndustrySecondary(id='plastics_plant',
                     intro_year='1900' )
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios=[('RFPR', 8)]
-industry.economy_variations['STEELTOWN'].prod_cargo_types=['GOOD', 'VPTS']
 
 industry.add_tile(id='plastics_plant_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,

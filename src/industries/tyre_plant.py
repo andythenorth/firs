@@ -13,7 +13,7 @@ industry = IndustrySecondary(id='tyre_plant',
                     fund_cost_multiplier='130',
                     intro_year=1832 )
 
-industry.economy_variations['STEELTOWN'].enabled = True
+# currently disabled
 
 industry.add_tile(id='tyre_plant_tile_1',
                   animation_length=71,
