@@ -24,7 +24,7 @@ industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['DIAM', 'JAVA'
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'FMSP']
 
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FMSP']
+industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FMSP', 'BDMT']
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['RUBR', 'FOOD']
 
 industry.add_tile(id='trading_post_tile_1',
