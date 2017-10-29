@@ -167,6 +167,9 @@ rubber.cargo.register()
 from cargos import sand
 sand.cargo.register()
 
+from cargos import salt
+salt.cargo.register()
+
 from cargos import scrap_metal
 scrap_metal.cargo.register()
 
