@@ -42,6 +42,7 @@ STR_CARGO_NAME_COFFEE                                                           
 STR_CARGO_NAME_COKE                                                             :Koksi
 STR_CARGO_NAME_COPPER                                                           :Kupari
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Ruokaöljy
+STR_CARGO_NAME_ELECTRICAL_MACHINES                                              :Sähkökoneet
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Tekniset tarvikkeet
 STR_CARGO_NAME_EXPLOSIVES                                                       :Räjähteet
 STR_CARGO_NAME_FIBRES                                                           :Kasvikuidut
@@ -68,6 +69,7 @@ STR_CARGO_NAME_POTASH                                                           
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyriittimalmi
 STR_CARGO_NAME_QUICKLIME                                                        :Poltettu kalkki
 STR_CARGO_NAME_RECYCLABLES                                                      :Kierrätystavara
+STR_CARGO_NAME_SALT                                                             :Suola
 STR_CARGO_NAME_SAND                                                             :Hiekka
 STR_CARGO_NAME_SCRAP_METAL                                                      :Romumetalli
 STR_CARGO_NAME_SLAG                                                             :Kuona
@@ -94,6 +96,7 @@ STR_CARGO_UNIT_COFFEE                                                           
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} koksia
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} kuparia
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} ruokaöljyä
+STR_CARGO_UNIT_ELECTRICAL_MACHINES                                              :{WEIGHT} sähkökoneita
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} laatikko{P 0 "" a} teknisiä tarvikkeita
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} laatikko{P 0 "" a} räjähteitä
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} lannoitetta
@@ -120,6 +123,7 @@ STR_CARGO_UNIT_POTASH                                                           
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pyriittimalmia
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} poltettua kalkkia
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} kierrätystavaraa
+STR_CARGO_UNIT_SALT                                                             :{WEIGHT} suolaa
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} hiekkaa
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} romumetallia
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} kuonaa
@@ -146,6 +150,7 @@ STR_CID_COFFEE                                                                  
 STR_CID_COKE                                                                    :{TINYFONT}KO
 STR_CID_COPPER                                                                  :{TINYFONT}KU
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}RÖ
+STR_CID_ELECTRICAL_MACHINES                                                     :{TINYFONT}SÄ
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}TK
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}RÄ
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}MT
@@ -171,6 +176,7 @@ STR_CID_POTASH                                                                  
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
 STR_CID_QUICKLIME                                                               :{TINYFONT}SK
 STR_CID_RECYCLABLES                                                             :{TINYFONT}KT
+STR_CID_SALT                                                                    :{TINYFONT}SL
 STR_CID_SAND                                                                    :{TINYFONT}HK
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}RM
 STR_CID_SLAG                                                                    :{TINYFONT}KN
@@ -239,6 +245,7 @@ STR_IND_HERDING_COOP                                                            
 STR_IND_IRON_WORKS                                                              :Rautaruukki
 STR_IND_JUNKYARD                                                                :Romuttamo
 STR_IND_LIME_KILN                                                               :Kalkkiuuni
+STR_IND_LIMESTONE_MINE                                                          :Kalkkikivikaivos
 STR_IND_LIQUIDS_TERMINAL                                                        :Nesteterminaali
 STR_IND_LUMBER_YARD                                                             :Taapeli
 STR_IND_MACHINE_SHOP                                                            :Konepaja
@@ -275,6 +282,7 @@ STR_IND_TRADING_POST                                                            
 STR_IND_TYRE_PLANT                                                              :Rengastehdas
 STR_IND_ASSEMBLY_PLANT                                                          :Ajoneuvotehdas
 STR_IND_VINEYARD                                                                :Viinitarha
+STR_IND_VEHICLE_DEALER                                                          :Ajoneuvokauppa
 
 
 STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             :{BLACK}(toimitettu)
@@ -304,7 +312,7 @@ STR_FUND_AVAILABLE_FROM                                                         
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Ei saatavilla alkaen: {YELLOW}{COMMA}
 
 STR_TOWN                                                                        :{STRING}
-STR_STATION                                                                     :{STRING} {STRING}
+STR_STATION                                                                     :{STRING}{STRING}
 
 STR_STATION_ANIMALS                                                             :, hevostori
 STR_STATION_AUTOMOTIVE                                                          :, autoteollisuus
@@ -322,7 +330,7 @@ STR_STATION_DAIRY_LANE                                                          
 STR_STATION_ESTATE                                                              :, kartano
 STR_STATION_EXCHANGE                                                            :, pörssi
 STR_STATION_FARM_1                                                              :, tila
-STR_STATION_FARM_2                                                              :Niityt
+STR_STATION_FARM_2                                                              :, niityt
 STR_STATION_FARM_3                                                              :, maatila
 STR_STATION_FISHMARKET                                                          :, kalatori
 STR_STATION_FOOD_CORPORATION                                                    :, ruokatehdas
@@ -340,6 +348,7 @@ STR_STATION_IRONSTONE                                                           
 STR_STATION_JOINERS_SHOP                                                        :, yhdistäjän kauppa
 STR_STATION_KILNS                                                               :, polttouunit
 STR_STATION_KIMBERLITE_DEPOSITS                                                 :, kimberliittiesiintymä
+STR_STATION_LIMESTONE_MINES                                                     :, kalkkikivikaivos
 STR_STATION_MANGANESE_MINES                                                     :, mangaanikaivokset
 STR_STATION_MARKET                                                              :, tori
 STR_STATION_MERCHANTS_LANE                                                      :, kauppakatu
@@ -373,3 +382,4 @@ STR_STATION_WATER                                                               
 STR_STATION_WEAVE_AND_DYE                                                       :, kutomo
 STR_STATION_WELLS                                                               :, lähteet
 STR_STATION_WINERY                                                              :, viinitila
+STR_STATION_VEHICLE_DEALER                                                      :, ajoneuvokauppa

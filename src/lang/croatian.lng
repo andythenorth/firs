@@ -44,6 +44,7 @@ STR_CARGO_NAME_COFFEE                                                           
 STR_CARGO_NAME_COKE                                                             :Koks
 STR_CARGO_NAME_COPPER                                                           :Bakar
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Jestivo ulje
+STR_CARGO_NAME_ELECTRICAL_MACHINES                                              :Elektromotorni strojevi
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Inžinjerske potrepštine
 STR_CARGO_NAME_EXPLOSIVES                                                       :Eksplozivi
 STR_CARGO_NAME_FIBRES                                                           :Biljna vlakna
@@ -70,6 +71,7 @@ STR_CARGO_NAME_POTASH                                                           
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pirit
 STR_CARGO_NAME_QUICKLIME                                                        :Živo vapno
 STR_CARGO_NAME_RECYCLABLES                                                      :Reciklažni materijal
+STR_CARGO_NAME_SALT                                                             :Sol
 STR_CARGO_NAME_SAND                                                             :Pijesak
 STR_CARGO_NAME_SCRAP_METAL                                                      :Otpadni metal
 STR_CARGO_NAME_SLAG                                                             :Šljaka
@@ -96,6 +98,7 @@ STR_CARGO_UNIT_COFFEE                                                           
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} koksa
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} bakra
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} jestivog ulja
+STR_CARGO_UNIT_ELECTRICAL_MACHINES                                              :{WEIGHT} elektromotornih strojeva
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} kutij{P 0 a e e} inžinjerskih potrepština
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} kutij{P 0 a e e} eksploziva
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} gnojiva
@@ -122,6 +125,7 @@ STR_CARGO_UNIT_POTASH                                                           
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pirita
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} živog vapna
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} reciklažnog materijala
+STR_CARGO_UNIT_SALT                                                             :{WEIGHT} soli
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} pijeska
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} otpadnog metala
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} šljake
@@ -148,6 +152,7 @@ STR_CID_COFFEE                                                                  
 STR_CID_COKE                                                                    :{TINYFONT}KK
 STR_CID_COPPER                                                                  :{TINYFONT}BA
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}JU
+STR_CID_ELECTRICAL_MACHINES                                                     :{TINYFONT}ES
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}IP
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}EX
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}AP
@@ -173,10 +178,11 @@ STR_CID_POTASH                                                                  
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PR
 STR_CID_QUICKLIME                                                               :{TINYFONT}ŽV
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RM
+STR_CID_SALT                                                                    :{TINYFONT}SO
 STR_CID_SAND                                                                    :{TINYFONT}PI
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}OM
 STR_CID_SLAG                                                                    :{TINYFONT}ŠLJ
-STR_CID_SODA_ASH                                                                :{TINYFONT}SO
+STR_CID_SODA_ASH                                                                :{TINYFONT}SD
 STR_CID_STEEL                                                                   :{TINYFONT}ČE
 STR_CID_STONE                                                                   :{TINYFONT}KA
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}ŠR
@@ -241,6 +247,7 @@ STR_IND_HERDING_COOP                                                            
 STR_IND_IRON_WORKS                                                              :Željezara
 STR_IND_JUNKYARD                                                                :Odlagalište otpada
 STR_IND_LIME_KILN                                                               :Vapnara
+STR_IND_LIMESTONE_MINE                                                          :Rudnik vapnenca
 STR_IND_LIQUIDS_TERMINAL                                                        :Terminal za tekuće terete
 STR_IND_LUMBER_YARD                                                             :Pilana
 STR_IND_MACHINE_SHOP                                                            :Trgovina strojevima
@@ -277,6 +284,7 @@ STR_IND_TRADING_POST                                                            
 STR_IND_TYRE_PLANT                                                              :Tvornica guma
 STR_IND_ASSEMBLY_PLANT                                                          :Tvornica vozila
 STR_IND_VINEYARD                                                                :Vinograd
+STR_IND_VEHICLE_DEALER                                                          :Salon automobila
 
 
 STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(dostavljeno)
@@ -342,6 +350,7 @@ STR_STATION_IRONSTONE                                                           
 STR_STATION_JOINERS_SHOP                                                        :Stolarija
 STR_STATION_KILNS                                                               :Peći za sušenje
 STR_STATION_KIMBERLITE_DEPOSITS                                                 :Naslage kimberlita
+STR_STATION_LIMESTONE_MINES                                                     :Rudnici vapnenca
 STR_STATION_MANGANESE_MINES                                                     :Rudnici mangana
 STR_STATION_MARKET                                                              :Tržnica
 STR_STATION_MERCHANTS_LANE                                                      :Trgovačka ulica
@@ -375,3 +384,4 @@ STR_STATION_WATER                                                               
 STR_STATION_WEAVE_AND_DYE                                                       :Pletenje i bojenje
 STR_STATION_WELLS                                                               :Izvori
 STR_STATION_WINERY                                                              :Vinski podrum
+STR_STATION_VEHICLE_DEALER                                                      :Parkiralište za kamione
