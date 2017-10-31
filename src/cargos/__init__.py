@@ -22,6 +22,9 @@ cement.cargo.register()
 from cargos import chemicals
 chemicals.cargo.register()
 
+from cargos import chlorine
+chlorine.cargo.register()
+
 from cargos import clay
 clay.cargo.register()
 
@@ -87,6 +90,9 @@ livestock.cargo.register()
 
 from cargos import lumber
 lumber.cargo.register()
+
+from cargos import lye
+lye.cargo.register()
 
 from cargos import kaolin
 kaolin.cargo.register()

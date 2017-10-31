@@ -34,5 +34,7 @@ economy = Economy(id = "STEELTOWN",
                             'electrical_machines',
                             'vehicles',
                             'vehicle_parts',
-                            'vehicle_bodies'])
+                            'vehicle_bodies',
+                            'lye',
+                            'chlorine'])
 
