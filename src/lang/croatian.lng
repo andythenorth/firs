@@ -39,6 +39,7 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CASSAVA                                                          :Manioka
 STR_CARGO_NAME_CEMENT                                                           :Cement
 STR_CARGO_NAME_CHEMICALS                                                        :Kemikalije
+STR_CARGO_NAME_CHLORINE                                                         :Klor
 STR_CARGO_NAME_CLAY                                                             :Glina
 STR_CARGO_NAME_COFFEE                                                           :Kava
 STR_CARGO_NAME_COKE                                                             :Koks
@@ -55,6 +56,7 @@ STR_CARGO_NAME_FRUITS                                                           
 STR_CARGO_NAME_KAOLIN                                                           :Kaolinit
 STR_CARGO_NAME_LIMESTONE                                                        :Vapnenac
 STR_CARGO_NAME_LUMBER                                                           :Drvo
+STR_CARGO_NAME_LYE                                                              :Lužina
 STR_CARGO_NAME_METAL                                                            :Metal
 STR_CARGO_NAME_MILK                                                             :Mlijeko
 STR_CARGO_NAME_MANGANESE                                                        :Mangan
@@ -93,6 +95,7 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} manioke
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} cementa
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kemikalija
+STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} klora
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} gline
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} vreć{P a e e} kave
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} koksa
@@ -109,6 +112,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} kaolinita
 STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} vapnenca
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} drva
+STR_CARGO_UNIT_LYE                                                              :{VOLUME} lužine
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} mangana
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metala
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} mlijeka
@@ -147,6 +151,7 @@ STR_CID_BUILDING_MATERIALS                                                      
 STR_CID_CASSAVA                                                                 :{TINYFONT}MA
 STR_CID_CEMENT                                                                  :{TINYFONT}CE
 STR_CID_CHEMICALS                                                               :{TINYFONT}KM
+STR_CID_CHLORINE                                                                :{TINYFONT}KL
 STR_CID_CLAY                                                                    :{TINYFONT}GL
 STR_CID_COFFEE                                                                  :{TINYFONT}KV
 STR_CID_COKE                                                                    :{TINYFONT}KK
@@ -159,9 +164,10 @@ STR_CID_FARM_SUPPLIES                                                           
 STR_CID_FERTILISER                                                              :{TINYFONT}GN
 STR_CID_FIBRES                                                                  :{TINYFONT}BV
 STR_CID_FISH                                                                    :{TINYFONT}RI
-STR_CID_KAOLIN                                                                  :{TINYFONT}KL
+STR_CID_KAOLIN                                                                  :{TINYFONT}KN
 STR_CID_LIMESTONE                                                               :{TINYFONT}VA
 STR_CID_LUMBER                                                                  :{TINYFONT}DR
+STR_CID_LYE                                                                     :{TINYFONT}LU
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_METAL                                                                   :{TINYFONT}ML
 STR_CID_MILK                                                                    :{TINYFONT}MK
@@ -211,6 +217,7 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 STR_IND_ALUMINIUM_PLANT                                                         :Ljevaonica aluminija
 STR_IND_AMMONIA_PLANT                                                           :Tvornica amonijaka
 STR_IND_ARABLE_FARM                                                             :Poljoprivredna farma
+STR_IND_ASSEMBLY_PLANT                                                          :Tvornica vozila
 STR_IND_BASICFARM                                                               :Farma
 STR_IND_BASIC_OXYGEN_FURNACE                                                    :Oksidacijska peć
 STR_IND_BIOREFINERY                                                             :Biorafinerija
@@ -282,7 +289,6 @@ STR_IND_SUPPLY_YARD                                                             
 STR_IND_TEXTILE_MILL                                                            :Tvornica tekstila
 STR_IND_TRADING_POST                                                            :Trgovačka kuća
 STR_IND_TYRE_PLANT                                                              :Tvornica guma
-STR_IND_ASSEMBLY_PLANT                                                          :Tvornica vozila
 STR_IND_VINEYARD                                                                :Vinograd
 STR_IND_VEHICLE_DEALER                                                          :Salon automobila
 
