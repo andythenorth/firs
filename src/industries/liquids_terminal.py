@@ -20,11 +20,6 @@ industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['OIL_', 'EOIL'
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['PETR', 'RFPR']
 industry.economy_variations['MISTAH_KURTZ'].prod_multiplier = '[7, 11]'
 
-industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].accept_cargo_types = ['SULP', 'LYE_']
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['PETR', 'RFPR']
-industry.economy_variations['STEELTOWN'].prod_multiplier = '[12, 9]'
-
 industry.add_tile(id='liquids_terminal_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
                   location_checks=TileLocationChecks(always_allow_founder=False))

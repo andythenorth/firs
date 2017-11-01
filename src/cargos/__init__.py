@@ -1,6 +1,9 @@
 registered_cargos = []
 
 # keep these alphabetised for ease of maintaining
+from cargos import acid
+acid.cargo.register()
+
 from cargos import alcohol
 alcohol.cargo.register()
 
@@ -12,6 +15,9 @@ beans.cargo.register()
 
 from cargos import building_materials
 building_materials.cargo.register()
+
+from cargos import carbon_black
+carbon_black.cargo.register()
 
 from cargos import cassava
 cassava.cargo.register()

@@ -17,8 +17,8 @@ industry.economy_variations['FIRS'].enabled = True
 
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].name = 'string(STR_IND_STEEL_FINISHING_PLANT)'
-industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios = [('STEL', 6), ('ZINC', 2)]
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['VBOD']
+industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios = [('STEL', 4), ('ZINC', 2), ('ACID', 2)]
+industry.economy_variations['STEELTOWN'].prod_cargo_types = ['VBOD', 'PIPE']
 
 industry.add_tile(id='metal_fabrication_plant_tile_1',
                   animation_length=71,
