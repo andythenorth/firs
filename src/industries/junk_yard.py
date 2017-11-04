@@ -5,7 +5,7 @@ industry = IndustryPrimaryExtractive(id='junk_yard',
                     prob_in_game='3',
                     prob_random='7',
                     prod_multiplier='[12, 0]',
-                    map_colour='37',
+                    map_colour='64',
                     # no industry location checks for junk yard, by design
                     prospect_chance='0.75',
                     name='string(STR_IND_JUNKYARD)',

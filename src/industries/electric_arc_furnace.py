@@ -7,7 +7,7 @@ industry = IndustrySecondary(id='electric_arc_furnace',
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
-                    map_colour='189',
+                    map_colour='209',
                     name='string(STR_IND_ELECTRIC_ARC_FURNACE)',
                     nearby_station_name='string(STR_STATION_FURNACE)',
                     fund_cost_multiplier='160',
@@ -107,33 +107,16 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id = 'electric_arc_furnace_industry_layout_1',
     layout = [(0, 0, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_2'),
-              (0, 1, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_3'),
-              (1, 0, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_1'),
-              (1, 1, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_4'),
-              (2, 0, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_5'),
-              (2, 1, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_6')
-    ]
-)
-
-industry.add_industry_layout(
-    id = 'electric_arc_furnace_industry_layout_2',
-    layout = [(0, 0, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_2'),
-              (0, 1, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_3'),
-              (0, 2, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_5'),
-              (1, 0, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_1'),
-              (1, 1, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_4'),
-              (1, 2, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_6')
-    ]
-)
-
-industry.add_industry_layout(
-    id = 'electric_arc_furnace_industry_layout_3',
-    layout = [(0, 0, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_5'),
-              (0, 1, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_3'),
+              (0, 1, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_2'),
               (0, 2, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_2'),
-              (1, 0, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_6'),
-              (1, 1, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_4'),
-              (1, 2, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_1')
+              (0, 3, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_3'),
+              (1, 0, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_1'),
+              (1, 1, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_1'),
+              (1, 2, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_1'),
+              (1, 3, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_4'),
+              (2, 0, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_5'),
+              (2, 1, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_5'),
+              (2, 2, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_6'),
+              (2, 3, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_6')
     ]
 )
-

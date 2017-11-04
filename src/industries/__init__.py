@@ -31,9 +31,6 @@ builders_yard.industry.register()
 from industries import bulk_terminal
 bulk_terminal.industry.register()
 
-from industries import carbon_black_plant
-carbon_black_plant.industry.register()
-
 from industries import cement_plant
 cement_plant.industry.register()
 

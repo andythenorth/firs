@@ -16,9 +16,6 @@ beans.cargo.register()
 from cargos import building_materials
 building_materials.cargo.register()
 
-from cargos import carbon_black
-carbon_black.cargo.register()
-
 from cargos import cassava
 cassava.cargo.register()
 
