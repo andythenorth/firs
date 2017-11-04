@@ -18,6 +18,7 @@ industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].processed_cargos_and_output_ratios = [('SULP', 4), ('PHOS', 4)]
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['FERT', 'BOOM']
 
+# tried accepting SULP in Steeltown, but better balance if it just goes to Tyre Plant
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios = [('SALT', 8)]
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['ACID', 'CHLO']
