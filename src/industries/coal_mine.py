@@ -15,6 +15,7 @@ industry = IndustryPrimaryExtractive(id='coal_mine',
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].prob_random = '10'
 
 industry.add_tile(id='coal_mine_tile_1',
                   animation_length=81,

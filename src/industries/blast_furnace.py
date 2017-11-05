@@ -23,6 +23,7 @@ industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].name = 'string(STR_IND_BLAST_FURNACE)'
 industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios = [('IORE', 3), ('COKE', 3), ('LIME', 2)]
 industry.economy_variations['STEELTOWN'].prod_cargo_types = [('IRON', 6), ('SLAG', 2)]
+industry.economy_variations['STEELTOWN'].prob_random = '3'
 
 industry.add_tile(id='blast_furnace_tile_1',
                   animation_length=7,
