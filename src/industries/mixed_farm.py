@@ -5,7 +5,7 @@ industry = IndustryPrimaryOrganic(id='mixed_farm',
                     prob_in_game='3',
                     prob_random='11',
                     prod_multiplier='[13, 14]',
-                    map_colour='207',
+                    map_colour='85',
                     spec_flags='bitmask(IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT)',
                     # mixed farm doesn't cluster, by design - no industry location checks needed
                     prospect_chance='0.75',
@@ -20,6 +20,10 @@ industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types=['MAIZ', 'LVST']
 industry.economy_variations['MISTAH_KURTZ'].prob_random = '14'
 industry.economy_variations['MISTAH_KURTZ'].prod_multiplier = '[14, 13]'
+
+industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].name = 'string(STR_IND_BASICFARM)'
+industry.economy_variations['STEELTOWN'].prod_cargo_types = ['FOOD']
 
 industry.add_tile(id='mixed_farm_tile_1',
                   location_checks=TileLocationChecks(disallow_steep_slopes=True,

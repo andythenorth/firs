@@ -24,8 +24,10 @@ industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['DIAM', 'JAVA'
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'FMSP']
 
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FMSP']
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['RUBR', 'FOOD']
+industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FMSP', 'POWR']
+industry.economy_variations['STEELTOWN'].prod_cargo_types = ['COPR', 'ENSP']
+industry.economy_variations['STEELTOWN'].prod_multiplier = '[16, 12]'
+industry.economy_variations['STEELTOWN'].name='string(STR_IND_WHARF)'
 
 industry.add_tile(id='trading_post_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
