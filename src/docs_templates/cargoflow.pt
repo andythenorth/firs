@@ -4,6 +4,8 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
     fontname="sans-serif"
     stylesheet="static/css/cargoflow_styles.css"
     rankdir="LR"
+    ranksep="0.44"
+    nodesep="0.33"
     tooltip="${doc_helper.get_economy_name(economy)}"
 
     <tal:cargos repeat="cargo sorted(economy_schemas[economy].enabled_cargos, key=doc_helper.get_cargo_name)">
@@ -33,7 +35,7 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
 
         <tal:accepted_cargos repeat="cargo doc_helper.cargos_accepted_by_industry(industry, economy)">
             <tal:not_banned condition="(cargo.id not in banned_cargos) and (cargo.id not in supply_cargos)">
-                C_${cargo.id} -> I_${industry.id} [tooltip="${doc_helper.get_cargo_name(cargo)} -> ${doc_helper.get_industry_name(industry, economy)}"]
+                C_${cargo.id} -> I_${industry.id} [weight="${len(doc_helper.cargos_accepted_by_industry(industry, economy))}" tooltip="${doc_helper.get_cargo_name(cargo)} -> ${doc_helper.get_industry_name(industry, economy)}"]
             </tal:not_banned>
             <tal:banned condition="cargo.id in banned_cargos">
                 CI_${industry.id}_${cargo.id} [shape="ellipse" label="${doc_helper.get_cargo_name(cargo)}" href="cargos.html#${cargo.id}" target="_top" fontname="sans-serif" id="${cargo.id}"]
@@ -42,7 +44,7 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
         </tal:accepted_cargos>
         <tal:produced_cargos repeat="cargo doc_helper.cargos_produced_by_industry(industry, economy)">
             <tal:not_banned condition="cargo.id not in banned_cargos">
-                I_${industry.id} -> C_${cargo.id} [tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"]
+                I_${industry.id} -> C_${cargo.id} [weight="${len(doc_helper.cargos_produced_by_industry(industry, economy))}" tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"]
             </tal:not_banned>
             <tal:banned condition="cargo.id in banned_cargos">
                 CI_${industry.id}_${cargo.id} [shape="ellipse" label="${doc_helper.get_cargo_name(cargo)}" href="cargos.html#${cargo.id}" target="_top" fontname="sans-serif" id="${cargo.id}"]
