@@ -1,10 +1,10 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='fruit_plantation',
-                    map_colour='85',
                     prob_in_game='4',
                     prob_random='10',
                     prospect_chance='0.75',
+                    map_colour='207',
                     name='TTD_STR_INDUSTRY_NAME_FRUIT_PLANTATION',
                     extra_text_fund='string(STR_FUND_FRUIT_PLANTATION)',
                     nearby_station_name='string(STR_STATION_PLANTATION)',
