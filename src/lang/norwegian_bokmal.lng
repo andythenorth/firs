@@ -32,6 +32,7 @@ STR_PARAM_VALUE_ECONOMIES_FIRS                                                  
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :I et hett land
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Stålbyen
 
+STR_CARGO_NAME_ACID                                                             :Syre
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauksitt
 STR_CARGO_NAME_BEANS                                                            :Bønner
@@ -39,11 +40,13 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CASSAVA                                                          :Kassava
 STR_CARGO_NAME_CEMENT                                                           :Sement
 STR_CARGO_NAME_CHEMICALS                                                        :Kjemikalier
+STR_CARGO_NAME_CHLORINE                                                         :Klor
 STR_CARGO_NAME_CLAY                                                             :Leire
 STR_CARGO_NAME_COFFEE                                                           :Kaffe
 STR_CARGO_NAME_COKE                                                             :Koks
 STR_CARGO_NAME_COPPER                                                           :Kobber
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Matolje
+STR_CARGO_NAME_ELECTRICAL_MACHINES                                              :Elektromaskiner
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Anleggsutstyr
 STR_CARGO_NAME_EXPLOSIVES                                                       :Sprengstoff
 STR_CARGO_NAME_FIBRES                                                           :Plantefiber
@@ -52,7 +55,9 @@ STR_CARGO_NAME_FARM_SUPPLIES                                                    
 STR_CARGO_NAME_FERTILISER                                                       :Gjødsel
 STR_CARGO_NAME_FRUITS                                                           :Frukt
 STR_CARGO_NAME_KAOLIN                                                           :Kaolin
+STR_CARGO_NAME_LIMESTONE                                                        :Kalkstein
 STR_CARGO_NAME_LUMBER                                                           :Trelast
+STR_CARGO_NAME_LYE                                                              :Lut
 STR_CARGO_NAME_METAL                                                            :Metall
 STR_CARGO_NAME_MILK                                                             :Melk
 STR_CARGO_NAME_MANGANESE                                                        :Mangan
@@ -69,6 +74,7 @@ STR_CARGO_NAME_POTASH                                                           
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrittmalm
 STR_CARGO_NAME_QUICKLIME                                                        :Ulesket kalk
 STR_CARGO_NAME_RECYCLABLES                                                      :Gjenvinningsgods
+STR_CARGO_NAME_SALT                                                             :Salt
 STR_CARGO_NAME_SAND                                                             :Sand
 STR_CARGO_NAME_SCRAP_METAL                                                      :Skrapmetall
 STR_CARGO_NAME_SLAG                                                             :Slagg
@@ -83,6 +89,7 @@ STR_CARGO_NAME_VEHICLES                                                         
 STR_CARGO_NAME_WOOL                                                             :Ull
 STR_CARGO_NAME_ZINC                                                             :Sink
 
+STR_CARGO_UNIT_ACID                                                             :{VOLUME} syre
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkohol
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauksitt
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} bønner
@@ -90,11 +97,13 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} kassava
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} sement
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kjemikalier
+STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} klor
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} leire
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sekk{P 0 "" er} kaffe
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} koks
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} kobber
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} matolje
+STR_CARGO_UNIT_ELECTRICAL_MACHINES                                              :{WEIGHT} Elektromaskineri
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} kasse{P 0 "" r} anleggsutstyr
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} kasse{P 0 "" r} sprengstoff
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} gjødsel
@@ -103,7 +112,9 @@ STR_CARGO_UNIT_FISH                                                             
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} kasse{P 0 "" r} gårdsutstyr
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} frukt
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} kaolin
+STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} kalkstein
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} trelast
+STR_CARGO_UNIT_LYE                                                              :{VOLUME} lut
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} mangan
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metall
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
@@ -120,6 +131,7 @@ STR_CARGO_UNIT_POTASH                                                           
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pyrittmalm
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} ulesket kalk
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} gjenvinningsgods
+STR_CARGO_UNIT_SALT                                                             :{WEIGHT} salt
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} sand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} skrapmetall
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} slagg
@@ -134,6 +146,7 @@ STR_CARGO_UNIT_VEHICLES                                                         
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} balle{P 0 "" r} ull
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} sink
 
+STR_CID_ACID                                                                    :{TINYFONT}AC
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}BN
@@ -141,11 +154,13 @@ STR_CID_BUILDING_MATERIALS                                                      
 STR_CID_CASSAVA                                                                 :{TINYFONT}CA
 STR_CID_CEMENT                                                                  :{TINYFONT}CE
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
+STR_CID_CHLORINE                                                                :{TINYFONT}CL
 STR_CID_CLAY                                                                    :{TINYFONT}CY
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
 STR_CID_COKE                                                                    :{TINYFONT}CK
 STR_CID_COPPER                                                                  :{TINYFONT}CR
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
+STR_CID_ELECTRICAL_MACHINES                                                     :{TINYFONT}EM
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}EX
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
@@ -153,7 +168,9 @@ STR_CID_FERTILISER                                                              
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
 STR_CID_FISH                                                                    :{TINYFONT}FI
 STR_CID_KAOLIN                                                                  :{TINYFONT}KA
+STR_CID_LIMESTONE                                                               :{TINYFONT}LS
 STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_CID_LYE                                                                     :{TINYFONT}LY
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}MK
@@ -170,6 +187,7 @@ STR_CID_POTASH                                                                  
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
 STR_CID_QUICKLIME                                                               :{TINYFONT}QL
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
+STR_CID_SALT                                                                    :{TINYFONT}NA
 STR_CID_SAND                                                                    :{TINYFONT}SA
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
 STR_CID_SLAG                                                                    :{TINYFONT}SG
@@ -239,6 +257,7 @@ STR_IND_HERDING_COOP                                                            
 STR_IND_IRON_WORKS                                                              :{G=neuter}Jernverk
 STR_IND_JUNKYARD                                                                :{G=masculine}Skraphandel
 STR_IND_LIME_KILN                                                               :{G=masculine}Kalkovn
+STR_IND_LIMESTONE_MINE                                                          :{G=neuter}Kalkbrudd
 STR_IND_LIQUIDS_TERMINAL                                                        :{G=masculine}Tankterminal
 STR_IND_LUMBER_YARD                                                             :{G=masculine}Trevarefabrikk
 STR_IND_MACHINE_SHOP                                                            :{G=neuter}Mekanisk verksted
@@ -274,6 +293,8 @@ STR_IND_TEXTILE_MILL                                                            
 STR_IND_TRADING_POST                                                            :{G=masculine}Handelsstasjon
 STR_IND_TYRE_PLANT                                                              :{G=masculine}Dekkfabrikk
 STR_IND_VINEYARD                                                                :{G=masculine}Vingård
+STR_IND_VEHICLE_DEALER                                                          :{G=masculine}Kjøretøyforretning
+STR_IND_WHARF                                                                   :{G=masculine}Slipp
 
 
 STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(levert)
@@ -339,6 +360,7 @@ STR_STATION_IRONSTONE                                                           
 STR_STATION_JOINERS_SHOP                                                        :Trevare
 STR_STATION_KILNS                                                               :Ovner
 STR_STATION_KIMBERLITE_DEPOSITS                                                 :Kimberlittleie
+STR_STATION_LIMESTONE_MINES                                                     :Kalkbrudd
 STR_STATION_MANGANESE_MINES                                                     :Mangangruve
 STR_STATION_MARKET                                                              :Marked
 STR_STATION_MERCHANTS_LANE                                                      :Kjøpmannsgate
@@ -360,6 +382,7 @@ STR_STATION_SHEEP_FOLD                                                          
 STR_STATION_SHOALS                                                              :Banke
 STR_STATION_SILO                                                                :Silo
 STR_STATION_SMELTER                                                             :Smelteverk
+STR_STATION_STACKS                                                              :Stabler
 STR_STATION_STAMP_AND_PLATE                                                     :Skiltverksted
 STR_STATION_SUGAR_COMPANY                                                       :Sukkerfabrikk
 STR_STATION_TANK_FARM                                                           :Tankgård
@@ -372,3 +395,4 @@ STR_STATION_WATER                                                               
 STR_STATION_WEAVE_AND_DYE                                                       :Veveri
 STR_STATION_WELLS                                                               :Brønner
 STR_STATION_WINERY                                                              :Vingård
+STR_STATION_VEHICLE_DEALER                                                      :Lastebilpark

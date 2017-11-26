@@ -32,6 +32,7 @@ STR_PARAM_VALUE_ECONOMIES_FIRS                                                  
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :V subtropech
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Ocelové město
 
+STR_CARGO_NAME_ACID                                                             :Kyselina
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauxit
 STR_CARGO_NAME_BEANS                                                            :Fazole
@@ -39,11 +40,13 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CASSAVA                                                          :Maniok
 STR_CARGO_NAME_CEMENT                                                           :Cement
 STR_CARGO_NAME_CHEMICALS                                                        :Chemikálie
+STR_CARGO_NAME_CHLORINE                                                         :Chlór
 STR_CARGO_NAME_CLAY                                                             :Jíl
 STR_CARGO_NAME_COFFEE                                                           :Káva
 STR_CARGO_NAME_COKE                                                             :Koks
 STR_CARGO_NAME_COPPER                                                           :Měď
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Potravinářský olej
+STR_CARGO_NAME_ELECTRICAL_MACHINES                                              :Elektrické stroje
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Strojírenské potřeby
 STR_CARGO_NAME_EXPLOSIVES                                                       :Výbušniny
 STR_CARGO_NAME_FIBRES                                                           :Rostlinná vlákna
@@ -52,7 +55,9 @@ STR_CARGO_NAME_FARM_SUPPLIES                                                    
 STR_CARGO_NAME_FERTILISER                                                       :Hnojivo
 STR_CARGO_NAME_FRUITS                                                           :Ovoce a Zelenina
 STR_CARGO_NAME_KAOLIN                                                           :Kaolin
+STR_CARGO_NAME_LIMESTONE                                                        :Vápenec
 STR_CARGO_NAME_LUMBER                                                           :Řezivo
+STR_CARGO_NAME_LYE                                                              :Louh
 STR_CARGO_NAME_METAL                                                            :Kov
 STR_CARGO_NAME_MILK                                                             :Mléko
 STR_CARGO_NAME_MANGANESE                                                        :Mangan
@@ -69,6 +74,7 @@ STR_CARGO_NAME_POTASH                                                           
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrit
 STR_CARGO_NAME_QUICKLIME                                                        :Nehasené vápno
 STR_CARGO_NAME_RECYCLABLES                                                      :Recyklovatelné materiály
+STR_CARGO_NAME_SALT                                                             :Sůl
 STR_CARGO_NAME_SAND                                                             :Písek
 STR_CARGO_NAME_SCRAP_METAL                                                      :Kovový šrot
 STR_CARGO_NAME_SLAG                                                             :Struska
@@ -83,6 +89,7 @@ STR_CARGO_NAME_VEHICLES                                                         
 STR_CARGO_NAME_WOOL                                                             :Vlna
 STR_CARGO_NAME_ZINC                                                             :Zinek
 
+STR_CARGO_UNIT_ACID                                                             :{VOLUME} kyseliny
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkoholu
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxitu
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} fazolí
@@ -90,11 +97,13 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} manioku
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} cementu
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemikálií
+STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} chlóru
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} jílu
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} pyt{P 0 el le lů} kávy
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} koksu
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} mědi
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} potravinářského oleje
+STR_CARGO_UNIT_ELECTRICAL_MACHINES                                              :{WEIGHT} elektrických strojů
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} bed{P 0 na ny en} strojírenských potřeb
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} bed{P 0 na ny en} výbušnin
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} hnojiva
@@ -103,7 +112,9 @@ STR_CARGO_UNIT_FISH                                                             
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} bed{P 0 na ny en} zemědělských potřeb
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} ovoce a zeleniny
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} kaolinu
+STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} vápence
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} řeziva
+STR_CARGO_UNIT_LYE                                                              :{VOLUME} louhu
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} manganu
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} kovu
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} mléka
@@ -120,6 +131,7 @@ STR_CARGO_UNIT_POTASH                                                           
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pyritu
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} nehaseného vápna
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} recyklovatelných materiálů
+STR_CARGO_UNIT_SALT                                                             :{WEIGHT} soli
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} písku
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} kovového šrotu
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} strusky
@@ -134,6 +146,7 @@ STR_CARGO_UNIT_VEHICLES                                                         
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} balík{P 0 "" y ů} vlny
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} zinku
 
+STR_CID_ACID                                                                    :{TINYFONT}KYS
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}FA
@@ -141,11 +154,13 @@ STR_CID_BUILDING_MATERIALS                                                      
 STR_CID_CASSAVA                                                                 :{TINYFONT}MA
 STR_CID_CEMENT                                                                  :{TINYFONT}CE
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
+STR_CID_CHLORINE                                                                :{TINYFONT}CL
 STR_CID_CLAY                                                                    :{TINYFONT}CL
 STR_CID_COFFEE                                                                  :{TINYFONT}KA
 STR_CID_COKE                                                                    :{TINYFONT}KO
 STR_CID_COPPER                                                                  :{TINYFONT}MD
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}PO
+STR_CID_ELECTRICAL_MACHINES                                                     :{TINYFONT}ES
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}EX
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
@@ -153,7 +168,9 @@ STR_CID_FERTILISER                                                              
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
 STR_CID_FISH                                                                    :{TINYFONT}FI
 STR_CID_KAOLIN                                                                  :{TINYFONT}KA
+STR_CID_LIMESTONE                                                               :{TINYFONT}VP
 STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_CID_LYE                                                                     :{TINYFONT}LO
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_METAL                                                                   :{TINYFONT}ML
 STR_CID_MILK                                                                    :{TINYFONT}MK
@@ -170,6 +187,7 @@ STR_CID_POTASH                                                                  
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
 STR_CID_QUICKLIME                                                               :{TINYFONT}NV
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RM
+STR_CID_SALT                                                                    :{TINYFONT}SA
 STR_CID_SAND                                                                    :{TINYFONT}SA
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
 STR_CID_SLAG                                                                    :{TINYFONT}ST
@@ -211,6 +229,7 @@ STR_IND_BREWERY                                                                 
 STR_IND_CIDER_MILL                                                              :Pálenka
 STR_IND_BRICK_WORKS                                                             :Cihelna
 STR_IND_BUILDERS_YARD                                                           :Stavebniny
+STR_IND_BULK_TERMINAL                                                           :Nákladový terminál
 STR_IND_CEMENT_PLANT                                                            :Cementárna
 STR_IND_CHEMICAL_PLANT                                                          :Chemička
 STR_IND_CLAY_PIT                                                                :Jílový důl
@@ -238,6 +257,7 @@ STR_IND_HERDING_COOP                                                            
 STR_IND_IRON_WORKS                                                              :Železárna
 STR_IND_JUNKYARD                                                                :Smetiště
 STR_IND_LIME_KILN                                                               :Vápenka
+STR_IND_LIMESTONE_MINE                                                          :Vápencový důl
 STR_IND_LIQUIDS_TERMINAL                                                        :Skladiště kapalin
 STR_IND_LUMBER_YARD                                                             :Řezárna
 STR_IND_MACHINE_SHOP                                                            :Obchod se stroji
@@ -270,8 +290,11 @@ STR_IND_STOCKYARD                                                               
 STR_IND_SUGAR_REFINERY                                                          :Cukrovar
 STR_IND_SUPPLY_YARD                                                             :Sklad zásob
 STR_IND_TEXTILE_MILL                                                            :Tkalcovna
+STR_IND_TRADING_POST                                                            :Obchodní místo
 STR_IND_TYRE_PLANT                                                              :Továrna na pneumatiky
 STR_IND_VINEYARD                                                                :Vinice
+STR_IND_VEHICLE_DEALER                                                          :Prodejce vozidel
+STR_IND_WHARF                                                                   :Přístaviště
 
 
 STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(doručeno)
@@ -305,7 +328,11 @@ STR_STATION                                                                     
 
 STR_STATION_ANIMALS                                                             :Koňský trh
 STR_STATION_AUTOMOTIVE                                                          :Automobilka
+STR_STATION_BAR_GRILL_AND_ROOMS                                                 :Bar, gril a pokoje
 STR_STATION_BARNS                                                               :Stodoly
+STR_STATION_BARREL_AND_KEG                                                      :Barel a sud
+STR_STATION_BASE                                                                :Základna
+STR_STATION_BONEYARD                                                            :Pohřebiště
 STR_STATION_BANK_TOP                                                            :Koksovna
 STR_STATION_CASTINGS                                                            :Slévárny
 STR_STATION_COLLIERY                                                            :Jáma
@@ -314,6 +341,7 @@ STR_STATION_CREOSOTING                                                          
 STR_STATION_DAIRY_LANE                                                          :Mlékárenská
 STR_STATION_ESTATE                                                              :Plantáž
 STR_STATION_EXCHANGE                                                            :Přeložiště
+STR_STATION_FARM_1                                                              :Panství
 STR_STATION_FARM_2                                                              :Luka
 STR_STATION_FARM_3                                                              :Ranč
 STR_STATION_FISHMARKET                                                          :Rybí trh
@@ -323,12 +351,16 @@ STR_STATION_FORGE                                                               
 STR_STATION_FURNACE                                                             :Pece
 STR_STATION_HEAVY_EQUIPMENT_YARD                                                :Sklad Těžkého vybavení
 STR_STATION_HEAVY_INDUSTRY_2                                                    :Dílny
+STR_STATION_HERDING_COOP                                                        :Chata
 STR_STATION_INDUSTRY_ESTATE_1                                                   :Průmyslová zóna
+STR_STATION_INDUSTRY_HARBOUR_1                                                  :Přílivový dvůr
+STR_STATION_INDUSTRY_HARBOUR_2                                                  :Břeh
 STR_STATION_INDUSTRY_HARBOUR_3                                                  :Přístavní můstek
 STR_STATION_IRONSTONE                                                           :Železná ruda
 STR_STATION_JOINERS_SHOP                                                        :Spojovací materiál
 STR_STATION_KILNS                                                               :Pece
 STR_STATION_KIMBERLITE_DEPOSITS                                                 :Uložiště kimberlitu
+STR_STATION_LIMESTONE_MINES                                                     :Vápencové doly
 STR_STATION_MANGANESE_MINES                                                     :Manganové doly
 STR_STATION_MARKET                                                              :Trh
 STR_STATION_MERCHANTS_LANE                                                      :Obchodní ulice
@@ -344,12 +376,23 @@ STR_STATION_PUMPS                                                               
 STR_STATION_PYRITES                                                             :Uložiště Pyritu
 STR_STATION_REFINERY                                                            :Rafinerie
 STR_STATION_RUBBER_COMPANY                                                      :Gumovna
+STR_STATION_SALTPETER_WORKS                                                     :Ledkový důl
+STR_STATION_SHARP_STREET                                                        :Ostrá ulice
 STR_STATION_SHEEP_FOLD                                                          :Ovčín
+STR_STATION_SHOALS                                                              :Hejna
 STR_STATION_SILO                                                                :Silo
 STR_STATION_SMELTER                                                             :Huť
+STR_STATION_STACKS                                                              :Hromady
+STR_STATION_STAMP_AND_PLATE                                                     :Razítko a talíř
 STR_STATION_SUGAR_COMPANY                                                       :Cukrová Společnost
+STR_STATION_TANK_FARM                                                           :Tankoviště
+STR_STATION_TAPPERS_SHED                                                        :Nálevna
 STR_STATION_TOWN_1                                                              :Stará radnice
+STR_STATION_TOWN_2                                                              :Hlavní silnice
 STR_STATION_TOWN_3                                                              :Prodejny
+STR_STATION_TRONA_BEDS                                                          :Lehátka
 STR_STATION_WATER                                                               :Písčina
+STR_STATION_WEAVE_AND_DYE                                                       :Vázání  a barvení
 STR_STATION_WELLS                                                               :Prameny
 STR_STATION_WINERY                                                              :Vinárna
+STR_STATION_VEHICLE_DEALER                                                      :Nákladní vozidlo
