@@ -32,6 +32,13 @@ STR_PARAM_VALUE_ECONOMIES_FIRS                                                  
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :W Gorącym Kraju
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Stalowa metropolia
 
+STR_CARGO_NAME_ACID                                                             :{G=m}Kwas
+STR_CARGO_NAME_ACID.b                                                           :kwas
+STR_CARGO_NAME_ACID.c                                                           :kwasowi
+STR_CARGO_NAME_ACID.d                                                           :kwasu
+STR_CARGO_NAME_ACID.m                                                           :kwasie
+STR_CARGO_NAME_ACID.n                                                           :kwasem
+STR_CARGO_NAME_ACID.w                                                           :kwasie
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alkohol
 STR_CARGO_NAME_ALCOHOL.b                                                        :alkohol
 STR_CARGO_NAME_ALCOHOL.c                                                        :alkoholowi
@@ -63,6 +70,13 @@ STR_CARGO_NAME_CEMENT.w                                                         
 STR_CARGO_NAME_CHEMICALS                                                        :{G=n}Chemikalia
 STR_CARGO_NAME_CHEMICALS.b                                                      :chemikalia
 STR_CARGO_NAME_CHEMICALS.d                                                      :chemikaliów
+STR_CARGO_NAME_CHLORINE                                                         :{G=m}Chlor
+STR_CARGO_NAME_CHLORINE.b                                                       :chlor
+STR_CARGO_NAME_CHLORINE.c                                                       :chlorowi
+STR_CARGO_NAME_CHLORINE.d                                                       :chloru
+STR_CARGO_NAME_CHLORINE.m                                                       :chlorze
+STR_CARGO_NAME_CHLORINE.n                                                       :chlorem
+STR_CARGO_NAME_CHLORINE.w                                                       :chlorze
 STR_CARGO_NAME_CLAY                                                             :{G=f}Glina
 STR_CARGO_NAME_CLAY.b                                                           :glinę
 STR_CARGO_NAME_CLAY.d                                                           :gliny
@@ -137,6 +151,13 @@ STR_CARGO_NAME_LIMESTONE                                                        
 STR_CARGO_NAME_LUMBER                                                           :{G=f}Deski
 STR_CARGO_NAME_LUMBER.b                                                         :deski
 STR_CARGO_NAME_LUMBER.d                                                         :desek
+STR_CARGO_NAME_LYE                                                              :{G=f}Soda kaustyczna
+STR_CARGO_NAME_LYE.b                                                            :sodę kaustyczną
+STR_CARGO_NAME_LYE.c                                                            :sodzie kaustycznej
+STR_CARGO_NAME_LYE.d                                                            :sody kaustycznej
+STR_CARGO_NAME_LYE.m                                                            :sodzie kaustycznej
+STR_CARGO_NAME_LYE.n                                                            :sodą kaustyczną
+STR_CARGO_NAME_LYE.w                                                            :sodo kaustyczna
 STR_CARGO_NAME_METAL                                                            :{G=m}Metal
 STR_CARGO_NAME_METAL.b                                                          :metal
 STR_CARGO_NAME_METAL.d                                                          :metalu
@@ -286,6 +307,7 @@ STR_CARGO_NAME_ZINC.m                                                           
 STR_CARGO_NAME_ZINC.n                                                           :cynkiem
 STR_CARGO_NAME_ZINC.w                                                           :cynku
 
+STR_CARGO_UNIT_ACID                                                             :{VOLUME} kwasu
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkoholu
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} boksytu
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} soi
@@ -293,6 +315,7 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} manioku
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} cementu
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemikaliów
+STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} chloru
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} gliny
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} wor{P 0 ek ki ków} kawy
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} koksu
@@ -309,6 +332,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} kaolinitu
 STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} wapienia
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} desek
+STR_CARGO_UNIT_LYE                                                              :{VOLUME} sody kaustycznej
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} manganu
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metalu
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} mleka
@@ -340,6 +364,7 @@ STR_CARGO_UNIT_VEHICLES                                                         
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bel{P 0 a e i} wełny
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} cynku
 
+STR_CID_ACID                                                                    :{TINYFONT}KW
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}SA
@@ -347,6 +372,7 @@ STR_CID_BUILDING_MATERIALS                                                      
 STR_CID_CASSAVA                                                                 :{TINYFONT}MK
 STR_CID_CEMENT                                                                  :{TINYFONT}CE
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
+STR_CID_CHLORINE                                                                :{TINYFONT}CHL
 STR_CID_CLAY                                                                    :{TINYFONT}GL
 STR_CID_COFFEE                                                                  :{TINYFONT}KW
 STR_CID_COKE                                                                    :{TINYFONT}KK
@@ -362,6 +388,7 @@ STR_CID_FISH                                                                    
 STR_CID_KAOLIN                                                                  :{TINYFONT}KA
 STR_CID_LIMESTONE                                                               :{TINYFONT}WP
 STR_CID_LUMBER                                                                  :{TINYFONT}DS
+STR_CID_LYE                                                                     :{TINYFONT}SK
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}MK
@@ -685,6 +712,7 @@ STR_IND_VINEYARD.c                                                              
 STR_IND_VINEYARD.d                                                              :winnicy
 STR_IND_VINEYARD.n                                                              :winnicą
 STR_IND_VEHICLE_DEALER                                                          :Salon samochodowy
+STR_IND_WHARF                                                                   :Nabrzeże
 
 
 STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(dostarczono)
@@ -778,6 +806,7 @@ STR_STATION_SHEEP_FOLD                                                          
 STR_STATION_SHOALS                                                              :Łowisko
 STR_STATION_SILO                                                                :Silosy
 STR_STATION_SMELTER                                                             :Huta
+STR_STATION_STACKS                                                              :Stosy
 STR_STATION_STAMP_AND_PLATE                                                     :Walcownia
 STR_STATION_SUGAR_COMPANY                                                       :{G=f}Cukrownia
 STR_STATION_TANK_FARM                                                           :Naftoport
