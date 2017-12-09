@@ -5,7 +5,7 @@ cargo = Cargo(id = 'acid',
               unit_name = 'string(STR_CARGO_NAME_ACID)',
               type_abbreviation = 'string(STR_CID_ACID)',
               sprite = 'NEW_CARGO_SPRITE',
-              weight = '1.0',
+              weight = '1.5', # extra realism, per forum suggestion Nov 2017
               cargo_payment_list_colour = '68',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_LIQUID, CC_HAZARDOUS)',
