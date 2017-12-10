@@ -17,7 +17,7 @@ cargo = Cargo(id = 'sand',
               penalty_lowerbound = '30',
               single_penalty_length = '255',
               capacity_multiplier = '1',
-              price_factor = '72',
+              price_factor = '52',
               icon_indices = (0, 1))
 
 

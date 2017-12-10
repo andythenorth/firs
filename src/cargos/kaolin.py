@@ -16,7 +16,7 @@ cargo = Cargo(id = 'kaolin',
               items_of_cargo = 'string(STR_CARGO_UNIT_KAOLIN)',
               penalty_lowerbound = '30',
               single_penalty_length = '255',
-              price_factor = '79',
+              price_factor = '74',
               capacity_multiplier = '1',
               icon_indices = (5, 3))
 
