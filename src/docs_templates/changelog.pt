@@ -64,6 +64,8 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
     - name varies by economy, either Metal Fabrication Plant or Steel Finishing Plant
 - Mixed Farm:
     - name varies by economy, either Farm or Mixed Farm
+- Quarry:
+    - minor tweaks to appearance of sand
 - Steel Mill
     - name varies by economy, either Blast Furnace or Steel Mill
     - Blast Furnace variant requires Coke, Iron Ore, Limestone, produces Pig Iron and Slag
@@ -187,6 +189,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
     - for industries with trees, including terrain and slope support
     - for harbours
 - automated incompatible industry checks
+- automated guard against some cases where cargos could be missing
 - require_houses_nearby check circular tile search range increased to 7 (and uses automated generator for the ranges)
 - set random_sound_effects to empty array to prevent spurious sounds due to default industry properties
 - Metal cargo label now 'METL' not 'STEL', cargo labels must be unique per cargo, cannot be reused inside FIRS
