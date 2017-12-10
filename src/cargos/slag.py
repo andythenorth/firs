@@ -18,6 +18,7 @@ cargo = Cargo(id = 'slag',
               single_penalty_length = '255',
               price_factor = '71',
               capacity_multiplier = '1',
+              allow_animated_pixels = True, # slag uses fire cycle pixels, by design, so suppress NML pixel warnings
               icon_indices = (11, 3))
 
 

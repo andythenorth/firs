@@ -18,5 +18,6 @@ cargo = Cargo(id = 'explosives',
               single_penalty_length = '36',
               price_factor = '141',
               capacity_multiplier = '1',
+              allow_animated_pixels = True, # explosives uses fire cycle pixels, by design, so suppress NML pixel warnings
               icon_indices = (2, 3))
 

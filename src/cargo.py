@@ -44,6 +44,7 @@ class Cargo(object):
         self.price_factor = kwargs['price_factor']
         self.capacity_multiplier = kwargs['capacity_multiplier']
         # not nml properties
+        self.allow_animated_pixels = kwargs.get('allow_animated_pixels', False) # suppress nml warnings about animated pixels
         self.economy_variations = {}
         for economy in registered_economies:
             if self.id in economy.cargos:

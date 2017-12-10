@@ -11,7 +11,7 @@ disable_item(FEAT_CARGOS, 31, 31);
 
 <tal:cargos repeat="cargo registered_cargos">
     spriteset(cargoicon_${cargo.id}) {
-        [10 + 20 * ${cargo.icon_indices[0]}, 10 + 20 * ${cargo.icon_indices[1]}, 10, 10, 0, 0, "src/graphics/other/cargoicons.png"]
+        [10 + 20 * ${cargo.icon_indices[0]}, 10 + 20 * ${cargo.icon_indices[1]}, 10, 10, 0, 0, ${"ANIM," if cargo.allow_animated_pixels else None} "src/graphics/other/cargoicons.png"]
     }
 
 
