@@ -59,6 +59,10 @@ class Cargo(object):
         for cargo in registered_cargos:
             if cargo.price_factor == self.price_factor:
                 utils.echo_message("Cargo " + self.id + " has overlapping price_factor with cargo " + cargo.id)
+        # guard against overlapping cargo colours, cargo colours are intended to be unique within FIRS
+        for cargo in registered_cargos:
+            if cargo.cargo_payment_list_colour == self.cargo_payment_list_colour:
+                utils.echo_message("Cargo " + self.id + " has overlapping cargo_payment_list_colour with cargo " + cargo.id)
 
         # icon indices relate to position of icon in cargo icons spritesheet
         self.icon_indices = kwargs['icon_indices']
