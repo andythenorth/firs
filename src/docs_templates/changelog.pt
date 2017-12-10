@@ -19,11 +19,11 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
     - includes fish as important food source
 - 'Steeltown' economy
     - highly industrial economy, dominated by Iron and Steel chain
-    - multiple new chains and cargo types, including Coke, Limestone, Quicklime, Pig Iron, Pipe, Soda Ash and Slag
+    - multiple new chains and cargo types, including Acid, Cement, Chlorine, Coke, Electrical Machines, Limestone, Pig Iron, Pipe, Quicklime, Salt, Soda Ash, Slag and Zinc
     - new industries include Basic Oxygen Furnace, Coke Oven, Soda Ash Mine and Electric Arc Furnace
-    - a complex economy with 28 cargos and 23 industries
+    - a complex economy with 31 cargos and 25 industries
     - highly focussed on industrial production
-    - most chains connect to ultimately produce Vehicles and Engineering Supplies
+    - most chains connect to ultimately produce Vehicles
     - use with any climate
 
 *Improved Industries*
@@ -34,11 +34,13 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
     - Electric Arc Furnace
     - Farm
     - Foundry
-    - Herding Co-op
     - Farm / Mixed Farm
+    - Herding Co-op
+    - Limestone Mine
     - Peatlands
     - Slag Grinding Plant
     - Soda Ash Mine
+    - Vehicle Dealer
 - improved industry graphics and layouts:
     - Coffee Estate
     - Forest
@@ -66,14 +68,19 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
     - name varies by economy, either Blast Furnace or Steel Mill
     - Blast Furnace variant requires Coke, Iron Ore, Limestone, produces Pig Iron and Slag
     - Steel Mill variant unchanged, requires Coal, Iron Ore, Scrap Metal, produces Metal or Steel
+- Trading Post
+    - name varies by economy, either Trading Post or Wharf
 - Vehicle Factory
     - renamed to Assembly Plant
 
 *Improved Cargos*
 
-- new cargo types
+- new cargo types:
+    - Acid
     - Cement
+    - Chlorine
     - Coke
+    - Electrical Machines
     - Explosives
     - Fertiliser
     - Kaolin
@@ -82,20 +89,23 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
     - Pig Iron
     - Pipe
     - Quicklime
+    - Salt
     - Slag
     - Soda Ash
     - Steel
     - Sulphur
     - Vehicle Bodies
     - Zinc
-- Vehicles cargo:
-    - now uses 'tonnes' (or equivalent localised weight) as unit, rather than 'vehicles'
-    - simpler for vehicle newgrf authors to deal with, no special treatment needed for Vehicles cargo
-- Vehicle Parts cargo:
-    - removed incorrect 'express' cargo class
-- Packaging cargo:
+- Chemicals:
+    - increase cargo weight
+- Packaging:
     - renamed from Manufacturing Supplies to avoid confusion between this ordinary cargo and Engineering Supplies / Farm Supplies which have special behaviour
     - uses 'tonnes' (or equivalent localised weight) as unit, rather than 'crates'
+- Vehicle Parts:
+    - removed incorrect 'express' cargo class
+- Vehicles:
+    - now uses 'tonnes' (or equivalent localised weight) as unit, rather than 'vehicles'
+    - simpler for vehicle newgrf authors to deal with, no special treatment needed for Vehicles cargo
 
 *General Improvements*
 
@@ -142,6 +152,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 - all pages now use a responsive grid and should work across a wide range of devices
 - page layouts redesigned to be more legible and more visually appealing
 - zoom-and-pan tools to view 'larger' version of cargo-flow graphs (may not work in all browsers, sorry, 3rd-party plugin for this is not 100% reliable)
+- improved cargo-flow graphs
 - improved readme, removing confusing and/or outdated info, and linking to main docs
 
 *Translations*
