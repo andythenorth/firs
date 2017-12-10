@@ -38,6 +38,9 @@ spriteset_large_shed = industry.add_spriteset(
 spriteset_grinding_tower = industry.add_spriteset(
     sprites = [(150, 10, 64, 120, -31, -89)],
 )
+spriteset_conveyors = industry.add_spriteset(
+    sprites = [(220, 10, 64, 120, -31, -89)],
+)
 spriteset_slag_pile_1 = industry.add_spriteset(
     sprites = [(290, 10, 64, 120, -31, -89)],
 )
@@ -81,6 +84,13 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
+    id = 'slag_grinding_plant_spritelayout_conveyors',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_conveyors],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
     id = 'slag_grinding_plant_spritelayout_slag_pile_1',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
@@ -97,21 +107,16 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'slag_grinding_plant_industry_layout_1',
-    layout = [(0, 0, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_slag_pile_1'),
-              (0, 1, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_slag_pile_1'),
-              (0, 2, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_slag_pile_2'),
-              (0, 3, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_tile_empty'),
+    layout = [(0, 0, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_silos'),
+              (0, 1, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_large_shed'),
+              (0, 2, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_grinding_tower'),
+              (0, 3, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_conveyors'),
               (1, 0, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_tile_empty'),
               (1, 1, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_tile_empty'),
               (1, 2, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_tile_empty'),
               (1, 3, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_tile_empty'),
-              (2, 0, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_silos'),
-              (2, 1, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_large_shed'),
-              (2, 2, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_grinding_tower'),
-              (2, 3, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_tile_empty'),
-              (3, 0, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_tile_empty'),
-              (3, 1, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_tile_empty'),
-              (3, 2, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_tile_empty'),
-              (3, 3, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_tile_empty'),
-    ]
+              (2, 0, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_slag_pile_1'),
+              (2, 1, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_slag_pile_1'),
+              (2, 2, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_slag_pile_2'),
+              (2, 3, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_tile_empty'),    ]
 )
