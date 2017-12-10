@@ -94,9 +94,6 @@ livestock.cargo.register()
 from cargos import lumber
 lumber.cargo.register()
 
-from cargos import lye
-lye.cargo.register()
-
 from cargos import kaolin
 kaolin.cargo.register()
 
@@ -120,11 +117,6 @@ metal.cargo.register()
 
 from cargos import milk
 milk.cargo.register()
-
-"""
-from cargos import nickel
-nickel.cargo.register()
-"""
 
 from cargos import nitrates
 nitrates.cargo.register()
@@ -158,11 +150,6 @@ pipe.cargo.register()
 
 from cargos import plant_fibres
 plant_fibres.cargo.register()
-
-"""
-from cargos import potash
-potash.cargo.register()
-"""
 
 from cargos import pyrite_ore
 pyrite_ore.cargo.register()
