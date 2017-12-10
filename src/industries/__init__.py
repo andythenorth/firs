@@ -224,6 +224,7 @@ from industries import phosphate_mine
 phosphate_mine.industry.register()
 
 """
+# unused currently, but left in place for PacMan/Big Arctic economy
 from industries import potash_mine
 potash_mine.industry.register()
 """
