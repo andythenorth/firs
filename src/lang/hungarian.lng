@@ -17,9 +17,9 @@ STR_PARAM_NAME_NO_OPENINGS                                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Másodlagos gazdasági épületek bezárásának engedélyezése
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Nincs határ
 
-STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :A Megnövekedett termelési szint eléréséhez szükséges segédeszközök mennyisége (alapértelmezés: 16 láda)
-STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :A Maximális termelési szint eléréséhez szükséges segédeszközök mennyisége (alapértelmezés: 80 láda)
-STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :A farmok, bányák és hasonló gazdasági épületek növelik a termelésüket, ha segédeszközöket kapnak; először {SILVER}Megnövekedett{BLACK}, majd pedig {SILVER}Maximális {BLACK}szintre, ha elég a szállítmány.{}{} Az alapértelmezett értékek megfelelőek, de igény szerint itt megváltoztathatod őket.{}{}Kikötő típusú gazdasági épületek esetén az itt beállított értékek 8-szorosa érvényesül.
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :A Megnövekedett termelési szint eléréséhez szükséges felszerelés mennyisége (alapértelmezés: 16 láda)
+STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :A Maximális termelési szint eléréséhez szükséges felszerelés mennyisége (alapértelmezés: 80 láda)
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :A farmok, bányák és hasonló gazdasági épületek növelik a termelésüket, ha felszerelést kapnak; először {SILVER}Megnövekedett{BLACK}, majd pedig {SILVER}Maximális {BLACK}szintre, ha elég a szállítmány.{}{} Az alapértelmezett értékek megfelelőek, de igény szerint itt megváltoztathatod őket.{}{}Kikötő típusú gazdasági épületek esetén az itt beállított értékek 8-szorosa érvényesül.
 STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Megnövekedett termelési szint (%)
 STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Maximális termelési szint (%)
 STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Farmok, bányák és hasonló gazdasági épületek termelése, ha az ellátás eléri a megfelelő szintet (az {SILVER}Alapszintű {BLACK}termelés százalékában).
@@ -31,6 +31,8 @@ STR_PARAM_VALUE_ECONOMIES_FIRS                                                  
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Meleg ország
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Fémipar
 
+STR_CARGO_NAME_ACID                                                             :Sav
+STR_CARGO_NAME_ACID.t                                                           :savat
 STR_CARGO_NAME_ALCOHOL                                                          :Szeszes ital
 STR_CARGO_NAME_ALCOHOL.t                                                        :szeszes italt
 STR_CARGO_NAME_BAUXITE                                                          :Bauxit
@@ -45,6 +47,8 @@ STR_CARGO_NAME_CEMENT                                                           
 STR_CARGO_NAME_CEMENT.t                                                         :cementet
 STR_CARGO_NAME_CHEMICALS                                                        :Vegyszer
 STR_CARGO_NAME_CHEMICALS.t                                                      :vegyszert
+STR_CARGO_NAME_CHLORINE                                                         :Klór
+STR_CARGO_NAME_CHLORINE.t                                                       :klórt
 STR_CARGO_NAME_CLAY                                                             :Agyag
 STR_CARGO_NAME_CLAY.t                                                           :agyagot
 STR_CARGO_NAME_COFFEE                                                           :Kávé
@@ -54,8 +58,10 @@ STR_CARGO_NAME_COKE.t                                                           
 STR_CARGO_NAME_COPPER                                                           :Réz
 STR_CARGO_NAME_COPPER.t                                                         :rezet
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Étolaj
-STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Ipari segédeszközök
-STR_CARGO_NAME_ENGINEERING_SUPPLIES.t                                           :ipari segédeszközöket
+STR_CARGO_NAME_ELECTRICAL_MACHINES                                              :Elektromos gépek
+STR_CARGO_NAME_ELECTRICAL_MACHINES.t                                            :elektromos gépeket
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Ipari felszerelés
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.t                                           :ipari felszerelést
 STR_CARGO_NAME_EXPLOSIVES                                                       :Robbanóanyag
 STR_CARGO_NAME_EXPLOSIVES.t                                                     :robbanóanyagot
 STR_CARGO_NAME_FIBRES                                                           :Rostnövény
@@ -74,6 +80,8 @@ STR_CARGO_NAME_LIMESTONE                                                        
 STR_CARGO_NAME_LIMESTONE.t                                                      :mészkövet
 STR_CARGO_NAME_LUMBER                                                           :Fűrészáru
 STR_CARGO_NAME_LUMBER.t                                                         :fűrészárut
+STR_CARGO_NAME_LYE                                                              :Lúg
+STR_CARGO_NAME_LYE.t                                                            :lúgot
 STR_CARGO_NAME_METAL                                                            :Fém
 STR_CARGO_NAME_METAL.t                                                          :fémet
 STR_CARGO_NAME_MILK                                                             :Tej
@@ -106,6 +114,8 @@ STR_CARGO_NAME_QUICKLIME                                                        
 STR_CARGO_NAME_QUICKLIME.t                                                      :égetett meszet
 STR_CARGO_NAME_RECYCLABLES                                                      :Újrahasznosítható áru
 STR_CARGO_NAME_RECYCLABLES.t                                                    :újrahasznosítható árut
+STR_CARGO_NAME_SALT                                                             :Só
+STR_CARGO_NAME_SALT.t                                                           :sót
 STR_CARGO_NAME_SAND                                                             :Homok
 STR_CARGO_NAME_SAND.t                                                           :homokot
 STR_CARGO_NAME_SCRAP_METAL                                                      :Fémhulladék
@@ -132,6 +142,7 @@ STR_CARGO_NAME_WOOL.t                                                           
 STR_CARGO_NAME_ZINC                                                             :Cink
 STR_CARGO_NAME_ZINC.t                                                           :cinket
 
+STR_CARGO_UNIT_ACID                                                             :{VOLUME} sav
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} szeszes ital
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxit
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} bab
@@ -139,12 +150,14 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} manióka
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} cement
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} vegyszer
+STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} klór
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} agyag
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} zsák kávé
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} koksz
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} réz
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} étolaj
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} láda ipari segédeszköz
+STR_CARGO_UNIT_ELECTRICAL_MACHINES                                              :{WEIGHT} elektromos gép
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} láda ipari felszerelés
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} láda robbanóanyag
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} műtrágya
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bála rostnövény
@@ -154,6 +167,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} kaolin
 STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} mészkő
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} fűrészáru
+STR_CARGO_UNIT_LYE                                                              :{VOLUME} lúg
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} mangán
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} fém
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} tej
@@ -170,6 +184,7 @@ STR_CARGO_UNIT_POTASH                                                           
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} piritérc
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} égetett mész
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} újrahasznosítható áru
+STR_CARGO_UNIT_SALT                                                             :{WEIGHT} só
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} homok
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} fémhulladék
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} salak
@@ -184,6 +199,7 @@ STR_CARGO_UNIT_VEHICLES                                                         
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bála gyapjú
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} cink
 
+STR_CID_ACID                                                                    :{TINYFONT}SA
 STR_CID_ALCOHOL                                                                 :{TINYFONT}IT
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}BB
@@ -191,12 +207,14 @@ STR_CID_BUILDING_MATERIALS                                                      
 STR_CID_CASSAVA                                                                 :{TINYFONT}MA
 STR_CID_CEMENT                                                                  :{TINYFONT}CE
 STR_CID_CHEMICALS                                                               :{TINYFONT}VS
+STR_CID_CHLORINE                                                                :{TINYFONT}KL
 STR_CID_CLAY                                                                    :{TINYFONT}AG
 STR_CID_COFFEE                                                                  :{TINYFONT}KV
 STR_CID_COKE                                                                    :{TINYFONT}KK
 STR_CID_COPPER                                                                  :{TINYFONT}RZ
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}ÉO
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}IS
+STR_CID_ELECTRICAL_MACHINES                                                     :{TINYFONT}EG
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}IF
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}RO
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}MF
 STR_CID_FERTILISER                                                              :{TINYFONT}MT
@@ -205,6 +223,7 @@ STR_CID_FISH                                                                    
 STR_CID_KAOLIN                                                                  :{TINYFONT}KA
 STR_CID_LIMESTONE                                                               :{TINYFONT}MÉ
 STR_CID_LUMBER                                                                  :{TINYFONT}FÜ
+STR_CID_LYE                                                                     :{TINYFONT}LÚ
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_METAL                                                                   :{TINYFONT}FM
 STR_CID_MILK                                                                    :{TINYFONT}TJ
@@ -221,6 +240,7 @@ STR_CID_POTASH                                                                  
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PI
 STR_CID_QUICKLIME                                                               :{TINYFONT}ÉM
 STR_CID_RECYCLABLES                                                             :{TINYFONT}ÚÁ
+STR_CID_SALT                                                                    :{TINYFONT}SÓ
 STR_CID_SAND                                                                    :{TINYFONT}HM
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}FH
 STR_CID_SLAG                                                                    :{TINYFONT}SK
@@ -329,6 +349,8 @@ STR_IND_JUNKYARD                                                                
 STR_IND_JUNKYARD.t                                                              :roncstelepet
 STR_IND_LIME_KILN                                                               :Mészégető
 STR_IND_LIME_KILN.t                                                             :mészégetőt
+STR_IND_LIMESTONE_MINE                                                          :Mészkőbánya
+STR_IND_LIMESTONE_MINE.t                                                        :mészkőbányát
 STR_IND_LIQUIDS_TERMINAL                                                        :Olajterminál
 STR_IND_LIQUIDS_TERMINAL.t                                                      :olajterminált
 STR_IND_LUMBER_YARD                                                             :Fatelep
@@ -397,15 +419,19 @@ STR_IND_TRADING_POST                                                            
 STR_IND_TRADING_POST.t                                                          :kereskedelmi állomást
 STR_IND_TYRE_PLANT                                                              :Gumiabroncs gyár
 STR_IND_VINEYARD                                                                :Szőlőskert
+STR_IND_VEHICLE_DEALER                                                          :Járműkereskedés
+STR_IND_VEHICLE_DEALER.t                                                        :járműkereskedést
+STR_IND_WHARF                                                                   :Rakpart
+STR_IND_WHARF.t                                                                 :rakpartot
 
 
 STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(szállítva)
 STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}A maximális termelés eléréséhez {WHITE}bármely {BLACK}rakomány szállítása elegendő.
 STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}A maximális termelés eléréséhez {WHITE}minden {BLACK}rakomány szállítása szükséges minimum 3 havonta.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Újrahasznosítható termékeket termel a település méretével arányosan.
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}Alapszintű{}{}{BLACK}A {WHITE}Megnövekedett {BLACK} szint eléréséhez {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül.{}A {WHITE}Maximális {BLACK}szint eléréséhez {SIGNED_WORD} láda szükséges.
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}Megnövekedett{}{}{BLACK}A szint fenntartásához {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül.{}A {WHITE}Maximális {BLACK}szint eléréséhez {SIGNED_WORD} láda szükséges.
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}maximális{}{}{BLACK}A szint fenntartásához {SKIP}{SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül.
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}Alapszintű{}{}{BLACK}A {WHITE}Megnövekedett {BLACK} szint eléréséhez {SIGNED_WORD} láda felszerelés szállítása szükséges 3 hónapon belül.{}A {WHITE}Maximális {BLACK}szint eléréséhez {SIGNED_WORD} láda szükséges.
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}Megnövekedett{}{}{BLACK}A szint fenntartásához {SIGNED_WORD} láda felszerelés szállítása szükséges 3 hónapon belül.{}A {WHITE}Maximális {BLACK}szint eléréséhez {SIGNED_WORD} láda szükséges.
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}maximális{}{}{BLACK}A szint fenntartásához {SKIP}{SIGNED_WORD} láda felszerelés szállítása szükséges 3 hónapon belül.
 STR_PORT_PRODUCTION_1X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}Alapszintű{}{}{BLACK}A {WHITE}Megnövekedett {BLACK} szint eléréséhez {SIGNED_WORD} egység rakomány szállítása szükséges 3 hónapon belül.{}A {WHITE}Maximális {BLACK}szint eléréséhez {SIGNED_WORD} egység rakomány szükséges.
 STR_PORT_PRODUCTION_2X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}Megnövekedett{}{}{BLACK}A szint fenntartásához {SIGNED_WORD} egység rakomány szállítása szükséges 3 hónapon belül.{}A {WHITE}Maximális {BLACK}szint eléréséhez {SIGNED_WORD} egység rakomány szükséges.
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}maximális{}{}{BLACK}A szint fenntartásához {SKIP}{SIGNED_WORD} egység rakomány szállítása szükséges 3 hónapon belül.
@@ -462,6 +488,7 @@ STR_STATION_IRONSTONE                                                           
 STR_STATION_JOINERS_SHOP                                                        :Asztalos
 STR_STATION_KILNS                                                               :Égető
 STR_STATION_KIMBERLITE_DEPOSITS                                                 :Gyémántlelőhely
+STR_STATION_LIMESTONE_MINES                                                     :Mészkőbánya
 STR_STATION_MANGANESE_MINES                                                     :Mangánbánya
 STR_STATION_MARKET                                                              :Piac
 STR_STATION_MERCHANTS_LANE                                                      :Újváros
@@ -483,6 +510,7 @@ STR_STATION_SHEEP_FOLD                                                          
 STR_STATION_SHOALS                                                              :Halászterület
 STR_STATION_SILO                                                                :Siló
 STR_STATION_SMELTER                                                             :Olvasztó
+STR_STATION_STACKS                                                              :Lerakat
 STR_STATION_STAMP_AND_PLATE                                                     :Lakatos
 STR_STATION_SUGAR_COMPANY                                                       :Cukorfinomító
 STR_STATION_TANK_FARM                                                           :Tartálytelep
@@ -495,3 +523,4 @@ STR_STATION_WATER                                                               
 STR_STATION_WEAVE_AND_DYE                                                       :Szabóság
 STR_STATION_WELLS                                                               :Olajkút
 STR_STATION_WINERY                                                              :Borászat
+STR_STATION_VEHICLE_DEALER                                                      :Járműkereskedés
