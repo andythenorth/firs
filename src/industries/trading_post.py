@@ -23,6 +23,8 @@ industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['DIAM', 'JAVA', 'RUBR']
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'FMSP']
 
+# in Steeltown, there is a deliberate feedback loop with COPR > POWR + ENSP > more COPR (and more ENSP)
+# this is to allow an easy kickstart of ENSP, when all other chains are so tightly connected
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FMSP', 'POWR']
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['COPR', 'ENSP']
