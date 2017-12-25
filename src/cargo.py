@@ -45,6 +45,7 @@ class Cargo(object):
         self.capacity_multiplier = kwargs['capacity_multiplier']
         # not nml properties
         self.allow_animated_pixels = kwargs.get('allow_animated_pixels', False) # suppress nml warnings about animated pixels
+        self.icon_indices = kwargs['icon_indices'] # icon indices relate to position of icon in cargo icons spritesheet
         self.economy_variations = {}
         for economy in registered_economies:
             if self.id in economy.cargos:
@@ -63,9 +64,12 @@ class Cargo(object):
         for cargo in registered_cargos:
             if cargo.cargo_payment_list_colour == self.cargo_payment_list_colour:
                 utils.echo_message("Cargo " + self.id + " has overlapping cargo_payment_list_colour with cargo " + cargo.id)
+        # guard against overlapping icon indices, icons should be unique per cargo
+        # if two cargos use same icon (1) don't, copy-paste, then adjust some pixels for one of them (2) see 1
+        for cargo in registered_cargos:
+            if cargo.icon_indices == self.icon_indices:
+                utils.echo_message("Cargo " + self.id + " has overlapping icon_indices with cargo " + cargo.id)
 
-        # icon indices relate to position of icon in cargo icons spritesheet
-        self.icon_indices = kwargs['icon_indices']
 
     def get_numeric_id(self, economy):
         return self.economy_variations[economy].get('numeric_id')

@@ -19,7 +19,7 @@ cargo = Cargo(id = 'metal',
               single_penalty_length = '255',
               capacity_multiplier = '1',
               price_factor = '125',
-              icon_indices = (10, 0))
+              icon_indices = (1, 4))
 
 
 

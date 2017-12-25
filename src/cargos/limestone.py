@@ -18,7 +18,7 @@ cargo = Cargo(id = 'limestone',
               single_penalty_length = '255',
               price_factor = '66',
               capacity_multiplier = '1',
-              icon_indices = (5, 1))
+              icon_indices = (0, 4))
 
 
 
