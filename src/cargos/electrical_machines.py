@@ -18,7 +18,7 @@ cargo = Cargo(id = 'electrical_machines',
               single_penalty_length = '255',
               price_factor = '172',
               capacity_multiplier = '1',
-              icon_indices = (6, 4))
+              icon_indices = (5, 4))
 
 
 
