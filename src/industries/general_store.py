@@ -23,7 +23,7 @@ industry.economy_variations['MISTAH_KURTZ'].prob_random = '14'
 industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='general_store_tile_1',
-                  location_checks=TileLocationChecks(road_adjacent=['nw', 'ne', 'sw', 'se']))
+                  location_checks=TileLocationChecks(require_road_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
     type='slab',
