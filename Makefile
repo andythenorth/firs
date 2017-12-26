@@ -15,16 +15,15 @@ MK_ARCHIVE = bin/mk-archive
 
 # Project details
 PROJECT_NAME = firs
-SOURCES=$(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.pt --ext=.png --ext=.lng src)
 
-DOCS_DIR = docs
 # graphics is not copied to generated currently in FIRS, unlike RH, IH etc - could be changed
 GRAPHICS_DIR = src/graphics
 # lang is not copied to generated currently in FIRS, unlike RH, IH etc - could be changed
 LANG_DIR = src/lang
-CUSTOM_TAGS = generated/custom_tags.txt
 NML_FILE = generated/firs.nml
 NML_FLAGS =-c -l $(LANG_DIR) -t $(CUSTOM_TAGS)
+# only FIRS uses custom_tags currently
+CUSTOM_TAGS = generated/custom_tags.txt
 
 EXPORTED = no
 ifeq ($(strip $(EXPORTED)),no)
@@ -52,7 +51,7 @@ HTML_DOCS = docs
 SOURCE_NAME = $(PROJECT_VERSIONED_NAME)-source
 BUNDLE_DIR = bundle_dir
 
-# graphviz tools
+# graphviz tools (FIRS only)
 GVPR ?= $(shell which gvpr)
 DOT  ?= $(shell which dot)
 
@@ -68,24 +67,21 @@ grf: $(GRF_FILE)
 tar: $(TAR_FILE)
 html_docs: $(HTML_DOCS)
 
+# remove the @ for more verbose output (@ suppresses command output)
+_V ?= @
+
 $(CUSTOM_TAGS): src/templates/custom_tags.template
 	$(FILL_TEMPLATE) --template=src/templates/custom_tags.template --output=$(CUSTOM_TAGS) \
 		version=$(REPO_VERSION)
 
-# determining deps reliably for graphics generation is hard, as graphics processor depends on many things so always rebuild all
-$(GRAPHICS_DIR):
-	$(PYTHON3) src/render_graphics.py $(ARGS)
+$(GRAPHICS_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.png src)
+	$(_V) $(PYTHON3) src/render_graphics.py $(ARGS)
 
-$(LANG_DIR):
-	$(PYTHON3) src/render_lang.py $(ARGS)
+$(LANG_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.lng src)
+	$(_V) $(PYTHON3) src/render_lang.py $(ARGS)
 
-$(NML_FILE): $(SOURCES)
-	$(PYTHON3) src/render_nml.py $(ARGS)
-
-$(GRF_FILE): $(GRAPHICS_DIR) $(LANG_DIR) $(NML_FILE) $(CUSTOM_TAGS) $(HTML_DOCS)
-	$(NMLC) $(NML_FLAGS) --grf=$(GRF_FILE) $(NML_FILE)
-
-$(HTML_DOCS): $(SOURCES)
+$(HTML_DOCS): $(GRAPHICS_DIR) $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.pt --ext=.lng src)
+	$(_V) $(PYTHON3) src/render_docs.py $(ARGS)
 	$(PYTHON3) src/render_docs.py $(ARGS)
 # Insane trick to check whether both DOT and GVPR are not empty.
 ifeq ($(DOT)$(GVPR),$(GVPR)$(DOT))
@@ -95,6 +91,12 @@ else
 	$(GVPR) 'BEG_G { fname = sprintf("docs/html/%s.dot", $$G.name); writeG($$G, fname) }' docs/cargoflow.dotall
 	cd docs/html; $(DOT) -Tsvg -O *.dot
 endif
+
+$(NML_FILE): $(shell $(FIND_FILES) --ext=.py --ext=.pynml src)
+	$(_V) $(PYTHON3) src/render_nml.py $(ARGS)
+
+$(GRF_FILE): $(GRAPHICS_DIR) $(LANG_DIR) $(NML_FILE) $(CUSTOM_TAGS) $(HTML_DOCS)
+	$(NMLC) $(NML_FLAGS) --grf=$(GRF_FILE) $(NML_FILE)
 
 $(TAR_FILE): $(GRF_FILE)
 # the goal here is a sparse tar that bananas will accept; bananas can't accept html docs etc, hence they're not included
