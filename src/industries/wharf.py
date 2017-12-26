@@ -1,6 +1,6 @@
 from industry import IndustryPrimaryPort, TileLocationChecks
 
-industry = IndustryPrimaryPort(id='trading_post',
+industry = IndustryPrimaryPort(id='wharf',
                     accept_cargo_types=['FOOD', 'FRUT', 'BEER'],
                     prod_cargo_types=[],
                     prob_in_game='2',
@@ -10,23 +10,23 @@ industry = IndustryPrimaryPort(id='trading_post',
                     spec_flags='bitmask(IND_FLAG_BUILT_ON_WATER)',
                     location_checks=dict(same_type_distance=16),
                     prospect_chance='0.75',
-                    name='string(STR_IND_TRADING_POST)',
+                    name='string(STR_IND_WHARF)',
                     nearby_station_name='string(STR_STATION_INDUSTRY_HARBOUR_3)',
                     fund_cost_multiplier='152',
                     override_default_construction_states=True)
 
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['BOOM', 'PEAT', 'GOOD']
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['FMSP', 'BEER']
+# in Steeltown, there is a deliberate feedback loop with COPR > POWR + ENSP > more COPR (and more ENSP)
+# this is to allow an easy kickstart of ENSP, when all other chains are so tightly connected
+industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FMSP', 'POWR']
+industry.economy_variations['STEELTOWN'].prod_cargo_types = ['COPR', 'ENSP']
+industry.economy_variations['STEELTOWN'].prod_multiplier = '[16, 12]'
+industry.economy_variations['STEELTOWN'].name='string(STR_IND_WHARF)'
 
-industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['DIAM', 'JAVA', 'RUBR']
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'FMSP']
-
-industry.add_tile(id='trading_post_tile_1',
+industry.add_tile(id='wharf_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
                   location_checks=TileLocationChecks(always_allow_founder=False))
-industry.add_tile(id='trading_post_tile_2',
+industry.add_tile(id='wharf_tile_2',
                   foundations='return CB_RESULT_NO_FOUNDATIONS',
                   location_checks=TileLocationChecks(always_allow_founder=False,
                                                      require_coast=True))
@@ -102,87 +102,87 @@ spriteset_small_warehouse = industry.add_spriteset(
 )
 
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_11',
+    id = 'wharf_spritelayout_11',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_jetty_se_nw, spriteset_concrete, spriteset_large_warehouse]
 )
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_12',
+    id = 'wharf_spritelayout_12',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_jetty_ne_sw, spriteset_concrete, spriteset_large_warehouse]
 )
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_13',
+    id = 'wharf_spritelayout_13',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_large_warehouse]
 )
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_21',
+    id = 'wharf_spritelayout_21',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_11]
 )
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_22',
+    id = 'wharf_spritelayout_22',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_12]
 )
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_23',
+    id = 'wharf_spritelayout_23',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_13]
 )
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_24',
+    id = 'wharf_spritelayout_24',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_14]
 )
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_25',
+    id = 'wharf_spritelayout_25',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_14]
 )
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_26',
+    id = 'wharf_spritelayout_26',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
     building_sprites = []
 )
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_27',
+    id = 'wharf_spritelayout_27',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
     building_sprites = []
 )
-# trading_post_spritelayout_28 fell out of use and was removed
+# wharf_spritelayout_28 fell out of use and was removed
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_29',
+    id = 'wharf_spritelayout_29',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_10]
 )
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_30',
+    id = 'wharf_spritelayout_30',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_9b]
 )
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_null',
+    id = 'wharf_spritelayout_null',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
     building_sprites = []
 )
 industry.add_magic_spritelayout(
     type = 'harbour_coast_foundations',
-    base_id = 'trading_post_spritelayout_coast_small_warehouse',
+    base_id = 'wharf_spritelayout_coast_small_warehouse',
     config = {'ground_sprite': spriteset_ground_empty, # should alqways be empty for this magic spritelayout
               'building_sprites': [spriteset_concrete, spriteset_small_warehouse],
               'foundation_sprites': {'ne_sw': spriteset_jetty_ne_sw,
@@ -194,7 +194,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type = 'harbour_coast_foundations',
-    base_id = 'trading_post_spritelayout_coast_large_warehouse',
+    base_id = 'wharf_spritelayout_coast_large_warehouse',
     config = {'ground_sprite': spriteset_ground_empty, # should alqways be empty for this magic spritelayout
               'building_sprites': [spriteset_concrete, spriteset_large_warehouse],
               'foundation_sprites': {'ne_sw': spriteset_jetty_ne_sw,
@@ -206,81 +206,81 @@ industry.add_magic_spritelayout(
 )
 
 industry.add_industry_layout(
-    id = 'trading_post_industry_layout_1',
-    layout = [(0, 2, 'trading_post_tile_1', 'trading_post_spritelayout_27'),
-              (0, 3, 'trading_post_tile_2', 'trading_post_spritelayout_coast_small_warehouse'),
-              (1, 0, '255', 'trading_post_spritelayout_null'),
-              (1, 1, 'trading_post_tile_1', 'trading_post_spritelayout_11'),
-              (1, 2, 'trading_post_tile_1', 'trading_post_spritelayout_29'),
-              (1, 3, 'trading_post_tile_2', 'trading_post_spritelayout_coast_large_warehouse'),
-              (2, 1, 'trading_post_tile_1', 'trading_post_spritelayout_24'),
-              (2, 2, 'trading_post_tile_1', 'trading_post_spritelayout_24'),
+    id = 'wharf_industry_layout_1',
+    layout = [(0, 2, 'wharf_tile_1', 'wharf_spritelayout_27'),
+              (0, 3, 'wharf_tile_2', 'wharf_spritelayout_coast_small_warehouse'),
+              (1, 0, '255', 'wharf_spritelayout_null'),
+              (1, 1, 'wharf_tile_1', 'wharf_spritelayout_11'),
+              (1, 2, 'wharf_tile_1', 'wharf_spritelayout_29'),
+              (1, 3, 'wharf_tile_2', 'wharf_spritelayout_coast_large_warehouse'),
+              (2, 1, 'wharf_tile_1', 'wharf_spritelayout_24'),
+              (2, 2, 'wharf_tile_1', 'wharf_spritelayout_24'),
     ]
 )
 industry.add_industry_layout(
-    id = 'trading_post_industry_layout_2',
-    layout = [(0, 0, '255', 'trading_post_spritelayout_null'),
-              (0, 1, '255', 'trading_post_spritelayout_null'),
-              (0, 2, '255', 'trading_post_spritelayout_null'),
-              (1, 0, 'trading_post_tile_1', 'trading_post_spritelayout_23'),
-              (1, 1, 'trading_post_tile_1', 'trading_post_spritelayout_23'),
-              (1, 255, '255', 'trading_post_spritelayout_null'),
-              (2, 0, 'trading_post_tile_1', 'trading_post_spritelayout_30'),
-              (2, 1, 'trading_post_tile_1', 'trading_post_spritelayout_12'),
-              (2, 2, 'trading_post_tile_1', 'trading_post_spritelayout_21'),
-              (2, 255, '255', 'trading_post_spritelayout_null'),
-              (3, 1, 'trading_post_tile_2', 'trading_post_spritelayout_coast_large_warehouse'),
-              (3, 2, 'trading_post_tile_2', 'trading_post_spritelayout_coast_small_warehouse'),
+    id = 'wharf_industry_layout_2',
+    layout = [(0, 0, '255', 'wharf_spritelayout_null'),
+              (0, 1, '255', 'wharf_spritelayout_null'),
+              (0, 2, '255', 'wharf_spritelayout_null'),
+              (1, 0, 'wharf_tile_1', 'wharf_spritelayout_23'),
+              (1, 1, 'wharf_tile_1', 'wharf_spritelayout_23'),
+              (1, 255, '255', 'wharf_spritelayout_null'),
+              (2, 0, 'wharf_tile_1', 'wharf_spritelayout_30'),
+              (2, 1, 'wharf_tile_1', 'wharf_spritelayout_12'),
+              (2, 2, 'wharf_tile_1', 'wharf_spritelayout_21'),
+              (2, 255, '255', 'wharf_spritelayout_null'),
+              (3, 1, 'wharf_tile_2', 'wharf_spritelayout_coast_large_warehouse'),
+              (3, 2, 'wharf_tile_2', 'wharf_spritelayout_coast_small_warehouse'),
     ]
 )
 industry.add_industry_layout(
-    id = 'trading_post_industry_layout_3',
-    layout = [(0, 0, 'trading_post_tile_2', 'trading_post_spritelayout_coast_large_warehouse'),
-              (0, 1, 'trading_post_tile_2', 'trading_post_spritelayout_coast_large_warehouse'),
-              (0, 2, 'trading_post_tile_2', 'trading_post_spritelayout_coast_small_warehouse'),
-              (1, 0, 'trading_post_tile_1', 'trading_post_spritelayout_24'),
-              (1, 2, 'trading_post_tile_1', 'trading_post_spritelayout_30'),
-              (2, 1, 'trading_post_tile_1', 'trading_post_spritelayout_26'),
-              (2, 2, 'trading_post_tile_1', 'trading_post_spritelayout_29'),
-              (2, 3, 'trading_post_tile_1', 'trading_post_spritelayout_22'),
-              (2, 4, '255', 'trading_post_spritelayout_null'),
-              (3, 2, '255', 'trading_post_spritelayout_null'),
-              (3, 3, '255', 'trading_post_spritelayout_null'),
+    id = 'wharf_industry_layout_3',
+    layout = [(0, 0, 'wharf_tile_2', 'wharf_spritelayout_coast_large_warehouse'),
+              (0, 1, 'wharf_tile_2', 'wharf_spritelayout_coast_large_warehouse'),
+              (0, 2, 'wharf_tile_2', 'wharf_spritelayout_coast_small_warehouse'),
+              (1, 0, 'wharf_tile_1', 'wharf_spritelayout_24'),
+              (1, 2, 'wharf_tile_1', 'wharf_spritelayout_30'),
+              (2, 1, 'wharf_tile_1', 'wharf_spritelayout_26'),
+              (2, 2, 'wharf_tile_1', 'wharf_spritelayout_29'),
+              (2, 3, 'wharf_tile_1', 'wharf_spritelayout_22'),
+              (2, 4, '255', 'wharf_spritelayout_null'),
+              (3, 2, '255', 'wharf_spritelayout_null'),
+              (3, 3, '255', 'wharf_spritelayout_null'),
     ]
 )
 industry.add_industry_layout(
-    id = 'trading_post_industry_layout_4',
-    layout = [(0, 0, 'trading_post_tile_2', 'trading_post_spritelayout_coast_large_warehouse'),
-              (0, 1, '255', 'trading_post_spritelayout_null'),
-              (1, 0, 'trading_post_tile_2', 'trading_post_spritelayout_coast_large_warehouse'),
-              (1, 1, 'trading_post_tile_1', 'trading_post_spritelayout_29'),
-              (1, 2, 'trading_post_tile_1', 'trading_post_spritelayout_30'),
-              (1, 3, '255', 'trading_post_spritelayout_null'),
-              (2, 0, 'trading_post_tile_2', 'trading_post_spritelayout_coast_small_warehouse'),
-              (2, 1, 'trading_post_tile_1', 'trading_post_spritelayout_25'),
-              (2, 2, '255', 'trading_post_spritelayout_null'),
-              (3, 2, '255', 'trading_post_spritelayout_null'),
-              (3, 3, '255', 'trading_post_spritelayout_null'),
+    id = 'wharf_industry_layout_4',
+    layout = [(0, 0, 'wharf_tile_2', 'wharf_spritelayout_coast_large_warehouse'),
+              (0, 1, '255', 'wharf_spritelayout_null'),
+              (1, 0, 'wharf_tile_2', 'wharf_spritelayout_coast_large_warehouse'),
+              (1, 1, 'wharf_tile_1', 'wharf_spritelayout_29'),
+              (1, 2, 'wharf_tile_1', 'wharf_spritelayout_30'),
+              (1, 3, '255', 'wharf_spritelayout_null'),
+              (2, 0, 'wharf_tile_2', 'wharf_spritelayout_coast_small_warehouse'),
+              (2, 1, 'wharf_tile_1', 'wharf_spritelayout_25'),
+              (2, 2, '255', 'wharf_spritelayout_null'),
+              (3, 2, '255', 'wharf_spritelayout_null'),
+              (3, 3, '255', 'wharf_spritelayout_null'),
     ]
 )
 industry.add_industry_layout(
-    id = 'trading_post_industry_layout_5',
-    layout = [(0, 0, 'trading_post_tile_2', 'trading_post_spritelayout_coast_small_warehouse'),
-              (1, 0, 'trading_post_tile_2', 'trading_post_spritelayout_coast_large_warehouse'),
-              (1, 2, '255', 'trading_post_spritelayout_null'),
-              (2, 0, 'trading_post_tile_1', 'trading_post_spritelayout_13'),
-              (2, 1, 'trading_post_tile_1', 'trading_post_spritelayout_29'),
-              (2, 2, 'trading_post_tile_1', 'trading_post_spritelayout_30'),
-              (2, 3, '255', 'trading_post_spritelayout_null'),
-              (3, 255, '255', 'trading_post_spritelayout_null'),
-              (3, 0, 'trading_post_tile_1', 'trading_post_spritelayout_24'),
-              (3, 1, 'trading_post_tile_1', 'trading_post_spritelayout_24'),
-              (3, 2, 'trading_post_tile_1', 'trading_post_spritelayout_24'),
-              (3, 3, '255', 'trading_post_spritelayout_null'),
-              (4, 255, '255', 'trading_post_spritelayout_null'),
-              (4, 0, '255', 'trading_post_spritelayout_null'),
-              (4, 1, '255', 'trading_post_spritelayout_null'),
-              (4, 2, '255', 'trading_post_spritelayout_null'),
-              (4, 3, '255', 'trading_post_spritelayout_null'),
+    id = 'wharf_industry_layout_5',
+    layout = [(0, 0, 'wharf_tile_2', 'wharf_spritelayout_coast_small_warehouse'),
+              (1, 0, 'wharf_tile_2', 'wharf_spritelayout_coast_large_warehouse'),
+              (1, 2, '255', 'wharf_spritelayout_null'),
+              (2, 0, 'wharf_tile_1', 'wharf_spritelayout_13'),
+              (2, 1, 'wharf_tile_1', 'wharf_spritelayout_29'),
+              (2, 2, 'wharf_tile_1', 'wharf_spritelayout_30'),
+              (2, 3, '255', 'wharf_spritelayout_null'),
+              (3, 255, '255', 'wharf_spritelayout_null'),
+              (3, 0, 'wharf_tile_1', 'wharf_spritelayout_24'),
+              (3, 1, 'wharf_tile_1', 'wharf_spritelayout_24'),
+              (3, 2, 'wharf_tile_1', 'wharf_spritelayout_24'),
+              (3, 3, '255', 'wharf_spritelayout_null'),
+              (4, 255, '255', 'wharf_spritelayout_null'),
+              (4, 0, '255', 'wharf_spritelayout_null'),
+              (4, 1, '255', 'wharf_spritelayout_null'),
+              (4, 2, '255', 'wharf_spritelayout_null'),
+              (4, 3, '255', 'wharf_spritelayout_null'),
     ]
 )

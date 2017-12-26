@@ -252,3 +252,6 @@ vehicle_dealer.industry.register()
 
 from industries import vineyard
 vineyard.industry.register()
+
+from industries import wharf
+wharf.industry.register()
