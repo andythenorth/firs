@@ -127,14 +127,15 @@ bundle_src: $(MD5_FILE)
 		`$(FIND_FILES) $(BUNDLE_DIR)/src` $(MD5_FILE)
 
 # this is a macOS-specifc install location; the pre-2017 Makefile handled multiple platforms, that could be restored if needed
-# currently only copies the grf, could move all of the contents of PROJECT_VERSIONED_NAME, but that is only created on-demand for the tar right now
 install: $(GRF_FILE)
 	cp $(GRF_FILE) ~/Documents/OpenTTD/newgrf/
 
 clean:
-	for f in .chameleon_cache .nmlcache src/__pycache__ src/*/__pycache__ docs generated \
-	$(TAR_FILE) $(ZIP_FILE) $(MD5_FILE) $(BUNDLE_DIR) $(SOURCE_NAME).tar;\
+	$(_V) echo "[CLEANING]"
+	$(_V) for f in .chameleon_cache .nmlcache src/__pycache__ src/*/__pycache__ docs generated \
+	$(GRF_FILE) $(TAR_FILE) $(ZIP_FILE) $(MD5_FILE) $(BUNDLE_DIR) $(SOURCE_NAME).tar;\
 	do if test -e $$f;\
 	   then rm -r $$f;\
 	   fi;\
 	done
+	$(_V) echo "[DONE]"
