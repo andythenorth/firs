@@ -10,7 +10,7 @@ cargo = Cargo(id = 'vehicles',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_PIECE_GOODS)',
               cargo_label = 'VEHI',
-              town_growth_effect = 'TOWNGROWTH_NONE',
+              town_growth_effect = 'TOWNGROWTH_WATER', # intended for desert Steeltown, may not be appropriate in other cases
               town_growth_multiplier = '1.0',
               units_of_cargo = '84',
               items_of_cargo = 'string(STR_CARGO_UNIT_VEHICLES)',
