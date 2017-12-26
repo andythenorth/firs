@@ -29,13 +29,13 @@ spriteset_ground_overlay = industry.add_spriteset(
 )
 
 spriteset_platform = industry.add_spriteset(
-    sprites=[(10, 10, 64, 100, -31, -65)],
+    sprites=[(10, 10, 64, 100, -31, -67)],
 )
 spriteset_greeble = industry.add_spriteset(
-    sprites=[(80, 10, 64, 39, -31, -10)],
+    sprites=[(80, 10, 64, 39, -31, -12)],
 )
 spriteset_crane_animated = industry.add_spriteset(
-    sprites=[(150, 10, 64, 64, -33, -35)],
+    sprites=[(150, 10, 64, 64, -33, -37)],
 )
 
 industry.add_spritelayout(
