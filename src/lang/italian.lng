@@ -32,6 +32,7 @@ STR_PARAM_VALUE_ECONOMIES_FIRS                                                  
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :In un Paese caldo
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Città d'acciaio
 
+STR_CARGO_NAME_ACID                                                             :Acidi
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alcoolici
 STR_CARGO_NAME_BAUXITE                                                          :{G=f}Bauxite
 STR_CARGO_NAME_BEANS                                                            :{G=m}Fagioli
@@ -39,11 +40,13 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CASSAVA                                                          :Manioca
 STR_CARGO_NAME_CEMENT                                                           :Cemento
 STR_CARGO_NAME_CHEMICALS                                                        :{G=m}Prodotti chimici
+STR_CARGO_NAME_CHLORINE                                                         :{G=m}Cloro
 STR_CARGO_NAME_CLAY                                                             :{G=f}Argilla
 STR_CARGO_NAME_COFFEE                                                           :{G=m}Caffé
 STR_CARGO_NAME_COKE                                                             :Coke
 STR_CARGO_NAME_COPPER                                                           :Rame
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Olio da cucina
+STR_CARGO_NAME_ELECTRICAL_MACHINES                                              :Macchinari elettrici
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=f}Forniture meccaniche
 STR_CARGO_NAME_EXPLOSIVES                                                       :Esplosivi
 STR_CARGO_NAME_FIBRES                                                           :{G=f}Fibre tessili
@@ -52,7 +55,9 @@ STR_CARGO_NAME_FARM_SUPPLIES                                                    
 STR_CARGO_NAME_FERTILISER                                                       :Fertilizzante
 STR_CARGO_NAME_FRUITS                                                           :{G=f}Frutta
 STR_CARGO_NAME_KAOLIN                                                           :{G=f}Caolinite
+STR_CARGO_NAME_LIMESTONE                                                        :{G=m}Calcare
 STR_CARGO_NAME_LUMBER                                                           :{G=m}Prodotti in legno
+STR_CARGO_NAME_LYE                                                              :{G=f}Liscivia
 STR_CARGO_NAME_METAL                                                            :{G=m}Metalli
 STR_CARGO_NAME_MILK                                                             :{G=m}Latte
 STR_CARGO_NAME_MANGANESE                                                        :Manganese
@@ -69,6 +74,7 @@ STR_CARGO_NAME_POTASH                                                           
 STR_CARGO_NAME_PYRITE_ORE                                                       :Minerale di pirite
 STR_CARGO_NAME_QUICKLIME                                                        :Calce viva
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=m}Prodotti riciclati
+STR_CARGO_NAME_SALT                                                             :{G=m}Sale
 STR_CARGO_NAME_SAND                                                             :{G=f}Sabbia
 STR_CARGO_NAME_SCRAP_METAL                                                      :{G=m}Metalli di scarto
 STR_CARGO_NAME_SLAG                                                             :Scorie
@@ -77,12 +83,13 @@ STR_CARGO_NAME_STEEL                                                            
 STR_CARGO_NAME_STONE                                                            :{G=f}Pietre
 STR_CARGO_NAME_SUGAR_BEET                                                       :{G=f}Barbabietole da zucchero
 STR_CARGO_NAME_SULPHUR                                                          :Zolfo
-STR_CARGO_NAME_VEHICLE_BODIES                                                   :{G=f}Parti di carrozzerie
+STR_CARGO_NAME_VEHICLE_BODIES                                                   :{G=f}Scocche di veicoli
 STR_CARGO_NAME_VEHICLE_PARTS                                                    :{G=f}Parti meccaniche
 STR_CARGO_NAME_VEHICLES                                                         :Veicoli
 STR_CARGO_NAME_WOOL                                                             :{G=f}Lana
 STR_CARGO_NAME_ZINC                                                             :Zinco
 
+STR_CARGO_UNIT_ACID                                                             :{VOLUME} di acidi
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} di alcoolici
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} di bauxite
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} di fagioli
@@ -90,11 +97,13 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} di manioca
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} di cemento
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} di prodotti chimici
+STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} di cloro
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} di argilla
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sacc{P 0 o hi} di caffé
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} di coke
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} di rame
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} di olio da cucina
+STR_CARGO_UNIT_ELECTRICAL_MACHINES                                              :{WEIGHT} di macchinari elettrici
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} cass{P 0 a e} di forniture meccaniche
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} cass{P 0 a e} di esplosivi
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} di fertilizzanti
@@ -103,7 +112,9 @@ STR_CARGO_UNIT_FISH                                                             
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} cass{P 0 a e} di forniture agricole
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} di frutta e verdura
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} di caolinite
+STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} di calcare
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} di prodotti in legno
+STR_CARGO_UNIT_LYE                                                              :{VOLUME} di liscivia
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} di manganese
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} di metalli
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} di latte
@@ -120,6 +131,7 @@ STR_CARGO_UNIT_POTASH                                                           
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} di minerale di pirite
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} di calce viva
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} di prodotti da riciclare
+STR_CARGO_UNIT_SALT                                                             :{WEIGHT} di sale
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} di sabbia
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} di metalli di scarto
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} di scorie
@@ -128,12 +140,13 @@ STR_CARGO_UNIT_STEEL                                                            
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} di pietre
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} di barbabietola da zucchero
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} di zolfo
-STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} di parti di carrozzerie
+STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} di scocche di veicoli
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{WEIGHT} di parti meccaniche
 STR_CARGO_UNIT_VEHICLES                                                         :{WEIGHT} di veicoli
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} ball{P 0 a e} di lana
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} di zinco
 
+STR_CID_ACID                                                                    :{TINYFONT}AC
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}FG
@@ -141,11 +154,13 @@ STR_CID_BUILDING_MATERIALS                                                      
 STR_CID_CASSAVA                                                                 :{TINYFONT}MC
 STR_CID_CEMENT                                                                  :{TINYFONT}CE
 STR_CID_CHEMICALS                                                               :{TINYFONT}PC
+STR_CID_CHLORINE                                                                :{TINYFONT}CL
 STR_CID_CLAY                                                                    :{TINYFONT}AR
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
 STR_CID_COKE                                                                    :{TINYFONT}CK
 STR_CID_COPPER                                                                  :{TINYFONT}RA
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}OL
+STR_CID_ELECTRICAL_MACHINES                                                     :{TINYFONT}MA
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}FM
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}ES
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FA
@@ -153,7 +168,9 @@ STR_CID_FERTILISER                                                              
 STR_CID_FIBRES                                                                  :{TINYFONT}FI
 STR_CID_FISH                                                                    :{TINYFONT}PS
 STR_CID_KAOLIN                                                                  :{TINYFONT}CO
+STR_CID_LIMESTONE                                                               :{TINYFONT}CC
 STR_CID_LUMBER                                                                  :{TINYFONT}PL
+STR_CID_LYE                                                                     :{TINYFONT}LI
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_METAL                                                                   :{TINYFONT}ME
 STR_CID_MILK                                                                    :{TINYFONT}LA
@@ -170,6 +187,7 @@ STR_CID_POTASH                                                                  
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}MP
 STR_CID_QUICKLIME                                                               :{TINYFONT}CV
 STR_CID_RECYCLABLES                                                             :{TINYFONT}PR
+STR_CID_SALT                                                                    :{TINYFONT}SL
 STR_CID_SAND                                                                    :{TINYFONT}SA
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}MS
 STR_CID_SLAG                                                                    :{TINYFONT}SC
@@ -178,7 +196,7 @@ STR_CID_STEEL                                                                   
 STR_CID_STONE                                                                   :{TINYFONT}PI
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}BA
 STR_CID_SULPHUR                                                                 :{TINYFONT}ZO
-STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}CZ
+STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}SC
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}PV
 STR_CID_VEHICLES                                                                :{TINYFONT}VE
 STR_CID_WOOL                                                                    :{TINYFONT}LN
@@ -239,6 +257,7 @@ STR_IND_HERDING_COOP                                                            
 STR_IND_IRON_WORKS                                                              :{G=f}Fucina
 STR_IND_JUNKYARD                                                                :{G=m}Deposito di rottami
 STR_IND_LIME_KILN                                                               :{G=m}Forno per ceramiche
+STR_IND_LIMESTONE_MINE                                                          :Miniere
 STR_IND_LIQUIDS_TERMINAL                                                        :{G=m}Centro di stoccaggio liquidi
 STR_IND_LUMBER_YARD                                                             :{G=f}Falegnameria
 STR_IND_MACHINE_SHOP                                                            :{G=f}Fabbrica di macchinari
@@ -274,6 +293,8 @@ STR_IND_TEXTILE_MILL                                                            
 STR_IND_TRADING_POST                                                            :{G=m}Emporio commerciale
 STR_IND_TYRE_PLANT                                                              :{G=f}Fabbrica di pneumatici
 STR_IND_VINEYARD                                                                :{G=f}Vigna
+STR_IND_VEHICLE_DEALER                                                          :{G=f}Concessionaria di veicoli
+STR_IND_WHARF                                                                   :Moli
 
 
 STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(consegnato)
@@ -339,6 +360,7 @@ STR_STATION_IRONSTONE                                                           
 STR_STATION_JOINERS_SHOP                                                        :Mobilifici
 STR_STATION_KILNS                                                               :Fabbriche
 STR_STATION_KIMBERLITE_DEPOSITS                                                 :Miniere
+STR_STATION_LIMESTONE_MINES                                                     :Miniere
 STR_STATION_MANGANESE_MINES                                                     :Miniere
 STR_STATION_MARKET                                                              :Mercato
 STR_STATION_MERCHANTS_LANE                                                      :Via dei Mercanti
@@ -360,6 +382,7 @@ STR_STATION_SHEEP_FOLD                                                          
 STR_STATION_SHOALS                                                              :Area di pesca
 STR_STATION_SILO                                                                :Silos
 STR_STATION_SMELTER                                                             :Fonderie
+STR_STATION_STACKS                                                              :Depositi
 STR_STATION_STAMP_AND_PLATE                                                     :Presse
 STR_STATION_SUGAR_COMPANY                                                       :Zuccherificio
 STR_STATION_TANK_FARM                                                           :Serbatoi
@@ -372,3 +395,4 @@ STR_STATION_WATER                                                               
 STR_STATION_WEAVE_AND_DYE                                                       :Lanifici
 STR_STATION_WELLS                                                               :Pozzi
 STR_STATION_WINERY                                                              :Cantine
+STR_STATION_VEHICLE_DEALER                                                      :Parcheggi
