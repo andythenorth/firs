@@ -43,6 +43,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
     - Vehicle Dealer
 - improved industry graphics and layouts:
     - Coffee Estate
+    - Dredging Site
     - Forest
     - Fruit Plantation
     - Orchard and Piggery
@@ -145,17 +146,18 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 
 *Online Docs*
 
-- updated with images for new and changed industries
+- text now more helpful for players who are new to FIRS
+- improved readme, removing confusing and/or outdated info, and linking to main docs
 - Cargos page shows hints about many cargos, to aid vehicle set authors
 - Code Reference page shows cargo colours and industry map colours
+- Industries page updated with images for new and changed industries
+- improved cargo-flow graphs in Economies page
+- zoom-and-pan tools to view 'larger' version of cargo-flow graphs (may not work in all browsers, sorry, 3rd-party plugin for this is not 100% reliable)
 - docs no longer show cargos that are not used (including Sugar and Sugarcane)
 - much more variety in randomised banner images for docs
 - upgrade UI library to Boostrap 3
 - all pages now use a responsive grid and should work across a wide range of devices
 - page layouts redesigned to be more legible and more visually appealing
-- zoom-and-pan tools to view 'larger' version of cargo-flow graphs (may not work in all browsers, sorry, 3rd-party plugin for this is not 100% reliable)
-- improved cargo-flow graphs
-- improved readme, removing confusing and/or outdated info, and linking to main docs
 
 *Translations*
 
@@ -185,6 +187,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 - don't fail silently if tile numeric IDs are not defined; fix a bunch of missing tile numeric IDs
 - minor code refactoring in many other places, simplifying where possible
 - GPL notice is not required imho for every source file, remove them widely
+- pep8 some python files
 - magic templates:
     - for industries with trees, including terrain and slope support
     - for harbours
