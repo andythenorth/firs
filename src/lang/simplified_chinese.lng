@@ -30,6 +30,7 @@ STR_PARAM_VALUE_ECONOMIES_FIRS                                                  
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :进阶级
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :钢铁城
 
+STR_CARGO_NAME_ACID                                                             :酸
 STR_CARGO_NAME_ALCOHOL                                                          :酒
 STR_CARGO_NAME_BAUXITE                                                          :铝土
 STR_CARGO_NAME_BEANS                                                            :大豆
@@ -37,11 +38,13 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CASSAVA                                                          :木薯
 STR_CARGO_NAME_CEMENT                                                           :水泥
 STR_CARGO_NAME_CHEMICALS                                                        :化工品
+STR_CARGO_NAME_CHLORINE                                                         :氯气
 STR_CARGO_NAME_CLAY                                                             :粘土
 STR_CARGO_NAME_COFFEE                                                           :咖啡
 STR_CARGO_NAME_COKE                                                             :焦炭
 STR_CARGO_NAME_COPPER                                                           :铜
 STR_CARGO_NAME_EDIBLE_OIL                                                       :食用油
+STR_CARGO_NAME_ELECTRICAL_MACHINES                                              :电机
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :工程物资
 STR_CARGO_NAME_EXPLOSIVES                                                       :炸药
 STR_CARGO_NAME_FIBRES                                                           :植物纤维
@@ -52,6 +55,7 @@ STR_CARGO_NAME_FRUITS                                                           
 STR_CARGO_NAME_KAOLIN                                                           :高岭土
 STR_CARGO_NAME_LIMESTONE                                                        :石灰岩
 STR_CARGO_NAME_LUMBER                                                           :木料
+STR_CARGO_NAME_LYE                                                              :碱液
 STR_CARGO_NAME_METAL                                                            :金属
 STR_CARGO_NAME_MILK                                                             :牛奶
 STR_CARGO_NAME_MANGANESE                                                        :锰矿
@@ -68,6 +72,7 @@ STR_CARGO_NAME_POTASH                                                           
 STR_CARGO_NAME_PYRITE_ORE                                                       :黄铁矿
 STR_CARGO_NAME_QUICKLIME                                                        :生石灰
 STR_CARGO_NAME_RECYCLABLES                                                      :回收物资
+STR_CARGO_NAME_SALT                                                             :盐
 STR_CARGO_NAME_SAND                                                             :沙子
 STR_CARGO_NAME_SCRAP_METAL                                                      :废金属
 STR_CARGO_NAME_SLAG                                                             :矿渣
@@ -82,6 +87,7 @@ STR_CARGO_NAME_VEHICLES                                                         
 STR_CARGO_NAME_WOOL                                                             :羊毛
 STR_CARGO_NAME_ZINC                                                             :锌
 
+STR_CARGO_UNIT_ACID                                                             :{VOLUME} 升酸
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} 酒
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} 铝土
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} 吨大豆
@@ -89,11 +95,13 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} 吨木薯
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} 吨水泥
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} 化工品
+STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} 升氯气
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} 粘土
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} 袋咖啡
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} 吨 焦炭
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} 吨铜
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} 升食用油
+STR_CARGO_UNIT_ELECTRICAL_MACHINES                                              :{WEIGHT} 台电机
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} 箱 工程物资
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} 箱 炸药
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} 袋 化肥
@@ -104,6 +112,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} 吨高岭土
 STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} 吨石灰岩
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} 木料
+STR_CARGO_UNIT_LYE                                                              :{VOLUME} 升碱液
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} 吨锰矿
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} 金属
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} 牛奶
@@ -120,6 +129,7 @@ STR_CARGO_UNIT_POTASH                                                           
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} 吨黄铁矿
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} 吨生石灰
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} 回收物资
+STR_CARGO_UNIT_SALT                                                             :{WEIGHT} 吨盐
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} 沙子
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} 废金属
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} 吨 矿渣
@@ -134,6 +144,7 @@ STR_CARGO_UNIT_VEHICLES                                                         
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} 包 羊毛
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} 吨锌
 
+STR_CID_ACID                                                                    :{TINYFONT}酸
 STR_CID_ALCOHOL                                                                 :{TINYFONT}酒
 STR_CID_BAUXITE                                                                 :{TINYFONT}铝
 STR_CID_BEANS                                                                   :{TINYFONT}豆
@@ -141,11 +152,13 @@ STR_CID_BUILDING_MATERIALS                                                      
 STR_CID_CASSAVA                                                                 :{TINYFONT}薯
 STR_CID_CEMENT                                                                  :{TINYFONT}泥
 STR_CID_CHEMICALS                                                               :{TINYFONT}化
+STR_CID_CHLORINE                                                                :{TINYFONT}氯
 STR_CID_CLAY                                                                    :{TINYFONT}粘
 STR_CID_COFFEE                                                                  :{TINYFONT}啡
 STR_CID_COKE                                                                    :{TINYFONT}焦
 STR_CID_COPPER                                                                  :{TINYFONT}铜
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}脂
+STR_CID_ELECTRICAL_MACHINES                                                     :{TINYFONT}电
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}程
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}炸
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}农
@@ -155,6 +168,7 @@ STR_CID_FISH                                                                    
 STR_CID_KAOLIN                                                                  :{TINYFONT}岭
 STR_CID_LIMESTONE                                                               :{TINYFONT}灰
 STR_CID_LUMBER                                                                  :{TINYFONT}料
+STR_CID_LYE                                                                     :{TINYFONT}碱
 STR_CID_MANGANESE                                                               :{TINYFONT}锰
 STR_CID_METAL                                                                   :{TINYFONT}金
 STR_CID_MILK                                                                    :{TINYFONT}奶
@@ -171,6 +185,7 @@ STR_CID_POTASH                                                                  
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}黄
 STR_CID_QUICKLIME                                                               :{TINYFONT}生
 STR_CID_RECYCLABLES                                                             :{TINYFONT}回
+STR_CID_SALT                                                                    :{TINYFONT}盐
 STR_CID_SAND                                                                    :{TINYFONT}沙
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}废
 STR_CID_SLAG                                                                    :{TINYFONT}渣
@@ -240,6 +255,7 @@ STR_IND_HERDING_COOP                                                            
 STR_IND_IRON_WORKS                                                              :炼铁厂
 STR_IND_JUNKYARD                                                                :废料场
 STR_IND_LIME_KILN                                                               :石灰窑
+STR_IND_LIMESTONE_MINE                                                          :石灰岩
 STR_IND_LIQUIDS_TERMINAL                                                        :油品码头
 STR_IND_LUMBER_YARD                                                             :木材加工厂
 STR_IND_MACHINE_SHOP                                                            :机械厂
@@ -275,6 +291,8 @@ STR_IND_TEXTILE_MILL                                                            
 STR_IND_TRADING_POST                                                            :贸易站
 STR_IND_TYRE_PLANT                                                              :轮胎工厂
 STR_IND_VINEYARD                                                                :葡萄园
+STR_IND_VEHICLE_DEALER                                                          :车辆经销商
+STR_IND_WHARF                                                                   :码头
 
 
 STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(已供应)
@@ -340,6 +358,7 @@ STR_STATION_IRONSTONE                                                           
 STR_STATION_JOINERS_SHOP                                                        :木匠店
 STR_STATION_KILNS                                                               :窑
 STR_STATION_KIMBERLITE_DEPOSITS                                                 :金伯利矿
+STR_STATION_LIMESTONE_MINES                                                     :石灰岩矿
 STR_STATION_MANGANESE_MINES                                                     :锰矿
 STR_STATION_MARKET                                                              :市场
 STR_STATION_MERCHANTS_LANE                                                      :建材胡同
@@ -361,6 +380,7 @@ STR_STATION_SHEEP_FOLD                                                          
 STR_STATION_SHOALS                                                              :滩
 STR_STATION_SILO                                                                :筒仓
 STR_STATION_SMELTER                                                             :熔炉
+STR_STATION_STACKS                                                              :堆
 STR_STATION_STAMP_AND_PLATE                                                     :雕印坊
 STR_STATION_SUGAR_COMPANY                                                       :糖厂
 STR_STATION_TANK_FARM                                                           :油库
@@ -373,3 +393,4 @@ STR_STATION_WATER                                                               
 STR_STATION_WEAVE_AND_DYE                                                       :纺染所
 STR_STATION_WELLS                                                               :油井
 STR_STATION_WINERY                                                              :酒厂
+STR_STATION_VEHICLE_DEALER                                                      :货车场

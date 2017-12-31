@@ -5,11 +5,11 @@
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industrie-Set{}{BLACK}Von andythenorth, FooBar, planetmaker, Terkhen, Yexo und vielen weiteren Mitwirkenden.{SILVER}Siehe Readme für ausführliche Informationen. {BLACK}Lizenz: GPL v2
 STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
-STR_EMPTY                                                                       :{}
+STR_EMPTY                                                                       :
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximaler Abstand von Fischgründen und Baggerseen von der Küste in Feldern
-STR_PARAM_DESC_ECONOMIES                                                        :Jeder Wirtschaftstyp stellt verschiedene Industrien und Frachtarten bereit.{}{}Der Wirtschaftstyp 'Einfach' bietet weniger Industrien und Frachtarten als die anderen Wirtschaftstypen.
-STR_PARAM_DESC_NO_OPENINGS                                                      :Standardmäßig werden neue Industrien im Laufe der Zeit gegründet.{}{}Wenn 'Neue Industrien öffnen' ausgeschaltet ist, werden keine neuen Industrien auftauchen und Spieler können auch keine finanzieren oder prospektieren.
+STR_PARAM_DESC_ECONOMIES                                                        :Jeder Wirtschaftstyp stellt verschiedene Industrien und Frachtarten bereit.{}{}Der Wirtschaftstyp {SILVER}Einfach {BLACK} bietet weniger Industrien und Frachtarten als die anderen Wirtschaftstypen.{}{}Die FIRS-Homepage bietet detaillierte Informationen über jeden Wirtschaftstyp.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Standardmäßig werden neue Industrien im Laufe der Zeit gegründet.{}{}Wenn {SILVER}Neue Industrien öffnen{BLACK} ausgeschaltet ist, werden keine neuen Industrien auftauchen und Spieler können auch keine finanzieren oder prospektieren.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Standardmäßig schließen Sekundärindustrien in FIRS nie.{}{}Wenn das Schließen von Sekundärindustrien erlaubt ist, so können sie schließen wenn über einen längeren Zeitraum keine Fracht transportiert worden ist. Primärindustrien schließen in FIRS niemals und sind von dieser Einstellung nicht beeinflusst.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximaler Abstand maritimer Industrien von der Küste
 STR_PARAM_NAME_ECONOMIES                                                        :Wirtschaftstyp
@@ -17,6 +17,8 @@ STR_PARAM_NAME_NO_OPENINGS                                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Sekundärindustrien dürfen schließen
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Kein Limit
 
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Erhöhtes Produktionsniveau (%)
+STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Spitzenmäßiges Produktionsniveau (%)
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :einfach, für gemäßigtes Klima
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :einfach, für arktisches Klima
@@ -93,6 +95,7 @@ STR_CARGO_UNIT_COFFEE                                                           
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} Koks
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} Kupfer
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} Speiseöl
+STR_CARGO_UNIT_ELECTRICAL_MACHINES                                              :{WEIGHT} elektrische Maschinen
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} Kiste{P 0 "" n} Ersatzteile
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} Kiste{P 0 "" n} Sprengstoff
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} Düngemittel
@@ -130,11 +133,12 @@ STR_CARGO_UNIT_STONE                                                            
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} Zuckerrüben
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} Schwefel
 STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} Karosserien
-STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} Kiste{P 0 "" n} Fahrzeugteile
-STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} Fahrzeug{P 0 "" e}
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{WEIGHT} Fahrzeugteile
+STR_CARGO_UNIT_VEHICLES                                                         :{WEIGHT} Fahrzeuge
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} Ballen Wolle
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} Zink
 
+STR_CID_ACID                                                                    :{TINYFONT}SÄ
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}BN
@@ -144,37 +148,50 @@ STR_CID_CEMENT                                                                  
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}TN
 STR_CID_COFFEE                                                                  :{TINYFONT}KF
+STR_CID_COKE                                                                    :{TINYFONT}KO
 STR_CID_COPPER                                                                  :{TINYFONT}KP
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}SÖ
+STR_CID_ELECTRICAL_MACHINES                                                     :{TINYFONT}EM
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ET
+STR_CID_EXPLOSIVES                                                              :{TINYFONT}SP
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}LB
+STR_CID_FERTILISER                                                              :{TINYFONT}DM
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
 STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_LIMESTONE                                                               :{TINYFONT}KA
 STR_CID_LUMBER                                                                  :{TINYFONT}SH
+STR_CID_LYE                                                                     :{TINYFONT}LG
 STR_CID_MANGANESE                                                               :{TINYFONT}BS
 STR_CID_METAL                                                                   :{TINYFONT}ME
 STR_CID_MILK                                                                    :{TINYFONT}ML
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_NUTS                                                                    :{TINYFONT}NÜ
+STR_CID_PACKAGING                                                               :{TINYFONT}VP
+STR_CID_PEAT                                                                    :{TINYFONT}TF
 STR_CID_PETROL                                                                  :{TINYFONT}TS
 STR_CID_PIG_IRON                                                                :{TINYFONT}RE
+STR_CID_PIPE                                                                    :{TINYFONT}RO
 STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
 STR_CID_POTASH                                                                  :{TINYFONT}KS
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
 STR_CID_QUICKLIME                                                               :{TINYFONT}BK
 STR_CID_RECYCLABLES                                                             :{TINYFONT}WS
+STR_CID_SALT                                                                    :{TINYFONT}SZ
 STR_CID_SAND                                                                    :{TINYFONT}SD
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}AM
+STR_CID_SLAG                                                                    :{TINYFONT}SK
+STR_CID_SODA_ASH                                                                :{TINYFONT}NK
 STR_CID_STONE                                                                   :{TINYFONT}ST
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}ZU
 STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}FK
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}FT
 STR_CID_VEHICLES                                                                :{TINYFONT}FZ
 STR_CID_WOOL                                                                    :{TINYFONT}WL
+STR_CID_ZINC                                                                    :{TINYFONT}ZK
 
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS ist nicht für die Nutzung mit dem Spielzeugland ausgelegt.
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS benötigt mindestens OpenTTD 1.6.0 / trunk r27279. {YELLOW}Siehe FIRS Readme: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS benötigt mindestens OpenTTD 1.7.0 / trunk r27769.
 STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Inkompatibles Set: {ORANGE}{STRING} {YELLOW}Siehe FIRS-Readme: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Inkompatible Parameter: {ORANGE}CanSet: Parameter 2 muss für Kompatibilität mit FIRS 0 sein. {YELLOW}Siehe FIRS Readme: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Inkompatible Parameter: {ORANGE}NA City-Set: Parameter 2 muss für Kompatibilität mit FIRS 0 sein. {YELLOW}Siehe FIRS Readme: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
@@ -223,6 +240,7 @@ STR_IND_GENERAL_STORE                                                           
 STR_IND_GLASS_WORKS                                                             :{G=w}Glashütte
 STR_IND_HARDWARE_STORE                                                          :{G=m}Metallhandel
 STR_IND_HOTEL                                                                   :{G=n}Hotel
+STR_IND_HERDING_COOP                                                            :Weide-Genossenschaft
 STR_IND_IRON_WORKS                                                              :{G=n}Hüttenwerk
 STR_IND_JUNKYARD                                                                :{G=m}Schrottplatz
 STR_IND_LIME_KILN                                                               :{G=w}Kalkbrennerei
@@ -254,6 +272,7 @@ STR_IND_SHEEPFARM                                                               
 STR_IND_SLAG_GRINDING_PLANT                                                     :Schlackemühle
 STR_IND_SMITHY_FORGE                                                            :{G=w}Schmiede
 STR_IND_SODA_ASH_MINE                                                           :Natriumkarbonatmine
+STR_IND_STEEL_FINISHING_PLANT                                                   :Stahlnachbearbeitungsanlage
 STR_IND_STOCKYARD                                                               :{G=m}Schlachthof
 STR_IND_SUGAR_REFINERY                                                          :{G=w}Zuckerraffinerie
 STR_IND_SUPPLY_YARD                                                             :{G=m}Landmaschinenhandel
@@ -267,11 +286,11 @@ STR_IND_WHARF                                                                   
 
 STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(geliefert)
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produktion ist proportional zur Einwohnerzahl der Stadt
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Momentane Produktion: {YELLOW}normal{}{}{BLACK}Um die Produktion zu verdoppeln, müssen {SIGNED_WORD} Kisten innerhalb von drei Monaten angeliefert werden (oder {SIGNED_WORD} Kisten für 4-fache Produktion)
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Momentane Produktion: {YELLOW}erhöht (doppelt){}{}{BLACK}Um diesen Produktionslevel zu halten, müssen innerhalb von drei Monaten {SIGNED_WORD} Kisten angeliefert werden (oder {SIGNED_WORD} Kisten, um die Produktion auf 4-fach zu erhöhen)
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Momentane Produktion: {YELLOW}spitzenmäßig (vierfach){}{}{BLACK}Um diesen Produktionslevel zu halten, müssen innerhalb von drei Monaten {SKIP}{SIGNED_WORD} Kisten angeliefert werden
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Momentane Produktion: {YELLOW}normal{}{}{BLACK}Um diesen Produktionslevel zu halten, müssen innerhalb von drei Monaten {SIGNED_WORD} Frachteinheiten angeliefert werden (oder {SIGNED_WORD} für 4-fache Produktion)
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Momentane Produktion: {YELLOW}erhöht (doppelt){}{}{BLACK}Um diesen Produktionslevel zu halten, müssen innerhalb von drei Monaten {SIGNED_WORD} Frachteinheiten geliefert werden (oder {SIGNED_WORD} Frachteinheiten, um die Produktion auf 4-fach zu erhöhen)
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Momentane Produktion: {YELLOW}normal{}{}{BLACK}Für eine {WHITE}erhöhte{BLACK} Produktion müssen innerhalb von drei Monaten {SIGNED_WORD} Kisten angeliefert werden.{} Für {WHITE}spitzenmäßige {BLACK} Produktion {SIGNED_WORD} Kisten.
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Momentane Produktion: {YELLOW}erhöht (doppelt){}{}{BLACK}Um dieses Produktionsniveau zu halten, müssen innerhalb von drei Monaten {SIGNED_WORD} Kisten angeliefert werden.{} Für {WHITE}spitzenmäßige {BLACK} Produktion {SIGNED_WORD} Kisten.
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Momentane Produktion: {YELLOW}spitzenmäßig (vierfach){}{}{BLACK}Um diesen Produktionslevel zu halten, müssen innerhalb von drei Monaten {SKIP}{SIGNED_WORD} Kisten angeliefert werden.
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Momentane Produktion: {YELLOW}normal{}{}{BLACK}Für eine {WHITE}erhöhte{BLACK} Produktion müssen innerhalb von drei Monaten {SIGNED_WORD} Frachteinheiten angeliefert werden.{} Für {WHITE}spitzenmäßige {BLACK} Produktion {SIGNED_WORD} Frachteinheiten.
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Momentane Produktion: {YELLOW}erhöht (doppelt){}{}{BLACK}Um dieses Produktionsniveau zu halten, müssen innerhalb von drei Monaten {SIGNED_WORD} Frachteinheiten geliefert werden.{} Für {WHITE}spitzenmäßige {BLACK} Produktion {SIGNED_WORD} Frachteinheiten.
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Momentane Produktion: {YELLOW}spitzenmäßig (vierfach){}{}{BLACK}Um diesen Produktionslevel zu halten, müssen innerhalb von drei Monaten {SKIP}{SIGNED_WORD} Frachteinheiten angeliefert werden.
 STR_GENERIC_NEWLINE                                                             :{}
 
@@ -296,6 +315,7 @@ STR_STATION_ANIMALS                                                             
 STR_STATION_BAR_GRILL_AND_ROOMS                                                 :Gasthaus
 STR_STATION_BARNS                                                               :Stallungen
 STR_STATION_BARREL_AND_KEG                                                      :Kellerei
+STR_STATION_BONEYARD                                                            :Verwertungshof
 STR_STATION_CASTINGS                                                            :Gussstücke
 STR_STATION_COLLIERY                                                            :Zeche
 STR_STATION_COPPER_LODE                                                         :Kupferader
@@ -305,6 +325,7 @@ STR_STATION_FARM_1                                                              
 STR_STATION_FARM_2                                                              :Weide
 STR_STATION_FARM_3                                                              :Viehzuchtbetrieb
 STR_STATION_FISHMARKET                                                          :Fischmarkt
+STR_STATION_FOOD_CORPORATION                                                    :Lebensmittelhersteller
 STR_STATION_FOREST                                                              :Rundholzlade
 STR_STATION_FORGE                                                               :Schmiede
 STR_STATION_FURNACE                                                             :Schmelzofen
@@ -312,7 +333,11 @@ STR_STATION_HEAVY_INDUSTRY_2                                                    
 STR_STATION_HERDING_COOP                                                        :Hütte
 STR_STATION_INDUSTRY_ESTATE_1                                                   :Gewerbegebiet
 STR_STATION_INDUSTRY_HARBOUR_1                                                  :Industriehafen
+STR_STATION_INDUSTRY_HARBOUR_2                                                  :Wasserfront
+STR_STATION_INDUSTRY_HARBOUR_3                                                  :Landungsbrücke
 STR_STATION_JOINERS_SHOP                                                        :Tischlerei
+STR_STATION_KILNS                                                               :Brennöfen
+STR_STATION_KIMBERLITE_DEPOSITS                                                 :Kimberlit-Halde
 STR_STATION_MANGANESE_MINES                                                     :Manganmine
 STR_STATION_MARKET                                                              :Marktplatz
 STR_STATION_MERCHANTS_LANE                                                      :Einkaufsstraße
@@ -330,11 +355,14 @@ STR_STATION_REFINERY                                                            
 STR_STATION_RUBBER_COMPANY                                                      :Gummifabrik
 STR_STATION_SALTPETER_WORKS                                                     :Salpeterwerk
 STR_STATION_SHEEP_FOLD                                                          :Schafspferch
+STR_STATION_SHOALS                                                              :Sandbank
 STR_STATION_SILO                                                                :Silo
 STR_STATION_SMELTER                                                             :Scmelzofen
 STR_STATION_SUGAR_COMPANY                                                       :Zuckerfabrik
 STR_STATION_TANK_FARM                                                           :Tanklager
 STR_STATION_TOWN_1                                                              :Mitte
+STR_STATION_TOWN_2                                                              :Hauptstraße
+STR_STATION_TOWN_3                                                              :Geschäfte
 STR_STATION_WATER                                                               :Sandbank
 STR_STATION_WEAVE_AND_DYE                                                       :Web- und Färberei
 STR_STATION_WELLS                                                               :Brunnen
