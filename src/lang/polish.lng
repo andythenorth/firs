@@ -126,12 +126,10 @@ STR_CARGO_NAME_FISH.c                                                           
 STR_CARGO_NAME_FISH.d                                                           :ryb
 STR_CARGO_NAME_FISH.m                                                           :rybach
 STR_CARGO_NAME_FISH.n                                                           :rybami
-STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=m}Sprzęt rolniczy
-STR_CARGO_NAME_FARM_SUPPLIES.c                                                  :sprzętowi rolniczemu
-STR_CARGO_NAME_FARM_SUPPLIES.d                                                  :sprzętu rolniczego
-STR_CARGO_NAME_FARM_SUPPLIES.m                                                  :sprzęcie rolniczym
-STR_CARGO_NAME_FARM_SUPPLIES.n                                                  :sprzętem rolniczym
-STR_CARGO_NAME_FARM_SUPPLIES.w                                                  :sprzęcie rolniczy
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=m}Zaopatrzenie rolnictwa
+STR_CARGO_NAME_FARM_SUPPLIES.c                                                  :zaopatrzeniu rolnictwa
+STR_CARGO_NAME_FARM_SUPPLIES.d                                                  :zaopatrzenia rolnictwa
+STR_CARGO_NAME_FARM_SUPPLIES.m                                                  :zaopatrzeniem rolnictwa
 STR_CARGO_NAME_FERTILISER                                                       :Nawóz
 STR_CARGO_NAME_FERTILISER.c                                                     :nawozowi
 STR_CARGO_NAME_FERTILISER.d                                                     :nawozu
@@ -197,11 +195,11 @@ STR_CARGO_NAME_PEAT.d                                                           
 STR_CARGO_NAME_PEAT.m                                                           :torfie
 STR_CARGO_NAME_PEAT.n                                                           :torfem
 STR_CARGO_NAME_PEAT.w                                                           :torfie
-STR_CARGO_NAME_PETROL                                                           :{G=n}Paliwa ropopochodne
-STR_CARGO_NAME_PETROL.b                                                         :paliwa ropopochodne
-STR_CARGO_NAME_PETROL.c                                                         :paliwom ropopochodnym
-STR_CARGO_NAME_PETROL.d                                                         :paliw ropopochodnych
-STR_CARGO_NAME_PETROL.n                                                         :paliwami ropopochodnymi
+STR_CARGO_NAME_PETROL                                                           :{G=n}Paliwa
+STR_CARGO_NAME_PETROL.b                                                         :paliwa
+STR_CARGO_NAME_PETROL.c                                                         :paliwom
+STR_CARGO_NAME_PETROL.d                                                         :paliw
+STR_CARGO_NAME_PETROL.n                                                         :paliwami
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosforan
 STR_CARGO_NAME_PHOSPHATE.b                                                      :fosforan
 STR_CARGO_NAME_PHOSPHATE.c                                                      :fosforanowi
@@ -327,7 +325,7 @@ STR_CARGO_UNIT_EXPLOSIVES                                                       
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} nawozu
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bel{P 0 a e i} włókien roślinnych
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} ryb
-STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} skrzy{P 0 nia nie ń} sprzętu rolniczego
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} skrzy{P 0 nia nie ń} zaopatrzenia rolnictwa
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} owoców
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} kaolinitu
 STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} wapienia
@@ -379,9 +377,9 @@ STR_CID_COKE                                                                    
 STR_CID_COPPER                                                                  :{TINYFONT}MI
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}OJ
 STR_CID_ELECTRICAL_MACHINES                                                     :{TINYFONT}ME
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}MS
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ZT
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}MW
-STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}SR
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}ZR
 STR_CID_FERTILISER                                                              :{TINYFONT}NW
 STR_CID_FIBRES                                                                  :{TINYFONT}WN
 STR_CID_FISH                                                                    :{TINYFONT}RB
@@ -437,9 +435,9 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 
 STR_IND_ALUMINIUM_PLANT                                                         :{G=f}Huta aluminium
 STR_IND_ALUMINIUM_PLANT.d                                                       :huty aluminium
-STR_IND_AMMONIA_PLANT                                                           :{G=n}Zakłady azotowe
-STR_IND_AMMONIA_PLANT.b                                                         :zakłady azotowe
-STR_IND_AMMONIA_PLANT.d                                                         :zakładów azotowych
+STR_IND_AMMONIA_PLANT                                                           :{G=n}Zakłady chemiczne
+STR_IND_AMMONIA_PLANT.b                                                         :zakłady chemiczne
+STR_IND_AMMONIA_PLANT.d                                                         :zakładów chemicznych
 STR_IND_ARABLE_FARM                                                             :{G=n}Pole uprawne
 STR_IND_ARABLE_FARM.d                                                           :pola uprawnego
 STR_IND_ASSEMBLY_PLANT                                                          :{G=f}Fabryka samochodów
@@ -671,12 +669,9 @@ STR_IND_REINDEER_FARM.n                                                         
 STR_IND_REINDEER_FARM.w                                                         :farmo reniferów
 STR_IND_SHEEPFARM                                                               :{G=f}Ferma owiec
 STR_IND_SHEEPFARM.d                                                             :fermy owiec
-STR_IND_SLAG_GRINDING_PLANT                                                     :{G=m}Zakład obróbki żużlu
-STR_IND_SLAG_GRINDING_PLANT.c                                                   :zakładowi obróbki żużlu
-STR_IND_SLAG_GRINDING_PLANT.d                                                   :zakładu obróbki żużlu
-STR_IND_SLAG_GRINDING_PLANT.m                                                   :zakładzie obróbki żużlu
-STR_IND_SLAG_GRINDING_PLANT.n                                                   :zakładem obróbki żużlu
-STR_IND_SLAG_GRINDING_PLANT.w                                                   :zakładzie obróbki żużlu
+STR_IND_SLAG_GRINDING_PLANT                                                     :{G=m}Przetwórnia żużlu
+STR_IND_SLAG_GRINDING_PLANT.c                                                   :przetwórni żużlu
+STR_IND_SLAG_GRINDING_PLANT.d                                                   :przetwórni żużlu
 STR_IND_SMITHY_FORGE                                                            :{G=f}Kuźnia
 STR_IND_SMITHY_FORGE.d                                                          :kuźni
 STR_IND_SODA_ASH_MINE                                                           :{G=f}Fabryka sody
@@ -816,7 +811,7 @@ STR_STATION_TOWN_2                                                              
 STR_STATION_TOWN_3                                                              :Centrum handlowe
 STR_STATION_TRONA_BEDS                                                          :Solanka
 STR_STATION_WATER                                                               :Zatoka
-STR_STATION_WEAVE_AND_DYE                                                       :Roszarnia
+STR_STATION_WEAVE_AND_DYE                                                       :Tkalnia
 STR_STATION_WELLS                                                               :Wiertnie
 STR_STATION_WINERY                                                              :{G=f}Winiarnia
 STR_STATION_WINERY.b                                                            :winiarnię
