@@ -52,6 +52,7 @@
                     <th class="number">Colour</th>
                     <th class="number">Weight</th>
                     <th class="number">Price Factor</th>
+                    <th class="text">Cargo Classes</th>
                     <th class="text">Town Growth Effect</th><!--! request by Zuu, don't just delete this because it's boring -->
                 </tr>
             </thead>
@@ -86,6 +87,7 @@
                             </td>
                             <td class="number">${cargo.weight}</td>
                             <td class="number">${cargo.price_factor}</td>
+                            <td class="number">${cargo.cargo_classes}</td>
                             <td class="text">${cargo.town_growth_effect}</td>
                         </tr>
                     </tal:cargo>
