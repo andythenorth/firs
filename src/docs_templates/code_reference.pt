@@ -41,7 +41,8 @@
 
     <div id="cargos">
         <h3>Cargos (${len(registered_cargos)}) <small>Code Reference</small></h3>
-        <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/NML:Cargos#Cargo_IDs">&#187; Reference for NewGRF cargo IDs</a>
+        <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/NML:Cargos#Cargo_IDs">&#187; NML Reference for NewGRF cargos</a>
+        <p><small>Don't rely on the classes for detailed vehicle support, they might change with no warning.  Use labels instead.</small>
         <table class="table table-striped tablesorter firs-table">
             <thead>
                 <tr>
@@ -87,7 +88,7 @@
                             </td>
                             <td class="number">${cargo.weight}</td>
                             <td class="number">${cargo.price_factor}</td>
-                            <td class="number">${cargo.cargo_classes}</td>
+                            <td class="text">${doc_helper.pretty_print_cargo_classes(cargo)}</td>
                             <td class="text">${cargo.town_growth_effect}</td>
                         </tr>
                     </tal:cargo>

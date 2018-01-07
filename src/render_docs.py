@@ -76,6 +76,29 @@ class DocHelper(object):
         string_id = utils.unwrap_nml_string_declaration(name)
         return base_lang_strings.get(string_id, 'NO NAME ' + str(name) + ' ' + cargo.id)
 
+    def pretty_print_cargo_classes(self, cargo):
+        result = []
+        pretty_names = {'CC_PASSENGERS': 'Passengers',
+                        'CC_MAIL': 'Mail',
+                        'CC_EXPRESS': 'Express',
+                        'CC_ARMOURED': 'Armoured',
+                        'CC_BULK': 'Bulk (uncountable)',
+                        'CC_PIECE_GOODS': 'Piece Goods (countable)',
+                        'CC_LIQUID': 'Liquid',
+                        'CC_REFRIGERATED': 'Refrigerated',
+                        'CC_HAZARDOUS': 'Hazardous',
+                        'CC_COVERED': 'Covered (weather protected)',
+                        'CC_NON_POURABLE': 'Not Pourable',
+                        }
+        cargo_classes_as_literal = cargo.cargo_classes[8:-1]
+        cargo_classes = [i.strip() for i in cargo_classes_as_literal.split(',')]
+        for cargo_class in cargo_classes:
+            if cargo_class not in pretty_names:
+                utils.echo_message('cargo class ' + cargo_class + ' is not pretty-printable (used in cargo ' + cargo.id + ')')
+            else:
+                result.append(pretty_names[cargo_class])
+        return ', '.join(result)
+
     def get_industry_name(self, industry, economy=None):
         # industries don't store the name directly as a python attr, but in lang - so look it up in base_lang using string id
         name = industry.get_property('name', economy)
