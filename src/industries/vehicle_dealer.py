@@ -13,8 +13,7 @@ industry = IndustryTertiary(id='vehicle_dealer',
                             prospect_chance='0.75',
                             name='string(STR_IND_VEHICLE_DEALER)',
                             nearby_station_name='string(STR_STATION_VEHICLE_DEALER)',
-                            fund_cost_multiplier='8',
-                            intro_year=1900)
+                            fund_cost_multiplier='8')
 
 industry.economy_variations['STEELTOWN'].enabled = True
 
