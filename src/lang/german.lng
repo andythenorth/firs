@@ -34,6 +34,7 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CASSAVA                                                          :Maniok
 STR_CARGO_NAME_CEMENT                                                           :{G=m}Zement
 STR_CARGO_NAME_CHEMICALS                                                        :{G=p}Chemikalien
+STR_CARGO_NAME_CHLORINE                                                         :Chlor
 STR_CARGO_NAME_CLAY                                                             :{G=p}Ton
 STR_CARGO_NAME_COFFEE                                                           :{G=m}Kaffee
 STR_CARGO_NAME_COKE                                                             :Koks
@@ -88,6 +89,7 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} Maniok
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} Zement
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} Chemikalien
+STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} Chlor
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} Ton
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} S{P 0 ack äcke} Kaffee
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} Koks
@@ -310,10 +312,12 @@ STR_TOWN                                                                        
 STR_STATION                                                                     :{STRING} {STRING}
 
 STR_STATION_ANIMALS                                                             :Viehmarkt
+STR_STATION_AUTOMOTIVE                                                          :Fahrzeugbau
 STR_STATION_BAR_GRILL_AND_ROOMS                                                 :Gasthaus
 STR_STATION_BARNS                                                               :Stallungen
 STR_STATION_BARREL_AND_KEG                                                      :Kellerei
 STR_STATION_BONEYARD                                                            :Verwertungshof
+STR_STATION_BANK_TOP                                                            :Koksbrennerei
 STR_STATION_CASTINGS                                                            :Gussstücke
 STR_STATION_COLLIERY                                                            :Zeche
 STR_STATION_COPPER_LODE                                                         :Kupferader
@@ -361,6 +365,7 @@ STR_STATION_TANK_FARM                                                           
 STR_STATION_TOWN_1                                                              :Mitte
 STR_STATION_TOWN_2                                                              :Hauptstraße
 STR_STATION_TOWN_3                                                              :Geschäfte
+STR_STATION_TRONA_BEDS                                                          :Kalizeche
 STR_STATION_WATER                                                               :Sandbank
 STR_STATION_WEAVE_AND_DYE                                                       :Web- und Färberei
 STR_STATION_WELLS                                                               :Brunnen

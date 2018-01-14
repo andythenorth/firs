@@ -31,6 +31,7 @@ STR_PARAM_VALUE_ECONOMIES_FIRS                                                  
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :En un país cálido
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Acerera
 
+STR_CARGO_NAME_ACID                                                             :{G=m}Ácido
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alcohol
 STR_CARGO_NAME_BAUXITE                                                          :{G=f}Bauxita
 STR_CARGO_NAME_BEANS                                                            :{G=m}Frijoles
@@ -38,24 +39,30 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CASSAVA                                                          :{G=f}Tapioca
 STR_CARGO_NAME_CEMENT                                                           :{G=m}Cemento
 STR_CARGO_NAME_CHEMICALS                                                        :{G=m}Químicos
+STR_CARGO_NAME_CHLORINE                                                         :{G=m}Cloro
 STR_CARGO_NAME_CLAY                                                             :{G=f}Arcilla
 STR_CARGO_NAME_COFFEE                                                           :{G=m}Café
 STR_CARGO_NAME_COKE                                                             :{G=m}Coque
 STR_CARGO_NAME_COPPER                                                           :{G=m}Cobre
 STR_CARGO_NAME_EDIBLE_OIL                                                       :{G=m}Aceite comestible
+STR_CARGO_NAME_ELECTRICAL_MACHINES                                              :{G=f}Máquinas eléctricas
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=m}Suministros de maquinaria
 STR_CARGO_NAME_EXPLOSIVES                                                       :{G=m}Explosivos
 STR_CARGO_NAME_FIBRES                                                           :{G=f}Fibras vegetales
 STR_CARGO_NAME_FISH                                                             :{G=m}Pescado
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=m}Suministros agrícolas
-STR_CARGO_NAME_FERTILISER                                                       :{G=m}Fertilizante
+STR_CARGO_NAME_FERTILISER                                                       :{G=m}Abono
 STR_CARGO_NAME_FRUITS                                                           :{G=f}Fruta
-STR_CARGO_NAME_LUMBER                                                           :{G=f}Madera
+STR_CARGO_NAME_KAOLIN                                                           :{G=m}Caolín
+STR_CARGO_NAME_LIMESTONE                                                        :{G=f}Caliza
+STR_CARGO_NAME_LUMBER                                                           :{G=f}Madera cortada
 STR_CARGO_NAME_METAL                                                            :{G=m}Metal
 STR_CARGO_NAME_MILK                                                             :{G=f}Leche
 STR_CARGO_NAME_MANGANESE                                                        :{G=m}Manganeso
 STR_CARGO_NAME_NITRATES                                                         :{G=m}Nitratos
 STR_CARGO_NAME_NUTS                                                             :{G=f}Nueces
+STR_CARGO_NAME_PACKAGING                                                        :Envases
+STR_CARGO_NAME_PEAT                                                             :Turba
 STR_CARGO_NAME_PETROL                                                           :{G=f}Gasolina
 STR_CARGO_NAME_PHOSPHATE                                                        :{G=m}Fosfato
 STR_CARGO_NAME_PIG_IRON                                                         :{G=m}Arrabio
@@ -64,19 +71,22 @@ STR_CARGO_NAME_POTASH                                                           
 STR_CARGO_NAME_PYRITE_ORE                                                       :{G=m}Mineral de pirita
 STR_CARGO_NAME_QUICKLIME                                                        :{G=f}Cal
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=m}Reciclables
+STR_CARGO_NAME_SALT                                                             :{G=f}Sal
 STR_CARGO_NAME_SAND                                                             :{G=m}Arena
 STR_CARGO_NAME_SCRAP_METAL                                                      :{G=f}Chatarra
 STR_CARGO_NAME_SLAG                                                             :{G=f}Escoria
 STR_CARGO_NAME_SODA_ASH                                                         :{G=f}Carbonado de sodio
 STR_CARGO_NAME_STEEL                                                            :{G=m}Acero
 STR_CARGO_NAME_STONE                                                            :{G=f}Piedra
-STR_CARGO_NAME_SUGAR_BEET                                                       :{G=f}Remolacha azucarera
+STR_CARGO_NAME_SUGAR_BEET                                                       :{G=f}Caña de azúcar
 STR_CARGO_NAME_SULPHUR                                                          :{G=m}Azufre
 STR_CARGO_NAME_VEHICLE_BODIES                                                   :{G=m}Chasis de vehículos
 STR_CARGO_NAME_VEHICLE_PARTS                                                    :{G=f}Piezas de vehículos
 STR_CARGO_NAME_VEHICLES                                                         :{G=m}Vehículos
 STR_CARGO_NAME_WOOL                                                             :{G=f}Lana
+STR_CARGO_NAME_ZINC                                                             :Zinc
 
+STR_CARGO_UNIT_ACID                                                             :{VOLUME} de ácido
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} de alcohol
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} de bauxita
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} de frijoles
@@ -84,25 +94,32 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} de tapioca
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} de cemento
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de químicos
+STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} de cloro
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} de arcilla
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} costal{P 0 "" es} de café
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} de coque
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} de cobre
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} de aceite comestible
+STR_CARGO_UNIT_ELECTRICAL_MACHINES                                              :{WEIGHT} de máquinas eléctricas
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros de maquinaria
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} caja{P 0 "" s} de explosivos
-STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} de fertilizante
+STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} de abono
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} paca{P 0 "" s} de fibras vegetales
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} de pescado
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros agrícolas
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} de fruta
-STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de madera
+STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} de caolín
+STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} de caliza
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de madera cortada
+STR_CARGO_UNIT_LYE                                                              :{VOLUME} de sosa cáustica
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} de manganeso
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de metal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} de leche
 STR_CARGO_UNIT_NICKEL                                                           :{WEIGHT} de níquel
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} de nitratos
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} costal{P 0 "" es} de nueces
+STR_CARGO_UNIT_PACKAGING                                                        :{WEIGHT} de envases
+STR_CARGO_UNIT_PEAT                                                             :{WEIGHT} de turba
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} de gasolina
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} de fosfato
 STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} de arrabio
@@ -111,63 +128,76 @@ STR_CARGO_UNIT_POTASH                                                           
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} de mineral de pirita
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} de cal
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} de reciclables
+STR_CARGO_UNIT_SALT                                                             :{WEIGHT} de sal
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} de arena
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} de chatarra
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} de escoria
 STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} de carbonato de sodio
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} de acero
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} de piedra
-STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} de remolacha azucarera
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} de caña de azúcar
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} de azufre
 STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} de chasis de vehículos
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} caja{P 0 "" s} de piezas de vehículos
 STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} vehículo{P 0 "" s}
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} paca{P 0 "" s} de lana
+STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} de zinc
 
-STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_ACID                                                                    :{TINYFONT}AD
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AH
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}FJ
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
 STR_CID_CASSAVA                                                                 :{TINYFONT}TA
 STR_CID_CEMENT                                                                  :{TINYFONT}CM
 STR_CID_CHEMICALS                                                               :{TINYFONT}QM
+STR_CID_CHLORINE                                                                :{TINYFONT}CL
 STR_CID_CLAY                                                                    :{TINYFONT}AR
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
 STR_CID_COKE                                                                    :{TINYFONT}CQ
-STR_CID_COPPER                                                                  :{TINYFONT}CB
+STR_CID_COPPER                                                                  :{TINYFONT}CR
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}AC
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}SQ
+STR_CID_ELECTRICAL_MACHINES                                                     :{TINYFONT}ME
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}SM
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}EX
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}SA
-STR_CID_FERTILISER                                                              :{TINYFONT}FE
+STR_CID_FERTILISER                                                              :{TINYFONT}AB
 STR_CID_FIBRES                                                                  :{TINYFONT}FV
-STR_CID_FISH                                                                    :{TINYFONT}PE
-STR_CID_LUMBER                                                                  :{TINYFONT}MA
+STR_CID_FISH                                                                    :{TINYFONT}PC
+STR_CID_KAOLIN                                                                  :{TINYFONT}KL
+STR_CID_LIMESTONE                                                               :{TINYFONT}CZ
+STR_CID_LUMBER                                                                  :{TINYFONT}MD
+STR_CID_LYE                                                                     :{TINYFONT}SO
 STR_CID_MANGANESE                                                               :{TINYFONT}MG
 STR_CID_METAL                                                                   :{TINYFONT}MT
-STR_CID_MILK                                                                    :{TINYFONT}LC
+STR_CID_MILK                                                                    :{TINYFONT}LE
 STR_CID_NICKEL                                                                  :{TINYFONT}NQ
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_NUTS                                                                    :{TINYFONT}NU
+STR_CID_PACKAGING                                                               :{TINYFONT}EN
+STR_CID_PEAT                                                                    :{TINYFONT}TU
 STR_CID_PETROL                                                                  :{TINYFONT}GS
-STR_CID_PIG_IRON                                                                :{TINYFONT}AB
+STR_CID_PIG_IRON                                                                :{TINYFONT}AR
 STR_CID_PIPE                                                                    :{TINYFONT}TU
 STR_CID_PHOSPHATE                                                               :{TINYFONT}FO
 STR_CID_POTASH                                                                  :{TINYFONT}PO
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}MP
-STR_CID_QUICKLIME                                                               :{TINYFONT}CL
-STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
+STR_CID_QUICKLIME                                                               :{TINYFONT}CA
+STR_CID_RECYCLABLES                                                             :{TINYFONT}RE
+STR_CID_SALT                                                                    :{TINYFONT}SL
 STR_CID_SAND                                                                    :{TINYFONT}AN
-STR_CID_SCRAP_METAL                                                             :{TINYFONT}CH
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}CT
 STR_CID_SLAG                                                                    :{TINYFONT}ES
-STR_CID_SODA_ASH                                                                :{TINYFONT}SO
-STR_CID_STEEL                                                                   :{TINYFONT}AO
+STR_CID_SODA_ASH                                                                :{TINYFONT}CS
+STR_CID_STEEL                                                                   :{TINYFONT}AC
 STR_CID_STONE                                                                   :{TINYFONT}PI
-STR_CID_SUGAR_BEET                                                              :{TINYFONT}RA
-STR_CID_SULPHUR                                                                 :{TINYFONT}SU
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}CÑ
+STR_CID_SULPHUR                                                                 :{TINYFONT}AZ
+STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}CV
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}PV
 STR_CID_VEHICLES                                                                :{TINYFONT}VE
-STR_CID_WOOL                                                                    :{TINYFONT}LN
+STR_CID_WOOL                                                                    :{TINYFONT}LA
+STR_CID_ZINC                                                                    :{TINYFONT}ZI
 
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS no es apto para jugarse con el clima Mundo de juguetes
@@ -184,6 +214,7 @@ STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :solo se puede tener una industria de este tipo por pueblo.
 
 STR_IND_ALUMINIUM_PLANT                                                         :{G=f}Planta de aluminio
+STR_IND_AMMONIA_PLANT                                                           :{G=f}Planta de amoníaco
 STR_IND_ARABLE_FARM                                                             :{G=f}Granja de cultivo
 STR_IND_ASSEMBLY_PLANT                                                          :{G=f}Ensambladora
 STR_IND_BASICFARM                                                               :{G=f}Granja
@@ -222,6 +253,7 @@ STR_IND_HERDING_COOP                                                            
 STR_IND_IRON_WORKS                                                              :{G=f}Herrería
 STR_IND_JUNKYARD                                                                :{G=m}Deshuesadero
 STR_IND_LIME_KILN                                                               :{G=f}Calera
+STR_IND_LIMESTONE_MINE                                                          :{G=f}Mina de caliza
 STR_IND_LIQUIDS_TERMINAL                                                        :{G=f}Terminal receptora de líquidos
 STR_IND_LUMBER_YARD                                                             :{G=f}Maderería
 STR_IND_MACHINE_SHOP                                                            :{G=f}Tienda de maquinaria
@@ -258,6 +290,7 @@ STR_IND_TYRE_PLANT                                                              
 STR_IND_VINEYARD                                                                :{G=m}Viñedo
 
 
+STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(suministrado)
 STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Produce al nivel máximo si se suministra {WHITE}cualquier {BLACK}cargamento requerido.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La producción es proporcional al tamaño de cada pueblo.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Producción actual: {YELLOW}Normal{}{}{BLACK}Para una producción {WHITE}Aumentada {BLACK}se deben entregar {SIGNED_WORD} cajas de suministros dentro de tres meses{}Para una producción {WHITE}Abundante {BLACK}se deben entregar {SIGNED_WORD} cajas

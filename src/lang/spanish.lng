@@ -66,10 +66,10 @@ STR_CARGO_NAME_PEAT                                                             
 STR_CARGO_NAME_PETROL                                                           :{G=m}Combustibles Petrolíferos
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosfato
 STR_CARGO_NAME_PIG_IRON                                                         :Arrabio
-STR_CARGO_NAME_PIPE                                                             :Tubería
+STR_CARGO_NAME_PIPE                                                             :Tuberías
 STR_CARGO_NAME_POTASH                                                           :Potasa
 STR_CARGO_NAME_PYRITE_ORE                                                       :Mineral de Pirita
-STR_CARGO_NAME_QUICKLIME                                                        :Cal viva
+STR_CARGO_NAME_QUICKLIME                                                        :Cal Viva
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=m}Reciclables
 STR_CARGO_NAME_SALT                                                             :Sal
 STR_CARGO_NAME_SAND                                                             :{G=f}Arena
@@ -148,7 +148,7 @@ STR_CID_ALCOHOL                                                                 
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}JD
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
-STR_CID_CASSAVA                                                                 :{TINYFONT}MD
+STR_CID_CASSAVA                                                                 :{TINYFONT}MA
 STR_CID_CEMENT                                                                  :{TINYFONT}CE
 STR_CID_CHEMICALS                                                               :{TINYFONT}PQ
 STR_CID_CHLORINE                                                                :{TINYFONT}CL
@@ -201,7 +201,7 @@ STR_CID_ZINC                                                                    
 
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS no está diseñado para ser usado en el clima de Juguetelandia
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS requires OpenTTD 1.7.0 / r27769 ó superior.
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS requiere OpenTTD 1.7.0 / r27769 ó superior.
 STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Set Incompatible: {ORANGE}{STRING} {YELLOW}Consulta el Leeme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Parámetro incompatible: {ORANGE}El parámetro 2 de CanSet debe de ser 0 para funcionar con FIRS. {YELLOW}Consulta el Leeme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Parámetro incompatible: {ORANGE}El parámetro 2 de NA City Set debe de ser 0 para funcionar con FIRS. {YELLOW}Consulta el Leeme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
@@ -291,12 +291,12 @@ STR_IND_TRADING_POST                                                            
 STR_IND_TYRE_PLANT                                                              :Fábrica de Neumáticos
 STR_IND_VINEYARD                                                                :Viñedo
 STR_IND_VEHICLE_DEALER                                                          :Concesionario
-STR_IND_WHARF                                                                   :Embarcadero
+STR_IND_WHARF                                                                   :Muelle
 
 
 STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(suministrado)
-STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Produce al máximo si se suministra{WHITE}cualquier {BLACK} carga requerida.
-STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}Para producir al máximo, suministra{WHITE}todas {BLACK}las cargas requeridas el menos una vez cada tres meses.
+STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Produce al máximo si se suministra{WHITE} cualquier {BLACK} carga requerida.
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}Para producir al máximo, suministra{WHITE} todas {BLACK}las cargas requeridas el menos una vez cada tres meses.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La producción es proporcional a la población de su localidad
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Producción actual: {YELLOW}Normal{}{}{BLACK}Para una producción {WHITE}Mejorada{BLACK} entrega {SIGNED_WORD} cajas de suministros en un intervalo de tres meses.{}Para la producción {WHITE}Al límite{BLACK} entrega {SIGNED_WORD} cajas.
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Producción actual: {YELLOW}Mejorada{}{}{BLACK}Para mantener este nivel de producción es necesario entregar {SIGNED_WORD} cajas de suministros en un intervalo de tres meses.{}Para la producción {WHITE}Al límite {BLACK}entrega {SIGNED_WORD} cajas.
@@ -311,7 +311,7 @@ STR_FUND_COFFEE_ESTATE                                                          
 STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Localización: {YELLOW}No puede ser fundada en desiertos o nieve.
 STR_FUND_FOREST                                                                 :{}{BLACK}Localización: {YELLOW}No puede ser fundada en desiertos.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Localización: {YELLOW}No puede ser fundada en nieve.
-STR_FUND_HERDING_COOP                                                           :{}{BLACK}Localización: {YELLOW}Sólo puede ser fundada en nieve.
+STR_FUND_HERDING_COOP                                                           :{}{BLACK}Localización: {YELLOW}Únicamente puede ser fundada en nieve.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Localización: {YELLOW}No puede ser fundada en desiertos o nieve.
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Localización: {YELLOW}No puede ser fundada en desiertos o nieve.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Localización: {YELLOW}No puede ser fundada en desiertos o nieve.
