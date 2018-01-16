@@ -298,12 +298,12 @@ STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             
 STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Produce al nivel máximo si se suministra {WHITE}cualquier {BLACK}cargamento requerido.
 STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}Entregar {WHITE}todos {BLACK}los cargamentos requeridos por lo menos una vez cada tres meses para alcanzar el nivel máximo de producción.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La producción es proporcional al tamaño de cada pueblo.
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Producción actual: {YELLOW}Normal{}{}{BLACK}Para una producción {WHITE}Aumentada {BLACK}se deben entregar {SIGNED_WORD} cajas de suministros dentro de tres meses{}Para una producción {WHITE}Abundante {BLACK}se deben entregar {SIGNED_WORD} cajas
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Producción actual: {YELLOW}Aumentada{}{}{BLACK}Se deben entregar {SIGNED_WORD} cajas de suministros dentro de tres meses para mantener este nivel{}Para una producción {WHITE}Abundante {BLACK}se deben entregar {SIGNED_WORD} cajas
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Producción actual: {YELLOW}Abundante{}{}{BLACK}Se deben entregar {SKIP}{SIGNED_WORD} unidades de cargamento dentro de tres meses para mantener este nivel
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Producción actual: {YELLOW}Normal{}{}{BLACK}Para una producción {WHITE}Aumentada {BLACK}se deben entregar {SIGNED_WORD} unidades de cargamento dentro de tres meses{}Para una producción {WHITE}Abundante {BLACK}se deben entregar {SIGNED_WORD} unidades
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Producción actual: {YELLOW}Aumentada{}{}{BLACK}Se deben entregar {SIGNED_WORD} unidades de cargamento dentro de tres meses para mantener este nivel{}Para una producción {WHITE}Abundante {BLACK}se deben entregar {SIGNED_WORD} unidades
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Producción actual: {YELLOW}Abundante{}{}{BLACK}Se deben entregar {SKIP}{SIGNED_WORD} unidades de cargamento dentro de tres meses para mantener este nivel
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Producción actual: {YELLOW}Normal{}{}{BLACK}Para una producción {WHITE}Aumentada {BLACK}se deben entregar {SIGNED_WORD} cajas de suministros dentro de tres meses{}Para una producción {WHITE}Abundante {BLACK}se deben entregar {SIGNED_WORD} cajas.
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Producción actual: {YELLOW}Aumentada{}{}{BLACK}Se deben entregar {SIGNED_WORD} cajas de suministros dentro de tres meses para mantener este nivel{}Para una producción {WHITE}Abundante {BLACK}se deben entregar {SIGNED_WORD} cajas.
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Producción actual: {YELLOW}Abundante{}{}{BLACK}Se deben entregar {SKIP}{SIGNED_WORD} unidades de cargamento dentro de tres meses para mantener este nivel.
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Producción actual: {YELLOW}Normal{}{}{BLACK}Para una producción {WHITE}Aumentada {BLACK}se deben entregar {SIGNED_WORD} unidades de cargamento dentro de tres meses{}Para una producción {WHITE}Abundante {BLACK}se deben entregar {SIGNED_WORD} unidades.
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Producción actual: {YELLOW}Aumentada{}{}{BLACK}Se deben entregar {SIGNED_WORD} unidades de cargamento dentro de tres meses para mantener este nivel{}Para una producción {WHITE}Abundante {BLACK}se deben entregar {SIGNED_WORD} unidades.
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Producción actual: {YELLOW}Abundante{}{}{BLACK}Se deben entregar {SKIP}{SIGNED_WORD} unidades de cargamento dentro de tres meses para mantener este nivel.
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
@@ -371,9 +371,25 @@ STR_STATION_PLANTATION                                                          
 STR_STATION_POWERHUNGRY                                                         :Central eléctrica
 STR_STATION_PUMPS                                                               :Gasolinera
 STR_STATION_PYRITES                                                             :Depósitos de pirita
-STR_STATION_REFINERY                                                            :Zona portuaria
+STR_STATION_REFINERY                                                            :Refinería
 STR_STATION_RUBBER_COMPANY                                                      :Empresa de caucho
 STR_STATION_SALTPETER_WORKS                                                     :Fábrica de salitre
+STR_STATION_SHARP_STREET                                                        :Calle Sharp
+STR_STATION_SHEEP_FOLD                                                          :Corral
+STR_STATION_SHOALS                                                              :Bancos de peces
 STR_STATION_SILO                                                                :Silo
+STR_STATION_SMELTER                                                             :Fundidor
+STR_STATION_STACKS                                                              :Pilas
+STR_STATION_STAMP_AND_PLATE                                                     :Laminaciones
+STR_STATION_SUGAR_COMPANY                                                       :Empresa azucarera
+STR_STATION_TANK_FARM                                                           :Terminal petrolera
+STR_STATION_TAPPERS_SHED                                                        :Resinero
 STR_STATION_TOWN_1                                                              :Antiguo ayuntamiento
+STR_STATION_TOWN_2                                                              :Avenida Central
+STR_STATION_TOWN_3                                                              :Tiendas
+STR_STATION_TRONA_BEDS                                                          :Depósitos de trona
 STR_STATION_WATER                                                               :Arenera
+STR_STATION_WEAVE_AND_DYE                                                       :Tejidos y tintes
+STR_STATION_WELLS                                                               :Pozos
+STR_STATION_WINERY                                                              :Bodega
+STR_STATION_VEHICLE_DEALER                                                      :Lote de camiones
