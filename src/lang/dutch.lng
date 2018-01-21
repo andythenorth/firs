@@ -30,6 +30,7 @@ STR_PARAM_VALUE_ECONOMIES_FIRS                                                  
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :In een heet land
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Staalstad
 
+STR_CARGO_NAME_ACID                                                             :Zuren
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauxiet
 STR_CARGO_NAME_BEANS                                                            :Bonen
@@ -37,11 +38,13 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CASSAVA                                                          :Cassave
 STR_CARGO_NAME_CEMENT                                                           :Cement
 STR_CARGO_NAME_CHEMICALS                                                        :Chemicaliën
+STR_CARGO_NAME_CHLORINE                                                         :Chloor
 STR_CARGO_NAME_CLAY                                                             :Klei
 STR_CARGO_NAME_COFFEE                                                           :Koffie
 STR_CARGO_NAME_COKE                                                             :Cokes
 STR_CARGO_NAME_COPPER                                                           :Koper
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Spijsolie
+STR_CARGO_NAME_ELECTRICAL_MACHINES                                              :Elektrische machines
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Constructiematerialen
 STR_CARGO_NAME_EXPLOSIVES                                                       :Explosieven
 STR_CARGO_NAME_FIBRES                                                           :Katoen
@@ -50,6 +53,7 @@ STR_CARGO_NAME_FARM_SUPPLIES                                                    
 STR_CARGO_NAME_FERTILISER                                                       :Kunstmest
 STR_CARGO_NAME_FRUITS                                                           :Groente en fruit
 STR_CARGO_NAME_KAOLIN                                                           :Kaolien
+STR_CARGO_NAME_LIMESTONE                                                        :Kalksteen
 STR_CARGO_NAME_LUMBER                                                           :Timmerhout
 STR_CARGO_NAME_METAL                                                            :Metaal
 STR_CARGO_NAME_MILK                                                             :Melk
@@ -66,6 +70,7 @@ STR_CARGO_NAME_POTASH                                                           
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyriet
 STR_CARGO_NAME_QUICKLIME                                                        :Calciumoxide
 STR_CARGO_NAME_RECYCLABLES                                                      :Kringloopgoederen
+STR_CARGO_NAME_SALT                                                             :Zout
 STR_CARGO_NAME_SAND                                                             :Zand
 STR_CARGO_NAME_SCRAP_METAL                                                      :Schroot
 STR_CARGO_NAME_SLAG                                                             :Slak
@@ -80,6 +85,7 @@ STR_CARGO_NAME_VEHICLES                                                         
 STR_CARGO_NAME_WOOL                                                             :Wol
 STR_CARGO_NAME_ZINC                                                             :Zink
 
+STR_CARGO_UNIT_ACID                                                             :{VOLUME} zuren
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alcohol
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxiet
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} bonen
@@ -87,11 +93,13 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} cassave
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} cement
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicaliën
+STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} chloor
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} klei
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} zak{P 0 "" ken} koffie
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} cokes
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} kopererts
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} spijsolie
+STR_CARGO_UNIT_ELECTRICAL_MACHINES                                              :{WEIGHT} elektrische machines
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} krat{P 0 "" ten} constructiematerialen
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} krat{P 0 "" ten} explosieven
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} kunstmest
@@ -100,7 +108,9 @@ STR_CARGO_UNIT_FISH                                                             
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} krat{P 0 "" ten} landbouwmaterialen
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} groente en fruit
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} kaolien
+STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} kalksteen
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} timmerhout
+STR_CARGO_UNIT_LYE                                                              :{VOLUME} natronloog
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} mangaan
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metaal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
@@ -117,6 +127,7 @@ STR_CARGO_UNIT_POTASH                                                           
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pyriet
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} calciumoxide
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} kringloopgoederen
+STR_CARGO_UNIT_SALT                                                             :{WEIGHT} zout
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} zand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} schroot
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} slak
@@ -131,6 +142,7 @@ STR_CARGO_UNIT_VEHICLES                                                         
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} ba{P 0 al len} wol
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} zink
 
+STR_CID_ACID                                                                    :{TINYFONT}ZR
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}BN
@@ -138,11 +150,13 @@ STR_CID_BUILDING_MATERIALS                                                      
 STR_CID_CASSAVA                                                                 :{TINYFONT}CA
 STR_CID_CEMENT                                                                  :{TINYFONT}CE
 STR_CID_CHEMICALS                                                               :{TINYFONT}CM
+STR_CID_CHLORINE                                                                :{TINYFONT}CL
 STR_CID_CLAY                                                                    :{TINYFONT}KL
 STR_CID_COFFEE                                                                  :{TINYFONT}KF
 STR_CID_COKE                                                                    :{TINYFONT}CK
 STR_CID_COPPER                                                                  :{TINYFONT}KR
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
+STR_CID_ELECTRICAL_MACHINES                                                     :{TINYFONT}EM
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}CH
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}EX
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}LH
@@ -150,7 +164,9 @@ STR_CID_FERTILISER                                                              
 STR_CID_FIBRES                                                                  :{TINYFONT}KT
 STR_CID_FISH                                                                    :{TINYFONT}VS
 STR_CID_KAOLIN                                                                  :{TINYFONT}KA
+STR_CID_LIMESTONE                                                               :{TINYFONT}KS
 STR_CID_LUMBER                                                                  :{TINYFONT}HT
+STR_CID_LYE                                                                     :{TINYFONT}NL
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}ML
@@ -167,6 +183,7 @@ STR_CID_POTASH                                                                  
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
 STR_CID_QUICKLIME                                                               :{TINYFONT}CO
 STR_CID_RECYCLABLES                                                             :{TINYFONT}KG
+STR_CID_SALT                                                                    :{TINYFONT}ZT
 STR_CID_SAND                                                                    :{TINYFONT}ZD
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}ST
 STR_CID_SLAG                                                                    :{TINYFONT}SK
@@ -236,6 +253,7 @@ STR_IND_HERDING_COOP                                                            
 STR_IND_IRON_WORKS                                                              :IJzeroven
 STR_IND_JUNKYARD                                                                :Schroothoop
 STR_IND_LIME_KILN                                                               :Kalkoven
+STR_IND_LIMESTONE_MINE                                                          :Mergelgroeve
 STR_IND_LIQUIDS_TERMINAL                                                        :Vloeistoffenterminal
 STR_IND_LUMBER_YARD                                                             :Houtwerkplaats
 STR_IND_MACHINE_SHOP                                                            :Machinewerkplaats
@@ -271,6 +289,8 @@ STR_IND_TEXTILE_MILL                                                            
 STR_IND_TRADING_POST                                                            :Handelspost
 STR_IND_TYRE_PLANT                                                              :Bandenfabriek
 STR_IND_VINEYARD                                                                :Wijngaard
+STR_IND_VEHICLE_DEALER                                                          :Voertuighandel
+STR_IND_WHARF                                                                   :Scheepswerf
 
 
 STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             :{BLACK}(geleverd)
@@ -336,6 +356,7 @@ STR_STATION_IRONSTONE                                                           
 STR_STATION_JOINERS_SHOP                                                        :Houtbewerking
 STR_STATION_KILNS                                                               :Kalkovens
 STR_STATION_KIMBERLITE_DEPOSITS                                                 :Kimberlietpijp
+STR_STATION_LIMESTONE_MINES                                                     :Mergelgrotten
 STR_STATION_MANGANESE_MINES                                                     :Mangaanmijn
 STR_STATION_MARKET                                                              :Markt
 STR_STATION_MERCHANTS_LANE                                                      :Handelsplaats
@@ -357,6 +378,7 @@ STR_STATION_SHEEP_FOLD                                                          
 STR_STATION_SHOALS                                                              :Visgronden
 STR_STATION_SILO                                                                :Silo
 STR_STATION_SMELTER                                                             :Smeltoven
+STR_STATION_STACKS                                                              :Stapelplaats
 STR_STATION_STAMP_AND_PLATE                                                     :Staalpers
 STR_STATION_SUGAR_COMPANY                                                       :Bietenbrug
 STR_STATION_TANK_FARM                                                           :Olieterminal
@@ -369,3 +391,4 @@ STR_STATION_WATER                                                               
 STR_STATION_WEAVE_AND_DYE                                                       :Weverij
 STR_STATION_WELLS                                                               :Bronnen
 STR_STATION_WINERY                                                              :Château
+STR_STATION_VEHICLE_DEALER                                                      :Garage
