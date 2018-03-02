@@ -12,6 +12,9 @@ def get_repo_vars(sys):
     return repo_vars
 
 def unescape_chameleon_output(escaped_nml):
+    # first drop as much whitespace as we sensibly can
+    # in tests, this doesn't make the compile any faster at all, but it reduced firs.nml (v3.0.4) from 326k lines to 226k lines,
+    escaped_nml = '\n'.join([x for x in escaped_nml.split('\n') if x.strip(' \t\n\r') != ''])
     # chameleon html-escapes some characters; that's sane and secure for chameleon's intended web use, but not wanted for nml
     # there is probably a standard module for unescaping html entities, but this will do for now
     escaped_nml = '>'.join(escaped_nml.split('&gt;'))
