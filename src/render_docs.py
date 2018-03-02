@@ -1,10 +1,4 @@
-"""
-  This file is part of FIRS Industry Set for OpenTTD.
-  FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
-  FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
-"""
-print("[PYTHON] render docs")
+print("[RENDER DOCS] render docs")
 
 import codecs # used for writing files - more unicode friendly than standard open() module
 
@@ -12,6 +6,7 @@ import shutil
 import sys
 import os
 currentdir = os.curdir
+from time import time
 
 docs_src = os.path.join(currentdir, 'src', 'docs_templates')
 docs_output_path = os.path.join(currentdir, 'docs')
@@ -273,6 +268,7 @@ def render_docs(doc_list, file_type, use_markdown=False):
         doc_file.close()
 
 def main():
+    start = time()
     for economy in registered_economies:
         enabled_cargos = [cargo for cargo in registered_cargos if cargo.id in economy.cargos]
         enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy.id].enabled]
@@ -310,6 +306,8 @@ def main():
         doc_file = codecs.open(os.path.join(docs_output_path, 'html', doc_name + '.html'), 'w','utf8')
         doc_file.write(result)
         doc_file.close()
+    # eh, how long does this take anyway?
+    print(format((time() - start), '.2f')+'s')
 
 if __name__ == '__main__':
     main()

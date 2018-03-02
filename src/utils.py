@@ -1,4 +1,6 @@
 from PIL import Image
+import os.path
+import codecs # used for writing files - more unicode friendly than standard open() module
 
 def get_repo_vars(sys):
     # get args passed by makefile
@@ -19,17 +21,12 @@ def unescape_chameleon_output(escaped_nml):
     return escaped_nml
 
 
+def split_nml_string_lines(text):
+    # this is fragile, playing one line python is silly :)
+    return dict((line.split(':',1)[0].strip(), line.split(':',1)[1].strip()) for line in text if ':' in line)
+
 def parse_base_lang():
-    print("[PARSE BASE LANG & EXTRA STRINGS] utils.py")
-
-    import os.path
-
-    import codecs # used for writing files - more unicode friendly than standard open() module
-
-    def split_nml_string_lines(text):
-        # this is fragile, playing one line python is silly :)
-        return dict((line.split(':',1)[0].strip(), line.split(':',1)[1].strip()) for line in text if ':' in line)
-
+    # pick out strings for docs, both from lang file, and extra strings that can't be in the lang file
     base_lang_file = codecs.open(os.path.join('src', 'lang', 'english.lng'), 'r','utf8')
     strings = split_nml_string_lines(base_lang_file.readlines())
 
