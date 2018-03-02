@@ -27,7 +27,7 @@ if not os.path.exists(generated_nml_path):
     os.mkdir(generated_nml_path)
 
 # get args passed by makefile
-repo_vars = utils.get_repo_vars(sys)
+repo_vars = utils.get_makefile_args(sys)
 
 def render_header_item_nml(header_item):
     template = templates[header_item]

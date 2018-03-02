@@ -2,14 +2,14 @@ from PIL import Image
 import os.path
 import codecs # used for writing files - more unicode friendly than standard open() module
 
-def get_repo_vars(sys):
+def get_makefile_args(sys):
     # get args passed by makefile
     if len(sys.argv) > 1:
-        repo_vars = {'repo_revision' : sys.argv[1], 'repo_version' : sys.argv[2],
-                     'test_industry': sys.argv[3], 'no_mp': sys.argv[4]}
+        makefile_args = {'repo_revision' : sys.argv[1], 'repo_version' : sys.argv[2],
+                         'test_industry': sys.argv[3], 'no_mp': sys.argv[4]}
     else: # provide some defaults so templates don't explode when testing python script without command line args
-        repo_vars = {'repo_revision' : 0, 'repo_version' : 0}
-    return repo_vars
+        makefile_args = {'repo_revision' : 0, 'repo_version' : 0}
+    return makefile_args
 
 def unescape_chameleon_output(escaped_nml):
     # first drop as much whitespace as we sensibly can

@@ -35,7 +35,7 @@ import markdown
 from PIL import Image
 
 # get args passed by makefile
-repo_vars = utils.get_repo_vars(sys)
+repo_vars = utils.get_makefile_args(sys)
 
 # get the strings from base lang file so they can be used in docs
 base_lang_strings = utils.parse_base_lang()
