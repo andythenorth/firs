@@ -11,7 +11,6 @@ def get_repo_vars(sys):
         repo_vars = {'repo_revision' : 0, 'repo_version' : 0}
     return repo_vars
 
-
 def unescape_chameleon_output(escaped_nml):
     # chameleon html-escapes some characters; that's sane and secure for chameleon's intended web use, but not wanted for nml
     # there is probably a standard module for unescaping html entities, but this will do for now
@@ -19,7 +18,6 @@ def unescape_chameleon_output(escaped_nml):
     escaped_nml = '<'.join(escaped_nml.split('&lt;'))
     escaped_nml = '&'.join(escaped_nml.split('&amp;'))
     return escaped_nml
-
 
 def split_nml_string_lines(text):
     # this is fragile, playing one line python is silly :)
@@ -37,7 +35,6 @@ def parse_base_lang():
 
     return strings
 
-
 def unwrap_nml_string_declaration(nml_string=None):
     # some properties are declared in python as 'string(STR_HAM_EGGS)'
     # this is done because it saves hassle with nml (distinguishes from default OTTD strings)
@@ -53,7 +50,6 @@ def echo_message(message):
     # use to raise messages from templates to standard out (can't print directly from template render)
     # magically wraps these messages in ANSI colour to make them visible - they are only intended for noticeable messages, not general output
     print('\033[33m' + message + '\033[0m')
-
 
 def dos_palette_to_rgb():
     palette_sample = Image.open("palette_key.png").getpalette()
