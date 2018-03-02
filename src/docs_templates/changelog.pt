@@ -2,6 +2,21 @@ Changelog
 =========
 
 -------------
+3.0.5 Release
+-------------
+
+*Fixes*
+
+- display correct version number in grf name
+
+*Codechanges*
+
+- cleaned up makefile and build scripts
+- switched to generated lang files
+    - dropped custom_tags.txt
+    - STR_EMPTY now only provided once, eliminating a proven source of bugs coming in from translated lang files
+
+-------------
 3.0.4 Release
 -------------
 
