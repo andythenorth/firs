@@ -1,6 +1,3 @@
-"""
-from time import time
-
 import firs
 import utils
 
@@ -34,7 +31,7 @@ hint_file.close()
 def main():
     start = time()
     print("[RENDER LANG] render_lang.py")
-    consists = firs.get_consists_in_buy_menu_order()
+    #consists = firs.get_consists_in_buy_menu_order()
 
     languages_with_generation = ('english',)
     for i in languages_with_generation:
@@ -44,7 +41,7 @@ def main():
         src_file = codecs.open(os.path.join(lang_src, i + '.lng'), 'r','utf8')
         dst_file = codecs.open(os.path.join(lang_dst, i + '.lng'), 'w','utf8')
         lang_content = src_file.read()
-        lang_content = lang_content + lang_template(consists=consists, makefile_args=makefile_args)
+        lang_content = lang_content + lang_template(makefile_args=makefile_args)
         dst_file.write(lang_content)
         dst_file.close()
 
@@ -52,4 +49,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-"""

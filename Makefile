@@ -19,11 +19,9 @@ PROJECT_NAME = firs
 # graphics is not copied to generated currently in FIRS, unlike RH, IH etc - could be changed
 GRAPHICS_DIR = src/graphics
 # lang is not copied to generated currently in FIRS, unlike RH, IH etc - could be changed
-LANG_DIR = src/lang
+LANG_DIR = generated/lang
 NML_FILE = generated/firs.nml
-NML_FLAGS =-c -l $(LANG_DIR) -t $(CUSTOM_TAGS)
-# only FIRS uses custom_tags currently
-CUSTOM_TAGS = generated/custom_tags.txt
+NML_FLAGS =-c -l $(LANG_DIR)
 
 EXPORTED = no
 ifeq ($(strip $(EXPORTED)),no)
@@ -70,10 +68,6 @@ html_docs: $(HTML_DOCS)
 # remove the @ for more verbose output (@ suppresses command output)
 _V ?= @
 
-$(CUSTOM_TAGS): src/templates/custom_tags.template
-	$(FILL_TEMPLATE) --template=src/templates/custom_tags.template --output=$(CUSTOM_TAGS) \
-		version=$(REPO_VERSION)
-
 $(GRAPHICS_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.png src)
 	$(_V) $(PYTHON3) src/render_graphics.py $(ARGS)
 
@@ -95,7 +89,7 @@ endif
 $(NML_FILE): $(shell $(FIND_FILES) --ext=.py --ext=.pynml src)
 	$(_V) $(PYTHON3) src/render_nml.py $(ARGS)
 
-$(GRF_FILE): $(GRAPHICS_DIR) $(LANG_DIR) $(NML_FILE) $(CUSTOM_TAGS) $(HTML_DOCS)
+$(GRF_FILE): $(GRAPHICS_DIR) $(LANG_DIR) $(NML_FILE) $(HTML_DOCS)
 	$(NMLC) $(NML_FLAGS) --grf=$(GRF_FILE) $(NML_FILE)
 
 $(TAR_FILE): $(GRF_FILE)
