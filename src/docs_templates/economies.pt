@@ -17,7 +17,9 @@
     <tal:economies repeat="economy registered_economies">
         <div class="row" id="${doc_helper.get_economy_name_char_safe(economy)}"  style="padding-bottom:20px;">
             <div class="col-xs-12 col-sm-4">
-                <h3>${doc_helper.get_economy_name(economy)}</h3>
+                <h3 class="firs-title-with-anchor">
+                    <a href="${doc_helper.get_economy_name_char_safe(economy)}">${doc_helper.get_economy_name(economy)}</a>
+                </h3>
                 <p class="lead">${structure:doc_helper.get_economy_extra_info(economy)}</p>
             </div>
             <div class="col-xs-12 col-sm-8" style="padding-top:16px;">

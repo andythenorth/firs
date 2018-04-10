@@ -34,14 +34,16 @@
         <tal:cargo define="name item[0]; cargo item[1]">
             <div class="row" id="${cargo.id}">
                 <div class="col-xs-12 col-sm-4">
-                    <h3>
-                        <span style="display:inline-block;
-                                     width:20px;
-                                     height:20px;
-                                     background-image:url('static/img/cargoicons.png');
-                                     background-position:-${20 + 40 * cargo.icon_indices[0]}px -${20 + 40 * cargo.icon_indices[1]}px;">
-                        </span>
-                        ${doc_helper.get_cargo_name(cargo)}
+                    <h3 class="firs-title-with-anchor">
+                        <a href="#${cargo.id}">
+                            <span style="display:inline-block;
+                                         width:20px;
+                                         height:20px;
+                                         margin-right: 7px;
+                                         background-image:url('static/img/cargoicons.png');
+                                         background-position:-${20 + 40 * cargo.icon_indices[0]}px -${20 + 40 * cargo.icon_indices[1]}px;">
+                            </span>${doc_helper.get_cargo_name(cargo)}
+                        </a>
                     </h3>
                     <p class="lead">${doc_helper.get_cargo_extra_info(cargo)}</p>
                     <tal:unused condition="doc_helper.cargo_is_unused_in_any_economy(cargo) and cargo.id != 'mail'">

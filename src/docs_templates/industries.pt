@@ -34,7 +34,9 @@
         <tal:industry define="name item[0]; industry item[1]">
             <div class="row" id="${industry.id}" style="padding-bottom:20px;">
                 <div class="col-xs-12 col-sm-3">
-                    <h3>${' / '.join(doc_helper.get_industry_all_names(industry))}</h3>
+                    <h3 class="firs-title-with-anchor">
+                        <a href="#${industry.id}">${' / '.join(doc_helper.get_industry_all_names(industry))}</a>
+                    </h3>
                     <p class="muted" tal:condition="len(doc_helper.get_industry_all_names(industry)) > 1">Industry name varies by economy.</p>
                     <p class="muted">${doc_helper.get_industry_extra_info(industry)}</p>
                 </div>
