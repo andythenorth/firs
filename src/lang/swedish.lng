@@ -26,28 +26,36 @@ STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tropisk bas-ekonomi
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Extrem
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :I ett varmare land
+STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Stålstaden
 
+STR_CARGO_NAME_ACID                                                             :Syra
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauxit
 STR_CARGO_NAME_BEANS                                                            :Bönor
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Byggmaterial
 STR_CARGO_NAME_CASSAVA                                                          :Kassava
+STR_CARGO_NAME_CEMENT                                                           :Cement
 STR_CARGO_NAME_CHEMICALS                                                        :Kemikalier
+STR_CARGO_NAME_CHLORINE                                                         :Klorin
 STR_CARGO_NAME_CLAY                                                             :Lera
 STR_CARGO_NAME_COFFEE                                                           :Kaffe
 STR_CARGO_NAME_COPPER                                                           :Koppar
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Matolja
+STR_CARGO_NAME_ELECTRICAL_MACHINES                                              :Elektriska maskiner
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Ingenjörsmateriel
+STR_CARGO_NAME_EXPLOSIVES                                                       :Explosivämnen
 STR_CARGO_NAME_FIBRES                                                           :Växtfibrer
 STR_CARGO_NAME_FISH                                                             :Fisk
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Lantbruksmateriel
 STR_CARGO_NAME_FRUITS                                                           :Frukt
+STR_CARGO_NAME_KAOLIN                                                           :Kaolin
 STR_CARGO_NAME_LUMBER                                                           :Virke
 STR_CARGO_NAME_METAL                                                            :Metall
 STR_CARGO_NAME_MILK                                                             :Mjölk
 STR_CARGO_NAME_MANGANESE                                                        :Mangan
 STR_CARGO_NAME_NITRATES                                                         :Nitrat
 STR_CARGO_NAME_NUTS                                                             :Nötter
+STR_CARGO_NAME_PACKAGING                                                        :Packetering
 STR_CARGO_NAME_PETROL                                                           :Bensin
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosfat
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyritmalm
@@ -56,9 +64,11 @@ STR_CARGO_NAME_SAND                                                             
 STR_CARGO_NAME_SCRAP_METAL                                                      :Metallskrot
 STR_CARGO_NAME_STONE                                                            :Sten
 STR_CARGO_NAME_SUGAR_BEET                                                       :Sockerbetor
+STR_CARGO_NAME_SULPHUR                                                          :Sulfat
 STR_CARGO_NAME_VEHICLE_PARTS                                                    :Fordonsdelar
 STR_CARGO_NAME_VEHICLES                                                         :Fordon
 STR_CARGO_NAME_WOOL                                                             :Ull
+STR_CARGO_NAME_ZINC                                                             :Zink
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkohol
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxit
@@ -71,6 +81,8 @@ STR_CARGO_UNIT_COFFEE                                                           
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} koppar
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} matolja
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} låd{P 0 a or} med ingenjörsmateriel
+STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} låd{P 0 a or} med explosivämnen
+STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} av gödning
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bal{P 0 "" ar} med växtfibrer
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} fisk
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} låd{P 0 a or} med lantbruksmateriel
@@ -84,13 +96,15 @@ STR_CARGO_UNIT_NUTS                                                             
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} bensin
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} fosfat
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pyritmalm
+STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} av osläckt kalk
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} returmaterial
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} sand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} metallskrot
+STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} av slagg
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} sten
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} sockerbetor
-STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} låd{P 0 a or} av fordonsdelar
-STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} fordon{P 0 "" ""}
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{WEIGHT} av fordonsdelar
+STR_CARGO_UNIT_VEHICLES                                                         :{WEIGHT} av fordon
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bal{P 0 "" ar} med ull
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
@@ -98,27 +112,33 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BEANS                                                                   :{TINYFONT}BN
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
 STR_CID_CASSAVA                                                                 :{TINYFONT}KA
+STR_CID_CEMENT                                                                  :{TINYFONT}CE
 STR_CID_CHEMICALS                                                               :{TINYFONT}KE
 STR_CID_CLAY                                                                    :{TINYFONT}LE
 STR_CID_COFFEE                                                                  :{TINYFONT}KF
 STR_CID_COPPER                                                                  :{TINYFONT}KR
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}VO
+STR_CID_ELECTRICAL_MACHINES                                                     :{TINYFONT}EM
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}IM
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}LM
 STR_CID_FIBRES                                                                  :{TINYFONT}VF
 STR_CID_FISH                                                                    :{TINYFONT}FI
 STR_CID_LUMBER                                                                  :{TINYFONT}VI
+STR_CID_LYE                                                                     :{TINYFONT}LU
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_METAL                                                                   :{TINYFONT}ME
 STR_CID_MILK                                                                    :{TINYFONT}MK
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_NUTS                                                                    :{TINYFONT}NT
 STR_CID_PETROL                                                                  :{TINYFONT}BE
+STR_CID_PIG_IRON                                                                :{TINYFONT}TJ
 STR_CID_PHOSPHATE                                                               :{TINYFONT}FF
+STR_CID_POTASH                                                                  :{TINYFONT}PA
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RE
 STR_CID_SAND                                                                    :{TINYFONT}SA
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}MS
+STR_CID_STEEL                                                                   :{TINYFONT}SL
 STR_CID_STONE                                                                   :{TINYFONT}ST
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}FD
@@ -156,6 +176,7 @@ STR_IND_COFFEE_ESTATE                                                           
 STR_IND_COPPER_REFINERY                                                         :Kopparraffinaderi
 STR_IND_DAIRY                                                                   :Mejeri
 STR_IND_DREDGING_SITE                                                           :Mudderverk
+STR_IND_ELECTRIC_ARC_FURNACE                                                    :Ljusbågesmältverk
 STR_IND_FISHING_GROUND                                                          :Fångstområde
 STR_IND_FISHING_HARBOUR                                                         :Fiskehamn
 STR_IND_FISHING_VILLAGE                                                         :Fiskeby
@@ -170,6 +191,7 @@ STR_IND_HOTEL                                                                   
 STR_IND_IRON_WORKS                                                              :Järnverk
 STR_IND_JUNKYARD                                                                :Skrotupplag
 STR_IND_LIME_KILN                                                               :Kalkbruk
+STR_IND_LIMESTONE_MINE                                                          :Kalkstensgruva
 STR_IND_LIQUIDS_TERMINAL                                                        :Vätsketerminal
 STR_IND_LUMBER_YARD                                                             :Brädgård
 STR_IND_MACHINE_SHOP                                                            :Maskinfabrik
@@ -182,6 +204,7 @@ STR_IND_PETROLPUMP                                                              
 STR_IND_PHOSPHATE_MINE                                                          :Fosfatgruva
 STR_IND_PLASTICS_PLANT                                                          :Plastfabrik
 STR_IND_PORT                                                                    :Handelshamn
+STR_IND_POTASH_MINE                                                             :Pottaskegruva
 STR_IND_PYRITE_MINE                                                             :Pyritgruva
 STR_IND_PYRITE_SMELTER                                                          :Pyritsmältverk
 STR_IND_POWER_PLANT                                                             :Kraftverk
@@ -198,8 +221,10 @@ STR_IND_TEXTILE_MILL                                                            
 STR_IND_TRADING_POST                                                            :Handelshamn
 STR_IND_TYRE_PLANT                                                              :Däcksfabrik
 STR_IND_VINEYARD                                                                :Vingård
+STR_IND_VEHICLE_DEALER                                                          :Bihandlare
 
 
+STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             :{BLACK}(mottagen)
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produktionen är proportionell mot stadens befolkningstal.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Nuvarande produktion: {YELLOW}Normal{}{}{BLACK}Leverera {SIGNED_WORD} lådor med materiel inom tre månader för {WHITE}Förhöjd{BLACK} produktion{}Leverera  {SIGNED_WORD} lådor för {WHITE}Gung-ho {BLACK}produktion
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Nuvarande produktion: {YELLOW}Förhöjd{}{}{BLACK}Leverera {SIGNED_WORD} lådor med materiel inom tre månader för att behålla den här nivån{}Leverera {SIGNED_WORD}  lådor för {WHITE}Gung-ho {BLACK}produktion
@@ -214,6 +239,7 @@ STR_FUND_COFFEE_ESTATE                                                          
 STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Placering: {YELLOW}Kan inte byggas på snö eller i öknar.
 STR_FUND_FOREST                                                                 :{}{BLACK}Placering: {YELLOW}Kan inte byggas i öknar.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Placering: {YELLOW}Kan inte byggas på snö.
+STR_FUND_HERDING_COOP                                                           :{}{BLACK}Placering: {YELLOW}Kan enbart byggas på snö.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Placering: {YELLOW}Kan inte byggas på snö eller i öknar.
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Placering: {YELLOW}Kan inte byggas på snö eller i öknar.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Placering: {YELLOW}Kan inte byggas på snö eller i öknar.
@@ -226,16 +252,32 @@ STR_TOWN                                                                        
 STR_STATION                                                                     :{STRING} {STRING}
 
 STR_STATION_ANIMALS                                                             :Hästmarknad
+STR_STATION_BARREL_AND_KEG                                                      :Tunna och Kagge
+STR_STATION_CASTINGS                                                            :Gjutgods
+STR_STATION_COLLIERY                                                            :Kolgruva
+STR_STATION_COPPER_LODE                                                         :Kopparåder
+STR_STATION_ESTATE                                                              :Egendom
+STR_STATION_EXCHANGE                                                            :Utbyte
 STR_STATION_FARM_1                                                              :Herrgård
 STR_STATION_FISHMARKET                                                          :Fiskemarknad
+STR_STATION_HEAVY_EQUIPMENT_YARD                                                :Depå för tunga maskiner
 STR_STATION_INDUSTRY_ESTATE_1                                                   :Industriområde
 STR_STATION_INDUSTRY_HARBOUR_1                                                  :Industrihamn
+STR_STATION_INDUSTRY_HARBOUR_2                                                  :Strand
 STR_STATION_MARKET                                                              :Marknad
 STR_STATION_MILL                                                                :Kvarn
 STR_STATION_MINE                                                                :Malmbergsvägen
+STR_STATION_MOULDINGS                                                           :Lister
+STR_STATION_ORCHARDS                                                            :Fruktträdgård
 STR_STATION_PIT                                                                 :Dagbrott
 STR_STATION_PLANTATION                                                          :Plantage
 STR_STATION_POWERHUNGRY                                                         :Elkraftverk
 STR_STATION_REFINERY                                                            :Hamnområde
+STR_STATION_RUBBER_COMPANY                                                      :Gummibolag
+STR_STATION_SHARP_STREET                                                        :Skarpa gatan
+STR_STATION_SILO                                                                :Silo
+STR_STATION_SUGAR_COMPANY                                                       :Sockerbolag
+STR_STATION_TAPPERS_SHED                                                        :Tappareskjul
 STR_STATION_TOWN_1                                                              :Gamla bystugan
 STR_STATION_WATER                                                               :Sandbank
+STR_STATION_WEAVE_AND_DYE                                                       :Väv och färgämnen
