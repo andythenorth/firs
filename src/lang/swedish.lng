@@ -48,6 +48,7 @@ STR_CARGO_NAME_EXPLOSIVES                                                       
 STR_CARGO_NAME_FIBRES                                                           :Växtfibrer
 STR_CARGO_NAME_FISH                                                             :Fisk
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Lantbruksmateriel
+STR_CARGO_NAME_FERTILISER                                                       :Gödningsmedel
 STR_CARGO_NAME_FRUITS                                                           :Frukt
 STR_CARGO_NAME_KAOLIN                                                           :Kaolin
 STR_CARGO_NAME_LIMESTONE                                                        :Kalksten
@@ -72,6 +73,7 @@ STR_CARGO_NAME_SAND                                                             
 STR_CARGO_NAME_SCRAP_METAL                                                      :Metallskrot
 STR_CARGO_NAME_SLAG                                                             :Slagg
 STR_CARGO_NAME_SODA_ASH                                                         :Natriumkarbonat
+STR_CARGO_NAME_STEEL                                                            :Stål
 STR_CARGO_NAME_STONE                                                            :Sten
 STR_CARGO_NAME_SUGAR_BEET                                                       :Sockerbetor
 STR_CARGO_NAME_SULPHUR                                                          :Sulfat
@@ -81,6 +83,7 @@ STR_CARGO_NAME_VEHICLES                                                         
 STR_CARGO_NAME_WOOL                                                             :Ull
 STR_CARGO_NAME_ZINC                                                             :Zink
 
+STR_CARGO_UNIT_ACID                                                             :{VOLUME} av syra
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkohol
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxit
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} bönor
@@ -88,6 +91,7 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} kassava
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} av cement
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kemikalier
+STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} av klorin
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} lera
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} säck{P 0 "" ar} med kaffe
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} av koks
@@ -116,6 +120,7 @@ STR_CARGO_UNIT_PEAT                                                             
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} bensin
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} fosfat
 STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} av tackjärn
+STR_CARGO_UNIT_PIPE                                                             :{WEIGHT} av rör
 STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} av pottaska
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pyritmalm
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} av osläckt kalk
@@ -189,6 +194,7 @@ STR_CID_VEHICLE_BODIES                                                          
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}FD
 STR_CID_VEHICLES                                                                :{TINYFONT}FN
 STR_CID_WOOL                                                                    :{TINYFONT}UL
+STR_CID_ZINC                                                                    :{TINYFONT}ZN
 
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS är inte ämnat att användas ihop med leksakslandskap
@@ -222,6 +228,7 @@ STR_IND_CEMENT_PLANT                                                            
 STR_IND_CHEMICAL_PLANT                                                          :Kemifabrik
 STR_IND_CLAY_PIT                                                                :Lertäkt
 STR_IND_COFFEE_ESTATE                                                           :Kaffeplantage
+STR_IND_COKE_OVEN                                                               :Koksugn
 STR_IND_COPPER_REFINERY                                                         :Kopparraffinaderi
 STR_IND_DAIRY                                                                   :Mejeri
 STR_IND_DAIRY_FARM                                                              :Mjölkgård
@@ -240,6 +247,7 @@ STR_IND_GENERAL_STORE                                                           
 STR_IND_GLASS_WORKS                                                             :Glasbruk
 STR_IND_HARDWARE_STORE                                                          :Byggvaruhus
 STR_IND_HOTEL                                                                   :Hotell
+STR_IND_HERDING_COOP                                                            :Vallningsfålla
 STR_IND_IRON_WORKS                                                              :Järnverk
 STR_IND_JUNKYARD                                                                :Skrotupplag
 STR_IND_LIME_KILN                                                               :Kalkbruk
@@ -285,13 +293,14 @@ STR_IND_WHARF                                                                   
 
 STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             :{BLACK}(mottagen)
 STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Producerar maximalt när {WHITE}någon {BLACK} erforderlig last levereras.
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :Leverera {WHITE}alla {BLACK}nödvändiga laster inom tre månader för att nå maximum produktionsnivå.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produktionen är proportionell mot stadens befolkningstal.
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Nuvarande produktion: {YELLOW}Normal{}{}{BLACK}Leverera {SIGNED_WORD} lådor med materiel inom tre månader för {WHITE}Förhöjd{BLACK} produktion{}Leverera  {SIGNED_WORD} lådor för {WHITE}Gung-ho {BLACK}produktion
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Nuvarande produktion: {YELLOW}Förhöjd{}{}{BLACK}Leverera {SIGNED_WORD} lådor med materiel inom tre månader för att behålla den här nivån{}Leverera {SIGNED_WORD}  lådor för {WHITE}Gung-ho {BLACK}produktion
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Nuvarande produktion: {YELLOW}Gung-ho{}{}{BLACK}Leverera {SKIP}{SIGNED_WORD} lådor med materiel inom tre månader för att behålla den här nivån
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Nuvarande produktion: {YELLOW}Normal{}{}{BLACK}Leverera {SIGNED_WORD} enheter med last inom tre månader för {WHITE}Förhöjd{BLACK} produktion{}Leverera {SIGNED_WORD} enheter för {WHITE}Gung-ho {BLACK}produktion
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Nuvarande produktion: {YELLOW}Förhöjd{}{}{BLACK}Leverera {SIGNED_WORD} enheter med last inom tre månader för att behålla den här nivån.{}Leverera {SIGNED_WORD} enheter för {WHITE}Gung-ho {BLACK}produktion
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Nuvarande produktion: {YELLOW}Gung-ho{}{}{BLACK}Leverera {SKIP}{SIGNED_WORD} enheter last inom tre månader för att behålla den här nivån
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Nuvarande produktion: {YELLOW}Normal{}{}{BLACK}Leverera {SIGNED_WORD} lådor med materiel inom tre månader för {WHITE}Förhöjd{BLACK} produktion{}Leverera  {SIGNED_WORD} lådor för {WHITE}Gung-ho {BLACK}produktion.
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Nuvarande produktion: {YELLOW}Förhöjd{}{}{BLACK}Leverera {SIGNED_WORD} lådor med materiel inom tre månader för att behålla den här nivån{}Leverera {SIGNED_WORD}  lådor för {WHITE}Gung-ho {BLACK}produktion.
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Nuvarande produktion: {YELLOW}Gung-ho{}{}{BLACK}Leverera {SKIP}{SIGNED_WORD} lådor med materiel inom tre månader för att behålla den här nivån.
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Nuvarande produktion: {YELLOW}Normal{}{}{BLACK}Leverera {SIGNED_WORD} enheter med last inom tre månader för {WHITE}Förhöjd{BLACK} produktion{}Leverera {SIGNED_WORD} enheter för {WHITE}Gung-ho {BLACK}produktion.
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Nuvarande produktion: {YELLOW}Förhöjd{}{}{BLACK}Leverera {SIGNED_WORD} enheter med last inom tre månader för att behålla den här nivån.{}Leverera {SIGNED_WORD} enheter för {WHITE}Gung-ho {BLACK}produktion.
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Nuvarande produktion: {YELLOW}Gung-ho{}{}{BLACK}Leverera {SKIP}{SIGNED_WORD} enheter last inom tre månader för att behålla den här nivån.
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Placering: {YELLOW}Kan inte byggas på snö eller i öknar.
@@ -330,6 +339,7 @@ STR_STATION_FARM_1                                                              
 STR_STATION_FARM_2                                                              :Äng
 STR_STATION_FARM_3                                                              :Ranch
 STR_STATION_FISHMARKET                                                          :Fiskemarknad
+STR_STATION_FOOD_CORPORATION                                                    :Livsmedelsföretag
 STR_STATION_FOREST                                                              :Stocklastning
 STR_STATION_FORGE                                                               :Smedja
 STR_STATION_FURNACE                                                             :Masugn
@@ -342,10 +352,12 @@ STR_STATION_INDUSTRY_HARBOUR_2                                                  
 STR_STATION_INDUSTRY_HARBOUR_3                                                  :Landningsbrygga
 STR_STATION_IRONSTONE                                                           :Malmberg
 STR_STATION_JOINERS_SHOP                                                        :Snickeri
+STR_STATION_KILNS                                                               :Smältugnar
 STR_STATION_KIMBERLITE_DEPOSITS                                                 :Kimberfyndighet
 STR_STATION_LIMESTONE_MINES                                                     :Kalkstensgruvor
 STR_STATION_MANGANESE_MINES                                                     :Mangangruvor
 STR_STATION_MARKET                                                              :Marknad
+STR_STATION_MERCHANTS_LANE                                                      :Handlaregränd
 STR_STATION_MILL                                                                :Kvarn
 STR_STATION_MINE                                                                :Malmbergsvägen
 STR_STATION_MOULDINGS                                                           :Lister
@@ -356,7 +368,7 @@ STR_STATION_PLANTATION                                                          
 STR_STATION_POWERHUNGRY                                                         :Elkraftverk
 STR_STATION_PUMPS                                                               :Pumpar
 STR_STATION_PYRITES                                                             :Pyritfyndighet
-STR_STATION_REFINERY                                                            :Hamnområde
+STR_STATION_REFINERY                                                            :Raffinaderi
 STR_STATION_RUBBER_COMPANY                                                      :Gummibolag
 STR_STATION_SALTPETER_WORKS                                                     :Saltpeterbruk
 STR_STATION_SHARP_STREET                                                        :Skarpgatan
