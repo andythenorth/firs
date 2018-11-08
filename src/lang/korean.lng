@@ -29,6 +29,7 @@ STR_PARAM_VALUE_ECONOMIES_FIRS                                                  
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :더운 나라
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :철강도시
 
+STR_CARGO_NAME_ACID                                                             :산
 STR_CARGO_NAME_ALCOHOL                                                          :주류
 STR_CARGO_NAME_BAUXITE                                                          :보크사이트
 STR_CARGO_NAME_BEANS                                                            :콩
@@ -36,11 +37,13 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CASSAVA                                                          :카사바
 STR_CARGO_NAME_CEMENT                                                           :시멘트
 STR_CARGO_NAME_CHEMICALS                                                        :화학 약품
+STR_CARGO_NAME_CHLORINE                                                         :염소
 STR_CARGO_NAME_CLAY                                                             :점토
 STR_CARGO_NAME_COFFEE                                                           :커피
 STR_CARGO_NAME_COKE                                                             :코크스
 STR_CARGO_NAME_COPPER                                                           :구리
 STR_CARGO_NAME_EDIBLE_OIL                                                       :식용유
+STR_CARGO_NAME_ELECTRICAL_MACHINES                                              :전자기기
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :생산 장비
 STR_CARGO_NAME_EXPLOSIVES                                                       :폭발물
 STR_CARGO_NAME_FIBRES                                                           :식물 섬유
@@ -48,12 +51,16 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :농장 비품
 STR_CARGO_NAME_FERTILISER                                                       :비료
 STR_CARGO_NAME_FRUITS                                                           :과일
+STR_CARGO_NAME_KAOLIN                                                           :고령토
+STR_CARGO_NAME_LIMESTONE                                                        :석회석
 STR_CARGO_NAME_LUMBER                                                           :제재목
 STR_CARGO_NAME_METAL                                                            :금속
 STR_CARGO_NAME_MILK                                                             :우유
 STR_CARGO_NAME_MANGANESE                                                        :망가니즈
 STR_CARGO_NAME_NITRATES                                                         :질산염
 STR_CARGO_NAME_NUTS                                                             :견과류
+STR_CARGO_NAME_PACKAGING                                                        :포장품
+STR_CARGO_NAME_PEAT                                                             :토탄
 STR_CARGO_NAME_PETROL                                                           :석유 연료
 STR_CARGO_NAME_PHOSPHATE                                                        :인산염
 STR_CARGO_NAME_PIG_IRON                                                         :선철
@@ -62,6 +69,7 @@ STR_CARGO_NAME_POTASH                                                           
 STR_CARGO_NAME_PYRITE_ORE                                                       :황철석
 STR_CARGO_NAME_QUICKLIME                                                        :생석회
 STR_CARGO_NAME_RECYCLABLES                                                      :재활용품
+STR_CARGO_NAME_SALT                                                             :소금
 STR_CARGO_NAME_SAND                                                             :모래
 STR_CARGO_NAME_SCRAP_METAL                                                      :고철
 STR_CARGO_NAME_SLAG                                                             :광재
@@ -70,10 +78,13 @@ STR_CARGO_NAME_STEEL                                                            
 STR_CARGO_NAME_STONE                                                            :석재
 STR_CARGO_NAME_SUGAR_BEET                                                       :사탕무
 STR_CARGO_NAME_SULPHUR                                                          :황
+STR_CARGO_NAME_VEHICLE_BODIES                                                   :자동차 뼈대
 STR_CARGO_NAME_VEHICLE_PARTS                                                    :자동차 부품
 STR_CARGO_NAME_VEHICLES                                                         :자동차
 STR_CARGO_NAME_WOOL                                                             :양털
+STR_CARGO_NAME_ZINC                                                             :아연
 
+STR_CARGO_UNIT_ACID                                                             :산 {VOLUME}
 STR_CARGO_UNIT_ALCOHOL                                                          :주류 {VOLUME}
 STR_CARGO_UNIT_BAUXITE                                                          :보크사이트 {WEIGHT}
 STR_CARGO_UNIT_BEANS                                                            :콩 {WEIGHT}
@@ -81,11 +92,13 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CASSAVA                                                          :카사바 {WEIGHT}
 STR_CARGO_UNIT_CEMENT                                                           :시멘트 {WEIGHT}
 STR_CARGO_UNIT_CHEMICALS                                                        :화학 약품 {VOLUME}
+STR_CARGO_UNIT_CHLORINE                                                         :염소 {VOLUME}
 STR_CARGO_UNIT_CLAY                                                             :점토 {WEIGHT}
 STR_CARGO_UNIT_COFFEE                                                           :커피 {SIGNED_WORD}자루
 STR_CARGO_UNIT_COKE                                                             :코크스 {WEIGHT}
 STR_CARGO_UNIT_COPPER                                                           :구리 {WEIGHT}
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :식용유 {VOLUME}
+STR_CARGO_UNIT_ELECTRICAL_MACHINES                                              :전자기기 {WEIGHT}
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :생산 장비 {SIGNED_WORD}상자
 STR_CARGO_UNIT_EXPLOSIVES                                                       :폭발물 {SIGNED_WORD}상자
 STR_CARGO_UNIT_FERTILISER                                                       :비료 {WEIGHT}
@@ -93,13 +106,18 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :물고기 {WEIGHT}
 STR_CARGO_UNIT_FMSP                                                             :농장 비품 {SIGNED_WORD}상자
 STR_CARGO_UNIT_FRUITS                                                           :과일 {WEIGHT}
+STR_CARGO_UNIT_KAOLIN                                                           :고령토 {WEIGHT}
+STR_CARGO_UNIT_LIMESTONE                                                        :석회석 {WEIGHT}
 STR_CARGO_UNIT_LUMBER                                                           :제재목 {WEIGHT}
+STR_CARGO_UNIT_LYE                                                              :소다 {VOLUME}
 STR_CARGO_UNIT_MANGANESE                                                        :망가니즈 {WEIGHT}
 STR_CARGO_UNIT_METAL                                                            :금속 {WEIGHT}
 STR_CARGO_UNIT_MILK                                                             :우유 {VOLUME}
 STR_CARGO_UNIT_NICKEL                                                           :니켈 {WEIGHT}
 STR_CARGO_UNIT_NITRATES                                                         :질산염 {WEIGHT}
 STR_CARGO_UNIT_NUTS                                                             :견과류 {SIGNED_WORD}자루
+STR_CARGO_UNIT_PACKAGING                                                        :포장품 {WEIGHT}
+STR_CARGO_UNIT_PEAT                                                             :토탄 {WEIGHT}
 STR_CARGO_UNIT_PETROL                                                           :석유 연료 {VOLUME}
 STR_CARGO_UNIT_PHOSPHATE                                                        :인산염 {WEIGHT}
 STR_CARGO_UNIT_PIG_IRON                                                         :선철 {WEIGHT}
@@ -108,6 +126,7 @@ STR_CARGO_UNIT_POTASH                                                           
 STR_CARGO_UNIT_PYRITE_ORE                                                       :황철석 {WEIGHT}
 STR_CARGO_UNIT_QUICKLIME                                                        :생석회 {WEIGHT}
 STR_CARGO_UNIT_RECYCLABLES                                                      :재활용품 {WEIGHT}
+STR_CARGO_UNIT_SALT                                                             :소금 {WEIGHT}
 STR_CARGO_UNIT_SAND                                                             :모래 {WEIGHT}
 STR_CARGO_UNIT_SCRAP_METAL                                                      :고철 {WEIGHT}
 STR_CARGO_UNIT_SLAG                                                             :광재 {WEIGHT}
@@ -116,10 +135,13 @@ STR_CARGO_UNIT_STEEL                                                            
 STR_CARGO_UNIT_STONE                                                            :석재 {WEIGHT}
 STR_CARGO_UNIT_SUGAR_BEET                                                       :사탕무 {WEIGHT}
 STR_CARGO_UNIT_SULPHUR                                                          :황 {WEIGHT}
-STR_CARGO_UNIT_VEHICLE_PARTS                                                    :자동차 부품 {SIGNED_WORD}상자
-STR_CARGO_UNIT_VEHICLES                                                         :자동차 {SIGNED_WORD}대
+STR_CARGO_UNIT_VEHICLE_BODIES                                                   :자동차 뼈대 {WEIGHT}
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :자동차 부품 {WEIGHT}
+STR_CARGO_UNIT_VEHICLES                                                         :자동차 {WEIGHT}
 STR_CARGO_UNIT_WOOL                                                             :양털 {SIGNED_WORD}뭉치
+STR_CARGO_UNIT_ZINC                                                             :아연 {WEIGHT}
 
+STR_CID_ACID                                                                    :{TINYFONT}산
 STR_CID_ALCOHOL                                                                 :{TINYFONT}주
 STR_CID_BAUXITE                                                                 :{TINYFONT}보
 STR_CID_BEANS                                                                   :{TINYFONT}콩
@@ -127,24 +149,31 @@ STR_CID_BUILDING_MATERIALS                                                      
 STR_CID_CASSAVA                                                                 :{TINYFONT}카
 STR_CID_CEMENT                                                                  :{TINYFONT}시
 STR_CID_CHEMICALS                                                               :{TINYFONT}화
+STR_CID_CHLORINE                                                                :{TINYFONT}Cl
 STR_CID_CLAY                                                                    :{TINYFONT}점
 STR_CID_COFFEE                                                                  :{TINYFONT}커
 STR_CID_COKE                                                                    :{TINYFONT}코
 STR_CID_COPPER                                                                  :{TINYFONT}구
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}용
+STR_CID_ELECTRICAL_MACHINES                                                     :{TINYFONT}전
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}생
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}폭
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}농
 STR_CID_FERTILISER                                                              :{TINYFONT}비
 STR_CID_FIBRES                                                                  :{TINYFONT}섬
 STR_CID_FISH                                                                    :{TINYFONT}물
+STR_CID_KAOLIN                                                                  :{TINYFONT}토
+STR_CID_LIMESTONE                                                               :{TINYFONT}회
 STR_CID_LUMBER                                                                  :{TINYFONT}목
+STR_CID_LYE                                                                     :{TINYFONT}잿
 STR_CID_MANGANESE                                                               :{TINYFONT}망
 STR_CID_METAL                                                                   :{TINYFONT}금
 STR_CID_MILK                                                                    :{TINYFONT}유
 STR_CID_NICKEL                                                                  :{TINYFONT}니
 STR_CID_NITRATES                                                                :{TINYFONT}질
 STR_CID_NUTS                                                                    :{TINYFONT}견
+STR_CID_PACKAGING                                                               :{TINYFONT}포
+STR_CID_PEAT                                                                    :{TINYFONT}탄
 STR_CID_PETROL                                                                  :{TINYFONT}휘
 STR_CID_PIG_IRON                                                                :{TINYFONT}선
 STR_CID_PIPE                                                                    :{TINYFONT}파
@@ -153,6 +182,7 @@ STR_CID_POTASH                                                                  
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}황
 STR_CID_QUICKLIME                                                               :{TINYFONT}생
 STR_CID_RECYCLABLES                                                             :{TINYFONT}활
+STR_CID_SALT                                                                    :{TINYFONT}염
 STR_CID_SAND                                                                    :{TINYFONT}사
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}고
 STR_CID_SLAG                                                                    :{TINYFONT}재
@@ -161,25 +191,29 @@ STR_CID_STEEL                                                                   
 STR_CID_STONE                                                                   :{TINYFONT}석
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}무
 STR_CID_SULPHUR                                                                 :{TINYFONT}황
+STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}뼈
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}부
 STR_CID_VEHICLES                                                                :{TINYFONT}차
 STR_CID_WOOL                                                                    :{TINYFONT}모
+STR_CID_ZINC                                                                    :{TINYFONT}Zn
 
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS는 장난감나라 기후에서는 사용할 수 없습니다.
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS는 OpenTTD 1.6.0나 r27279 이상이 필요합니다. {YELLOW}FIRS ReadMe를 참고하세요: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS는 OpenTTD 1.7.0 이상(또는 r27769를 기반으로 한 빌드)에서만 사용할 수 있습니다.
 STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}호환 불가능한 세트: {ORANGE}{STRING} {YELLOW}FIRS ReadMe를 참고하세요: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}호환 불가능한 매개 변수: {ORANGE}FIRS를 사용하려면 CanSet의 2번 매개 변숫값이 0이어야 합니다.{YELLOW}FIRS ReadMe를 참고하세요: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}호환 불가능한 매개 변수: {ORANGE}FIRS를 사용하려면 NA City Set의 2번 매개 변숫값이 0이어야 합니다. {YELLOW}FIRS ReadMe를 참고하세요: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}호환 불가능한 버전: {ORANGE}Total Town Replacement Set의 버전은 3.11 이상이어야 합니다. {YELLOW}FIRS ReadMe를 참고하세요: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :설선 아래에 지어야 합니다.
+STR_ERR_LOCATION_NOT_BELOW_SNOWLINE                                             :설선 위에 지어야 합니다.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :마른 땅 위에 지어야 합니다.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :사막에 지을 수 없습니다.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :가파른 경사 위에 지을 수 없습니다.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :이 종류의 산업 시설은 한 도시에 하나만 지을 수 있습니다.
 
 STR_IND_ALUMINIUM_PLANT                                                         :알루미늄 제련소
+STR_IND_AMMONIA_PLANT                                                           :암모니아 공장
 STR_IND_ARABLE_FARM                                                             :경작 농장
 STR_IND_ASSEMBLY_PLANT                                                          :자동차 공장
 STR_IND_BASICFARM                                                               :농장
@@ -218,6 +252,7 @@ STR_IND_HERDING_COOP                                                            
 STR_IND_IRON_WORKS                                                              :제철소
 STR_IND_JUNKYARD                                                                :고철 집적소
 STR_IND_LIME_KILN                                                               :석회 가마
+STR_IND_LIMESTONE_MINE                                                          :석회석 광산
 STR_IND_LIQUIDS_TERMINAL                                                        :유류 부두
 STR_IND_LUMBER_YARD                                                             :저목장
 STR_IND_MACHINE_SHOP                                                            :기계 상점
@@ -227,6 +262,7 @@ STR_IND_METAL_WORKSHOP                                                          
 STR_IND_MIXEDFARM                                                               :혼합 농장
 STR_IND_NITRATE_MINE                                                            :질산염 광산
 STR_IND_ORCHARD_PIGGERY                                                         :과수원 및 양돈장
+STR_IND_PEATLANDS                                                               :토탄지
 STR_IND_PETROLPUMP                                                              :주유소
 STR_IND_PHOSPHATE_MINE                                                          :인산염 광산
 STR_IND_PLASTICS_PLANT                                                          :플라스틱 공장
@@ -252,14 +288,19 @@ STR_IND_TEXTILE_MILL                                                            
 STR_IND_TRADING_POST                                                            :교역소
 STR_IND_TYRE_PLANT                                                              :타이어 공장
 STR_IND_VINEYARD                                                                :포도원
+STR_IND_VEHICLE_DEALER                                                          :자동차 판매소
+STR_IND_WHARF                                                                   :부두
 
 
+STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(공급됨)
+STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}최대 생산량을 내기 위해서는, {WHITE}아무 {BLACK} 화물이나 공급하십시오.
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}최대 생산량을 내기 위해서는, 필요한 {WHITE}모든 {BLACK} 화물을 최소한 3개월에 한 번씩은 공급하십시오.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}생산량이 도시 인구에 비례합니다.
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}현재 생산량: {YELLOW}보통{}{}생산량을 {WHITE}2배{BLACK}로 올리고 싶다면, 3개월 이내에 {SIGNED_WORD}상자의 공급품을 수송하세요.{}생산량을 {WHITE}4배{BLACK}로 올리고 싶다면올리고 싶다면 {SIGNED_WORD}상자를 수송하십시오.
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}현재 생산량: {YELLOW}많음{}{}{BLACK}현재 수준을 유지하려면, 3개월 이내에 {SIGNED_WORD}상자의 공급품을 수송하고, {WHITE}4배{BLACK}로 늘리려면 {SIGNED_WORD} 상자를 수송하십시오.
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}현재 생산량: {YELLOW}보통{}{}생산량을 {WHITE}2배{BLACK}로 올리고 싶다면, 3개월 이내에 {SIGNED_WORD}상자의 공급품을 수송하십시오.{}생산량을 {WHITE}4배{BLACK}로 올리고 싶다면올리고 싶다면 {SIGNED_WORD}상자를 수송하십시오.
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}현재 생산량: {YELLOW}많음{}{}{BLACK}현재 수준을 유지하려면, 3개월 이내에 {SIGNED_WORD}상자의 공급품을 수송하십시오.{} {WHITE}4배{BLACK}로 늘리려면 {SIGNED_WORD} 상자를 수송하십시오.
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}현재 생산량: {YELLOW}격렬히 많음{}{}{BLACK}현재 수준을 유지하려면, 3개월 이내에 {SKIP}{SIGNED_WORD}상자의 공급품을 수송하십시오.
 STR_PORT_PRODUCTION_1X                                                          :{BLACK}현재 생산량: {YELLOW}보통{}{}{BLACK}생산량을 {WHITE}2배{BLACK}로 올리고 싶다면, 3개월 이내에 {SIGNED_WORD} 단위의 화물을 수송하십시오.{}{WHITE}4배{BLACK}로 늘리려면 {SIGNED_WORD} 단위의 화물을 수송하십시오.
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}현재 생산량: {YELLOW}많음{}{}{BLACK}현재 수준을 유지하려면, 3개월 이내에 {SIGNED_WORD} 단위의 화물을 수송하시고, {WHITE}4배{BLACK}로 늘리려면 {SIGNED_WORD} 단위의 화물을 수송하십시오.
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}현재 생산량: {YELLOW}많음{}{}{BLACK}현재 수준을 유지하려면, 3개월 이내에 {SIGNED_WORD} 단위의 화물을 수송하십시오.{}{WHITE}4배{BLACK}로 늘리려면 {SIGNED_WORD} 단위의 화물을 수송하십시오.
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}현재 생산량: {YELLOW}격렬히 많음{}{}{BLACK}현재 수준을 유지하려면, 3개월 이내에 {SKIP}{SIGNED_WORD} 단위의 화물을 수송하십시오.
 STR_GENERIC_NEWLINE                                                             :{}
 
@@ -268,6 +309,7 @@ STR_FUND_COFFEE_ESTATE                                                          
 STR_FUND_DAIRY_FARM                                                             :{}{BLACK}위치: {YELLOW}눈이나 사막 위에 세울 수 없습니다.
 STR_FUND_FOREST                                                                 :{}{BLACK}위치: {YELLOW}사막 위에 세울 수 없습니다.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}위치: {YELLOW}눈 위에 세울 수 없습니다.
+STR_FUND_HERDING_COOP                                                           :{}{BLACK}위치: {YELLOW}눈 위에만 세울 수 있습니다.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}위치: {YELLOW}눈이나 사막 위에 세울 수 없습니다.
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}위치: {YELLOW}눈이나 사막 위에 세울 수 없습니다.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}위치: {YELLOW}눈이나 사막 위에 세울 수 없습니다.
@@ -280,17 +322,72 @@ STR_TOWN                                                                        
 STR_STATION                                                                     :{STRING} {STRING}
 
 STR_STATION_ANIMALS                                                             :마시장
+STR_STATION_AUTOMOTIVE                                                          :자동차
+STR_STATION_BAR_GRILL_AND_ROOMS                                                 :객실
+STR_STATION_BARNS                                                               :곳간
+STR_STATION_BARREL_AND_KEG                                                      :통
+STR_STATION_BASE                                                                :기지
+STR_STATION_BONEYARD                                                            :폐차장
+STR_STATION_BANK_TOP                                                            :굴뚝
+STR_STATION_CASTINGS                                                            :주물
+STR_STATION_COLLIERY                                                            :탄광
+STR_STATION_COPPER_LODE                                                         :동광맥
+STR_STATION_CREOSOTING                                                          :크레오소트
+STR_STATION_DAIRY_LANE                                                          :낙농길
+STR_STATION_ESTATE                                                              :커피 농장
+STR_STATION_EXCHANGE                                                            :환승
 STR_STATION_FARM_1                                                              :장원
+STR_STATION_FARM_2                                                              :목초지
+STR_STATION_FARM_3                                                              :목장
 STR_STATION_FISHMARKET                                                          :수산 시장
+STR_STATION_FOOD_CORPORATION                                                    :식품 협회
+STR_STATION_FOREST                                                              :목재 하차장
+STR_STATION_FORGE                                                               :대장간
+STR_STATION_FURNACE                                                             :용광로
+STR_STATION_HEAVY_EQUIPMENT_YARD                                                :중장비 창고
+STR_STATION_HEAVY_INDUSTRY_2                                                    :공장
 STR_STATION_HERDING_COOP                                                        :산장
 STR_STATION_INDUSTRY_ESTATE_1                                                   :산업 단지
 STR_STATION_INDUSTRY_HARBOUR_1                                                  :공업항
+STR_STATION_INDUSTRY_HARBOUR_2                                                  :물가
+STR_STATION_INDUSTRY_HARBOUR_3                                                  :부잔교
+STR_STATION_IRONSTONE                                                           :철광
+STR_STATION_JOINERS_SHOP                                                        :소목장이 상점
+STR_STATION_KILNS                                                               :가마
+STR_STATION_KIMBERLITE_DEPOSITS                                                 :킴벌라이트 매장층
+STR_STATION_LIMESTONE_MINES                                                     :석회석 광산
+STR_STATION_MANGANESE_MINES                                                     :망가니즈 광산
 STR_STATION_MARKET                                                              :시장
+STR_STATION_MERCHANTS_LANE                                                      :무역로
 STR_STATION_MILL                                                                :방앗간
-STR_STATION_MINE                                                                :태너 로
+STR_STATION_MINE                                                                :광산도로
+STR_STATION_MOULDINGS                                                           :몰딩
+STR_STATION_OIL_RIG                                                             :유전
+STR_STATION_ORCHARDS                                                            :과수원
 STR_STATION_PIT                                                                 :갱
 STR_STATION_PLANTATION                                                          :플랜테이션
 STR_STATION_POWERHUNGRY                                                         :발전소
-STR_STATION_REFINERY                                                            :포틀랜드
+STR_STATION_PUMPS                                                               :펌프
+STR_STATION_PYRITES                                                             :황철석 매장층
+STR_STATION_REFINERY                                                            :정유공장
+STR_STATION_RUBBER_COMPANY                                                      :고무회사
+STR_STATION_SALTPETER_WORKS                                                     :초석사
+STR_STATION_SHARP_STREET                                                        :골목길
+STR_STATION_SHEEP_FOLD                                                          :양우리
+STR_STATION_SHOALS                                                              :여울
+STR_STATION_SILO                                                                :저장고
+STR_STATION_SMELTER                                                             :황철용광로
+STR_STATION_STACKS                                                              :무더기
+STR_STATION_STAMP_AND_PLATE                                                     :우체국
+STR_STATION_SUGAR_COMPANY                                                       :제당회사
+STR_STATION_TANK_FARM                                                           :유류탱크 집합소
+STR_STATION_TAPPERS_SHED                                                        :고무수액 헛간
 STR_STATION_TOWN_1                                                              :구 읍사무소
+STR_STATION_TOWN_2                                                              :간선도로
+STR_STATION_TOWN_3                                                              :상점
+STR_STATION_TRONA_BEDS                                                          :중탄산소다석 지층
 STR_STATION_WATER                                                               :모래톱
+STR_STATION_WEAVE_AND_DYE                                                       :직물 및 염료
+STR_STATION_WELLS                                                               :유정
+STR_STATION_WINERY                                                              :양조장
+STR_STATION_VEHICLE_DEALER                                                      :트럭 주차장
