@@ -7,6 +7,9 @@
 
 
 
+STR_CARGO_NAME_ACID                                                             :Кіслата
+STR_CARGO_NAME_ACID.acc                                                         :кіслату
+STR_CARGO_NAME_ACID.gen                                                         :кіслаты
 STR_CARGO_NAME_ALCOHOL                                                          :спіртное
 STR_CARGO_NAME_ALCOHOL.gen                                                      :спіртнога
 STR_CARGO_NAME_BAUXITE                                                          :Баксіты
@@ -27,16 +30,86 @@ STR_CARGO_NAME_COFFEE.gen                                                       
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Абсталяванне
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.acc                                         :абсталяванне
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.gen                                         :абсталявання
+STR_CARGO_NAME_FIBRES                                                           :Раслінныя валокны
+STR_CARGO_NAME_FIBRES.acc                                                       :раслінныя валокны
+STR_CARGO_NAME_FIBRES.gen                                                       :раслінных валокнаў
+STR_CARGO_NAME_FISH                                                             :Рыба
+STR_CARGO_NAME_FISH.acc                                                         :рыбу
+STR_CARGO_NAME_FISH.gen                                                         :рыбы
+STR_CARGO_NAME_FRUITS                                                           :Садавіна
+STR_CARGO_NAME_FRUITS.acc                                                       :садавіну
+STR_CARGO_NAME_FRUITS.gen                                                       :садавіны
+STR_CARGO_NAME_LUMBER                                                           :Лесаматэрыялы
+STR_CARGO_NAME_LUMBER.acc                                                       :лесаматэрыялы
+STR_CARGO_NAME_LUMBER.gen                                                       :лесаматэрыялаў
+STR_CARGO_NAME_METAL                                                            :Метал
+STR_CARGO_NAME_METAL.acc                                                        :метал
+STR_CARGO_NAME_METAL.gen                                                        :металу
+STR_CARGO_NAME_MILK                                                             :Малако
+STR_CARGO_NAME_MILK.acc                                                         :малако
+STR_CARGO_NAME_MILK.gen                                                         :малака
+STR_CARGO_NAME_RECYCLABLES                                                      :Другасная сыравіна
+STR_CARGO_NAME_RECYCLABLES.acc                                                  :другасную сыравіну
+STR_CARGO_NAME_RECYCLABLES.gen                                                  :другаснай сыравіны
+STR_CARGO_NAME_SAND                                                             :Пясок
+STR_CARGO_NAME_SAND.acc                                                         :пясок
+STR_CARGO_NAME_SAND.gen                                                         :пяску
+STR_CARGO_NAME_SCRAP_METAL                                                      :Металалом
+STR_CARGO_NAME_SCRAP_METAL.acc                                                  :металалом
+STR_CARGO_NAME_SCRAP_METAL.gen                                                  :металалому
+STR_CARGO_NAME_STONE                                                            :Вапняк
+STR_CARGO_NAME_STONE.acc                                                        :вапняк
+STR_CARGO_NAME_STONE.gen                                                        :вапняку
+STR_CARGO_NAME_SUGAR_BEET                                                       :Буракі
+STR_CARGO_NAME_SUGAR_BEET.acc                                                   :буракі
+STR_CARGO_NAME_SUGAR_BEET.gen                                                   :буракоў
+STR_CARGO_NAME_WOOL                                                             :Шэрсць
+STR_CARGO_NAME_WOOL.acc                                                         :шэрсць
+STR_CARGO_NAME_WOOL.gen                                                         :шэрсці
 STR_CARGO_NAME_ZINC                                                             :Цынк
 
+STR_CARGO_UNIT_ACID                                                             :{VOLUME} кіслаты
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} спіртнога
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} баксітаў
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} будматэрыялаў
+STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} цэменту
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} хімікатаў
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} гліны
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} адзін{P 0 ка кі ""} абсталявання
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} {P 0 "мех" "мяхі" ""} раслінных валокнаў
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} рыбы
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} адзін{P 0 ка ак ""} агратэхсродкаў
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} садавіны
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} лесаматэрыялаў
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} метала
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} малака
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} другаснай сыравіны
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} пяску
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} металалому
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} вапняку
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} буракоў
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} звяз{P 0 "ка" "кі" "ак"} шэрсці
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}СП
+STR_CID_BAUXITE                                                                 :{TINYFONT}БС
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}АГ
+STR_CID_FISH                                                                    :{TINYFONT}РЫ
+STR_CID_SALT                                                                    :{TINYFONT}СО
+STR_CID_STONE                                                                   :{TINYFONT}ВП
+
+
+
+
+STR_IND_BREWERY                                                                 :Бровар
+STR_IND_BREWERY.acc                                                             :бровар
+STR_IND_BREWERY.gen                                                             :бровара
 
 
 
 
 
 
-
-
-
-
-
+STR_STATION_POWERHUNGRY                                                         :Электрастанцыя
+STR_STATION_POWERHUNGRY.acc                                                     :электрастанцыю
+STR_STATION_POWERHUNGRY.gen                                                     :электрастанцыі
+STR_STATION_SUGAR_COMPANY                                                       :Цукровая кампанія
