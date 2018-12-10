@@ -4,6 +4,9 @@
 ##case acc nom pre f abl m n dat p gen
 
 
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Максімальная адлегласць месц лоўлі рыбы, нафтавых вышак і участкаў паглыблення дна ад берага, ў тайлах.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Па змаўчанні, новыя прадпрыемствы ствараюцца ў ходзе гульні.{}{}Калі параметр {SILVER}перашкаджае стварэнню {BLACK}прадпрыемствы не будуць адкрывацца, і гульцы не змогуць ствараць іх.
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Дазволіць аднолькавым прадпрыемствам знаходзіцца блізка адзін да аднаго
 
 
 
@@ -15,9 +18,15 @@ STR_CARGO_NAME_ALCOHOL.gen                                                      
 STR_CARGO_NAME_BAUXITE                                                          :Баксіты
 STR_CARGO_NAME_BAUXITE.acc                                                      :баксіты
 STR_CARGO_NAME_BAUXITE.gen                                                      :баксітаў
+STR_CARGO_NAME_BEANS                                                            :Фасоля
+STR_CARGO_NAME_BEANS.acc                                                        :фасолю
+STR_CARGO_NAME_BEANS.gen                                                        :фасолі
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Будматэрыялы
 STR_CARGO_NAME_BUILDING_MATERIALS.acc                                           :будматэрыялы
 STR_CARGO_NAME_BUILDING_MATERIALS.gen                                           :будматэрыялаў
+STR_CARGO_NAME_CASSAVA                                                          :Маніёк
+STR_CARGO_NAME_CASSAVA.acc                                                      :маніёк
+STR_CARGO_NAME_CASSAVA.gen                                                      :маніёку
 STR_CARGO_NAME_CHEMICALS                                                        :Хімікаты
 STR_CARGO_NAME_CHEMICALS.acc                                                    :хімікаты
 STR_CARGO_NAME_CHEMICALS.gen                                                    :хімікатаў
@@ -30,12 +39,18 @@ STR_CARGO_NAME_COFFEE.gen                                                       
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Абсталяванне
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.acc                                         :абсталяванне
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.gen                                         :абсталявання
+STR_CARGO_NAME_EXPLOSIVES                                                       :Выбуховыя рэчывы
+STR_CARGO_NAME_EXPLOSIVES.acc                                                   :выбуховыя рэчывы
+STR_CARGO_NAME_EXPLOSIVES.gen                                                   :выбуховых рэчываў
 STR_CARGO_NAME_FIBRES                                                           :Раслінныя валокны
 STR_CARGO_NAME_FIBRES.acc                                                       :раслінныя валокны
 STR_CARGO_NAME_FIBRES.gen                                                       :раслінных валокнаў
 STR_CARGO_NAME_FISH                                                             :Рыба
 STR_CARGO_NAME_FISH.acc                                                         :рыбу
 STR_CARGO_NAME_FISH.gen                                                         :рыбы
+STR_CARGO_NAME_FERTILISER                                                       :Угнаенні
+STR_CARGO_NAME_FERTILISER.acc                                                   :угнаенні
+STR_CARGO_NAME_FERTILISER.gen                                                   :угнаенняў
 STR_CARGO_NAME_FRUITS                                                           :Садавіна
 STR_CARGO_NAME_FRUITS.acc                                                       :садавіну
 STR_CARGO_NAME_FRUITS.gen                                                       :садавіны
@@ -48,6 +63,12 @@ STR_CARGO_NAME_METAL.gen                                                        
 STR_CARGO_NAME_MILK                                                             :Малако
 STR_CARGO_NAME_MILK.acc                                                         :малако
 STR_CARGO_NAME_MILK.gen                                                         :малака
+STR_CARGO_NAME_NITRATES                                                         :Нітраты
+STR_CARGO_NAME_NITRATES.acc                                                     :нітраты
+STR_CARGO_NAME_NITRATES.gen                                                     :нітратаў
+STR_CARGO_NAME_PEAT                                                             :Торф
+STR_CARGO_NAME_PEAT.acc                                                         :торф
+STR_CARGO_NAME_PEAT.gen                                                         :торфу
 STR_CARGO_NAME_RECYCLABLES                                                      :Другасная сыравіна
 STR_CARGO_NAME_RECYCLABLES.acc                                                  :другасную сыравіну
 STR_CARGO_NAME_RECYCLABLES.gen                                                  :другаснай сыравіны
@@ -63,6 +84,9 @@ STR_CARGO_NAME_STONE.gen                                                        
 STR_CARGO_NAME_SUGAR_BEET                                                       :Буракі
 STR_CARGO_NAME_SUGAR_BEET.acc                                                   :буракі
 STR_CARGO_NAME_SUGAR_BEET.gen                                                   :буракоў
+STR_CARGO_NAME_SULPHUR                                                          :Сера
+STR_CARGO_NAME_SULPHUR.acc                                                      :серу
+STR_CARGO_NAME_SULPHUR.gen                                                      :серы
 STR_CARGO_NAME_WOOL                                                             :Шэрсць
 STR_CARGO_NAME_WOOL.acc                                                         :шэрсць
 STR_CARGO_NAME_WOOL.gen                                                         :шэрсці
@@ -71,6 +95,7 @@ STR_CARGO_NAME_ZINC                                                             
 STR_CARGO_UNIT_ACID                                                             :{VOLUME} кіслаты
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} спіртнога
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} баксітаў
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} фасолі
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} будматэрыялаў
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} цэменту
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} хімікатаў
@@ -83,33 +108,105 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} лесаматэрыялаў
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} метала
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} малака
+STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} калію
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} другаснай сыравіны
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} пяску
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} металалому
+STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} дзындры
+STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} соды
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} вапняку
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} буракоў
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} звяз{P 0 "ка" "кі" "ак"} шэрсці
+STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} цынку
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}СП
 STR_CID_BAUXITE                                                                 :{TINYFONT}БС
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}БМ
+STR_CID_COFFEE                                                                  :{TINYFONT}КВ
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}АГ
 STR_CID_FISH                                                                    :{TINYFONT}РЫ
+STR_CID_LIMESTONE                                                               :{TINYFONT}ВП
+STR_CID_LUMBER                                                                  :{TINYFONT}БВ
+STR_CID_MANGANESE                                                               :{TINYFONT}МН
+STR_CID_METAL                                                                   :{TINYFONT}МТ
+STR_CID_PIPE                                                                    :{TINYFONT}ТБ
 STR_CID_SALT                                                                    :{TINYFONT}СО
+STR_CID_SAND                                                                    :{TINYFONT}ПС
+STR_CID_STEEL                                                                   :{TINYFONT}СЛ
 STR_CID_STONE                                                                   :{TINYFONT}ВП
+STR_CID_ZINC                                                                    :{TINYFONT}ЦН
 
 
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}Немагчыма выкарыстоўваць FIRS ў цацачным клімаце
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Несумяшчальная версія: {ORANGE}Total Town Replacement Set павінен быць версіі release 3.11 ці навей. {YELLOW}Подрабязнасці в FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :можна размясціць только на зямлі.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :нельга размясціць у пустыні.
 
 STR_IND_BREWERY                                                                 :Бровар
 STR_IND_BREWERY.acc                                                             :бровар
 STR_IND_BREWERY.gen                                                             :бровара
+STR_IND_CLAY_PIT                                                                :Гліняны кар'ер
+STR_IND_CLAY_PIT.acc                                                            :гліняны кар'ер
+STR_IND_CLAY_PIT.gen                                                            :глінянага кар'еру
+STR_IND_COKE_OVEN                                                               :Коксавая печ
+STR_IND_COKE_OVEN.acc                                                           :коксавую печ
+STR_IND_COKE_OVEN.gen                                                           :коксавай печы
+STR_IND_DAIRY_FARM                                                              :Малочная гаспадарка
+STR_IND_DAIRY_FARM.acc                                                          :малочную гаспадарку
+STR_IND_DAIRY_FARM.gen                                                          :малочнай гаспадаркі
+STR_IND_FISHING_GROUND                                                          :Месца лоўлі рыбы
+STR_IND_FISHING_GROUND.acc                                                      :месца лоўлі рыбы
+STR_IND_FISHING_GROUND.gen                                                      :месца лоўлі рыбы
+STR_IND_FISHING_VILLAGE                                                         :Рыбацкая вёска
+STR_IND_FISHING_VILLAGE.acc                                                     :рыбацкую вёску
+STR_IND_FISHING_VILLAGE.gen                                                     :рыбацкай вёскі
+STR_IND_FOOD_MARKET                                                             :Прадуктовая крама
+STR_IND_FOOD_MARKET.acc                                                         :прадуктовую краму
+STR_IND_FOOD_MARKET.gen                                                         :прадуктовай крамы
+STR_IND_HOTEL                                                                   :Гатэль
+STR_IND_HOTEL.acc                                                               :гатэль
+STR_IND_HOTEL.gen                                                               :гатэля
+STR_IND_LIMESTONE_MINE                                                          :Вапнавы кар'ер
+STR_IND_LIMESTONE_MINE.acc                                                      :вапнавы кар'ер
+STR_IND_LIMESTONE_MINE.gen                                                      :вапнавага кар'ера
+STR_IND_PLASTICS_PLANT                                                          :Пластыкавы завод
+STR_IND_PLASTICS_PLANT.acc                                                      :пластыкавы завод
+STR_IND_PLASTICS_PLANT.gen                                                      :пластыкавага заводу
+STR_IND_SLAG_GRINDING_PLANT                                                     :Завод па пераапрацоўцы дзындры
+STR_IND_SLAG_GRINDING_PLANT.acc                                                 :завод па пераапрацоўцы дзындры
+STR_IND_SLAG_GRINDING_PLANT.gen                                                 :заводу па пераапрацоўцы дзындры
+STR_IND_SODA_ASH_MINE                                                           :Содавая пячора
+STR_IND_SODA_ASH_MINE.acc                                                       :содавую пячору
+STR_IND_SODA_ASH_MINE.gen                                                       :содавай пячоры
+
+
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Узровень вытворчасці: {YELLOW}Найлепшы (x4){}{}{BLACK}Для падтрымкі гэтага ўзроўня, дастаўце{SKIP}{SIGNED_WORD} скрын{P ку і ак} матэрыялаў на працягу трох месяцаў
+
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Мясцовасць: {YELLOW}Ня можа быць пабудавана на снезе ці ў пустыне.
 
 
 
-
-
-
+STR_STATION_ANIMALS                                                             :Конны кірмаш
+STR_STATION_ANIMALS.acc                                                         :конны кірмаш
+STR_STATION_ANIMALS.gen                                                         :коннага кірмашу
+STR_STATION_FISHMARKET                                                          :Рыбны рынак
+STR_STATION_FISHMARKET.acc                                                      :рыбны рынак
+STR_STATION_FISHMARKET.gen                                                      :рыбнага рынку
+STR_STATION_OIL_RIG                                                             :Нафтавая вышка
+STR_STATION_OIL_RIG.acc                                                         :нафтавую вышку
+STR_STATION_OIL_RIG.gen                                                         :нафтавай вышкі
+STR_STATION_ORCHARDS                                                            :Сады
+STR_STATION_ORCHARDS.acc                                                        :сады
+STR_STATION_ORCHARDS.gen                                                        :садоў
+STR_STATION_PLANTATION                                                          :Плантацыя
+STR_STATION_PLANTATION.acc                                                      :плантацыю
+STR_STATION_PLANTATION.gen                                                      :плантацыі
 STR_STATION_POWERHUNGRY                                                         :Электрастанцыя
 STR_STATION_POWERHUNGRY.acc                                                     :электрастанцыю
 STR_STATION_POWERHUNGRY.gen                                                     :электрастанцыі
-STR_STATION_SUGAR_COMPANY                                                       :Цукровая кампанія
+STR_STATION_SUGAR_COMPANY                                                       :Цукровы завод
+STR_STATION_WEAVE_AND_DYE                                                       :Швейная фабрыка
+STR_STATION_WEAVE_AND_DYE.acc                                                   :швейную фабрыку
+STR_STATION_WEAVE_AND_DYE.gen                                                   :швейнай фабрыкі
+STR_STATION_WINERY                                                              :Віна-гарэлкавы завод
