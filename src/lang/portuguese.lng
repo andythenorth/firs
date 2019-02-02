@@ -16,7 +16,7 @@ STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Sem limite
 
 STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Quintas, minas e industrias similares aumentarão producão quando unidades de carga forem entregues, primeiro para {SILVER}Melhorado{BLACK}, e depois para {SILVER}Gung-ho{BLACK}, se as necessárias unidades forem entregues.{}{}Os valores padrão são bons, mas se necessário, podem aqui ser alterados .{}{}Os requerimentos para a carga para industrias do tipo porto serão 8x os valores aqui definidos.
-STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Nível primário de produção melhorado (%)
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Nível primário de produção Melhorado (%)
 STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Nível primário de produção Gung-Ho (%)
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Economia Básica Clima Temperado
@@ -27,11 +27,13 @@ STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          
 
 STR_CARGO_NAME_ALCOHOL                                                          :Álcool
 STR_CARGO_NAME_BAUXITE                                                          :Bauxita
+STR_CARGO_NAME_BEANS                                                            :Feijões
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Material de Construção
 STR_CARGO_NAME_CASSAVA                                                          :Mandioca
 STR_CARGO_NAME_CHEMICALS                                                        :Produtos Químicos
 STR_CARGO_NAME_CLAY                                                             :Argila
 STR_CARGO_NAME_COFFEE                                                           :Café
+STR_CARGO_NAME_COPPER                                                           :Cobre
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Peças
 STR_CARGO_NAME_FIBRES                                                           :Fibras Vegetais
 STR_CARGO_NAME_FISH                                                             :Peixe
@@ -43,25 +45,33 @@ STR_CARGO_NAME_MILK                                                             
 STR_CARGO_NAME_NITRATES                                                         :Nitratos
 STR_CARGO_NAME_PETROL                                                           :Gasolina
 STR_CARGO_NAME_PIG_IRON                                                         :Liga de Ferro
+STR_CARGO_NAME_POTASH                                                           :Potássio
 STR_CARGO_NAME_PYRITE_ORE                                                       :Minério de pirite
 STR_CARGO_NAME_QUICKLIME                                                        :Cal
 STR_CARGO_NAME_RECYCLABLES                                                      :Material Reciclável
+STR_CARGO_NAME_SALT                                                             :Sal
 STR_CARGO_NAME_SAND                                                             :Areia
 STR_CARGO_NAME_SCRAP_METAL                                                      :Sucata
+STR_CARGO_NAME_SODA_ASH                                                         :Carbonato de sódio
 STR_CARGO_NAME_STEEL                                                            :Aço
 STR_CARGO_NAME_STONE                                                            :Pedra
 STR_CARGO_NAME_SUGAR_BEET                                                       :Beterraba Sacarina
+STR_CARGO_NAME_SULPHUR                                                          :Enxofre
 STR_CARGO_NAME_VEHICLE_PARTS                                                    :Peças de veículos
 STR_CARGO_NAME_WOOL                                                             :Lã
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} de álcool
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} de bauxita
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} de materias de construção
+STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} de mandioca
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} de cimento
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de produtos químicos
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} de argila
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} saco{P 0 "" s} de café
+STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} de óleo alimentar
+STR_CARGO_UNIT_ELECTRICAL_MACHINES                                              :{WEIGHT} de máquinas eléctricas
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} caixa{P 0 "" s} de peças
+STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} de fertilizante
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} fardo{P 0 "" s} de fibras vegetais
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} de peixe
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} caixa{P 0 "" s} de fertilizante
@@ -69,6 +79,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de madeira
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de metal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} de leite
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} de nitratos
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} de gasolina
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} de fosfato
 STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} de liga de ferro
@@ -85,6 +96,7 @@ STR_CARGO_UNIT_WOOL                                                             
 STR_CID_ACID                                                                    :{TINYFONT}AC
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BEANS                                                                   :{TINYFONT}BN
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
 STR_CID_CASSAVA                                                                 :{TINYFONT}CA
 STR_CID_CHEMICALS                                                               :{TINYFONT}PQ
@@ -95,9 +107,11 @@ STR_CID_FARM_SUPPLIES                                                           
 STR_CID_FIBRES                                                                  :{TINYFONT}FV
 STR_CID_FISH                                                                    :{TINYFONT}PX
 STR_CID_LUMBER                                                                  :{TINYFONT}MA
+STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}LE
 STR_CID_NITRATES                                                                :{TINYFONT}NI
+STR_CID_NUTS                                                                    :{TINYFONT}NT
 STR_CID_PETROL                                                                  :{TINYFONT}GA
 STR_CID_PIPE                                                                    :{TINYFONT}PP
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
@@ -106,6 +120,7 @@ STR_CID_RECYCLABLES                                                             
 STR_CID_SALT                                                                    :{TINYFONT}NA
 STR_CID_SAND                                                                    :{TINYFONT}AR
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SU
+STR_CID_SLAG                                                                    :{TINYFONT}SG
 STR_CID_STONE                                                                   :{TINYFONT}PE
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}BS
 STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}VB
@@ -158,6 +173,7 @@ STR_IND_HOTEL                                                                   
 STR_IND_IRON_WORKS                                                              :Siderúrgica
 STR_IND_JUNKYARD                                                                :Ferro Velho
 STR_IND_LIME_KILN                                                               :Usina de Cal
+STR_IND_LIMESTONE_MINE                                                          :Mina de Calcário
 STR_IND_LIQUIDS_TERMINAL                                                        :Terminal de Líquidos
 STR_IND_LUMBER_YARD                                                             :Madeireira
 STR_IND_MACHINE_SHOP                                                            :Fábrica de Ferramentas
@@ -168,6 +184,7 @@ STR_IND_ORCHARD_PIGGERY                                                         
 STR_IND_PETROLPUMP                                                              :Posto de Gasolina
 STR_IND_PLASTICS_PLANT                                                          :Fabrica de Plastico
 STR_IND_PORT                                                                    :Porto
+STR_IND_POTASH_MINE                                                             :Mina de Potássio
 STR_IND_PYRITE_SMELTER                                                          :Fundição de Pirite
 STR_IND_QUARRY                                                                  :Pedreira
 STR_IND_RANCH                                                                   :Rancho
@@ -184,6 +201,7 @@ STR_IND_TRADING_POST                                                            
 STR_IND_VEHICLE_DEALER                                                          :Revendedor de Veículos
 
 
+STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(fornecido)
 STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}Para taxa de produção máxima, entregar {WHITE}todas {BLACK}unidades de carga requeridas pelo menos uma vez a cada 3 meses.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produção é proporcional à população da cidade.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produção atual: {YELLOW}Normal{}{}{BLACK}Para duplicar a produção entregar {SIGNED_WORD} unidades de carga dentro de três meses (ou {SIGNED_WORD} unidades de carga para quadruplicar a produção)
@@ -210,16 +228,25 @@ STR_STATION                                                                     
 
 STR_STATION_ANIMALS                                                             :Mercado de Cavalos
 STR_STATION_AUTOMOTIVE                                                          :Automotivo
+STR_STATION_BARNS                                                               :Celeiros
+STR_STATION_CASTINGS                                                            :Moldes
+STR_STATION_CREOSOTING                                                          :Creosotagem
+STR_STATION_ESTATE                                                              :Estado
 STR_STATION_EXCHANGE                                                            :Troca
 STR_STATION_FARM_1                                                              :Solar
+STR_STATION_FARM_3                                                              :Rancho
 STR_STATION_FISHMARKET                                                          :Mercado de Pesca
+STR_STATION_FOOD_CORPORATION                                                    :Corporação Alimentar
 STR_STATION_FORGE                                                               :Forja
 STR_STATION_HEAVY_INDUSTRY_2                                                    :Oficinas
 STR_STATION_INDUSTRY_ESTATE_1                                                   :Parque Industrial
 STR_STATION_INDUSTRY_HARBOUR_1                                                  :Porto Industrial
+STR_STATION_IRONSTONE                                                           :Pedra de Ferro
+STR_STATION_JOINERS_SHOP                                                        :Loja de Marceneiro
 STR_STATION_KIMBERLITE_DEPOSITS                                                 :Depósitos de Kimberlite
 STR_STATION_LIMESTONE_MINES                                                     :Minas de calcário
 STR_STATION_MARKET                                                              :Mercado
+STR_STATION_MERCHANTS_LANE                                                      :Linha dos Comerciantes
 STR_STATION_MILL                                                                :Moinho/Fábrica
 STR_STATION_MINE                                                                :Estrada Tanner
 STR_STATION_PIT                                                                 :Escavação
@@ -230,7 +257,14 @@ STR_STATION_PYRITES                                                             
 STR_STATION_REFINERY                                                            :Portland
 STR_STATION_RUBBER_COMPANY                                                      :Empresa de borracha
 STR_STATION_SALTPETER_WORKS                                                     :Refinarias de Sal
+STR_STATION_SHARP_STREET                                                        :Rua Sharp
 STR_STATION_SHEEP_FOLD                                                          :Curral de Ovelhas
+STR_STATION_SMELTER                                                             :Fundição
+STR_STATION_STACKS                                                              :Pilhas
 STR_STATION_SUGAR_COMPANY                                                       :Companhia de Açucar
+STR_STATION_TANK_FARM                                                           :Parque de Armazenagem
 STR_STATION_TOWN_1                                                              :Câmara Municipal antiga
+STR_STATION_TOWN_2                                                              :Autoestrada
 STR_STATION_WATER                                                               :Banco de Areia
+STR_STATION_WINERY                                                              :Adega
+STR_STATION_VEHICLE_DEALER                                                      :Cais Camiões
