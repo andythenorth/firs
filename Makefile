@@ -1,5 +1,5 @@
 # Various needed programs
-HG= hg
+GIT = git
 PYTHON3 = python3
 SED = sed
 ZIP = zip
@@ -7,7 +7,7 @@ ZIP = zip
 NMLC = nmlc
 GRFID = grfid
 
-HG_INFO = bin/hg-info
+GIT_INFO = bin/git-info
 FILL_TEMPLATE = bin/fill-template
 FIND_FILES = bin/find-files
 MK_ARCHIVE = bin/mk-archive
@@ -26,7 +26,7 @@ NML_FLAGS =-c -l $(LANG_DIR)
 EXPORTED = no
 ifeq ($(strip $(EXPORTED)),no)
   # Not exported source, therefore regular checkout
-  REPO_INFO = $(shell $(HG_INFO) --num-id --version)
+  REPO_INFO = $(shell $(GIT_INFO) --num-id --version)
   REPO_REVISION = $(word 1,$(REPO_INFO))
   REPO_VERSION = $(word 2,$(REPO_INFO))
 else
@@ -113,7 +113,7 @@ $(MD5_FILE): $(GRF_FILE)
 bundle_src: $(MD5_FILE)
 	if test -d $(BUNDLE_DIR); then rm -r $(BUNDLE_DIR); fi
 	mkdir $(BUNDLE_DIR)
-	$(HG) archive -t files $(BUNDLE_DIR)/src
+	$(GIT) archive -t files $(BUNDLE_DIR)/src
 	$(FILL_TEMPLATE) --template=Makefile \
 		--output=$(BUNDLE_DIR)/src/Makefile \
 		"exported_revision=$(REPO_REVISION)" \
