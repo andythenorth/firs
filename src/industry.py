@@ -924,15 +924,28 @@ class Industry(object):
     def get_nearby_station_name_declaration(self):
         return 'nearby_station_name: string(STR_STATION, string(STR_TOWN),' + self.get_property('nearby_station_name', None) + ');'
 
-    def get_accept_cargo_types_declaration(self, economy):
-        # special handling to reformat python list as nml property declaration
-        result = ','.join(['cargotype("' + label + '")' for label in self.get_accept_cargo_types(economy)])
-        return 'accept_cargo_types: [' + result + '];'
+    def get_cargo_types_declaration(self, economy):
+        # special handling for cargo_types nml declaration
+        cargo_types = []
+        cargo_types.extend(['accept_cargo("' + label + '")' for label in self.get_accept_cargo_types(economy)])
+        # !! horrible migration hax, zip together old prod_multiplier prop and prod_cargo_types to get new format
+        utils.echo_message('zipping prod_multipliers into prod_cargo_types is silly')
+        prod_multipliers = [int(i) for i in self.get_property('prod_multiplier', economy)[1:-1].split(',')]
+        prod_cargo_types = []
+        for count, i in enumerate(self.get_prod_cargo_types(economy)):
+            prod_cargo_types.append((i[0], prod_multipliers[count]))
+        cargo_types.extend(['produce_cargo("' + label + '",' + str(output_ratio) + ')' for label, output_ratio in prod_cargo_types])
+        result = 'cargo_types: [' + ','.join(cargo_types) + '];'
 
-    def get_prod_cargo_types_declaration(self, economy):
-        # special handling to reformat python list as nml property declaration
-        result = ','.join(['cargotype("' + label + '")' for label, output_ratio in self.get_prod_cargo_types(economy)])
-        return 'prod_cargo_types: [' + result + '];'
+        print(result)
+        return result
+        """
+            # just use 0 in produce_cargo("MAIL", 0.5) if prod. cb is in use (i.e. secondaries
+            accept_cargo("COAL", produce_cargo("MAIL", 1), produce_cargo("GOOD", 1), produce_cargo("STEL", 1), produce_cargo("VALU", 1)),
+            accept_cargo("OIL_"),
+            accept_cargo("IORE", produce_cargo("STEL", 4)),
+            accept_cargo("GRAI", produce_cargo("MAIL", 0.5), produce_cargo("VALU", 0.5))
+        """
 
     def get_accept_cargo_types(self, economy):
         # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed
@@ -942,7 +955,7 @@ class Industry(object):
             return []
         else:
             # guard against too many cargos being defined
-            if len(result) > 3:
+            if len(result) > 16:
                 utils.echo_message("Too many accepted cargos defined for " + self.id + ' in economy ' + economy.id)
             return result
 
@@ -958,13 +971,14 @@ class Industry(object):
             return []
         else:
             # guard against too many cargos being defined
-            if len(prod_cargo_types) > 2:
+            if len(prod_cargo_types) > 16:
                 utils.echo_message("Too many produced cargos defined for " + self.id + ' in economy ' + economy.id)
             # now do some magic to support occasionally using output ratios other than 50:50;
             # magic is bad, but so is manually adjusting more than 80 industries :|
             result = []
             for i in prod_cargo_types:
                 if isinstance(i, str):
+                    print("output cargo split will need ported for > 2 cargos")
                     if len(prod_cargo_types) == 2:
                         result.append((i, 4))
                     else:
@@ -1114,6 +1128,7 @@ class IndustryPrimaryTownProducer(Industry):
         super().__init__(**kwargs)
         self.template = kwargs.get('template', 'industry_primary_town_producer.pynml')
         self.supply_requirements = None # supplies do not boost this type of primary
+
 
 class IndustrySecondary(Industry):
     """ Processing industries: input cargo(s) -> output cargo(s) """
