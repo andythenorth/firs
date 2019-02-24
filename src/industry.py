@@ -937,14 +937,12 @@ class Industry(object):
         result = 'cargo_types: [' + ','.join(cargo_types) + '];'
         """
             # output format
-            # just use 0 in produce_cargo("MAIL", 0.5) if prod. cb is in use (i.e. secondaries
+            # just use 0 in produce_cargo("MAIL", 0.5) if prod. cb is in use (i.e. secondaries)
             accept_cargo("COAL", produce_cargo("MAIL", 1), produce_cargo("GOOD", 1), produce_cargo("STEL", 1), produce_cargo("VALU", 1)),
             accept_cargo("OIL_"),
             accept_cargo("IORE", produce_cargo("STEL", 4)),
-            accept_cargo("GRAI", produce_cargo("MAIL", 0.5), produce_cargo("VALU", 0.5)),
             produce_cargo("VALU", 0.5)
         """
-        print(result)
         return result
 
     def get_accept_cargo_types(self, economy):
