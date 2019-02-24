@@ -947,15 +947,18 @@ class Industry(object):
 
     def get_accept_cargo_types(self, economy):
         # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed
-        result = self.get_property('accept_cargo_types', economy)
-        if result is None:
+        accept_cargo_types = self.get_property('accept_cargo_types', economy)
+        if accept_cargo_types is None:
             # returning None causes some things to explode in docs, which I should fix, but haven't, this patches it with jank
-            return []
+            result = []
         else:
-            # guard against too many cargos being defined
-            if len(result) > 16:
-                utils.echo_message("Too many accepted cargos defined for " + self.id + ' in economy ' + economy.id)
-            return result
+            result = accept_cargo_types
+            # although OpenTTD 1.9.0+ supports up to 16 accepted cargos, FIRS caps to 16
+            # - for gameplay reasons (too many cargos in one industry isn't fun)
+            # - because of long-established production rules that calculate cargo output using ratios of n/8
+            assert(len(result) <= 8), "More than 8 accepted cargos defined for %s in economy %s" % (
+                self.id, economy.id)
+        return result
 
     def get_prod_cargo_types(self, economy):
         # method used here for (1) unfortunate magic (2) guarding against invalid values
@@ -969,8 +972,12 @@ class Industry(object):
             return []
         else:
             # guard against too many cargos being defined
-            if len(prod_cargo_types) > 16:
-                utils.echo_message("Too many produced cargos defined for " + self.id + ' in economy ' + economy.id)
+            # although OpenTTD 1.9.0+ supports up to 16 produced cargos, FIRS caps to 16
+            # - for gameplay reasons (too many cargos in one industry isn't fun)
+            # - because of long-established production rules that calculate cargo output using ratios of n/8
+            assert(len(prod_cargo_types) <= 8), "More than 8 produced cargos defined for %s in economy %s" % (
+                self.id, economy.id)
+
             # now do some magic to support occasionally using output ratios other than 50:50;
             # magic is bad, but so is manually adjusting more than 80 industries :|
             result = []
