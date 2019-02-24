@@ -18,9 +18,9 @@ industry = IndustryPrimaryPort(id='wharf',
 # in Steeltown, there is a deliberate feedback loop with COPR > POWR + ENSP > more COPR (and more ENSP)
 # this is to allow an easy kickstart of ENSP, when all other chains are so tightly connected
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FMSP', 'POWR']
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['COPR', 'ENSP']
-industry.economy_variations['STEELTOWN'].prod_multiplier = '[16, 12]'
+industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FMSP', 'POWR', 'PIPE', 'FOOD']
+industry.economy_variations['STEELTOWN'].prod_cargo_types = ['COPR', 'ZINC', 'ENSP']
+industry.economy_variations['STEELTOWN'].prod_multiplier = '[16, 16, 12]'
 industry.economy_variations['STEELTOWN'].name = 'string(STR_IND_WHARF)'
 
 industry.add_tile(id='wharf_tile_1',

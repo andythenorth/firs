@@ -40,7 +40,7 @@ industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['WDPR', 'COPR'
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'GOOD']
 industry.economy_variations['MISTAH_KURTZ'].prod_multiplier = '[17, 14]'
 
-industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].enabled = False
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FOOD', 'PIPE']
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['ZINC', 'RUBR']
 industry.economy_variations['STEELTOWN'].prod_multiplier = '[16, 16]'
