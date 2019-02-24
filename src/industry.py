@@ -45,7 +45,7 @@ class Tile(object):
         # 'janky_industry_id_string' because an industry ID is needed, and I don't trivially have one here
         if self.land_shape_flags is not '0' and len(self.location_checks.get_render_tree(self.id, industry_id)) > 0:
             raise Exception("Tile " + self.id + ": land_shape_flags are set but will be ignored because the tile also uses location_checks cb.  Only set one of these attributes.")
-        self.special_flags = kwargs.get('special_flags', None)
+        self._special_flags = kwargs.get('special_flags', [])
         self.foundations = kwargs.get('foundations', None)
         self.autoslope = kwargs.get('autoslope', None)
         # animation length (int), looping (bool), speed (int) should be set for all animations
@@ -67,12 +67,11 @@ class Tile(object):
         self.custom_animation_control = kwargs.get('custom_animation_control', None)
         self.random_trigger = kwargs.get('random_trigger', None)
 
-    def get_expression_for_tile_acceptance(self, industry, economy):
-        result = []
-        accept_cargo_types = industry.get_accept_cargo_types(economy)
-        for cargo in accept_cargo_types:
-            result.append('[cargotype("' + cargo + '"), 8]')
-        return ','.join(result)
+    @property
+    def special_flags(self):
+        flags = ['INDTILE_FLAG_ACCEPT_ALL']
+        flags.extend(self._special_flags)
+        return 'bitmask(' + ','.join(flags) + ')'
 
     def get_animation_triggers(self):
         if self.custom_animation_control is None:
@@ -936,16 +935,17 @@ class Industry(object):
             prod_cargo_types.append((i[0], prod_multipliers[count]))
         cargo_types.extend(['produce_cargo("' + label + '",' + str(output_ratio) + ')' for label, output_ratio in prod_cargo_types])
         result = 'cargo_types: [' + ','.join(cargo_types) + '];'
-
-        print(result)
-        return result
         """
+            # output format
             # just use 0 in produce_cargo("MAIL", 0.5) if prod. cb is in use (i.e. secondaries
             accept_cargo("COAL", produce_cargo("MAIL", 1), produce_cargo("GOOD", 1), produce_cargo("STEL", 1), produce_cargo("VALU", 1)),
             accept_cargo("OIL_"),
             accept_cargo("IORE", produce_cargo("STEL", 4)),
-            accept_cargo("GRAI", produce_cargo("MAIL", 0.5), produce_cargo("VALU", 0.5))
+            accept_cargo("GRAI", produce_cargo("MAIL", 0.5), produce_cargo("VALU", 0.5)),
+            produce_cargo("VALU", 0.5)
         """
+        print(result)
+        return result
 
     def get_accept_cargo_types(self, economy):
         # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed

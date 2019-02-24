@@ -4,9 +4,7 @@
         property {
             substitute:         0;
             land_shape_flags:   ${tile.land_shape_flags};
-            <tal:special_flags condition="tile.special_flags is not None">
-                special_flags: ${tile.special_flags};
-            </tal:special_flags>
+            special_flags: ${tile.special_flags};
             <!--! conditionally setting animation props might result in undefined behaviour? -->
             <tal:animation_info condition="tile.animation_length > 1">
                 animation_info: [${'ANIMATION_LOOPING' if tile.animation_looping else 'ANIMATION_NON_LOOPING'}, ${tile.animation_length}];
@@ -39,18 +37,4 @@
             ${industry.id}_tile_fences;
         }
     }
-    <!--!
-          Tile properties that vary by economy.
-    -->
-    <tal:economies repeat="economy economies">
-        if (economy==${economy.numeric_id}) {
-            <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
-                item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
-                    property {
-                        accepted_cargos:  [${tile.get_expression_for_tile_acceptance(industry, economy)}];
-                    }
-                }
-            </tal:industry_on_or_off>
-        }
-    </tal:economies>
 </tal:tiles>
