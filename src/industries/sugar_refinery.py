@@ -1,12 +1,11 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='sugar_refinery',
-                             processed_cargos_and_output_ratios=[('MNSP', 3), ('SGBT', 5)],
+                             accept_cargos_with_input_ratios=[('MNSP', 3), ('SGBT', 5)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types=['FOOD'],
+                             prod_cargo_types_with_output_ratios=[('FOOD', 8)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='83',
                              spec_flags='bitmask(IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE)',
                              name='string(STR_IND_SUGAR_REFINERY)',

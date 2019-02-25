@@ -1,19 +1,20 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(id='iron_ore_mine',
+                                     prod_cargo_types_with_multipliers=[('IORE', 20)],
                                      map_colour='55',
                                      prob_in_game='4',
                                      prob_random='7',
                                      prospect_chance='0.75',
                                      name='TTD_STR_INDUSTRY_NAME_IRON_ORE_MINE',
                                      location_checks=dict(cluster=[70, 3]),
-                                     prod_multiplier='[20]',
-                                     prod_cargo_types=['IORE'],
                                      nearby_station_name='string(STR_STATION_IRONSTONE)',
                                      fund_cost_multiplier='232')
 
 industry.economy_variations['FIRS'].enabled = True
+
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].prob_random = '10'
 

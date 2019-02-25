@@ -1,11 +1,10 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='plastics_plant',
-                             processed_cargos_and_output_ratios=[('RFPR', 6), ('FICR', 6)],
-                             prod_cargo_types=['GOOD', 'MNSP'],
+                             accept_cargos_with_input_ratios=[('RFPR', 6), ('FICR', 6)],
+                             prod_cargo_types_with_output_ratios=[('GOOD', 4), ('MNSP', 4)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='209',
                              name='string(STR_IND_PLASTICS_PLANT)',
                              nearby_station_name='string(STR_STATION_MOULDINGS)',

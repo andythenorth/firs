@@ -1,11 +1,10 @@
 from industry import IndustryPrimaryPort, TileLocationChecks
 
 industry = IndustryPrimaryPort(id='port',
-                               accept_cargo_types=['FOOD', 'FRUT', 'BEER'],
-                               prod_cargo_types=[],
+                               accept_cargo_types=[],
+                               prod_cargo_types_with_multipliers=[],
                                prob_in_game='2',
                                prob_random='6',
-                               prod_multiplier='[9, 9]',
                                map_colour='186',
                                spec_flags='bitmask(IND_FLAG_BUILT_ON_WATER)',
                                location_checks=dict(same_type_distance=16),
@@ -17,33 +16,27 @@ industry = IndustryPrimaryPort(id='port',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['FIRS'].accept_cargo_types = ['GOOD', 'FRUT', 'MNSP']
-industry.economy_variations['FIRS'].prod_cargo_types = ['ENSP', 'FMSP']
-industry.economy_variations['FIRS'].prod_multiplier = '[9, 7]'
+industry.economy_variations['FIRS'].prod_cargo_types_with_multipliers = [('ENSP', 9), ('FMSP', 7)]
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].accept_cargo_types = ['BEER', 'GOOD']
-industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['ENSP']
-industry.economy_variations['BASIC_TEMPERATE'].prod_multiplier = '[19]'
+industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types_with_multipliers = [('ENSP', 19)]
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'ZINC']
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP']
-industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[9]'
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('ENSP', 9)]
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['COPR', 'JAVA', 'WOOL']
-industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['ENSP', 'GOOD']
-industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[8, 17]'
+industry.economy_variations['BASIC_TROPIC'].prod_cargo_types_with_multipliers = [('ENSP', 8), ('GOOD', 17)]
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['WDPR', 'COPR', 'FRUT']
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'GOOD']
-industry.economy_variations['MISTAH_KURTZ'].prod_multiplier = '[17, 14]'
+industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types_with_multipliers = [('ENSP', 17), ('GOOD', 14)]
 
 industry.economy_variations['STEELTOWN'].enabled = False
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FOOD', 'PIPE']
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['ZINC', 'RUBR']
-industry.economy_variations['STEELTOWN'].prod_multiplier = '[16, 16]'
+industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('ZINC', 16), ('RUBR', 16)]
 
 industry.add_tile(id='port_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',

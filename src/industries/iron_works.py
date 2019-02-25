@@ -1,12 +1,11 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='iron_works',
-                             processed_cargos_and_output_ratios=[('IORE', 3), ('WOOD', 3), ('SAND', 2)],
+                             accept_cargos_with_input_ratios=[('IORE', 3), ('WOOD', 3), ('SAND', 2)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types=['METL'],
+                             prod_cargo_types_with_output_ratios=[('METL', 8)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='194',
                              name='string(STR_IND_IRON_WORKS)',
                              nearby_station_name='string(STR_STATION_FURNACE)',

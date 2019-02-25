@@ -1,12 +1,11 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='metal_workshop',
-                             processed_cargos_and_output_ratios=[('METL', 6), ('RFPR', 2)],
+                             accept_cargos_with_input_ratios=[('METL', 6), ('RFPR', 2)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types=['GOOD', 'MNSP'],
+                             prod_cargo_types_with_output_ratios=[('GOOD', 4), ('MNSP', 4)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='166',
                              name='string(STR_IND_METAL_WORKSHOP)',
                              nearby_station_name='string(STR_STATION_STAMP_AND_PLATE)',
@@ -17,12 +16,12 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['FIRS'].intro_year = 1762
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-industry.economy_variations['BASIC_TEMPERATE'].processed_cargos_and_output_ratios = [('STEL', 6), ('RFPR', 2)]
-industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['GOOD']
+industry.economy_variations['BASIC_TEMPERATE'].accept_cargos_with_input_ratios = [('STEL', 6), ('RFPR', 2)]
+industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types_with_output_ratios = [('GOOD', 8)]
 
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios = [('STEL', 4), ('COPR', 4)]
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['ENSP', 'POWR']
+industry.economy_variations['STEELTOWN'].accept_cargos_with_input_ratios = [('STEL', 4), ('COPR', 4)]
+industry.economy_variations['STEELTOWN'].prod_cargo_types_with_output_ratios = [('ENSP', 4), ('POWR', 4)]
 
 industry.add_tile(id='metal_workshop_tile_1',
                   animation_length=47,

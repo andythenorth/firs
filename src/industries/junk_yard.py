@@ -1,10 +1,9 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(id='junk_yard',
-                                     prod_cargo_types=['SCMT'],
+                                     prod_cargo_types_with_multipliers=[('SCMT', 12)],
                                      prob_in_game='3',
                                      prob_random='7',
-                                     prod_multiplier='[12, 0]',
                                      map_colour='64',
                                      # no industry location checks for junk yard, by design
                                      prospect_chance='0.75',

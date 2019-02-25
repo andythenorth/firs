@@ -1,10 +1,9 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='mixed_farm',
-                                  prod_cargo_types=['LVST', 'FICR'],
+                                  prod_cargo_types_with_multipliers=[('LVST', 13), ('FICR', 14)],
                                   prob_in_game='3',
                                   prob_random='11',
-                                  prod_multiplier='[13, 14]',
                                   map_colour='85',
                                   spec_flags='bitmask(IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT)',
                                   # mixed farm doesn't cluster, by design - no industry location checks needed
@@ -17,13 +16,12 @@ industry = IndustryPrimaryOrganic(id='mixed_farm',
 industry.economy_variations['FIRS'].enabled = True
 # definitely not in Arctic Basic, farm has been added and removed more than once from that economy :P
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['MAIZ', 'LVST']
+industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types_with_multipliers = [('MAIZ', 14), ('LVST', 13)]
 industry.economy_variations['MISTAH_KURTZ'].prob_random = '14'
-industry.economy_variations['MISTAH_KURTZ'].prod_multiplier = '[14, 13]'
 
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].name = 'string(STR_IND_BASICFARM)'
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['FOOD']
+industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('FOOD', 14)]
 
 industry.add_tile(id='mixed_farm_tile_1',
                   location_checks=TileLocationChecks(disallow_steep_slopes=True,

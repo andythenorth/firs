@@ -1,15 +1,14 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(id='diamond_mine',
+                                     prod_cargo_types_with_multipliers=[('DIAM', 12)],
                                      map_colour='69',
                                      prospect_chance='0.75',
                                      prob_random='4',
                                      prob_in_game='7',
                                      layouts="AUTO",
                                      override='INDUSTRYTYPE_DIAMOND_MINE',
-                                     prod_multiplier='[12]',
                                      # diamond mine doesn't cluster, by design - no industry location checks needed
-                                     prod_cargo_types=['DIAM'],
                                      substitute='INDUSTRYTYPE_DIAMOND_MINE',
                                      name='TTD_STR_INDUSTRY_NAME_DIAMOND_MINE',
                                      nearby_station_name='string(STR_STATION_KIMBERLITE_DEPOSITS)',

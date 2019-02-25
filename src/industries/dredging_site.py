@@ -1,10 +1,9 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(id='dredging_site',
-                                     prod_cargo_types=['SAND', 'GRVL'],
+                                     prod_cargo_types_with_multipliers=[('SAND', 17), ('GRVL', 17)],
                                      prob_in_game='3',
                                      prob_random='5',
-                                     prod_multiplier='[17, 17]',
                                      map_colour='194',
                                      spec_flags='bitmask(IND_FLAG_BUILT_ON_WATER, IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES)',
                                      location_checks=dict(coast_distance=True),

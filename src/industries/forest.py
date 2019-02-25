@@ -1,16 +1,15 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='forest',
+                                  prod_cargo_types_with_multipliers=[('WOOD', 19)],
                                   prob_in_game='3',
                                   prob_random='10',
                                   map_colour='83',
                                   prospect_chance='0.75',
-                                  prod_cargo_types=['WOOD'],
                                   location_checks=dict(cluster=[72, 3]),
                                   name='TTD_STR_INDUSTRY_NAME_FOREST',
                                   extra_text_fund='string(STR_FUND_FOREST)',
                                   fund_cost_multiplier='95',
-                                  prod_multiplier='[19]',
                                   substitute='INDUSTRYTYPE_FOREST',
                                   nearby_station_name='string(STR_STATION_FOREST)',
                                   graphics_change_dates=[1935, 1990],
@@ -18,8 +17,7 @@ industry = IndustryPrimaryOrganic(id='forest',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['WOOD']
-industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[24]'
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('WOOD', 24)]
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='forest_tile_1',

@@ -1,11 +1,10 @@
 from industry import IndustryPrimaryPort, TileLocationChecks
 
 industry = IndustryPrimaryPort(id='wharf',
-                               accept_cargo_types=['FOOD', 'FRUT', 'BEER'],
-                               prod_cargo_types=[],
+                               accept_cargo_types=[],
+                               prod_cargo_types_with_multipliers=[],
                                prob_in_game='2',
                                prob_random='6',
-                               prod_multiplier='[7, 6]',
                                map_colour='37',
                                spec_flags='bitmask(IND_FLAG_BUILT_ON_WATER)',
                                location_checks=dict(same_type_distance=16),
@@ -19,9 +18,7 @@ industry = IndustryPrimaryPort(id='wharf',
 # this is to allow an easy kickstart of ENSP, when all other chains are so tightly connected
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FMSP', 'POWR', 'PIPE', 'FOOD']
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['COPR', 'ZINC', 'ENSP']
-industry.economy_variations['STEELTOWN'].prod_multiplier = '[16, 16, 12]'
-industry.economy_variations['STEELTOWN'].name = 'string(STR_IND_WHARF)'
+industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('COPR', 16), ('ZINC', 16), ('ENSP', 12)]
 
 industry.add_tile(id='wharf_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',

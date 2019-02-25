@@ -1,11 +1,10 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='pyrite_smelter',
-                             processed_cargos_and_output_ratios=[('PORE', 8)],
-                             prod_cargo_types=['ZINC', 'SULP'],
+                             accept_cargos_with_input_ratios=[('PORE', 8)],
+                             prod_cargo_types_with_output_ratios=[('ZINC', 4), ('SULP', 4)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='19',
                              spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
                              name='string(STR_IND_PYRITE_SMELTER)',

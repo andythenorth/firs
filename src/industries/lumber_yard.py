@@ -1,12 +1,11 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='lumber_yard',
-                             processed_cargos_and_output_ratios=[('WDPR', 6), ('RFPR', 2)],
+                             accept_cargos_with_input_ratios=[('WDPR', 6), ('RFPR', 2)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types=['ENSP', 'BDMT'],
+                             prod_cargo_types_with_output_ratios=[('ENSP', 4), ('BDMT', 4)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='43',
                              name='string(STR_IND_LUMBER_YARD)',
                              nearby_station_name='string(STR_STATION_CREOSOTING)',
@@ -14,7 +13,7 @@ industry = IndustrySecondary(id='lumber_yard',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['BDMT']
+industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types_with_output_ratios = [('BDMT', 8)]
 
 # non-animated tile, allowed on slopes
 industry.add_tile(id='lumber_yard_tile_1',

@@ -2,10 +2,9 @@ from industry import IndustryTertiary, TileLocationChecks
 
 industry = IndustryTertiary(id='hotel',
                             accept_cargo_types=['FOOD', 'BEER', 'PASS'],
-                            prod_cargo_types=['PASS'],
+                            prod_cargo_types_with_multipliers=[('PASS', 17)],
                             prob_in_game='15',
                             prob_random='10',
-                            prod_multiplier='[17, 0]',
                             map_colour='189',
                             life_type='IND_LIFE_TYPE_BLACK_HOLE',
                             location_checks=dict(same_type_distance=16),

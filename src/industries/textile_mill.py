@@ -1,11 +1,10 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='textile_mill',
-                             processed_cargos_and_output_ratios=[('WOOL', 6), ('FICR', 6)],
-                             prod_cargo_types=['GOOD'],
+                             accept_cargos_with_input_ratios=[('WOOL', 6), ('FICR', 6)],
+                             prod_cargo_types_with_output_ratios=[('GOOD', 8)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='37',
                              name='string(STR_IND_TEXTILE_MILL)',
                              nearby_station_name='string(STR_STATION_WEAVE_AND_DYE)',

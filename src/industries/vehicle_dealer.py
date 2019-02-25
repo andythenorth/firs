@@ -2,10 +2,9 @@ from industry import IndustryTertiary, TileLocationChecks
 
 industry = IndustryTertiary(id='vehicle_dealer',
                             accept_cargo_types=['VEHI'],
-                            prod_cargo_types=[],
+                            prod_cargo_types_with_multipliers=[],
                             prob_in_game='14',
                             prob_random='14',
-                            prod_multiplier='[0, 0]',
                             map_colour='189',
                             life_type='IND_LIFE_TYPE_BLACK_HOLE',
                             spec_flags='bitmask(IND_FLAG_BUILT_NEAR_TOWN)',

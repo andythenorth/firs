@@ -1,12 +1,11 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='blast_furnace',
-                             processed_cargos_and_output_ratios=[('IORE', 3), ('COAL', 2), ('SCMT', 3)],
+                             accept_cargos_with_input_ratios=[('IORE', 3), ('COAL', 2), ('SCMT', 3)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types=['METL'],
+                             prod_cargo_types_with_output_ratios=[('METL', 8)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='10',
                              spec_flags='bitmask()',
                              name='TTD_STR_INDUSTRY_NAME_STEEL_MILL',  # default to steel mill
@@ -18,11 +17,11 @@ industry = IndustrySecondary(id='blast_furnace',
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].intro_year = 1800
-industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['STEL']
+industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types_with_output_ratios = [('STEL', 8)]
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].name = 'string(STR_IND_BLAST_FURNACE)'
-industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios = [('IORE', 3), ('COKE', 3), ('LIME', 2)]
-industry.economy_variations['STEELTOWN'].prod_cargo_types = [('IRON', 6), ('SLAG', 2)]
+industry.economy_variations['STEELTOWN'].accept_cargos_with_input_ratios = [('IORE', 3), ('COKE', 3), ('LIME', 2)]
+industry.economy_variations['STEELTOWN'].prod_cargo_types_with_output_ratios = [('IRON', 6), ('SLAG', 2)]
 industry.economy_variations['STEELTOWN'].prob_random = '3'
 
 industry.add_tile(id='blast_furnace_tile_1',

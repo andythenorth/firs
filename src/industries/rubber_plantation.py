@@ -1,6 +1,7 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='rubber_plantation',
+                                  prod_cargo_types_with_multipliers=[('RUBR', 16)],
                                   map_colour='121',
                                   prob_in_game='4',
                                   prob_random='11',
@@ -9,9 +10,7 @@ industry = IndustryPrimaryOrganic(id='rubber_plantation',
                                   extra_text_fund='string(STR_FUND_RUBBER_PLANTATION)',
                                   nearby_station_name='string(STR_STATION_TAPPERS_SHED)',
                                   location_checks=dict(cluster=[72, 4]),
-                                  prod_cargo_types=['RUBR'],
                                   fund_cost_multiplier='54',
-                                  prod_multiplier='[16]',
                                   override_default_construction_states=True)
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True

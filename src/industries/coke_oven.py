@@ -1,11 +1,10 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='coke_oven',
-                             processed_cargos_and_output_ratios=[('COAL', 8)],
-                             prod_cargo_types=[('COKE', 6), ('SULP', 2)],
+                             accept_cargos_with_input_ratios=[('COAL', 8)],
+                             prod_cargo_types_with_output_ratios=[('COKE', 6), ('SULP', 2)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='183',
                              # it's rare to force co-location of secondaries, but this one is near blast furnace by design
                              location_checks=dict(industry_max_distance=['blast_furnace', 72], same_type_distance=72),

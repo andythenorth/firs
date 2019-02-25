@@ -1,12 +1,11 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='brick_works',
-                             processed_cargos_and_output_ratios=[('COAL', 2), ('SAND', 2), ('CLAY', 4)],
+                             accept_cargos_with_input_ratios=[('COAL', 2), ('SAND', 2), ('CLAY', 4)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types=['BDMT'],
+                             prod_cargo_types_with_output_ratios=[('BDMT', 8)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='183',
                              spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
                              name='string(STR_IND_BRICK_WORKS)',

@@ -1,6 +1,7 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='orchard_piggery',
+                                  prod_cargo_types_with_multipliers=[('FRUT', 9), ('LVST', 8)],
                                   map_colour='85',
                                   prob_in_game='4',
                                   prob_random='11',
@@ -8,10 +9,8 @@ industry = IndustryPrimaryOrganic(id='orchard_piggery',
                                   name='string(STR_IND_ORCHARD_PIGGERY)',
                                   extra_text_fund='string(STR_FUND_ORCHARD_PIGGERY)',
                                   location_checks=dict(cluster=[72, 4]),
-                                  prod_cargo_types=['FRUT', 'LVST'],
                                   nearby_station_name='string(STR_STATION_ORCHARDS)',
                                   fund_cost_multiplier='54',
-                                  prod_multiplier='[9, 8]',
                                   override_default_construction_states=True)
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

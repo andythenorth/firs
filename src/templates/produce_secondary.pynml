@@ -5,7 +5,7 @@
 
 <!--!
     var_output_ratio_max_sum and var_input_ratio_max_sum are constants, both 8, used in cargo output calculation
-    they relate to industry prod_cargo_types ratio and processed_cargos_and_output_ratios (which must sum to 8 or less)
+    they relate to industry prod_cargo_types ratio and accept_cargos_with_input_ratios (which must sum to 8 or less)
 -->
 <tal:block define="var_received_timely_1 0;
                    var_received_timely_2 1;

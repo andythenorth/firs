@@ -1,11 +1,10 @@
 from industry import IndustryPrimaryPort, TileLocationChecks
 
 industry = IndustryPrimaryPort(id='liquids_terminal',
-                               accept_cargo_types=['OIL_'],
-                               prod_cargo_types=['PETR', 'RFPR'],
+                               accept_cargo_types=[],
+                               prod_cargo_types_with_multipliers=[],
                                prob_in_game='2',
                                prob_random='6',
-                               prod_multiplier='[9, 9]',
                                map_colour='164',
                                spec_flags='bitmask(IND_FLAG_BUILT_ON_WATER)',
                                location_checks=dict(same_type_distance=16),
@@ -17,8 +16,7 @@ industry = IndustryPrimaryPort(id='liquids_terminal',
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['OIL_', 'EOIL']
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['PETR', 'RFPR']
-industry.economy_variations['MISTAH_KURTZ'].prod_multiplier = '[7, 11]'
+industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types_with_multipliers = [('PETR', 7), ('RFPR', 11)]
 
 industry.add_tile(id='liquids_terminal_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',

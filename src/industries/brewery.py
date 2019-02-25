@@ -1,12 +1,11 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='brewery',
-                             processed_cargos_and_output_ratios=[('MNSP', 2), ('FRUT', 3), ('GRAI', 3)],
+                             accept_cargos_with_input_ratios=[('MNSP', 2), ('FRUT', 3), ('GRAI', 3)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types=['BEER'],
+                             prod_cargo_types_with_output_ratios=[('BEER', 8)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='191',
                              # no industry location checks for brewery, by design
                              name='string(STR_IND_BREWERY)',
@@ -16,9 +15,9 @@ industry = IndustrySecondary(id='brewery',
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].name = 'string(STR_IND_CIDER_MILL)'
-industry.economy_variations['BASIC_TEMPERATE'].processed_cargos_and_output_ratios = [('FRUT', 6)]
+industry.economy_variations['BASIC_TEMPERATE'].accept_cargos_with_input_ratios = [('FRUT', 6)]
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('FRUT', 4), ('MAIZ', 4)]
+industry.economy_variations['MISTAH_KURTZ'].accept_cargos_with_input_ratios = [('FRUT', 4), ('MAIZ', 4)]
 
 industry.add_tile(id='brewery_tile_1',
                   animation_length=6,

@@ -1,6 +1,7 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='vineyard',
+                                  prod_cargo_types_with_multipliers=[('BEER', 9), ('FRUT', 9)],
                                   map_colour='85',
                                   prob_in_game='3',
                                   prob_random='10',
@@ -8,15 +9,12 @@ industry = IndustryPrimaryOrganic(id='vineyard',
                                   name='string(STR_IND_VINEYARD)',
                                   extra_text_fund='string(STR_FUND_VINEYARD)',
                                   location_checks=dict(cluster=[72, 4]),
-                                  prod_cargo_types=['BEER', 'FRUT'],
                                   nearby_station_name='string(STR_STATION_WINERY)',
                                   fund_cost_multiplier='54',
                                   prod_multiplier='[11, 8]',
                                   override_default_construction_states=True)
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[9, 9]'
-
 
 industry.add_tile(id='vineyard_tile_1',
                   foundations='return CB_RESULT_NO_FOUNDATIONS',

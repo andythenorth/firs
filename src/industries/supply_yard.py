@@ -1,11 +1,10 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='supply_yard',
-                             processed_cargos_and_output_ratios=[('BOOM', 8), ('GOOD', 8)],
-                             prod_cargo_types=['FMSP', 'ENSP'],
+                             accept_cargos_with_input_ratios=[('BOOM', 8), ('GOOD', 8)],
+                             prod_cargo_types_with_output_ratios=[('FMSP', 4), ('ENSP', 4)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='143',
                              name='string(STR_IND_SUPPLY_YARD)',
                              nearby_station_name='string(STR_STATION_BASE)',
@@ -13,7 +12,7 @@ industry = IndustrySecondary(id='supply_yard',
                              intro_year=1800)
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('BDMT', 8), ('PETR', 8), ('GOOD', 8)]
+industry.economy_variations['MISTAH_KURTZ'].accept_cargos_with_input_ratios = [('BDMT', 8), ('PETR', 8), ('GOOD', 8)]
 
 industry.add_tile(id='supply_yard_tile_1',
                   animation_length=71,

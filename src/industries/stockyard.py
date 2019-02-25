@@ -1,12 +1,11 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='stockyard',
-                             processed_cargos_and_output_ratios=[('MNSP', 3), ('LVST', 5)],
+                             accept_cargos_with_input_ratios=[('MNSP', 3), ('LVST', 5)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types=['FOOD'],
+                             prod_cargo_types_with_output_ratios=[('FOOD', 8)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='177',
                              spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
                              name='string(STR_IND_STOCKYARD)',
@@ -14,12 +13,15 @@ industry = IndustrySecondary(id='stockyard',
                              fund_cost_multiplier='115')
 
 industry.economy_variations['FIRS'].enabled = True
+
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-industry.economy_variations['BASIC_TEMPERATE'].processed_cargos_and_output_ratios = [('LVST', 6)]
+industry.economy_variations['BASIC_TEMPERATE'].accept_cargos_with_input_ratios = [('LVST', 6)]
+
 industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].processed_cargos_and_output_ratios = [('LVST', 6)]
+industry.economy_variations['BASIC_TROPIC'].accept_cargos_with_input_ratios = [('LVST', 6)]
+
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('LVST', 6)]
+industry.economy_variations['MISTAH_KURTZ'].accept_cargos_with_input_ratios = [('LVST', 6)]
 
 industry.add_tile(id='stockyard_tile_1',
                   animation_length=7,

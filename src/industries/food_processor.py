@@ -1,11 +1,10 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='food_processor',
-                             processed_cargos_and_output_ratios=[('BEAN', 6), ('FRUT', 6)],
-                             prod_cargo_types=['FOOD'],
+                             accept_cargos_with_input_ratios=[('BEAN', 6), ('FRUT', 6)],
+                             prod_cargo_types_with_output_ratios=[('FOOD', 8)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='181',
                              name='TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT',
                              nearby_station_name='string(STR_STATION_FOOD_CORPORATION)',
@@ -13,8 +12,8 @@ industry = IndustrySecondary(id='food_processor',
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('NUTS', 6), ('FRUT', 6)]
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['EOIL', 'FOOD']
+industry.economy_variations['MISTAH_KURTZ'].accept_cargos_with_input_ratios = [('NUTS', 6), ('FRUT', 6)]
+industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types_with_output_ratios = [('EOIL', 4), ('FOOD', 4)]
 
 industry.add_tile(id='food_processor_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,

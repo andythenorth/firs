@@ -1,11 +1,10 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='biorefinery',
-                             processed_cargos_and_output_ratios=[('GRAI', 6), ('SGBT', 6)],
-                             prod_cargo_types=['RFPR', 'PETR'],
+                             accept_cargos_with_input_ratios=[('GRAI', 6), ('SGBT', 6)],
+                             prod_cargo_types_with_output_ratios=[('RFPR', 4), ('PETR', 4)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='186',
                              spec_flags='bitmask(IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE)',
                              name='string(STR_IND_BIOREFINERY)',

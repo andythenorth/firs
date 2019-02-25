@@ -1,12 +1,11 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='basic_oxygen_furnace',
-                             processed_cargos_and_output_ratios=[('IRON', 4), ('MNO2', 2), ('QLME', 2)],
+                             accept_cargos_with_input_ratios=[('IRON', 4), ('MNO2', 2), ('QLME', 2)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types=[('STEL', 6), ('SLAG', 2)],
+                             prod_cargo_types_with_output_ratios=[('STEL', 6), ('SLAG', 2)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='49',
                              spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
                              # it's rare to force co-location of secondaries, but this one is near blast furnace by design

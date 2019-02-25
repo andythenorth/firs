@@ -1,11 +1,10 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='flour_mill',
-                             processed_cargos_and_output_ratios=[('GRAI', 6)],
-                             prod_cargo_types=['FOOD'],
+                             accept_cargos_with_input_ratios=[('GRAI', 6)],
+                             prod_cargo_types_with_output_ratios=[('FOOD', 8)],
                              prob_random='10',
                              prob_in_game='10',
-                             prod_multiplier='[0, 0]',
                              map_colour='49',
                              location_checks=dict(flour_mill_layouts_by_date=True),
                              name='string(STR_IND_FLOUR_MILL)',
@@ -14,9 +13,9 @@ industry = IndustrySecondary(id='flour_mill',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].processed_cargos_and_output_ratios = [('GRAI', 6)]
+industry.economy_variations['BASIC_TROPIC'].accept_cargos_with_input_ratios = [('GRAI', 6)]
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('CASS', 6), ('MAIZ', 6)]
+industry.economy_variations['MISTAH_KURTZ'].accept_cargos_with_input_ratios = [('CASS', 6), ('MAIZ', 6)]
 
 industry.add_tile(id='flour_mill_tile_1',
                   animation_length=6,

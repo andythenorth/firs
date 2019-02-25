@@ -1,6 +1,7 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='fruit_plantation',
+                                  prod_cargo_types_with_multipliers=[('FRUT', 16)],
                                   prob_in_game='4',
                                   prob_random='10',
                                   prospect_chance='0.75',
@@ -9,9 +10,7 @@ industry = IndustryPrimaryOrganic(id='fruit_plantation',
                                   extra_text_fund='string(STR_FUND_FRUIT_PLANTATION)',
                                   nearby_station_name='string(STR_STATION_PLANTATION)',
                                   # fruit plantation doesn't cluster, by design - no industry location checks needed
-                                  prod_cargo_types=['FRUT'],
                                   fund_cost_multiplier='54',
-                                  prod_multiplier='[16]',
                                   override_default_construction_states=True)
 
 industry.economy_variations['FIRS'].enabled = True

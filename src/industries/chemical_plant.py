@@ -1,12 +1,11 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='chemical_plant',
-                             processed_cargos_and_output_ratios=[('OIL_', 4), ('NITR', 4)],
-                             prod_cargo_types=['RFPR'],
+                             accept_cargos_with_input_ratios=[('OIL_', 4), ('NITR', 4)],
+                             prod_cargo_types_with_output_ratios=[('RFPR', 8)],
                              combined_cargos_boost_prod=True,
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='191',
                              name='string(STR_IND_CHEMICAL_PLANT)',
                              nearby_station_name='string(STR_STATION_HEAVY_INDUSTRY_2)',
@@ -15,13 +14,13 @@ industry = IndustrySecondary(id='chemical_plant',
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].processed_cargos_and_output_ratios = [('SULP', 4), ('PHOS', 4)]
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['FERT', 'BOOM']
+industry.economy_variations['BASIC_ARCTIC'].accept_cargos_with_input_ratios = [('SULP', 4), ('PHOS', 4)]
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_output_ratios = [('FERT', 4), ('BOOM', 4)]
 
 # tried accepting SULP in Steeltown, but better balance if it just goes to Tyre Plant
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios = [('SALT', 8)]
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['ACID', 'CHLO']
+industry.economy_variations['STEELTOWN'].accept_cargos_with_input_ratios = [('SALT', 8)]
+industry.economy_variations['STEELTOWN'].prod_cargo_types_with_output_ratios = [('ACID', 4), ('CHLO', 4)]
 
 industry.add_tile(id='chemical_plant_tile_1',
                   animation_length=7,

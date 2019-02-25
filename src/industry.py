@@ -705,9 +705,6 @@ class IndustryProperties(object):
         self.nearby_station_name = kwargs.get('nearby_station_name', None)
         self.intro_year = kwargs.get('intro_year', None)
         self.expiry_year = kwargs.get('expiry_year', None)
-        self.accept_cargo_types = kwargs.get('accept_cargo_types', None)
-        self.prod_cargo_types = kwargs.get('prod_cargo_types', None)
-        self.prod_multiplier = kwargs.get('prod_multiplier', None)
         self.min_cargo_distr = '5' # just use the most common value from default OTTD industries, this property needs set but has little use
         #  input multipliers must be explicitly 0 unless set, don't rely on sensible defaults
         self.input_multiplier_1 = kwargs.get('input_multiplier_1', '[0, 0]')
@@ -726,8 +723,12 @@ class IndustryProperties(object):
         self.fund_cost_multiplier = kwargs.get('fund_cost_multiplier', None)
         self.remove_cost_multiplier = kwargs.get('remove_cost_multiplier', '0')
         # not nml properties
+        self.accept_cargo_types = kwargs.get('accept_cargo_types', None)
+        self.accept_cargos_with_input_ratios = kwargs.get('accept_cargos_with_input_ratios', None)
+        self.prod_cargo_types_with_multipliers = kwargs.get('prod_cargo_types_with_multipliers', None)
+        self.prod_cargo_types_with_output_ratios = kwargs.get('prod_cargo_types_with_output_ratios', None)
+        self.prod_multiplier = kwargs.get('prod_multiplier', None)
         self.enabled = kwargs.get('enabled', False)
-        self.processed_cargos_and_output_ratios = kwargs.get('processed_cargos_and_output_ratios', None)
         self.override_default_construction_states = kwargs.get('override_default_construction_states', False)
         self.extra_text_fund = kwargs.get('extra_text_fund', None)
         # nml properties we want to prevent being set for one reason or another
@@ -865,7 +866,7 @@ class Industry(object):
         return 'return ' + result[0]
 
     def get_extra_text_string(self, economy):
-        accept_cargos_with_ratios = self.get_property('processed_cargos_and_output_ratios', economy)
+        accept_cargos_with_ratios = self.get_property('accept_cargos_with_input_ratios', economy)
         if len(accept_cargos_with_ratios) == 1:
             extra_text_string = 'STR_EMPTY' # nothing useful to show where just one cargo is accepted eh
         else:
@@ -928,9 +929,10 @@ class Industry(object):
         cargo_types = []
         cargo_types.extend(['accept_cargo("' + label + '")' for label in self.get_accept_cargo_types(economy)])
         # !! horrible migration hax, zip together old prod_multiplier prop and prod_cargo_types to get new format
-        utils.echo_message('zipping prod_multipliers into prod_cargo_types is silly')
-        prod_multipliers = [int(i) for i in self.get_property('prod_multiplier', economy)[1:-1].split(',')]
+        utils.echo_message('zipping prod_multipliers into prod_cargo_types is silly; prod multipliers also all set 0 currently')
+        prod_multipliers = [0, 0, 0]
         prod_cargo_types = []
+        print(self.get_prod_cargo_types(economy))
         for count, i in enumerate(self.get_prod_cargo_types(economy)):
             prod_cargo_types.append((i[0], prod_multipliers[count]))
         cargo_types.extend(['produce_cargo("' + label + '",' + str(output_ratio) + ')' for label, output_ratio in prod_cargo_types])
@@ -961,47 +963,9 @@ class Industry(object):
         return result
 
     def get_prod_cargo_types(self, economy):
-        # method used here for (1) unfortunate magic (2) guarding against invalid values
-        # the magic is applied to prod_cargo_types, which industries can define as
-        # (a) list of 1 or 2 labels ['GOOD', 'ENSP'] etc, in which case output is split 4:4 (evenly)
-        # (b) list of 1 or 2 2-tuples [('GOOD', 6), ('ENSP', 2)], in which case output is split 6:2 unevenly)
-        # the uneven case is much rarer, and should only be used for balancing industries where one cargo is strictly a by-product
-        prod_cargo_types = self.get_property('prod_cargo_types', economy)
-        if prod_cargo_types is None:
-            # returning None causes some things to explode in docs, which I should fix, but haven't, this patches it with jank
-            return []
-        else:
-            # guard against too many cargos being defined
-            # although OpenTTD 1.9.0+ supports up to 16 produced cargos, FIRS caps to 16
-            # - for gameplay reasons (too many cargos in one industry isn't fun)
-            # - because of long-established production rules that calculate cargo output using ratios of n/8
-            assert(len(prod_cargo_types) <= 8), "More than 8 produced cargos defined for %s in economy %s" % (
-                self.id, economy.id)
-
-            # now do some magic to support occasionally using output ratios other than 50:50;
-            # magic is bad, but so is manually adjusting more than 80 industries :|
-            result = []
-            for i in prod_cargo_types:
-                if isinstance(i, str):
-                    print("output cargo split will need ported for > 2 cargos")
-                    if len(prod_cargo_types) == 2:
-                        result.append((i, 4))
-                    else:
-                        result.append((i, 8))
-                else:
-                    # assume it's a two tuple (no guards against other types here right now)
-                    result.append(i)
-                    # do guard against explicitly defining 4:4 splits (e.g. copy-paste-adjust mistakes), because that's pointless and makes any future migration harder
-                    if i[1] == 4:
-                        utils.echo_message("Explictly defining output ratio of 4 is pointless for industry " + self.id + ' in economy ' + economy.id + ".  4 is the default if no value is defined.")
-            # guard against ratios that don't add up to 8 (values other than 8 make no sense)
-            if len(prod_cargo_types) > 0:
-                sum_of_output_ratios = 0
-                for label, output_ratio in result:
-                    sum_of_output_ratios += output_ratio
-                if sum_of_output_ratios != 8:
-                    utils.echo_message("Sum of output ratios must be 8: sum is " + str(sum_of_output_ratios) + " for industry " + self.id + ' in economy ' + economy.id)
-            return result
+        # stub, this should be handled in Industry subclasses
+        raise Exception("get_prod_cargo_types called", self.id)
+        return []
 
     def get_another_industry(self, id):
         return get_another_industry(id)
@@ -1084,6 +1048,21 @@ class IndustryPrimary(Industry):
                                                  'unused',
                                                  'unused'])
 
+    def get_prod_cargo_types(self, economy):
+        # primary industry prod cargo provides multipliers for the produced amounts (8 or 9 times per month)
+        prod_cargo_types = self.get_property('prod_cargo_types_with_multipliers', economy)
+        # prod_cargo_types cannot be None for primary industries
+        assert(prod_cargo_types is not None), "prod_cargo_types_with_multipliers cannot be None for %s - property should be set in industry definition " % (self.id)
+        # guard against too many cargos being defined
+        # although OpenTTD 1.9.0+ supports up to 16 produced cargos, FIRS caps to 16
+        # - for gameplay reasons (too many cargos in one industry isn't fun)
+        # - because of long-established production rules that calculate cargo output using ratios of n/8
+        assert(len(prod_cargo_types) <= 8), "More than 8 produced cargos defined for %s in economy %s" % (self.id, economy.id)
+        # guard against ratios that don't add up to 8 (values other than 8 make no sense)
+        for label, prod_multiplier in prod_cargo_types:
+            assert(prod_multiplier != 0), "Prod multiplier cannot be 0 for %s industry %s in economy %s" % (label, self.id, economy.id)
+        return prod_cargo_types
+
 
 class IndustryPrimaryExtractive(IndustryPrimary):
     """
@@ -1120,19 +1099,29 @@ class IndustryPrimaryPort(IndustryPrimary):
         self.supply_requirements = [0, 'PORT', 8] # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
 
 
-class IndustryPrimaryNoSupplies(Industry):
+class IndustryPrimaryNoSupplies(IndustryPrimary):
     """ Industry that does not accept supplies and does not change production amounts during game """
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.template = kwargs.get('template', 'industry_primary_no_supplies.pynml')
+        self.supply_requirements = None # supplies do not boost this type of primary
 
 
-class IndustryPrimaryTownProducer(Industry):
+class IndustryTownProducerPopulationDependent(IndustryPrimary):
     """ Industry that locates near towns, with production amount related to town population """
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.template = kwargs.get('template', 'industry_primary_town_producer.pynml')
         self.supply_requirements = None # supplies do not boost this type of primary
+
+    def get_prod_cargo_types(self, economy):
+        # !! this method is unfinished
+        # - what property name to use for prod cargos here??
+        # - should multipliers be supported (allowing scale factor to popn)??
+        # - should the be used for hotel??
+        prod_cargo_types = self.get_property('prod_cargo_types_with_multipliers', economy)
+        utils.echo_message("IndustryTownProducerPopulationDependent.get_prod_cargo_types() is unfinished")
+        return prod_cargo_types
 
 
 class IndustrySecondary(Industry):
@@ -1164,14 +1153,14 @@ class IndustrySecondary(Industry):
             utils.echo_message("prospect_chance passed in kwargs for " + self.id + "; secondary industries should not set prospect_chance")
 
     def get_prod_ratio(self, cargo_num, economy):
-        if cargo_num > len(self.get_property('processed_cargos_and_output_ratios', economy)):
+        if cargo_num > len(self.get_property('accept_cargos_with_input_ratios', economy)):
             return 0
         else:
-            return self.get_property('processed_cargos_and_output_ratios', economy)[cargo_num - 1][1]
+            return self.get_property('accept_cargos_with_input_ratios', economy)[cargo_num - 1][1]
 
     def get_accept_cargo_types(self, economy):
         # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed
-        accept_cargo_types = [i[0] for i in self.get_property('processed_cargos_and_output_ratios', economy)]
+        accept_cargo_types = [i[0] for i in self.get_property('accept_cargos_with_input_ratios', economy)]
         # guard against too many cargos being defined
         if len(accept_cargo_types) > 3:
             utils.echo_message("Too many accepted cargos defined for " + self.id + ' in economy ' + economy.id)
@@ -1179,16 +1168,41 @@ class IndustrySecondary(Industry):
 
     def get_boost(self, supplied_cargo_num, boosted_cargo_num, economy):
         if self.combined_cargos_boost_prod:
-            if boosted_cargo_num > len(self.get_property('processed_cargos_and_output_ratios', economy)):
+            if boosted_cargo_num > len(self.get_property('accept_cargos_with_input_ratios', economy)):
                 return 0
             else:
                 return self.get_prod_ratio(supplied_cargo_num, economy)
         return 0
 
+    def get_prod_cargo_types(self, economy):
+        # secondary industry prod cargo uses output ratios of n/8 per cargo, which must sum to 8 for all cargos
+        prod_cargo_types = self.get_property('prod_cargo_types_with_output_ratios', economy)
+        # prod_cargo_types cannot be None for secondary industries
+        assert(prod_cargo_types is not None), "prod_cargo_types_with_output_ratios cannot be None for %s - property should be set in industry definition " % (self.id)
+        # guard against too many cargos being defined
+        # although OpenTTD 1.9.0+ supports up to 16 produced cargos, FIRS caps to 16
+        # - for gameplay reasons (too many cargos in one industry isn't fun)
+        # - because of long-established production rules that calculate cargo output using ratios of n/8
+        assert(len(prod_cargo_types) <= 8), "More than 8 produced cargos defined for %s in economy %s" % (self.id, economy.id)
+        # guard against ratios that don't add up to 8 (values other than 8 make no sense)
+        sum_of_output_ratios = sum([output_ratio for label, output_ratio in prod_cargo_types])
+        assert(sum_of_output_ratios == 8), "Sum of output ratios must be 8: sum is %s for industry %s in economy %s" % (str(sum_of_output_ratios), self.id, economy.id)
+        return prod_cargo_types
+
 
 class IndustryTertiary(Industry):
-    """ Industries that consume cargo and don't produce much (or anything), typically black holes in or near towns """
+    """ Industries that consume cargo and don't produce anything, typically black holes in or near towns """
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.template = 'industry_tertiary.pynml'
         # no perm_storage needed currently
+
+    def get_prod_cargo_types(self, economy):
+        # tertiary industries don't produce so eh
+        if self.id == 'hotel':
+            utils.echo_message('hotel needs output cargos, IndustryTertiary does not provide that currently')
+        return []
+
+
+
+

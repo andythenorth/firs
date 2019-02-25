@@ -1,12 +1,11 @@
-from industry import IndustryPrimaryTownProducer, TileLocationChecks
+from industry import IndustryTownProducerPopulationDependent, TileLocationChecks
 
-industry = IndustryPrimaryTownProducer(id='recycling_depot',
+industry = IndustryTownProducerPopulationDependent(id='recycling_depot',
                                        accept_cargo_types=[],
-                                       prod_cargo_types=['RCYC'],
+                                       prod_cargo_types_with_multipliers=[('RCYC', 0)], # prod dependent on town popn
                                        prob_in_game='20',
                                        prob_random='20',
-                                       prod_multiplier='[0, 0]',
-                                       map_colour='191',
+                                                 map_colour='191',
                                        life_type='IND_LIFE_TYPE_EXTRACTIVE',
                                        location_checks=dict(same_type_distance=16,
                                                             town_industry_count=['recycling_depot', 0, 0],

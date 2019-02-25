@@ -1,12 +1,11 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='copper_refinery',
-                             processed_cargos_and_output_ratios=[('CORE', 5), ('RFPR', 3)],
+                             accept_cargos_with_input_ratios=[('CORE', 5), ('RFPR', 3)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types=['COPR'],
+                             prod_cargo_types_with_output_ratios=[('COPR', 8)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='64',
                              name='string(STR_IND_COPPER_REFINERY)',
                              nearby_station_name='string(STR_STATION_SMELTER)',

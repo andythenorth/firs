@@ -1,11 +1,10 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='sawmill',
-                             processed_cargos_and_output_ratios=[('WOOD', 6)],
-                             prod_cargo_types=['WDPR'],
+                             accept_cargos_with_input_ratios=[('WOOD', 6)],
+                             prod_cargo_types_with_output_ratios=[('WDPR', 8)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='194',
                              name='TTD_STR_INDUSTRY_NAME_SAWMILL',
                              nearby_station_name='string(STR_STATION_MILL)',

@@ -1,11 +1,10 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='smithy_forge',
-                             processed_cargos_and_output_ratios=[('METL', 8)],
-                             prod_cargo_types=['ENSP', 'FMSP'],
+                             accept_cargos_with_input_ratios=[('METL', 8)],
+                             prod_cargo_types_with_output_ratios=[('ENSP', 4), ('FMSP', 4)],
                              prob_in_game='2',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='143',
                              spec_flags='bitmask(IND_FLAG_ONLY_IN_TOWNS)',
                              name='string(STR_IND_SMITHY_FORGE)',

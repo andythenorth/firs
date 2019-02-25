@@ -3,11 +3,10 @@ from industry import IndustrySecondary, TileLocationChecks
 # this industry overlaps with chemical plant somewhat, but blah blah blah
 
 industry = IndustrySecondary(id='ammonia_plant',
-                             processed_cargos_and_output_ratios=[('RFPR', 8)],
-                             prod_cargo_types=['FMSP', 'ENSP'],
+                             accept_cargos_with_input_ratios=[('RFPR', 8)],
+                             prod_cargo_types_with_output_ratios=[('FMSP', 4), ('ENSP', 4)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='173',
                              name='string(STR_IND_AMMONIA_PLANT)',
                              nearby_station_name='string(STR_STATION_HEAVY_INDUSTRY_2)',

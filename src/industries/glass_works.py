@@ -1,12 +1,11 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='glass_works',
-                             processed_cargos_and_output_ratios=[('SAND', 6), ('RFPR', 2)],
+                             accept_cargos_with_input_ratios=[('SAND', 6), ('RFPR', 2)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types=['BDMT', 'MNSP'],
+                             prod_cargo_types_with_output_ratios=[('BDMT', 4), ('MNSP', 4)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='151',
                              spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
                              name='string(STR_IND_GLASS_WORKS)',
@@ -14,16 +13,16 @@ industry = IndustrySecondary(id='glass_works',
                              fund_cost_multiplier='95')
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['GOOD']
+industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types_with_output_ratios = [('GOOD', 8)]
 
 industry.economy_variations['FIRS'].enabled = True
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['BDMT', 'GOOD']
+industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types_with_output_ratios = [('BDMT', 4), ('GOOD', 4)]
 
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios = [('SAND', 6), ('SASH', 2)]
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['VPTS']
+industry.economy_variations['STEELTOWN'].accept_cargos_with_input_ratios = [('SAND', 6), ('SASH', 2)]
+industry.economy_variations['STEELTOWN'].prod_cargo_types_with_output_ratios = [('VPTS', 8)]
 
 industry.add_tile(id='glass_works_tile_1',
                   animation_length=71,

@@ -1,10 +1,9 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(id='oil_rig',
-                                     prod_cargo_types=['OIL_', 'PASS'],
+                                     prod_cargo_types_with_multipliers=[('OIL_', 29), ('PASS', 4)],
                                      prob_in_game='6',
                                      prob_random='6',
-                                     prod_multiplier='[29, 4]',
                                      substitute='5',
                                      map_colour='151',
                                      spec_flags='bitmask(IND_FLAG_BUILT_ON_WATER, IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES)',

@@ -1,12 +1,11 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='aluminium_plant',
-                             processed_cargos_and_output_ratios=[('AORE', 2), ('RFPR', 2), ('SCMT', 4)],
+                             accept_cargos_with_input_ratios=[('AORE', 2), ('RFPR', 2), ('SCMT', 4)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types=['METL'],
+                             prod_cargo_types_with_output_ratios=[('METL', 8)],
                              prob_in_game='3',
                              prob_random='5',
-                             prod_multiplier='[0, 0]',
                              map_colour='19',
                              name='string(STR_IND_ALUMINIUM_PLANT)',
                              nearby_station_name='string(STR_STATION_SMELTER)',
