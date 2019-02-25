@@ -928,14 +928,7 @@ class Industry(object):
         # special handling for cargo_types nml declaration
         cargo_types = []
         cargo_types.extend(['accept_cargo("' + label + '")' for label in self.get_accept_cargo_types(economy)])
-        # !! horrible migration hax, zip together old prod_multiplier prop and prod_cargo_types to get new format
-        utils.echo_message('zipping prod_multipliers into prod_cargo_types is silly; prod multipliers also all set 0 currently')
-        prod_multipliers = [0, 0, 0]
-        prod_cargo_types = []
-        print(self.get_prod_cargo_types(economy))
-        for count, i in enumerate(self.get_prod_cargo_types(economy)):
-            prod_cargo_types.append((i[0], prod_multipliers[count]))
-        cargo_types.extend(['produce_cargo("' + label + '",' + str(output_ratio) + ')' for label, output_ratio in prod_cargo_types])
+        cargo_types.extend(['produce_cargo("' + label + '",' + str(output_ratio) + ')' for label, output_ratio in self.get_prod_cargo_types(economy)])
         result = 'cargo_types: [' + ','.join(cargo_types) + '];'
         """
             # output format
