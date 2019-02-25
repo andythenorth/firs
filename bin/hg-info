@@ -6,13 +6,122 @@ import subprocess, getopt, os, sys
 
 dump_commands = False # Whether to display executed commands.
 
-HG = 'hg'
-OUTPUT_OPTS = {
-    "id-modified": "               Output numeric id, 'M' appended if source is modified",
-    "num-id": "                    Output numeric id without modification indication",
-    "branch": "                    Output branch, empty string if default branch",
-    "version": "                   Output version indication, for appending to grf name",
-              }
+class Vcs:
+    def __init__(self, default_path, default_branch):
+        self.path = default_path
+        self.default_branch = default_branch
+
+    def set_path(self, path):
+        self.path = path
+
+    def set_defaut_branch(self, default_branch):
+        self.default_branch = default_branch
+
+
+class Hg(Vcs):
+    def __init__(self):
+        super().__init__("hg", "default")
+        self.numeric = None # Some unique-ish number.
+        self.modified = None # 'M' if modified.
+        self.branch = None # branch name
+        self.tags = None # tag, list str
+
+    def private_get_info(self):
+        cmd = [self.path, 'id', '-n', '-b', '-t']
+        lines = exe_cmd(cmd, {'HGPLAIN': ''})
+
+        assert len(lines) == 1
+        words = lines[0].split()
+        numeric = words[0]
+        self.branch = words[1]
+        self.tags = [w for w in words[2:] if w != 'tip']
+
+        if numeric[-1] == '+':
+            self.numeric = numeric[:-1]
+            self.modified = 'M'
+        else:
+            self.numeric = numeric
+            self.modified = ''
+
+    def get_numeric(self):
+        if self.numeric is None:
+            self.private_get_info()
+        return self.numeric
+
+    def get_modified(self):
+        if self.modified is None:
+            self.private_get_info()
+        return self.modified
+
+    def get_branch(self):
+        if self.branch is None:
+            self.private_get_info()
+        return self.branch
+
+    def get_tags(self):
+        if self.tags is None:
+            self.private_get_info()
+        return self.tags
+
+
+class OutputOption:
+    def __init__(self, name, desc):
+        self.name = name
+        self.desc = desc
+
+    def compute(self, vcs):
+        raise NotImplementedError("Implement me in " + str(repr(self)))
+
+def make_branch_name(branch, default_branch):
+    if branch == default_branch:
+        return ''
+    return branch
+
+
+class OutputIdModified(OutputOption):
+    def __init__(self):
+        super().__init__("id-modified",
+                         "Output numeric id, 'M' appended if source is modified")
+
+    def compute(self, vcs):
+        return vcs.numeric + vcs.modified
+
+
+class OutputNumericId(OutputOption):
+    def __init__(self):
+        super().__init__("num-id",
+                         "Output numeric id without modification indication")
+
+    def compute(self, vcs):
+        return vcs.numeric
+
+
+class OutputBranch(OutputOption):
+    def __init__(self):
+        super().__init__("branch",
+                         "Output branch, empty string if default branch")
+
+    def compute(self, vcs):
+        return make_branch_name(vcs.branch, vcs.default_branch)
+
+class OutputVersion(OutputOption):
+    def __init__(self):
+        super().__init__("version",
+                         "Output version indication, for appending to grf name")
+
+    def compute(self, vcs):
+        if len(vcs.tags) > 0:
+            return "{}{}".format(vcs.tags[0], vcs.modified)
+
+        branch = make_branch_name(vcs.branch, vcs.default_branch)
+        if branch == '':
+            return "r{}{}".format(vcs.numeric, vcs.modified)
+        return "{}-r{}{}".format(branch, vcs.numeric, vcs.modified)
+
+OUTPUT_OPTS = [ OutputIdModified(), OutputNumericId(), OutputBranch(),
+                OutputVersion() ]
+OUTPUT_OPTS_BY_NAME = dict((opt.name, opt) for opt in OUTPUT_OPTS)
+
 
 def escape_name(text):
     """
@@ -68,85 +177,44 @@ def exe_cmd(cmd, env=None):
     lines = output.splitlines()
     return lines
 
-def get_hg_info():
-    """
-    Get the numeric revision of the repository.
 
-    @return: Numeric revision number as string,
-             modified flag ('M' or ''),
-             branch name (could be 'default').
-             tags (0 or more tag names, 'tip' is never returned).
-    """
-    cmd = [HG, 'id', '-n', '-b', '-t']
-    lines = exe_cmd(cmd, {'HGPLAIN': ''})
-
-    assert len(lines) == 1
-    words = lines[0].split()
-    numeric = words[0]
-    branch = words[1]
-    tags = [w for w in words[2:] if w != 'tip']
-
-    if numeric[-1] == '+':
-        numeric = numeric[:-1]
-        modified = 'M'
-    else:
-        modified = ''
-
-    return numeric, modified, branch, tags
-
-def compute_outputs(output_names, default_branch):
+def compute_outputs(output_names, vcs):
     """
     Compute all requested output texts.
     """
-    numeric, modified, branch, tags = get_hg_info()
-
-    def make_branch_name(branch, default_branch):
-        if branch == default_branch:
-            return ''
-        return branch
-
     outputs = []
     for name in output_names:
-        if name == "num-id":
-            text = numeric
-            outputs.append(text)
-            continue
-
-        if name == "id-modified":
-            text = numeric + modified
-            outputs.append(text)
-            continue
-
-        if name == "branch":
-            outputs.append(make_branch_name(branch, default_branch))
-            continue
-
-        if name == "version":
-            if len(tags) > 0:
-                outputs.append("{}{}".format(tags[0], modified))
-                continue
-            branch = make_branch_name(branch, default_branch)
-            if branch == '':
-                outputs.append("r{}{}".format(numeric, modified))
-                continue
-            outputs.append("{}-r{}{}".format(branch, numeric, modified))
-            continue
-
-        assert False, "Unknown output option '{}'".format(name)
+        output_opt = OUTPUT_OPTS_BY_NAME[name]
+        outputs.append(output_opt.compute(vcs))
 
     return outputs
+
+
+def print_opts(opts):
+    """
+    Output the options as an indented 2-column text.
+    """
+    optmax = max(len(opt[0]) for opt in opts)
+    for optname, optdesc in opts:
+        spaces = " " * (2 + optmax - len(optname))
+        print("  {}{}{}".format(optname, spaces, optdesc))
+
 
 def usage():
     print("Usage: hg-info [options]")
     print("Extracts repository information, and builds branch and version suffixes from it")
+
     print("Options (settings):")
-    print("  -h, --help                  This online help")
-    print("  -v, --verbose               Dump executed commands to the output")
-    print("  -m HG, --mercurial=HG       Path to the 'hg' binary, default is 'hg'")
-    print("  -b BRANCH, --branch=BRANCH  Name of the default branch, default is 'default'")
-    print("Options (output):")
-    for output_opt in sorted(OUTPUT_OPTS.items()):
-        print("  --{}{}".format(output_opt[0], output_opt[1]))
+    opts = [("-h, --help", "This online help"),
+            ("-v, --verbose", "Dump executed commands to the output"),
+            ("-m HG, --mercurial=HG",
+             "Path to the 'hg' binary, default is 'hg'"),
+            ("-b BRANCH, --branch=BRANCH",
+             "Name of the default branch, default is 'default'"), ]
+    for output_opt in sorted(OUTPUT_OPTS_BY_NAME.items()):
+        opts.append(("--" + output_opt[1].name, output_opt[1].desc))
+    print_opts(opts)
+
     print("")
     print("Output is a single line with all output requests in the same order")
     print("")
@@ -156,11 +224,11 @@ def usage():
     print("  REPO_VERSION = $(word 2,$(REPO_INFO))")
 
 def run():
-    global HG, dump_commands
+    global dump_commands
 
     short_opts = 'hvm:b:g:'
-    long_opts = ['help', "verbose", "mercurial=", "branch=", "grf="] + \
-                list(OUTPUT_OPTS.keys())
+    long_opts = (['help', "verbose", "mercurial=", "branch=", "grf="] +
+                 list(OUTPUT_OPTS_BY_NAME.keys()))
 
     try:
         opts, args = getopt.getopt(sys.argv[1:], short_opts, long_opts)
@@ -172,8 +240,9 @@ def run():
         print("hg-info ERROR: Command does not accept arguments")
         sys.exit(1)
 
+    hg_vcs = Hg()
+
     grf_name = None
-    default_branch = 'default'
     output_names = []
     for opt, opt_val in opts:
         if opt in ('-h', '--help'):
@@ -189,20 +258,20 @@ def run():
             continue
 
         if opt in ('-m', '--mercurial'):
-            HG = opt_val
+            hg_vcs.set_path(opt_val)
             continue
 
         if opt in ('-b', '--branch'):
-            default_branch = opt_val
+            hg_vcs.set_defaut_branch(opt_val)
             continue
 
-        if opt.startswith("--") and opt[2:] in OUTPUT_OPTS:
+        if opt.startswith("--") and opt[2:] in OUTPUT_OPTS_BY_NAME:
             output_names.append(opt[2:])
             continue
 
         assert False, "Unexpected option value {}".format((opt, opt_val))
 
-    outputs = compute_outputs(output_names, default_branch)
+    outputs = compute_outputs(output_names, hg_vcs)
     print("{}".format(" ".join(escape_name(out) for out in outputs)))
     sys.exit(0)
 
