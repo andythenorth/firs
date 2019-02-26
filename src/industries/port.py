@@ -24,8 +24,8 @@ industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types_with_multipliers
 industry.economy_variations['BASIC_TEMPERATE'].prob_random = '10'
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'ZINC']
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('ENSP', 9)]
+industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'ZINC', 'BOOM', 'PEAT', 'GOOD']
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('ENSP', 9), ('FMSP', 7), ('BEER', 6)]
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['COPR', 'JAVA', 'WOOL', 'BEER', 'RFPR', 'FOOD']
