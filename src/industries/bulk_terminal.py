@@ -19,10 +19,6 @@ industry.economy_variations['FIRS'].accept_cargo_types = ['BDMT', 'PETR', 'FOOD'
 industry.economy_variations['FIRS'].prod_cargo_types_with_multipliers = [('AORE', 16), ('RFPR', 16)]
 industry.economy_variations['FIRS'].prob_random = '3'
 
-industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-industry.economy_variations['BASIC_TEMPERATE'].accept_cargo_types = ['CLAY', 'FOOD']
-industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types_with_multipliers = [('FMSP', 7), ('RFPR', 19)]
-
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['FERT', 'WDPR']
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('KAOL', 12), ('FOOD', 12)]

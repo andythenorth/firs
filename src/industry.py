@@ -976,15 +976,6 @@ class Industry(object):
         if int(value) not in global_constants.valid_industry_map_colours:
             utils.echo_message("Industry " + self.id +  " uses map Colour " + value + " which is invalid (lacks contrast)")
 
-
-    def get_output_ratio(self, cargo_num, economy):
-        prod_cargo_types = self.get_prod_cargo_types(economy)
-        if cargo_num > len(prod_cargo_types):
-            # cargo isn't defined, just return 8, does no harm and prevents upstream code choking (returning 0 might lead to a divide-by-zero)
-            return 8
-        else:
-            return prod_cargo_types[cargo_num - 1][1]
-
     def unpack_sprite_or_spriteset(self, sprite_or_spriteset, construction_state_num=3, terrain_type='', date_variation_num='0'):
         date_variation_suffix = '_' + str(date_variation_num)
         if terrain_type != '':
@@ -1177,10 +1168,21 @@ class IndustrySecondary(Industry):
         # - for gameplay reasons (too many cargos in one industry isn't fun)
         # - because of long-established production rules that calculate cargo output using ratios of n/8
         assert(len(prod_cargo_types) <= 8), "More than 8 produced cargos defined for %s in economy %s" % (self.id, economy.id)
-        # guard against ratios that don't add up to 8 (values other than 8 make no sense)
+        # output ratios are actually used in prod. cb, not cargo_types
+        # so prod_multiplier returned for cargo_types should be 0 for secondary industries, otherwise they'll produce without input
+        prod_cargo_types = [(label, 0) for label, output_ratio in prod_cargo_types]
+        return prod_cargo_types
+
+    def get_output_ratio(self, cargo_num, economy):
+        prod_cargo_types = self.get_property('prod_cargo_types_with_output_ratios', economy)
+        # guard against defined ratios that don't add up to 8 (values other than 8 make no sense)
         sum_of_output_ratios = sum([output_ratio for label, output_ratio in prod_cargo_types])
         assert(sum_of_output_ratios == 8), "Sum of output ratios must be 8: sum is %s for industry %s in economy %s" % (str(sum_of_output_ratios), self.id, economy.id)
-        return prod_cargo_types
+        # but in some cases ratio isn't defined, so just return 8, does no harm and prevents upstream code choking (returning 0 might lead to a divide-by-zero)
+        if cargo_num > len(prod_cargo_types):
+            return 8
+        else:
+            return prod_cargo_types[cargo_num - 1][1]
 
 
 class IndustryTertiary(Industry):
