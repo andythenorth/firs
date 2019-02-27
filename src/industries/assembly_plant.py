@@ -1,9 +1,9 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='assembly_plant',
-                             accept_cargos_with_input_ratios=[('VPTS', 4), ('VBOD', 4)],
+                             accept_cargos_with_input_ratios=[('TYRE', 2), ('VPTS', 3), ('VBOD', 3)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types_with_output_ratios=[('VEHI', 6), ('ENSP', 2)],
+                             prod_cargo_types_with_output_ratios=[('VEHI', 6), ('ENSP', 1), ('FMSP', 1)],
                              prob_in_game='3',
                              prob_random='5',
                              map_colour='141',

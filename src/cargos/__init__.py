@@ -16,8 +16,14 @@ beans.cargo.register()
 from cargos import building_materials
 building_materials.cargo.register()
 
+from cargos import carbon_black
+carbon_black.cargo.register()
+
 from cargos import cassava
 cassava.cargo.register()
+
+from cargos import cast_iron
+cast_iron.cargo.register()
 
 from cargos import cement
 cement.cargo.register()
@@ -33,6 +39,9 @@ clay.cargo.register()
 
 from cargos import coal
 coal.cargo.register()
+
+from cargos import coal_tar
+coal_tar.cargo.register()
 
 from cargos import coffee
 coffee.cargo.register()
@@ -118,6 +127,9 @@ metal.cargo.register()
 from cargos import milk
 milk.cargo.register()
 
+from cargos import nickel
+nickel.cargo.register()
+
 from cargos import nitrates
 nitrates.cargo.register()
 
@@ -126,6 +138,9 @@ nuts.cargo.register()
 
 from cargos import oil
 oil.cargo.register()
+
+from cargos import oxygen
+oxygen.cargo.register()
 
 from cargos import paper
 paper.cargo.register()
@@ -189,6 +204,9 @@ sulphur.cargo.register()
 
 from cargos import sugar_beet
 sugar_beet.cargo.register()
+
+from cargos import tyres
+tyres.cargo.register()
 
 from cargos import vehicle_parts
 vehicle_parts.cargo.register()

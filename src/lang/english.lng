@@ -33,12 +33,15 @@ STR_CARGO_NAME_ALCOHOL                                                          
 STR_CARGO_NAME_BAUXITE                                                          :Bauxite
 STR_CARGO_NAME_BEANS                                                            :Beans
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Building Materials
+STR_CARGO_NAME_CARBON_BLACK                                                     :Carbon Black
 STR_CARGO_NAME_CASSAVA                                                          :Cassava
+STR_CARGO_NAME_CAST_IRON                                                        :Cast Iron
 STR_CARGO_NAME_CEMENT                                                           :Cement
 STR_CARGO_NAME_CHEMICALS                                                        :Chemicals
 STR_CARGO_NAME_CHLORINE                                                         :Chlorine
 STR_CARGO_NAME_CLAY                                                             :Clay
 STR_CARGO_NAME_COFFEE                                                           :Coffee
+STR_CARGO_NAME_COAL_TAR                                                         :Coal Tar
 STR_CARGO_NAME_COKE                                                             :Coke
 STR_CARGO_NAME_COPPER                                                           :Copper
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Edible Oil
@@ -56,8 +59,10 @@ STR_CARGO_NAME_LUMBER                                                           
 STR_CARGO_NAME_METAL                                                            :Metal
 STR_CARGO_NAME_MILK                                                             :Milk
 STR_CARGO_NAME_MANGANESE                                                        :Manganese
+STR_CARGO_NAME_NICKEL                                                           :Nickel
 STR_CARGO_NAME_NITRATES                                                         :Nitrates
 STR_CARGO_NAME_NUTS                                                             :Nuts
+STR_CARGO_NAME_OXYGEN                                                           :Oxygen
 STR_CARGO_NAME_PACKAGING                                                        :Packaging
 STR_CARGO_NAME_PEAT                                                             :Peat
 STR_CARGO_NAME_PETROL                                                           :Petroleum Fuels
@@ -77,6 +82,7 @@ STR_CARGO_NAME_STEEL                                                            
 STR_CARGO_NAME_STONE                                                            :Stone
 STR_CARGO_NAME_SUGAR_BEET                                                       :Sugar Beet
 STR_CARGO_NAME_SULPHUR                                                          :Sulphur
+STR_CARGO_NAME_TYRES                                                            :Tyres
 STR_CARGO_NAME_VEHICLE_BODIES                                                   :Vehicle Bodies
 STR_CARGO_NAME_VEHICLE_PARTS                                                    :Vehicle Parts
 STR_CARGO_NAME_VEHICLES                                                         :Vehicles
@@ -88,11 +94,14 @@ STR_CARGO_UNIT_ALCOHOL                                                          
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} of bauxite
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} of beans
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} of building materials
+STR_CARGO_UNIT_CARBON_BLACK                                                     :{WEIGHT} of carbon black
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} of cassava
+STR_CARGO_UNIT_CAST_IRON                                                        :{WEIGHT} of cast iron
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} of cement
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} of chemicals
 STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} of chlorine
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} of clay
+STR_CARGO_UNIT_COAL_TAR                                                         :{VOLUME} of coal tar
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sack{P 0 "" s} of coffee
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} of coke
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} of copper
@@ -115,6 +124,7 @@ STR_CARGO_UNIT_MILK                                                             
 STR_CARGO_UNIT_NICKEL                                                           :{WEIGHT} of nickel
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} of nitrates
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} sack{P 0 "" s}  of nuts
+STR_CARGO_UNIT_OXYGEN                                                           :{VOLUME} of oxygen
 STR_CARGO_UNIT_PACKAGING                                                        :{WEIGHT} of packaging
 STR_CARGO_UNIT_PEAT                                                             :{WEIGHT} of peat
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of petroleum fuels
@@ -134,6 +144,7 @@ STR_CARGO_UNIT_STEEL                                                            
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} of stone
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} of sugar beet
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} of sulphur
+STR_CARGO_UNIT_TYRES                                                            :{WEIGHT} of tyres
 STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} of vehicle bodies
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{WEIGHT} of vehicle parts
 STR_CARGO_UNIT_VEHICLES                                                         :{WEIGHT} of vehicles
@@ -145,12 +156,15 @@ STR_CID_ALCOHOL                                                                 
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}BN
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CID_CARBON_BLACK                                                            :{TINYFONT}CB
 STR_CID_CASSAVA                                                                 :{TINYFONT}CA
+STR_CID_CAST_IRON                                                               :{TINYFONT}CI
 STR_CID_CEMENT                                                                  :{TINYFONT}CE
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CHLORINE                                                                :{TINYFONT}CL
 STR_CID_CLAY                                                                    :{TINYFONT}CY
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
+STR_CID_COAL_TAR                                                                :{TINYFONT}CT
 STR_CID_COKE                                                                    :{TINYFONT}CK
 STR_CID_COPPER                                                                  :{TINYFONT}CR
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
@@ -171,6 +185,7 @@ STR_CID_MILK                                                                    
 STR_CID_NICKEL                                                                  :{TINYFONT}NK
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_NUTS                                                                    :{TINYFONT}NT
+STR_CID_OXYGEN                                                                  :{TINYFONT}O2
 STR_CID_PACKAGING                                                               :{TINYFONT}PK
 STR_CID_PEAT                                                                    :{TINYFONT}PE
 STR_CID_PETROL                                                                  :{TINYFONT}PT
@@ -190,6 +205,7 @@ STR_CID_STEEL                                                                   
 STR_CID_STONE                                                                   :{TINYFONT}ST
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
 STR_CID_SULPHUR                                                                 :{TINYFONT}SU
+STR_CID_TYRES                                                                   :{TINYFONT}TY
 STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}VB
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}VP
 STR_CID_VEHICLES                                                                :{TINYFONT}VS
@@ -224,12 +240,14 @@ STR_IND_CIDER_MILL                                                              
 STR_IND_BRICK_WORKS                                                             :Brick Works
 STR_IND_BUILDERS_YARD                                                           :Builders Yard
 STR_IND_BULK_TERMINAL                                                           :Bulk Terminal
+STR_IND_CARBON_BLACK_PLANT                                                      :Carbon Black Plant
 STR_IND_CEMENT_PLANT                                                            :Cement Plant
 STR_IND_CHEMICAL_PLANT                                                          :Chemical Plant
 STR_IND_CLAY_PIT                                                                :Clay Pit
 STR_IND_COFFEE_ESTATE                                                           :Coffee Estate
 STR_IND_COKE_OVEN                                                               :Coke Oven
 STR_IND_COPPER_REFINERY                                                         :Copper Refinery
+STR_IND_CRYO_PLANT                                                              :Cryo Plant
 STR_IND_DAIRY                                                                   :Dairy
 STR_IND_DAIRY_FARM                                                              :Dairy Farm
 STR_IND_DREDGING_SITE                                                           :Dredging Site
@@ -255,6 +273,7 @@ STR_IND_LIMESTONE_MINE                                                          
 STR_IND_LIQUIDS_TERMINAL                                                        :Liquids Terminal
 STR_IND_LUMBER_YARD                                                             :Timber Yard
 STR_IND_MACHINE_SHOP                                                            :Machine Shop
+STR_IND_MACHINE_WORKS                                                           :Machine Works
 STR_IND_MANGANESE_MINE                                                          :Manganese Mine
 STR_IND_METAL_FABRICATION_PLANT                                                 :Metal Fabrication Plant
 STR_IND_METAL_WORKSHOP                                                          :Metal Workshop
@@ -333,6 +352,7 @@ STR_STATION_COLLIERY                                                            
 STR_STATION_COPPER_LODE                                                         :Copper Lode
 STR_STATION_CREOSOTING                                                          :Creosoting
 STR_STATION_DAIRY_LANE                                                          :Dairy Lane
+STR_STATION_DYNAMO                                                              :Dynamo
 STR_STATION_ESTATE                                                              :Estate
 STR_STATION_EXCHANGE                                                            :Exchange
 STR_STATION_FARM_1                                                              :Manor

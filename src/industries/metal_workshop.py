@@ -19,10 +19,6 @@ industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].accept_cargos_with_input_ratios = [('STEL', 6), ('RFPR', 2)]
 industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types_with_output_ratios = [('GOOD', 8)]
 
-industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].accept_cargos_with_input_ratios = [('STEL', 4), ('COPR', 4)]
-industry.economy_variations['STEELTOWN'].prod_cargo_types_with_output_ratios = [('ENSP', 4), ('POWR', 4)]
-
 industry.add_tile(id='metal_workshop_tile_1',
                   animation_length=47,
                   animation_looping=True,

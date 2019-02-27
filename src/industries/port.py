@@ -35,10 +35,6 @@ industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['WDPR', 'COPR', 'FRUT']
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types_with_multipliers = [('ENSP', 17), ('GOOD', 14)]
 
-industry.economy_variations['STEELTOWN'].enabled = False
-industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FOOD', 'PIPE']
-industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('ZINC', 16), ('RUBR', 16)]
-
 industry.add_tile(id='port_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
                   location_checks=TileLocationChecks(always_allow_founder=False))

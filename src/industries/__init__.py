@@ -31,6 +31,9 @@ builders_yard.industry.register()
 from industries import bulk_terminal
 bulk_terminal.industry.register()
 
+from industries import carbon_black_plant
+carbon_black_plant.industry.register()
+
 from industries import cement_plant
 cement_plant.industry.register()
 
@@ -48,6 +51,9 @@ copper_mine.industry.register()
 
 from industries import copper_refinery
 copper_refinery.industry.register()
+
+from industries import cryo_plant
+cryo_plant.industry.register()
 
 from industries import dairy
 dairy.industry.register()
@@ -114,6 +120,9 @@ lumber_yard.industry.register()
 
 from industries import machine_shop
 machine_shop.industry.register()
+
+from industries import machine_works
+machine_works.industry.register()
 
 from industries import manganese_mine
 manganese_mine.industry.register()
