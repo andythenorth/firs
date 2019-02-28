@@ -220,6 +220,19 @@ def escape_name(text):
             text = text.replace(repl[0], repl[1])
     return '"' + text + '"'
 
+def find_used_vcs():
+    components = os.getcwd().split(os.sep)
+    i = len(components) - 1
+    while i > 0:
+        path = os.sep.join(components[:i])
+        if os.path.isdir(os.path.join(path, ".git")):
+            return "git"
+        if os.path.isdir(os.path.join(path, ".hg")):
+            return "hg"
+
+        i = i - 1
+    return None
+
 def exe_cmd(cmd, env=None):
     """
     Execute a shell command.
@@ -319,7 +332,7 @@ def run():
     hg_vcs = HgVcs()
     git_vcs = GitVcs()
 
-    used_vcs = None
+    used_vcs = {'git':git_vcs, 'hg':hg_vcs, None:None}[find_used_vcs()]
     grf_name = None
     output_names = []
     for opt, opt_val in opts:
