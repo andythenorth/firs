@@ -1,20 +1,20 @@
 from industry import IndustrySecondary, TileLocationChecks
 
-industry = IndustrySecondary(id='foundry',
-                             accept_cargos_with_input_ratios=[('CSTI', 4), ('NICK', 2), ('SAND', 2)],
+industry = IndustrySecondary(id='engine_plant',
+                             accept_cargos_with_input_ratios=[('CSTI', 6), ('SAND', 2)],
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[('VPTS', 8)],
                              prob_in_game='3',
                              prob_random='5',
                              map_colour='43',
-                             name='string(STR_IND_FOUNDRY)',
-                             nearby_station_name='string(STR_STATION_CASTINGS)',
+                             name='string(STR_IND_ENGINE_PLANT)',
+                             nearby_station_name='string(STR_STATION_POWERTRAIN)',
                              fund_cost_multiplier='120',
                              intro_year=1762)
 
 industry.economy_variations['STEELTOWN'].enabled = True
 
-industry.add_tile(id='foundry_tile_1',
+industry.add_tile(id='engine_plant_tile_1',
                   animation_length=47,
                   animation_looping=True,
                   animation_speed=2,
@@ -56,7 +56,7 @@ sprite_smoke = industry.add_smoke_sprite(
 )
 
 industry.add_spritelayout(
-    id='foundry_spritelayout_1',
+    id='engine_plant_spritelayout_1',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -64,42 +64,42 @@ industry.add_spritelayout(
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
-    id='foundry_spritelayout_2',
+    id='engine_plant_spritelayout_2',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
-    id='foundry_spritelayout_3',
+    id='engine_plant_spritelayout_3',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=['nw', 'ne', 'se']
 )
 industry.add_spritelayout(
-    id='foundry_spritelayout_4',
+    id='engine_plant_spritelayout_4',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     fences=['nw', 'ne', 'se']
 )
 industry.add_spritelayout(
-    id='foundry_spritelayout_5',
+    id='engine_plant_spritelayout_5',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
     fences=['nw', 'ne', 'se']
 )
 industry.add_spritelayout(
-    id='foundry_spritelayout_6',
+    id='engine_plant_spritelayout_6',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
-    id='foundry_spritelayout_7',
+    id='engine_plant_spritelayout_7',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
@@ -107,39 +107,39 @@ industry.add_spritelayout(
 )
 
 industry.add_industry_layout(
-    id='foundry_industry_layout_1',
-    layout=[(0, 0, 'foundry_tile_1', 'foundry_spritelayout_3'),
-            (0, 1, 'foundry_tile_1', 'foundry_spritelayout_3'),
-            (0, 2, 'foundry_tile_1', 'foundry_spritelayout_5'),
-            (0, 3, 'foundry_tile_1', 'foundry_spritelayout_4'),
-            (0, 4, 'foundry_tile_1', 'foundry_spritelayout_5'),
-            (1, 0, 'foundry_tile_1', 'foundry_spritelayout_3'),
-            (1, 1, 'foundry_tile_1', 'foundry_spritelayout_3'),
-            (1, 2, 'foundry_tile_1', 'foundry_spritelayout_5'),
-            (1, 3, 'foundry_tile_1', 'foundry_spritelayout_4'),
-            (1, 4, 'foundry_tile_1', 'foundry_spritelayout_6'),
-            (2, 0, 'foundry_tile_1', 'foundry_spritelayout_3'),
-            (2, 1, 'foundry_tile_1', 'foundry_spritelayout_1'),
-            (2, 2, 'foundry_tile_1', 'foundry_spritelayout_2'),
-            (2, 3, 'foundry_tile_1', 'foundry_spritelayout_7'),
-            (2, 4, 'foundry_tile_1', 'foundry_spritelayout_7'),
+    id='engine_plant_industry_layout_1',
+    layout=[(0, 0, 'engine_plant_tile_1', 'engine_plant_spritelayout_3'),
+            (0, 1, 'engine_plant_tile_1', 'engine_plant_spritelayout_3'),
+            (0, 2, 'engine_plant_tile_1', 'engine_plant_spritelayout_5'),
+            (0, 3, 'engine_plant_tile_1', 'engine_plant_spritelayout_4'),
+            (0, 4, 'engine_plant_tile_1', 'engine_plant_spritelayout_5'),
+            (1, 0, 'engine_plant_tile_1', 'engine_plant_spritelayout_3'),
+            (1, 1, 'engine_plant_tile_1', 'engine_plant_spritelayout_3'),
+            (1, 2, 'engine_plant_tile_1', 'engine_plant_spritelayout_5'),
+            (1, 3, 'engine_plant_tile_1', 'engine_plant_spritelayout_4'),
+            (1, 4, 'engine_plant_tile_1', 'engine_plant_spritelayout_6'),
+            (2, 0, 'engine_plant_tile_1', 'engine_plant_spritelayout_3'),
+            (2, 1, 'engine_plant_tile_1', 'engine_plant_spritelayout_1'),
+            (2, 2, 'engine_plant_tile_1', 'engine_plant_spritelayout_2'),
+            (2, 3, 'engine_plant_tile_1', 'engine_plant_spritelayout_7'),
+            (2, 4, 'engine_plant_tile_1', 'engine_plant_spritelayout_7'),
             ]
 )
 industry.add_industry_layout(
-    id='foundry_industry_layout_2',
-    layout=[(0, 2, 'foundry_tile_1', 'foundry_spritelayout_3'),
-            (0, 3, 'foundry_tile_1', 'foundry_spritelayout_3'),
-            (1, 0, 'foundry_tile_1', 'foundry_spritelayout_1'),
-            (1, 1, 'foundry_tile_1', 'foundry_spritelayout_2'),
-            (1, 2, 'foundry_tile_1', 'foundry_spritelayout_3'),
-            (1, 3, 'foundry_tile_1', 'foundry_spritelayout_3'),
-            (2, 0, 'foundry_tile_1', 'foundry_spritelayout_4'),
-            (2, 1, 'foundry_tile_1', 'foundry_spritelayout_7'),
-            (2, 2, 'foundry_tile_1', 'foundry_spritelayout_6'),
-            (2, 3, 'foundry_tile_1', 'foundry_spritelayout_6'),
-            (3, 0, 'foundry_tile_1', 'foundry_spritelayout_4'),
-            (3, 1, 'foundry_tile_1', 'foundry_spritelayout_5'),
-            (3, 2, 'foundry_tile_1', 'foundry_spritelayout_4'),
-            (3, 3, 'foundry_tile_1', 'foundry_spritelayout_3'),
+    id='engine_plant_industry_layout_2',
+    layout=[(0, 2, 'engine_plant_tile_1', 'engine_plant_spritelayout_3'),
+            (0, 3, 'engine_plant_tile_1', 'engine_plant_spritelayout_3'),
+            (1, 0, 'engine_plant_tile_1', 'engine_plant_spritelayout_1'),
+            (1, 1, 'engine_plant_tile_1', 'engine_plant_spritelayout_2'),
+            (1, 2, 'engine_plant_tile_1', 'engine_plant_spritelayout_3'),
+            (1, 3, 'engine_plant_tile_1', 'engine_plant_spritelayout_3'),
+            (2, 0, 'engine_plant_tile_1', 'engine_plant_spritelayout_4'),
+            (2, 1, 'engine_plant_tile_1', 'engine_plant_spritelayout_7'),
+            (2, 2, 'engine_plant_tile_1', 'engine_plant_spritelayout_6'),
+            (2, 3, 'engine_plant_tile_1', 'engine_plant_spritelayout_6'),
+            (3, 0, 'engine_plant_tile_1', 'engine_plant_spritelayout_4'),
+            (3, 1, 'engine_plant_tile_1', 'engine_plant_spritelayout_5'),
+            (3, 2, 'engine_plant_tile_1', 'engine_plant_spritelayout_4'),
+            (3, 3, 'engine_plant_tile_1', 'engine_plant_spritelayout_3'),
             ]
 )

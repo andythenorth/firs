@@ -40,6 +40,9 @@ cement_plant.industry.register()
 from industries import chemical_plant
 chemical_plant.industry.register()
 
+from industries import chlor_alkali_plant
+chlor_alkali_plant.industry.register()
+
 from industries import coffee_estate
 coffee_estate.industry.register()
 
@@ -70,6 +73,9 @@ dredging_site.industry.register()
 from industries import electric_arc_furnace
 electric_arc_furnace.industry.register()
 
+from industries import engine_plant
+engine_plant.industry.register()
+
 from industries import flour_mill
 flour_mill.industry.register()
 
@@ -78,9 +84,6 @@ food_market.industry.register()
 
 from industries import food_processor
 food_processor.industry.register()
-
-from industries import foundry
-foundry.industry.register()
 
 from industries import furniture_factory
 furniture_factory.industry.register()

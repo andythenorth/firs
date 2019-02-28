@@ -1,7 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='carbon_black_plant',
-                             accept_cargos_with_input_ratios=[('PETR', 4), ('CTAR', 4)],
+                             accept_cargos_with_input_ratios=[('CTAR', 6)],
                              prod_cargo_types_with_output_ratios=[('CBLK', 8)],
                              prob_in_game='3',
                              prob_random='5',

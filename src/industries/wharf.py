@@ -18,7 +18,7 @@ industry = IndustryPrimaryPort(id='wharf',
 # this is to allow an easy kickstart of ENSP, when all other chains are so tightly connected
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['POWR', 'PIPE', 'CMNT']
-industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('COPR', 16), ('ZINC', 16), ('ENSP', 12), ('NICK', 16)]
+industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('ENSP', 12), ('COPR', 16), ('ZINC', 16)]
 
 industry.add_tile(id='wharf_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',

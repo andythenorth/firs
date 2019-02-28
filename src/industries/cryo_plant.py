@@ -1,6 +1,7 @@
-from industry import IndustryPrimaryExtractive, TileLocationChecks
+from industry import IndustryPrimaryNoSupplies, TileLocationChecks
 
-industry = IndustryPrimaryExtractive(id='cryo_plant',
+industry = IndustryPrimaryNoSupplies(id='cryo_plant',
+                                     accept_cargo_types=[],
                                      prod_cargo_types_with_multipliers=[('O2__', 12)],
                                      prob_in_game='4',
                                      prob_random='7',
