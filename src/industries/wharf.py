@@ -14,6 +14,10 @@ industry = IndustryPrimaryPort(id='wharf',
                                fund_cost_multiplier='152',
                                override_default_construction_states=True)
 
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['BOOM', 'PEAT', 'GOOD']
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('BEER', 12), ('FOOD', 12)]
+
 # in Steeltown, there is a deliberate feedback loop with COPR > POWR + ENSP > more COPR (and more ENSP)
 # this is to allow an easy kickstart of ENSP, when all other chains are so tightly connected
 industry.economy_variations['STEELTOWN'].enabled = True
