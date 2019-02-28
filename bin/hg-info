@@ -8,7 +8,8 @@ dump_commands = False # Whether to display executed commands.
 
 # {{{ Vcs classes
 class Vcs:
-    def __init__(self, default_path, default_branch):
+    def __init__(self, default_path, default_branch, rev_prefix):
+        self.rev_prefix = rev_prefix
         self.path = default_path
         self.vcs_default_branch = default_branch
         self.default_branch = default_branch
@@ -36,7 +37,7 @@ class Vcs:
 
 class HgVcs(Vcs):
     def __init__(self):
-        super().__init__("hg", "default")
+        super().__init__("hg", "default", "r")
         self.numeric = None # Some unique-ish number.
         self.modified = None # 'M' if modified.
         self.branch = None # branch name
@@ -84,19 +85,21 @@ GIT_CURBRANCH_PAT = re.compile('# branch.head +(.*)')
 
 class GitVcs(Vcs):
     def __init__(self):
-        super().__init__("git", "master")
+        super().__init__("git", "master", "g")
         self.numeric = None # Some unique-ish number.
         self.modified = None # 'M' if modified.
         self.branch = None # branch name
 
     def private_get_status(self):
-        self.modified = False
+        self.modified = ''
+        self.numeric = None
+        self.branch = None
 
         # https://git-scm.com/docs/git-status
         cmd = [self.path, "status", "--porcelain=2", "--branch"]
         for line in exe_cmd(cmd):
             if line and line[0] in ("1", "2", "u"):
-                self.modified = True
+                self.modified = 'M'
                 continue
             m = GIT_COMMIT_PAT.match(line)
             if m:
@@ -183,8 +186,8 @@ class OutputVersion(OutputOption):
 
         branch = make_branch_name(vcs.get_branch(), vcs.default_branch)
         if branch == '':
-            return "r{}{}".format(vcs.get_numeric(), vcs.get_modified())
-        return "{}-r{}{}".format(branch, vcs.get_numeric(), vcs.get_modified())
+            return "{}{}{}".format(vcs.rev_prefix, vcs.get_numeric(), vcs.get_modified())
+        return "{}-{}{}{}".format(branch, vcs.rev_prefix, vcs.get_numeric(), vcs.get_modified())
 
 OUTPUT_OPTS = [ OutputIdModified(), OutputNumericId(), OutputBranch(),
                 OutputVersion() ]
