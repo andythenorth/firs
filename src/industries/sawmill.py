@@ -11,7 +11,7 @@ industry = IndustrySecondary(id='sawmill',
                              fund_cost_multiplier='97')
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].enabled = True
+industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 industry.add_tile(id='sawmill_tile_1',

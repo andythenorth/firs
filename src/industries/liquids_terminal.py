@@ -14,9 +14,7 @@ industry = IndustryPrimaryPort(id='liquids_terminal',
                                fund_cost_multiplier='152',
                                override_default_construction_states=True)
 
-industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['OIL_', 'EOIL']
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types_with_multipliers = [('PETR', 7), ('RFPR', 11)]
+# unused currently
 
 industry.add_tile(id='liquids_terminal_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',

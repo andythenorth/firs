@@ -16,9 +16,9 @@ industry = IndustryTertiary(id='petrol_pump',
                             intro_year=1900)
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].prob_random = '8'
-industry.economy_variations['MISTAH_KURTZ'].prob_in_game = '8'
+industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+industry.economy_variations['IN_A_HOT_COUNTRY'].prob_random = '8'
+industry.economy_variations['IN_A_HOT_COUNTRY'].prob_in_game = '8'
 
 industry.add_tile(id='petrol_pump_tile_1',
                   location_checks=TileLocationChecks(require_road_adjacent=True,

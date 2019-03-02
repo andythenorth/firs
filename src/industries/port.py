@@ -31,9 +31,9 @@ industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['COPR', 'JAVA', 'WOOL', 'BEER', 'RFPR', 'FOOD']
 industry.economy_variations['BASIC_TROPIC'].prod_cargo_types_with_multipliers = [('ENSP', 8), ('GOOD', 17), ('FMSP', 19)]
 
-industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['WDPR', 'COPR', 'FRUT']
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types_with_multipliers = [('ENSP', 17), ('GOOD', 14)]
+industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['WDPR', 'COPR', 'FRUT']
+industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('GOOD', 14)]
 
 industry.add_tile(id='port_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',

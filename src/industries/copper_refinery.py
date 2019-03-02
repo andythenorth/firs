@@ -14,7 +14,7 @@ industry = IndustrySecondary(id='copper_refinery',
                              graphics_change_dates=[])
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].enabled = True
+industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 
 industry.add_tile(id='copper_refinery_tile_1',
                   animation_length=47,

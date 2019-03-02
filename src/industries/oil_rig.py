@@ -16,7 +16,6 @@ industry = IndustryPrimaryExtractive(id='oil_rig',
                                      intro_year=1967)
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='oil_rig_tile_1',
                   location_checks=TileLocationChecks(disallow_industry_adjacent=True))

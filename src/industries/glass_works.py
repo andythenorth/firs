@@ -17,8 +17,8 @@ industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types_with_output_rati
 
 industry.economy_variations['FIRS'].enabled = True
 
-industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types_with_output_ratios = [('BDMT', 4), ('GOOD', 4)]
+industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('BDMT', 4), ('GOOD', 4)]
 
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargos_with_input_ratios = [('SAND', 6), ('SASH', 2)]
