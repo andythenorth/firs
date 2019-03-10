@@ -35,7 +35,8 @@
     We have a special production code here:
     Production depends on the town population: population / 12 is output
  -->
-produce(${industry.id}_production,
+
+<!--!produce(${industry.id}_production,
 		waiting_cargo_1, // should be 0
 		waiting_cargo_2, // should be 0
 		waiting_cargo_3, // should be 0
@@ -44,11 +45,11 @@ produce(${industry.id}_production,
 		0                // don't repeat
 		);
 
-
 switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [STORE_TEMP(((population + 11) / (12 * 7)), 1)]) {
 	0: ${industry.id}_production;
 	${industry.id}_production;
 }
+-->
 
 
 <tal:include metal:use-macro="load: properties_industry.pynml" />
@@ -59,7 +60,7 @@ switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [STORE_TEMP(((population
         if (economy==${economy.numeric_id}) {
             item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
                 graphics {
-                    produce_256_ticks:       ${industry.id}_produce;
+<!--!                    produce_256_ticks:       ${industry.id}_produce; -->
                     construction_probability:${industry.id}_check_availability;
                     location_check:          ${industry.id}_check_location;
                     monthly_prod_change:     CB_RESULT_IND_PROD_NO_CHANGE;

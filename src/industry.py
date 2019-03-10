@@ -685,8 +685,11 @@ class IndustryPermStorage(object):
     def __init__(self, identifiers):
         # should be passed a list of length 16, with 'unused' string in empty slots
         # doesn't need any numbers, just don't mess with positions of identifiers (or bump savegame version if you do)
+        """
+        !!!! suppressed warning
         if len(identifiers) is not 16:
             utils.echo_message("IndustryPermStorageNums must be passed a list of 16 registers containing var names as strings, or 'unused'")
+        """
         self.unused = []
         for register_num, identifier in enumerate(identifiers):
             if identifier is 'unused':
@@ -948,7 +951,7 @@ class Industry(object):
             result = []
         else:
             result = accept_cargo_types
-            # although OpenTTD 1.9.0+ supports up to 16 accepted cargos, FIRS caps to 16
+            # although OpenTTD 1.9.0+ supports up to 16 accepted cargos, FIRS caps to 8
             # - for gameplay reasons (too many cargos in one industry isn't fun)
             # - because of long-established production rules that calculate cargo output using ratios of n/8
             assert(len(result) <= 8), "More than 8 accepted cargos defined for %s in economy %s" % (
@@ -1038,7 +1041,7 @@ class IndustryPrimary(Industry):
         # prod_cargo_types cannot be None for primary industries
         assert(prod_cargo_types is not None), "prod_cargo_types_with_multipliers cannot be None for %s - property should be set in industry definition " % (self.id)
         # guard against too many cargos being defined
-        # although OpenTTD 1.9.0+ supports up to 16 produced cargos, FIRS caps to 16
+        # although OpenTTD 1.9.0+ supports up to 16 produced cargos, FIRS caps to 8
         # - for gameplay reasons (too many cargos in one industry isn't fun)
         # - because of long-established production rules that calculate cargo output using ratios of n/8
         assert(len(prod_cargo_types) <= 8), "More than 8 produced cargos defined for %s in economy %s" % (self.id, economy.id)
@@ -1104,7 +1107,10 @@ class IndustryTownProducerPopulationDependent(IndustryPrimary):
         # - should multipliers be supported (allowing scale factor to popn)??
         # - should the be used for hotel??
         prod_cargo_types = self.get_property('prod_cargo_types_with_multipliers', economy)
+        """
+        !!!! suppressed warning
         utils.echo_message("IndustryTownProducerPopulationDependent.get_prod_cargo_types() is unfinished")
+        """
         return prod_cargo_types
 
 
@@ -1115,22 +1121,31 @@ class IndustrySecondary(Industry):
         super().__init__(**kwargs)
         self.template = kwargs.get('template', 'industry_secondary.pynml')
         self.combined_cargos_boost_prod = kwargs.get('combined_cargos_boost_prod', False)
-        self.perm_storage = IndustryPermStorage(['unused',
-                                                 'ratio_input_1', # output per 8 units input of cargo 1; can be made temporary
-                                                 'ratio_input_2', # output per 8 units input of cargo 2; can be made temporary
-                                                 'ratio_input_3', # output per 8 units input of cargo 3; can be made temporary
+        self.perm_storage = IndustryPermStorage(['closure_counter', # months without delivery, same as primary industries
+                                                 # date of last cargo delivery, per cargo (max 8 input cargos)
+                                                 'date_received_cargo_1',
+                                                 'date_received_cargo_2',
+                                                 'date_received_cargo_3',
+                                                 'date_received_cargo_4',
+                                                 'date_received_cargo_5',
+                                                 'date_received_cargo_6',
+                                                 'date_received_cargo_7',
+                                                 'date_received_cargo_8',
+                                                 # cargo
+                                                 'current_production_ratio',
+                                                 'total_cargo_produced_this_cycle',
                                                  'leftover_cargo_1', # non-processed cargo 1
                                                  'leftover_cargo_2', # non-processed cargo 2
                                                  'leftover_cargo_3', # non-processed cargo 3
                                                  'unused',
+                                                 'ratio_input_1', # output per 8 units input of cargo 1; can be made temporary
+                                                 'ratio_input_2', # output per 8 units input of cargo 2; can be made temporary
+                                                 'ratio_input_3', # output per 8 units input of cargo 3; can be made temporary
                                                  'unused',
                                                  'unused',
-                                                 'date_received_1', # date of last cargo 1 delivery
-                                                 'date_received_2', # date of last cargo 2 delivery
-                                                 'date_received_3', # date of last cargo 2 delivery
                                                  'unused',
                                                  'unused',
-                                                 'closure_counter' # months without delivery, same as primary industries
+                                                 'unused',
                                                  ])
         # guard against prospect chance kword being set, it's pure cruft for secondary industry (harmless, but needless)
         if 'prospect_chance' in kwargs:
@@ -1146,8 +1161,11 @@ class IndustrySecondary(Industry):
         # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed
         accept_cargo_types = [i[0] for i in self.get_property('accept_cargos_with_input_ratios', economy)]
         # guard against too many cargos being defined
+        """
+        !!!! suppressed warning
         if len(accept_cargo_types) > 3:
             utils.echo_message("Too many accepted cargos defined for " + self.id + ' in economy ' + economy.id)
+        """
         return accept_cargo_types
 
     def get_boost(self, supplied_cargo_num, boosted_cargo_num, economy):
@@ -1164,7 +1182,7 @@ class IndustrySecondary(Industry):
         # prod_cargo_types cannot be None for secondary industries
         assert(prod_cargo_types is not None), "prod_cargo_types_with_output_ratios cannot be None for %s - property should be set in industry definition " % (self.id)
         # guard against too many cargos being defined
-        # although OpenTTD 1.9.0+ supports up to 16 produced cargos, FIRS caps to 16
+        # although OpenTTD 1.9.0+ supports up to 16 produced cargos, FIRS caps to 8
         # - for gameplay reasons (too many cargos in one industry isn't fun)
         # - because of long-established production rules that calculate cargo output using ratios of n/8
         assert(len(prod_cargo_types) <= 8), "More than 8 produced cargos defined for %s in economy %s" % (self.id, economy.id)
@@ -1194,8 +1212,11 @@ class IndustryTertiary(Industry):
 
     def get_prod_cargo_types(self, economy):
         # tertiary industries don't produce so eh
+        """
+        !!! suppressed warning
         if self.id == 'hotel':
             utils.echo_message('hotel needs output cargos, IndustryTertiary does not provide that currently')
+        """
         return []
 
 

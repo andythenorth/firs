@@ -14,17 +14,17 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, economy) {
     The 0x3800 expressions here are related to using extended cb 37 before nml support was added, and can be removed when nml is updated
 -->
 
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_1, [current_date - LOAD_PERM(${industry.perm_storage.date_received_1}) > 90]) {
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_1, [current_date - LOAD_PERM(${industry.perm_storage.date_received_cargo_1}) > 90]) {
     0: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED);
     1: return 0x3800 + string(STR_EMPTY);
 }
 
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_2, [current_date - LOAD_PERM(${industry.perm_storage.date_received_2}) > 90]) {
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_2, [current_date - LOAD_PERM(${industry.perm_storage.date_received_cargo_2}) > 90]) {
     0: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED);
     1: return 0x3800 + string(STR_EMPTY);
 }
 
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_3, [current_date - LOAD_PERM(${industry.perm_storage.date_received_3}) > 90]) {
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_3, [current_date - LOAD_PERM(${industry.perm_storage.date_received_cargo_3}) > 90]) {
     0: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED);
     1: return 0x3800 + string(STR_EMPTY);
 }
