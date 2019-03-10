@@ -685,11 +685,9 @@ class IndustryPermStorage(object):
     def __init__(self, identifiers):
         # should be passed a list of length 16, with 'unused' string in empty slots
         # doesn't need any numbers, just don't mess with positions of identifiers (or bump savegame version if you do)
-        """
-        !!!! suppressed warning
+        # note that *16 is an arbitrary limit*, OpenTTD 1.9.0 increased permanent storage to 256 registers
         if len(identifiers) is not 16:
             utils.echo_message("IndustryPermStorageNums must be passed a list of 16 registers containing var names as strings, or 'unused'")
-        """
         self.unused = []
         for register_num, identifier in enumerate(identifiers):
             if identifier is 'unused':
@@ -1133,13 +1131,6 @@ class IndustrySecondary(Industry):
                                                  'date_received_cargo_6',
                                                  'date_received_cargo_7',
                                                  'date_received_cargo_8',
-                                                 'unused',
-                                                 'unused',
-                                                 'unused',
-                                                 'unused',
-                                                 'unused',
-                                                 'unused',
-                                                 'unused',
                                                  'unused',
                                                  'unused',
                                                  'unused',
