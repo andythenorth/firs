@@ -1199,11 +1199,8 @@ class IndustryTertiary(Industry):
 
     def get_prod_cargo_types(self, economy):
         # tertiary industries don't produce so eh
-        """
-        !!! suppressed warning
         if self.id == 'hotel':
             utils.echo_message('hotel needs output cargos, IndustryTertiary does not provide that currently')
-        """
         return []
 
 
