@@ -1,109 +1,72 @@
 <!--!
-    Production template for secondary industries with equal output to all output cargos
-    Accepts up to three input cargos and produces up to two output cargos
+Production template for secondary industries
 -->
 
-<!--!
-    var_output_ratio_max_sum and var_input_ratio_max_sum are constants, both 8, used in cargo output calculation
-    they relate to industry prod_cargo_types ratio and accept_cargos_with_input_ratios (which must sum to 8 or less)
--->
-<tal:block define="var_received_timely_1 0;
-                   var_received_timely_2 1;
-                   var_received_timely_3 2;
-                   var_num_output_cargos 3;
-                   var_output_ratio_1 4;
-                   var_output_ratio_2 5;
-                   var_output_ratio_max_sum 8;
-                   var_input_ratio_max_sum 8;
-                   perm_storage industry.perm_storage;">
-<!--! ^ I don't like the indirection of perm_storage, but industry.perm_storage makes calculations below even harder to read than otherwise so shorten it -->
+<tal:economies repeat="economy economies">
+    produce (${industry.id}_simple_produce_${economy.numeric_id},
+        [
+            <tal:subtract repeat="cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
+                <!--! !!! assume just subtracting all for now, don't faff around with remaindered amounts -->
+                ${cargo[0]}: incoming_cargo_waiting("${cargo[0]}");
+            </tal:subtract>
+        ],
+        [
+            <tal:produce repeat="cargo industry.get_property('prod_cargo_types_with_output_ratios', economy)">
+                ${cargo[0]}: (LOAD_PERM(${industry.perm_storage.total_cargo_produced_this_cycle}) * ${cargo[1]}) / 8;
+            </tal:produce>
+        ],
+    0)
 
-
-<tal:drop replace="nothing">    produce (${industry.id}_simple_produce,
-                waiting_cargo_1,
-                waiting_cargo_2,
-                waiting_cargo_3,
-                LOAD_PERM(${perm_storage.leftover_cargo_1}) * LOAD_PERM(${perm_storage.ratio_input_1}) * LOAD_TEMP(${var_output_ratio_1}) / (${var_input_ratio_max_sum * var_output_ratio_max_sum}) +
-                LOAD_PERM(${perm_storage.leftover_cargo_2}) * LOAD_PERM(${perm_storage.ratio_input_2}) * LOAD_TEMP(${var_output_ratio_1}) / (${var_input_ratio_max_sum * var_output_ratio_max_sum}) +
-                LOAD_PERM(${perm_storage.leftover_cargo_3}) * LOAD_PERM(${perm_storage.ratio_input_3}) * LOAD_TEMP(${var_output_ratio_1}) / (${var_input_ratio_max_sum * var_output_ratio_max_sum}),
-
-                LOAD_PERM(${perm_storage.leftover_cargo_1}) * LOAD_PERM(${perm_storage.ratio_input_1}) * LOAD_TEMP(${var_output_ratio_2}) / (${var_input_ratio_max_sum * var_output_ratio_max_sum}) +
-                LOAD_PERM(${perm_storage.leftover_cargo_2}) * LOAD_PERM(${perm_storage.ratio_input_2}) * LOAD_TEMP(${var_output_ratio_2}) / (${var_input_ratio_max_sum * var_output_ratio_max_sum}) +
-                LOAD_PERM(${perm_storage.leftover_cargo_3}) * LOAD_PERM(${perm_storage.ratio_input_3}) * LOAD_TEMP(${var_output_ratio_2}) / (${var_input_ratio_max_sum * var_output_ratio_max_sum}),
-                [
-                <!--! Account for cargo 'wasted' in output calc (due to integer division discarding fractional values) - keep it for next production cycle -->
-                STORE_PERM(LOAD_PERM(${perm_storage.leftover_cargo_1}) % (${var_input_ratio_max_sum} / LOAD_TEMP(${var_num_output_cargos})), ${perm_storage.leftover_cargo_1}),
-                STORE_PERM(LOAD_PERM(${perm_storage.leftover_cargo_2}) % (${var_input_ratio_max_sum} / LOAD_TEMP(${var_num_output_cargos})), ${perm_storage.leftover_cargo_2}),
-                STORE_PERM(LOAD_PERM(${perm_storage.leftover_cargo_3}) % (${var_input_ratio_max_sum} / LOAD_TEMP(${var_num_output_cargos})), ${perm_storage.leftover_cargo_3}),
-                0
-                ]
-    );</tal:drop>
-
-    <tal:economies repeat="economy economies">
-        produce (${industry.id}_simple_produce_${economy.numeric_id},
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_economy_${economy.numeric_id},
             [
-                <tal:subtract repeat="cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
-                    <!--! !!! assume just subtracting all for now, don't faff around with remaindered amounts -->
-                    ${cargo[0]}: incoming_cargo_waiting("${cargo[0]}");
-                </tal:subtract>
-            ],
-            [
-                <tal:produce repeat="cargo industry.get_property('prod_cargo_types_with_output_ratios', economy)">
-                    ${cargo[0]}: (LOAD_PERM(${industry.perm_storage.total_cargo_produced_this_cycle}) * ${cargo[1]}) / 8;
-                </tal:produce>
-            ],
-        0)
-
-        switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_economy_${economy.numeric_id},
-                [
-                    <!--! zero the current production ratio, which we will recalculate during this production cycle -->
-                    STORE_PERM(0, ${industry.perm_storage.current_production_ratio}),
-                    <!--! zero the total production from this cycle, as a starting value-->
-                    STORE_PERM(0, ${industry.perm_storage.total_cargo_produced_this_cycle}),
-                    <tal:input_cargos repeat="input_cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
-                        <!--! check if this cargo is deliver, and if so, update the last delivery date for it -->
-                        <tal:date_received define="date_received_storage_number getattr(industry.perm_storage, 'date_received_cargo_' + str(repeat.input_cargo.number))">
-                        STORE_PERM(
-                            max(LOAD_PERM(${date_received_storage_number}), (incoming_cargo_waiting("${input_cargo[0]}") > 0) * current_date),
-                            ${date_received_storage_number}
-                        ),
-                        <!--! if this cargo was delivered, increase the total production ratio appropriately -->
-                        STORE_PERM(
-                            LOAD_PERM(${industry.perm_storage.current_production_ratio})
-                            + (
-                                (current_date - LOAD_PERM(${date_received_storage_number})) <= ${global_constants.secondary_production_span}
-                                ? ${input_cargo[1]} : 0
-                            ),
-                            ${industry.perm_storage.current_production_ratio}
-                        ),
-                        </tal:date_received>
-                    </tal:input_cargos>
-                    <!--! add to total amount produced;
-                          note that production_ratio is a value 0..8, and is divided by 8 in the calculation here - this is to account for integer maths
-                          note also that this has to be in a separate loop to the ratio calculation, have sum ratio over all input cargos before calculating production from each input cargo
-                    -->
-                    <tal:total_production repeat="input_cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
-                        STORE_PERM(
-                            LOAD_PERM(${industry.perm_storage.total_cargo_produced_this_cycle})
-                            + ((incoming_cargo_waiting("${input_cargo[0]}") * LOAD_PERM(${industry.perm_storage.current_production_ratio})) / 8),
-                            ${industry.perm_storage.total_cargo_produced_this_cycle}
-                        ),
-                    </tal:total_production>
-                    <!--! if any cargo was produced, reset the closure countdown  -->
-                    <!--! !! unclear if this is working, separate closure template needs updated for n cargos, currently depends on 3 -->
+                <!--! zero the current production ratio, which we will recalculate during this production cycle -->
+                STORE_PERM(0, ${industry.perm_storage.current_production_ratio}),
+                <!--! zero the total production from this cycle, as a starting value-->
+                STORE_PERM(0, ${industry.perm_storage.total_cargo_produced_this_cycle}),
+                <tal:input_cargos repeat="input_cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
+                    <!--! check if this cargo is deliver, and if so, update the last delivery date for it -->
+                    <tal:date_received define="date_received_storage_number getattr(industry.perm_storage, 'date_received_cargo_' + str(repeat.input_cargo.number))">
                     STORE_PERM(
-                        (LOAD_PERM(${industry.perm_storage.total_cargo_produced_this_cycle}) == 0)
-                        ? LOAD_PERM(${perm_storage.closure_counter}) : 0,
-                        ${perm_storage.closure_counter}
+                        max(LOAD_PERM(${date_received_storage_number}), (incoming_cargo_waiting("${input_cargo[0]}") > 0) * current_date),
+                        ${date_received_storage_number}
                     ),
-                ]) {
-            ${industry.id}_simple_produce_${economy.numeric_id};
-        }
-    </tal:economies>
-
-    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce, economy) {
-        <tal:economies repeat="economy economies">
-            ${economy.numeric_id}: ${industry.id}_produce_economy_${economy.numeric_id};
-        </tal:economies>
+                    <!--! if this cargo was delivered, increase the total production ratio appropriately -->
+                    STORE_PERM(
+                        LOAD_PERM(${industry.perm_storage.current_production_ratio})
+                        + (
+                            (current_date - LOAD_PERM(${date_received_storage_number})) <= ${global_constants.secondary_production_span}
+                            ? ${input_cargo[1]} : 0
+                        ),
+                        ${industry.perm_storage.current_production_ratio}
+                    ),
+                    </tal:date_received>
+                </tal:input_cargos>
+                <!--! add to total amount produced;
+                      note that production_ratio is a value 0..8, and is divided by 8 in the calculation here - this is to account for integer maths
+                      note also that this has to be in a separate loop to the ratio calculation, have sum ratio over all input cargos before calculating production from each input cargo
+                -->
+                <tal:total_production repeat="input_cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
+                    STORE_PERM(
+                        LOAD_PERM(${industry.perm_storage.total_cargo_produced_this_cycle})
+                        + ((incoming_cargo_waiting("${input_cargo[0]}") * LOAD_PERM(${industry.perm_storage.current_production_ratio})) / 8),
+                        ${industry.perm_storage.total_cargo_produced_this_cycle}
+                    ),
+                </tal:total_production>
+                <!--! if any cargo was produced, reset the closure countdown  -->
+                <!--! !! unclear if this is working, separate closure template needs updated for n cargos, currently depends on 3 -->
+                STORE_PERM(
+                    (LOAD_PERM(${industry.perm_storage.total_cargo_produced_this_cycle}) == 0)
+                    ? LOAD_PERM(${industry.perm_storage.closure_counter}) : 0,
+                    ${industry.perm_storage.closure_counter}
+                ),
+            ]) {
+        ${industry.id}_simple_produce_${economy.numeric_id};
     }
-</tal:block>
+</tal:economies>
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce, economy) {
+    <tal:economies repeat="economy economies">
+        ${economy.numeric_id}: ${industry.id}_produce_economy_${economy.numeric_id};
+    </tal:economies>
+}
+
