@@ -1160,11 +1160,8 @@ class IndustrySecondary(Industry):
         # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed
         accept_cargo_types = [i[0] for i in self.get_property('accept_cargos_with_input_ratios', economy)]
         # guard against too many cargos being defined
-        """
-        !!!! suppressed warning
-        if len(accept_cargo_types) > 3:
-            utils.echo_message("Too many accepted cargos defined for " + self.id + ' in economy ' + economy.id)
-        """
+        if len(accept_cargo_types) > 8:
+            utils.echo_message("Too many accepted cargos defined for " + self.id + " in economy " + economy.id + " (max 8)")
         return accept_cargo_types
 
     def get_boost(self, supplied_cargo_num, boosted_cargo_num, economy):
