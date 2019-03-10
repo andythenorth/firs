@@ -1122,6 +1122,8 @@ class IndustrySecondary(Industry):
         self.template = kwargs.get('template', 'industry_secondary.pynml')
         self.combined_cargos_boost_prod = kwargs.get('combined_cargos_boost_prod', False)
         self.perm_storage = IndustryPermStorage(['closure_counter', # months without delivery, same as primary industries
+                                                 'current_production_ratio', # in format n/8, calculated during prod cycle, permanent register used for ease of debugging
+                                                 'total_cargo_produced_this_cycle', # calculated during prod cycle, permanent register used for ease of debugging
                                                  # date of last cargo delivery, per cargo (max 8 input cargos)
                                                  'date_received_cargo_1',
                                                  'date_received_cargo_2',
@@ -1131,16 +1133,13 @@ class IndustrySecondary(Industry):
                                                  'date_received_cargo_6',
                                                  'date_received_cargo_7',
                                                  'date_received_cargo_8',
-                                                 # cargo
-                                                 'current_production_ratio',
-                                                 'total_cargo_produced_this_cycle',
-                                                 'leftover_cargo_1', # non-processed cargo 1
-                                                 'leftover_cargo_2', # non-processed cargo 2
-                                                 'leftover_cargo_3', # non-processed cargo 3
                                                  'unused',
-                                                 'ratio_input_1', # output per 8 units input of cargo 1; can be made temporary
-                                                 'ratio_input_2', # output per 8 units input of cargo 2; can be made temporary
-                                                 'ratio_input_3', # output per 8 units input of cargo 3; can be made temporary
+                                                 'unused',
+                                                 'unused',
+                                                 'unused',
+                                                 'unused',
+                                                 'unused',
+                                                 'unused',
                                                  'unused',
                                                  'unused',
                                                  'unused',

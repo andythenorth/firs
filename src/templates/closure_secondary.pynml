@@ -1,9 +1,9 @@
-<!--! ==== Monthly prod. change callback checks delivered cargo ==== -->
+<!--! Monthly prod. change callback checks delivered cargo -->
 
 <tal:block define="perm_storage industry.perm_storage">
     <!--! ^ I don't like this indirection, but makes code below easier to read -->
 
-    <!--!  Increase closure counter if nothing was transported or received; otherwise reset closure_counter -->
+    <!--!  Increase closure counter, prod cb will reset this to 0 if cargo is produced -->
     switch(FEAT_INDUSTRIES, SELF, ${industry.id}_secondary_increase_closure_counter,
            STORE_PERM((1 + LOAD_PERM(${perm_storage.closure_counter})), ${perm_storage.closure_counter})) {
         return 0;
