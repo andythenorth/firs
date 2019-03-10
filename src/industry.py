@@ -1105,10 +1105,7 @@ class IndustryTownProducerPopulationDependent(IndustryPrimary):
         # - should multipliers be supported (allowing scale factor to popn)??
         # - should the be used for hotel??
         prod_cargo_types = self.get_property('prod_cargo_types_with_multipliers', economy)
-        """
-        !!!! suppressed warning
         utils.echo_message("IndustryTownProducerPopulationDependent.get_prod_cargo_types() is unfinished")
-        """
         return prod_cargo_types
 
 
