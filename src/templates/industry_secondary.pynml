@@ -47,8 +47,8 @@
 <!--!                    monthly_prod_change:      ${industry.id}_check_secondary_production_level;
                     random_prod_change:       ${industry.id}_check_secondary_closure; -->
                     location_check:           ${industry.id}_check_location;
-<!--!                    extra_text_fund:          ${industry.get_extra_text_fund(economy)};
-                    extra_text_industry:      ${industry.id}_extra_text; -->
+                    extra_text_fund:          ${industry.get_extra_text_fund(economy)};
+                    extra_text_industry:      ${industry.id}_extra_text;
                     cargo_subtype_display:    ${industry.id}_cargo_subtype_display;
                     colour:                   switch_colour;
                 }
