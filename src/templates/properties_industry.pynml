@@ -13,8 +13,8 @@
                     ${industry.get_property_declaration('prod_decrease_msg')}
                     ${industry.get_property_declaration('new_ind_msg')}
                     ${industry.get_property_declaration('min_cargo_distr')}
-                    ${industry.get_property_declaration('spec_flags')}
                     ${industry.get_industry_layouts_as_property()}
+                    spec_flags: ${industry.special_flags};
                     conflicting_ind_types: []; // set this prop empty, FIRS has it's own better checks for this
                     random_sound_effects: []; // set this empty to avoid spurious default industry sounds (as of May 2017 FIRS does not yet use sound effects)
                     <!--! following props may optionally vary per economy, or use industry default -->

@@ -6,7 +6,7 @@ industry = IndustrySecondary(id='slag_grinding_plant',
                              prob_in_game='3',
                              prob_random='5',
                              map_colour='19',
-                             spec_flags='bitmask(IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE)',
+                             special_flags=['IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE'],
                              # it's rare to force co-location of secondaries, but this one is near blast furnace by design
                              location_checks=dict(industry_max_distance=['blast_furnace', 72], same_type_distance=72),
                              name='string(STR_IND_SLAG_GRINDING_PLANT)',

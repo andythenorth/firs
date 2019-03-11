@@ -14,25 +14,21 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, economy) {
     The 0x3800 expressions here are related to using extended cb 37 before nml support was added, and can be removed when nml is updated
 -->
 
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_1, [current_date - LOAD_PERM(${industry.perm_storage.date_received_cargo_1}) > 90]) {
-    0: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED);
-    1: return 0x3800 + string(STR_EMPTY);
-}
-
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_2, [current_date - LOAD_PERM(${industry.perm_storage.date_received_cargo_2}) > 90]) {
-    0: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED);
-    1: return 0x3800 + string(STR_EMPTY);
-}
-
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_3, [current_date - LOAD_PERM(${industry.perm_storage.date_received_cargo_3}) > 90]) {
-    0: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED);
-    1: return 0x3800 + string(STR_EMPTY);
-}
+<!--! up to 8 cargos, indexed to 1 not 0 -->
+<tal:cargos repeat="cargo_num range(1, 9)">
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_${cargo_num}, [
+            current_date - LOAD_PERM(${getattr(industry.perm_storage, 'date_received_cargo_' + str(cargo_num))}) > 90
+        ]) {
+        0: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED);
+        1: return 0x3800 + string(STR_EMPTY);
+    }
+</tal:cargos>
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_switch_cargo, getbits(extra_callback_info2, 0, 8)) {
-    0: ${industry.id}_cargo_subtype_display_cargo_1;
-    1: ${industry.id}_cargo_subtype_display_cargo_2;
-    2: ${industry.id}_cargo_subtype_display_cargo_3;
+    <!--! up to 8 cargos, indexed to 1 not 0 -->
+    <tal:cargos repeat="cargo_num range(1, 9)">
+        ${cargo_num - 1}: ${industry.id}_cargo_subtype_display_cargo_${cargo_num};
+    </tal:cargos>
     return CB_RESULT_NO_TEXT;
 }
 <!--! only show subtype in industry window, not other contexts -->

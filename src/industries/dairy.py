@@ -7,7 +7,7 @@ industry = IndustrySecondary(id='dairy',
                              prob_in_game='3',
                              prob_random='5',
                              map_colour='169',
-                             spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
+                             special_flags=['IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE'],
                              name='string(STR_IND_DAIRY)',
                              nearby_station_name='string(STR_STATION_DAIRY_LANE)',
                              fund_cost_multiplier='45')

@@ -5,7 +5,7 @@ industry = IndustryPrimaryOrganic(id='herding_coop',
                                   prob_in_game='14',
                                   prob_random='14',
                                   map_colour='207',
-                                  spec_flags='bitmask(IND_FLAG_NO_PRODUCTION_INCREASE)',
+                                  special_flags=['IND_FLAG_NO_PRODUCTION_INCREASE'],
                                   # herding_coop doesn't cluster, by design - no industry location checks needed
                                   prospect_chance='0.75',
                                   name='string(STR_IND_HERDING_COOP)',

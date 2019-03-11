@@ -720,9 +720,9 @@ class IndustryProperties(object):
         self.prospect_chance = kwargs.get('prospect_chance', None)
         self.map_colour = kwargs.get('map_colour', None)
         self.life_type = kwargs.get('life_type', None)
-        self.spec_flags = kwargs.get('spec_flags', '0')
         self.fund_cost_multiplier = kwargs.get('fund_cost_multiplier', None)
         self.remove_cost_multiplier = kwargs.get('remove_cost_multiplier', '0')
+        self._special_flags = kwargs.get('special_flags', [])
         # not nml properties
         self.accept_cargo_types = kwargs.get('accept_cargo_types', None)
         self.accept_cargos_with_input_ratios = kwargs.get('accept_cargos_with_input_ratios', None)
@@ -969,6 +969,12 @@ class Industry(object):
         # there's no sensible way to get incompatible_industries from here, it has to be passed in when rendering templates
         # there are genuine performance reasons to have incompatibility calculated once and only once by firs.py
         utils.echo_message('Incompatible industries not implemented in industry.py, must be passed from firs.py at render time')
+
+    @property
+    def special_flags(self):
+        flags = ['IND_FLAG_LONG_CARGO_TYPE_LISTS']
+        flags.extend(self.get_property('_special_flags', None))
+        return 'bitmask(' + ','.join(flags) + ')'
 
     def validate_map_colour(self, value):
         # we need to guard against map colours that have poor contrast with the green, dark green and purple maps
