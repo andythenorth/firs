@@ -18,5 +18,5 @@ cargo = Cargo(id='cast_iron',
               penalty_lowerbound='15',
               single_penalty_length='255',
               capacity_multiplier='1',
-              price_factor='121',
+              price_factor='129',
               icon_indices=(4, 3))
