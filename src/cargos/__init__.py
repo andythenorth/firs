@@ -127,8 +127,11 @@ metal.cargo.register()
 from cargos import milk
 milk.cargo.register()
 
+"""
+# unused currently
 from cargos import nickel
 nickel.cargo.register()
+"""
 
 from cargos import nitrates
 nitrates.cargo.register()

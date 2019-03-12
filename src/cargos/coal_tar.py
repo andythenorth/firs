@@ -16,6 +16,6 @@ cargo = Cargo(id='coal_tar',
               items_of_cargo='string(STR_CARGO_UNIT_COAL_TAR)',
               penalty_lowerbound='30',
               single_penalty_length='255',
-              price_factor='77',
+              price_factor='53',
               capacity_multiplier='1',
               icon_indices=(1, 3))
