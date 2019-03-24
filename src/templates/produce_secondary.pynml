@@ -3,7 +3,7 @@ Production template for secondary industries
 -->
 
 <tal:economies repeat="economy economies">
-    produce (${industry.id}_simple_produce_${economy.numeric_id},
+    produce (${industry.id}_produce_${economy.numeric_id},
         [
             <tal:subtract repeat="cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
                 <!--! !!! assume just subtracting all for now, don't faff around with remaindered amounts -->
@@ -17,7 +17,7 @@ Production template for secondary industries
         ],
     0)
 
-    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_economy_${economy.numeric_id},
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_calculation_${economy.numeric_id},
             [
                 <!--! zero the current production ratio, which we will recalculate during this production cycle -->
                 STORE_PERM(0, ${industry.perm_storage.current_production_ratio}),
@@ -60,13 +60,13 @@ Production template for secondary industries
                     ${industry.perm_storage.closure_counter}
                 ),
             ]) {
-        ${industry.id}_simple_produce_${economy.numeric_id};
+        ${industry.id}_produce_${economy.numeric_id};
     }
 </tal:economies>
 
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce, economy) {
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_cargo_arrival, economy) {
     <tal:economies repeat="economy economies">
-        ${economy.numeric_id}: ${industry.id}_produce_economy_${economy.numeric_id};
+        ${economy.numeric_id}: ${industry.id}_produce_calculation_${economy.numeric_id};
     </tal:economies>
 }
 
