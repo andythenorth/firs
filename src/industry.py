@@ -929,7 +929,8 @@ class Industry(object):
         # special handling for cargo_types nml declaration
         cargo_types = []
         cargo_types.extend(['accept_cargo("' + label + '")' for label in self.get_accept_cargo_types(economy)])
-        cargo_types.extend(['produce_cargo("' + label + '",' + str(output_ratio) + ')' for label, output_ratio in self.get_prod_cargo_types(economy)])
+        zero_output = '0' # *all* industry production is via production cb, so force output to 0 in the action 0 prop
+        cargo_types.extend(['produce_cargo("' + label + '",' + zero_output + ')' for label, output_ratio in self.get_prod_cargo_types(economy)])
         result = 'cargo_types: [' + ','.join(cargo_types) + '];'
         """
             # output format
@@ -1176,9 +1177,6 @@ class IndustrySecondary(Industry):
         # - for gameplay reasons (too many cargos in one industry isn't fun)
         # - because of long-established production rules that calculate cargo output using ratios of n/8
         assert(len(prod_cargo_types) <= 8), "More than 8 produced cargos defined for %s in economy %s" % (self.id, economy.id)
-        # output ratios are actually used in prod. cb, not cargo_types
-        # so prod_multiplier returned for cargo_types should be 0 for secondary industries, otherwise they'll produce without input
-        prod_cargo_types = [(label, 0) for label, output_ratio in prod_cargo_types]
         return prod_cargo_types
 
     def get_output_ratio(self, cargo_num, economy):

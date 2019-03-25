@@ -24,10 +24,9 @@ if (marine_industry_max_coastal_distance == 0) {
     }
 </tal:economy_param>
 
-// production bonuses are expressed as absolute % of base production in parameters menu,
-// but we need them as bonus amounts, to be added on top of base production, so net off 100
-primary_level1_bonus = primary_level1_produced_percent - 100;
-primary_level2_bonus = primary_level2_produced_percent - 100;
+// this assignment is a legacy of an older way of calculating primary supply boost, and could be unpicked and removed
+primary_level1_bonus = primary_level1_produced_percent;
+primary_level2_bonus = primary_level2_produced_percent;
 
 // the tree for the food market is a climate-dependent special case, re-using base set sprites
 // it has to be handled here as a parameter, no elegant way to include it in the industry

@@ -1,24 +1,82 @@
 /* Primary production which is boosted by supplies */
 
+<!--! Monthly prod change handles the supply counter, so that every month supply level runs down -->
+
 <tal:block define="perm_storage industry.perm_storage">
-    produce(${industry.id}_production, 9999, 9999, 9999, 0, 0, 0);
-
-    switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce, STORE_PERM(waiting_cargo_1 + waiting_cargo_2 + waiting_cargo_3 + LOAD_PERM(${perm_storage.var_num_supplies_delivered}), ${perm_storage.var_num_supplies_delivered})) {
-        ${industry.id}_production;
-    }
-
-    produce(${industry.id}_production_256, 0, 0, 0, LOAD_TEMP(9) * production_rate_1 / 100, LOAD_TEMP(9) * production_rate_2 / 100, 0);
-
-    switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
-            [STORE_TEMP(
-                LOAD_PERM(${perm_storage.var_num_supplies_delivered}) +
-                LOAD_PERM(${perm_storage.var_num_supplies_delivered_last}) +
-                LOAD_PERM(${perm_storage.var_num_supplies_delivered_bef_last}),
-            8),
-            STORE_TEMP((LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level2_requirement)) ? primary_level2_bonus :
-                       (LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level1_requirement)) ? primary_level1_bonus : 0, 9),
-            STORE_PERM(LOAD_TEMP(9), ${perm_storage.var_current_supplies_prod_factor})
-            ]) {
-        ${industry.id}_production_256;
+    switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change, [
+        STORE_PERM(LOAD_PERM(${perm_storage.var_num_supplies_delivered_last}), ${perm_storage.var_num_supplies_delivered_bef_last}),
+        STORE_PERM(LOAD_PERM(${perm_storage.var_num_supplies_delivered}), ${perm_storage.var_num_supplies_delivered_last}),
+        STORE_PERM(0, ${perm_storage.var_num_supplies_delivered})
+    ]) {
+        return CB_RESULT_IND_PROD_NO_CHANGE;
     }
 </tal:block>
+
+
+<!--! On arrival of supplies, push the amount to perm storage, then clear from stockpile -->
+
+<tal:economies repeat="economy economies">
+    produce (${industry.id}_clear_incoming_cargo_waiting_${economy.numeric_id},
+        [
+            <tal:subtract repeat="cargo industry.get_accept_cargo_types(economy)">
+                <!--! !!! assume just subtracting all for now, don't faff around with remaindered amounts -->
+                ${cargo}: incoming_cargo_waiting("${cargo}");
+            </tal:subtract>
+        ],
+        [<!--! no prod in arrival cb -->],
+    0)
+    switch(FEAT_INDUSTRIES, SELF, ${industry.id}_store_incoming_cargo_waiting_${economy.numeric_id},
+        STORE_PERM(
+            <tal:store repeat="cargo industry.get_accept_cargo_types(economy)">
+                incoming_cargo_waiting("${cargo}") +
+            </tal:store>
+            LOAD_PERM(${industry.perm_storage.var_num_supplies_delivered}), ${industry.perm_storage.var_num_supplies_delivered})
+        ) {
+        ${industry.id}_clear_incoming_cargo_waiting_${economy.numeric_id};
+    }
+
+</tal:economies>
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_cargo_arrival, economy) {
+    <tal:economies repeat="economy economies">
+        ${economy.numeric_id}: ${industry.id}_store_incoming_cargo_waiting_${economy.numeric_id};
+    </tal:economies>
+}
+
+
+
+<!--! On 256 ticks, if supplied, produce extra output cargo at appropriate multiplier -->
+
+
+<!--!produce(${industry.id}_production_256, 0, 0, 0, LOAD_TEMP(9) * production_rate_1 / 100, LOAD_TEMP(9) * production_rate_2 / 100, 0);-->
+
+<tal:economies repeat="economy economies">
+    produce(${industry.id}_production_256_economy_${economy.numeric_id},
+        [<!--! no accept in 256 cb -->],
+        [
+            <tal:produce repeat="cargo industry.get_prod_cargo_types(economy)">
+                <!--! (cargo amount * industry prod level * supply boost as percent) / (default prod level * 100 because boost is percent) -->
+                ${cargo[0]}: (${cargo[1]} * production_level * LOAD_TEMP(9)) / (16 * 100);
+            </tal:produce>
+        ],
+    0)
+</tal:economies>
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks_switch_economy, economy) {
+<tal:economies repeat="economy economies">
+    ${economy.numeric_id}: ${industry.id}_production_256_economy_${economy.numeric_id};
+</tal:economies>
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
+        [STORE_TEMP(
+            LOAD_PERM(${industry.perm_storage.var_num_supplies_delivered}) +
+            LOAD_PERM(${industry.perm_storage.var_num_supplies_delivered_last}) +
+            LOAD_PERM(${industry.perm_storage.var_num_supplies_delivered_bef_last}),
+        8),
+        STORE_TEMP((LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level2_requirement)) ? primary_level2_bonus :
+                   (LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level1_requirement)) ? primary_level1_bonus : 100, 9),
+        STORE_PERM(LOAD_TEMP(9), ${industry.perm_storage.var_current_supplies_prod_factor})
+        ]) {
+    ${industry.id}_produce_256_ticks_switch_economy;
+}
