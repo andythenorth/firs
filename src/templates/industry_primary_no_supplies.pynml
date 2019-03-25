@@ -21,6 +21,32 @@
  * Definition of the industry
  * *************************************************/
 
+<!--! production behaviour is simple, so no separate template used -->
+
+<tal:economies repeat="economy economies">
+    produce(${industry.id}_production_256_economy_${economy.numeric_id},
+        [<!--! no accept in 256 cb -->],
+        [
+            <tal:produce repeat="cargo industry.get_prod_cargo_types(economy)">
+                <!--!
+                      simply replicates default ottd prod. algorithm but in prod. cb, so action 0 prod. properties can be set 0
+                      prod. cb is used consistently in FIRS, to reduce the number of different prod. methods in use
+                      calculation is (cargo amount * industry prod level) / default prod level
+                -->
+                ${cargo[0]}: (${cargo[1]} * production_level) / 16;
+            </tal:produce>
+        ],
+    0)
+</tal:economies>
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks, economy) {
+<tal:economies repeat="economy economies">
+    ${economy.numeric_id}: ${industry.id}_production_256_economy_${economy.numeric_id};
+</tal:economies>
+}
+
+<!--! end production behaviour -->
+
 <tal:include metal:use-macro="load: layouts.pynml" />
 
 <tal:include metal:use-macro="load: availability.pynml" />
@@ -34,12 +60,12 @@
 <!--! no economy support currently -->
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
 	graphics {
-		construction_probability:${industry.id}_check_availability;
-        build_prod_change:       randomise_primary_production_on_build;
-		location_check:          ${industry.id}_check_location;
-		monthly_prod_change:     return CB_RESULT_IND_PROD_NO_CHANGE;
-		random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
-//		extra_text_industry:     // no extra text. No production increase by means of FMSP
-		colour:                  switch_colour;
+		construction_probability: ${industry.id}_check_availability;
+        build_prod_change:        randomise_primary_production_on_build;
+        produce_256_ticks:        ${industry.id}_produce_256_ticks;
+		location_check:           ${industry.id}_check_location;
+		monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+		colour:                   switch_colour;
 	}
 }
