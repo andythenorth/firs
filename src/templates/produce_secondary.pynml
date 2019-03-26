@@ -1,7 +1,3 @@
-<!--!
-Production template for secondary industries
--->
-
 <tal:economies repeat="economy economies">
     produce (${industry.id}_produce_${economy.numeric_id},
         [
