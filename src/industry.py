@@ -706,7 +706,7 @@ class IndustryProperties(object):
         self.nearby_station_name = kwargs.get('nearby_station_name', None)
         self.intro_year = kwargs.get('intro_year', None)
         self.expiry_year = kwargs.get('expiry_year', None)
-        self.min_cargo_distr = '5' # just use the most common value from default OTTD industries, this property needs set but has little use
+        self.min_cargo_distr = '1' # just use the most common value from default OTTD industries, this property needs set but has little use
         #  input multipliers must be explicitly 0 unless set, don't rely on sensible defaults
         self.input_multiplier_1 = kwargs.get('input_multiplier_1', '[0, 0]')
         self.input_multiplier_2 = kwargs.get('input_multiplier_2', '[0, 0]')
