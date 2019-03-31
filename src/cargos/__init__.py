@@ -85,8 +85,8 @@ food.cargo.register()
 from cargos import fruits
 fruits.cargo.register()
 
-from cargos import vehicle_bodies
-vehicle_bodies.cargo.register()
+from cargos import glass
+glass.cargo.register()
 
 from cargos import goods
 goods.cargo.register()
@@ -169,6 +169,9 @@ pipe.cargo.register()
 from cargos import plant_fibres
 plant_fibres.cargo.register()
 
+from cargos import plastics
+plastics.cargo.register()
+
 from cargos import pyrite_ore
 pyrite_ore.cargo.register()
 
@@ -210,6 +213,12 @@ sugar_beet.cargo.register()
 
 from cargos import tyres
 tyres.cargo.register()
+
+from cargos import vehicle_bodies
+vehicle_bodies.cargo.register()
+
+from cargos import vehicle_engines
+vehicle_engines.cargo.register()
 
 from cargos import vehicle_parts
 vehicle_parts.cargo.register()

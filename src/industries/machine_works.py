@@ -4,7 +4,7 @@ from industry import IndustrySecondary, TileLocationChecks
 # see https://en.wikipedia.org/wiki/Edison_Machine_Works
 
 industry = IndustrySecondary(id='machine_works',
-                             accept_cargos_with_input_ratios=[('STEL', 4), ('COPR', 4)],
+                             accept_cargos_with_input_ratios=[('STEL', 2), ('COPR', 2), ('PLAS', 2), ('GLAS', 2)],
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[('VPTS', 4), ('POWR', 4)],
                              prob_in_game='3',
