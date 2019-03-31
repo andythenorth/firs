@@ -8,7 +8,7 @@ industry = IndustrySecondary(id='chlor_alkali_plant',
                              prod_multiplier='[0, 0]',
                              map_colour='191',
                              name='string(STR_IND_CHLOR_ALKALI_PLANT)',
-                             nearby_station_name='string(STR_STATION_HEAVY_INDUSTRY_2)',
+                             nearby_station_name='string(STR_STATION_BRINE_WORKS)',
                              fund_cost_multiplier='170')
 
 # tried accepting SULP in Steeltown, but better balance if it just goes to Tyre Plant

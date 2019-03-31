@@ -9,7 +9,7 @@ industry = IndustryPrimaryNoSupplies(id='cryo_plant',
                                      location_checks=dict(same_type_distance=72),
                                      prospect_chance='0.75',
                                      name='string(STR_IND_CRYO_PLANT)',
-                                     nearby_station_name='string(STR_STATION_SALTPETER_WORKS)',
+                                     nearby_station_name='string(STR_STATION_CRYO_PLANT)',
                                      fund_cost_multiplier='180')
 
 industry.economy_variations['STEELTOWN'].enabled = True

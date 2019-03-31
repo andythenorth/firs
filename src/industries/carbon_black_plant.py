@@ -10,7 +10,7 @@ industry = IndustrySecondary(id='carbon_black_plant',
                              # it's rare to force co-location of secondaries, but this one is near blast furnace by design
                              location_checks=dict(industry_max_distance=['coke_oven', 72], same_type_distance=72),
                              name='string(STR_IND_CARBON_BLACK_PLANT)',
-                             nearby_station_name='string(STR_STATION_KILNS)',
+                             nearby_station_name='string(STR_STATION_SOOT_FURNACE)',
                              fund_cost_multiplier='120')
 
 industry.economy_variations['STEELTOWN'].enabled = True
