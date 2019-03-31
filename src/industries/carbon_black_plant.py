@@ -5,7 +5,7 @@ industry = IndustrySecondary(id='carbon_black_plant',
                              prod_cargo_types_with_output_ratios=[('CBLK', 8)],
                              prob_in_game='3',
                              prob_random='5',
-                             map_colour='183',
+                             map_colour='16',
                              special_flags=['IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE'],
                              # it's rare to force co-location of secondaries, but this one is near blast furnace by design
                              location_checks=dict(industry_max_distance=['coke_oven', 72], same_type_distance=72),
