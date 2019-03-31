@@ -76,6 +76,9 @@ electric_arc_furnace.industry.register()
 from industries import engine_plant
 engine_plant.industry.register()
 
+from industries import factory
+factory.industry.register()
+
 from industries import flour_mill
 flour_mill.industry.register()
 
@@ -126,8 +129,10 @@ lumber_yard.industry.register()
 from industries import machine_shop
 machine_shop.industry.register()
 
+"""
 from industries import machine_works
 machine_works.industry.register()
+"""
 
 from industries import manganese_mine
 manganese_mine.industry.register()

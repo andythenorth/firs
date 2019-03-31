@@ -4,9 +4,9 @@ from industry import IndustrySecondary, TileLocationChecks
 # see https://en.wikipedia.org/wiki/Edison_Machine_Works
 
 industry = IndustrySecondary(id='machine_works',
-                             accept_cargos_with_input_ratios=[('STEL', 2), ('COPR', 2), ('PLAS', 2), ('GLAS', 2)],
+                             accept_cargos_with_input_ratios=[('STEL', 4), ('COPR', 4)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types_with_output_ratios=[('VPTS', 4), ('POWR', 4)],
+                             prod_cargo_types_with_output_ratios=[('POWR', 8)],
                              prob_in_game='3',
                              prob_random='5',
                              map_colour='166',
@@ -15,7 +15,7 @@ industry = IndustrySecondary(id='machine_works',
                              fund_cost_multiplier='120',
                              intro_year=1800)
 
-industry.economy_variations['STEELTOWN'].enabled = True
+#industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='machine_works_tile_1',
                   animation_length=47,

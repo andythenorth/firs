@@ -1,7 +1,6 @@
 from industry import IndustryTownProducerPopulationDependent, TileLocationChecks
 
 industry = IndustryTownProducerPopulationDependent(id='recycling_depot',
-                                       accept_cargo_types=[],
                                        prod_cargo_types_with_multipliers=[('RCYC', 0)], # prod dependent on town popn
                                        prob_in_game='20',
                                        prob_random='20',
