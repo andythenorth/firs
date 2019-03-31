@@ -36,21 +36,29 @@
     Production depends on the town population: population / 12 is output
  -->
 
-<!--!produce(${industry.id}_production,
-		waiting_cargo_1, // should be 0
-		waiting_cargo_2, // should be 0
-		waiting_cargo_3, // should be 0
-		LOAD_TEMP(1),    // we stored output here
-		0,               // no 2nd output
-		0                // don't repeat
-		);
+<tal:economies repeat="economy economies">
+    produce (${industry.id}_production_256_economy_${economy.numeric_id},
+        [<!--! no acceptance at this industry type -->],
+        [
+            <tal:produce repeat="cargo industry.get_property('prod_cargo_types_with_multipliers', economy)">
+                 <!--! prod is multiplied by an amount per cargo, and divided by 16.  Set multiplier 16 in default cases -->
+                ${cargo[0]}: (LOAD_TEMP(1) * ${cargo[1]}) / 16;
+            </tal:produce>
+        ],
+    0)
+</tal:economies>
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_switch_economy, economy) {
+    <tal:economies repeat="economy economies">
+        ${economy.numeric_id}: ${industry.id}_production_256_economy_${economy.numeric_id};
+    </tal:economies>
+}
 
 switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [STORE_TEMP(((population + 11) / (12 * 7)), 1)]) {
-	0: ${industry.id}_production;
-	${industry.id}_production;
+	${industry.id}_produce_switch_economy;
 }
--->
 
+<!--! end production code -->
 
 <tal:include metal:use-macro="load: properties_industry.pynml" />
 
@@ -60,7 +68,7 @@ switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [STORE_TEMP(((population
         if (economy==${economy.numeric_id}) {
             item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
                 graphics {
-<!--!                    produce_256_ticks:       ${industry.id}_produce; -->
+                    produce_256_ticks:       ${industry.id}_produce;
                     construction_probability:${industry.id}_check_availability;
                     location_check:          ${industry.id}_check_location;
                     monthly_prod_change:     CB_RESULT_IND_PROD_NO_CHANGE;
