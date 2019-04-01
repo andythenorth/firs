@@ -40,9 +40,13 @@
     produce (${industry.id}_production_256_economy_${economy.numeric_id},
         [<!--! no acceptance at this industry type -->],
         [
-            <tal:produce repeat="cargo industry.get_property('prod_cargo_types_with_multipliers', economy)">
-                 <!--! prod is multiplied by an amount per cargo, and divided by 16.  Set multiplier 16 in default cases -->
-                ${cargo[0]}: (LOAD_TEMP(1) * ${cargo[1]}) / 16;
+            <tal:produce repeat="cargo industry.get_prod_cargo_types(economy)">
+                 <!--!
+                    Prod is multiplied by an amount per cargo, and divided by 16.
+                    Set multiplier in industry to default of 16, or vary it.
+                    Note that the max caps mininmum production to about 56t / month, to catch case of very small towns.
+                  -->
+                ${cargo[0]}: max(((LOAD_TEMP(1) * ${cargo[1]}) / 16), 7);
             </tal:produce>
         ],
     0)

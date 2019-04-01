@@ -1107,12 +1107,18 @@ class IndustryTownProducerPopulationDependent(IndustryPrimary):
         self.supply_requirements = None # supplies do not boost this type of primary
 
     def get_prod_cargo_types(self, economy):
-        # !! this method is unfinished
-        # - what property name to use for prod cargos here??
-        # - should multipliers be supported (allowing scale factor to popn)??
-        # - should the be used for hotel??
+        # town-population-dependent industries provide multipliers which are used as n/16 - set 16 for default
         prod_cargo_types = self.get_property('prod_cargo_types_with_multipliers', economy)
-        utils.echo_message("IndustryTownProducerPopulationDependent.get_prod_cargo_types() is unfinished")
+        # prod_cargo_types cannot be None for town-population-dependent industries
+        assert(prod_cargo_types is not None), "prod_cargo_types_with_multipliers cannot be None for %s - property should be set in industry definition " % (self.id)
+        # guard against too many cargos being defined
+        # although OpenTTD 1.9.0+ supports up to 16 produced cargos, FIRS caps to 8
+        # - for gameplay reasons (too many cargos in one industry isn't fun)
+        # - because of long-established production rules that calculate cargo output using ratios of n/8
+        assert(len(prod_cargo_types) <= 8), "More than 8 produced cargos defined for %s in economy %s" % (self.id, economy.id)
+        # guard against ratios that don't add up to 8 (values other than 8 make no sense)
+        for label, prod_multiplier in prod_cargo_types:
+            assert(prod_multiplier != 0), "Prod multiplier cannot be 0 for %s industry %s in economy %s" % (label, self.id, economy.id)
         return prod_cargo_types
 
 

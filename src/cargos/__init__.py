@@ -7,6 +7,9 @@ acid.cargo.register()
 from cargos import alcohol
 alcohol.cargo.register()
 
+from cargos import aluminium
+aluminium.cargo.register()
+
 from cargos import bauxite
 bauxite.cargo.register()
 
@@ -97,17 +100,20 @@ grain.cargo.register()
 from cargos import iron_ore
 iron_ore.cargo.register()
 
+from cargos import kaolin
+kaolin.cargo.register()
+
 from cargos import livestock
 livestock.cargo.register()
 
 from cargos import lumber
 lumber.cargo.register()
 
-from cargos import kaolin
-kaolin.cargo.register()
-
 from cargos import limestone
 limestone.cargo.register()
+
+from cargos import lye
+lye.cargo.register()
 
 from cargos import mail
 mail.cargo.register()
@@ -117,9 +123,6 @@ maize.cargo.register()
 
 from cargos import manganese
 manganese.cargo.register()
-
-from cargos import packaging
-packaging.cargo.register()
 
 from cargos import metal
 metal.cargo.register()
@@ -144,6 +147,9 @@ oil.cargo.register()
 
 from cargos import oxygen
 oxygen.cargo.register()
+
+from cargos import packaging
+packaging.cargo.register()
 
 from cargos import paper
 paper.cargo.register()
