@@ -3,7 +3,7 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(id='basic_oxygen_furnace',
                              accept_cargos_with_input_ratios=[('IRON', 4), ('MNO2', 2), ('QLME', 1), ('O2__', 1)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types_with_output_ratios=[('STEL', 6), ('SLAG', 2)],
+                             prod_cargo_types_with_output_ratios=[('STCB', 4), ('STAL', 2), ('SLAG', 2)],
                              prob_in_game='3',
                              prob_random='5',
                              map_colour='49',

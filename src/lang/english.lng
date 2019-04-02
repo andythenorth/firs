@@ -30,11 +30,13 @@ STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             
 
 STR_CARGO_NAME_ACID                                                             :Acid
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
+STR_CARGO_NAME_ALLOY_STEEL                                                      :Alloy Steel
 STR_CARGO_NAME_ALUMINIUM                                                        :Aluminium
 STR_CARGO_NAME_BAUXITE                                                          :Bauxite
 STR_CARGO_NAME_BEANS                                                            :Beans
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Building Materials
 STR_CARGO_NAME_CARBON_BLACK                                                     :Carbon Black
+STR_CARGO_NAME_CARBON_STEEL                                                     :Carbon Steel
 STR_CARGO_NAME_CASSAVA                                                          :Cassava
 STR_CARGO_NAME_CAST_IRON                                                        :Cast Iron
 STR_CARGO_NAME_CEMENT                                                           :Cement
@@ -49,6 +51,7 @@ STR_CARGO_NAME_EDIBLE_OIL                                                       
 STR_CARGO_NAME_ELECTRICAL_MACHINES                                              :Electrical Machines
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Engineering Supplies
 STR_CARGO_NAME_EXPLOSIVES                                                       :Explosives
+STR_CARGO_NAME_FERROCHROME                                                      :Ferrochrome
 STR_CARGO_NAME_FIBRES                                                           :Plant Fibres
 STR_CARGO_NAME_FISH                                                             :Fish
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Farm Supplies
@@ -82,6 +85,7 @@ STR_CARGO_NAME_SAND                                                             
 STR_CARGO_NAME_SCRAP_METAL                                                      :Scrap Metal
 STR_CARGO_NAME_SLAG                                                             :Slag
 STR_CARGO_NAME_SODA_ASH                                                         :Soda Ash
+STR_CARGO_NAME_STAINLESS_STEEL                                                  :Stainless Steel
 STR_CARGO_NAME_STEEL                                                            :Steel
 STR_CARGO_NAME_STONE                                                            :Stone
 STR_CARGO_NAME_SUGAR_BEET                                                       :Sugar Beet
@@ -96,11 +100,13 @@ STR_CARGO_NAME_ZINC                                                             
 
 STR_CARGO_UNIT_ACID                                                             :{VOLUME} of acid
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} of alcohol
+STR_CARGO_UNIT_ALLOY_STEEL                                                      :${WEIGHT} of alloy steel
 STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} of aluminium
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} of bauxite
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} of beans
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} of building materials
 STR_CARGO_UNIT_CARBON_BLACK                                                     :{WEIGHT} of carbon black
+STR_CARGO_UNIT_CARBON_STEEL                                                     :${WEIGHT} of carbon steel
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} of cassava
 STR_CARGO_UNIT_CAST_IRON                                                        :{WEIGHT} of cast iron
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} of cement
@@ -115,6 +121,7 @@ STR_CARGO_UNIT_EDIBLE_OIL                                                       
 STR_CARGO_UNIT_ELECTRICAL_MACHINES                                              :{WEIGHT} of electrical machines
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crate{P 0 "" s} of engineering supplies
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} crate{P 0 "" s} of explosives
+STR_CARGO_UNIT_FERROCHROME                                                      :{WEIGHT} of ferrochrome
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} of fertiliser
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bale{P 0 "" s} of plant fibres
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} of fish
@@ -148,6 +155,7 @@ STR_CARGO_UNIT_SAND                                                             
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} of scrap metal
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} of slag
 STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} of soda ash
+STR_CARGO_UNIT_STAINLESS_STEEL                                                  :{WEIGHT} of stainless steel
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} of steel
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} of stone
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} of sugar beet
@@ -162,11 +170,13 @@ STR_CARGO_UNIT_ZINC                                                             
 
 STR_CID_ACID                                                                    :{TINYFONT}AC
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_ALLOY_STEEL                                                             :{TINYFONT}AS
 STR_CID_ALUMINIUM                                                               :{TINYFONT}AM
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}BN
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
 STR_CID_CARBON_BLACK                                                            :{TINYFONT}CB
+STR_CID_CARBON_STEEL                                                            :{TINYFONT}CS
 STR_CID_CASSAVA                                                                 :{TINYFONT}CA
 STR_CID_CAST_IRON                                                               :{TINYFONT}CI
 STR_CID_CEMENT                                                                  :{TINYFONT}CE
@@ -182,6 +192,7 @@ STR_CID_ELECTRICAL_MACHINES                                                     
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}EX
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
+STR_CID_FERROCHROME                                                             :{TINYFONT}FC
 STR_CID_FERTILISER                                                              :{TINYFONT}FL
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
 STR_CID_FISH                                                                    :{TINYFONT}FI
@@ -213,6 +224,7 @@ STR_CID_SAND                                                                    
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
 STR_CID_SLAG                                                                    :{TINYFONT}SG
 STR_CID_SODA_ASH                                                                :{TINYFONT}SO
+STR_CID_STAINLESS_STEEL                                                         :{TINYFONT}SS
 STR_CID_STEEL                                                                   :{TINYFONT}SL
 STR_CID_STONE                                                                   :{TINYFONT}ST
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB

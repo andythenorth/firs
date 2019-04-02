@@ -7,8 +7,13 @@ acid.cargo.register()
 from cargos import alcohol
 alcohol.cargo.register()
 
+from cargos import alloy_steel
+alloy_steel.cargo.register()
+
+"""
 from cargos import aluminium
 aluminium.cargo.register()
+"""
 
 from cargos import bauxite
 bauxite.cargo.register()
@@ -21,6 +26,9 @@ building_materials.cargo.register()
 
 from cargos import carbon_black
 carbon_black.cargo.register()
+
+from cargos import carbon_steel
+carbon_steel.cargo.register()
 
 from cargos import cassava
 cassava.cargo.register()
@@ -75,6 +83,9 @@ explosives.cargo.register()
 
 from cargos import farm_supplies
 farm_supplies.cargo.register()
+
+from cargos import ferrochrome
+ferrochrome.cargo.register()
 
 from cargos import fertiliser
 fertiliser.cargo.register()
@@ -204,6 +215,9 @@ slag.cargo.register()
 
 from cargos import soda_ash
 soda_ash.cargo.register()
+
+from cargos import stainless_steel
+stainless_steel.cargo.register()
 
 from cargos import steel
 steel.cargo.register()
