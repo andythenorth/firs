@@ -16,6 +16,7 @@ industry = IndustryTertiary(id='petrol_pump',
                             intro_year=1900)
 
 industry.economy_variations['FIRS'].enabled = True
+
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].prob_random = '8'
 industry.economy_variations['IN_A_HOT_COUNTRY'].prob_in_game = '8'
