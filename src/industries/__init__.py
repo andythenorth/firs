@@ -31,9 +31,6 @@ builders_yard.industry.register()
 from industries import bulk_terminal
 bulk_terminal.industry.register()
 
-from industries import carbon_black_plant
-carbon_black_plant.industry.register()
-
 from industries import cement_plant
 cement_plant.industry.register()
 
@@ -42,6 +39,9 @@ chemical_plant.industry.register()
 
 from industries import chlor_alkali_plant
 chlor_alkali_plant.industry.register()
+
+from industries import coal_tar_distillery
+coal_tar_distillery.industry.register()
 
 from industries import coffee_estate
 coffee_estate.industry.register()
