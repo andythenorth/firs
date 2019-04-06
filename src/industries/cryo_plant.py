@@ -2,7 +2,7 @@ from industry import IndustryPrimaryNoSupplies, TileLocationChecks
 
 industry = IndustryPrimaryNoSupplies(id='cryo_plant',
                                      accept_cargo_types=[],
-                                     prod_cargo_types_with_multipliers=[('O2__', 12)],
+                                     prod_cargo_types_with_multipliers=[('O2__', 14)],
                                      prob_in_game='4',
                                      prob_random='7',
                                      map_colour='189',
