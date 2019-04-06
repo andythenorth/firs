@@ -45,7 +45,16 @@
                     Prod is multiplied by an amount per cargo, and divided by 16.
                     Set multiplier in industry to default of 16, or vary it.
                   -->
-                ${cargo[0]}: LOAD_TEMP(4) * ${cargo[1]} / 16;
+                ${cargo[0]}: min(
+                                max(
+                                    <!--! calculated prod, scaled per cargo. -->
+                                    LOAD_TEMP(1) * ${cargo[1]} / 16,
+                                    <!--! min prod. -->
+                                    LOAD_TEMP(2)
+                                ),
+                                <!--! max prod. -->
+                                LOAD_TEMP(3)
+                             );
             </tal:produce>
         ],
     0)
@@ -64,8 +73,6 @@ switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [
                 STORE_TEMP(${industry.min_production} / 8, 2),
                 <!--! max production, around 4096t / month, to prevent pathological output in large cities -->
                 STORE_TEMP(${industry.max_production} / 8, 3),
-                <!--! from popn, max, min, store an actual output amount -->
-                STORE_TEMP(min(max(LOAD_TEMP(1), LOAD_TEMP(2)), LOAD_TEMP(3)), 4)
             ]
        ) {
 	${industry.id}_produce_switch_economy;
