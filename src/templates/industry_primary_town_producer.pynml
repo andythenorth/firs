@@ -44,9 +44,8 @@
                  <!--!
                     Prod is multiplied by an amount per cargo, and divided by 16.
                     Set multiplier in industry to default of 16, or vary it.
-                    Note that the max caps mininmum production to about 56t / month, to catch case of very small towns.
                   -->
-                ${cargo[0]}: max(((LOAD_TEMP(1) * ${cargo[1]}) / 16), 7);
+                ${cargo[0]}: LOAD_TEMP(4) * ${cargo[1]} / 16;
             </tal:produce>
         ],
     0)
@@ -58,7 +57,17 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_switch_economy, economy) {
     </tal:economies>
 }
 
-switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [STORE_TEMP(((population + 11) / (12 * 7)), 1)]) {
+switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [
+                <!--! calculated production based on population -->
+                STORE_TEMP((population + 11) / (12 * 7), 1),
+                <!--! min production, around 56t / month, to prevent very small towns having no production -->
+                STORE_TEMP(${industry.min_production} / 8, 2),
+                <!--! max production, around 4096t / month, to prevent pathological output in large cities -->
+                STORE_TEMP(${industry.max_production} / 8, 3),
+                <!--! from popn, max, min, store an actual output amount -->
+                STORE_TEMP(min(max(LOAD_TEMP(1), LOAD_TEMP(2)), LOAD_TEMP(3)), 4)
+            ]
+       ) {
 	${industry.id}_produce_switch_economy;
 }
 
