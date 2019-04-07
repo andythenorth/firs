@@ -112,13 +112,37 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id='cryo_plant_industry_layout_3',
-    layout=[(0, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_separation_tower'),
+    layout=[(0, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_large_shed'),
             (0, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_horizontal_tanks'),
-            (0, 2, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_purification_unit'),
-            (0, 3, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_purification_unit'),
-            (1, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_large_shed'),
-            (1, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
+            (0, 2, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_horizontal_tanks'),
+            (0, 3, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
+            (1, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_purification_unit'),
+            (1, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_separation_tower'),
             (1, 2, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_empty'),
-            (1, 3, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_empty'),
+            (1, 3, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
+            ]
+)
+industry.add_industry_layout(
+    id='cryo_plant_industry_layout_4',
+    layout=[(0, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
+            (0, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_large_shed'),
+            (0, 2, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_purification_unit'),
+            (0, 3, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_separation_tower'),
+            (1, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
+            (1, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_empty'),
+            (1, 2, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_horizontal_tanks'),
+            (1, 3, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_horizontal_tanks'),
+            ]
+)
+industry.add_industry_layout(
+    id='cryo_plant_industry_layout_5',
+    layout=[(0, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_large_shed'),
+            (0, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_empty'),
+            (0, 2, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
+            (1, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_purification_unit'),
+            (1, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_separation_tower'),
+            (1, 2, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
+            (2, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_horizontal_tanks'),
+            (2, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_horizontal_tanks'),
             ]
 )
