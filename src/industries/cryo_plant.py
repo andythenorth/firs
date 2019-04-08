@@ -43,6 +43,9 @@ spriteset_5 = industry.add_spriteset(
 spriteset_6 = industry.add_spriteset(
     sprites=[(360, 10, 64, 64, -31, -32)],
 )
+spriteset_7 = industry.add_spriteset(
+    sprites=[(430, 10, 64, 64, -31, -32)],
+)
 
 industry.add_spritelayout(
     id='cryo_plant_spritelayout_separation_tower',
@@ -73,17 +76,24 @@ industry.add_spritelayout(
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
-    id='cryo_plant_spritelayout_storage_tank',
+    id='cryo_plant_spritelayout_storage_tank_blue',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
-    id='cryo_plant_spritelayout_empty',
+    id='cryo_plant_spritelayout_storage_tank_yellow',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
+    fences=['nw', 'ne', 'se', 'sw']
+)
+industry.add_spritelayout(
+    id='cryo_plant_spritelayout_empty',
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_7],
 )
 
 industry.add_industry_layout(
@@ -94,14 +104,14 @@ industry.add_industry_layout(
             (1, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_separation_tower'),
             (2, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_horizontal_tanks'),
             (2, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_empty'),
-            (3, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
-            (3, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
+            (3, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank_blue'),
+            (3, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank_yellow'),
             ]
 )
 industry.add_industry_layout(
     id='cryo_plant_industry_layout_2',
-    layout=[(0, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
-            (0, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
+    layout=[(0, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank_blue'),
+            (0, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank_yellow'),
             (1, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_large_shed'),
             (1, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_empty'),
             (2, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_purification_unit'),
@@ -115,20 +125,20 @@ industry.add_industry_layout(
     layout=[(0, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_large_shed'),
             (0, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_horizontal_tanks'),
             (0, 2, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_horizontal_tanks'),
-            (0, 3, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
+            (0, 3, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank_yellow'),
             (1, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_purification_unit'),
             (1, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_separation_tower'),
             (1, 2, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_empty'),
-            (1, 3, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
+            (1, 3, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank_blue'),
             ]
 )
 industry.add_industry_layout(
     id='cryo_plant_industry_layout_4',
-    layout=[(0, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
+    layout=[(0, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank_yellow'),
             (0, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_large_shed'),
             (0, 2, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_purification_unit'),
             (0, 3, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_separation_tower'),
-            (1, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
+            (1, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank_blue'),
             (1, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_empty'),
             (1, 2, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_horizontal_tanks'),
             (1, 3, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_horizontal_tanks'),
@@ -138,10 +148,10 @@ industry.add_industry_layout(
     id='cryo_plant_industry_layout_5',
     layout=[(0, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_large_shed'),
             (0, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_empty'),
-            (0, 2, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
+            (0, 2, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank_yellow'),
             (1, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_purification_unit'),
             (1, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_separation_tower'),
-            (1, 2, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank'),
+            (1, 2, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_storage_tank_blue'),
             (2, 0, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_horizontal_tanks'),
             (2, 1, 'cryo_plant_tile_1', 'cryo_plant_spritelayout_horizontal_tanks'),
             ]
