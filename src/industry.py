@@ -1207,12 +1207,27 @@ class IndustryTertiary(Industry):
         self.template = 'industry_tertiary.pynml'
         # no perm_storage needed currently
 
+    @property
+    def has_production(self):
+        # bool, used to micro-optimise compile
+        result = False
+        for economy in registered_economies:
+            if self.get_property('prod_cargo_types_with_multipliers', economy) is not None:
+                if len(self.get_property('prod_cargo_types_with_multipliers', economy)) > 0:
+                    result = True
+        return result
+
     def get_prod_cargo_types(self, economy):
-        # tertiary industries don't produce so eh
-        if self.id == 'hotel':
-            utils.echo_message('hotel needs output cargos, IndustryTertiary does not provide that currently')
-        return []
-
-
-
-
+        # primary industry prod cargo provides multipliers for the produced amounts (8 or 9 times per month)
+        prod_cargo_types = self.get_property('prod_cargo_types_with_multipliers', economy)
+        if prod_cargo_types is None:
+            return []
+        # guard against too many cargos being defined
+        # although OpenTTD 1.9.0+ supports up to 16 produced cargos, FIRS caps to 8
+        # - for gameplay reasons (too many cargos in one industry isn't fun)
+        # - because of long-established production rules that calculate cargo output using ratios of n/8
+        assert(len(prod_cargo_types) <= 8), "More than 8 produced cargos defined for %s in economy %s" % (self.id, economy.id)
+        # guard against prod multipliers that are 0, they're not wanted
+        for label, prod_multiplier in prod_cargo_types:
+            assert(prod_multiplier != 0), "Prod multiplier cannot be 0 for %s industry %s in economy %s" % (label, self.id, economy.id)
+        return prod_cargo_types

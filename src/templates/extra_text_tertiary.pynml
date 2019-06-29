@@ -1,0 +1,8 @@
+<!--!
+    Additional text after the cargos in the industry window (callback 37)
+    The 0x3800 expressions here are related to using extended cb 37 before nml support was added, and can be removed when nml is updated
+-->
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display, 1) {
+    return 0x3800 + string(STR_EMPTY);
+}
