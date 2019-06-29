@@ -926,20 +926,19 @@ class Industry(object):
         return 'nearby_station_name: string(STR_STATION, string(STR_TOWN),' + self.get_property('nearby_station_name', None) + ');'
 
     def get_cargo_types_declaration(self, economy):
-        # special handling for cargo_types nml declaration
+        """
+            *Output Format*
+            accept_cargo("COAL", produce_cargo("MAIL", 1), produce_cargo("GOOD", 1), produce_cargo("STEL", 1), produce_cargo("VALU", 1)),
+            accept_cargo("OIL_"),
+            accept_cargo("IORE", produce_cargo("STEL", 4)),
+            produce_cargo("VALU", 0.5)
+            Just use 0 in produce_cargo("STEL", 0) if prod. cb is in use (i.e. secondaries).
+        """
         cargo_types = []
         cargo_types.extend(['accept_cargo("' + label + '")' for label in self.get_accept_cargo_types(economy)])
         zero_output = '0' # *all* industry production is via production cb, so force output to 0 in the action 0 prop
         cargo_types.extend(['produce_cargo("' + label + '",' + zero_output + ')' for label, output_ratio in self.get_prod_cargo_types(economy)])
         result = 'cargo_types: [' + ','.join(cargo_types) + '];'
-        """
-            # output format
-            # just use 0 in produce_cargo("MAIL", 0.5) if prod. cb is in use (i.e. secondaries)
-            accept_cargo("COAL", produce_cargo("MAIL", 1), produce_cargo("GOOD", 1), produce_cargo("STEL", 1), produce_cargo("VALU", 1)),
-            accept_cargo("OIL_"),
-            accept_cargo("IORE", produce_cargo("STEL", 4)),
-            produce_cargo("VALU", 0.5)
-        """
         return result
 
     def get_accept_cargo_types(self, economy):
@@ -1050,7 +1049,7 @@ class IndustryPrimary(Industry):
         # - for gameplay reasons (too many cargos in one industry isn't fun)
         # - because of long-established production rules that calculate cargo output using ratios of n/8
         assert(len(prod_cargo_types) <= 8), "More than 8 produced cargos defined for %s in economy %s" % (self.id, economy.id)
-        # guard against ratios that don't add up to 8 (values other than 8 make no sense)
+        # guard against multipliers being 0
         for label, prod_multiplier in prod_cargo_types:
             assert(prod_multiplier != 0), "Prod multiplier cannot be 0 for %s industry %s in economy %s" % (label, self.id, economy.id)
         return prod_cargo_types
@@ -1119,7 +1118,7 @@ class IndustryTownProducerPopulationDependent(IndustryPrimary):
         # - for gameplay reasons (too many cargos in one industry isn't fun)
         # - because of long-established production rules that calculate cargo output using ratios of n/8
         assert(len(prod_cargo_types) <= 8), "More than 8 produced cargos defined for %s in economy %s" % (self.id, economy.id)
-        # guard against ratios that don't add up to 8 (values other than 8 make no sense)
+        # guard against multipliers being 0
         for label, prod_multiplier in prod_cargo_types:
             assert(prod_multiplier != 0), "Prod multiplier cannot be 0 for %s industry %s in economy %s" % (label, self.id, economy.id)
         return prod_cargo_types
