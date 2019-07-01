@@ -1187,17 +1187,6 @@ class IndustrySecondary(Industry):
         assert(len(prod_cargo_types) <= 8), "More than 8 produced cargos defined for %s in economy %s" % (self.id, economy.id)
         return prod_cargo_types
 
-    def get_output_ratio(self, cargo_num, economy):
-        prod_cargo_types = self.get_property('prod_cargo_types_with_output_ratios', economy)
-        # guard against defined ratios that don't add up to 8 (values other than 8 make no sense)
-        sum_of_output_ratios = sum([output_ratio for label, output_ratio in prod_cargo_types])
-        assert(sum_of_output_ratios == 8), "Sum of output ratios must be 8: sum is %s for industry %s in economy %s" % (str(sum_of_output_ratios), self.id, economy.id)
-        # but in some cases ratio isn't defined, so just return 8, does no harm and prevents upstream code choking (returning 0 might lead to a divide-by-zero)
-        if cargo_num > len(prod_cargo_types):
-            return 8
-        else:
-            return prod_cargo_types[cargo_num - 1][1]
-
 
 class IndustryTertiary(Industry):
     """ Industries that consume cargo and don't produce anything, typically black holes in or near towns """
