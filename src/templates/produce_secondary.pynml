@@ -8,7 +8,7 @@
         ],
         [
             <tal:produce repeat="cargo industry.get_property('prod_cargo_types_with_output_ratios', economy)">
-                ${cargo[0]}: (LOAD_PERM(${industry.perm_storage.total_cargo_produced_this_cycle}) * ${cargo[1]}) / 8;
+                ${cargo[0]}: (LOAD_PERM(${industry.perm_storage.total_cargo_to_distribute_this_cycle}) * ${cargo[1]}) / 8;
             </tal:produce>
         ],
     0)
@@ -48,6 +48,29 @@
                         ${industry.perm_storage.total_cargo_produced_this_cycle}
                     ),
                 </tal:total_production>
+                <!--! when low cargo amounts are delivered, it's possible that final output cargo amounts < 1, which means no cargo is distributed
+                      prevent that by stockpiling produced cargo on each production cycle until there is enough to distribute
+                -->
+                STORE_PERM(
+                    LOAD_PERM(${industry.perm_storage.total_produced_cargo_available}) + LOAD_PERM(${industry.perm_storage.total_cargo_produced_this_cycle}),
+                    ${industry.perm_storage.total_produced_cargo_available}
+                ),
+                <!--! then check min. distributed by dividing over 8, to get the amount divided by max possible output cargos
+                      8 is the pathological case, this could be made more accurate by checking the lowest output ratio in current economy
+                      for accuracy, this could also store remainders using mod(8) or so, but eh, TMWFTLB?
+                -->
+
+                <!--! OOF, this needs to both assign total_cargo_to_distribute_this_cycle if > 1, and clear total_produced_cargo_available if > 1 -->
+                STORE_PERM(
+                    (LOAD_PERM(${industry.perm_storage.total_produced_cargo_available}) / 8) >= 1
+                    ? LOAD_PERM(${industry.perm_storage.total_produced_cargo_available}) : 0,
+                    ${industry.perm_storage.total_cargo_to_distribute_this_cycle}
+                ),
+                STORE_PERM(
+                    (LOAD_PERM(${industry.perm_storage.total_produced_cargo_available}) / 8) >= 1
+                    ? 0 : LOAD_PERM(${industry.perm_storage.total_produced_cargo_available}),
+                    ${industry.perm_storage.total_produced_cargo_available}
+                ),
                 <!--! if any cargo was produced, reset the closure countdown  -->
                 <!--! !! unclear if this is working, separate closure template needs updated for n cargos, currently depends on 3 -->
                 STORE_PERM(
