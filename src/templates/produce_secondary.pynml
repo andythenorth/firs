@@ -50,6 +50,7 @@
                 </tal:total_production>
                 <!--! when low cargo amounts are delivered, it's possible that final output cargo amounts < 1, which means no cargo is distributed
                       prevent that by stockpiling produced cargo on each production cycle until there is enough to distribute
+                      the case is triggered by low amounts being moved to the produce cycle as a vehicle gradually unloads, and was noticeable with Road Hog trams
                 -->
                 STORE_PERM(
                     LOAD_PERM(${industry.perm_storage.total_produced_cargo_available}) + LOAD_PERM(${industry.perm_storage.total_cargo_produced_this_cycle}),
