@@ -48,17 +48,17 @@ spriteset_larry_car = industry.add_spriteset(
 )
 spriteset_pusher_rails_base = industry.add_spriteset(
     sprites=[(150, 10, 64, 122, -31, -91)],
-    yextent=8  # prevents gantry flickering
+    yextent=8  # prevents gantry flickering ??
 )
 spriteset_pusher_car = industry.add_spriteset(
     sprites=[(10, 234, 64, 64, -31, -32)],
+    yextent=8  # prevents gantry flickering ??
 )
 spriteset_pipe_gantry = industry.add_spriteset(
     sprites=[(220, 10, 64, 122, -31, -91)],
 )
 spriteset_pipe_gantry_house = industry.add_spriteset(
     sprites=[(290, 10, 64, 122, -31, -91)],
-    yextent=32
 )
 spriteset_coal_handling_front = industry.add_spriteset(
     sprites=[(360, 10, 64, 122, -31, -91)],
@@ -134,7 +134,7 @@ industry.add_spritelayout(
     id='coke_oven_spritelayout_pusher_rails_with_house',
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_pusher_rails_base, spriteset_pipe_gantry, spriteset_pipe_gantry_house],
+    building_sprites=[spriteset_pusher_rails_base, spriteset_pipe_gantry_house],
 )
 industry.add_spritelayout(
     id='coke_oven_spritelayout_quench_tower',
