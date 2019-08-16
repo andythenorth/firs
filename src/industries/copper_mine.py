@@ -5,7 +5,10 @@ industry = IndustryPrimaryExtractive(id='copper_mine',
                                      prob_in_game='7',
                                      prob_random='7',
                                      map_colour='10',
-                                     location_checks=dict(cluster=[60, 3]),
+                                     # location_checks=dict(cluster=[60, 3]),
+                                     # it's rare to force co-location of secondaries, but this one is near copper mine by design
+                                     # !! won't work in Tropic Basic, no concentrator
+                                     location_checks=dict(industry_max_distance=['copper_concentrator', 72]),
                                      prospect_chance='0.75',
                                      name='TTD_STR_INDUSTRY_NAME_COPPER_ORE_MINE',
                                      nearby_station_name='string(STR_STATION_COPPER_LODE)',

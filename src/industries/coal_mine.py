@@ -5,16 +5,22 @@ industry = IndustryPrimaryExtractive(id='coal_mine',
                                      prob_in_game='4',
                                      prob_random='7',
                                      map_colour='1',
-                                     location_checks=dict(cluster=[70, 3]),
+                                     #location_checks=dict(cluster=[70, 3]),
+                                     # it's rare to force co-location of secondaries, but this one is near copper mine by design
+                                     location_checks=dict(industry_max_distance=['copper_mine', 72], same_type_distance=100),
                                      prospect_chance='0.75',
                                      name='TTD_STR_INDUSTRY_NAME_COAL_MINE',
                                      nearby_station_name='string(STR_STATION_COLLIERY)',
                                      fund_cost_multiplier='252')
 
 industry.economy_variations['FIRS'].enabled = True
+
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].prob_random = '10'
+
+industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 
 industry.add_tile(id='coal_mine_tile_1',
                   animation_length=81,

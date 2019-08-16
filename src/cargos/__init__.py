@@ -15,6 +15,9 @@ from cargos import aluminium
 aluminium.cargo.register()
 """
 
+from cargos import ammonia
+ammonia.cargo.register()
+
 from cargos import bauxite
 bauxite.cargo.register()
 
@@ -45,6 +48,9 @@ chemicals.cargo.register()
 from cargos import chlorine
 chlorine.cargo.register()
 
+from cargos import chromite_ore
+chromite_ore.cargo.register()
+
 from cargos import clay
 clay.cargo.register()
 
@@ -62,6 +68,9 @@ coke.cargo.register()
 
 from cargos import copper
 copper.cargo.register()
+
+from cargos import copper_concentrate
+copper_concentrate.cargo.register()
 
 from cargos import copper_ore
 copper_ore.cargo.register()
@@ -189,6 +198,9 @@ plant_fibres.cargo.register()
 from cargos import plastics
 plastics.cargo.register()
 
+from cargos import potash
+potash.cargo.register()
+
 from cargos import pyrite_ore
 pyrite_ore.cargo.register()
 
@@ -233,6 +245,9 @@ sugar_beet.cargo.register()
 
 from cargos import tyres
 tyres.cargo.register()
+
+from cargos import urea
+urea.cargo.register()
 
 from cargos import vehicle_bodies
 vehicle_bodies.cargo.register()

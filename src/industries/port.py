@@ -28,12 +28,12 @@ industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'GOOD'
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('ENSP', 9), ('FMSP', 7), ('KAOL', 12)]
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['COPR', 'JAVA', 'WOOL', 'BEER', 'RFPR', 'FOOD']
+industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['COCO', 'JAVA', 'WOOL', 'BEER', 'RFPR', 'FOOD']
 industry.economy_variations['BASIC_TROPIC'].prod_cargo_types_with_multipliers = [('ENSP', 8), ('GOOD', 17), ('FMSP', 12)]
 
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
-industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['WDPR', 'COPR', 'FRUT']
-industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('GOOD', 14)]
+industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['WDPR', 'COPR', 'EOIL', 'JAVA']
+industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('GOOD', 14), ('VEHI', 14)]
 
 industry.add_tile(id='port_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',

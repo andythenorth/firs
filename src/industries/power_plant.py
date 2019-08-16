@@ -15,6 +15,7 @@ industry = IndustryTertiary(id='power_plant',
                             intro_year=1900)
 
 industry.economy_variations['FIRS'].enabled = True
+
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PEAT']
 

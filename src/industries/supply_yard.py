@@ -2,7 +2,7 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='supply_yard',
                              accept_cargos_with_input_ratios=[('BOOM', 8), ('GOOD', 8)],
-                             prod_cargo_types_with_output_ratios=[('FMSP', 4), ('ENSP', 4)],
+                             prod_cargo_types_with_output_ratios=[('ENSP', 8)],
                              prob_in_game='3',
                              prob_random='5',
                              map_colour='143',
@@ -12,7 +12,7 @@ industry = IndustrySecondary(id='supply_yard',
                              intro_year=1800)
 
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
-industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('BDMT', 8), ('PETR', 8), ('GOOD', 8)]
+industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('CMNT', 8), ('PETR', 8), ('VEHI', 8), ('BOOM', 8), ('WDPR', 8)]
 
 industry.add_tile(id='supply_yard_tile_1',
                   animation_length=71,

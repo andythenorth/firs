@@ -20,8 +20,8 @@ industry.economy_variations['FIRS'].prod_cargo_types_with_multipliers = [('AORE'
 industry.economy_variations['FIRS'].prob_random = '3'
 
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
-industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['MNO2', 'PHOS', 'CMNT', 'EOIL']
-industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('RFPR', 12), ('FERT', 12)]
+industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['MNO2', 'FECR', 'RUBR']
+industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('POTA', 16)]
 
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['CHLO', 'FOOD']

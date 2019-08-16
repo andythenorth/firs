@@ -87,13 +87,23 @@ industry_numeric_ids = dict(coal_mine = 0,
                             herding_coop = 85,
                             soda_ash_mine = 86,
                             chlor_alkali_plant = 87,
-                            factory = 88)
+                            factory = 88,
+                            ferrochrome_smelter = 89,
+                            chromite_mine = 90,
+                            copper_concentrator = 91,
+                            fischer_tropsch_plant = 92)
 #127 is last ID to be used (128 industry limit, zero-based)
 
 
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
-tile_numeric_ids = dict(factory_tile_1 = 125,
+tile_numeric_ids = dict(fischer_tropsch_plant_tile_1 = 119,
+                        copper_concentrator_tile_1 = 120,
+                        chromite_mine_tile_1 = 121,
+                        chromite_mine_tile_2 = 122,
+                        chromite_mine_tile_3 = 123,
+                        ferrochrome_smelter_tile_1 = 124,
+                        factory_tile_1 = 125,
                         chlor_alkali_plant_tile_1 = 126,
                         chlor_alkali_plant_tile_2 = 127,
                         carbon_black_plant_tile_1 = 128,

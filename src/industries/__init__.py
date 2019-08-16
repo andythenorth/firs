@@ -43,6 +43,9 @@ chemical_plant.industry.register()
 from industries import chlor_alkali_plant
 chlor_alkali_plant.industry.register()
 
+from industries import chromite_mine
+chromite_mine.industry.register()
+
 from industries import coffee_estate
 coffee_estate.industry.register()
 
@@ -51,6 +54,9 @@ coke_oven.industry.register()
 
 from industries import copper_mine
 copper_mine.industry.register()
+
+from industries import copper_concentrator
+copper_concentrator.industry.register()
 
 from industries import copper_refinery
 copper_refinery.industry.register()
@@ -78,6 +84,12 @@ engine_plant.industry.register()
 
 from industries import factory
 factory.industry.register()
+
+from industries import ferrochrome_smelter
+ferrochrome_smelter.industry.register()
+
+from industries import fischer_tropsch_plant
+fischer_tropsch_plant.industry.register()
 
 from industries import flour_mill
 flour_mill.industry.register()

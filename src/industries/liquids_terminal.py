@@ -16,6 +16,12 @@ industry = IndustryPrimaryPort(id='liquids_terminal',
 
 # unused currently
 
+"""
+industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['EOIL']
+industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('NH3_', 16)]
+"""
+
 industry.add_tile(id='liquids_terminal_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
                   location_checks=TileLocationChecks(always_allow_founder=False))
