@@ -1,7 +1,7 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='rubber_plantation',
-                                  prod_cargo_types_with_multipliers=[('RUBR', 16)],
+                                  prod_cargo_types_with_multipliers=[('LATX', 16)],
                                   map_colour='121',
                                   prob_in_game='4',
                                   prob_random='11',

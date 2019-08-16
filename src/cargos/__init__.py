@@ -105,6 +105,9 @@ fish.cargo.register()
 from cargos import food
 food.cargo.register()
 
+from cargos import formic_acid
+formic_acid.cargo.register()
+
 from cargos import fruits
 fruits.cargo.register()
 
@@ -207,6 +210,9 @@ pyrite_ore.cargo.register()
 from cargos import quicklime
 quicklime.cargo.register()
 
+from cargos import raw_latex
+raw_latex.cargo.register()
+
 from cargos import recyclables
 recyclables.cargo.register()
 
@@ -242,6 +248,9 @@ sulphur.cargo.register()
 
 from cargos import sugar_beet
 sugar_beet.cargo.register()
+
+from cargos import textiles
+textiles.cargo.register()
 
 from cargos import tyres
 tyres.cargo.register()

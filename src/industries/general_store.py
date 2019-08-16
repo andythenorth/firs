@@ -16,10 +16,15 @@ industry = IndustryTertiary(id='general_store',
                             fund_cost_multiplier='15')
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
+
 industry.economy_variations['BASIC_TROPIC'].enabled = True
+
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].prob_random = '14'
+industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['FOOD', 'GOOD', 'BEER', 'TEXT']
+
 industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='general_store_tile_1',

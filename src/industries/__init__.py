@@ -124,6 +124,9 @@ iron_works.industry.register()
 from industries import junk_yard
 junk_yard.industry.register()
 
+from industries import latex_processor
+latex_processor.industry.register()
+
 from industries import lime_kiln
 lime_kiln.industry.register()
 

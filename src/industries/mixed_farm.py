@@ -16,7 +16,7 @@ industry = IndustryPrimaryOrganic(id='mixed_farm',
 industry.economy_variations['FIRS'].enabled = True
 # definitely not in Arctic Basic, farm has been added and removed more than once from that economy :P
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
-industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('MAIZ', 14), ('LVST', 13)]
+industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('MAIZ', 14), ('LVST', 13), ('NUTS', 14)]
 industry.economy_variations['IN_A_HOT_COUNTRY'].prob_random = '14'
 
 industry.economy_variations['STEELTOWN'].enabled = True

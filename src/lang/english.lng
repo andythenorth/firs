@@ -59,6 +59,7 @@ STR_CARGO_NAME_FIBRES                                                           
 STR_CARGO_NAME_FISH                                                             :Fish
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Farm Supplies
 STR_CARGO_NAME_FERTILISER                                                       :Fertiliser
+STR_CARGO_NAME_FORMIC_ACID                                                      :Formic Acid
 STR_CARGO_NAME_FRUITS                                                           :Fruit
 STR_CARGO_NAME_GLASS                                                            :Glass
 STR_CARGO_NAME_KAOLIN                                                           :Kaolin
@@ -82,6 +83,7 @@ STR_CARGO_NAME_PLASTICS                                                         
 STR_CARGO_NAME_POTASH                                                           :Potash
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrite Ore
 STR_CARGO_NAME_QUICKLIME                                                        :Quicklime
+STR_CARGO_NAME_RAW_LATEX                                                        :Raw Latex
 STR_CARGO_NAME_RECYCLABLES                                                      :Recyclables
 STR_CARGO_NAME_SALT                                                             :Salt
 STR_CARGO_NAME_SAND                                                             :Sand
@@ -93,6 +95,7 @@ STR_CARGO_NAME_STEEL                                                            
 STR_CARGO_NAME_STONE                                                            :Stone
 STR_CARGO_NAME_SUGAR_BEET                                                       :Sugar Beet
 STR_CARGO_NAME_SULPHUR                                                          :Sulphur
+STR_CARGO_NAME_TEXTILES                                                         :Textiles
 STR_CARGO_NAME_TYRES                                                            :Tyres
 STR_CARGO_NAME_UREA                                                             :Urea
 STR_CARGO_NAME_VEHICLE_BODIES                                                   :Vehicle Bodies
@@ -130,6 +133,7 @@ STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} crate{P 0 "" s} of explosives
 STR_CARGO_UNIT_FERROCHROME                                                      :{WEIGHT} of ferrochrome
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} of fertiliser
+STR_CARGO_UNIT_FORMIC_ACID                                                      :{VOLUME} of formic acid
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bale{P 0 "" s} of plant fibres
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} of fish
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of farm supplies
@@ -156,6 +160,7 @@ STR_CARGO_UNIT_PLASTICS                                                         
 STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} of potash
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} of pyrite ore
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} of quicklime
+STR_CARGO_UNIT_RAW_LATEX                                                        :{VOLUME} of raw latex
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} of recyclables
 STR_CARGO_UNIT_SALT                                                             :{WEIGHT} of salt
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} of sand
@@ -167,6 +172,7 @@ STR_CARGO_UNIT_STEEL                                                            
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} of stone
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} of sugar beet
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} of sulphur
+STR_CARGO_UNIT_TEXTILES                                                         :{WEIGHT} of textiles
 STR_CARGO_UNIT_TYRES                                                            :{WEIGHT} of tyres
 STR_CARGO_UNIT_UREA                                                             :{WEIGHT} of urea
 STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} of vehicle bodies
@@ -207,6 +213,7 @@ STR_CID_FERROCHROME                                                             
 STR_CID_FERTILISER                                                              :{TINYFONT}FL
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
 STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_FORMIC_ACID                                                             :{TINYFONT}FA
 STR_CID_GLASS                                                                   :{TINYFONT}GL
 STR_CID_KAOLIN                                                                  :{TINYFONT}KA
 STR_CID_LIMESTONE                                                               :{TINYFONT}LS
@@ -229,6 +236,7 @@ STR_CID_PLASTICS                                                                
 STR_CID_POTASH                                                                  :{TINYFONT}PA
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
 STR_CID_QUICKLIME                                                               :{TINYFONT}QL
+STR_CID_RAW_LATEX                                                               :{TINYFONT}RL
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
 STR_CID_SALT                                                                    :{TINYFONT}NA
 STR_CID_SAND                                                                    :{TINYFONT}SA
@@ -240,6 +248,7 @@ STR_CID_STEEL                                                                   
 STR_CID_STONE                                                                   :{TINYFONT}ST
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
 STR_CID_SULPHUR                                                                 :{TINYFONT}SU
+STR_CID_TEXTILES                                                                :{TINYFONT}TX
 STR_CID_TYRES                                                                   :{TINYFONT}TY
 STR_CID_UREA                                                                    :{TINYFONT}UR
 STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}VB
@@ -286,7 +295,7 @@ STR_IND_CLAY_PIT                                                                
 STR_IND_COFFEE_ESTATE                                                           :Coffee Estate
 STR_IND_COKE_OVEN                                                               :Coke Oven
 STR_IND_COPPER_CONCENTRATOR                                                     :Copper Concentrator
-STR_IND_COPPER_REFINERY                                                         :Copper Refinery
+STR_IND_COPPER_REFINERY                                                         :Copper Smelter
 STR_IND_CRYO_PLANT                                                              :Cryo Plant
 STR_IND_DAIRY                                                                   :Dairy
 STR_IND_DAIRY_FARM                                                              :Dairy Farm
@@ -310,6 +319,7 @@ STR_IND_HOTEL                                                                   
 STR_IND_HERDING_COOP                                                            :Herding Co-op
 STR_IND_IRON_WORKS                                                              :Iron Works
 STR_IND_JUNKYARD                                                                :Scrap Yard
+STR_IND_LATEX_PROCESSOR                                                         :Latex Processor
 STR_IND_LIME_KILN                                                               :Lime Kiln
 STR_IND_LIMESTONE_MINE                                                          :Limestone Mine
 STR_IND_LIQUIDS_TERMINAL                                                        :Liquids Terminal
