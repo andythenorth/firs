@@ -14,6 +14,10 @@ industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargos_with_input_ratios = [('GLAS', 2), ('PLAS', 2), ('STAL', 2), ('POWR', 2)]
 industry.economy_variations['STEELTOWN'].prod_cargo_types_with_output_ratios = [('VPTS', 8)]
 
+industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('FICR', 6), ('SASH', 2)]
+industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('YARN', 8)]
+
 
 industry.add_tile(id='factory_tile_1',
                   animation_length=47,

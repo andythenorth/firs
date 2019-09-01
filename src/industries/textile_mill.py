@@ -13,7 +13,7 @@ industry = IndustrySecondary(id='textile_mill',
 industry.economy_variations['FIRS'].enabled = True
 
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
-industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('FICR', 6)]
+industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('YARN', 6)]
 industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('TEXT', 8)]
 
 industry.add_tile(id='textile_mill_tile_1',

@@ -15,9 +15,11 @@ industry = IndustryTertiary(id='builders_yard',
 
 industry.economy_variations['FIRS'].enabled = True
 
+"""
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].prob_random = '14'
 industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['CMNT', 'WDPR']
+"""
 
 industry.add_tile(id='builders_yard_tile_1',
                   location_checks=TileLocationChecks(require_houses_nearby=True,

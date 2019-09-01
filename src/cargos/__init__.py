@@ -276,5 +276,8 @@ wood.cargo.register()
 from cargos import wool
 wool.cargo.register()
 
+from cargos import yarn
+yarn.cargo.register()
+
 from cargos import zinc
 zinc.cargo.register()
