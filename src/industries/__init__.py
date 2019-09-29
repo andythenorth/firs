@@ -43,8 +43,10 @@ chemical_plant.industry.register()
 from industries import chlor_alkali_plant
 chlor_alkali_plant.industry.register()
 
+"""
 from industries import chromite_mine
 chromite_mine.industry.register()
+"""
 
 from industries import coffee_estate
 coffee_estate.industry.register()
@@ -85,11 +87,15 @@ engine_plant.industry.register()
 from industries import factory
 factory.industry.register()
 
+""""
 from industries import ferrochrome_smelter
 ferrochrome_smelter.industry.register()
+"""
 
+"""
 from industries import fischer_tropsch_plant
 fischer_tropsch_plant.industry.register()
+"""
 
 from industries import flour_mill
 flour_mill.industry.register()
@@ -124,8 +130,10 @@ iron_works.industry.register()
 from industries import junk_yard
 junk_yard.industry.register()
 
+"""
 from industries import latex_processor
 latex_processor.industry.register()
+"""
 
 from industries import lime_kiln
 lime_kiln.industry.register()

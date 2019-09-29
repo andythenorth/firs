@@ -15,8 +15,10 @@ from cargos import aluminium
 aluminium.cargo.register()
 """
 
+"""
 from cargos import ammonia
 ammonia.cargo.register()
+"""
 
 from cargos import bauxite
 bauxite.cargo.register()
@@ -48,8 +50,10 @@ chemicals.cargo.register()
 from cargos import chlorine
 chlorine.cargo.register()
 
+"""
 from cargos import chromite_ore
 chromite_ore.cargo.register()
+"""
 
 from cargos import clay
 clay.cargo.register()
@@ -105,8 +109,10 @@ fish.cargo.register()
 from cargos import food
 food.cargo.register()
 
+"""
 from cargos import formic_acid
 formic_acid.cargo.register()
+"""
 
 from cargos import fruits
 fruits.cargo.register()
@@ -135,8 +141,10 @@ lumber.cargo.register()
 from cargos import limestone
 limestone.cargo.register()
 
+"""
 from cargos import lye
 lye.cargo.register()
+"""
 
 from cargos import mail
 mail.cargo.register()
@@ -201,8 +209,10 @@ plant_fibres.cargo.register()
 from cargos import plastics
 plastics.cargo.register()
 
+"""
 from cargos import potash
 potash.cargo.register()
+"""
 
 from cargos import pyrite_ore
 pyrite_ore.cargo.register()
@@ -210,8 +220,10 @@ pyrite_ore.cargo.register()
 from cargos import quicklime
 quicklime.cargo.register()
 
+"""
 from cargos import raw_latex
 raw_latex.cargo.register()
+"""
 
 from cargos import recyclables
 recyclables.cargo.register()
@@ -249,14 +261,18 @@ sulphur.cargo.register()
 from cargos import sugar_beet
 sugar_beet.cargo.register()
 
+"""
 from cargos import textiles
 textiles.cargo.register()
+"""
 
 from cargos import tyres
 tyres.cargo.register()
 
+"""
 from cargos import urea
 urea.cargo.register()
+"""
 
 from cargos import vehicle_bodies
 vehicle_bodies.cargo.register()
@@ -276,8 +292,10 @@ wood.cargo.register()
 from cargos import wool
 wool.cargo.register()
 
+"""
 from cargos import yarn
 yarn.cargo.register()
+"""
 
 from cargos import zinc
 zinc.cargo.register()
