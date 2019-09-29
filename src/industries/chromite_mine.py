@@ -11,7 +11,7 @@ industry = IndustryPrimaryExtractive(id='chromite_mine',
                                      nearby_station_name='string(STR_STATION_PYRITES)',
                                      fund_cost_multiplier='252')
 
-industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+#industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 
 industry.add_tile(id='chromite_mine_tile_1',
                   animation_length=81,

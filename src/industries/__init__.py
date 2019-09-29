@@ -133,10 +133,8 @@ lime_kiln.industry.register()
 from industries import limestone_mine
 limestone_mine.industry.register()
 
-"""
 from industries import liquids_terminal
 liquids_terminal.industry.register()
-"""
 
 from industries import lumber_yard
 lumber_yard.industry.register()

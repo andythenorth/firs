@@ -16,7 +16,7 @@ industry = IndustrySecondary(id='copper_concentrator',
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].accept_cargos_with_input_ratios = [('CORE', 5), ('RFPR', 3)]
 
-industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+#industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 
 industry.add_tile(id='copper_concentrator_tile_1',
                   animation_length=47,

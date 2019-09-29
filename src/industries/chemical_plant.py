@@ -17,9 +17,11 @@ industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargos_with_input_ratios = [('SULP', 4), ('PHOS', 4)]
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_output_ratios = [('FERT', 4), ('BOOM', 4)]
 
+"""
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('SULP', 2), ('PHOS', 2), ('NH3_', 2), ('POTA', 2)]
 industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('FMSP', 4), ('BOOM', 4)]
+"""
 
 industry.add_tile(id='chemical_plant_tile_1',
                   animation_length=7,

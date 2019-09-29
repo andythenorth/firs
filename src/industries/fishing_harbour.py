@@ -19,7 +19,7 @@ industry.economy_variations['FIRS'].accept_cargos_with_input_ratios = [('FISH', 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+#industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 
 industry.add_tile(id='fishing_harbour_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',

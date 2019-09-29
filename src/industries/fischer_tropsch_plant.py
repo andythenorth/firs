@@ -12,7 +12,7 @@ industry = IndustrySecondary(id='fischer_tropsch_plant',
                              nearby_station_name='string(STR_STATION_REFINERY)',
                              intro_year=1830)
 
-industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+#industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 
 industry.add_tile(id='fischer_tropsch_plant_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,
