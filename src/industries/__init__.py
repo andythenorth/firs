@@ -57,8 +57,10 @@ coke_oven.industry.register()
 from industries import copper_mine
 copper_mine.industry.register()
 
+"""
 from industries import copper_concentrator
 copper_concentrator.industry.register()
+"""
 
 from industries import copper_refinery
 copper_refinery.industry.register()

@@ -73,8 +73,10 @@ coke.cargo.register()
 from cargos import copper
 copper.cargo.register()
 
+"""
 from cargos import copper_concentrate
 copper_concentrate.cargo.register()
+"""
 
 from cargos import copper_ore
 copper_ore.cargo.register()
