@@ -15,10 +15,8 @@ from cargos import aluminium
 aluminium.cargo.register()
 """
 
-"""
 from cargos import ammonia
 ammonia.cargo.register()
-"""
 
 from cargos import bauxite
 bauxite.cargo.register()
