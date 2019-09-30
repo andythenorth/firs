@@ -14,7 +14,7 @@ industry = IndustrySecondary(id='chemical_plant',
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].accept_cargos_with_input_ratios = [('SULP', 4), ('PHOS', 4)]
+industry.economy_variations['BASIC_ARCTIC'].accept_cargos_with_input_ratios = [('SULP', 3), ('PHOS', 3), ('NH3_', 2)]
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_output_ratios = [('FERT', 4), ('BOOM', 4)]
 
 """
