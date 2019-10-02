@@ -7,6 +7,9 @@ industry = IndustrySecondary(id='chemical_plant',
                              prob_in_game='3',
                              prob_random='5',
                              map_colour='191',
+                             # it's rare to force co-location of secondaries, but this one is near portby design
+                             # !! this will fail if port is not available in economy
+                             location_checks=dict(industry_max_distance=['port', 96], same_type_distance=128),
                              name='string(STR_IND_CHEMICAL_PLANT)',
                              nearby_station_name='string(STR_STATION_HEAVY_INDUSTRY_2)',
                              fund_cost_multiplier='170')
@@ -14,7 +17,7 @@ industry = IndustrySecondary(id='chemical_plant',
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].accept_cargos_with_input_ratios = [('SULP', 3), ('PHOS', 3), ('NH3_', 2)]
+industry.economy_variations['BASIC_ARCTIC'].accept_cargos_with_input_ratios = [('SULP', 2), ('PHOS', 2), ('NH3_', 2), ('POTA', 2)]
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_output_ratios = [('FERT', 4), ('BOOM', 4)]
 
 """

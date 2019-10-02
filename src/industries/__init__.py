@@ -229,6 +229,9 @@ trading_post.industry.register()
 from industries import clay_pit
 clay_pit.industry.register()
 
+from industries import fish_farm
+fish_farm.industry.register()
+
 from industries import fishing_grounds
 fishing_grounds.industry.register()
 
