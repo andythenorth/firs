@@ -49,7 +49,7 @@ HTML_DOCS = docs
 SOURCE_NAME = $(PROJECT_VERSIONED_NAME)-source
 BUNDLE_DIR = bundle_dir
 
-# graphviz tools (FIRS only)
+# graphviz tools
 GVPR ?= $(shell which gvpr)
 DOT  ?= $(shell which dot)
 
