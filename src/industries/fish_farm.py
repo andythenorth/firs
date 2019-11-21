@@ -32,45 +32,72 @@ sprite_ground = industry.add_sprite(
 spriteset_ground_empty = industry.add_spriteset(
     type='empty'
 )
-spriteset_1 = industry.add_spriteset(
-    sprites=[(10, 10, 64, 31, -31, 0)],
+spriteset_concrete = industry.add_spriteset(
+    sprites=[(10, 10, 64, 39, -31, -8)],
+    always_draw=1,
 )
-spriteset_2 = industry.add_spriteset(
-    sprites=[(80, 10, 64, 31, -31, 0)],
+spriteset_warehouse = industry.add_spriteset(
+    sprites=[(80, 10, 64, 39, -31, -16)],
 )
-spriteset_3 = industry.add_spriteset(
-    sprites=[(150, 10, 64, 31, -31, 0)],
+spriteset_jetty_se_nw = industry.add_spriteset(
+    sprites=[(10, 60, 64, 39, -31, -7)],
+    always_draw=1,
 )
-spriteset_4 = industry.add_spriteset(
-    sprites=[(220, 10, 64, 31, -31, 0)],
+spriteset_jetty_ne_sw = industry.add_spriteset(
+    sprites=[(80, 60, 64, 39, -31, -7)],
+    always_draw=1
 )
-spriteset_5 = industry.add_spriteset(
-    sprites=[(290, 10, 64, 31, -31, -32)],
+spriteset_jetty_slope_nw_se = industry.add_spriteset(
+    sprites=[(150, 60, 64, 39, -31, -7)],
+)
+spriteset_jetty_slope_ne_sw = industry.add_spriteset(
+    sprites=[(220, 60, 64, 39, -31, -7)],
+)
+spriteset_jetty_slope_se_nw = industry.add_spriteset(
+    sprites=[(290, 60, 64, 39, -31, -7)],
+)
+spriteset_jetty_slope_sw_ne = industry.add_spriteset(
+    sprites=[(360, 60, 64, 39, -31, -7)],
+)
+spriteset_tank_1 = industry.add_spriteset(
+    sprites=[(10, 110, 64, 31, -31, 0)],
+)
+spriteset_tank_2 = industry.add_spriteset(
+    sprites=[(80, 110, 64, 31, -31, 0)],
+)
+spriteset_tank_3 = industry.add_spriteset(
+    sprites=[(150, 110, 64, 31, -31, 0)],
+)
+spriteset_tank_4 = industry.add_spriteset(
+    sprites=[(220, 110, 64, 31, -31, 0)],
+)
+spriteset_station_bouy = industry.add_spriteset(
+    sprites=[(290, 110, 64, 31, -31, -32)],
 )
 
 industry.add_spritelayout(
     id='fish_farm_spritelayout_1',
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_empty,
-    building_sprites=[spriteset_1]
+    building_sprites=[spriteset_tank_1]
 )
 industry.add_spritelayout(
     id='fish_farm_spritelayout_2',
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_empty,
-    building_sprites=[spriteset_2]
+    building_sprites=[spriteset_tank_2]
 )
 industry.add_spritelayout(
     id='fish_farm_spritelayout_3',
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_empty,
-    building_sprites=[spriteset_3]
+    building_sprites=[spriteset_tank_3]
 )
 industry.add_spritelayout(
     id='fish_farm_spritelayout_4',
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_5,
-    building_sprites=[spriteset_4]
+    ground_overlay=spriteset_station_bouy,
+    building_sprites=[spriteset_tank_4]
 )
 industry.add_spritelayout(
     id='fish_farm_spritelayout_null',
@@ -78,10 +105,22 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground,
     building_sprites=[]
 )
+industry.add_magic_spritelayout(
+    type='harbour_coast_foundations',
+    base_id='fish_farm_spritelayout_coast_warehouse',
+    config={'ground_sprite': spriteset_ground_empty,  # should alqways be empty for this magic spritelayout
+            'building_sprites': [spriteset_concrete, spriteset_warehouse],
+            'foundation_sprites': {'ne_sw': spriteset_jetty_ne_sw,
+                                   'se_nw': spriteset_jetty_se_nw,
+                                   'slope_nw_se': spriteset_jetty_slope_nw_se,
+                                   'slope_ne_sw': spriteset_jetty_slope_ne_sw,
+                                   'slope_se_nw': spriteset_jetty_slope_se_nw,
+                                   'slope_sw_ne': spriteset_jetty_slope_sw_ne}}
+)
 
 industry.add_industry_layout(
     id='fish_farm_industry_layout_1',
-    layout=[(0, 0, 'fish_farm_tile_2', 'fish_farm_spritelayout_null'),
+    layout=[(0, 0, 'fish_farm_tile_2', 'fish_farm_spritelayout_coast_warehouse'),
             (0, 1, '255', 'fish_farm_spritelayout_null'),
             (0, 2, '255', 'fish_farm_spritelayout_null'),
             (0, 3, '255', 'fish_farm_spritelayout_null'),
@@ -134,7 +173,7 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id='fish_farm_industry_layout_2',
-    layout=[(0, 0, 'fish_farm_tile_2', 'fish_farm_spritelayout_null'),
+    layout=[(0, 0, 'fish_farm_tile_2', 'fish_farm_spritelayout_coast_warehouse'),
             (0, 1, '255', 'fish_farm_spritelayout_null'),
             (0, 2, '255', 'fish_farm_spritelayout_null'),
             (0, 3, '255', 'fish_farm_spritelayout_null'),
@@ -194,7 +233,7 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id='fish_farm_industry_layout_3',
-    layout=[(0, 0, 'fish_farm_tile_2', 'fish_farm_spritelayout_null'),
+    layout=[(0, 0, 'fish_farm_tile_2', 'fish_farm_spritelayout_coast_warehouse'),
             (0, 1, '255', 'fish_farm_spritelayout_null'),
             (0, 2, '255', 'fish_farm_spritelayout_null'),
             (0, 3, '255', 'fish_farm_spritelayout_null'),
@@ -254,7 +293,7 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id='fish_farm_industry_layout_4',
-    layout=[(0, 0, 'fish_farm_tile_2', 'fish_farm_spritelayout_null'),
+    layout=[(0, 0, 'fish_farm_tile_2', 'fish_farm_spritelayout_coast_warehouse'),
             (0, 1, '255', 'fish_farm_spritelayout_null'),
             (0, 2, '255', 'fish_farm_spritelayout_null'),
             (0, 3, '255', 'fish_farm_spritelayout_null'),
