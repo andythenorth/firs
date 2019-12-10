@@ -20,7 +20,7 @@ GRAPHICS_DIR = src/graphics
 # lang is not copied to generated currently in FIRS, unlike RH, IH etc - could be changed
 LANG_DIR = generated/lang
 NML_FILE = generated/firs.nml
-NML_FLAGS =-c -l $(LANG_DIR)
+NML_FLAGS =-c -l $(LANG_DIR) --verbosity=4
 
 -include Makefile.local
 
