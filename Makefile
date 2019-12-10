@@ -12,7 +12,6 @@ FILL_TEMPLATE = bin/fill-template
 FIND_FILES = bin/find-files
 MK_ARCHIVE = bin/mk-archive
 
-
 # Project details
 PROJECT_NAME = firs
 
@@ -22,6 +21,8 @@ GRAPHICS_DIR = src/graphics
 LANG_DIR = generated/lang
 NML_FILE = generated/firs.nml
 NML_FLAGS =-c -l $(LANG_DIR)
+
+-include Makefile.local
 
 EXPORTED = no
 ifeq ($(strip $(EXPORTED)),no)
