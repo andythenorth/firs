@@ -124,8 +124,8 @@ industry.add_industry_layout(
             (1, 1, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_large_shed'),
             (1, 2, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_grinding_tower'),
             (1, 3, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_conveyors_1'),
-            (2, 0, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_tile_empty'),
-            (2, 1, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_tile_empty'),
+            (2, 0, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_slag_pile_2'),
+            (2, 1, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_slag_pile_1'),
             (2, 2, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_slag_pile_2'),
             (2, 3, 'slag_grinding_plant_tile_1', 'slag_grinding_plant_spritelayout_clinker_shed'), ]
 )
