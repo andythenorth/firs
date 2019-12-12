@@ -99,7 +99,9 @@ industry_numeric_ids = dict(coal_mine = 0,
 
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
-tile_numeric_ids = dict(wharf_tile_3 = 115,
+tile_numeric_ids = dict(slag_grinding_plant_tile_1 = 113,
+                        slag_grinding_plant_tile_2 = 114,
+                        wharf_tile_3 = 115,
                         fish_farm_tile_1 = 116,
                         fish_farm_tile_2 = 117,
                         latex_processor_tile_1 = 118,
@@ -135,7 +137,7 @@ tile_numeric_ids = dict(wharf_tile_3 = 115,
                         peatlands_tile_2 = 148,
                         phosphate_mine_tile_1 = 149,
                         phosphate_mine_tile_2 = 150,
-                        slag_grinding_plant_tile_1 = 151,
+                        # 151 unused
                         electric_arc_furnace_tile_1 = 152,
                         coal_mine_tile_1 = 153,
                         basic_oxygen_furnace_tile_1 = 154,
