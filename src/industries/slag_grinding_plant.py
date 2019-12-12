@@ -92,9 +92,9 @@ spriteset_animated_slag_dump_1 = industry.add_spriteset(
 
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type='white_smoke_big',
-    xoffset=1,
-    yoffset=0,
-    zoffset=62,
+    xoffset=0,
+    yoffset=2,
+    zoffset=76,
     animation_frame_offset=1
 )
 
@@ -116,6 +116,7 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_large_shed],
+    smoke_sprites=[sprite_smoke_1],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
