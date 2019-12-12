@@ -25,22 +25,22 @@ industry.add_tile(id='carbon_black_plant_tile_1',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    type='cobble',
+    type='concrete',
 )
 spriteset_ground_overlay = industry.add_spriteset(
     type='empty',
 )
 
-spriteset_1 = industry.add_spriteset(
+spriteset_boiler = industry.add_spriteset(
     sprites=[(10, 10, 64, 114, -31, -83)],
 )
-spriteset_2 = industry.add_spriteset(
+spriteset_chimneys = industry.add_spriteset(
     sprites=[(80, 10, 64, 114, -31, -83)],
 )
 spriteset_3 = industry.add_spriteset(
     sprites=[(150, 10, 64, 114, -31, -83)],
 )
-spriteset_4 = industry.add_spriteset(
+spriteset_silos = industry.add_spriteset(
     sprites=[(220, 10, 64, 114, -31, -83)],
 )
 spriteset_sand_staithe = industry.add_spriteset(
@@ -49,32 +49,38 @@ spriteset_sand_staithe = industry.add_spriteset(
 spriteset_clay_staithe = industry.add_spriteset(
     sprites=[(360, 10, 64, 64, -31, -33)],
 )
-sprite_smoke_boilerhouse = industry.add_smoke_sprite(
+sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type='white_smoke_big',
-    xoffset=8,
+    xoffset=9,
     yoffset=0,
-    zoffset=70,
+    zoffset=87,
 )
-sprite_smoke_kiln = industry.add_smoke_sprite(
+sprite_smoke_2 = industry.add_smoke_sprite(
     smoke_type='white_smoke_big',
-    xoffset=0,
-    yoffset=8,
-    zoffset=58,
+    xoffset=2,
+    yoffset=6,
+    zoffset=71,
+)
+sprite_smoke_3 = industry.add_smoke_sprite(
+    smoke_type='white_smoke_big',
+    xoffset=5,
+    yoffset=6,
+    zoffset=71,
 )
 
 industry.add_spritelayout(
-    id='carbon_black_plant_spritelayout_1',
+    id='carbon_black_plant_spritelayout_boiler',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_1],
-    smoke_sprites=[sprite_smoke_boilerhouse],
+    building_sprites=[spriteset_boiler],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
-    id='carbon_black_plant_spritelayout_2',
+    id='carbon_black_plant_spritelayout_chimneys',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_2],
+    building_sprites=[spriteset_chimneys],
+    smoke_sprites=[sprite_smoke_1, sprite_smoke_2, sprite_smoke_3],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
@@ -82,14 +88,13 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    smoke_sprites=[sprite_smoke_kiln],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
-    id='carbon_black_plant_spritelayout_4',
+    id='carbon_black_plant_spritelayout_silos',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_4],
+    building_sprites=[spriteset_silos],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
@@ -109,37 +114,37 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id='carbon_black_plant_industry_layout_1',
-    layout=[(0, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_4'),
-            (0, 1, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_4'),
+    layout=[(0, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_silos'),
+            (0, 1, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_silos'),
             (1, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_3'),
             (1, 1, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_3'),
-            (2, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_2'),
-            (2, 1, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_1'),
+            (2, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_chimneys'),
+            (2, 1, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_boiler'),
             (3, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_clay_staithe'),
             (3, 1, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_sand_staithe'),
             ]
 )
 industry.add_industry_layout(
     id='carbon_black_plant_industry_layout_2',
-    layout=[(0, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_4'),
-            (0, 1, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_4'),
+    layout=[(0, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_silos'),
+            (0, 1, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_clay_staithe'),
             (1, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_3'),
             (1, 1, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_3'),
-            (2, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_2'),
-            (2, 1, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_clay_staithe'),
-            (3, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_1'),
+            (2, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_chimneys'),
+            (2, 1, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_boiler'),
+            (3, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_boiler'),
             (3, 1, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_sand_staithe'),
             ]
 )
 industry.add_industry_layout(
     id='carbon_black_plant_industry_layout_3',
-    layout=[(0, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_1'),
-            (0, 1, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_1'),
-            (0, 2, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_2'),
+    layout=[(0, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_boiler'),
+            (0, 1, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_boiler'),
+            (0, 2, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_chimneys'),
             (0, 3, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_clay_staithe'),
-            (1, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_2'),
+            (1, 0, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_3'),
             (1, 1, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_3'),
-            (1, 2, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_4'),
+            (1, 2, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_silos'),
             (1, 3, 'carbon_black_plant_tile_1', 'carbon_black_plant_spritelayout_sand_staithe'),
             ]
 )
