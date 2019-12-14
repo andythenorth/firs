@@ -43,7 +43,7 @@ class Tile(object):
         # check for setting both land_shape_flags and location_checks
         # it's a cause of coder-error when I forget that land_shape_flags will be ignored when location_check is used
         # 'janky_industry_id_string' because an industry ID is needed, and I don't trivially have one here
-        if self.land_shape_flags is not '0' and len(self.location_checks.get_render_tree(self.id, industry_id)) > 0:
+        if self.land_shape_flags != '0' and len(self.location_checks.get_render_tree(self.id, industry_id)) > 0:
             raise Exception("Tile " + self.id + ": land_shape_flags are set but will be ignored because the tile also uses location_checks cb.  Only set one of these attributes.")
         self._special_flags = kwargs.get('special_flags', [])
         self.foundations = kwargs.get('foundations', None)
@@ -686,11 +686,11 @@ class IndustryPermStorage(object):
         # should be passed a list of length 16, with 'unused' string in empty slots
         # doesn't need any numbers, just don't mess with positions of identifiers (or bump savegame version if you do)
         # note that *16 is an arbitrary limit*, OpenTTD 1.9.0 increased permanent storage to 256 registers
-        if len(identifiers) is not 16:
+        if len(identifiers) != 16:
             utils.echo_message("IndustryPermStorageNums must be passed a list of 16 registers containing var names as strings, or 'unused'")
         self.unused = []
         for register_num, identifier in enumerate(identifiers):
-            if identifier is 'unused':
+            if identifier == 'unused':
                 self.unused.append(register_num)
             else:
                 setattr(self, identifier, register_num)
@@ -909,7 +909,7 @@ class Industry(object):
                 value = default_value
 
         # map colour uses a guarding function
-        if property_name is 'map_colour':
+        if property_name == 'map_colour':
             self.validate_map_colour(value)
 
         return value
