@@ -7,7 +7,7 @@ ZIP = zip
 NMLC = nmlc
 GRFID = grfid
 
-GIT_INFO = bin/git-info
+GIT_INFO = $(PYTHON3) src/polar_fox/git_info.py
 FILL_TEMPLATE = bin/fill-template
 FIND_FILES = bin/find-files
 MK_ARCHIVE = bin/mk-archive
@@ -27,7 +27,7 @@ NML_FLAGS =-c -l $(LANG_DIR) --verbosity=4
 EXPORTED = no
 ifeq ($(strip $(EXPORTED)),no)
   # Not exported source, therefore regular checkout
-  REPO_INFO = $(shell $(GIT_INFO) --num-id --version)
+  REPO_INFO = $(shell $(GIT_INFO))
   REPO_REVISION = $(word 1,$(REPO_INFO))
   REPO_VERSION = $(word 2,$(REPO_INFO))
 else
