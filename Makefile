@@ -15,8 +15,6 @@ MK_ARCHIVE = bin/mk-archive
 # Project details
 PROJECT_NAME = firs
 
-# graphics is not copied to generated currently in FIRS, unlike RH, IH etc - could be changed
-GRAPHICS_DIR = src/graphics
 # lang is not copied to generated currently in FIRS, unlike RH, IH etc - could be changed
 LANG_DIR = generated/lang
 NML_FILE = generated/firs.nml
@@ -60,7 +58,6 @@ default: html_docs grf
 # bundle needs to clean first to ensure we don't use outdated/cached version info
 bundle_tar: clean tar
 bundle_zip: $(ZIP_FILE)
-graphics: $(GRAPHICS_DIR)
 lang: $(LANG_DIR)
 nml: $(NML_FILE)
 grf: $(GRF_FILE)
@@ -70,13 +67,10 @@ html_docs: $(HTML_DOCS)
 # remove the @ for more verbose output (@ suppresses command output)
 _V ?= @
 
-$(GRAPHICS_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.png src)
-	$(_V) $(PYTHON3) src/render_graphics.py $(ARGS)
-
 $(LANG_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.lng src)
 	$(_V) $(PYTHON3) src/render_lang.py $(ARGS)
 
-$(HTML_DOCS): $(GRAPHICS_DIR) $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.pt --ext=.lng src)
+$(HTML_DOCS): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.pt --ext=.lng src)
 	$(_V) $(PYTHON3) src/render_docs.py $(ARGS)
 	$(PYTHON3) src/render_docs.py $(ARGS)
 # Insane trick to check whether both DOT and GVPR are not empty.
@@ -91,7 +85,7 @@ endif
 $(NML_FILE): $(shell $(FIND_FILES) --ext=.py --ext=.pynml src)
 	$(_V) $(PYTHON3) src/render_nml.py $(ARGS)
 
-$(GRF_FILE): $(GRAPHICS_DIR) $(LANG_DIR) $(NML_FILE) $(HTML_DOCS)
+$(GRF_FILE): $(shell $(FIND_FILES) --ext=.py --ext=.png src) $(LANG_DIR) $(NML_FILE) $(HTML_DOCS)
 	$(NMLC) $(NML_FLAGS) --grf=$(GRF_FILE) $(NML_FILE)
 
 $(TAR_FILE): $(GRF_FILE)
