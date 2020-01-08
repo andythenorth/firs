@@ -1,8 +1,9 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='factory',
-                             accept_cargos_with_input_ratios=[('MNSP', 8)],
-                             prod_cargo_types_with_output_ratios=[('GOOD', 8)],
+                             accept_cargos_with_input_ratios=[('GLAS', 2), ('PLAS', 2), ('STAL', 2), ('POWR', 2)],
+                             combined_cargos_boost_prod=True,
+                             prod_cargo_types_with_output_ratios=[('VPTS', 8)],
                              prob_in_game='7',
                              prob_random='8',
                              map_colour='166',
@@ -11,8 +12,6 @@ industry = IndustrySecondary(id='factory',
                              fund_cost_multiplier='95')
 
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].accept_cargos_with_input_ratios = [('GLAS', 2), ('PLAS', 2), ('STAL', 2), ('POWR', 2)]
-industry.economy_variations['STEELTOWN'].prod_cargo_types_with_output_ratios = [('VPTS', 8)]
 
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
