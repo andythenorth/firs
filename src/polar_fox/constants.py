@@ -98,6 +98,8 @@ cargo_labels = ['PASS', # pax first
                 'TYRE',
                 'VBOD',
                 'VENG',
+                'FECR',
+                'NH3_',
                 #
                 'NULL']
 
@@ -121,8 +123,8 @@ allowed_refits_by_label = {'edible_liquids': ['MILK', 'WATR', 'BEER', 'FOOD', 'E
                            'chemicals': ['ACID', 'RFPR', 'CHLO'],
                            'covered_hoppers': ['GRAI', 'WHEA', 'MAIZ', 'SUGR', 'FMSP', 'RFPR', 'CLAY', 'BDMT',
                                                'BEAN', 'NITR', 'RUBR', 'SAND', 'POTA', 'QLME', 'SASH', 'CMNT',
-                                               'KAOL', 'FERT', 'SALT', 'CBLK', 'PLAS'],
-                           'cryo_gases': ['CHLO', 'O2__'],
+                                               'KAOL', 'FERT', 'SALT', 'PLAS'], # not CBLK, gets dedicated vehicles or box
+                           'cryo_gases': ['CHLO', 'O2__', 'NH3_'],
                            'reefer': ['FOOD', 'FRUT', 'FISH'], # hax for intermodal container sprite selection - reefer car refits work just fine using CC_REFRIGERATED
                            'fruit_veg': ['FRUT', 'BEAN', 'CASS', 'JAVA', 'NUTS'],
                            'cold_metal': ['STEL', 'METL', 'STCB', 'STAL', 'STST', 'COPR']}
@@ -141,11 +143,12 @@ disallowed_refits_by_label = {'non_dump_bulk': ['WOOD', 'SGCN', 'FICR', 'BDMT', 
 # vehicle classes can also just provide their own list locally, using this is convenient, not obligatory
 default_cargos = {'box': ['GOOD', 'VPTS', 'FOOD'],
                   'chemicals_tank': ['ACID', 'RFPR', 'CHLO'],
-                  'coal_hopper': ['COAL', 'COKE', 'NITR', 'KAOL'],
+                  'coal_hopper': ['COAL', 'COKE', 'NITR', 'POTA'],
                   'cryo_gases': ['O2__', 'CHLO'],
                   'covered_hopper': ['SAND', 'KAOL', 'PLAS'],
-                  'dump': ['IORE', 'MNO2', 'NITR', 'PHOS'],
-                  'dump_high_sides': ['COKE', 'SCMT', 'PEAT', 'COAL'],
+                  'dump': ['MNO2', 'FECR', 'NITR', 'PHOS', 'SAND', 'GRVL'],
+                  'dump_high_sides': ['COKE', 'PEAT', 'COAL'],
+                  'dump_scrap': ['SCMT', 'COAL'],
                   'edibles_tank': ['WATR', 'MILK', 'BEER'],
                   'express': ['ENSP', 'FMSP', 'GOOD', 'FOOD', 'MAIL'],
                   'flat': ['STEL', 'STCB', 'COPR', 'METL'],
@@ -158,6 +161,7 @@ default_cargos = {'box': ['GOOD', 'VPTS', 'FOOD'],
                   'mail': ['MAIL'],
                   'metal': ['STEL', 'COPR'],
                   'open': ['GOOD'],
+                  'ore_hopper': ['IORE', 'CORE', 'PORE', 'PHOS', 'COKE'],
                   'pax': ['PASS'],
                   'plate': ['IRON', 'CSTI', 'ZINC', 'METL'],
                   'reefer': ['FOOD'],
