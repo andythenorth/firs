@@ -99,7 +99,6 @@ cargo_labels = ['PASS', # pax first
                 'VBOD',
                 'VENG',
                 'FECR',
-                'NH3_',
                 #
                 'NULL']
 
@@ -124,7 +123,7 @@ allowed_refits_by_label = {'edible_liquids': ['MILK', 'WATR', 'BEER', 'FOOD', 'E
                            'covered_hoppers': ['GRAI', 'WHEA', 'MAIZ', 'SUGR', 'FMSP', 'RFPR', 'CLAY', 'BDMT',
                                                'BEAN', 'NITR', 'RUBR', 'SAND', 'POTA', 'QLME', 'SASH', 'CMNT',
                                                'KAOL', 'FERT', 'SALT', 'PLAS'], # not CBLK, gets dedicated vehicles or box
-                           'cryo_gases': ['CHLO', 'O2__', 'NH3_'],
+                           'cryo_gases': ['CHLO', 'O2__'],
                            'reefer': ['FOOD', 'FRUT', 'FISH'], # hax for intermodal container sprite selection - reefer car refits work just fine using CC_REFRIGERATED
                            'fruit_veg': ['FRUT', 'BEAN', 'CASS', 'JAVA', 'NUTS'],
                            'cold_metal': ['STEL', 'METL', 'STCB', 'STAL', 'STST', 'COPR']}
@@ -150,7 +149,7 @@ default_cargos = {'box': ['GOOD', 'VPTS', 'FOOD'],
                   'dump_high_sides': ['COKE', 'PEAT', 'COAL'],
                   'dump_scrap': ['SCMT', 'COAL'],
                   'edibles_tank': ['WATR', 'MILK', 'BEER'],
-                  'express': ['ENSP', 'FMSP', 'GOOD', 'FOOD', 'MAIL'],
+                  'express': ['MAIL', 'ENSP', 'FMSP', 'GOOD', 'FOOD'], # ENSP was tried as default, but confusing when attached express cars for mail to pax trains
                   'flat': ['STEL', 'STCB', 'COPR', 'METL'],
                   'fruit_veg': ['FRUT', 'BEAN', 'CASS', 'JAVA', 'NUTS'],
                   'grain_hopper': ['GRAI', 'PLAS'],
