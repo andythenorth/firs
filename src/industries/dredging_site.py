@@ -18,7 +18,7 @@ industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types_with_multipliers = [('SAND', 17)]
 
 industry.add_tile(id='dredging_site_tile_1',
-                  location_checks=TileLocationChecks(disallow_industry_adjacent=True))
+                  location_checks=TileLocationChecks(disallow_industry_adjacent=True, disallow_slopes=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number='GROUNDSPRITE_WATER',
