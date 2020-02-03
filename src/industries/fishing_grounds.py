@@ -23,7 +23,7 @@ industry.economy_variations['BASIC_ARCTIC'].enabled = True
 #industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 
 industry.add_tile(id='fishing_grounds_tile_1',
-                  location_checks=TileLocationChecks(disallow_industry_adjacent=True))
+                  location_checks=TileLocationChecks(disallow_industry_adjacent=True, disallow_slopes=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number='GROUNDSPRITE_WATER',
