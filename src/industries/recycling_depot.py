@@ -14,7 +14,6 @@ industry = IndustryTownProducerPopulationDependent(id='recycling_depot',
                                        fund_cost_multiplier='118',
                                        intro_year=1978)
 
-industry.economy_variations['FIRS'].enabled = True
 
 industry.add_tile(id='recycling_depot_tile_1',
                   location_checks=TileLocationChecks(always_allow_founder=False,

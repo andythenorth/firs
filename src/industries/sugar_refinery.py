@@ -12,7 +12,6 @@ industry = IndustrySecondary(id='sugar_refinery',
                              nearby_station_name='string(STR_STATION_SUGAR_COMPANY)',
                              fund_cost_multiplier='140')
 
-industry.economy_variations['FIRS'].enabled = True
 
 industry.add_tile(id='sugar_refinery_tile_1',
                   animation_length=7,

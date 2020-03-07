@@ -18,7 +18,3 @@ steeltown.economy.register()
 
 from economies import in_a_hot_country
 in_a_hot_country.economy.register()
-
-from economies import firs
-firs.economy.register()
-

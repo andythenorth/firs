@@ -1,7 +1,7 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='arable_farm',
-                                  prod_cargo_types_with_multipliers=[('GRAI', 14), ('SGBT', 14)],
+                                  prod_cargo_types_with_multipliers=[('GRAI', 14), ('BEAN', 14)],
                                   prob_in_game='4',
                                   prob_random='11',
                                   map_colour='209',
@@ -14,7 +14,6 @@ industry = IndustryPrimaryOrganic(id='arable_farm',
                                   fund_cost_multiplier='55',
                                   graphics_change_dates=[1928])
 
-industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].prod_cargo_types_with_multipliers = [('GRAI', 14), ('BEAN', 14)]
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

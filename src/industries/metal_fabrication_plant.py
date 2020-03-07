@@ -1,7 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='metal_fabrication_plant',
-                             accept_cargos_with_input_ratios=[('METL', 6), ('RFPR', 2)],
+                             accept_cargos_with_input_ratios=[('STEL', 6), ('RFPR', 2)],
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[('BDMT', 8)],
                              prob_in_game='3',
@@ -12,7 +12,6 @@ industry = IndustrySecondary(id='metal_fabrication_plant',
                              fund_cost_multiplier='120',
                              intro_year=1832)
 
-industry.economy_variations['FIRS'].enabled = True
 
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].name = 'string(STR_IND_STEEL_FINISHING_PLANT)'

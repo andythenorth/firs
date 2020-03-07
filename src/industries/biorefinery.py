@@ -12,7 +12,6 @@ industry = IndustrySecondary(id='biorefinery',
                              fund_cost_multiplier='170',
                              intro_year=2001)
 
-industry.economy_variations['FIRS'].enabled = True
 
 industry.add_tile(id='biorefinery_tile_1',
                   animation_length=7,

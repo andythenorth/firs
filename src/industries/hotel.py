@@ -13,7 +13,6 @@ industry = IndustryTertiary(id='hotel',
                             nearby_station_name='string(STR_STATION_BAR_GRILL_AND_ROOMS)',
                             fund_cost_multiplier='101')
 
-industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

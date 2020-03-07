@@ -18,8 +18,10 @@ aluminium.cargo.register()
 from cargos import ammonia
 ammonia.cargo.register()
 
+"""
 from cargos import bauxite
 bauxite.cargo.register()
+"""
 
 from cargos import beans
 beans.cargo.register()
@@ -155,8 +157,10 @@ maize.cargo.register()
 from cargos import manganese
 manganese.cargo.register()
 
+"""
 from cargos import metal
 metal.cargo.register()
+"""
 
 from cargos import milk
 milk.cargo.register()
@@ -179,8 +183,10 @@ oil.cargo.register()
 from cargos import oxygen
 oxygen.cargo.register()
 
+"""
 from cargos import packaging
 packaging.cargo.register()
+"""
 
 from cargos import paper
 paper.cargo.register()
@@ -223,8 +229,10 @@ from cargos import raw_latex
 raw_latex.cargo.register()
 """
 
+"""
 from cargos import recyclables
 recyclables.cargo.register()
+"""
 
 from cargos import rubber
 rubber.cargo.register()
@@ -256,8 +264,10 @@ stone.cargo.register()
 from cargos import sulphur
 sulphur.cargo.register()
 
+"""
 from cargos import sugar_beet
 sugar_beet.cargo.register()
+"""
 
 """
 from cargos import textiles

@@ -15,7 +15,6 @@ industry = IndustryTertiary(id='petrol_pump',
                             fund_cost_multiplier='8',
                             intro_year=1900)
 
-industry.economy_variations['FIRS'].enabled = True
 
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].prob_random = '8'

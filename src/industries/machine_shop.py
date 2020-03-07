@@ -1,7 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='machine_shop',
-                             accept_cargos_with_input_ratios=[('METL', 8), ('PETR', 8)],
+                             accept_cargos_with_input_ratios=[('STEL', 8), ('PETR', 8)],
                              prod_cargo_types_with_output_ratios=[('FMSP', 4), ('ENSP', 4)],
                              prob_in_game='3',
                              prob_random='5',
@@ -12,7 +12,6 @@ industry = IndustrySecondary(id='machine_shop',
                              intro_year=1790,
                              graphics_change_dates=[1920, 1945, 1970, 1990, 2010])
 
-industry.economy_variations['FIRS'].enabled = True
 
 industry.add_tile(id='machine_shop_tile_1',
                   animation_length=71,

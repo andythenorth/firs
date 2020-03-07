@@ -14,11 +14,6 @@ industry = IndustryPrimaryPort(id='bulk_terminal',
                                fund_cost_multiplier='152',
                                override_default_construction_states=True)
 
-industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['FIRS'].accept_cargo_types = ['BDMT', 'PETR', 'FOOD']
-industry.economy_variations['FIRS'].prod_cargo_types_with_multipliers = [('AORE', 16), ('RFPR', 16)]
-industry.economy_variations['FIRS'].prob_random = '3'
-
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 #industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['MNO2', 'FECR', 'RUBR']
 #industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('FORM', 12)]

@@ -13,7 +13,6 @@ industry = IndustryPrimaryExtractive(id='dredging_site',
                                      fund_cost_multiplier='180',
                                      graphics_change_dates=[1906, 1945])
 
-industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types_with_multipliers = [('SAND', 17)]
 

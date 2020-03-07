@@ -14,8 +14,6 @@ industry = IndustrySecondary(id='fishing_harbour',
                              fund_cost_multiplier='150',
                              override_default_construction_states=True)
 
-industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['FIRS'].accept_cargos_with_input_ratios = [('FISH', 6), ('MNSP', 2)]
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

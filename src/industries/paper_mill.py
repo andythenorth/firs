@@ -3,7 +3,7 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(id='paper_mill',
                              accept_cargos_with_input_ratios=[('CLAY', 2), ('WOOD', 4), ('RFPR', 2)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types_with_output_ratios=[('GOOD', 4), ('MNSP', 4)],
+                             prod_cargo_types_with_output_ratios=[('GOOD', 8)],
                              prob_in_game='3',
                              prob_random='5',
                              substitute='14',
@@ -13,7 +13,6 @@ industry = IndustrySecondary(id='paper_mill',
                              name='TTD_STR_INDUSTRY_NAME_PAPER_MILL',
                              override='14')
 
-industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargos_with_input_ratios = [('KAOL', 2), ('WOOD', 4), ('SULP', 2)]
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_output_ratios = [('PAPR', 8)]

@@ -1,11 +1,15 @@
 registered_industries = []
 
 # keep these alphabetised for ease of maintaining
+"""
 from industries import aluminium_plant
 aluminium_plant.industry.register()
+"""
 
+"""
 from industries import ammonia_plant
 ammonia_plant.industry.register()
+"""
 
 from industries import arable_farm
 arable_farm.industry.register()
@@ -13,8 +17,10 @@ arable_farm.industry.register()
 from industries import basic_oxygen_furnace
 basic_oxygen_furnace.industry.register()
 
+"""
 from industries import biorefinery
 biorefinery.industry.register()
+"""
 
 from industries import blast_furnace
 blast_furnace.industry.register()
@@ -22,8 +28,10 @@ blast_furnace.industry.register()
 from industries import brewery
 brewery.industry.register()
 
+"""
 from industries import brick_works
 brick_works.industry.register()
+"""
 
 from industries import builders_yard
 builders_yard.industry.register()
@@ -102,14 +110,18 @@ fischer_tropsch_plant.industry.register()
 from industries import flour_mill
 flour_mill.industry.register()
 
+"""
 from industries import food_market
 food_market.industry.register()
+"""
 
 from industries import food_processor
 food_processor.industry.register()
 
+"""
 from industries import furniture_factory
 furniture_factory.industry.register()
+"""
 
 from industries import general_store
 general_store.industry.register()
@@ -126,8 +138,10 @@ hotel.industry.register()
 from industries import herding_coop
 herding_coop.industry.register()
 
+"""
 from industries import iron_works
 iron_works.industry.register()
+"""
 
 from industries import junk_yard
 junk_yard.industry.register()
@@ -149,8 +163,10 @@ liquids_terminal.industry.register()
 from industries import lumber_yard
 lumber_yard.industry.register()
 
+"""
 from industries import machine_shop
 machine_shop.industry.register()
+"""
 
 """
 from industries import machine_works
@@ -184,8 +200,10 @@ peatlands.industry.register()
 from industries import petrol_pump
 petrol_pump.industry.register()
 
+"""
 from industries import plastics_plant
 plastics_plant.industry.register()
+"""
 
 from industries import power_plant
 power_plant.industry.register()
@@ -193,17 +211,23 @@ power_plant.industry.register()
 from industries import ranch
 ranch.industry.register()
 
+"""
 from industries import recycling_depot
 recycling_depot.industry.register()
+"""
 
+"""
 from industries import recycling_plant
 recycling_plant.industry.register()
+"""
 
 from industries import rubber_plantation
 rubber_plantation.industry.register()
 
+"""
 from industries import sheep_farm
 sheep_farm.industry.register()
+"""
 
 from industries import slag_grinding_plant
 slag_grinding_plant.industry.register()
@@ -211,17 +235,23 @@ slag_grinding_plant.industry.register()
 from industries import soda_ash_mine
 soda_ash_mine.industry.register()
 
+"""
 from industries import smithy_forge
 smithy_forge.industry.register()
+"""
 
 from industries import stockyard
 stockyard.industry.register()
 
+"""
 from industries import sugar_refinery
 sugar_refinery.industry.register()
+"""
 
+"""
 from industries import textile_mill
 textile_mill.industry.register()
+"""
 
 from industries import trading_post
 trading_post.industry.register()
@@ -256,8 +286,10 @@ coal_mine.industry.register()
 from industries import iron_ore_mine
 iron_ore_mine.industry.register()
 
+"""
 from industries import oil_refinery
 oil_refinery.industry.register()
+"""
 
 from industries import oil_rig
 oil_rig.industry.register()

@@ -12,7 +12,6 @@ industry = IndustrySecondary(id='lime_kiln',
                              fund_cost_multiplier='45',
                              graphics_change_dates=[1952, 1978])
 
-industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargos_with_input_ratios = [('LIME', 4), ('PETR', 4)]
 industry.economy_variations['STEELTOWN'].prod_cargo_types_with_output_ratios = [('QLME', 8)]

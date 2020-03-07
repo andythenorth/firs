@@ -14,10 +14,6 @@ industry = IndustryPrimaryPort(id='port',
                                fund_cost_multiplier='152',
                                override_default_construction_states=True)
 
-industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['FIRS'].accept_cargo_types = ['GOOD', 'FRUT', 'MNSP']
-industry.economy_variations['FIRS'].prod_cargo_types_with_multipliers = [('ENSP', 9), ('FMSP', 7)]
-
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].accept_cargo_types = ['GOOD', 'KAOL', 'FOOD']
 industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types_with_multipliers = [('ENSP', 19), ('FMSP', 7), ('RFPR', 19)]

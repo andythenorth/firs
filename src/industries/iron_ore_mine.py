@@ -11,7 +11,6 @@ industry = IndustryPrimaryExtractive(id='iron_ore_mine',
                                      nearby_station_name='string(STR_STATION_IRONSTONE)',
                                      fund_cost_multiplier='232')
 
-industry.economy_variations['FIRS'].enabled = True
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 

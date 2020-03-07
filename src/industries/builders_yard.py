@@ -13,7 +13,6 @@ industry = IndustryTertiary(id='builders_yard',
                             nearby_station_name='string(STR_STATION_MERCHANTS_LANE)',
                             fund_cost_multiplier='16')
 
-industry.economy_variations['FIRS'].enabled = True
 
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].prob_random = '14'

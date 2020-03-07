@@ -11,7 +11,6 @@ industry = IndustrySecondary(id='recycling_plant',
                              fund_cost_multiplier='118',
                              intro_year=1978)
 
-industry.economy_variations['FIRS'].enabled = True
 
 industry.add_tile(id='recycling_plant_tile_1',
                   animation_length=71,

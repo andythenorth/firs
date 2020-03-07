@@ -12,7 +12,6 @@ industry = IndustryPrimaryOrganic(id='dairy_farm',
                                   nearby_station_name='string(STR_STATION_FARM_2)',
                                   fund_cost_multiplier='60')
 
-industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
 industry.add_tile(id='dairy_farm_tile_1',

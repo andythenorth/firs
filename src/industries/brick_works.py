@@ -12,7 +12,6 @@ industry = IndustrySecondary(id='brick_works',
                              nearby_station_name='string(STR_STATION_KILNS)',
                              fund_cost_multiplier='120')
 
-industry.economy_variations['FIRS'].enabled = True
 
 industry.add_tile(id='brick_works_tile_1',
                   animation_length=7,

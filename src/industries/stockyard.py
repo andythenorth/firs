@@ -1,7 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='stockyard',
-                             accept_cargos_with_input_ratios=[('MNSP', 3), ('LVST', 5)],
+                             accept_cargos_with_input_ratios=[('LVST', 6)],
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[('FOOD', 8)],
                              prob_in_game='3',
@@ -12,7 +12,6 @@ industry = IndustrySecondary(id='stockyard',
                              nearby_station_name='string(STR_STATION_ANIMALS)',
                              fund_cost_multiplier='115')
 
-industry.economy_variations['FIRS'].enabled = True
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].accept_cargos_with_input_ratios = [('LVST', 6)]
