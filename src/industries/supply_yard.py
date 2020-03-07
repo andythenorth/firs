@@ -11,9 +11,11 @@ industry = IndustrySecondary(id='supply_yard',
                              fund_cost_multiplier='110',
                              intro_year=1800)
 
+"""
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('BDMT', 8), ('PETR', 8), ('GOOD', 8)]
 #industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('CMNT', 8), ('PETR', 8), ('VEHI', 8), ('BOOM', 8), ('WDPR', 8)]
+"""
 
 industry.add_tile(id='supply_yard_tile_1',
                   animation_length=71,

@@ -11,8 +11,10 @@ industry = IndustrySecondary(id='lumber_yard',
                              nearby_station_name='string(STR_STATION_CREOSOTING)',
                              fund_cost_multiplier='35')
 
+"""
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('BDMT', 8)]
+"""
 
 # non-animated tile, allowed on slopes
 industry.add_tile(id='lumber_yard_tile_1',

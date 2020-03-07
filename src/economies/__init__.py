@@ -16,5 +16,7 @@ basic_tropic.economy.register()
 from economies import steeltown
 steeltown.economy.register()
 
+"""
 from economies import in_a_hot_country
 in_a_hot_country.economy.register()
+"""

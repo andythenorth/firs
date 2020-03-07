@@ -1,7 +1,7 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(id='clay_pit',
-                                     prod_cargo_types_with_multipliers=[('CLAY', 16)],
+                                     prod_cargo_types_with_multipliers=[('KAOL', 16)],
                                      prob_in_game='4',
                                      prob_random='7',
                                      map_colour='45',

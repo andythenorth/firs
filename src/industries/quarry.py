@@ -1,7 +1,7 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(id='quarry',
-                                     prod_cargo_types_with_multipliers=[('SAND', 14), ('GRVL', 14)],
+                                     prod_cargo_types_with_multipliers=[('SAND', 14), ('LIME', 14)],
                                      prob_in_game='4',
                                      prob_random='7',
                                      map_colour='194',
@@ -16,9 +16,11 @@ industry = IndustryPrimaryExtractive(id='quarry',
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('SAND', 14), ('LIME', 14)]
 
+"""
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('SAND', 14), ('GRVL', 14)]
 #industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('LIME', 16)]
+"""
 
 # 2 tiles for this industry: pit outer tile cannot be on slopes; pit inner tiles and processor tiles can be
 # cases for both tiles ensure that tiles can only be built at same height as north tile

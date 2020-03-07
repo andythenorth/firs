@@ -1,7 +1,7 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='mixed_farm',
-                                  prod_cargo_types_with_multipliers=[('LVST', 13), ('FICR', 14)],
+                                  prod_cargo_types_with_multipliers=[('FOOD', 14)],
                                   prob_in_game='3',
                                   prob_random='11',
                                   map_colour='85',
@@ -14,10 +14,12 @@ industry = IndustryPrimaryOrganic(id='mixed_farm',
                                   fund_cost_multiplier='49')
 
 # definitely not in Arctic Basic, farm has been added and removed more than once from that economy :P
+"""
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('MAIZ', 14), ('LVST', 13)]
 #industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('MAIZ', 14), ('LVST', 13), ('NUTS', 14), ('WOOL', 10)]
 industry.economy_variations['IN_A_HOT_COUNTRY'].prob_random = '14'
+"""
 
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].name = 'string(STR_IND_BASICFARM)'

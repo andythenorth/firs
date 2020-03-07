@@ -10,7 +10,7 @@ industry = IndustrySecondary(id='sawmill',
                              nearby_station_name='string(STR_STATION_MILL)',
                              fund_cost_multiplier='97')
 
-industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+#industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 industry.add_tile(id='sawmill_tile_1',

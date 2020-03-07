@@ -14,10 +14,12 @@ industry = IndustryPrimaryPort(id='liquids_terminal',
                                fund_cost_multiplier='152',
                                override_default_construction_states=True)
 
+"""
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['EOIL', 'OIL_']
 #industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('NH3_', 16)]
 industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('RFPR', 11), ('PETR', 7)]
+"""
 
 industry.add_tile(id='liquids_terminal_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',

@@ -11,7 +11,7 @@ industry = IndustryPrimaryExtractive(id='manganese_mine',
                                      nearby_station_name='string(STR_STATION_MANGANESE_MINES)',
                                      fund_cost_multiplier='232')
 
-industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+#industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 
 
 industry.add_tile(id='manganese_mine_tile_1',

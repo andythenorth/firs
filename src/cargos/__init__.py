@@ -26,8 +26,10 @@ bauxite.cargo.register()
 from cargos import beans
 beans.cargo.register()
 
+"""
 from cargos import building_materials
 building_materials.cargo.register()
+"""
 
 from cargos import carbon_black
 carbon_black.cargo.register()
@@ -35,8 +37,10 @@ carbon_black.cargo.register()
 from cargos import carbon_steel
 carbon_steel.cargo.register()
 
+"""
 from cargos import cassava
 cassava.cargo.register()
+"""
 
 from cargos import cast_iron
 cast_iron.cargo.register()
@@ -55,8 +59,10 @@ from cargos import chromite_ore
 chromite_ore.cargo.register()
 """
 
+"""
 from cargos import clay
 clay.cargo.register()
+"""
 
 from cargos import coal
 coal.cargo.register()
@@ -81,11 +87,15 @@ copper_concentrate.cargo.register()
 from cargos import copper_ore
 copper_ore.cargo.register()
 
+"""
 from cargos import diamonds
 diamonds.cargo.register()
+"""
 
+"""
 from cargos import edible_oil
 edible_oil.cargo.register()
+"""
 
 from cargos import electrical_machines
 electrical_machines.cargo.register()
@@ -151,8 +161,10 @@ lye.cargo.register()
 from cargos import mail
 mail.cargo.register()
 
+"""
 from cargos import maize
 maize.cargo.register()
+"""
 
 from cargos import manganese
 manganese.cargo.register()
@@ -174,8 +186,10 @@ nickel.cargo.register()
 from cargos import nitrates
 nitrates.cargo.register()
 
+"""
 from cargos import nuts
 nuts.cargo.register()
+"""
 
 from cargos import oil
 oil.cargo.register()
@@ -209,8 +223,10 @@ pig_iron.cargo.register()
 from cargos import pipe
 pipe.cargo.register()
 
+"""
 from cargos import plant_fibres
 plant_fibres.cargo.register()
+"""
 
 from cargos import plastics
 plastics.cargo.register()
@@ -258,8 +274,10 @@ stainless_steel.cargo.register()
 from cargos import steel
 steel.cargo.register()
 
+"""
 from cargos import stone
 stone.cargo.register()
+"""
 
 from cargos import sulphur
 sulphur.cargo.register()

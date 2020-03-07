@@ -1,7 +1,7 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(id='phosphate_mine',
-                                     prod_cargo_types_with_multipliers=[('PHOS', 16), ('CLAY', 10)],
+                                     prod_cargo_types_with_multipliers=[('PHOS', 16)],
                                      prob_in_game='4',
                                      prob_random='7',
                                      map_colour='45',
@@ -12,7 +12,7 @@ industry = IndustryPrimaryExtractive(id='phosphate_mine',
                                      nearby_station_name='string(STR_STATION_PIT)',
                                      fund_cost_multiplier='200')
 
-industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+#industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('PHOS', 16)]
 
