@@ -18,4 +18,4 @@ cargo = Cargo(id='plastics',
               single_penalty_length='36',
               capacity_multiplier='1',
               price_factor='110',
-              icon_indices=(2, 2))
+              icon_indices=(6, 4))

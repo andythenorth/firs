@@ -18,4 +18,4 @@ cargo = Cargo(id='vehicle_engines',
               single_penalty_length='255',
               capacity_multiplier='1',
               price_factor='152',
-              icon_indices=(14, 3))
+              icon_indices=(9, 4))

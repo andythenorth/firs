@@ -18,4 +18,4 @@ cargo = Cargo(id='ferrochrome',
               single_penalty_length='255',
               capacity_multiplier='1',
               price_factor='101',
-              icon_indices=(15, 3))
+              icon_indices=(8, 4))

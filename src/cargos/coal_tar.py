@@ -18,4 +18,4 @@ cargo = Cargo(id='coal_tar',
               single_penalty_length='255',
               price_factor='53',
               capacity_multiplier='1',
-              icon_indices=(1, 3))
+              icon_indices=(14, 4))

@@ -18,4 +18,4 @@ cargo = Cargo(id='oxygen',
               single_penalty_length='255',
               price_factor='121',
               capacity_multiplier='1',
-              icon_indices=(2, 4))
+              icon_indices=(1, 5))

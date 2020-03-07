@@ -18,4 +18,4 @@ cargo = Cargo(id='ammonia',
               single_penalty_length='255',
               price_factor='109',
               capacity_multiplier='1',
-              icon_indices=(4, 4))
+              icon_indices=(15, 4))
