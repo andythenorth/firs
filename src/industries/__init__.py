@@ -14,6 +14,9 @@ ammonia_plant.industry.register()
 from industries import arable_farm
 arable_farm.industry.register()
 
+from industries import assembly_plant
+assembly_plant.industry.register()
+
 from industries import basic_oxygen_furnace
 basic_oxygen_furnace.industry.register()
 
@@ -55,6 +58,12 @@ chlor_alkali_plant.industry.register()
 from industries import chromite_mine
 chromite_mine.industry.register()
 """
+
+from industries import clay_pit
+clay_pit.industry.register()
+
+from industries import coal_mine
+coal_mine.industry.register()
 
 from industries import coffee_estate
 coffee_estate.industry.register()
@@ -118,6 +127,21 @@ food_market.industry.register()
 from industries import food_processor
 food_processor.industry.register()
 
+from industries import fish_farm
+fish_farm.industry.register()
+
+from industries import fishing_grounds
+fishing_grounds.industry.register()
+
+from industries import fishing_harbour
+fishing_harbour.industry.register()
+
+from industries import forest
+forest.industry.register()
+
+from industries import fruit_plantation
+fruit_plantation.industry.register()
+
 """
 from industries import furniture_factory
 furniture_factory.industry.register()
@@ -137,6 +161,9 @@ hotel.industry.register()
 
 from industries import herding_coop
 herding_coop.industry.register()
+
+from industries import iron_ore_mine
+iron_ore_mine.industry.register()
 
 """
 from industries import iron_works
@@ -191,8 +218,19 @@ nitrate_mine.industry.register()
 from industries import oil_wells
 oil_wells.industry.register()
 
+"""
+from industries import oil_refinery
+oil_refinery.industry.register()
+"""
+
+from industries import oil_rig
+oil_rig.industry.register()
+
 from industries import orchard_piggery
 orchard_piggery.industry.register()
+
+from industries import paper_mill
+paper_mill.industry.register()
 
 from industries import peatlands
 peatlands.industry.register()
@@ -200,13 +238,34 @@ peatlands.industry.register()
 from industries import petrol_pump
 petrol_pump.industry.register()
 
+from industries import phosphate_mine
+phosphate_mine.industry.register()
+
 """
 from industries import plastics_plant
 plastics_plant.industry.register()
 """
 
+from industries import port
+port.industry.register()
+
 from industries import power_plant
 power_plant.industry.register()
+
+"""
+# unused currently, but left in place for PacMan/Big Arctic economy
+from industries import potash_mine
+potash_mine.industry.register()
+"""
+
+from industries import pyrite_mine
+pyrite_mine.industry.register()
+
+from industries import pyrite_smelter
+pyrite_smelter.industry.register()
+
+from industries import quarry
+quarry.industry.register()
 
 from industries import ranch
 ranch.industry.register()
@@ -229,6 +288,9 @@ from industries import sheep_farm
 sheep_farm.industry.register()
 """
 
+from industries import sawmill
+sawmill.industry.register()
+
 from industries import slag_grinding_plant
 slag_grinding_plant.industry.register()
 
@@ -248,6 +310,9 @@ from industries import sugar_refinery
 sugar_refinery.industry.register()
 """
 
+from industries import supply_yard
+supply_yard.industry.register()
+
 """
 from industries import textile_mill
 textile_mill.industry.register()
@@ -256,73 +321,8 @@ textile_mill.industry.register()
 from industries import trading_post
 trading_post.industry.register()
 
-from industries import clay_pit
-clay_pit.industry.register()
-
-from industries import fish_farm
-fish_farm.industry.register()
-
-from industries import fishing_grounds
-fishing_grounds.industry.register()
-
-from industries import fishing_harbour
-fishing_harbour.industry.register()
-
-from industries import forest
-forest.industry.register()
-
-from industries import fruit_plantation
-fruit_plantation.industry.register()
-
-from industries import port
-port.industry.register()
-
-from industries import quarry
-quarry.industry.register()
-
-from industries import coal_mine
-coal_mine.industry.register()
-
-from industries import iron_ore_mine
-iron_ore_mine.industry.register()
-
-"""
-from industries import oil_refinery
-oil_refinery.industry.register()
-"""
-
-from industries import oil_rig
-oil_rig.industry.register()
-
-from industries import paper_mill
-paper_mill.industry.register()
-
-from industries import phosphate_mine
-phosphate_mine.industry.register()
-
-"""
-# unused currently, but left in place for PacMan/Big Arctic economy
-from industries import potash_mine
-potash_mine.industry.register()
-"""
-
-from industries import pyrite_mine
-pyrite_mine.industry.register()
-
-from industries import pyrite_smelter
-pyrite_smelter.industry.register()
-
-from industries import sawmill
-sawmill.industry.register()
-
-from industries import supply_yard
-supply_yard.industry.register()
-
 from industries import tyre_plant
 tyre_plant.industry.register()
-
-from industries import assembly_plant
-assembly_plant.industry.register()
 
 from industries import vehicle_dealer
 vehicle_dealer.industry.register()
