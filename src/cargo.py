@@ -49,6 +49,7 @@ class Cargo(object):
         self.economy_variations = {}
         for economy in registered_economies:
             if self.id in economy.cargos:
+                # first create the economy variation
                 numeric_id = economy.cargos.index(self.id)
                 # As of May 2015, OTTD requires some cargos in specific slots, otherwise default houses break
                 mandatory_numeric_ids = {'PASS': 0, 'MAIL': 2, 'GOOD': 5, 'FOOD': 11}
@@ -56,7 +57,13 @@ class Cargo(object):
                     if self.cargo_label == key and numeric_id != value:
                         raise Exception("Economy " + economy.id + ": has cargo " + self.id + " in position " + str(numeric_id) + "; needs to be in position " + str(value))
                 self.economy_variations[economy] = {'numeric_id': numeric_id}
+                # check price factor (and adjust if necessary) to ensure they're all unique per economy
+                # prevents cargos overlapping on the payment curves chart in-game
+                #print(economy.numeric_id, '\n', economy.forcibly_space_cargo_price_factors(registered_cargos))
+                self.economy_variations[economy]['price_factor'] = self.price_factor
+
         # guard against overlapping price factors, which obscures cargos on the payment curves chart
+        # !!! this needs to be per economy
         for cargo in registered_cargos:
             if cargo.price_factor == self.price_factor:
                 utils.echo_message("Cargo " + self.id + " has overlapping price_factor with cargo " + cargo.id)
@@ -72,6 +79,9 @@ class Cargo(object):
 
     def get_numeric_id(self, economy):
         return self.economy_variations[economy].get('numeric_id')
+
+    def get_price_factor(self, economy):
+        return 100
 
     def get_cargo_label(self):
         # wrap cargo labels in " chars because nml needs them as string literals (we store them - by design - as python strings)

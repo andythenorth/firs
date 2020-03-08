@@ -17,5 +17,5 @@ cargo = Cargo(id='milk',
               penalty_lowerbound='0',
               single_penalty_length='16',
               capacity_multiplier='1',
-              price_factor='145',
+              price_factor=145,
               icon_indices=(13, 0))

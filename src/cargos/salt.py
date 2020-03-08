@@ -17,5 +17,5 @@ cargo = Cargo(id='salt',
               penalty_lowerbound='30',
               single_penalty_length='255',
               capacity_multiplier='1',
-              price_factor='108',
+              price_factor=108,
               icon_indices=(3, 4))

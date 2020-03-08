@@ -16,7 +16,7 @@ cargo = Cargo(id='explosives',
               items_of_cargo='string(STR_CARGO_UNIT_EXPLOSIVES)',
               penalty_lowerbound='6',
               single_penalty_length='36',
-              price_factor='154',
+              price_factor=154,
               capacity_multiplier='1',
               allow_animated_pixels=True,  # explosives uses fire cycle pixels, by design, so suppress NML pixel warnings
               icon_indices=(2, 3))
