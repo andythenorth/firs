@@ -16,6 +16,6 @@ cargo = Cargo(id='chlorine',
               items_of_cargo='string(STR_CARGO_UNIT_CHLORINE)',
               penalty_lowerbound='12',
               single_penalty_length='255',
-              price_factor=99,
+              price_factor=157,
               capacity_multiplier='1',
               icon_indices=(2, 4))
