@@ -14,7 +14,7 @@ cargo = Cargo(id='slag',
               town_growth_multiplier='1.0',
               units_of_cargo='TTD_STR_TONS',
               items_of_cargo='string(STR_CARGO_UNIT_SLAG)',
-              penalty_lowerbound='30',
+              penalty_lowerbound='64',
               single_penalty_length='255',
               price_factor=50,  # deliberately low, needed to space out cargo payments to allow unique rates
               capacity_multiplier='1',
