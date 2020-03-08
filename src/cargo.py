@@ -48,25 +48,16 @@ class Cargo(object):
         self.icon_indices = kwargs['icon_indices'] # icon indices relate to position of icon in cargo icons spritesheet
         self.economy_variations = {}
         for economy in registered_economies:
-            if self.id in economy.cargos:
-                # first create the economy variation
-                numeric_id = economy.cargos.index(self.id)
+            if self.id in economy.cargo_ids:
+                # create an economy variation
+                numeric_id = economy.cargo_ids.index(self.id)
                 # As of May 2015, OTTD requires some cargos in specific slots, otherwise default houses break
                 mandatory_numeric_ids = {'PASS': 0, 'MAIL': 2, 'GOOD': 5, 'FOOD': 11}
                 for key, value in mandatory_numeric_ids.items():
                     if self.cargo_label == key and numeric_id != value:
                         raise Exception("Economy " + economy.id + ": has cargo " + self.id + " in position " + str(numeric_id) + "; needs to be in position " + str(value))
                 self.economy_variations[economy] = {'numeric_id': numeric_id}
-                # check price factor (and adjust if necessary) to ensure they're all unique per economy
-                # prevents cargos overlapping on the payment curves chart in-game
-                #print(economy.numeric_id, '\n', economy.forcibly_space_cargo_price_factors(registered_cargos))
-                self.economy_variations[economy]['price_factor'] = self.price_factor
 
-        # guard against overlapping price factors, which obscures cargos on the payment curves chart
-        # !!! this needs to be per economy
-        for cargo in registered_cargos:
-            if cargo.price_factor == self.price_factor:
-                utils.echo_message("Cargo " + self.id + " has overlapping price_factor with cargo " + cargo.id)
         # guard against overlapping cargo colours, cargo colours are intended to be unique within FIRS
         for cargo in registered_cargos:
             if cargo.cargo_payment_list_colour == self.cargo_payment_list_colour:

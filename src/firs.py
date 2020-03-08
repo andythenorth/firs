@@ -32,7 +32,7 @@ registered_economies = economies.registered_economies
 # guard against mistakes with cargo ids in economies
 known_cargo_ids = [cargo.id for cargo in registered_cargos]
 for economy in registered_economies:
-    for cargo_id in economy.cargos:
+    for cargo_id in economy.cargo_ids:
          if cargo_id not in known_cargo_ids:
             raise Exception(economy.id + ' economy includes cargo ID "' + cargo_id + '" which does not exist')
 

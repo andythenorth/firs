@@ -1,3 +1,4 @@
+import utils
 from economies import registered_economies
 
 class Economy(object):
@@ -5,7 +6,7 @@ class Economy(object):
     def __init__(self, id, **kwargs):
         self.id = id
         self.numeric_id = kwargs.get('numeric_id')
-        self.cargos = kwargs.get('cargos')
+        self.cargo_ids = kwargs.get('cargos')
 
     def register(self):
         # guard, duplicate numeric IDs don't work :P
@@ -15,13 +16,25 @@ class Economy(object):
         registered_economies.append(self)
 
     def forcibly_space_cargo_price_factors(self, registered_cargos):
-        # registered_cargos has to be passed, can't rely on importing it, couldn't be bothered to find and fix why
-        # means this might get calculated repeatedly but eh
-        result = []
-        for cargo_id in self.cargos:
+        # check for overlapping price factors (and adjust if necessary) to ensure they're all unique per economy
+        # prevents cargos overlapping on the payment curves chart in-game
+        # designed to be called from template, easiest way to ensure registered_cargos is in scope and complete
+        cargos_by_price_factor = []
+        for cargo_id in self.cargo_ids:
             for cargo in registered_cargos:
                 if cargo_id == cargo.id:
-                    # store a 2 tuple eh
-                    result.append((cargo.id, int(cargo.price_factor)))
-        result = sorted(result, key=lambda c: c[1])
+                    cargos_by_price_factor.append(cargo)
+        cargos_by_price_factor = sorted(cargos_by_price_factor, key=lambda cargo: cargo.price_factor)
+
+        result = {}
+        for counter, cargo in enumerate(cargos_by_price_factor):
+            if counter > 0:
+                previous_cargo = cargos_by_price_factor[counter - 1]
+                if result[previous_cargo.id] >= cargo.price_factor:
+                    utils.echo_message('Cargo ' + cargo.id + ' has overlapping price_factor with ' + previous_cargo.id + ' in economy ' + self.id)
+                    result[cargo.id] = result[previous_cargo.id] + 1
+                else:
+                    result[cargo.id] = cargo.price_factor
+            else:
+                result[cargo.id] = cargo.price_factor
         return result
