@@ -24,12 +24,22 @@
         [<!--! no prod in arrival cb -->],
     0)
     switch(FEAT_INDUSTRIES, SELF, ${industry.id}_store_incoming_cargo_waiting_${economy.numeric_id},
-        STORE_PERM(
-            <tal:store repeat="cargo industry.get_accept_cargo_types(economy)">
-                incoming_cargo_waiting("${cargo}") +
-            </tal:store>
-            LOAD_PERM(${industry.perm_storage.var_num_supplies_delivered}), ${industry.perm_storage.var_num_supplies_delivered})
-        ) {
+        [
+            STORE_PERM(
+                <tal:store repeat="cargo industry.get_accept_cargo_types(economy)">
+                    incoming_cargo_waiting("${cargo}") +
+                </tal:store>
+                LOAD_PERM(${industry.perm_storage.var_num_supplies_delivered}), ${industry.perm_storage.var_num_supplies_delivered}),
+            <!--! check if each cargo is delivered, and if so, update the last delivery date for it -->
+            <tal:input_cargos repeat="input_cargo industry.get_accept_cargo_types(economy)">
+                <tal:date_received define="date_received_storage_number getattr(industry.perm_storage, 'date_received_cargo_' + str(repeat.input_cargo.number))">
+                STORE_PERM(
+                    max(LOAD_PERM(${date_received_storage_number}), (incoming_cargo_waiting("${input_cargo}") > 0) * current_date),
+                    ${date_received_storage_number}
+                ),
+                </tal:date_received>
+            </tal:input_cargos>
+        ]) {
         ${industry.id}_clear_incoming_cargo_waiting_${economy.numeric_id};
     }
 

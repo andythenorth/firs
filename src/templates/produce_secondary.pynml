@@ -20,7 +20,7 @@
                 <!--! zero the total production from this cycle, as a starting value-->
                 STORE_PERM(0, ${industry.perm_storage.total_cargo_produced_this_cycle}),
                 <tal:input_cargos repeat="input_cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
-                    <!--! check if this cargo is deliver, and if so, update the last delivery date for it -->
+                    <!--! check if this cargo is delivered, and if so, update the last delivery date for it -->
                     <tal:date_received define="date_received_storage_number getattr(industry.perm_storage, 'date_received_cargo_' + str(repeat.input_cargo.number))">
                     STORE_PERM(
                         max(LOAD_PERM(${date_received_storage_number}), (incoming_cargo_waiting("${input_cargo[0]}") > 0) * current_date),
