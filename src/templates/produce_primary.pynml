@@ -31,6 +31,7 @@
                 </tal:store>
                 LOAD_PERM(${industry.perm_storage.var_num_supplies_delivered}), ${industry.perm_storage.var_num_supplies_delivered}),
             <!--! check if each cargo is delivered, and if so, update the last delivery date for it -->
+            <!--! !! delivery dates are not currently in sync with 3-month-production calculation which runs on the monthly CB -->
             <tal:input_cargos repeat="input_cargo industry.get_accept_cargo_types(economy)">
                 <tal:date_received define="date_received_storage_number getattr(industry.perm_storage, 'date_received_cargo_' + str(repeat.input_cargo.number))">
                 STORE_PERM(
@@ -82,8 +83,8 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
             LOAD_PERM(${industry.perm_storage.var_num_supplies_delivered_last}) +
             LOAD_PERM(${industry.perm_storage.var_num_supplies_delivered_bef_last}),
         8),
-        STORE_TEMP((LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level2_requirement)) ? primary_level2_bonus :
-                   (LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level1_requirement)) ? primary_level1_bonus : 100, 9),
+        STORE_TEMP((LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level2_requirement)) ? primary_level2_produced_percent :
+                   (LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level1_requirement)) ? primary_level1_produced_percent : 100, 9),
         STORE_PERM(LOAD_TEMP(9), ${industry.perm_storage.var_current_supplies_prod_factor})
         ]) {
     ${industry.id}_produce_256_ticks_switch_economy;
