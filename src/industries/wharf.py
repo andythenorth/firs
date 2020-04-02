@@ -18,11 +18,11 @@ industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['BOOM', 'PEAT', 'WDPR']
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('POTA', 19), ('ENSP', 9), ('FMSP', 9)]
 
-# in Steeltown, there is a deliberate feedback loop with COPR > POWR + ENSP > more COPR (and more ENSP)
-# this is to allow an easy kickstart of ENSP, when all other chains are so tightly connected
+# in Steeltown, there is a deliberate feedback loop with ZINC -> PIPE -> wharf
+# this is to allow an easy kickstart of ENSP at the wharf, when all other chains are so tightly connected
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['CMNT', 'PIPE', 'STST', 'RBAR']
-industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('ENSP', 12), ('POWR', 16), ('ZINC', 16), ('COAT', 10), ('ALUM', 16)]
+industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('ENSP', 12), ('POWR', 14), ('ZINC', 16), ('COAT', 10), ('ALUM', 16)]
 
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
