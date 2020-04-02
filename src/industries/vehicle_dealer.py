@@ -3,11 +3,10 @@ from industry import IndustryTertiary, TileLocationChecks
 industry = IndustryTertiary(id='vehicle_dealer',
                             accept_cargo_types=['VEHI'],
                             prod_cargo_types_with_multipliers=[],
-                            prob_in_game='14',
-                            prob_random='14',
-                            map_colour='209',
+                            prob_in_game='8',
+                            prob_random='10',
+                            map_colour='207',
                             life_type='IND_LIFE_TYPE_BLACK_HOLE',
-                            special_flags=['IND_FLAG_BUILT_NEAR_TOWN'],
                             location_checks=dict(same_type_distance=32),
                             prospect_chance='0.75',
                             name='string(STR_IND_VEHICLE_DEALER)',
@@ -18,7 +17,8 @@ industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='vehicle_dealer_tile_1',
                   location_checks=TileLocationChecks(
-                      require_road_adjacent=True,
+                      #require_road_adjacent=True,
+                      require_houses_nearby=True,
                       require_effectively_flat=True))
 
 spriteset_ground = industry.add_spriteset(
@@ -52,12 +52,16 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id='vehicle_dealer_industry_layout_1',
     layout=[(0, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_1'),
-            (0, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2')
+            (0, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
+            (1, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_1'),
+            (1, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2')
             ]
 )
 industry.add_industry_layout(
     id='vehicle_dealer_industry_layout_2',
     layout=[(0, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_1'),
-            (1, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2')
+            (1, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
+            (0, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_1'),
+            (1, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2')
             ]
 )

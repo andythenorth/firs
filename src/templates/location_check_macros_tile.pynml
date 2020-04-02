@@ -75,7 +75,13 @@
 
 
 <metal:require_road_adjacent metal:define-macro="require_road_adjacent">
-    <!--!  Check whether an industry *tile* is within a certain distance of road -->
+    <!--!  Check whether an industry *tile* is adjacent to at least 1 road tile -->
+    <!--!
+        !!! failing with multi-tile industries as they can't all find road
+        nearby_tile_is_same_industry ??
+        move this to an industry location check that works ALL the tiles in the layout, and allows build if ANY are next to road
+    -->
+
     switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point},
                                                       (
                                                       nearby_tile_class(0, -1) == TILE_CLASS_ROAD ? 1 :
@@ -91,10 +97,27 @@
 
 <metal:require_houses_nearby metal:define-macro="require_houses_nearby">
     <!--!  Check whether an industry *tile* is within a certain distance of houses -->
-    switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}, nearby_tile_class(${location_check.x}, ${location_check.y})) {
-        <!--! 'ALLOW' looks dubious below, usually we return disallow or 'next' switch; in a checks tree this could lead to allowing building when other checks would want to forbid it -->
-        TILE_CLASS_HOUSE: return CB_RESULT_LOCATION_ALLOW;
-        ${location_check.switch_result};
+    <!--!
+        !! would this not be better as a plain industry location check?
+    -->
+    switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}_${len(location_check.search_points)}, LOAD_TEMP(0)) {
+        1: ${location_check.switch_result};
+        return CB_RESULT_LOCATION_DISALLOW;
+    }
+    <!--! repeat over all the search points, if houses are found in any, a flag is set 1, which is checked at end -->
+    <tal:search_point repeat="search_point location_check.search_points">
+        <tal:switch_num define="switch_num len(location_check.search_points) - repeat.search_point.number">
+            switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}_${switch_num}, [
+                 nearby_tile_class(${search_point[0]}, ${search_point[1]}) == TILE_CLASS_HOUSE ? STORE_TEMP(1, 0) : 0,
+                 LOAD_TEMP(0)
+                ]) {
+                1: ${location_check.switch_entry_point}_${len(location_check.search_points)};
+                return ${location_check.switch_entry_point}_${switch_num + 1};
+            }
+        </tal:switch_num>
+    </tal:search_point>
+    switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}, STORE_TEMP(0, 0)) {
+        return ${location_check.switch_entry_point}_0;
     }
 </metal:require_houses_nearby>
 

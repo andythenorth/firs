@@ -330,8 +330,8 @@ smithy_forge.industry.register()
 from industries import stockyard
 stockyard.industry.register()
 
-from industries import steel_rod_mill
-steel_rod_mill.industry.register()
+from industries import wire_rod_mill
+wire_rod_mill.industry.register()
 
 """
 from industries import sugar_refinery

@@ -132,8 +132,7 @@ class TileLocationChecks(object):
             for x in range(-1 * distance, distance+1):
                 for y in range(-1 * distance, distance+1):
                     search_points.append((x, y))
-            for search_offsets in search_points:
-                result.append(TileLocationCheckRequireHousesNearby(search_offsets))
+            result.append(TileLocationCheckRequireHousesNearby(search_points))
 
         if self.require_road_adjacent:
             result.append(TileLocationCheckRequireRoadAdjacent())
@@ -213,12 +212,11 @@ class TileLocationCheckRequireEffectivelyFlat(TileLocationCheck):
 
 class TileLocationCheckRequireHousesNearby(TileLocationCheck):
     """ Requires houses at offset x, y (to be fed by circular tile search) """
-    def __init__(self, search_offsets):
-        self.switch_result = 'return CB_RESULT_LOCATION_DISALLOW' # default result, value may also be id for next switch
+    def __init__(self, search_points):
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = None
         self.macro_name = 'require_houses_nearby'
-        self.x = search_offsets[0]
-        self.y = search_offsets[1]
+        self.search_points = search_points
 
 
 class TileLocationCheckRequireRoadAdjacent(TileLocationCheck):
@@ -1195,6 +1193,7 @@ class IndustryTertiary(Industry):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.template = 'industry_tertiary.pynml'
+        self.town_industry_for_cargoflow = True
         # no perm_storage needed currently
 
     @property

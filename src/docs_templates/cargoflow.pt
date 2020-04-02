@@ -27,6 +27,9 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
                     <tal:banned condition="cargo.id in banned_cargos">
                         <tr><td>[${doc_helper.get_cargo_name(cargo)}]</td></tr>
                     </tal:banned>
+                    <tal:town_industries condition="getattr(industry, 'town_industry_for_cargoflow', False)">
+                        <tr><td>[${doc_helper.get_cargo_name(cargo)}]</td></tr>
+                    </tal:town_industries>
                 </tal:cargos>
             </table>
         >
@@ -36,20 +39,22 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
         ]
         #<tr><td><img width="100%" src="static/img/industries/${industry.id}.png"/></td></tr>
 
-        <tal:accepted_cargos repeat="cargo doc_helper.cargos_accepted_by_industry(industry, economy)">
-            <tal:not_banned condition="(cargo.id not in banned_cargos) and (cargo.id not in supply_cargos)">
-                C_${cargo.id} -> I_${industry.id} [weight="${len(doc_helper.cargos_accepted_by_industry(industry, economy))}" tooltip="${doc_helper.get_cargo_name(cargo)} -> ${doc_helper.get_industry_name(industry, economy)}"]
-            </tal:not_banned>
-        </tal:accepted_cargos>
-        <tal:produced_cargos repeat="cargo doc_helper.cargos_produced_by_industry(industry, economy)">
-            <tal:supply_output condition="cargo.id in doc_helper.get_cargoflow_supply_cargos()">
-                I_${industry.id} -> C_${cargo.id}_${industry.id} [weight="${len(doc_helper.cargos_produced_by_industry(industry, economy))}" tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"]
-                C_${cargo.id}_${industry.id} [shape="ellipse" label="${doc_helper.get_cargo_name(cargo)}" href="cargos.html#${cargo.id}" target="_top" fontname="sans-serif" id="${cargo.id}"]
-            </tal:supply_output>
-            <tal:not_banned condition="(cargo.id not in banned_cargos) and (cargo.id not in doc_helper.get_cargoflow_supply_cargos())">
-                I_${industry.id} -> C_${cargo.id} [weight="${len(doc_helper.cargos_produced_by_industry(industry, economy))}" tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"]
-            </tal:not_banned>
-        </tal:produced_cargos>
+        <tal:not_town_industries condition="not: getattr(industry, 'town_industry_for_cargoflow', False)">
+            <tal:accepted_cargos repeat="cargo doc_helper.cargos_accepted_by_industry(industry, economy)">
+                <tal:not_banned condition="(cargo.id not in banned_cargos) and (cargo.id not in supply_cargos)">
+                    C_${cargo.id} -> I_${industry.id} [weight="${len(doc_helper.cargos_accepted_by_industry(industry, economy))}" tooltip="${doc_helper.get_cargo_name(cargo)} -> ${doc_helper.get_industry_name(industry, economy)}"]
+                </tal:not_banned>
+            </tal:accepted_cargos>
+            <tal:produced_cargos repeat="cargo doc_helper.cargos_produced_by_industry(industry, economy)">
+                <tal:supply_output condition="cargo.id in doc_helper.get_cargoflow_supply_cargos()">
+                    I_${industry.id} -> C_${cargo.id}_${industry.id} [weight="${len(doc_helper.cargos_produced_by_industry(industry, economy))}" tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"]
+                    C_${cargo.id}_${industry.id} [shape="ellipse" label="${doc_helper.get_cargo_name(cargo)}" href="cargos.html#${cargo.id}" target="_top" fontname="sans-serif" id="${cargo.id}"]
+                </tal:supply_output>
+                <tal:not_banned condition="(cargo.id not in banned_cargos) and (cargo.id not in doc_helper.get_cargoflow_supply_cargos())">
+                    I_${industry.id} -> C_${cargo.id} [weight="${len(doc_helper.cargos_produced_by_industry(industry, economy))}" tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"]
+                </tal:not_banned>
+            </tal:produced_cargos>
+        </tal:not_town_industries>
     </tal:industries>
 }
 </tal:economies>

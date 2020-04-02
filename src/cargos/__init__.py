@@ -281,8 +281,8 @@ stainless_steel.cargo.register()
 from cargos import steel
 steel.cargo.register()
 
-from cargos import steel_wire
-steel_wire.cargo.register()
+from cargos import steel_wire_rod
+steel_wire_rod.cargo.register()
 
 """
 from cargos import stone
