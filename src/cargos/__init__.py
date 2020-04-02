@@ -10,10 +10,8 @@ alcohol.cargo.register()
 from cargos import alloy_steel
 alloy_steel.cargo.register()
 
-"""
 from cargos import aluminium
 aluminium.cargo.register()
-"""
 
 from cargos import ammonia
 ammonia.cargo.register()
@@ -129,6 +127,9 @@ formic_acid.cargo.register()
 from cargos import fruits
 fruits.cargo.register()
 
+from cargos import galvanised_steel
+galvanised_steel.cargo.register()
+
 from cargos import glass
 glass.cargo.register()
 
@@ -202,6 +203,9 @@ from cargos import packaging
 packaging.cargo.register()
 """
 
+from cargos import paints_and_coatings
+paints_and_coatings.cargo.register()
+
 from cargos import paper
 paper.cargo.register()
 
@@ -250,6 +254,9 @@ from cargos import recyclables
 recyclables.cargo.register()
 """
 
+from cargos import rebar
+rebar.cargo.register()
+
 from cargos import rubber
 rubber.cargo.register()
 
@@ -273,6 +280,9 @@ stainless_steel.cargo.register()
 
 from cargos import steel
 steel.cargo.register()
+
+from cargos import steel_wire
+steel_wire.cargo.register()
 
 """
 from cargos import stone

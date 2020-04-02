@@ -60,6 +60,7 @@ STR_CARGO_NAME_FARM_SUPPLIES                                                    
 STR_CARGO_NAME_FERTILISER                                                       :Fertiliser
 STR_CARGO_NAME_FORMIC_ACID                                                      :Formic Acid
 STR_CARGO_NAME_FRUITS                                                           :Fruit
+STR_CARGO_NAME_GALVANISED_STEEL                                                 :Galvanised Steel
 STR_CARGO_NAME_GLASS                                                            :Glass
 STR_CARGO_NAME_KAOLIN                                                           :Kaolin
 STR_CARGO_NAME_LIMESTONE                                                        :Limestone
@@ -73,6 +74,7 @@ STR_CARGO_NAME_NITRATES                                                         
 STR_CARGO_NAME_NUTS                                                             :Nuts
 STR_CARGO_NAME_OXYGEN                                                           :Oxygen
 STR_CARGO_NAME_PACKAGING                                                        :Packaging
+STR_CARGO_NAME_PAINTS_AND_COATINGS                                              :Paints & Coatings
 STR_CARGO_NAME_PEAT                                                             :Peat
 STR_CARGO_NAME_PETROL                                                           :Petroleum Fuels
 STR_CARGO_NAME_PHOSPHATE                                                        :Phosphate
@@ -83,6 +85,7 @@ STR_CARGO_NAME_POTASH                                                           
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrite Ore
 STR_CARGO_NAME_QUICKLIME                                                        :Quicklime
 STR_CARGO_NAME_RAW_LATEX                                                        :Raw Latex
+STR_CARGO_NAME_REBAR                                                            :Rebar
 STR_CARGO_NAME_RECYCLABLES                                                      :Recyclables
 STR_CARGO_NAME_SALT                                                             :Salt
 STR_CARGO_NAME_SAND                                                             :Sand
@@ -91,6 +94,7 @@ STR_CARGO_NAME_SLAG                                                             
 STR_CARGO_NAME_SODA_ASH                                                         :Soda Ash
 STR_CARGO_NAME_STAINLESS_STEEL                                                  :Stainless Steel
 STR_CARGO_NAME_STEEL                                                            :Steel
+STR_CARGO_NAME_STEEL_WIRE                                                       :Steel Wire
 STR_CARGO_NAME_STONE                                                            :Stone
 STR_CARGO_NAME_SUGAR_BEET                                                       :Sugar Beet
 STR_CARGO_NAME_SULPHUR                                                          :Sulphur
@@ -138,6 +142,7 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} of fish
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of farm supplies
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} of fruit
+STR_CARGO_UNIT_GALVANISED_STEEL                                                 :{WEIGHT} of galvanised steel
 STR_CARGO_UNIT_GLASS                                                            :{WEIGHT} of glass
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} of kaolin
 STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} of limestone
@@ -151,6 +156,7 @@ STR_CARGO_UNIT_NITRATES                                                         
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} sack{P 0 "" s}  of nuts
 STR_CARGO_UNIT_OXYGEN                                                           :{VOLUME} of oxygen
 STR_CARGO_UNIT_PACKAGING                                                        :{WEIGHT} of packaging
+STR_CARGO_UNIT_PAINTS_AND_COATINGS                                              :{VOLUME} of paints & coatings
 STR_CARGO_UNIT_PEAT                                                             :{WEIGHT} of peat
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of petroleum fuels
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} of phosphate
@@ -161,6 +167,7 @@ STR_CARGO_UNIT_POTASH                                                           
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} of pyrite ore
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} of quicklime
 STR_CARGO_UNIT_RAW_LATEX                                                        :{VOLUME} of raw latex
+STR_CARGO_UNIT_REBAR                                                            :{WEIGHT} of rebar
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} of recyclables
 STR_CARGO_UNIT_SALT                                                             :{WEIGHT} of salt
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} of sand
@@ -169,6 +176,7 @@ STR_CARGO_UNIT_SLAG                                                             
 STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} of soda ash
 STR_CARGO_UNIT_STAINLESS_STEEL                                                  :{WEIGHT} of stainless steel
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} of steel
+STR_CARGO_UNIT_STEEL_WIRE                                                       :{WEIGHT} of steel wire
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} of stone
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} of sugar beet
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} of sulphur
@@ -215,6 +223,7 @@ STR_CID_FERTILISER                                                              
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
 STR_CID_FISH                                                                    :{TINYFONT}FI
 STR_CID_FORMIC_ACID                                                             :{TINYFONT}FA
+STR_CID_GALVANISED_STEEL                                                        :{TINYFONT}GA
 STR_CID_GLASS                                                                   :{TINYFONT}GL
 STR_CID_KAOLIN                                                                  :{TINYFONT}KA
 STR_CID_LIMESTONE                                                               :{TINYFONT}LS
@@ -228,6 +237,7 @@ STR_CID_NITRATES                                                                
 STR_CID_NUTS                                                                    :{TINYFONT}NT
 STR_CID_OXYGEN                                                                  :{TINYFONT}O2
 STR_CID_PACKAGING                                                               :{TINYFONT}PK
+STR_CID_PAINTS_AND_COATINGS                                                     :{TINYFONT}PC
 STR_CID_PEAT                                                                    :{TINYFONT}PE
 STR_CID_PETROL                                                                  :{TINYFONT}PT
 STR_CID_PIG_IRON                                                                :{TINYFONT}PI
@@ -238,6 +248,7 @@ STR_CID_POTASH                                                                  
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
 STR_CID_QUICKLIME                                                               :{TINYFONT}QL
 STR_CID_RAW_LATEX                                                               :{TINYFONT}RL
+STR_CID_REBAR                                                                   :{TINYFONT}RB
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
 STR_CID_SALT                                                                    :{TINYFONT}NA
 STR_CID_SAND                                                                    :{TINYFONT}SA
@@ -249,6 +260,7 @@ STR_CID_STEEL                                                                   
 STR_CID_STONE                                                                   :{TINYFONT}ST
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
 STR_CID_SULPHUR                                                                 :{TINYFONT}SU
+STR_CID_STEEL_WIRE                                                              :{TINYFONT}SW
 STR_CID_TEXTILES                                                                :{TINYFONT}TX
 STR_CID_TYRES                                                                   :{TINYFONT}TY
 STR_CID_UREA                                                                    :{TINYFONT}UR
@@ -283,6 +295,7 @@ STR_IND_BASICFARM                                                               
 STR_IND_BASIC_OXYGEN_FURNACE                                                    :Basic Oxygen Furnace
 STR_IND_BIOREFINERY                                                             :Biorefinery
 STR_IND_BLAST_FURNACE                                                           :Blast Furnace
+STR_IND_BODY_PLANT                                                              :Body Plant
 STR_IND_BREWERY                                                                 :Brewery
 STR_IND_CIDER_MILL                                                              :Cider Mill
 STR_IND_BRICK_WORKS                                                             :Brick Works
@@ -330,7 +343,7 @@ STR_IND_LUMBER_YARD                                                             
 STR_IND_MACHINE_SHOP                                                            :Machine Shop
 STR_IND_MACHINE_WORKS                                                           :Machine Works
 STR_IND_MANGANESE_MINE                                                          :Manganese Mine
-STR_IND_METAL_FABRICATION_PLANT                                                 :Metal Fabrication Plant
+STR_IND_METAL_FABRICATION_PLANT                                                 :Steel Finishing Plant
 STR_IND_METAL_WORKSHOP                                                          :Metal Workshop
 STR_IND_MIXEDFARM                                                               :Mixed Farm
 STR_IND_NITRATE_MINE                                                            :Nitrate Mine
@@ -353,7 +366,7 @@ STR_IND_SHEEPFARM                                                               
 STR_IND_SLAG_GRINDING_PLANT                                                     :Slag Grinding Plant
 STR_IND_SMITHY_FORGE                                                            :Smithy Forge
 STR_IND_SODA_ASH_MINE                                                           :Soda Ash Mine
-STR_IND_STEEL_FINISHING_PLANT                                                   :Steel Finishing Plant
+STR_IND_STEEL_ROD_MILL                                                          :Steel Rod Mill
 STR_IND_STOCKYARD                                                               :Stockyard
 STR_IND_SUGAR_REFINERY                                                          :Sugar Refinery
 STR_IND_SUPPLY_YARD                                                             :Supply Yard

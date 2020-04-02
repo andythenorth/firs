@@ -28,6 +28,9 @@ biorefinery.industry.register()
 from industries import blast_furnace
 blast_furnace.industry.register()
 
+from industries import body_plant
+body_plant.industry.register()
+
 from industries import brewery
 brewery.industry.register()
 
@@ -36,10 +39,8 @@ from industries import brick_works
 brick_works.industry.register()
 """
 
-"""
 from industries import builders_yard
 builders_yard.industry.register()
-"""
 
 from industries import bulk_terminal
 bulk_terminal.industry.register()
@@ -329,6 +330,9 @@ smithy_forge.industry.register()
 from industries import stockyard
 stockyard.industry.register()
 
+from industries import steel_rod_mill
+steel_rod_mill.industry.register()
+
 """
 from industries import sugar_refinery
 sugar_refinery.industry.register()
@@ -342,6 +346,11 @@ supply_yard.industry.register()
 """
 from industries import textile_mill
 textile_mill.industry.register()
+"""
+
+"""
+from industries import tinplate_works
+tinplate_works.industry.register()
 """
 
 """
