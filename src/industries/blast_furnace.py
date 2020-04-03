@@ -5,7 +5,7 @@ industry = IndustrySecondary(id='blast_furnace',
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[('STEL', 8)],
                              prob_in_game='3',
-                             prob_random='5',
+                             prob_map_gen='5',
                              map_colour='10',
                              name='TTD_STR_INDUSTRY_NAME_STEEL_MILL',  # default to steel mill
                              nearby_station_name='string(STR_STATION_FURNACE)',
@@ -20,7 +20,7 @@ industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].name = 'string(STR_IND_BLAST_FURNACE)'
 industry.economy_variations['STEELTOWN'].accept_cargos_with_input_ratios = [('IORE', 3), ('COKE', 3), ('LIME', 2)]
 industry.economy_variations['STEELTOWN'].prod_cargo_types_with_output_ratios = [('IRON', 4), ('CSTI', 2), ('SLAG', 2)]
-industry.economy_variations['STEELTOWN'].prob_random = '3'
+industry.economy_variations['STEELTOWN'].prob_map_gen = '3'
 
 industry.add_tile(id='blast_furnace_tile_1',
                   animation_length=7,

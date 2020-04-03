@@ -62,6 +62,9 @@ from cargos import clay
 clay.cargo.register()
 """
 
+from cargos import cleaning_agents
+cleaning_agents.cargo.register()
+
 from cargos import coal
 coal.cargo.register()
 
@@ -95,8 +98,8 @@ from cargos import edible_oil
 edible_oil.cargo.register()
 """
 
-from cargos import electrical_machines
-electrical_machines.cargo.register()
+from cargos import electrical_equipment
+electrical_equipment.cargo.register()
 
 from cargos import engineering_supplies
 engineering_supplies.cargo.register()
@@ -126,9 +129,6 @@ formic_acid.cargo.register()
 
 from cargos import fruits
 fruits.cargo.register()
-
-from cargos import galvanised_steel
-galvanised_steel.cargo.register()
 
 from cargos import glass
 glass.cargo.register()
@@ -280,6 +280,9 @@ stainless_steel.cargo.register()
 
 from cargos import steel
 steel.cargo.register()
+
+from cargos import steel_sheet
+steel_sheet.cargo.register()
 
 from cargos import steel_wire_rod
 steel_wire_rod.cargo.register()

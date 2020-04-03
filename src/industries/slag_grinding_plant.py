@@ -4,7 +4,7 @@ industry = IndustrySecondary(id='slag_grinding_plant',
                              accept_cargos_with_input_ratios=[('SLAG', 8)],
                              prod_cargo_types_with_output_ratios=[('CMNT', 4), ('FMSP', 4)],
                              prob_in_game='3',
-                             prob_random='5',
+                             prob_map_gen='5',
                              map_colour='19',
                              special_flags=['IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE'],
                              # it's rare to force co-location of secondaries, but this one is near blast furnace by design

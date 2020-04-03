@@ -4,7 +4,7 @@ industry = IndustrySecondary(id='coal_tar_distillery',
                              accept_cargos_with_input_ratios=[('CTAR', 6), ('LYE_', 2)],
                              prod_cargo_types_with_output_ratios=[('CBLK', 4), ('PETR', 4)],
                              prob_in_game='3',
-                             prob_random='5',
+                             prob_map_gen='5',
                              map_colour='16',
                              special_flags=['IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE'],
                              # it's rare to force co-location of secondaries, but this one is near blast furnace by design

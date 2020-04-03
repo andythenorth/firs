@@ -4,7 +4,7 @@ industry = IndustryTertiary(id='vehicle_dealer',
                             accept_cargo_types=['VEHI'],
                             prod_cargo_types_with_multipliers=[],
                             prob_in_game='8',
-                            prob_random='10',
+                            prob_map_gen='10',
                             map_colour='207',
                             life_type='IND_LIFE_TYPE_BLACK_HOLE',
                             location_checks=dict(same_type_distance=32),
@@ -54,7 +54,9 @@ industry.add_industry_layout(
     layout=[(0, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_1'),
             (0, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
             (1, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_1'),
-            (1, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2')
+            (1, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
+            (2, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
+            (2, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2')
             ]
 )
 industry.add_industry_layout(
@@ -62,6 +64,8 @@ industry.add_industry_layout(
     layout=[(0, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_1'),
             (1, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
             (0, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_1'),
-            (1, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2')
+            (1, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
+            (0, 2, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
+            (1, 2, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2')
             ]
 )

@@ -3,7 +3,7 @@ from industry import IndustryTownProducerPopulationDependent, TileLocationChecks
 industry = IndustryTownProducerPopulationDependent(id='junk_yard',
                                      prod_cargo_types_with_multipliers=[('SCMT', 32)], # prod dependent on town popn
                                      prob_in_game='3',
-                                     prob_random='7',
+                                     prob_map_gen='7',
                                      map_colour='64',
                                      # no industry location checks for junk yard, by design
                                      prospect_chance='0.75',
@@ -17,7 +17,7 @@ industry = IndustryTownProducerPopulationDependent(id='junk_yard',
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].prob_random = '14'
+industry.economy_variations['STEELTOWN'].prob_map_gen = '14'
 
 industry.add_tile(id='junk_yard_tile_1',
                   location_checks=TileLocationChecks(disallow_steep_slopes=True,

@@ -4,7 +4,7 @@ industry = IndustryPrimaryPort(id='wharf',
                                accept_cargo_types=[],
                                prod_cargo_types_with_multipliers=[],
                                prob_in_game='2',
-                               prob_random='6',
+                               prob_map_gen='6',
                                map_colour='37',
                                special_flags=['IND_FLAG_BUILT_ON_WATER'],
                                location_checks=dict(same_type_distance=16),
@@ -21,8 +21,8 @@ industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = 
 # in Steeltown, there is a deliberate feedback loop with ZINC -> PIPE -> wharf
 # this is to allow an easy kickstart of ENSP at the wharf, when all other chains are so tightly connected
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].accept_cargo_types = ['CMNT', 'PIPE', 'STST', 'RBAR']
-industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('ENSP', 12), ('POWR', 14), ('ZINC', 16), ('COAT', 10), ('ALUM', 16)]
+industry.economy_variations['STEELTOWN'].accept_cargo_types = ['CMNT', 'PIPE', 'RBAR']
+industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('ENSP', 12), ('POWR', 14), ('ZINC', 16), ('COAT', 10), ('ALUM', 16), ('SOAP', 10)]
 
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

@@ -4,7 +4,7 @@ industry = IndustryTertiary(id='general_store',
                             accept_cargo_types=['FOOD', 'GOOD', 'BEER'],
                             prod_cargo_types=[],
                             prob_in_game='12',
-                            prob_random='24',
+                            prob_map_gen='24',
                             prod_multiplier='[0, 0]',
                             map_colour='168',
                             life_type='IND_LIFE_TYPE_BLACK_HOLE',
@@ -23,7 +23,7 @@ industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
-industry.economy_variations['IN_A_HOT_COUNTRY'].prob_random = '14'
+industry.economy_variations['IN_A_HOT_COUNTRY'].prob_map_gen = '14'
 industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['FOOD', 'GOOD', 'BEER']
 #industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['FOOD', 'GOOD', 'BEER', 'TEXT']
 """

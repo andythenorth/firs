@@ -4,7 +4,7 @@ industry = IndustrySecondary(id='pyrite_smelter',
                              accept_cargos_with_input_ratios=[('PORE', 8)],
                              prod_cargo_types_with_output_ratios=[('ZINC', 4), ('SULP', 4)],
                              prob_in_game='3',
-                             prob_random='5',
+                             prob_map_gen='5',
                              map_colour='19',
                              # it's rare to force co-location of secondaries, but this one is near pyrite mine by design
                              location_checks=dict(industry_max_distance=['pyrite_mine', 72], same_type_distance=100),

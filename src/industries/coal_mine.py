@@ -3,7 +3,7 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 industry = IndustryPrimaryExtractive(id='coal_mine',
                                      prod_cargo_types_with_multipliers=[('COAL', 20)],
                                      prob_in_game='4',
-                                     prob_random='7',
+                                     prob_map_gen='7',
                                      map_colour='1',
                                      prospect_chance='0.75',
                                      name='TTD_STR_INDUSTRY_NAME_COAL_MINE',
@@ -14,7 +14,7 @@ industry = IndustryPrimaryExtractive(id='coal_mine',
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].prob_random = '10'
+industry.economy_variations['STEELTOWN'].prob_map_gen = '10'
 
 #industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 

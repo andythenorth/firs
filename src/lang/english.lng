@@ -44,13 +44,14 @@ STR_CARGO_NAME_CHEMICALS                                                        
 STR_CARGO_NAME_CHLORINE                                                         :Chlorine
 STR_CARGO_NAME_CHROMITE_ORE                                                     :Chromite Ore
 STR_CARGO_NAME_CLAY                                                             :Clay
+STR_CARGO_NAME_CLEANING_AGENTS                                                  :Cleaning Agents
 STR_CARGO_NAME_COFFEE                                                           :Coffee
 STR_CARGO_NAME_COAL_TAR                                                         :Coal Tar
 STR_CARGO_NAME_COKE                                                             :Coke
 STR_CARGO_NAME_COPPER                                                           :Copper
 STR_CARGO_NAME_COPPER_CONCENTRATE                                               :Copper Concentrate
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Edible Oil
-STR_CARGO_NAME_ELECTRICAL_MACHINES                                              :Electrical Machines
+STR_CARGO_NAME_ELECTRICAL_EQUIPMENT                                             :Electrical Equipment
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Engineering Supplies
 STR_CARGO_NAME_EXPLOSIVES                                                       :Explosives
 STR_CARGO_NAME_FERROCHROME                                                      :Ferrochrome
@@ -60,7 +61,6 @@ STR_CARGO_NAME_FARM_SUPPLIES                                                    
 STR_CARGO_NAME_FERTILISER                                                       :Fertiliser
 STR_CARGO_NAME_FORMIC_ACID                                                      :Formic Acid
 STR_CARGO_NAME_FRUITS                                                           :Fruit
-STR_CARGO_NAME_GALVANISED_STEEL                                                 :Galvanised Steel
 STR_CARGO_NAME_GLASS                                                            :Glass
 STR_CARGO_NAME_KAOLIN                                                           :Kaolin
 STR_CARGO_NAME_LIMESTONE                                                        :Limestone
@@ -94,6 +94,7 @@ STR_CARGO_NAME_SLAG                                                             
 STR_CARGO_NAME_SODA_ASH                                                         :Soda Ash
 STR_CARGO_NAME_STAINLESS_STEEL                                                  :Stainless Steel
 STR_CARGO_NAME_STEEL                                                            :Steel
+STR_CARGO_NAME_STEEL_SHEET                                                      :Steel Sheet
 STR_CARGO_NAME_STEEL_WIRE_ROD                                                   :Steel Wire Rod
 STR_CARGO_NAME_STONE                                                            :Stone
 STR_CARGO_NAME_SUGAR_BEET                                                       :Sugar Beet
@@ -126,13 +127,14 @@ STR_CARGO_UNIT_CHEMICALS                                                        
 STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} of chlorine
 STR_CARGO_UNIT_CHROMITE_ORE                                                     :{WEIGHT} of chromite ore
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} of clay
+STR_CARGO_UNIT_CLEANING_AGENTS                                                  :{WEIGHT} of cleaning agents
 STR_CARGO_UNIT_COAL_TAR                                                         :{VOLUME} of coal tar
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sack{P 0 "" s} of coffee
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} of coke
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} of copper
 STR_CARGO_UNIT_COPPER_CONCENTRATE                                               :{WEIGHT} of copper concentrate
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} of edible oil
-STR_CARGO_UNIT_ELECTRICAL_MACHINES                                              :{WEIGHT} of electrical machines
+STR_CARGO_UNIT_ELECTRICAL_EQUIPMENT                                             :{WEIGHT} of electrical equipment
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crate{P 0 "" s} of engineering supplies
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} crate{P 0 "" s} of explosives
 STR_CARGO_UNIT_FERROCHROME                                                      :{WEIGHT} of ferrochrome
@@ -142,7 +144,6 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} of fish
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of farm supplies
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} of fruit
-STR_CARGO_UNIT_GALVANISED_STEEL                                                 :{WEIGHT} of galvanised steel
 STR_CARGO_UNIT_GLASS                                                            :{WEIGHT} of glass
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} of kaolin
 STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} of limestone
@@ -176,6 +177,7 @@ STR_CARGO_UNIT_SLAG                                                             
 STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} of soda ash
 STR_CARGO_UNIT_STAINLESS_STEEL                                                  :{WEIGHT} of stainless steel
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} of steel
+STR_CARGO_UNIT_STEEL_SHEET                                                      :{WEIGHT} of steel sheet
 STR_CARGO_UNIT_STEEL_WIRE_ROD                                                   :{WEIGHT} of steel wire
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} of stone
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} of sugar beet
@@ -208,13 +210,14 @@ STR_CID_CHEMICALS                                                               
 STR_CID_CHROMITE_ORE                                                            :{TINYFONT}CO
 STR_CID_CHLORINE                                                                :{TINYFONT}CL
 STR_CID_CLAY                                                                    :{TINYFONT}CY
+STR_CID_CLEANING_AGENTS                                                         :{TINYFONT}CN
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
 STR_CID_COAL_TAR                                                                :{TINYFONT}CT
 STR_CID_COKE                                                                    :{TINYFONT}CK
 STR_CID_COPPER                                                                  :{TINYFONT}CR
 STR_CID_COPPER_CONCENTRATE                                                      :{TINYFONT}CC
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
-STR_CID_ELECTRICAL_MACHINES                                                     :{TINYFONT}EM
+STR_CID_ELECTRICAL_EQUIPMENT                                                    :{TINYFONT}EE
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}EX
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
@@ -223,7 +226,6 @@ STR_CID_FERTILISER                                                              
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
 STR_CID_FISH                                                                    :{TINYFONT}FI
 STR_CID_FORMIC_ACID                                                             :{TINYFONT}FA
-STR_CID_GALVANISED_STEEL                                                        :{TINYFONT}GA
 STR_CID_GLASS                                                                   :{TINYFONT}GL
 STR_CID_KAOLIN                                                                  :{TINYFONT}KA
 STR_CID_LIMESTONE                                                               :{TINYFONT}LS
@@ -260,6 +262,7 @@ STR_CID_STEEL                                                                   
 STR_CID_STONE                                                                   :{TINYFONT}ST
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
 STR_CID_SULPHUR                                                                 :{TINYFONT}SU
+STR_CID_STEEL_SHEET                                                             :{TINYFONT}SH
 STR_CID_STEEL_WIRE_ROD                                                          :{TINYFONT}SW
 STR_CID_TEXTILES                                                                :{TINYFONT}TX
 STR_CID_TYRES                                                                   :{TINYFONT}TY
@@ -373,7 +376,7 @@ STR_IND_TEXTILE_MILL                                                            
 STR_IND_TRADING_POST                                                            :Trading Post
 STR_IND_TYRE_PLANT                                                              :Tyre Plant
 STR_IND_VINEYARD                                                                :Vineyard
-STR_IND_VEHICLE_DEALER                                                          :Vehicle Dealer
+STR_IND_VEHICLE_DEALER                                                          :Vehicle Distributor
 STR_IND_WHARF                                                                   :Wharf
 STR_IND_WIRE_ROD_MILL                                                           :Wire Rod Mill
 

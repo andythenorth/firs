@@ -19,7 +19,7 @@
                     random_sound_effects: []; // set this empty to avoid spurious default industry sounds (as of May 2017 FIRS does not yet use sound effects)
                     <!--! following props may optionally vary per economy, or use industry default -->
                     ${industry.get_property_declaration('name', economy)}
-                    ${industry.get_property_declaration('prob_random', economy)}
+                    ${industry.get_property_declaration('prob_map_gen', economy)}
                     ${industry.get_property_declaration('prob_in_game', economy)}
                     ${industry.get_property_declaration('prospect_chance', economy)}
                     ${industry.get_property_declaration('fund_cost_multiplier', economy)}

@@ -714,7 +714,7 @@ class IndustryProperties(object):
         self.new_ind_msg = kwargs.get('new_ind_msg', None)
         self.closure_msg = kwargs.get('closure_msg', None)
         self.prob_in_game = kwargs.get('prob_in_game', None)
-        self.prob_random = kwargs.get('prob_random', None)
+        self.prob_map_gen = kwargs.get('prob_map_gen', None)
         self.prospect_chance = kwargs.get('prospect_chance', None)
         self.map_colour = kwargs.get('map_colour', None)
         self.life_type = kwargs.get('life_type', None)

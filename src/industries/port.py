@@ -4,7 +4,7 @@ industry = IndustryPrimaryPort(id='port',
                                accept_cargo_types=[],
                                prod_cargo_types_with_multipliers=[],
                                prob_in_game='2',
-                               prob_random='8',
+                               prob_map_gen='8',
                                map_colour='186',
                                special_flags=['IND_FLAG_BUILT_ON_WATER'],
                                location_checks=dict(same_type_distance=16),
@@ -17,7 +17,7 @@ industry = IndustryPrimaryPort(id='port',
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].accept_cargo_types = ['GOOD', 'KAOL', 'FOOD']
 industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types_with_multipliers = [('ENSP', 19), ('FMSP', 7), ('RFPR', 19)]
-industry.economy_variations['BASIC_TEMPERATE'].prob_random = '10'
+industry.economy_variations['BASIC_TEMPERATE'].prob_map_gen = '10'
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'ZINC', 'FERT']

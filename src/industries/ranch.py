@@ -3,7 +3,7 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 industry = IndustryPrimaryOrganic(id='ranch',
                                   prod_cargo_types_with_multipliers=[('LVST', 14), ('WOOL', 13)],
                                   prob_in_game='4',
-                                  prob_random='11',
+                                  prob_map_gen='11',
                                   map_colour='168',
                                   location_checks=dict(cluster=[72, 4]),
                                   prospect_chance='0.75',

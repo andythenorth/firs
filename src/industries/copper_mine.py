@@ -3,7 +3,7 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 industry = IndustryPrimaryExtractive(id='copper_mine',
                                      prod_cargo_types_with_multipliers=[('CORE', 20)],
                                      prob_in_game='7',
-                                     prob_random='7',
+                                     prob_map_gen='7',
                                      map_colour='10',
                                      location_checks=dict(cluster=[60, 3]),
                                      # it's rare to force co-location of secondaries, but this one is near copper mine by design

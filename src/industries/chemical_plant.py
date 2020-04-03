@@ -5,7 +5,7 @@ industry = IndustrySecondary(id='chemical_plant',
                              prod_cargo_types_with_output_ratios=[('RFPR', 8)],
                              combined_cargos_boost_prod=True,
                              prob_in_game='3',
-                             prob_random='5',
+                             prob_map_gen='5',
                              map_colour='191',
                              # it's rare to force co-location of secondaries, but this one is near portby design
                              # !! this will fail if port is not available in economy

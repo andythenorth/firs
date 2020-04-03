@@ -3,7 +3,7 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 industry = IndustryPrimaryOrganic(id='mixed_farm',
                                   prod_cargo_types_with_multipliers=[('FOOD', 14)],
                                   prob_in_game='3',
-                                  prob_random='11',
+                                  prob_map_gen='11',
                                   map_colour='85',
                                   special_flags=['IND_FLAG_PLANT_FIELDS_PERIODICALLY', 'IND_FLAG_PLANT_FIELDS_WHEN_BUILT'],
                                   # mixed farm doesn't cluster, by design - no industry location checks needed
@@ -18,7 +18,7 @@ industry = IndustryPrimaryOrganic(id='mixed_farm',
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('MAIZ', 14), ('LVST', 13)]
 #industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('MAIZ', 14), ('LVST', 13), ('NUTS', 14), ('WOOL', 10)]
-industry.economy_variations['IN_A_HOT_COUNTRY'].prob_random = '14'
+industry.economy_variations['IN_A_HOT_COUNTRY'].prob_map_gen = '14'
 """
 
 industry.economy_variations['STEELTOWN'].enabled = True

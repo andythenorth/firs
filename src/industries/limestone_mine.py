@@ -3,7 +3,7 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 industry = IndustryPrimaryExtractive(id='limestone_mine',
                                      prod_cargo_types_with_multipliers=[('LIME', 20)],
                                      prob_in_game='4',
-                                     prob_random='7',
+                                     prob_map_gen='7',
                                      map_colour='69',
                                      location_checks=dict(cluster=[70, 3]),
                                      prospect_chance='0.75',

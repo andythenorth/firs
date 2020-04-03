@@ -3,7 +3,7 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 industry = IndustryPrimaryOrganic(id='fruit_plantation',
                                   prod_cargo_types_with_multipliers=[('FRUT', 16)],
                                   prob_in_game='4',
-                                  prob_random='10',
+                                  prob_map_gen='10',
                                   prospect_chance='0.75',
                                   map_colour='207',
                                   name='TTD_STR_INDUSTRY_NAME_FRUIT_PLANTATION',

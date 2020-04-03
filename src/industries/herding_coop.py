@@ -3,7 +3,7 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 industry = IndustryPrimaryOrganic(id='herding_coop',
                                   prod_cargo_types_with_multipliers=[('FOOD', 7)],
                                   prob_in_game='14',
-                                  prob_random='14',
+                                  prob_map_gen='14',
                                   map_colour='207',
                                   special_flags=['IND_FLAG_NO_PRODUCTION_INCREASE'],
                                   # herding_coop doesn't cluster, by design - no industry location checks needed

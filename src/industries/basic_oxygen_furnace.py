@@ -5,7 +5,7 @@ industry = IndustrySecondary(id='basic_oxygen_furnace',
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[('STCB', 4), ('STAL', 2), ('SLAG', 2)],
                              prob_in_game='3',
-                             prob_random='5',
+                             prob_map_gen='5',
                              map_colour='49',
                              special_flags=['IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE'],
                              # it's rare to force co-location of secondaries, but this one is near blast furnace by design

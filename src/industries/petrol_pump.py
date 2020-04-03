@@ -4,7 +4,7 @@ industry = IndustryTertiary(id='petrol_pump',
                             accept_cargo_types=['FOOD', 'GOOD', 'PETR'],
                             prod_cargo_types=[],
                             prob_in_game='14',
-                            prob_random='14',
+                            prob_map_gen='14',
                             prod_multiplier='[0, 0]',
                             map_colour='169',
                             life_type='IND_LIFE_TYPE_BLACK_HOLE',
@@ -17,7 +17,7 @@ industry = IndustryTertiary(id='petrol_pump',
 
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
-industry.economy_variations['IN_A_HOT_COUNTRY'].prob_random = '8'
+industry.economy_variations['IN_A_HOT_COUNTRY'].prob_map_gen = '8'
 industry.economy_variations['IN_A_HOT_COUNTRY'].prob_in_game = '8'
 """
 

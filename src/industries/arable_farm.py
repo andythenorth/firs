@@ -3,7 +3,7 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 industry = IndustryPrimaryOrganic(id='arable_farm',
                                   prod_cargo_types_with_multipliers=[('GRAI', 14), ('BEAN', 14)],
                                   prob_in_game='4',
-                                  prob_random='11',
+                                  prob_map_gen='11',
                                   map_colour='209',
                                   special_flags=['IND_FLAG_PLANT_FIELDS_PERIODICALLY', 'IND_FLAG_PLANT_FIELDS_WHEN_BUILT'],
                                   location_checks=dict(cluster=[72, 4]),

@@ -4,7 +4,7 @@ industry = IndustrySecondary(id='coke_oven',
                              accept_cargos_with_input_ratios=[('COAL', 8)],
                              prod_cargo_types_with_output_ratios=[('COKE', 6), ('CTAR', 1), ('SULP', 1)],
                              prob_in_game='3',
-                             prob_random='5',
+                             prob_map_gen='5',
                              map_colour='183',
                              # it's rare to force co-location of secondaries, but this one is near blast furnace by design
                              location_checks=dict(industry_max_distance=['blast_furnace', 72], same_type_distance=72),

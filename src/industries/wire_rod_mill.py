@@ -1,11 +1,11 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='wire_rod_mill',
-                             accept_cargos_with_input_ratios=[('STCB', 6), ('ACID', 2)],
+                             accept_cargos_with_input_ratios=[('STCB', 4), ('ACID', 2), ('SOAP', 2)],
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[('RBAR', 4), ('STWR', 4)],
                              prob_in_game='3',
-                             prob_random='5',
+                             prob_map_gen='5',
                              map_colour='43',
                              name='string(STR_IND_WIRE_ROD_MILL)',
                              nearby_station_name='string(STR_STATION_HEAVY_INDUSTRY_2)',

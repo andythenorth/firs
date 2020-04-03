@@ -5,7 +5,7 @@ industry = IndustrySecondary(id='brewery',
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[('BEER', 8)],
                              prob_in_game='3',
-                             prob_random='5',
+                             prob_map_gen='5',
                              map_colour='191',
                              # no industry location checks for brewery, by design
                              name='string(STR_IND_BREWERY)',
