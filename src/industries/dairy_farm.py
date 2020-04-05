@@ -5,6 +5,8 @@ industry = IndustryPrimaryOrganic(id='dairy_farm',
                                   prob_in_game='3',
                                   prob_map_gen='11',
                                   map_colour='164',
+                                  # fields aren't 100% appropriate, but without them there are zero farm fields planted in Basic Temperate economy
+                                  special_flags=['IND_FLAG_PLANT_FIELDS_PERIODICALLY', 'IND_FLAG_PLANT_FIELDS_WHEN_BUILT'],
                                   location_checks=dict(cluster=[72, 4]),
                                   prospect_chance='0.75',
                                   name='string(STR_IND_DAIRY_FARM)',
