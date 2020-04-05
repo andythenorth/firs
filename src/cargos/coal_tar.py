@@ -16,6 +16,6 @@ cargo = Cargo(id='coal_tar',
               items_of_cargo='string(STR_CARGO_UNIT_COAL_TAR)',
               penalty_lowerbound='64',
               single_penalty_length='255',
-              price_factor=52,
+              price_factor=89, # IRL coal tar is low value, but for gameplay it is transported in low amounts and needs a bonus
               capacity_multiplier='1',
               icon_indices=(14, 4))
