@@ -345,10 +345,8 @@ from industries import textile_mill
 textile_mill.industry.register()
 """
 
-"""
 from industries import tinplate_works
 tinplate_works.industry.register()
-"""
 
 """
 from industries import trading_post

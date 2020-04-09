@@ -95,13 +95,15 @@ industry_numeric_ids = dict(coal_mine = 0,
                             latex_processor = 93,
                             fish_farm = 94,
                             wire_rod_mill = 95,
-                            body_plant = 96)
+                            body_plant = 96,
+                            tinplate_works = 97)
 #127 is last ID to be used (128 industry limit, zero-based)
 
 
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
-tile_numeric_ids = dict(wire_rod_mill_tile_1 = 112,
+tile_numeric_ids = dict(tinplate_works_tile_1 = 111,
+                        wire_rod_mill_tile_1 = 112,
                         slag_grinding_plant_tile_1 = 113,
                         slag_grinding_plant_tile_2 = 114,
                         wharf_tile_3 = 115,

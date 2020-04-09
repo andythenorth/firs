@@ -303,15 +303,11 @@ from cargos import textiles
 textiles.cargo.register()
 """
 
-"""
 from cargos import tin
 tin.cargo.register()
-"""
 
-"""
 from cargos import tin_mill_black_plate
 tin_mill_black_plate.cargo.register()
-"""
 
 from cargos import tyres
 tyres.cargo.register()
