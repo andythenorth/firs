@@ -53,19 +53,15 @@ industry.add_industry_layout(
     id='vehicle_dealer_industry_layout_1',
     layout=[(0, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_1'),
             (0, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
+            (0, 2, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
             (1, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_1'),
             (1, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
-            (2, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
-            (2, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2')
-            ]
-)
-industry.add_industry_layout(
-    id='vehicle_dealer_industry_layout_2',
-    layout=[(0, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_1'),
-            (1, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
-            (0, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_1'),
-            (1, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
-            (0, 2, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
-            (1, 2, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2')
+            (1, 2, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
+            (2, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_1'),
+            (2, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
+            (2, 2, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
+            (3, 0, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
+            (3, 1, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2'),
+            (3, 2, 'vehicle_dealer_tile_1', 'vehicle_dealer_spritelayout_2')
             ]
 )
