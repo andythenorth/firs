@@ -2,7 +2,7 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='chlor_alkali_plant',
                              accept_cargos_with_input_ratios=[('SALT', 8)],
-                             prod_cargo_types_with_output_ratios=[('ACID', 4), ('CHLO', 4)],
+                             prod_cargo_types_with_output_ratios=[('ACID', 4), ('CHLO', 2), ('LYE_', 2)],
                              prob_in_game='3',
                              prob_map_gen='5',
                              prod_multiplier='[0, 0]',

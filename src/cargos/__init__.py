@@ -154,10 +154,8 @@ lumber.cargo.register()
 from cargos import limestone
 limestone.cargo.register()
 
-"""
 from cargos import lye
 lye.cargo.register()
-"""
 
 from cargos import mail
 mail.cargo.register()

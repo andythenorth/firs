@@ -51,4 +51,6 @@ economy = Economy(id = "STEELTOWN",
                             'vehicle_bodies',
                             'vehicle_engines',
                             'vehicle_parts',
-                            'zinc'])
+                            'zinc',
+                                                        'lye', # needs alphabetised after testing
+])
