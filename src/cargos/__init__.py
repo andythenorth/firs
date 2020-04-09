@@ -198,8 +198,10 @@ oil.cargo.register()
 from cargos import oxygen
 oxygen.cargo.register()
 
+"""
 from cargos import packaging
 packaging.cargo.register()
+"""
 
 from cargos import paints_and_coatings
 paints_and_coatings.cargo.register()
@@ -303,11 +305,15 @@ from cargos import textiles
 textiles.cargo.register()
 """
 
+"""
 from cargos import tin
 tin.cargo.register()
+"""
 
+"""
 from cargos import tin_mill_black_plate
 tin_mill_black_plate.cargo.register()
+"""
 
 from cargos import tyres
 tyres.cargo.register()
