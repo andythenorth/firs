@@ -98,8 +98,8 @@ from cargos import edible_oil
 edible_oil.cargo.register()
 """
 
-from cargos import electrical_equipment
-electrical_equipment.cargo.register()
+from cargos import electrical_parts
+electrical_parts.cargo.register()
 
 from cargos import engineering_supplies
 engineering_supplies.cargo.register()
