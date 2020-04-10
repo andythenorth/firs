@@ -1,7 +1,7 @@
 from industry import IndustryTertiary, TileLocationChecks
 
 industry = IndustryTertiary(id='builders_yard',
-                            accept_cargo_types=['CMNT', 'RBAR', 'PIPE'],
+                            accept_cargo_types=['CMNT', 'RBAR', 'PIPE', 'STSE'],
                             prod_cargo_types=[],
                             prob_in_game='12',
                             prob_map_gen='18',
