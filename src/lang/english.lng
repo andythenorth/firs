@@ -94,6 +94,7 @@ STR_CARGO_NAME_SLAG                                                             
 STR_CARGO_NAME_SODA_ASH                                                         :Soda Ash
 STR_CARGO_NAME_STAINLESS_STEEL                                                  :Stainless Steel
 STR_CARGO_NAME_STEEL                                                            :Steel
+STR_CARGO_NAME_STEEL_SECTIONS                                                   :Steel Sections
 STR_CARGO_NAME_STEEL_SHEET                                                      :Steel Sheet
 STR_CARGO_NAME_STEEL_WIRE_ROD                                                   :Steel Wire Rod
 STR_CARGO_NAME_STONE                                                            :Stone
@@ -179,6 +180,7 @@ STR_CARGO_UNIT_SLAG                                                             
 STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} of soda ash
 STR_CARGO_UNIT_STAINLESS_STEEL                                                  :{WEIGHT} of stainless steel
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} of steel
+STR_CARGO_UNIT_STEEL_SECTIONS                                                   :{WEIGHT} of steel sections
 STR_CARGO_UNIT_STEEL_SHEET                                                      :{WEIGHT} of steel sheet
 STR_CARGO_UNIT_STEEL_WIRE_ROD                                                   :{WEIGHT} of steel wire
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} of stone
@@ -266,6 +268,7 @@ STR_CID_STEEL                                                                   
 STR_CID_STONE                                                                   :{TINYFONT}ST
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
 STR_CID_SULPHUR                                                                 :{TINYFONT}SU
+STR_CID_STEEL_SECTIONS                                                          :{TINYFONT}SE
 STR_CID_STEEL_SHEET                                                             :{TINYFONT}SH
 STR_CID_STEEL_WIRE_ROD                                                          :{TINYFONT}SW
 STR_CID_TEXTILES                                                                :{TINYFONT}TX
@@ -374,7 +377,7 @@ STR_IND_SHEEPFARM                                                               
 STR_IND_SLAG_GRINDING_PLANT                                                     :Slag Grinding Plant
 STR_IND_SMITHY_FORGE                                                            :Smithy Forge
 STR_IND_SODA_ASH_MINE                                                           :Soda Ash Mine
-STR_IND_STEEL_FINISHING_PLANT                                                   :Steel Finishing Plant
+STR_IND_STEEL_FINISHING_PLANT                                                   :Sheet and Pipe Mill
 STR_IND_STOCKYARD                                                               :Stockyard
 STR_IND_SUGAR_REFINERY                                                          :Sugar Refinery
 STR_IND_SUPPLY_YARD                                                             :Supply Yard
@@ -385,7 +388,7 @@ STR_IND_TYRE_PLANT                                                              
 STR_IND_VINEYARD                                                                :Vineyard
 STR_IND_VEHICLE_DEALER                                                          :Vehicle Distributor
 STR_IND_WHARF                                                                   :Wharf
-STR_IND_WIRE_ROD_MILL                                                           :Wire Rod Mill
+STR_IND_WIRE_ROD_MILL                                                           :Long Products Mill
 
 
 STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(supplied)

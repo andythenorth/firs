@@ -279,6 +279,9 @@ stainless_steel.cargo.register()
 from cargos import steel
 steel.cargo.register()
 
+from cargos import steel_sections
+steel_sections.cargo.register()
+
 from cargos import steel_sheet
 steel_sheet.cargo.register()
 

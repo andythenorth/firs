@@ -53,4 +53,5 @@ economy = Economy(id = "STEELTOWN",
                             'vehicle_parts',
                             'zinc',
                                                         'lye', # needs alphabetised after testing
+                                                        'steel_sections', # needs alphabetised after testing
 ])
