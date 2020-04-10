@@ -12,8 +12,8 @@ industry = IndustrySecondary(id='tinplate_works',
                              fund_cost_multiplier='120',
                              intro_year=1832)
 
-
-industry.economy_variations['STEELTOWN'].enabled = True
+# Tinplate is *not* in Steeltown because it fragments the consumers of Acid too much.  Maybe Better Living Through Chemistry?
+#industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='tinplate_works_tile_1',
                   animation_length=71,
