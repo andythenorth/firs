@@ -1,8 +1,8 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='oil_refinery',
-                             accept_cargos_with_input_ratios=[('OIL_', 6)],
-                             prod_cargo_types_with_output_ratios=[('RFPR', 4), ('PETR', 4)],
+                             accept_cargos_with_input_ratios=[('OIL_', 8)],
+                             prod_cargo_types_with_output_ratios=[('PETR', 6), ('SULP', 2)],
                              prob_in_game='3',
                              prob_map_gen='5',
                              map_colour='191',
@@ -12,6 +12,7 @@ industry = IndustrySecondary(id='oil_refinery',
                              nearby_station_name='string(STR_STATION_REFINERY)',
                              intro_year=1830)
 
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(id='oil_refinery_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,

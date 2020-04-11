@@ -11,7 +11,8 @@ industry = IndustrySecondary(id='chlor_alkali_plant',
                              nearby_station_name='string(STR_STATION_BRINE_WORKS)',
                              fund_cost_multiplier='170')
 
-# no lye output in Steeltown, it confuses the chains
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+
 industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='chlor_alkali_plant_tile_1',

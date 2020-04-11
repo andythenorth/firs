@@ -57,10 +57,8 @@ from cargos import chromite_ore
 chromite_ore.cargo.register()
 """
 
-"""
 from cargos import clay
 clay.cargo.register()
-"""
 
 from cargos import cleaning_agents
 cleaning_agents.cargo.register()
@@ -103,6 +101,9 @@ electrical_parts.cargo.register()
 
 from cargos import engineering_supplies
 engineering_supplies.cargo.register()
+
+from cargos import ethylene
+ethylene.cargo.register()
 
 from cargos import explosives
 explosives.cargo.register()
@@ -225,10 +226,8 @@ pig_iron.cargo.register()
 from cargos import pipe
 pipe.cargo.register()
 
-"""
 from cargos import plant_fibres
 plant_fibres.cargo.register()
-"""
 
 from cargos import plastics
 plastics.cargo.register()
@@ -296,20 +295,14 @@ stone.cargo.register()
 from cargos import sulphur
 sulphur.cargo.register()
 
-"""
 from cargos import sugar_beet
 sugar_beet.cargo.register()
-"""
 
-"""
 from cargos import textiles
 textiles.cargo.register()
-"""
 
-"""
 from cargos import tin
 tin.cargo.register()
-"""
 
 """
 from cargos import tin_mill_black_plate
@@ -319,10 +312,8 @@ tin_mill_black_plate.cargo.register()
 from cargos import tyres
 tyres.cargo.register()
 
-"""
 from cargos import urea
 urea.cargo.register()
-"""
 
 from cargos import vehicle_bodies
 vehicle_bodies.cargo.register()
@@ -342,10 +333,8 @@ wood.cargo.register()
 from cargos import wool
 wool.cargo.register()
 
-"""
 from cargos import yarn
 yarn.cargo.register()
-"""
 
 from cargos import zinc
 zinc.cargo.register()

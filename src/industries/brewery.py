@@ -15,6 +15,9 @@ industry = IndustrySecondary(id='brewery',
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].name = 'string(STR_IND_CIDER_MILL)'
 industry.economy_variations['BASIC_TEMPERATE'].accept_cargos_with_input_ratios = [('FRUT', 6)]
+
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('FRUT', 4), ('MAIZ',4)]

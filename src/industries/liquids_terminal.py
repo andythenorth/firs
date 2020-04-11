@@ -14,6 +14,10 @@ industry = IndustryPrimaryPort(id='liquids_terminal',
                                fund_cost_multiplier='152',
                                override_default_construction_states=True)
 
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargo_types = []
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_multipliers = [('OIL_', 20)]
+
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['EOIL', 'OIL_']

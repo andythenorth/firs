@@ -18,6 +18,8 @@ industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['BOOM', 'PEAT', 'WDPR']
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('POTA', 19), ('ENSP', 9), ('FMSP', 9)]
 
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+
 # in Steeltown, there is a deliberate feedback loop with ZINC -> PIPE -> wharf
 # this is to allow an easy kickstart of ENSP at the wharf, when all other chains are so tightly connected
 industry.economy_variations['STEELTOWN'].enabled = True

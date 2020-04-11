@@ -12,6 +12,8 @@ industry = IndustryPrimaryExtractive(id='clay_pit',
                                      nearby_station_name='string(STR_STATION_PIT)',
                                      fund_cost_multiplier='200')
 
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_multipliers = [('CLAY', 16)]
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types_with_multipliers = [('KAOL', 16)]

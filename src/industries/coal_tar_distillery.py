@@ -2,18 +2,18 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='coal_tar_distillery',
                              accept_cargos_with_input_ratios=[('CTAR', 6), ('LYE_', 2)],
-                             prod_cargo_types_with_output_ratios=[('CBLK', 4), ('PETR', 4)],
+                             prod_cargo_types_with_output_ratios=[('CBLK', 1), ('PETR', 4), ('SULP', 2)], # creosote?
                              prob_in_game='3',
                              prob_map_gen='5',
                              map_colour='16',
                              special_flags=['IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE'],
-                             # it's rare to force co-location of secondaries, but this one is near blast furnace by design
+                             # it's rare to force co-location of secondaries, but this one is near coke oven by design
                              location_checks=dict(industry_max_distance=['coke_oven', 72], same_type_distance=72),
                              name='string(STR_IND_COAL_TAR_DISTILLERY)',
                              nearby_station_name='string(STR_STATION_PHENOLS)',
                              fund_cost_multiplier='120')
 
-industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(id='coal_tar_distillery_tile_1',
                   animation_length=7,

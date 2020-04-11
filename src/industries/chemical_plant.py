@@ -20,6 +20,12 @@ industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargos_with_input_ratios = [('SULP', 2), ('PHOS', 2), ('NH3_', 2), ('POTA', 2)]
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_output_ratios = [('FERT', 4), ('BOOM', 4)]
 
+# should be Specialty Chemicals Plant, and should also accept ACID??
+# also this should not be forced to be near port in BLTC
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('SASH', 2), ('LYE_', 2), ('NH3_', 2), ('CHLO', 2)]
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_output_ratios = [('SOAP', 2), ('COAT', 2)]
+
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('SULP', 2), ('PHOS', 2), ('NH3_', 2), ('POTA', 2)]

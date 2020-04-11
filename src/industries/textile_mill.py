@@ -1,8 +1,9 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='textile_mill',
-                             accept_cargos_with_input_ratios=[('WOOL', 6), ('FICR', 6)],
-                             prod_cargo_types_with_output_ratios=[('GOOD', 8)],
+                             accept_cargos_with_input_ratios=[('FICR', 6)],
+                             combined_cargos_boost_prod=True,
+                             prod_cargo_types_with_output_ratios=[('TEXT', 8)],
                              prob_in_game='3',
                              prob_map_gen='5',
                              map_colour='37',
@@ -10,6 +11,8 @@ industry = IndustrySecondary(id='textile_mill',
                              nearby_station_name='string(STR_STATION_WEAVE_AND_DYE)',
                              fund_cost_multiplier='120')
 
+
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

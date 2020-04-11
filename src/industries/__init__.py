@@ -1,10 +1,9 @@
 registered_industries = []
 
 # keep these alphabetised for ease of maintaining
-"""
+
 from industries import aluminium_plant
 aluminium_plant.industry.register()
-"""
 
 """
 from industries import ammonia_plant
@@ -48,10 +47,8 @@ bulk_terminal.industry.register()
 from industries import carbon_black_plant
 carbon_black_plant.industry.register()
 
-"""
 from industries import cement_plant
 cement_plant.industry.register()
-"""
 
 from industries import chemical_plant
 chemical_plant.industry.register()
@@ -69,6 +66,9 @@ clay_pit.industry.register()
 
 from industries import coal_mine
 coal_mine.industry.register()
+
+from industries import coal_tar_distillery
+coal_tar_distillery.industry.register()
 
 from industries import coffee_estate
 coffee_estate.industry.register()
@@ -109,6 +109,9 @@ electric_arc_furnace.industry.register()
 
 from industries import engine_plant
 engine_plant.industry.register()
+
+from industries import ethylene_cracker
+ethylene_cracker.industry.register()
 
 from industries import factory
 factory.industry.register()
@@ -195,15 +198,11 @@ lime_kiln.industry.register()
 from industries import limestone_mine
 limestone_mine.industry.register()
 
-"""
 from industries import liquids_terminal
 liquids_terminal.industry.register()
-"""
 
-"""
 from industries import lumber_yard
 lumber_yard.industry.register()
-"""
 
 """
 from industries import machine_shop
@@ -234,10 +233,8 @@ from industries import oil_wells
 oil_wells.industry.register()
 """
 
-"""
 from industries import oil_refinery
 oil_refinery.industry.register()
-"""
 
 """
 from industries import oil_rig
@@ -261,10 +258,8 @@ petrol_pump.industry.register()
 from industries import phosphate_mine
 phosphate_mine.industry.register()
 
-"""
 from industries import plastics_plant
 plastics_plant.industry.register()
-"""
 
 from industries import port
 port.industry.register()
@@ -340,15 +335,11 @@ from industries import supply_yard
 supply_yard.industry.register()
 """
 
-"""
 from industries import textile_mill
 textile_mill.industry.register()
-"""
 
-"""
 from industries import tinplate_works
 tinplate_works.industry.register()
-"""
 
 """
 from industries import trading_post

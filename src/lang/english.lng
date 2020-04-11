@@ -24,6 +24,7 @@ STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Temperate Basic
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Arctic Basic
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tropic Basic
+STR_PARAM_VALUE_ECONOMIES_BETTER_LIVING_THROUGH_CHEMISTRY                       :Better Living Through Chemistry
 STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                      :In A Hot Country
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Steeltown
 
@@ -53,6 +54,7 @@ STR_CARGO_NAME_COPPER_CONCENTRATE                                               
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Edible Oil
 STR_CARGO_NAME_ELECTRICAL_PARTS                                                 :Electrical Parts
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Engineering Supplies
+STR_CARGO_NAME_ETHYLENE                                                         :Ethylene
 STR_CARGO_NAME_EXPLOSIVES                                                       :Explosives
 STR_CARGO_NAME_FERROCHROME                                                      :Ferrochrome
 STR_CARGO_NAME_FIBRES                                                           :Plant Fibres
@@ -139,6 +141,7 @@ STR_CARGO_UNIT_COPPER_CONCENTRATE                                               
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} of edible oil
 STR_CARGO_UNIT_ELECTRICAL_PARTS                                                 :{WEIGHT} of electrical parts
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crate{P 0 "" s} of engineering supplies
+STR_CARGO_UNIT_ETHYLENE                                                         :{VOLUME} of ethylene
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} crate{P 0 "" s} of explosives
 STR_CARGO_UNIT_FERROCHROME                                                      :{WEIGHT} of ferrochrome
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} of fertiliser
@@ -319,6 +322,7 @@ STR_IND_CHEMICAL_PLANT                                                          
 STR_IND_CHLOR_ALKALI_PLANT                                                      :Chlor-alkali Plant
 STR_IND_CHROMITE_MINE                                                           :Chromite Mine
 STR_IND_CLAY_PIT                                                                :Clay Pit
+STR_IND_COAL_TAR_DISTILLERY                                                     :Coal Tar Distillery
 STR_IND_COFFEE_ESTATE                                                           :Coffee Estate
 STR_IND_COKE_OVEN                                                               :Coke Oven
 STR_IND_COPPER_CONCENTRATOR                                                     :Copper Concentrator
@@ -329,6 +333,7 @@ STR_IND_DAIRY_FARM                                                              
 STR_IND_DREDGING_SITE                                                           :Dredging Site
 STR_IND_ELECTRIC_ARC_FURNACE                                                    :Electric Arc Furnace
 STR_IND_ENGINE_PLANT                                                            :Engine plant
+STR_IND_ETHYLENE_CRACKER                                                        :Ethylene Cracker
 STR_IND_FACTORY                                                                 :Component Factory
 STR_IND_FERROCHROME_SMELTER                                                     :Ferrochrome Smelter
 STR_IND_FISCHER_TROPSCH_PLANT                                                   :Fischer-Tropsch Plant
@@ -362,7 +367,7 @@ STR_IND_ORCHARD_PIGGERY                                                         
 STR_IND_PEATLANDS                                                               :Peatlands
 STR_IND_PETROLPUMP                                                              :Petrol Station
 STR_IND_PHOSPHATE_MINE                                                          :Phosphate Mine
-STR_IND_PLASTICS_PLANT                                                          :Plastics Plant
+STR_IND_PLASTICS_PLANT                                                          :Polymer Plant
 STR_IND_PORT                                                                    :Port
 STR_IND_POTASH_MINE                                                             :Potash Mine
 STR_IND_PYRITE_MINE                                                             :Pyrite Mine
@@ -466,6 +471,7 @@ STR_STATION_MINE                                                                
 STR_STATION_MOULDINGS                                                           :Mouldings
 STR_STATION_OIL_RIG                                                             :Field
 STR_STATION_ORCHARDS                                                            :Orchards
+STR_STATION_PHENOLS                                                             :Phenols
 STR_STATION_PIT                                                                 :Pit
 STR_STATION_PLANTATION                                                          :Plantation
 STR_STATION_POWERHUNGRY                                                         :Power Plant

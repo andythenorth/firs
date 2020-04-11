@@ -3,13 +3,15 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(id='lumber_yard',
                              accept_cargos_with_input_ratios=[('WDPR', 6), ('RFPR', 2)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types_with_output_ratios=[('ENSP', 4), ('BDMT', 4)],
+                             prod_cargo_types_with_output_ratios=[],
                              prob_in_game='3',
                              prob_map_gen='5',
                              map_colour='43',
                              name='string(STR_IND_LUMBER_YARD)',
                              nearby_station_name='string(STR_STATION_CREOSOTING)',
                              fund_cost_multiplier='35')
+
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
