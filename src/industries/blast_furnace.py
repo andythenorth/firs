@@ -7,7 +7,7 @@ industry = IndustrySecondary(id='blast_furnace',
                              prob_in_game='3',
                              prob_map_gen='5',
                              map_colour='10',
-                             name='STR_IND_BLAST_FURNACE',
+                             name='string(STR_IND_BLAST_FURNACE)',
                              nearby_station_name='string(STR_STATION_FURNACE)',
                              fund_cost_multiplier='190',
                              intro_year=1850)

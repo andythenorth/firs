@@ -108,7 +108,7 @@ industry.add_spritelayout(
 )
 
 industry.add_industry_layout(
-    id='factory_industry_layout_1',
+    id='factory_1_industry_layout_1',
     layout=[(0, 0, 'factory_1_tile_1', 'factory_1_spritelayout_3'),
             (0, 1, 'factory_1_tile_1', 'factory_1_spritelayout_3'),
             (0, 2, 'factory_1_tile_1', 'factory_1_spritelayout_5'),
@@ -127,7 +127,7 @@ industry.add_industry_layout(
             ]
 )
 industry.add_industry_layout(
-    id='factory_industry_layout_2',
+    id='factory_1_industry_layout_2',
     layout=[(0, 2, 'factory_1_tile_1', 'factory_1_spritelayout_3'),
             (0, 3, 'factory_1_tile_1', 'factory_1_spritelayout_3'),
             (1, 0, 'factory_1_tile_1', 'factory_1_spritelayout_1'),
