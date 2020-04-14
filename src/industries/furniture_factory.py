@@ -1,8 +1,8 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='furniture_factory',
-                             accept_cargos_with_input_ratios=[('WDPR', 6)],
-                             prod_cargo_types_with_output_ratios=[('GOOD', 8)],
+                             accept_cargos_with_input_ratios=[('WDPR', 6), ('COAT', 2)],
+                             prod_cargo_types_with_output_ratios=[('FURN', 8)],
                              prob_in_game='7',
                              prob_map_gen='8',
                              map_colour='186',
@@ -10,7 +10,7 @@ industry = IndustrySecondary(id='furniture_factory',
                              nearby_station_name='string(STR_STATION_JOINERS_SHOP)',
                              fund_cost_multiplier='95')
 
-#industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(id='furniture_factory_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,

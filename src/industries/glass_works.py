@@ -1,9 +1,9 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='glass_works',
-                             accept_cargos_with_input_ratios=[('SAND', 6), ('RFPR', 2)],
+                             accept_cargos_with_input_ratios=[('SAND', 6), ('SASH', 2)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types_with_output_ratios=[('GOOD', 8)],
+                             prod_cargo_types_with_output_ratios=[('GLAS', 8)],
                              prob_in_game='3',
                              prob_map_gen='5',
                              map_colour='151',
@@ -13,6 +13,7 @@ industry = IndustrySecondary(id='glass_works',
                              fund_cost_multiplier='95')
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].accept_cargos_with_input_ratios = [('SAND', 6), ('RFPR', 2)]
 industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types_with_output_ratios = [('GOOD', 8)]
 
 industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
@@ -23,8 +24,6 @@ industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_rat
 """
 
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].accept_cargos_with_input_ratios = [('SAND', 6), ('SASH', 2)]
-industry.economy_variations['STEELTOWN'].prod_cargo_types_with_output_ratios = [('GLAS', 8)]
 
 industry.add_tile(id='glass_works_tile_1',
                   animation_length=71,

@@ -5,10 +5,8 @@ registered_industries = []
 from industries import aluminium_plant
 aluminium_plant.industry.register()
 
-"""
 from industries import ammonia_plant
 ammonia_plant.industry.register()
-"""
 
 from industries import arable_farm
 arable_farm.industry.register()
@@ -76,6 +74,9 @@ coffee_estate.industry.register()
 from industries import coke_oven
 coke_oven.industry.register()
 
+from industries import component_factory
+component_factory.industry.register()
+
 from industries import copper_mine
 copper_mine.industry.register()
 
@@ -113,8 +114,14 @@ engine_plant.industry.register()
 from industries import ethylene_cracker
 ethylene_cracker.industry.register()
 
-from industries import factory
-factory.industry.register()
+from industries import factory_1
+factory_1.industry.register()
+
+from industries import factory_2
+factory_2.industry.register()
+
+from industries import factory_3
+factory_3.industry.register()
 
 """"
 from industries import ferrochrome_smelter
@@ -149,15 +156,11 @@ fishing_harbour.industry.register()
 from industries import forest
 forest.industry.register()
 
-"""
 from industries import fruit_plantation
 fruit_plantation.industry.register()
-"""
 
-"""
 from industries import furniture_factory
 furniture_factory.industry.register()
-"""
 
 from industries import general_store
 general_store.industry.register()
@@ -165,10 +168,8 @@ general_store.industry.register()
 from industries import glass_works
 glass_works.industry.register()
 
-"""
 from industries import hardware_store
 hardware_store.industry.register()
-"""
 
 from industries import hotel
 hotel.industry.register()
@@ -198,8 +199,10 @@ lime_kiln.industry.register()
 from industries import limestone_mine
 limestone_mine.industry.register()
 
+"""
 from industries import liquids_terminal
 liquids_terminal.industry.register()
+"""
 
 from industries import lumber_yard
 lumber_yard.industry.register()
@@ -300,13 +303,19 @@ from industries import rubber_plantation
 rubber_plantation.industry.register()
 """
 
+from industries import salt_mine
+salt_mine.industry.register()
+
+from industries import sawmill
+sawmill.industry.register()
+
 """
 from industries import sheep_farm
 sheep_farm.industry.register()
 """
 
-from industries import sawmill
-sawmill.industry.register()
+from industries import sheet_and_pipe_mill
+sheet_and_pipe_mill.industry.register()
 
 from industries import slag_grinding_plant
 slag_grinding_plant.industry.register()
@@ -314,26 +323,25 @@ slag_grinding_plant.industry.register()
 from industries import soda_ash_mine
 soda_ash_mine.industry.register()
 
+from industries import solvay_plant
+solvay_plant.industry.register()
+
 """
 from industries import smithy_forge
 smithy_forge.industry.register()
 """
 
-from industries import steel_finishing_plant
-steel_finishing_plant.industry.register()
+from industries import steel_mill
+steel_mill.industry.register()
 
 from industries import stockyard
 stockyard.industry.register()
 
-"""
 from industries import sugar_refinery
 sugar_refinery.industry.register()
-"""
 
-"""
 from industries import supply_yard
 supply_yard.industry.register()
-"""
 
 from industries import textile_mill
 textile_mill.industry.register()

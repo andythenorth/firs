@@ -18,6 +18,8 @@ industry = IndustryTertiary(id='power_plant',
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PEAT']
 
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+
 industry.add_tile(id='power_plant_tile_1',
                   animation_length=7,
                   animation_looping=True,

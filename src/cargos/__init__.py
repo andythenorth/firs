@@ -10,6 +10,9 @@ alcohol.cargo.register()
 from cargos import alloy_steel
 alloy_steel.cargo.register()
 
+from cargos import aluminia
+aluminia.cargo.register()
+
 from cargos import aluminium
 aluminium.cargo.register()
 
@@ -123,6 +126,9 @@ fish.cargo.register()
 from cargos import food
 food.cargo.register()
 
+from cargos import food_additives
+food_additives.cargo.register()
+
 """
 from cargos import formic_acid
 formic_acid.cargo.register()
@@ -130,6 +136,9 @@ formic_acid.cargo.register()
 
 from cargos import fruits
 fruits.cargo.register()
+
+from cargos import furniture
+furniture.cargo.register()
 
 from cargos import glass
 glass.cargo.register()
@@ -197,10 +206,8 @@ oil.cargo.register()
 from cargos import oxygen
 oxygen.cargo.register()
 
-"""
 from cargos import packaging
 packaging.cargo.register()
-"""
 
 from cargos import paints_and_coatings
 paints_and_coatings.cargo.register()
@@ -304,10 +311,8 @@ textiles.cargo.register()
 from cargos import tin
 tin.cargo.register()
 
-"""
-from cargos import tin_mill_black_plate
-tin_mill_black_plate.cargo.register()
-"""
+from cargos import tinplate
+tinplate.cargo.register()
 
 from cargos import tyres
 tyres.cargo.register()

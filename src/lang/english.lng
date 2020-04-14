@@ -32,6 +32,7 @@ STR_CARGO_NAME_ACID                                                             
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
 STR_CARGO_NAME_ALLOY_STEEL                                                      :Alloy Steel
 STR_CARGO_NAME_ALUMINIUM                                                        :Aluminium
+STR_CARGO_NAME_ALUMINIA                                                         :Aluminia
 STR_CARGO_NAME_AMMONIA                                                          :Ammonia
 STR_CARGO_NAME_BAUXITE                                                          :Bauxite
 STR_CARGO_NAME_BEANS                                                            :Beans
@@ -61,8 +62,10 @@ STR_CARGO_NAME_FIBRES                                                           
 STR_CARGO_NAME_FISH                                                             :Fish
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Farm Supplies
 STR_CARGO_NAME_FERTILISER                                                       :Fertiliser
+STR_CARGO_NAME_FOOD_ADDITIVES                                                   :Food Additives
 STR_CARGO_NAME_FORMIC_ACID                                                      :Formic Acid
 STR_CARGO_NAME_FRUITS                                                           :Fruit
+STR_CARGO_NAME_FURNITURE                                                        :Furniture
 STR_CARGO_NAME_GLASS                                                            :Glass
 STR_CARGO_NAME_KAOLIN                                                           :Kaolin
 STR_CARGO_NAME_LIMESTONE                                                        :Limestone
@@ -104,7 +107,7 @@ STR_CARGO_NAME_SUGAR_BEET                                                       
 STR_CARGO_NAME_SULPHUR                                                          :Sulphur
 STR_CARGO_NAME_TEXTILES                                                         :Textiles
 STR_CARGO_NAME_TIN                                                              :Tin
-STR_CARGO_NAME_TIN_MILL_BLACK_PLATE                                             :Tin Mill Black Plate
+STR_CARGO_NAME_TINPLATE                                                         :Tinplate
 STR_CARGO_NAME_TYRES                                                            :Tyres
 STR_CARGO_NAME_UREA                                                             :Urea
 STR_CARGO_NAME_VEHICLE_BODIES                                                   :Vehicle Bodies
@@ -118,6 +121,7 @@ STR_CARGO_NAME_ZINC                                                             
 STR_CARGO_UNIT_ACID                                                             :{VOLUME} of acid
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} of alcohol
 STR_CARGO_UNIT_ALLOY_STEEL                                                      :{WEIGHT} of alloy steel
+STR_CARGO_UNIT_ALUMINIA                                                         :{WEIGHT} of aluminia
 STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} of aluminium
 STR_CARGO_UNIT_AMMONIA                                                          :{VOLUME} of ammonia
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} of bauxite
@@ -191,7 +195,7 @@ STR_CARGO_UNIT_SUGAR_BEET                                                       
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} of sulphur
 STR_CARGO_UNIT_TEXTILES                                                         :{WEIGHT} of textiles
 STR_CARGO_UNIT_TIN                                                              :{WEIGHT} of tin
-STR_CARGO_UNIT_TIN_MILL_BLACK_PLATE                                             :{WEIGHT} of tin mill plack plate
+STR_CARGO_UNIT_TINPLATE                                                         :{WEIGHT} of tinplate
 STR_CARGO_UNIT_TYRES                                                            :{WEIGHT} of tyres
 STR_CARGO_UNIT_UREA                                                             :{WEIGHT} of urea
 STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} of vehicle bodies
@@ -205,6 +209,7 @@ STR_CARGO_UNIT_ZINC                                                             
 STR_CID_ACID                                                                    :{TINYFONT}AC
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_ALLOY_STEEL                                                             :{TINYFONT}AS
+STR_CID_ALUMINIA                                                                :{TINYFONT}AA
 STR_CID_ALUMINIUM                                                               :{TINYFONT}AM
 STR_CID_AMMONIA                                                                 :{TINYFONT}AO
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
@@ -228,6 +233,7 @@ STR_CID_COPPER_CONCENTRATE                                                      
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
 STR_CID_ELECTRICAL_PARTS                                                        :{TINYFONT}EP
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
+STR_CID_ETHYLENE                                                                :{TINYFONT}EY
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}EX
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
 STR_CID_FERROCHROME                                                             :{TINYFONT}FC
@@ -276,7 +282,7 @@ STR_CID_STEEL_SHEET                                                             
 STR_CID_STEEL_WIRE_ROD                                                          :{TINYFONT}SW
 STR_CID_TEXTILES                                                                :{TINYFONT}TX
 STR_CID_TIN                                                                     :{TINYFONT}TI
-STR_CID_TIN_MILL_BLACK_PLATE                                                    :{TINYFONT}TB
+STR_CID_TINPLATE                                                                :{TINYFONT}TP
 STR_CID_TYRES                                                                   :{TINYFONT}TY
 STR_CID_UREA                                                                    :{TINYFONT}UR
 STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}VB
@@ -325,6 +331,7 @@ STR_IND_CLAY_PIT                                                                
 STR_IND_COAL_TAR_DISTILLERY                                                     :Coal Tar Distillery
 STR_IND_COFFEE_ESTATE                                                           :Coffee Estate
 STR_IND_COKE_OVEN                                                               :Coke Oven
+STR_IND_COMPONENT_FACTORY                                                       :Component Factory
 STR_IND_COPPER_CONCENTRATOR                                                     :Copper Concentrator
 STR_IND_COPPER_REFINERY                                                         :Copper Smelter
 STR_IND_CRYO_PLANT                                                              :Cryo Plant
@@ -334,8 +341,10 @@ STR_IND_DREDGING_SITE                                                           
 STR_IND_ELECTRIC_ARC_FURNACE                                                    :Electric Arc Furnace
 STR_IND_ENGINE_PLANT                                                            :Engine plant
 STR_IND_ETHYLENE_CRACKER                                                        :Ethylene Cracker
-STR_IND_FACTORY                                                                 :Component Factory
 STR_IND_FERROCHROME_SMELTER                                                     :Ferrochrome Smelter
+STR_IND_FACTORY_1                                                               :Factory 1
+STR_IND_FACTORY_2                                                               :Factory 2
+STR_IND_FACTORY_3                                                               :Factory 3
 STR_IND_FISCHER_TROPSCH_PLANT                                                   :Fischer-Tropsch Plant
 STR_IND_FISH_FARM                                                               :Fish Farm
 STR_IND_FISHING_GROUND                                                          :Fishing Grounds
@@ -378,11 +387,14 @@ STR_IND_RANCH                                                                   
 STR_IND_RECYCLING_DEPOT                                                         :Recycling Depot
 STR_IND_RECYCLING_PLANT                                                         :Recycling Plant
 STR_IND_REINDEER_FARM                                                           :Reindeer Farm
+STR_IND_SALT_MINE                                                               :Salt Mine
 STR_IND_SHEEPFARM                                                               :Sheep Farm
 STR_IND_SLAG_GRINDING_PLANT                                                     :Slag Grinding Plant
 STR_IND_SMITHY_FORGE                                                            :Smithy Forge
 STR_IND_SODA_ASH_MINE                                                           :Soda Ash Mine
-STR_IND_STEEL_FINISHING_PLANT                                                   :Sheet and Pipe Mill
+STR_IND_SOLVAY_PLANT                                                            :Solvay Plant
+STR_IND_STEEL_MILL                                                              :Steel Mill
+STR_IND_SHEET_AND_PIPE_MILL                                                     :Sheet and Pipe Mill
 STR_IND_STOCKYARD                                                               :Stockyard
 STR_IND_SUGAR_REFINERY                                                          :Sugar Refinery
 STR_IND_SUPPLY_YARD                                                             :Supply Yard

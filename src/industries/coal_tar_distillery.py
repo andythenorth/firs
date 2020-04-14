@@ -25,121 +25,123 @@ industry.add_tile(id='coal_tar_distillery_tile_1',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    type='cobble',
+    type='concrete',
 )
 spriteset_ground_overlay = industry.add_spriteset(
     type='empty',
 )
 
-spriteset_1 = industry.add_spriteset(
-    sprites=[(10, 10, 64, 101, -31, -64)],
+spriteset_boiler = industry.add_spriteset(
+    sprites=[(10, 10, 64, 114, -31, -83)],
 )
-spriteset_2 = industry.add_spriteset(
-    sprites=[(80, 10, 64, 101, -31, -59)],
+spriteset_chimneys = industry.add_spriteset(
+    sprites=[(80, 10, 64, 114, -31, -83)],
 )
-spriteset_3 = industry.add_spriteset(
-    sprites=[(150, 10, 64, 101, -31, -71)],
+spriteset_tanks_group = industry.add_spriteset(
+    sprites=[(150, 10, 64, 114, -31, -83)],
 )
-spriteset_4 = industry.add_spriteset(
-    sprites=[(220, 10, 64, 101, -31, -69)],
+spriteset_silos = industry.add_spriteset(
+    sprites=[(220, 10, 64, 114, -31, -83)],
 )
-spriteset_sand_staithe = industry.add_spriteset(
-    sprites=[(290, 10, 64, 31, -31, 0)],
+spriteset_silos_with_office = industry.add_spriteset(
+    sprites=[(290, 10, 64, 114, -31, -83)],
 )
-spriteset_clay_staithe = industry.add_spriteset(
-    sprites=[(360, 10, 64, 31, -31, 0)],
-)
-sprite_smoke_boilerhouse = industry.add_smoke_sprite(
+sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type='white_smoke_big',
-    xoffset=8,
+    xoffset=9,
     yoffset=0,
-    zoffset=70,
+    zoffset=87,
 )
-sprite_smoke_kiln = industry.add_smoke_sprite(
+sprite_smoke_2 = industry.add_smoke_sprite(
     smoke_type='white_smoke_big',
-    xoffset=0,
-    yoffset=8,
-    zoffset=58,
+    xoffset=2,
+    yoffset=6,
+    zoffset=71,
+)
+sprite_smoke_3 = industry.add_smoke_sprite(
+    smoke_type='white_smoke_big',
+    xoffset=5,
+    yoffset=6,
+    zoffset=71,
 )
 
 industry.add_spritelayout(
-    id='coal_tar_distillery_spritelayout_1',
+    id='coal_tar_distillery_spritelayout_empty',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_1],
-    smoke_sprites=[sprite_smoke_boilerhouse],
+    building_sprites=[],
+)
+industry.add_spritelayout(
+    id='coal_tar_distillery_spritelayout_boiler',
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_boiler],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
-    id='coal_tar_distillery_spritelayout_2',
+    id='coal_tar_distillery_spritelayout_chimneys',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_2],
+    building_sprites=[spriteset_chimneys],
+    smoke_sprites=[sprite_smoke_1, sprite_smoke_2, sprite_smoke_3],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
-    id='coal_tar_distillery_spritelayout_3',
+    id='coal_tar_distillery_spritelayout_tanks_group',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_3],
-    smoke_sprites=[sprite_smoke_kiln],
+    building_sprites=[spriteset_tanks_group],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
-    id='coal_tar_distillery_spritelayout_4',
+    id='coal_tar_distillery_spritelayout_silos',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_4],
+    building_sprites=[spriteset_silos],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
-    id='coal_tar_distillery_spritelayout_sand_staithe',
+    id='coal_tar_distillery_spritelayout_silos_with_office',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_sand_staithe],
-    fences=['nw', 'ne', 'se', 'sw']
-)
-industry.add_spritelayout(
-    id='coal_tar_distillery_spritelayout_clay_staithe',
-    ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_clay_staithe],
+    building_sprites=[spriteset_silos_with_office],
     fences=['nw', 'ne', 'se', 'sw']
 )
 
 industry.add_industry_layout(
     id='coal_tar_distillery_industry_layout_1',
-    layout=[(0, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_4'),
-            (0, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_4'),
-            (1, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_3'),
-            (1, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_3'),
-            (2, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_2'),
-            (2, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_1'),
-            (3, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_clay_staithe'),
-            (3, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_sand_staithe'),
+    layout=[(0, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_chimneys'),
+            (0, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_boiler'),
+            (0, 2, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_tanks_group'),
+            (1, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_chimneys'),
+            (1, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_boiler'),
+            (1, 2, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_tanks_group'),
+            (2, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_silos_with_office'),
+            (2, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_silos'),
+            (2, 2, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_empty'),
             ]
 )
 industry.add_industry_layout(
     id='coal_tar_distillery_industry_layout_2',
-    layout=[(0, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_4'),
-            (0, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_4'),
-            (1, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_3'),
-            (1, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_3'),
-            (2, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_2'),
-            (2, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_clay_staithe'),
-            (3, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_1'),
-            (3, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_sand_staithe'),
+    layout=[(0, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_boiler'),
+            (0, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_tanks_group'),
+            (1, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_boiler'),
+            (1, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_tanks_group'),
+            (2, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_chimneys'),
+            (2, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_silos'),
+            (3, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_silos_with_office'),
+            (3, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_empty'),
             ]
 )
 industry.add_industry_layout(
     id='coal_tar_distillery_industry_layout_3',
-    layout=[(0, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_4'),
-            (0, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_4'),
-            (0, 2, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_1'),
-            (0, 3, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_clay_staithe'),
-            (1, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_3'),
-            (1, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_3'),
-            (1, 2, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_2'),
-            (1, 3, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_sand_staithe'),
+    layout=[(0, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_boiler'),
+            (0, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_tanks_group'),
+            (0, 2, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_chimneys'),
+            (0, 3, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_silos'),
+            (1, 0, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_boiler'),
+            (1, 1, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_tanks_group'),
+            (1, 2, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_silos_with_office'),
+            (1, 3, 'coal_tar_distillery_tile_1', 'coal_tar_distillery_spritelayout_empty'),
             ]
 )

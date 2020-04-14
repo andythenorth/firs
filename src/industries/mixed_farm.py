@@ -1,7 +1,7 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='mixed_farm',
-                                  prod_cargo_types_with_multipliers=[('FOOD', 14)],
+                                  prod_cargo_types_with_multipliers=[],
                                   prob_in_game='3',
                                   prob_map_gen='11',
                                   map_colour='85',
@@ -20,6 +20,9 @@ industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multiplier
 #industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('MAIZ', 14), ('LVST', 13), ('NUTS', 14), ('WOOL', 10)]
 industry.economy_variations['IN_A_HOT_COUNTRY'].prob_map_gen = '14'
 """
+
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_multipliers = [('GRAI', 14), ('LVST', 13)]
 
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].name = 'string(STR_IND_BASICFARM)'

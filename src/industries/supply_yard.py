@@ -1,7 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='supply_yard',
-                             accept_cargos_with_input_ratios=[('BOOM', 8), ('GOOD', 8)],
+                             accept_cargos_with_input_ratios=[],
                              prod_cargo_types_with_output_ratios=[('ENSP', 4), ('FMSP', 4)],
                              prob_in_game='3',
                              prob_map_gen='5',
@@ -10,6 +10,9 @@ industry = IndustrySecondary(id='supply_yard',
                              nearby_station_name='string(STR_STATION_BASE)',
                              fund_cost_multiplier='110',
                              intro_year=1800)
+
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('VEHI', 8), ('PETR', 8)]
 
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
