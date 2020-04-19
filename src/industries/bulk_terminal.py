@@ -24,8 +24,8 @@ industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multiplier
 """
 
 industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargo_types = ['RUBR']
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_multipliers = [('ALO_', 16), ('OIL_', 20)]
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargo_types = []
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_multipliers = [('OIL_', 20), ('POTA', 12), ('PHOS', 12)]
 
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['CHLO', 'FOOD']

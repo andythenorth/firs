@@ -54,6 +54,9 @@ chemical_plant.industry.register()
 from industries import chlor_alkali_plant
 chlor_alkali_plant.industry.register()
 
+from industries import civil_explosives_facility
+civil_explosives_facility.industry.register()
+
 """
 from industries import chromite_mine
 chromite_mine.industry.register()
@@ -127,6 +130,9 @@ factory_3.industry.register()
 from industries import ferrochrome_smelter
 ferrochrome_smelter.industry.register()
 """
+
+from industries import fertiliser_plant
+fertiliser_plant.industry.register()
 
 """
 from industries import fischer_tropsch_plant
@@ -261,6 +267,9 @@ petrol_pump.industry.register()
 from industries import phosphate_mine
 phosphate_mine.industry.register()
 
+from industries import phosphoric_acid_plant
+phosphoric_acid_plant.industry.register()
+
 from industries import plastics_plant
 plastics_plant.industry.register()
 
@@ -337,8 +346,10 @@ steel_mill.industry.register()
 from industries import stockyard
 stockyard.industry.register()
 
+"""
 from industries import sugar_refinery
 sugar_refinery.industry.register()
+"""
 
 from industries import supply_yard
 supply_yard.industry.register()

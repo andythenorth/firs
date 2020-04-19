@@ -3,7 +3,7 @@ from industry import IndustrySecondary, TileLocationChecks
 # !! Window / glazing factory?
 # !! layout names will need set correctly
 industry = IndustrySecondary(id='factory_1',
-                             accept_cargos_with_input_ratios=[('GLAS', 2), ('STSE', 2), ('PLAS', 2)],
+                             accept_cargos_with_input_ratios=[('GLAS', 2), ('STEL', 2), ('PLAS', 2)],
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[],
                              prob_in_game='7',

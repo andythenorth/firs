@@ -19,6 +19,9 @@ aluminium.cargo.register()
 from cargos import ammonia
 ammonia.cargo.register()
 
+from cargos import ammonium_nitrate
+ammonium_nitrate.cargo.register()
+
 """
 from cargos import bauxite
 bauxite.cargo.register()
@@ -186,6 +189,9 @@ metal.cargo.register()
 from cargos import milk
 milk.cargo.register()
 
+from cargos import naphtha
+naphtha.cargo.register()
+
 """
 # unused currently
 from cargos import nickel
@@ -226,6 +232,9 @@ petrol.cargo.register()
 
 from cargos import phosphate
 phosphate.cargo.register()
+
+from cargos import phosphoric_acid
+phosphoric_acid.cargo.register()
 
 from cargos import pig_iron
 pig_iron.cargo.register()
@@ -294,10 +303,8 @@ steel_sheet.cargo.register()
 from cargos import steel_wire_rod
 steel_wire_rod.cargo.register()
 
-"""
 from cargos import stone
 stone.cargo.register()
-"""
 
 from cargos import sulphur
 sulphur.cargo.register()

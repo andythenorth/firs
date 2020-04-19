@@ -104,14 +104,23 @@ industry_numeric_ids = dict(coal_mine = 0,
                             factory_3 = 102,
                             sheet_and_pipe_mill = 103,
                             solvay_plant = 104,
-                            salt_mine = 105)
+                            salt_mine = 105,
+                            fertiliser_plant = 106,
+                            civil_explosives_facility = 107,
+                            phosphoric_acid_plant = 108,)
 #127 is last ID to be used (128 industry limit, zero-based)
 # see also why 128 is a hard limit as of 2020 http://webster.openttdcoop.org/?channel=openttd&date=1586563200#1586641232
 
 
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
-tile_numeric_ids = dict(salt_mine_tile_1 = 100,
+tile_numeric_ids = dict(phosphoric_acid_plant_tile_1 = 94,
+                        phosphoric_acid_plant_tile_2 = 95,
+                        civil_explosives_facility_tile_1 = 96,
+                        civil_explosives_facility_tile_2 = 97,
+                        fertiliser_plant_tile_2 = 98,
+                        fertiliser_plant_tile_1 = 99,
+                        salt_mine_tile_1 = 100,
                         salt_mine_tile_2 = 101,
                         solvay_plant_tile_1 = 102,
                         solvay_plant_tile_2 = 103,
