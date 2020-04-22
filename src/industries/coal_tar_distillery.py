@@ -2,7 +2,7 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='coal_tar_distillery',
                              accept_cargos_with_input_ratios=[('CTAR', 6), ('LYE_', 2)],
-                             prod_cargo_types_with_output_ratios=[('CBLK', 1), ('PETR', 4), ('SULP', 2)], # creosote?
+                             prod_cargo_types_with_output_ratios=[], # creosote?
                              prob_in_game='3',
                              prob_map_gen='5',
                              map_colour='16',

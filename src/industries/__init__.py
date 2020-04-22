@@ -351,6 +351,9 @@ from industries import sugar_refinery
 sugar_refinery.industry.register()
 """
 
+from industries import sulphuric_acid_plant
+sulphuric_acid_plant.industry.register()
+
 from industries import supply_yard
 supply_yard.industry.register()
 

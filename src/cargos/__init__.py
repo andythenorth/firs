@@ -152,6 +152,9 @@ goods.cargo.register()
 from cargos import grain
 grain.cargo.register()
 
+from cargos import hydrochloric_acid
+hydrochloric_acid.cargo.register()
+
 from cargos import iron_ore
 iron_ore.cargo.register()
 
@@ -308,6 +311,9 @@ stone.cargo.register()
 
 from cargos import sulphur
 sulphur.cargo.register()
+
+from cargos import sulphuric_acid
+sulphuric_acid.cargo.register()
 
 from cargos import sugar_beet
 sugar_beet.cargo.register()

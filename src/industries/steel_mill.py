@@ -1,7 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='steel_mill',
-                             accept_cargos_with_input_ratios=[('IORE', 2), ('COKE', 2), ('LIME', 2), ('ACID', 1), ('O2__', 1)],
+                             accept_cargos_with_input_ratios=[('IORE', 2), ('COKE', 2), ('LIME', 2), ('HYAC', 1), ('O2__', 1)],
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[('STEL', 8)],
                              prob_in_game='3',
