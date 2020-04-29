@@ -237,10 +237,8 @@ mixed_farm.industry.register()
 from industries import nitrate_mine
 nitrate_mine.industry.register()
 
-"""
 from industries import oil_wells
 oil_wells.industry.register()
-"""
 
 from industries import oil_refinery
 oil_refinery.industry.register()
