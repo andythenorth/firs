@@ -12,7 +12,7 @@ industry = IndustrySecondary(id='cement_plant',
                              nearby_station_name='string(STR_STATION_SILO)',
                              fund_cost_multiplier='203')
 
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+#industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

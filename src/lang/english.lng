@@ -91,6 +91,7 @@ STR_CARGO_NAME_PIG_IRON                                                         
 STR_CARGO_NAME_PIPE                                                             :Pipe
 STR_CARGO_NAME_PLASTICS                                                         :Plastics
 STR_CARGO_NAME_POTASH                                                           :Potash
+STR_CARGO_NAME_PROPYLENE                                                        :Propylene
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrite Ore
 STR_CARGO_NAME_QUICKLIME                                                        :Quicklime
 STR_CARGO_NAME_RAW_LATEX                                                        :Raw Latex
@@ -186,6 +187,7 @@ STR_CARGO_UNIT_PIG_IRON                                                         
 STR_CARGO_UNIT_PIPE                                                             :{WEIGHT} of pipe
 STR_CARGO_UNIT_PLASTICS                                                         :{WEIGHT} of plastics
 STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} of potash
+STR_CARGO_UNIT_PROPYLENE                                                        :{VOLUME} of propylene
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} of pyrite ore
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} of quicklime
 STR_CARGO_UNIT_RAW_LATEX                                                        :{VOLUME} of raw latex
@@ -218,6 +220,7 @@ STR_CARGO_UNIT_WOOL                                                             
 STR_CARGO_UNIT_YARN                                                             :{SIGNED_WORD} bale{P 0 "" s} of yarn
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} of zinc
 
+# it seems that using 2 chars for these is a convention not a limit, I tested 4 chars and OpenTTD renders it fine - May 2020
 STR_CID_ACID                                                                    :{TINYFONT}AC
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_ALLOY_STEEL                                                             :{TINYFONT}AS
@@ -280,6 +283,7 @@ STR_CID_PHOSPHATE                                                               
 STR_CID_PHOSPHORIC_ACID                                                         :{TINYFONT}PA
 STR_CID_PLASTICS                                                                :{TINYFONT}PL
 STR_CID_POTASH                                                                  :{TINYFONT}PA
+STR_CID_PROPYLENE                                                               :{TINYFONT}PR
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
 STR_CID_QUICKLIME                                                               :{TINYFONT}QL
 STR_CID_RAW_LATEX                                                               :{TINYFONT}RL
@@ -360,7 +364,7 @@ STR_IND_DAIRY_FARM                                                              
 STR_IND_DREDGING_SITE                                                           :Dredging Site
 STR_IND_ELECTRIC_ARC_FURNACE                                                    :Electric Arc Furnace
 STR_IND_ENGINE_PLANT                                                            :Engine plant
-STR_IND_ETHYLENE_CRACKER                                                        :Ethylene Cracker
+STR_IND_ETHYLENE_CRACKER                                                        :Naphtha Cracker
 STR_IND_FERROCHROME_SMELTER                                                     :Ferrochrome Smelter
 STR_IND_FERTILISER_PLANT                                                        :Fertiliser Plant
 STR_IND_FACTORY_1                                                               :Factory 1
@@ -398,7 +402,9 @@ STR_IND_PEATLANDS                                                               
 STR_IND_PETROLPUMP                                                              :Petrol Station
 STR_IND_PHOSPHATE_MINE                                                          :Phosphate Mine
 STR_IND_PHOSPHORIC_ACID_PLANT                                                   :Phosphoric Acid Plant
-STR_IND_PLASTICS_PLANT                                                          :Polymer Plant
+STR_IND_PLASTICS_PLANT                                                          :PVC Plant
+STR_IND_POLYETHYLENE_PLANT                                                      :Polyethylene Plant
+STR_IND_POLYPROPYLENE_PLANT                                                     :Polypropylene Plant
 STR_IND_PORT                                                                    :Port
 STR_IND_POTASH_MINE                                                             :Potash Mine
 STR_IND_PYRITE_MINE                                                             :Pyrite Mine

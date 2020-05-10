@@ -11,14 +11,12 @@ economy = Economy(id = "BETTER_LIVING_THROUGH_CHEMISTRY",
                             'aluminium',
                             'ammonia',
                             'ammonium_nitrate',
-                            'cement',
                             'chlorine',
-                            'clay',
                             'cleaning_agents',
                             'coal',
-                            'food', # must be in slot 11
                             'coal_tar',
                             'coke',
+                            'food', # must be in slot 11
                             'copper',
                             'electrical_parts',
                             'engineering_supplies',
@@ -47,6 +45,7 @@ economy = Economy(id = "BETTER_LIVING_THROUGH_CHEMISTRY",
                             'plant_fibres', # should be cotton?
                             'plastics',
                             'potash',
+                            'propylene',
                             'rubber', # includes synthetic rubber, export only
                             'salt',
                             'sand',

@@ -1,8 +1,8 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='plastics_plant',
-                             accept_cargos_with_input_ratios=[('C2H4', 4), ('CHLO', 4)],
-                             prod_cargo_types_with_output_ratios=[('RUBR', 2), ('PLAS', 3), ('COAT', 3)],
+                             accept_cargos_with_input_ratios=[('CHLO', 4), ('C2H4', 4)],
+                             prod_cargo_types_with_output_ratios=[('PLAS', 3), ('COAT', 3)],
                              combined_cargos_boost_prod=True,
                              prob_in_game='3',
                              prob_map_gen='5',

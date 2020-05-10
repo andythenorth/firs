@@ -271,6 +271,12 @@ phosphoric_acid_plant.industry.register()
 from industries import plastics_plant
 plastics_plant.industry.register()
 
+from industries import polyethylene_plant
+polyethylene_plant.industry.register()
+
+from industries import polypropylene_plant
+polypropylene_plant.industry.register()
+
 from industries import port
 port.industry.register()
 

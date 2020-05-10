@@ -254,6 +254,9 @@ plastics.cargo.register()
 from cargos import potash
 potash.cargo.register()
 
+from cargos import propylene
+propylene.cargo.register()
+
 from cargos import pyrite_ore
 pyrite_ore.cargo.register()
 
