@@ -16,6 +16,6 @@ cargo = Cargo(id='pipe',
               items_of_cargo='string(STR_CARGO_UNIT_PIPE)',
               penalty_lowerbound='30',
               single_penalty_length='42',
-              price_factor=150,
+              price_factor=154,
               capacity_multiplier='1',
               icon_indices=(7, 3))
