@@ -11,6 +11,7 @@ currentdir = os.curdir
 src_path = os.path.join(currentdir, 'src')
 
 import global_constants
+import utils
 
 # setting up a cache for compiled chameleon templates can significantly speed up template rendering
 chameleon_cache_path = os.path.join(currentdir, global_constants.chameleon_cache_dir)
@@ -77,3 +78,15 @@ for industry in registered_industries:
             if industry in accept_industries:
                 incompatible.extend(industries_producing_cargo[cargo])
     incompatible_industries[industry] = set(incompatible)
+
+# guard against unused / wasted industry IDs
+# n.b. sometimes there are valid unused IDs during development
+# note also that tile ID should be cleaned up if removing an industry id
+for industry_id, industry_numeric_id in global_constants.industry_numeric_ids.items():
+    found = False
+    for industry in registered_industries:
+        if industry_id == industry.id:
+            found = True
+            break
+    if found == False:
+        utils.echo_message('Not found: ' + industry_id + ' from global_constants')
