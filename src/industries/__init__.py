@@ -375,8 +375,10 @@ from industries import smithy_forge
 smithy_forge.industry.register()
 """
 
+"""
 from industries import steel_mill
 steel_mill.industry.register()
+"""
 
 from industries import stockyard
 stockyard.industry.register()

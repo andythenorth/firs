@@ -1,7 +1,7 @@
 # Definition of numeric IDs for industries
 industry_numeric_ids = dict(coal_mine = 0,
                             lime_kiln = 1,
-                            steel_mill = 2,
+                            ####UNUSED?####steel_mill = 2,
                             cryo_plant = 3,
                             iron_ore_mine = 4,
                             peatlands = 5,
