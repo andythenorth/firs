@@ -21,8 +21,8 @@ industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multiplier
 industry.economy_variations['IN_A_HOT_COUNTRY'].prob_map_gen = '14'
 """
 
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_multipliers = [('GRAI', 14), ('LVST', 13)]
+###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_multipliers = [('GRAI', 14), ('LVST', 13)]
 
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].name = 'string(STR_IND_BASICFARM)'

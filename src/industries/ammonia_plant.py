@@ -14,7 +14,7 @@ industry = IndustrySecondary(id='ammonia_plant',
                              intro_year=1890,
                              graphics_change_dates=[1952])
 
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(id='ammonia_plant_tile_1',
                   animation_length=7,

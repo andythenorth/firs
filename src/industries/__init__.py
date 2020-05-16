@@ -5,8 +5,10 @@ registered_industries = []
 from industries import aluminium_plant
 aluminium_plant.industry.register()
 
+""" BLTC
 from industries import ammonia_plant
 ammonia_plant.industry.register()
+"""
 
 from industries import arable_farm
 arable_farm.industry.register()
@@ -54,8 +56,10 @@ chemical_plant.industry.register()
 from industries import chlor_alkali_plant
 chlor_alkali_plant.industry.register()
 
+""" BLTC
 from industries import civil_explosives_facility
 civil_explosives_facility.industry.register()
+"""
 
 """
 from industries import chromite_mine
@@ -114,9 +118,12 @@ electric_arc_furnace.industry.register()
 from industries import engine_plant
 engine_plant.industry.register()
 
+""" BLTC
 from industries import ethylene_cracker
 ethylene_cracker.industry.register()
+"""
 
+""" BLTC
 from industries import factory_1
 factory_1.industry.register()
 
@@ -125,14 +132,17 @@ factory_2.industry.register()
 
 from industries import factory_3
 factory_3.industry.register()
+"""
 
-""""
+"""
 from industries import ferrochrome_smelter
 ferrochrome_smelter.industry.register()
 """
 
+""" BLTC
 from industries import fertiliser_plant
 fertiliser_plant.industry.register()
+"""
 
 """
 from industries import fischer_tropsch_plant
@@ -240,8 +250,10 @@ nitrate_mine.industry.register()
 from industries import oil_wells
 oil_wells.industry.register()
 
+""" BLTC
 from industries import oil_refinery
 oil_refinery.industry.register()
+"""
 
 """
 from industries import oil_rig
@@ -265,17 +277,23 @@ petrol_pump.industry.register()
 from industries import phosphate_mine
 phosphate_mine.industry.register()
 
+""" BLTC
 from industries import phosphoric_acid_plant
 phosphoric_acid_plant.industry.register()
+"""
 
+""" BLTC # should be one of the polymer plants (pvc?)
 from industries import plastics_plant
 plastics_plant.industry.register()
+"""
 
+""" BLTC
 from industries import polyethylene_plant
 polyethylene_plant.industry.register()
 
 from industries import polypropylene_plant
 polypropylene_plant.industry.register()
+"""
 
 from industries import port
 port.industry.register()
@@ -316,8 +334,10 @@ from industries import rubber_plantation
 rubber_plantation.industry.register()
 """
 
+""" BLTC
 from industries import salt_mine
 salt_mine.industry.register()
+"""
 
 from industries import sawmill
 sawmill.industry.register()
@@ -336,8 +356,10 @@ slag_grinding_plant.industry.register()
 from industries import soda_ash_mine
 soda_ash_mine.industry.register()
 
+""" BLTC
 from industries import solvay_plant
 solvay_plant.industry.register()
+"""
 
 """
 from industries import smithy_forge
@@ -355,17 +377,23 @@ from industries import sugar_refinery
 sugar_refinery.industry.register()
 """
 
+""" BLTC
 from industries import sulphuric_acid_plant
 sulphuric_acid_plant.industry.register()
+"""
 
 from industries import supply_yard
 supply_yard.industry.register()
 
+""" BLTC
 from industries import textile_mill
 textile_mill.industry.register()
+"""
 
+""" BLTC
 from industries import tinplate_works
 tinplate_works.industry.register()
+"""
 
 """
 from industries import trading_post

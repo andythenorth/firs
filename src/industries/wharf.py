@@ -18,9 +18,9 @@ industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['BOOM', 'PEAT', 'WDPR']
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('POTA', 19), ('ENSP', 9), ('FMSP', 9)]
 
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargo_types = ['POWR', 'RUBR', 'BOOM']
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_multipliers = [('COPR', 10), ('VEHI', 14), ('ALUM', 12), ('WDPR', 14), ('STEL', 14)]
+###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargo_types = ['POWR', 'RUBR', 'BOOM']
+###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_multipliers = [('COPR', 10), ('VEHI', 14), ('ALUM', 12), ('WDPR', 14), ('STEL', 14)]
 
 # in Steeltown, there is a deliberate feedback loop with ZINC -> PIPE -> wharf
 # this is to allow an easy kickstart of ENSP at the wharf, when all other chains are so tightly connected

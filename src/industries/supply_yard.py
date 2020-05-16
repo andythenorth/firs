@@ -11,8 +11,8 @@ industry = IndustrySecondary(id='supply_yard',
                              fund_cost_multiplier='110',
                              intro_year=1800)
 
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('VEHI', 8), ('PETR', 8)]
+###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('VEHI', 8), ('PETR', 8)]
 
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

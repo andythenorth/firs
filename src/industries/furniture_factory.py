@@ -10,7 +10,7 @@ industry = IndustrySecondary(id='furniture_factory',
                              nearby_station_name='string(STR_STATION_JOINERS_SHOP)',
                              fund_cost_multiplier='95')
 
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(id='furniture_factory_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,

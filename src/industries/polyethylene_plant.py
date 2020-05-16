@@ -12,7 +12,7 @@ industry = IndustrySecondary(id='polyethylene_plant',
                              fund_cost_multiplier='125',
                              intro_year='1900')
 
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(id='polyethylene_plant_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,
