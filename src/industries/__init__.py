@@ -2,8 +2,10 @@ registered_industries = []
 
 # keep these alphabetised for ease of maintaining
 
+"""
 from industries import aluminium_plant
 aluminium_plant.industry.register()
+"""
 
 """ BLTC
 from industries import ammonia_plant
@@ -47,8 +49,10 @@ bulk_terminal.industry.register()
 from industries import carbon_black_plant
 carbon_black_plant.industry.register()
 
+"""
 from industries import cement_plant
 cement_plant.industry.register()
+"""
 
 from industries import chemical_plant
 chemical_plant.industry.register()
@@ -71,9 +75,6 @@ clay_pit.industry.register()
 
 from industries import coal_mine
 coal_mine.industry.register()
-
-from industries import coal_tar_distillery
-coal_tar_distillery.industry.register()
 
 from industries import coffee_estate
 coffee_estate.industry.register()
@@ -172,11 +173,15 @@ fishing_harbour.industry.register()
 from industries import forest
 forest.industry.register()
 
+""" BLTC
 from industries import fruit_plantation
 fruit_plantation.industry.register()
+"""
 
+""" BLTC
 from industries import furniture_factory
 furniture_factory.industry.register()
+"""
 
 from industries import general_store
 general_store.industry.register()
@@ -184,8 +189,10 @@ general_store.industry.register()
 from industries import glass_works
 glass_works.industry.register()
 
+""" BLTC
 from industries import hardware_store
 hardware_store.industry.register()
+"""
 
 from industries import hotel
 hotel.industry.register()
@@ -220,8 +227,10 @@ from industries import liquids_terminal
 liquids_terminal.industry.register()
 """
 
+""" BLTC
 from industries import lumber_yard
 lumber_yard.industry.register()
+"""
 
 """
 from industries import machine_shop
@@ -382,8 +391,10 @@ from industries import sulphuric_acid_plant
 sulphuric_acid_plant.industry.register()
 """
 
+""" BLTC
 from industries import supply_yard
 supply_yard.industry.register()
+"""
 
 """ BLTC
 from industries import textile_mill
