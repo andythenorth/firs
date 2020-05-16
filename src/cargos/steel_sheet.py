@@ -18,4 +18,4 @@ cargo = Cargo(id='steel_sheet',
               single_penalty_length='255',
               capacity_multiplier='1',
               price_factor=147,
-              icon_indices=(12, 4))
+              icon_indices=(6, 5))

@@ -18,4 +18,4 @@ cargo = Cargo(id='cleaning_agents',
               single_penalty_length='255',
               price_factor=117,
               capacity_multiplier='1',
-              icon_indices=(10, 1))
+              icon_indices=(9, 5))

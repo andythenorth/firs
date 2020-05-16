@@ -18,4 +18,4 @@ cargo = Cargo(id='rebar',
               single_penalty_length='42',
               price_factor=133,
               capacity_multiplier='1',
-              icon_indices=(7, 3))
+              icon_indices=(3, 5))

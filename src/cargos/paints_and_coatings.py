@@ -18,4 +18,4 @@ cargo = Cargo(id='paints_and_coatings',
               single_penalty_length='255',
               price_factor=156,
               capacity_multiplier='1',
-              icon_indices=(10, 1))
+              icon_indices=(5, 5))

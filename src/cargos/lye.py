@@ -18,4 +18,4 @@ cargo = Cargo(id='lye',
               single_penalty_length='255',
               price_factor=108,
               capacity_multiplier='1',
-              icon_indices=(4, 4))
+              icon_indices=(4, 5))

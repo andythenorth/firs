@@ -18,4 +18,4 @@ cargo = Cargo(id='steel_wire_rod',
               single_penalty_length='42',
               price_factor=143,
               capacity_multiplier='1',
-              icon_indices=(7, 3))
+              icon_indices=(8, 5))
