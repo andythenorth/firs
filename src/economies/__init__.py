@@ -13,10 +13,8 @@ basic_arctic.economy.register()
 from economies import basic_tropic
 basic_tropic.economy.register()
 
-"""
 from economies import better_living_through_chemistry
 better_living_through_chemistry.economy.register()
-"""
 
 from economies import steeltown
 steeltown.economy.register()
