@@ -189,6 +189,12 @@ from cargos import metal
 metal.cargo.register()
 """
 
+from cargos import methane
+methane.cargo.register()
+
+from cargos import methanol
+methanol.cargo.register()
+
 from cargos import milk
 milk.cargo.register()
 

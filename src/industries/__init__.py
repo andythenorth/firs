@@ -168,6 +168,9 @@ fruit_plantation.industry.register()
 from industries import furniture_factory
 furniture_factory.industry.register()
 
+from industries import gas_wells
+gas_wells.industry.register()
+
 from industries import general_store
 general_store.industry.register()
 
@@ -230,6 +233,9 @@ manganese_mine.industry.register()
 
 from industries import metal_workshop
 metal_workshop.industry.register()
+
+from industries import methanol_plant
+methanol_plant.industry.register()
 
 from industries import mixed_farm
 mixed_farm.industry.register()

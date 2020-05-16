@@ -13,7 +13,7 @@ industry = IndustrySecondary(id='coal_tar_distillery',
                              nearby_station_name='string(STR_STATION_PHENOLS)',
                              fund_cost_multiplier='120')
 
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+#industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(id='coal_tar_distillery_tile_1',
                   animation_length=7,

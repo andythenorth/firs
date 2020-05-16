@@ -13,7 +13,7 @@ industry = IndustrySecondary(id='steel_mill',
                              intro_year=1832)
 
 
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+# industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(id='steel_mill_tile_1',
                   animation_length=71,

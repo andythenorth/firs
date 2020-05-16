@@ -2,7 +2,7 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='civil_explosives_facility',
                              accept_cargos_with_input_ratios=[('NHNO', 6), ('PETR', 2)],
-                             prod_cargo_types_with_output_ratios=[('ENSP', 8)],
+                             prod_cargo_types_with_output_ratios=[('BOOM', 8)],
                              combined_cargos_boost_prod=True,
                              prob_in_game='3',
                              prob_map_gen='5',

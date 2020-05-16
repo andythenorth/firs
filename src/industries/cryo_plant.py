@@ -12,7 +12,6 @@ industry = IndustryPrimaryNoSupplies(id='cryo_plant',
                                      nearby_station_name='string(STR_STATION_CRYO_PLANT)',
                                      fund_cost_multiplier='180')
 
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='cryo_plant_tile_1',

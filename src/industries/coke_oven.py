@@ -12,7 +12,6 @@ industry = IndustrySecondary(id='coke_oven',
                              nearby_station_name='string(STR_STATION_BANK_TOP)',
                              fund_cost_multiplier='120')
 
-industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='coke_oven_tile_1',
