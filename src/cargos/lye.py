@@ -6,7 +6,7 @@ cargo = Cargo(id='lye',
               type_abbreviation='string(STR_CID_LYE)',
               sprite='NEW_CARGO_SPRITE',
               weight='1.5',  # extra realism, per forum suggestion Nov 2017
-              cargo_payment_list_colour='184',
+              cargo_payment_list_colour='176',
               is_freight='1',
               cargo_classes='bitmask(CC_LIQUID, CC_HAZARDOUS)',
               cargo_label='LYE_',
