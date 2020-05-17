@@ -11,6 +11,7 @@ currentdir = os.curdir
 # add to the module search path
 src_path = os.path.join(currentdir, 'src')
 
+import global_constants as global_constants
 import utils as utils
 
 from chameleon import PageTemplateLoader # chameleon used in most template cases
@@ -31,8 +32,6 @@ class Cargo(object):
         self.type_abbreviation = kwargs['type_abbreviation']
         self.sprite = kwargs['sprite']
         self.weight = kwargs['weight']
-        self.cargo_payment_list_colour = kwargs['cargo_payment_list_colour']
-        self.station_list_colour = self.cargo_payment_list_colour # use same value for both cargo colour properties
         self.is_freight = kwargs['is_freight']
         self.cargo_classes = kwargs['cargo_classes']
         self.town_growth_effect = kwargs['town_growth_effect']
@@ -58,10 +57,6 @@ class Cargo(object):
                         raise Exception("Economy " + economy.id + ": has cargo " + self.id + " in position " + str(numeric_id) + "; needs to be in position " + str(value))
                 self.economy_variations[economy] = {'numeric_id': numeric_id}
 
-        # guard against overlapping cargo colours, cargo colours are intended to be unique within FIRS
-        for cargo in registered_cargos:
-            if cargo.cargo_payment_list_colour == self.cargo_payment_list_colour:
-                utils.echo_message("Cargo " + self.id + " has overlapping cargo_payment_list_colour with cargo " + cargo.id)
         # guard against overlapping icon indices, icons should be unique per cargo
         # if two cargos use same icon (1) don't, copy-paste, then adjust some pixels for one of them (2) see 1
         for cargo in registered_cargos:
@@ -77,6 +72,10 @@ class Cargo(object):
     def get_cargo_label(self):
         # wrap cargo labels in " chars because nml needs them as string literals (we store them - by design - as python strings)
         return '"' + self.cargo_label + '"'
+
+    def get_cargo_colour(self, economy):
+        # automatically provide a colour specific to the economy, don't attempt to provide a consistent colour across all economies, PITA to maintain
+         return global_constants.valid_cargo_colours[self.get_numeric_id(economy)];
 
     def get_property(self, property_name, economy):
         # straightforward lookup of a property, doesn't try to handle failure case of property not found; don't look up props that don't exist

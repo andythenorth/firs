@@ -6,7 +6,6 @@ cargo = Cargo(id='aluminia',
               type_abbreviation='string(STR_CID_ALUMINIA)',
               sprite='NEW_CARGO_SPRITE',
               weight='1.0',
-              cargo_payment_list_colour='134',
               is_freight='1',
               cargo_classes='bitmask(CC_BULK)',
               cargo_label='ALO_', # Aluminium Oxide

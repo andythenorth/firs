@@ -6,7 +6,6 @@ cargo = Cargo(id='nuts',
               type_abbreviation='string(STR_CID_NUTS)',
               sprite='NEW_CARGO_SPRITE',
               weight='0.25',  # IRL sacks of nuts are lighter even than this, but eh
-              cargo_payment_list_colour='178',
               is_freight='1',
               cargo_classes='bitmask(CC_PIECE_GOODS)',
               cargo_label='NUTS',

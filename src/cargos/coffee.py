@@ -6,7 +6,6 @@ cargo = Cargo(id='coffee',
               type_abbreviation='string(STR_CID_COFFEE)',
               sprite='NEW_CARGO_SPRITE',
               weight='0.25',  # IRL coffee is lighter even than this, but eh
-              cargo_payment_list_colour='71',
               is_freight='1',
               cargo_classes='bitmask(CC_PIECE_GOODS, CC_EXPRESS)',
               cargo_label='JAVA',

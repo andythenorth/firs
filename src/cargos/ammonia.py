@@ -6,7 +6,6 @@ cargo = Cargo(id='ammonia',
               type_abbreviation='string(STR_CID_AMMONIA)',
               sprite='NEW_CARGO_SPRITE',
               weight='0.60',  # extra realism per forum suggestion
-              cargo_payment_list_colour='189',
               is_freight='1',
               cargo_classes='bitmask(CC_LIQUID, CC_HAZARDOUS)',
               cargo_label='NH3_',

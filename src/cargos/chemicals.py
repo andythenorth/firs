@@ -6,7 +6,6 @@ cargo = Cargo(id='chemicals',
               type_abbreviation='string(STR_CID_CHEMICALS)',
               sprite='NEW_CARGO_SPRITE',
               weight='1.2',  # extra realism, per forum suggestion Nov 2017
-              cargo_payment_list_colour='177',
               is_freight='1',
               cargo_classes='bitmask(CC_LIQUID)',
               cargo_label='RFPR',

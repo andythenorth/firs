@@ -6,7 +6,6 @@ cargo = Cargo(id='formic_acid',
               type_abbreviation='string(STR_CID_FORMIC_ACID)',
               sprite='NEW_CARGO_SPRITE',
               weight='1.2',  # extra realism, per forum suggestion Nov 2017
-              cargo_payment_list_colour='184',
               is_freight='1',
               cargo_classes='bitmask(CC_LIQUID, CC_HAZARDOUS)',
               cargo_label='FORM',

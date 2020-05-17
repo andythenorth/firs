@@ -6,7 +6,6 @@ cargo = Cargo(id='food_additives',
               type_abbreviation='string(STR_CID_FOOD_ADDITIVES)',
               sprite='NEW_CARGO_SPRITE',
               weight='1.0',
-              cargo_payment_list_colour='166',
               is_freight='1',
               cargo_classes='bitmask(CC_LIQUID, CC_BULK, CC_PIECE_GOODS)',
               cargo_label='ENUM', # yes it's a terrible pun on several things at once - LordAro suggested it

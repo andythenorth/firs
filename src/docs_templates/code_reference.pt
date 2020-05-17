@@ -51,7 +51,6 @@
                     <th>NML Identifier</th>
                     <th>Label</th>
                     <th>Icon</th>
-                    <th class="number">Colour</th>
                     <th class="number">Weight</th>
                     <th nowrap="true" class="number">Price Factor*</th>
                     <th class="text">Cargo Classes</th>
@@ -73,18 +72,6 @@
                                              height:20px;
                                              background-image:url('static/img/cargoicons.png');
                                              background-position:-${20 + 40 * cargo.icon_indices[0]}px -${20 + 40 * cargo.icon_indices[1]}px;">
-                                </span>
-                            </td>
-                            <td class="number" nowrap="nowrap">
-                                <span style="vertical-align:top;">${cargo.cargo_payment_list_colour}</span>
-                                <span style="background-color:rgb${doc_helper.get_cargo_colour(cargo)};
-                                             border:solid 1px #000;
-                                             width:16px;
-                                             height:16px;
-                                             display:inline-block;
-                                             vertical-align:top;
-                                             margin-top:1px;
-                                             margin-left:2px;">
                                 </span>
                             </td>
                             <td class="number">${cargo.weight}</td>

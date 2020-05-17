@@ -6,7 +6,6 @@ cargo = Cargo(id='packaging',
               type_abbreviation='string(STR_CID_PACKAGING)',
               sprite='NEW_CARGO_SPRITE',
               weight='0.65',
-              cargo_payment_list_colour='145',
               is_freight='1',
               cargo_classes='bitmask(CC_EXPRESS, CC_PIECE_GOODS)',
               cargo_label='MNSP',  # MNSP label preserved in FIRS v3 for backwards compatibility, may remove in v4

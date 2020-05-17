@@ -216,9 +216,6 @@ class DocHelper(object):
         result = sorted(result, key=self.get_cargo_name)
         return result
 
-    def get_cargo_colour(self, cargo):
-        return palette[int(cargo.cargo_payment_list_colour)]
-
     def get_industry_colour(self, industry):
         return palette[int(industry.get_property('map_colour', None))]
 
