@@ -332,8 +332,9 @@ valid_industry_map_colours.extend([1, 15])
 # - 191 replaced by 51 as 191 is the edge colour for cargo flow diagram
 # - 8 is removed, it's a grey, invisible on cargo payment chart, 149 appended at end to replace
 # - 19 replaced by 18 for legibility on grey
+# - 141 replaced by 139 for legibility on grey
 # - first entry is 152, traditional colour for pax (assumes pax will always be cargo 0)
 # - third entry is 15, traditional colour for mail (assumes mail will always be cargo 2)
-valid_cargo_colours = [152, 183, 15, 61, 166, 45, 157, 51, 141, 178, 189, 55, 186, 43, 148, 5, 116, 160, 127, 143, 170,
+valid_cargo_colours = [152, 183, 15, 61, 166, 45, 157, 51, 139, 178, 189, 55, 186, 43, 148, 5, 116, 160, 127, 143, 170,
                        49, 37, 146, 214, 172, 177, 181, 194, 24, 168, 155, 210, 169, 70, 119, 26, 69, 85, 56, 18, 121, 105,
                        125, 144, 209, 164, 16, 63, 111, 65, 10, 126, 62, 104, 207, 190, 83, 142, 72, 33, 162, 173, 149]
