@@ -15,6 +15,6 @@ cargo = Cargo(id='paints_and_coatings',
               items_of_cargo='string(STR_CARGO_UNIT_PAINTS_AND_COATINGS)',
               penalty_lowerbound='20',
               single_penalty_length='255',
-              price_factor=156,
+              price_factor=158,
               capacity_multiplier='1',
               icon_indices=(5, 5))

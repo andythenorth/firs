@@ -15,6 +15,6 @@ cargo = Cargo(id='steel_wire_rod',
               items_of_cargo='string(STR_CARGO_UNIT_STEEL_WIRE_ROD)',
               penalty_lowerbound='30',
               single_penalty_length='42',
-              price_factor=143,
+              price_factor=154,
               capacity_multiplier='1',
               icon_indices=(8, 5))

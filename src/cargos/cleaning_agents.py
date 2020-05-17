@@ -15,6 +15,6 @@ cargo = Cargo(id='cleaning_agents',
               items_of_cargo='string(STR_CARGO_UNIT_CLEANING_AGENTS)',
               penalty_lowerbound='20',
               single_penalty_length='255',
-              price_factor=117,
+              price_factor=133,
               capacity_multiplier='1',
               icon_indices=(9, 5))

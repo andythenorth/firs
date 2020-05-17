@@ -16,5 +16,5 @@ cargo = Cargo(id='vehicle_bodies',
               penalty_lowerbound='5',
               single_penalty_length='255',
               capacity_multiplier='1',
-              price_factor=159,
+              price_factor=169,
               icon_indices=(14, 3))
