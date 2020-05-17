@@ -15,6 +15,6 @@ cargo = Cargo(id='hydrochloric_acid',
               items_of_cargo='string(STR_CARGO_UNIT_HYDROCHLORIC_ACID)',
               penalty_lowerbound='24',
               single_penalty_length='48',
-              price_factor=109,
+              price_factor=143,
               capacity_multiplier='1',
               icon_indices=(4, 4))
