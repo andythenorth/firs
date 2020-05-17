@@ -12,7 +12,7 @@ industry = IndustrySecondary(id='ethylene_cracker',
                              nearby_station_name='string(STR_STATION_HEAVY_INDUSTRY_2)',
                              fund_cost_multiplier='170')
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(id='ethylene_cracker_tile_1',
                   animation_length=7,

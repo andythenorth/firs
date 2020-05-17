@@ -11,7 +11,7 @@ industry = IndustryPrimaryExtractive(id='salt_mine',
                                      nearby_station_name='string(STR_STATION_TRONA_BEDS)',
                                      fund_cost_multiplier='180')
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(id='salt_mine_tile_1',
                   animation_length=81,

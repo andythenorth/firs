@@ -12,7 +12,7 @@ industry = IndustrySecondary(id='oil_refinery',
                              nearby_station_name='string(STR_STATION_REFINERY)',
                              intro_year=1830)
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(id='oil_refinery_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,

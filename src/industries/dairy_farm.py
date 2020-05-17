@@ -15,7 +15,7 @@ industry = IndustryPrimaryOrganic(id='dairy_farm',
                                   fund_cost_multiplier='60')
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(id='dairy_farm_tile_1',
                   location_checks=TileLocationChecks(disallow_steep_slopes=True,
