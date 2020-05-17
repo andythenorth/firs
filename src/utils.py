@@ -49,10 +49,14 @@ def unwrap_nml_string_declaration(nml_string=None):
     else:
         return nml_string
 
-def echo_message(message):
+def echo_message(message, message_type=None):
     # use to raise messages from templates to standard out (can't print directly from template render)
     # magically wraps these messages in ANSI colour to make them visible - they are only intended for noticeable messages, not general output
-    print('\033[33m' + message + '\033[0m')
+    if message_type == 'info':
+        color = '\033[36m' # cyan
+    else:
+        color = '\033[33m' # yellow
+    print(color + message + '\033[0m')
 
 def dos_palette_to_rgb():
     palette_sample = Image.open("palette_key.png").getpalette()
