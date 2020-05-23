@@ -419,8 +419,8 @@ trading_post.industry.register()
 from industries import tyre_plant
 tyre_plant.industry.register()
 
-from industries import vehicle_dealer
-vehicle_dealer.industry.register()
+from industries import vehicle_distributor
+vehicle_distributor.industry.register()
 
 from industries import vineyard
 vineyard.industry.register()
