@@ -54,5 +54,5 @@ economy = Economy(id = "BETTER_LIVING_THROUGH_CHEMISTRY",
                             'tin',
                             'tinplate',
                             'urea',
-                            'vehicles',
-])
+                            'wood',
+                            ])

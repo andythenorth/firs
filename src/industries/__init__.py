@@ -166,6 +166,9 @@ fishing_harbour.industry.register()
 from industries import forest
 forest.industry.register()
 
+from industries import formaldehyde_plant
+formaldehyde_plant.industry.register()
+
 from industries import fruit_plantation
 fruit_plantation.industry.register()
 
