@@ -22,12 +22,12 @@
 
         <!--! ground tile spritesets; conditional check is possibly fragile if other types are introduced -->
         <tal:ground condition="spriteset.type != ''">
-            spriteset(${spriteset.id}_${date_variation_num}, "src/graphics/industries/groundtiles.png") {
+            spriteset(${spriteset.id}_${date_variation_num}, "src/graphics/other/groundtiles.png") {
                 <tal:autofill_sprites repeat="autosprite_num range(spriteset.num_sprites_to_autofill)">
                     tmpl_ground_tile(${spriteset.get_ground_tile_x_start(spriteset.type)}, 10)
                 </tal:autofill_sprites>
             }
-            spriteset(${spriteset.id}_${date_variation_num}_snow, "src/graphics/industries/groundtiles.png") {
+            spriteset(${spriteset.id}_${date_variation_num}_snow, "src/graphics/other/groundtiles.png") {
                 <tal:autofill_sprites repeat="autosprite_num range(spriteset.num_sprites_to_autofill)">
                     tmpl_ground_tile(${spriteset.get_ground_tile_x_start('snow')}, 10)
                 </tal:autofill_sprites>
