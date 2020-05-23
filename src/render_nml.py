@@ -30,7 +30,7 @@ if not os.path.exists(generated_nml_path):
 repo_vars = utils.get_makefile_args(sys)
 
 def render_header_item_nml(header_item):
-    template = templates[header_item]
+    template = templates[header_item + '.pynml']
     result = utils.unescape_chameleon_output(template(registered_industries=registered_industries,
                                                       registered_cargos=registered_cargos,
                                                       economies=registered_economies,
@@ -65,8 +65,8 @@ def render_industry_nml(industry):
 def main():
     start = time()
     grf_nml = codecs.open(os.path.join(firs.generated_files_path, 'firs.nml'),'w','utf8')
-    # ! extension is included due to partial migration from pypnaml to pynml; it should ideally be standard and concatenated within the repeat
-    header_items = ['header.pynml','checks.pynml','parameters.pynml', 'sprite_templates.pynml', 'cargos.pynml', 'construction_states.pynml', 'colour.pynml', 'randomise_primary_production_on_build.pynml']
+    header_items = ['header','checks','parameters', 'sprite_templates', 'cargos', 'construction_states', 'colour',
+                    'randomise_primary_production_on_build']
     for header_item in header_items:
         grf_nml.write(render_header_item_nml(header_item))
 
