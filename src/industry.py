@@ -997,10 +997,12 @@ class Industry(object):
                      sprite_selector = str(sprite_or_spriteset.animation_rate) + '* (animation_frame)'
             else:
                 sprite_selector = '0'
-            if construction_state_num == 3 or self.default_industry_properties.override_default_construction_states == False:
-                return sprite_or_spriteset.id + date_variation_suffix + suffix  + '(' + sprite_selector + ')'
-            else:
+            if construction_state_num != 3 and self.default_industry_properties.override_default_construction_states == False:
+                # in this case we want a default construction state
                 return sprite_or_spriteset.id + '_spriteset_default_construction_state_' + str(construction_state_num) + '(' + sprite_selector + ')'
+            else:
+                # we want a spriteset name and optional frame number
+                return sprite_or_spriteset.id + date_variation_suffix + suffix  + '(' + sprite_selector + ')'
         if isinstance(sprite_or_spriteset, Sprite):
             return getattr(sprite_or_spriteset, 'sprite_number' + suffix)
 
