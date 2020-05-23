@@ -32,21 +32,23 @@
         </tal:ground_sprite>
 
         <!--! industry ground overlay, if not empty -->
-        childsprite {
-            sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay)};
-            recolour_mode: RECOLOUR_REMAP;
-            palette: PALETTE_USE_DEFAULT;
-            hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
-            always_draw: 1;
-        }
-        <!--! ...industry ground overlay with snow -->
-        childsprite {
-            sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay, snow_overlay=True)};
-            recolour_mode: RECOLOUR_REMAP;
-            palette: PALETTE_USE_DEFAULT;
-            hide_sprite: (!LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
-            always_draw: 1;
-        }
+        <tal:not_empty condition="getattr(spritelayout.ground_overlay, 'type', None) != 'empty'">
+            childsprite {
+                sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay)};
+                recolour_mode: RECOLOUR_REMAP;
+                palette: PALETTE_USE_DEFAULT;
+                hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
+                always_draw: 1;
+            }
+            <!--! ...industry ground overlay with snow -->
+            childsprite {
+                sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay, snow_overlay=True)};
+                recolour_mode: RECOLOUR_REMAP;
+                palette: PALETTE_USE_DEFAULT;
+                hide_sprite: (!LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
+                always_draw: 1;
+            }
+        </tal:not_empty>
 
         <tal:optional_fence condition="'ne' in spritelayout.fences">
             <!--! fences NE -->
