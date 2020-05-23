@@ -1,0 +1,41 @@
+<tal:block define="temp_storage global_constants.temp_storage_graphics_chain">
+    <!--! ^ I don't like the indirection of temp_storage, but 'global_constants.temp_storage_graphics_chain' is lacks enough brevity-->
+    <!--! fence switches -->
+    switch (FEAT_INDUSTRYTILES, SELF, switch_tile_fences_neighbouring_station, [
+                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_ne}) * (nearby_tile_class(-1,  0) != TILE_CLASS_STATION), ${temp_storage.var_use_fence_ne}),
+                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_nw}) * (nearby_tile_class( 0, -1) != TILE_CLASS_STATION), ${temp_storage.var_use_fence_nw}),
+                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_se}) * (nearby_tile_class( 0,  1) != TILE_CLASS_STATION), ${temp_storage.var_use_fence_se}),
+                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_sw}) * (nearby_tile_class( 1,  0) != TILE_CLASS_STATION), ${temp_storage.var_use_fence_sw}),
+            ]) {
+        return 1;
+    }
+
+    switch (FEAT_INDUSTRYTILES, SELF, switch_tile_fences_neighbouring_industry, [
+                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_ne}) * !nearby_tile_is_same_industry(-1,  0), ${temp_storage.var_use_fence_ne}),
+                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_nw}) * !nearby_tile_is_same_industry( 0, -1), ${temp_storage.var_use_fence_nw}),
+                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_se}) * !nearby_tile_is_same_industry( 0,  1), ${temp_storage.var_use_fence_se}),
+                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_sw}) * !nearby_tile_is_same_industry( 1,  0), ${temp_storage.var_use_fence_sw}),
+            ]) {
+        switch_tile_fences_neighbouring_station;
+    }
+
+    switch (FEAT_INDUSTRYTILES, SELF, switch_tile_fences, [
+                STORE_TEMP(0, ${temp_storage.var_fencesprite_ne}),
+                STORE_TEMP(0, ${temp_storage.var_fencesprite_nw}),
+                STORE_TEMP(0, ${temp_storage.var_fencesprite_se}),
+                STORE_TEMP(0, ${temp_storage.var_fencesprite_sw}),
+
+                STORE_TEMP(1, ${temp_storage.var_use_fence_ne}),
+                STORE_TEMP(1, ${temp_storage.var_use_fence_nw}),
+                STORE_TEMP(1, ${temp_storage.var_use_fence_se}),
+                STORE_TEMP(1, ${temp_storage.var_use_fence_sw}),
+
+                STORE_TEMP(0, ${temp_storage.var_fence_offset_ne}),
+                STORE_TEMP(0, ${temp_storage.var_fence_offset_nw}),
+                STORE_TEMP(0, ${temp_storage.var_fence_offset_se}),
+                STORE_TEMP(0, ${temp_storage.var_fence_offset_sw}),
+                ]) {
+        switch_tile_fences_neighbouring_industry;
+    }
+    <!--! end fence switches -->
+</tal:block>

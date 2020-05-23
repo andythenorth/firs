@@ -33,7 +33,8 @@
     }
 
     switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_store_temp_vars,
-            [STORE_TEMP(terrain_type == TILETYPE_SNOW, ${temp_storage.var_terrain_is_snow})
+            [STORE_TEMP(random_bits, ${temp_storage.var_random_bits}),
+             STORE_TEMP(terrain_type == TILETYPE_SNOW, ${temp_storage.var_terrain_is_snow})
                 <tal:date_variations repeat="date_variation_num range(len(industry.graphics_change_dates)+1)"><!--! +1 because we need to run repeat at least once -->
                     , STORE_TEMP(${industry.get_date_conditions_for_hide_sprites(repeat.date_variation_num.index)},
                                  ${255 - date_variation_num}) <!--! dangerous counting down for these registers :D -->
@@ -48,46 +49,8 @@
         ${industry.id}_industry_construction_state_graphics_switch; // default
     }
 
-    switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_master_graphics_switch, STORE_TEMP(random_bits, ${temp_storage.var_random_bits})) {
-        ${industry.id}_store_temp_vars; // default
-    }
-
-    <!--! fence switches -->
-    switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_fence_station, [
-                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_ne}) * (nearby_tile_class(-1,  0) != TILE_CLASS_STATION), ${temp_storage.var_use_fence_ne}),
-                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_nw}) * (nearby_tile_class( 0, -1) != TILE_CLASS_STATION), ${temp_storage.var_use_fence_nw}),
-                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_se}) * (nearby_tile_class( 0,  1) != TILE_CLASS_STATION), ${temp_storage.var_use_fence_se}),
-                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_sw}) * (nearby_tile_class( 1,  0) != TILE_CLASS_STATION), ${temp_storage.var_use_fence_sw}),
-            ]) {
-        ${industry.id}_industry_master_graphics_switch;
-    }
-
-    switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_fence_industry, [
-                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_ne}) * !nearby_tile_is_same_industry(-1,  0), ${temp_storage.var_use_fence_ne}),
-                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_nw}) * !nearby_tile_is_same_industry( 0, -1), ${temp_storage.var_use_fence_nw}),
-                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_se}) * !nearby_tile_is_same_industry( 0,  1), ${temp_storage.var_use_fence_se}),
-                STORE_TEMP(LOAD_TEMP(${temp_storage.var_use_fence_sw}) * !nearby_tile_is_same_industry( 1,  0), ${temp_storage.var_use_fence_sw}),
-            ]) {
-        ${industry.id}_tile_fence_station;
-    }
-
-    switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_fences, [
-                STORE_TEMP(0, ${temp_storage.var_fencesprite_ne}),
-                STORE_TEMP(0, ${temp_storage.var_fencesprite_nw}),
-                STORE_TEMP(0, ${temp_storage.var_fencesprite_se}),
-                STORE_TEMP(0, ${temp_storage.var_fencesprite_sw}),
-
-                STORE_TEMP(1, ${temp_storage.var_use_fence_ne}),
-                STORE_TEMP(1, ${temp_storage.var_use_fence_nw}),
-                STORE_TEMP(1, ${temp_storage.var_use_fence_se}),
-                STORE_TEMP(1, ${temp_storage.var_use_fence_sw}),
-
-                STORE_TEMP(0, ${temp_storage.var_fence_offset_ne}),
-                STORE_TEMP(0, ${temp_storage.var_fence_offset_nw}),
-                STORE_TEMP(0, ${temp_storage.var_fence_offset_se}),
-                STORE_TEMP(0, ${temp_storage.var_fence_offset_sw}),
-                ]) {
-        ${industry.id}_tile_fence_industry;
+    switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_switch_graphics, switch_tile_fences()) {
+        ${industry.id}_store_temp_vars;
     }
     <!--! end fence switches -->
 </tal:block>
