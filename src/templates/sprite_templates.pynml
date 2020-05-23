@@ -1,12 +1,3 @@
-<!--! Plain ground sprite without any frills -->
-template tmpl_ground_tile(x, y) {
-	[x, y, 64, 31, -31, 0, ANIM]
-}
-
-template tmpl_ground_tile_filename(x, y, filename) {
-	[x, y, 64, 31, -31, 0, ANIM, filename]
-}
-
 <!--!
     Normal building sprite of 64px width and arbitrary width
     and normal alignment to the edges of the tile

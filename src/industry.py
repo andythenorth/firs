@@ -997,7 +997,9 @@ class Industry(object):
                      sprite_selector = str(sprite_or_spriteset.animation_rate) + '* (animation_frame)'
             else:
                 sprite_selector = '0'
-            if construction_state_num != 3 and self.default_industry_properties.override_default_construction_states == False:
+            if sprite_or_spriteset.type == 'empty':
+                return sprite_or_spriteset.id + date_variation_suffix + suffix  + '(' + sprite_selector + ')'
+            elif construction_state_num != 3 and self.default_industry_properties.override_default_construction_states == False:
                 # in this case we want a default construction state
                 return sprite_or_spriteset.id + '_spriteset_default_construction_state_' + str(construction_state_num) + '(' + sprite_selector + ')'
             else:
