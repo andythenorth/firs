@@ -20,7 +20,7 @@
                 }
                 <!--! ...explicit ground sprite from industry with snow -->
                 childsprite {
-                    sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite, terrain_type='snow')};
+                    sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite, snow_overlay=True)};
                     recolour_mode: RECOLOUR_REMAP;
                     palette: PALETTE_USE_DEFAULT;
                     hide_sprite: (!LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
@@ -39,7 +39,7 @@
         }
         <!--! ...industry ground overlay with snow -->
         childsprite {
-            sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay, terrain_type='snow')};
+            sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay, snow_overlay=True)};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
             hide_sprite: (!LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
@@ -137,7 +137,7 @@
                     hide_sprite: (LOAD_TEMP(${255 - date_variation_num}));
                 }
                 building {
-                    sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3, terrain_type='snow', date_variation_num=date_variation_num)};
+                    sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3, snow_overlay=True, date_variation_num=date_variation_num)};
                     recolour_mode: RECOLOUR_REMAP;
                     palette: PALETTE_USE_DEFAULT;
                     xoffset: ${building_sprite.xoffset};

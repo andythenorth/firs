@@ -981,13 +981,14 @@ class Industry(object):
         if int(value) not in global_constants.valid_industry_map_colours:
             utils.echo_message("Industry " + self.id +  " uses map Colour " + value + " which is invalid (lacks contrast)")
 
-    def unpack_sprite_or_spriteset(self, sprite_or_spriteset, construction_state_num=3, terrain_type='', date_variation_num='0'):
-        date_variation_suffix = '_' + str(date_variation_num)
-        if terrain_type != '':
-            suffix = '_' + terrain_type
+    def unpack_sprite_or_spriteset(self, sprite_or_spriteset, construction_state_num=3, snow_overlay=False, date_variation_num='0'):
+        # note the annoying edge case where 'empty' should not have a snow overlay
+        if snow_overlay == True and getattr(sprite_or_spriteset, 'type', None) != 'empty':
+            suffix = '_snow'
         else:
             suffix = ''
         if isinstance(sprite_or_spriteset, Spriteset):
+            date_variation_suffix = '_' + str(date_variation_num)
             # tiny optimisation, don't use an animation sprite selector if there is no animation
             if sprite_or_spriteset.animation_rate > 0:
                 if sprite_or_spriteset.custom_sprite_selector:
