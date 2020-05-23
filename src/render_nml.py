@@ -36,6 +36,7 @@ def render_header_item_nml(header_item):
                                                       economies=registered_economies,
                                                       incompatible_grfs=incompatible_grfs,
                                                       global_constants=global_constants,
+                                                      graphics_temp_storage=global_constants.graphics_temp_storage, # convenience measure
                                                       repo_vars=repo_vars,
                                                       utils=utils,
                                                       sys=sys))
