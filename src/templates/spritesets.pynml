@@ -19,22 +19,7 @@
                 </tal:autofill_sprites>
             }
         </tal:default_feature_or_building>
-
-        <!--! ground tile spritesets; conditional check is possibly fragile if other types are introduced -->
-        <tal:ground condition="spriteset.type != ''">
-            spriteset(${spriteset.id}_${date_variation_num}, "src/graphics/other/ground_tiles.png") {
-                <tal:autofill_sprites repeat="autosprite_num range(spriteset.num_sprites_to_autofill)">
-                    tmpl_ground_tile(${spriteset.get_ground_tile_x_start(spriteset.type)}, 10)
-                </tal:autofill_sprites>
-            }
-            spriteset(${spriteset.id}_${date_variation_num}_snow, "src/graphics/other/ground_tiles.png") {
-                <tal:autofill_sprites repeat="autosprite_num range(spriteset.num_sprites_to_autofill)">
-                    tmpl_ground_tile(${spriteset.get_ground_tile_x_start('snow')}, 10)
-                </tal:autofill_sprites>
-            }
-        </tal:ground>
     </tal:date_variations>
-
 
     <tal:construction_states condition="spriteset.type == '' and industry.default_industry_properties.override_default_construction_states==True">
         <!--! Construction states -->

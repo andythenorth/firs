@@ -363,6 +363,7 @@ class Spriteset(object):
         self.always_draw = always_draw
 
     def get_ground_tile_x_start(self, type):
+        print('get_ground_tile_x_start needs deleted')
         return {'mud': 0, 'concrete': 80, 'cobble': 150, 'snow': 220, 'slab': 290, 'empty':360}[type]
 
 
@@ -997,13 +998,15 @@ class Industry(object):
                      sprite_selector = str(sprite_or_spriteset.animation_rate) + '* (animation_frame)'
             else:
                 sprite_selector = '0'
-            if sprite_or_spriteset.type == 'empty':
-                return sprite_or_spriteset.id + date_variation_suffix + suffix  + '(' + sprite_selector + ')'
+            if sprite_or_spriteset.type != '':
+                # ground tile assumes sprite_or_spriteset.type will always map to a ground_tile type
+                # have to accomodate number of frames needed (num_sprites_to_autofill) for animated spritelayouts
+                return 'spriteset_ground_tile_' + sprite_or_spriteset.type + '_' + str(sprite_or_spriteset.num_sprites_to_autofill)
             elif construction_state_num != 3 and self.default_industry_properties.override_default_construction_states == False:
-                # in this case we want a default construction state
+                # default construction state (no custom construction sprites)
                 return sprite_or_spriteset.id + '_spriteset_default_construction_state_' + str(construction_state_num) + '(' + sprite_selector + ')'
             else:
-                # we want a spriteset name and optional frame number
+                # default result is a spriteset name and optional frame number
                 return sprite_or_spriteset.id + date_variation_suffix + suffix  + '(' + sprite_selector + ')'
         if isinstance(sprite_or_spriteset, Sprite):
             return getattr(sprite_or_spriteset, 'sprite_number' + suffix)
