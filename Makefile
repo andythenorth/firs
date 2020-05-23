@@ -72,7 +72,6 @@ $(LANG_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.lng src)
 
 $(HTML_DOCS): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.pt --ext=.lng src)
 	$(_V) $(PYTHON3) src/render_docs.py $(ARGS)
-	$(PYTHON3) src/render_docs.py $(ARGS)
 # Insane trick to check whether both DOT and GVPR are not empty.
 ifeq ($(DOT)$(GVPR),$(GVPR)$(DOT))
 	echo "[HTML DOCS] graphviz not found, skipping cargo flow graphs"
