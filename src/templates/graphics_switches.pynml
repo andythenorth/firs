@@ -49,7 +49,7 @@
         ${industry.id}_industry_construction_state_graphics_switch; // default
     }
 
-    switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_switch_graphics, switch_tile_fences()) {
+    switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_switch_graphics, [switch_tile_fences(), switch_terrain_sprite()]) {
         ${industry.id}_store_temp_vars;
     }
     <!--! end fence switches -->

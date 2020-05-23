@@ -66,7 +66,7 @@ def main():
     start = time()
     grf_nml = codecs.open(os.path.join(firs.generated_files_path, 'firs.nml'),'w','utf8')
     header_items = ['header','checks','parameters', 'sprite_templates', 'cargos', 'construction_states', 'colour',
-                    'procedures_fences', 'randomise_primary_production_on_build']
+                    'procedures_fences', 'procedures_terrain_sprite', 'randomise_primary_production_on_build']
     for header_item in header_items:
         grf_nml.write(render_header_item_nml(header_item))
 

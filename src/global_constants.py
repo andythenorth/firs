@@ -303,7 +303,7 @@ FARM_MINE_SUPPLY_REQUIREMENT = 16
 # time window (days) for delivery of combinatory cargos to secondary industries
 secondary_production_span = 90
 
-temp_storage_graphics_chain = dict(var_default_ground = 0,  # currently unused - sprite ID of default ground tile in the place of the tile
+temp_storage_graphics_chain = dict(var_terrain_sprite = 0, # ID of terrain sprite (from baseset) for the tile
                                    var_fencesprite_ne = 1, # fence sprite to use on the NE border
                                    var_fencesprite_nw = 2, # fence sprite to use on the NW border
                                    var_fencesprite_se = 3, # fence sprite to use on the SE border
