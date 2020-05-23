@@ -46,24 +46,18 @@ industry.add_spritelayout(
     ground_overlay=spriteset_platform,
     building_sprites=[spriteset_crane_animated, spriteset_greeble]
 )
-industry.add_spritelayout(
-    id='dredging_site_spritelayout_null',
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[]
-)
 
 industry.add_industry_layout(
     id='dredging_site_industry_layout_1',
-    layout=[(0, 0, '255', 'dredging_site_spritelayout_null'),
-            (0, 1, '24', 'dredging_site_spritelayout_null'),
-            (0, 2, '24', 'dredging_site_spritelayout_null'),
-            (0, 4, '255', 'dredging_site_spritelayout_null'),
-            (1, 0, '255', 'dredging_site_spritelayout_null'),
-            (1, 4, '255', 'dredging_site_spritelayout_null'),
-            (2, 0, '255', 'dredging_site_spritelayout_null'),
-            (2, 2, '255', 'dredging_site_spritelayout_null'),
+    layout=[(0, 0, '255', 'spritelayout_null'),
+            (0, 1, '24', 'spritelayout_null'),
+            (0, 2, '24', 'spritelayout_null'),
+            (0, 4, '255', 'spritelayout_null'),
+            (1, 0, '255', 'spritelayout_null'),
+            (1, 4, '255', 'spritelayout_null'),
+            (2, 0, '255', 'spritelayout_null'),
+            (2, 2, '255', 'spritelayout_null'),
             (2, 3, 'dredging_site_tile_1', 'dredging_site_spritelayout_1'),
-            (2, 4, '255', 'dredging_site_spritelayout_null'),
+            (2, 4, '255', 'spritelayout_null'),
             ]
 )

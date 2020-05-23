@@ -203,12 +203,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_empty,
     building_sprites=[spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_9b]
 )
-industry.add_spritelayout(
-    id='port_spritelayout_null',
-    ground_sprite=spriteset_ground_empty,
-    ground_overlay=spriteset_ground_empty,
-    building_sprites=[]
-)
 industry.add_magic_spritelayout(
     type='harbour_coast_foundations',
     base_id='port_spritelayout_coast_warehouse',
@@ -238,7 +232,7 @@ industry.add_industry_layout(
     id='port_industry_layout_1',
     layout=[(0, 3, 'port_tile_1', 'port_spritelayout_27'),
             (0, 4, 'port_tile_2', 'port_spritelayout_coast_truck'),
-            (1, 0, '255', 'port_spritelayout_null'),
+            (1, 0, '255', 'spritelayout_null'),
             (1, 1, 'port_tile_1', 'port_spritelayout_11'),
             (1, 2, 'port_tile_1', 'port_spritelayout_29'),
             (1, 3, 'port_tile_1', 'port_spritelayout_11'),
@@ -249,16 +243,16 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id='port_industry_layout_2',
-    layout=[(0, 0, '255', 'port_spritelayout_null'),
-            (0, 1, '255', 'port_spritelayout_null'),
-            (0, 2, '255', 'port_spritelayout_null'),
+    layout=[(0, 0, '255', 'spritelayout_null'),
+            (0, 1, '255', 'spritelayout_null'),
+            (0, 2, '255', 'spritelayout_null'),
             (1, 0, 'port_tile_1', 'port_spritelayout_23'),
             (1, 1, 'port_tile_1', 'port_spritelayout_23'),
-            (1, 255, '255', 'port_spritelayout_null'),
+            (1, 255, '255', 'spritelayout_null'),
             (2, 0, 'port_tile_1', 'port_spritelayout_30'),
             (2, 1, 'port_tile_1', 'port_spritelayout_12'),
             (2, 2, 'port_tile_1', 'port_spritelayout_21'),
-            (2, 255, '255', 'port_spritelayout_null'),
+            (2, 255, '255', 'spritelayout_null'),
             (3, 1, 'port_tile_2', 'port_spritelayout_coast_warehouse'),
             (3, 2, 'port_tile_2', 'port_spritelayout_coast_truck'),
             ]
@@ -273,9 +267,9 @@ industry.add_industry_layout(
             (2, 1, 'port_tile_1', 'port_spritelayout_26'),
             (2, 2, 'port_tile_1', 'port_spritelayout_28'),
             (2, 3, 'port_tile_1', 'port_spritelayout_22'),
-            (2, 4, '255', 'port_spritelayout_null'),
-            (3, 2, '255', 'port_spritelayout_null'),
-            (3, 3, '255', 'port_spritelayout_null'),
+            (2, 4, '255', 'spritelayout_null'),
+            (3, 2, '255', 'spritelayout_null'),
+            (3, 3, '255', 'spritelayout_null'),
             ]
 )
 industry.add_industry_layout(
@@ -285,39 +279,39 @@ industry.add_industry_layout(
             (0, 2, 'port_tile_1', 'port_spritelayout_29'),
             (0, 3, 'port_tile_1', 'port_spritelayout_11'),
             (0, 4, 'port_tile_1', 'port_spritelayout_28'),
-            (0, 5, '255', 'port_spritelayout_null'),
+            (0, 5, '255', 'spritelayout_null'),
             (1, 0, 'port_tile_2', 'port_spritelayout_coast_warehouse'),
             (1, 1, 'port_tile_1', 'port_spritelayout_28'),
             (1, 2, 'port_tile_1', 'port_spritelayout_25'),
             (1, 4, 'port_tile_1', 'port_spritelayout_25'),
-            (1, 5, '255', 'port_spritelayout_null'),
-            (2, 3, '255', 'port_spritelayout_null'),
-            (2, 4, '255', 'port_spritelayout_null'),
-            (2, 5, '255', 'port_spritelayout_null'),
+            (1, 5, '255', 'spritelayout_null'),
+            (2, 3, '255', 'spritelayout_null'),
+            (2, 4, '255', 'spritelayout_null'),
+            (2, 5, '255', 'spritelayout_null'),
             ]
 )
 industry.add_industry_layout(
     id='port_industry_layout_5',
     layout=[(0, 0, 'port_tile_2', 'port_spritelayout_coast_warehouse'),
             (1, 0, 'port_tile_1', 'port_spritelayout_12'),
-            (1, 2, '255', 'port_spritelayout_null'),
+            (1, 2, '255', 'spritelayout_null'),
             (2, 0, 'port_tile_1', 'port_spritelayout_12'),
             (2, 1, 'port_tile_1', 'port_spritelayout_29'),
             (2, 2, 'port_tile_1', 'port_spritelayout_28'),
-            (2, 3, '255', 'port_spritelayout_null'),
+            (2, 3, '255', 'spritelayout_null'),
             (3, 0, 'port_tile_1', 'port_spritelayout_12'),
             (3, 1, 'port_tile_1', 'port_spritelayout_2'),
             (3, 2, 'port_tile_1', 'port_spritelayout_28'),
-            (3, 3, '255', 'port_spritelayout_null'),
-            (4, 255, '255', 'port_spritelayout_null'),
+            (3, 3, '255', 'spritelayout_null'),
+            (4, 255, '255', 'spritelayout_null'),
             (4, 0, 'port_tile_1', 'port_spritelayout_13'),
             (4, 1, 'port_tile_1', 'port_spritelayout_24'),
             (4, 2, 'port_tile_1', 'port_spritelayout_24'),
-            (4, 3, '255', 'port_spritelayout_null'),
-            (5, 255, '255', 'port_spritelayout_null'),
-            (5, 0, '255', 'port_spritelayout_null'),
-            (5, 1, '255', 'port_spritelayout_null'),
-            (5, 2, '255', 'port_spritelayout_null'),
-            (5, 3, '255', 'port_spritelayout_null'),
+            (4, 3, '255', 'spritelayout_null'),
+            (5, 255, '255', 'spritelayout_null'),
+            (5, 0, '255', 'spritelayout_null'),
+            (5, 1, '255', 'spritelayout_null'),
+            (5, 2, '255', 'spritelayout_null'),
+            (5, 3, '255', 'spritelayout_null'),
             ]
 )

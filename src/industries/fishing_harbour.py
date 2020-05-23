@@ -315,12 +315,6 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground,
     building_sprites=[spriteset_18]
 )
-industry.add_spritelayout(
-    id='fishing_harbour_spritelayout_null',
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[]
-)
 
 slope_switch_1 = industry.add_slope_graphics_switch('fishing_harbour_slope_switch_1',
                                                     slope_spritelayout_mapping={0: 'fishing_harbour_spritelayout_land_tile_1_1',
@@ -362,7 +356,7 @@ industry.add_industry_layout(
     id='fishing_harbour_industry_layout_1',
     layout=[(0, 3, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_27'),
             (0, 4, 'fishing_harbour_tile_2', 'fishing_harbour_slope_switch_1'),
-            (1, 0, '255', 'fishing_harbour_spritelayout_null'),
+            (1, 0, '255', 'spritelayout_null'),
             (1, 1, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_11'),
             (1, 2, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_29'),
             (1, 3, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_11'),
@@ -373,16 +367,16 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id='fishing_harbour_industry_layout_2',
-    layout=[(0, 0, '255', 'fishing_harbour_spritelayout_null'),
-            (0, 1, '255', 'fishing_harbour_spritelayout_null'),
-            (0, 2, '255', 'fishing_harbour_spritelayout_null'),
+    layout=[(0, 0, '255', 'spritelayout_null'),
+            (0, 1, '255', 'spritelayout_null'),
+            (0, 2, '255', 'spritelayout_null'),
             (1, 0, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_23'),
             (1, 1, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_23'),
-            (1, 255, '255', 'fishing_harbour_spritelayout_null'),
+            (1, 255, '255', 'spritelayout_null'),
             (2, 0, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_30'),
             (2, 1, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_12'),
             (2, 2, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_21'),
-            (2, 255, '255', 'fishing_harbour_spritelayout_null'),
+            (2, 255, '255', 'spritelayout_null'),
             (3, 1, 'fishing_harbour_tile_2', 'fishing_harbour_slope_switch_2'),
             (3, 2, 'fishing_harbour_tile_2', 'fishing_harbour_slope_switch_1'),
             ]
@@ -397,9 +391,9 @@ industry.add_industry_layout(
             (2, 1, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_26'),
             (2, 2, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_28'),
             (2, 3, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_22'),
-            (2, 4, '255', 'fishing_harbour_spritelayout_null'),
-            (3, 2, '255', 'fishing_harbour_spritelayout_null'),
-            (3, 3, '255', 'fishing_harbour_spritelayout_null'),
+            (2, 4, '255', 'spritelayout_null'),
+            (3, 2, '255', 'spritelayout_null'),
+            (3, 3, '255', 'spritelayout_null'),
             ]
 )
 industry.add_industry_layout(
@@ -409,39 +403,39 @@ industry.add_industry_layout(
             (0, 2, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_1'),
             (0, 3, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_1'),
             (0, 4, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_28'),
-            (0, 5, '255', 'fishing_harbour_spritelayout_null'),
+            (0, 5, '255', 'spritelayout_null'),
             (1, 0, 'fishing_harbour_tile_2', 'fishing_harbour_slope_switch_1'),
             (1, 1, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_31'),
             (1, 2, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_32'),
             (1, 4, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_25'),
-            (1, 5, '255', 'fishing_harbour_spritelayout_null'),
-            (2, 3, '255', 'fishing_harbour_spritelayout_null'),
-            (2, 4, '255', 'fishing_harbour_spritelayout_null'),
-            (2, 5, '255', 'fishing_harbour_spritelayout_null'),
+            (1, 5, '255', 'spritelayout_null'),
+            (2, 3, '255', 'spritelayout_null'),
+            (2, 4, '255', 'spritelayout_null'),
+            (2, 5, '255', 'spritelayout_null'),
             ]
 )
 industry.add_industry_layout(
     id='fishing_harbour_industry_layout_5',
     layout=[(0, 0, 'fishing_harbour_tile_2', 'fishing_harbour_slope_switch_1'),
             (1, 0, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_land_tile_1_3'),
-            (1, 2, '255', 'fishing_harbour_spritelayout_null'),
+            (1, 2, '255', 'spritelayout_null'),
             (2, 0, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_land_tile_1_3'),
             (2, 1, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_31'),
             (2, 2, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_32'),
-            (2, 3, '255', 'fishing_harbour_spritelayout_null'),
+            (2, 3, '255', 'spritelayout_null'),
             (3, 0, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_30'),
             (3, 1, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_13'),
             (3, 2, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_13'),
-            (3, 3, '255', 'fishing_harbour_spritelayout_null'),
-            (4, 255, '255', 'fishing_harbour_spritelayout_null'),
+            (3, 3, '255', 'spritelayout_null'),
+            (4, 255, '255', 'spritelayout_null'),
             (4, 0, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_24'),
             (4, 1, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_24'),
             (4, 2, 'fishing_harbour_tile_1', 'fishing_harbour_spritelayout_24'),
-            (4, 3, '255', 'fishing_harbour_spritelayout_null'),
-            (5, 255, '255', 'fishing_harbour_spritelayout_null'),
-            (5, 0, '255', 'fishing_harbour_spritelayout_null'),
-            (5, 1, '255', 'fishing_harbour_spritelayout_null'),
-            (5, 2, '255', 'fishing_harbour_spritelayout_null'),
-            (5, 3, '255', 'fishing_harbour_spritelayout_null'),
+            (4, 3, '255', 'spritelayout_null'),
+            (5, 255, '255', 'spritelayout_null'),
+            (5, 0, '255', 'spritelayout_null'),
+            (5, 1, '255', 'spritelayout_null'),
+            (5, 2, '255', 'spritelayout_null'),
+            (5, 3, '255', 'spritelayout_null'),
             ]
 )
