@@ -15,7 +15,7 @@ cargo = Cargo(id='slag',
               items_of_cargo='string(STR_CARGO_UNIT_SLAG)',
               penalty_lowerbound='64',
               single_penalty_length='255',
-              price_factor=50,  # deliberately low, needed to space out cargo payments to allow unique rates
+              price_factor=56,  # deliberately low, needed to space out cargo payments to allow unique rates
               capacity_multiplier='1',
               allow_animated_pixels=True,  # slag uses fire cycle pixels, by design, so suppress NML pixel warnings
               icon_indices=(11, 3))

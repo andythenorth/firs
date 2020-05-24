@@ -15,6 +15,6 @@ cargo = Cargo(id='iron_ore',
               items_of_cargo='TTD_STR_QUANTITY_IRON_ORE',
               penalty_lowerbound='40',
               single_penalty_length='255',
-              price_factor=60,
+              price_factor=64,
               capacity_multiplier='1',
               icon_indices=(9, 0))

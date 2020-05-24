@@ -15,6 +15,6 @@ cargo = Cargo(id='coal',
               items_of_cargo='TTD_STR_QUANTITY_COAL',
               penalty_lowerbound='40',
               single_penalty_length='255',
-              price_factor=57,
+              price_factor=61,
               capacity_multiplier='1',
               icon_indices=(1, 0))
