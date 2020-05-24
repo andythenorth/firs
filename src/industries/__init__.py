@@ -135,6 +135,9 @@ from industries import factory_3
 factory_3.industry.register()
 """
 
+from industries import farm
+farm.industry.register()
+
 """
 from industries import ferrochrome_smelter
 ferrochrome_smelter.industry.register()
@@ -252,9 +255,6 @@ manganese_mine.industry.register()
 
 from industries import metal_workshop
 metal_workshop.industry.register()
-
-from industries import mixed_farm
-mixed_farm.industry.register()
 
 from industries import nitrate_mine
 nitrate_mine.industry.register()
