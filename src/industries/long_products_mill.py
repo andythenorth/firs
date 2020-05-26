@@ -53,6 +53,12 @@ spriteset_7 = industry.add_spriteset(
 spriteset_8 = industry.add_spriteset(
     sprites=[(500, 10, 64, 31, -31, 0)],
 )
+spriteset_9 = industry.add_spriteset(
+    sprites=[(570, 10, 64, 31, -31, 0)],
+)
+spriteset_10 = industry.add_spriteset(
+    sprites=[(640, 10, 64, 31, -31, -10)],
+)
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type='white_smoke_small',
     xoffset=-5,
@@ -111,60 +117,77 @@ industry.add_spritelayout(
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
-    id='long_products_mill_spritelayout_greeble',
+    id='long_products_mill_spritelayout_steel_pile_sw_ne',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
     fences=['nw', 'ne', 'se', 'sw']
+)
+industry.add_spritelayout(
+    id='long_products_mill_spritelayout_steel_pile_se_nw',
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_9],
+    fences=['nw', 'ne', 'se', 'sw']
+)
+industry.add_spritelayout(
+    id='long_products_mill_spritelayout_greeble',
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_10],
+    fences=[]
+)
+industry.add_spritelayout(
+    id='long_products_mill_spritelayout_empty',
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[],
+    fences=[]
 )
 
 # long products mill uses non-standard layouts where some sprites only used for some orientiations (sw_ne or se_nw)
 # this is to achieve the appearance of 'long'
 industry.add_industry_layout(
     id='long_products_mill_industry_layout_1',
-    layout=[(0, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_sw_ne_2'),
+    layout=[(0, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_sw_ne_1'),
             (0, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_boilerhouse'),
-            (0, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
-            (1, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_sw_ne_1'),
-            (1, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_sw_ne_1'),
-            (1, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
+            (0, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_open_shed'),
+            (1, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_sw_ne_2'),
+            (1, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_steel_pile_se_nw'),
+            (1, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_steel_pile_sw_ne'),
             (2, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_sw_ne_2'),
             (2, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_sw_ne_2'),
-            (2, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
+            (2, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_empty'),
             (3, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_sw_ne_1'),
             (3, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_sw_ne_1'),
-            (3, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
-            (4, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_sw_ne_2'),
+            (3, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_steel_pile_sw_ne'),
+            (4, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_open_shed'),
             (4, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_sw_ne_2'),
-            (4, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
-            (5, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
-            (5, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
+            (4, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_steel_pile_sw_ne'),
+            (5, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_tanks'),
+            (5, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_empty'),
             (5, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
-            (6, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_open_shed'),
-            (6, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_tanks'),
             ]
 )
 industry.add_industry_layout(
     id='long_products_mill_industry_layout_2',
-    layout=[(0, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_se_nw_2'),
-            (0, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_se_nw_1'),
+    layout=[(0, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_se_nw_1'),
+            (0, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_se_nw_2'),
             (0, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_se_nw_2'),
             (0, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_se_nw_1'),
-            (0, 4, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_se_nw_2'),
-            (0, 5, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
-            (0, 6, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_open_shed'),
+            (0, 4, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_open_shed'),
+            (0, 5, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_tanks'),
             (1, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_boilerhouse'),
-            (1, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_se_nw_1'),
+            (1, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_steel_pile_sw_ne'),
             (1, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_se_nw_2'),
             (1, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_se_nw_1'),
             (1, 4, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_shed_se_nw_2'),
-            (1, 5, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
-            (1, 6, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_tanks'),
-            (2, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
-            (2, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
-            (2, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
-            (2, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
-            (2, 4, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
+            (1, 5, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_empty'),
+            (2, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_open_shed'),
+            (2, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_steel_pile_se_nw'),
+            (2, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_empty'),
+            (2, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_steel_pile_se_nw'),
+            (2, 4, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_steel_pile_se_nw'),
             (2, 5, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_greeble'),
             ]
 )
