@@ -1114,8 +1114,8 @@ class IndustryTownProducerPopulationDependent(IndustryPrimary):
         self.template = kwargs.get('template', 'industry_primary_town_producer.pynml')
         self.supply_requirements = None # supplies do not boost this type of primary
         # town producer industries have lower and upper production caps
-        self.min_production = 56
-        self.max_production = 4096
+        self.min_production = 64
+        self.max_production = 2048
 
     def get_prod_cargo_types(self, economy):
         # town-population-dependent industries provide multipliers which are used as n/16 - set 16 for default

@@ -69,10 +69,10 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_switch_economy, economy) {
 switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [
                 <!--! calculated production based on population -->
                 STORE_TEMP((population + 11) / (12 * 7), 1),
-                <!--! min production, around 56t / month, to prevent very small towns having no production
+                <!--! min production, around 64t / month, to prevent very small towns having no production
                       divide by 7, as this is the least number of production cycles we'll get in a month (February) -->
                 STORE_TEMP(${industry.min_production} / 7, 2),
-                <!--! max production, around 4096t / month, to prevent pathological output in large cities
+                <!--! max production, around 2048t / month, to prevent pathological output in large cities
                       divide by 9, as that's the largest number of production cycles we'll get in a month -->
                 STORE_TEMP(${industry.max_production} / 9, 3),
             ]
