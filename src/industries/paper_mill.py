@@ -27,7 +27,7 @@ industry.add_tile(id='paper_mill_tile_1',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    type='concrete'
+    type='dirty_concrete'
 )
 spriteset_ground_overlay = industry.add_spriteset(
     type='empty'

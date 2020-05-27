@@ -32,7 +32,7 @@ industry.add_tile(id='slag_grinding_plant_tile_2',
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
-    type='concrete',
+    type='dirty_concrete',
 )
 spriteset_ground_overlay = industry.add_spriteset(
     type='empty'

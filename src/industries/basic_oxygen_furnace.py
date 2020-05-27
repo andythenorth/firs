@@ -26,8 +26,8 @@ industry.add_tile(id='basic_oxygen_furnace_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
-sprite_ground = industry.add_sprite(
-    sprite_number='GROUNDTILE_MUD_TRACKS'  # ground tile same as overlay tile
+sprite_ground = industry.add_spriteset(
+    type='hard_standing_dirt',
 )
 sprite_ground_overlay = industry.add_spriteset(
     type='empty',
