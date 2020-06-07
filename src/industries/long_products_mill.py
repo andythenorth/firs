@@ -30,13 +30,13 @@ spriteset_ground_overlay = industry.add_spriteset(
     type='empty'
 )
 spriteset_1 = industry.add_spriteset(
-    sprites=[(10, 60, 64, 70, -31, -35)],
+    sprites=[(10, 60, 64, 64, -31, -33)],
 )
 spriteset_2 = industry.add_spriteset(
-    sprites=[(80, 60, 64, 70, -31, -35)],
+    sprites=[(80, 60, 64, 64, -31, -33)],
 )
 spriteset_3 = industry.add_spriteset(
-    sprites=[(150, 60, 64, 51, -31, -20)],
+    sprites=[(150, 60, 64, 64, -31, -33)],
 )
 spriteset_4 = industry.add_spriteset(
     sprites=[(220, 60, 64, 51, -31, -23)],
@@ -110,58 +110,20 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id='long_products_mill_industry_layout_1',
-    layout=[(0, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
-            (0, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
-            (0, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_4'),
+    layout=[(0, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_2'),
+            (0, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_2'),
+            (0, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
             (0, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_6'),
             (0, 4, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_5'),
-            (1, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
-            (1, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
+            (1, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_2'),
+            (1, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_2'),
             (1, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_7'),
             (1, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_6'),
             (1, 4, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_5'),
-            (2, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
+            (2, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_6'),
             (2, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_1'),
-            (2, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_2'),
+            (2, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_6'),
             (2, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_7'),
             (2, 4, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_6'),
-            ]
-)
-industry.add_industry_layout(
-    id='long_products_mill_industry_layout_2',
-    layout=[(0, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
-            (0, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
-            (1, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_1'),
-            (1, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_2'),
-            (1, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
-            (1, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
-            (2, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_7'),
-            (2, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_7'),
-            (2, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_6'),
-            (2, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_6'),
-            (3, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_4'),
-            (3, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_5'),
-            (3, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_5'),
-            (3, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_5'),
-            ]
-)
-industry.add_industry_layout(
-    id='long_products_mill_industry_layout_3',
-    layout=[(0, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
-            (0, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
-            (0, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
-            (0, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_5'),
-            (1, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
-            (1, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
-            (1, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
-            (1, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_6'),
-            (2, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_5'),
-            (2, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_1'),
-            (2, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_2'),
-            (2, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_7'),
-            (3, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_5'),
-            (3, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_4'),
-            (3, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_7'),
-            (3, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_6'),
             ]
 )
