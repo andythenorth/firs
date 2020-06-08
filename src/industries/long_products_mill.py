@@ -39,7 +39,7 @@ spriteset_3 = industry.add_spriteset(
     sprites=[(150, 60, 64, 64, -31, -33)],
 )
 spriteset_4 = industry.add_spriteset(
-    sprites=[(220, 60, 64, 51, -31, -23)],
+    sprites=[(220, 60, 64, 64, -31, -33)],
 )
 spriteset_5 = industry.add_spriteset(
     sprites=[(290, 60, 64, 51, -31, -20)],
@@ -112,16 +112,16 @@ industry.add_industry_layout(
     id='long_products_mill_industry_layout_1',
     layout=[(0, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_2'),
             (0, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_2'),
-            (0, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
-            (0, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_6'),
+            (0, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_2'),
+            (0, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_7'),
             (0, 4, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_5'),
             (1, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_2'),
             (1, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_2'),
             (1, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_7'),
             (1, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_6'),
             (1, 4, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_5'),
-            (2, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_6'),
-            (2, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_1'),
+            (2, 0, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_4'),
+            (2, 1, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_3'),
             (2, 2, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_6'),
             (2, 3, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_7'),
             (2, 4, 'long_products_mill_tile_1', 'long_products_mill_spritelayout_6'),
