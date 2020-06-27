@@ -8,7 +8,7 @@ industry = IndustrySecondary(id='wire_and_section_mill',
                              prob_map_gen='5',
                              map_colour='43',
                              name='string(STR_IND_WIRE_AND_SECTION_MILL)',
-                             nearby_station_name='string(STR_STATION_HEAVY_INDUSTRY_2)',
+                             nearby_station_name='string(STR_STATION_ROD_MILL)',
                              fund_cost_multiplier='120',
                              intro_year=1832)
 
