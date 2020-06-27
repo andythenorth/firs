@@ -230,9 +230,6 @@ from industries import liquids_terminal
 liquids_terminal.industry.register()
 """
 
-from industries import long_products_mill
-long_products_mill.industry.register()
-
 """ BLTC
 from industries import lumber_yard
 lumber_yard.industry.register()
@@ -428,3 +425,5 @@ vineyard.industry.register()
 from industries import wharf
 wharf.industry.register()
 
+from industries import wire_and_section_mill
+wire_and_section_mill.industry.register()
