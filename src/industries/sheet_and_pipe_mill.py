@@ -8,7 +8,7 @@ industry = IndustrySecondary(id='sheet_and_pipe_mill',
                              prob_map_gen='5',
                              map_colour='160',
                              name='string(STR_IND_SHEET_AND_PIPE_MILL)',
-                             nearby_station_name='string(STR_STATION_HEAVY_INDUSTRY_2)',
+                             nearby_station_name='string(STR_STATION_PIPE_MILL)',
                              fund_cost_multiplier='120',
                              intro_year=1832)
 
