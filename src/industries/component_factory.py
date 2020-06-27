@@ -8,7 +8,7 @@ industry = IndustrySecondary(id='component_factory',
                              prob_map_gen='8',
                              map_colour='166',
                              name='string(STR_IND_COMPONENT_FACTORY)',
-                             nearby_station_name='string(STR_STATION_INDUSTRY_ESTATE_1)',
+                             nearby_station_name='string(STR_STATION_COMPONENTS)',
                              fund_cost_multiplier='95')
 
 industry.economy_variations['STEELTOWN'].enabled = True
