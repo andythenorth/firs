@@ -30,8 +30,8 @@ industry.add_tile(id='coke_oven_tile_2',
                   location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
-sprite_ground = industry.add_sprite(
-    sprite_number='GROUNDTILE_MUD_TRACKS'
+sprite_ground = industry.add_spriteset(
+    type='hard_standing_dirt',
 )
 spriteset_ground_overlay = industry.add_spriteset(
     type='empty'

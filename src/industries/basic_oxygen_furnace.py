@@ -26,10 +26,10 @@ industry.add_tile(id='basic_oxygen_furnace_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
-sprite_ground = industry.add_spriteset(
+spriteset_ground = industry.add_spriteset(
     type='hard_standing_dirt',
 )
-sprite_ground_overlay = industry.add_spriteset(
+spriteset_ground_overlay = industry.add_spriteset(
     type='empty',
 )
 # unused
@@ -75,73 +75,73 @@ sprite_smoke_2 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id='basic_oxygen_furnace_spritelayout_empty',
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='basic_oxygen_furnace_spritelayout_manganese_1',
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_manganese_1],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='basic_oxygen_furnace_spritelayout_tanks',
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_tanks],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='basic_oxygen_furnace_spritelayout_air_plant',
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_air_plant],
     smoke_sprites=[sprite_smoke_2],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='basic_oxygen_furnace_spritelayout_furnace',
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_furnace],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='basic_oxygen_furnace_spritelayout_caster',
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_caster],
     smoke_sprites=[sprite_smoke_1],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='basic_oxygen_furnace_spritelayout_metal_1',
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_metal_1],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='basic_oxygen_furnace_spritelayout_metal_2',
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_metal_2],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='basic_oxygen_furnace_spritelayout_metal_3',
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_metal_3],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='basic_oxygen_furnace_spritelayout_shed',
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_shed],
     fences=['nw', 'ne', 'se', 'sw']
 )

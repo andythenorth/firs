@@ -28,7 +28,7 @@ industry.add_tile(id='copper_refinery_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
-sprite_ground = industry.add_spriteset(
+spriteset_ground = industry.add_spriteset(
     type='hard_standing_dirt',
 )
 spriteset_ground_overlay = industry.add_spriteset(
@@ -93,28 +93,28 @@ sprite_smoke_3 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id='copper_refinery_spritelayout_tanks',
-    ground_sprite=sprite_ground,
+    ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='copper_refinery_spritelayout_thickening_tank',
-    ground_sprite=sprite_ground,
+    ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='copper_refinery_spritelayout_big_shed',
-    ground_sprite=sprite_ground,
+    ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='copper_refinery_spritelayout_flue_stack',
-    ground_sprite=sprite_ground,
+    ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     smoke_sprites=[sprite_smoke_1],
@@ -122,7 +122,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id='copper_refinery_spritelayout_ore_handling_front',
-    ground_sprite=sprite_ground,
+    ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
     smoke_sprites=[sprite_smoke_2, sprite_smoke_3],
@@ -130,42 +130,42 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id='copper_refinery_spritelayout_ore_handling_rear',
-    ground_sprite=sprite_ground,
+    ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='copper_refinery_spritelayout_copper_forklift',
-    ground_sprite=sprite_ground,
+    ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='copper_refinery_spritelayout_small_shed',
-    ground_sprite=sprite_ground,
+    ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='copper_refinery_spritelayout_stack_vent_thing',
-    ground_sprite=sprite_ground,
+    ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='copper_refinery_spritelayout_ground',
-    ground_sprite=sprite_ground,
+    ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='copper_refinery_spritelayout_transformer',
-    ground_sprite=sprite_ground,
+    ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_transformer],
     fences=['nw', 'ne', 'se', 'sw']
