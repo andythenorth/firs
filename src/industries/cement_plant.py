@@ -52,12 +52,12 @@ spriteset_5 = industry.add_spriteset(
              (500, 130, 64, 113, -31, -82), (570, 130, 64, 113, -31, -82), (640, 130, 64, 113, -31, -82)],
     animation_rate=1,
 )
-spriteset_ground_5 = industry.add_spriteset(
+spriteset_ground_anim = industry.add_spriteset(
     type='concrete',
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_5.sprites),
 )
-spriteset_ground_overlay_5 = industry.add_spriteset(
+spriteset_ground_overlay_anim = industry.add_spriteset(
     type='empty',
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_5.sprites),
@@ -130,8 +130,8 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id='cement_plant_spritelayout_5',
-    ground_sprite=spriteset_ground_5,
-    ground_overlay=spriteset_ground_overlay_5,
+    ground_sprite=spriteset_ground_anim,
+    ground_overlay=spriteset_ground_overlay_anim,
     building_sprites=[spriteset_5],
     fences=['nw', 'ne', 'se', 'sw']
 )
