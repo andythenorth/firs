@@ -16,10 +16,9 @@ industry = IndustryPrimaryOrganic(id='arable_farm',
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].prod_cargo_types_with_multipliers = [('GRAI', 14), ('BEAN', 14)]
-"""
+
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('CASS', 14), ('NUTS', 14)]
-"""
 
 industry.add_tile(id='arable_farm_tile_1',
                   location_checks=TileLocationChecks(disallow_slopes=True,

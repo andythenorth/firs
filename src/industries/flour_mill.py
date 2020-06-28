@@ -16,10 +16,8 @@ industry.economy_variations['BASIC_TROPIC'].accept_cargos_with_input_ratios = [(
 
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
-"""
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('CASS', 6), ('MAIZ', 6)]
-"""
 
 industry.add_tile(id='flour_mill_tile_1',
                   animation_length=6,

@@ -49,10 +49,8 @@ bulk_terminal.industry.register()
 from industries import carbon_black_plant
 carbon_black_plant.industry.register()
 
-"""
 from industries import cement_plant
 cement_plant.industry.register()
-"""
 
 from industries import chemical_plant
 chemical_plant.industry.register()
@@ -105,10 +103,8 @@ dairy.industry.register()
 from industries import dairy_farm
 dairy_farm.industry.register()
 
-"""
 from industries import diamond_mine
 diamond_mine.industry.register()
-"""
 
 from industries import dredging_site
 dredging_site.industry.register()
@@ -176,10 +172,8 @@ fishing_harbour.industry.register()
 from industries import forest
 forest.industry.register()
 
-""" BLTC
 from industries import fruit_plantation
 fruit_plantation.industry.register()
-"""
 
 """ BLTC
 from industries import furniture_factory
@@ -192,10 +186,8 @@ general_store.industry.register()
 from industries import glass_works
 glass_works.industry.register()
 
-""" BLTC
 from industries import hardware_store
 hardware_store.industry.register()
-"""
 
 from industries import hotel
 hotel.industry.register()
@@ -225,15 +217,11 @@ lime_kiln.industry.register()
 from industries import limestone_mine
 limestone_mine.industry.register()
 
-"""
 from industries import liquids_terminal
 liquids_terminal.industry.register()
-"""
 
-""" BLTC
 from industries import lumber_yard
 lumber_yard.industry.register()
-"""
 
 """
 from industries import machine_shop
@@ -245,10 +233,8 @@ from industries import machine_works
 machine_works.industry.register()
 """
 
-"""
 from industries import manganese_mine
 manganese_mine.industry.register()
-"""
 
 from industries import metal_workshop
 metal_workshop.industry.register()
@@ -264,10 +250,8 @@ from industries import oil_refinery
 oil_refinery.industry.register()
 """
 
-"""
 from industries import oil_rig
 oil_rig.industry.register()
-"""
 
 from industries import orchard_piggery
 orchard_piggery.industry.register()
@@ -278,10 +262,8 @@ paper_mill.industry.register()
 from industries import peatlands
 peatlands.industry.register()
 
-"""
 from industries import petrol_pump
 petrol_pump.industry.register()
-"""
 
 from industries import phosphate_mine
 phosphate_mine.industry.register()
@@ -338,10 +320,8 @@ from industries import recycling_plant
 recycling_plant.industry.register()
 """
 
-"""
 from industries import rubber_plantation
 rubber_plantation.industry.register()
-"""
 
 """ BLTC
 from industries import salt_mine
@@ -393,10 +373,8 @@ from industries import sulphuric_acid_plant
 sulphuric_acid_plant.industry.register()
 """
 
-""" BLTC
 from industries import supply_yard
 supply_yard.industry.register()
-"""
 
 """ BLTC
 from industries import textile_mill
@@ -408,10 +386,8 @@ from industries import tinplate_works
 tinplate_works.industry.register()
 """
 
-"""
 from industries import trading_post
 trading_post.industry.register()
-"""
 
 from industries import tyre_plant
 tyre_plant.industry.register()

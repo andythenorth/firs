@@ -15,7 +15,7 @@ industry = IndustryPrimaryExtractive(id='copper_mine',
                                      fund_cost_multiplier='238',
                                      intro_year=1800)
 
-#industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 industry.add_tile(id='copper_mine_tile_1',
