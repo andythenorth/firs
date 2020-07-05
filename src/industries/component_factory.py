@@ -39,7 +39,7 @@ spriteset_2 = industry.add_spriteset(
     sprites=[(80, 60, 64, 100, -31, -66)],
 )
 spriteset_3 = industry.add_spriteset(
-    sprites=[(150, 60, 64, 51, -31, -20)],
+    sprites=[(150, 60, 64, 100, -31, -66)],
 )
 spriteset_4 = industry.add_spriteset(
     sprites=[(220, 60, 64, 51, -31, -20)],
@@ -61,7 +61,7 @@ sprite_smoke = industry.add_smoke_sprite(
 )
 
 industry.add_spritelayout(
-    id='component_factory_spritelayout_large_building',
+    id='component_factory_spritelayout_large_building_1',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -69,18 +69,18 @@ industry.add_spritelayout(
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
-    id='component_factory_spritelayout_2',
+    id='component_factory_spritelayout_large_building_2',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
     fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
-    id='component_factory_spritelayout_3',
+    id='component_factory_spritelayout_large_building_3',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    fences=['nw', 'ne', 'se']
+    fences=['nw', 'ne', 'se', 'sw']
 )
 industry.add_spritelayout(
     id='component_factory_spritelayout_4',
@@ -113,21 +113,25 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id='component_factory_industry_layout_1',
-    layout=[(0, 0, 'component_factory_tile_1', 'component_factory_spritelayout_large_building'),
-            (0, 1, 'component_factory_tile_1', 'component_factory_spritelayout_large_building'),
-            (0, 2, 'component_factory_tile_1', 'component_factory_spritelayout_large_building'),
-            (0, 3, 'component_factory_tile_1', 'component_factory_spritelayout_3'),
-            (1, 0, 'component_factory_tile_1', 'component_factory_spritelayout_large_building'),
-            (1, 1, 'component_factory_tile_1', 'component_factory_spritelayout_2'),
-            (1, 2, 'component_factory_tile_1', 'component_factory_spritelayout_3'),
-            (1, 3, 'component_factory_tile_1', 'component_factory_spritelayout_3'),
-            (2, 0, 'component_factory_tile_1', 'component_factory_spritelayout_large_building'),
-            (2, 1, 'component_factory_tile_1', 'component_factory_spritelayout_7'),
+    layout=[(0, 0, 'component_factory_tile_1', 'component_factory_spritelayout_large_building_2'),
+            (0, 1, 'component_factory_tile_1', 'component_factory_spritelayout_large_building_3'),
+            (0, 2, 'component_factory_tile_1', 'component_factory_spritelayout_large_building_2'),
+            (0, 3, 'component_factory_tile_1', 'component_factory_spritelayout_large_building_3'),
+            (0, 4, 'component_factory_tile_1', 'component_factory_spritelayout_large_building_3'),
+            (1, 0, 'component_factory_tile_1', 'component_factory_spritelayout_large_building_1'),
+            (1, 1, 'component_factory_tile_1', 'component_factory_spritelayout_4'),
+            (1, 2, 'component_factory_tile_1', 'component_factory_spritelayout_6'),
+            (1, 3, 'component_factory_tile_1', 'component_factory_spritelayout_4'),
+            (1, 4, 'component_factory_tile_1', 'component_factory_spritelayout_4'),
+            (2, 0, 'component_factory_tile_1', 'component_factory_spritelayout_large_building_2'),
+            (2, 1, 'component_factory_tile_1', 'component_factory_spritelayout_large_building_3'),
             (2, 2, 'component_factory_tile_1', 'component_factory_spritelayout_6'),
             (2, 3, 'component_factory_tile_1', 'component_factory_spritelayout_6'),
-            (3, 0, 'component_factory_tile_1', 'component_factory_spritelayout_large_building'),
-            (3, 1, 'component_factory_tile_1', 'component_factory_spritelayout_large_building'),
-            (3, 2, 'component_factory_tile_1', 'component_factory_spritelayout_4'),
-            (3, 3, 'component_factory_tile_1', 'component_factory_spritelayout_3'),
+            (2, 4, 'component_factory_tile_1', 'component_factory_spritelayout_6'),
+            (3, 0, 'component_factory_tile_1', 'component_factory_spritelayout_large_building_1'),
+            (3, 1, 'component_factory_tile_1', 'component_factory_spritelayout_4'),
+            (3, 2, 'component_factory_tile_1', 'component_factory_spritelayout_6'),
+            (3, 3, 'component_factory_tile_1', 'component_factory_spritelayout_7'),
+            (3, 4, 'component_factory_tile_1', 'component_factory_spritelayout_7'),
             ]
 )
