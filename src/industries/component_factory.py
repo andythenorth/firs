@@ -33,10 +33,10 @@ spriteset_ground_overlay = industry.add_spriteset(
     type='empty'
 )
 spriteset_1 = industry.add_spriteset(
-    sprites=[(10, 60, 64, 70, -31, -39)],
+    sprites=[(10, 60, 64, 100, -31, -66)],
 )
 spriteset_2 = industry.add_spriteset(
-    sprites=[(80, 60, 64, 70, -31, -39)],
+    sprites=[(80, 60, 64, 100, -31, -66)],
 )
 spriteset_3 = industry.add_spriteset(
     sprites=[(150, 60, 64, 51, -31, -20)],
@@ -61,7 +61,7 @@ sprite_smoke = industry.add_smoke_sprite(
 )
 
 industry.add_spritelayout(
-    id='component_factory_spritelayout_1',
+    id='component_factory_spritelayout_large_building',
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -113,37 +113,20 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id='component_factory_industry_layout_1',
-    layout=[(0, 0, 'component_factory_tile_1', 'component_factory_spritelayout_3'),
-            (0, 1, 'component_factory_tile_1', 'component_factory_spritelayout_3'),
-            (0, 2, 'component_factory_tile_1', 'component_factory_spritelayout_5'),
-            (0, 3, 'component_factory_tile_1', 'component_factory_spritelayout_4'),
-            (0, 4, 'component_factory_tile_1', 'component_factory_spritelayout_5'),
-            (1, 0, 'component_factory_tile_1', 'component_factory_spritelayout_3'),
-            (1, 1, 'component_factory_tile_1', 'component_factory_spritelayout_3'),
-            (1, 2, 'component_factory_tile_1', 'component_factory_spritelayout_5'),
-            (1, 3, 'component_factory_tile_1', 'component_factory_spritelayout_4'),
-            (1, 4, 'component_factory_tile_1', 'component_factory_spritelayout_6'),
-            (2, 0, 'component_factory_tile_1', 'component_factory_spritelayout_3'),
-            (2, 1, 'component_factory_tile_1', 'component_factory_spritelayout_1'),
-            (2, 2, 'component_factory_tile_1', 'component_factory_spritelayout_2'),
-            (2, 3, 'component_factory_tile_1', 'component_factory_spritelayout_7'),
-            (2, 4, 'component_factory_tile_1', 'component_factory_spritelayout_7'),
-            ]
-)
-industry.add_industry_layout(
-    id='component_factory_industry_layout_2',
-    layout=[(0, 2, 'component_factory_tile_1', 'component_factory_spritelayout_3'),
+    layout=[(0, 0, 'component_factory_tile_1', 'component_factory_spritelayout_large_building'),
+            (0, 1, 'component_factory_tile_1', 'component_factory_spritelayout_large_building'),
+            (0, 2, 'component_factory_tile_1', 'component_factory_spritelayout_large_building'),
             (0, 3, 'component_factory_tile_1', 'component_factory_spritelayout_3'),
-            (1, 0, 'component_factory_tile_1', 'component_factory_spritelayout_1'),
+            (1, 0, 'component_factory_tile_1', 'component_factory_spritelayout_large_building'),
             (1, 1, 'component_factory_tile_1', 'component_factory_spritelayout_2'),
             (1, 2, 'component_factory_tile_1', 'component_factory_spritelayout_3'),
             (1, 3, 'component_factory_tile_1', 'component_factory_spritelayout_3'),
-            (2, 0, 'component_factory_tile_1', 'component_factory_spritelayout_4'),
+            (2, 0, 'component_factory_tile_1', 'component_factory_spritelayout_large_building'),
             (2, 1, 'component_factory_tile_1', 'component_factory_spritelayout_7'),
             (2, 2, 'component_factory_tile_1', 'component_factory_spritelayout_6'),
             (2, 3, 'component_factory_tile_1', 'component_factory_spritelayout_6'),
-            (3, 0, 'component_factory_tile_1', 'component_factory_spritelayout_4'),
-            (3, 1, 'component_factory_tile_1', 'component_factory_spritelayout_5'),
+            (3, 0, 'component_factory_tile_1', 'component_factory_spritelayout_large_building'),
+            (3, 1, 'component_factory_tile_1', 'component_factory_spritelayout_large_building'),
             (3, 2, 'component_factory_tile_1', 'component_factory_spritelayout_4'),
             (3, 3, 'component_factory_tile_1', 'component_factory_spritelayout_3'),
             ]
