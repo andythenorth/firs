@@ -177,6 +177,7 @@ industry.add_spritelayout(
 
 # long products mill uses non-standard layouts where some sprites only used for some orientiations (sw_ne or se_nw)
 # this is to achieve the appearance of 'long'
+# min 6x4 as there are lots of output cargos
 industry.add_industry_layout(
     id='sheet_and_pipe_mill_industry_layout_1',
     layout=[(0, 0, 'sheet_and_pipe_mill_tile_1', 'sheet_and_pipe_mill_spritelayout_shed_sw_ne_1'),
