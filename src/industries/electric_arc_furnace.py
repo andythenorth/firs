@@ -140,6 +140,8 @@ industry.add_spritelayout(
     building_sprites=[spriteset_metal_2],
     fences=['nw', 'ne', 'se', 'sw']
 )
+
+# min 6x4 or 5x5 as there are lots of output cargos
 industry.add_industry_layout(
     id='electric_arc_furnace_industry_layout_1',
     layout=[(0, 0, 'electric_arc_furnace_tile_1', 'electric_arc_furnace_spritelayout_2'),

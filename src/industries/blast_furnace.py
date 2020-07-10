@@ -167,6 +167,8 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_tile_dark_animated,
     building_sprites=[spriteset_casting_shed_animated],
 )
+
+# min 6x4 or 5x5 as there are lots of output cargos
 industry.add_industry_layout(
     id='blast_furnace_industry_layout_1',
     layout=[(0, 0, 'blast_furnace_tile_1', 'blast_furnace_spritelayout_empty'),

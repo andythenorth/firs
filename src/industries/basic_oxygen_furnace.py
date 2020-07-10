@@ -146,6 +146,7 @@ industry.add_spritelayout(
     fences=['nw', 'ne', 'se', 'sw']
 )
 
+# min 6x4 or 5x5 as there are lots of output cargos
 industry.add_industry_layout(
     id='basic_oxygen_furnace_industry_layout_1',
     layout=[(0, 0, 'basic_oxygen_furnace_tile_1', 'basic_oxygen_furnace_spritelayout_furnace'),
