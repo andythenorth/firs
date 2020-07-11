@@ -2,7 +2,7 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='fish_farm',
                                   accept_cargo_types=[],
-                                  prod_cargo_types_with_multipliers=[('FISH', 7)],
+                                  prod_cargo_types_with_multipliers=[('FISH', 8)],
                                   prob_in_game='14',
                                   prob_map_gen='14',
                                   substitute='5',
