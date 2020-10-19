@@ -26,7 +26,7 @@ industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = 
 # this is to allow an easy kickstart of ENSP at the wharf, when all other chains are so tightly connected
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['CMNT', 'PIPE', 'LYE_', 'STSE'] # FOOD was tried, but results in more complex cargo flow diagram
-industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('ENSP', 12), ('POWR', 14), ('ZINC', 16), ('COAT', 10), ('ALUM', 11), ('SOAP', 10)]
+industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('ENSP', 12), ('POWR', 14), ('ZINC', 16), ('COAT', 10), ('SOAP', 10)]
 
 industry.add_tile(id='wharf_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
