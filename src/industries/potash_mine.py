@@ -12,6 +12,8 @@ industry = IndustryPrimaryExtractive(id='potash_mine',
                                      fund_cost_multiplier='232')
 
 #industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('POTA', 20), ('SALT', 15)]
 
 industry.add_tile(id='potash_mine_tile_1',
                   animation_length=81,

@@ -22,10 +22,10 @@ industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = 
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargo_types = ['POWR', 'RUBR', 'BOOM']
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_multipliers = [('COPR', 10), ('VEHI', 14), ('ALUM', 12), ('WDPR', 14), ('STEL', 14)]
 
-# in Steeltown, there is a deliberate feedback loop with ZINC -> PIPE -> wharf
+# in Steeltown, there is a deliberate feedback loop with ZINC -> PIPE -> wharf, same for SOAP
 # this is to allow an easy kickstart of ENSP at the wharf, when all other chains are so tightly connected
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].accept_cargo_types = ['CMNT', 'PIPE', 'LYE_', 'STSE'] # FOOD was tried, but results in more complex cargo flow diagram
+industry.economy_variations['STEELTOWN'].accept_cargo_types = ['LYE_', 'PIPE', 'CMNT', 'STSE'] # FOOD was tried, but results in more complex cargo flow diagram
 industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('ENSP', 12), ('POWR', 14), ('ZINC', 16), ('COAT', 10), ('SOAP', 10)]
 
 industry.add_tile(id='wharf_tile_1',

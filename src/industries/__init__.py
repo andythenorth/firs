@@ -292,11 +292,8 @@ port.industry.register()
 from industries import power_plant
 power_plant.industry.register()
 
-"""
-# unused currently, but left in place for PacMan/Big Arctic economy
 from industries import potash_mine
 potash_mine.industry.register()
-"""
 
 from industries import pyrite_mine
 pyrite_mine.industry.register()
