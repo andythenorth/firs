@@ -23,7 +23,7 @@ industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios 
 industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('BDMT', 4), ('GOOD', 4)]
 
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].accept_cargos_with_input_ratios = [('SAND', 4), ('SASH', 2), ('LIME', 2)]
+industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('SAND', 6), ('RFPR', 2)] # no limestone or dolomite, too much detail
 
 industry.add_tile(id='glass_works_tile_1',
                   animation_length=71,
