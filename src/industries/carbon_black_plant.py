@@ -15,6 +15,7 @@ industry = IndustrySecondary(id='carbon_black_plant',
                              fund_cost_multiplier='120')
 
 industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].prob_in_game = '0' # do not build during gameplay
 
 industry.add_tile(id='carbon_black_plant_tile_1',
                   animation_length=7,

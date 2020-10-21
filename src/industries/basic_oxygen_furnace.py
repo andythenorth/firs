@@ -16,6 +16,7 @@ industry = IndustrySecondary(id='basic_oxygen_furnace',
                              intro_year=1850)  # intro year needs to >= Blast Furnace intro year, otherwise location restriction means no BOFs are built
 
 industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].prob_in_game = '0' # do not build during gameplay
 
 industry.add_tile(id='basic_oxygen_furnace_tile_1',
                   animation_length=7,

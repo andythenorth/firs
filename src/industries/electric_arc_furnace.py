@@ -13,6 +13,7 @@ industry = IndustrySecondary(id='electric_arc_furnace',
                              intro_year=1832)
 
 industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].prob_in_game = '1' # low chance of build during gameplay
 
 industry.add_tile(id='electric_arc_furnace_tile_1',
                   animation_length=71,

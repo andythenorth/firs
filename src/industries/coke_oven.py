@@ -13,6 +13,7 @@ industry = IndustrySecondary(id='coke_oven',
                              fund_cost_multiplier='120')
 
 industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].prob_in_game = '0' # do not build during gameplay
 
 industry.add_tile(id='coke_oven_tile_1',
                   animation_length=7,

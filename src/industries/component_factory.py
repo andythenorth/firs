@@ -12,6 +12,7 @@ industry = IndustrySecondary(id='component_factory',
                              fund_cost_multiplier='95')
 
 industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].prob_in_game = '1' # low chance of build during gameplay
 
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

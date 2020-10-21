@@ -14,6 +14,7 @@ industry = IndustrySecondary(id='wire_and_section_mill',
 
 
 industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].prob_in_game = '0' # do not build during gameplay
 
 industry.add_tile(id='wire_and_section_mill_tile_1',
                   animation_length=71,
