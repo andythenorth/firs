@@ -28,6 +28,10 @@ industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FOOD', 'POTA', 'CHLO']
 industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('MNO2', 19), ('RUBR', 16), ('PLAS', 16), ('FECR', 14), ('ALUM', 11)]
 
+industry.economy_variations['WAWC'].enabled = True
+industry.economy_variations['WAWC'].accept_cargo_types = ['WDPR']
+industry.economy_variations['WAWC'].prod_cargo_types_with_multipliers = [('MNO2', 19), ('PORE', 16)]
+
 industry.add_tile(id='bulk_terminal_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
                   location_checks=TileLocationChecks(always_allow_founder=False))

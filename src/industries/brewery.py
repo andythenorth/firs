@@ -22,6 +22,9 @@ industry.economy_variations['BASIC_TEMPERATE'].accept_cargos_with_input_ratios =
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('FRUT', 4), ('MAIZ',4)]
 
+industry.economy_variations['WAWC'].enabled = True
+industry.economy_variations['WAWC'].name = 'string(STR_IND_CIDER_MILL)'
+
 industry.add_tile(id='brewery_tile_1',
                   animation_length=6,
                   animation_looping=True,

@@ -245,10 +245,8 @@ nitrate_mine.industry.register()
 from industries import oil_wells
 oil_wells.industry.register()
 
-""" BLTC
 from industries import oil_refinery
 oil_refinery.industry.register()
-"""
 
 from industries import oil_rig
 oil_rig.industry.register()
@@ -328,10 +326,8 @@ salt_mine.industry.register()
 from industries import sawmill
 sawmill.industry.register()
 
-"""
 from industries import sheep_farm
 sheep_farm.industry.register()
-"""
 
 from industries import sheet_and_pipe_mill
 sheet_and_pipe_mill.industry.register()
@@ -378,10 +374,8 @@ from industries import textile_mill
 textile_mill.industry.register()
 """
 
-""" BLTC
 from industries import tinplate_works
 tinplate_works.industry.register()
-"""
 
 from industries import trading_post
 trading_post.industry.register()

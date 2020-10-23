@@ -15,6 +15,8 @@ industry = IndustrySecondary(id='pyrite_smelter',
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
+industry.economy_variations['WAWC'].enabled = True
+
 industry.add_tile(id='pyrite_smelter_tile_1',
                   animation_length=7,
                   animation_looping=True,

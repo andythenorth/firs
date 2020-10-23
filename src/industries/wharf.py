@@ -28,6 +28,10 @@ industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['STSE', 'PIPE', 'CMNT', 'LYE_'] # FOOD was tried, but results in more complex cargo flow diagram
 industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('ENSP', 12), ('ZINC', 16), ('POWR', 14), ('COAT', 10), ('SOAP', 10)]
 
+industry.economy_variations['WAWC'].enabled = True
+industry.economy_variations['WAWC'].accept_cargo_types = ['WOOL', 'TINP']
+industry.economy_variations['WAWC'].prod_cargo_types_with_multipliers = [('ENSP', 12), ('QLME', 16), ('VEHI', 12)]
+
 industry.add_tile(id='wharf_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
                   location_checks=TileLocationChecks(always_allow_founder=False))

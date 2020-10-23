@@ -2,7 +2,7 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='oil_refinery',
                              accept_cargos_with_input_ratios=[('OIL_', 8)],
-                             prod_cargo_types_with_output_ratios=[('PETR', 3), ('NAPH', 3), ('SULP', 2)],
+                             prod_cargo_types_with_output_ratios=[('PETR', 6)],
                              prob_in_game='3',
                              prob_map_gen='5',
                              map_colour='191',
@@ -13,6 +13,10 @@ industry = IndustrySecondary(id='oil_refinery',
                              intro_year=1830)
 
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_output_ratios = [('PETR', 3), ('NAPH', 3), ('SULP', 2)]
+
+industry.economy_variations['WAWC'].enabled = True
+industry.economy_variations['WAWC'].prod_cargo_types_with_output_ratios = [('PETR', 3)] # and ???
 
 industry.add_tile(id='oil_refinery_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,

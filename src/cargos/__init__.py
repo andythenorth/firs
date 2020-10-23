@@ -345,15 +345,11 @@ from cargos import textiles
 textiles.cargo.register()
 """
 
-""" BLTC
 from cargos import tin
 tin.cargo.register()
-"""
 
-""" BLTC
 from cargos import tinplate
 tinplate.cargo.register()
-"""
 
 from cargos import tyres
 tyres.cargo.register()

@@ -25,6 +25,9 @@ industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['EOIL', 'O
 #industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('NH3_', 16)]
 industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('RFPR', 11), ('PETR', 7)]
 
+industry.economy_variations['WAWC'].enabled = True
+industry.economy_variations['WAWC'].prod_cargo_types_with_multipliers = [('OIL_', 18)]
+
 industry.add_tile(id='liquids_terminal_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
                   location_checks=TileLocationChecks(always_allow_founder=False))

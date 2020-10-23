@@ -20,6 +20,8 @@ industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_rat
 #industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('COAL', 2), ('CLAY', 2), ('GRVL', 4)]
 #industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('CMNT', 8)]
 
+industry.economy_variations['WAWC'].enabled = True
+
 industry.add_tile(id='cement_plant_tile_1',
                   animation_length=7,
                   animation_looping=True,

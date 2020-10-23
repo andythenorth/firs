@@ -18,6 +18,7 @@ industry = IndustryPrimaryOrganic(id='forest',
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('WOOD', 24)]
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+industry.economy_variations['WAWC'].enabled = True
 
 industry.add_tile(id='forest_tile_1',
                   foundations='return CB_RESULT_NO_FOUNDATIONS',

@@ -15,6 +15,8 @@ industry = IndustryPrimaryOrganic(id='orchard_piggery',
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
+industry.economy_variations['WAWC'].enabled = True
+
 industry.add_tile(id='orchard_piggery_tile_1',
                   foundations='return CB_RESULT_NO_FOUNDATIONS',
                   autoslope='return CB_RESULT_NO_AUTOSLOPE',
