@@ -9,10 +9,13 @@ Any changes made here are liable to be over-written.
 import subprocess
 
 def exe_cmd(cmd):
-    output = subprocess.run(cmd, env=None, check=True, stdout=subprocess.PIPE,
-                                universal_newlines=True).stdout
-    lines = output.splitlines()
-    return lines
+    try:
+        output = subprocess.run(cmd, env=None, check=True, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
+                                    universal_newlines=True).stdout
+        lines = output.splitlines()
+        return lines
+    except:
+        return ['undefined']
 
 def run():
     # revision is simply the count of revs in the current branch
@@ -22,7 +25,10 @@ def run():
     # for the version we just use git describe, which gives us a recent tag or so
     version = exe_cmd(['git', 'describe'])
 
-    print(revision[0], version[0])
+    # are we on a specific tag? (returns tag if true, otherwise errors)
+    tag_exact_match = exe_cmd(['git', 'describe', '--tags', '--exact-match'])
+
+    print(revision[0], version[0], tag_exact_match[0])
 
 if __name__ == '__main__':
     run()
