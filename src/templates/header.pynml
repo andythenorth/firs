@@ -2,7 +2,7 @@ grf {
 	grfid: "\F1%\00\08";
 	name: string(STR_GRF_NAME);
 	desc: string(STR_GRF_DESC);
-	url: string(STR_GRF_URL);
+	url: string(STR_GRF_DOCS_URL);
 	version: ${repo_vars.repo_revision};
 	min_compatible_version: 6294;
 	param 0 {
