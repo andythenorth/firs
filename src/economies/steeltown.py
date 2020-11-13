@@ -32,12 +32,10 @@ economy = Economy(id = "STEELTOWN",
                             'manganese',
                             'oxygen',
                             'paints_and_coatings',
-                            'petrol', # deprecated, needs removed
                             'pig_iron',
                             'pipe',
                             'plastics',
                             'quicklime',
-                            'rebar', # deprecated, needs removed
                             'rubber',
                             'salt',
                             'sand',
