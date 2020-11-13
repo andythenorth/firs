@@ -17,18 +17,24 @@ def exe_cmd(cmd):
     except:
         return ['undefined']
 
-def run():
+def get_revision():
     # revision is simply the count of revs in the current branch
     # this won't be perfect in all cases, but there's no possible way to produce a perfect single rev with git
     # so this is good enough
-    revision = exe_cmd(['git', 'rev-list', '--count', 'HEAD'])
+    return exe_cmd(['git', 'rev-list', '--count', 'HEAD'])[0]
+
+def get_version():
     # for the version we just use git describe, which gives us a recent tag or so
-    version = exe_cmd(['git', 'describe'])
+    return exe_cmd(['git', 'describe'])[0]
 
+def get_tag_exact_match():
     # are we on a specific tag? (returns tag if true, otherwise errors)
-    tag_exact_match = exe_cmd(['git', 'describe', '--tags', '--exact-match'])
+    return exe_cmd(['git', 'describe', '--tags', '--exact-match'])[0]
 
-    print(revision[0], version[0], tag_exact_match[0])
+def run():
+    # for the default case we just print the results, this is used by e.g. Makefiles
+    # for python cases, use the get_foo methods directly
+    print(get_revision(), get_version(), get_tag_exact_match())
 
 if __name__ == '__main__':
     run()
