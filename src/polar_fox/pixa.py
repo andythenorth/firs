@@ -10,186 +10,6 @@ import os.path
 currentdir = os.curdir
 
 
-class _Point:
-    """ simple class to hold the definition of a pixel that should be drawn """
-    def __init__(self, dx, dy, colour):
-        self.dx = dx
-        self.dy = dy
-        self._colour = colour # private storage of colour value or object
-
-    def colour(self, colourset = None):
-        """
-        for any given _Point instance, colour value might be stored as a numeric value, or calculated by an object (and returned on demand)
-        therefore get the actual colour via a method to hide implementation details from end user
-        """
-        if hasattr(self._colour, 'get_colour'):
-            # assume we have an object implementing a get_colour() method (ducktyped for ease of authors who want to provide their own colour object)
-            return self._colour.get_colour(colourset)
-        else:
-            # assume we have a valid int, if it isn't render stage will likely fail anyway, which imo is good enough in this case
-            return self._colour
-
-
-class _PixaSpotColour:
-    def __init__(self, shift, parent):
-        self.shift = shift
-        self.parent = parent
-
-    def get_colour(self, colourset):
-        result = colourset.get(self.parent.name, self.parent.default)
-        return result + self.shift
-
-
-class PixaColour:
-    """
-    small factory-like class
-    holds a variable for a colour index, for use in sequences
-    creates instances of spot colour classes which optionally shift up or down the colour index from the parent class
-    """
-    def __init__(self, name, default):
-        self.name = name
-        self.default = default
-
-    def __call__(self, shift=0):
-        return _PixaSpotColour(shift, self)
-
-
-class PixaSequence:
-    def __init__(self, points = None, transforms = None):
-        """
-        pass an optional sequence, in format [(dx, dy, colour)...]
-        pass an optional list of transforms to use
-        """
-        self.colourset_cache = None
-        self.temp_points_cache = None
-        self.points = []
-        self.transforms = []
-        if points is not None:
-            self.add_points(points)
-        if transforms is not None:
-            self.add_transforms(transforms)
-
-    def add_points(self, points):
-        """ pass in a list containing tuples of (x, y, colour) """
-        # ? could check here and print a warning if more than one point has same x, y ?
-        for dx, dy, col in points:
-            self.points.append(_Point(dx = dx, dy = dy, colour = col))
-
-    def add_transforms(self, transforms):
-        """ pass in an object for the transform """
-        """
-        ? this could be used by authors to add transforms at arbitrary points in their pipeline ?
-        that would let authors add transforms using variables which might not be in scope earlier in the pipeline
-        however...order of transforms matter.  How would they control order when adding a transform?
-        """
-        self.transforms.extend(transforms)
-
-    def get_recolouring(self, x, y, colourset = None):
-        """
-        Give points to be painted by the caller.
-        Colourset is required if points use vars for colours.  Colourset not required if all colours are specified as numbers.
-        If transforms are defined in this sequence, they willl be applied after the colourset and before returning points.
-        """
-
-        if self.temp_points_cache is None or self.colourset_cache is None or self.colourset_cache != colourset:
-
-            # create a copy of points, just used when returning to the caller
-            # don't want to modify the actual point values stored in the sequence definition
-            # n.b. we need to copy the objects in the list, not just the list
-            # we also apply a colourset at this point if available; if None, then default values will be used (if colour is provided by an object not int)
-            temp_points = []
-            for p in self.points:
-                temp_points.append(_Point(dx=p.dx, dy=p.dy, colour=p.colour(colourset)))
-
-            for t in self.transforms:
-                if t is not None:
-                    temp_points = t.convert(temp_points)
-
-            self.temp_points_cache = temp_points
-            self.colourset_cache = colourset
-
-        for p in self.temp_points_cache:
-            yield (x + p.dx, y + p.dy, p.colour())
-
-
-class PixaSequenceCollection:
-    def __init__(self, sequences):
-        self.sequences = sequences
-
-    def get_sequence_by_colour_index(self, colour):
-        return self.sequences.get(colour)
-
-
-class PixaMixer:
-    """
-    Empty base class for modifying a sequence.
-    """
-
-    def convert(self, seq):
-        """
-        Convert the sequence.
-
-        @param seq: Sequence of points.
-        @type  seq: C{list} of L{_Point}
-
-        @return Converted sequence.
-        @rtype: C{list} of L{_Point}
-        """
-        raise NotImplementedError("Implement me in %r" % type(self))
-
-
-class PixaShiftColour(PixaMixer):
-    """
-    Shift colours for an entire sequence by some value.
-    """
-    def __init__(self, lower, upper, shift):
-        self.lower = lower
-        self.upper = upper
-        self.shift = shift
-
-    def convert(self, seq):
-        result = []
-        for p in seq:
-            if p.colour() >= self.lower and p.colour() <= self.upper:
-                result.append(_Point(p.dx, p.dy, p.colour() + self.shift))
-            else:
-                result.append(p)
-        return result
-
-
-class PixaMaskColour(PixaMixer):
-    """
-    Mask out all colours for an entire sequence (mask colour user-defined to allow for palette variations).
-    """
-    def __init__(self, mask_colour):
-        self.mask_colour = mask_colour
-
-    def convert(self, seq):
-        return [_Point(p.dx, p.dy, self.mask_colour) for p in seq]
-
-class PixaShiftXY(PixaMixer):
-    """
-    Shift X, Y position.
-
-    @ivar ddx: Change in dx.
-    @type ddx: C{int}
-
-    @ivar ddy: Change in dy.
-    @type ddy: C{int}
-    """
-    def __init__(self, ddx, ddy):
-        self.ddx = ddx
-        self.ddy = ddy
-
-    def convert(self, seq):
-        return [_Point(p.dx + self.ddx, p.dy + self.ddy, p.colour()) for p in seq]
-
-def PixaShiftDY(dy):
-    """
-    Backwards compatibility; PixaShiftDY class removed in favour of PixaShiftXY.
-    """
-    return PixaShiftXY(0, dy)
-
 class Spritesheet:
     """
     Class holding the sprite sheet.
@@ -217,68 +37,63 @@ class Spritesheet:
         self.sprites.save(output_path, optimize=True)
 
 
-class PixaImageLoader:
+class PieceCargoSprites:
     """
-    Loads images from disk and does various useful things with them.
-    An instance of this class can store defaults for crops, masks, etcetera, useful for working with imported sprite sheets.
-    Defaults can in certain cases be over-ridden when calling a method on this class.
-
-    @ivar crop_box: If set, a box defining the left, upper, right, and lower pixel coordinates for cropping.
-    @type crop_box: A C{tuple} (C{int}, C{int}, C{int}, C{int}), or C{None} if no cropping necessary.
-
-    @ivar origin: The (x, y) pair defining the point where offset (0, 0) is.
-    @type origin: A C{tuple} (C{int}, C{int}).
+    Convenience class to hold sprites for piece cargos, sliced up by angle
     """
-    def __init__(self, crop_box = None, mask = (), origin = (0, 0)):
-        self.crop_box = crop_box
-        self.mask = mask
-        self.origin = origin
+    def __init__(self, polar_fox_constants, polar_fox_graphics_path):
+        # note that specific polar_fox attributes *must* be passed explicitly
+        # can't just pass polar_fox module as it's not always in scope
+        # similarly the path to polar fox graphics must be set explicitly as it varies by scope
+        self.polar_fox_constants = polar_fox_constants
+        self.sprites_by_filename = {}
+        # it may be undesirable for performance reasons to slice all the sprites on init, but I think we can chance it eh?
+        for cargo_filename in self.polar_fox_constants.piece_sprites_to_cargo_labels_maps.keys():
+            cargo_sprites_input_path = os.path.join(currentdir, polar_fox_graphics_path, 'piece_cargos', cargo_filename + '.png')
+            cargo_sprites_input_image = Image.open(cargo_sprites_input_path)
+            self.sprites_by_filename[cargo_filename] = cargo_sprites_input_image.copy()
+            # don't leave open files around, it can hit open file limits on macOs, maybe elsewhere; we've copied the Image object above to avoid needing the file handle
+            cargo_sprites_input_image.close()
 
-    def get_image(self, image_file_path, crop_box = None):
-        options = self._Options(self, crop_box)
-        raw = Image.open(image_file_path)
-        if options.crop_box is not None:  # only crop if needed
-            raw = raw.crop(options.crop_box)
-        return raw
+    def get_cargo_sprites_all_angles_for_length(self, cargo_filename, length):
+            # provide a list, with a two-tuple (cargo_sprite, mask) for each of 4 angles
+            # cargo sprites are assumed to be symmetrical, only 4 angles are needed
+            # cargos with 8 angles (e.g. bulldozers) aren't supported, use a different gestalt & template for those (dedicated or custom)
+            # loading states are first 4 sprites, loaded are second 4, all in one list, just pick them out as needed
+            return get_arbitrary_angles(self.sprites_by_filename[cargo_filename], self.cargo_spritesheet_bounding_boxes[length])
 
-    def make_points(self, image_file_path, crop_box = None, mask = None, origin = None):
-        """
-        Turns an image file into a list of points (dx, dy, colour index) suitable for use with L{PixaSequence}.
+    @property
+    def cargo_spritesheet_bounding_boxes(self):
+        # Cargo spritesheets provide multiple lengths, using a specific format of rows
+        # given a base set, find the bounding boxes for the rows per length
+        cargo_spritesheet_bounding_boxes = {}
+        for counter, length in enumerate([3, 4, 5, 6, 7, 8]):
+            bb_result = []
+            for y_offset in [0, 30]:
+                bb_y_offset = (counter * 60) + y_offset
+                bb_result.extend(tuple([(i[0], i[1] + bb_y_offset, i[2], i[3] + bb_y_offset) for i in self.polar_fox_constants.cargo_spritesheet_bounding_boxes_base]))
+            cargo_spritesheet_bounding_boxes[length] = bb_result
+        return cargo_spritesheet_bounding_boxes
 
-        @param image_file_path: Path to an image file to load.
-        @type  image_file_path: C{str}
 
-        @parm crop_box: If specified, override of the crop-box. (Otherwise, the class default value is used.)
-        @type crop_box: A C{tuple} (C{int}, C{int}, C{int}, C{int}), or C{None} if the class default should be used.
-
-        @param origin: If specified, a (x, y) pair defining the point where offset (0, 0) is.
-        @type  origin: A C{tuple} (C{int}, C{int}), or C{None} if the class default should be used.
-
-        @return: Collection of (dx, dy, colour) of unmasked pixels in the image.
-        @rtype:  C{list} of (C{int}, C{int}, C{int})
-        """
-        if mask is None:
-            mask = self.mask
-        if origin is None:
-            origin = self.origin
-        if crop_box is None:
-            crop_box = self.crop_box
-
-        assert mask is not None
-        assert origin is not None
-
-        raw = Image.open(image_file_path)
-        if crop_box is not None:  # only crop if needed
-            raw = raw.crop(crop_box)
-        rawpx = raw.load()
-        points = []
-        for x in range(raw.size[0]):
-          for y in range(raw.size[1]):
-            colour = rawpx[x, y]
-            if colour not in mask:
-                points.append((x - origin[0], y - origin[1], colour))
-        return points
-
+def get_arbitrary_angles(input_image, bounding_boxes):
+    # given an image and a list of arbitrary bounding boxes...
+    # ...return a list of two tuples with sprite and mask
+    # this can then be used for compositing
+    # note the arbitrary order of sprites which makes this very flexible
+    result = []
+    for bounding_box in bounding_boxes:
+        sprite = input_image.copy()
+        sprite = sprite.crop(bounding_box)
+        mask = sprite.copy()
+        # !! .point is noticeably slow although not signifcantly so with only 3 cargo types
+        # !! check this again if optimisation is a concern - can cargos be processed once and passed to the pipeline?
+        # !! as of Oct 2018, I tested commenting out *all* piece cargo processing, including calls to this method
+        # !! that cut only 1s from an 11s graphics processing run on single CPU
+        # !! so optimising this is TMWFTLB currently; instead simply using multiprocessing cuts graphics run to 2s
+        mask = mask.point(lambda i: 0 if i == 0 else 255).convert("1")
+        result.append((sprite, mask))
+    return result
 
 def make_cheatsheet(image, output_path, origin = None):
     block_size = 30
@@ -306,6 +121,11 @@ def make_cheatsheet(image, output_path, origin = None):
 
     result.save(output_path, optimize = True)
 
+def make_spritesheet_from_image(input_image, palette):
+    # convenience method to get a spritesheet from a passed PIL image
+    spritesheet = Spritesheet(width=input_image.size[0], height=input_image.size[1] , palette=palette)
+    spritesheet.sprites.paste(input_image)
+    return spritesheet
 
 def pixascan(image):
     """

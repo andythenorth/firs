@@ -102,49 +102,58 @@ cargo_labels = ['PASS', # pax first
                 'GLAS',
                 'POWR',
                 'STSH',
+                'STWR',
+                'NH3_',
                 #
                 'NULL']
 
 # shared lists of allowed classes, shared across multiple vehicle types
-base_refits_by_class = {'empty': [],
+base_refits_by_class = {
                         'all_freight': ['CC_BULK', 'CC_PIECE_GOODS', 'CC_EXPRESS', 'CC_LIQUID', 'CC_ARMOURED', 'CC_REFRIGERATED', 'CC_COVERED', 'CC_NON_POURABLE'],
-                        'pax': ['CC_PASSENGERS'],
-                        'mail': ['CC_MAIL'],
-                        'liquids': ['CC_LIQUID'],
-                        'packaged_freight': ['CC_PIECE_GOODS', 'CC_EXPRESS', 'CC_ARMOURED', 'CC_LIQUID'],
-                        'flatbed_freight': ['CC_PIECE_GOODS'],
-                        'dump_freight': ['CC_BULK'],
                         'covered_hopper_freight': [], # explicit allowal by label instead
+                        'dump_freight': ['CC_BULK'],
+                        'empty': [],
+                        'express_freight': ['CC_EXPRESS','CC_ARMOURED'],
+                        'flatbed_freight': ['CC_PIECE_GOODS'],
+                        'liquids': ['CC_LIQUID'],
+                        'mail': ['CC_MAIL'],
+                        'packaged_freight': ['CC_PIECE_GOODS', 'CC_EXPRESS', 'CC_ARMOURED', 'CC_LIQUID'],
+                        'pax': ['CC_PASSENGERS'],
                         'refrigerated_freight': ['CC_REFRIGERATED'],
-                        'express_freight': ['CC_EXPRESS','CC_ARMOURED']}
+                        }
 
 # generally we want to allow refit on classes, and disallow on labels (see disallowed_refits_by_label)
 # BUT for _some_ specialist vehicle types, it's simpler to just allow refit by label
-allowed_refits_by_label = {'edible_liquids': ['MILK', 'WATR', 'BEER', 'FOOD', 'EOIL'],
+allowed_refits_by_label = {
                            'box_freight': ['MAIL', 'GRAI', 'WHEA', 'MAIZ', 'FRUT', 'BEAN', 'NITR'], # box cars get some extended cargos
                            'chemicals': ['ACID', 'RFPR', 'CHLO'], # seems to be used by intermodal, otherwise chemicals tankers are deprecated in favour of product tankers
+                           'cold_metal': ['STEL', 'METL', 'STCB', 'STAL', 'STST', 'COPR', 'STSH', 'STWR'],
                            'covered_hoppers': ['GRAI', 'WHEA', 'MAIZ', 'SUGR', 'FMSP', 'RFPR', 'CLAY', 'BDMT',
                                                'BEAN', 'NITR', 'RUBR', 'SAND', 'POTA', 'QLME', 'SASH', 'CMNT',
                                                'KAOL', 'FERT', 'SALT', 'PLAS'], # not CBLK, gets dedicated vehicles or box
-                           'cryo_gases': ['CHLO', 'O2__'],
-                           'reefer': ['FOOD', 'FRUT', 'FISH'], # hax for intermodal container sprite selection - reefer car refits work just fine using CC_REFRIGERATED
+                           'cryo_gases': ['CHLO', 'O2__', 'NH3_'],
+                           'edible_liquids': ['MILK', 'WATR', 'BEER', 'FOOD', 'EOIL'],
                            'fruit_veg': ['FRUT', 'BEAN', 'CASS', 'JAVA', 'NUTS'],
-                           'cold_metal': ['STEL', 'METL', 'STCB', 'STAL', 'STST', 'COPR', 'STSH']}
+                           'reefer': ['FOOD', 'FRUT', 'FISH'], # hax for intermodal container sprite selection - reefer car refits work just fine using CC_REFRIGERATED
+                           }
 
 # rather than using disallowed classes (can cause breakage), specific labels are disallowed
-disallowed_refits_by_label = {'non_dump_bulk': ['WOOD', 'SGCN', 'FICR', 'BDMT', 'WDPR', 'GRAI', 'WHEA', 'CERE', 'MAIZ', 'FRUT', 'BEAN', 'CMNT',
+disallowed_refits_by_label = {
+                              'non_dump_bulk': ['WOOD', 'SGCN', 'FICR', 'BDMT', 'WDPR', 'GRAI', 'WHEA', 'CERE', 'MAIZ', 'FRUT', 'BEAN', 'CMNT',
                                                 'CTCD', 'FERT', 'OLSD', 'SUGR', 'TOFF', 'URAN', 'CBLK', 'PLAS'],
                               'non_generic_liquids': ['MILK', 'WATR', 'BEER', 'FOOD', 'EOIL', 'O2__', 'CHLO'], # used to exclude from standard tankers
                               'non_flatbed_freight': ['FOOD', 'FISH', 'LVST', 'FRUT', 'BEER', 'MILK', 'JAVA', 'SUGR', 'NUTS', 'EOIL', 'BOOM',
                                                       'FERT', 'PLAS', 'CBLK'],
-                              'non_freight_special_cases': ['TOUR']}
+                              'non_freight_special_cases': ['TOUR']
+                              }
 
 # cascading lists of default cargos, if the first cargo(s) are not available, all will be tried in order
 # avoids an issue where default cargo was weird for, e.g. some FIRS economies
 # don't conflate this with general refittability, they're different concerns ;)
 # vehicle classes can also just provide their own list locally, using this is convenient, not obligatory
-default_cargos = {'box': ['GOOD', 'VPTS', 'FOOD'],
-                  'coal_hopper': ['COAL', 'COKE', 'NITR', 'POTA'],
+default_cargos = {
+                  'box': ['GOOD', 'VPTS', 'FOOD'],
+                  'hopper': ['COAL', 'COKE', 'NITR', 'POTA'],
                   'cryo_gases': ['O2__', 'CHLO'],
                   'covered_hopper': ['SAND', 'KAOL', 'PLAS'],
                   'dump': ['MNO2', 'FECR', 'NITR', 'PHOS', 'SAND', 'GRVL'],
@@ -155,7 +164,7 @@ default_cargos = {'box': ['GOOD', 'VPTS', 'FOOD'],
                   'flat': ['STEL', 'STCB', 'COPR', 'METL'],
                   'fruit_veg': ['FRUT', 'BEAN', 'CASS', 'JAVA', 'NUTS'],
                   'grain_hopper': ['GRAI', 'PLAS'],
-                  'hopper': ['LIME', 'GRVL', 'SAND', 'PORE', 'SALT', 'IORE', 'CORE'],
+                  'rock_hopper': ['LIME', 'GRVL', 'SAND', 'PORE', 'SALT', 'IORE', 'CORE'],
                   # intermodal, uses box
                   'mail': ['MAIL'],
                   'metal': ['STEL', 'COPR'],
@@ -203,53 +212,66 @@ cargo_spritesheet_bounding_boxes_base = ((10, 10, 18, 36), (22, 10, 44, 26), (48
 # 2. this permits fine-grained control, e.g. cargos that can only go in open vehicles, outsized cargo that needs flats etc
 # also supports multiple cargo sprite types to suit vehicle, e.g. piled fruit, fruit in crates etc
 # keep alphabetised for general quality-of-life
-piece_vehicle_type_to_sprites_maps = {'flat': ['barrels_silver', 'copper_coils', 'crates_1', 'logs',
-                                              'lumber_planks', 'paper_coils', 'steel_coils',
-                                              'tarps_2cc_1', 'tarps_blue_1', 'tarps_gold_1', 'tarps_red_1'],
-                                      'open':['barrels_silver', 'coffee', 'copper_coils', 'crates_1', 'fruit', 'logs',
-                                              'lumber_planks', 'nuts', 'paper_coils', 'steel_coils',
-                                              'tarps_2cc_1', 'tarps_blue_1', 'tarps_gold_1', 'tarps_red_1'],
-                                      'stake':['logs', 'lumber_planks', 'tarps_2cc_1'] # tarps_2cc_1 for DFLT
-                                      }
+piece_vehicle_type_to_sprites_maps = {
+                                      'coil': ['copper_coils_eye_longitudinal_1', 'steel_coils_eye_longitudinal_1', 'tarps_grey_1'], # tarps_grey_1 for DFLT
+                                      'flat': ['barrels_silver_1', 'copper_coils_eye_to_sky_1', 'crates_1', 'ingots_1', 'logs_1',
+                                               'lumber_planks_1', 'paper_coils_eye_to_sky_1', 'pipes_1',
+                                               'steel_coils_eye_to_sky_1', 'steel_wire_rod_1',
+                                               'tarps_grey_1', 'tarps_blue_1', 'tarps_gold_1', 'tarps_red_1'],
+                                      'open': ['barrels_silver_1', 'coffee_1', 'copper_coils_eye_to_sky_1', 'crates_1', 'fruit_1', 'ingots_1', 'logs_1',
+                                               'lumber_planks_1', 'nuts_1', 'paper_coils_eye_to_sky_1', 'pipes_1',
+                                               'steel_coils_eye_to_sky_1', 'steel_wire_rod_1',
+                                               'tarps_grey_1', 'tarps_blue_1', 'tarps_gold_1', 'tarps_red_1'],
+                                      'stake': ['logs_1', 'lumber_planks_1', 'pipes_1', 'tarps_grey_1'] # tarps_grey_1 for DFLT
+                                     }
 
 # cargo labels can be repeated for different sprites, they'll be used selectively by vehicle types and/or randomised as appropriate
 # keep alphabetised for general quality-of-life
 # DFLT label is a hack to support cargos with no specific sprites (including unknown cargos), and should not be added to cargo translation table
-piece_sprites_to_cargo_labels_maps = {'barrels_silver': ['BEER', 'DYES', 'EOIL', 'MILK', 'OIL_', 'PETR', 'RFPR', 'WATR'],
-                                      'coffee': ['JAVA'],
-                                      'copper_coils': ['COPR'],
+piece_sprites_to_cargo_labels_maps = {
+                                      'barrels_silver_1': ['BEER', 'DYES', 'EOIL', 'MILK', 'OIL_', 'PETR', 'RFPR', 'WATR'],
+                                      'coffee_1': ['JAVA'],
+                                      'copper_coils_eye_longitudinal_1': ['COPR'],
+                                      'copper_coils_eye_to_sky_1': ['COPR'],
                                       'crates_1': ['GOOD'],
-                                      'fruit': ['FRUT'],
-                                      'logs': ['WOOD'],
-                                      'lumber_planks': ['WDPR'],
-                                      'nuts': ['NUTS'],
-                                      'paper_coils': ['PAPR'],
-                                      'steel_coils': ['STEL', 'METL', 'STAL', 'STCB', 'STST'],
+                                      'fruit_1': ['FRUT'],
+                                      'ingots_1': ['ALUM', 'ZINC'],
+                                      'logs_1': ['WOOD'],
+                                      'lumber_planks_1': ['WDPR'],
+                                      'nuts_1': ['NUTS'],
+                                      'paper_coils_eye_to_sky_1': ['PAPR'],
+                                      'pipes_1': ['PIPE'],
+                                      'steel_coils_eye_longitudinal_1': ['STEL', 'METL', 'STAL', 'STCB', 'STST', 'STSH'],
+                                      'steel_coils_eye_to_sky_1': ['STEL', 'METL', 'STAL', 'STCB', 'STST', 'STSH'],
+                                      'steel_wire_rod_1': ['STWR'],
                                       'tarps_blue_1': ['FMSP'],
                                       'tarps_gold_1': ['ENSP'],
                                       'tarps_red_1': ['BDMT'],
-                                      'tarps_2cc_1': ['DFLT']}  # see note on use of DFLT above
+                                      'tarps_grey_1': ['DFLT'] # see note on use of DFLT above
+                                     }
 
 # Tanker recolour maps
 # DFLT label is a hack to support cargos with no specific sprites (including unknown cargos), and should not be added to cargo translation table
 # the extended format includes information for intermodal that isn't needed in common cases
 # this is parsed and the intermodal information is dropped for tanker_livery_recolour_maps
-tanker_livery_recolour_maps_extended = (("OIL_", "1CC", # second value is body recolour map for intermodal bulk containers
-                                        {136: 1, 137: 2, 138: 3, 139: 4, 140: 5, 141: 6, 142: 7, 143: 8}),
-                                       ("CTAR", "1CC",
-                                        {136: 1, 137: 2, 138: 3, 139: 4, 140: 5, 141: 6, 142: 7, 143: 8}),
-                                       # see note on DFLT above
-                                       ("DFLT",  "2CC",
-                                        {136: 198, 137: 199, 138: 200, 139: 201, 140: 202, 141: 203, 142: 204, 143: 205}),
-                                       ("SULP",  "1CC",
-                                        {136: 62, 137: 63, 138: 64, 139: 65, 140: 66, 141: 67, 142: 68, 143: 69}),
-                                       # RFPR deliberately 2CC to allow combining with 1CC livery details
-                                       ("RFPR",  "1CC",
-                                        {136: 80, 137: 81, 138: 82, 139: 83, 140: 84, 141: 85, 142: 86, 143: 87}),
-                                       ("RUBR",  "1CC",
-                                        {136: 40, 137: 41, 138: 42, 139: 43, 140: 44, 141: 45, 142: 46, 143: 47}),
-                                       ("PETR", "1CC",
-                                        {136: 16, 137: 17, 138: 18, 139: 19, 140: 20, 141: 21, 142: 22, 143: 23}))
+tanker_livery_recolour_maps_extended = (
+                                        ("OIL_", "1CC", # second value is body recolour map for intermodal bulk containers
+                                         {136: 1, 137: 2, 138: 3, 139: 4, 140: 5, 141: 6, 142: 7, 143: 8}),
+                                        ("CTAR", "1CC",
+                                         {136: 1, 137: 2, 138: 3, 139: 4, 140: 5, 141: 6, 142: 7, 143: 8}),
+                                        # see note on DFLT above
+                                        ("DFLT",  "2CC",
+                                         {136: 198, 137: 199, 138: 200, 139: 201, 140: 202, 141: 203, 142: 204, 143: 205}),
+                                        ("SULP",  "1CC",
+                                         {136: 62, 137: 63, 138: 64, 139: 65, 140: 66, 141: 67, 142: 68, 143: 69}),
+                                        # RFPR deliberately 2CC to allow combining with 1CC livery details
+                                        ("RFPR",  "1CC",
+                                         {136: 80, 137: 81, 138: 82, 139: 83, 140: 84, 141: 85, 142: 86, 143: 87}),
+                                        ("RUBR",  "1CC",
+                                         {136: 40, 137: 41, 138: 42, 139: 43, 140: 44, 141: 45, 142: 46, 143: 47}),
+                                        ("PETR", "1CC",
+                                         {136: 16, 137: 17, 138: 18, 139: 19, 140: 20, 141: 21, 142: 22, 143: 23})
+                                       )
 
 tanker_livery_recolour_maps = [(i[0], i[2]) for i in tanker_livery_recolour_maps_extended]
 
@@ -258,7 +280,8 @@ tanker_livery_recolour_maps = [(i[0], i[2]) for i in tanker_livery_recolour_maps
 # the extended format includes information for intermodal that isn't needed in common cases
 # this is parsed and the intermodal information is dropped for bulk_cargo_recolour_maps
 # SCMT *is* bulk cargo in this set, realism is not relevant here, went back and forth on this a few times :P
-bulk_cargo_recolour_maps_extended = (("AORE", "1CC", # second value is body recolour map for intermodal bulk containers
+bulk_cargo_recolour_maps_extended = (
+                                     ("AORE", "1CC", # second value is body recolour map for intermodal bulk containers
                                       {170: 42, 171: 123, 172: 74, 173: 125, 174: 162, 175: 126, 176: 78}),
                                      ("CASS", "1CC",
                                       {170: 53, 171: 54, 172: 55, 173: 56, 174: 57, 175: 58, 176: 59}),
@@ -301,25 +324,82 @@ bulk_cargo_recolour_maps_extended = (("AORE", "1CC", # second value is body reco
                                      ("SLAG", "1CC",
                                       {170: 24, 171: 3, 172: 2, 173: 3, 174: 4, 175: 5, 176: 5}),
                                      ("SULP", "1CC",
-                                      {170: 65, 171: 67, 172: 66, 173: 67, 174: 68, 175: 69, 176: 69}))
+                                      {170: 65, 171: 67, 172: 66, 173: 67, 174: 68, 175: 69, 176: 69})
+                                    )
 
 bulk_cargo_recolour_maps = [(i[0], i[2]) for i in bulk_cargo_recolour_maps_extended]
 
-chemicals_tanker_livery_recolour_maps_extended = (("DFLT", "1CC",
-                                                   {136: CC1, 137: CC1+1, 138: CC1+2, 139: CC1+3, 140: CC1+4, 141: CC1+5, 142: CC1+6, 143: CC1+7}),)
+chemicals_tanker_livery_recolour_maps_extended = (
+                                                  ("DFLT", "1CC",
+                                                   {136: CC1, 137: CC1+1, 138: CC1+2, 139: CC1+3, 140: CC1+4, 141: CC1+5, 142: CC1+6, 143: CC1+7}),
+                                                 )
 
 chemicals_tanker_livery_recolour_maps = [(i[0], i[2]) for i in chemicals_tanker_livery_recolour_maps_extended]
 
-cryo_tanker_livery_recolour_maps_extended = (("DFLT", "1CC",
+cryo_tanker_livery_recolour_maps_extended = (
+                                             ("DFLT", "1CC",
                                               {136: 5, 137: 7, 138: 9, 139: 11, 140: 12, 141: 13, 142: 14, 143: 15}),
                                              ("CHLO", "1CC",
-                                              {136: 154, 137: 155, 138: 157, 139: 158, 140: 159, 141: 159, 142: 160, 143: 161}),)
+                                              {136: 154, 137: 155, 138: 157, 139: 158, 140: 159, 141: 159, 142: 160, 143: 161}),
+                                            )
 
 cryo_tanker_livery_recolour_maps = [(i[0], i[2]) for i in cryo_tanker_livery_recolour_maps_extended]
 
-curtain_side_livery_recolour_maps_extended = (("DFLT", "1CC", {}),
+# only intended for intermodal containers, curtain side vehicles will be CC
+curtain_side_livery_recolour_maps_extended = (
+                                              ("DFLT", "1CC", {}),
                                               ("TYRE", "black", {}),
                                               ("VENG", "grey", {}),
-                                              ("VPTS", "2CC", {}))
+                                              ("VPTS", "2CC", {})
+                                             )
 
 curtain_side_livery_recolour_maps = [(i[0], i[2]) for i in curtain_side_livery_recolour_maps_extended]
+
+# intermodal mapping of types to cargos with recolour options
+# first result is known refits which will fallback to xxxxx_DFLT
+# second result is known cargo sprites / livery recolours, which will map explicitly
+container_recolour_cargo_maps = (
+                                 ('box', ([], [])), # box currently generic, and is fallback for all unknown cargos / classes
+                                 ('bulk', ([], bulk_cargo_recolour_maps)),
+                                 ('chemicals_tank', (allowed_refits_by_label['chemicals'],
+                                                     chemicals_tanker_livery_recolour_maps)),
+                                 ('cryo_tank', (allowed_refits_by_label['cryo_gases'],
+                                                cryo_tanker_livery_recolour_maps)),
+                                 ('curtain_side', (['VBOD'], # this single label is a dirty trick to stop warnings about unused DFLT spritesets
+                                                   curtain_side_livery_recolour_maps)),
+                                 ('edibles_tank', (allowed_refits_by_label['edible_liquids'], [])),
+                                 ('livestock', (['LVST'], [])), # one label only - extend if other livestock labels added in future
+                                 ('reefer', (allowed_refits_by_label['reefer'], [])),
+                                 ('tank', ([], tanker_livery_recolour_maps)),
+                                 ('wood', (['WOOD'], [])), # one label only - note that wood container sprites are slightly different to stake flatrack
+                                )
+
+# intermodal flatracks use selected entries from piece_sprites_to_cargo_labels_maps
+# for intermodal, we don't always want to use a flatrack with visible cargo, even if the sprites are available; in some cases a box, tank etc is better
+# for simplicity of maintenance though, we do just use all the cargo labels for a specific type of cargo sprite
+container_piece_cargo_maps = {
+                              'ingots_1': piece_sprites_to_cargo_labels_maps['ingots_1'],
+                              'pipes_1': piece_sprites_to_cargo_labels_maps['pipes_1'],
+                              }
+
+# indexes into the DOS palette for a company colour name
+# find these from https://github.com/frosch123/TTDViewer/blob/master/src/recolor.xml#L186
+company_colour_maps = {
+                       'COLOUR_DARK_BLUE': (198, 199, 200, 201, 202, 203, 204, 205),
+                       'COLOUR_PALE_GREEN': (96, 97, 98, 99, 100, 101, 102, 103),
+                       'COLOUR_PINK': (42, 43, 44, 45, 46, 47, 48, 49),
+                       'COLOUR_YELLOW': (62, 63, 64, 65, 66, 67, 68, 69),
+                       'COLOUR_RED': (179, 180, 181, 182, 183, 164, 165, 166),
+                       'COLOUR_LIGHT_BLUE': (154, 155, 156, 157, 158, 159, 160, 161),
+                       'COLOUR_GREEN': (82, 83, 84, 85, 206, 207, 208, 209),
+                       'COLOUR_DARK_GREEN': (88, 89, 90, 91, 92, 93, 94, 95),
+                       'COLOUR_BLUE': (146, 147, 148, 149, 150, 151, 152, 153),
+                       'COLOUR_CREAM': (114, 115, 116, 117, 118, 119, 120, 121),
+                       'COLOUR_MAUVE': (128, 129, 130, 131, 132, 133, 134, 135),
+                       'COLOUR_PURPLE': (136, 137, 138, 139, 140, 141, 142, 143),
+                       'COLOUR_ORANGE': (64, 192, 193, 194, 195, 196, 197, 39),
+                       'COLOUR_BROWN': (32, 33, 34, 35, 36, 37, 38, 39),
+                       'COLOUR_GREY': (4, 5, 6, 7, 8, 9, 10, 11),
+                       'COLOUR_WHITE': (8, 9, 10, 11, 12, 13, 14, 15)
+                      }
+
