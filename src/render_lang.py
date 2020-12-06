@@ -1,4 +1,4 @@
-import firs
+import makfirs
 import utils
 
 import shutil
@@ -19,7 +19,7 @@ lang_templates = PageTemplateLoader(os.path.join(currentdir, 'src', 'lang_templa
 makefile_args = utils.get_makefile_args(sys)
 
 lang_src = os.path.join(currentdir, 'src', 'lang')
-lang_dst = os.path.join(firs.generated_files_path, 'lang')
+lang_dst = os.path.join(makfirs.generated_files_path, 'lang')
 
 if os.path.exists(lang_dst):
     shutil.rmtree(lang_dst)

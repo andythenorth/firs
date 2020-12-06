@@ -1,7 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='brewery',
-                             accept_cargos_with_input_ratios=[('FRUT', 6)],
+                             accept_cargos_with_input_ratios=[('FRUT', 6), ('ELEC', 6)],
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[('BEER', 8)],
                              prob_in_game='3',
@@ -12,15 +12,15 @@ industry = IndustrySecondary(id='brewery',
                              nearby_station_name='string(STR_STATION_BARREL_AND_KEG)',
                              fund_cost_multiplier='50')
 
-industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-industry.economy_variations['BASIC_TEMPERATE'].name = 'string(STR_IND_CIDER_MILL)'
-industry.economy_variations['BASIC_TEMPERATE'].accept_cargos_with_input_ratios = [('FRUT', 6)]
+industry.economy_variations['MAK_TEST'].enabled = True
+industry.economy_variations['MAK_TEST'].name = 'string(STR_IND_CIDER_MILL)'
+industry.economy_variations['MAK_TEST'].accept_cargos_with_input_ratios = [('FRUT', 6)]
 
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('GRAI', 4), ('MNSP', 4)]
 
-industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
-industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('FRUT', 4), ('MAIZ',4)]
+#industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+#industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('FRUT', 4), ('MAIZ',4)]
 
 industry.add_tile(id='brewery_tile_1',
                   animation_length=6,

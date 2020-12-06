@@ -1,19 +1,20 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='coke_oven',
-                             accept_cargos_with_input_ratios=[('COAL', 8)],
-                             prod_cargo_types_with_output_ratios=[('COKE', 6), ('CTAR', 1), ('SULP', 1)],
-                             prob_in_game='3',
-                             prob_map_gen='5',
+                             accept_cargos_with_input_ratios=[('PASS', 50), ('COAL', 50), ('ELEC', 1), ('FOOD', 5), ('ENSP', 5), ('GOOD', 5), ('MAIL', 10), ('WATR', 10)], 
+                             combined_cargos_boost_prod=True,
+                             prod_cargo_types_with_output_ratios=[('COKE', 1)],
+                             prob_in_game='1',
+                             prob_map_gen='0.5',
                              map_colour='183',
-                             # it's rare to force co-location of secondaries, but this one is near blast furnace by design
-                             location_checks=dict(industry_max_distance=['blast_furnace', 72], same_type_distance=72),
+                             # it's rare to force co-location of secondaries, but this one is near coal mine by design
+                             location_checks=dict(industry_max_distance=['coal_mine', 150], same_type_distance=500, industry_min_distance=['basic_oxygen_furnace', 500]),
                              name='string(STR_IND_COKE_OVEN)',
                              nearby_station_name='string(STR_STATION_BANK_TOP)',
                              fund_cost_multiplier='120')
 
-industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].prob_in_game = '0' # do not build during gameplay
+industry.economy_variations['MAK_TEST'].enabled = True
+#industry.economy_variations['STEELTOWN'].prob_in_game = '0' # do not build during gameplay
 
 industry.add_tile(id='coke_oven_tile_1',
                   animation_length=7,
@@ -22,14 +23,14 @@ industry.add_tile(id='coke_oven_tile_1',
                   custom_animation_control={'macro': 'random_first_frame',
                                             'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
                   location_checks=TileLocationChecks(require_effectively_flat=True,
-                                                     disallow_industry_adjacent=True))
+                                                     disallow_industry_adjacent=False))
 
 industry.add_tile(id='coke_oven_tile_2',
                   animation_length=47,
                   animation_looping=True,
                   animation_speed=2,
                   location_checks=TileLocationChecks(require_effectively_flat=True,
-                                                     disallow_industry_adjacent=True))
+                                                     disallow_industry_adjacent=False))
 
 sprite_ground = industry.add_spriteset(
     type='hard_standing_dirt',

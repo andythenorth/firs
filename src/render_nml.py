@@ -11,18 +11,18 @@ from time import time
 import global_constants
 import utils
 from incompatible_grfs import incompatible_grfs
-import firs
-registered_cargos = firs.registered_cargos
-registered_industries = firs.registered_industries
-registered_economies = firs.registered_economies
-incompatible_industries = firs.incompatible_industries
+import makfirs
+registered_cargos = makfirs.registered_cargos
+registered_industries = makfirs.registered_industries
+registered_economies = makfirs.registered_economies
+incompatible_industries = makfirs.incompatible_industries
 
 from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
 templates = PageTemplateLoader(os.path.join(src_path, 'templates'), format='text')
 industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), format='text')
 
-generated_nml_path = os.path.join(firs.generated_files_path, 'nml')
+generated_nml_path = os.path.join(makfirs.generated_files_path, 'nml')
 if not os.path.exists(generated_nml_path):
     os.mkdir(generated_nml_path)
 
@@ -65,7 +65,7 @@ def render_industry_nml(industry):
 
 def main():
     start = time()
-    grf_nml = codecs.open(os.path.join(firs.generated_files_path, 'firs.nml'),'w','utf8')
+    grf_nml = codecs.open(os.path.join(makfirs.generated_files_path, 'Makfirs.nml'),'w','utf8')
     header_items = ['header','checks','parameters', 'cargos', 'colour',
                     'procedures_fences', 'procedures_terrain_sprite', 'randomise_primary_production_on_build',
                     'sprite_templates', 'construction_states', 'ground_tiles']

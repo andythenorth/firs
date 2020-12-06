@@ -1,17 +1,18 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='sawmill',
-                             accept_cargos_with_input_ratios=[('WOOD', 6)],
-                             prod_cargo_types_with_output_ratios=[('WDPR', 8)],
-                             prob_in_game='3',
-                             prob_map_gen='5',
+                             accept_cargos_with_input_ratios=[('WOOD', 1), ('MAIL', 50), ('WATR', 100), ('ELEC', 100), ('GOOD', 40), ('PASS', 20)],
+                             combined_cargos_boost_prod=True,
+                             prod_cargo_types_with_output_ratios=[('WOOD', 10), ('MAIL', 1), ('PASS', 1)],
+                             prob_in_game='10',
+                             prob_map_gen='10',
                              map_colour='194',
+                             location_checks=dict(cluster=[200, 2], same_type_distance=500),
                              name='TTD_STR_INDUSTRY_NAME_SAWMILL',
                              nearby_station_name='string(STR_STATION_MILL)',
                              fund_cost_multiplier='97')
 
-industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['MAK_TEST'].enabled = True
 
 industry.add_tile(id='sawmill_tile_1',
                   location_checks=TileLocationChecks(disallow_industry_adjacent=True))

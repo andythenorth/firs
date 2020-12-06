@@ -561,17 +561,17 @@ class IndustryLocationChecks(object):
             # special case if clustering is used, cluster check handles max distance and cluster counts...
             # ...and min distance is set to 20 for all types (as all clustered industries were using this value at time of writing)
             result.append(IndustryLocationCheckCluster(self.industry.id, self.cluster))
-            result.append(IndustryLocationCheckIndustryMinDistance(self.industry.id, 20))
+            result.append(IndustryLocationCheckIndustryMinDistance(self.industry.id, 1))
         elif self.same_type_distance:
             # industries can over-ride the default min distance to others of same type
             result.append(IndustryLocationCheckIndustryMinDistance(self.industry.id, self.same_type_distance))
         else:
             # enforce a default min distance to other industries of same type
-            result.append(IndustryLocationCheckIndustryMinDistance(self.industry.id, 56))
+            result.append(IndustryLocationCheckIndustryMinDistance(self.industry.id, 1))
 
         if self.industry_max_distance:
             result.append(IndustryLocationCheckIndustryMaxDistance(self.industry_max_distance))
-
+                      
         if self.town_industry_count:
             result.append(IndustryLocationCheckTownIndustryCount(self.town_industry_count))
 
@@ -585,7 +585,7 @@ class IndustryLocationChecks(object):
         for industry in set(incompatible_industries[self.industry]):
             # don't check for self type, we have other ways to do that (occasionally economy cargo variations trigger this)
             if industry.id != self.industry.id:
-                result.append(IndustryLocationCheckIndustryMinDistance(industry.id, 16))
+                result.append(IndustryLocationCheckIndustryMinDistance(industry.id, 1))
 
         prev = None
         for lc in reversed(result):
@@ -641,8 +641,8 @@ class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = 'min_distance_' + str(self.industry_type_numeric_id)
         self.macro_name = 'check_industry_min_distance'
-
-
+        
+ 
 class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
     """ Prevent locating near incompatible industry types """
     def __init__(self, industry_max_distance):
@@ -1071,7 +1071,7 @@ class IndustryPrimaryExtractive(IndustryPrimary):
         Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
     """
     def __init__(self, **kwargs):
-        kwargs['accept_cargo_types'] = ['ENSP']
+        kwargs['accept_cargo_types'] = ['ENSP', 'GOOD', 'ELEC']
         kwargs['life_type'] = 'IND_LIFE_TYPE_EXTRACTIVE'
         super().__init__(**kwargs)
         self.supply_requirements = [0, 'PRIMARY', 1] # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
@@ -1083,7 +1083,7 @@ class IndustryPrimaryOrganic(IndustryPrimary):
         Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
     """
     def __init__(self, **kwargs):
-        kwargs['accept_cargo_types'] = ['FMSP']
+        kwargs['accept_cargo_types'] = ['FMSP', 'WATR', 'ELEC']
         kwargs['life_type'] = 'IND_LIFE_TYPE_ORGANIC'
         super().__init__(**kwargs)
         self.supply_requirements = [0, 'PRIMARY', 1] # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)

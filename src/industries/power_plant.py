@@ -1,22 +1,23 @@
-from industry import IndustryTertiary, TileLocationChecks
+from industry import IndustrySecondary, TileLocationChecks
 
-industry = IndustryTertiary(id='power_plant',
-                            accept_cargo_types=['COAL'],
-                            prod_cargo_types=[],
-                            prob_in_game='3',
-                            prob_map_gen='5',
+industry = IndustrySecondary(id='power_plant',
+                            accept_cargos_with_input_ratios=[('STEM', 40), ('PASS', 60)], 
+                            combined_cargos_boost_prod=True,
+                            prod_cargo_types_with_output_ratios=[('ELEC', 100), ("MAIL", 25), ('WATR', 2), ('PASS', 60)],
+                            prob_in_game='2',
+                            prob_map_gen='1',
                             prod_multiplier='[0, 0]',
                             map_colour='168',
-                            life_type='IND_LIFE_TYPE_BLACK_HOLE',
-                            prospect_chance='0.75',
+                             # it's rare to force co-location of secondaries, but this one is near power station by design
+                             location_checks=dict(industry_max_distance=['basic_oxygen_furnace', 50], same_type_distance=500),
                             name='string(STR_IND_POWER_PLANT)',
                             nearby_station_name='string(STR_STATION_POWERHUNGRY)',
                             fund_cost_multiplier='15',
-                            intro_year=1900)
+                            intro_year=1882)
 
 
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PEAT']
+industry.economy_variations['MAK_TEST'].enabled = True
+#industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PEAT']
 
 industry.add_tile(id='power_plant_tile_1',
                   animation_length=7,
@@ -25,7 +26,7 @@ industry.add_tile(id='power_plant_tile_1',
                   custom_animation_control={'macro': 'random_first_frame',
                                             'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
                   location_checks=TileLocationChecks(require_effectively_flat=True,
-                                                     disallow_industry_adjacent=True))
+                                                     disallow_industry_adjacent=False))
 sprite_ground = industry.add_sprite(
     sprite_number='GROUNDTILE_MUD_TRACKS'
 )

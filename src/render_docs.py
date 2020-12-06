@@ -45,11 +45,11 @@ metadata['dev_thread_url'] = 'http://www.tt-forums.net/viewtopic.php?t=41607'
 metadata['repo_url'] = 'http://dev.openttdcoop.org/projects/firs/repository'
 metadata['issue_tracker'] = 'http://dev.openttdcoop.org/projects/firs/issues'
 
-import firs
+import makfirs
 # default sort for docs is by id
-registered_cargos = sorted(firs.registered_cargos, key=lambda registered_cargos: registered_cargos.id)
-registered_industries = sorted(firs.registered_industries, key=lambda registered_industries: registered_industries.id)
-registered_economies = firs.registered_economies
+registered_cargos = sorted(makfirs.registered_cargos, key=lambda registered_cargos: registered_cargos.id)
+registered_industries = sorted(makfirs.registered_industries, key=lambda registered_industries: registered_industries.id)
+registered_economies = makfirs.registered_economies
 economy_schemas = {}
 palette = utils.dos_palette_to_rgb()
 

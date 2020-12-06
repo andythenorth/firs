@@ -13,17 +13,17 @@ industry = IndustrySecondary(id='stockyard',
                              fund_cost_multiplier='115')
 
 
-industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-industry.economy_variations['BASIC_TEMPERATE'].accept_cargos_with_input_ratios = [('LVST', 6)]
+industry.economy_variations['MAK_TEST'].enabled = True
+industry.economy_variations['MAK_TEST'].accept_cargos_with_input_ratios = [('LVST', 6)]
 
-industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].accept_cargos_with_input_ratios = [('LVST', 6)]
+#industry.economy_variations['BASIC_TROPIC'].enabled = True
+#industry.economy_variations['BASIC_TROPIC'].accept_cargos_with_input_ratios = [('LVST', 6)]
 
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('LVST', 6), ('MNSP', 1), ('ENUM', 1)]
 
-industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
-industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('LVST', 6)]
+#industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+#industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('LVST', 6)]
 
 industry.add_tile(id='stockyard_tile_1',
                   animation_length=7,

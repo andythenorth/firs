@@ -4,7 +4,7 @@ industry = IndustryPrimaryNoSupplies(id='fishing_grounds',
                                      accept_cargo_types=[],
                                      prod_cargo_types_with_multipliers=[('FISH', 8)],
                                      prob_in_game='14',
-                                     prob_map_gen='14',
+                                     prob_map_gen='10',
                                      substitute='5',
                                      map_colour='160',
                                      life_type='IND_LIFE_TYPE_EXTRACTIVE',
@@ -16,9 +16,9 @@ industry = IndustryPrimaryNoSupplies(id='fishing_grounds',
                                      nearby_station_name='string(STR_STATION_SHOALS)',
                                      fund_cost_multiplier='88')
 
-industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['MAK_TEST'].enabled = True
+#industry.economy_variations['BASIC_TROPIC'].enabled = True
+#industry.economy_variations['BASIC_ARCTIC'].enabled = True
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 #industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

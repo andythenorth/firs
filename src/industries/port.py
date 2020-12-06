@@ -4,7 +4,7 @@ industry = IndustryPrimaryPort(id='port',
                                accept_cargo_types=[],
                                prod_cargo_types_with_multipliers=[],
                                prob_in_game='2',
-                               prob_map_gen='8',
+                               prob_map_gen='1',
                                map_colour='186',
                                special_flags=['IND_FLAG_BUILT_ON_WATER'],
                                location_checks=dict(same_type_distance=16),
@@ -14,22 +14,22 @@ industry = IndustryPrimaryPort(id='port',
                                fund_cost_multiplier='152',
                                override_default_construction_states=True)
 
-industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-industry.economy_variations['BASIC_TEMPERATE'].accept_cargo_types = ['GOOD', 'KAOL', 'FOOD']
-industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types_with_multipliers = [('ENSP', 19), ('FMSP', 7), ('RFPR', 19)]
-industry.economy_variations['BASIC_TEMPERATE'].prob_map_gen = '10'
+industry.economy_variations['MAK_TEST'].enabled = True
+industry.economy_variations['MAK_TEST'].accept_cargo_types = ['GOOD', 'FOOD']
+industry.economy_variations['MAK_TEST'].prod_cargo_types_with_multipliers = [('ENSP', 19), ('FMSP', 7), ('RFPR', 19)]
+industry.economy_variations['MAK_TEST'].prob_map_gen = '10'
 
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'ZINC', 'FERT']
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('KAOL', 16), ('NH3_', 17), ('ENSP', 9), ('FMSP', 9)]
+#industry.economy_variations['BASIC_ARCTIC'].enabled = True
+#industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'ZINC', 'FERT']
+#industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('KAOL', 16), ('NH3_', 17), ('ENSP', 9), ('FMSP', 9)]
 
-industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['COPR', 'JAVA', 'WOOL', 'BEER', 'RFPR', 'FOOD']
-industry.economy_variations['BASIC_TROPIC'].prod_cargo_types_with_multipliers = [('ENSP', 9), ('GOOD', 17), ('FMSP', 12)]
+#industry.economy_variations['BASIC_TROPIC'].enabled = True
+#industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['COPR', 'JAVA', 'WOOL', 'BEER', 'RFPR', 'FOOD']
+#industry.economy_variations['BASIC_TROPIC'].prod_cargo_types_with_multipliers = [('ENSP', 9), ('GOOD', 17), ('FMSP', 12)]
 
-industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
-industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['COPR', 'FRUT', 'WDPR']
-industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('GOOD', 14), ('ENSP', 17)]
+#industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+#industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['COPR', 'FRUT', 'WDPR']
+#industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('GOOD', 14), ('ENSP', 17)]
 #industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['DIAM', 'EOIL', 'JAVA', 'WDPR']
 #industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('GOOD', 14), ('SASH', 12)]
 

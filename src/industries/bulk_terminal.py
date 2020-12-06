@@ -1,10 +1,10 @@
 from industry import IndustryPrimaryPort, TileLocationChecks
 
 industry = IndustryPrimaryPort(id='bulk_terminal',
-                               accept_cargo_types=[],
-                               prod_cargo_types_with_multipliers=[],
+                               accept_cargo_types=[('PASS'), ('FOOD'), ('ELEC'), ('MAIL')],
+                               prod_cargo_types_with_multipliers=[('WATR', 10), ('PASS', 1), ('GOOD', 10), ('MAIL', 1)],
                                prob_in_game='2',
-                               prob_map_gen='6',
+                               prob_map_gen='2',
                                map_colour='177',
                                special_flags=['IND_FLAG_BUILT_ON_WATER'],
                                location_checks=dict(same_type_distance=16),
@@ -14,19 +14,19 @@ industry = IndustryPrimaryPort(id='bulk_terminal',
                                fund_cost_multiplier='152',
                                override_default_construction_states=True)
 
-industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+industry.economy_variations['MAK_TEST'].enabled = True
 #industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['MNO2', 'FECR', 'RUBR']
 #industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('FORM', 12)]
-industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['MNO2', 'PHOS', 'BDMT']
-industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('RFPR', 12), ('FMSP', 12)]
+#industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['MNO2', 'PHOS', 'BDMT']
+#industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('RFPR', 12), ('FMSP', 12)]
 
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargo_types = []
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_multipliers = [('OIL_', 20), ('POTA', 12), ('PHOS', 12), ('MEOH', 12)]
 
-industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FOOD', 'POTA', 'CHLO']
-industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('MNO2', 19), ('RUBR', 16), ('PLAS', 16), ('FECR', 14), ('ALUM', 11)]
+#industry.economy_variations['STEELTOWN'].enabled = True
+#industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FOOD', 'POTA', 'CHLO']
+#industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('MNO2', 19), ('RUBR', 16), ('PLAS', 16), ('FECR', 14), ('ALUM', 11)]
 
 industry.add_tile(id='bulk_terminal_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',

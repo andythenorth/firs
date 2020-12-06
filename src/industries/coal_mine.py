@@ -1,20 +1,21 @@
-from industry import IndustryPrimaryExtractive, TileLocationChecks
+from industry import IndustrySecondary, TileLocationChecks
 
-industry = IndustryPrimaryExtractive(id='coal_mine',
-                                     prod_cargo_types_with_multipliers=[('COAL', 20)],
+industry = IndustrySecondary(id='coal_mine',
+                                    accept_cargos_with_input_ratios=[('COAL', 1), ('ELEC', 100), ('FOOD', 100), ('ENSP', 50), ('GOOD', 100), ('WATR', 100)], 
+                                    combined_cargos_boost_prod=True,
+                                    prod_cargo_types_with_output_ratios=[('COAL', 1)],
                                      prob_in_game='4',
-                                     prob_map_gen='7',
+                                     prob_map_gen='4',
                                      map_colour='1',
-                                     location_checks=dict(cluster=[70, 3]),
-                                     prospect_chance='0.75',
+                                     location_checks=dict(cluster=[200, 2], same_type_distance=100, industry_min_distance=['forest', 500]),
                                      name='TTD_STR_INDUSTRY_NAME_COAL_MINE',
                                      nearby_station_name='string(STR_STATION_COLLIERY)',
                                      fund_cost_multiplier='252')
 
 
-industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].prob_map_gen = '10'
+industry.economy_variations['MAK_TEST'].enabled = True
+#industry.economy_variations['STEELTOWN'].enabled = True
+#industry.economy_variations['STEELTOWN'].prob_map_gen = '10'
 
 #industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 
@@ -26,7 +27,7 @@ industry.add_tile(id='coal_mine_tile_1',
                   custom_animation_control={'macro': 'first_frame_is_0',
                                             'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP)'},
                   location_checks=TileLocationChecks(require_effectively_flat=True,
-                                                     disallow_industry_adjacent=True))
+                                                     disallow_industry_adjacent=False))
 
 sprite_ground = industry.add_sprite(
     sprite_number='GROUNDTILE_MUD_TRACKS'

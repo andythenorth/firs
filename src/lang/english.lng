@@ -1,7 +1,7 @@
 ##grflangid 0x01
 ##plural 0
 
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Brought to you by andythenorth, FooBar, planetmaker, Terkhen and Yexo, with help from many others. {SILVER}See readme for more information, including how to use FIRS. {BLACK}License: GPL v2.
+STR_GRF_DESC                                                                    :{ORANGE}Makzimum Indusrty{}{BLACK}Brought to you by Amak with help from many others. {SILVER}See readme for more information, including how to use FIRS. {BLACK}License: GPL v2.
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximum distance of fishing grounds, oil rigs and dredging sites from the coast in tiles.
 STR_PARAM_DESC_ECONOMIES                                                        :Each economy provides a different combination of cargos and industries.{}{}For players who want simple gameplay, {SILVER}Basic {BLACK}economies contain fewer industries and cargos than other FIRS economies.{}{}The FIRS website provides detailed information about each economy.
@@ -20,12 +20,7 @@ STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             
 STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Gung-ho primary production level (%)
 STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Production at farms, mines and similar industries when supply requirements are met (as percentage of {SILVER}Normal {BLACK}production level).
 
-STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Temperate Basic
-STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Arctic Basic
-STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tropic Basic
-STR_PARAM_VALUE_ECONOMIES_BETTER_LIVING_THROUGH_CHEMISTRY                       :Better Living Through Chemistry
-STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                      :In A Hot Country
-STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Steeltown
+STR_PARAM_VALUE_ECONOMIES_MAK_TEST                                       :Testering
 
 STR_CARGO_NAME_ACID                                                             :Acid
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
@@ -125,6 +120,9 @@ STR_CARGO_NAME_VEHICLES                                                         
 STR_CARGO_NAME_WOOL                                                             :Wool
 STR_CARGO_NAME_YARN                                                             :Yarn
 STR_CARGO_NAME_ZINC                                                             :Zinc
+TTD_STR_CARGO_PLURAL_WATER                                                      :Water
+STR_CARGO_NAME_STEAM                                                            :Steam
+STR_CARGO_NAME_ELECTRICITY                                                      :Electricity
 
 STR_CARGO_UNIT_ACID                                                             :{VOLUME} of acid
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} of alcohol
@@ -207,7 +205,7 @@ STR_CARGO_UNIT_STAINLESS_STEEL                                                  
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} of steel
 STR_CARGO_UNIT_STEEL_SECTIONS                                                   :{WEIGHT} of steel sections
 STR_CARGO_UNIT_STEEL_SHEET                                                      :{WEIGHT} of steel sheet
-STR_CARGO_UNIT_STEEL_WIRE_ROD                                                   :{WEIGHT} of steel wire
+STR_CARGO_UNIT_STEEL_WIRE_ROD                                                   :{WEIGHT} of steel wire rod
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} of stone
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} of sugar beet
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} of sulphur
@@ -224,6 +222,9 @@ STR_CARGO_UNIT_VEHICLES                                                         
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bale{P 0 "" s} of wool
 STR_CARGO_UNIT_YARN                                                             :{SIGNED_WORD} bale{P 0 "" s} of yarn
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} of zinc
+TTD_STR_QUANTITY_WATER                                                          :{VOLUME} of water
+STR_CARGO_UNIT_STEAM                                                            :{VOLUME} of steam
+STR_CARGO_UNIT_ELECTRICITY                                                      :{VOLUME} of Electricity
 
 # it seems that using 2 chars for these is a convention not a limit, I tested 4 chars and OpenTTD renders it fine - May 2020
 STR_CID_ACID                                                                    :{TINYFONT}AC
@@ -323,6 +324,9 @@ STR_CID_VEHICLES                                                                
 STR_CID_WOOL                                                                    :{TINYFONT}WL
 STR_CID_YARN                                                                    :{TINYFONT}YN
 STR_CID_ZINC                                                                    :{TINYFONT}ZN
+TTD_STR_ABBREV_WATER                                                            :{TINYFONT}WTR
+STR_CID_STEAM                                                                   :{TINYFONT}STM
+STR_CID_ELECTRICITY                                                             :{TINYFONT}ELEC
 
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS is not designed to be used with Toyland climate
@@ -341,107 +345,65 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 
 STR_IND_ALUMINIUM_PLANT                                                         :Aluminium Plant
 STR_IND_AMMONIA_PLANT                                                           :Ammonia Plant
-STR_IND_ARABLE_FARM                                                             :Arable Farm
 STR_IND_ASSEMBLY_PLANT                                                          :Assembly Plant
 STR_IND_BASIC_OXYGEN_FURNACE                                                    :Basic Oxygen Furnace
 STR_IND_BIOREFINERY                                                             :Biorefinery
 STR_IND_BLAST_FURNACE                                                           :Blast Furnace
-STR_IND_BODY_PLANT                                                              :Body Plant
 STR_IND_BREWERY                                                                 :Brewery
 STR_IND_CIDER_MILL                                                              :Cider Mill
 STR_IND_BRICK_WORKS                                                             :Brick Works
 STR_IND_BUILDERS_YARD                                                           :Builders Yard
 STR_IND_BULK_TERMINAL                                                           :Bulk Terminal
-STR_IND_CARBON_BLACK_PLANT                                                      :Carbon Black Plant
-STR_IND_CEMENT_PLANT                                                            :Cement Plant
-STR_IND_CHEMICAL_PLANT                                                          :Chemical Plant
-STR_IND_CHLOR_ALKALI_PLANT                                                      :Chlor-alkali Plant
 STR_IND_CHROMITE_MINE                                                           :Chromite Mine
-STR_IND_CIVIL_EXPLOSIVES_FACILITY                                               :Civil Explosives Facility
 STR_IND_CLAY_PIT                                                                :Clay Pit
-STR_IND_COFFEE_ESTATE                                                           :Coffee Estate
+STR_IND_COAL_PIT                                                                :Coal Pit
 STR_IND_COKE_OVEN                                                               :Coke Oven
-STR_IND_COMPONENT_FACTORY                                                       :Component Factory
 STR_IND_COPPER_CONCENTRATOR                                                     :Copper Concentrator
-STR_IND_COPPER_REFINERY                                                         :Copper Smelter
-STR_IND_CRYO_PLANT                                                              :Cryo Plant
 STR_IND_DAIRY                                                                   :Dairy
 STR_IND_DAIRY_FARM                                                              :Dairy Farm
 STR_IND_DREDGING_SITE                                                           :Dredging Site
-STR_IND_ELECTRIC_ARC_FURNACE                                                    :Electric Arc Furnace
-STR_IND_ENGINE_PLANT                                                            :Engine plant
 STR_IND_ETHYLENE_CRACKER                                                        :Naphtha Cracker
-STR_IND_FARM                                                                    :Farm
 STR_IND_FERROCHROME_SMELTER                                                     :Ferrochrome Smelter
 STR_IND_FERTILISER_PLANT                                                        :Fertiliser Plant
-STR_IND_FACTORY_1                                                               :Factory 1
-STR_IND_FACTORY_2                                                               :Factory 2
-STR_IND_FACTORY_3                                                               :Factory 3
 STR_IND_FISCHER_TROPSCH_PLANT                                                   :Fischer-Tropsch Plant
-STR_IND_FISH_FARM                                                               :Fish Farm
 STR_IND_FISHING_GROUND                                                          :Fishing Grounds
 STR_IND_FISHING_HARBOUR                                                         :Fishing Harbour
 STR_IND_FISHING_VILLAGE                                                         :Fishing Village
-STR_IND_FLOUR_MILL                                                              :Flour Mill
 STR_IND_FOOD_MARKET                                                             :Grocer's Shop
-STR_IND_FOOD_PROCESSOR                                                          :Food Processing Plant
 STR_IND_FURNITURE_FACTORY                                                       :Furniture Factory
 STR_IND_GENERAL_STORE                                                           :General Store
 STR_IND_GLASS_WORKS                                                             :Glass Works
 STR_IND_HARDWARE_STORE                                                          :Hardware Store
 STR_IND_HOTEL                                                                   :Hotel
-STR_IND_HERDING_COOP                                                            :Herding Co-op
 STR_IND_IRON_WORKS                                                              :Iron Works
 STR_IND_JUNKYARD                                                                :Scrap Yard
 STR_IND_LATEX_PROCESSOR                                                         :Latex Processor
-STR_IND_LIME_KILN                                                               :Lime Kiln
-STR_IND_LIMESTONE_MINE                                                          :Limestone Mine
-STR_IND_LIQUIDS_TERMINAL                                                        :Liquids Terminal
-STR_IND_LUMBER_YARD                                                             :Timber Yard
 STR_IND_MACHINE_SHOP                                                            :Machine Shop
 STR_IND_MACHINE_WORKS                                                           :Machine Works
-STR_IND_MANGANESE_MINE                                                          :Manganese Mine
 STR_IND_METAL_WORKSHOP                                                          :Metal Workshop
 STR_IND_MIXEDFARM                                                               :Mixed Farm
-STR_IND_NITRATE_MINE                                                            :Nitrate Mine
 STR_IND_ORCHARD_PIGGERY                                                         :Orchard and Piggery
-STR_IND_PEATLANDS                                                               :Peatlands
 STR_IND_PETROLPUMP                                                              :Petrol Station
-STR_IND_PHOSPHATE_MINE                                                          :Phosphate Mine
 STR_IND_PHOSPHORIC_ACID_PLANT                                                   :Phosphoric Acid Plant
 STR_IND_PLASTICS_PLANT                                                          :PVC Plant
 STR_IND_POLYETHYLENE_PLANT                                                      :Polyethylene Plant
 STR_IND_POLYPROPYLENE_PLANT                                                     :Polypropylene Plant
 STR_IND_PORT                                                                    :Port
-STR_IND_POTASH_MINE                                                             :Potash Mine
-STR_IND_PYRITE_MINE                                                             :Pyrite Mine
-STR_IND_PYRITE_SMELTER                                                          :Pyrite Smelter
 STR_IND_POWER_PLANT                                                             :Power Plant
-STR_IND_QUARRY                                                                  :Quarry
-STR_IND_RANCH                                                                   :Ranch
 STR_IND_RECYCLING_DEPOT                                                         :Recycling Depot
 STR_IND_RECYCLING_PLANT                                                         :Recycling Plant
 STR_IND_REINDEER_FARM                                                           :Reindeer Farm
 STR_IND_SALT_MINE                                                               :Salt Mine
 STR_IND_SHEEPFARM                                                               :Sheep Farm
-STR_IND_SLAG_GRINDING_PLANT                                                     :Slag Grinding Plant
 STR_IND_SMITHY_FORGE                                                            :Smithy Forge
-STR_IND_SODA_ASH_MINE                                                           :Soda Ash Mine
 STR_IND_SOLVAY_PLANT                                                            :Solvay Plant
 STR_IND_STEEL_MILL                                                              :Steel Mill
-STR_IND_SHEET_AND_PIPE_MILL                                                     :Sheet and Pipe Mill
 STR_IND_STOCKYARD                                                               :Stockyard
 STR_IND_SUGAR_REFINERY                                                          :Sugar Refinery
 STR_IND_SULPHURIC_ACID_PLANT                                                    :Sulphuric Acid Plant
-STR_IND_SUPPLY_YARD                                                             :Supply Yard
 STR_IND_TEXTILE_MILL                                                            :Textile Mill
 STR_IND_TINPLATE_WORKS                                                          :Tinplate Works
-STR_IND_TRADING_POST                                                            :Trading Post
-STR_IND_TYRE_PLANT                                                              :Tyre Plant
-STR_IND_VINEYARD                                                                :Vineyard
 STR_IND_VEHICLE_DISTRIBUTOR                                                     :Vehicle Distributor
-STR_IND_WHARF                                                                   :Wharf
-STR_IND_WIRE_AND_SECTION_MILL                                                   :Wire and Section Mill
 
 
 STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(supplied)

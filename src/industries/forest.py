@@ -1,12 +1,12 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='forest',
-                                  prod_cargo_types_with_multipliers=[('WOOD', 19)],
-                                  prob_in_game='3',
-                                  prob_map_gen='10',
+                                  prod_cargo_types_with_multipliers=[('WOOD', 1)], #throws error without this why? Because its in import IndustryPrimaryExtractive and does those checks forcing gung-ho etc.
+                                  prob_in_game='50',
+                                  prob_map_gen='50',
                                   map_colour='83',
                                   prospect_chance='0.75',
-                                  location_checks=dict(cluster=[72, 3]),
+                                  location_checks=dict(industry_max_distance=['sawmill', 20], industry_min_distance=['coal_mine', 500], same_type_distance=1, cluster=[100, 8]),
                                   name='TTD_STR_INDUSTRY_NAME_FOREST',
                                   extra_text_fund='string(STR_FUND_FOREST)',
                                   fund_cost_multiplier='95',
@@ -15,20 +15,18 @@ industry = IndustryPrimaryOrganic(id='forest',
                                   graphics_change_dates=[1935, 1990],
                                   override_default_construction_states=True)
 
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('WOOD', 24)]
-industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+industry.economy_variations['MAK_TEST'].enabled = True
+#industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('WOOD', 24)]
+#industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 
 industry.add_tile(id='forest_tile_1',
                   foundations='return CB_RESULT_NO_FOUNDATIONS',
                   autoslope='return CB_RESULT_NO_AUTOSLOPE',
                   location_checks=TileLocationChecks(disallow_desert=True,
-                                                     disallow_coast=True,
-                                                     disallow_industry_adjacent=True))
+                                                     disallow_coast=True))
 industry.add_tile(id='forest_tile_2',
                   location_checks=TileLocationChecks(disallow_desert=True,
-                                                     disallow_coast=True,
-                                                     disallow_industry_adjacent=True))
+                                                     disallow_coast=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number='GROUNDTILE_MUD_TRACKS'

@@ -1,22 +1,22 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='basic_oxygen_furnace',
-                             accept_cargos_with_input_ratios=[('IRON', 4), ('MNO2', 2), ('QLME', 1), ('O2__', 1)],
+                             accept_cargos_with_input_ratios=[('COKE', 4), ('PASS', 1), ('WATR', 6)], 
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types_with_output_ratios=[('STCB', 4), ('STAL', 2), ('SLAG', 2)],
-                             prob_in_game='3',
-                             prob_map_gen='5',
-                             map_colour='49',
+                             prod_cargo_types_with_output_ratios=[('STEM', 4)],
+                             prob_in_game='2',
+                             prob_map_gen='1',
+                             map_colour='169',
                              special_flags=['IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE'],
-                             # it's rare to force co-location of secondaries, but this one is near blast furnace by design
-                             location_checks=dict(industry_max_distance=['blast_furnace', 72], same_type_distance=72),
+                             # it's rare to force co-location of secondaries, but this one is near power station by design
+                             location_checks=dict(industry_max_distance=['power_plant', 50], same_type_distance=500),
                              name='string(STR_IND_BASIC_OXYGEN_FURNACE)',
                              nearby_station_name='string(STR_STATION_FURNACE)',
                              fund_cost_multiplier='160',
-                             intro_year=1850)  # intro year needs to >= Blast Furnace intro year, otherwise location restriction means no BOFs are built
+                             intro_year=1882)  # intro year needs to >= power station? intro year, otherwise location restriction means no BOFs are built
 
-industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].prob_in_game = '0' # do not build during gameplay
+industry.economy_variations['MAK_TEST'].enabled = True
+#industry.economy_variations['mak_test'].prob_in_game = '50' # 0 to what scale?
 
 industry.add_tile(id='basic_oxygen_furnace_tile_1',
                   animation_length=7,
@@ -25,7 +25,7 @@ industry.add_tile(id='basic_oxygen_furnace_tile_1',
                   custom_animation_control={'macro': 'random_first_frame',
                                             'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
                   location_checks=TileLocationChecks(require_effectively_flat=True,
-                                                     disallow_industry_adjacent=True))
+                                                     disallow_industry_adjacent=False))
 
 spriteset_ground = industry.add_spriteset(
     type='hard_standing_dirt',

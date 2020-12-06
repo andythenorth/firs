@@ -1,11 +1,11 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='fishing_harbour',
-                             accept_cargos_with_input_ratios=[('FISH', 6)],
+                             accept_cargos_with_input_ratios=[('FISH', 6), ('PASS', 1), ('ELEC', 1)],
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[('FOOD', 8)],
-                             prob_in_game='10',
-                             prob_map_gen='10',
+                             prob_in_game='1',
+                             prob_map_gen='1',
                              map_colour='169',
                              special_flags=['IND_FLAG_BUILT_ON_WATER'],
                              location_checks=dict(industry_max_distance=['fishing_grounds', 72]),
@@ -14,9 +14,9 @@ industry = IndustrySecondary(id='fishing_harbour',
                              fund_cost_multiplier='150',
                              override_default_construction_states=True)
 
-industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['MAK_TEST'].enabled = True
+#industry.economy_variations['BASIC_TROPIC'].enabled = True
+#industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('FISH', 6), ('MNSP', 1), ('ENUM', 1)]

@@ -13,11 +13,11 @@ FIND_FILES = bin/find-files
 MK_ARCHIVE = bin/mk-archive
 
 # Project details
-PROJECT_NAME = firs
+PROJECT_NAME = Makfirs
 
 # lang is not copied to generated currently in FIRS, unlike RH, IH etc - could be changed
 LANG_DIR = generated/lang
-NML_FILE = generated/firs.nml
+NML_FILE = generated/Makfirs.nml
 NML_FLAGS =-c -l $(LANG_DIR) --verbosity=4
 
 -include Makefile.local
@@ -120,8 +120,8 @@ bundle_src: $(MD5_FILE)
 # this is a macOS-specifc install location; the pre-2017 Makefile handled multiple platforms, that could be restored if needed
 install: $(GRF_FILE)
     # remove first, OpenTTD does not like having the _contents_ of the current file change under it, but will handle a removed-and-replaced file correctly
-	rm ~/Documents/OpenTTD/newgrf/$(PROJECT_NAME).grf
-	cp $(GRF_FILE) ~/Documents/OpenTTD/newgrf/
+	rm ~/mnt/c/Users/alex/OneDrive/Documents/OpenTTD/newgrf/$(PROJECT_NAME).grf
+	cp $(GRF_FILE) ~/mnt/c/Users/alex/OneDrive/Documents/OpenTTD/newgrf/
 
 clean:
 	$(_V) echo "[CLEANING]"

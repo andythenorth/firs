@@ -1,19 +1,19 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='orchard_piggery',
-                                  prod_cargo_types_with_multipliers=[('FRUT', 9), ('LVST', 8)],
+                                  prod_cargo_types_with_multipliers=[('FRUT', 1), ('LVST', 1)],
                                   map_colour='85',
                                   prob_in_game='4',
-                                  prob_map_gen='11',
+                                  prob_map_gen='50',
                                   prospect_chance='0.75',
                                   name='string(STR_IND_ORCHARD_PIGGERY)',
                                   extra_text_fund='string(STR_FUND_ORCHARD_PIGGERY)',
-                                  location_checks=dict(cluster=[72, 4]),
+                                  location_checks=dict(industry_max_distance=['dairy_farm', 10], same_type_distance=2),
                                   nearby_station_name='string(STR_STATION_ORCHARDS)',
                                   fund_cost_multiplier='54',
                                   override_default_construction_states=True)
 
-industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['MAK_TEST'].enabled = True
 
 industry.add_tile(id='orchard_piggery_tile_1',
                   foundations='return CB_RESULT_NO_FOUNDATIONS',

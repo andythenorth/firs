@@ -1,0 +1,20 @@
+from cargo import Cargo
+
+cargo = Cargo(id='steam',
+              type_name='string(STR_CARGO_NAME_STEAM)',
+              unit_name='string(STR_CARGO_NAME_STEAM)',
+              type_abbreviation='string(STR_CID_STEAM)',
+              sprite='NEW_CARGO_SPRITE',
+              weight='0.6',
+              is_freight='1',
+              cargo_classes='bitmask(CC_LIQUID, CC_HAZARDOUS, CC_EXPRESS)',
+              cargo_label='STEM',
+              town_growth_effect='TOWNGROWTH_NONE',
+              town_growth_multiplier='1.0',
+              units_of_cargo='TTD_STR_LITERS',
+              items_of_cargo='string(STR_CARGO_UNIT_STEAM)',
+              penalty_lowerbound='32',
+              single_penalty_length='64',
+              price_factor=109,
+              capacity_multiplier='1',
+              icon_indices=(15, 4))
