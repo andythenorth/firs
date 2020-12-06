@@ -1,13 +1,13 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='sawmill',
-                             accept_cargos_with_input_ratios=[('WOOD', 1), ('MAIL', 50), ('WATR', 100), ('ELEC', 100), ('GOOD', 40), ('PASS', 20)],
+                             accept_cargos_with_input_ratios=[('MAIL', 5), ('WATR', 1), ('ELEC', 0), ('GOOD', 4), ('PASS', 2)],
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[('WOOD', 10), ('MAIL', 1), ('PASS', 1)],
                              prob_in_game='10',
                              prob_map_gen='10',
                              map_colour='194',
-                             location_checks=dict(cluster=[200, 2], same_type_distance=500),
+                             location_checks=dict(industry_min_distance=['coal_mine', 500], cluster=[200, 2], same_type_distance=500),
                              name='TTD_STR_INDUSTRY_NAME_SAWMILL',
                              nearby_station_name='string(STR_STATION_MILL)',
                              fund_cost_multiplier='97')

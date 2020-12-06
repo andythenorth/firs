@@ -104,6 +104,8 @@ cargo_labels = ['PASS', # pax first
                 'STSH',
                 'STWR',
                 'NH3_',
+                'ELEC',
+                'STEM',
                 #
                 'NULL']
 
@@ -126,12 +128,12 @@ base_refits_by_class = {
 # BUT for _some_ specialist vehicle types, it's simpler to just allow refit by label
 allowed_refits_by_label = {
                            'box_freight': ['MAIL', 'GRAI', 'WHEA', 'MAIZ', 'FRUT', 'BEAN', 'NITR'], # box cars get some extended cargos
-                           'chemicals': ['ACID', 'RFPR', 'CHLO'], # seems to be used by intermodal, otherwise chemicals tankers are deprecated in favour of product tankers
+                           'chemicals': ['ACID', 'RFPR', 'CHLO', 'ELEC'], # seems to be used by intermodal, otherwise chemicals tankers are deprecated in favour of product tankers
                            'cold_metal': ['STEL', 'METL', 'STCB', 'STAL', 'STST', 'COPR', 'STSH', 'STWR'],
                            'covered_hoppers': ['GRAI', 'WHEA', 'MAIZ', 'SUGR', 'FMSP', 'RFPR', 'CLAY', 'BDMT',
                                                'BEAN', 'NITR', 'RUBR', 'SAND', 'POTA', 'QLME', 'SASH', 'CMNT',
                                                'KAOL', 'FERT', 'SALT', 'PLAS'], # not CBLK, gets dedicated vehicles or box
-                           'cryo_gases': ['CHLO', 'O2__', 'NH3_'],
+                           'cryo_gases': ['CHLO', 'O2__', 'NH3_', 'STEM'],
                            'edible_liquids': ['MILK', 'WATR', 'BEER', 'FOOD', 'EOIL'],
                            'fruit_veg': ['FRUT', 'BEAN', 'CASS', 'JAVA', 'NUTS'],
                            'reefer': ['FOOD', 'FRUT', 'FISH'], # hax for intermodal container sprite selection - reefer car refits work just fine using CC_REFRIGERATED
@@ -154,7 +156,7 @@ disallowed_refits_by_label = {
 default_cargos = {
                   'box': ['GOOD', 'VPTS', 'FOOD'],
                   'hopper': ['COAL', 'COKE', 'NITR', 'POTA'],
-                  'cryo_gases': ['O2__', 'CHLO'],
+                  'cryo_gases': ['O2__', 'CHLO', 'STEM'],
                   'covered_hopper': ['SAND', 'KAOL', 'PLAS'],
                   'dump': ['MNO2', 'FECR', 'NITR', 'PHOS', 'SAND', 'GRVL'],
                   'dump_high_sides': ['COKE', 'PEAT', 'COAL'],
@@ -177,7 +179,7 @@ default_cargos = {
                   'silo': ['CMNT', 'BDMT', 'RFPR', 'QLME', 'FMSP'],
                   'stake': ['WOOD'],
                   'supplies': ['ENSP'],
-                  'tank': ['OIL_', 'CTAR', 'SULP', 'KAOL', 'RUBR'],
+                  'tank': ['OIL_', 'CTAR', 'SULP', 'KAOL', 'RUBR', 'ELEC'],
                   }
 
 

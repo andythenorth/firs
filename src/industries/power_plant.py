@@ -9,7 +9,7 @@ industry = IndustrySecondary(id='power_plant',
                             prod_multiplier='[0, 0]',
                             map_colour='168',
                              # it's rare to force co-location of secondaries, but this one is near power station by design
-                             location_checks=dict(industry_max_distance=['basic_oxygen_furnace', 50], same_type_distance=500),
+                            location_checks=dict(industry_max_distance=['basic_oxygen_furnace', 50], same_type_distance=500),
                             name='string(STR_IND_POWER_PLANT)',
                             nearby_station_name='string(STR_STATION_POWERHUNGRY)',
                             fund_cost_multiplier='15',
@@ -26,6 +26,7 @@ industry.add_tile(id='power_plant_tile_1',
                   custom_animation_control={'macro': 'random_first_frame',
                                             'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
                   location_checks=TileLocationChecks(require_effectively_flat=True,
+                                                     require_houses_nearby=True,
                                                      disallow_industry_adjacent=False))
 sprite_ground = industry.add_sprite(
     sprite_number='GROUNDTILE_MUD_TRACKS'

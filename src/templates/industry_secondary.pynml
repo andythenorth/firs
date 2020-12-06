@@ -23,18 +23,46 @@
 
 <tal:include metal:use-macro="load: layouts.pynml" />
 
+/* *************************************************
+ * !!!!!!!!PRODUCTION BELOW!!!!!!!!!!
+ * *************************************************/
+
 <tal:include metal:use-macro="load: produce_secondary.pynml" />
+
+/* *************************************************
+ * !!!!!!!CLOSURE BELOW!!!!!!!!
+ * *************************************************/
 
 <!--! <tal:include metal:use-macro="load: closure_secondary.pynml" /> -->
 
+/* *************************************************
+ * !!!!!!!!!!!!EXTRA TEXT BELOW!!!!!!!!!!!
+ * *************************************************/
+
 <tal:include metal:use-macro="load: extra_text_secondary.pynml" />
+
+/* *************************************************
+ * !!!!!!!!!!!!!!!AVAILABILITY BELOW!!!!!!!!
+ * *************************************************/
 
 <tal:include metal:use-macro="load: availability.pynml" />
 
+/* *************************************************
+ * !!!!!!!!!!LOCATION_CHECKS_INDUSTRY BELOW!!!!!!!!!!!!
+ * *************************************************/
+
 <tal:include define="location_checks_industry load: location_check_macros_industry.pynml"
              metal:use-macro="location_checks_industry.macros['render_tree']" />
+			 
+/* *************************************************
+ * PROPERTIES_INDUSTRY of the industry
+ * *************************************************/
 
 <tal:include metal:use-macro="load: properties_industry.pynml" />
+
+/* *************************************************
+ * GRAPHICS BLOCK
+ * *************************************************/
 
 <!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
 <tal:build_economies repeat="economy economies">
@@ -58,3 +86,7 @@
         }
     </tal:industry_on_or_off>
 </tal:build_economies>
+
+/* *************************************************
+ * !!!!!!!!!END!!!!!!!!!
+ * *************************************************/

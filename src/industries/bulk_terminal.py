@@ -1,7 +1,7 @@
 from industry import IndustryPrimaryPort, TileLocationChecks
 
 industry = IndustryPrimaryPort(id='bulk_terminal',
-                               accept_cargo_types=[('PASS'), ('FOOD'), ('ELEC'), ('MAIL')],
+                               accept_cargo_types=[('PASS'), ('FOOD'), ('ELEC'), ('MAIL'), ('WOOD')],
                                prod_cargo_types_with_multipliers=[('WATR', 10), ('PASS', 1), ('GOOD', 10), ('MAIL', 1)],
                                prob_in_game='2',
                                prob_map_gen='2',

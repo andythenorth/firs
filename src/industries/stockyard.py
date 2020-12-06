@@ -5,7 +5,7 @@ industry = IndustrySecondary(id='stockyard',
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[('FOOD', 8)],
                              prob_in_game='3',
-                             prob_map_gen='5',
+                             prob_map_gen='3',
                              map_colour='177',
                              special_flags=['IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE'],
                              name='string(STR_IND_STOCKYARD)',
@@ -30,7 +30,8 @@ industry.add_tile(id='stockyard_tile_1',
                   animation_looping=True,
                   animation_speed=3,
                   location_checks=TileLocationChecks(require_effectively_flat=True,
-                                                     disallow_industry_adjacent=True))
+                                                     require_houses_nearby=True,
+                                                     disallow_industry_adjacent=False))
 
 spriteset_ground = industry.add_spriteset(
     type='concrete'

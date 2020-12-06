@@ -21,7 +21,8 @@ industry.economy_variations['MAK_TEST'].enabled = True
 
 industry.add_tile(id='hotel_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,
-                                                     require_houses_nearby=True))
+                                                     require_houses_nearby=True,
+                                                     disallow_industry_adjacent=False))
 
 sprite_ground = industry.add_sprite(
     sprite_number='GROUNDSPRITE_CLEARED'

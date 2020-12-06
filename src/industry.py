@@ -127,7 +127,7 @@ class TileLocationChecks(object):
             # generates circular tile search points automatically
             # possibly could be done simpler with a town zone check instead of a tile search, but eh, it's done and works
             # note that this automates the provision of tile locations for the search radius, no option to declare that per-industry
-            distance = 7
+            distance = 3
             search_points = []
             for x in range(-1 * distance, distance+1):
                 for y in range(-1 * distance, distance+1):
@@ -1083,7 +1083,7 @@ class IndustryPrimaryOrganic(IndustryPrimary):
         Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
     """
     def __init__(self, **kwargs):
-        kwargs['accept_cargo_types'] = ['FMSP', 'WATR', 'ELEC']
+        kwargs['accept_cargo_types'] = ['FMSP', 'RFPR', 'ELEC', 'WATR']
         kwargs['life_type'] = 'IND_LIFE_TYPE_ORGANIC'
         super().__init__(**kwargs)
         self.supply_requirements = [0, 'PRIMARY', 1] # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)

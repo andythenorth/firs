@@ -7,14 +7,13 @@ industry = IndustrySecondary(id='brewery',
                              prob_in_game='3',
                              prob_map_gen='5',
                              map_colour='191',
+                            special_flags=['IND_FLAG_ONLY_IN_TOWNS'],
                              # no industry location checks for brewery, by design
                              name='string(STR_IND_BREWERY)',
                              nearby_station_name='string(STR_STATION_BARREL_AND_KEG)',
                              fund_cost_multiplier='50')
 
 industry.economy_variations['MAK_TEST'].enabled = True
-industry.economy_variations['MAK_TEST'].name = 'string(STR_IND_CIDER_MILL)'
-industry.economy_variations['MAK_TEST'].accept_cargos_with_input_ratios = [('FRUT', 6)]
 
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('GRAI', 4), ('MNSP', 4)]
@@ -30,7 +29,7 @@ industry.add_tile(id='brewery_tile_1',
                                             'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
                   location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      require_houses_nearby=True,
-                                                     disallow_industry_adjacent=True))
+                                                     disallow_industry_adjacent=False))
 industry.add_tile(id='brewery_tile_2',
                   animation_length=71,
                   animation_looping=True,

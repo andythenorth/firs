@@ -26,7 +26,8 @@ industry.add_tile(id='dairy_tile_1',
                   animation_looping=True,
                   animation_speed=3,
                   location_checks=TileLocationChecks(require_effectively_flat=True,
-                                                     disallow_industry_adjacent=True))
+                                                     require_houses_nearby=True,
+                                                     disallow_industry_adjacent=False))
 # tile with animation for smoke
 industry.add_tile(id='dairy_tile_2',
                   animation_length=7 * 6,  # animation length should have a common factor for all tiles in industry
@@ -35,7 +36,8 @@ industry.add_tile(id='dairy_tile_2',
                   custom_animation_control={'macro': 'random_first_frame',
                                             'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
                   location_checks=TileLocationChecks(require_effectively_flat=True,
-                                                     disallow_industry_adjacent=True))
+                                                     require_houses_nearby=True,
+                                                     disallow_industry_adjacent=False))
 
 spriteset_ground = industry.add_spriteset(
     type='concrete',
