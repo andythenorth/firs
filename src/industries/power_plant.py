@@ -1,9 +1,9 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='power_plant',
-                            accept_cargos_with_input_ratios=[('STEM', 40), ('PASS', 60)], 
+                            accept_cargos_with_input_ratios=[('STEM', 4), ('PASS', 6)], 
                             combined_cargos_boost_prod=True,
-                            prod_cargo_types_with_output_ratios=[('ELEC', 100), ("MAIL", 25), ('WATR', 2), ('PASS', 60)],
+                            prod_cargo_types_with_output_ratios=[('ELEC', 1), ("MAIL", 2), ('WATR', 2), ('PASS', 6)],
                             prob_in_game='2',
                             prob_map_gen='1',
                             prod_multiplier='[0, 0]',

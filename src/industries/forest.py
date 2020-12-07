@@ -1,12 +1,12 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='forest',
-                                  prod_cargo_types_with_multipliers=[('WOOD', 1)], #throws error without this why? Because its in import IndustryPrimaryExtractive and does those checks forcing gung-ho etc.
+                                  prod_cargo_types_with_multipliers=[('WOOD', 2)], #throws error without this why? Because its in import IndustryPrimaryExtractive and does those checks forcing gung-ho etc.
                                   prob_in_game='50',
                                   prob_map_gen='50',
                                   map_colour='83',
                                   prospect_chance='0.75',
-                                  location_checks=dict(industry_max_distance=['sawmill', 150], industry_min_distance=['coal_mine', 500], same_type_distance=10, cluster=[50, 8]),
+                                  location_checks=dict(industry_max_distance=['sawmill', 150], industry_min_distance=['coal_mine', 500], same_type_distance=10, cluster=[100, 8]),
                                   name='TTD_STR_INDUSTRY_NAME_FOREST',
                                   extra_text_fund='string(STR_FUND_FOREST)',
                                   fund_cost_multiplier='95',

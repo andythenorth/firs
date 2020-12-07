@@ -34,6 +34,9 @@ goods.cargo.register()
 from cargos import livestock
 livestock.cargo.register()
 
+from cargos import lumber
+lumber.cargo.register()
+
 from cargos import mail
 mail.cargo.register()
 

@@ -41,8 +41,14 @@ general_store.industry.register()
 from industries import hotel
 hotel.industry.register()
 
+from industries import lumber_yard
+lumber_yard.industry.register()
+
 from industries import orchard_piggery
 orchard_piggery.industry.register()
+
+from industries import paper_mill
+paper_mill.industry.register()
 
 from industries import port
 port.industry.register()

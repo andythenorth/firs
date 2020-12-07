@@ -1,9 +1,9 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='coke_oven',
-                             accept_cargos_with_input_ratios=[('COAL', 100), ('ELEC', 800), ('FOOD', 800), ('ENSP', 800), ('GOOD', 800), ('MAIL', 800), ('WATR', 800)], 
+                             accept_cargos_with_input_ratios=[('COAL', 8), ('ELEC', 8), ('FOOD', 0), ('ENSP', 1), ('GOOD', 1), ('MAIL', 1), ('WATR', 1)], 
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types_with_output_ratios=[('COKE', 100), ('RFPR', 1)],
+                             prod_cargo_types_with_output_ratios=[('COKE', 8), ('RFPR', 1), ('MAIL', 1)],
                              prob_in_game='1',
                              prob_map_gen='0.5',
                              map_colour='183',
