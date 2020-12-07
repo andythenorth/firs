@@ -1,7 +1,7 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(id='forest',
-                                  prod_cargo_types_with_multipliers=[('WOOD', 2)], #throws error without this why? Because its in import IndustryPrimaryExtractive and does those checks forcing gung-ho etc.
+                                  prod_cargo_types_with_multipliers=[('WOOD', 2), ('RCYC', 1)], #throws error without this why? Because its in import IndustryPrimaryExtractive and does those checks forcing gung-ho etc.
                                   prob_in_game='50',
                                   prob_map_gen='50',
                                   map_colour='83',

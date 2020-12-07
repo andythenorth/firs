@@ -1,14 +1,14 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(id='coke_oven',
-                             accept_cargos_with_input_ratios=[('COAL', 8), ('ELEC', 8), ('FOOD', 0), ('ENSP', 1), ('GOOD', 1), ('MAIL', 1), ('WATR', 1)], 
+                             accept_cargos_with_input_ratios=[('COAL', 8), ('ELEC', 8), ('FOOD', 0), ('ENSP', 1), ('GOOD', 1), ('PAPR', 1), ('WATR', 1)], 
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types_with_output_ratios=[('COKE', 8), ('RFPR', 1), ('MAIL', 1)],
+                             prod_cargo_types_with_output_ratios=[('COKE', 8), ('RFPR', 1), ('MAIL', 1), ('RCYC', 1)],
                              prob_in_game='1',
                              prob_map_gen='0.5',
                              map_colour='183',
-                             # it's rare to force co-location of secondaries, but this one is near coal mine by design
-                             location_checks=dict(industry_min_distance=['basic_oxygen_furnace', 500], same_type_distance=500, industry_max_distance=['coal_mine', 100]),
+                             # is 100 tiles too little or too much for coal mine travel? Would coke be transported by train to boiler or by car?
+                             location_checks=dict(industry_min_distance=[('basic_oxygen_furnace', 500), ('coal_mine', 100)], same_type_distance=500, industry_max_distance=['coal_mine', 200]),
                              name='string(STR_IND_COKE_OVEN)',
                              nearby_station_name='string(STR_STATION_BANK_TOP)',
                              fund_cost_multiplier='120')

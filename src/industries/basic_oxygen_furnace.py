@@ -9,7 +9,7 @@ industry = IndustrySecondary(id='basic_oxygen_furnace',
                              map_colour='169',
                              special_flags=['IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE'],
                              # it's rare to force co-location of secondaries, but this one is near power station by design
-                             location_checks=dict(industry_max_distance=['power_plant', 50], same_type_distance=500),
+                             location_checks=dict(industry_max_distance=['power_plant', 150], industry_min_distance=[('power_plant', 50), ('coke_oven', 500)], same_type_distance=500),
                              name='string(STR_IND_BASIC_OXYGEN_FURNACE)',
                              nearby_station_name='string(STR_STATION_FURNACE)',
                              fund_cost_multiplier='160',

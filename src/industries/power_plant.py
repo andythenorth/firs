@@ -9,7 +9,7 @@ industry = IndustrySecondary(id='power_plant',
                             prod_multiplier='[0, 0]',
                             map_colour='168',
                              # it's rare to force co-location of secondaries, but this one is near power station by design
-                            location_checks=dict(industry_max_distance=['basic_oxygen_furnace', 50], same_type_distance=500),
+                            location_checks=dict(industry_max_distance=['basic_oxygen_furnace', 150], industry_min_distance=['basic_oxygen_furnace', 50], same_type_distance=500),
                             name='string(STR_IND_POWER_PLANT)',
                             nearby_station_name='string(STR_STATION_POWERHUNGRY)',
                             fund_cost_multiplier='15',

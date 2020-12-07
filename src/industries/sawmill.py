@@ -7,7 +7,7 @@ industry = IndustrySecondary(id='sawmill',
                              prob_in_game='5',
                              prob_map_gen='5',
                              map_colour='194',
-                             location_checks=dict(industry_min_distance=['coal_mine', 500], cluster=[200, 2], same_type_distance=500),
+                             location_checks=dict(industry_min_distance=[('coal_mine', 400), ('paper_mill', 200)], same_type_distance=500),
                              name='TTD_STR_INDUSTRY_NAME_SAWMILL',
                              nearby_station_name='string(STR_STATION_MILL)',
                              fund_cost_multiplier='97')
@@ -15,7 +15,7 @@ industry = IndustrySecondary(id='sawmill',
 industry.economy_variations['MAK_TEST'].enabled = True
 
 industry.add_tile(id='sawmill_tile_1',
-                  location_checks=TileLocationChecks(disallow_industry_adjacent=True))
+                  location_checks=TileLocationChecks(disallow_industry_adjacent=False))
 
 sprite_ground = industry.add_sprite(
     sprite_number='GROUNDTILE_MUD_TRACKS'  # ground tile same as overlay tile

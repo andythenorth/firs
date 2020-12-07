@@ -23,5 +23,8 @@ economy = Economy(id = "MAK_TEST",
                             'fish',
                             'steam',
                             'electricity',
-                            'lumber'])
+                            'lumber',
+                            'recyclables',
+                            'scrap_metal',
+                            'paper'])
 

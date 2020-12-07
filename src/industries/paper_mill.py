@@ -3,12 +3,12 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(id='paper_mill',
                              accept_cargos_with_input_ratios=[('RFPR', 1), ('WOOD', 4)],
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types_with_output_ratios=[('GOOD', 8)],
+                             prod_cargo_types_with_output_ratios=[('PAPR', 8), ('RCYC', 2)],
                              prob_in_game='3',
                              prob_map_gen='5',
                              substitute='14',
                              map_colour='164',
-                             location_checks=dict(same_type_distance=500),
+                             location_checks=dict(industry_max_distance=['coke_oven', 300], industry_min_distance=['coke_oven', 10], same_type_distance=500),
                              fund_cost_multiplier='120',
                              nearby_station_name='string(STR_STATION_MILL)',
                              name='TTD_STR_INDUSTRY_NAME_PAPER_MILL',
@@ -25,7 +25,7 @@ industry.add_tile(id='paper_mill_tile_1',
                   animation_looping=True,
                   animation_speed=3,
                   location_checks=TileLocationChecks(require_effectively_flat=True,
-                                                     disallow_industry_adjacent=True))
+                                                     disallow_industry_adjacent=False))
 
 spriteset_ground = industry.add_spriteset(
     type='dirty_concrete'
