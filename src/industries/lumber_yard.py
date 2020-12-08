@@ -3,11 +3,12 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(id='lumber_yard',
                              accept_cargos_with_input_ratios=[('WDPR', 6), ('WATR', 1)], #, ('COAT', 2)
                              combined_cargos_boost_prod=True,
-                             prod_cargo_types_with_output_ratios=[('ENSP', 8)],
+                             prod_cargo_types_with_output_ratios=[('GOOD', 8), ('RFPR', 2)],
                              prob_in_game='3',
                              prob_map_gen='5',
                              map_colour='43',
                              location_checks=dict(industry_min_distance=['sawmill', 500], same_type_distance=500),
+                             special_flags=['IND_FLAG_ONLY_IN_TOWNS'],
                              name='string(STR_IND_LUMBER_YARD)',
                              nearby_station_name='string(STR_STATION_CREOSOTING)',
                              fund_cost_multiplier='35')
@@ -27,7 +28,7 @@ industry.add_tile(id='lumber_yard_tile_2',
                   animation_looping=True,
                   animation_speed=2,
                   location_checks=TileLocationChecks(require_effectively_flat=True,
-                                                     disallow_industry_adjacent=True))
+                                                     disallow_industry_adjacent=False))
 
 sprite_ground = industry.add_sprite(
     sprite_number='GROUNDTILE_MUD_TRACKS'

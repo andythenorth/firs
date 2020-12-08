@@ -1,11 +1,12 @@
 from industry import IndustryTownProducerPopulationDependent, TileLocationChecks
 
 industry = IndustryTownProducerPopulationDependent(id='junk_yard',
-                                     prod_cargo_types_with_multipliers=[('SCMT', 32)], # prod dependent on town popn
+                                     prod_cargo_types_with_multipliers=[('SCMT', 32), ('WDPR', 12)], # prod dependent on town popn
                                      prob_in_game='3',
                                      prob_map_gen='7',
                                      map_colour='64',
                                      # no industry location checks for junk yard, by design, maybe; maybe not.
+                                     special_flags=['IND_FLAG_ONLY_IN_TOWNS'],
                                      prospect_chance='0.75',
                                      name='string(STR_IND_JUNKYARD)',
                                      nearby_station_name='string(STR_STATION_BONEYARD)',

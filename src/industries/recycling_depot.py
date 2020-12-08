@@ -1,11 +1,12 @@
 from industry import IndustryTownProducerPopulationDependent, TileLocationChecks
 
 industry = IndustryTownProducerPopulationDependent(id='recycling_depot',
-                                       prod_cargo_types_with_multipliers=[('RCYC', 16)], # prod dependent on town popn
+                                       prod_cargo_types_with_multipliers=[('RCYC', 32)], # prod dependent on town popn
                                        prob_in_game='20',
                                        prob_map_gen='20',
                                                  map_colour='191',
                                        life_type='IND_LIFE_TYPE_EXTRACTIVE',
+                                       special_flags=['IND_FLAG_ONLY_IN_TOWNS'],
                                        location_checks=dict(same_type_distance=16,
                                                             town_industry_count=['recycling_depot', 0, 0],
                                                             prevent_player_founding=True),
