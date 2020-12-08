@@ -7,7 +7,7 @@ industry = IndustryPrimaryOrganic(id='dairy_farm',
                                   map_colour='209',
                                   # fields aren't 100% appropriate, but without them there are zero farm fields planted in Basic Temperate economy
                                   special_flags=['IND_FLAG_PLANT_FIELDS_PERIODICALLY', 'IND_FLAG_PLANT_FIELDS_WHEN_BUILT'],
-                                  location_checks=dict(cluster=[2, 6]),
+                                  location_checks=dict(cluster=[20, 4]),
                                   prospect_chance='0.75',
                                   name='string(STR_IND_DAIRY_FARM)',
                                   extra_text_fund='string(STR_FUND_DAIRY_FARM)',
@@ -22,7 +22,7 @@ industry.add_tile(id='dairy_farm_tile_1',
                                                      disallow_above_snowline=True,
                                                      disallow_desert=True,
                                                      disallow_coast=True,
-                                                     disallow_industry_adjacent=True))
+                                                     disallow_industry_adjacent=False))
 
 sprite_ground = industry.add_sprite(
     sprite_number='GROUNDTILE_MUD_TRACKS'

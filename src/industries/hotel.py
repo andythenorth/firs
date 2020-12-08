@@ -1,8 +1,8 @@
 from industry import IndustryTertiary, TileLocationChecks
 
 industry = IndustryTertiary(id='hotel',
-                            accept_cargo_types=['FOOD', 'BEER', 'PASS'],
-                            prod_cargo_types_with_multipliers=[('PASS', 1)],
+                            accept_cargo_types=['FOOD', 'BEER', 'PASS', 'MAIL', 'WATR', 'ELEC'],
+                            prod_cargo_types_with_multipliers=[('PASS', 2), ('RCYC', 1)],
                             prob_in_game='15',
                             prob_map_gen='10',
                             map_colour='189',

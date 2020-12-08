@@ -5,7 +5,7 @@ industry = IndustrySecondary(id='coke_oven',
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[('COKE', 8), ('RFPR', 1), ('MAIL', 1), ('RCYC', 1)],
                              prob_in_game='1',
-                             prob_map_gen='0.5',
+                             prob_map_gen='1',
                              map_colour='183',
                              # is 100 tiles too little or too much for coal mine travel? Would coke be transported by train to boiler or by car?
                              location_checks=dict(industry_min_distance=[('basic_oxygen_furnace', 500), ('coal_mine', 100)], same_type_distance=500, industry_max_distance=['coal_mine', 200]),

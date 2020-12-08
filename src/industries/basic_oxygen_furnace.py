@@ -4,11 +4,11 @@ industry = IndustrySecondary(id='basic_oxygen_furnace',
                              accept_cargos_with_input_ratios=[('COKE', 4), ('PASS', 0), ('WATR', 6)], 
                              combined_cargos_boost_prod=True,
                              prod_cargo_types_with_output_ratios=[('STEM', 4), ('PASS', 12)],
-                             prob_in_game='2',
+                             prob_in_game='1',
                              prob_map_gen='1',
                              map_colour='169',
                              special_flags=['IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE'],
-                             # it's rare to force co-location of secondaries, but this one is near power station by design
+                             # My poop is recycled.
                              location_checks=dict(industry_max_distance=['recycling_plant', 50], industry_min_distance=[('recycling_plant', 10), ('coke_oven', 500), ('power_plant', 500)], same_type_distance=500),
                              name='string(STR_IND_BASIC_OXYGEN_FURNACE)',
                              nearby_station_name='string(STR_STATION_FURNACE)',

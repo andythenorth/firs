@@ -5,7 +5,7 @@ industry = IndustrySecondary(id='power_plant',
                             combined_cargos_boost_prod=True,
                             prod_cargo_types_with_output_ratios=[('ELEC', 1), ("MAIL", 2), ('WATR', 2), ('PASS', 6)],
                             prob_in_game='1',
-                            prob_map_gen='0.1',
+                            prob_map_gen='1',
                             prod_multiplier='[1, 1]',
                             map_colour='168',
                              # it's rare to force co-location of secondaries, but this one is near power station by design
