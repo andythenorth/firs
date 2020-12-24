@@ -20,19 +20,7 @@ grf {
 		}
 	}
 	param 2 {
-		<!--! primary closure deprecated -->
-		<!--! allow_close_primary {
-			name: string(STR_PARAM_NAME_NEVER_CLOSE);
-			desc: string(STR_PARAM_DESC_NEVER_CLOSE);
-			type: bool;
-			bit: 0;
-		} -->
-		allow_close_secondary {
-			name: string(STR_PARAM_NAME_SECONDARY_NEVER_CLOSE);
-			desc: string(STR_PARAM_DESC_SECONDARY_NEVER_CLOSE);
-			type: bool;
-			bit: 1;
-		}
+	    <!--! legacy use of bit 2 as other bool params were deleted from here -->
 		restrict_open_during_gameplay {
 			name: string(STR_PARAM_NAME_NO_OPENINGS);
 			desc: string(STR_PARAM_DESC_NO_OPENINGS);
@@ -40,15 +28,6 @@ grf {
 			bit: 2;
 		}
 	}
-	<!--! deprecated param 1 -->
-	<!--! param 1 {
-		allow_primary_production_change {
-			name: string(STR_PARAM_NAME_PRIMARY_PRODUCTION_CHANGE);
-			desc: string(STR_PARAM_DESC_PRIMARY_PRODUCTION_CHANGE);
-			type: bool;
-			bit: 0;
-		}
-	} -->
 	param 7 {
 		primary_level1_produced_percent {
 			name: string(STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS);
