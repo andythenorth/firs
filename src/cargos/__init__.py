@@ -288,8 +288,10 @@ from cargos import recyclables
 recyclables.cargo.register()
 """
 
+"""
 from cargos import rebar
 rebar.cargo.register()
+"""
 
 from cargos import rubber
 rubber.cargo.register()
