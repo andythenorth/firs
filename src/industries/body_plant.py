@@ -53,9 +53,6 @@ spriteset_5 = industry.add_spriteset(
 spriteset_6 = industry.add_spriteset(
     sprites=[(360, 60, 64, 31, -31, 0)],
 )
-spriteset_7 = industry.add_spriteset(
-    sprites=[(430, 60, 64, 31, -31, 0)],
-)
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type="white_smoke_small",
     xoffset=-5,
@@ -104,13 +101,6 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
-    fences=["nw", "ne", "se", "sw"],
-)
-industry.add_spritelayout(
-    id="body_plant_spritelayout_7",
-    ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_7],
     fences=["nw", "ne", "se", "sw"],
 )
 

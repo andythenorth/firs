@@ -50,8 +50,6 @@
 
 <tal:include metal:use-macro="load: layouts.pynml" />
 
-<tal:include metal:use-macro="load: extra_text_tertiary.pynml" />
-
 <tal:include metal:use-macro="load: availability.pynml" />
 
 <tal:include define="location_checks_industry load: location_check_macros_industry.pynml"
@@ -72,7 +70,8 @@
                     </tal:has_production>
                     location_check:           ${industry.id}_check_location;
                     extra_text_fund:          ${industry.get_extra_text_fund(economy)};
-                    cargo_subtype_display:    ${industry.id}_cargo_subtype_display;
+                    <!--! The 0x3800 expressions here are related to using extended cb 37 before nml support was added, and can be removed when nml is updated -->
+                    cargo_subtype_display:    return 0x3800 + string(STR_EMPTY);
                     colour:                   switch_colour;
                 }
             }
