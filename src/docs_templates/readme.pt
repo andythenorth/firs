@@ -1,5 +1,5 @@
 ====================================
-FIRS Industry Replacement Set ${repo_vars.repo_version}
+FIRS Industry Replacement Set ${git_info.get_version()}
 ====================================
 New Industries and Cargos for OpenTTD
 
@@ -9,7 +9,7 @@ FIRS docs are published online:
 =======
 GRF Name : FIRS Industry Replacement Set
 
-This version of FIRS is created using repository version ${repo_vars.repo_revision}
+This version of FIRS is created using repository version ${git_info.get_revision()}
 
 Thanks to *all* who helped create FIRS.
 

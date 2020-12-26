@@ -9,13 +9,12 @@ def get_makefile_args(sys):
     # get args passed by makefile
     if len(sys.argv) > 1:
         makefile_args = {
-            "repo_revision": sys.argv[1],
-            "repo_version": sys.argv[2],
-            "test_industry": sys.argv[3],
-            "no_mp": sys.argv[4],
+            "test_industry": sys.argv[1],
+            "no_mp": sys.argv[2],
         }
-    else:  # provide some defaults so templates don't explode when testing python script without command line args
-        makefile_args = {"repo_revision": 0, "repo_version": 0}
+    else:
+        # provide any necessary defaults here
+        makefile_args = {}
     return makefile_args
 
 

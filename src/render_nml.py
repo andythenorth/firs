@@ -9,10 +9,11 @@ currentdir = os.curdir
 src_path = os.path.join(currentdir, "src")
 from time import time
 
-import global_constants
-import utils
-from incompatible_grfs import incompatible_grfs
 import firs
+import utils
+import global_constants
+from polar_fox import git_info
+from incompatible_grfs import incompatible_grfs
 
 registered_cargos = firs.registered_cargos
 registered_industries = firs.registered_industries
@@ -48,6 +49,7 @@ def render_header_item_nml(header_item):
             repo_vars=repo_vars,
             utils=utils,
             sys=sys,
+            git_info=git_info,
         )
     )
     # write the nml per vehicle to disk, it aids debugging

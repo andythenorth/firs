@@ -3,7 +3,7 @@ grf {
 	name: string(STR_GRF_NAME);
 	desc: string(STR_GRF_DESC);
 	url: string(STR_GRF_DOCS_URL);
-	version: ${repo_vars.repo_revision};
+	version: ${git_info.get_revision()};
 	min_compatible_version: 6339;
 	param 0 {
 	    <!--! 'economy_selection' is remapped to 'economy' later because we can't control order and value separately here -->

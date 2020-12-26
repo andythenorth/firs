@@ -1,5 +1,6 @@
 import firs
 import utils
+from polar_fox import git_info
 
 import shutil
 import os
@@ -50,7 +51,7 @@ def main():
         dst_file = codecs.open(os.path.join(lang_dst, i + ".lng"), "w", "utf8")
         lang_content = src_file.read()
         lang_content = lang_content + lang_template(
-            makefile_args=makefile_args, utils=utils
+            makefile_args=makefile_args, utils=utils, git_info=git_info
         )
         dst_file.write(lang_content)
         dst_file.close()

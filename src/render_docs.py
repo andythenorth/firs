@@ -9,6 +9,15 @@ import os
 currentdir = os.curdir
 from time import time
 
+import markdown
+from PIL import Image
+
+import utils as utils
+import global_constants as global_constants
+from polar_fox import git_info
+import firs
+from incompatible_grfs import incompatible_grfs
+
 docs_src = os.path.join(currentdir, "src", "docs_templates")
 docs_output_path = os.path.join(currentdir, "docs")
 if os.path.exists(docs_output_path):
@@ -29,12 +38,6 @@ from chameleon import PageTemplateLoader  # chameleon used in most template case
 # setup the places we look for templates
 docs_templates = PageTemplateLoader(docs_src, format="text")
 
-import global_constants as global_constants
-import utils as utils
-from incompatible_grfs import incompatible_grfs
-import markdown
-
-from PIL import Image
 
 # get args passed by makefile
 repo_vars = utils.get_makefile_args(sys)
@@ -44,8 +47,6 @@ base_lang_strings = utils.parse_base_lang()
 
 metadata = {}
 metadata.update(global_constants.metadata)
-
-import firs
 
 # default sort for docs is by id
 registered_cargos = sorted(
@@ -276,6 +277,7 @@ def render_docs(doc_list, file_type, use_markdown=False):
             incompatible_grfs=incompatible_grfs,
             global_constants=global_constants,
             repo_vars=repo_vars,
+            git_info=git_info,
             metadata=metadata,
             utils=utils,
             doc_helper=DocHelper(),
@@ -288,6 +290,7 @@ def render_docs(doc_list, file_type, use_markdown=False):
                 content=markdown.markdown(doc),
                 global_constants=global_constants,
                 repo_vars=repo_vars,
+                git_info=git_info,
                 metadata=metadata,
                 utils=utils,
                 doc_helper=DocHelper(),
