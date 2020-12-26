@@ -3,16 +3,13 @@
 ##gender m f
 
 STR_GRF_DESC                                                                    :{ORANGE}FIRS 산업 시설 대체 세트{}{BLACK}andythenorth, FooBar, planetmaker, Terkhen, Yexo 등 많은 분들의 도움을 받아 제공됩니다. {SILVER}FIRS를 사용하는 방법 등을 포함한 자세한 정보는 읽어보기를 참고하세요. {BLACK}라이선스: GPL v2.
-STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :어장, 유전, 준설 부지의 최대 해안 거리 (단위: 칸)
 STR_PARAM_DESC_ECONOMIES                                                        :각각의 경제 설정에 따라 화물과 산업시설의 구성이 달라집니다.{}{}간단한 게임 플레이를 원하는 플레이어의 경우, 다른 FIRS 경제에 비해 '{SILVER}기본{BLACK}' 경제가 산업 시설과 화물의 종류가 적으므로 이를 사용하십시오.{}{} FIRS 웹 사이트에서 각 경제 설정에 대한 상세 정보를 확인하실 수 있습니다.
 STR_PARAM_DESC_NO_OPENINGS                                                      :기본적으로, 게임 중에 새로운 산업 시설이 건설될 것입니다.{}{}만약 '{SILVER}건설 금지{BLACK}' 옵션을 켠다면 게임 중에 산업 시설이 건설되지 않을 것이고, 플레이어는 산업시설에 투자하거나 산업 시설을 탐사할 수 없게 됩니다.
-STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :기본적으로, FIRS의 2차 산업시설은 절대 폐쇄되지 않습니다.{}{}만약 2차 산업시설 폐쇄 옵션을 켜면, 2차 산업시설은 오랫동안 화물이 수송되지 않을 경우 폐쇄될 수도 있습니다. 1차 산업시설은 FIRS에서 절대 폐쇄되지 않고 이 설정의 영향을 받지도 않습니다.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :해양 산업 시설의 최대 해안 거리 (단위: 칸)
 STR_PARAM_NAME_ECONOMIES                                                        :경제
 STR_PARAM_NAME_NO_OPENINGS                                                      :게임 플레이 중 산업 시설의 건설을 금지
-STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :2차 산업시설 자동 폐쇄 허용
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :제한 없음
 
 STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :1차 산업 시설의 생산량을 2배로 늘리기 위해 수송해야 할 화물량 (기본값: 16)
