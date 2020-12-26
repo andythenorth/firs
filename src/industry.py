@@ -11,18 +11,14 @@ import os.path
 
 currentdir = os.curdir
 
-# add to the module search path
-src_path = os.path.join(currentdir, "src")
-
 import global_constants as global_constants
 import utils as utils
 
 from chameleon import PageTemplateLoader  # chameleon used in most template cases
 
 # setup the places we look for templates
-templates = PageTemplateLoader(os.path.join(src_path, "templates"), format="text")
-industry_templates = PageTemplateLoader(
-    os.path.join(src_path, "industries"), format="text"
+templates = PageTemplateLoader(
+    os.path.join(currentdir, "src", "templates"), format="text"
 )
 
 from economies import registered_economies

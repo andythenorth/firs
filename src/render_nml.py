@@ -6,7 +6,6 @@ import sys
 import os
 
 currentdir = os.curdir
-src_path = os.path.join(currentdir, "src")
 from time import time
 
 import firs
@@ -23,9 +22,8 @@ incompatible_industries = firs.incompatible_industries
 from chameleon import PageTemplateLoader  # chameleon used in most template cases
 
 # setup the places we look for templates
-templates = PageTemplateLoader(os.path.join(src_path, "templates"), format="text")
-industry_templates = PageTemplateLoader(
-    os.path.join(src_path, "industries"), format="text"
+templates = PageTemplateLoader(
+    os.path.join(currentdir, "src", "templates"), format="text"
 )
 
 generated_nml_path = os.path.join(firs.generated_files_path, "nml")

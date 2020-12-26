@@ -8,8 +8,6 @@
 import os
 
 currentdir = os.curdir
-# add to the module search path
-src_path = os.path.join(currentdir, "src")
 
 import global_constants
 import utils
