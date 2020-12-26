@@ -7,7 +7,7 @@ cargo = Cargo(id='chemicals',
               sprite='NEW_CARGO_SPRITE',
               weight='1.2',  # extra realism, per forum suggestion Nov 2017
               is_freight='1',
-              cargo_classes='bitmask(CC_LIQUID)',
+              cargo_classes='bitmask(CC_LIQUID, CC_PIECE_GOODS, CC_HAZARDOUS)',
               cargo_label='RFPR',
               town_growth_effect='TOWNGROWTH_NONE',
               town_growth_multiplier='1.0',

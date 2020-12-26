@@ -7,7 +7,7 @@ cargo = Cargo(id='vehicles',
               sprite='NEW_CARGO_SPRITE',
               weight='1.0',
               is_freight='1',
-              cargo_classes='bitmask(CC_PIECE_GOODS)',
+              cargo_classes='bitmask(CC_PIECE_GOODS, CC_OVERSIZED)',
               cargo_label='VEHI',
               town_growth_effect='TOWNGROWTH_WATER',  # intended for desert Steeltown, may not be appropriate in other cases
               town_growth_multiplier='1.0',
