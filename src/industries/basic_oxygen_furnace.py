@@ -73,8 +73,11 @@ spriteset_metal_2 = industry.add_spriteset(
 spriteset_metal_3 = industry.add_spriteset(
     sprites=[(570, 10, 64, 122, -31, -90)],
 )
-spriteset_shed = industry.add_spriteset(
+spriteset_metal_4 = industry.add_spriteset(
     sprites=[(640, 10, 64, 122, -31, -90)],
+)
+spriteset_shed = industry.add_spriteset(
+    sprites=[(710, 10, 64, 122, -31, -90)],
 )
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type="white_smoke_big",
@@ -155,6 +158,13 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
+    id="basic_oxygen_furnace_spritelayout_metal_4",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_metal_4],
+    fences=["nw", "ne", "se", "sw"],
+)
+industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_shed",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
@@ -220,7 +230,7 @@ industry.add_industry_layout(
             1,
             4,
             "basic_oxygen_furnace_tile_1",
-            "basic_oxygen_furnace_spritelayout_metal_3",
+            "basic_oxygen_furnace_spritelayout_metal_4",
         ),
         (
             1,
@@ -256,7 +266,7 @@ industry.add_industry_layout(
             2,
             4,
             "basic_oxygen_furnace_tile_1",
-            "basic_oxygen_furnace_spritelayout_metal_3",
+            "basic_oxygen_furnace_spritelayout_empty",
         ),
         (
             2,
@@ -292,13 +302,13 @@ industry.add_industry_layout(
             3,
             4,
             "basic_oxygen_furnace_tile_1",
-            "basic_oxygen_furnace_spritelayout_metal_3",
+            "basic_oxygen_furnace_spritelayout_metal_4",
         ),
         (
             3,
             5,
             "basic_oxygen_furnace_tile_1",
-            "basic_oxygen_furnace_spritelayout_metal_3",
+            "basic_oxygen_furnace_spritelayout_metal_4",
         ),
     ],
 )
@@ -388,7 +398,7 @@ industry.add_industry_layout(
             2,
             4,
             "basic_oxygen_furnace_tile_1",
-            "basic_oxygen_furnace_spritelayout_metal_3",
+            "basic_oxygen_furnace_spritelayout_metal_4",
         ),
         (
             3,
@@ -418,7 +428,7 @@ industry.add_industry_layout(
             3,
             4,
             "basic_oxygen_furnace_tile_1",
-            "basic_oxygen_furnace_spritelayout_metal_3",
+            "basic_oxygen_furnace_spritelayout_empty",
         ),
         (4, 0, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_shed"),
         (4, 1, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_shed"),
@@ -539,7 +549,7 @@ industry.add_industry_layout(
             3,
             0,
             "basic_oxygen_furnace_tile_1",
-            "basic_oxygen_furnace_spritelayout_metal_3",
+            "basic_oxygen_furnace_spritelayout_metal_4",
         ),
         (
             3,
@@ -577,7 +587,7 @@ industry.add_industry_layout(
             4,
             3,
             "basic_oxygen_furnace_tile_1",
-            "basic_oxygen_furnace_spritelayout_metal_3",
+            "basic_oxygen_furnace_spritelayout_metal_4",
         ),
         (
             4,
@@ -678,7 +688,7 @@ industry.add_industry_layout(
             3,
             2,
             "basic_oxygen_furnace_tile_1",
-            "basic_oxygen_furnace_spritelayout_metal_3",
+            "basic_oxygen_furnace_spritelayout_empty",
         ),
         (
             3,
@@ -702,14 +712,14 @@ industry.add_industry_layout(
             4,
             2,
             "basic_oxygen_furnace_tile_1",
-            "basic_oxygen_furnace_spritelayout_metal_3",
+            "basic_oxygen_furnace_spritelayout_empty",
         ),
         (4, 3, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_shed"),
         (
             5,
             0,
             "basic_oxygen_furnace_tile_1",
-            "basic_oxygen_furnace_spritelayout_metal_3",
+            "basic_oxygen_furnace_spritelayout_metal_4",
         ),
         (
             5,
