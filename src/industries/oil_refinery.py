@@ -11,7 +11,6 @@ industry = IndustrySecondary(
     fund_cost_multiplier="200",
     name="TTD_STR_INDUSTRY_NAME_OIL_REFINERY",
     nearby_station_name="string(STR_STATION_REFINERY)",
-    intro_year=1830,
 )
 
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True

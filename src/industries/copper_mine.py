@@ -14,7 +14,6 @@ industry = IndustryPrimaryExtractive(
     name="TTD_STR_INDUSTRY_NAME_COPPER_ORE_MINE",
     nearby_station_name="string(STR_STATION_COPPER_LODE)",
     fund_cost_multiplier="238",
-    intro_year=1800,
 )
 
 industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True

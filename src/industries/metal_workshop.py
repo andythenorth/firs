@@ -11,7 +11,6 @@ industry = IndustrySecondary(
     name="string(STR_IND_METAL_WORKSHOP)",
     nearby_station_name="string(STR_STATION_STAMP_AND_PLATE)",
     fund_cost_multiplier="120",
-    intro_year=1800,
 )
 
 industry.economy_variations["BASIC_TEMPERATE"].enabled = True

@@ -21,8 +21,7 @@ industry = IndustrySecondary(
     name="string(STR_IND_BASIC_OXYGEN_FURNACE)",
     nearby_station_name="string(STR_STATION_FURNACE)",
     fund_cost_multiplier="160",
-    intro_year=1850,
-)  # intro year needs to >= Blast Furnace intro year, otherwise location restriction means no BOFs are built
+)
 
 industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations[

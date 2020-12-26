@@ -11,7 +11,6 @@ industry = IndustrySecondary(
     name="string(STR_IND_BLAST_FURNACE)",
     nearby_station_name="string(STR_STATION_FURNACE)",
     fund_cost_multiplier="190",
-    intro_year=1850,
 )
 
 
