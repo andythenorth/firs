@@ -25,13 +25,14 @@ Any changes made here are liable to be over-written.
 import os
 from PIL import Image, ImageDraw, ImageFont
 
-DOS_PALETTE = Image.open('palette_key.png').palette
+DOS_PALETTE = Image.open("palette_key.png").palette
 try:
     # truetype fonts may not be available in older versions of PIL / Pillow
-    label_font = ImageFont.truetype(os.path.join('font','slkscr.ttf'), 8)
+    label_font = ImageFont.truetype(os.path.join("font", "slkscr.ttf"), 8)
 except:
     # if truetype fonts are not available, 'None' will trigger fallback to PIL default bitmap font
     label_font = None
+
 
 class ProcessingUnit(object):
     def __init__(self):
@@ -55,6 +56,7 @@ class ProcessingUnit(object):
 
 class PassThrough(ProcessingUnit):
     """ PassThrough """
+
     # just an example unit that does nothing
     def __init__(self):
         super().__init__()
@@ -65,6 +67,7 @@ class PassThrough(ProcessingUnit):
 
 class SimpleRecolour(ProcessingUnit):
     """ SimpleRecolour """
+
     def __init__(self, recolour_map):
         self.recolour_map = recolour_map
         super().__init__()
@@ -76,6 +79,7 @@ class SimpleRecolour(ProcessingUnit):
 
 class SwapCompanyColours(ProcessingUnit):
     """ SwapCompanyColours """
+
     def __init__(self):
         # colour defaults
         CC1 = 198
@@ -93,56 +97,82 @@ class SwapCompanyColours(ProcessingUnit):
 
 class AppendToSpritesheet(ProcessingUnit):
     """ AppendToSpritesheet """
+
     """ Always appends at the end vertically.  Insertions and horizontal appending are not supported. """
+
     def __init__(self, spritesheet_to_paste, crop_box=None):
         self.spritesheet_to_paste = spritesheet_to_paste
         # 4 tuple for box size (left, upper, right, lower)
         self.crop_box = crop_box
         if self.crop_box is None:
-            self.crop_box = (0, 0, spritesheet_to_paste.sprites.size[0], spritesheet_to_paste.sprites.size[1])
+            self.crop_box = (
+                0,
+                0,
+                spritesheet_to_paste.sprites.size[0],
+                spritesheet_to_paste.sprites.size[1],
+            )
         super().__init__()
 
     def render(self, spritesheet):
         image_to_paste = self.spritesheet_to_paste.sprites.copy()
-        image_to_paste = image_to_paste.crop((self.crop_box[0], self.crop_box[1], self.crop_box[2], self.crop_box[3]))
+        image_to_paste = image_to_paste.crop(
+            (self.crop_box[0], self.crop_box[1], self.crop_box[2], self.crop_box[3])
+        )
         previous = spritesheet.sprites
         width = previous.size[0]
         height = previous.size[1] + image_to_paste.size[1]
-        temp = Image.new('P', (width, height), 255)
+        temp = Image.new("P", (width, height), 255)
         temp.putpalette(DOS_PALETTE)
         temp.paste(previous, (0, 0, previous.size[0], previous.size[1]))
         spritesheet.sprites = temp
-        box = (0, previous.size[1], image_to_paste.size[0], previous.size[1] + image_to_paste.size[1])
+        box = (
+            0,
+            previous.size[1],
+            image_to_paste.size[0],
+            previous.size[1] + image_to_paste.size[1],
+        )
         spritesheet.sprites.paste(image_to_paste, box)
         return spritesheet
 
 
 class TransposeAsymmetricSprites(ProcessingUnit):
     """ TransposeAsymmetricSprites """
+
     """ Provides column 1 sprites for asymmetric vehicles.  Maps from column 2 sprites."""
+
     def __init__(self, spriterow_height, bboxes, row_map):
         self.spriterow_height = spriterow_height
-        self.bboxes = bboxes # spriteset bounding boxes, usually in global_constants
-        self.row_map = row_map # mapping of {row num to provide in col 1: row num to copy from in col 2}
+        self.bboxes = bboxes  # spriteset bounding boxes, usually in global_constants
+        self.row_map = row_map  # mapping of {row num to provide in col 1: row num to copy from in col 2}
 
     def render(self, spritesheet):
-        source =  spritesheet.sprites.copy()
+        source = spritesheet.sprites.copy()
         for dest_row, source_row in self.row_map.items():
             source_row_y_loc = 10 + ((source_row - 1) * self.spriterow_height)
-            content = source.copy().crop((self.bboxes[4][0],
-                                          source_row_y_loc,
-                                          self.bboxes[7][0] + self.bboxes[7][1],
-                                          source_row_y_loc + self.spriterow_height))
+            content = source.copy().crop(
+                (
+                    self.bboxes[4][0],
+                    source_row_y_loc,
+                    self.bboxes[7][0] + self.bboxes[7][1],
+                    source_row_y_loc + self.spriterow_height,
+                )
+            )
             dest_row_y_loc = 10 + ((dest_row - 1) * self.spriterow_height)
-            spritesheet.sprites.paste(content, (self.bboxes[0][0],
-                                                dest_row_y_loc,
-                                                self.bboxes[3][0] + self.bboxes[3][1],
-                                                dest_row_y_loc + self.spriterow_height))
+            spritesheet.sprites.paste(
+                content,
+                (
+                    self.bboxes[0][0],
+                    dest_row_y_loc,
+                    self.bboxes[3][0] + self.bboxes[3][1],
+                    dest_row_y_loc + self.spriterow_height,
+                ),
+            )
         return spritesheet
 
 
 class AddBuyMenuSprite(ProcessingUnit):
     """ AddBuyMenuSprite """
+
     """ Inserts a (custom) buy menu sprite for articulated vehicles etc. """
     # to create the buy menu sprite, we need the *processed* vehicle sprites
     # to do that, we use this unit at or near the end of the pipeline
@@ -154,8 +184,10 @@ class AddBuyMenuSprite(ProcessingUnit):
     def render(self, spritesheet):
         return self.processing_function(spritesheet)
 
+
 class AddCargoLabel(ProcessingUnit):
     """AddCargoLabel"""
+
     """Adds a cargo (or other) label to the spritesheet"""
 
     def __init__(self, label, x_offset, y_offset):
@@ -171,4 +203,3 @@ class AddCargoLabel(ProcessingUnit):
         draw_cargo_labels = ImageDraw.Draw(spritesheet.sprites)
         draw_cargo_labels.text(position, self.label, font=label_font)
         return spritesheet
-
