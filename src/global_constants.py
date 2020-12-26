@@ -286,6 +286,12 @@ tile_numeric_ids = dict(polyethylene_plant_tile_1 = 90,
                         fishing_village_tile_2 = 253,
                         chemical_plant_tile_2 = 254)
 
+metadata = {
+    "dev_thread_url": 'http://www.tt-forums.net/viewtopic.php?t=41607',
+    "repo_url": "https://github.com/andythenorth/firs",
+    "docs_url": "https://grf.farm/firs",
+}
+
 chameleon_cache_dir =  '.chameleon_cache'
 
 # specify location for intermediate files generated during build (nml, graphics, lang etc)

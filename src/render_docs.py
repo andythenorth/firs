@@ -41,9 +41,7 @@ repo_vars = utils.get_makefile_args(sys)
 base_lang_strings = utils.parse_base_lang()
 
 metadata = {}
-metadata['dev_thread_url'] = 'http://www.tt-forums.net/viewtopic.php?t=41607'
-metadata['repo_url'] = 'http://dev.openttdcoop.org/projects/firs/repository'
-metadata['issue_tracker'] = 'http://dev.openttdcoop.org/projects/firs/issues'
+metadata.update(global_constants.metadata)
 
 import firs
 # default sort for docs is by id
