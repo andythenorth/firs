@@ -1,11 +1,9 @@
 Changelog
 =========
 
-
 ------------------
 4.0.0 Beta Release
 ------------------
-
 
 *Steeltown*
 
@@ -148,6 +146,7 @@ Changelog
 
 - note that nml 0.4.5 or newer is needed for compiling FIRS
 
+
 *Translations*
 
 - updated
@@ -160,6 +159,7 @@ Changelog
 *Fix*
 
 - match units_of_cargo with items_of_cargo (frosch)
+
 
 *Docs*
 
@@ -174,6 +174,7 @@ Changelog
 
 - fix broken links in economies page
 
+
 *Translations*
 
 - updated
@@ -186,6 +187,7 @@ Changelog
 *Codechange*
 
 - improved how 'make install' handles copying the grf to install location
+
 
 *Translations*
 
@@ -209,6 +211,7 @@ Changelog
 
 - 3.0.6 unintentionally broke industry availability, now fixed
 
+
 *Docs*
 
 - more accurate licensing information
@@ -221,6 +224,7 @@ Changelog
 *Docs*
 
 - cargos, economies and industries can now be deep linked
+
 
 *Translations*
 
@@ -298,6 +302,7 @@ Changelog
 
 FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 
+
 *Improved Economies*
 
 - 'Arctic Basic' economy
@@ -314,6 +319,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
     - highly focussed on industrial production
     - most chains connect to ultimately produce Vehicles
     - use with any climate
+
 
 *Improved Industries*
 
@@ -365,6 +371,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 - Vehicle Factory
     - renamed to Assembly Plant
 
+
 *Improved Cargos*
 
 - new cargo types:
@@ -398,6 +405,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 - Vehicles:
     - now uses 'tonnes' (or equivalent localised weight) as unit, rather than 'vehicles'
     - simpler for vehicle newgrf authors to deal with, no special treatment needed for Vehicles cargo
+
 
 *General Improvements*
 
@@ -433,6 +441,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 - added checks for incompatible 'OpenGFX+Industries' and 'Improved Oil Rig Layout' grfs
 - adjusted order of economies in parameter menu and docs
 
+
 *Online Docs*
 
 - text now more helpful for players who are new to FIRS
@@ -448,9 +457,11 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 - all pages now use a responsive grid and should work across a wide range of devices
 - page layouts redesigned to be more legible and more visually appealing
 
+
 *Translations*
 
 - multiple languages updated
+
 
 *Codechanges*
 
@@ -515,6 +526,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 
 - wrong output in some economies for secondary industries with two output cargos
 
+
 *Translations*
 
 - multiple languages updated
@@ -546,9 +558,11 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 
 - new graphics and layouts for Manganese Mine
 
+
 *Fixes*
 
 - Stockyard had wrong unit for livestock extra info string
+
 
 *Translations*
 
@@ -573,6 +587,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 - Metal Workshop production ratios wrong
 - Smithy Forge production ratios wrong
 
+
 *Translations*
 
 - multiple languages updated
@@ -586,6 +601,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 
 - reduce port-type industries supply requirements to 8x parameter setting, not 10x (10x is too hard)
 - reduce fund cost of Supply Yard
+
 
 *Fixes*
 
@@ -604,6 +620,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 "Better, faster, stronger."
 
 **FIRS 2.0.0 is not savegame-compatible with any previous version of FIRS.**
+
 
 *Improved Economies*
 
@@ -631,6 +648,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
     - renamed 'FIRS' to 'Extreme'
     - added Power Plant
     - tip: try 'Extreme' with the Busy Bee Game Script which provides cargo delivery goals
+
 
 *Improved Industries*
 
@@ -678,6 +696,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
     - no longer randomises cargos at construction time, that was the source of too many bug reports and confusions
     - now introduced in 1978, for higher chance of seeing it in a game before getting bored
 - Sawmill: additional layouts
+
 
 *Improved Cargos*
 
@@ -736,6 +755,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
 
 - multiple languages updated
 
+
 *Codechanges*
 
 - converted significant number of legacy C-Pre-Processor templates to python templates
@@ -745,6 +765,7 @@ FIRS 3.0.0 requires OpenTTD 1.7.0 or newer.
     - single-industry compiles take around 5s on the test machine
 - take advantage of increased industry limit in OpenTTD and stop trying to stuff > 64 industries into 64 slots
 - grfid bumped, v2 is different enough to v1 to justify a new grfid
+
 
 --------------
 1.4.4 Release
