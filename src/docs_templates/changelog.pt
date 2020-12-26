@@ -1,6 +1,145 @@
 Changelog
 =========
 
+
+------------------
+4.0.0 Beta Release
+------------------
+
+
+*Steeltown*
+
+- reworked completely, Steeltown is a much more intense, highly-connected economy
+    - Carbon Steel is a key cargo
+        - there are two routes to produce it, the Blast Furnace route, which depends on many primary inputs
+        - the Electric Arc Furnace route, which depends highly on scrap production, which depends on the population of towns
+    - there are many more steel industry processes and end products represented
+    - vehicles production process is also more detailed
+- added cargos
+    - Alloy Steel
+    - Aluminium
+    - Carbon Black
+    - Carbon Steel
+    - Cast Iron
+    - Cement
+    - Cleaning Agents
+    - Coal Tar
+    - Electrical Parts
+    - Ferrochrome
+    - Glass
+    - Sodium Hydroxide
+    - Oxygen
+    - Paints & Coatings
+    - Plastics
+    - Potash
+    - Stainless Steel
+    - Steel Sections
+    - Steel Sheet
+    - Steel Wire Rod
+    - Tyres
+    - Vehicle Engines
+- removed cargos
+    - Petroleum Fuels
+    - Copper
+    - Steel
+    - Electrical Machines
+- added industries
+    - Body Plant
+    - Builders Yard
+    - Carbon Black Plant (new sprites)
+    - Component Factory (new sprites)
+    - Cryo Plant (new sprites)
+    - Engine Plant (new sprites)
+    - Potash Mine
+    - Sheet and Pipe Mill (new sprites)
+    - Vehicle Distributor
+    - Wire and Section Mill (new sprites)
+- Chlor-alkali Plant replaces Chemical Plant
+- removed industries
+    - Foundry
+    - Steel Finishing Plant
+    - Metal Workshop
+    - Port
+    - Vehicle Dealer
+- Scrap Yard production amount now depends on town population (grow town to increase production)
+- improved sprites for Slag Grinding Plant
+- rebalanced industry probabilities
+    - most secondary industries in Steeltown will only build at game start, not during gameplay
+    - this avoids the game spamming the map with new secondary industries that are unlikely to be served
+    - this increases the chance of the game building useful new primary industries
+
+
+*Extreme*
+
+- removed Extreme economy from FIRS
+    - the future of 'big' economies in FIRS is detailed themes (industry chains or world regions)
+- for the most interesting current FIRS gameplay, use Steeltown, which focusses on highly connected industry chains
+- meanwhile, if you want a 'big general economy':
+    - try an alternative industry, options include grfs based on FIRS, like XIS or Auz Industries
+    - or make your own version of FIRS, many people have done this now, code is on github https://github.com/andythenorth/firs
+
+
+*Temperate Basic*
+
+- renamed Clay to Kaolin
+- removed Bulk Terminal
+- adjusted Port cargos
+    - added Kaolin to accepted
+    - removed Alcohol from accepted
+    - added Chemicals and Farm Supplies to produced
+- Scrap Yard production amount now depends on town population (grow town to increase production)
+
+
+*Arctic Basic*
+
+- reworked cargo and industry chains
+- removed Trading Post
+- removed Furniture Factory
+- replaced Bulk Terminal with Wharf
+- added Fish Farm industry
+- added Ammonia cargo
+- added Potash cargo
+- removed Alcohol cargo
+- removed Goods cargo
+
+
+*Tropic Basic*
+
+- removed Bulk Terminal, moved its cargos to Port
+
+
+*In a Hot Country*
+
+-  no changes to industry chains or cargos
+
+
+*General Changes*
+
+- reduced overlap of cargos on cargo payment rate chart in-game
+- removed option for secondary industries to close
+- improved ground tile sprites for multiple industries
+- increased sizes of layouts for multiple industries
+- added BSPI to list of incompatible grfs
+- Copper Refinery renamed Copper Smelter
+
+
+*Docs*
+- improved cargoflow diagrams
+
+
+*Fixes*
+- prevent Oil Rig, Dredging Site and Fishing grounds building on coast of small islands (frosch)
+
+
+*Codechanges*
+
+- moved to git
+- reworked all production-related industry code to use OpenTTD's improved spec for industry cargos (16-in, 16-out per industry)
+    - note for those forking: FIRS caps cargos to 8-in, 8-out for both gameplay reasons, and because production code maths relies on not dividing by more than 8, to avoid very small fractional cargo production
+- introduced nml procedures, eliminating many blocks of repeated nml, improving compile times
+- improved compile / Makefile
+
+
 --------------
 3.0.12 Release
 --------------
@@ -95,6 +234,7 @@ Changelog
 *Fixes*
 
 - display correct version number in grf name
+
 
 *Codechanges*
 
