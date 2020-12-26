@@ -40,7 +40,7 @@ docs_templates = PageTemplateLoader(docs_src, format="text")
 
 
 # get args passed by makefile
-repo_vars = utils.get_makefile_args(sys)
+makefile_args = utils.get_makefile_args(sys)
 
 # get the strings from base lang file so they can be used in docs
 base_lang_strings = utils.parse_base_lang()
@@ -276,7 +276,7 @@ def render_docs(doc_list, file_type, use_markdown=False):
             economy_schemas=economy_schemas,
             incompatible_grfs=incompatible_grfs,
             global_constants=global_constants,
-            repo_vars=repo_vars,
+            makefile_args=makefile_args,
             git_info=git_info,
             metadata=metadata,
             utils=utils,
@@ -289,7 +289,7 @@ def render_docs(doc_list, file_type, use_markdown=False):
             doc = markdown_wrapper(
                 content=markdown.markdown(doc),
                 global_constants=global_constants,
-                repo_vars=repo_vars,
+                makefile_args=makefile_args,
                 git_info=git_info,
                 metadata=metadata,
                 utils=utils,

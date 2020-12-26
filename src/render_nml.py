@@ -31,7 +31,7 @@ if not os.path.exists(generated_nml_path):
     os.mkdir(generated_nml_path)
 
 # get args passed by makefile
-repo_vars = utils.get_makefile_args(sys)
+makefile_args = utils.get_makefile_args(sys)
 
 
 def render_header_item_nml(header_item):
@@ -44,7 +44,7 @@ def render_header_item_nml(header_item):
             incompatible_grfs=incompatible_grfs,
             global_constants=global_constants,
             graphics_temp_storage=global_constants.graphics_temp_storage,  # convenience measure
-            repo_vars=repo_vars,
+            makefile_args=makefile_args,
             utils=utils,
             sys=sys,
             git_info=git_info,
@@ -62,7 +62,7 @@ def render_header_item_nml(header_item):
 
 
 def render_industry_nml(industry):
-    only_build_test_industry = repo_vars.get("test_industry", None)
+    only_build_test_industry = makefile_args.get("test_industry", None)
     if not only_build_test_industry or only_build_test_industry == industry.id:
         result = industry.render_nml(incompatible_industries=incompatible_industries)
     else:
