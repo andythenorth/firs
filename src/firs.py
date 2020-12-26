@@ -6,9 +6,10 @@
 """
 
 import os
+
 currentdir = os.curdir
 # add to the module search path
-src_path = os.path.join(currentdir, 'src')
+src_path = os.path.join(currentdir, "src")
 
 import global_constants
 import utils
@@ -17,25 +18,33 @@ import utils
 chameleon_cache_path = os.path.join(currentdir, global_constants.chameleon_cache_dir)
 if not os.path.exists(chameleon_cache_path):
     os.mkdir(chameleon_cache_path)
-os.environ['CHAMELEON_CACHE'] = chameleon_cache_path
+os.environ["CHAMELEON_CACHE"] = chameleon_cache_path
 
 generated_files_path = os.path.join(currentdir, global_constants.generated_files_dir)
 if not os.path.exists(generated_files_path):
     os.mkdir(generated_files_path)
 
 import cargos
+
 registered_cargos = cargos.registered_cargos
 import industries
+
 registered_industries = industries.registered_industries
 import economies
+
 registered_economies = economies.registered_economies
 
 # guard against mistakes with cargo ids in economies
 known_cargo_ids = [cargo.id for cargo in registered_cargos]
 for economy in registered_economies:
     for cargo_id in economy.cargo_ids:
-         if cargo_id not in known_cargo_ids:
-            raise Exception(economy.id + ' economy includes cargo ID "' + cargo_id + '" which does not exist')
+        if cargo_id not in known_cargo_ids:
+            raise Exception(
+                economy.id
+                + ' economy includes cargo ID "'
+                + cargo_id
+                + '" which does not exist'
+            )
 
 # cargo production and incompatibility lists have to be done after all industries, economies and cargos are registered
 # this means they have to live here, which isn't ideal, but eh
@@ -89,4 +98,4 @@ for industry_id, industry_numeric_id in global_constants.industry_numeric_ids.it
             found = True
             break
     if found == False:
-        utils.echo_message('Not found: ' + industry_id + ' from global_constants')
+        utils.echo_message("Not found: " + industry_id + " from global_constants")

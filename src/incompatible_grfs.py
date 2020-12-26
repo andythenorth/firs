@@ -1,21 +1,30 @@
 incompatible_grfs = []
 
+
 class DwordGrfID(object):
     """
-        grfids in game and bananas are presented as dwords, so it would be more convenient all round to use the dword
-        however nml wants grfids as literals, so this class stores a dword, and converts it to an *nml* literal on demand
+    grfids in game and bananas are presented as dwords, so it would be more convenient all round to use the dword
+    however nml wants grfids as literals, so this class stores a dword, and converts it to an *nml* literal on demand
     """
+
     def __init__(self, grfid):
-        self.grfid_as_dword = grfid # keep the grfid around in case it's wanted for docs etc (as yet unknown)
+        self.grfid_as_dword = grfid  # keep the grfid around in case it's wanted for docs etc (as yet unknown)
         # split to bytes
-        split = [self.grfid_as_dword[i:i+2] for i in range(0, len(self.grfid_as_dword), 2)]
-        self.grfid = '\\' + '\\'.join(split) # note the leading '\' that nml requires (escaped as double \\ for python)
+        split = [
+            self.grfid_as_dword[i : i + 2]
+            for i in range(0, len(self.grfid_as_dword), 2)
+        ]
+        self.grfid = "\\" + "\\".join(
+            split
+        )  # note the leading '\' that nml requires (escaped as double \\ for python)
+
 
 class LiteralGrfID(object):
     """
-        store a literal grfid directly, which is convenient for nml
-        but most grfids are found in the wild as dwords, in which case it's simpler to use the class for dword grfids instead ;)
+    store a literal grfid directly, which is convenient for nml
+    but most grfids are found in the wild as dwords, in which case it's simpler to use the class for dword grfids instead ;)
     """
+
     def __init__(self, grfid):
         # grfid should be passed using r"literal", to avoid python interpreting \ chars as escapes
         self.grfid = grfid
@@ -23,14 +32,18 @@ class LiteralGrfID(object):
 
 class IncompatibleGRF(object):
     """ simple class to hold incompatible grfs, including optional properties for extended checks """
+
     def __init__(self, grfid, grfname):
-        self._grfid = grfid # private var for this, we'll mangle it when called as a property
+        self._grfid = (
+            grfid  # private var for this, we'll mangle it when called as a property
+        )
         self.grfname = grfname
         incompatible_grfs.append(self)
 
     @property
     def grfid(self):
         return self._grfid.grfid
+
 
 # add incompatible grfs here (note that some properties are optional, allowing simple or extended checks)
 # IMPORTANT
@@ -83,4 +96,3 @@ IncompatibleGRF(LiteralGrfID(r"SLTU"), "Tourist Set")
 IncompatibleGRF(LiteralGrfID(r"DD\06\03"), "UKRS Brick Chain")
 IncompatibleGRF(LiteralGrfID(r"DD\06\01"), "UKRS Industries")
 IncompatibleGRF(DwordGrfID("42580002"), "Vanilla Industries in Stockpiling mode")
-

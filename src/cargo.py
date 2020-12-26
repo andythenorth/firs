@@ -6,65 +6,89 @@
 """
 
 import os.path
+
 currentdir = os.curdir
 
 # add to the module search path
-src_path = os.path.join(currentdir, 'src')
+src_path = os.path.join(currentdir, "src")
 
 import global_constants as global_constants
 import utils as utils
 
-from chameleon import PageTemplateLoader # chameleon used in most template cases
+from chameleon import PageTemplateLoader  # chameleon used in most template cases
+
 # setup the places we look for templates
-templates = PageTemplateLoader(os.path.join(src_path, 'templates'), format='text')
-industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), format='text')
+templates = PageTemplateLoader(os.path.join(src_path, "templates"), format="text")
+industry_templates = PageTemplateLoader(
+    os.path.join(src_path, "industries"), format="text"
+)
 
 from economies import registered_economies
 from cargos import registered_cargos
 
+
 class Cargo(object):
     """ Base class to hold cargos"""
+
     def __init__(self, id, **kwargs):
         self.id = id
-        self.cargo_label = kwargs['cargo_label']
-        self.type_name = kwargs['type_name']
-        self.unit_name = kwargs['unit_name']
-        self.type_abbreviation = kwargs['type_abbreviation']
-        self.sprite = kwargs['sprite']
-        self.weight = kwargs['weight']
-        self.is_freight = kwargs['is_freight']
-        self.cargo_classes = kwargs['cargo_classes']
-        self.town_growth_effect = kwargs['town_growth_effect']
-        self.town_growth_multiplier = kwargs['town_growth_multiplier']
-        self.units_of_cargo = kwargs['units_of_cargo']
-        self.items_of_cargo = kwargs['items_of_cargo']
-        self.penalty_lowerbound = kwargs['penalty_lowerbound']
-        self.single_penalty_length = kwargs['single_penalty_length']
-        self.price_factor = kwargs['price_factor']
-        self.capacity_multiplier = kwargs['capacity_multiplier']
+        self.cargo_label = kwargs["cargo_label"]
+        self.type_name = kwargs["type_name"]
+        self.unit_name = kwargs["unit_name"]
+        self.type_abbreviation = kwargs["type_abbreviation"]
+        self.sprite = kwargs["sprite"]
+        self.weight = kwargs["weight"]
+        self.is_freight = kwargs["is_freight"]
+        self.cargo_classes = kwargs["cargo_classes"]
+        self.town_growth_effect = kwargs["town_growth_effect"]
+        self.town_growth_multiplier = kwargs["town_growth_multiplier"]
+        self.units_of_cargo = kwargs["units_of_cargo"]
+        self.items_of_cargo = kwargs["items_of_cargo"]
+        self.penalty_lowerbound = kwargs["penalty_lowerbound"]
+        self.single_penalty_length = kwargs["single_penalty_length"]
+        self.price_factor = kwargs["price_factor"]
+        self.capacity_multiplier = kwargs["capacity_multiplier"]
         # not nml properties
-        self.allow_animated_pixels = kwargs.get('allow_animated_pixels', False) # suppress nml warnings about animated pixels
-        self.icon_indices = kwargs['icon_indices'] # icon indices relate to position of icon in cargo icons spritesheet
+        self.allow_animated_pixels = kwargs.get(
+            "allow_animated_pixels", False
+        )  # suppress nml warnings about animated pixels
+        self.icon_indices = kwargs[
+            "icon_indices"
+        ]  # icon indices relate to position of icon in cargo icons spritesheet
         self.economy_variations = {}
         for economy in registered_economies:
             if self.id in economy.cargo_ids:
                 # create an economy variation
                 numeric_id = economy.cargo_ids.index(self.id)
                 # As of May 2015, OTTD requires some cargos in specific slots, otherwise default houses break
-                mandatory_numeric_ids = {'PASS': 0, 'MAIL': 2, 'GOOD': 5, 'FOOD': 11}
+                mandatory_numeric_ids = {"PASS": 0, "MAIL": 2, "GOOD": 5, "FOOD": 11}
                 for key, value in mandatory_numeric_ids.items():
                     if self.cargo_label == key and numeric_id != value:
-                        raise Exception("Economy " + economy.id + ": has cargo " + self.id + " in position " + str(numeric_id) + "; needs to be in position " + str(value))
-                self.economy_variations[economy] = {'numeric_id': numeric_id}
+                        raise Exception(
+                            "Economy "
+                            + economy.id
+                            + ": has cargo "
+                            + self.id
+                            + " in position "
+                            + str(numeric_id)
+                            + "; needs to be in position "
+                            + str(value)
+                        )
+                self.economy_variations[economy] = {"numeric_id": numeric_id}
 
         # guard against overlapping icon indices, icons should be unique per cargo
         # if two cargos use same icon (1) don't, copy-paste, then adjust some pixels for one of them (2) see 1
         for cargo in registered_cargos:
             if cargo.icon_indices == self.icon_indices:
-                utils.echo_message("Cargo " + self.id + " has overlapping icon_indices with cargo " + cargo.id)
+                utils.echo_message(
+                    "Cargo "
+                    + self.id
+                    + " has overlapping icon_indices with cargo "
+                    + cargo.id
+                )
 
     def get_numeric_id(self, economy):
-        return self.economy_variations[economy].get('numeric_id')
+        return self.economy_variations[economy].get("numeric_id")
 
     def get_price_factor(self, economy):
         return 100
@@ -75,7 +99,7 @@ class Cargo(object):
 
     def get_cargo_colour(self, economy):
         # automatically provide a colour specific to the economy, don't attempt to provide a consistent colour across all economies, PITA to maintain
-         return global_constants.valid_cargo_colours[self.get_numeric_id(economy)];
+        return global_constants.valid_cargo_colours[self.get_numeric_id(economy)]
 
     def get_property(self, property_name, economy):
         # straightforward lookup of a property, doesn't try to handle failure case of property not found; don't look up props that don't exist
@@ -86,9 +110,9 @@ class Cargo(object):
 
     def get_property_declaration(self, property_name, economy=None):
         value = self.get_property(property_name, economy)
-        return property_name + ': ' + str(value) + ';'
+        return property_name + ": " + str(value) + ";"
 
     def register(self):
         if len(self.economy_variations) == 0:
-            utils.echo_message(self.id + ' is not used in any economy')
+            utils.echo_message(self.id + " is not used in any economy")
         registered_cargos.append(self)
