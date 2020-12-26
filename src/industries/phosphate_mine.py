@@ -13,6 +13,7 @@ industry = IndustryPrimaryExtractive(id='phosphate_mine',
                                      fund_cost_multiplier='200')
 
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('PHOS', 16), ('CLAY', 10)]
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types_with_multipliers = [('PHOS', 16)]
 
