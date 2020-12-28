@@ -285,8 +285,20 @@ default_cargos = {
         "FOOD",
     ],  # ENSP was tried as default, but confusing when attached express cars for mail to pax trains
     "flat": ["ALUM", "WDPR", "STEL", "COPR", "METL"],
-    "flat_sliding_roof": ["ZINC", "ALUM", "WOOL", "BDMT"], # possibly sliding roof shouldn't be flat at all?
-    "flat_tarpaulin_roof": ["STAL", "PAPR", "FERT", "WOOL", "FMSP", "WDPR"],  # possibly tarpaulin roof shouldn't be flat at all?
+    "flat_sliding_roof": [
+        "ZINC",
+        "ALUM",
+        "WOOL",
+        "BDMT",
+    ],  # possibly sliding roof shouldn't be flat at all?
+    "flat_tarpaulin_roof": [
+        "STAL",
+        "PAPR",
+        "FERT",
+        "WOOL",
+        "FMSP",
+        "WDPR",
+    ],  # possibly tarpaulin roof shouldn't be flat at all?
     "fruit_veg": ["FRUT", "BEAN", "CASS", "JAVA", "NUTS"],
     "hopper_coal": ["COAL", "COKE", "NITR", "POTA"],
     "hopper_ore": ["IORE", "CORE", "PORE", "PHOS", "COKE"],
