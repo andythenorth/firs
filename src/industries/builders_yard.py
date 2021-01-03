@@ -2,7 +2,7 @@ from industry import IndustryTertiary, TileLocationChecks
 
 industry = IndustryTertiary(
     id="builders_yard",
-    accept_cargo_types=["CMNT", "PIPE", "STSE"],
+    accept_cargo_types=["BDMT"],
     prod_cargo_types=[],
     prob_in_game="12",
     prob_map_gen="18",
@@ -20,6 +20,7 @@ industry = IndustryTertiary(
 industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].prob_in_game = "6"
 industry.economy_variations["STEELTOWN"].prob_map_gen = "9"
+industry.economy_variations["STEELTOWN"].accept_cargo_types=["CMNT", "PIPE", "STSE"]
 
 industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
 industry.economy_variations["IN_A_HOT_COUNTRY"].prob_map_gen = "14"
