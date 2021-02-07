@@ -145,6 +145,7 @@ allowed_refits_by_label = {
         "FRUT",
         "BEAN",
         "NITR",
+        "CMNT",
     ],  # box cars get some extended cargos
     "chemicals": [
         "ACID",
