@@ -37,10 +37,10 @@ industry.add_tile(
     ),
 )
 
-sprite_ground = industry.add_sprite(
-    sprite_number="GROUNDTILE_MUD_TRACKS"  # ground tile same as overlay tile
+spriteset_ground = industry.add_spriteset(
+    type="hard_standing_dirt",
 )
-sprite_ground_overlay = industry.add_spriteset(
+spriteset_ground_overlay = industry.add_spriteset(
     type="empty",
 )
 spriteset_1 = industry.add_spriteset(
@@ -85,72 +85,72 @@ sprite_smoke_2 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_empty",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_2",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
     smoke_sprites=[sprite_smoke_1, sprite_smoke_2],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_3",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_scrap_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_scrap_1],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_scrap_2",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_scrap_2],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_crane_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_crane_1],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_crane_2",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_crane_2],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_metal_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_metal_1],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_metal_2",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_metal_2],
     fences=["nw", "ne", "se", "sw"],
 )
