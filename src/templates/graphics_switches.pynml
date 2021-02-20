@@ -37,13 +37,13 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_store_temp_vars,
          STORE_TEMP(terrain_type == TILETYPE_SNOW, ${graphics_temp_storage.var_terrain_is_snow})
             <tal:date_variations repeat="date_variation_num range(len(industry.graphics_change_dates)+1)"><!--! +1 because we need to run repeat at least once -->
                 , STORE_TEMP(${industry.get_date_conditions_for_hide_sprites(repeat.date_variation_num.index)},
-                             ${255 - date_variation_num}) <!--! dangerous counting down for these registers :D -->
-                , STORE_TEMP(construction_state != 3 ? 1 : LOAD_TEMP(${255 - date_variation_num}),
-                             ${255 - date_variation_num})
-                , STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}) == 0 ? 1 : LOAD_TEMP(${255 - date_variation_num}), <!--! copy a register for snow case -->
-                             ${245 - date_variation_num}) <!--! eh, these count down from 245, max 10 date variations is plenty -->
-                , STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}) == 1 ? 1 : LOAD_TEMP(${255 - date_variation_num}), <!--! non-snow case -->
-                             ${255 - date_variation_num})
+                             ${127 - date_variation_num}) <!--! dangerous counting down for these registers :D -->
+                , STORE_TEMP(construction_state != 3 ? 1 : LOAD_TEMP(${127 - date_variation_num}),
+                             ${127 - date_variation_num})
+                , STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}) == 0 ? 1 : LOAD_TEMP(${127 - date_variation_num}), <!--! copy a register for snow case -->
+                             ${117 - date_variation_num}) <!--! eh, these count down from 117, max 10 date variations is plenty -->
+                , STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}) == 1 ? 1 : LOAD_TEMP(${127 - date_variation_num}), <!--! non-snow case -->
+                             ${127 - date_variation_num})
             </tal:date_variations>
         ]) {
     ${industry.id}_industry_construction_state_graphics_switch; // default
