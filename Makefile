@@ -86,15 +86,15 @@ $(NML_FILE): $(shell $(FIND_FILES) --ext=.py --ext=.pynml src)
 $(GRF_FILE): $(shell $(FIND_FILES) --ext=.py --ext=.png src) $(LANG_DIR) $(NML_FILE) $(HTML_DOCS)
 	$(NMLC) $(NML_FLAGS) --grf=$(GRF_FILE) $(NML_FILE)
 
-$(TAR_FILE): $(GRF_FILE)
-# the goal here is a sparse tar that bananas will accept; bananas can't accept html docs etc, hence they're not included
-	# create an intermediate dir, and copy in what we need for bananas
+$(TAR_FILE): $(GRF_FILE) $(HTML_DOCS)
+# the goal here is a sparse tar for distribution
+	# create an intermediate dir, and copy in what we need
 	mkdir $(PROJECT_VERSIONED_NAME)
 	cp docs/readme.txt $(PROJECT_VERSIONED_NAME)
-	cp docs/license.txt $(PROJECT_VERSIONED_NAME)
 	cp docs/changelog.txt $(PROJECT_VERSIONED_NAME)
+	cp docs/license.txt $(PROJECT_VERSIONED_NAME)
 	cp $(GRF_FILE) $(PROJECT_VERSIONED_NAME)
-	$(MK_ARCHIVE) --tar --output=$(TAR_FILE) --base=$(PROJECT_VERSIONED_NAME) $(PROJECT_VERSIONED_NAME)
+	$(MK_ARCHIVE) --tar --output=$(TAR_FILE) $(PROJECT_VERSIONED_NAME)
 	# delete the intermediate dir
 	rm -r $(PROJECT_VERSIONED_NAME)
 
