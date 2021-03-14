@@ -22,7 +22,7 @@
  * *************************************************/
 
 <!--! production behaviour is relativel simple, so no separate template used -->
-<tal:economies repeat="economy economies">
+<tal:economies repeat="economy industry.economies_enabled_for_industry">
     <!--! clear any delivered cargo immediately on arrival -->
     produce (${industry.id}_produce_cargo_arrival_economy_${economy.numeric_id},
         [
@@ -61,24 +61,22 @@
 <tal:include metal:use-macro="load: properties_industry.pynml" />
 
 <!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
-<tal:build_economies repeat="economy economies">
-    <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
-        if (economy==${economy.numeric_id}) {
-            item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
-                graphics {
-                    construction_probability: ${industry.id}_check_availability;
-                    build_prod_change:        randomise_primary_production_on_build;
-                    produce_cargo_arrival:    ${industry.id}_produce_cargo_arrival_economy_${economy.numeric_id};
-                    <tal:has_production condition="industry.has_production">
-                        produce_256_ticks:        ${industry.id}_production_256_economy_${economy.numeric_id};
-                    </tal:has_production>
-                    location_check:           ${industry.id}_check_location;
-                    extra_text_fund:          ${industry.get_extra_text_fund(economy)};
-                    <!--! The 0x3800 expressions here are related to using extended cb 37 before nml support was added, and can be removed when nml is updated -->
-                    cargo_subtype_display:    return 0x3800 + string(STR_EMPTY);
-                    colour:                   switch_colour;
-                }
+<tal:economies repeat="economy industry.economies_enabled_for_industry">
+    if (economy==${economy.numeric_id}) {
+        item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
+            graphics {
+                construction_probability: ${industry.id}_check_availability;
+                build_prod_change:        randomise_primary_production_on_build;
+                produce_cargo_arrival:    ${industry.id}_produce_cargo_arrival_economy_${economy.numeric_id};
+                <tal:has_production condition="industry.has_production">
+                    produce_256_ticks:        ${industry.id}_production_256_economy_${economy.numeric_id};
+                </tal:has_production>
+                location_check:           ${industry.id}_check_location;
+                extra_text_fund:          ${industry.get_extra_text_fund(economy)};
+                <!--! The 0x3800 expressions here are related to using extended cb 37 before nml support was added, and can be removed when nml is updated -->
+                cargo_subtype_display:    return 0x3800 + string(STR_EMPTY);
+                colour:                   switch_colour;
             }
         }
-    </tal:industry_on_or_off>
-</tal:build_economies>
+    }
+</tal:economies>

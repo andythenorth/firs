@@ -36,7 +36,7 @@
     Production depends on the town population: population / 12 is output
  -->
 
-<tal:economies repeat="economy economies">
+<tal:economies repeat="economy industry.economies_enabled_for_industry">
     produce (${industry.id}_production_256_economy_${economy.numeric_id},
         [<!--! no acceptance at this industry type -->],
         [
@@ -61,7 +61,7 @@
 </tal:economies>
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_switch_economy, economy) {
-    <tal:economies repeat="economy economies">
+    <tal:economies repeat="economy industry.economies_enabled_for_industry">
         ${economy.numeric_id}: ${industry.id}_production_256_economy_${economy.numeric_id};
     </tal:economies>
 }
@@ -87,21 +87,19 @@ switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [
 <tal:include metal:use-macro="load: properties_industry.pynml" />
 
 <!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
-<tal:build_economies repeat="economy economies">
-    <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
-        if (economy==${economy.numeric_id}) {
-            item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
-                graphics {
-                    produce_256_ticks:       ${industry.id}_produce;
-                    construction_probability:${industry.id}_check_availability;
-                    location_check:          ${industry.id}_check_location;
-                    monthly_prod_change:     CB_RESULT_IND_PROD_NO_CHANGE;
-                    random_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
-                    extra_text_fund:         ${industry.get_extra_text_fund(economy)};
-                    extra_text_industry:     return string(STR_EXTRA_TEXT_TOWN_PRODUCER, ${industry.min_production}, ${industry.max_production});
-                    colour:                  switch_colour;
-                }
+<tal:build_economies repeat="economy industry.economies_enabled_for_industry">
+    if (economy==${economy.numeric_id}) {
+        item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
+            graphics {
+                produce_256_ticks:       ${industry.id}_produce;
+                construction_probability:${industry.id}_check_availability;
+                location_check:          ${industry.id}_check_location;
+                monthly_prod_change:     CB_RESULT_IND_PROD_NO_CHANGE;
+                random_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
+                extra_text_fund:         ${industry.get_extra_text_fund(economy)};
+                extra_text_industry:     return string(STR_EXTRA_TEXT_TOWN_PRODUCER, ${industry.min_production}, ${industry.max_production});
+                colour:                  switch_colour;
             }
         }
-    </tal:industry_on_or_off>
+    }
 </tal:build_economies>

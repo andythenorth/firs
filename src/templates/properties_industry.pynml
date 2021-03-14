@@ -1,35 +1,33 @@
-<tal:build_economies repeat="economy economies">
-    <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
-        if (economy==${economy.numeric_id}) {
-            item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
-                property {
-                    <!--! following props are always same for all economies -->
-                    ${industry.get_property_declaration('substitute')}
-                    ${industry.get_property_declaration('override')}
-                    ${industry.get_property_declaration('map_colour')}
-                    ${industry.get_property_declaration('life_type')}
-                    ${industry.get_property_declaration('closure_msg')}
-                    ${industry.get_property_declaration('prod_increase_msg')}
-                    ${industry.get_property_declaration('prod_decrease_msg')}
-                    ${industry.get_property_declaration('new_ind_msg')}
-                    ${industry.get_property_declaration('min_cargo_distr')}
-                    ${industry.get_industry_layouts_as_property()}
-                    spec_flags: ${industry.special_flags};
-                    conflicting_ind_types: []; // set this prop empty, FIRS has it's own better checks for this
-                    random_sound_effects: []; // set this empty to avoid spurious default industry sounds (as of May 2017 FIRS does not yet use sound effects)
-                    <!--! following props may optionally vary per economy, or use industry default -->
-                    ${industry.get_property_declaration('name', economy)}
-                    ${industry.get_property_declaration('prob_map_gen', economy)}
-                    ${industry.get_property_declaration('prob_in_game', economy)}
-                    ${industry.get_property_declaration('prospect_chance', economy)}
-                    ${industry.get_property_declaration('fund_cost_multiplier', economy)}
-                    ${industry.get_property_declaration('remove_cost_multiplier', economy)}
-                    ${industry.get_property_declaration('remove_cost_multiplier', economy)}
-                    <!--! special handling -->
-                    ${industry.get_cargo_types_declaration(economy)}
-                    ${industry.get_nearby_station_name_declaration()}
-                }
+<tal:build_economies repeat="economy industry.economies_enabled_for_industry">
+    if (economy==${economy.numeric_id}) {
+        item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
+            property {
+                <!--! following props are always same for all economies -->
+                ${industry.get_property_declaration('substitute')}
+                ${industry.get_property_declaration('override')}
+                ${industry.get_property_declaration('map_colour')}
+                ${industry.get_property_declaration('life_type')}
+                ${industry.get_property_declaration('closure_msg')}
+                ${industry.get_property_declaration('prod_increase_msg')}
+                ${industry.get_property_declaration('prod_decrease_msg')}
+                ${industry.get_property_declaration('new_ind_msg')}
+                ${industry.get_property_declaration('min_cargo_distr')}
+                ${industry.get_industry_layouts_as_property()}
+                spec_flags: ${industry.special_flags};
+                conflicting_ind_types: []; // set this prop empty, FIRS has it's own better checks for this
+                random_sound_effects: []; // set this empty to avoid spurious default industry sounds (as of May 2017 FIRS does not yet use sound effects)
+                <!--! following props may optionally vary per economy, or use industry default -->
+                ${industry.get_property_declaration('name', economy)}
+                ${industry.get_property_declaration('prob_map_gen', economy)}
+                ${industry.get_property_declaration('prob_in_game', economy)}
+                ${industry.get_property_declaration('prospect_chance', economy)}
+                ${industry.get_property_declaration('fund_cost_multiplier', economy)}
+                ${industry.get_property_declaration('remove_cost_multiplier', economy)}
+                ${industry.get_property_declaration('remove_cost_multiplier', economy)}
+                <!--! special handling -->
+                ${industry.get_cargo_types_declaration(economy)}
+                ${industry.get_nearby_station_name_declaration()}
             }
         }
-    </tal:industry_on_or_off>
+    }
 </tal:build_economies>

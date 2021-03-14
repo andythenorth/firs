@@ -1227,6 +1227,14 @@ class Industry(object):
     def numeric_id(self):
         return global_constants.industry_numeric_ids[self.id]
 
+    @property
+    def economies_enabled_for_industry(self):
+        result = []
+        for economy in registered_economies:
+            if self.get_property('enabled', economy):
+                result.append(economy)
+        return result
+
     def get_graphics_file_path(
         self, date_variation_num=None, terrain="", construction_state_num=None
     ):
