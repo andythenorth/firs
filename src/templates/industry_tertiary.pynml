@@ -21,31 +21,34 @@
  * Definition of the industry
  * *************************************************/
 
-<!--! production behaviour is simple, so no separate template used -->
-
-<tal:has_production condition="industry.has_production">
-    <tal:economies repeat="economy economies">
-            produce(${industry.id}_production_256_economy_${economy.numeric_id},
-                [<!--! no accept in 256 cb -->],
-                [
-                    <tal:produce repeat="cargo industry.get_prod_cargo_types(economy)">
-                        <!--!
-                              simply replicates default ottd prod. algorithm but in prod. cb, so action 0 prod. properties can be set 0
-                              prod. cb is used consistently in FIRS, to reduce the number of different prod. methods in use
-                              calculation is (cargo amount * industry prod level) / default prod level
-                        -->
-                        ${cargo[0]}: (${cargo[1]} * production_level) / 16;
-                    </tal:produce>
-                ],
-            0)
-    </tal:economies>
-
-    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks, economy) {
-    <tal:economies repeat="economy economies">
-        ${economy.numeric_id}: ${industry.id}_production_256_economy_${economy.numeric_id};
-    </tal:economies>
-    }
-</tal:has_production>
+<!--! production behaviour is relativel simple, so no separate template used -->
+<tal:economies repeat="economy economies">
+    <!--! clear any delivered cargo immediately on arrival -->
+    produce (${industry.id}_produce_cargo_arrival_economy_${economy.numeric_id},
+        [
+            <tal:subtract repeat="cargo industry.get_property('accept_cargo_types', economy)">
+                ${cargo}: incoming_cargo_waiting("${cargo}");
+            </tal:subtract>
+        ],
+        [<!--! no production when cargo arrives -->],
+    0)
+    <!--! some tertiaries also produce, assumed to be on a regular interval (256 ticks) -->
+    <tal:has_production condition="industry.has_production">
+        produce(${industry.id}_production_256_economy_${economy.numeric_id},
+            [<!--! no accept in 256 cb -->],
+            [
+                <tal:produce repeat="cargo industry.get_prod_cargo_types(economy)">
+                    <!--!
+                          simply replicates default ottd prod. algorithm but in prod. cb, so action 0 prod. properties can be set 0
+                          prod. cb is used consistently in FIRS, to reduce the number of different prod. methods in use
+                          calculation is (cargo amount * industry prod level) / default prod level
+                    -->
+                    ${cargo[0]}: (${cargo[1]} * production_level) / 16;
+                </tal:produce>
+            ],
+        0)
+    </tal:has_production>
+</tal:economies>
 <!--! end production behaviour -->
 
 <tal:include metal:use-macro="load: layouts.pynml" />
@@ -65,8 +68,9 @@
                 graphics {
                     construction_probability: ${industry.id}_check_availability;
                     build_prod_change:        randomise_primary_production_on_build;
+                    produce_cargo_arrival:    ${industry.id}_produce_cargo_arrival_economy_${economy.numeric_id};
                     <tal:has_production condition="industry.has_production">
-                        produce_256_ticks:        ${industry.id}_produce_256_ticks;
+                        produce_256_ticks:        ${industry.id}_production_256_economy_${economy.numeric_id};
                     </tal:has_production>
                     location_check:           ${industry.id}_check_location;
                     extra_text_fund:          ${industry.get_extra_text_fund(economy)};
