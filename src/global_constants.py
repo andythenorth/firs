@@ -328,6 +328,9 @@ graphics_temp_storage = dict(
     var_use_fence_sw=12,  # draw fence in the SW
     var_terrain_is_snow=13,  # must be set to 1 (true) or 0 (false)
     var_random_bits=14,  # some random bits to use as required
+    var_magic_trees_hide_default=15,  # hide tree sprite for default (temperate, arctic below snowline)
+    var_magic_trees_hide_snow=16,  # hide tree sprite for snow
+    var_magic_trees_hide_tropic=17,  # hide tree sprite for snow
 )  # max register number must be 235; registers 236-255 are reserved for building sprite hide/show values
 
 # valid industry map colours, derived from an algorithm to ensure contrast against green / dark green / purple minimaps

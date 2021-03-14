@@ -1469,6 +1469,13 @@ class Industry(object):
         return get_another_industry(id)
 
     @property
+    def uses_magic_trees(self):
+        for spritelayout in self.spritelayouts:
+            if len(spritelayout.magic_trees) > 0:
+                return True
+        return False
+
+    @property
     def incompatible_industries(self):
         # there's no sensible way to get incompatible_industries from here, it has to be passed in when rendering templates
         # there are genuine performance reasons to have incompatibility calculated once and only once by firs.py

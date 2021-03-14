@@ -1,0 +1,41 @@
+<!--! simple storage into registers of boolean hide_sprite values for magic trees per terrain/snowline -->
+
+switch (FEAT_INDUSTRYTILES, SELF, switch_magic_trees_default, [
+                climate == CLIMATE_TROPIC
+                ||
+                nearby_tile_height(0, 0) >= snowline_height
+                ||
+                construction_state == 0
+    ]) {
+    1: return 1;
+    return 0;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, switch_magic_trees_snow, [
+                climate != CLIMATE_ARCTIC
+                ||
+                nearby_tile_height(0, 0) < snowline_height
+                ||
+                construction_state == 0
+    ]) {
+    1: return 1;
+    return 0;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, switch_magic_trees_tropic, [
+                climate != CLIMATE_TROPIC
+                ||
+                construction_state == 0
+    ]) {
+    1: return 1;
+    return 0;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, switch_magic_trees, [
+                STORE_TEMP(switch_magic_trees_default(), ${graphics_temp_storage.var_magic_trees_hide_default}),
+                STORE_TEMP(switch_magic_trees_snow(), ${graphics_temp_storage.var_magic_trees_hide_snow}),
+                STORE_TEMP(switch_magic_trees_tropic(), ${graphics_temp_storage.var_magic_trees_hide_tropic}),
+            ]) {
+    return;
+}
+

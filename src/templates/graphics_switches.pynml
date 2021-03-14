@@ -52,6 +52,10 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_store_temp_vars,
     ${industry.id}_industry_construction_state_graphics_switch; // default
 }
 
-switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_switch_graphics, [switch_tile_fences(), switch_terrain_sprite()]) {
+switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_switch_graphics, [
+                                    switch_tile_fences(),
+                                    switch_terrain_sprite(),
+                                    ${'switch_magic_trees()' if industry.uses_magic_trees else ''}
+                                 ]) {
     ${industry.id}_store_temp_vars;
 }

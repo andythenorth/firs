@@ -160,6 +160,7 @@
             <!--! magic trees, magically added by industry.add_magic_spritelayout() -->
             building {
                 sprite: ${magic_tree.default};
+                hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_magic_trees_hide_default});
                 recolour_mode: RECOLOUR_REMAP;
                 palette: PALETTE_USE_DEFAULT;
                 xoffset: ${magic_tree.xoffset};
@@ -169,22 +170,10 @@
                 xextent: 4;
                 yextent: 4;
                 zextent: 32;
-                hide_sprite: climate == CLIMATE_TROPIC || nearby_tile_height(0, 0) >= snowline_height || construction_state == 0;
-            }
-            building {
-                sprite: ${magic_tree.tropic};
-                recolour_mode: RECOLOUR_REMAP;
-                palette: PALETTE_USE_DEFAULT;
-                xoffset: ${magic_tree.xoffset};
-                yoffset: ${magic_tree.yoffset};
-                <!--!zoffset: ${building_sprite.zoffset};-->
-                xextent: 4;
-                yextent: 4;
-                zextent: 32;
-                hide_sprite: climate != CLIMATE_TROPIC || construction_state == 0;
             }
             building {
                 sprite: ${magic_tree.snow};
+                hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_magic_trees_hide_snow});
                 recolour_mode: RECOLOUR_REMAP;
                 palette: PALETTE_USE_DEFAULT;
                 xoffset: ${magic_tree.xoffset};
@@ -193,7 +182,18 @@
                 xextent: 4;
                 yextent: 4;
                 zextent: 32;
-                hide_sprite: climate != CLIMATE_ARCTIC || nearby_tile_height(0, 0) < snowline_height || construction_state == 0;
+            }
+            building {
+                sprite: ${magic_tree.tropic};
+                hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_magic_trees_hide_tropic});
+                recolour_mode: RECOLOUR_REMAP;
+                palette: PALETTE_USE_DEFAULT;
+                xoffset: ${magic_tree.xoffset};
+                yoffset: ${magic_tree.yoffset};
+                <!--!zoffset: ${building_sprite.zoffset};-->
+                xextent: 4;
+                yextent: 4;
+                zextent: 32;
             }
         </tal:magic_trees>
 

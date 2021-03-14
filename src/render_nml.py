@@ -89,6 +89,7 @@ def main():
         "cargos",
         "colour",
         "procedures_fences",
+        "procedures_magic_trees",
         "procedures_terrain_sprite",
         "randomise_primary_production_on_build",
         "sprite_templates",
