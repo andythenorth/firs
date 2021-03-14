@@ -23,7 +23,14 @@
                 anim_next_frame: return ${tile.custom_animation_next_frame};
             </tal:anim_next_frame>
     		<tal:anim_control condition="tile.custom_animation_control is not None">
-    		    anim_control: ${tile.id}_anim_control;
+    		    <!--! tedious optimisation to avoid a switch that returns 0 for one macro -->
+                <tal:block condition="tile.custom_animation_control['macro'] == 'first_frame_is_0'">
+                    <!--! starts animation on first frame, intended to be called by periodic tile loop -->
+        		    anim_control: 0;
+                </tal:block>
+                <tal:block condition="tile.custom_animation_control['macro'] != 'first_frame_is_0'">
+        		    anim_control: ${tile.id}_anim_control;
+                </tal:block>
     		</tal:anim_control>
             <tal:random_trigger condition="tile.random_trigger is not None">
                 random_trigger: ${tile.random_trigger};
