@@ -5,6 +5,7 @@ SED = sed
 ZIP = zip
 
 NMLC = nmlc
+GRFCODEC = grfcodec
 GRFID = grfid
 
 GIT_INFO = $(PYTHON3) src/polar_fox/git_info.py
@@ -15,8 +16,8 @@ MK_ARCHIVE = bin/mk-archive
 # Project details
 PROJECT_NAME = firs
 
-# lang is not copied to generated currently in FIRS, unlike RH, IH etc - could be changed
 LANG_DIR = generated/lang
+LANG_TARGET = $(LANG_DIR)/english.lng
 NML_FILE = generated/firs.nml
 NML_FLAGS =-c -l $(LANG_DIR) --verbosity=4
 
@@ -37,6 +38,7 @@ endif
 PROJECT_VERSIONED_NAME = $(PROJECT_NAME)-$(REPO_VERSION)
 ARGS = '${TEST_INDUSTRY}' '${NO_MP}'
 
+NFO_FILE = generated/$(PROJECT_NAME).nfo
 GRF_FILE = generated/$(PROJECT_NAME).grf
 TAR_FILE = $(PROJECT_VERSIONED_NAME).tar
 ZIP_FILE = $(PROJECT_VERSIONED_NAME).zip
@@ -57,8 +59,10 @@ default: html_docs grf
 # bundle needs to clean first to ensure we don't use outdated/cached version info
 bundle_tar: clean tar
 bundle_zip: $(ZIP_FILE)
-lang: $(LANG_DIR)
+graphics: $(GRAPHICS_TARGET)
+lang: $(LANG_TARGET)
 nml: $(NML_FILE)
+nfo: $(NFO_FILE)
 grf: $(GRF_FILE)
 tar: $(TAR_FILE)
 html_docs: $(HTML_DOCS)
@@ -66,7 +70,10 @@ html_docs: $(HTML_DOCS)
 # remove the @ for more verbose output (@ suppresses command output)
 _V ?= @
 
-$(LANG_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.lng src)
+$(GRAPHICS_TARGET): $(shell $(FIND_FILES) --ext=.py --ext=.png src)
+	$(_V) touch $(GRAPHICS_TARGET)
+
+$(LANG_TARGET): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.lng src)
 	$(_V) $(PYTHON3) src/render_lang.py $(ARGS)
 
 $(HTML_DOCS): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.pt --ext=.lng src)
@@ -83,8 +90,16 @@ endif
 $(NML_FILE): $(shell $(FIND_FILES) --ext=.py --ext=.pynml src)
 	$(_V) $(PYTHON3) src/render_nml.py $(ARGS)
 
-$(GRF_FILE): $(shell $(FIND_FILES) --ext=.py --ext=.png src) $(LANG_DIR) $(NML_FILE) $(HTML_DOCS)
-	$(NMLC) $(NML_FLAGS) --grf=$(GRF_FILE) $(NML_FILE)
+# nmlc is used to compile a nfo file only, which is then used by grfcodec
+# this means that the (relatively slow) nmlc stage can be skipped if the nml file is unchanged (only graphics changed)
+$(NFO_FILE): $(LANG_TARGET) $(NML_FILE) | $(GRAPHICS_TARGET)
+	$(NMLC) $(NML_FLAGS) --nfo=$(NFO_FILE) $(NML_FILE)
+
+# N.B grf codec can't compile into a specific target dir, so after compiling, move the compiled grf to appropriate dir
+# grfcodec -n was tried, but was slower and produced a large grf file
+$(GRF_FILE): $(NFO_FILE)
+	$(GRFCODEC) -s -e -c -g 2 $(PROJECT_NAME).grf generated
+	mv $(PROJECT_NAME).grf $(GRF_FILE)
 
 $(TAR_FILE): $(GRF_FILE) $(HTML_DOCS)
 # the goal here is a sparse tar for distribution
