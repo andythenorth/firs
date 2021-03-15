@@ -161,11 +161,8 @@
             building {
                 sprite: ${magic_tree.default};
                 hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_magic_trees_hide_default});
-                recolour_mode: RECOLOUR_REMAP;
-                palette: PALETTE_USE_DEFAULT;
                 xoffset: ${magic_tree.xoffset};
                 yoffset: ${magic_tree.yoffset};
-                <!--!zoffset: ${building_sprite.zoffset};-->
                 <!--! x and y extents need to be 4 or so for trees to prevent flickering -->
                 xextent: 4;
                 yextent: 4;
@@ -174,11 +171,9 @@
             building {
                 sprite: ${magic_tree.snow};
                 hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_magic_trees_hide_snow});
-                recolour_mode: RECOLOUR_REMAP;
-                palette: PALETTE_USE_DEFAULT;
                 xoffset: ${magic_tree.xoffset};
                 yoffset: ${magic_tree.yoffset};
-                <!--!zoffset: ${building_sprite.zoffset};-->
+                <!--! x and y extents need to be 4 or so for trees to prevent flickering -->
                 xextent: 4;
                 yextent: 4;
                 zextent: 32;
@@ -186,11 +181,9 @@
             building {
                 sprite: ${magic_tree.tropic};
                 hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_magic_trees_hide_tropic});
-                recolour_mode: RECOLOUR_REMAP;
-                palette: PALETTE_USE_DEFAULT;
                 xoffset: ${magic_tree.xoffset};
                 yoffset: ${magic_tree.yoffset};
-                <!--!zoffset: ${building_sprite.zoffset};-->
+                <!--! x and y extents need to be 4 or so for trees to prevent flickering -->
                 xextent: 4;
                 yextent: 4;
                 zextent: 32;
