@@ -89,6 +89,7 @@
                 yextent: ${building_sprite.yextent};
                 zextent: ${building_sprite.zextent};
                 always_draw: ${building_sprite.always_draw};
+                <!--! tested, not worth delegating construction state check to register / procedure -->
                 hide_sprite: (construction_state != 0);
             }
             building {
@@ -102,6 +103,7 @@
                 yextent: ${building_sprite.yextent};
                 zextent: ${building_sprite.zextent};
                 always_draw: ${building_sprite.always_draw};
+                <!--! tested, not worth delegating construction state check to register / procedure -->
                 hide_sprite: (construction_state != 1);
             }
             building {
@@ -115,6 +117,7 @@
                 yextent: ${building_sprite.yextent};
                 zextent: ${building_sprite.zextent};
                 always_draw: ${building_sprite.always_draw};
+                <!--! tested, not worth delegating construction state check to register / procedure -->
                 hide_sprite: (construction_state != 2);
             }
         </tal:optional_construction_sprites>
