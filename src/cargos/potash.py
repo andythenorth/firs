@@ -16,7 +16,7 @@ cargo = Cargo(
     items_of_cargo="string(STR_CARGO_UNIT_POTASH)",
     penalty_lowerbound="30",
     single_penalty_length="255",
-    price_factor=95,
+    price_factor=102,
     capacity_multiplier="1",
     icon_indices=(2, 5),
 )

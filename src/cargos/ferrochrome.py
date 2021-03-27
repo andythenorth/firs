@@ -14,9 +14,9 @@ cargo = Cargo(
     town_growth_multiplier="1.0",
     units_of_cargo="TTD_STR_TONS",
     items_of_cargo="string(STR_CARGO_UNIT_FERROCHROME)",
-    penalty_lowerbound="15",
+    penalty_lowerbound="40",
     single_penalty_length="255",
     capacity_multiplier="1",
-    price_factor=101,
+    price_factor=106,
     icon_indices=(8, 4),
 )

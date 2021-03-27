@@ -16,7 +16,7 @@ cargo = Cargo(
     items_of_cargo="string(STR_CARGO_UNIT_EDIBLE_OIL)",
     penalty_lowerbound="20",
     single_penalty_length="128",
-    price_factor=122,
+    price_factor=116,
     capacity_multiplier="1",
     icon_indices=(0, 3),
 )

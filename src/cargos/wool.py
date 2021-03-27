@@ -16,7 +16,7 @@ cargo = Cargo(
     items_of_cargo="string(STR_CARGO_UNIT_WOOL)",
     penalty_lowerbound="8",
     single_penalty_length="48",
-    price_factor=107,
+    price_factor=111,
     capacity_multiplier="1",
     icon_indices=(4, 1),
 )

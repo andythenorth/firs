@@ -16,7 +16,7 @@ cargo = Cargo(
     items_of_cargo="TTD_STR_QUANTITY_OIL",
     penalty_lowerbound="30",
     single_penalty_length="255",
-    price_factor=91,
+    price_factor=101,
     capacity_multiplier="1",
     icon_indices=(3, 0),
 )

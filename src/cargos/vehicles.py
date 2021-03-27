@@ -14,9 +14,9 @@ cargo = Cargo(
     town_growth_multiplier="1.0",
     units_of_cargo="TTD_STR_TONS",
     items_of_cargo="string(STR_CARGO_UNIT_VEHICLES)",
-    penalty_lowerbound="30",
+    penalty_lowerbound="15",
     single_penalty_length="128",
-    price_factor=185,
+    price_factor=164,
     capacity_multiplier="1",
     icon_indices=(15, 2),
 )

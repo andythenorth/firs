@@ -16,7 +16,7 @@ cargo = Cargo(
     items_of_cargo="TTD_STR_QUANTITY_WOOD",
     penalty_lowerbound="24",
     single_penalty_length="255",
-    price_factor=97,
+    price_factor=104,
     capacity_multiplier="1",
     icon_indices=(8, 0),
 )

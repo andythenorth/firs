@@ -16,7 +16,7 @@ cargo = Cargo(
     items_of_cargo="string(STR_CARGO_UNIT_VEHICLE_PARTS)",
     penalty_lowerbound="7",
     single_penalty_length="255",
-    price_factor=174,
+    price_factor=150,
     capacity_multiplier="1",
     icon_indices=(14, 2),
 )
