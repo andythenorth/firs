@@ -1,46 +1,14 @@
 <tal:industries repeat="industry registered_industries">
-    #${industry.id} polygon {
-        <tal:lifetype tal:switch="industry.default_industry_properties.life_type">
-            <tal:block tal:case="'IND_LIFE_TYPE_EXTRACTIVE'">
-                fill: #2A7234;
-                stroke: #2A7234;
-            </tal:block>
-            <tal:block tal:case="'IND_LIFE_TYPE_ORGANIC'">
-                fill: #2A7234;
-                stroke: #2A7234;
-            </tal:block>
-            <tal:block tal:case="'IND_LIFE_TYPE_PROCESSING'">
-                fill: #a04000;
-                stroke: #a04000;
-            </tal:block>
-            <tal:block tal:case="'IND_LIFE_TYPE_BLACK_HOLE'">
-                fill: #4A5F6D;
-                stroke: #4A5F6D;
-            </tal:block>
-        </tal:lifetype>
-    }
     #${industry.id} text {
-        <tal:lifetype tal:switch="industry.default_industry_properties.life_type">
-            <tal:block tal:case="'IND_LIFE_TYPE_EXTRACTIVE'">
-                fill: white;
-            </tal:block>
-            <tal:block tal:case="'IND_LIFE_TYPE_ORGANIC'">
-                fill: white;
-            </tal:block>
-            <tal:block tal:case="'IND_LIFE_TYPE_PROCESSING'">
-                fill: white;
-            </tal:block>
-            <tal:block tal:case="'IND_LIFE_TYPE_BLACK_HOLE'">
-                fill: #fff;
-            </tal:block>
-        </tal:lifetype>
+        fill: #000;
     }
 </tal:industries>
 
 <tal:cargos repeat="cargo registered_cargos">
     #${cargo.id} ellipse {
-        fill: #D8DBE2;
-        stroke: #D8DBE2;
+        // fill: #D8DBE2;
+        stroke-width: 3;
+        // stroke: #D8DBE2;
         <tal:supplies condition="cargo.id in doc_helper.get_cargoflow_supply_cargos()">
             fill: #C5E5F4;
             stroke: #C5E5F4;
@@ -49,8 +17,8 @@
 </tal:cargos>
 
 g.edge path {
-    stroke: black;
-    stroke-width: 3;
+    // stroke: black;
+    // stroke-width: 3;
 }
 g.edge:hover path {
     stroke: #105799;

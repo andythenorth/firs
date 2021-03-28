@@ -254,6 +254,12 @@ class DocHelper(object):
     def get_industry_colour(self, industry):
         return palette[int(industry.get_property("map_colour", None))]
 
+    def get_cargo_colour_as_hex_triple_with_hash(self, cargo, economy):
+        colour_as_raw_hex_triple = [hex(i) for i in palette[int(cargo.get_cargo_colour(economy))]]
+        # format the result to #aabbcc for use in html etc
+        result = '#' + ''.join([str(i)[2:] for i in colour_as_raw_hex_triple])
+        return result
+
     def get_cargoflow_banned_cargos(self):
         return ["mail", "passengers"]
 
