@@ -1849,7 +1849,7 @@ class IndustrySecondary(Industry):
 
 
 class IndustryTertiary(Industry):
-    """ Industries that consume cargo and don't produce anything, typically black holes in or near towns """
+    """ Industries that consume cargo and may or may not produce anything, typically black holes in or near towns """
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
