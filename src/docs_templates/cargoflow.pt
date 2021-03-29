@@ -73,11 +73,10 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
                         color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
                         arrowsize=2
                         arrowhead=normal
-                        penwidth=3
-                        weight=1
+                        penwidth=6
                         <tal:head_is_cluster condition="getattr(industry, 'town_industry_for_cargoflow', False)">
                             lhead="cluster_town_industries"
-                            #style="invis"
+                            style="invis"
                         </tal:head_is_cluster>
 
                     ]
@@ -111,8 +110,7 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
                         dir=back
                         arrowtail=nonenoneinv
                         arrowsize=2
-                        penwidth=3
-                        weight=1
+                        penwidth=6
                     ]
                 </tal:not_banned>
             </tal:produced_cargos>
@@ -165,14 +163,20 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
         </tal:industries>
         -->
     }
-    { rank=source; I_farm, I_potash_mine, I_soda_ash_mine, I_coal_mine, C_coal, I_coke_oven, I_iron_ore_mine, I_limestone_mine, I_quarry}
-    { rank=same; I_chlor_alkali_plant, C_chlorine, C_limestone, C_iron_ore}
-    { rank=same; I_basic_oxygen_furnace, I_electric_arc_furnace}
-    { rank=same; I_blast_furnace, I_lime_kiln, I_junk_yard, I_cryo_plant}
-    { rank=same; I_glass_works, I_sheet_and_pipe_mill, I_wire_and_section_mill}
-    { rank=sink; I_assembly_plant, T_town_industries, C_vehicles}
-    { rank=same; I_engine_plant}
-    { rank=same; C_steel_sections, C_cleaning_agents, C_zinc, C_pipe, C_cement, C_plastics, C_steel_wire_rod, C_alloy_steel, C_stainless_steel, C_lye}
-    { rank=same; I_body_plant, I_component_factory, I_wharf}
+    <tal:force_rankings condition="economy.id == 'STEELTOWN'">
+        { group="cabbage2"; I_engine_plant, I_glass_works}
+        { group="cabbage3"; I_chlor_alkali_plant}
+        { rank=source; I_farm, I_potash_mine, I_soda_ash_mine, I_iron_ore_mine, I_limestone_mine, I_quarry, I_coal_mine, C_coal, I_coke_oven}
+        { rank=same; C_chlorine, I_chlor_alkali_plant, C_iron_ore, C_limestone}
+        { rank=same; I_electric_arc_furnace, I_basic_oxygen_furnace}
+        { rank=same; C_cast_iron, C_aluminium, C_sand}
+        { rank=same; I_blast_furnace, I_cryo_plant, I_lime_kiln, I_junk_yard}
+        { rank=same; I_wire_and_section_mill, I_sheet_and_pipe_mill}
+        { rank=same; I_glass_works, I_engine_plant, C_acid, C_slag}
+        { rank=same; C_steel_sections, C_cleaning_agents, C_zinc, C_pipe, C_cement, C_plastics, C_steel_wire_rod, C_alloy_steel, C_stainless_steel}
+        { rank=same; I_body_plant, I_component_factory, I_wharf}
+        { rank=same;  C_tyres, C_vehicle_engines}
+        { rank=sink; I_assembly_plant, T_town_industries, C_vehicles}
+    </tal:force_rankings>
 }
 </tal:economies>

@@ -11,6 +11,7 @@ from time import time
 
 import markdown
 from PIL import Image
+import colorsys
 
 import utils as utils
 import global_constants as global_constants
@@ -255,9 +256,13 @@ class DocHelper(object):
         return palette[int(industry.get_property("map_colour", None))]
 
     def get_cargo_colour_as_hex_triple_with_hash(self, cargo, economy):
-        colour_as_raw_hex_triple = [hex(i) for i in palette[int(cargo.get_cargo_colour(economy))]]
-        # format the result to #aabbcc for use in html etc
-        result = '#' + ''.join([str(i)[2:] for i in colour_as_raw_hex_triple])
+        colour_as_rgb = palette[int(cargo.get_cargo_colour(economy))]
+        result = [i for i in colorsys.rgb_to_hsv(colour_as_rgb[0], colour_as_rgb[1], colour_as_rgb[2])]
+        # darken colours that are too light
+        result[2] = result[2] / 255 if (result[2] / 255) < 0.66 else 0.66
+        # saturate colours that are unsaturated
+        result[1] = result[1] * 2 if result[1] < 0.3 else result[1]
+        result = ','.join([str(i) for i in result])
         return result
 
     def get_cargoflow_banned_cargos(self):
