@@ -119,6 +119,21 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
         </tal:not_town_industries>
     </tal:industries>
 
+    T_towns_food [
+        shape="box"
+        label="Towns"
+        fontname="sans-serif"
+        fontcolor=orange
+        fontsize=32
+        color=orange
+        penwidth=5
+        margin=1
+    ]
+    C_food -> T_towns_food [
+        color=orange
+        penwidth=5
+        arrowsize=2
+    ]
     subgraph cluster_town_industries {
         color="azure3"
         style="filled"
@@ -169,7 +184,7 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
         { rank=same; I_nitrate_mine I_coffee_estate, I_ranch, I_arable_farm}
         { rank=same; I_food_processor, I_stockyard, I_flour_mill}
         { rank=same; I_port, C_food, I_fishing_harbour, C_fish}
-        { rank=sink; C_goods, T_town_industries}
+        { rank=sink; C_goods}
         subgraph cluster_elephant {
             color=white
             I_chemical_plant
@@ -209,7 +224,7 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
         { rank=same; I_wire_and_section_mill, I_sheet_and_pipe_mill}
         { rank=same; C_cleaning_agents, C_zinc, C_cement}
         { rank=same; C_plastics, C_alloy_steel, C_stainless_steel, C_glass, C_sulphur, C_aluminium}
-        { rank=max; I_assembly_plant, T_town_industries, C_vehicles}
+        { rank=max; I_assembly_plant, C_vehicles}
         subgraph cluster_foo {
             subgraph {
                 rank=same
