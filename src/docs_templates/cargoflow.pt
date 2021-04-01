@@ -180,7 +180,15 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
             </tal:town_industries>
         </tal:industries>
     }
-    <tal:force_tropic_basic condition="economy.id == 'BASIC_TROPIC'">
+    <tal:force_basic_temperate condition="economy.id == 'BASIC_TEMPERATE'">
+        <!--! temporary patch up, needs more work -->
+        { rank=sink; I_port, T_town_industries}
+    </tal:force_basic_temperate>
+    <tal:force_basic_arctic condition="economy.id == 'BASIC_ARCTIC'">
+        <!--! temporary patch up, needs more work -->
+        { rank=sink; T_town_industries, T_towns_food}
+    </tal:force_basic_arctic>
+    <tal:force_basic_tropic condition="economy.id == 'BASIC_TROPIC'">
         <!--! as of March 30th 2021, this is really as optimised as can be
               the main driver is preventing ugly appearance of the edges that converge on food, most of the layout is arranged around preventing that
         -->
@@ -218,7 +226,7 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
             C_alcohol
             C_copper
         }
-    </tal:force_tropic_basic>
+    </tal:force_basic_tropic>
     <tal:force_steeltown condition="economy.id == 'STEELTOWN'">
         <!--! as of March 30th 2021, this is really as optimised as can be
               the pacemaker is the salt -> chlor-alkali -> acid chain which requires 15 steps in horizontal rank
@@ -355,5 +363,14 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
             C_vehicle_bodies
         }
     </tal:force_steeltown>
+    <tal:force_iahc condition="economy.id == 'IN_A_HOT_COUNTRY'">
+        <!--! temporary patch up, needs more work -->
+        { rank=same; I_port, C_goods}
+        { rank=sink; T_town_industries, N_force_rank}
+        N_force_rank [shape=none, style="invis"]
+        edge [style="invis"]
+        I_supply_yard -> T_town_industries
+        I_supply_yard -> N_force_rank
+    </tal:force_iahc>
 }
 </tal:economies>
