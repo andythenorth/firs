@@ -57,7 +57,15 @@ economy = Economy(
         "zinc",
         "potash",
     ],
+    # as of April 2021 this cargoflow graph is really as optimised as can be
+    # the pacemaker is the salt -> chlor-alkali -> acid chain which requires 15 steps in horizontal rank
+    # this limits how big the font / industry images can be
+    # I've tried using vertical edges or reversed edges to cut the number of steps, but it makes the overall flow less legible
     cargoflow_graph_tuning={
+        "group_edges_subgraphs": [
+            ["I_basic_oxygen_furnace", "I_electric_arc_furnace"],
+            ["C_pig_iron"] # groups edges can be set for a single node
+        ],
         "ranking_subgraphs": [
             ("source", ["I_potash_mine", "I_quarry", "I_farm", "I_coal_mine"]),
             ("same", ["I_chlor_alkali_plant", "I_lime_kiln", "I_cryo_plant"]),

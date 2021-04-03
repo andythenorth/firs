@@ -181,15 +181,6 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
         </tal:industries>
     }
     <tal:economy_tweaks switch="economy.id">
-        <tal:force_steeltown case="'STEELTOWN'">
-            <!--! as of March 30th 2021, this is really as optimised as can be
-                  the pacemaker is the salt -> chlor-alkali -> acid chain which requires 15 steps in horizontal rank
-                  this limits how big the font / industry images can be
-                  I've tried using vertical edges or reversed edges to cut the number of steps, but it makes the overall flow less legible
-            -->
-            { group="cabbage"; I_basic_oxygen_furnace, I_electric_arc_furnace}
-            { group="cabbage2"; C_pig_iron}
-        </tal:force_steeltown>
         <tal:force_iahc case="'IN_A_HOT_COUNTRY'">
             <!--! temporary patch up, needs more work -->
             N_force_rank [shape=none, style="invis"]
@@ -199,13 +190,19 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
         </tal:force_iahc>
     </tal:economy_tweaks>
     <!--! economy specific tuning - this supports
-          1. ranking subgraphs, to force nodes to the same rank
-          2. explicit clusters which physically group nodes
+          1. edge grouping subgraphs for specific nodes
+            - note this affects position and spline drawing of edges for node(s), does *not* group the actual nodes - use clusters for that
+            - edge grouping is typically brittle and can have surprising results, generally best avoided, but occasionally gets a wanted result
+          2. ranking subgraphs, to force nodes to the same rank
+          3. explicit clusters which physically group nodes
           Generally doing more than that is not advised, and will require manual tweaks directly inside the cargoflow
     -->
-    <tal:subgraphs repeat="ranking_subgraph economy.cargoflow_graph_tuning['ranking_subgraphs']">
+    <tal:group_edges_subgraphs repeat="group_edge_subgraph economy.cargoflow_graph_tuning['group_edges_subgraphs']">
+        { group="${economy.id}_group_edges_${repeat.group_edge_subgraph.index}"; ${', '.join(group_edge_subgraph)}}
+    </tal:group_edges_subgraphs>
+    <tal:ranking_subgraphs repeat="ranking_subgraph economy.cargoflow_graph_tuning['ranking_subgraphs']">
         { rank=${ranking_subgraph[0]}; ${', '.join(ranking_subgraph[1])}}
-    </tal:subgraphs>
+    </tal:ranking_subgraphs>
     <tal:clusters repeat="cluster economy.cargoflow_graph_tuning['clusters']">
         subgraph cluster_${economy.id}_${repeat.cluster.index} {
             <!--! optional color for cluster - could later be replaced by a style class somehow? -->
