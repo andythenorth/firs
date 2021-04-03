@@ -27,4 +27,14 @@ economy = Economy(
         "scrap_metal",
         "steel",
     ],
+    # as of March 2021 this cargoflow tuning is a temporary patch up, might need more work
+    cargoflow_graph_tuning={
+        "ranking_subgraphs": [
+            ("sink", ["I_port", "T_town_industries"]),
+        ],
+        "clusters": [
+            {"nodes": [], "rank": "", "color": ""},
+            {"nodes": [], "rank": "", "color": ""},
+        ],
+    },
 )

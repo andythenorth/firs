@@ -9,6 +9,7 @@ class Economy(object):
         self.id = id
         self.numeric_id = kwargs.get("numeric_id")
         self.cargo_ids = kwargs.get("cargos")
+        self.cargoflow_graph_tuning = kwargs.get("cargoflow_graph_tuning")
 
     def register(self):
         # guard, duplicate numeric IDs don't work :P

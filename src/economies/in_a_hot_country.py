@@ -38,4 +38,14 @@ economy = Economy(
         "stone",
         "wood",
     ],
+    cargoflow_graph_tuning={
+        "ranking_subgraphs": [
+            ("same", ["I_port", "C_goods"]),
+            ("sink", ["T_town_industries", "N_force_rank"]),
+        ],
+        "clusters": [
+            {"nodes": [], "rank": "", "color": ""},
+            {"nodes": [], "rank": "", "color": ""},
+        ],
+    },
 )
