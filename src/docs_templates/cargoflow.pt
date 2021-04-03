@@ -199,19 +199,14 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
             { rank=sink; C_goods, T_town_industries}
             subgraph cluster_elephant {
                 color=white
-                I_chemical_plant
-                I_oil_wells
-                I_nitrate_mine
-                I_copper_mine
                 C_chemicals
-                I_copper_refinery
                 C_copper_ore
-                subgraph cluster_omega {
-                    color=white
-                    rank=same
-                    C_nitrates
-                    C_oil
-                }
+            }
+            subgraph cluster_omega {
+                color=white
+                rank=same
+                C_nitrates
+                C_oil
             }
             subgraph cluster_zebra {
                 color=white
@@ -243,12 +238,10 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
             { rank=same; C_plastics, C_alloy_steel, C_stainless_steel, C_glass, C_sulphur, C_aluminium}
             { rank=max; I_assembly_plant, C_vehicles, T_town_industries}
             subgraph cluster_foo {
-                subgraph {
-                    rank=same
-                    I_blast_furnace
-                    C_pig_iron
-                    I_basic_oxygen_furnace
-                }
+                rank=same
+                I_blast_furnace
+                C_pig_iron
+                I_basic_oxygen_furnace
             }
             subgraph cluster_kingdom {
                 color=white
@@ -257,21 +250,16 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
                 C_quicklime
             }
             subgraph cluster_eggs {
-                subgraph {
-                    rank=same
-                    I_junk_yard
-                    C_scrap_metal
-                    I_electric_arc_furnace
-                }
+                rank=same
+                I_junk_yard
+                C_scrap_metal
+                I_electric_arc_furnace
             }
-
             subgraph cluster_bar {
                 color=white
-                subgraph {
-                    rank=source
-                    I_quarry
-                    I_limestone_mine
-                }
+                rank=source
+                I_quarry
+                I_limestone_mine
             }
             subgraph cluster_jelly {
                 color=white
@@ -282,14 +270,11 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
             }
             subgraph cluster_domino {
                 color=white
-                subgraph {
-                    rank=same
-                    C_pipe
-                    C_steel_sections
-                    C_cement
-                    C_lye
-                }
-                I_wharf
+                rank=same
+                C_pipe
+                C_steel_sections
+                C_cement
+                C_lye
             }
             subgraph cluster_gamma {
                 rank=same
@@ -304,22 +289,17 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
                 C_acid
             }
             subgraph cluster_simon {
-                subgraph {
-                    rank=source;
-                    C_coal_tar
-                    I_carbon_black_plant
-                    C_carbon_black
-                }
+                rank=source;
+                C_coal_tar
+                I_carbon_black_plant
+                C_carbon_black
             }
             subgraph cluster_magnet {
                 color=white
-                subgraph {
-                    rank=source;
-                    C_stainless_steel
-                    C_alloy_steel
-                    C_plastics
-                    C_electrical_parts
-                }
+                C_stainless_steel
+                C_alloy_steel
+                C_plastics
+                C_electrical_parts
             }
             subgraph {
                 color=white
@@ -331,29 +311,23 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
             }
             subgraph cluster_nurse {
                 color=white
-                subgraph {
-                    rank=same;
-                    C_glass
-                    C_paints_and_coatings
-                    C_steel_sheet
-                }
+                rank=same;
+                C_glass
+                C_paints_and_coatings
+                C_steel_sheet
             }
             subgraph cluster_ox {
                 color=white
-                subgraph {
-                    rank=source
-                    C_sulphur
-                    C_rubber
-                    C_steel_wire_rod
-                }
+                rank=source
+                C_sulphur
+                C_rubber
+                C_steel_wire_rod
             }
             subgraph cluster_victor {
                 color=white
-                subgraph {
-                    rank=source;
-                    C_aluminium
-                    C_cast_iron
-                }
+                rank=source;
+                C_aluminium
+                C_cast_iron
             }
             subgraph cluster_bob {
                 color=white
