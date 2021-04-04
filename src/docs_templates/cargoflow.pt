@@ -30,40 +30,38 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
     </tal:cargos>
 
     <tal:industries repeat="industry sorted(economy_schemas[economy].enabled_industries, key=doc_helper.get_industry_name)">
-        <tal:not_town_industries condition="not: getattr(industry, 'town_industry_for_cargoflow', False)">
-            I_${industry.id} [
-                shape=none
-                fontsize=32
-                label=<
-                    <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3">
-                        <tr><td><IMG SRC="static/img/industries/${industry.id}.png" /></td></tr>
-                        <!--! nested table for text offers more control + better appearance -->
-                        <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
-                            <tr><td>${doc_helper.get_industry_name(industry, economy)}</td></tr>
-                            <tal:cargos repeat="cargo doc_helper.cargos_accepted_by_industry(industry, economy)">
-                                 <tal:supplies condition="cargo.id in supply_cargos">
-                                    <tr><td><font POINT-SIZE="20">Requires ${doc_helper.get_cargo_name(cargo)}</font></td></tr>
-                                </tal:supplies>
-                                <tal:banned condition="(cargo.id in banned_cargos) and not getattr(industry, 'town_industry_for_cargoflow', False)">
-                                    <tr><td>Requires ${doc_helper.get_cargo_name(cargo)}</td></tr>
-                                </tal:banned>
-                                <tal:town_industries condition="getattr(industry, 'town_industry_for_cargoflow', False)">
-                                    <tr><td>Requires ${doc_helper.get_cargo_name(cargo)}</td></tr>
-                                </tal:town_industries>
-                            </tal:cargos>
-                            <tal:produced_cargos repeat="cargo doc_helper.cargos_produced_by_industry(industry, economy)">
-                                <tal:supply_output condition="cargo.id in doc_helper.get_cargoflow_supply_cargos()">
-                                    <tr><td><font POINT-SIZE="20">Produces ${doc_helper.get_cargo_name(cargo)}</font></td></tr>
-                                </tal:supply_output>
-                            </tal:produced_cargos>
-                        </table></td></tr>
-                    </table>
-                >
-                id="${industry.id}"
-                href="industries.html#${industry.id}" target="_top" fontname="sans-serif"
-                tooltip="${doc_helper.get_industry_name(industry, economy)}"
-            ]
-        </tal:not_town_industries>
+        I_${industry.id} [
+            shape=none
+            fontsize=32
+            label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/${industry.id}.png" /></td></tr>
+                    <!--! nested table for text offers more control + better appearance -->
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>${doc_helper.get_industry_name(industry, economy)}</td></tr>
+                        <tal:cargos repeat="cargo doc_helper.cargos_accepted_by_industry(industry, economy)">
+                             <tal:supplies condition="cargo.id in supply_cargos">
+                                <tr><td><font POINT-SIZE="20">Requires ${doc_helper.get_cargo_name(cargo)}</font></td></tr>
+                            </tal:supplies>
+                            <tal:banned condition="(cargo.id in banned_cargos) and not getattr(industry, 'town_industry_for_cargoflow', False)">
+                                <tr><td><font POINT-SIZE="20">Requires ${doc_helper.get_cargo_name(cargo)}</font></td></tr>
+                            </tal:banned>
+                            <tal:town_industries condition="getattr(industry, 'town_industry_for_cargoflow', False)">
+                                <tr><td><font POINT-SIZE="20">Requires ${doc_helper.get_cargo_name(cargo)}</font></td></tr>
+                            </tal:town_industries>
+                        </tal:cargos>
+                        <tal:produced_cargos repeat="cargo doc_helper.cargos_produced_by_industry(industry, economy)">
+                            <tal:supply_output condition="cargo.id in doc_helper.get_cargoflow_supply_cargos()">
+                                <tr><td><font POINT-SIZE="20">Produces ${doc_helper.get_cargo_name(cargo)}</font></td></tr>
+                            </tal:supply_output>
+                        </tal:produced_cargos>
+                    </table></td></tr>
+                </table>
+            >
+            id="${industry.id}"
+            href="industries.html#${industry.id}" target="_top" fontname="sans-serif"
+            tooltip="${doc_helper.get_industry_name(industry, economy)}"
+        ]
 
         <tal:not_town_industries condition="not: getattr(industry, 'town_industry_for_cargoflow', False)">
             <tal:accepted_cargos repeat="cargo doc_helper.cargos_accepted_by_industry(industry, economy)">
@@ -199,8 +197,10 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
         </tal:towns_vehicles>
     </tal:town_cargos>
     subgraph cluster_town_industries {
-        color="azure3"
+        shape="rounded"
+        color="azure2"
         style="filled"
+        penwidth=5
         fillcolor="azure2"
         rank=same
         position="0,0!"
@@ -214,33 +214,7 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
         ]
         <tal:industries repeat="industry sorted(economy_schemas[economy].enabled_industries, key=doc_helper.get_industry_name)">
             <tal:town_industries condition="getattr(industry, 'town_industry_for_cargoflow', False)">
-                I_${industry.id} [
-                    shape=none
-                    label=<
-                        <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3">
-                            <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
-                                <tr><td><IMG SRC="static/img/industries/${industry.id}.png" /></td></tr>
-                                <tr><td>${doc_helper.get_industry_name(industry, economy)}</td></tr>
-                                <tal:cargos repeat="cargo doc_helper.cargos_accepted_by_industry(industry, economy)">
-                                     <tal:supplies condition="cargo.id in supply_cargos">
-                                        <tr><td>Requires ${doc_helper.get_cargo_name(cargo)}</td></tr>
-                                    </tal:supplies>
-                                    <tal:banned condition="(cargo.id in banned_cargos) and not getattr(industry, 'town_industry_for_cargoflow', False)">
-                                        <tr><td>Requires ${doc_helper.get_cargo_name(cargo)}</td></tr>
-                                    </tal:banned>
-                                    <tal:town_industries condition="getattr(industry, 'town_industry_for_cargoflow', False)">
-                                        <tr><td>Requires ${doc_helper.get_cargo_name(cargo)}</td></tr>
-                                    </tal:town_industries>
-                                </tal:cargos>
-                            </table></td></tr>
-                        </table>
-                    >
-                    id="${industry.id}"
-                    href="industries.html#${industry.id}"
-                    target="_top"
-                    fontname="sans-serif"
-                    tooltip="${doc_helper.get_industry_name(industry, economy)}"
-                ]
+                I_${industry.id}
             </tal:town_industries>
         </tal:industries>
     }
