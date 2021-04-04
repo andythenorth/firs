@@ -34,17 +34,17 @@ economy = Economy(
         "group_edges_subgraphs": [
         ],
         "ranking_subgraphs": [
-            ("same", ["I_nitrate_mine", "I_coffee_estate", "I_ranch", "I_arable_farm"]),
-            ("same", ["I_food_processor", "I_stockyard", "I_flour_mill"]),
-            ("same", ["I_port", "C_food", "I_fishing_harbour", "C_fish"]),
-            ("sink", ["C_goods", "T_town_industries"]),
+            ("same", ["nitrate_mine", "coffee_estate", "ranch", "arable_farm"]),
+            ("same", ["food_processor", "stockyard", "flour_mill"]),
+            ("same", ["port", "food", "fishing_harbour", "fish"]),
+            ("sink", ["goods", "T_town_industries"]),
         ],
         "clusters": [
-            {"nodes": ["C_chemicals", "C_copper_ore"], "rank": "", "color": "white"},
-            {"nodes": ["C_nitrates", "C_oil"], "rank": "same", "color": "white"},
-            {"nodes": ["C_fruits", "C_beans"], "rank": "same", "color": "white"},
+            {"nodes": ["chemicals", "copper_ore"], "rank": "", "color": "white"},
+            {"nodes": ["nitrates", "oil"], "rank": "same", "color": "white"},
+            {"nodes": ["fruits", "beans"], "rank": "same", "color": "white"},
             {
-                "nodes": ["C_wool", "C_coffee", "C_alcohol", "C_copper"],
+                "nodes": ["wool", "coffee", "alcohol", "copper"],
                 "rank": "same",
                 "color": "white",
             },

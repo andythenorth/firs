@@ -257,13 +257,35 @@ class DocHelper(object):
 
     def get_cargo_colour_as_hex_triple_with_hash(self, cargo, economy):
         colour_as_rgb = palette[int(cargo.get_cargo_colour(economy))]
-        result = [i for i in colorsys.rgb_to_hsv(colour_as_rgb[0], colour_as_rgb[1], colour_as_rgb[2])]
+        result = [
+            i
+            for i in colorsys.rgb_to_hsv(
+                colour_as_rgb[0], colour_as_rgb[1], colour_as_rgb[2]
+            )
+        ]
         # darken colours that are too light
         result[2] = result[2] / 255 if (result[2] / 255) < 0.66 else 0.66
         # saturate colours that are unsaturated
         result[1] = result[1] * 2 if result[1] < 0.3 else result[1]
-        result = ','.join([str(i) for i in result])
+        result = ",".join([str(i) for i in result])
         return result
+
+    def unpack_cargoflow_node_name(self, node):
+        # there are some known exceptions for special nodes which are maintained as a manual list
+        if node in ["T_town_industries", "T_towns_food", "N_force_rank"]:
+            return node
+        # then check cargos and industries
+        for cargo in registered_cargos:
+            if cargo.id == node:
+                return "C_" + node
+        for industry in registered_industries:
+            if industry.id == node:
+                return "I_" + node
+        # fail if the node can't be unpacked
+        raise Exception(
+            "Unknown cargoflow node passed to doc_helper.unpack_cargoflow_node_name: "
+            + node
+        )
 
     def get_cargoflow_banned_cargos(self):
         return ["mail", "passengers"]

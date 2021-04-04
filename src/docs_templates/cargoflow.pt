@@ -198,10 +198,20 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
           Generally doing more than that is not advised, and will require manual tweaks directly inside the cargoflow
     -->
     <tal:group_edges_subgraphs repeat="group_edge_subgraph economy.cargoflow_graph_tuning['group_edges_subgraphs']">
-        { group="${economy.id}_group_edges_${repeat.group_edge_subgraph.index}"; ${', '.join(group_edge_subgraph)}}
+        {
+            group="${economy.id}_group_edges_${repeat.group_edge_subgraph.index}"
+            <tal:nodes repeat="node group_edge_subgraph">
+                ${doc_helper.unpack_cargoflow_node_name(node)}
+            </tal:nodes>
+        }
     </tal:group_edges_subgraphs>
     <tal:ranking_subgraphs repeat="ranking_subgraph economy.cargoflow_graph_tuning['ranking_subgraphs']">
-        { rank=${ranking_subgraph[0]}; ${', '.join(ranking_subgraph[1])}}
+        {
+            rank=${ranking_subgraph[0]}
+            <tal:nodes repeat="node ranking_subgraph[1]">
+                ${doc_helper.unpack_cargoflow_node_name(node)}
+            </tal:nodes>
+        }
     </tal:ranking_subgraphs>
     <tal:clusters repeat="cluster economy.cargoflow_graph_tuning['clusters']">
         subgraph cluster_${economy.id}_${repeat.cluster.index} {
@@ -214,7 +224,7 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
                 rank=${cluster['rank']}
             </tal:optional_rank>
             <tal:nodes repeat="node cluster['nodes']">
-                ${node}
+                ${doc_helper.unpack_cargoflow_node_name(node)}
             </tal:nodes>
         }
     </tal:clusters>
