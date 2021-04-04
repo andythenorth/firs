@@ -1849,12 +1849,13 @@ class IndustrySecondary(Industry):
 
 
 class IndustryTertiary(Industry):
-    """ Industries that consume cargo and may or may not produce anything, typically black holes in or near towns """
+    """ Industries that are typically black holes in or near towns. Consume cargo, may also produce town-type cargos (e.g. pax) at a constant rate unrelated to delivery."""
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.template = "industry_tertiary.pynml"
-        self.town_industry_for_cargoflow = True
+        # common case is that tertiary should be treated as town industry when drawing docs cargoflow, but over-ride for cases where that's not wanted
+        self.town_industry_for_cargoflow = kwargs.get('town_industry_for_cargoflow', True)
         # no perm_storage needed currently
 
     @property

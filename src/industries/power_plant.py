@@ -9,6 +9,7 @@ industry = IndustryTertiary(
     prod_multiplier="[0, 0]",
     map_colour="168",
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
+    town_industry_for_cargoflow=False,
     prospect_chance="0.75",
     name="string(STR_IND_POWER_PLANT)",
     nearby_station_name="string(STR_STATION_POWERHUNGRY)",

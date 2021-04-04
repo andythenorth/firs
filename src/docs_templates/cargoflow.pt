@@ -119,21 +119,85 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
         </tal:not_town_industries>
     </tal:industries>
 
-    T_towns_food [
-        shape="box"
-        label="Towns"
-        fontname="sans-serif"
-        fontcolor=orange
-        fontsize=32
-        color=orange
-        penwidth=5
-        margin=0.33
-    ]
-    C_food -> T_towns_food [
-        color=orange
-        penwidth=5
-        arrowsize=2
-    ]
+    <!--! manual maintenance of town cargos, this could be automated by detecting industries that have town_industry_for_cargoflow set, and figuring out their cargos -->
+    <tal:town_cargos repeat="cargo economy_schemas[economy].enabled_cargos">
+        <tal:towns_alcohol condition="cargo.id == 'alcohol'">
+            T_towns_alcohol [
+                shape="box"
+                style="dashed"
+                label="Towns"
+                fontname="sans-serif"
+                fontcolor="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                fontsize=32
+                color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                penwidth=5
+                margin=0.33
+            ]
+            C_alcohol -> T_towns_alcohol [
+                style="dashed"
+                color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                penwidth=5
+                arrowsize=2
+            ]
+        </tal:towns_alcohol>
+        <tal:towns_food condition="cargo.id == 'food'">
+            T_towns_food [
+                shape="box"
+                style="dashed"
+                label="Towns"
+                fontname="sans-serif"
+                fontcolor="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                fontsize=32
+                color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                penwidth=5
+                margin=0.33
+            ]
+            C_food -> T_towns_food [
+                style="dashed"
+                color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                penwidth=5
+                arrowsize=2
+            ]
+        </tal:towns_food>
+        <tal:towns_goods condition="cargo.id == 'goods'">
+            T_towns_goods [
+                shape="box"
+                style="dashed"
+                label="Towns"
+                fontname="sans-serif"
+                fontcolor="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                fontsize=32
+                color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                penwidth=5
+                margin=0.33
+            ]
+            C_goods -> T_towns_goods [
+                style="dashed"
+                color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                penwidth=5
+                arrowsize=2
+            ]
+        </tal:towns_goods>
+        <tal:towns_vehicles condition="cargo.id == 'vehicles'">
+            T_towns_vehicles [
+                shape="box"
+                style="dashed"
+                label="Towns"
+                fontname="sans-serif"
+                fontcolor="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                fontsize=32
+                color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                penwidth=5
+                margin=0.33
+            ]
+            C_vehicles -> T_towns_vehicles [
+                style="dashed"
+                color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                penwidth=5
+                arrowsize=2
+            ]
+        </tal:towns_vehicles>
+    </tal:town_cargos>
     subgraph cluster_town_industries {
         color="azure3"
         style="filled"

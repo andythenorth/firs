@@ -91,7 +91,7 @@ economy = Economy(
                     "aluminium",
                 ],
             ),
-            ("sink", ["assembly_plant", "vehicles", "T_town_industries"]),
+            ("sink", ["assembly_plant", "vehicles", "T_town_industries", "T_towns_vehicles"]),
         ],
         "clusters": [
             {
