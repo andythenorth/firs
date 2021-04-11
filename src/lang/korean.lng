@@ -140,7 +140,7 @@ STR_CARGO_UNIT_CARBON_STEEL                                                     
 STR_CARGO_UNIT_CASSAVA                                                          :카사바 {WEIGHT}
 STR_CARGO_UNIT_CAST_IRON                                                        :주철 {WEIGHT}
 STR_CARGO_UNIT_CEMENT                                                           :시멘트 {WEIGHT}
-STR_CARGO_UNIT_CHEMICALS                                                        :화학 약품 {VOLUME}
+STR_CARGO_UNIT_CHEMICALS                                                        :화학품 {VOLUME}
 STR_CARGO_UNIT_CHLORINE                                                         :염소 {VOLUME}
 STR_CARGO_UNIT_CHROMITE_ORE                                                     :크로마이트 광석 {WEIGHT}
 STR_CARGO_UNIT_CLAY                                                             :점토 {WEIGHT}
@@ -325,8 +325,8 @@ STR_CID_ZINC                                                                    
 
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS는 장난감나라 기후에서는 사용할 수 없습니다.
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS를 사용하려면 OpenTTD 1.7.0 (또는 r27769 빌드를 기반으로 한) 버전 이상이 필요합니다 <TODO>
-STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}호환되지 않는 NewGRF 세트: {ORANGE}{STRING} <TODO>
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS를 사용하려면 OpenTTD 1.7.0 (또는 r27769 빌드를 기반으로 한) 버전 이상이 필요합니다
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}호환되지 않는 NewGRF 세트: {ORANGE}{STRING}
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}호환되지 않는 매개변수: {ORANGE}CanSet을 FIRS와 함께 사용하려면 매개변수 2의 값이 0보다 커야합니다.
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}호환되지 않는 매개변수: {ORANGE}NA City Set을 FIRS와 함께 사용하려면 매개변수 2의 값이 0보다 커야합니다.
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}호환되지 않는 버전: {ORANGE}Total Town Replacement Set은 3.11 또는 그 이상의 버전을 사용해야 합니다.
@@ -443,7 +443,7 @@ STR_IND_WHARF                                                                   
 STR_IND_WIRE_AND_SECTION_MILL                                                   :형강 & 강철봉 공장
 
 
-STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             :{BLACK}(공급됨)
+STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(공급됨)
 STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}최대 생산량을 내려면, {WHITE}아무 {BLACK} 화물이나 공급하십시오.
 STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}최대 생산량을 내려면, 필요한 {WHITE}모든 {BLACK} 화물을 최소한 3개월에 한 번씩은 공급하십시오.
 STR_EXTRA_TEXT_TOWN_PRODUCER                                                    :{BLACK}생산량이 도시 인구에 비례합니다. 매월마다 최소 {WHITE}{SIGNED_WORD} 단위{BLACK}에서 {WHITE}{SIGNED_WORD} 단위{BLACK} 사이의 화물이 생산될 것입니다.
