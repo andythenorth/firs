@@ -1231,7 +1231,7 @@ class Industry(object):
     def economies_enabled_for_industry(self):
         result = []
         for economy in registered_economies:
-            if self.get_property('enabled', economy):
+            if self.get_property("enabled", economy):
                 result.append(economy)
         return result
 
@@ -1855,7 +1855,9 @@ class IndustryTertiary(Industry):
         super().__init__(**kwargs)
         self.template = "industry_tertiary.pynml"
         # common case is that tertiary should be treated as town industry when drawing docs cargoflow, but over-ride for cases where that's not wanted
-        self.town_industry_for_cargoflow = kwargs.get('town_industry_for_cargoflow', True)
+        self.town_industry_for_cargoflow = kwargs.get(
+            "town_industry_for_cargoflow", True
+        )
         # no perm_storage needed currently
 
     @property

@@ -64,7 +64,7 @@ economy = Economy(
     cargoflow_graph_tuning={
         "group_edges_subgraphs": [
             ["basic_oxygen_furnace", "electric_arc_furnace"],
-            ["pig_iron"] # groups edges can be set for a single node
+            ["pig_iron"],  # groups edges can be set for a single node
         ],
         "ranking_subgraphs": [
             ("source", ["potash_mine", "quarry", "farm", "coal_mine"]),
@@ -91,7 +91,10 @@ economy = Economy(
                     "aluminium",
                 ],
             ),
-            ("sink", ["assembly_plant", "vehicles", "T_town_industries", "T_towns_vehicles"]),
+            (
+                "sink",
+                ["assembly_plant", "vehicles", "T_town_industries", "T_towns_vehicles"],
+            ),
         ],
         "clusters": [
             {

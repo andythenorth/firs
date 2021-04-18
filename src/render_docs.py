@@ -272,7 +272,14 @@ class DocHelper(object):
 
     def unpack_cargoflow_node_name(self, node):
         # there are some known exceptions for special nodes which are maintained as a manual list
-        if node in ["T_town_industries", "T_towns_alcohol", "T_towns_food", "T_towns_goods", "T_towns_vehicles", "N_force_rank"]:
+        if node in [
+            "T_town_industries",
+            "T_towns_alcohol",
+            "T_towns_food",
+            "T_towns_goods",
+            "T_towns_vehicles",
+            "N_force_rank",
+        ]:
             return node
         # then check cargos and industries
         for cargo in registered_cargos:

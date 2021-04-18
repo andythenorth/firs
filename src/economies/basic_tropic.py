@@ -31,13 +31,20 @@ economy = Economy(
     # as of April 2021 this cargoflow graph is really as optimised as can be
     # the main driver is preventing ugly appearance of the edges that converge on food, most of the layout is arranged around preventing that
     cargoflow_graph_tuning={
-        "group_edges_subgraphs": [
-        ],
+        "group_edges_subgraphs": [],
         "ranking_subgraphs": [
             ("same", ["nitrate_mine", "coffee_estate", "ranch", "arable_farm"]),
             ("same", ["food_processor", "stockyard", "flour_mill"]),
             ("same", ["port", "food", "fishing_harbour", "fish"]),
-            ("sink", ["T_town_industries", "T_towns_alcohol", "T_towns_food", "T_towns_goods"]),
+            (
+                "sink",
+                [
+                    "T_town_industries",
+                    "T_towns_alcohol",
+                    "T_towns_food",
+                    "T_towns_goods",
+                ],
+            ),
         ],
         "clusters": [
             {"nodes": ["chemicals", "copper_ore"], "rank": "", "color": "white"},

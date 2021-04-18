@@ -34,7 +34,7 @@ registered_economies = economies.registered_economies
 
 # guard against mistakes with cargo ids in economies
 known_cargo_ids = [cargo.id for cargo in registered_cargos]
-cargo_label_id_mapping = {cargo.cargo_label:cargo.id for cargo in registered_cargos}
+cargo_label_id_mapping = {cargo.cargo_label: cargo.id for cargo in registered_cargos}
 for economy in registered_economies:
     for cargo_id in economy.cargo_ids:
         if cargo_id not in known_cargo_ids:
@@ -51,10 +51,34 @@ for economy in registered_economies:
         if industry.economy_variations[economy.id].enabled:
             for cargo_label in industry.get_accept_cargo_types(economy):
                 if cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
-                    utils.echo_message(' '.join(['In economy', economy.id, 'industry', industry.id, 'accepts', cargo_label, 'which is not available for that economy']))
+                    utils.echo_message(
+                        " ".join(
+                            [
+                                "In economy",
+                                economy.id,
+                                "industry",
+                                industry.id,
+                                "accepts",
+                                cargo_label,
+                                "which is not available for that economy",
+                            ]
+                        )
+                    )
             for cargo_label, amount in industry.get_prod_cargo_types(economy):
                 if cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
-                    utils.echo_message(' '.join(['In economy', economy.id, 'industry', industry.id, 'produces', cargo_label, 'which is not available for that economy']))
+                    utils.echo_message(
+                        " ".join(
+                            [
+                                "In economy",
+                                economy.id,
+                                "industry",
+                                industry.id,
+                                "produces",
+                                cargo_label,
+                                "which is not available for that economy",
+                            ]
+                        )
+                    )
 
 # cargo production and incompatibility lists have to be done after all industries, economies and cargos are registered
 # this means they have to live here, which isn't ideal, but eh
