@@ -899,6 +899,7 @@ class IndustryLocationChecks(object):
         self.industry_max_distance = location_args.get("industry_max_distance", None)
         self.cluster = location_args.get("cluster", None)
         self.town_industry_count = location_args.get("town_industry_count", None)
+        self.town_min_population = location_args.get("town_min_population", None)
         self.coast_distance = location_args.get("coast_distance", None)
         # this is custom to grain mill, can be made generic if needed
         self.flour_mill_layouts_by_date = location_args.get(
@@ -945,6 +946,11 @@ class IndustryLocationChecks(object):
                 IndustryLocationCheckTownIndustryCount(self.town_industry_count)
             )
 
+        if self.town_min_population:
+            result.append(
+                IndustryLocationCheckTownMinPopulation(self.town_min_population)
+            )
+
         if self.coast_distance:
             result.append(IndustryLocationCheckCoastDistance())
 
@@ -987,11 +993,21 @@ class IndustryLocationCheckTownIndustryCount(IndustryLocationCheck):
         self.max_count = town_industry_count[2]
         if self.min_count != 0 or self.max_count != 0:
             utils.echo_message(
-                "IndustryLocationCheckTownIndustryCount uses a hardcoded error string limint to 1 instance per town, add more strings to handle higher limits"
+                "IndustryLocationCheckTownIndustryCount uses a hardcoded error string limiting to 1 instance per town, add more strings to handle higher limits"
             )
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
         self.switch_entry_point = "town_industry_count"
         self.macro_name = "town_industry_count"
+
+
+class IndustryLocationCheckTownMinPopulation(IndustryLocationCheck):
+    """ Require the nearest town to have a minimum population """
+
+    def __init__(self, town_min_population):
+        self.town_min_population = town_min_population
+        self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
+        self.switch_entry_point = "town_min_population"
+        self.macro_name = "town_min_population"
 
 
 class IndustryLocationCheckCluster(IndustryLocationCheck):
