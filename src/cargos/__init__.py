@@ -215,6 +215,10 @@ from cargos import limestone
 
 limestone.cargo.register()
 
+from cargos import logs
+
+logs.cargo.register()
+
 from cargos import lye
 
 lye.cargo.register()
@@ -456,10 +460,6 @@ vehicle_parts.cargo.register()
 from cargos import vehicles
 
 vehicles.cargo.register()
-
-from cargos import wood
-
-wood.cargo.register()
 
 from cargos import wool
 

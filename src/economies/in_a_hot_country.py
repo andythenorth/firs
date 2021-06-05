@@ -26,6 +26,7 @@ economy = Economy(
         "farm_supplies",
         "fruits",
         "livestock",
+        "logs",
         "lumber",
         "maize",
         "manganese",
@@ -36,7 +37,6 @@ economy = Economy(
         "rubber",
         "sand",
         "stone",
-        "wood",
     ],
     cargoflow_graph_tuning={
         "group_edges_subgraphs": [],
