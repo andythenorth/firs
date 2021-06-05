@@ -70,7 +70,7 @@ STR_CARGO_NAME_HYDROCHLORIC_ACID                                                
 STR_CARGO_NAME_KAOLIN                                                           :고령토
 STR_CARGO_NAME_LIMESTONE                                                        :석회석
 STR_CARGO_NAME_LUMBER                                                           :제재목
-# needs renamed if Lye is changed to Sodium Hydroxide permanently
+# cargo uses Sodium Hydroxide as name string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
 STR_CARGO_NAME_LYE                                                              :수산화나트륨
 STR_CARGO_NAME_METAL                                                            :금속
 STR_CARGO_NAME_METHANE                                                          :메탄
@@ -169,7 +169,7 @@ STR_CARGO_UNIT_HYDROCHLORIC_ACID                                                
 STR_CARGO_UNIT_KAOLIN                                                           :고령토 {WEIGHT}
 STR_CARGO_UNIT_LIMESTONE                                                        :석회석 {WEIGHT}
 STR_CARGO_UNIT_LUMBER                                                           :제재목 {WEIGHT}
-# needs renamed if Lye is changed to Sodium Hydroxide permanently
+# cargo uses Sodium Hydroxide as name string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
 STR_CARGO_UNIT_LYE                                                              :소다 {VOLUME}
 STR_CARGO_UNIT_MANGANESE                                                        :망가니즈 {WEIGHT}
 STR_CARGO_UNIT_METAL                                                            :금속 {WEIGHT}
@@ -268,7 +268,7 @@ STR_CID_HYDROCHLORIC_ACID                                                       
 STR_CID_KAOLIN                                                                  :{TINYFONT}토
 STR_CID_LIMESTONE                                                               :{TINYFONT}회
 STR_CID_LUMBER                                                                  :{TINYFONT}목
-# needs renamed if Lye is changed to Sodium Hydroxide permanently
+# cargo uses Sodium Hydroxide as name string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
 STR_CID_LYE                                                                     :{TINYFONT}잿
 STR_CID_MANGANESE                                                               :{TINYFONT}망
 STR_CID_METAL                                                                   :{TINYFONT}금

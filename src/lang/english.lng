@@ -70,7 +70,7 @@ STR_CARGO_NAME_KAOLIN                                                           
 STR_CARGO_NAME_LIMESTONE                                                        :Limestone
 STR_CARGO_NAME_LOGS                                                             :Logs
 STR_CARGO_NAME_LUMBER                                                           :Timber
-# needs renamed if Lye is changed to Sodium Hydroxide permanently
+# cargo uses Sodium Hydroxide as string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
 STR_CARGO_NAME_LYE                                                              :Sodium Hydroxide
 STR_CARGO_NAME_METAL                                                            :Metal
 STR_CARGO_NAME_METHANE                                                          :Methane
@@ -170,7 +170,7 @@ STR_CARGO_UNIT_KAOLIN                                                           
 STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} of limestone
 STR_CARGO_UNIT_LOGS                                                             :{WEIGHT} of logs
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} of timber
-# needs renamed if Lye is changed to Sodium Hydroxide permanently
+# cargo uses Sodium Hydroxide as string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
 STR_CARGO_UNIT_LYE                                                              :{VOLUME} of sodium hydroxide
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} of manganese
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} of metal
@@ -270,7 +270,7 @@ STR_CID_KAOLIN                                                                  
 STR_CID_LIMESTONE                                                               :{TINYFONT}LS
 STR_CID_LOGS                                                                    :{TINYFONT}LG
 STR_CID_LUMBER                                                                  :{TINYFONT}LU
-# needs renamed if Lye is changed to Sodium Hydroxide permanently
+# cargo uses Sodium Hydroxide as name string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
 STR_CID_LYE                                                                     :{TINYFONT}SY
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_METAL                                                                   :{TINYFONT}MT
