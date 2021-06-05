@@ -2,6 +2,22 @@ Changelog
 =========
 
 -------------
+4.1.0 Release
+-------------
+
+**FIRS 4.1.0 is not savegame-compatible with any previous version of FIRS.**
+
+*Changes*
+- renamed Wood cargo to Logs
+    - Wood was repeatedly conflated with Lumber/Timber
+    - Logs is more obvious
+    - cargo label remains WOOD as it is so widely supported
+- Scrap Yard/Junk Yard requires town population of at least 400 when game is placing Scrap Yards
+    - this improves gameplay with Scrap Yards, as the production depends on town population
+    - player can place Scrap Yards anywhere when buildiing industry manually
+
+
+-------------
 4.0.1 Release
 -------------
 
