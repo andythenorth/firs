@@ -8,7 +8,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="191",
-    # it's rare to force co-location of secondaries, but this one is near portby design
+    # it's rare to force co-location of secondaries, but this one is near port by design
     # !! this will fail if port is not available in economy
     location_checks=dict(industry_max_distance=["port", 96], same_type_distance=128),
     name="string(STR_IND_CHEMICAL_PLANT)",
