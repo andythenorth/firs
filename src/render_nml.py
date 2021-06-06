@@ -86,15 +86,16 @@ def main():
         "header",
         "checks",
         "parameters",
+        "sprite_templates",
+        # alphabetise below here for simplicity
         "cargos",
         "colour",
-        "fences",
-        "magic_trees",
-        "terrain_sprite",
-        "randomise_primary_production_on_build",
-        "sprite_templates",
         "construction_states",
+        "fences",
         "ground_tiles",
+        "magic_trees",
+        "randomise_primary_production_on_build",
+        "terrain_sprite",
     ]
     for header_item in header_items:
         grf_nml.write(render_header_item_nml(header_item))
