@@ -16,9 +16,9 @@
 
 <metal:coast_distance metal:define-macro="coast_distance">
     <!--! Check for minimum distance to the coast -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, water_distance) {
-        0 .. param_max_coastal_distance: ${location_check.switch_result};
-        return CB_RESULT_LOCATION_DISALLOW;
+    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, location_check_industry_disallow_too_far_from_coast()) {
+        1: CB_RESULT_LOCATION_DISALLOW;
+        return ${location_check.switch_result};
     }
 </metal:coast_distance>
 

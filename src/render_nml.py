@@ -93,6 +93,7 @@ def main():
         "construction_states",
         "fences",
         "ground_tiles",
+        "location_checks_industry",
         "magic_trees",
         "randomise_primary_production_on_build",
         "terrain_sprite",

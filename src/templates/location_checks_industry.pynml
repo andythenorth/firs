@@ -1,39 +1,16 @@
+<!--! Check distance to nearest coast does not exceed value set in grf parameter -->
+<!--! !!!! probably checking the wrong var I think?  Delete this check?? -->
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_disallow_too_far_from_coast, water_distance) {
+    0 .. param_max_coastal_distance: return 1;
+    return 0;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<metal:render_tree metal:define-macro="render_tree">
-    <tal:location_checks_industry define="location_checks industry.location_checks.get_render_tree(incompatible_industries)" repeat="location_check location_checks">
-        <tal:location_check_macro metal:use-macro="location_check.macro" />
-    </tal:location_checks_industry>
-</metal:render_tree>
-
+<!--! legacy -->
 
 <!--! Location check macros -->
 
-<metal:coast_distance metal:define-macro="coast_distance">
-    <!--! Check for minimum distance to the coast -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, water_distance) {
-        0 .. param_max_coastal_distance: ${location_check.switch_result};
-        return CB_RESULT_LOCATION_DISALLOW;
-    }
-</metal:coast_distance>
-
-
+<tal:drop replace="nothing">
 <metal:check_industry_min_distance metal:define-macro="check_industry_min_distance">
     <!--! Check for a minimum distance to another industry type -->
     switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, industry_distance(${location_check.industry_type_numeric_id})) {
@@ -134,3 +111,4 @@
         ${industry.id}_brick_layouts_only;
     }
 </metal:flour_mill_layouts_by_date>
+</tal:drop>
