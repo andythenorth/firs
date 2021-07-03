@@ -911,7 +911,15 @@ class IndustryLocationChecks(object):
             "flour_mill_layouts_by_date", None
         )
 
-    def get_render_tree(self, incompatible_industries):
+    def get_pre_player_founding_checks(self, incompatible_industries):
+        result = []
+
+        if self.flour_mill_layouts_by_date:
+            result.append(IndustryLocationCheckGrainMillLayoutsByDate())
+
+        return result
+
+    def get_post_player_founding_checks(self, incompatible_industries):
         result = []
 
         if self.require_cluster:
@@ -955,9 +963,6 @@ class IndustryLocationChecks(object):
 
         if self.location_check_industry_disallow_too_far_from_coast:
             result.append(IndustryLocationCheckCoastDistance())
-
-        if self.flour_mill_layouts_by_date:
-            result.append(IndustryLocationCheckGrainMillLayoutsByDate())
 
         # prevent locating very near industries in the same accept / produce chain
         for industry in set(incompatible_industries[self.industry]):
