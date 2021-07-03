@@ -16,7 +16,8 @@
 
 <metal:coast_distance metal:define-macro="coast_distance">
     <!--! Check for minimum distance to the coast -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, location_check_industry_disallow_too_far_from_coast()) {
+    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
+        location_check_industry_disallow_too_far_from_coast(${location_check.params_as_nml_string})) {
         1: ${location_check.switch_result};
         return CB_RESULT_LOCATION_DISALLOW;
     }
@@ -26,7 +27,7 @@
 <metal:check_industry_min_distance metal:define-macro="check_industry_min_distance">
     <!--! Check for a minimum distance to another industry type -->
     switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
-        location_check_industry_require_min_distance_to_another_industry_type(${location_check.industry_type_numeric_id}, ${location_check.distance})) {
+        location_check_industry_require_min_distance_to_another_industry_type(${location_check.params_as_nml_string})) {
         1: ${location_check.switch_result};
         return CB_RESULT_LOCATION_DISALLOW;
     }
@@ -36,7 +37,7 @@
 <metal:check_industry_max_distance metal:define-macro="check_industry_max_distance">
     <!--! Check for a minimum distance to another industry type -->
     switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
-        location_check_industry_require_max_distance_to_another_industry_type(${location_check.industry_type_numeric_id}, ${location_check.distance})) {
+        location_check_industry_require_max_distance_to_another_industry_type(${location_check.params_as_nml_string})) {
         1: ${location_check.switch_result};
         return CB_RESULT_LOCATION_DISALLOW;
     }
@@ -46,7 +47,7 @@
 <metal:cluster metal:define-macro="cluster">
     <!--! Check for distance to related industry cluster -->
     switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
-        location_check_industry_require_cluster(${location_check.industry_type_numeric_id}, ${location_check.cluster_factor}, ${location_check.max_distance})) {
+        location_check_industry_require_cluster(${location_check.params_as_nml_string})) {
         1: ${location_check.switch_result};
         return CB_RESULT_LOCATION_DISALLOW;
     }
@@ -56,7 +57,7 @@
 <metal:town_industry_count metal:define-macro="town_industry_count">
     <!--! Check for count of industry type per town -->
     switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
-        location_check_industry_industry_town_count(${location_check.industry_type_numeric_id}, ${location_check.min_count}, ${location_check.max_count})) {
+        location_check_industry_industry_town_count(${location_check.params_as_nml_string})) {
         1: ${location_check.switch_result};
         return CB_RESULT_LOCATION_DISALLOW;
     }
@@ -66,7 +67,7 @@
 <metal:town_min_population metal:define-macro="town_min_population">
     <!--! Check for count of industry type per town -->
     switch (FEAT_INDUSTRIES, PARENT, ${location_check.switch_entry_point},
-        location_check_industry_town_min_population(${location_check.town_min_population})) {
+        location_check_industry_town_min_population(${location_check.params_as_nml_string})) {
         1: ${location_check.switch_result};
         return CB_RESULT_LOCATION_DISALLOW;
     }
@@ -78,7 +79,8 @@
         Flour Mill restricts layouts by date.
         This could be made more generic if needed.
     -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, location_check_industry_flour_mill_layouts_by_date()) {
+    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
+        location_check_industry_flour_mill_layouts_by_date(${location_check.params_as_nml_string})) {
         1: ${location_check.switch_result};
         return CB_RESULT_LOCATION_DISALLOW;
     }

@@ -980,6 +980,10 @@ class IndustryLocationCheck(object):
     def macro(self):
         return templates["location_check_macros_industry.pynml"].macros[self.macro_name]
 
+    @property
+    def params_as_nml_string(self):
+        return ",".join([str(param) for param in self.params])
+
 
 class IndustryLocationCheckTownIndustryCount(IndustryLocationCheck):
     """ Require specific count of industry type in a town """
@@ -998,6 +1002,7 @@ class IndustryLocationCheckTownIndustryCount(IndustryLocationCheck):
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
         self.switch_entry_point = "town_industry_count"
         self.macro_name = "town_industry_count"
+        self.params = [self.industry_type_numeric_id, self.min_count, self.max_count]
 
 
 class IndustryLocationCheckTownMinPopulation(IndustryLocationCheck):
@@ -1008,6 +1013,7 @@ class IndustryLocationCheckTownMinPopulation(IndustryLocationCheck):
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
         self.switch_entry_point = "town_min_population"
         self.macro_name = "town_min_population"
+        self.params = [self.town_min_population]
 
 
 class IndustryLocationCheckCluster(IndustryLocationCheck):
@@ -1022,6 +1028,11 @@ class IndustryLocationCheckCluster(IndustryLocationCheck):
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
         self.switch_entry_point = "cluster_" + str(self.industry_type_numeric_id)
         self.macro_name = "cluster"
+        self.params = [
+            self.industry_type_numeric_id,
+            self.cluster_factor,
+            self.max_distance,
+        ]
 
 
 class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
@@ -1035,6 +1046,7 @@ class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
         self.switch_entry_point = "min_distance_" + str(self.industry_type_numeric_id)
         self.macro_name = "check_industry_min_distance"
+        self.params = [self.industry_type_numeric_id, self.distance]
 
 
 class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
@@ -1050,15 +1062,7 @@ class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
         self.switch_entry_point = "max_distance_" + str(self.industry_type_numeric_id)
         self.macro_name = "check_industry_max_distance"
-
-
-class IndustryLocationCheckFounder(IndustryLocationCheck):
-    """ Ensures player can build irrespective of _industry_ location checks (tile checks still apply) """
-
-    def __init__(self):
-        self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
-        self.switch_entry_point = "check_founder"
-        self.macro_name = "check_founder"
+        self.params = [self.industry_type_numeric_id, self.distance]
 
 
 class IndustryLocationCheckCoastDistance(IndustryLocationCheck):
@@ -1068,6 +1072,7 @@ class IndustryLocationCheckCoastDistance(IndustryLocationCheck):
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
         self.switch_entry_point = "coast_distance"
         self.macro_name = "coast_distance"
+        self.params = []
 
 
 class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
@@ -1077,6 +1082,16 @@ class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
         self.switch_entry_point = "check_date"
         self.macro_name = "flour_mill_layouts_by_date"
+        self.params = []
+
+
+class IndustryLocationCheckFounder(IndustryLocationCheck):
+    """ Ensures player can build irrespective of _industry_ location checks (tile checks still apply) """
+
+    def __init__(self):
+        self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
+        self.switch_entry_point = "check_founder"
+        self.macro_name = "check_founder"
 
 
 class IndustryPermStorage(object):
