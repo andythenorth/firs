@@ -73,6 +73,18 @@
 </metal:town_min_population>
 
 
+<metal:flour_mill_layouts_by_date metal:define-macro="flour_mill_layouts_by_date">
+    <!--!
+        Flour Mill restricts layouts by date.
+        This could be made more generic if needed.
+    -->
+    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, location_check_industry_flour_mill_layouts_by_date()) {
+        1: ${location_check.switch_result};
+        return CB_RESULT_LOCATION_DISALLOW;
+    }
+</metal:flour_mill_layouts_by_date>
+
+
 <metal:check_founder metal:define-macro="check_founder">
     <!--!
         Check whether a certain location is suitable for building the industry
@@ -90,31 +102,3 @@
 </metal:check_founder>
 
 
-<metal:flour_mill_layouts_by_date metal:define-macro="flour_mill_layouts_by_date">
-    <!--!
-        Grain Mill restricts layouts by date.
-        This could be made more generic if needed.
-    -->
-
-    <!--! After 1900, windmills will only be built during map generation, not during gameplay (fake history). -->
-    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_brick_layouts_only_check_layout, var[0x86]) {
-        3..5: return CB_RESULT_LOCATION_DISALLOW;
-        ${location_check.switch_result};
-    }
-    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_brick_layouts_only, extra_callback_info2) {
-        IND_CREATION_GENERATION: ${location_check.switch_result};
-        ${industry.id}_brick_layouts_only_check_layout;
-    }
-    <!--! Before 1870, only windmills will be built. -->
-    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_windmill_layout_only, var[0x86]) {
-        3..5: ${location_check.switch_result};
-        return CB_RESULT_LOCATION_DISALLOW;
-    }
-    <!--! Both types of layouts can appear between 1870 and 1900.
-          Update the docs if changing graphics dates -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, current_year) {
-        0..1869:    ${industry.id}_windmill_layout_only;
-        1870..1900: ${location_check.switch_result};
-        ${industry.id}_brick_layouts_only;
-    }
-</metal:flour_mill_layouts_by_date>
