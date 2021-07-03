@@ -56,7 +56,7 @@
 <metal:town_industry_count metal:define-macro="town_industry_count">
     <!--! Check for count of industry type per town -->
     switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
-        location_check_industry_industry_town_count(${location_check.industry_type_numeric_id}, ${location_check.min_count}, ${location_check.max_count}) {
+        location_check_industry_industry_town_count(${location_check.industry_type_numeric_id}, ${location_check.min_count}, ${location_check.max_count})) {
         1: ${location_check.switch_result};
         return CB_RESULT_LOCATION_DISALLOW;
     }
@@ -65,9 +65,10 @@
 
 <metal:town_min_population metal:define-macro="town_min_population">
     <!--! Check for count of industry type per town -->
-    switch (FEAT_INDUSTRIES, PARENT, ${location_check.switch_entry_point}, population) {
-        0..${location_check.town_min_population - 1}: return CB_RESULT_LOCATION_DISALLOW;
-        return ${location_check.switch_result};
+    switch (FEAT_INDUSTRIES, PARENT, ${location_check.switch_entry_point},
+        location_check_industry_town_min_population(${location_check.town_min_population})) {
+        1: ${location_check.switch_result};
+        return CB_RESULT_LOCATION_DISALLOW;
     }
 </metal:town_min_population>
 

@@ -51,20 +51,20 @@ switch (FEAT_INDUSTRIES, SELF, location_check_industry_industry_town_count, indu
     return 0;
 }
 
+<!--! Check for minimum population of town -->
+switch (FEAT_INDUSTRIES, PARENT, location_check_industry_town_min_population, town_min_population,
+    [
+     population >= town_min_population
+    ]) {
+    1: return 1;
+    return 0;
+}
+
 <!--! legacy -->
 
 <!--! Location check macros -->
 
 <tal:drop replace="nothing">
-
-<metal:town_min_population metal:define-macro="town_min_population">
-    <!--! Check for count of industry type per town -->
-    switch (FEAT_INDUSTRIES, PARENT, ${location_check.switch_entry_point}, population) {
-        0..${location_check.town_min_population - 1}: return CB_RESULT_LOCATION_DISALLOW;
-        return ${location_check.switch_result};
-    }
-</metal:town_min_population>
-
 
 <metal:check_founder metal:define-macro="check_founder">
     <!--!
