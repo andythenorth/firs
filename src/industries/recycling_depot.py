@@ -9,7 +9,7 @@ industry = IndustryTownProducerPopulationDependent(
     life_type="IND_LIFE_TYPE_EXTRACTIVE",
     location_checks=dict(
         same_type_distance=16,
-        town_industry_count=["recycling_depot", 0, 0],
+        require_town_industry_count=["recycling_depot", 0, 0],
     ),
     name="string(STR_IND_RECYCLING_DEPOT)",
     nearby_station_name="string(STR_STATION_TOWN_2)",

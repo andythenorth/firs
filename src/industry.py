@@ -893,11 +893,19 @@ class IndustryLocationChecks(object):
     def __init__(self, industry, location_args={}):
         self.industry = industry
         self.same_type_distance = location_args.get("same_type_distance", None)
-        self.industry_max_distance = location_args.get("industry_max_distance", None)
-        self.cluster = location_args.get("cluster", None)
-        self.town_industry_count = location_args.get("town_industry_count", None)
-        self.town_min_population = location_args.get("town_min_population", None)
-        self.coast_distance = location_args.get("coast_distance", None)
+        self.require_max_distance_to_another_industry_type = location_args.get(
+            "require_max_distance_to_another_industry_type", None
+        )
+        self.require_cluster = location_args.get("require_cluster", None)
+        self.require_town_industry_count = location_args.get(
+            "require_town_industry_count", None
+        )
+        self.require_town_min_population = location_args.get(
+            "require_town_min_population", None
+        )
+        self.location_check_industry_disallow_too_far_from_coast = location_args.get(
+            "location_check_industry_disallow_too_far_from_coast", None
+        )
         # this is custom to grain mill, can be made generic if needed
         self.flour_mill_layouts_by_date = location_args.get(
             "flour_mill_layouts_by_date", None
@@ -908,13 +916,12 @@ class IndustryLocationChecks(object):
         # this could be reimplemented to just use numeric switch suffixes, as per tile location check tree
         result = deque([])
 
-        # industry location checks *alway* allow player to found industries (tile location checks still apply)
-        result.append(IndustryLocationCheckFounder())
-
-        if self.cluster:
-            # special case if clustering is used, cluster check handles max distance and cluster counts...
+        if self.require_cluster:
+            # special case if clustering is used, require_cluster check handles max distance and cluster counts...
             # ...and min distance is set to 20 for all types (as all clustered industries were using this value at time of writing)
-            result.append(IndustryLocationCheckCluster(self.industry.id, self.cluster))
+            result.append(
+                IndustryLocationCheckCluster(self.industry.id, self.require_cluster)
+            )
             result.append(
                 IndustryLocationCheckIndustryMinDistance(self.industry.id, 20)
             )
@@ -931,22 +938,24 @@ class IndustryLocationChecks(object):
                 IndustryLocationCheckIndustryMinDistance(self.industry.id, 56)
             )
 
-        if self.industry_max_distance:
+        if self.require_max_distance_to_another_industry_type:
             result.append(
-                IndustryLocationCheckIndustryMaxDistance(self.industry_max_distance)
+                IndustryLocationCheckIndustryMaxDistance(
+                    self.require_max_distance_to_another_industry_type
+                )
             )
 
-        if self.town_industry_count:
+        if self.require_town_industry_count:
             result.append(
-                IndustryLocationCheckTownIndustryCount(self.town_industry_count)
+                IndustryLocationCheckTownIndustryCount(self.require_town_industry_count)
             )
 
-        if self.town_min_population:
+        if self.require_town_min_population:
             result.append(
-                IndustryLocationCheckTownMinPopulation(self.town_min_population)
+                IndustryLocationCheckTownMinPopulation(self.require_town_min_population)
             )
 
-        if self.coast_distance:
+        if self.location_check_industry_disallow_too_far_from_coast:
             result.append(IndustryLocationCheckCoastDistance())
 
         if self.flour_mill_layouts_by_date:
@@ -964,7 +973,7 @@ class IndustryLocationChecks(object):
             if prev is not None:
                 lc.switch_result = prev.switch_entry_point
             prev = lc
-        result[0].switch_entry_point = switch_prefix + "check_location"
+        result[0].switch_entry_point = switch_prefix + "check_location_tree_entry_point"
         return list(reversed(result))
 
 
@@ -983,46 +992,46 @@ class IndustryLocationCheck(object):
 class IndustryLocationCheckTownIndustryCount(IndustryLocationCheck):
     """ Require specific count of industry type in a town """
 
-    def __init__(self, town_industry_count):
+    def __init__(self, require_town_industry_count):
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
         self.industry_type_numeric_id = get_another_industry(
-            town_industry_count[0]
+            require_town_industry_count[0]
         ).numeric_id
-        self.min_count = town_industry_count[1]
-        self.max_count = town_industry_count[2]
+        self.min_count = require_town_industry_count[1]
+        self.max_count = require_town_industry_count[2]
         if self.min_count != 0 or self.max_count != 0:
             utils.echo_message(
                 "IndustryLocationCheckTownIndustryCount uses a hardcoded error string limiting to 1 instance per town, add more strings to handle higher limits"
             )
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
-        self.switch_entry_point = "town_industry_count"
-        self.macro_name = "town_industry_count"
+        self.switch_entry_point = "require_town_industry_count"
+        self.macro_name = "require_town_industry_count"
         self.params = [self.industry_type_numeric_id, self.min_count, self.max_count]
 
 
 class IndustryLocationCheckTownMinPopulation(IndustryLocationCheck):
     """ Require the nearest town to have a minimum population """
 
-    def __init__(self, town_min_population):
-        self.town_min_population = town_min_population
+    def __init__(self, require_town_min_population):
+        self.min_population = require_town_min_population
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
-        self.switch_entry_point = "town_min_population"
-        self.macro_name = "town_min_population"
-        self.params = [self.town_min_population]
+        self.switch_entry_point = "require_town_min_population"
+        self.macro_name = "require_town_min_population"
+        self.params = [self.min_population]
 
 
 class IndustryLocationCheckCluster(IndustryLocationCheck):
     """ Require industries to locate in n clusters """
 
-    def __init__(self, industry_type, cluster):
+    def __init__(self, industry_type, require_cluster):
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
         self.industry_type_numeric_id = industry_type
-        self.max_distance = cluster[0]
+        self.max_distance = require_cluster[0]
         # cluster factor is a fudge, theoretically determines number of clusters per 256x256 section of map, but often irrelevant due to industry counts in any given combination of map/setting/economy/randomisation
-        self.cluster_factor = cluster[1]
+        self.cluster_factor = require_cluster[1]
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
         self.switch_entry_point = "cluster_" + str(self.industry_type_numeric_id)
-        self.macro_name = "cluster"
+        self.macro_name = "require_cluster"
         self.params = [
             self.industry_type_numeric_id,
             self.cluster_factor,
@@ -1040,23 +1049,23 @@ class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
         self.distance = distance
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
         self.switch_entry_point = "min_distance_" + str(self.industry_type_numeric_id)
-        self.macro_name = "check_industry_min_distance"
+        self.macro_name = "require_min_distance_to_another_industry_type"
         self.params = [self.industry_type_numeric_id, self.distance]
 
 
 class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
     """ Prevent locating near incompatible industry types """
 
-    def __init__(self, industry_max_distance):
-        self.industry_type = industry_max_distance[0]
+    def __init__(self, require_max_distance_to_another_industry_type):
+        self.industry_type = require_max_distance_to_another_industry_type[0]
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
         self.industry_type_numeric_id = get_another_industry(
             self.industry_type
         ).numeric_id
-        self.distance = industry_max_distance[1]
+        self.distance = require_max_distance_to_another_industry_type[1]
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
         self.switch_entry_point = "max_distance_" + str(self.industry_type_numeric_id)
-        self.macro_name = "check_industry_max_distance"
+        self.macro_name = "require_max_distance_to_another_industry_type"
         self.params = [self.industry_type_numeric_id, self.distance]
 
 
@@ -1065,8 +1074,8 @@ class IndustryLocationCheckCoastDistance(IndustryLocationCheck):
 
     def __init__(self):
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
-        self.switch_entry_point = "coast_distance"
-        self.macro_name = "coast_distance"
+        self.switch_entry_point = "disallow_too_far_from_coast"
+        self.macro_name = "disallow_too_far_from_coast"
         self.params = []
 
 
@@ -1078,15 +1087,6 @@ class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
         self.switch_entry_point = "check_date"
         self.macro_name = "flour_mill_layouts_by_date"
         self.params = []
-
-
-class IndustryLocationCheckFounder(IndustryLocationCheck):
-    """ Ensures player can build irrespective of _industry_ location checks (tile checks still apply) """
-
-    def __init__(self):
-        self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
-        self.switch_entry_point = "check_founder"
-        self.macro_name = "check_founder"
 
 
 class IndustryPermStorage(object):

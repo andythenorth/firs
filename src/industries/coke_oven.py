@@ -9,7 +9,8 @@ industry = IndustrySecondary(
     map_colour="183",
     # it's rare to force co-location of secondaries, but this one is near blast furnace by design
     location_checks=dict(
-        industry_max_distance=["blast_furnace", 72], same_type_distance=72
+        require_max_distance_to_another_industry_type=["blast_furnace", 72],
+        same_type_distance=72,
     ),
     name="string(STR_IND_COKE_OVEN)",
     nearby_station_name="string(STR_STATION_BANK_TOP)",

@@ -7,100 +7,24 @@
 
 <metal:render_tree metal:define-macro="render_tree">
     <tal:location_checks_industry define="location_checks industry.location_checks.get_render_tree(incompatible_industries)" repeat="location_check location_checks">
-        <tal:location_check_macro metal:use-macro="location_check.macro" />
+        switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
+            location_check_industry_${location_check.macro_name}(${location_check.params_as_nml_string})) {
+            1: ${location_check.switch_result};
+            return CB_RESULT_LOCATION_DISALLOW;
+        }
     </tal:location_checks_industry>
-</metal:render_tree>
-
-
-<!--! Location check macros -->
-
-<metal:coast_distance metal:define-macro="coast_distance">
-    <!--! Check for minimum distance to the coast -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
-        location_check_industry_disallow_too_far_from_coast(${location_check.params_as_nml_string})) {
-        1: ${location_check.switch_result};
-        return CB_RESULT_LOCATION_DISALLOW;
-    }
-</metal:coast_distance>
-
-
-<metal:check_industry_min_distance metal:define-macro="check_industry_min_distance">
-    <!--! Check for a minimum distance to another industry type -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
-        location_check_industry_require_min_distance_to_another_industry_type(${location_check.params_as_nml_string})) {
-        1: ${location_check.switch_result};
-        return CB_RESULT_LOCATION_DISALLOW;
-    }
-</metal:check_industry_min_distance>
-
-
-<metal:check_industry_max_distance metal:define-macro="check_industry_max_distance">
-    <!--! Check for a minimum distance to another industry type -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
-        location_check_industry_require_max_distance_to_another_industry_type(${location_check.params_as_nml_string})) {
-        1: ${location_check.switch_result};
-        return CB_RESULT_LOCATION_DISALLOW;
-    }
-</metal:check_industry_max_distance>
-
-
-<metal:cluster metal:define-macro="cluster">
-    <!--! Check for distance to related industry cluster -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
-        location_check_industry_require_cluster(${location_check.params_as_nml_string})) {
-        1: ${location_check.switch_result};
-        return CB_RESULT_LOCATION_DISALLOW;
-    }
-</metal:cluster>
-
-
-<metal:town_industry_count metal:define-macro="town_industry_count">
-    <!--! Check for count of industry type per town -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
-        location_check_industry_industry_town_count(${location_check.params_as_nml_string})) {
-        1: ${location_check.switch_result};
-        return CB_RESULT_LOCATION_DISALLOW;
-    }
-</metal:town_industry_count>
-
-
-<metal:town_min_population metal:define-macro="town_min_population">
-    <!--! Check for count of industry type per town -->
-    switch (FEAT_INDUSTRIES, PARENT, ${location_check.switch_entry_point},
-        location_check_industry_town_min_population(${location_check.params_as_nml_string})) {
-        1: ${location_check.switch_result};
-        return CB_RESULT_LOCATION_DISALLOW;
-    }
-</metal:town_min_population>
-
-
-<metal:flour_mill_layouts_by_date metal:define-macro="flour_mill_layouts_by_date">
-    <!--!
-        Flour Mill restricts layouts by date.
-        This could be made more generic if needed.
-    -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
-        location_check_industry_flour_mill_layouts_by_date(${location_check.params_as_nml_string})) {
-        1: ${location_check.switch_result};
-        return CB_RESULT_LOCATION_DISALLOW;
-    }
-</metal:flour_mill_layouts_by_date>
-
-
-<metal:check_founder metal:define-macro="check_founder">
     <!--!
         Check whether a certain location is suitable for building the industry
         Restrictions apply only to industries funded by the game.
-        founder == FOUNDER_GAME means founded by the game, 0 .. 15 are player companies */
+        founder == FOUNDER_GAME means founded by the game, 0 .. 15 are player companies.
+        *Alway* allow player to found industries (tile location checks still apply).
     -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, (
+    switch (FEAT_INDUSTRIES, SELF,${industry.id}_check_location, (
                 (extra_callback_info2 == IND_CREATION_FUND) ||
                 (extra_callback_info2 == IND_CREATION_PROSPECT)
                 )
             ) {
         1: return CB_RESULT_LOCATION_ALLOW;
-        ${location_check.switch_result};
+        ${industry.id}_check_location_tree_entry_point;
     }
-</metal:check_founder>
-
-
+</metal:render_tree>

@@ -9,7 +9,7 @@ industry = IndustryPrimaryOrganic(
     prospect_chance="0.75",
     name="string(STR_IND_VINEYARD)",
     extra_text_fund="string(STR_FUND_VINEYARD)",
-    location_checks=dict(cluster=[72, 4]),
+    location_checks=dict(require_cluster=[72, 4]),
     nearby_station_name="string(STR_STATION_WINERY)",
     fund_cost_multiplier="54",
     prod_multiplier="[11, 8]",

@@ -7,7 +7,7 @@ industry = IndustryPrimaryOrganic(
     prob_map_gen="10",
     map_colour="83",
     prospect_chance="0.75",
-    location_checks=dict(cluster=[72, 3]),
+    location_checks=dict(require_cluster=[72, 3]),
     name="TTD_STR_INDUSTRY_NAME_FOREST",
     extra_text_fund="string(STR_FUND_FOREST)",
     fund_cost_multiplier="95",

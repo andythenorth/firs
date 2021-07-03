@@ -6,7 +6,7 @@ industry = IndustryPrimaryOrganic(
     prob_in_game="4",
     prob_map_gen="11",
     map_colour="168",
-    location_checks=dict(cluster=[72, 4]),
+    location_checks=dict(require_cluster=[72, 4]),
     prospect_chance="0.75",
     name="string(STR_IND_SHEEPFARM)",
     nearby_station_name="string(STR_STATION_SHEEP_FOLD)",

@@ -6,7 +6,7 @@ industry = IndustryTownProducerPopulationDependent(
     prob_in_game="3",
     prob_map_gen="7",
     map_colour="64",
-    location_checks=dict(town_min_population=400),
+    location_checks=dict(require_town_min_population=400),
     prospect_chance="0.75",
     name="string(STR_IND_JUNKYARD)",
     nearby_station_name="string(STR_STATION_BONEYARD)",

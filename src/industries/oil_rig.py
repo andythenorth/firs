@@ -11,7 +11,7 @@ industry = IndustryPrimaryExtractive(
         "IND_FLAG_BUILT_ON_WATER",
         "IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES",
     ],
-    location_checks=dict(coast_distance=True),
+    location_checks=dict(location_check_industry_disallow_too_far_from_coast=True),
     prospect_chance="0.75",
     name="TTD_STR_INDUSTRY_NAME_OIL_RIG",
     nearby_station_name="string(STR_STATION_OIL_RIG)",

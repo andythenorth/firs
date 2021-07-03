@@ -7,7 +7,7 @@ industry = IndustryPrimaryExtractive(
     prob_map_gen="7",
     map_colour="45",
     # allow longer distance on clustering than usual, and more clusters, as industry is hard to locate
-    location_checks=dict(cluster=[90, 4]),
+    location_checks=dict(require_cluster=[90, 4]),
     prospect_chance="0.75",
     name="string(STR_IND_PHOSPHATE_MINE)",
     nearby_station_name="string(STR_STATION_PIT)",

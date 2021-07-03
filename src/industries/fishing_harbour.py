@@ -9,7 +9,9 @@ industry = IndustrySecondary(
     prob_map_gen="10",
     map_colour="169",
     special_flags=["IND_FLAG_BUILT_ON_WATER"],
-    location_checks=dict(industry_max_distance=["fishing_grounds", 72]),
+    location_checks=dict(
+        require_max_distance_to_another_industry_type=["fishing_grounds", 72]
+    ),
     name="string(STR_IND_FISHING_HARBOUR)",
     nearby_station_name="string(STR_STATION_FISHMARKET)",
     fund_cost_multiplier="150",

@@ -8,7 +8,7 @@ industry = IndustryPrimaryExtractive(
     prob_map_gen="7",
     prospect_chance="0.75",
     name="TTD_STR_INDUSTRY_NAME_IRON_ORE_MINE",
-    location_checks=dict(cluster=[70, 3]),
+    location_checks=dict(require_cluster=[70, 3]),
     nearby_station_name="string(STR_STATION_IRONSTONE)",
     fund_cost_multiplier="232",
 )

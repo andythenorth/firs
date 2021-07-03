@@ -10,7 +10,7 @@ industry = IndustryPrimaryOrganic(
     name="TTD_STR_INDUSTRY_NAME_RUBBER_PLANTATION",
     extra_text_fund="string(STR_FUND_RUBBER_PLANTATION)",
     nearby_station_name="string(STR_STATION_TAPPERS_SHED)",
-    location_checks=dict(cluster=[72, 4]),
+    location_checks=dict(require_cluster=[72, 4]),
     fund_cost_multiplier="54",
     override_default_construction_states=True,
 )

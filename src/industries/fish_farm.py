@@ -14,7 +14,9 @@ industry = IndustryPrimaryOrganic(
         "IND_FLAG_NO_PRODUCTION_INCREASE",
         "IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES",
     ],
-    location_checks=dict(cluster=[60, 5], coast_distance=True),
+    location_checks=dict(
+        cluster=[60, 5], location_check_industry_disallow_too_far_from_coast=True
+    ),
     prospect_chance="0.75",
     name="string(STR_IND_FISH_FARM)",
     nearby_station_name="string(STR_STATION_SEAFOOD)",  # appears to not work - maybe water industries don't accept station names?
