@@ -46,11 +46,9 @@
 <metal:cluster metal:define-macro="cluster">
     <!--! Check for distance to related industry cluster -->
     switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
-                industry_count(${location_check.industry_type_numeric_id}) >= (${location_check.cluster_factor} * industry_clusters) &&
-                industry_distance(${location_check.industry_type_numeric_id}) > ${location_check.max_distance}
-            ) {
-        1: return CB_RESULT_LOCATION_DISALLOW;
-        ${location_check.switch_result};
+        location_check_industry_require_cluster(${location_check.industry_type_numeric_id}, ${location_check.cluster_factor}, ${location_check.max_distance})) {
+        1: ${location_check.switch_result};
+        return CB_RESULT_LOCATION_DISALLOW;
     }
 </metal:cluster>
 
