@@ -66,7 +66,7 @@ switch (FEAT_INDUSTRIES, PARENT, location_check_industry_require_town_min_popula
     This could be made more generic if needed -->
 
 <!--! After 1900, windmills will only be built during map generation, not during gameplay (fake history). -->
-switch (FEAT_INDUSTRIES, SELF, location_check_industry_flour_mill_layouts_by_date_brick_layouts_only_check_layout, var[0x86]) {
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_flour_mill_layouts_by_date_brick_layouts_only_check_layout, layout_num) {
     3..5: return 0;
     return 1;
 }
@@ -75,7 +75,7 @@ switch (FEAT_INDUSTRIES, SELF, location_check_industry_flour_mill_layouts_by_dat
     location_check_industry_flour_mill_layouts_by_date_brick_layouts_only_check_layout;
 }
 <!--! Before 1870, only windmills will be built. -->
-switch (FEAT_INDUSTRIES, SELF, location_check_industry_flour_mill_layouts_by_date_windmill_layout_only, var[0x86]) {
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_flour_mill_layouts_by_date_windmill_layout_only, layout_num) {
     3..5: return 1;
     return 0;
 }
