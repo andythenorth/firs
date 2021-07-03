@@ -892,9 +892,6 @@ class IndustryLocationChecks(object):
 
     def __init__(self, industry, location_args={}):
         self.industry = industry
-        self.prevent_player_founding = location_args.get(
-            "prevent_player_founding", False
-        )
         self.same_type_distance = location_args.get("same_type_distance", None)
         self.industry_max_distance = location_args.get("industry_max_distance", None)
         self.cluster = location_args.get("cluster", None)
@@ -911,10 +908,8 @@ class IndustryLocationChecks(object):
         # this could be reimplemented to just use numeric switch suffixes, as per tile location check tree
         result = deque([])
 
-        # usually industry location checks *alway* allow player to found industries (tile location checks still apply)
-        # *very rarely* we need to prevent player founding (e.g. recycling depot, where production depends on town population)
-        if not self.prevent_player_founding:
-            result.append(IndustryLocationCheckFounder())
+        # industry location checks *alway* allow player to found industries (tile location checks still apply)
+        result.append(IndustryLocationCheckFounder())
 
         if self.cluster:
             # special case if clustering is used, cluster check handles max distance and cluster counts...
