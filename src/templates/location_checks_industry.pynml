@@ -13,7 +13,7 @@ switch (FEAT_INDUSTRIES, SELF, location_check_industry_require_min_distance_to_a
 }
 
 
-<!--! Check for a minimum distance to another industry type
+<!--! Check for a maximum distance to another industry type
       Don't check distance if there are none of the target industries on the map,
       as that causes pathological cases on small maps, or low industry counts.
       This makes the max distance check ineffective in some cases, but the alternative is red messages to players at game start -->
@@ -28,24 +28,20 @@ switch (FEAT_INDUSTRIES, SELF, location_check_industry_require_max_distance_to_a
     return 0;
 }
 
+<!--! Check for distance to related industry cluster -->
+switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
+            industry_count(${location_check.industry_type_numeric_id}) >= (${location_check.cluster_factor} * industry_clusters) &&
+            industry_distance(${location_check.industry_type_numeric_id}) > ${location_check.max_distance}
+        ) {
+    1: return CB_RESULT_LOCATION_DISALLOW;
+    ${location_check.switch_result};
+}
+
 <!--! legacy -->
 
 <!--! Location check macros -->
 
 <tal:drop replace="nothing">
-
-
-<metal:cluster metal:define-macro="cluster">
-    <!--! Check for distance to related industry cluster -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
-                industry_count(${location_check.industry_type_numeric_id}) >= (${location_check.cluster_factor} * industry_clusters) &&
-                industry_distance(${location_check.industry_type_numeric_id}) > ${location_check.max_distance}
-            ) {
-        1: return CB_RESULT_LOCATION_DISALLOW;
-        ${location_check.switch_result};
-    }
-</metal:cluster>
-
 
 <metal:town_industry_count metal:define-macro="town_industry_count">
     <!--! Check for count of industry type per town -->
