@@ -1,11 +1,5 @@
-<!--!
-    Location checks are defined as macros, to use these load the template as an object and call the macro from the macros dict
-    e.g. foo.macros[macro_name] where foo has been loaded in a python script or in a chameleon template
--->
-
-<!--! Loop to render the location checks tree -->
-
 <metal:render_tree metal:define-macro="render_tree">
+    <!--! checks that only apply when the game is constructing the industry, not the player -->
     switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_location_post_player_founding_checks,
         [
         <!--! assumes all checks return 1 for allow and 0 otherwise, then we just AND all the results -->
@@ -32,6 +26,7 @@
         1: return CB_RESULT_LOCATION_ALLOW;
         ${industry.id}_check_location_post_player_founding_checks;
     }
+    <!--! checks that apply to both player and game constructing the industry, e.g. date restricted layouts -->
     switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_location,
         [
         <!--! assumes all checks return 1 for allow and 0 otherwise, then we just AND all the results -->
