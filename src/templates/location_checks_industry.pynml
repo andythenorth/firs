@@ -12,26 +12,27 @@ switch (FEAT_INDUSTRIES, SELF, location_check_industry_require_min_distance_to_a
     return 0;
 }
 
+
+<!--! Check for a minimum distance to another industry type
+      Don't check distance if there are none of the target industries on the map,
+      as that causes pathological cases on small maps, or low industry counts.
+      This makes the max distance check ineffective in some cases, but the alternative is red messages to players at game start -->
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_require_max_distance_to_another_industry_type_2, industry_type_numeric_id, max_distance,
+    [industry_distance(industry_type_numeric_id) <= max_distance]) {
+    1: return 1;
+    return 0;
+}
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_require_max_distance_to_another_industry_type, industry_type_numeric_id, max_distance,
+    [industry_count(industry_type_numeric_id) == 0 ? 1 : location_check_industry_require_max_distance_to_another_industry_type_2(industry_type_numeric_id, max_distance)]) {
+    1: return 1;
+    return 0;
+}
+
 <!--! legacy -->
 
 <!--! Location check macros -->
 
 <tal:drop replace="nothing">
-
-<metal:check_industry_max_distance metal:define-macro="check_industry_max_distance">
-    <!--! Check for a minimum distance to another industry type -->
-    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_industry_max_distance_2, industry_distance(${location_check.industry_type_numeric_id})) {
-        0 .. ${location_check.distance}: ${location_check.switch_result};
-        return CB_RESULT_LOCATION_DISALLOW;
-    }
-    <!--! Don't check distance if there are none of the target industries on the map,
-          as that causes pathological cases on small maps, or low industry counts.
-          This makes the max distance check ineffective in some cases, but the alternative is red messages to players at game start -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, industry_count(${location_check.industry_type_numeric_id})) {
-        0: ${location_check.switch_result};
-        ${industry.id}_check_industry_max_distance_2;
-    }
-</metal:check_industry_max_distance>
 
 
 <metal:cluster metal:define-macro="cluster">
