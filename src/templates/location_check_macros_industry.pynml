@@ -6,12 +6,17 @@
 <!--! Loop to render the location checks tree -->
 
 <metal:render_tree metal:define-macro="render_tree">
-    <tal:location_checks_industry repeat="location_check industry.location_checks.get_render_tree(incompatible_industries)">
-        switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, ${location_check.procedure_name_and_params_as_nml_string}) {
-            1: ${location_check.switch_result};
-            return CB_RESULT_LOCATION_DISALLOW;
-        }
-    </tal:location_checks_industry>
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_location_tree_entry_point,
+        [
+        <!--! assumes all checks return 1 for allow and 0 otherwise, then we just AND all the results -->
+        <tal:location_checks_industry repeat="location_check industry.location_checks.get_render_tree(incompatible_industries)">
+            ${location_check.procedure_name_and_params_as_nml_string}
+            ${'&&' if not repeat.location_check.end else ''}
+        </tal:location_checks_industry>
+        ]) {
+        1: return CB_RESULT_LOCATION_ALLOW;
+        return CB_RESULT_LOCATION_DISALLOW;
+    }
     <!--!
         Check whether a certain location is suitable for building the industry
         Restrictions apply only to industries funded by the game.
