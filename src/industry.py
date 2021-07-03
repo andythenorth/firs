@@ -985,8 +985,15 @@ class IndustryLocationCheck(object):
         return templates["location_check_macros_industry.pynml"].macros[self.macro_name]
 
     @property
-    def params_as_nml_string(self):
-        return ",".join([str(param) for param in self.params])
+    def procedure_name_and_params_as_nml_string(self):
+        params_as_nml_string = ",".join([str(param) for param in self.params])
+        return (
+            "location_check_industry_"
+            + self.macro_name
+            + "("
+            + params_as_nml_string
+            + ")"
+        )
 
 
 class IndustryLocationCheckTownIndustryCount(IndustryLocationCheck):

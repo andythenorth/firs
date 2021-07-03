@@ -7,8 +7,7 @@
 
 <metal:render_tree metal:define-macro="render_tree">
     <tal:location_checks_industry repeat="location_check industry.location_checks.get_render_tree(incompatible_industries)">
-        switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point},
-            location_check_industry_${location_check.macro_name}(${location_check.params_as_nml_string})) {
+        switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, ${location_check.procedure_name_and_params_as_nml_string}) {
             1: ${location_check.switch_result};
             return CB_RESULT_LOCATION_DISALLOW;
         }
