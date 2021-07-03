@@ -41,20 +41,21 @@ switch (FEAT_INDUSTRIES, SELF, location_check_industry_require_cluster, industry
     return 0;
 }
 
+<!--! Check for count of industry type per town
+      Can be used to limit maximum count of an industry type, or to check for at least n instances already in the town (of another industry type) -->
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_industry_town_count, industry_type_numeric_id, min_count, max_count,
+        [
+         min_count <= industry_town_count(industry_type_numeric_id) < max_count
+        ]) {
+    1: return 1;
+    return 0;
+}
+
 <!--! legacy -->
 
 <!--! Location check macros -->
 
 <tal:drop replace="nothing">
-
-<metal:town_industry_count metal:define-macro="town_industry_count">
-    <!--! Check for count of industry type per town -->
-    switch (FEAT_INDUSTRIES, SELF, ${location_check.switch_entry_point}, industry_town_count(${location_check.industry_type_numeric_id})) {
-        ${location_check.min_count} .. ${location_check.max_count}: ${location_check.switch_result};
-        return string(STR_ERR_LOCATION_LIMIT_1_PER_TOWN);
-    }
-</metal:town_industry_count>
-
 
 <metal:town_min_population metal:define-macro="town_min_population">
     <!--! Check for count of industry type per town -->
