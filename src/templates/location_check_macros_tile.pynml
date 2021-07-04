@@ -146,13 +146,13 @@
         2. Not necessary for most town industries
     -->
     switch(FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point},
-        (nearby_tile_class( 1,  1) == TILE_CLASS_INDUSTRY) |
-        (nearby_tile_class( 1,  0) == TILE_CLASS_INDUSTRY) |
-        (nearby_tile_class( 1, -1) == TILE_CLASS_INDUSTRY) |
-        (nearby_tile_class( 0, -1) == TILE_CLASS_INDUSTRY) |
-        (nearby_tile_class(-1, -1) == TILE_CLASS_INDUSTRY) |
-        (nearby_tile_class(-1,  0) == TILE_CLASS_INDUSTRY) |
-        (nearby_tile_class(-1,  1) == TILE_CLASS_INDUSTRY) |
+        (nearby_tile_class( 1,  1) == TILE_CLASS_INDUSTRY) ||
+        (nearby_tile_class( 1,  0) == TILE_CLASS_INDUSTRY) ||
+        (nearby_tile_class( 1, -1) == TILE_CLASS_INDUSTRY) ||
+        (nearby_tile_class( 0, -1) == TILE_CLASS_INDUSTRY) ||
+        (nearby_tile_class(-1, -1) == TILE_CLASS_INDUSTRY) ||
+        (nearby_tile_class(-1,  0) == TILE_CLASS_INDUSTRY) ||
+        (nearby_tile_class(-1,  1) == TILE_CLASS_INDUSTRY) ||
         (nearby_tile_class( 0,  1) == TILE_CLASS_INDUSTRY)) {
         1: return CB_RESULT_LOCATION_DISALLOW;
         ${location_check.switch_result};
