@@ -9,6 +9,10 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     substitute="14",
     map_colour="164",
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[["forest"], 96],
+        same_type_distance=96,
+    ),
     fund_cost_multiplier="120",
     nearby_station_name="string(STR_STATION_MILL)",
     name="TTD_STR_INDUSTRY_NAME_PAPER_MILL",
