@@ -1,6 +1,37 @@
 Changelog
 =========
 
+
+-------------
+4.2.0 Release
+-------------
+
+**FIRS 4.2.0 is not savegame-compatible with any previous version of FIRS.**
+
+*Changes*
+
+- reworked location checks for certain processing industries so they always locate within reasonable distance of at least one other industry type in their chain
+    - checks for primary (input) sources added for:
+        - Cement Plant
+        - Cider Mill
+        - Copper Refinery
+        - Dairy
+        - Food Processing Plant
+        - Lime Kiln
+        - Paper Mill
+        - Sawmill
+    - added Fish Farm to Fishing Harbour, which previously only checked for Fishing Grounds
+    - added Coal Mine to Coke Oven, which previously only checked for Blast Furnace
+    - added Electric Arc Furnace and Basic Oxygen Furnace to Slag Grinding Plant, which previously only checked for Blast Furnace
+    - most other processing industries do not use this location check by design, and may require cargo to be transported a long distance, for gameplay reasons ;)
+
+
+*Codechanges*
+
+- rewrote location check handling to use procedures
+- split Cider Mill into a separate industry from Brewery, for simplicity of location checks
+
+
 -------------
 4.1.0 Release
 -------------
