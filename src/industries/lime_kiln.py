@@ -11,7 +11,10 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="119",
     location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[["quarry", "limestone_mine"], 72],
+        near_at_least_one_of_these_keystone_industries=[
+            ["quarry", "limestone_mine"],
+            72,
+        ],
         same_type_distance=72,
     ),
     name="string(STR_IND_LIME_KILN)",
