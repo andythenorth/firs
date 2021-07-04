@@ -10,7 +10,7 @@ industry = IndustrySecondary(
     map_colour="169",
     special_flags=["IND_FLAG_BUILT_ON_WATER"],
     location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[["fishing_grounds"], 72]
+        near_at_least_one_of_these_keystone_industries=[["fishing_grounds", "fish_farm"], 72]
     ),
     name="string(STR_IND_FISHING_HARBOUR)",
     nearby_station_name="string(STR_STATION_FISHMARKET)",
