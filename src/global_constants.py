@@ -98,7 +98,7 @@ industry_numeric_ids = dict(
     wire_and_section_mill=95,
     body_plant=96,
     ###BLTC###tinplate_works = 97,
-    # unused = 98,
+    cider_mill = 98,
     ###BLTC###ethylene_cracker = 99,
     ###BLTC###factory_1 = 100,
     ###BLTC###factory_2 = 101,
@@ -122,6 +122,8 @@ industry_numeric_ids = dict(
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
 tile_numeric_ids = dict(
+    cider_mill_tile_1=88,
+    cider_mill_tile_2=89,
     polyethylene_plant_tile_1=90,
     polypropylene_plant_tile_1=91,
     sulphuric_acid_plant_tile_1=92,
