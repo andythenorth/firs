@@ -8,7 +8,10 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="191",
-    # no industry location checks for cider_mill, by design
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[["orchard_piggery"], 72],
+        same_type_distance=72,
+    ),
     name="string(STR_IND_CIDER_MILL)",
     nearby_station_name="string(STR_STATION_BARREL_AND_KEG)",
     fund_cost_multiplier="50",
