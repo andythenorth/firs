@@ -6,10 +6,7 @@ industry = IndustryPrimaryExtractive(
     prob_in_game="7",
     prob_map_gen="7",
     map_colour="10",
-    location_checks=dict(require_cluster=[60, 3]),
-    # it's rare to force co-location of secondaries, but this one is near copper mine by design
-    # !! won't work in Tropic Basic, no concentrator
-    # location_checks=dict(near_at_least_one_of_these_keystone_industries=[['copper_concentrator'], 72]),
+    location_checks=dict(require_cluster=[70, 3]),
     prospect_chance="0.75",
     name="TTD_STR_INDUSTRY_NAME_COPPER_ORE_MINE",
     nearby_station_name="string(STR_STATION_COPPER_LODE)",
