@@ -8,6 +8,11 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="19",
+    # the keystones are quite specific to IAHC, and location checks aren't economy specific, so this might need adjusted if other economies gain cement plant
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[["quarry", "phosphate_mine"], 96],
+        same_type_distance=96,
+    ),
     special_flags=["IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE"],
     name="string(STR_IND_CEMENT_PLANT)",
     nearby_station_name="string(STR_STATION_SILO)",
