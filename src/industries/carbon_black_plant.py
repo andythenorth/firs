@@ -11,7 +11,7 @@ industry = IndustrySecondary(
     special_flags=["IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE"],
     # it's rare to force co-location of secondaries, but this one is near coke oven by design
     location_checks=dict(
-        require_max_distance_to_another_industry_type=["coke_oven", 72],
+        near_at_least_one_of_these_keystone_industries=[["coke_oven"], 72],
         same_type_distance=72,
     ),
     name="string(STR_IND_CARBON_BLACK_PLANT)",

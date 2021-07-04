@@ -893,8 +893,8 @@ class IndustryLocationChecks(object):
     def __init__(self, industry, location_args={}):
         self.industry = industry
         self.same_type_distance = location_args.get("same_type_distance", None)
-        self.require_max_distance_to_another_industry_type = location_args.get(
-            "require_max_distance_to_another_industry_type", None
+        self.near_at_least_one_of_these_keystone_industries = location_args.get(
+            "near_at_least_one_of_these_keystone_industries", None
         )
         self.require_cluster = location_args.get("require_cluster", None)
         self.require_town_industry_count = location_args.get(
@@ -923,12 +923,14 @@ class IndustryLocationChecks(object):
         # checks where satisyfing any of the conditions is enough
         result = []
 
-        if self.require_max_distance_to_another_industry_type:
-            result.append(
-                IndustryLocationCheckIndustryMaxDistance(
-                    self.require_max_distance_to_another_industry_type
+        if self.near_at_least_one_of_these_keystone_industries:
+            for industry_type in self.near_at_least_one_of_these_keystone_industries[0]:
+                result.append(
+                    IndustryLocationCheckIndustryMaxDistance(
+                        industry_type,
+                        self.near_at_least_one_of_these_keystone_industries[1],
+                    )
                 )
-            )
         return result
 
     def get_post_player_founding_checks_AND(self, incompatible_industries):
@@ -955,13 +957,6 @@ class IndustryLocationChecks(object):
             # enforce a default min distance to other industries of same type
             result.append(
                 IndustryLocationCheckIndustryMinDistance(self.industry.id, 56)
-            )
-
-        if self.require_max_distance_to_another_industry_type:
-            result.append(
-                IndustryLocationCheckIndustryMaxDistance(
-                    self.require_max_distance_to_another_industry_type
-                )
             )
 
         if self.require_town_industry_count:
@@ -1064,13 +1059,10 @@ class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
 class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
     """ Prevent locating near incompatible industry types """
 
-    def __init__(self, require_max_distance_to_another_industry_type):
-        self.industry_type = require_max_distance_to_another_industry_type[0]
+    def __init__(self, industry_type, distance):
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
-        self.industry_type_numeric_id = get_another_industry(
-            self.industry_type
-        ).numeric_id
-        self.distance = require_max_distance_to_another_industry_type[1]
+        self.industry_type_numeric_id = get_another_industry(industry_type).numeric_id
+        self.distance = distance
         self.macro_name = "require_max_distance_to_another_industry_type"
         self.params = [self.industry_type_numeric_id, self.distance]
 

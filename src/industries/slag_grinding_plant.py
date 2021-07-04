@@ -8,9 +8,9 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="19",
     special_flags=["IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE"],
-    # it's rare to force co-location of secondaries, but this one is near blast furnace by design
     location_checks=dict(
-        require_max_distance_to_another_industry_type=["blast_furnace", 72],
+        near_at_least_one_of_these_keystone_industries=[["blast_furnace"], 72],
+        #near_at_least_one_of_these_keystone_industries=[["blast_furnace", "basic_oxygen_furnace", "electric_arc_furnace"], 72],
         same_type_distance=72,
     ),
     name="string(STR_IND_SLAG_GRINDING_PLANT)",
