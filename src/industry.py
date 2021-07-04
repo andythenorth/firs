@@ -919,7 +919,20 @@ class IndustryLocationChecks(object):
 
         return result
 
-    def get_post_player_founding_checks(self, incompatible_industries):
+    def get_post_player_founding_checks_OR(self, incompatible_industries):
+        # checks where satisyfing any of the conditions is enough
+        result = []
+
+        if self.require_max_distance_to_another_industry_type:
+            result.append(
+                IndustryLocationCheckIndustryMaxDistance(
+                    self.require_max_distance_to_another_industry_type
+                )
+            )
+        return result
+
+    def get_post_player_founding_checks_AND(self, incompatible_industries):
+        # checks where all conditions must be satisfied
         result = []
 
         if self.require_cluster:

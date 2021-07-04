@@ -1,10 +1,13 @@
 <!--! Check whether a certain location is suitable for building the industry -->
 
 <!--! checks that only apply when the game is constructing the industry, not the player -->
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_location_post_player_founding_checks,
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_location_post_player_founding_checks_AND,
     [
-    <!--! assumes all checks return 1 for allow and 0 otherwise, then we just AND all the results -->
-    <tal:location_checks_industry repeat="location_check industry.location_checks.get_post_player_founding_checks(incompatible_industries)">
+    <!--!
+        checks where ALL condiitions must be met
+        assumes all checks return 1 for allow and 0 otherwise, then we just AND all the results
+    -->
+    <tal:location_checks_industry repeat="location_check industry.location_checks.get_post_player_founding_checks_AND(incompatible_industries)">
         ${location_check.procedure_name_and_params_as_nml_string}
         ${'&&' if not repeat.location_check.end else ''}
     </tal:location_checks_industry>
@@ -22,7 +25,7 @@ switch (FEAT_INDUSTRIES, SELF,${industry.id}_check_location_allow_player_foundin
             )
         ) {
     1: return CB_RESULT_LOCATION_ALLOW;
-    ${industry.id}_check_location_post_player_founding_checks;
+    ${industry.id}_check_location_post_player_founding_checks_AND;
 }
 <!--! checks that apply to both player and game constructing the industry, e.g. date restricted layouts -->
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_location,
