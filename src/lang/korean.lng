@@ -69,8 +69,9 @@ STR_CARGO_NAME_GLASS                                                            
 STR_CARGO_NAME_HYDROCHLORIC_ACID                                                :{G=m}염산
 STR_CARGO_NAME_KAOLIN                                                           :{G=f}고령토
 STR_CARGO_NAME_LIMESTONE                                                        :{G=m}석회석
+STR_CARGO_NAME_LOGS                                                             :{G=f}목재
 STR_CARGO_NAME_LUMBER                                                           :{G=m}제재목
-# cargo uses Sodium Hydroxide as name string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
+# cargo uses Sodium Hydroxide as string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
 STR_CARGO_NAME_LYE                                                              :{G=m}수산화나트륨
 STR_CARGO_NAME_METAL                                                            :{G=m}금속
 STR_CARGO_NAME_METHANE                                                          :{G=m}메탄
@@ -168,8 +169,9 @@ STR_CARGO_UNIT_GLASS                                                            
 STR_CARGO_UNIT_HYDROCHLORIC_ACID                                                :염산 {VOLUME}
 STR_CARGO_UNIT_KAOLIN                                                           :고령토 {WEIGHT}
 STR_CARGO_UNIT_LIMESTONE                                                        :석회석 {WEIGHT}
+STR_CARGO_UNIT_LOGS                                                             :목재 {WEIGHT}
 STR_CARGO_UNIT_LUMBER                                                           :제재목 {WEIGHT}
-# needs renamed if Lye is changed to Sodium Hydroxide permanently
+# cargo uses Sodium Hydroxide as string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
 STR_CARGO_UNIT_LYE                                                              :수산화나트륨 {VOLUME}
 STR_CARGO_UNIT_MANGANESE                                                        :망가니즈 {WEIGHT}
 STR_CARGO_UNIT_METAL                                                            :금속 {WEIGHT}
@@ -267,8 +269,9 @@ STR_CID_GLASS                                                                   
 STR_CID_HYDROCHLORIC_ACID                                                       :{TINYFONT}염
 STR_CID_KAOLIN                                                                  :{TINYFONT}토
 STR_CID_LIMESTONE                                                               :{TINYFONT}회
-STR_CID_LUMBER                                                                  :{TINYFONT}목
-# needs renamed if Lye is changed to Sodium Hydroxide permanently
+STR_CID_LOGS                                                                    :{TINYFONT}목
+STR_CID_LUMBER                                                                  :{TINYFONT}제
+# cargo uses Sodium Hydroxide as name string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
 STR_CID_LYE                                                                     :{TINYFONT}수
 STR_CID_MANGANESE                                                               :{TINYFONT}망
 STR_CID_METAL                                                                   :{TINYFONT}금
