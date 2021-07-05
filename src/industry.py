@@ -926,12 +926,18 @@ class IndustryLocationChecks(object):
         if self.near_at_least_one_of_these_keystone_industries:
             for industry_type in self.near_at_least_one_of_these_keystone_industries[0]:
                 # if the ID of the keystone type is higher than the current industry, the current industry won't be built on smaller maps or low industry settings
-                if self.industry.numeric_id < (get_another_industry(industry_type).numeric_id):
+                if self.industry.numeric_id < (
+                    get_another_industry(industry_type).numeric_id
+                ):
                     utils.echo_message("oof " + self.industry.id + " " + industry_type)
+                    permissive_flag = 1
+                else:
+                    permissive_flag = 0
                 result.append(
                     IndustryLocationCheckIndustryMaxDistance(
                         industry_type,
                         self.near_at_least_one_of_these_keystone_industries[1],
+                        permissive_flag,
                     )
                 )
         return result
@@ -1060,14 +1066,19 @@ class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
 
 
 class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
-    """ Prevent locating near incompatible industry types """
+    """ Check distance to another industry type """
 
-    def __init__(self, industry_type, distance):
+    def __init__(self, industry_type, distance, permissive_flag):
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
         self.industry_type_numeric_id = get_another_industry(industry_type).numeric_id
         self.distance = distance
+        self.permissive_flag = permissive_flag
         self.macro_name = "require_max_distance_to_another_industry_type"
-        self.params = [self.industry_type_numeric_id, self.distance]
+        self.params = [
+            self.industry_type_numeric_id,
+            self.distance,
+            self.permissive_flag,
+        ]
 
 
 class IndustryLocationCheckCoastDistance(IndustryLocationCheck):

@@ -10,8 +10,9 @@ industry = IndustrySecondary(
     map_colour="191",
     # it's rare to force co-location of secondaries, but this one is near port by design
     # !! this will fail if port is not available in economy
+    # wharf was added to avoid pathological case in Arctic Basic where checking for only port would often fail to yield a location (for reasons I didn't fully understand eh)
     location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[["port"], 96],
+        near_at_least_one_of_these_keystone_industries=[["port", "wharf"], 96],
         same_type_distance=128,
     ),
     name="string(STR_IND_CHEMICAL_PLANT)",
