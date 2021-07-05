@@ -3,6 +3,15 @@ Changelog
 
 
 -------------
+4.2.1 Release
+-------------
+
+*Fixes*
+
+- adjust location checks added in 4.2.0 to make it much less likely that some types will never be built on small maps / low industry setting
+
+
+-------------
 4.2.0 Release
 -------------
 
@@ -24,6 +33,7 @@ Changelog
     - added Coal Mine to Coke Oven, which previously only checked for Blast Furnace
     - added Electric Arc Furnace and Basic Oxygen Furnace to Slag Grinding Plant, which previously only checked for Blast Furnace
     - most other processing industries do not use this location check by design, and may require cargo to be transported a long distance, for gameplay reasons ;)
+- increase spacing between industries to 2 tiles (was 1 tile)
 
 
 *Codechanges*
