@@ -925,6 +925,9 @@ class IndustryLocationChecks(object):
 
         if self.near_at_least_one_of_these_keystone_industries:
             for industry_type in self.near_at_least_one_of_these_keystone_industries[0]:
+                # if the ID of the keystone type is higher than the current industry, the current industry won't be built on smaller maps or low industry settings
+                if self.industry.numeric_id < (get_another_industry(industry_type).numeric_id):
+                    utils.echo_message("oof " + self.industry.id + " " + industry_type)
                 result.append(
                     IndustryLocationCheckIndustryMaxDistance(
                         industry_type,
