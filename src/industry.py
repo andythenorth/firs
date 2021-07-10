@@ -1628,20 +1628,20 @@ class IndustryPrimary(Industry):
         self.supply_requirements = None  # default None, set appropriately by subclasses
         self.perm_storage = IndustryPermStorage(
             [
-                "unused",  # amount of supplies delivered this month
+                "unused",
                 "unused",
                 "unused",
                 "var_current_supplies_prod_factor",
-                # date of last cargo delivery, per cargo (max 8 input cargos)
-                # usually will just be supplies, except for ports
-                "date_received_cargo_1",
-                "date_received_cargo_2",
-                "date_received_cargo_3",
-                "date_received_cargo_4",
-                "date_received_cargo_5",
-                "date_received_cargo_6",
-                "date_received_cargo_7",
-                "date_received_cargo_8",
+                # used by industry text window to display 'supplied' or not
+                # usually will just be supplies in slot 1 for primaries, except for port-type industries
+                "supplied_cycles_remaining_cargo_1",
+                "supplied_cycles_remaining_cargo_2",
+                "supplied_cycles_remaining_cargo_3",
+                "supplied_cycles_remaining_cargo_4",
+                "supplied_cycles_remaining_cargo_5",
+                "supplied_cycles_remaining_cargo_6",
+                "supplied_cycles_remaining_cargo_7",
+                "supplied_cycles_remaining_cargo_8",
                 # amount of supplies delivered in each of 27 recent production cycles (27 is nice approximation to 3 months, in player's favour given varying month lengths)
                 "var_num_supplies_delivered_1",
                 "var_num_supplies_delivered_2",
