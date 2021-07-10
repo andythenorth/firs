@@ -23,7 +23,6 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, [
                     ${getattr(industry.perm_storage, 'supplied_cycles_remaining_cargo_' + str(repeat.cargo.number))}
                 )
             ]) {
-            <!--! delivery is tracked across 27 cycles of the 256 tick production cb -->
             0: return 0x3800 + string(STR_EMPTY);
             return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG);
         }
