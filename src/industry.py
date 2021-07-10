@@ -1101,12 +1101,11 @@ class IndustryPermStorage(object):
     """ sparse class mapping properties names to int numbers 1-16, used to aid readability when using STORE_PERM and LOAD_PERM"""
 
     def __init__(self, identifiers):
-        # should be passed a list of length 16, with 'unused' string in empty slots
         # doesn't need any numbers, just don't mess with positions of identifiers (or bump savegame version if you do)
-        # note that *16 is an arbitrary limit*, OpenTTD 1.9.0 increased permanent storage to 256 registers
-        if len(identifiers) != 16:
+        # note that OpenTTD 1.9.0 increased permanent storage to 256 registers
+        if len(identifiers) > 256:
             utils.echo_message(
-                "IndustryPermStorageNums must be passed a list of 16 registers containing var names as strings, or 'unused'"
+                "More than 256 storage identifiers passed to IndustryPermStorageNums"
             )
         self.unused = []
         for register_num, identifier in enumerate(identifiers):
@@ -1629,9 +1628,9 @@ class IndustryPrimary(Industry):
         self.supply_requirements = None  # default None, set appropriately by subclasses
         self.perm_storage = IndustryPermStorage(
             [
-                "var_num_supplies_delivered",  # amount of supplies delivered this month
-                "var_num_supplies_delivered_last",
-                "var_num_supplies_delivered_bef_last",
+                "unused",  # amount of supplies delivered this month
+                "unused",
+                "unused",
                 "var_current_supplies_prod_factor",
                 # date of last cargo delivery, per cargo (max 8 input cargos)
                 # usually will just be supplies, except for ports
@@ -1643,10 +1642,34 @@ class IndustryPrimary(Industry):
                 "date_received_cargo_6",
                 "date_received_cargo_7",
                 "date_received_cargo_8",
-                "unused",
-                "unused",
-                "unused",
-                "unused",
+                # amount of supplies delivered in each of 27 recent production cycles (27 is nice approximation to 3 months, in player's favour given varying month lengths)
+                "var_num_supplies_delivered_1",
+                "var_num_supplies_delivered_2",
+                "var_num_supplies_delivered_3",
+                "var_num_supplies_delivered_4",
+                "var_num_supplies_delivered_5",
+                "var_num_supplies_delivered_6",
+                "var_num_supplies_delivered_7",
+                "var_num_supplies_delivered_8",
+                "var_num_supplies_delivered_9",
+                "var_num_supplies_delivered_10",
+                "var_num_supplies_delivered_11",
+                "var_num_supplies_delivered_12",
+                "var_num_supplies_delivered_13",
+                "var_num_supplies_delivered_14",
+                "var_num_supplies_delivered_15",
+                "var_num_supplies_delivered_16",
+                "var_num_supplies_delivered_17",
+                "var_num_supplies_delivered_18",
+                "var_num_supplies_delivered_19",
+                "var_num_supplies_delivered_20",
+                "var_num_supplies_delivered_21",
+                "var_num_supplies_delivered_22",
+                "var_num_supplies_delivered_23",
+                "var_num_supplies_delivered_24",
+                "var_num_supplies_delivered_25",
+                "var_num_supplies_delivered_26",
+                "var_num_supplies_delivered_27",
             ]
         )
 
