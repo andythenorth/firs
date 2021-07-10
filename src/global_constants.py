@@ -311,9 +311,6 @@ max_game_date = 5000000
 # amount of cargo required to trigger 'enhanced' production at primary industries
 FARM_MINE_SUPPLY_REQUIREMENT = 16
 
-# time window (days) for delivery of combinatory cargos to secondary industries
-secondary_production_span = 90
-
 graphics_temp_storage = dict(
     var_terrain_sprite=0,  # ID of terrain sprite (from baseset) for the tile
     var_fencesprite_ne=1,  # fence sprite to use on the NE border

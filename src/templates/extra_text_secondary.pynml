@@ -13,21 +13,15 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, economy) {
 -->
 
 <tal:economies repeat="economy industry.economies_enabled_for_industry">
-    <!--! up to 8 cargos, n.b. date register names are indexed to 1 not 0 -->
+    <!--! up to 8 cargos, n.b. supplied_flag_cargo_n register names are indexed to 1 not 0 -->
     <tal:cargos repeat="input_cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
         switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_${input_cargo[0]}_economy_${economy.numeric_id}, [
                 LOAD_PERM(
-                    ${getattr(industry.perm_storage, 'supplied_cycles_remaining_cargo_' + str(repeat.cargo.number))}
+                    ${getattr(industry.perm_storage, 'supplied_cycles_remaining_cargo_' + str(repeat.input_cargo.number))}
                 )
             ]) {
-            <!--! delivery is tracked across 27 cycles of the 256 tick production cb -->
             0: return 0x3800 + string(STR_EMPTY);
             return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG);
-            <!--!
-                current_date - LOAD_PERM(${getattr(industry.perm_storage, 'supplied_cycles_remaining_cargo_' + str(repeat.input_cargo.number))}) > 90
-            ]) {
-            0: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG);
-            1: return 0x3800 + string(STR_EMPTY);-->
         }
     </tal:cargos>
     switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_switch_cargo_economy_${economy.numeric_id}, getbits(extra_callback_info2, 16, 23)) {
