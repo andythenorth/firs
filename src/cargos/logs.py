@@ -12,6 +12,7 @@ cargo = Cargo(
     # for legacy compatibility WOOD label is used as there is very wide support for it
     # but as a name string that has proven ambiguous in games - conflates with finished wood products (lumber, finished timber etc)
     cargo_label="WOOD",
+    # apart from TOWNGROWTH_PASSENGERS and TOWNGROWTH_MAIL, FIRS does not set any town growth effects; this has the intended effect of disabling food / water requirements for towns in desert and above snowline
     town_growth_effect="TOWNGROWTH_NONE",
     town_growth_multiplier="1.0",
     units_of_cargo="TTD_STR_TONS",
