@@ -3,6 +3,27 @@ Changelog
 
 
 -------------
+4.3.0 Release
+-------------
+
+**FIRS 4.3.0 is not savegame-compatible with any previous version of FIRS.**
+
+*Changes*
+
+- reworked primary industry supplies handling (including port-type industries where all input cargos count as 'supplies')
+    - **this is not a significant gameplay change, it just removes some inconsistencies**
+    - applied consistent approach to 'deliver every 3 months', using a window of 93 days (27 production cycles on the 256-tick callback)
+    - dropped use of exact date calculations and monthly production callback, which could produce inconsistent results in some cases
+    - synchronised update of industry window text indicating 'Supplied' and 'Current production'
+        - industry window text should now change on delivery of cargo in both cases, which feels more natural
+        - occasionally latency in OpenTTD might still cause these two text indicators to be briefly out of sync
+
+
+*Translations*
+- translation updates (thanks translators)
+
+
+-------------
 4.2.1 Release
 -------------
 
