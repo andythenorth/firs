@@ -41,7 +41,7 @@
                     ${getattr(industry.perm_storage, 'supplied_cycles_remaining_cargo_' + str(repeat.cargo.number))}
                 ),
             </tal:input_cargos>
-            0 <!--! spurious 0 because nmlc was running into a parse error without it -->
+            0 <!--! spurious 0 because nmlc was running into a parse error without it - this is actually due to empty lists in some economies-->
         ]) {
         return 0;
     }
@@ -64,7 +64,7 @@
                     ${industry.perm_storage.current_production_ratio}
                 ),
             </tal:input_cargos>
-            0 <!--! spurious 0 because nmlc was running into a parse error without it -->
+            0 <!--! spurious 0 because nmlc was running into a parse error without it - this is actually due to empty lists in some economies-->
         ]) {
         return 0;
     }
