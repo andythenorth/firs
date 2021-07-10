@@ -1822,15 +1822,15 @@ class IndustrySecondary(Industry):
                 "closure_counter",  # months without delivery, same as primary industries
                 "current_production_ratio",  # in format n/8, calculated during prod cycle, permanent register used for ease of debugging
                 "total_cargo_produced_this_cycle",  # calculated during prod cycle, permanent register used for ease of debugging
-                # date of last cargo delivery, per cargo (max 8 input cargos)
-                "date_received_cargo_1",
-                "date_received_cargo_2",
-                "date_received_cargo_3",
-                "date_received_cargo_4",
-                "date_received_cargo_5",
-                "date_received_cargo_6",
-                "date_received_cargo_7",
-                "date_received_cargo_8",
+                # used by industry text window to display 'supplied' or not
+                "supplied_cycles_remaining_cargo_1",
+                "supplied_cycles_remaining_cargo_2",
+                "supplied_cycles_remaining_cargo_3",
+                "supplied_cycles_remaining_cargo_4",
+                "supplied_cycles_remaining_cargo_5",
+                "supplied_cycles_remaining_cargo_6",
+                "supplied_cycles_remaining_cargo_7",
+                "supplied_cycles_remaining_cargo_8",
                 "total_cargo_to_distribute_this_cycle",
                 "total_produced_cargo_available",
                 "unused",

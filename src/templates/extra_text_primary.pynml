@@ -25,7 +25,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, [
             ]) {
             <!--! delivery is tracked across 27 cycles of the 256 tick production cb -->
             0: return 0x3800 + string(STR_EMPTY);
-            return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED);
+            return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG);
         }
     </tal:cargos>
     switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_switch_cargo_economy_${economy.numeric_id}, getbits(extra_callback_info2, 16, 23)) {
