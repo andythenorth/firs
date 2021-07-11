@@ -92,9 +92,10 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_cargo_arrival, economy) {
                 <!--!
                       replicates default ottd prod. algorithm but with supply boost applied as needed
                       note action 0 prod. is not used for primary, prod. cb is used consistently in FIRS, to reduce the number of different prod. methods in use
-                    (cargo amount * industry prod level * supply boost as percent) / (default prod level * 100 because boost is percent)
+                    (cargo amount * production_level * base_prod_factor * supply boost as percent) / (default base_prod_factor * default production_level * 100 because boost is percent)
+                    base_prod_factor is randomised at start (default 16), so that production_level can be used separately for cheats and monthly/random prod changes
                 -->
-                ${cargo[0]}: (${cargo[1]} * production_level * LOAD_TEMP(9)) / (16 * 100);
+                ${cargo[0]}: (${cargo[1]} * production_level * LOAD_PERM(${industry.perm_storage.base_prod_factor}) * LOAD_TEMP(9)) / (16 * 16 * 100);
             </tal:produce>
         ],
     0)

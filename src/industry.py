@@ -1630,7 +1630,10 @@ class IndustryPrimary(Industry):
             [
                 "unused",
                 "unused",
-                "unused",
+                # base prod factor is randomised when industry is constructed, to give production variation between instances of this type
+                # used in the production calculation as n/16
+                # this is NOT built-in production_level which is used, but will always be 16 by default, and can be adjusted by cheats and monthly/random prod change cbs
+                "base_prod_factor",
                 "current_supplies_prod_factor",
                 # used by industry text window to display 'supplied' or not
                 # usually will just be supplies in slot 1 for primaries, except for port-type industries
@@ -1915,7 +1918,14 @@ class IndustryTertiary(Industry):
         self.town_industry_for_cargoflow = kwargs.get(
             "town_industry_for_cargoflow", True
         )
-        # no perm_storage needed currently
+        self.perm_storage = IndustryPermStorage(
+            [
+                # base prod factor is randomised when industry is constructed, to give production variation between instances of this type
+                # used in the production calculation as n/16
+                # this is NOT built-in production_level which is used, but will always be 16 by default, and can be adjusted by cheats and monthly/random prod change cbs
+                "base_prod_factor",
+            ]
+        )
 
     @property
     def has_production(self):

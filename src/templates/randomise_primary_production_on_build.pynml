@@ -1,4 +1,9 @@
-random_switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build) {
+<!--!
+    these set the FIRS-specific base_prod_factor not the built-in property production_level
+    this means that randomisation of production across instances of the same type is decoupled from cheats and monthly/random production cb changes
+    default value is 16, same as production_level, and the produce method divides the end result by 16, so these values give actual factors of n/16
+-->
+random_switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build_get_factor) {
 	1: return 8;
 	1: return 12;
 	4: return 16;
@@ -8,3 +13,14 @@ random_switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build) {
 	1: return 32;
 	1: return 36;
 }
+
+switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build, base_prod_factor_perm_storage_num,
+    [
+        STORE_PERM(
+            randomise_primary_production_on_build_get_factor(),
+            base_prod_factor_perm_storage_num
+        )
+    ]) {
+	return 16;
+}
+

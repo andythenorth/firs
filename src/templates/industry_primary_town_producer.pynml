@@ -30,10 +30,7 @@
 
 <tal:include metal:use-macro="load: availability.pynml" />
 
-<!--!
-    We have a special production code here:
-    Production depends on the town population: population / 12 is output
- -->
+<!--! Production depends on the town population - this doesn't have its own template currently, should be split for consistency -->
 
 <tal:economies repeat="economy industry.economies_enabled_for_industry">
     produce (${industry.id}_production_256_economy_${economy.numeric_id},
@@ -43,6 +40,7 @@
                  <!--!
                     Prod is multiplied by an amount per cargo, and divided by 16.
                     Set multiplier in industry to default of 16, or vary it.
+                    NOTE no use of production_level or base_prod_factor
                   -->
                 ${cargo[0]}: min(
                                 max(
