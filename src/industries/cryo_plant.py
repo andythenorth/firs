@@ -11,7 +11,8 @@ industry = IndustryPrimaryNoSupplies(
     prospect_chance="0.75",
     name="string(STR_IND_CRYO_PLANT)",
     nearby_station_name="string(STR_STATION_CRYO_PLANT)",
-    fund_cost_multiplier="180",
+    # deliberately low fund cost; there is some remaining weirdness on cost because this is a non-growable primary, but eh, live with it
+    fund_cost_multiplier="45",
 )
 
 industry.economy_variations["STEELTOWN"].enabled = True
