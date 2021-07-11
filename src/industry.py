@@ -926,10 +926,18 @@ class IndustryLocationChecks(object):
         if self.near_at_least_one_of_these_keystone_industries:
             for industry_type in self.near_at_least_one_of_these_keystone_industries[0]:
                 # if the ID of the keystone type is higher than the current industry, the current industry won't be built on smaller maps or low industry settings
+                # this is because OpenTTD places first round of industries sequentially by ID (lowest first) at map gen time
                 if self.industry.numeric_id < (
                     get_another_industry(industry_type).numeric_id
                 ):
-                    utils.echo_message("oof " + self.industry.id + " " + industry_type)
+                    utils.echo_message(
+                        self.industry.id
+                        + " declares a keystone with higher ID ("
+                        + industry_type
+                        + ") - keystones must have lower ID than declaring industry, as industries are placed sequentially by ID (lowest first) when generating map.  Move "
+                        + self.industry.id
+                        + " to a higher ID (probably breaks savegames)."
+                    )
                     permissive_flag = 1
                 else:
                     permissive_flag = 0
