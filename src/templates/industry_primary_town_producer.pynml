@@ -17,69 +17,16 @@
 <tal:include metal:use-macro="load: properties_tile.pynml" />
 
 /* *************************************************
- * Definition of the industry layouts
+ * Definition of the industry
  * *************************************************/
 
 <tal:include metal:use-macro="load: layouts.pynml" />
 
-/* *************************************************
- * Definition of the industry
- * *************************************************/
-
-<tal:include metal:use-macro="load: location_check_macros_industry.pynml" />
+<tal:include metal:use-macro="load: produce_primary_town_producer.pynml" />
 
 <tal:include metal:use-macro="load: availability.pynml" />
 
-<!--! Production depends on the town population - this doesn't have its own template currently, should be split for consistency -->
-
-<tal:economies repeat="economy industry.economies_enabled_for_industry">
-    produce (${industry.id}_production_256_economy_${economy.numeric_id},
-        [<!--! no acceptance at this industry type -->],
-        [
-            <tal:produce repeat="cargo industry.get_prod_cargo_types(economy)">
-                 <!--!
-                    Prod is multiplied by an amount per cargo, and divided by 16.
-                    Set multiplier in industry to default of 16, or vary it.
-                    NOTE no use of production_level or base_prod_factor
-                  -->
-                ${cargo[0]}: min(
-                                max(
-                                    <!--! calculated prod, scaled per cargo. -->
-                                    LOAD_TEMP(1) * ${cargo[1]} / 16,
-                                    <!--! min prod. -->
-                                    LOAD_TEMP(2)
-                                ),
-                                <!--! max prod. -->
-                                LOAD_TEMP(3)
-                             );
-            </tal:produce>
-        ],
-    0)
-</tal:economies>
-
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_switch_economy, economy) {
-    <tal:economies repeat="economy industry.economies_enabled_for_industry">
-        ${economy.numeric_id}: ${industry.id}_production_256_economy_${economy.numeric_id};
-    </tal:economies>
-}
-
-switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [
-                <!--! calculated production based on population -->
-                STORE_TEMP((population + 11) / (12 * 7), 1),
-                <!--! min production, around 64t / month, to prevent very small towns having no production
-                      divide by 7, as this is the least number of production cycles we'll get in a month (February)
-                      Note that integer maths means min. production might not be limited to exact value. -->
-                STORE_TEMP(${industry.min_production} / 7, 2),
-                <!--! max production, around 2048t / month, to prevent pathological output in large cities
-                      divide by 9, as that's the largest number of production cycles we'll get in a month
-                      Note that integer maths means max. production might not be limited to exact value. -->
-                STORE_TEMP(${industry.max_production} / 9, 3),
-            ]
-       ) {
-	${industry.id}_produce_switch_economy;
-}
-
-<!--! end production code -->
+<tal:include metal:use-macro="load: location_check_macros_industry.pynml" />
 
 <tal:include metal:use-macro="load: properties_industry.pynml" />
 
