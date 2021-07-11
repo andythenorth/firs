@@ -1,5 +1,5 @@
 <!--!
-    Primary production.
+    Primary production (also includes permanent production change).
     Supplies includes ENSP, FMSP, and multiple cargos in the case of port-type industries.
     Supply deliveries are tracked over 27 production cycles.
     This gives the easiest approximation of the 'every 3 months' the player is told.
@@ -8,6 +8,7 @@
     All production takes place on the 256 tick callback.
     Acceptance and clearing of stockpile is handled on delivery of cargo.
     Admin functions are called on 256 tick and also on delivery (so player sees immediate change to 'Supplied' and to production level that will be used on next 256 tick cycle).
+    This template also handles permanent production change as the concerns seem to be closely related.
 -->
 
 <!--! get the total amount of supplies delivered in last 27 production cycles -->
@@ -152,4 +153,13 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
         ${industry.id}_produce_256_ticks_shift_supplies_delivered(),
     ]) {
     ${industry.id}_produce_256_ticks_switch_economy;
+}
+
+<!--! permanent production change -->
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
+    [
+        STORE_TEMP(string(STR_PROD_CHANGE_TEST), 256)
+    ]) {
+    return CB_RESULT_IND_PROD_DOUBLE | (1 << 8);  <!--! set bit 8 to show custom text result -->
 }
