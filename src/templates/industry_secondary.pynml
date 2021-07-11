@@ -23,11 +23,11 @@
 
 <tal:include metal:use-macro="load: layouts.pynml" />
 
+<tal:include metal:use-macro="load: extra_text_secondary.pynml" />
+
 <tal:include metal:use-macro="load: produce_secondary.pynml" />
 
 <!--! <tal:include metal:use-macro="load: closure_secondary.pynml" /> -->
-
-<tal:include metal:use-macro="load: extra_text_secondary.pynml" />
 
 <tal:include metal:use-macro="load: availability.pynml" />
 
