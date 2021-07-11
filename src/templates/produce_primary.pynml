@@ -15,7 +15,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_total_supplies_delivered,
     [
     <tal:total_supplies repeat="var_num range(1, 28)">
         LOAD_PERM(
-            ${getattr(industry.perm_storage, 'var_num_supplies_delivered_' + str(var_num))}
+            ${getattr(industry.perm_storage, 'num_supplies_delivered_' + str(var_num))}
         )
         ${'+' if not repeat.var_num.end else ''}
     </tal:total_supplies>
@@ -28,7 +28,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_calculate_current_productio
          STORE_TEMP(${industry.id}_produce_total_supplies_delivered(), 8),
          STORE_TEMP((LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level2_requirement)) ? primary_level2_produced_percent :
                     (LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level1_requirement)) ? primary_level1_produced_percent : 100, 9),
-         STORE_PERM(LOAD_TEMP(9), ${industry.perm_storage.var_current_supplies_prod_factor}),
+         STORE_PERM(LOAD_TEMP(9), ${industry.perm_storage.current_supplies_prod_factor}),
     ]) {
     return 0;
 }
@@ -50,7 +50,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_calculate_current_productio
                 <tal:store repeat="cargo industry.get_accept_cargo_types(economy)">
                     incoming_cargo_waiting("${cargo}") +
                 </tal:store>
-                LOAD_PERM(${industry.perm_storage.var_num_supplies_delivered_27}), ${industry.perm_storage.var_num_supplies_delivered_27}
+                LOAD_PERM(${industry.perm_storage.num_supplies_delivered_27}), ${industry.perm_storage.num_supplies_delivered_27}
             ),
             <!--! check if each cargo is delivered in this cycle, and if so reset the supplied cycles remaining
                   NOTE next cycle will -1 so store 28 so we get 27 cycles in total
@@ -133,11 +133,11 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks_shift_supplies_de
     [
         <tal:shift_supplies repeat="var_num range(1, 27)">
             STORE_PERM(
-                LOAD_PERM(${getattr(industry.perm_storage, 'var_num_supplies_delivered_' + str(var_num + 1))}),
-                ${getattr(industry.perm_storage, 'var_num_supplies_delivered_' + str(var_num))}
+                LOAD_PERM(${getattr(industry.perm_storage, 'num_supplies_delivered_' + str(var_num + 1))}),
+                ${getattr(industry.perm_storage, 'num_supplies_delivered_' + str(var_num))}
             ),
         </tal:shift_supplies>
-        STORE_PERM(0, ${industry.perm_storage.var_num_supplies_delivered_27})
+        STORE_PERM(0, ${industry.perm_storage.num_supplies_delivered_27})
     ]) {
     return 0;
 }
