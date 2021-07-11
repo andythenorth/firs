@@ -4,7 +4,7 @@ grf {
 	desc: string(STR_GRF_DESC);
 	url: string(STR_GRF_DOCS_URL);
 	version: ${git_info.get_revision()};
-	min_compatible_version: 6527;
+	min_compatible_version: 6531;
 	param 0 {
 	    <!--! 'economy_selection' is remapped to 'economy' later because we can't control order and value separately here -->
 		economy_selection {
