@@ -23,7 +23,7 @@ STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Zwykła ekonomia dla klimatu umiarkowanego
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Zwykła ekonomia dla klimatu arktycznego
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Zwykła ekonomia dla klimatu tropikalnego
-STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                          :W Gorącym Kraju
+STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                      :W Gorącym Kraju
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Stalowa metropolia
 
 STR_CARGO_NAME_ACID                                                             :{G=m}Kwas
@@ -38,6 +38,7 @@ STR_CARGO_NAME_ALCOHOL.b                                                        
 STR_CARGO_NAME_ALCOHOL.c                                                        :alkoholowi
 STR_CARGO_NAME_ALCOHOL.d                                                        :alkoholu
 STR_CARGO_NAME_ALCOHOL.n                                                        :alkoholem
+STR_CARGO_NAME_ALLOY_STEEL                                                      :{G=m}Stal stopowa
 STR_CARGO_NAME_BAUXITE                                                          :{G=m}Boksyt
 STR_CARGO_NAME_BAUXITE.b                                                        :boksyt
 STR_CARGO_NAME_BAUXITE.d                                                        :boksytu
@@ -263,7 +264,7 @@ STR_CARGO_NAME_VEHICLE_BODIES.d                                                 
 STR_CARGO_NAME_VEHICLE_BODIES.m                                                 :karoserii
 STR_CARGO_NAME_VEHICLE_BODIES.n                                                 :karoserią
 STR_CARGO_NAME_VEHICLE_BODIES.w                                                 :karoserio
-STR_CARGO_NAME_VEHICLE_PARTS                                                    :{G=f} Części samochodowe
+STR_CARGO_NAME_VEHICLE_PARTS                                                    :{G=f}Części samochodowe
 STR_CARGO_NAME_VEHICLE_PARTS.b                                                  :części samochodowe
 STR_CARGO_NAME_VEHICLE_PARTS.c                                                  :częściom samochodowym
 STR_CARGO_NAME_VEHICLE_PARTS.d                                                  :części samochodowych
@@ -285,6 +286,7 @@ STR_CARGO_NAME_ZINC.w                                                           
 
 STR_CARGO_UNIT_ACID                                                             :{VOLUME} kwasu
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkoholu
+STR_CARGO_UNIT_ALLOY_STEEL                                                      :{WEIGHT} stali stopowej
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} boksytu
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} soi
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} materiałów budowlanych
@@ -341,6 +343,7 @@ STR_CARGO_UNIT_ZINC                                                             
 
 STR_CID_ACID                                                                    :{TINYFONT}KW
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_ALLOY_STEEL                                                             :{TINYFONT}STS
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}SA
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MB
@@ -396,6 +399,11 @@ STR_CID_ZINC                                                                    
 
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS nie został zaprojektowany do użycia z klimatem zabawkowym
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS wymaga OpenTTD w wersji przynajmniej 1.7.0 (rewizja 27769 i kolejne)
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Niekompatybilny NewGRF: {ORANGE}{STRING}
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Niekompatybilny parametr: {ORANGE}CanSet parametr 2 musi być ustawiony na 0 aby działać z FIRS.
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Niekompatybilny parametr: {ORANGE}NA City Set parametr 2 musi być ustawiony na 0 aby działać z FIRS.
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Niekompatybilna wersja: {ORANGE}Total Town Replacement Set musi być w wersji 3.11 lub nowszej.
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :musi być ustawione poniżej linii śniegu.
 STR_ERR_LOCATION_NOT_BELOW_SNOWLINE                                             :musi być ustawione nad linią śniegu.
@@ -664,9 +672,10 @@ STR_PORT_PRODUCTION_2X                                                          
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Aktualna produkcja: {YELLOW}niewiarygodna{}{}{BLACK}By utrzymać ten poziom, dostarcz {SKIP}{SIGNED_WORD} jednostek towaru w ciągu trzech miesięcy.
 STR_GENERIC_NEWLINE                                                             :{}
 
-STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu, pustyni i zboczach.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
+STR_FUND_FARM                                                                   :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_FOREST                                                                 :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na pustyni.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu.
 STR_FUND_HERDING_COOP                                                           :{}{BLACK}Lokalizacja: {YELLOW}Może być budowane tylko na śniegu.
