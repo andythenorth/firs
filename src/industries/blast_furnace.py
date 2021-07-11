@@ -13,15 +13,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="190",
 )
 
-
-industry.economy_variations["BASIC_TEMPERATE"].enabled = True
-industry.economy_variations["BASIC_TEMPERATE"].intro_year = 1800
-industry.economy_variations[
-    "BASIC_TEMPERATE"
-].name = "string(STR_IND_STEEL_MILL)"  # integrated steel mill in this economy
-
 industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations["STEELTOWN"].name = "string(STR_IND_BLAST_FURNACE)"
 industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
     ("IORE", 3),
     ("COKE", 3),

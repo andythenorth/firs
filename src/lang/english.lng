@@ -429,7 +429,8 @@ STR_IND_SLAG_GRINDING_PLANT                                                     
 STR_IND_SMITHY_FORGE                                                            :Smithy Forge
 STR_IND_SODA_ASH_MINE                                                           :Soda Ash Mine
 STR_IND_SOLVAY_PLANT                                                            :Solvay Plant
-STR_IND_STEEL_MILL                                                              :Steel Mill
+# we use 'integrated_steel_mill' in code to avoid confusion with Steeltown mills, but it's easier to just use 'Steel Mill' for name that players see
+STR_IND_INTEGRATED_STEEL_MILL                                                   :Steel Mill
 STR_IND_SHEET_AND_PIPE_MILL                                                     :Sheet and Pipe Mill
 STR_IND_STOCKYARD                                                               :Stockyard
 STR_IND_SUGAR_REFINERY                                                          :Sugar Refinery

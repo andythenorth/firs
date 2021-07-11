@@ -238,6 +238,10 @@ from industries import herding_coop
 
 herding_coop.industry.register()
 
+from industries import integrated_steel_mill
+
+integrated_steel_mill.industry.register()
+
 from industries import iron_ore_mine
 
 iron_ore_mine.industry.register()

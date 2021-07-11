@@ -94,7 +94,7 @@ industry_numeric_ids = dict(
     ##IAHC##copper_concentrator = 91,
     ##IAHC##fischer_tropsch_plant = 92,
     ##IAHC##latex_processor = 93,
-    ##IAHC?##sugar_refinery = 94,
+    integrated_steel_mill=94,
     wire_and_section_mill=95,
     body_plant=96,
     ###BLTC###tinplate_works = 97,
@@ -113,6 +113,7 @@ industry_numeric_ids = dict(
     ###BLTC###polypropylene_plant = 110,
     ###BLTC###polyethylene_plant = 111,
     ###BLTC###ethylene_cracker = 112,
+    ##IAHC?##sugar_refinery = 113,
 )
 # 127 is last ID to be used (128 industry limit, zero-based)
 # see also why 128 is a hard limit as of 2020 http://webster.openttdcoop.org/?channel=openttd&date=1586563200#1586641232
@@ -123,6 +124,8 @@ industry_numeric_ids = dict(
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
 tile_numeric_ids = dict(
+    integrated_steel_mill_tile_1=86,
+    integrated_steel_mill_tile_2=87,
     cider_mill_tile_1=88,
     cider_mill_tile_2=89,
     polyethylene_plant_tile_1=90,
