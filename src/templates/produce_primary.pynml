@@ -157,9 +157,15 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
 
 <!--! permanent production change -->
 
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_increase,
     [
         STORE_TEMP(string(STR_PROD_CHANGE_TEST), 256)
     ]) {
     return CB_RESULT_IND_PROD_DOUBLE | (1 << 8);  <!--! set bit 8 to show custom text result -->
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change, getbits(extra_callback_info2, 0, 1)) {
+    1: ${industry.id}_monthly_prod_change_increase;
+    return CB_RESULT_IND_PROD_NO_CHANGE;
 }
