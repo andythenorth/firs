@@ -42,12 +42,12 @@ STR_CARGO_NAME_ALCOHOL.n                                                        
 STR_CARGO_NAME_ALLOY_STEEL                                                      :{G=f}Stal stopowa
 STR_CARGO_NAME_ALLOY_STEEL.b                                                    :stal stopową
 STR_CARGO_NAME_ALLOY_STEEL.d                                                    :stali stopowej
-STR_CARGO_NAME_ALUMINIUM                                                        :{G=m}Glin
-STR_CARGO_NAME_ALUMINIUM.b                                                      :glin
-STR_CARGO_NAME_ALUMINIUM.d                                                      :glinu
 STR_CARGO_NAME_ALUMINIA                                                         :{G=m}Tlenek glinu
 STR_CARGO_NAME_ALUMINIA.b                                                       :tlenek glinu
 STR_CARGO_NAME_ALUMINIA.d                                                       :tlenku glinu
+STR_CARGO_NAME_ALUMINIUM                                                        :{G=m}Glin
+STR_CARGO_NAME_ALUMINIUM.b                                                      :glin
+STR_CARGO_NAME_ALUMINIUM.d                                                      :glinu
 STR_CARGO_NAME_AMMONIA                                                          :{G=m}Amoniak
 STR_CARGO_NAME_AMMONIA.b                                                        :amoniak
 STR_CARGO_NAME_AMMONIA.d                                                        :amoniaku
@@ -106,6 +106,9 @@ STR_CARGO_NAME_CLAY.d                                                           
 STR_CARGO_NAME_CLEANING_AGENTS                                                  :Środki czyszczące
 STR_CARGO_NAME_CLEANING_AGENTS.b                                                :środki czyszczące
 STR_CARGO_NAME_CLEANING_AGENTS.d                                                :środków czyszczących
+STR_CARGO_NAME_COAL_TAR                                                         :{G=f}Smoła pogazowa
+STR_CARGO_NAME_COAL_TAR.b                                                       :smołę pogazową
+STR_CARGO_NAME_COAL_TAR.d                                                       :smoły pogazowej
 STR_CARGO_NAME_COFFEE                                                           :{G=f}Kawa
 STR_CARGO_NAME_COFFEE.b                                                         :kawę
 STR_CARGO_NAME_COFFEE.c                                                         :kawie
@@ -113,9 +116,6 @@ STR_CARGO_NAME_COFFEE.d                                                         
 STR_CARGO_NAME_COFFEE.m                                                         :kawie
 STR_CARGO_NAME_COFFEE.n                                                         :kawą
 STR_CARGO_NAME_COFFEE.w                                                         :kawo
-STR_CARGO_NAME_COAL_TAR                                                         :{G=f}Smoła pogazowa
-STR_CARGO_NAME_COAL_TAR.b                                                       :smołę pogazową
-STR_CARGO_NAME_COAL_TAR.d                                                       :smoły pogazowej
 STR_CARGO_NAME_COKE                                                             :{G=m}Koks
 STR_CARGO_NAME_COKE.b                                                           :koks
 STR_CARGO_NAME_COKE.c                                                           :koksowi
@@ -143,9 +143,9 @@ STR_CARGO_NAME_ENGINEERING_SUPPLIES.c                                           
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.d                                           :zaopatrzenia technicznego
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.m                                           :zaopatrzeniu technicznym
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.n                                           :zaopatrzeniem technicznym
-STR_CARGO_NAME_ETHYLENE                                                         :{G=m}Eten
-STR_CARGO_NAME_ETHYLENE.b                                                       :eten
-STR_CARGO_NAME_ETHYLENE.d                                                       :etenu
+STR_CARGO_NAME_ETHYLENE                                                         :{G=m}Etylen
+STR_CARGO_NAME_ETHYLENE.b                                                       :etylen
+STR_CARGO_NAME_ETHYLENE.d                                                       :etylenu
 STR_CARGO_NAME_EXPLOSIVES                                                       :Materiały wybuchowe
 STR_CARGO_NAME_EXPLOSIVES.b                                                     :materiały wybuchowe
 STR_CARGO_NAME_EXPLOSIVES.c                                                     :materiałom wybuchowym
@@ -349,12 +349,12 @@ STR_CARGO_NAME_STEEL.d                                                          
 STR_CARGO_NAME_STEEL.m                                                          :stali
 STR_CARGO_NAME_STEEL.n                                                          :stalą
 STR_CARGO_NAME_STEEL.w                                                          :stali
-STR_CARGO_NAME_STEEL_SECTIONS                                                   :{G=f}Blacha stalowa
-STR_CARGO_NAME_STEEL_SECTIONS.b                                                 :blachę stalową
-STR_CARGO_NAME_STEEL_SECTIONS.d                                                 :blachy stalowej
-STR_CARGO_NAME_STEEL_SHEET                                                      :Profile stalowe
-STR_CARGO_NAME_STEEL_SHEET.b                                                    :profile stalowe
-STR_CARGO_NAME_STEEL_SHEET.d                                                    :profili stalowych
+STR_CARGO_NAME_STEEL_SECTIONS                                                   :Profile stalowe
+STR_CARGO_NAME_STEEL_SECTIONS.b                                                 :profile stalowe
+STR_CARGO_NAME_STEEL_SECTIONS.d                                                 :profili stalowych
+STR_CARGO_NAME_STEEL_SHEET                                                      :{G=f}Blacha stalowa
+STR_CARGO_NAME_STEEL_SHEET.b                                                    :blachę stalową
+STR_CARGO_NAME_STEEL_SHEET.d                                                    :blachy stalowej
 STR_CARGO_NAME_STEEL_WIRE_ROD                                                   :{G=f}Walcówka stalowa
 STR_CARGO_NAME_STEEL_WIRE_ROD.b                                                 :walcówkę stalową
 STR_CARGO_NAME_STEEL_WIRE_ROD.d                                                 :walcówki stalowej
@@ -425,60 +425,104 @@ STR_CARGO_NAME_ZINC.w                                                           
 STR_CARGO_UNIT_ACID                                                             :{VOLUME} kwasu
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkoholu
 STR_CARGO_UNIT_ALLOY_STEEL                                                      :{WEIGHT} stali stopowej
+STR_CARGO_UNIT_ALUMINIA                                                         :{WEIGHT} tlenku glinu
+STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} glinu
+STR_CARGO_UNIT_AMMONIA                                                          :{VOLUME} amoniaku
+STR_CARGO_UNIT_AMMONIUM_NITRATE                                                 :{VOLUME} azotanu amonu
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} boksytu
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} soi
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} materiałów budowlanych
+STR_CARGO_UNIT_CARBON_BLACK                                                     :{WEIGHT} sadzy
+STR_CARGO_UNIT_CARBON_STEEL                                                     :{WEIGHT} stali niestopowej
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} manioku
+STR_CARGO_UNIT_CAST_IRON                                                        :{WEIGHT} żeliwa
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} cementu
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemikaliów
 STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} chloru
+STR_CARGO_UNIT_CHROMITE_ORE                                                     :{WEIGHT} chromitu
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} gliny
+STR_CARGO_UNIT_CLEANING_AGENTS                                                  :{WEIGHT} środków czyszczących
+STR_CARGO_UNIT_COAL_TAR                                                         :{VOLUME} smoły pogazowej
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} wor{P 0 ek ki ków} kawy
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} koksu
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} miedzi
+# STR_CARGO_UNIT_COPPER_CONCENTRATE                                               :{WEIGHT} of copper concentrate //unused in current version, not sure how to translate
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} oleju jadalnego
+STR_CARGO_UNIT_ELECTRICAL_PARTS                                                 :{WEIGHT} części elektrycznych
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} skrzy{P 0 nia nie ń} zaopatrzenia technicznego
+STR_CARGO_UNIT_ETHYLENE                                                         :{VOLUME} etylenu
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} skrzy{P 0 nia nie ń} materiałów wybuchowych
+STR_CARGO_UNIT_FERROCHROME                                                      :{WEIGHT} żelazochromu
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} nawozu
+# STR_CARGO_UNIT_FOOD_ADDITIVES                                                   :{WEIGHT} of food additives //unused in current version, not sure how to translate
+STR_CARGO_UNIT_FORMIC_ACID                                                      :{VOLUME} kwasu mrówkowego
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bel{P 0 a e i} włókien roślinnych
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} ryb
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} skrzy{P 0 nia nie ń} zaopatrzenia rolnictwa
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} owoców
+STR_CARGO_UNIT_FURNITURE                                                        :{WEIGHT} mebli
+STR_CARGO_UNIT_GLASS                                                            :{WEIGHT} szkła
+STR_CARGO_UNIT_HYDROCHLORIC_ACID                                                :{VOLUME} kwasu solnego
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} kaolinitu
 STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} wapienia
+STR_CARGO_UNIT_LOGS                                                             :{WEIGHT} drewna
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} desek
-STR_CARGO_UNIT_LYE                                                              :{VOLUME} sody kaustycznej
+# cargo uses Sodium Hydroxide (wodorotlenek sodu) as string as it's interchangeable with Lye (ług), but lye is convenient for filename / cargo label
+STR_CARGO_UNIT_LYE                                                              :{VOLUME} wodorotlenku sodu
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} manganu
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metalu
+STR_CARGO_UNIT_METHANE                                                          :{VOLUME} metanu
+STR_CARGO_UNIT_METHANOL                                                         :{VOLUME} metanolu
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} mleka
+# STR_CARGO_UNIT_NAPHTHA                                                          :{VOLUME} of naphtha //Not sure if should be "nafta" (EN: paraffin, more common popular name) or "benzyna surowa" (more official, technical)
 STR_CARGO_UNIT_NICKEL                                                           :{WEIGHT} niklu
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} saletry
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} wor{P 0 ek ki ków} orzechów
+STR_CARGO_UNIT_OXYGEN                                                           :{VOLUME} tlenu
 STR_CARGO_UNIT_PACKAGING                                                        :{WEIGHT} opakowań
+STR_CARGO_UNIT_PAINTS_AND_COATINGS                                              :{VOLUME} farb i lakierów
 STR_CARGO_UNIT_PEAT                                                             :{WEIGHT} torfu
-STR_CARGO_UNIT_PETROL                                                           :{VOLUME} paliw ropopochodnych
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} paliw
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} fosforanu
+STR_CARGO_UNIT_PHOSPHORIC_ACID                                                  :{VOLUME} kwasu fosforowego
 STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} surówki hutniczej
 STR_CARGO_UNIT_PIPE                                                             :{WEIGHT} rur
+STR_CARGO_UNIT_PLASTICS                                                         :{WEIGHT} plastików
 STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} potażu
+STR_CARGO_UNIT_PROPYLENE                                                        :{VOLUME} propenu
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} rudy pirytu
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} wapna palonego
+# STR_CARGO_UNIT_RAW_LATEX                                                        :{VOLUME} of raw latex //not sure how to translate, but not used in current version
+STR_CARGO_UNIT_REBAR                                                            :{WEIGHT} zbrojenia
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} surowców wtórnych
 STR_CARGO_UNIT_SALT                                                             :{WEIGHT} soli
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} piasku
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} złomu
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} żużlu
 STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} węglanu sodu
+STR_CARGO_UNIT_STAINLESS_STEEL                                                  :{WEIGHT} stali nierdzewnej
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} stali
+STR_CARGO_UNIT_STEEL_SECTIONS                                                   :{WEIGHT} profili stalowych
+STR_CARGO_UNIT_STEEL_SHEET                                                      :{WEIGHT} blachy stalowej
+STR_CARGO_UNIT_STEEL_WIRE_ROD                                                   :{WEIGHT} walcówki stalowej
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kamieni
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} buraków cukrowych
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} siarki
+STR_CARGO_UNIT_SULPHURIC_ACID                                                   :{VOLUME} kwasu siarkowego
+STR_CARGO_UNIT_TEXTILES                                                         :{WEIGHT} tekstyliów
+STR_CARGO_UNIT_TIN                                                              :{WEIGHT} cyny
+STR_CARGO_UNIT_TINPLATE                                                         :{WEIGHT} blachy cynowanej
+STR_CARGO_UNIT_TYRES                                                            :{WEIGHT} opon
+STR_CARGO_UNIT_UREA                                                             :{WEIGHT} mocznika
 STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} karoserii
+STR_CARGO_UNIT_VEHICLE_ENGINES                                                  :{WEIGHT} silników samochodowych
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{WEIGHT} części samochodowych
 STR_CARGO_UNIT_VEHICLES                                                         :{WEIGHT} samochodów
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bel{P 0 a e i} wełny
+STR_CARGO_UNIT_YARN                                                             :{SIGNED_WORD} bel{P 0 a e i} przędzy
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} cynku
 
+# it seems that using 2 chars for these is a convention not a limit, I tested 4 chars and OpenTTD renders it fine - May 2020
 STR_CID_ACID                                                                    :{TINYFONT}KW
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_ALLOY_STEEL                                                             :{TINYFONT}STS
