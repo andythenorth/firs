@@ -165,7 +165,41 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_increase,
     return CB_RESULT_IND_PROD_DOUBLE | (1 << 8);  <!--! set bit 8 to show custom text result -->
 }
 
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change, getbits(extra_callback_info2, 0, 1)) {
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_dice_roll, getbits(extra_callback_info2, 0, 1)) {
     1: ${industry.id}_monthly_prod_change_increase;
+    return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+<!--! provide some variation using mod(town_index) so that not all industries update in same month -->
+switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_get_cycle_counter_random_offset, [(town_index % 3) + 1]) {
+    return;
+}
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_update_cycle_counter_increase_or_reset,
+    [
+        LOAD_PERM(${industry.perm_storage.permanent_prod_change_cycle_counter}) == 3
+        ?
+        1
+        :
+        LOAD_PERM(${industry.perm_storage.permanent_prod_change_cycle_counter}) + 1
+    ]) {
+    return;
+}
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_update_cycle_counter,
+    [
+        STORE_PERM(
+            LOAD_PERM(${industry.perm_storage.permanent_prod_change_cycle_counter}) == 0
+            ?
+            ${industry.id}_get_cycle_counter_random_offset()
+            :
+            ${industry.id}_monthly_prod_change_update_cycle_counter_increase_or_reset(),
+            ${industry.perm_storage.permanent_prod_change_cycle_counter}
+        )
+    ]) {
+    return;
+}
+
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change, ${industry.id}_monthly_prod_change_update_cycle_counter()) {
+    3: ${industry.id}_monthly_prod_change_dice_roll;
     return CB_RESULT_IND_PROD_NO_CHANGE;
 }

@@ -1636,7 +1636,7 @@ class IndustryPrimary(Industry):
         self.supply_requirements = None  # default None, set appropriately by subclasses
         self.perm_storage = IndustryPermStorage(
             [
-                "unused",
+                "permanent_prod_change_cycle_counter",
                 "unused",
                 # base prod factor is randomised when industry is constructed, to give production variation between instances of this type
                 # used in the production calculation as n/16
