@@ -374,9 +374,9 @@ STR_CARGO_NAME_SULPHUR.w                                                        
 STR_CARGO_NAME_SULPHURIC_ACID                                                   :{G=m}Kwas siarkowy
 STR_CARGO_NAME_SULPHURIC_ACID.b                                                 :kwas siarkowy
 STR_CARGO_NAME_SULPHURIC_ACID.d                                                 :kwasu siarkowego
-STR_CARGO_NAME_TEXTILES                                                         :Tekstylia
-STR_CARGO_NAME_TEXTILES.b                                                       :tekstylia
-STR_CARGO_NAME_TEXTILES.d                                                       :tekstyliów
+STR_CARGO_NAME_TEXTILES                                                         :{G=f}Odzież
+STR_CARGO_NAME_TEXTILES.b                                                       :odzież
+STR_CARGO_NAME_TEXTILES.d                                                       :odzieży
 STR_CARGO_NAME_TIN                                                              :{G=f}Cyna
 STR_CARGO_NAME_TIN.b                                                            :cynę
 STR_CARGO_NAME_TIN.d                                                            :cyny
@@ -509,7 +509,7 @@ STR_CARGO_UNIT_STONE                                                            
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} buraków cukrowych
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} siarki
 STR_CARGO_UNIT_SULPHURIC_ACID                                                   :{VOLUME} kwasu siarkowego
-STR_CARGO_UNIT_TEXTILES                                                         :{WEIGHT} tekstyliów
+STR_CARGO_UNIT_TEXTILES                                                         :{WEIGHT} odzieży
 STR_CARGO_UNIT_TIN                                                              :{WEIGHT} cyny
 STR_CARGO_UNIT_TINPLATE                                                         :{WEIGHT} blachy cynowanej
 STR_CARGO_UNIT_TYRES                                                            :{WEIGHT} opon
@@ -609,7 +609,7 @@ STR_CID_SULPHURIC_ACID                                                          
 STR_CID_STEEL_SECTIONS                                                          :{TINYFONT}STPR
 STR_CID_STEEL_SHEET                                                             :{TINYFONT}STBL
 STR_CID_STEEL_WIRE_ROD                                                          :{TINYFONT}STWA
-STR_CID_TEXTILES                                                                :{TINYFONT}TEKS
+STR_CID_TEXTILES                                                                :{TINYFONT}ODZ
 STR_CID_TIN                                                                     :{TINYFONT}CYNA
 STR_CID_TINPLATE                                                                :{TINYFONT}BLCY
 STR_CID_TYRES                                                                   :{TINYFONT}OPN
@@ -639,9 +639,8 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 
 STR_IND_ALUMINIUM_PLANT                                                         :{G=f}Huta aluminium
 STR_IND_ALUMINIUM_PLANT.d                                                       :huty aluminium
-STR_IND_AMMONIA_PLANT                                                           :{G=n}Zakłady chemiczne
-STR_IND_AMMONIA_PLANT.b                                                         :zakłady chemiczne
-STR_IND_AMMONIA_PLANT.d                                                         :zakładów chemicznych
+STR_IND_AMMONIA_PLANT                                                           :{G=f}Fabryka amoniaku
+STR_IND_AMMONIA_PLANT.d                                                         :fabryki amoniaku
 STR_IND_ARABLE_FARM                                                             :{G=n}Pole uprawne
 STR_IND_ARABLE_FARM.d                                                           :pola uprawnego
 STR_IND_ASSEMBLY_PLANT                                                          :{G=f}Fabryka samochodów
@@ -649,7 +648,7 @@ STR_IND_ASSEMBLY_PLANT.b                                                        
 STR_IND_ASSEMBLY_PLANT.c                                                        :fabryce samochodów
 STR_IND_ASSEMBLY_PLANT.d                                                        :fabryki samochodów
 STR_IND_ASSEMBLY_PLANT.n                                                        :fabryką samochodów
-STR_IND_BASIC_OXYGEN_FURNACE                                                    :Konwertor tlenowy
+STR_IND_BASIC_OXYGEN_FURNACE                                                    :{G=m}Konwertor tlenowy
 STR_IND_BASIC_OXYGEN_FURNACE.c                                                  :konwertorowi tlenowemu
 STR_IND_BASIC_OXYGEN_FURNACE.d                                                  :konwertora tlenowego
 STR_IND_BASIC_OXYGEN_FURNACE.m                                                  :konwertorze tlenowym
@@ -663,6 +662,8 @@ STR_IND_BLAST_FURNACE.d                                                         
 STR_IND_BLAST_FURNACE.m                                                         :wielkim piecu
 STR_IND_BLAST_FURNACE.n                                                         :wielkim piecem
 STR_IND_BLAST_FURNACE.w                                                         :wielki piecu
+STR_IND_BODY_PLANT                                                              :{G=f}Fabryka karoserii
+STR_IND_BODY_PLANT.d                                                            :fabryki karoserii
 STR_IND_BREWERY                                                                 :{G=m}Browar
 STR_IND_BREWERY.d                                                               :browaru
 STR_IND_CIDER_MILL                                                              :{G=f}Wytwórnia cydru
@@ -678,33 +679,43 @@ STR_IND_BUILDERS_YARD                                                           
 STR_IND_BUILDERS_YARD.d                                                         :spółki budowlanej
 STR_IND_BULK_TERMINAL                                                           :{G=m}Port handlowy
 STR_IND_BULK_TERMINAL.d                                                         :portu handlowego
+STR_IND_CARBON_BLACK_PLANT                                                      :{G=f}Przetwórnia smoły pogazowej
+STR_IND_CARBON_BLACK_PLANT.d                                                    :przetwórni smoły pogazowej
 STR_IND_CEMENT_PLANT                                                            :{G=f}Cementownia
 STR_IND_CEMENT_PLANT.d                                                          :cementowni
-STR_IND_CHEMICAL_PLANT                                                          :{G=m}Zakłady chemiczne
-STR_IND_CHEMICAL_PLANT.b                                                        :zakłady chemiczne
-STR_IND_CHEMICAL_PLANT.c                                                        :Zakładom chemicznym
-STR_IND_CHEMICAL_PLANT.d                                                        :zakładów chemicznych
-STR_IND_CHEMICAL_PLANT.m                                                        :Zakładami chemicznymi
-STR_IND_CHEMICAL_PLANT.n                                                        :Zakładami chemicznymi
-STR_IND_CLAY_PIT                                                                :{G=f}Kopalnia gliny
-STR_IND_CLAY_PIT.d                                                              :kopalni gliny
+STR_IND_CHEMICAL_PLANT                                                          :{G=m}Zakład chemiczny
+STR_IND_CHEMICAL_PLANT.d                                                        :zakładu chemicznego
+STR_IND_CHLOR_ALKALI_PLANT                                                      :{G=m}Zakład chloro-alkaliczny
+STR_IND_CHLOR_ALKALI_PLANT.d                                                    :zakładu chloro-alkalicznego
+STR_IND_CHROMITE_MINE                                                           :{G=f}Kopalnia chromitu
+STR_IND_CHROMITE_MINE.d                                                         :kopalni chromitu
+STR_IND_CIVIL_EXPLOSIVES_FACILITY                                               :{G=f}Fabryka materiałów wybuchowych
+STR_IND_CIVIL_EXPLOSIVES_FACILITY.d                                             :fabryki materiałów wybuchowych
+STR_IND_CLAY_PIT                                                                :{G=f}Glinianka
+STR_IND_CLAY_PIT.d                                                              :glinianki
 STR_IND_COFFEE_ESTATE                                                           :{G=f}Plantacja kawy
 STR_IND_COFFEE_ESTATE.d                                                         :plantacji kawy
-STR_IND_COKE_OVEN                                                               :Koksownia
+STR_IND_COKE_OVEN                                                               :{G=f}Koksownia
 STR_IND_COKE_OVEN.b                                                             :koksownię
 STR_IND_COKE_OVEN.c                                                             :koksowni
 STR_IND_COKE_OVEN.d                                                             :koksowni
 STR_IND_COKE_OVEN.m                                                             :koksowni
 STR_IND_COKE_OVEN.n                                                             :koksownią
 STR_IND_COKE_OVEN.w                                                             :koksownio
-STR_IND_COPPER_REFINERY                                                         :Rafineria miedzi
+STR_IND_COMPONENT_FACTORY                                                       :{G=f}Fabryka części samochodowych
+STR_IND_COMPONENT_FACTORY.d                                                     :fabryki części samochodowych
+# STR_IND_COPPER_CONCENTRATOR                                                     :Copper Concentrator //depends on COPPER_CONCENTRATE translation
+# STR_IND_COPPER_CONCENTRATOR.d                                                   :Copper Concentrator //depends on COPPER_CONCENTRATE translation
+STR_IND_COPPER_REFINERY                                                         :{G=f}Rafineria miedzi
 STR_IND_COPPER_REFINERY.b                                                       :rafinerię miedzi
 STR_IND_COPPER_REFINERY.c                                                       :rafinerii miedzi
 STR_IND_COPPER_REFINERY.d                                                       :rafinerii miedzi
 STR_IND_COPPER_REFINERY.n                                                       :rafinerią miedzi
+STR_IND_CRYO_PLANT                                                              :{G=m}Generator tlenu
+STR_IND_CRYO_PLANT.d                                                            :generatora tlenu
 STR_IND_DAIRY                                                                   :{G=f}Mleczarnia
 STR_IND_DAIRY.d                                                                 :mleczarni
-STR_IND_DAIRY_FARM                                                              :Hodowla
+STR_IND_DAIRY_FARM                                                              :{G=f}Hodowla
 STR_IND_DAIRY_FARM.b                                                            :hodowlę
 STR_IND_DAIRY_FARM.c                                                            :hodowli
 STR_IND_DAIRY_FARM.d                                                            :hodowli
@@ -713,12 +724,32 @@ STR_IND_DAIRY_FARM.n                                                            
 STR_IND_DAIRY_FARM.w                                                            :hodowlo
 STR_IND_DREDGING_SITE                                                           :{G=f}Pogłębiarka
 STR_IND_DREDGING_SITE.d                                                         :pogłębiarki
-STR_IND_ELECTRIC_ARC_FURNACE                                                    :Piec łukowy
+STR_IND_ELECTRIC_ARC_FURNACE                                                    :{G=m}Piec łukowy
 STR_IND_ELECTRIC_ARC_FURNACE.c                                                  :piecowi łukowemu
 STR_IND_ELECTRIC_ARC_FURNACE.d                                                  :pieca łukowego
 STR_IND_ELECTRIC_ARC_FURNACE.m                                                  :piecu łukowym
 STR_IND_ELECTRIC_ARC_FURNACE.n                                                  :piecem łukowym
 STR_IND_ELECTRIC_ARC_FURNACE.w                                                  :piecu łukowy
+STR_IND_ENGINE_PLANT                                                            :{G=f}Fabryka silników samochodowych
+STR_IND_ENGINE_PLANT.d                                                          :fabryki silników
+# STR_IND_ETHYLENE_CRACKER                                                        :Naphtha Cracker //Depends on NAPHTHA translation
+# STR_IND_ETHYLENE_CRACKER.d                                                      :Naphtha Cracker
+STR_IND_FARM                                                                    :{G=f}Farma
+STR_IND_FARM.d                                                                  :farmy
+STR_IND_FERROCHROME_SMELTER                                                     :{G=f}Wytwórnia żelazochromu
+STR_IND_FERROCHROME_SMELTER.d                                                   :wytwórni żelazochromu
+STR_IND_FERTILISER_PLANT                                                        :{G=f}Fabryka nawozu
+STR_IND_FERTILISER_PLANT.d                                                      :fabryki nawozu
+# STR_IND_FACTORY_1                                                               :Factory 1 //These factory numbers does not look like final names
+# STR_IND_FACTORY_1.d                                                             :Factory 1
+# STR_IND_FACTORY_2                                                               :Factory 2
+# STR_IND_FACTORY_2.d                                                             :Factory 2
+# STR_IND_FACTORY_3                                                               :Factory 3
+# STR_IND_FACTORY_3.d                                                             :Factory 3
+STR_IND_FISCHER_TROPSCH_PLANT                                                   :{G=m}Zakład syntezy Fischera-Tropscha
+STR_IND_FISCHER_TROPSCH_PLANT.d                                                 :zakładu syntezy Fischera-Tropscha
+STR_IND_FISH_FARM                                                               :{G=f}Hodowla ryb
+STR_IND_FISH_FARM.d                                                             :hodowli ryb
 STR_IND_FISHING_GROUND                                                          :{G=n}Łowisko
 STR_IND_FISHING_GROUND.d                                                        :łowiska
 STR_IND_FISHING_HARBOUR                                                         :{G=m}Port rybacki
@@ -747,7 +778,7 @@ STR_IND_HARDWARE_STORE                                                          
 STR_IND_HARDWARE_STORE.d                                                        :sklepu przemysłowego
 STR_IND_HOTEL                                                                   :{G=m}Hotel
 STR_IND_HOTEL.d                                                                 :hotelu
-STR_IND_HERDING_COOP                                                            :Hodowla bydła
+STR_IND_HERDING_COOP                                                            :{G=f}Hodowla bydła
 STR_IND_HERDING_COOP.b                                                          :hodowlę bydła
 STR_IND_HERDING_COOP.c                                                          :hodowli bydła
 STR_IND_HERDING_COOP.d                                                          :hodowli bydła
@@ -758,12 +789,15 @@ STR_IND_IRON_WORKS                                                              
 STR_IND_IRON_WORKS.d                                                            :pieca hutniczego
 STR_IND_JUNKYARD                                                                :{G=n}Złomowisko
 STR_IND_JUNKYARD.d                                                              :złomowiska
+# STR_IND_LATEX_PROCESSOR                                                         :Latex Processor //depends on RAW_LATEX translation
+# STR_IND_LATEX_PROCESSOR.d                                                       :Latex Processor
 STR_IND_LIME_KILN                                                               :{G=m}Wapiennik
 STR_IND_LIME_KILN.d                                                             :wapiennika
-STR_IND_LIMESTONE_MINE                                                          :Kopalnia wapienia
+STR_IND_LIMESTONE_MINE                                                          :{G=f}Kopalnia wapienia
+STR_IND_LIMESTONE_MINE.d                                                        :kopalni wapienia
 STR_IND_LIQUIDS_TERMINAL                                                        :{G=m}Port ładunków ciekłych
 STR_IND_LIQUIDS_TERMINAL.c                                                      :Portowi ładunków ciekłych
-STR_IND_LIQUIDS_TERMINAL.d                                                      :Portu ładunków ciekłych
+STR_IND_LIQUIDS_TERMINAL.d                                                      :portu ładunków ciekłych
 STR_IND_LIQUIDS_TERMINAL.m                                                      :Porcie ładunków ciekłych
 STR_IND_LIQUIDS_TERMINAL.n                                                      :Portem ładunków ciekłych
 STR_IND_LIQUIDS_TERMINAL.w                                                      :Port ładunków ciekłych
@@ -771,6 +805,8 @@ STR_IND_LUMBER_YARD                                                             
 STR_IND_LUMBER_YARD.d                                                           :stolarni
 STR_IND_MACHINE_SHOP                                                            :{G=f}Fabryka maszyn
 STR_IND_MACHINE_SHOP.d                                                          :fabryki maszyn
+STR_IND_MACHINE_WORKS                                                           :{G=f}Wytwórnia części elektrycznych
+STR_IND_MACHINE_WORKS.d                                                         :wytwórni części elektrycznych
 STR_IND_MANGANESE_MINE                                                          :{G=f}Kopalnia manganu
 STR_IND_MANGANESE_MINE.b                                                        :kopalnię manganu
 STR_IND_MANGANESE_MINE.c                                                        :kopalni manganu
@@ -798,8 +834,14 @@ STR_IND_PETROLPUMP.d                                                            
 STR_IND_PHOSPHATE_MINE                                                          :{G=f}Kopalnia fosforytów
 STR_IND_PHOSPHATE_MINE.b                                                        :kopalnię fosforytów
 STR_IND_PHOSPHATE_MINE.d                                                        :kopalni fosforytów
+STR_IND_PHOSPHORIC_ACID_PLANT                                                   :{G=f}Wytwórnia kwasu fosforowego
+STR_IND_PHOSPHORIC_ACID_PLANT.d                                                 :wytwórni kwasu fosforowego
 STR_IND_PLASTICS_PLANT                                                          :{G=f}Fabryka tworzyw sztucznych
 STR_IND_PLASTICS_PLANT.d                                                        :fabryki tworzyw sztucznych
+STR_IND_POLYETHYLENE_PLANT                                                      :{G=f}Fabryka polietylenu
+STR_IND_POLYETHYLENE_PLANT.d                                                    :fabryki polietylenu
+STR_IND_POLYPROPYLENE_PLANT                                                     :{G=f}Fabryka polipropylenu
+STR_IND_POLYPROPYLENE_PLANT.d                                                   :fabryki polipropylenu
 STR_IND_PORT                                                                    :{G=m}Port
 STR_IND_PORT.d                                                                  :portu
 STR_IND_POTASH_MINE                                                             :{G=f}Kopalnia potażu
@@ -819,7 +861,7 @@ STR_IND_PYRITE_SMELTER.b                                                        
 STR_IND_PYRITE_SMELTER.c                                                        :prażalni pirytu
 STR_IND_PYRITE_SMELTER.d                                                        :prażalni pirytu
 STR_IND_PYRITE_SMELTER.n                                                        :prażalnią pirytu
-STR_IND_POWER_PLANT                                                             :Elektrownia
+STR_IND_POWER_PLANT                                                             :{G=f}Elektrownia
 STR_IND_POWER_PLANT.b                                                           :elektrownię
 STR_IND_POWER_PLANT.c                                                           :elektrowni
 STR_IND_POWER_PLANT.d                                                           :elektrowni
@@ -850,9 +892,11 @@ STR_IND_REINDEER_FARM.d                                                         
 STR_IND_REINDEER_FARM.m                                                         :farmie reniferów
 STR_IND_REINDEER_FARM.n                                                         :farmą reniferów
 STR_IND_REINDEER_FARM.w                                                         :farmo reniferów
+STR_IND_SALT_MINE                                                               :{G=f}Kopalnia soli
+STR_IND_SALT_MINE.d                                                             :kopalni soli
 STR_IND_SHEEPFARM                                                               :{G=f}Ferma owiec
 STR_IND_SHEEPFARM.d                                                             :fermy owiec
-STR_IND_SLAG_GRINDING_PLANT                                                     :{G=m}Przetwórnia żużlu
+STR_IND_SLAG_GRINDING_PLANT                                                     :{G=f}Przetwórnia żużlu
 STR_IND_SLAG_GRINDING_PLANT.c                                                   :przetwórni żużlu
 STR_IND_SLAG_GRINDING_PLANT.d                                                   :przetwórni żużlu
 STR_IND_SMITHY_FORGE                                                            :{G=f}Kuźnia
@@ -860,17 +904,28 @@ STR_IND_SMITHY_FORGE.d                                                          
 STR_IND_SODA_ASH_MINE                                                           :{G=f}Fabryka sody
 STR_IND_SODA_ASH_MINE.b                                                         :fabrykę sody
 STR_IND_SODA_ASH_MINE.d                                                         :fabryki sody
+STR_IND_SOLVAY_PLANT                                                            :{G=f}Wytwórnia węglanu sodu
+STR_IND_SOLVAY_PLANT.d                                                          :wytwórni węglanu sodu
+# we use 'integrated_steel_mill' in code to avoid confusion with Steeltown mills, but it's easier to just use 'Steel Mill' for name that players see
+STR_IND_INTEGRATED_STEEL_MILL                                                   :{G=f}Huta stali
+STR_IND_INTEGRATED_STEEL_MILL.d                                                 :huty stali
+STR_IND_SHEET_AND_PIPE_MILL                                                     :{G=f}Fabryka blachy i rur
+STR_IND_SHEET_AND_PIPE_MILL.d                                                   :fabryki blachy i rur
 STR_IND_STOCKYARD                                                               :{G=f}Ubojnia
 STR_IND_STOCKYARD.d                                                             :ubojni
 STR_IND_SUGAR_REFINERY                                                          :{G=f}Cukrownia
 STR_IND_SUGAR_REFINERY.d                                                        :cukrowni
+STR_IND_SULPHURIC_ACID_PLANT                                                    :{G=f}Wytwórnia kwasu siarkowego
+STR_IND_SULPHURIC_ACID_PLANT.d                                                  :wytwórni kwasu siarkowego
 STR_IND_SUPPLY_YARD                                                             :{G=m}Magazyn zaopatrzeniowy
 STR_IND_SUPPLY_YARD.b                                                           :magazyn zaopatrzeniowy
 STR_IND_SUPPLY_YARD.c                                                           :magazynowi zaopatrzeniowemu
 STR_IND_SUPPLY_YARD.d                                                           :magazynu zaopatrzeniowego
 STR_IND_SUPPLY_YARD.n                                                           :magazynem zaopatrzeniowym
-STR_IND_TEXTILE_MILL                                                            :{G=m}Zakłady odzieżowe
+STR_IND_TEXTILE_MILL                                                            :{G=m}Zakład odzieżowy
 STR_IND_TEXTILE_MILL.d                                                          :zakładu odzieżowego
+STR_IND_TINPLATE_WORKS                                                          :{G=f}Fabryka blachy cynowanej
+STR_IND_TINPLATE_WORKS.d                                                        :fabryki blachy cynowanej
 STR_IND_TRADING_POST                                                            :{G=m}Punkt handlowy
 STR_IND_TRADING_POST.d                                                          :punktu handlowego
 STR_IND_TYRE_PLANT                                                              :{G=f}Fabryka opon
@@ -878,12 +933,17 @@ STR_IND_TYRE_PLANT.b                                                            
 STR_IND_TYRE_PLANT.c                                                            :fabryce opon
 STR_IND_TYRE_PLANT.d                                                            :fabryki opon
 STR_IND_TYRE_PLANT.n                                                            :fabryką opon
-STR_IND_VINEYARD                                                                :Winnica
+STR_IND_VINEYARD                                                                :{G=f}Winnica
 STR_IND_VINEYARD.b                                                              :winnicę
 STR_IND_VINEYARD.c                                                              :winnicy
 STR_IND_VINEYARD.d                                                              :winnicy
 STR_IND_VINEYARD.n                                                              :winnicą
-STR_IND_WHARF                                                                   :Nabrzeże
+STR_IND_VEHICLE_DISTRIBUTOR                                                     :{G=m}Salon samochodowy
+STR_IND_VEHICLE_DISTRIBUTOR.d                                                   :salonu samochodowego
+STR_IND_WHARF                                                                   :{G=n}Nabrzeże
+STR_IND_WHARF.d                                                                 :nabrzeża
+STR_IND_WIRE_AND_SECTION_MILL                                                   :{G=f}Fabryka profili i walcówki
+STR_IND_WIRE_AND_SECTION_MILL.d                                                 :fabryki profili i walcówki
 
 
 STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG                             : {BLACK}(dostarczono)
@@ -923,23 +983,28 @@ STR_STATION_BARREL_AND_KEG                                                      
 STR_STATION_BASE                                                                :Baza sprzętu
 STR_STATION_BONEYARD                                                            :Złomowisko
 STR_STATION_BANK_TOP                                                            :Hałdy
+STR_STATION_BRINE_WORKS                                                         :Solanka
 STR_STATION_CASTINGS                                                            :Odlewnia
-STR_STATION_COLLIERY                                                            :Kopalnia węgla
+STR_STATION_COLLIERY                                                            :Kopalnia Węgla
 STR_STATION_COLLIERY.b                                                          :kopalnię węgla
 STR_STATION_COLLIERY.c                                                          :kopalni węgla
 STR_STATION_COLLIERY.d                                                          :kopalni węgla
 STR_STATION_COLLIERY.m                                                          :kopalni węgla
 STR_STATION_COLLIERY.n                                                          :kopalnią węgla
 STR_STATION_COLLIERY.w                                                          :kopalnio węgla
+STR_STATION_COMPONENTS                                                          :Manufaktura Części
 STR_STATION_COPPER_LODE                                                         :Odkrywka miedzi
 STR_STATION_CREOSOTING                                                          :Stolarnia
+STR_STATION_CRYO_PLANT                                                          :Generator
 STR_STATION_DAIRY_LANE                                                          :Mleczarnia
+STR_STATION_DYNAMO                                                              :Maszynownia
 STR_STATION_ESTATE                                                              :Posiadłość
 STR_STATION_EXCHANGE                                                            :Składy
 STR_STATION_FARM_1                                                              :Folwark
 STR_STATION_FARM_2                                                              :Łąki
 STR_STATION_FARM_3                                                              :{G=n}Ranczo
 STR_STATION_FISHMARKET                                                          :Targ Rybny
+STR_STATION_FISH_PENS                                                           :Stawy
 STR_STATION_FOOD_CORPORATION                                                    :Zakłady Spożywcze
 STR_STATION_FOREST                                                              :Polanka
 STR_STATION_FORGE                                                               :{G=f}Kuźnia
@@ -951,27 +1016,33 @@ STR_STATION_INDUSTRY_ESTATE_1                                                   
 STR_STATION_INDUSTRY_HARBOUR_1                                                  :Nabrzeże Górnicze
 STR_STATION_INDUSTRY_HARBOUR_2                                                  :Molo
 STR_STATION_INDUSTRY_HARBOUR_3                                                  :Przystań
+STR_STATION_INDUSTRY_HARBOUR_4                                                  :Port
 STR_STATION_IRONSTONE                                                           :Rudawa
 STR_STATION_JOINERS_SHOP                                                        :Stolarnia
 STR_STATION_KILNS                                                               :Cegielnia
-STR_STATION_KIMBERLITE_DEPOSITS                                                 :Złoża kimberlitu
-STR_STATION_LIMESTONE_MINES                                                     :Kamieniołomy wapienne
-STR_STATION_MANGANESE_MINES                                                     :Kopalnie manganu
+STR_STATION_KIMBERLITE_DEPOSITS                                                 :Złoża Kimberlitu
+STR_STATION_LIMESTONE_MINES                                                     :Kamieniołomy Wapienne
+STR_STATION_MANGANESE_MINES                                                     :Kopalnie Manganu
 STR_STATION_MARKET                                                              :Targowisko
 STR_STATION_MERCHANTS_LANE                                                      :Rynek
 STR_STATION_MILL                                                                :Młyny
 STR_STATION_MINE                                                                :Zagłębie
 STR_STATION_MOULDINGS                                                           :Formiernia
-STR_STATION_OIL_RIG                                                             :Pole naftowe
+STR_STATION_OIL_RIG                                                             :Pole Naftowe
 STR_STATION_ORCHARDS                                                            :Sady
+STR_STATION_PHENOLS                                                             :Fenole
 STR_STATION_PIT                                                                 :Wyrobisko
+STR_STATION_PIPE_MILL                                                           :Rurownia
 STR_STATION_PLANTATION                                                          :Plantacja
 STR_STATION_POWERHUNGRY                                                         :Elektrownia
+STR_STATION_POWERTRAIN                                                          :Fabryka Silników
 STR_STATION_PUMPS                                                               :Pompy
-STR_STATION_PYRITES                                                             :Złoża pirytu
+STR_STATION_PYRITES                                                             :Sztolnia
 STR_STATION_REFINERY                                                            :Rafineria
-STR_STATION_RUBBER_COMPANY                                                      :Fabryka opon
+STR_STATION_ROD_MILL                                                            :Walcownia
+STR_STATION_RUBBER_COMPANY                                                      :Fabryka Opon
 STR_STATION_SALTPETER_WORKS                                                     :Azoty
+STR_STATION_SEAFOOD                                                             :Owoce Morza
 STR_STATION_SHARP_STREET                                                        :Huta Szkła
 STR_STATION_SHEEP_FOLD                                                          :Owczarnia
 STR_STATION_SHOALS                                                              :Łowisko
@@ -979,13 +1050,13 @@ STR_STATION_SILO                                                                
 STR_STATION_SMELTER                                                             :Huta
 STR_STATION_STACKS                                                              :Stosy
 STR_STATION_STAMP_AND_PLATE                                                     :Walcownia
-STR_STATION_SUGAR_COMPANY                                                       :{G=f}Cukrownia
+STR_STATION_SUGAR_COMPANY                                                       :Cukrownia
 STR_STATION_TANK_FARM                                                           :Naftoport
-STR_STATION_TAPPERS_SHED                                                        :Plantacja kauczuku
+STR_STATION_TAPPERS_SHED                                                        :Plantacja Kauczuku
 STR_STATION_TOWN_1                                                              :Stare Miasto
 STR_STATION_TOWN_2                                                              :Krzyżówka
-STR_STATION_TOWN_3                                                              :Centrum handlowe
-STR_STATION_TRONA_BEDS                                                          :Solanka
+STR_STATION_TOWN_3                                                              :Centrum Handlowe
+STR_STATION_TRONA_BEDS                                                          :Złoża Soli
 STR_STATION_WATER                                                               :Zatoka
 STR_STATION_WEAVE_AND_DYE                                                       :Tkalnia
 STR_STATION_WELLS                                                               :Wiertnie
@@ -996,3 +1067,4 @@ STR_STATION_WINERY.d                                                            
 STR_STATION_WINERY.m                                                            :winiarni
 STR_STATION_WINERY.n                                                            :winiarnią
 STR_STATION_WINERY.w                                                            :winiarnio
+STR_STATION_VEHICLE_DISTRIBUTOR                                                 :Salon Samochodowy
