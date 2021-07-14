@@ -1105,7 +1105,7 @@ class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
         self.params = []
 
 
-class IndustryPermStorage(object):
+class PermStorageMapping(object):
     """ sparse class mapping properties names to int numbers 1-16, used to aid readability when using STORE_PERM and LOAD_PERM"""
 
     def __init__(self, identifiers):
@@ -1113,7 +1113,7 @@ class IndustryPermStorage(object):
         # note that OpenTTD 1.9.0 increased permanent storage to 256 registers
         if len(identifiers) > 256:
             utils.echo_message(
-                "More than 256 storage identifiers passed to IndustryPermStorageNums"
+                "More than 256 storage identifiers passed to PermStorageMapping"
             )
         self.unused = []
         for register_num, identifier in enumerate(identifiers):
@@ -1634,7 +1634,7 @@ class IndustryPrimary(Industry):
         super().__init__(**kwargs)
         self.template = kwargs.get("template", "industry_primary.pynml")
         self.supply_requirements = None  # default None, set appropriately by subclasses
-        self.perm_storage = IndustryPermStorage(
+        self.perm_storage = PermStorageMapping(
             [
                 "unused",
                 "unused",
@@ -1828,7 +1828,7 @@ class IndustrySecondary(Industry):
         self.combined_cargos_boost_prod = kwargs.get(
             "combined_cargos_boost_prod", False
         )
-        self.perm_storage = IndustryPermStorage(
+        self.perm_storage = PermStorageMapping(
             [
                 "closure_counter",  # months without delivery, same as primary industries
                 "current_production_ratio",  # in format n/8, calculated during prod cycle, permanent register used for ease of debugging
@@ -1926,7 +1926,7 @@ class IndustryTertiary(Industry):
         self.town_industry_for_cargoflow = kwargs.get(
             "town_industry_for_cargoflow", True
         )
-        self.perm_storage = IndustryPermStorage(
+        self.perm_storage = PermStorageMapping(
             [
                 # base prod factor is randomised when industry is constructed, to give production variation between instances of this type
                 # used in the production calculation as n/16
