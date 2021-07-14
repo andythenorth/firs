@@ -23,6 +23,7 @@ templates = PageTemplateLoader(
 
 from economies import registered_economies
 from industries import registered_industries
+from industries import perm_storage_mappings
 
 
 def get_another_industry(id):
@@ -1108,7 +1109,7 @@ class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
 class PermStorageMapping(object):
     """ sparse class mapping properties names to int numbers 1-16, used to aid readability when using STORE_PERM and LOAD_PERM"""
 
-    def __init__(self, identifiers):
+    def __init__(self, id, identifiers):
         # doesn't need any numbers, just don't mess with positions of identifiers (or bump savegame version if you do)
         # note that OpenTTD 1.9.0 increased permanent storage to 256 registers
         if len(identifiers) > 256:
@@ -1121,6 +1122,7 @@ class PermStorageMapping(object):
                 self.unused.append(register_num)
             else:
                 setattr(self, identifier, register_num)
+        perm_storage_mappings.setdefault(id, self)
 
 
 class IndustryProperties(object):
@@ -1202,7 +1204,7 @@ class Industry(object):
         self.location_checks = IndustryLocationChecks(
             self, kwargs.get("location_checks", {})
         )
-        self.town_perm_storage = PermStorageMapping(["test"])
+        self.town_perm_storage = PermStorageMapping("TownStorage", ["test"])
 
     def register(self):
         if (
@@ -1636,6 +1638,7 @@ class IndustryPrimary(Industry):
         self.template = kwargs.get("template", "industry_primary.pynml")
         self.supply_requirements = None  # default None, set appropriately by subclasses
         self.perm_storage = PermStorageMapping(
+            self.__class__.__name__,
             [
                 "permanent_prod_change_cycle_counter",
                 "unused",
@@ -1682,7 +1685,7 @@ class IndustryPrimary(Industry):
                 "num_supplies_delivered_25",
                 "num_supplies_delivered_26",
                 "num_supplies_delivered_27",
-            ]
+            ],
         )
 
     def get_prod_cargo_types(self, economy):
@@ -1830,6 +1833,7 @@ class IndustrySecondary(Industry):
             "combined_cargos_boost_prod", False
         )
         self.perm_storage = PermStorageMapping(
+            self.__class__.__name__,
             [
                 "closure_counter",  # months without delivery, same as primary industries
                 "current_production_ratio",  # in format n/8, calculated during prod cycle, permanent register used for ease of debugging
@@ -1848,7 +1852,7 @@ class IndustrySecondary(Industry):
                 "unused",
                 "unused",
                 "unused",
-            ]
+            ],
         )
         # guard against prospect chance kword being set, it's pure cruft for secondary industry (harmless, but needless)
         if "prospect_chance" in kwargs:
@@ -1928,12 +1932,13 @@ class IndustryTertiary(Industry):
             "town_industry_for_cargoflow", True
         )
         self.perm_storage = PermStorageMapping(
+            self.__class__.__name__,
             [
                 # base prod factor is randomised when industry is constructed, to give production variation between instances of this type
                 # used in the production calculation as n/16
                 # this is NOT built-in production_level which is used, but will always be 16 by default, and can be adjusted by cheats and monthly/random prod change cbs
                 "base_prod_factor",
-            ]
+            ],
         )
 
     @property
