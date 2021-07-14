@@ -41,6 +41,7 @@ def render_header_item_nml(header_item):
             registered_industries=registered_industries,
             registered_cargos=registered_cargos,
             economies=registered_economies,
+            perm_storage_mappings=firs.perm_storage_mappings,
             incompatible_grfs=incompatible_grfs,
             global_constants=global_constants,
             graphics_temp_storage=global_constants.graphics_temp_storage,  # convenience measure
@@ -95,6 +96,7 @@ def main():
         "ground_tiles",
         "location_checks_industry",
         "magic_trees",
+        "perm_storage_mappings",
         "randomise_primary_production_on_build",
         "terrain_sprite",
     ]
