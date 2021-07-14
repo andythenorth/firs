@@ -1202,6 +1202,7 @@ class Industry(object):
         self.location_checks = IndustryLocationChecks(
             self, kwargs.get("location_checks", {})
         )
+        self.town_perm_storage = PermStorageMapping(["test"])
 
     def register(self):
         if (
