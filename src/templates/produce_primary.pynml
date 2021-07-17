@@ -27,7 +27,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_calculate_current_productio
          STORE_TEMP(${industry.id}_produce_total_supplies_delivered(), 8),
          STORE_TEMP((LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level2_requirement)) ? primary_level2_produced_percent :
                     (LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level1_requirement)) ? primary_level1_produced_percent : 100, 9),
-         STORE_PERM(LOAD_TEMP(9), ${get_perm("current_supplies_prod_factor")}),
+         STORE_PERM_ALT(${get_perm("current_supplies_prod_factor")}, LOAD_TEMP(9)),
     ]) {
     return 0;
 }
@@ -45,23 +45,24 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_calculate_current_productio
     0)
     switch(FEAT_INDUSTRIES, SELF, ${industry.id}_store_incoming_cargo_waiting_${economy.numeric_id},
         [
-            STORE_PERM(
+            STORE_PERM_ALT(
+                ${get_perm("num_supplies_delivered_27")},
                 <tal:store repeat="cargo industry.get_accept_cargo_types(economy)">
                     incoming_cargo_waiting("${cargo}") +
                 </tal:store>
-                LOAD_PERM(${get_perm("num_supplies_delivered_27")}), ${get_perm("num_supplies_delivered_27")}
+                LOAD_PERM(${get_perm("num_supplies_delivered_27")})
             ),
             <!--! check if each cargo is delivered in this cycle, and if so reset the supplied cycles remaining
                   NOTE next cycle will -1 so store 28 so we get 27 cycles in total
                   this will cause the industry 'supplied' text to show immediately -->
             <tal:input_cargos repeat="cargo industry.get_accept_cargo_types(economy)">
-                STORE_PERM(
+                STORE_PERM_ALT(
+                    ${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))},
                     (incoming_cargo_waiting("${cargo}") > 0)
                     ?
                     28
                     :
-                    LOAD_PERM(${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))}),
-                    ${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))}
+                    LOAD_PERM(${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))})
                 ),
             </tal:input_cargos>
             <!--! update the production level immediately, so that production level text immediately updates in industry window
@@ -111,13 +112,13 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_update_supplied_cycles_remaining_pe
             <!--! check if each cargo is delivered, and if so update the cycles remaining flag for that to 27,
                   otherwise reduce the number of cycles remaining by 1
                   cap minimum value to 0, avoid -ve values that might overflow eventually -->
-            STORE_PERM(
+            STORE_PERM_ALT(
+                ${get_perm("supplied_cycles_remaining_cargo_" + str(cargo_num))},
                 max(
                     0,
                     LOAD_PERM(${get_perm("supplied_cycles_remaining_cargo_" + str(cargo_num))})
                     - 1
-                ),
-                ${get_perm("supplied_cycles_remaining_cargo_" + str(cargo_num))}
+                )
             ),
         </tal:cargos>
     ]) {
@@ -128,12 +129,12 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_update_supplied_cycles_remaining_pe
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks_shift_supplies_delivered,
     [
         <tal:shift_supplies repeat="var_num range(1, 27)">
-            STORE_PERM(
+            STORE_PERM_ALT(
+                ${get_perm("num_supplies_delivered_" + str(var_num))},
                 LOAD_PERM(${get_perm("num_supplies_delivered_" + str(var_num + 1))}),
-                ${get_perm("num_supplies_delivered_" + str(var_num))}
             ),
         </tal:shift_supplies>
-        STORE_PERM(0, ${get_perm("num_supplies_delivered_27")})
+        STORE_PERM_ALT(${get_perm("num_supplies_delivered_27")}, 0)
     ]) {
     return 0;
 }
@@ -155,9 +156,9 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_increase,
     [
         <!--! set the counter to 24 so we don't get another increase for at least 24 months -->
-        STORE_PERM(
-            24,
-            ${get_perm("permanent_prod_change_cycle_counter")}
+        STORE_PERM_ALT(
+            ${get_perm("permanent_prod_change_cycle_counter")},
+            24
         ),
         <!--! push news string to register from register 0x100 (256d) -->
         STORE_TEMP(string(STR_PROD_CHANGE_TEST), 256)
@@ -190,13 +191,13 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_update_cycle_co
       this could have used the build_prod_change cb, but I wanted to handle it all in one cb to reduce complexity of the codebase -->
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_update_cycle_counter,
     [
-        STORE_PERM(
+        STORE_PERM_ALT(
+            ${get_perm("permanent_prod_change_cycle_counter")},
             LOAD_PERM(${get_perm("permanent_prod_change_cycle_counter")}) == 0
             ?
             ${industry.id}_initialise_permanent_prod_change()
             :
-            ${industry.id}_monthly_prod_change_update_cycle_counter_decrement_or_reset(),
-            ${get_perm("permanent_prod_change_cycle_counter")}
+            ${industry.id}_monthly_prod_change_update_cycle_counter_decrement_or_reset()
         )
     ]) {
     return;

@@ -16,9 +16,9 @@ random_switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build_get_f
 
 switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build, base_prod_factor_perm_storage_num,
     [
-        STORE_PERM(
-            randomise_primary_production_on_build_get_factor(),
-            base_prod_factor_perm_storage_num
+        STORE_PERM_ALT(
+            base_prod_factor_perm_storage_num,
+            randomise_primary_production_on_build_get_factor()
         )
     ]) {
 	return 16;

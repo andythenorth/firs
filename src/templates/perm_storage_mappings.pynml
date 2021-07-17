@@ -12,8 +12,8 @@
     </tal:storage_item>
 </tal:perm_storage_mappings>
 
-// CABBAGE
-switch (FEAT_INDUSTRIES, SELF, store_perm_alt, storage_number, value,
+<!--! I don't like the syntax for STORE_PERM, I prefer the storage number to come before the value as calculationss can be long and complex -->
+switch (FEAT_INDUSTRIES, SELF, STORE_PERM_ALT, storage_number, value,
     [
         STORE_PERM(
             value,
