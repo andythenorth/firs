@@ -39,7 +39,7 @@
         item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
             graphics {
                 construction_probability: ${industry.id}_check_availability;
-                build_prod_change:        randomise_primary_production_on_build(${industry.perm_storage.base_prod_factor});
+                build_prod_change:        randomise_primary_production_on_build(${get_perm("base_prod_factor")});
                 produce_cargo_arrival:    ${industry.id}_produce_cargo_arrival;
                 produce_256_ticks:        ${industry.id}_produce_256_ticks;
                 monthly_prod_change:      ${industry.id}_monthly_prod_change;

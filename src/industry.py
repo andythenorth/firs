@@ -1616,12 +1616,21 @@ class Industry(object):
         if isinstance(sprite_or_spriteset, Sprite):
             return getattr(sprite_or_spriteset, "sprite_number" + suffix)
 
+    def get_perm(self, identifier):
+        if identifier in self.perm_storage.storage_items.keys():
+            return self.perm_storage.storage_items[identifier]
+        else:
+            utils.echo_message(
+                "Perm storage not found for " + self.id + ": " + identifier
+            )
+
     def render_nml(self, incompatible_industries):
         # incompatible industries isn't known at init time, only at compile time, so it has to be passed in
         industry_template = templates[self.template]
         templated_nml = utils.unescape_chameleon_output(
             industry_template(
                 industry=self,
+                get_perm=self.get_perm,
                 global_constants=global_constants,
                 graphics_temp_storage=global_constants.graphics_temp_storage,  # convenience measure
                 incompatible_industries=incompatible_industries,

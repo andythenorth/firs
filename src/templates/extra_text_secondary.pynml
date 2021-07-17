@@ -17,7 +17,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, economy) {
     <tal:cargos repeat="input_cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
         switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_${input_cargo[0]}_economy_${economy.numeric_id}, [
                 LOAD_PERM(
-                    ${getattr(industry.perm_storage, 'supplied_cycles_remaining_cargo_' + str(repeat.input_cargo.number))}
+                    ${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.input_cargo.number))}
                 )
             ]) {
             0: return 0x3800 + string(STR_EMPTY);
