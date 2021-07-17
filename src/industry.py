@@ -1619,6 +1619,8 @@ class Industry(object):
     def get_perm_num(self, identifier):
         if identifier in self.perm_storage.storage_items.keys():
             return self.perm_storage.storage_items[identifier]
+        elif identifier in self.town_perm_storage.storage_items.keys():
+            return self.town_perm_storage.storage_items[identifier]
         else:
             utils.echo_message(
                 "Perm storage not found for " + self.id + ": " + identifier

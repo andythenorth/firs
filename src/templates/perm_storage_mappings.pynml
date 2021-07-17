@@ -1,18 +1,4 @@
-<tal:perm_storage_mappings repeat="perm_storage_mapping perm_storage_mappings">
-    <tal:storage_item repeat="storage_item perm_storage_mappings[perm_storage_mapping].storage_items">
-        switch (FEAT_INDUSTRIES, SELF, store_perm__${perm_storage_mapping}_${storage_item}, value,
-            [
-                STORE_PERM(
-                    ${perm_storage_mappings[perm_storage_mapping].storage_items[storage_item]},
-                    value,
-                )
-            ]) {
-            return 16;
-        }
-    </tal:storage_item>
-</tal:perm_storage_mappings>
-
-<!--! I don't like the syntax for STORE_PERM, I prefer the storage number to come before the value as calculationss can be long and complex -->
+<!--! I don't like the syntax for STORE_PERM, I prefer the storage number to come before the value as calculations can be long and complex -->
 switch (FEAT_INDUSTRIES, SELF, STORE_PERM_ALT, storage_number, value,
     [
         STORE_PERM(
@@ -20,5 +6,35 @@ switch (FEAT_INDUSTRIES, SELF, STORE_PERM_ALT, storage_number, value,
             storage_number,
         )
     ]) {
+    return;
+}
+
+<!--! convenience for writing town storage, note that the order of (value, storage_number) is reversed in parameters to (storage_number, value) as I prefer that -->
+switch (FEAT_INDUSTRIES, PARENT, STORE_PERM_TOWN, storage_number, value,
+    [
+        STORE_PERM(
+            value,
+            storage_number,
+        )
+    ]) {
+    return;
+}
+
+
+<tal:storage_item repeat="storage_number perm_storage_mappings['TownStorage'].storage_items.values()">
+switch (FEAT_INDUSTRIES, PARENT, LOAD_PERM_TOWN_${storage_number}, LOAD_PERM(${storage_number})) {
+    return;
+}
+</tal:storage_item>
+
+switch (FEAT_INDUSTRIES, SELF, LOAD_PERM_TOWN, storage_number, [storage_number]) {
+    <!--! this might stumble if lots of storages are used, as it might approach action2 ID limit - shard it somehow if it does -->
+    <tal:storage_item repeat="storage_number perm_storage_mappings['TownStorage'].storage_items.values()">
+        ${storage_number}: LOAD_PERM_TOWN_${storage_number};
+    </tal:storage_item>
+    return;
+}
+
+switch (FEAT_INDUSTRIES, PARENT, LOAD_PERM_TOWN_test, LOAD_PERM(0)) {
     return;
 }
