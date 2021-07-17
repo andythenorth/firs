@@ -3,7 +3,7 @@
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, [
 	STORE_TEMP((primary_level1_requirement * ${industry.supply_requirements[2]}) |
 	(primary_level2_requirement * ${industry.supply_requirements[2]}) << 16, 0x100),
-	LOAD_PERM(${get_perm("current_supplies_prod_factor")})
+	LOAD_PERM(${get_perm_num("current_supplies_prod_factor")})
 ]) {
 	primary_level2_produced_percent: return string(STR_${industry.supply_requirements[1]}_PRODUCTION_4X);
 	primary_level1_produced_percent: return string(STR_${industry.supply_requirements[1]}_PRODUCTION_2X);
@@ -19,7 +19,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, [
     <!--! up to 8 cargos, n.b. supplied_flag_cargo_n register names are indexed to 1 not 0 -->
     <tal:cargos repeat="cargo industry.get_accept_cargo_types(economy)">
         switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_${cargo}_economy_${economy.numeric_id}, [
-                LOAD_PERM(${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))})
+                LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))})
             ]) {
             0: return 0x3800 + string(STR_EMPTY);
             return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG);

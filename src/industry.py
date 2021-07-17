@@ -1616,7 +1616,7 @@ class Industry(object):
         if isinstance(sprite_or_spriteset, Sprite):
             return getattr(sprite_or_spriteset, "sprite_number" + suffix)
 
-    def get_perm(self, identifier):
+    def get_perm_num(self, identifier):
         if identifier in self.perm_storage.storage_items.keys():
             return self.perm_storage.storage_items[identifier]
         else:
@@ -1630,7 +1630,7 @@ class Industry(object):
         templated_nml = utils.unescape_chameleon_output(
             industry_template(
                 industry=self,
-                get_perm=self.get_perm,
+                get_perm_num=self.get_perm_num,
                 global_constants=global_constants,
                 graphics_temp_storage=global_constants.graphics_temp_storage,  # convenience measure
                 incompatible_industries=incompatible_industries,

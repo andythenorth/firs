@@ -14,7 +14,7 @@
                       calculation is (cargo amount * production_level * base_prod_factor) / (default production_level * default base_prod_factor)
                       base_prod_factor is randomised at start (default 16), so that production_level can be used separately for cheats and monthly/random prod changes
                 -->
-                ${cargo[0]}: (${cargo[1]} * production_level * LOAD_PERM(${get_perm("base_prod_factor")})) / (16 * 16);
+                ${cargo[0]}: (${cargo[1]} * production_level * LOAD_PERM(${get_perm_num("base_prod_factor")})) / (16 * 16);
             </tal:produce>
         ],
     0)

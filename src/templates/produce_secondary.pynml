@@ -18,7 +18,7 @@
         ],
         [
             <tal:produce repeat="cargo industry.get_property('prod_cargo_types_with_output_ratios', economy)">
-                ${cargo[0]}: (LOAD_PERM(${get_perm("total_cargo_to_distribute_this_cycle")}) * ${cargo[1]}) / 8;
+                ${cargo[0]}: (LOAD_PERM(${get_perm_num("total_cargo_to_distribute_this_cycle")}) * ${cargo[1]}) / 8;
             </tal:produce>
         ],
     0)
@@ -31,12 +31,12 @@
                   this will cause the industry 'supplied' text to show immediately -->
             <tal:input_cargos repeat="cargo industry.get_accept_cargo_types(economy)">
                 STORE_PERM_ALT(
-                    ${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))},
+                    ${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))},
                     (incoming_cargo_waiting("${cargo}") > 0)
                     ?
                     28
                     :
-                    LOAD_PERM(${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))})
+                    LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))})
                 ),
             </tal:input_cargos>
             0 <!--! spurious 0 because nmlc was running into a parse error without it - this is actually due to empty lists in some economies-->
@@ -49,11 +49,11 @@
             <tal:input_cargos repeat="input_cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
                 <!--! if this cargo was delivered, increase the total production ratio appropriately -->
                 STORE_PERM_ALT(
-                    ${get_perm("current_production_ratio")},
-                    LOAD_PERM(${get_perm("current_production_ratio")})
+                    ${get_perm_num("current_production_ratio")},
+                    LOAD_PERM(${get_perm_num("current_production_ratio")})
                     +
                     (
-                        LOAD_PERM(${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.input_cargo.number))})
+                        LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.input_cargo.number))})
                         > 0 ? ${input_cargo[1]} : 0
                     )
                 ),
@@ -66,9 +66,9 @@
     switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_calculation_${economy.numeric_id},
             [
                 <!--! zero the current production ratio, which we will recalculate during this production cycle -->
-                STORE_PERM_ALT(${get_perm("current_production_ratio")}, 0),
+                STORE_PERM_ALT(${get_perm_num("current_production_ratio")}, 0),
                 <!--! zero the total production from this cycle, as a starting value-->
-                STORE_PERM_ALT(${get_perm("total_cargo_produced_this_cycle")}, 0),
+                STORE_PERM_ALT(${get_perm_num("total_cargo_produced_this_cycle")}, 0),
                 ${industry.id}_produce_update_supplied_cycles_remaining_per_cargo_${economy.numeric_id}(),
                 ${industry.id}_produce_calculate_current_production_level_${economy.numeric_id}(),
                 <!--! add to total amount produced;
@@ -77,9 +77,9 @@
                 -->
                 <tal:total_production repeat="input_cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
                     STORE_PERM_ALT(
-                        ${get_perm("total_cargo_produced_this_cycle")},
-                        LOAD_PERM(${get_perm("total_cargo_produced_this_cycle")})
-                        + ((incoming_cargo_waiting("${input_cargo[0]}") * LOAD_PERM(${get_perm("current_production_ratio")})) / 8)
+                        ${get_perm_num("total_cargo_produced_this_cycle")},
+                        LOAD_PERM(${get_perm_num("total_cargo_produced_this_cycle")})
+                        + ((incoming_cargo_waiting("${input_cargo[0]}") * LOAD_PERM(${get_perm_num("current_production_ratio")})) / 8)
                     ),
                 </tal:total_production>
                 <!--! when low cargo amounts are delivered, it's possible that final output cargo amounts < 1, which means no cargo is distributed
@@ -87,8 +87,8 @@
                       the case is triggered by low amounts being moved to the produce cycle as a vehicle gradually unloads, and was noticeable with Road Hog trams
                 -->
                 STORE_PERM_ALT(
-                    ${get_perm("total_produced_cargo_available")},
-                    LOAD_PERM(${get_perm("total_produced_cargo_available")}) + LOAD_PERM(${get_perm("total_cargo_produced_this_cycle")})
+                    ${get_perm_num("total_produced_cargo_available")},
+                    LOAD_PERM(${get_perm_num("total_produced_cargo_available")}) + LOAD_PERM(${get_perm_num("total_cargo_produced_this_cycle")})
                 ),
                 <!--! then check min. distributed by dividing over 8, to get the amount divided by max possible output cargos
                       8 is the pathological case, this could be made more accurate by checking the lowest output ratio in current economy
@@ -97,28 +97,28 @@
 
                 <!--! OOF, this needs to both assign total_cargo_to_distribute_this_cycle if > 1, and clear total_produced_cargo_available if > 1 -->
                 STORE_PERM_ALT(
-                    ${get_perm("total_cargo_to_distribute_this_cycle")},
-                    (LOAD_PERM(${get_perm("total_produced_cargo_available")}) / 8) >= 1
+                    ${get_perm_num("total_cargo_to_distribute_this_cycle")},
+                    (LOAD_PERM(${get_perm_num("total_produced_cargo_available")}) / 8) >= 1
                     ?
-                    LOAD_PERM(${get_perm("total_produced_cargo_available")})
+                    LOAD_PERM(${get_perm_num("total_produced_cargo_available")})
                     :
                     0
                 ),
                 STORE_PERM_ALT(
-                    ${get_perm("total_produced_cargo_available")},
-                    (LOAD_PERM(${get_perm("total_produced_cargo_available")}) / 8) >= 1
+                    ${get_perm_num("total_produced_cargo_available")},
+                    (LOAD_PERM(${get_perm_num("total_produced_cargo_available")}) / 8) >= 1
                     ?
                     0
                     :
-                    LOAD_PERM(${get_perm("total_produced_cargo_available")})
+                    LOAD_PERM(${get_perm_num("total_produced_cargo_available")})
                 ),
                 <!--! if any cargo was produced, reset the closure countdown  -->
                 <!--! !! unclear if this is working, separate closure template needs updated for n cargos, currently depends on 3 -->
                 STORE_PERM_ALT(
-                    ${get_perm("closure_counter")},
-                    (LOAD_PERM(${get_perm("total_cargo_produced_this_cycle")}) == 0)
+                    ${get_perm_num("closure_counter")},
+                    (LOAD_PERM(${get_perm_num("total_cargo_produced_this_cycle")}) == 0)
                     ?
-                    LOAD_PERM(${get_perm("closure_counter")})
+                    LOAD_PERM(${get_perm_num("closure_counter")})
                     :
                     0
                 ),
@@ -149,10 +149,10 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_update_supplied_cycles_remaining_pe
                   otherwise reduce the number of cycles remaining by 1
                   cap minimum value to 0, avoid -ve values that might overflow eventually -->
             STORE_PERM_ALT(
-                ${get_perm("supplied_cycles_remaining_cargo_" + str(cargo_num))},
+                ${get_perm_num("supplied_cycles_remaining_cargo_" + str(cargo_num))},
                 max(
                     0,
-                    LOAD_PERM(${get_perm("supplied_cycles_remaining_cargo_" + str(cargo_num))})
+                    LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(cargo_num))})
                     - 1
                 )
             ),

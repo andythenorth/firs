@@ -15,7 +15,7 @@
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_total_supplies_delivered,
     [
     <tal:total_supplies repeat="var_num range(1, 28)">
-        LOAD_PERM(${get_perm("num_supplies_delivered_" + str(var_num))})
+        LOAD_PERM(${get_perm_num("num_supplies_delivered_" + str(var_num))})
         ${'+' if not repeat.var_num.end else ''}
     </tal:total_supplies>
     ]) {
@@ -27,7 +27,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_calculate_current_productio
          STORE_TEMP(${industry.id}_produce_total_supplies_delivered(), 8),
          STORE_TEMP((LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level2_requirement)) ? primary_level2_produced_percent :
                     (LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level1_requirement)) ? primary_level1_produced_percent : 100, 9),
-         STORE_PERM_ALT(${get_perm("current_supplies_prod_factor")}, LOAD_TEMP(9)),
+         STORE_PERM_ALT(${get_perm_num("current_supplies_prod_factor")}, LOAD_TEMP(9)),
     ]) {
     return 0;
 }
@@ -46,23 +46,23 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_calculate_current_productio
     switch(FEAT_INDUSTRIES, SELF, ${industry.id}_store_incoming_cargo_waiting_${economy.numeric_id},
         [
             STORE_PERM_ALT(
-                ${get_perm("num_supplies_delivered_27")},
+                ${get_perm_num("num_supplies_delivered_27")},
                 <tal:store repeat="cargo industry.get_accept_cargo_types(economy)">
                     incoming_cargo_waiting("${cargo}") +
                 </tal:store>
-                LOAD_PERM(${get_perm("num_supplies_delivered_27")})
+                LOAD_PERM(${get_perm_num("num_supplies_delivered_27")})
             ),
             <!--! check if each cargo is delivered in this cycle, and if so reset the supplied cycles remaining
                   NOTE next cycle will -1 so store 28 so we get 27 cycles in total
                   this will cause the industry 'supplied' text to show immediately -->
             <tal:input_cargos repeat="cargo industry.get_accept_cargo_types(economy)">
                 STORE_PERM_ALT(
-                    ${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))},
+                    ${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))},
                     (incoming_cargo_waiting("${cargo}") > 0)
                     ?
                     28
                     :
-                    LOAD_PERM(${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))})
+                    LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))})
                 ),
             </tal:input_cargos>
             <!--! update the production level immediately, so that production level text immediately updates in industry window
@@ -93,7 +93,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_cargo_arrival, economy) {
                     (cargo amount * production_level * base_prod_factor * supply boost as percent) / (default base_prod_factor * default production_level * 100 because boost is percent)
                     base_prod_factor is randomised at start (default 16), so that production_level can be used separately for cheats and monthly/random prod changes
                 -->
-                ${cargo[0]}: (${cargo[1]} * production_level * LOAD_PERM(${get_perm("base_prod_factor")}) * LOAD_TEMP(9)) / (16 * 16 * 100);
+                ${cargo[0]}: (${cargo[1]} * production_level * LOAD_PERM(${get_perm_num("base_prod_factor")}) * LOAD_TEMP(9)) / (16 * 16 * 100);
             </tal:produce>
         ],
     0)
@@ -113,10 +113,10 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_update_supplied_cycles_remaining_pe
                   otherwise reduce the number of cycles remaining by 1
                   cap minimum value to 0, avoid -ve values that might overflow eventually -->
             STORE_PERM_ALT(
-                ${get_perm("supplied_cycles_remaining_cargo_" + str(cargo_num))},
+                ${get_perm_num("supplied_cycles_remaining_cargo_" + str(cargo_num))},
                 max(
                     0,
-                    LOAD_PERM(${get_perm("supplied_cycles_remaining_cargo_" + str(cargo_num))})
+                    LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(cargo_num))})
                     - 1
                 )
             ),
@@ -130,11 +130,11 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks_shift_supplies_de
     [
         <tal:shift_supplies repeat="var_num range(1, 27)">
             STORE_PERM_ALT(
-                ${get_perm("num_supplies_delivered_" + str(var_num))},
-                LOAD_PERM(${get_perm("num_supplies_delivered_" + str(var_num + 1))}),
+                ${get_perm_num("num_supplies_delivered_" + str(var_num))},
+                LOAD_PERM(${get_perm_num("num_supplies_delivered_" + str(var_num + 1))}),
             ),
         </tal:shift_supplies>
-        STORE_PERM_ALT(${get_perm("num_supplies_delivered_27")}, 0)
+        STORE_PERM_ALT(${get_perm_num("num_supplies_delivered_27")}, 0)
     ]) {
     return 0;
 }
@@ -157,7 +157,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_increase,
     [
         <!--! set the counter to 24 so we don't get another increase for at least 24 months -->
         STORE_PERM_ALT(
-            ${get_perm("permanent_prod_change_cycle_counter")},
+            ${get_perm_num("permanent_prod_change_cycle_counter")},
             24
         ),
         <!--! push news string to register from register 0x100 (256d) -->
@@ -179,11 +179,11 @@ switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_initialise_permanent_prod_change,
 
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_update_cycle_counter_decrement_or_reset,
     [
-        LOAD_PERM(${get_perm("permanent_prod_change_cycle_counter")}) == 1
+        LOAD_PERM(${get_perm_num("permanent_prod_change_cycle_counter")}) == 1
         ?
         3
         :
-        LOAD_PERM(${get_perm("permanent_prod_change_cycle_counter")}) - 1
+        LOAD_PERM(${get_perm_num("permanent_prod_change_cycle_counter")}) - 1
     ]) {
     return;
 }
@@ -192,8 +192,8 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_update_cycle_co
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_update_cycle_counter,
     [
         STORE_PERM_ALT(
-            ${get_perm("permanent_prod_change_cycle_counter")},
-            LOAD_PERM(${get_perm("permanent_prod_change_cycle_counter")}) == 0
+            ${get_perm_num("permanent_prod_change_cycle_counter")},
+            LOAD_PERM(${get_perm_num("permanent_prod_change_cycle_counter")}) == 0
             ?
             ${industry.id}_initialise_permanent_prod_change()
             :
