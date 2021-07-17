@@ -1117,11 +1117,13 @@ class PermStorageMapping(object):
                 "More than 256 storage identifiers passed to PermStorageMapping"
             )
         self.unused = []
+        self.storage_items = {}
         for register_num, identifier in enumerate(identifiers):
             if identifier == "unused":
                 self.unused.append(register_num)
             else:
                 setattr(self, identifier, register_num)
+                self.storage_items[identifier] = register_num
         perm_storage_mappings.setdefault(id, self)
 
 

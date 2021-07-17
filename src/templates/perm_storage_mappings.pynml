@@ -1,4 +1,9 @@
 <tal:perm_storage_mappings repeat="perm_storage_mapping perm_storage_mappings">
-     <!--!${perm_storage_mapping}-->
+    <tal:storage_item repeat="storage_item perm_storage_mappings[perm_storage_mapping].storage_items">
+        //${storage_item}
+    </tal:storage_item>
 </tal:perm_storage_mappings>
+/*
+
+*/
 
