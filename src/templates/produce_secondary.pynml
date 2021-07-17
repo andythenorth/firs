@@ -35,9 +35,7 @@
                     ?
                     28
                     :
-                        LOAD_PERM(
-                            ${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))}
-                        ),
+                    LOAD_PERM(${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))}),
                     ${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))}
                 ),
             </tal:input_cargos>
@@ -51,14 +49,10 @@
             <tal:input_cargos repeat="input_cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
                 <!--! if this cargo was delivered, increase the total production ratio appropriately -->
                 STORE_PERM(
-                    LOAD_PERM(
-                        ${get_perm("current_production_ratio")}
-                        )
+                    LOAD_PERM(${get_perm("current_production_ratio")})
                     +
                     (
-                        LOAD_PERM(
-                            ${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.input_cargo.number))}
-                        )
+                        LOAD_PERM(${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.input_cargo.number))})
                         > 0 ? ${input_cargo[1]} : 0
                     ),
                     ${get_perm("current_production_ratio")}
@@ -148,9 +142,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_update_supplied_cycles_remaining_pe
             STORE_PERM(
                 max(
                     0,
-                    LOAD_PERM(
-                        ${get_perm("supplied_cycles_remaining_cargo_" + str(cargo_num))}
-                    )
+                    LOAD_PERM(${get_perm("supplied_cycles_remaining_cargo_" + str(cargo_num))})
                     - 1
                 ),
                 ${get_perm("supplied_cycles_remaining_cargo_" + str(cargo_num))}

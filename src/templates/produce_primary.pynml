@@ -15,9 +15,7 @@
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_total_supplies_delivered,
     [
     <tal:total_supplies repeat="var_num range(1, 28)">
-        LOAD_PERM(
-            ${get_perm("num_supplies_delivered_" + str(var_num))}
-        )
+        LOAD_PERM(${get_perm("num_supplies_delivered_" + str(var_num))})
         ${'+' if not repeat.var_num.end else ''}
     </tal:total_supplies>
     ]) {
@@ -62,9 +60,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_calculate_current_productio
                     ?
                     28
                     :
-                        LOAD_PERM(
-                            ${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))}
-                        ),
+                    LOAD_PERM(${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))}),
                     ${get_perm("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))}
                 ),
             </tal:input_cargos>
@@ -118,9 +114,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_update_supplied_cycles_remaining_pe
             STORE_PERM(
                 max(
                     0,
-                    LOAD_PERM(
-                        ${get_perm("supplied_cycles_remaining_cargo_" + str(cargo_num))}
-                    )
+                    LOAD_PERM(${get_perm("supplied_cycles_remaining_cargo_" + str(cargo_num))})
                     - 1
                 ),
                 ${get_perm("supplied_cycles_remaining_cargo_" + str(cargo_num))}
