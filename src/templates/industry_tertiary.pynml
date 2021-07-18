@@ -42,6 +42,9 @@
                 <tal:has_production condition="industry.has_production">
                     produce_256_ticks:        ${industry.id}_production_256_economy_${economy.numeric_id};
                 </tal:has_production>
+                <tal:proof_of_concept condition="industry.id == 'general_store'">
+                    monthly_prod_change:      ${industry.id}_monthly_prod_change;
+                </tal:proof_of_concept>
                 location_check:           ${industry.id}_check_location;
                 extra_text_fund:          ${industry.get_extra_text_fund(economy)};
                 <!--! The 0x3800 expressions here are related to using extended cb 37 before nml support was added, and can be removed when nml is updated -->

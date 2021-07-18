@@ -30,3 +30,57 @@
 </tal:economies>
 <!--! end production behaviour -->
 
+<!--! monthly callback is used to influence town behaviour depending on cargo delivered
+      currently included with production behaviour template as it's closely related -->
+
+<tal:proof_of_concept condition="industry.id == 'general_store'">
+    switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
+        [
+            <!--! proof of concept for writing and reading town perm storage from industry -->
+            STORE_PERM_TOWN(
+                ${get_perm_num("copy_of_industry_town_count_for_debugging")},
+                industry_town_count(${industry.numeric_id}) + 1 <!--! seems industry_town_count filters out current instance? -->
+            ),
+            STORE_PERM_TOWN(
+                ${get_perm_num("next_month_happiness_level")},
+                33
+            ),
+            LOAD_PERM_TOWN(${get_perm_num("this_cycle_industry_counter")})
+            ==
+            industry_town_count(${industry.numeric_id}) + 1
+            ?
+            (
+                STORE_PERM_TOWN(
+                    ${get_perm_num("this_cycle_industry_counter")},
+                    0
+                )
+                +
+                STORE_PERM_TOWN(
+                    ${get_perm_num("current_happiness_level")},
+                    LOAD_PERM_TOWN(${get_perm_num("next_month_happiness_level")})
+                )
+                <!--!+
+                STORE_PERM_TOWN(
+                    ${get_perm_num("next_month_happiness_level")},
+                    0
+                )-->
+            )
+            :
+            STORE_PERM_TOWN(
+                ${get_perm_num("this_cycle_industry_counter")},
+                LOAD_PERM_TOWN(${get_perm_num("this_cycle_industry_counter")}) + 1
+            )
+            <!--! seem to have to store temp if we want to store the value of the town storage?
+                  maybe can't use a procedure as an argument to another parameterised procedure?
+                  it's a bug in nml
+                  see https://gist.github.com/andythenorth/df51f3b8fa7bce212a87604702fb836c
+                  and fix in https://github.com/OpenTTD/nml/pull/227
+                  -->
+            <!--!
+            STORE_PERM_ALT(62, LOAD_PERM_TOWN(${get_perm_num("test")})),
+            STORE_TEMP(LOAD_PERM_TOWN(${get_perm_num("test")}), 10),
+            STORE_PERM_ALT(63, LOAD_TEMP(10))-->
+        ]) {
+        return CB_RESULT_IND_PROD_NO_CHANGE;
+    }
+</tal:proof_of_concept>
