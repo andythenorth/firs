@@ -150,8 +150,10 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
         STORE_PERM_TOWN(${get_perm_num("test")}, 999),
         <!--! seem to have to store temp if we want to store the value of the town storage?
               maybe can't use a procedure as an argument to another parameterised procedure?
-              or a bug in nml?
-              see https://gist.github.com/andythenorth/df51f3b8fa7bce212a87604702fb836c -->
+              it's a bug in nml
+              see https://gist.github.com/andythenorth/df51f3b8fa7bce212a87604702fb836c
+              and fix in https://github.com/OpenTTD/nml/pull/227
+              -->
         STORE_PERM_ALT(62, LOAD_PERM_TOWN(${get_perm_num("test")})),
         STORE_TEMP(LOAD_PERM_TOWN(${get_perm_num("test")}), 10),
         STORE_PERM_ALT(63, LOAD_TEMP(10))
