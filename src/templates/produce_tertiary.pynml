@@ -159,11 +159,18 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_count_happiness_effect_industries_i
     return;
 }
 
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_calculate_town_happiness_contribution,
+    [
+        ${industry.id}_produce_total_input_cargo_delivered() >= 80 ? 8 :0
+    ]) {
+    return;
+}
+
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_contribute_to_town_happiness,
     [
         STORE_PERM_TOWN(
             ${get_perm_num("next_happiness_level")},
-            LOAD_PERM_TOWN(${get_perm_num("next_happiness_level")}) + ${industry.id}_produce_total_input_cargo_delivered()
+            LOAD_PERM_TOWN(${get_perm_num("next_happiness_level")}) + ${industry.id}_calculate_town_happiness_contribution()
         ),
     ]) {
     return;
