@@ -1,7 +1,57 @@
-<!--! Tertiary production behaviour is relatively simple -->
+<!--!
+    Tertiary production behaviour.
+    Black hole for any delivered cargo.
+    Delivered cargo may affect town happiness.
+    Optional cargo production on 256 tick callback, similar to primary.
+-->
+
+<!--! get the total amount of supplies delivered in last 27 production cycles -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_total_input_cargo_delivered,
+    [
+    <tal:total_supplies repeat="var_num range(1, 28)">
+        LOAD_PERM(${get_perm_num("input_cargo_delivered_" + str(var_num))})
+        ${'+' if not repeat.var_num.end else ''}
+    </tal:total_supplies>
+    ]) {
+    return;
+}
 
 <tal:economies repeat="economy industry.economies_enabled_for_industry">
-    <!--! clear any delivered cargo immediately on arrival -->
+    <!--!
+        Handle produce 256 tick callback.
+        Always handled to update recent deliveries (used for town happiness).
+        Optionally also produce for industries that have production
+    -->
+    <tal:has_production switch="industry.has_production">
+        <tal:case case="True">
+            produce(${industry.id}_produce_256_ticks_economy_${economy.numeric_id},
+                [<!--! no accept in 256 cb -->],
+                [
+                    <tal:produce repeat="cargo industry.get_prod_cargo_types(economy)">
+                        <!--!
+                              simply replicates default ottd prod. algorithm but in prod. cb, so action 0 prod. properties can be set 0
+                              prod. cb is used consistently in FIRS, to reduce the number of different prod. methods in use
+                              calculation is (cargo amount * production_level * base_prod_factor) / (default production_level * default base_prod_factor)
+                              base_prod_factor is randomised at start (default 16), so that production_level can be used separately for cheats and monthly/random prod changes
+                        -->
+                        ${cargo[0]}: (${cargo[1]} * production_level * LOAD_PERM(${get_perm_num("base_prod_factor")})) / (16 * 16);
+                    </tal:produce>
+                ],
+            0)
+        </tal:case>
+        <tal:case case="False">
+            produce(${industry.id}_produce_256_ticks_economy_${economy.numeric_id},
+                [<!--! no accept in 256 cb -->],
+                [<!--! no product in 256 cb -->],
+            0)
+        </tal:case>
+    </tal:has_production>
+
+    <!--!
+        Handle produce on cargo arrival.
+        Push the amount to perm storage, and update supplied cycles counter (used for town happiness).
+        Then clear cargo from stockpile.
+    -->
     produce (${industry.id}_produce_cargo_arrival_economy_${economy.numeric_id},
         [
             <tal:subtract repeat="cargo industry.get_property('accept_cargo_types', economy)">
@@ -10,77 +60,190 @@
         ],
         [<!--! no production when cargo arrives -->],
     0)
-    <!--! some tertiaries also produce, assumed to be on a regular interval (256 ticks) -->
-    <tal:has_production condition="industry.has_production">
-        produce(${industry.id}_production_256_economy_${economy.numeric_id},
-            [<!--! no accept in 256 cb -->],
-            [
-                <tal:produce repeat="cargo industry.get_prod_cargo_types(economy)">
-                    <!--!
-                          simply replicates default ottd prod. algorithm but in prod. cb, so action 0 prod. properties can be set 0
-                          prod. cb is used consistently in FIRS, to reduce the number of different prod. methods in use
-                          calculation is (cargo amount * production_level * base_prod_factor) / (default production_level * default base_prod_factor)
-                          base_prod_factor is randomised at start (default 16), so that production_level can be used separately for cheats and monthly/random prod changes
-                    -->
-                    ${cargo[0]}: (${cargo[1]} * production_level * LOAD_PERM(${get_perm_num("base_prod_factor")})) / (16 * 16);
-                </tal:produce>
-            ],
-        0)
-    </tal:has_production>
+
+    switch(FEAT_INDUSTRIES, SELF, ${industry.id}_store_incoming_cargo_waiting_${economy.numeric_id},
+        [
+            STORE_PERM_ALT(
+                ${get_perm_num("input_cargo_delivered_27")},
+                <tal:store repeat="cargo industry.get_accept_cargo_types(economy)">
+                    incoming_cargo_waiting("${cargo}") +
+                </tal:store>
+                LOAD_PERM(${get_perm_num("input_cargo_delivered_27")})
+            ),
+            <!--! check if each cargo is delivered in this cycle, and if so reset the supplied cycles remaining
+                  NOTE next cycle will -1 so store 28 so we get 27 cycles in total
+                  this will cause the industry 'supplied' text to show immediately -->
+            <tal:input_cargos repeat="cargo industry.get_accept_cargo_types(economy)">
+                STORE_PERM_ALT(
+                    ${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))},
+                    (incoming_cargo_waiting("${cargo}") > 0)
+                    ?
+                    28
+                    :
+                    LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))})
+                ),
+            </tal:input_cargos>
+        ]) {
+        ${industry.id}_produce_cargo_arrival_economy_${economy.numeric_id};
+    }
+
 </tal:economies>
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_cargo_arrival, economy) {
+    <tal:economies repeat="economy industry.economies_enabled_for_industry">
+        ${economy.numeric_id}: ${industry.id}_store_incoming_cargo_waiting_${economy.numeric_id};
+    </tal:economies>
+}
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks_switch_economy, economy) {
+<tal:economies repeat="economy industry.economies_enabled_for_industry">
+    ${economy.numeric_id}: ${industry.id}_produce_256_ticks_economy_${economy.numeric_id};
+</tal:economies>
+}
+
+<!--! set the number of supplied cycles remaining per cargo - used to display 'supplied' (or not) in the industry window -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_update_supplied_cycles_remaining_per_cargo,
+    [
+        <tal:cargos repeat="cargo_num range(1, 9)">
+            <!--! check if each cargo is delivered, and if so update the cycles remaining flag for that to 27,
+                  otherwise reduce the number of cycles remaining by 1
+                  cap minimum value to 0, avoid -ve values that might overflow eventually -->
+            STORE_PERM_ALT(
+                ${get_perm_num("supplied_cycles_remaining_cargo_" + str(cargo_num))},
+                max(
+                    0,
+                    LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(cargo_num))})
+                    - 1
+                )
+            ),
+        </tal:cargos>
+    ]) {
+    return 0;
+}
+
+<!--! shift the array of supplies_delivered values one place to the left, and zero the last entry -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks_shift_supplies_delivered,
+    [
+        <tal:shift_supplies repeat="var_num range(1, 27)">
+            STORE_PERM_ALT(
+                ${get_perm_num("input_cargo_delivered_" + str(var_num))},
+                LOAD_PERM(${get_perm_num("input_cargo_delivered_" + str(var_num + 1))}),
+            ),
+        </tal:shift_supplies>
+        STORE_PERM_ALT(${get_perm_num("input_cargo_delivered_27")}, 0)
+    ]) {
+    return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
+    [
+        <!--! there is a good chance that the order of operations here introduces an obiwan on the 27 cycles
+              but it _seems_ to work and I don't think it matters enough to figure it out with pen and paper -->
+        ${industry.id}_update_supplied_cycles_remaining_per_cargo(),
+        ${industry.id}_produce_256_ticks_shift_supplies_delivered(),
+    ]) {
+    ${industry.id}_produce_256_ticks_switch_economy;
+}
+
 <!--! end production behaviour -->
 
 <!--! monthly callback is used to influence town behaviour depending on cargo delivered
       currently included with production behaviour template as it's closely related -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_count_happiness_effect_industries_in_town,
+    [
+        <tal:industries_with_town_happiness_effect repeat="industry_with_town_happiness_effect industries_with_town_happiness_effect">
+            industry_town_count(${industry_with_town_happiness_effect.numeric_id}) +
+        </tal:industries_with_town_happiness_effect>
+        1 <!--! seems industry_town_count filters out current instance so add 1? -->
+    ]) {
+    return;
+}
 
-<tal:proof_of_concept condition="industry.id == 'general_store'">
-    switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
-        [
-            <!--! proof of concept for writing and reading town perm storage from industry -->
-            STORE_PERM_TOWN(
-                ${get_perm_num("copy_of_industry_town_count_for_debugging")},
-                industry_town_count(${industry.numeric_id}) + 1 <!--! seems industry_town_count filters out current instance? -->
-            ),
-            STORE_PERM_TOWN(
-                ${get_perm_num("next_month_happiness_level")},
-                33
-            ),
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_contribute_to_town_happiness,
+    [
+        STORE_PERM_TOWN(
+            ${get_perm_num("next_happiness_level")},
+            LOAD_PERM_TOWN(${get_perm_num("next_happiness_level")}) + ${industry.id}_produce_total_input_cargo_delivered()
+        ),
+    ]) {
+    return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_increment_town_happiness_monthly_cycle_industry_counter,
+    [
+        STORE_PERM_TOWN(
+            ${get_perm_num("this_cycle_industry_counter")},
+            LOAD_PERM_TOWN(${get_perm_num("this_cycle_industry_counter")}) + 1
+        )
+    ]) {
+    return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_reset_town_happiness_monthly_cycle_industry_counter,
+    [
+        STORE_PERM_TOWN(
+            ${get_perm_num("this_cycle_industry_counter")},
+            0
+        )
+    ]) {
+    return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_rollover_next_and_current_happiness_level,
+    [
+        STORE_PERM_TOWN(
+            ${get_perm_num("current_happiness_level")},
+            LOAD_PERM_TOWN(${get_perm_num("next_happiness_level")})
+        )
+        ,
+        STORE_PERM_TOWN(
+            ${get_perm_num("next_happiness_level")},
+            0
+        )
+    ]) {
+    return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_town_happiness_monthly_cycle_complete,
+    [
+        ${industry.id}_rollover_next_and_current_happiness_level(),
+        ${industry.id}_reset_town_happiness_monthly_cycle_industry_counter()
+    ]) {
+    return 1;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_check_if_town_happiness_monthly_cycle_complete,
+    [
+        LOAD_PERM_TOWN(${get_perm_num("this_cycle_industry_counter")}) == ${industry.id}_count_happiness_effect_industries_in_town()
+    ]) {
+    1: return ${industry.id}_town_happiness_monthly_cycle_complete;
+    return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
+    [
+        ${industry.id}_contribute_to_town_happiness(),
+        ${industry.id}_increment_town_happiness_monthly_cycle_industry_counter(),
+        <!--! temp debugging to industry 63 and 64 -->
+        STORE_PERM_ALT(
+            63,
             LOAD_PERM_TOWN(${get_perm_num("this_cycle_industry_counter")})
-            ==
-            industry_town_count(${industry.numeric_id}) + 1
-            ?
-            (
-                STORE_PERM_TOWN(
-                    ${get_perm_num("this_cycle_industry_counter")},
-                    0
-                )
-                +
-                STORE_PERM_TOWN(
-                    ${get_perm_num("current_happiness_level")},
-                    LOAD_PERM_TOWN(${get_perm_num("next_month_happiness_level")})
-                )
-                <!--!+
-                STORE_PERM_TOWN(
-                    ${get_perm_num("next_month_happiness_level")},
-                    0
-                )-->
-            )
-            :
-            STORE_PERM_TOWN(
-                ${get_perm_num("this_cycle_industry_counter")},
-                LOAD_PERM_TOWN(${get_perm_num("this_cycle_industry_counter")}) + 1
-            )
-            <!--! seem to have to store temp if we want to store the value of the town storage?
-                  maybe can't use a procedure as an argument to another parameterised procedure?
-                  it's a bug in nml
-                  see https://gist.github.com/andythenorth/df51f3b8fa7bce212a87604702fb836c
-                  and fix in https://github.com/OpenTTD/nml/pull/227
-                  -->
-            <!--!
-            STORE_PERM_ALT(62, LOAD_PERM_TOWN(${get_perm_num("test")})),
-            STORE_TEMP(LOAD_PERM_TOWN(${get_perm_num("test")}), 10),
-            STORE_PERM_ALT(63, LOAD_TEMP(10))-->
-        ]) {
-        return CB_RESULT_IND_PROD_NO_CHANGE;
-    }
-</tal:proof_of_concept>
+        ),
+        STORE_PERM_ALT(
+            64,
+            ${industry.id}_count_happiness_effect_industries_in_town()
+        ),
+        ${industry.id}_check_if_town_happiness_monthly_cycle_complete(),
+        <!--! seem to have to store temp if we want to store the value of the town storage?
+              maybe can't use a procedure as an argument to another parameterised procedure?
+              it's a bug in nml
+              see https://gist.github.com/andythenorth/df51f3b8fa7bce212a87604702fb836c
+              and fix in https://github.com/OpenTTD/nml/pull/227
+              -->
+        <!--!
+        STORE_PERM_ALT(62, LOAD_PERM_TOWN(${get_perm_num("test")})),
+        STORE_TEMP(LOAD_PERM_TOWN(${get_perm_num("test")}), 10),
+        STORE_PERM_ALT(63, LOAD_TEMP(10))-->
+    ]) {
+    return CB_RESULT_IND_PROD_NO_CHANGE;
+}

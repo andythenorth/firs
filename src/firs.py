@@ -107,6 +107,16 @@ for industry in registered_industries:
     for cargo_label in set(accepted):
         industries_accepting_cargo[cargo_label].append(industry)
 
+industries_with_town_happiness_effect = []
+for industry in registered_industries:
+    # currently relies on class, but move to a specific flag if that becomes non-viable
+    if industry.__class__.__name__ == "IndustryTertiary":
+        industries_with_town_happiness_effect.append(industry)
+if len(industries_with_town_happiness_effect) == 0:
+    utils.echo_message(
+        "industries_with_town_happiness_effect has no entries - is this expected?"
+    )
+
 incompatible_industries = {}
 for industry in registered_industries:
     incompatible = []

@@ -1212,7 +1212,7 @@ class Industry(object):
                 "copy_of_industry_town_count_for_debugging",
                 "this_cycle_industry_counter",
                 "current_happiness_level",
-                "next_month_happiness_level",
+                "next_happiness_level",
             ],
         )
 
@@ -1634,7 +1634,9 @@ class Industry(object):
                 "Perm storage not found for " + self.id + ": " + identifier
             )
 
-    def render_nml(self, incompatible_industries):
+    def render_nml(
+        self, incompatible_industries, industries_with_town_happiness_effect
+    ):
         # incompatible industries isn't known at init time, only at compile time, so it has to be passed in
         industry_template = templates[self.template]
         templated_nml = utils.unescape_chameleon_output(
@@ -1644,6 +1646,7 @@ class Industry(object):
                 global_constants=global_constants,
                 graphics_temp_storage=global_constants.graphics_temp_storage,  # convenience measure
                 incompatible_industries=incompatible_industries,
+                industries_with_town_happiness_effect=industries_with_town_happiness_effect,
                 economies=registered_economies,
                 utils=utils,
             )
@@ -1959,6 +1962,44 @@ class IndustryTertiary(Industry):
                 # used in the production calculation as n/16
                 # this is NOT built-in production_level which is used, but will always be 16 by default, and can be adjusted by cheats and monthly/random prod change cbs
                 "base_prod_factor",
+                # used by industry text window to display 'supplied' or not
+                # usually will just be supplies in slot 1 for primaries, except for port-type industries
+                "supplied_cycles_remaining_cargo_1",
+                "supplied_cycles_remaining_cargo_2",
+                "supplied_cycles_remaining_cargo_3",
+                "supplied_cycles_remaining_cargo_4",
+                "supplied_cycles_remaining_cargo_5",
+                "supplied_cycles_remaining_cargo_6",
+                "supplied_cycles_remaining_cargo_7",
+                "supplied_cycles_remaining_cargo_8",
+                # amount of supplies delivered in each of 27 recent production cycles (27 is nice approximation to 3 months, in player's favour given varying month lengths)
+                "input_cargo_delivered_1",
+                "input_cargo_delivered_2",
+                "input_cargo_delivered_3",
+                "input_cargo_delivered_4",
+                "input_cargo_delivered_5",
+                "input_cargo_delivered_6",
+                "input_cargo_delivered_7",
+                "input_cargo_delivered_8",
+                "input_cargo_delivered_9",
+                "input_cargo_delivered_10",
+                "input_cargo_delivered_11",
+                "input_cargo_delivered_12",
+                "input_cargo_delivered_13",
+                "input_cargo_delivered_14",
+                "input_cargo_delivered_15",
+                "input_cargo_delivered_16",
+                "input_cargo_delivered_17",
+                "input_cargo_delivered_18",
+                "input_cargo_delivered_19",
+                "input_cargo_delivered_20",
+                "input_cargo_delivered_21",
+                "input_cargo_delivered_22",
+                "input_cargo_delivered_23",
+                "input_cargo_delivered_24",
+                "input_cargo_delivered_25",
+                "input_cargo_delivered_26",
+                "input_cargo_delivered_27",
             ],
         )
 
