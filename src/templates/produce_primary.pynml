@@ -153,6 +153,15 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
 
 <!--! permanent production change
       handled via monthly callback -->
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_new_production_level,
+    [
+        <!--! 1. cap to 105 (656%); 2. multiply production by 1.66, using integer maths -->
+        min(production_level + ((2 * production_level) / 3), 105)
+    ]) {
+    return;
+}
+
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_increase,
     [
         <!--! set the counter to 24 so we don't get another increase for at least 24 months -->
@@ -160,14 +169,22 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_increase,
             ${get_perm_num("permanent_prod_change_cycle_counter")},
             24
         ),
-        <!--! push news string to register from register 0x100 (256d) -->
-        STORE_TEMP(string(STR_PROD_CHANGE_TEST), 256)
+        <!--! push result to register 0x100 (256d)
+              1. news string in bits 0..15
+              2. new value for production_level, shifted into bits 16..23; max value 128 (800%), default 16 (100%) -->
+        STORE_TEMP(
+            string(STR_PROD_CHANGE_TEST) | (${industry.id}_new_production_level() << 16),
+            256
+        )
     ]) {
-    return CB_RESULT_IND_PROD_DOUBLE | (1 << 8);  <!--! set bit 8 to show custom text result -->
+    return CB_RESULT_IND_PROD_SET_BY_0x100 | (1 << 8);  <!--! set bit 8 to show custom text result -->
 }
 
 <!--! !! 4 bits = 25% chance of increase, this needs adjusted to look at town happiness etc -->
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_dice_roll, getbits(extra_callback_info2, 0, 4)) {
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_dice_roll,
+    [
+        getbits(extra_callback_info2, 0, 4) * (LOAD_PERM_TOWN(${get_perm_num("current_happiness_level")}) >= 8)
+    ]) {
     1: ${industry.id}_monthly_prod_change_increase;
     return CB_RESULT_IND_PROD_NO_CHANGE;
 }
