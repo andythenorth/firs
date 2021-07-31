@@ -119,7 +119,7 @@ bundle_src: $(MD5_FILE)
 
 
 copy_docs_to_grf_farm:
-	$(_V) $(PYTHON3) src/grf_farm.py $(PROJECT_NAME)
+	$(_V) $(PYTHON3) src/polar_fox/grf_farm.py $(PROJECT_NAME)
 
 # this is a macOS-specifc install location; the pre-2017 Makefile handled multiple platforms, that could be restored if needed
 install: $(GRF_FILE)
