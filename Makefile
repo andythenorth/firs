@@ -118,6 +118,7 @@ bundle_src: $(MD5_FILE)
 		`$(FIND_FILES) $(BUNDLE_DIR)/src` $(MD5_FILE)
 
 
+# this expects to find a '../../grf.farm' path relative to the project, and will fail otherwise
 copy_docs_to_grf_farm:
 	$(_V) $(PYTHON3) src/polar_fox/grf_farm.py $(PROJECT_NAME)
 
