@@ -47,7 +47,6 @@ class Tile(object):
         self.location_checks = kwargs.get("location_checks")
         # check for setting both land_shape_flags and location_checks
         # it's a cause of coder-error when I forget that land_shape_flags will be ignored when location_check is used
-        # 'janky_industry_id_string' because an industry ID is needed, and I don't trivially have one here
         if (
             self.land_shape_flags != "0"
             and len(self.location_checks.get_render_tree(self.id, industry_id)) > 0
