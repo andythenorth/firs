@@ -18,7 +18,7 @@ PROJECT_NAME = firs
 # lang is not copied to generated currently in FIRS, unlike RH, IH etc - could be changed
 LANG_DIR = generated/lang
 NML_FILE = generated/firs.nml
-NML_FLAGS =-c -l $(LANG_DIR) --verbosity=4
+NML_FLAGS =-c -l $(LANG_DIR) --verbosity=4 --no-optimisation-warning
 
 -include Makefile.local
 
