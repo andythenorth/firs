@@ -1653,6 +1653,29 @@ class Industry(object):
         return templated_nml
 
 
+class IndustryInformative(Industry):
+    """ Industries used solely to explain advanced game mechanics to players via industry window text."""
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.template = "industry_informative.pynml"
+        # common case is that tertiary should be treated as town industry when drawing docs cargoflow, but over-ride for cases where that's not wanted
+        self.town_industry_for_cargoflow = kwargs.get(
+            "town_industry_for_cargoflow", True
+        )
+        self.perm_storage = PermStorageMapping(
+            self.__class__.__name__,
+            [],
+        )
+
+    def get_extra_text_string(self, economy, industries_with_town_happiness_effect):
+        result = ','.join([industry.get_property('name', economy) for industry in industries_with_town_happiness_effect])
+        return "string(STR_CABBAGE," + result + ")"
+
+    def get_prod_cargo_types(self, economy):
+        return []
+
+
 class IndustryPrimary(Industry):
     """ Industries that produce cargo and (optionally) boost production if supplies are delivered """
 

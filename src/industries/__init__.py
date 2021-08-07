@@ -317,6 +317,10 @@ from industries import orchard_piggery
 
 orchard_piggery.industry.register()
 
+from industries import newspaper_office
+
+newspaper_office.industry.register()
+
 from industries import paper_mill
 
 paper_mill.industry.register()

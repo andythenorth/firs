@@ -1,0 +1,47 @@
+/* ******************************************************************
+ * Definition of the industry tile, its callbacks, and graphics chain
+ * ******************************************************************/
+
+<tal:include metal:use-macro="load: spritesets.pynml" />
+
+<tal:include metal:use-macro="load: spritelayouts.pynml" />
+
+<tal:include metal:use-macro="load: graphics_switches.pynml" />
+
+<tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
+             metal:use-macro="location_checks_tile.macros['render_tree']" />
+
+<tal:include define="animation_macros load: animation_macros.pynml"
+             metal:use-macro="animation_macros.macros['tile_animation']" />
+
+<tal:include metal:use-macro="load: properties_tile.pynml" />
+
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+<tal:include metal:use-macro="load: layouts.pynml" />
+
+<tal:include metal:use-macro="load: extra_text_informative.pynml" />
+
+<tal:include metal:use-macro="load: availability.pynml" />
+
+<tal:include metal:use-macro="load: location_check_macros_industry.pynml" />
+
+<tal:include metal:use-macro="load: properties_industry.pynml" />
+
+<!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
+<tal:economies repeat="economy industry.economies_enabled_for_industry">
+    if (economy==${economy.numeric_id}) {
+        item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
+            graphics {
+                construction_probability: ${industry.id}_check_availability;
+                location_check:           ${industry.id}_check_location;
+                extra_text_fund:          ${industry.get_extra_text_fund(economy)};
+                extra_text_industry:      ${industry.id}_extra_text;
+                colour:                   switch_colour;
+            }
+        }
+    }
+</tal:economies>
