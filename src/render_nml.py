@@ -13,6 +13,7 @@ import utils
 import global_constants
 from polar_fox import git_info
 from incompatible_grfs import incompatible_grfs
+from perm_storage_mappings import perm_storage_mappings
 
 registered_cargos = firs.registered_cargos
 registered_industries = firs.registered_industries
@@ -34,6 +35,15 @@ if not os.path.exists(generated_nml_path):
 makefile_args = utils.get_makefile_args(sys)
 
 
+def get_perm_num(identifier):
+    # !! temp hax - see also industry get_perm_num() - needs consolidated
+    if identifier in perm_storage_mappings['TownStorage'].storage_items.keys():
+        return perm_storage_mappings['TownStorage'].storage_items[identifier]
+    else:
+        utils.echo_message(
+            "Perm storage not found for " + self.id + ": " + identifier
+        )
+
 def render_header_item_nml(header_item):
     template = templates[header_item + ".pynml"]
     result = utils.unescape_chameleon_output(
@@ -41,7 +51,8 @@ def render_header_item_nml(header_item):
             registered_industries=registered_industries,
             registered_cargos=registered_cargos,
             economies=registered_economies,
-            perm_storage_mappings=firs.perm_storage_mappings,
+            perm_storage_mappings=perm_storage_mappings,
+            get_perm_num=get_perm_num,
             incompatible_grfs=incompatible_grfs,
             global_constants=global_constants,
             graphics_temp_storage=global_constants.graphics_temp_storage,  # convenience measure
@@ -66,7 +77,6 @@ def render_industry_nml(industry):
     only_build_test_industry = makefile_args.get("test_industry", None)
     if not only_build_test_industry or only_build_test_industry == industry.id:
         result = industry.render_nml(
-            registered_industries=registered_industries,
             incompatible_industries=incompatible_industries,
         )
     else:
@@ -101,6 +111,7 @@ def main():
         "magic_trees",
         "perm_storage_mappings",
         "randomise_primary_production_on_build",
+        "monthly_town_loop",
         "terrain_sprite",
     ]
     for header_item in header_items:

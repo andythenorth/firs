@@ -1,7 +1,5 @@
 registered_industries = []
 
-perm_storage_mappings = {}
-
 # keep these alphabetised for ease of maintaining
 
 """

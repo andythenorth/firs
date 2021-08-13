@@ -1,6 +1,6 @@
 <!--! monthly callback is used to influence town behaviour depending on cargo delivered
       currently included with production behaviour template as it's closely related -->
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_count_industries_in_town,
+switch(FEAT_INDUSTRIES, SELF, count_industries_in_town,
     [
         <tal:industries_in_town repeat="industry registered_industries">
             industry_town_count(${industry.numeric_id}) +
@@ -10,24 +10,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_count_industries_in_town,
     return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_calculate_town_optimism_contribution,
-    [
-        ${industry.id}_produce_total_input_cargo_delivered() >= 80 ? 8 :0
-    ]) {
-    return;
-}
-
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_contribute_to_town_optimism,
-    [
-        STORE_PERM_TOWN(
-            ${get_perm_num("next_optimism_score")},
-            LOAD_PERM_TOWN(${get_perm_num("next_optimism_score")}) + ${industry.id}_calculate_town_optimism_contribution()
-        ),
-    ]) {
-    return;
-}
-
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_increment_town_monthly_cycle_industry_counter,
+switch(FEAT_INDUSTRIES, SELF, increment_town_monthly_cycle_industry_counter,
     [
         STORE_PERM_TOWN(
             ${get_perm_num("this_cycle_industry_counter")},
@@ -37,7 +20,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_increment_town_monthly_cycle_indust
     return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_reset_town_monthly_cycle_industry_counter,
+switch(FEAT_INDUSTRIES, SELF, reset_town_monthly_cycle_industry_counter,
     [
         STORE_PERM_TOWN(
             ${get_perm_num("this_cycle_industry_counter")},
@@ -47,7 +30,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_reset_town_monthly_cycle_industry_c
     return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_rollover_next_and_current_optimism_scores,
+switch(FEAT_INDUSTRIES, SELF, rollover_next_and_current_optimism_scores,
     [
         STORE_PERM_TOWN(
             ${get_perm_num("current_optimism_score")},
@@ -62,26 +45,25 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_rollover_next_and_current_optimism_
     return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_town_monthly_cycle_complete,
+switch(FEAT_INDUSTRIES, SELF, town_monthly_cycle_complete,
     [
-        ${industry.id}_rollover_next_and_current_optimism_scores(),
-        ${industry.id}_reset_town_monthly_cycle_industry_counter()
+        rollover_next_and_current_optimism_scores(),
+        reset_town_monthly_cycle_industry_counter()
     ]) {
     return 1;
 }
 
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_check_if_town_monthly_cycle_complete,
+switch(FEAT_INDUSTRIES, SELF, check_if_town_monthly_cycle_complete,
     [
-        LOAD_PERM_TOWN(${get_perm_num("this_cycle_industry_counter")}) == ${industry.id}_count_industries_in_town()
+        LOAD_PERM_TOWN(${get_perm_num("this_cycle_industry_counter")}) == count_industries_in_town()
     ]) {
-    1: return ${industry.id}_town_monthly_cycle_complete;
+    1: return town_monthly_cycle_complete;
     return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
+switch(FEAT_INDUSTRIES, SELF, monthly_town_loop,
     [
-        ${industry.id}_contribute_to_town_optimism(),
-        ${industry.id}_increment_town_monthly_cycle_industry_counter(),
+        increment_town_monthly_cycle_industry_counter(),
         <!--! temp debugging to industry 63 and 64 -->
         STORE_PERM_ALT(
             63,
@@ -89,9 +71,9 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
         ),
         STORE_PERM_ALT(
             64,
-            ${industry.id}_count_industries_in_town()
+            count_industries_in_town()
         ),
-        ${industry.id}_check_if_town_monthly_cycle_complete(),
+        check_if_town_monthly_cycle_complete(),
         <!--! seem to have to store temp if we want to store the value of the town storage?
               maybe can't use a procedure as an argument to another parameterised procedure?
               it's a bug in nml

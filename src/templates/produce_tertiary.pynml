@@ -146,3 +146,34 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
 }
 
 <!--! end production behaviour -->
+
+
+<!--! called from monthly 'town' loop (actually monthly industry loop) -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_calculate_town_optimism_contribution,
+    [
+        ${industry.id}_produce_total_input_cargo_delivered() >= 80 ? 8 :0
+    ]) {
+    return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_contribute_to_town_optimism,
+    [
+        STORE_PERM_TOWN(
+            ${get_perm_num("next_optimism_score")},
+            LOAD_PERM_TOWN(${get_perm_num("next_optimism_score")}) + ${industry.id}_calculate_town_optimism_contribution()
+        ),
+    ]) {
+    return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
+    [
+        ${industry.id}_contribute_to_town_optimism(),
+        monthly_town_loop()
+    ]) {
+    return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+<!--! end from monthly 'town' loop (actually monthly industry loop) -->
+
+

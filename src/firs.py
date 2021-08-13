@@ -28,7 +28,6 @@ registered_cargos = cargos.registered_cargos
 import industries
 
 registered_industries = industries.registered_industries
-perm_storage_mappings = industries.perm_storage_mappings
 import economies
 
 registered_economies = economies.registered_economies

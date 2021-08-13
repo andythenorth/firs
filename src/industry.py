@@ -21,10 +21,9 @@ templates = PageTemplateLoader(
     os.path.join(currentdir, "src", "templates"), format="text"
 )
 
+from perm_storage_mappings import PermStorageMapping, town_perm_storage
 from economies import registered_economies
 from industries import registered_industries
-from industries import perm_storage_mappings
-
 
 def get_another_industry(id):
     # utility function so that we can provide numeric ids in nml output, rather than relying identifiers
@@ -33,7 +32,6 @@ def get_another_industry(id):
         if industry.id == id:
             return industry
     # if none found, that's an error, don't handle the error, just blow up
-
 
 class Tile(object):
     """ Base class to hold industry tiles"""
@@ -1105,27 +1103,6 @@ class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
         self.params = []
 
 
-class PermStorageMapping(object):
-    """ sparse class mapping properties names to int numbers 1-16, used to aid readability when using STORE_PERM and LOAD_PERM"""
-
-    def __init__(self, id, identifiers):
-        # doesn't need any numbers, just don't mess with positions of identifiers (or bump savegame version if you do)
-        # note that OpenTTD 1.9.0 increased permanent storage to 256 registers
-        if len(identifiers) > 256:
-            utils.echo_message(
-                "More than 256 storage identifiers passed to PermStorageMapping"
-            )
-        self.unused = []
-        self.storage_items = {}
-        for register_num, identifier in enumerate(identifiers):
-            if identifier == "unused":
-                self.unused.append(register_num)
-            else:
-                setattr(self, identifier, register_num)
-                self.storage_items[identifier] = register_num
-        perm_storage_mappings.setdefault(id, self)
-
-
 class IndustryProperties(object):
     """ Base class to hold properties corresponding to nml industry item properties """
 
@@ -1205,15 +1182,7 @@ class Industry(object):
         self.location_checks = IndustryLocationChecks(
             self, kwargs.get("location_checks", {})
         )
-        self.town_perm_storage = PermStorageMapping(
-            "TownStorage",
-            [
-                "copy_of_industry_town_count_for_debugging",
-                "this_cycle_industry_counter",
-                "current_optimism_score",
-                "next_optimism_score",
-            ],
-        )
+        self.town_perm_storage = town_perm_storage
 
     def register(self):
         if (
@@ -1634,7 +1603,7 @@ class Industry(object):
             )
 
     def render_nml(
-        self, registered_industries, incompatible_industries
+        self, incompatible_industries
     ):
         # incompatible industries isn't known at init time, only at compile time, so it has to be passed in
         industry_template = templates[self.template]
