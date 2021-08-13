@@ -3,7 +3,7 @@
 
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Brought to you by andythenorth, FooBar, planetmaker, Terkhen and Yexo, with help from many others. {SILVER}See readme for more information, including how to use FIRS. {BLACK}License: GPL v2.
 
-STR_CABBAGE                                                                     :Cabbage Cabbage Cabbage {YELLOW}{}{STRING} {}{STRING} {}{STRING} {}{STRING} {}{STRING} {}{STRING} {}{STRING}
+STR_CABBAGE                                                                     :Population mood: {YELLOW}optimistic{}{}Optimism score:{}{BLACK} Needs and luxuries met: {YELLOW}22 points{}{BLACK} Pollution and squalor: {YELLOW}-15 points{}{BLACK} Total score: {GREEN}7 points
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximum distance of fishing grounds, oil rigs and dredging sites from the coast in tiles.
 STR_PARAM_DESC_ECONOMIES                                                        :Each economy provides a different combination of cargos and industries.{}{}For players who want simple gameplay, {SILVER}Basic {BLACK}economies contain fewer industries and cargos than other FIRS economies.{}{}The FIRS website provides detailed information about each economy.
@@ -26,6 +26,19 @@ STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          
 STR_PARAM_VALUE_ECONOMIES_BETTER_LIVING_THROUGH_CHEMISTRY                       :Better Living Through Chemistry
 STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                      :In A Hot Country
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Steeltown
+
+STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG                                   : {BLACK}(supplied)
+STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Produces at maximum rate if {WHITE}any {BLACK}required cargo is supplied.
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}For maximum production rate, supply {WHITE}all {BLACK}required cargos at least once every three months.
+STR_EXTRA_TEXT_TOWN_PRODUCER                                                    :{BLACK}Production is proportional to town population. At least {WHITE}{SIGNED_WORD} units{BLACK} and not more than {WHITE}{SIGNED_WORD} units{BLACK} of cargo will be produced every month.
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} crates of supplies at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates.{STRING}
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this level, deliver {SIGNED_WORD} crates of supplies at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates.{STRING}
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} crates of supplies at least once every three months.{STRING}
+STR_PRIMARY_TOWN_IS_HAPPY                                                       :{}{}Local population is feeling optimistic. Production might also increase permanently.
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} units of cargo at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} units.
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this level, deliver {SIGNED_WORD} units of cargo at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} units.
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} units of cargo at least once every three months.
+STR_GENERIC_NEWLINE                                                             :{}
 
 STR_CARGO_NAME_ACID                                                             :Acid
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
@@ -408,7 +421,7 @@ STR_IND_MACHINE_WORKS                                                           
 STR_IND_MANGANESE_MINE                                                          :Manganese Mine
 STR_IND_METAL_WORKSHOP                                                          :Metal Workshop
 STR_IND_MIXEDFARM                                                               :Mixed Farm
-STR_IND_NEWSPAPER_OFFICE                                                        :Newspaper Office
+STR_IND_NEWSPAPER_OFFICE                                                        :Plaza
 STR_IND_NITRATE_MINE                                                            :Nitrate Mine
 STR_IND_ORCHARD_PIGGERY                                                         :Orchard and Piggery
 STR_IND_PEATLANDS                                                               :Peatlands
@@ -449,19 +462,6 @@ STR_IND_VINEYARD                                                                
 STR_IND_VEHICLE_DISTRIBUTOR                                                     :Vehicle Distributor
 STR_IND_WHARF                                                                   :Wharf
 STR_IND_WIRE_AND_SECTION_MILL                                                   :Wire and Section Mill
-
-
-STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG                             : {BLACK}(supplied)
-STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Produces at maximum rate if {WHITE}any {BLACK}required cargo is supplied.
-STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}For maximum production rate, supply {WHITE}all {BLACK}required cargos at least once every three months.
-STR_EXTRA_TEXT_TOWN_PRODUCER                                                    :{BLACK}Production is proportional to town population. At least {WHITE}{SIGNED_WORD} units{BLACK} and not more than {WHITE}{SIGNED_WORD} units{BLACK} of cargo will be produced every month.
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} crates of supplies at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates.
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this level, deliver {SIGNED_WORD} crates of supplies at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates.
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} crates of supplies at least once every three months.
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} units of cargo at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} units.
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this level, deliver {SIGNED_WORD} units of cargo at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} units.
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} units of cargo at least once every three months.
-STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
 STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
