@@ -39,7 +39,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
         build_prod_change:        randomise_primary_production_on_build(${get_perm_num("base_prod_factor")});
         produce_256_ticks:        ${industry.id}_produce_256_ticks;
 		location_check:           ${industry.id}_check_location;
-		monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+        monthly_prod_change:      ${industry.id}_monthly_prod_change;
 		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 		colour:                   switch_colour;
 	}

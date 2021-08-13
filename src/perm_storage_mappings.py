@@ -42,7 +42,7 @@ class PermStorageMapping(object):
 register_perm_storage_mapping(
     "town_perm_storage",
     [
-        "copy_of_industry_town_count_for_debugging",
+        "town_industry_count_for_debugging",
         "this_cycle_industry_counter",
         "current_optimism_score",
         "next_optimism_score",

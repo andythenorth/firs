@@ -48,3 +48,18 @@ switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [
        ) {
 	${industry.id}_produce_switch_economy;
 }
+
+<!--! called from monthly 'town' loop (actually monthly industry loop)
+      *all* industries must handle monthly_town_loop, or town behaviour will fail on wrong industry counts -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
+    [
+        monthly_town_loop(
+            ${industry.basic_needs_and_luxuries_score},
+            ${industry.pollution_and_squalor_score}
+        )
+    ]) {
+    return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+<!--! end from monthly 'town' loop (actually monthly industry loop) -->
+
+

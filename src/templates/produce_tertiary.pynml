@@ -147,7 +147,8 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
 <!--! end production behaviour -->
 
 
-<!--! called from monthly 'town' loop (actually monthly industry loop) -->
+<!--! called from monthly 'town' loop (actually monthly industry loop)
+      *all* industries must handle monthly_town_loop, or town behaviour will fail on wrong industry counts -->
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_calculate_town_optimism_contribution,
     [
         ${industry.id}_produce_total_input_cargo_delivered() >= 80 ? 8 :0
@@ -158,7 +159,8 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_calculate_town_optimism_contributio
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
     [
         monthly_town_loop(
-            ${industry.id}_calculate_town_optimism_contribution()
+            ${industry.id}_calculate_town_optimism_contribution(),
+            ${industry.pollution_and_squalor_score}
         )
     ]) {
     return CB_RESULT_IND_PROD_NO_CHANGE;

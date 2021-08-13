@@ -1510,6 +1510,14 @@ class Industry(object):
         flags.extend(self.get_property("_special_flags", None))
         return "bitmask(" + ",".join(flags) + ")"
 
+    @property
+    def basic_needs_and_luxuries_score(self):
+        return 1
+
+    @property
+    def pollution_and_squalor_score(self):
+        return 1
+
     def validate_map_colour(self, value):
         # we need to guard against map colours that have poor contrast with the green, dark green and purple maps
         # see the list of valid colours in global_constants

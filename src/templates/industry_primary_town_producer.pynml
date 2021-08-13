@@ -38,7 +38,7 @@
                 produce_256_ticks:       ${industry.id}_produce;
                 construction_probability:${industry.id}_check_availability;
                 location_check:          ${industry.id}_check_location;
-                monthly_prod_change:     CB_RESULT_IND_PROD_NO_CHANGE;
+                monthly_prod_change:     ${industry.id}_monthly_prod_change;
                 random_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
                 extra_text_fund:         ${industry.get_extra_text_fund(economy)};
                 extra_text_industry:     return string(STR_EXTRA_TEXT_TOWN_PRODUCER, ${industry.min_production}, ${industry.max_production});

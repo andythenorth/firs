@@ -23,6 +23,8 @@
 
 <tal:include metal:use-macro="load: layouts.pynml" />
 
+<tal:include metal:use-macro="load: produce_informative.pynml" />
+
 <tal:include metal:use-macro="load: extra_text_informative.pynml" />
 
 <tal:include metal:use-macro="load: availability.pynml" />
@@ -38,6 +40,7 @@
             graphics {
                 construction_probability: ${industry.id}_check_availability;
                 location_check:           ${industry.id}_check_location;
+                monthly_prod_change:      ${industry.id}_monthly_prod_change;
                 extra_text_fund:          ${industry.get_extra_text_fund(economy)};
                 extra_text_industry:      ${industry.id}_extra_text;
                 colour:                   switch_colour;
