@@ -61,8 +61,19 @@ switch(FEAT_INDUSTRIES, SELF, check_if_town_monthly_cycle_complete,
     return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, monthly_town_loop,
+switch(FEAT_INDUSTRIES, SELF, contribute_to_town_optimism, optimism_score,
     [
+        STORE_PERM_TOWN(
+            ${get_perm_num("next_optimism_score")},
+            LOAD_PERM_TOWN(${get_perm_num("next_optimism_score")}) + optimism_score
+        ),
+    ]) {
+    return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, monthly_town_loop, optimism_score,
+    [
+        contribute_to_town_optimism(optimism_score),
         increment_town_monthly_cycle_industry_counter(),
         <!--! temp debugging to industry 63 and 64 -->
         STORE_PERM_ALT(

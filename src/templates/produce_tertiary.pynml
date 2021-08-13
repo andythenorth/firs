@@ -156,20 +156,11 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_calculate_town_optimism_contributio
     return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_contribute_to_town_optimism,
-    [
-        STORE_PERM_TOWN(
-            ${get_perm_num("next_optimism_score")},
-            LOAD_PERM_TOWN(${get_perm_num("next_optimism_score")}) + ${industry.id}_calculate_town_optimism_contribution()
-        ),
-    ]) {
-    return;
-}
-
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
     [
-        ${industry.id}_contribute_to_town_optimism(),
-        monthly_town_loop()
+        monthly_town_loop(
+            ${industry.id}_calculate_town_optimism_contribution()
+        )
     ]) {
     return CB_RESULT_IND_PROD_NO_CHANGE;
 }
