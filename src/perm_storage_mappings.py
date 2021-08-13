@@ -27,7 +27,6 @@ class PermStorageMapping(object):
             utils.echo_message(
                 "More than 256 storage identifiers passed to PermStorageMapping"
             )
-        self.id = id
         self.unused = []
         self.storage_items = {}
         for register_num, identifier in enumerate(identifiers):
