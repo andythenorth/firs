@@ -1,16 +1,21 @@
 perm_storage_mappings = {}
 
+
 def get_perm_num(identifier, industry_type=None):
     if industry_type is not None:
         if identifier in perm_storage_mappings[industry_type].storage_items.keys():
             return perm_storage_mappings[industry_type].storage_items[identifier]
-    if identifier in perm_storage_mappings['town_perm_storage'].storage_items.keys():
-        return perm_storage_mappings['town_perm_storage'].storage_items[identifier]
+    if identifier in perm_storage_mappings["town_perm_storage"].storage_items.keys():
+        return perm_storage_mappings["town_perm_storage"].storage_items[identifier]
     # fall through to here if not found
-    utils.echo_message(
-        "Perm storage not found for " + self.id + ": " + identifier
-    )
+    utils.echo_message("Perm storage not found for " + self.id + ": " + identifier)
     return "NOT FOUND"
+
+
+def register_perm_storage_mapping(id, mapping):
+    new_mapping = PermStorageMapping(id, mapping)
+    perm_storage_mappings.setdefault(id, new_mapping)
+
 
 class PermStorageMapping(object):
     """ sparse class mapping properties names to int numbers 1-16, used to aid readability when using STORE_PERM and LOAD_PERM"""
@@ -31,12 +36,11 @@ class PermStorageMapping(object):
             else:
                 setattr(self, identifier, register_num)
                 self.storage_items[identifier] = register_num
-        perm_storage_mappings.setdefault(id, self)
 
 
 # arguably should be in main() but eh, later
 
-town_perm_storage = PermStorageMapping(
+town_perm_storage = register_perm_storage_mapping(
     "town_perm_storage",
     [
         "copy_of_industry_town_count_for_debugging",

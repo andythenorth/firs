@@ -21,7 +21,7 @@ templates = PageTemplateLoader(
     os.path.join(currentdir, "src", "templates"), format="text"
 )
 
-from perm_storage_mappings import PermStorageMapping, get_perm_num
+from perm_storage_mappings import register_perm_storage_mapping, get_perm_num
 from economies import registered_economies
 from industries import registered_industries
 
@@ -1593,7 +1593,7 @@ class Industry(object):
 
     def get_perm_num(self, identifier):
         # just a silly pass-through to perm_storage_mappings.get_perm_num
-        return get_perm_num(identifier, industry_type=self.perm_storage.id)
+        return get_perm_num(identifier, industry_type=self.__class__.__name__)
 
     def render_nml(
         self, incompatible_industries
@@ -1625,7 +1625,7 @@ class IndustryInformative(Industry):
         self.town_industry_for_cargoflow = kwargs.get(
             "town_industry_for_cargoflow", True
         )
-        self.perm_storage = PermStorageMapping(
+        register_perm_storage_mapping(
             self.__class__.__name__,
             [],
         )
@@ -1645,7 +1645,7 @@ class IndustryPrimary(Industry):
         super().__init__(**kwargs)
         self.template = kwargs.get("template", "industry_primary.pynml")
         self.supply_requirements = None  # default None, set appropriately by subclasses
-        self.perm_storage = PermStorageMapping(
+        register_perm_storage_mapping(
             self.__class__.__name__,
             [
                 "permanent_prod_change_cycle_counter",
@@ -1840,7 +1840,7 @@ class IndustrySecondary(Industry):
         self.combined_cargos_boost_prod = kwargs.get(
             "combined_cargos_boost_prod", False
         )
-        self.perm_storage = PermStorageMapping(
+        register_perm_storage_mapping(
             self.__class__.__name__,
             [
                 "closure_counter",  # months without delivery, same as primary industries
@@ -1939,7 +1939,7 @@ class IndustryTertiary(Industry):
         self.town_industry_for_cargoflow = kwargs.get(
             "town_industry_for_cargoflow", True
         )
-        self.perm_storage = PermStorageMapping(
+        register_perm_storage_mapping(
             self.__class__.__name__,
             [
                 # base prod factor is randomised when industry is constructed, to give production variation between instances of this type
