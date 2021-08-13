@@ -317,10 +317,6 @@ from industries import orchard_piggery
 
 orchard_piggery.industry.register()
 
-from industries import newspaper_office
-
-newspaper_office.industry.register()
-
 from industries import paper_mill
 
 paper_mill.industry.register()
@@ -346,6 +342,10 @@ phosphoric_acid_plant.industry.register()
 from industries import plastics_plant
 plastics_plant.industry.register()
 """
+
+from industries import plaza
+
+plaza.industry.register()
 
 """ BLTC
 from industries import polyethylene_plant

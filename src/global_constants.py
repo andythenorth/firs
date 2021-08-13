@@ -1,7 +1,7 @@
 # Definition of numeric IDs for industries
 industry_numeric_ids = dict(
     coal_mine=0,
-    newspaper_office = 1,
+    plaza = 1,
     ####UNUSED?####steel_mill = 2,
     cryo_plant=3,
     iron_ore_mine=4,
@@ -124,7 +124,7 @@ industry_numeric_ids = dict(
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
 tile_numeric_ids = dict(
-    newspaper_office_tile_1=85,
+    plaza_tile_1=85,
     integrated_steel_mill_tile_1=86,
     integrated_steel_mill_tile_2=87,
     cider_mill_tile_1=88,
