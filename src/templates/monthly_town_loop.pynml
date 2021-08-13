@@ -96,5 +96,5 @@ switch(FEAT_INDUSTRIES, SELF, monthly_town_loop, optimism_score,
         STORE_TEMP(LOAD_PERM_TOWN(${get_perm_num("test")}), 10),
         STORE_PERM_ALT(63, LOAD_TEMP(10))-->
     ]) {
-    return CB_RESULT_IND_PROD_NO_CHANGE;
+    return;
 }
