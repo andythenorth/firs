@@ -1,0 +1,107 @@
+<!--! monthly callback is used to influence town behaviour depending on cargo delivered
+      currently included with production behaviour template as it's closely related -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_count_happiness_effect_industries_in_town,
+    [
+        <tal:industries_with_town_happiness_effect repeat="industry_with_town_happiness_effect industries_with_town_happiness_effect">
+            industry_town_count(${industry_with_town_happiness_effect.numeric_id}) +
+        </tal:industries_with_town_happiness_effect>
+        1 <!--! seems industry_town_count filters out current instance so add 1? -->
+    ]) {
+    return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_calculate_town_happiness_contribution,
+    [
+        ${industry.id}_produce_total_input_cargo_delivered() >= 80 ? 8 :0
+    ]) {
+    return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_contribute_to_town_happiness,
+    [
+        STORE_PERM_TOWN(
+            ${get_perm_num("next_happiness_level")},
+            LOAD_PERM_TOWN(${get_perm_num("next_happiness_level")}) + ${industry.id}_calculate_town_happiness_contribution()
+        ),
+    ]) {
+    return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_increment_town_happiness_monthly_cycle_industry_counter,
+    [
+        STORE_PERM_TOWN(
+            ${get_perm_num("this_cycle_industry_counter")},
+            LOAD_PERM_TOWN(${get_perm_num("this_cycle_industry_counter")}) + 1
+        )
+    ]) {
+    return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_reset_town_happiness_monthly_cycle_industry_counter,
+    [
+        STORE_PERM_TOWN(
+            ${get_perm_num("this_cycle_industry_counter")},
+            0
+        )
+    ]) {
+    return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_rollover_next_and_current_happiness_level,
+    [
+        STORE_PERM_TOWN(
+            ${get_perm_num("current_happiness_level")},
+            LOAD_PERM_TOWN(${get_perm_num("next_happiness_level")})
+        )
+        ,
+        STORE_PERM_TOWN(
+            ${get_perm_num("next_happiness_level")},
+            0
+        )
+    ]) {
+    return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_town_happiness_monthly_cycle_complete,
+    [
+        ${industry.id}_rollover_next_and_current_happiness_level(),
+        ${industry.id}_reset_town_happiness_monthly_cycle_industry_counter()
+    ]) {
+    return 1;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_check_if_town_happiness_monthly_cycle_complete,
+    [
+        LOAD_PERM_TOWN(${get_perm_num("this_cycle_industry_counter")}) == ${industry.id}_count_happiness_effect_industries_in_town()
+    ]) {
+    1: return ${industry.id}_town_happiness_monthly_cycle_complete;
+    return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
+    [
+        ${industry.id}_contribute_to_town_happiness(),
+        ${industry.id}_increment_town_happiness_monthly_cycle_industry_counter(),
+        <!--! temp debugging to industry 63 and 64 -->
+        STORE_PERM_ALT(
+            63,
+            LOAD_PERM_TOWN(${get_perm_num("this_cycle_industry_counter")})
+        ),
+        STORE_PERM_ALT(
+            64,
+            ${industry.id}_count_happiness_effect_industries_in_town()
+        ),
+        ${industry.id}_check_if_town_happiness_monthly_cycle_complete(),
+        <!--! seem to have to store temp if we want to store the value of the town storage?
+              maybe can't use a procedure as an argument to another parameterised procedure?
+              it's a bug in nml
+              see https://gist.github.com/andythenorth/df51f3b8fa7bce212a87604702fb836c
+              and fix in https://github.com/OpenTTD/nml/pull/227
+              -->
+        <!--!
+        STORE_PERM_ALT(62, LOAD_PERM_TOWN(${get_perm_num("test")})),
+        STORE_TEMP(LOAD_PERM_TOWN(${get_perm_num("test")}), 10),
+        STORE_PERM_ALT(63, LOAD_TEMP(10))-->
+    ]) {
+    return CB_RESULT_IND_PROD_NO_CHANGE;
+}
