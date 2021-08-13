@@ -39,7 +39,7 @@ class PermStorageMapping(object):
 
 # arguably should be in main() but eh, later
 
-town_perm_storage = register_perm_storage_mapping(
+register_perm_storage_mapping(
     "town_perm_storage",
     [
         "copy_of_industry_town_count_for_debugging",
