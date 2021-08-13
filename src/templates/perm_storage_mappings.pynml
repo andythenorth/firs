@@ -21,7 +21,7 @@ switch (FEAT_INDUSTRIES, PARENT, STORE_PERM_TOWN, storage_number, value,
 }
 
 
-<tal:storage_item repeat="storage_number perm_storage_mappings['TownStorage'].storage_items.values()">
+<tal:storage_item repeat="storage_number perm_storage_mappings['town_perm_storage'].storage_items.values()">
 switch (FEAT_INDUSTRIES, PARENT, LOAD_PERM_TOWN_${storage_number}, LOAD_PERM(${storage_number})) {
     return;
 }
@@ -29,7 +29,7 @@ switch (FEAT_INDUSTRIES, PARENT, LOAD_PERM_TOWN_${storage_number}, LOAD_PERM(${s
 
 switch (FEAT_INDUSTRIES, SELF, LOAD_PERM_TOWN, storage_number, [storage_number]) {
     <!--! this might stumble if lots of storages are used, as it might approach action2 ID limit - shard it somehow if it does -->
-    <tal:storage_item repeat="storage_number perm_storage_mappings['TownStorage'].storage_items.values()">
+    <tal:storage_item repeat="storage_number perm_storage_mappings['town_perm_storage'].storage_items.values()">
         ${storage_number}: LOAD_PERM_TOWN_${storage_number};
     </tal:storage_item>
     return;

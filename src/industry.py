@@ -21,7 +21,7 @@ templates = PageTemplateLoader(
     os.path.join(currentdir, "src", "templates"), format="text"
 )
 
-from perm_storage_mappings import PermStorageMapping, town_perm_storage
+from perm_storage_mappings import PermStorageMapping, get_perm_num
 from economies import registered_economies
 from industries import registered_industries
 
@@ -1182,7 +1182,6 @@ class Industry(object):
         self.location_checks = IndustryLocationChecks(
             self, kwargs.get("location_checks", {})
         )
-        self.town_perm_storage = town_perm_storage
 
     def register(self):
         if (
@@ -1593,14 +1592,8 @@ class Industry(object):
             return getattr(sprite_or_spriteset, "sprite_number" + suffix)
 
     def get_perm_num(self, identifier):
-        if identifier in self.perm_storage.storage_items.keys():
-            return self.perm_storage.storage_items[identifier]
-        elif identifier in self.town_perm_storage.storage_items.keys():
-            return self.town_perm_storage.storage_items[identifier]
-        else:
-            utils.echo_message(
-                "Perm storage not found for " + self.id + ": " + identifier
-            )
+        # just a silly pass-through to perm_storage_mappings.get_perm_num
+        return get_perm_num(identifier, industry_type=self.perm_storage.id)
 
     def render_nml(
         self, incompatible_industries
