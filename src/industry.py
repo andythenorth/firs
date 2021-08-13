@@ -1669,7 +1669,12 @@ class IndustryInformative(Industry):
         )
 
     def get_extra_text_string(self, economy, industries_with_town_happiness_effect):
-        result = ','.join([industry.get_property('name', economy) for industry in industries_with_town_happiness_effect])
+        result = ",".join(
+            [
+                industry.get_property("name", economy)
+                for industry in industries_with_town_happiness_effect
+            ]
+        )
         return "string(STR_CABBAGE," + result + ")"
 
     def get_prod_cargo_types(self, economy):
