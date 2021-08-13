@@ -180,10 +180,10 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_increase,
     return CB_RESULT_IND_PROD_SET_BY_0x100 | (1 << 8);  <!--! set bit 8 to show custom text result -->
 }
 
-<!--! !! 4 bits = 25% chance of increase, this needs adjusted to look at town happiness etc -->
+<!--! !! 4 bits = 25% chance of increase, this needs adjusted to look at town population optimism etc -->
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_dice_roll,
     [
-        getbits(extra_callback_info2, 0, 4) * (LOAD_PERM_TOWN(${get_perm_num("current_happiness_level")}) >= 8)
+        getbits(extra_callback_info2, 0, 4) * (LOAD_PERM_TOWN(${get_perm_num("current_optimism_score")}) >= 8)
     ]) {
     1: ${industry.id}_monthly_prod_change_increase;
     return CB_RESULT_IND_PROD_NO_CHANGE;

@@ -1,7 +1,7 @@
 <!--!
     Tertiary production behaviour.
     Black hole for any delivered cargo.
-    Delivered cargo may affect town happiness.
+    Delivered cargo may affect population optimism in this town.
     Optional cargo production on 256 tick callback, similar to primary.
 -->
 
@@ -19,7 +19,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_total_input_cargo_delivered
 <tal:economies repeat="economy industry.economies_enabled_for_industry">
     <!--!
         Handle produce 256 tick callback.
-        Always handled to update recent deliveries (used for town happiness).
+        Always handled to update recent deliveries (affects population optimism score).
         Optionally also produce for industries that have production
     -->
     <tal:has_production switch="industry.has_production">
@@ -49,7 +49,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_total_input_cargo_delivered
 
     <!--!
         Handle produce on cargo arrival.
-        Push the amount to perm storage, and update supplied cycles counter (used for town happiness).
+        Push the amount to perm storage, and update supplied cycles counter (used for population optimism score).
         Then clear cargo from stockpile.
     -->
     produce (${industry.id}_produce_cargo_arrival_economy_${economy.numeric_id},

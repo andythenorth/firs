@@ -107,19 +107,6 @@ for industry in registered_industries:
     for cargo_label in set(accepted):
         industries_accepting_cargo[cargo_label].append(industry)
 
-# strictly industries_with_town_happiness_effect creation doesn't need to be in firs.py as it doesn't depend on cargos or economies, only industries
-# it's here because it's become a convention to put these 'global' things in firs.py, but this could be a method on Industry in industry.py
-industries_with_town_happiness_effect = []
-for industry in registered_industries:
-    # currently relies on class, but move to a specific flag if that becomes non-viable
-    if industry.__class__.__name__ == "IndustryTertiary":
-        industries_with_town_happiness_effect.append(industry)
-print(len(industries_with_town_happiness_effect))
-if len(industries_with_town_happiness_effect) == 0:
-    utils.echo_message(
-        "industries_with_town_happiness_effect has no entries - is this expected?"
-    )
-
 incompatible_industries = {}
 for industry in registered_industries:
     incompatible = []

@@ -2,6 +2,6 @@
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, economy) {
     <tal:economies repeat="economy industry.economies_enabled_for_industry">
-        ${economy.numeric_id}: return ${industry.get_extra_text_string(economy, industries_with_town_happiness_effect)};
+        ${economy.numeric_id}: return ${industry.get_extra_text_string(economy)};
     </tal:economies>
 }

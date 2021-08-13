@@ -1210,8 +1210,8 @@ class Industry(object):
             [
                 "copy_of_industry_town_count_for_debugging",
                 "this_cycle_industry_counter",
-                "current_happiness_level",
-                "next_happiness_level",
+                "current_optimism_score",
+                "next_optimism_score",
             ],
         )
 
@@ -1634,7 +1634,7 @@ class Industry(object):
             )
 
     def render_nml(
-        self, incompatible_industries, industries_with_town_happiness_effect
+        self, registered_industries, incompatible_industries
     ):
         # incompatible industries isn't known at init time, only at compile time, so it has to be passed in
         industry_template = templates[self.template]
@@ -1644,8 +1644,8 @@ class Industry(object):
                 get_perm_num=self.get_perm_num,
                 global_constants=global_constants,
                 graphics_temp_storage=global_constants.graphics_temp_storage,  # convenience measure
+                registered_industries=registered_industries,
                 incompatible_industries=incompatible_industries,
-                industries_with_town_happiness_effect=industries_with_town_happiness_effect,
                 economies=registered_economies,
                 utils=utils,
             )
@@ -1668,14 +1668,9 @@ class IndustryInformative(Industry):
             [],
         )
 
-    def get_extra_text_string(self, economy, industries_with_town_happiness_effect):
-        result = ",".join(
-            [
-                industry.get_property("name", economy)
-                for industry in industries_with_town_happiness_effect
-            ]
-        )
-        return "string(STR_CABBAGE," + result + ")"
+    def get_extra_text_string(self, economy):
+        # !! use of method is overkill, it's in place in case we need to add parameters to the string later
+        return "string(STR_CABBAGE)"
 
     def get_prod_cargo_types(self, economy):
         return []
