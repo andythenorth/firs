@@ -144,7 +144,6 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
     ]) {
     ${industry.id}_produce_256_ticks_switch_economy;
 }
-
 <!--! end production behaviour -->
 
 
@@ -164,7 +163,6 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
     ]) {
     return CB_RESULT_IND_PROD_NO_CHANGE;
 }
-
 <!--! end from monthly 'town' loop (actually monthly industry loop) -->
 
 
