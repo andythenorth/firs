@@ -21,7 +21,9 @@ switch (FEAT_INDUSTRIES, PARENT, ${industry.id}_extra_text_get_pollution_and_squ
     return;
 }
 
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_current_optimism_string,
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_current_optimism_score_normalised,
+    <!--! return static value correlating optimism score to mood (order of moods is arbitrary): 0 = neutral, 1 = optimistic, 2 = gloomy
+          uses +ve integers to avoid shenanigans -->
     [
        ${industry.id}_extra_text_current_optimism_score() > 3
         ?
@@ -35,9 +37,20 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_current_optimism_string
             0
         )
     ]) {
+    return;
+}
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_current_optimism_string, ${industry.id}_extra_text_current_optimism_score_normalised()) {
     0: return string(STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL);
     1: return string(STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC);
     2: return string(STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY);
+    return;
+}
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_score_colour_string, ${industry.id}_extra_text_current_optimism_score_normalised()) {
+    0: return string(STR_COLOUR_WHITE);
+    1: return string(STR_COLOUR_GREEN);
+    2: return string(STR_COLOUR_GOLD);
     return;
 }
 
@@ -45,7 +58,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text,
     [
         <!--! note that 0x100 can't be used for text stack as it gets thrashed when accessing perm storage, it also has to be skipped in the string with {SKIP}{SKIP} -->
         STORE_TEMP(
-            <!--! add 0xD000, usually nml does this automagically for strings based on context, but it can't do it for procedure results -->
+            <!--! add 0xD000 to string result, usually nml does this automagically for strings based on context, but it can't do it for procedure results -->
             ${industry.id}_extra_text_current_optimism_string() + 0xD000,
             <!--! 1 spare word in 101 currently, so a {SKIP} is used in the string -->
             0x101
@@ -56,9 +69,11 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text,
             0x102
         ),
         STORE_TEMP(
-            ${industry.id}_extra_text_current_optimism_score(),
+            <!--! add 0xD000 to string result, usually nml does this automagically for strings based on context, but it can't do it for procedure results -->
+            ${industry.id}_extra_text_score_colour_string() + 0xD000
+            | ${industry.id}_extra_text_current_optimism_score() << 16,
             0x103
         ),
     ]) {
-    return ${industry.get_extra_text_string()};
+    return string(STR_INFORMATIVE_EXTRA_TEXT_PLAZA);
 }

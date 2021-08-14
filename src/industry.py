@@ -1641,10 +1641,6 @@ class IndustryInformative(Industry):
             [],
         )
 
-    def get_extra_text_string(self):
-        # !! use of method is overkill, it's in place in case we need to add parameters to the string later
-        return "string(STR_INFORMATIVE_EXTRA_TEXT_PLAZA)"
-
     def get_prod_cargo_types(self, economy):
         return []
 

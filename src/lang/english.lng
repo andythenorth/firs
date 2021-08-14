@@ -36,9 +36,8 @@ STR_PRIMARY_POPULATION_OPTIMISTIC                                               
 STR_PORT_PRODUCTION_1X                                                          :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} units of cargo at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} units.
 STR_PORT_PRODUCTION_2X                                                          :{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this level, deliver {SIGNED_WORD} units of cargo at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} units.
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} units of cargo at least once every three months.
-STR_GENERIC_NEWLINE                                                             :{}
 
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA                                                :{SKIP}{SKIP}Population mood: {YELLOW}{STRING}{SKIP}{}{}Optimism score:{}{BLACK} Needs and luxuries met: {YELLOW}{SIGNED_WORD} point{P 1 "" s} {}{BLACK} Pollution and squalor: {YELLOW}{SIGNED_WORD} point{P 2 "" s} {}{BLACK} Total score: {GREEN}{SIGNED_WORD} point{P 3 "" s}
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA                                                :{SKIP}{SKIP}Population mood: {YELLOW}{STRING}{SKIP}{}{}{BLACK}Optimism score:{}{BLACK} Needs and luxuries met: {YELLOW}{SIGNED_WORD} point{P 1 "" s} {}{BLACK} Pollution and squalor: {YELLOW}{SIGNED_WORD} point{P 2 "" s} {}{BLACK} Total score: {STRING}{SIGNED_WORD} point{P 3 "" s}
 STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC                                :optimistic
 STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY                                    :gloomy
 STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL                                   :neutral
@@ -566,4 +565,13 @@ STR_STATION_WEAVE_AND_DYE                                                       
 STR_STATION_WELLS                                                               :Wells
 STR_STATION_WINERY                                                              :Winery
 STR_STATION_VEHICLE_DISTRIBUTOR                                                 :Truck Lot
+
+# do not translate these
+STR_GENERIC_NEWLINE                                                             :{}
+# to use when dynamically choosing text colours, and we can't return a colour code directly
+STR_COLOUR_GOLD                                                                 :{GOLD}
+STR_COLOUR_GREEN                                                                :{GREEN}
+STR_COLOUR_RED                                                                  :{RED}
+STR_COLOUR_YELLOW                                                               :{YELLOW}
+STR_COLOUR_WHITE                                                                :{WHITE}
 
