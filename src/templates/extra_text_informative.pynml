@@ -48,7 +48,17 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text,
     [
         <!--! 0x100 can't be used for text stack as it gets thrashed when accessing perm storage, it also has to be skipped in the string with {SKIP}{SKIP} -->
         STORE_TEMP(
-        	${industry.id}_extra_text_current_optimism_string(),
+            (${industry.id}_extra_text_current_optimism_score() > 3)
+            ?
+            string(STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC)
+            :
+            (
+                (${industry.id}_extra_text_current_optimism_score() < -3)
+                ?
+                string(STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY)
+                :
+                string(STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL)
+            ),
             <!--! 1 spare word in 101 currently, so a {SKIP} is used in the string -->
             0x101
         ),
