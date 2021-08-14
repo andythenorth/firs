@@ -25,12 +25,12 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_current_optimism_score_
     <!--! return static value correlating optimism score to mood (order of moods is arbitrary): 0 = neutral, 1 = optimistic, 2 = gloomy
           uses +ve integers to avoid shenanigans -->
     [
-       ${industry.id}_extra_text_current_optimism_score() > 3
+        ${industry.id}_extra_text_current_optimism_score() > 3
         ?
         1
         :
         (
-            ${industry.id}_extra_text_current_optimism_score() < 3
+            ${industry.id}_extra_text_current_optimism_score() < -3
             ?
             2
             :
