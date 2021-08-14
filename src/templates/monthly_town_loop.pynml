@@ -89,9 +89,10 @@ switch(FEAT_INDUSTRIES, SELF, contribute_to_town_optimism, basic_needs_and_luxur
             ${get_perm_num("next_basic_needs_and_luxuries_score")},
             LOAD_PERM_TOWN(${get_perm_num("next_basic_needs_and_luxuries_score")}) + basic_needs_and_luxuries_score
         ),
+        <!--! pollution_and_squalor_score expressed as +ve integer, avoids issues with signed words and 15 bit return values from procedures -->
         STORE_PERM_TOWN(
             ${get_perm_num("next_pollution_and_squalor_score")},
-            LOAD_PERM_TOWN(${get_perm_num("next_pollution_and_squalor_score")}) - pollution_and_squalor_score
+            LOAD_PERM_TOWN(${get_perm_num("next_pollution_and_squalor_score")}) + pollution_and_squalor_score
         ),
     ]) {
     return;

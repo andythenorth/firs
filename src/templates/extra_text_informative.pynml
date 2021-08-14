@@ -52,7 +52,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text,
         ),
         STORE_TEMP(
             ${industry.id}_extra_text_get_basic_needs_and_luxuries_score()
-            | (${industry.id}_extra_text_get_pollution_and_squalor_score() - 32768) << 16,
+            | -1 * ${industry.id}_extra_text_get_pollution_and_squalor_score() << 16,
             0x102
         ),
         STORE_TEMP(
