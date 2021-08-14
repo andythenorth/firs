@@ -20,21 +20,10 @@ switch (FEAT_INDUSTRIES, PARENT, STORE_PERM_TOWN, storage_number, value,
     return;
 }
 
-
-<tal:storage_item repeat="storage_number perm_storage_mappings['town_perm_storage'].storage_items.values()">
-switch (FEAT_INDUSTRIES, PARENT, LOAD_PERM_TOWN_${storage_number}, LOAD_PERM(${storage_number})) {
-    return;
-}
-</tal:storage_item>
-
-switch (FEAT_INDUSTRIES, SELF, LOAD_PERM_TOWN, storage_number, [storage_number]) {
-    <!--! this might stumble if lots of storages are used, as it might approach action2 ID limit - shard it somehow if it does -->
-    <tal:storage_item repeat="storage_number perm_storage_mappings['town_perm_storage'].storage_items.values()">
-        ${storage_number}: LOAD_PERM_TOWN_${storage_number};
-    </tal:storage_item>
-    return;
-}
-
-switch (FEAT_INDUSTRIES, PARENT, LOAD_PERM_TOWN_test, LOAD_PERM(0)) {
-    return;
-}
+<!--! there are no equivalent convenience methods for reading storage
+    1. procedures can only return 15 bit values, which is (1) limited (2) dangerous with signed values as it strips the signed bitl causing incorrect results
+    2. for context SELF (industry), there would be no benefit anyway over LOAD_PERM()
+    3. for towns, have to call out to another switch with context PARENT and store the result in a temp register, return 0 from that switch then OR the result
+         e.g. `(procedure_foo() | LOAD_TEMP(1))` or similar
+       or just chain through a preceeding PARENT switch to stuff a temp register
+-->

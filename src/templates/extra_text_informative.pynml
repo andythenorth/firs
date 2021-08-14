@@ -1,36 +1,17 @@
-<!--! Extra text in the industry window (callback 3A) -->
+<!--! Extra text in the industry window (callback 3A)
+      Note that this is mostly PARENT scope as it depends on town
+-->
 
-switch (FEAT_INDUSTRIES, PARENT, ${industry.id}_extra_text_current_optimism_score,
-    [
-        LOAD_PERM_TOWN(${get_perm_num("current_optimism_score")})
-    ]) {
-    return;
-}
-
-switch (FEAT_INDUSTRIES, PARENT, ${industry.id}_extra_text_get_basic_needs_and_luxuries_score,
-    [
-        LOAD_PERM_TOWN(${get_perm_num("current_basic_needs_and_luxuries_score")})
-    ]) {
-    return;
-}
-
-switch (FEAT_INDUSTRIES, PARENT, ${industry.id}_extra_text_get_pollution_and_squalor_score,
-    [
-        LOAD_PERM_TOWN(${get_perm_num("current_pollution_and_squalor_score")})
-    ]) {
-    return;
-}
-
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_current_optimism_score_normalised,
+switch (FEAT_INDUSTRIES, PARENT, ${industry.id}_extra_text_current_optimism_score_normalised,
     <!--! return static value correlating optimism score to mood (order of moods is arbitrary): 0 = neutral, 1 = optimistic, 2 = gloomy
           uses +ve integers to avoid shenanigans -->
     [
-        ${industry.id}_extra_text_current_optimism_score() > 3
+        LOAD_PERM(${get_perm_num("current_optimism_score")}) > 3
         ?
         1
         :
         (
-            ${industry.id}_extra_text_current_optimism_score() < -3
+            LOAD_PERM(${get_perm_num("current_optimism_score")}) < -3
             ?
             2
             :
@@ -40,38 +21,38 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_current_optimism_score_
     return;
 }
 
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_current_optimism_string, ${industry.id}_extra_text_current_optimism_score_normalised()) {
+switch (FEAT_INDUSTRIES, PARENT, ${industry.id}_extra_text_current_optimism_string, ${industry.id}_extra_text_current_optimism_score_normalised()) {
     0: return string(STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL);
     1: return string(STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC);
     2: return string(STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY);
     return;
 }
 
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_score_colour_string, ${industry.id}_extra_text_current_optimism_score_normalised()) {
+switch (FEAT_INDUSTRIES, PARENT, ${industry.id}_extra_text_score_colour_string, ${industry.id}_extra_text_current_optimism_score_normalised()) {
     0: return string(STR_COLOUR_WHITE);
     1: return string(STR_COLOUR_GREEN);
     2: return string(STR_COLOUR_GOLD);
     return;
 }
 
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text,
+switch (FEAT_INDUSTRIES, PARENT, ${industry.id}_extra_text,
     [
         <!--! note that 0x100 can't be used for text stack as it gets thrashed when accessing perm storage, it also has to be skipped in the string with {SKIP}{SKIP} -->
         STORE_TEMP(
             <!--! add 0xD000 to string result, usually nml does this automagically for strings based on context, but it can't do it for procedure results -->
-            ${industry.id}_extra_text_current_optimism_string() + 0xD000,
-            <!--! 1 spare word in 101 currently, so a {SKIP} is used in the string -->
+            ${industry.id}_extra_text_score_colour_string() + 0xD000
+            | (${industry.id}_extra_text_current_optimism_string() + 0xD000) << 16,
             0x101
         ),
         STORE_TEMP(
-            ${industry.id}_extra_text_get_basic_needs_and_luxuries_score()
-            | -1 * ${industry.id}_extra_text_get_pollution_and_squalor_score() << 16,
+            LOAD_PERM(${get_perm_num("current_basic_needs_and_luxuries_score")})
+            | (-1 * LOAD_PERM(${get_perm_num("current_pollution_and_squalor_score")})) << 16,
             0x102
         ),
         STORE_TEMP(
             <!--! add 0xD000 to string result, usually nml does this automagically for strings based on context, but it can't do it for procedure results -->
             ${industry.id}_extra_text_score_colour_string() + 0xD000
-            | ${industry.id}_extra_text_current_optimism_score() << 16,
+            | LOAD_PERM(${get_perm_num("current_optimism_score")}) << 16,
             0x103
         ),
     ]) {

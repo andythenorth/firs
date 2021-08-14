@@ -181,9 +181,9 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_increase,
 }
 
 <!--! !! 4 bits = 25% chance of increase, this needs adjusted to look at town population optimism etc -->
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_dice_roll,
+switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_monthly_prod_change_dice_roll,
     [
-        getbits(extra_callback_info2, 0, 4) * (LOAD_PERM_TOWN(${get_perm_num("current_optimism_score")}) >= 8)
+        getbits(extra_callback_info2, 0, 4) * (LOAD_PERM(${get_perm_num("current_optimism_score")}) >= 8)
     ]) {
     1: ${industry.id}_monthly_prod_change_increase;
     return CB_RESULT_IND_PROD_NO_CHANGE;

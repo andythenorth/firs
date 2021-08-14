@@ -1514,7 +1514,7 @@ class Industry(object):
     @property
     def basic_needs_and_luxuries_score(self):
         # handled via a method so that multipliers can be applied to adjust scoring, this might not be necessary
-        return 2
+        return 0
 
     @property
     def pollution_and_squalor_score(self):
