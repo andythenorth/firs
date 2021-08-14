@@ -1,7 +1,38 @@
 <!--! Extra text in the industry window (callback 3A) -->
 
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, economy) {
-    <tal:economies repeat="economy industry.economies_enabled_for_industry">
-        ${economy.numeric_id}: return ${industry.get_extra_text_string(economy)};
-    </tal:economies>
+switch (FEAT_INDUSTRIES, PARENT, ${industry.id}_extra_text_current_optimism_score,
+    [
+        LOAD_PERM_TOWN(${get_perm_num("current_optimism_score")})
+    ]) {
+    return;
+}
+
+switch (FEAT_INDUSTRIES, PARENT, ${industry.id}_extra_text_get_basic_needs_and_luxuries_score,
+    [
+        LOAD_PERM_TOWN(${get_perm_num("current_optimism_score")})
+    ]) {
+    return;
+}
+
+switch (FEAT_INDUSTRIES, PARENT, ${industry.id}_extra_text_get_pollution_and_squalor_score,
+    [
+        LOAD_PERM_TOWN(${get_perm_num("current_optimism_score")})
+    ]) {
+    return;
+}
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text,
+    [
+        STORE_TEMP(
+            ${industry.id}_extra_text_current_optimism_score()
+            | ${industry.id}_extra_text_current_optimism_score() << 16,
+            0x100
+        ),
+        STORE_TEMP(
+            ${industry.id}_extra_text_current_optimism_score(),
+            0x101
+        ),
+
+    ]) {
+    return ${industry.get_extra_text_string()};
 }

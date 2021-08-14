@@ -61,11 +61,11 @@ switch(FEAT_INDUSTRIES, SELF, check_if_town_monthly_cycle_complete,
     return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, contribute_to_town_optimism, basic_needs_and_luxuries_score,
+switch(FEAT_INDUSTRIES, SELF, contribute_to_town_optimism, basic_needs_and_luxuries_score, pollution_and_squalor_score,
     [
         STORE_PERM_TOWN(
             ${get_perm_num("next_optimism_score")},
-            LOAD_PERM_TOWN(${get_perm_num("next_optimism_score")}) + basic_needs_and_luxuries_score
+            LOAD_PERM_TOWN(${get_perm_num("next_optimism_score")}) + basic_needs_and_luxuries_score - pollution_and_squalor_score
         ),
     ]) {
     return;
@@ -73,7 +73,7 @@ switch(FEAT_INDUSTRIES, SELF, contribute_to_town_optimism, basic_needs_and_luxur
 
 switch(FEAT_INDUSTRIES, SELF, monthly_town_loop, basic_needs_and_luxuries_score, pollution_and_squalor_score,
     [
-        contribute_to_town_optimism(basic_needs_and_luxuries_score),
+        contribute_to_town_optimism(basic_needs_and_luxuries_score, pollution_and_squalor_score),
         increment_town_monthly_cycle_industry_counter(),
         <!--! temp debugging to industry 63 and 64 -->
         STORE_PERM_ALT(
