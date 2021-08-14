@@ -102,6 +102,7 @@
                     <th nowrap="true" class="number">Available From</th>
                     <th nowrap="true" class="number">Map Colour</th>
                     <th nowrap="true">Station Name</th>
+                    <th nowrap="true">Pol. Factor</th>
                 </tr>
             </thead>
             <tbody>
@@ -126,6 +127,7 @@
                                 </span>
                             </td>
                             <td>${doc_helper.get_nearby_station_name(industry)}</td>
+                            <td>${industry.get_property('pollution_and_squalor_factor', None)}</td>
                         </tr>
                     </tal:industry>
                 </tal:industries>

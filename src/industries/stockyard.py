@@ -12,6 +12,7 @@ industry = IndustrySecondary(
     name="string(STR_IND_STOCKYARD)",
     nearby_station_name="string(STR_STATION_ANIMALS)",
     fund_cost_multiplier="115",
+    pollution_and_squalor_factor=2,
 )
 
 

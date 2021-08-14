@@ -11,6 +11,7 @@ industry = IndustryPrimaryExtractive(
     name="string(STR_IND_MANGANESE_MINE)",
     nearby_station_name="string(STR_STATION_MANGANESE_MINES)",
     fund_cost_multiplier="232",
+    pollution_and_squalor_factor=1,
 )
 
 industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True

@@ -21,6 +21,7 @@ industry = IndustryPrimaryOrganic(
     name="string(STR_IND_FISH_FARM)",
     nearby_station_name="string(STR_STATION_SEAFOOD)",  # appears to not work - maybe water industries don't accept station names?
     fund_cost_multiplier="88",
+    pollution_and_squalor_factor=1,
 )
 
 industry.economy_variations["BASIC_ARCTIC"].enabled = True

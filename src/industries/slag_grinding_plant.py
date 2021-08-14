@@ -18,6 +18,7 @@ industry = IndustrySecondary(
     name="string(STR_IND_SLAG_GRINDING_PLANT)",
     nearby_station_name="string(STR_STATION_SILO)",
     fund_cost_multiplier="100 ",
+    pollution_and_squalor_factor=2,
 )
 
 industry.economy_variations["STEELTOWN"].enabled = True

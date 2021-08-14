@@ -12,6 +12,7 @@ industry = IndustryPrimaryExtractive(
     name="string(STR_IND_PHOSPHATE_MINE)",
     nearby_station_name="string(STR_STATION_PIT)",
     fund_cost_multiplier="200",
+    pollution_and_squalor_factor=1,
 )
 
 industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True

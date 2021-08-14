@@ -12,6 +12,7 @@ industry = IndustryPrimaryExtractive(
     name="string(STR_IND_QUARRY)",
     nearby_station_name="string(STR_IND_QUARRY)",
     fund_cost_multiplier="210",
+    pollution_and_squalor_factor=1,
 )
 
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True

@@ -12,6 +12,7 @@ industry = IndustryPrimaryExtractive(
     name="string(STR_IND_PEATLANDS)",
     nearby_station_name="string(STR_IND_PEATLANDS)",
     fund_cost_multiplier="210",
+    pollution_and_squalor_factor=1,
 )
 
 industry.economy_variations["BASIC_ARCTIC"].enabled = True

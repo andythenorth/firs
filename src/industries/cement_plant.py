@@ -20,6 +20,7 @@ industry = IndustrySecondary(
     name="string(STR_IND_CEMENT_PLANT)",
     nearby_station_name="string(STR_STATION_SILO)",
     fund_cost_multiplier="203",
+    pollution_and_squalor_factor=2,
 )
 
 # industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True

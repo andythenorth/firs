@@ -17,6 +17,7 @@ industry = IndustrySecondary(
     name="string(STR_IND_STEEL_MILL)",
     nearby_station_name="string(STR_STATION_HEAVY_INDUSTRY_2)",
     fund_cost_multiplier="120",
+    pollution_and_squalor_factor=2,
 )
 
 

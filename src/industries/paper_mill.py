@@ -17,6 +17,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_MILL)",
     name="TTD_STR_INDUSTRY_NAME_PAPER_MILL",
     override="14",
+    pollution_and_squalor_factor=2,
 )
 
 industry.economy_variations["BASIC_ARCTIC"].enabled = True

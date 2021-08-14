@@ -11,6 +11,7 @@ industry = IndustryPrimaryExtractive(
     name="string(STR_IND_SODA_ASH_MINE)",
     nearby_station_name="string(STR_STATION_TRONA_BEDS)",
     fund_cost_multiplier="180",
+    pollution_and_squalor_factor=1,
 )
 
 industry.economy_variations["STEELTOWN"].enabled = True

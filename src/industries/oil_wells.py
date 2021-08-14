@@ -10,6 +10,7 @@ industry = IndustryPrimaryExtractive(
     name="TTD_STR_INDUSTRY_NAME_OIL_WELLS",
     fund_cost_multiplier="230",
     nearby_station_name="string(STR_STATION_WELLS)",
+    pollution_and_squalor_factor=1,
 )
 
 industry.economy_variations["BASIC_TROPIC"].enabled = True
