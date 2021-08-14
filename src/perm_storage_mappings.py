@@ -46,5 +46,9 @@ register_perm_storage_mapping(
         "this_cycle_industry_counter",
         "current_optimism_score",
         "next_optimism_score",
+        "current_basic_needs_and_luxuries_score",
+        "next_basic_needs_and_luxuries_score",
+        "current_pollution_and_squalor_score",
+        "next_pollution_and_squalor_score",
     ],
 )

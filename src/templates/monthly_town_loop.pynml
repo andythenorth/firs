@@ -40,6 +40,24 @@ switch(FEAT_INDUSTRIES, SELF, rollover_next_and_current_optimism_scores,
         STORE_PERM_TOWN(
             ${get_perm_num("next_optimism_score")},
             0
+        ),
+        STORE_PERM_TOWN(
+            ${get_perm_num("current_basic_needs_and_luxuries_score")},
+            LOAD_PERM_TOWN(${get_perm_num("next_basic_needs_and_luxuries_score")})
+        )
+        ,
+        STORE_PERM_TOWN(
+            ${get_perm_num("next_basic_needs_and_luxuries_score")},
+            0
+        ),
+        STORE_PERM_TOWN(
+            ${get_perm_num("current_pollution_and_squalor_score")},
+            LOAD_PERM_TOWN(${get_perm_num("next_pollution_and_squalor_score")})
+        )
+        ,
+        STORE_PERM_TOWN(
+            ${get_perm_num("next_pollution_and_squalor_score")},
+            0
         )
     ]) {
     return;
@@ -66,6 +84,14 @@ switch(FEAT_INDUSTRIES, SELF, contribute_to_town_optimism, basic_needs_and_luxur
         STORE_PERM_TOWN(
             ${get_perm_num("next_optimism_score")},
             LOAD_PERM_TOWN(${get_perm_num("next_optimism_score")}) + basic_needs_and_luxuries_score - pollution_and_squalor_score
+        ),
+        STORE_PERM_TOWN(
+            ${get_perm_num("next_basic_needs_and_luxuries_score")},
+            LOAD_PERM_TOWN(${get_perm_num("next_basic_needs_and_luxuries_score")}) + basic_needs_and_luxuries_score
+        ),
+        STORE_PERM_TOWN(
+            ${get_perm_num("next_pollution_and_squalor_score")},
+            LOAD_PERM_TOWN(${get_perm_num("next_pollution_and_squalor_score")}) - pollution_and_squalor_score
         ),
     ]) {
     return;

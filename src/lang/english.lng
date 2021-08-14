@@ -38,7 +38,10 @@ STR_PORT_PRODUCTION_2X                                                          
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} units of cargo at least once every three months.
 STR_GENERIC_NEWLINE                                                             :{}
 
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA                                                :Population mood: {YELLOW}optimistic{}{}Optimism score:{}{BLACK} Needs and luxuries met: {YELLOW}{SIGNED_WORD} points{}{BLACK} Pollution and squalor: {YELLOW}{SIGNED_WORD} points{}{BLACK} Total score: {GREEN}{SIGNED_WORD} points
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA                                                :{SKIP}{SKIP}Population mood: {YELLOW}{STRING}{SKIP}{}{}Optimism score:{}{BLACK} Needs and luxuries met: {YELLOW}{SIGNED_WORD} points{}{BLACK} Pollution and squalor: {YELLOW}{SIGNED_WORD} points{}{BLACK} Total score: {GREEN}{SIGNED_WORD} points
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC                                :optimistic
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY                                    :gloomy
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL                                   :'fine'
 
 STR_CARGO_NAME_ACID                                                             :Acid
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol

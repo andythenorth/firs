@@ -9,30 +9,58 @@ switch (FEAT_INDUSTRIES, PARENT, ${industry.id}_extra_text_current_optimism_scor
 
 switch (FEAT_INDUSTRIES, PARENT, ${industry.id}_extra_text_get_basic_needs_and_luxuries_score,
     [
-        LOAD_PERM_TOWN(${get_perm_num("current_optimism_score")})
+        LOAD_PERM_TOWN(${get_perm_num("current_basic_needs_and_luxuries_score")})
     ]) {
     return;
 }
 
 switch (FEAT_INDUSTRIES, PARENT, ${industry.id}_extra_text_get_pollution_and_squalor_score,
     [
-        LOAD_PERM_TOWN(${get_perm_num("current_optimism_score")})
+        LOAD_PERM_TOWN(${get_perm_num("current_pollution_and_squalor_score")})
     ]) {
     return;
 }
 
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_current_optimism_string,
+    0) {
+    <!--!
+    [
+       ${industry.id}_extra_text_current_optimism_score() > 3
+        ?
+        1
+        :
+        (
+            ${industry.id}_extra_text_current_optimism_score() < 3
+            ?
+            2
+            :
+            0
+        )
+    ]) {
+    0: return string(STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL);
+    1: return string(STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC);
+    2: return string(STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY);
+    -->
+    return string(STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY) - 0xD400;
+}
+
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text,
     [
+        <!--! 0x100 can't be used for text stack as it gets thrashed when accessing perm storage, it also has to be skipped in the string with {SKIP}{SKIP} -->
         STORE_TEMP(
-            ${industry.id}_extra_text_current_optimism_score()
-            | ${industry.id}_extra_text_current_optimism_score() << 16,
-            0x100
+        	${industry.id}_extra_text_current_optimism_string(),
+            <!--! 1 spare word in 101 currently, so a {SKIP} is used in the string -->
+            0x101
+        ),
+        STORE_TEMP(
+            ${industry.id}_extra_text_get_basic_needs_and_luxuries_score()
+            | (${industry.id}_extra_text_get_pollution_and_squalor_score() - 32768) << 16,
+            0x102
         ),
         STORE_TEMP(
             ${industry.id}_extra_text_current_optimism_score(),
-            0x101
+            0x103
         ),
-
     ]) {
     return ${industry.get_extra_text_string()};
 }
