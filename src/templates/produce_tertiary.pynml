@@ -159,7 +159,8 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_calculate_town_optimism_contributio
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
     [
         monthly_town_loop(
-            ${industry.id}_calculate_town_optimism_contribution(),
+            <!--!${industry.id}_calculate_town_optimism_contribution(),-->
+            4, <!--! for testing -->
             ${industry.pollution_and_squalor_score}
         )
     ]) {

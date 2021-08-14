@@ -47,8 +47,8 @@ switch(FEAT_INDUSTRIES, PARENT, rollover_next_and_current_optimism_scores,
         )
         ,
         STORE_PERM_TOWN(
-            0,
-            ${get_perm_num("next_basic_needs_and_luxuries_score")}
+            ${get_perm_num("next_basic_needs_and_luxuries_score")},
+            0
         ),
         STORE_PERM_TOWN(
             ${get_perm_num("current_pollution_and_squalor_score")},
@@ -81,18 +81,18 @@ switch(FEAT_INDUSTRIES, PARENT, check_if_town_monthly_cycle_complete,
 
 switch(FEAT_INDUSTRIES, PARENT, contribute_to_town_optimism, basic_needs_and_luxuries_score, pollution_and_squalor_score,
     [
-        STORE_PERM(
-            LOAD_PERM(${get_perm_num("next_optimism_score")}) + basic_needs_and_luxuries_score - pollution_and_squalor_score,
-            ${get_perm_num("next_optimism_score")}
+        STORE_PERM_TOWN(
+            ${get_perm_num("next_optimism_score")},
+            LOAD_PERM(${get_perm_num("next_optimism_score")}) + basic_needs_and_luxuries_score - pollution_and_squalor_score
         ),
-        STORE_PERM(
-            LOAD_PERM(${get_perm_num("next_basic_needs_and_luxuries_score")}) + basic_needs_and_luxuries_score,
-            ${get_perm_num("next_basic_needs_and_luxuries_score")}
+        STORE_PERM_TOWN(
+            ${get_perm_num("next_basic_needs_and_luxuries_score")},
+            LOAD_PERM(${get_perm_num("next_basic_needs_and_luxuries_score")}) + basic_needs_and_luxuries_score
         ),
         <!--! pollution_and_squalor_score expressed as +ve integer, avoids issues with signed words and 15 bit return values from procedures -->
-        STORE_PERM(
-            LOAD_PERM(${get_perm_num("next_pollution_and_squalor_score")}) + pollution_and_squalor_score,
-            ${get_perm_num("next_pollution_and_squalor_score")}
+        STORE_PERM_TOWN(
+            ${get_perm_num("next_pollution_and_squalor_score")},
+            LOAD_PERM(${get_perm_num("next_pollution_and_squalor_score")}) + pollution_and_squalor_score
         ),
     ]) {
     return;
