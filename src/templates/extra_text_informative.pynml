@@ -46,14 +46,14 @@ switch (FEAT_INDUSTRIES, PARENT, ${industry.id}_extra_text,
             0x101
         ),
         STORE_TEMP(
-            LOAD_PERM(${get_perm_num("current_basic_needs_and_luxuries_score")})
-            | (-1 * LOAD_PERM(${get_perm_num("current_pollution_and_squalor_score")})) << 16,
-            0x102
-        ),
-        STORE_TEMP(
             <!--! note adding 0xD000 to string result from procedure, usually nml does this automagically for strings based on context, but it can't do it for procedure results -->
             ${industry.id}_extra_text_score_colour_string() + 0xD000
             | LOAD_PERM(${get_perm_num("current_optimism_score")}) << 16,
+            0x102
+        ),
+        STORE_TEMP(
+            LOAD_PERM(${get_perm_num("current_basic_needs_and_luxuries_score")})
+            | (-1 * LOAD_PERM(${get_perm_num("current_pollution_and_squalor_score")})) << 16,
             0x103
         ),
     ]) {

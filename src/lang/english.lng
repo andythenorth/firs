@@ -32,15 +32,15 @@ STR_EXTRA_TEXT_TOWN_PRODUCER                                                    
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} crates of supplies at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates.{STRING}
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this level, deliver {SIGNED_WORD} crates of supplies at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates.{STRING}
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} crates of supplies at least once every three months.{STRING}
-STR_PRIMARY_POPULATION_OPTIMISTIC                                               :{}{}Local population is feeling optimistic. Production might also increase permanently.
+STR_PRIMARY_POPULATION_OPTIMISTIC                                               :{}{}-- Long term prospects --{}Local population is feeling optimistic. Production might increase permanently.
 STR_PORT_PRODUCTION_1X                                                          :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} units of cargo at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} units.
 STR_PORT_PRODUCTION_2X                                                          :{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this level, deliver {SIGNED_WORD} units of cargo at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} units.
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} units of cargo at least once every three months.
 
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA                                                :{SKIP}{SKIP}Population mood: {STRING}{STRING}{}{}{BLACK}Optimism score:{}{BLACK} Needs and luxuries met: {YELLOW}{SIGNED_WORD} point{P 2 "" s} {}{BLACK} Pollution and squalor: {YELLOW}{SIGNED_WORD} point{P 3 "" s} {}{BLACK} Total score: {STRING}{SIGNED_WORD} point{P 5 "" s}
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC                                :optimistic
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY                                    :gloomy
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL                                   :neutral
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA                                                :{SKIP}{SKIP}Population mood:{} {STRING}{STRING}{}{}{BLACK}Optimism score: {STRING}{SIGNED_WORD} point{P 2 "" s}{}{BLACK} Needs and luxuries met: {YELLOW}{SIGNED_WORD} point{P 3 "" s} {}{BLACK} Pollution and squalor: {YELLOW}{SIGNED_WORD} point{P 4 "" s} {}{}{BLACK}Pollution and squalor increases with population and certain industry types.{}{}Needs and luxuries are met by delivering to certain industry types.{}{}If optimism score is more than 10, population mood will be {WHITE}optimistic{BLACK}. If optimism score is less than -10, population mood will be {WHITE}gloomy{BLACK}.
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC                                :Optimistic
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY                                    :Gloomy
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL                                   :Neutral
 
 STR_CARGO_NAME_ACID                                                             :Acid
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
