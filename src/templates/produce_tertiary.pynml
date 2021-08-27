@@ -151,7 +151,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
       *all* industries must handle monthly_town_loop, or town behaviour will fail on wrong industry counts -->
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_calculate_town_optimism_contribution,
     [
-        ${industry.id}_produce_total_input_cargo_delivered() >= 80 ? 2 :0
+        ${industry.id}_produce_total_input_cargo_delivered() >= 80 ? 8 :0
     ]) {
     return;
 }
