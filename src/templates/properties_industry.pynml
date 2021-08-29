@@ -1,5 +1,5 @@
 <tal:build_economies repeat="economy industry.economies_enabled_for_industry">
-    if (economy==${economy.numeric_id}) {
+    if (economy==${economy.numeric_id}${' && experimental_features' if industry.id is 'plaza' else None}) {
         item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
             property {
                 <!--! following props are always same for all economies -->

@@ -77,6 +77,15 @@ grf {
 			};
 		}
 	}
+	param 5 {
+	    <!--! legacy use of bit 2 as other bool params were deleted from here -->
+		experimental_features {
+			name: string(STR_PARAM_NAME_EXPERIMENTAL_FEATURES);
+			desc: string(STR_PARAM_DESC_EXPERIMENTAL_FEATURES);
+			type: bool;
+			bit: 5;
+		}
+	}
 }
 
 basecost {

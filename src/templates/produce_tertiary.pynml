@@ -166,5 +166,3 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
     return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 <!--! end from monthly 'town' loop (actually monthly industry loop) -->
-
-
