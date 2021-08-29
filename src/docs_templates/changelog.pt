@@ -3,6 +3,45 @@ Changelog
 
 
 -------------
+4.4.0 Release
+-------------
+
+**FIRS 4.4.0 is not savegame-compatible with any previous version of FIRS.**
+
+*Changes*
+
+- improved co-location checks for certain industry types:
+    - removed exemptions to co-location checks for these industry types when generating map (exceptions were needed to avoid these industries failing to generate)
+    - applies to:
+        - Cement Plant
+        - Chemical Plant
+        - Fishing Harbour
+        - Food Processing Plant
+        - Lime Kiln
+        - Paper Mill
+- reduce fund cost of Cryo Plant, reflecting that it has fixed production
+
+
+*Translations*
+
+- translation updates (thanks translators)
+
+
+*Codechanges*
+
+- split Steel Mill from Blast Furnace into separate industry (preparatory to possibly changing sprites later)
+- reworked secondary production
+    - switched span calculation from 90 days to 27 cycles of the 256-tick production cb
+    - approach is consistent with how primaries handle production
+    - should have no visible effect for most players; any observable change should be in the player's favour
+- reworked primary production randomisation
+    - stopped randomising production_level var at start
+    - added a separate var for randomising initial production
+    - this is preparatory to using production_level for permanent primary production changes (mechanic for that not designed yet)
+- shuffled some industry IDs so that keystone industries are built in correct sequence at map gen (which builds industry types sequentially, lowest ID first)
+
+
+-------------
 4.3.0 Release
 -------------
 
@@ -20,6 +59,7 @@ Changelog
 
 
 *Translations*
+
 - translation updates (thanks translators)
 
 
@@ -85,9 +125,11 @@ Changelog
 -------------
 
 *Docs*
+
 - improved cargoflow diagrams to show town destinations that were missing from FIRS 4.0.0 cargoflow diagrams
 
 *Translations*
+
 - translation updates (thanks translators)
 
 
@@ -217,15 +259,18 @@ Changelog
 
 
 *Docs*
+
 - improved cargoflow diagrams
 
 
 *Fixes*
+
 - prevent Oil Rig, Dredging Site and Fishing grounds building on coast of small islands (frosch)
 - prevent flickering sprites at Coke Oven
 
 
 *Translations*
+
 - multiple translation updates (thanks translators)
 
 
