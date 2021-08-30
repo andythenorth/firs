@@ -1,0 +1,26 @@
+
+Note: When writing your own GS with Minimal GS as boilerplate you
+can of course erase this changelog and replace it with your own.
+
+Version 2:
+- Add: Provide EnfOfMonth and EndOfYear methods that get called from
+  main loop every month/year
+- Add: Greet players using SuperLib.Story.ShowMessage which will
+  use the Story Book in recent enough trunk versions but fall back
+  to the blue query window in older trunk and 1.2-1.3.
+- Add: Detect if the OpenTTD version used has the World Gen Bug and
+  apply counter measures so that it doesn't affect the script. 
+  If World Gen bug is detected, it will delay script initialization
+  to after world gen.
+- Add: readme.txt and changelog.txt
+- Change: Move greeting of new players to event handler (works also
+  in multiplayer)
+- Change: Replace Helper.Max() with built in max() method
+- Change: Make it more clear that you may insert your own name as
+  author in info.nut
+- Fix: If parsing loaded data did not complete when Save() is called,
+  save in-memory copy of loaded data
+
+Version 1:
+- Initial release
+
