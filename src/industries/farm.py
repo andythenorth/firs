@@ -37,6 +37,13 @@ industry.enable_in_economy(
         ("FOOD", 14),
     ],
     prob_map_gen="15",  # intended to be relatively prevalent in Steeltown, split this per economy if needed
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToTowns",
+            "min_population": 0,
+            "industry_town_ratio": 0.5,
+        }
+    },
 )
 
 industry.add_tile(

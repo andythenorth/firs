@@ -1,0 +1,13 @@
+/*
+ * Warning: This file is loaded both by main.nut and info.nut
+ * thus, don't place anything here that is heavy or not required
+ * to be available when OpenTTD scans the info.nut file.
+ */
+
+// !!! WIP - not clear what version strategy is needed yet
+// !! as of August 2023 PersistentStorageManager depends on version
+
+// this is the GS savegame data version, and is separate from the git version
+// !! incremement SELF_VERSION linearly upwards when GS savegame data migrations are needed
+SELF_VERSION <- 2;
+GIT_VERSION <- "${git_info.get_version()}";

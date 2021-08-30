@@ -1,0 +1,66 @@
+require("version.nut");
+
+class FMainClass extends GSInfo {
+	function GetAuthor()		{ return "[Insert your name here]"; }
+	function GetName()			{ return "FIRS GS"; }
+	function GetDescription() 	{ return "FIRS GS, derived from Minimal GS boilerplate"; }
+	function GetVersion()		{ return SELF_VERSION; }
+	function GetDate()			{ return "2023-15-01"; }
+	function CreateInstance()	{ return "MainClass"; }
+	function GetShortName()		{ return "FIRS"; }
+	function GetAPIVersion()	{ return "13"; }
+	function GetURL()			{ return ""; }
+    // we assume that we'll always try and load a savegame and migrate FIRS GS savegame data accordingly
+	function MinVersionToLoad() { return 1; }
+
+	function GetSettings() {
+		AddSetting({
+		    name = "log_class_vulcan_map_curator",
+		    description = "Log Vulcan map curator messages",
+		    easy_value = 1,
+		    medium_value = 1,
+		    hard_value = 1,
+		    custom_value = 1,
+			flags = CONFIG_BOOLEAN | CONFIG_INGAME | CONFIG_DEVELOPER
+		});
+		AddSetting({
+		    name = "log_class_vulcan_industry_cargo_stats",
+		    description = "Log Vulcan industry cargo stats",
+		    easy_value = 1,
+		    medium_value = 1,
+		    hard_value = 1,
+		    custom_value = 1,
+			flags = CONFIG_BOOLEAN | CONFIG_INGAME | CONFIG_DEVELOPER
+		});
+		AddSetting({
+		    name = "log_class_vulcan_industry_control",
+		    description = "Log Vulcan industry control messages",
+		    easy_value = 1,
+		    medium_value = 1,
+		    hard_value = 1,
+		    custom_value = 1,
+			flags = CONFIG_BOOLEAN | CONFIG_INGAME | CONFIG_DEVELOPER
+		});
+		AddSetting({
+		    name = "log_class_vulcan_town_control",
+		    description = "Log Vulcan town control messages",
+		    easy_value = 1,
+		    medium_value = 1,
+		    hard_value = 1,
+		    custom_value = 1,
+			flags = CONFIG_BOOLEAN | CONFIG_INGAME | CONFIG_DEVELOPER
+		});
+
+		AddSetting({
+		    name = "grind_show",
+		    description = "Show Grind pages in story book",
+		    easy_value = 1,
+		    medium_value = 1,
+		    hard_value = 1,
+		    custom_value = 1,
+			flags = CONFIG_BOOLEAN | CONFIG_INGAME | CONFIG_DEVELOPER
+		});
+	}
+}
+
+RegisterGS(FMainClass());

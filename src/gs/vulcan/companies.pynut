@@ -1,0 +1,20 @@
+// quite a stubby module this one as of August 2023
+// !! really no need for this to be Vulcan namespaced, except that Companies.GetCompanies looks weird
+
+class VulcanCompanies {
+    /* structure for company control / access */
+    // note that this has no constructor as not designed to return a class instance, just a class to hold methods
+    function Init() {
+        // nothing
+    }
+
+    function GetCompanies() {
+        local result = [];
+        for (local i = 0; i <= GSCompany.COMPANY_LAST; i += 1) {
+            if (GSCompany.ResolveCompanyID(i) != GSCompany.COMPANY_INVALID) {
+                result.append(GSCompany.ResolveCompanyID(i));
+            }
+        }
+        return result;
+    }
+}

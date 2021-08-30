@@ -1,0 +1,90 @@
+/*
+    Generally FIRS GS tries to be stateless, as that makes developing simpler (state doesn't break when the GS or grf change).
+    However we do need to persist some data, typically historical / timeseries type information.
+    Store that here in the simplest possible format (such as lists of key/value pairs).
+    Defend testing savegames by making it trivial to clear out any of the lists in persistent storage - don't create intricate nested data structures.
+    Not namespaced to Vulcan as it is generically available to anything in the GS.
+*/
+
+// all needed slots are defined / initialised here, don't define them from other modules
+// this makes it explicit to know what we have and at what point in run-time the slot is created,
+
+class PersistentStorageManager {
+    /*
+        structure for managing persistent storage
+        this is just a convenient way to namespace functions
+        try to keep it simple eh?
+    */
+
+    // this is where we define all the required slots and their type (table or list or similar)
+    static slot_names_and_types = {
+        town_primary_industry_production_increase_timeseries = {},
+        industry_production_increase_timeseries = {},
+        industry_cargo_stats = {},
+    };
+
+    // no constructor, no instance attributes, keep it simple
+    function Init(loaded_data, loaded_from_version) {
+        // handle the default case, this means we don't fail on development savegames where the GS has no data stored
+        if (loaded_data == null) {
+            loaded_data = {};
+        }
+        ::persistent_storage <- {};
+        foreach (slot_name, slot_type in PersistentStorageManager.slot_names_and_types) {
+            if (slot_name in loaded_data){
+                Log.Info("Found slot " + slot_name);
+                ::persistent_storage[slot_name] <- PersistentStorageManager.ValidateSlotDataAndMigrateIfRequired(slot_name, loaded_data, loaded_from_version);
+            }
+            else {
+                // slot isn't in savegame data, create it as empty
+                Log.Info("Adding missing slot " + slot_name);
+                ::persistent_storage[slot_name] <- slot_type;
+            }
+        }
+    }
+
+    function ValidateSlotDataAndMigrateIfRequired(slot_name, loaded_data, loaded_from_version) {
+        // the value we'll set in the loaded data after migrations, and store back on next save
+        local migrations = {
+            industry_production_increase_timeseries = {
+                // when a migration is needed, bump SELF_VERSION in version.pynut and match min_gs_data_version to the bumped value at the time
+                min_firs_gs_data_version = 2,
+                migration_method = PersistentStorageManager.MigrateIndustryProductionTimeseries,
+            },
+            town_primary_industry_production_increase_timeseries = {
+                // when a migration is needed, bump SELF_VERSION in version.pynut and match min_gs_data_version to the bumped value at the time
+                min_firs_gs_data_version = 2,
+                migration_method = PersistentStorageManager.MigrateTownPrimaryIndustryProductionIncreaseTimeseries,
+            }
+        };
+        local slot_data = loaded_data[slot_name]
+        if (slot_name in migrations) {
+            if (loaded_from_version < migrations[slot_name]["min_firs_gs_data_version"]) {
+                Log.Info("Slot requires migration: " + slot_name);
+                slot_data = migrations[slot_name]["migration_method"](slot_data);
+                Log.Info("...migration successful");
+            }
+        }
+        return slot_data;
+    }
+
+    function MigrateIndustryProductionTimeseries(slot_data) {
+        // convert from a date to a list of dates
+        local result = {};
+        foreach (industry, date in slot_data) {
+            result[industry] <- [date];
+            //Log.Info(result[industry]);
+        }
+        return result;
+    }
+
+    function MigrateTownPrimaryIndustryProductionIncreaseTimeseries(slot_data) {
+        // convert from a date to a list of dates
+        local result = {};
+        foreach (town, date in slot_data) {
+            result[town] <- [date];
+            //Log.Info(result[town]);
+        }
+        return result;
+    }
+}

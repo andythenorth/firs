@@ -30,6 +30,13 @@ industry.enable_in_economy(
         "GLAS",
         "HWAR",
     ],
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToTowns",
+            "min_population": 400,
+            "industry_town_ratio": 0.66,
+        }
+    },
 )
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",

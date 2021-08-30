@@ -10,9 +10,6 @@ cargo = Cargo(
     is_freight="1",
     cargo_classes="bitmask(CC_EXPRESS, CC_PIECE_GOODS)",
     cargo_label="FMSP",
-    # apart from TOWNGROWTH_PASSENGERS and TOWNGROWTH_MAIL, FIRS does not set any town growth effects; this has the intended effect of disabling food / water requirements for towns in desert and above snowline
-    town_growth_effect="TOWNGROWTH_NONE",
-    town_growth_multiplier="1.0",
     units_of_cargo="TTD_STR_CRATES",
     items_of_cargo="string(STR_CARGO_UNIT_FMSP)",
     penalty_lowerbound="2",

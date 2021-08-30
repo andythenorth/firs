@@ -1,0 +1,133 @@
+class VulcanMapCurator {
+    /* just to namespace some functions */
+
+    // note that this creates a table in root
+    // not designed to return a class instance
+    // vulcan_town_control is a singleton, and allegedly a table with slots is more efficient for that case than a singleton class instance
+    function Init() {
+        ::vulcan_map_curator <- {};
+        /*
+            we assume that vulcan_map_curator is arbitrarily extensible
+            so we add specific firs controls
+            for each industry type that needs map curation, init a map curator instance into a list that can easily iterated when needed
+            this _must_ be done _after_ all industries and economy are initialised, as it relies on them
+        */
+        vulcan_map_curator.firs <- {};
+        vulcan_map_curator.firs.industry_types <- array(0);
+
+        foreach (industry_spec in firs.active_economy.industries) {
+            local map_curator = industry_spec.GetMapCurator();
+            if (map_curator != null) {
+                vulcan_map_curator.firs.industry_types.append(map_curator);
+            }
+        }
+
+    }
+
+    function OnNewMonth() {
+        foreach (map_curator in vulcan_map_curator.firs.industry_types) {
+            map_curator.OnNewMonth();
+        }
+    }
+
+}
+
+class VulcanMapCuratorIndustryType {
+    // monitors the number of an industry type on a map, then may take action
+    // for example, maintaining a minimum number of the type according to some rules / function
+    industry_spec = null;
+    map_curator_config = null;
+    curation_function = null;
+
+    constructor(industry_spec, map_curator_config) {
+        this.industry_spec = industry_spec;
+        this.map_curator_config = map_curator_config;
+        // the curation function name will be passed as a string, get the actual function from local scope
+        this.curation_function = this[map_curator_config.curation_function];
+    }
+
+    function _tostring() {
+        return Repr(this.map_curator_config);
+    }
+
+    function Curate(caller_name) {
+        local time_start = GSDate.GetSystemTime();
+        Log.Info("--", Log.CLASS_VULCAN_MAP_CURATOR)
+        Log.Info("VulcanMapIndustryTypeCountMonitor " + caller_name + " called for " + GSIndustryType.GetName(this.industry_spec.global_id) + "...", Log.CLASS_VULCAN_MAP_CURATOR)
+        this.curation_function();
+        Log.Info("...done: " + (GSDate.GetSystemTime() - time_start) + " seconds(s)", Log.CLASS_VULCAN_MAP_CURATOR);
+    }
+
+    function OnNewMonth() {
+        Curate("OnOnNewMonth");
+    }
+
+    function MinimumRatioToCompanionIndustryTypes() {
+        local time_start = GSDate.GetSystemTime();
+        local self_count = this.industry_spec.GetCount();
+        local companion_industry_specs = []
+        foreach (industry_name in this.map_curator_config["companion_industries"]) {
+            companion_industry_specs.append(firs.industries[industry_name]);
+        }
+        local companion_industries_count = 0;
+        foreach (companion_industry_spec in companion_industry_specs) {
+            companion_industries_count += companion_industry_spec.GetCount();
+        }
+        local target_self_count = this.map_curator_config["companion_industries_ratio"] * companion_industries_count;
+        local num_industries_to_build = target_self_count - self_count;
+        // currently this will only cause one instance to be built each time this is called, whether that is desirable us unknown
+        // - at map gen, probably better to build as many as needed
+        // - need to not flood on loading game though (rate limit by saving some state once a game is established)
+        // - need to not flood on month end
+        // - generally, player-visible flooding of new instances is worse than being short of industries on the map
+        if (num_industries_to_build > 0) {
+            Log.Info("...trying to build " + (num_industries_to_build) + " " + GSIndustryType.GetName(this.industry_spec.global_id) + "(s)...", Log.CLASS_VULCAN_MAP_CURATOR);
+            GSIndustryType.ProspectIndustry(this.industry_spec.global_id);
+        }
+    }
+
+    function MinimumRatioToTowns() {
+        local time_start = GSDate.GetSystemTime();
+        local self_count = this.industry_spec.GetCount();
+        local town_list = GSTownList();
+
+        // remove towns where the industry type is already present
+        local towns_with_industry_type_present = {}
+        local industry_list = GSIndustryList();
+        foreach (industry, _ in industry_list) {
+            if (GSIndustry.GetIndustryType(industry) == this.industry_spec.global_id) {
+                local industry_town = GSTile.GetClosestTown(GSIndustry.GetLocation(industry));
+                towns_with_industry_type_present[industry_town] <- true;
+            }
+        }
+        foreach (town, _ in town_list) {
+            if (town in towns_with_industry_type_present) {
+                town_list.RemoveItem(town);
+            }
+        }
+
+        // filter town list to remove towns that are too small
+        if (this.map_curator_config["min_population"] > 0) {
+            town_list.Valuate(GSTown.GetPopulation);
+            town_list.KeepAboveValue(this.map_curator_config["min_population"]);
+
+        }
+        // we want scrap yards in 2/3 towns with large enough population
+        local target_industry_count = (town_list.Count() * this.map_curator_config["industry_town_ratio"]).tointeger();
+        local num_industries_to_build = target_industry_count - towns_with_industry_type_present.len();
+        if (num_industries_to_build > 0) {
+            town_list.Valuate(GSBase.RandItem);
+            town_list.Sort(GSList.SORT_BY_VALUE, GSList.SORT_ASCENDING);
+            town_list.KeepTop(num_industries_to_build);
+
+            local industry_name = GSIndustryType.GetName(this.industry_spec.global_id);
+            Log.Info("Trying to build " + num_industries_to_build + " " + industry_name + "(s)...", Log.CLASS_VULCAN_MAP_CURATOR);
+            foreach (town, _ in town_list) {
+                local success = this.industry_spec.BuildInTown(town);
+                if (success == false) {
+                    Log.Info("Couldn't build " + industry_name + " in " + GSTown.GetName(town), Log.CLASS_VULCAN_MAP_CURATOR);
+                }
+            }
+        }
+    }
+}

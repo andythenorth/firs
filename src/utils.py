@@ -49,3 +49,49 @@ def parse_base_lang():
         strings[i] = extra_strings[i]
 
     return strings
+
+def gs_list_repr(_list):
+    # chameleon will render lists as ['foo', 'cabbage', '3']; squirrel wants them as ["foo", "cabbage", 3]
+    result = []
+    for item in _list:
+        if isinstance(item, list):
+            # this attempts to handle recursive items
+            result.append(gs_list_repr(item))
+        elif isinstance(item, (int, float)):
+            result.append(str(item))
+        elif isinstance(item, str):
+            # strings need double quotes, whereas python repr will single quote them
+            result.append('"' + item + '"')
+        else:
+            # extend if more types are needed
+            raise Exception("gs_list_repr. Don't know what to do with " + str(item))
+    return "[" + ",".join(result) + "]"
+
+def gs_table_repr(_dict):
+    # chameleon will render dicts as {'foo': 'cabbage', 'ham': 'eggs'}; squirrel wants them as tables in the form {"foo" = "cabbage", "ham" = "eggs"}
+    result = []
+    for key, value in _dict.items():
+        kv_result = key + " = "
+        if value == None:
+            kv_result = kv_result + 'null'
+        elif isinstance(value, list):
+            # this attempts to handle recursive items
+            kv_result = kv_result + gs_list_repr(value)
+        elif isinstance(value, dict):
+            # this attempts to handle recursive items
+            kv_result = kv_result + gs_table_repr(value)
+        elif isinstance(value, bool):
+            # python uses 'True' and 'False', squirrel uses 'true' and 'false'
+            # note that bool must be checked before int/float, as True and False are also instances of int/float
+            kv_result = kv_result + str(value).lower()
+        elif isinstance(value, (int, float)):
+            kv_result = kv_result + str(value)
+        elif isinstance(value, str):
+            # strings need double quotes, whereas python repr will single quote them
+            kv_result = kv_result + '"' + value + '"'
+        else:
+            # extend if more types are needed
+            raise Exception("gs_table_repr. Don't know what to do with " + str(value))
+        result.append(kv_result)
+
+    return "{" + ",".join(result) + "}"

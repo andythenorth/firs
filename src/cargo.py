@@ -36,14 +36,17 @@ class Cargo(object):
         self.weight = kwargs["weight"]
         self.is_freight = kwargs["is_freight"]
         self.cargo_classes = kwargs["cargo_classes"]
-        self.town_growth_effect = kwargs["town_growth_effect"]
-        self.town_growth_multiplier = kwargs["town_growth_multiplier"]
         self.units_of_cargo = kwargs["units_of_cargo"]
         self.items_of_cargo = kwargs["items_of_cargo"]
         self.penalty_lowerbound = kwargs["penalty_lowerbound"]
         self.single_penalty_length = kwargs["single_penalty_length"]
         self.price_factor = kwargs["price_factor"]
         self.capacity_multiplier = kwargs["capacity_multiplier"]
+        # except for PASS and MAIL town growth effect and multiplier are not set by FIRS, as they are of limited use
+        self.town_growth_effect = kwargs.get("town_growth_effect", "TOWNGROWTH_NONE")
+        self.town_growth_multiplier = "1.0"
+        # vulcan properties are optional, and are used by FIRS GS
+        self.vulcan_town_effect = kwargs.get("vulcan_town_effect", None)
         # not nml properties
         # suppress nml warnings about animated pixels
         self.allow_animated_pixels = kwargs.get(
@@ -113,6 +116,13 @@ class Cargo(object):
     def get_property_declaration(self, property_name, economy=None):
         value = self.get_property(property_name, economy)
         return property_name + ": " + str(value) + ";"
+
+    def get_selected_properties_as_gs_table(self):
+        result = {}
+        result["cargo_label"] = self.cargo_label
+        result["id"] = self.id
+        result["vulcan_town_effect"] = self.vulcan_town_effect
+        return utils.gs_table_repr(result)
 
     def register(self):
         if len(self.economy_variations) == 0:

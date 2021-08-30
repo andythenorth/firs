@@ -25,6 +25,13 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "STEELTOWN",
     prob_map_gen="10",
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["coke_oven"],
+            "companion_industries_ratio": 3,
+        }
+    },
 )
 
 # industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

@@ -1,0 +1,149 @@
+/* Grind handles basic debugging and development tasks, for example
+  - adding story pages for debugging information
+  - using story buttons to invalidate or refresh state
+*/
+
+class GrindStoryBook {
+
+    function Init() {
+        // note that this creates a table in root
+        // not designed to return a class instance
+        // grind_story_book is a singleton, and allegedly a table with slots is more efficient for that case than a singleton class instance
+        ::grind_story_book <- {};
+        grind_story_book.button_element_ids <- {};
+        grind_story_book.show <- null;
+        GrindStoryBook.CheckShowHide();
+    }
+
+    function CheckShowHide() {
+        if (GSController.GetSetting("grind_show") != grind_story_book.show) {
+            grind_story_book.show <- GSController.GetSetting("grind_show");
+            if (grind_story_book.show) {
+                GrindStoryBook.Show();
+            } else {
+                GrindStoryBook.Hide();
+            }
+        }
+    }
+
+    function Hide() {
+        local asyncmode = GSAsyncMode(true);
+        foreach (page_type in ["utility_pages", "persistent_storage_pages", "industry_spec_pages"]) {
+            // check for page_type to avoid crashing if not found, because a crashing debug utility is lolz
+            if (page_type in grind_story_book) {
+                foreach (grind_page in grind_story_book[page_type]) {
+                    GSStoryPage.Remove(grind_page.story_page);
+                }
+            }
+        }
+        local asyncmode = null;
+    }
+
+    function Show() {
+        local asyncmode = GSAsyncMode(true);
+        GrindStoryBook.AddUtilityPages();
+        GrindStoryBook.AddPersistentStoragePages();
+        GrindStoryBook.AddIndustrySpecStoryPages();
+        local asyncmode = null;
+    }
+
+    function AddUtilityPages() {
+        if (grind_story_book.show) {
+            // note that this also automatically clears all current pages, that can be changed if needed, but trivially prevents duplication currently
+            grind_story_book.utility_pages <- {};
+            // note that currently there is just a single page provisioned
+            grind_story_book.utility_pages.debug_page_1 <- GrindStoryPageUtility();
+        }
+    }
+
+    function AddPersistentStoragePages() {
+        if (grind_story_book.show) {
+            // note that this also automatically clears all current pages, that can be changed if needed, but trivially prevents duplication currently
+            grind_story_book.persistent_storage_pages <- {};
+            // note that currently there is just a single page provisioned
+            foreach (slot_name, slot_value in ::persistent_storage) {
+                grind_story_book.persistent_storage_pages[slot_name] <- GrindStoryPagePersistentStorage(slot_name, slot_value);
+            }
+        }
+    }
+
+    function AddIndustrySpecStoryPages() {
+        if (grind_story_book.show) {
+            // note that this also automatically clears all current pages, that can be changed if needed, but trivially prevents duplication currently
+            grind_story_book.industry_spec_pages <- {};
+            foreach (industry_id in firs.active_economy.GetIndustryIDsSortedByName()) {
+                grind_story_book.industry_spec_pages[industry_id] <- GrindStoryPageIndustrySpec(industry_id);
+            }
+        }
+    }
+}
+
+class GrindStoryPage {
+    /* base class for various types of Grind page */
+
+    // keep a copy of the story page (for convenience)
+    story_page = null;
+}
+
+class GrindStoryPageUtility extends GrindStoryPage {
+    // provide a class in case we want to add more utility pages in future
+    // but note that currently there is just a single page provisioned
+    constructor() {
+        this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Grind: LOLZ Dev Utils / Debugger");
+        local clean_industry_texts = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_BUTTON_PUSH, 1, "Clean industry texts");
+        // !! this is ass backwards because it's designed for a bunch of if statements to check, should be a simple function dispatcher
+        grind_story_book.button_element_ids[clean_industry_texts] <- "clean_industry_texts";
+    }
+}
+
+class GrindStoryPagePersistentStorage extends GrindStoryPage {
+    // provide a class in case we want to add more persistent storage pages in future
+    // but note that currently there is just a single page provisioned
+    constructor(slot_name, slot_value) {
+        this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Grind: Persistent Storage - " + slot_name);
+        // !! there's no update method for these pages, probably TMWFTLB as of July 2023
+        local element_text = GSText(GSText.STR_GRIND_DELAYED_UPDATE);
+        local note_delayed_update = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        // assume we want to show all the keys for the slot, then just repr the values, even if they're nested tables
+        foreach (prop_name, prop_value in slot_value) {
+            local element_text = GSText(GSText.STR_GRIND_TEST, prop_name.tostring(), Repr(prop_value));
+            local prop_display = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        }
+    }
+}
+
+class GrindStoryPageIndustrySpec extends GrindStoryPage {
+
+    constructor(industry_id) {
+        local industry_spec = firs.industries[industry_id];
+        local industry_name = GSIndustryType.GetName(industry_spec.global_id);
+
+        this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Grind: " + industry_name);
+        // needs a dump info function that walks all the known properties ??
+        // could foreach the industry_spec, but eh, doesn't seem needed right now
+        local element_text = GSText(GSText.STR_GRIND_TEST, "industry_id: ", industry_id.tostring());
+        local display_industry_id = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
+
+        local props_to_display = ["grf_local_id", "global_id"];
+        foreach (prop_name in props_to_display) {
+            local element_text = GSText(GSText.STR_GRIND_TEST, prop_name, industry_spec[prop_name].tostring());
+            local prop_display = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        }
+        local element_text = GSText(GSText.STR_GRIND_SUB_HEADING, "default_vulcan_config");
+        local prop_display = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        foreach (prop_name, prop_value in industry_spec.default_vulcan_config) {
+            local element_text = GSText(GSText.STR_GRIND_TEST, prop_name, prop_value.tostring());
+            local prop_display = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        }
+        local element_text = GSText(GSText.STR_GRIND_SUB_HEADING, "economy_variations");
+        local prop_display = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        // not sure we actually need map curation infor, it's trivially inspectable in src, but eh
+        local map_curator = industry_spec.GetMapCurator();
+        local map_curator_info = "null";
+        if (map_curator != null) {
+            map_curator_info = map_curator.tostring();
+        }
+        local element_text = GSText(GSText.STR_GRIND_TEST, "map_curator", map_curator_info);
+        local display_map_curator_info = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
+    }
+}

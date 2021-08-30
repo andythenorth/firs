@@ -1,0 +1,252 @@
+// Remember to set dependencies in the bananas web manager for all libraries
+// that you use. This way users will automatically get all libraries of the
+// version you selected when they download your Game Script.
+
+/* Import SuperLib for GameScript */
+import("util.superlib", "SuperLib", 36);
+Helper <- SuperLib.Helper;
+/* Import other libs */
+// none
+
+/* Local pseudo-libs, alphabetised */
+// Atlas handles map geometry
+require("atlas/atlas.nut");
+// Grind handles using the story book as a fake debugger
+require("grind/debug_storybook.nut");
+// our own wrapper around default logging
+require("vulcan/log.nut");
+Log <- VulcanLog();
+// our own implementation of pretty printing as I can't figure out how to use the one in Squirrel 2, if it exists
+require("repr.nut");
+Repr <- _Repr.Repr;
+// Persistent storage manager for save/load of state in savegame
+require("persistent_storage.nut");
+// Vulcan namespaces most of our scripts
+require("vulcan/companies.nut");
+require("vulcan/industry_cargo_stats.nut");
+require("vulcan/industry_control.nut");
+require("vulcan/industry_spec.nut");
+require("vulcan/map_curator.nut");
+require("vulcan/town_control.nut");
+require("vulcan/town_story_book.nut");
+
+// exposes FIRS grf structure to GS
+require("firs.nut");
+// other GS files
+require("version.nut");
+
+class MainClass extends GSController {
+	_loaded_data = null;
+	_loaded_from_version = null;
+	_init_done = null;
+
+	/*
+	 * This method is called when your GS is constructed.
+	 * It is recommended to only do basic initialization of member variables
+	 * here.
+	 * Many API functions are unavailable from the constructor. Instead do
+	 * or call most of your initialization code from MainClass::Init.
+	 */
+	constructor()
+	{
+		this._init_done = false;
+		this._loaded_data = null;
+		this._loaded_from_version = null;
+	}
+}
+
+/*
+ * This method is called by OpenTTD after the constructor, and after calling
+ * Load() in case the game was loaded from a save game. You should never
+ * return back from this method. (if you do, the script will crash)
+ *
+ * Start() contains of two main parts. First initialization (which is
+ * located in Init), and then the main loop.
+ */
+function MainClass::Start() {
+	// Some OpenTTD versions are affected by a bug where all API methods
+	// that create things in the game world during world generation will
+	// return object id 0 even if the created object has a different ID.
+	// In that case, the easiest workaround is to delay Init until the
+	// game has started.
+	if (Helper.HasWorldGenBug()) GSController.Sleep(1);
+
+	this.Init();
+
+	// Wait for the game to start (or more correctly, tell OpenTTD to not
+	// execute our GS further in world generation)
+	GSController.Sleep(1);
+
+    // AFAICT, GS story pages can't be added during init (as we might still be in world gen)
+    VulcanTownStoryBook.Init();
+    GrindStoryBook.Init();
+
+	// Game has now started and if it is a single player game,
+	// company 0 exist and is the human company.
+
+	// Main Game Script loop
+	local last_loop_date = GSDate.GetCurrentDate();
+	while (true) {
+		local loop_start_tick = GSController.GetTick();
+
+        GrindStoryBook.CheckShowHide();
+
+		// Handle incoming messages from OpenTTD
+		this.HandleEvents();
+
+		// Reached new year/month?
+		local current_date = GSDate.GetCurrentDate();
+		if (last_loop_date != null) {
+			local year = GSDate.GetYear(current_date);
+			local month = GSDate.GetMonth(current_date);
+			if (year != GSDate.GetYear(last_loop_date)) {
+				this.OnNewYear();
+			}
+			if (month != GSDate.GetMonth(last_loop_date)) {
+				this.OnNewMonth();
+			}
+		}
+		last_loop_date = current_date;
+
+        /*
+		// Loop with a frequency of five days
+		local ticks_used = GSController.GetTick() - loop_start_tick;
+		GSController.Sleep(max(1, 5 * 74 - ticks_used));
+		*/
+		// Try looping aggressively fast, this may nerf game FPS / FFWD speed? 5 is an arbitrary value for testing with
+		GSController.Sleep(5);
+	}
+}
+
+/*
+ * This method is called during the initialization of your Game Script.
+ * As long as you never call Sleep() and the user got a new enough OpenTTD
+ * version, all initialization happens while the world generation screen
+ * is shown. This means that even in single player, company 0 doesn't yet
+ * exist. The benefit of doing initialization in world gen is that commands
+ * that alter the game world are much cheaper before the game starts.
+ */
+
+function MainClass::Init() {
+    PersistentStorageManager.Init(this._loaded_data, this._loaded_from_version);
+
+    Log.Info(GIT_VERSION);
+
+    FIRS.Init();
+    VulcanCompanies.Init();
+    VulcanIndustryCargoStatsManager.Init();
+    VulcanIndustryControl.Init();
+    VulcanMapCurator.Init();
+    VulcanTownControl.Init();
+
+    // for the game load case, clean out the story book, and refresh it on Start()
+    // asyncmode for speed here as we want this to be quick across multiple commands, and don't care about command results
+    local asyncmode = GSAsyncMode(true);
+    local story_page_list = GSStoryPageList(GSCompany.COMPANY_INVALID);
+    foreach (story_page, _ in story_page_list) {
+        GSStoryPage.Remove(story_page);
+    }
+    local asyncmode = null;
+
+    /*
+    PowerGrid.build_
+    (
+        GSObjectType.ResolveNewGRFID(0x47477015, 0x51),
+        GSIndustryType.ResolveNewGRFID(firs.grfid, 0x42) // to-do: convert to list of industries
+    );
+    */
+
+    // set_town_text_test();
+
+    //tile_walker();
+
+    //find_power_sources();
+
+	// Indicate that all data structures has been initialized/restored.
+	this._init_done = true;
+	this._loaded_data = null; // the loaded data has no more use now after that _init_done is true.
+}
+
+/*
+ * This method handles incoming events from OpenTTD.
+ */
+function MainClass::HandleEvents() {
+	if(GSEventController.IsEventWaiting()) {
+		local ev = GSEventController.GetNextEvent();
+		if (ev == null) return;
+
+		local ev_type = ev.GetEventType();
+		switch (ev_type) {
+			case GSEvent.ET_STORYPAGE_BUTTON_CLICK: {
+				local button_event = GSEventStoryPageButtonClick.Convert(ev);
+				local company_id = button_event.GetCompanyID();
+                Log.Info("Button clicked! " + button_event.GetStoryPageID() + " " + button_event.GetElementID())
+
+                if (grind_story_book.button_element_ids[button_event.GetElementID()] == "clean_industry_texts") {
+                    local industry_list = GSIndustryList();
+                	foreach (industry, _ in industry_list) {
+                	    GSIndustry.SetText(industry, null);
+                	}
+                }
+            }
+		}
+	}
+}
+
+/*
+ * Called by our main loop when a new month has been reached.
+ * Named consistent with OpenTTD OnNewMonth
+ */
+function MainClass::OnNewMonth() {
+    // note that cargo stats should be run before town to ensure town access to latest industry stats
+    VulcanIndustryCargoStatsManager.RunPeriodicProcessing("OnNewMonth");
+    // !! this might need to explicitly be per month, or more or less frequently?
+    VulcanTownControl.RunPeriodicProcessing("OnNewMonth");
+    // this would only need to run every 3 months or so
+    VulcanMapCurator.OnNewMonth();
+    // do log report last as a reminder about why log messages _might_ be missing if not seen
+    Log.ReportLogStatus();
+}
+
+/*
+ * Called by our main loop when a new year has been reached.
+ * Named consistent with OpenTTD OnNewYear
+ */
+function MainClass::OnNewYear() {
+}
+
+/*
+ * This method is called by OpenTTD when an (auto)-save occurs. You should
+ * return a table which can contain nested tables, arrays of integers,
+ * strings and booleans. Null values can also be stored. Class instances and
+ * floating point values cannot be stored by OpenTTD.
+ */
+function MainClass::Save() {
+	Log.Info("Saving data to savegame");
+
+	// In case (auto-)save happens before we have initialized all data,
+	// save the raw _loaded_data if available or an empty table.
+	if (!this._init_done) {
+		return this._loaded_data != null ? this._loaded_data : {};
+	}
+
+	return ::persistent_storage
+}
+
+/*
+ * When a game is loaded, OpenTTD will call this method and pass you the
+ * table that you sent to OpenTTD in Save().
+ */
+function MainClass::Load(version, tbl) {
+	Log.Info("Loading data from savegame made with version " + version + " of the game script");
+
+	// Store a copy of the table from the save game
+	// but do not process the loaded data yet. Wait with that to Init
+	// so that OpenTTD doesn't kick us for taking too long to load.
+	this._loaded_data = {}
+   	foreach(key, val in tbl) {
+		this._loaded_data.rawset(key, val);
+	}
+
+	this._loaded_from_version = version;
+}

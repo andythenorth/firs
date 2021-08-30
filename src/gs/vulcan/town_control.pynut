@@ -1,0 +1,240 @@
+class VulcanTownControl {
+    /* structure for town control */
+
+    function Init() {
+        // note that this creates a table in root
+        // not designed to return a class instance
+        // vulcan_town_control is a singleton, and allegedly a table with slots is more efficient for that case than a singleton class instance
+        ::vulcan_town_control <- {};
+        vulcan_town_control.towns <- {};
+        local town_list = GSTownList();
+        foreach (town, _ in town_list) {
+            vulcan_town_control.towns[town] <- VulcanTown(town);
+        }
+        VulcanTownControl.RunPeriodicProcessing("Init");
+    }
+
+    function RunPeriodicProcessing(caller_type) {
+        local time_start = GSDate.GetSystemTime();
+        Log.Info("--", Log.CLASS_VULCAN_TOWN_CONTROL);
+        Log.Info("Town periodic processing...", Log.CLASS_VULCAN_TOWN_CONTROL);
+        // book-keep town industries, we do this once for all towns as it walks all industries, and shouldn't be called recursively for every town
+        VulcanTownControl.BookKeepVulcanTownIndustries();
+        // asyncmode for speed here as we execute a lot of commands over a potentially large number of towns
+        local asyncmode = GSAsyncMode(true);
+        // we use towns sorted by name as it will result in logging ordered by town name, which is convenient
+        foreach (vulcan_town in VulcanTownControl.GetVulcanTownsSortedByName()) {
+            Log.Info(GSTown.GetName(vulcan_town.town) + "...", Log.CLASS_VULCAN_TOWN_CONTROL);
+
+            Log.Info("...update required cargos delivery stats", Log.CLASS_VULCAN_TOWN_CONTROL);
+            foreach (cargo_label, required_cargo in vulcan_town.required_cargos) {
+                required_cargo.UpdateDeliveryStats(vulcan_town);
+            }
+
+            Log.Info("...setting town growth rates", Log.CLASS_VULCAN_TOWN_CONTROL);
+            vulcan_town.SetGrowthRate();
+
+            Log.Info("...setting town window texts", Log.CLASS_VULCAN_TOWN_CONTROL);
+            vulcan_town.SetTownWindowText();
+
+            if (caller_type != "Init") {
+                Log.Info("...updating town story pages", Log.CLASS_VULCAN_TOWN_CONTROL);
+                vulcan_town.UpdateTownStoryPage();
+            }
+            // increase primary production in town? - this must be called every month as it also does some housekeeping
+            VulcanIndustryControl.RollDiceForTownPrimaryIndustryProductionIncrease(vulcan_town);
+        }
+        Log.Info("Town periodic processing done. Elapsed time: " + (GSDate.GetSystemTime() - time_start), Log.CLASS_VULCAN_TOWN_CONTROL);
+    }
+
+
+    function BookKeepVulcanTownIndustries() {
+        Log.Info("...book-keeping town industries", Log.CLASS_VULCAN_TOWN_CONTROL);
+        // we call this in the periodic processing to account for any industries that opened / closed
+        // doing this in periodic processing is preferable to trying to book-keep by handling industry open / close events in detail
+        // !! however we might still need to book-keep when an industry closes, and then update the story book, as it tends to lag
+        // clean the existing list of industries for each town
+        foreach (town, vulcan_town in vulcan_town_control.towns) {
+            vulcan_town.town_industries = {};
+        }
+        local industry_list = GSIndustryList();
+        foreach (industry, _ in industry_list) {
+            local industry_town = GSTile.GetClosestTown(GSIndustry.GetLocation(industry));
+            local industry_spec = firs.active_economy.GetIndustrySpecByGlobalID(GSIndustry.GetIndustryType(industry));
+            vulcan_town_control.towns[industry_town].town_industries[industry] <- industry_spec;
+        }
+    }
+
+    function GetVulcanTownsSortedByName() {
+        // vulcan_town_control.towns is a table, so we can't rely on the order, provide this sort function as a convenience
+        local cmp_name = function(a, b) {
+            local name_a = GSTown.GetName(a.town);
+            local name_b = GSTown.GetName(b.town);
+            if (name_a > name_b) return 1
+            else if (name_a < name_b) return -1
+            return 0;
+        }
+        local result = [];
+        local town_list = vulcan_town_control.towns;
+        foreach (town, vulcan_town in town_list) {
+            result.append(vulcan_town);
+        }
+        result.sort(cmp_name);
+        return result;
+    }
+
+}
+
+class VulcanTown {
+    /* stores extended info / metadata about a town instance */
+
+    // store the numeric town id as we may need it for looking up other things
+    // town id is also available as the key in vulcan_town_control.towns
+    town = null;
+    required_cargos = null;
+    town_industries = null;
+
+    constructor(town) {
+        this.town = town;
+        // !! temp cargos
+        // !! these may be 'required' for different things, e.g. happiness, town growth etc
+        // !! needs delegated to the python economy definition
+        // !! we really need some cargos to be at specific industry instances
+        // !! e.g. structural steel, glass are town growth cargos and also used at secondary industry
+        this.required_cargos = {}
+        foreach (firs_cargo in firs.active_economy.vulcan_town_effect_cargos) {
+            this.required_cargos[firs_cargo.cargo_label] <- VulcanTownRequiredCargo(this, firs_cargo);
+        }
+        town_industries = {};
+    }
+
+    function SetGrowthRate() {
+        local town_satisfied_growth = false;
+        foreach (cargo_label, required_cargo in this.required_cargos) {
+            if (required_cargo.vulcan_town_effect == "VTE_GROWTH") {
+                if (required_cargo.TotalRecentlyDelivered() > 100) {
+                    town_satisfied_growth = true;
+                    break;
+                }
+            }
+        }
+        if (town_satisfied_growth == true) {
+            GSTown.SetGrowthRate(this.town, GSTown.TOWN_GROWTH_NORMAL);
+        } else {
+            GSTown.SetGrowthRate(this.town, GSTown.TOWN_GROWTH_NONE);
+        }
+        Log.Info("...growth rate: " + GSTown.GetGrowthRate(this.town), Log.CLASS_VULCAN_TOWN_CONTROL);
+    }
+
+    function GetHappiness() {
+        // !! currently not called - should it be a monthly town loop thing, or called per growable industry?
+        local town_satisfied_happiness = false;
+        foreach (cargo_label, required_cargo in this.required_cargos) {
+            if (required_cargo.vulcan_town_effect == "VTE_HAPPINESS") {
+                if (required_cargo.TotalRecentlyDelivered() > 100) {
+                    town_satisfied_happiness = true;
+                    break;
+                }
+            }
+        }
+        return town_satisfied_happiness;
+    }
+
+
+    function SetTownWindowText() {
+        local happiness_substr = null;
+        if (this.GetHappiness() == true) {
+            happiness_substr = GSText(GSText.STR_CABBAGE_TOWN_HAPPY);
+        }
+        else {
+            happiness_substr = GSText(GSText.STR_CABBAGE_TOWN_UNHAPPY);
+        }
+        local text = GSText(GSText.STR_CABBAGE_TOWN, happiness_substr, this.town);
+        GSTown.SetText(this.town, text);
+    }
+
+    function UpdateTownStoryPage() {
+        vulcan_town_control.story_pages[this.town].UpdatePage(this);
+    }
+
+}
+
+class VulcanTownRequiredCargo {
+
+    cargo = null;
+    delivery_stats = null;
+    vulcan_town_effect = null;
+
+    constructor(vulcan_town, firs_cargo) {
+        this.cargo = firs.active_economy.cargo_ids_by_label[firs_cargo.cargo_label]; // map-global numeric ID
+        this.delivery_stats = {
+            monthly_delivered_amounts = [],
+        }
+        this.vulcan_town_effect = firs_cargo.vulcan_town_effect;
+    }
+
+    function _tostring() {
+        // intended for easy logging output
+        local result = "";
+        result += GSCargo.GetName(this.cargo) + " (" + GSCargo.GetCargoLabel(this.cargo) + "). Monthly deliveries (oldest..newest): ";
+        result += "["
+        foreach (delivered_amount in this.delivery_stats.monthly_delivered_amounts) {
+            result = result + delivered_amount + ", "
+        }
+        result = result.slice(0, -2); // knock off the last "," (couldn't find any convenient array.join)
+        result += "]. "
+        result += "Total recently delivered: " + this.TotalRecentlyDelivered() + ".";
+        return result
+    }
+
+    function UpdateDeliveryStats(vulcan_town) {
+        // we will need to net off any cargo delivered to industries that aren't town sinks, so find those
+        local industries_with_delivery_excluded = [];
+        foreach (industry, industry_spec in vulcan_town.town_industries) {
+            if (industry_spec.default_vulcan_config["town_cargo_sink_industry"] == true) {
+                // Log.Info("found a " + GSIndustryType.GetName(GSIndustry.GetIndustryType(industry)) + ", it's allowed, skip");
+                // !! set industry window text - bit of an unrelated concern, but this loop is convenient right now
+                // !! this will be a pointless performance hog, consuming many opcodes, needs to be done once when industry is constructed
+                // !! but the caller of this function should already be in async mode...so probably ok?
+                GSIndustry.SetText(industry, GSText(GSText.STR_INDUSTRY_TOWN_BLACK_HOLE_EXTRA_TEXT_GROWTH));
+                continue;
+            }
+            foreach (cargo, _ in GSIndustryType.GetAcceptedCargo(GSIndustry.GetIndustryType(industry))) {
+                if (cargo == this.cargo) {
+                    industries_with_delivery_excluded.append(industry);
+                }
+            }
+        }
+        local total_town_cargo_delivered_all_companies = 0;
+        local total_excluded_industry_cargo_delivered_all_companies = 0;
+        // need to monitor all companies
+        foreach (company in VulcanCompanies.GetCompanies()) {
+            // cargo monitors are both created by and monitored by a call to GSCargoMonitor.GetTownDeliveryAmount
+            // so we don't need a separate creation method
+            // !!! will need to net off any cargos delivered to secondary industry types?
+            total_town_cargo_delivered_all_companies += GSCargoMonitor.GetTownDeliveryAmount(company, this.cargo, vulcan_town.town, true);
+        }
+        foreach (industry in industries_with_delivery_excluded) {
+            // we assign the delivered amount to a local in case we want to log it, as calling the CargoMonitor repeatedly resets the delivered counts each time
+            local industry_cargo_timeseries = ::persistent_storage["industry_cargo_stats"][industry]["accepted"][GSCargo.GetCargoLabel(cargo)];
+            // there probably *is* a way to non-destructively fetch the last item in an array from squirrel, but eh, this will do
+            local excluded_industry_cargo_delivered = industry_cargo_timeseries[industry_cargo_timeseries.len() - 1];
+            total_excluded_industry_cargo_delivered_all_companies += excluded_industry_cargo_delivered;
+        }
+        this.delivery_stats.monthly_delivered_amounts.append(total_town_cargo_delivered_all_companies - total_excluded_industry_cargo_delivered_all_companies);
+        // only need to keep 3 months of deliveries
+        if (this.delivery_stats.monthly_delivered_amounts.len() > 3) {
+            this.delivery_stats.monthly_delivered_amounts.remove(0);
+        }
+        Log.Info("..." + this.tostring(), Log.CLASS_VULCAN_TOWN_CONTROL);
+    }
+
+    function TotalRecentlyDelivered() {
+        // sums across monthly deliveries
+        local result = 0;
+        foreach (delivered_amount in this.delivery_stats.monthly_delivered_amounts) {
+            result += delivered_amount;
+        }
+        return result
+    }
+}

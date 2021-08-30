@@ -1,0 +1,131 @@
+/* Atlas handles map geometry, for example:
+  - finding tiles in lists by shape
+  - managing regions
+*/
+
+// !! lib structure of Atlas is WIP
+
+class Region {
+   /*
+        Manages a list of areas
+    */
+    static areas = array(0);
+    static negative_areas = array(0);
+}
+
+function Region::AddArea(area) {
+    this.areas.push(area);
+}
+
+function Region::AddNegativeArea(area) {
+    this.negative_areas.push(area);
+}
+
+function Region::GetUnifiedAreas() {
+    Log.Info("unifying areas...");
+    local time_start = GSDate.GetSystemTime();
+    local result = array(0);
+    ::index <- {}
+    ::excluded_index <- {}
+
+    foreach (negative_area in this.negative_areas) {
+        foreach (tile in negative_area.GetTiles()) {
+            if ((tile in ::excluded_index) == false) {
+                ::excluded_index[tile] <- null;
+            }
+        }
+    }
+
+    foreach (area in this.areas) {
+        foreach (tile in area.GetTiles()) {
+            // don't add excluded tiles
+            if (tile in ::excluded_index) {
+                // excluded, don't add it
+                continue;
+            }
+            // don't add duplicates
+            if ((tile in ::index) == false) {
+                ::index[tile] <- {};
+            }
+            else {
+                break;
+            }
+            result.push(tile);
+        }
+    }
+    Log.Info("...areas unified. Elapsed time: " + (GSDate.GetSystemTime() - time_start) + " seconds");
+    delete ::index
+    delete ::excluded_index
+    return result
+}
+
+function DeltaYFromDeltaXPythagoras(delta_x, radius) {
+    /*
+        given a distance x, find an equivalent distance y which will sit on the circumference of a cirle with given radius
+        this can be done by rearranging pythagoras so that b^2 = c^2 - a^2 where c is radius and a is delta_x
+        if we wanted ellipses, that would be achieved by just scaling the return result by some factor
+    */
+    return sqrt((radius * radius) - (delta_x * delta_x)).tointeger();
+}
+
+class AtlasCircle {
+    origin_tile = null;
+    origin_x = null;
+    origin_y = null;
+    radius = null;
+
+    constructor(origin_tile, radius) {
+        this.origin_tile = origin_tile;
+        this.origin_x = GSMap.GetTileX(origin_tile);
+        this.origin_y = GSMap.GetTileY(origin_tile);
+        this.radius = radius;
+    }
+
+    function GetTiles() {
+        local result = array(0);
+        // method using pythagoras to find y from each x using radius, then use y as the constraint for a tile file
+        // this walks only the tiles that are explicitly needed and _may_ scale slightly better with larger radii, but eh, I have no fine-grained timing info
+        for (local x = origin_x - radius; x <= origin_x + radius; x++) {
+            local delta_y = DeltaYFromDeltaXPythagoras(origin_x - x, radius);
+            for (local y = origin_y - delta_y; y <= origin_y + delta_y; y++) {
+                result.push(GSMap.GetTileIndex(x, y));
+
+            }
+        }
+        return result
+    }
+}
+
+class AtlasRect {
+    tile_from = null;
+    tile_to = null;
+    x_1 = null;
+    y_1 = null;
+    x_2 = null;
+    y_2 = null;
+
+    constructor(tile_from, tile_to) {
+        this.tile_from = tile_from;
+        this.tile_to = tile_to;
+        this.x_1 = GSMap.GetTileX(tile_from);
+        this.y_1 = GSMap.GetTileY(tile_from);
+        this.x_2 = GSMap.GetTileX(tile_to);
+        this.y_2 = GSMap.GetTileY(tile_to);
+    }
+
+    function GetTiles() {
+        // we already have GSTileList.AddRectangle()
+        // but this deliberately uses primitives, avoiding GSTileList etc and returning a simple array of tiles
+        // whether that's necessary or not I don't know, but there seems to be unresolved uncertainty around the performance of GS abstractions
+        // also primitive code is long, but is easy to reason about, and also possibly port out of GS to base game
+        //
+        local result = array(0);
+        // !! doesn't check for negative offsets between tile_from and tile_to
+        for (local x = x_1; x <= x_2; x++) {
+            for (local y = y_1; y <= y_2; y++) {
+                result.push(GSMap.GetTileIndex(x, y));
+            }
+        }
+        return result
+    }
+}

@@ -8,6 +8,7 @@
 from collections import deque
 import copy
 import os.path
+import json
 
 currentdir = os.curdir
 
@@ -858,9 +859,11 @@ class GRFObject(object):
             "ANIM_TRIGGER_INDTILE_TILE_LOOP": "ANIM_TRIGGER_OBJ_TILELOOP",
         }
         # split off some nml formatting to get the raw list
-        triggers = self.tile.animation_triggers.split("bitmask(")[1].split(")")[0].split(",")
+        triggers = (
+            self.tile.animation_triggers.split("bitmask(")[1].split(")")[0].split(",")
+        )
         # triggers from tile might be empty, strip those
-        triggers = [i for i in triggers if i != '']
+        triggers = [i for i in triggers if i != ""]
         # this is expected to error if the trigger isn't found, it only mapped the triggers in use as of September 2022, not all possible triggers
         for trigger in triggers:
             result.append(trigger_remap[trigger])
@@ -1124,7 +1127,7 @@ class IndustryLocationChecks(object):
                 industry.id,
                 "- should be in economy location checks only",
                 "(is this supported yet?)",
-                message_type="info"
+                message_type="info",
             )
         self.require_cluster = location_args.get("require_cluster", None)
         self.require_town_industry_count = location_args.get(
@@ -1417,6 +1420,8 @@ class IndustryProperties(object):
             "override_default_construction_states", False
         )
         self.extra_text_fund = kwargs.get("extra_text_fund", None)
+        # default and/or economy-specific configuration for FIRS GS at compile time
+        self.vulcan_config = kwargs.get("vulcan_config", {})
         # nml properties we want to prevent being set for one reason or another
         if "conflicting_ind_types" in kwargs:
             raise Exception(
@@ -1453,10 +1458,10 @@ class Industry(object):
         self.economy_variations = {}
         for economy in registered_economies:
             self.add_economy_variation(economy)
+        # Vulcan is used to configure FIRS GS compile-time properties, and holds Vulcan-specific properties and methods
+        self.vulcan = Vulcan(self)
         # template will be set by subcass, and/or by individual industry instances
-        self.template = kwargs.get(
-            "template", None
-        )
+        self.template = kwargs.get("template", None)
         self.location_checks = IndustryLocationChecks(
             self, kwargs.get("location_checks", {})
         )
@@ -1592,9 +1597,7 @@ class Industry(object):
                 result.append(economy)
         return result
 
-    def get_graphics_file_path(
-        self, terrain=None, construction_state_num=None
-    ):
+    def get_graphics_file_path(self, terrain=None, construction_state_num=None):
         if terrain == "snow" and self.provides_snow:
             terrain_suffix = "_snow"
         else:
@@ -1609,12 +1612,7 @@ class Industry(object):
                 + '.png"'
             )
         else:
-            return (
-                '"src/graphics/industries/'
-                + self.id
-                + terrain_suffix
-                + '.png"'
-            )
+            return '"src/graphics/industries/' + self.id + terrain_suffix + '.png"'
 
     @property
     def switch_name_for_construction_states(self):
@@ -1807,7 +1805,9 @@ class Industry(object):
             extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_BOTH"
         else:
             # below here is increasingly JFDI and may well go wrong if industries are inappropriately configured
-            max_ratio = (sum([cargo_with_ratio[1] for cargo_with_ratio in accept_cargos_with_ratios]))
+            max_ratio = sum(
+                [cargo_with_ratio[1] for cargo_with_ratio in accept_cargos_with_ratios]
+            )
             if max_ratio == 8:
                 # common case, industry is configured so that ratios sum to 8
                 extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ALL"
@@ -1815,19 +1815,31 @@ class Industry(object):
                 # less common case: all ratios are 8, so there is no combination
                 # to prevent surprises we guard on known industry ids
                 if self.id not in ["supply_yard", "food_processor"]:
-                    raise Exception("get_extra_text_string: " + self.id + " needs combinatorial production values checked, they may be incorrect?")
+                    raise Exception(
+                        "get_extra_text_string: "
+                        + self.id
+                        + " needs combinatorial production values checked, they may be incorrect?"
+                    )
                 extra_text_string = "STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY"
             elif int(max_ratio / len(accept_cargos_with_ratios)) == 3:
                 # rare case of 3 out of n cargos being required
                 # to prevent surprises we guard on known industry ids
                 if self.id not in ["component_factory"]:
-                    raise Exception("get_extra_text_string: " + self.id + " needs combinatorial production values checked, they may be incorrect?")
+                    raise Exception(
+                        "get_extra_text_string: "
+                        + self.id
+                        + " needs combinatorial production values checked, they may be incorrect?"
+                    )
                 extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_THREE"
             else:
                 # as of April 2023, we just assume that any 2 will give a max ratio
                 # to prevent surprises we guard on known industry ids
                 if self.id not in ["hardware_factory"]:
-                    raise Exception("get_extra_text_string: " + self.id + " needs combinatorial production values checked, they may be incorrect?")
+                    raise Exception(
+                        "get_extra_text_string: "
+                        + self.id
+                        + " needs combinatorial production values checked, they may be incorrect?"
+                    )
                 extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_TWO"
         return "string(" + extra_text_string + ")"
 
@@ -1935,10 +1947,10 @@ class Industry(object):
         return []
 
     def get_animation_macro_config(self, animation_context):
-        if animation_context == 'industry':
+        if animation_context == "industry":
             tiles = self.tiles
             feature = "FEAT_INDUSTRYTILES"
-        elif animation_context == 'object':
+        elif animation_context == "object":
             all_tiles = []
             for grf_object in self.objects.values():
                 all_tiles.append(grf_object.tile)
@@ -2028,8 +2040,15 @@ class Industry(object):
                 # ground tile assumes sprite_or_spriteset.type will always map to a ground_tile type
                 # have to accomodate number of frames needed (num_sprites_to_autofill) for animated spritelayouts
                 # !! if this is failing, look if the required number of frames is provided in ground_tiles.pynml
-                if sprite_or_spriteset.num_sprites_to_autofill not in global_constants.animated_ground_tile_frame_counts:
-                    raise BaseException(self.id + " needs global_constants.animated_ground_tile_frame_counts extended to add a frame count of " + str(sprite_or_spriteset.num_sprites_to_autofill))
+                if (
+                    sprite_or_spriteset.num_sprites_to_autofill
+                    not in global_constants.animated_ground_tile_frame_counts
+                ):
+                    raise BaseException(
+                        self.id
+                        + " needs global_constants.animated_ground_tile_frame_counts extended to add a frame count of "
+                        + str(sprite_or_spriteset.num_sprites_to_autofill)
+                    )
                 return (
                     "spriteset_ground_tile_"
                     + sprite_or_spriteset.type
@@ -2052,13 +2071,7 @@ class Industry(object):
                 )
             else:
                 # default result is a spriteset name and optional frame number
-                return (
-                    sprite_or_spriteset.id
-                    + suffix
-                    + "("
-                    + sprite_selector
-                    + ")"
-                )
+                return sprite_or_spriteset.id + suffix + "(" + sprite_selector + ")"
         if isinstance(sprite_or_spriteset, Sprite):
             return getattr(sprite_or_spriteset, "sprite_number" + suffix)
 
@@ -2094,7 +2107,7 @@ class IndustryPrimary(Industry):
         register_perm_storage_mapping(
             self.__class__.__name__,
             [
-                "permanent_prod_change_cycle_counter",
+                "unused",
                 "unused",
                 # base prod factor is randomised when industry is constructed, to give production variation between instances of this type
                 # used in the production calculation as n/16
@@ -2184,11 +2197,13 @@ class IndustryPrimaryExtractive(IndustryPrimary):
         kwargs["accept_cargo_types"] = ["ENSP"]
         kwargs["life_type"] = "IND_LIFE_TYPE_EXTRACTIVE"
         super().__init__(**kwargs)
+        # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
         self.supply_requirements = [
             0,
             "PRIMARY",
             1,
-        ]  # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
+        ]
+        self.allow_production_change_from_gs = True
 
 
 class IndustryPrimaryOrganic(IndustryPrimary):
@@ -2201,11 +2216,13 @@ class IndustryPrimaryOrganic(IndustryPrimary):
         kwargs["accept_cargo_types"] = ["FMSP"]
         kwargs["life_type"] = "IND_LIFE_TYPE_ORGANIC"
         super().__init__(**kwargs)
+        # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
         self.supply_requirements = [
             0,
             "PRIMARY",
             1,
-        ]  # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
+        ]
+        self.allow_production_change_from_gs = True
 
 
 class IndustryPrimaryPort(IndustryPrimary):
@@ -2217,20 +2234,25 @@ class IndustryPrimaryPort(IndustryPrimary):
     def __init__(self, **kwargs):
         kwargs["life_type"] = "IND_LIFE_TYPE_BLACK_HOLE"
         super().__init__(**kwargs)
+        # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
         self.supply_requirements = [
             0,
             "PORT",
             8,
-        ]  # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
+        ]
+        self.allow_production_change_from_gs = True
 
 
 class IndustryPrimaryNoSupplies(IndustryPrimary):
-    """Industry that does not accept supplies and does not change production amounts during game"""
+    """Industry that does not accept supplies"""
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.template = kwargs.get("template", "industry_primary_no_supplies.pynml")
         self.supply_requirements = None  # supplies do not boost this type of primary
+        self.allow_production_change_from_gs = kwargs.get(
+            "allow_production_change_from_gs", False
+        )
 
 
 class IndustryTownProducerPopulationDependent(IndustryPrimary):
@@ -2463,3 +2485,37 @@ class IndustryTertiary(Industry):
                 economy.id,
             )
         return prod_cargo_types
+
+
+class Vulcan(object):
+    """Used for GS configuration at compile time, which influences GS at run time"""
+
+    def __init__(self, industry):
+        self.industry = industry
+
+    def get_default_vulcan_config_as_gs_table(self):
+        vulcan_config = self.industry.get_property("vulcan_config", None)
+        result = {}
+        result["allow_production_change_from_gs"] = getattr(
+            self.industry, "allow_production_change_from_gs", False
+        )
+        # append some additional derived properties to Vulcan config
+        result["town_cargo_sink_industry"] = (
+            True
+            if self.industry.id in ["builders_yard", "hardware_store", "general_store"]
+            else False
+        )
+        return utils.gs_table_repr(result)
+
+    def get_economy_variations_as_gs_table(self):
+        result = {}
+        for economy in self.industry.economies_enabled_for_industry:
+            economy_config = {}
+            economy_config["accept_cargo_types"] = self.industry.get_accept_cargo_types(
+                economy
+            )
+            economy_config["vulcan_config"] = self.industry.get_property(
+                "vulcan_config", economy
+            )
+            result[economy.id] = economy_config
+        return utils.gs_table_repr(result)

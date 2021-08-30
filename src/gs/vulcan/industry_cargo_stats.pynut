@@ -1,0 +1,138 @@
+class VulcanIndustryCargoStatsManager {
+    /* just to namespace some functions */
+
+    // note that we can't simply make this a class with instances stored in savegame, as we can't save custom classes in savegame
+
+    // note that this creates a table in root
+    // not designed to return a class instance
+    // vulcan_industry_cargo_stats is a singleton, and allegedly a table with slots is more efficient for that case than a singleton class instance
+
+    static CARGO_STATS_TABLE_FORMAT = {
+        accepted = {},
+        produced = {},
+        transported = {},
+    }
+    static NUM_MONTHS_STORED = 3;
+
+    function Init() {
+        // nothing as of August 2023
+        VulcanIndustryCargoStatsManager.RunPeriodicProcessing("Init");
+    }
+
+    function RunPeriodicProcessing(caller_type) {
+        local time_start = GSDate.GetSystemTime();
+        Log.Info("--", Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+        Log.Info("Industry cargo stats periodic processing...", Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+
+        // this can filter on caller_type if needed, see VulcanTownControl for examples
+        local industry_list = GSIndustryList();
+        VulcanIndustryCargoStatsManager.CheckForUntrackedIndustries(industry_list);
+        VulcanIndustryCargoStatsManager.UpdatedIndustryStats(industry_list);
+        VulcanIndustryCargoStatsManager.CheckForDeletedIndustries(industry_list);
+        Log.Info("Industry cargo stats periodic processing done. Elapsed time: " + (GSDate.GetSystemTime() - time_start), Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+    }
+
+    function CheckForUntrackedIndustries(industry_list) {
+        // don't bother loggging that this is being called, it's minor housekeeping
+        foreach (industry, _ in industry_list) {
+            if (!(industry in ::persistent_storage["industry_cargo_stats"])) {
+                Log.Info(GSIndustry.GetName(industry) + " missing from ::persistent_storage.industry_cargo_stats, adding", Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+                // just stick the basic empty table in and deal with the rest later
+                ::persistent_storage["industry_cargo_stats"][industry] <- VulcanIndustryCargoStatsManager.CARGO_STATS_TABLE_FORMAT
+            }
+        }
+    }
+
+    function CheckForDeletedIndustries(industry_list) {
+        // remove any industries that don't exist, this (might) save memory, and avoids risk of collision if ID is reused for new industry
+        // don't remove slots from a table whilst iterating it, do it afterwards
+        // https://developer.electricimp.com/squirrel/squirrel-guide/variables-collections#checking-whether-a-table-has-a-certain-key
+        local slots_to_delete = [];
+        foreach (industry, _ in ::persistent_storage["industry_cargo_stats"]) {
+            if (!industry_list.HasItem(industry)) {
+                Log.Info("industry " + industry + " no longer exists, removing from ::persistent_storage.industry_cargo_stats", Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+                slots_to_delete.append(industry);
+            }
+        }
+        foreach (slot in slots_to_delete) {
+            delete ::persistent_storage["industry_cargo_stats"][slot];
+        }
+    }
+
+    function UpdatedIndustryStats(industry_list) {
+        industry_list.Valuate(GSIndustry.GetIndustryType);
+
+        foreach (industry, industry_type in industry_list) {
+            Log.Info(GSIndustry.GetName(industry), Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+
+            Log.Info("...accepted cargos...", Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+            local cargo_stat_type = "accepted";
+            foreach (cargo, _ in GSIndustryType.GetAcceptedCargo(industry_type)) {
+                local cargo_amount = 0;
+                foreach (company in VulcanCompanies.GetCompanies()) {
+                    // I'm just trusting that this call to GSCargoMonitor gets accurate results, I've never verified them
+                    // note that ANY other calls to GetIndustryDeliveryAmount with these parameters will reset the value, this should be avoided
+                    cargo_amount += GSCargoMonitor.GetIndustryDeliveryAmount(company, cargo, industry, true);
+                }
+                VulcanIndustryCargoStatsManager.StoreCargoAmount(industry, cargo_stat_type, cargo, cargo_amount);
+            }
+
+            Log.Info("...produced cargos...", Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+            local cargo_stat_type = "produced";
+            foreach (cargo, _ in GSIndustryType.GetProducedCargo(industry_type)) {
+                local cargo_amount = GSIndustry.GetLastMonthProduction(industry, cargo);
+                VulcanIndustryCargoStatsManager.StoreCargoAmount(industry, cargo_stat_type, cargo, cargo_amount);
+            }
+
+            Log.Info("...transported cargos (all companies)...", Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+            local cargo_stat_type = "transported";
+            foreach (cargo, _ in GSIndustryType.GetProducedCargo(industry_type)) {
+                local cargo_amount = 0;
+                foreach (company in VulcanCompanies.GetCompanies()) {
+                    // I'm just trusting that this call to GSCargoMonitor gets accurate results, I've never verified them
+                    // note that ANY other calls to GetIndustryPickupAmount with these parameters will reset the value, this should be avoided
+                    cargo_amount += GSCargoMonitor.GetIndustryPickupAmount(company, cargo, industry, true);
+                }
+                VulcanIndustryCargoStatsManager.StoreCargoAmount(industry, cargo_stat_type, cargo, cargo_amount);
+            }
+        }
+    }
+
+    function StoreCargoAmount(industry, cargo_stat_type, cargo, cargo_amount) {
+        local cargo_label = GSCargo.GetCargoLabel(cargo);
+        local storage = ::persistent_storage["industry_cargo_stats"][industry][cargo_stat_type]; // for convenience as looking up persistent_storage gets long
+        //  we could create the cargo slots when initialising industry tracking, but it's fine to do it here
+        if (!(cargo_label in storage)) {
+            storage[cargo_label] <- [];
+        }
+        storage[cargo_label].append(cargo_amount);
+        // only need to keep 3 months of stats as of August 2023
+        if (storage[cargo_label].len() > VulcanIndustryCargoStatsManager.NUM_MONTHS_STORED) {
+            storage[cargo_label].remove(0);
+        }
+        Log.Info("    " + GSCargo.GetName(cargo) + " (" + cargo_label + "): " + Repr(storage[cargo_label]), Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+    }
+
+    function GetLastMonthAccepted(industry, cargo) {
+        return VulcanIndustryCargoStatsManager._GetLastMonth(industry, cargo, "accepted");
+    }
+
+    function GetLastMonthProduced(industry, cargo) {
+        return VulcanIndustryCargoStatsManager._GetLastMonth(industry, cargo, "produced");
+    }
+
+    function GetLastMonthTransported(industry, cargo) {
+        return VulcanIndustryCargoStatsManager._GetLastMonth(industry, cargo, "transported");
+    }
+
+    function _GetLastMonth(industry, cargo, cargo_stat_type) {
+        local storage = ::persistent_storage["industry_cargo_stats"][industry][cargo_stat_type][GSCargo.GetCargoLabel(cargo)];
+        local last_index = storage.len() - 1;
+        if (last_index in storage) {
+            return storage[last_index];
+        }
+        else {
+            return -1 // not found
+        }
+    }
+}
