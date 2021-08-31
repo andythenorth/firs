@@ -1,31 +1,56 @@
-import firs
-import utils
-from polar_fox import git_info
+import codecs  # used for writing files - more unicode friendly than standard open() module
 
+import sys
 import shutil
 import os
 
 currentdir = os.curdir
 from time import time
 
-import sys
+import firs
+import utils
+from polar_fox import git_info
 
-sys.path.append(os.path.join("src"))  # add to the module search path
-
-import codecs  # used for writing files - more unicode friendly than standard open() module
+registered_cargos = firs.registered_cargos
+registered_industries = firs.registered_industries
+registered_economies = firs.registered_economies
 
 from chameleon import PageTemplateLoader  # chameleon used in most template cases
 
 # setup the places we look for templates
-nut_templates = PageTemplateLoader(
-    os.path.join(currentdir, "src", "gs"), format="text"
-)
+nut_templates = PageTemplateLoader(os.path.join(currentdir, "src", "gs"), format="text")
 
 # get args passed by makefile
 makefile_args = utils.get_makefile_args(sys)
 
 gs_src = os.path.join(currentdir, "src", "gs")
 gs_dst = os.path.join(firs.generated_files_path, "gs")
+
+
+class GSHelper(object):
+    # helps keep templating a bit less mad, and avoids add squirrel specific things to industry.py where I don't want them (as of August 2021 - might change later)
+    def get_accept_cargos_as_array_contents(self, industry, economy):
+        result = []
+        if industry.get_property("accept_cargo_types", economy) is not None:
+            for cargo in industry.get_accept_cargo_types(economy):
+                result.append('"' + cargo + '"')
+        return ",".join(result)
+
+    def get_economy_fingerprint(self, registered_industries, economy):
+        result = ""
+        # as of August 2021, port and wharf were sufficiently unique, and at least one of them is in every economy
+        # !! this could use a guard to enforce uniqueness
+        for industry in registered_industries:
+            if industry.id in ['port', 'wharf']:
+                if industry.economy_variations[economy.id].enabled:
+                    fingerprint_industry = industry
+                    break;
+        result = result + "Accepts: " + " ".join(sorted(fingerprint_industry.get_accept_cargo_types(economy)))
+        result = result + " Produces:"
+        for cargo_label, prod_multiplier in sorted(fingerprint_industry.get_prod_cargo_types(economy)):
+            result = result + " " + cargo_label
+        return result
+
 
 def main():
     start = time()
@@ -45,15 +70,23 @@ def main():
 
     nuts = [
         # alphabetise for simplicity
+        "constants",
+        "firs",
         "info",
         "main",
+        "temp_prototyping",
         "version",
     ]
     for nut_name in nuts:
         nut_template = nut_templates[nut_name + ".pynut"]
         dst_file = codecs.open(os.path.join(gs_dst, nut_name + ".nut"), "w", "utf8")
         result = nut_template(
-            makefile_args=makefile_args, git_info=git_info
+            gs_helper=GSHelper(),
+            makefile_args=makefile_args,
+            git_info=git_info,
+            registered_industries=registered_industries,
+            registered_cargos=registered_cargos,
+            registered_economies=registered_economies,
         )
         dst_file.write(result)
         dst_file.close()

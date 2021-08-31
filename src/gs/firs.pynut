@@ -1,0 +1,58 @@
+firs <- {};
+
+firs.industries <- {};
+
+<tal:industries repeat="industry registered_industries">
+    local industry = {};
+    industry.numeric_id <- ${industry.numeric_id};
+    industry.economy_variations <- {}
+    <tal:economies repeat="economy registered_economies">
+        industry.economy_variations[${economy.numeric_id}] <- {};
+        industry.economy_variations[${economy.numeric_id}].accept_cargo_types <- [${gs_helper.get_accept_cargos_as_array_contents(industry, economy)}];
+    </tal:economies>
+    firs["industries"]["${industry.id}"] <- industry;
+</tal:industries>
+
+firs.economy_fingerprints  <- {}
+<tal:economies repeat="economy registered_economies">
+    firs.economy_fingerprints[${economy.numeric_id}] <- "${gs_helper.get_economy_fingerprint(registered_industries, economy)}";
+</tal:economies>
+
+
+firs.get_economy_id <- function()
+/* uses fingerprinting to detect and return the economy id */
+{
+    local industry_types_list = GSIndustryTypeList();
+    local industry_type_ids = [];
+    local economy_matched = false;
+    foreach (industry_type, _ in industry_types_list) {
+        if (economy_matched == true) {
+            break;
+        }
+        local industry_fingerprint = "Accepts:"
+        local accepted_cargo_as_labels = [];
+        foreach (cargo, _ in GSIndustryType.GetAcceptedCargo(industry_type)) {
+            accepted_cargo_as_labels.push(GSCargo.GetCargoLabel(cargo));
+        }
+        accepted_cargo_as_labels.sort();
+        foreach (cargo in accepted_cargo_as_labels) {
+            industry_fingerprint = industry_fingerprint + " " + cargo;
+        }
+        industry_fingerprint = industry_fingerprint + " Produces:";
+        local produced_cargo_as_labels = [];
+        foreach (cargo, _ in GSIndustryType.GetProducedCargo(industry_type)) {
+            produced_cargo_as_labels.push(GSCargo.GetCargoLabel(cargo));
+        }
+        produced_cargo_as_labels.sort();
+        foreach (cargo in produced_cargo_as_labels) {
+            industry_fingerprint = industry_fingerprint  + " " + cargo;
+        }
+        foreach (economy, economy_fingerprint in firs.economy_fingerprints) {
+            if (economy_fingerprint == industry_fingerprint) {
+                Log.Info("Fingerprinting: FIRS economy ID is " + economy, Log.LVL_INFO);
+                economy_matched = true;
+                return economy;
+            }
+        }
+    }
+}

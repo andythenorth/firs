@@ -2,7 +2,7 @@
  * This file is part of MinimalGS, which is a GameScript for OpenTTD
  * Copyright (C) 2012-2013  Leif Linse
  *
- * MinimalGS is free software; you can redistribute it and/or modify it 
+ * MinimalGS is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 2 of the License
  *
@@ -13,7 +13,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with MinimalGS; If not, see <http://www.gnu.org/licenses/> or
- * write to the Free Software Foundation, Inc., 51 Franklin Street, 
+ * write to the Free Software Foundation, Inc., 51 Franklin Street,
  * Fifth Floor, Boston, MA 02110-1301 USA.
  *
  */
@@ -42,11 +42,14 @@ Story <- SuperLib.Story;
 
 /** Import other source code files **/
 require("version.nut"); // get SELF_VERSION
+require("constants.nut");
+require("firs.nut");
+require("temp_prototyping.nut");
 //require("some_file.nut");
 //..
 
 
-class MainClass extends GSController 
+class MainClass extends GSController
 {
 	_loaded_data = null;
 	_loaded_from_version = null;
@@ -79,8 +82,8 @@ function MainClass::Start()
 {
 	// Some OpenTTD versions are affected by a bug where all API methods
 	// that create things in the game world during world generation will
-	// return object id 0 even if the created object has a different ID. 
-	// In that case, the easiest workaround is to delay Init until the 
+	// return object id 0 even if the created object has a different ID.
+	// In that case, the easiest workaround is to delay Init until the
 	// game has started.
 	if (Helper.HasWorldGenBug()) GSController.Sleep(1);
 
@@ -89,6 +92,23 @@ function MainClass::Start()
 	// Wait for the game to start (or more correctly, tell OpenTTD to not
 	// execute our GS further in world generation)
 	GSController.Sleep(1);
+
+
+    /*
+    foreach(industry_id, industry_properties in firs.industries) {
+        Log.Info(industry_id, Log.LVL_INFO);
+        foreach(key, value in industry_properties) {
+            Log.Info(key, Log.LVL_INFO);
+            Log.Info(value, Log.LVL_INFO);
+        }
+        foreach(economy in industry_properties.economy_variations) {
+            foreach(cargo_label in economy.accept_cargo_types) {
+                Log.Info(cargo_label, Log.LVL_INFO);
+            }
+        }
+        Log.Info("--", Log.LVL_INFO);
+    }
+    */
 
 	// Game has now started and if it is a single player game,
 	// company 0 exist and is the human company.
@@ -114,7 +134,7 @@ function MainClass::Start()
 			}
 		}
 		last_loop_date = current_date;
-	
+
 		// Loop with a frequency of five days
 		local ticks_used = GSController.GetTick() - loop_start_tick;
 		GSController.Sleep(max(1, 5 * 74 - ticks_used));
@@ -138,6 +158,14 @@ function MainClass::Init()
 		// construct goals etc.
 	}
 
+    Log.Info(GIT_VERSION, Log.LVL_INFO);
+
+    local economy_id = firs.get_economy_id();
+
+    set_var_47_bits();
+
+    set_town_text_test();
+
 	// Indicate that all data structures has been initialized/restored.
 	this._init_done = true;
 	this._loaded_data = null; // the loaded data has no more use now after that _init_done is true.
@@ -159,7 +187,7 @@ function MainClass::HandleEvents()
 				local company_id = company_event.GetCompanyID();
 
 				// Here you can welcome the new company
-				Story.ShowMessage(company_id, GSText(GSText.STR_WELCOME, company_id));
+				Story.ShowMessage(company_id, GSText(GSText.STR_WELCOME, company_id, GIT_VERSION));
 				break;
 			}
 
@@ -198,7 +226,7 @@ function MainClass::Save()
 		return this._loaded_data != null ? this._loaded_data : {};
 	}
 
-	return { 
+	return {
 		some_data = null,
 		//some_other_data = this._some_variable,
 	};
