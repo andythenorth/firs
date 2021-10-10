@@ -12,6 +12,7 @@ switch(FEAT_INDUSTRIES, SELF, count_industries_in_town,
 
 <!--! probably not needed - delete (and caller)?
       just to prove whether monthly_town_loop() is being called from different industry classes -->
+<!--!
 switch(FEAT_INDUSTRIES, SELF, increment_town_monthly_cycle_industry_counter_debug, town_cycle_industry_counter,
     [
         STORE_PERM(
@@ -25,14 +26,16 @@ switch(FEAT_INDUSTRIES, SELF, increment_town_monthly_cycle_industry_counter_debu
     ]) {
     return;
 }
+-->
 
 switch(FEAT_INDUSTRIES, PARENT, increment_town_monthly_cycle_industry_counter,
     [
         STORE_PERM(
             LOAD_PERM(${get_perm_num("this_cycle_industry_counter")}) + 1,
             ${get_perm_num("this_cycle_industry_counter")}
-        ),
-        increment_town_monthly_cycle_industry_counter_debug(LOAD_PERM(${get_perm_num("this_cycle_industry_counter")}))
+        )
+        <!--!,
+        increment_town_monthly_cycle_industry_counter_debug(LOAD_PERM(${get_perm_num("this_cycle_industry_counter")}))-->
     ]) {
     return;
 }
@@ -88,7 +91,7 @@ switch(FEAT_INDUSTRIES, PARENT, town_monthly_cycle_complete,
 
 switch(FEAT_INDUSTRIES, PARENT, check_if_town_monthly_cycle_complete,
     [
-        LOAD_PERM(${get_perm_num("this_cycle_industry_counter")}) == count_industries_in_town() + 1
+        LOAD_PERM(${get_perm_num("this_cycle_industry_counter")}) == count_industries_in_town()
     ]) {
     1: return town_monthly_cycle_complete;
     return 0;
