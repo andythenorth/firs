@@ -9,17 +9,6 @@ switch (FEAT_INDUSTRIES, SELF, STORE_PERM_ALT, storage_number, value,
     return;
 }
 
-<!--! convenience for writing town storage, note that the order of (value, storage_number) is reversed in parameters to (storage_number, value) as I prefer that -->
-switch (FEAT_INDUSTRIES, PARENT, STORE_PERM_TOWN, storage_number, value,
-    [
-        STORE_PERM(
-            value,
-            storage_number,
-        )
-    ]) {
-    return;
-}
-
 <!--! there are no equivalent convenience methods for reading storage
     1. procedures can only return 15 bit values, which is (1) limited (2) dangerous with signed values as it strips the signed bitl causing incorrect results
     2. for context SELF (industry), there would be no benefit anyway over LOAD_PERM()
