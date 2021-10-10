@@ -10,21 +10,38 @@ switch(FEAT_INDUSTRIES, SELF, count_industries_in_town,
     return;
 }
 
+<!--! probably not needed - delete (and caller)?
+      just to prove whether monthly_town_loop() is being called from different industry classes -->
+switch(FEAT_INDUSTRIES, SELF, increment_town_monthly_cycle_industry_counter_debug, town_cycle_industry_counter,
+    [
+        STORE_PERM(
+            town_cycle_industry_counter,
+            230
+        ),
+        STORE_PERM(
+            1,
+            231
+        )
+    ]) {
+    return;
+}
+
 switch(FEAT_INDUSTRIES, PARENT, increment_town_monthly_cycle_industry_counter,
     [
-        STORE_PERM_TOWN(
-            ${get_perm_num("this_cycle_industry_counter")},
-            LOAD_PERM(${get_perm_num("this_cycle_industry_counter")}) + 1
-        )
+        STORE_PERM(
+            LOAD_PERM(${get_perm_num("this_cycle_industry_counter")}) + 1,
+            ${get_perm_num("this_cycle_industry_counter")}
+        ),
+        increment_town_monthly_cycle_industry_counter_debug(LOAD_PERM(${get_perm_num("this_cycle_industry_counter")}))
     ]) {
     return;
 }
 
 switch(FEAT_INDUSTRIES, PARENT, reset_town_monthly_cycle_industry_counter,
     [
-        STORE_PERM_TOWN(
-            ${get_perm_num("this_cycle_industry_counter")},
-            0
+        STORE_PERM(
+            0,
+            ${get_perm_num("this_cycle_industry_counter")}
         )
     ]) {
     return;
@@ -32,32 +49,30 @@ switch(FEAT_INDUSTRIES, PARENT, reset_town_monthly_cycle_industry_counter,
 
 switch(FEAT_INDUSTRIES, PARENT, rollover_next_and_current_optimism_scores,
     [
-        STORE_PERM_TOWN(
-            ${get_perm_num("current_optimism_score")},
-            LOAD_PERM(${get_perm_num("next_optimism_score")})
+        STORE_PERM(
+            <!--!LOAD_PERM(${get_perm_num("next_basic_needs_and_luxuries_score")}),-->
+            456,
+            ${get_perm_num("current_basic_needs_and_luxuries_score")}
         )
         ,
-        STORE_PERM_TOWN(
-            ${get_perm_num("next_optimism_score")},
-            0
+        STORE_PERM(
+            0,
+            ${get_perm_num("next_basic_needs_and_luxuries_score")}
         ),
-        STORE_PERM_TOWN(
-            ${get_perm_num("current_basic_needs_and_luxuries_score")},
-            LOAD_PERM(${get_perm_num("next_basic_needs_and_luxuries_score")})
+        STORE_PERM(
+            <!--!LOAD_PERM(${get_perm_num("next_pollution_and_squalor_score")}),-->
+            356,
+            ${get_perm_num("current_pollution_and_squalor_score")}
         )
         ,
-        STORE_PERM_TOWN(
-            ${get_perm_num("next_basic_needs_and_luxuries_score")},
-            0
+        STORE_PERM(
+            0,
+            ${get_perm_num("next_pollution_and_squalor_score")}
         ),
-        STORE_PERM_TOWN(
-            ${get_perm_num("current_pollution_and_squalor_score")},
-            LOAD_PERM(${get_perm_num("next_pollution_and_squalor_score")})
-        )
-        ,
-        STORE_PERM_TOWN(
-            ${get_perm_num("next_pollution_and_squalor_score")},
-            0
+        <!--! current_optimism_score calculated from bnal and pas scores -->
+        STORE_PERM(
+            LOAD_PERM(${get_perm_num("current_basic_needs_and_luxuries_score")}) - LOAD_PERM(${get_perm_num("current_pollution_and_squalor_score")}),
+            ${get_perm_num("current_optimism_score")}
         )
     ]) {
     return;
@@ -73,7 +88,7 @@ switch(FEAT_INDUSTRIES, PARENT, town_monthly_cycle_complete,
 
 switch(FEAT_INDUSTRIES, PARENT, check_if_town_monthly_cycle_complete,
     [
-        LOAD_PERM(${get_perm_num("this_cycle_industry_counter")}) == count_industries_in_town()
+        LOAD_PERM(${get_perm_num("this_cycle_industry_counter")}) == count_industries_in_town() + 1
     ]) {
     1: return town_monthly_cycle_complete;
     return 0;
@@ -81,18 +96,16 @@ switch(FEAT_INDUSTRIES, PARENT, check_if_town_monthly_cycle_complete,
 
 switch(FEAT_INDUSTRIES, PARENT, contribute_to_town_optimism, basic_needs_and_luxuries_score, pollution_and_squalor_score,
     [
-        STORE_PERM_TOWN(
-            ${get_perm_num("next_optimism_score")},
-            LOAD_PERM(${get_perm_num("next_optimism_score")}) + basic_needs_and_luxuries_score - pollution_and_squalor_score
-        ),
-        STORE_PERM_TOWN(
-            ${get_perm_num("next_basic_needs_and_luxuries_score")},
-            LOAD_PERM(${get_perm_num("next_basic_needs_and_luxuries_score")}) + basic_needs_and_luxuries_score
+        STORE_PERM(
+            <!--! LOAD_PERM(${get_perm_num("next_basic_needs_and_luxuries_score")}) + basic_needs_and_luxuries_score,-->
+            255,
+            ${get_perm_num("next_basic_needs_and_luxuries_score")}
         ),
         <!--! pollution_and_squalor_score expressed as +ve integer, avoids issues with signed words and 15 bit return values from procedures -->
-        STORE_PERM_TOWN(
-            ${get_perm_num("next_pollution_and_squalor_score")},
-            LOAD_PERM(${get_perm_num("next_pollution_and_squalor_score")}) + pollution_and_squalor_score
+        STORE_PERM(
+            <!--!LOAD_PERM(${get_perm_num("next_pollution_and_squalor_score")}) + pollution_and_squalor_score,-->
+            256,
+            ${get_perm_num("next_pollution_and_squalor_score")}
         ),
     ]) {
     return;
@@ -102,9 +115,9 @@ switch(FEAT_INDUSTRIES, PARENT, monthly_town_loop_enabled, basic_needs_and_luxur
     [
         contribute_to_town_optimism(basic_needs_and_luxuries_score, pollution_and_squalor_score),
         increment_town_monthly_cycle_industry_counter(),
-        STORE_PERM_TOWN(
-            ${get_perm_num("town_industry_count_for_debugging")},
-            count_industries_in_town()
+        STORE_PERM(
+            count_industries_in_town(),
+            ${get_perm_num("town_industry_count_for_debugging")}
         ),
         check_if_town_monthly_cycle_complete(),
     ]) {
