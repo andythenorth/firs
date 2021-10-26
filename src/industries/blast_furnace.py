@@ -199,48 +199,11 @@ industry.add_spritelayout(
     building_sprites=[spriteset_casting_shed_animated],
 )
 
-# min 6x4 or 5x5 as there are lots of output cargos
+# very large layouts for this industry type
+# layout 1 is smallest (6x4), to give a chance of locating on adverse maps
+# other layouts are larger
 industry.add_industry_layout(
     id="blast_furnace_industry_layout_1",
-    layout=[
-        (0, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
-        (0, 1, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
-        (0, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
-        (0, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
-        (1, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_blast_furnace_1"),
-        (1, 1, "blast_furnace_tile_1", "blast_furnace_spritelayout_blast_furnace_2"),
-        (1, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_tanks"),
-        (1, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_brick_building"),
-        (2, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_blast_furnace_1"),
-        (2, 1, "blast_furnace_tile_1", "blast_furnace_spritelayout_blast_furnace_2"),
-        (2, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_shed"),
-        (2, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
-        (3, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_blast_furnace_1"),
-        (3, 1, "blast_furnace_tile_1", "blast_furnace_spritelayout_blast_furnace_2"),
-        (3, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_greeble"),
-        (3, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
-        (4, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
-        (
-            4,
-            1,
-            "blast_furnace_tile_2",
-            "blast_furnace_spritelayout_large_shed_rear_part",
-        ),
-        (4, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_shed"),
-        (4, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_shed"),
-        (5, 0, "blast_furnace_tile_2", "blast_furnace_spritelayout_casting_shed"),
-        (
-            5,
-            1,
-            "blast_furnace_tile_2",
-            "blast_furnace_spritelayout_large_shed_front_part",
-        ),
-        (5, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_ladle_transporter"),
-        (5, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_greeble"),
-    ],
-)
-industry.add_industry_layout(
-    id="blast_furnace_industry_layout_2",
     layout=[
         (0, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_tanks"),
         (
@@ -286,5 +249,70 @@ industry.add_industry_layout(
         (3, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
         (3, 4, "blast_furnace_tile_1", "blast_furnace_spritelayout_greeble"),
         (3, 5, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
+    ],
+)
+industry.add_industry_layout(
+    id="blast_furnace_industry_layout_2",
+    layout=[
+        (0, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
+        (0, 1, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
+        (0, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
+        (0, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
+        (1, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_blast_furnace_1"),
+        (1, 1, "blast_furnace_tile_1", "blast_furnace_spritelayout_blast_furnace_2"),
+        (1, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_tanks"),
+        (1, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_brick_building"),
+        (2, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
+        (
+            2,
+            1,
+            "blast_furnace_tile_2",
+            "blast_furnace_spritelayout_large_shed_rear_part",
+        ),
+        (2, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_shed"),
+        (2, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_shed"),
+        (3, 0, "blast_furnace_tile_2", "blast_furnace_spritelayout_casting_shed"),
+        (
+            3,
+            1,
+            "blast_furnace_tile_2",
+            "blast_furnace_spritelayout_large_shed_front_part",
+        ),
+        (3, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_ladle_transporter"),
+        (3, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_greeble"),
+        (4, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
+        (4, 1, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
+        (4, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
+        (4, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
+        (5, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_blast_furnace_1"),
+        (5, 1, "blast_furnace_tile_1", "blast_furnace_spritelayout_blast_furnace_2"),
+        (5, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_tanks"),
+        (5, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_brick_building"),
+        (6, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_blast_furnace_1"),
+        (6, 1, "blast_furnace_tile_1", "blast_furnace_spritelayout_blast_furnace_2"),
+        (6, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_shed"),
+        (6, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
+        (7, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_blast_furnace_1"),
+        (7, 1, "blast_furnace_tile_1", "blast_furnace_spritelayout_blast_furnace_2"),
+        (7, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_greeble"),
+        (7, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
+        (8, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
+        (
+            8,
+            1,
+            "blast_furnace_tile_2",
+            "blast_furnace_spritelayout_large_shed_rear_part",
+        ),
+        (8, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_shed"),
+        (8, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_shed"),
+        (9, 0, "blast_furnace_tile_2", "blast_furnace_spritelayout_casting_shed"),
+        (
+            9,
+            1,
+            "blast_furnace_tile_2",
+            "blast_furnace_spritelayout_large_shed_front_part",
+        ),
+        (9, 2, "blast_furnace_tile_1", "blast_furnace_spritelayout_ladle_transporter"),
+        (9, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_greeble"),
     ],
 )
