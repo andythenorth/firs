@@ -53,8 +53,7 @@ switch(FEAT_INDUSTRIES, PARENT, reset_town_monthly_cycle_industry_counter,
 switch(FEAT_INDUSTRIES, PARENT, rollover_next_and_current_optimism_scores,
     [
         STORE_PERM(
-            <!--!LOAD_PERM(${get_perm_num("next_basic_needs_and_luxuries_score")}),-->
-            456,
+            LOAD_PERM(${get_perm_num("next_basic_needs_and_luxuries_score")}),
             ${get_perm_num("current_basic_needs_and_luxuries_score")}
         )
         ,
@@ -63,8 +62,7 @@ switch(FEAT_INDUSTRIES, PARENT, rollover_next_and_current_optimism_scores,
             ${get_perm_num("next_basic_needs_and_luxuries_score")}
         ),
         STORE_PERM(
-            <!--!LOAD_PERM(${get_perm_num("next_pollution_and_squalor_score")}),-->
-            356,
+            LOAD_PERM(${get_perm_num("next_pollution_and_squalor_score")}),
             ${get_perm_num("current_pollution_and_squalor_score")}
         )
         ,
@@ -100,14 +98,12 @@ switch(FEAT_INDUSTRIES, PARENT, check_if_town_monthly_cycle_complete,
 switch(FEAT_INDUSTRIES, PARENT, contribute_to_town_optimism, basic_needs_and_luxuries_score, pollution_and_squalor_score,
     [
         STORE_PERM(
-            <!--! LOAD_PERM(${get_perm_num("next_basic_needs_and_luxuries_score")}) + basic_needs_and_luxuries_score,-->
-            255,
+            LOAD_PERM(${get_perm_num("next_basic_needs_and_luxuries_score")}) + basic_needs_and_luxuries_score,
             ${get_perm_num("next_basic_needs_and_luxuries_score")}
         ),
-        <!--! pollution_and_squalor_score expressed as +ve integer, avoids issues with signed words and 15 bit return values from procedures -->
+        <!--! pollution_and_squalor_score expressed as +ve integer, avoids issues where procedures return 15 bit values, dropping the signed bit on -ve numbers -->
         STORE_PERM(
-            <!--!LOAD_PERM(${get_perm_num("next_pollution_and_squalor_score")}) + pollution_and_squalor_score,-->
-            256,
+            LOAD_PERM(${get_perm_num("next_pollution_and_squalor_score")}) + pollution_and_squalor_score,
             ${get_perm_num("next_pollution_and_squalor_score")}
         ),
     ]) {

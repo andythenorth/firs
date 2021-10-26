@@ -156,8 +156,8 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
 
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_new_production_level,
     [
-        <!--! 1. cap to 105 (656%); 2. multiply production by 1.66, using integer maths -->
-        min(production_level + ((2 * production_level) / 3), 105)
+        <!--! 1. cap to 105 (656%); 2. multiply production by 1.33, using integer maths -->
+        min(production_level + ((1 * production_level) / 3), 105)
     ]) {
     return;
 }
@@ -180,7 +180,15 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_increase,
     return CB_RESULT_IND_PROD_SET_BY_0x100 | (1 << 8);  <!--! set bit 8 to show custom text result -->
 }
 
-<!--! !! 4 bits = 25% chance of increase, this needs adjusted to look at town population optimism etc -->
+<!--!
+    !! 4 bits = 25% chance of increase !! test value
+    !! the order of industries in the monthly loop is sequential by ID
+    !! this means lower ID industries will have a higher chance of increase over sufficient dice rolls relative to higher ID industries
+    !! not sure what to do about that
+    - lock town for a limited period (12 months?) or scale town lock by number of industries?
+    - lock same industry for a longer period (3-5 years)?
+    - this should scale ok, and distribute increases around the town's industry types sufficiently
+-->
 switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_monthly_prod_change_dice_roll,
     [
         getbits(extra_callback_info2, 0, 4) * (LOAD_PERM(${get_perm_num("current_optimism_score")}) >= 4)
