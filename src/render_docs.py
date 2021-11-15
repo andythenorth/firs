@@ -304,7 +304,14 @@ class DocHelper(object):
         return ("", "active")[doc_name == nav_link]
 
 
-def render_docs(doc_list, file_type, use_markdown=False):
+def render_docs(doc_list, file_type, use_markdown=False, source_is_repo_root=False):
+    if source_is_repo_root:
+        doc_path = os.path.join(currentdir)
+    else:
+        doc_path = docs_src
+
+    docs_templates = PageTemplateLoader(doc_path, format="text")
+
     for doc_name in doc_list:
         template = docs_templates[
             doc_name + ".pt"
@@ -325,7 +332,9 @@ def render_docs(doc_list, file_type, use_markdown=False):
         )
         if use_markdown:
             # the doc might be in markdown format, if so we need to render markdown to html, and wrap the result in some boilerplate html
-            markdown_wrapper = docs_templates["markdown_wrapper.pt"]
+            markdown_wrapper = PageTemplateLoader(docs_src, format="text")[
+                "markdown_wrapper.pt"
+            ]
             doc = markdown_wrapper(
                 content=markdown.markdown(doc),
                 global_constants=global_constants,
@@ -389,13 +398,19 @@ def main():
         "industries",
         "translations",
     ]
-    txt_docs = ["license", "readme"]
+    txt_docs = ["readme"]
+    license_docs = ["license"]
     markdown_docs = ["changelog"]
     graph_docs = ["cargoflow"]
     stylesheets = ["cargoflow_styles"]
 
     render_docs(html_docs, "html")
     render_docs(txt_docs, "txt")
+    render_docs(
+        license_docs,
+        "txt",
+        source_is_repo_root=True,
+    )
     # just render the markdown docs twice to get txt and html versions, simples no?
     render_docs(markdown_docs, "txt")
     render_docs(markdown_docs, "html", use_markdown=True)
