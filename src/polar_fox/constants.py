@@ -106,6 +106,8 @@ cargo_labels = [
     "STWR",
     "NH3_",
     "STSE",
+    "SEED",
+    "TATO",
     #
     "NULL",
 ]
@@ -271,8 +273,10 @@ default_cargos = {
     "coil": ["STST", "STAL", "STEL"],
     "coil_covered": ["STSH", "STEL"],
     "covered_ag": ["GRAI", "MAIZ", "BEAN", "NUTS", "FERT", "QLME"],
-    "covered_mineral": ["SALT", "PHOS", "POTA", "SAND", "KAOL", "NITR"],
+    "covered_chemical": ["RFPR", "POTA", "PHOS", "SALT", "SAND"],
+    "covered_mineral": ["QLME", "SALT", "PHOS", "POTA", "SAND", "KAOL", "NITR"],
     "covered_pellet": ["PLAS", "RUBR", "KAOL", "FERT", "SAND", "SASH", "BEAN"],
+    "covered_roller_roof": [ "KAOL", "QLME", "SALT"],
     "cryo_gases": ["O2__", "CHLO"],
     "dump": ["MNO2", "FECR", "NITR", "PHOS", "SAND", "GRVL"],
     "dump_high_sides": ["COKE", "PEAT", "COAL"],
