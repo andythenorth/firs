@@ -2,7 +2,9 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(
     id="peatlands",
-    prod_cargo_types_with_multipliers=[("PEAT", 14)],
+    prod_cargo_types_with_multipliers=[
+        ("PEAT", 14),
+    ],
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="72",
@@ -15,7 +17,9 @@ industry = IndustryPrimaryExtractive(
     pollution_and_squalor_factor=1,
 )
 
-industry.economy_variations["BASIC_ARCTIC"].enabled = True
+industry.enable_in_economy(
+    "BASIC_ARCTIC",
+)
 
 industry.add_tile(
     id="peatlands_tile_1",

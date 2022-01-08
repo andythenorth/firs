@@ -2,7 +2,10 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(
     id="vineyard",
-    prod_cargo_types_with_multipliers=[("BEER", 9), ("FRUT", 9)],
+    prod_cargo_types_with_multipliers=[
+        ("BEER", 9),
+        ("FRUT", 9),
+    ],
     map_colour="85",
     prob_in_game="3",
     prob_map_gen="10",
@@ -16,7 +19,9 @@ industry = IndustryPrimaryOrganic(
     override_default_construction_states=True,
 )
 
-industry.economy_variations["BASIC_TROPIC"].enabled = True
+industry.enable_in_economy(
+    "BASIC_TROPIC",
+)
 
 industry.add_tile(
     id="vineyard_tile_1",

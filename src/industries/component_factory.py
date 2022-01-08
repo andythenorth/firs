@@ -9,8 +9,10 @@ industry = IndustrySecondary(
         ("POWR", 2),
     ],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("VPTS", 8)],
-    prob_in_game="7",
+    prod_cargo_types_with_output_ratios=[
+        ("VPTS", 8),
+    ],
+    prob_in_game="1",  # low chance of build during gameplay
     prob_map_gen="8",
     map_colour="166",
     name="string(STR_IND_COMPONENT_FACTORY)",
@@ -19,10 +21,9 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=1,
 )
 
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations[
-    "STEELTOWN"
-].prob_in_game = "1"  # low chance of build during gameplay
+industry.enable_in_economy(
+    "STEELTOWN",
+)
 
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

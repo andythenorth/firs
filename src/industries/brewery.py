@@ -2,9 +2,14 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="brewery",
-    accept_cargos_with_input_ratios=[("FRUT", 6)],
+    accept_cargos_with_input_ratios=[
+        ("FRUT", 4),
+        ("MAIZ", 4),
+    ],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("BEER", 8)],
+    prod_cargo_types_with_output_ratios=[
+        ("BEER", 8),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="191",
@@ -16,14 +21,11 @@ industry = IndustrySecondary(
     provides_snow=True,
 )
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('GRAI', 4), ('MNSP', 4)]
+###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY, accept_cargos_with_input_ratios = [('GRAI', 4), ('MNSP', 4)],)
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
-industry.economy_variations["IN_A_HOT_COUNTRY"].accept_cargos_with_input_ratios = [
-    ("FRUT", 4),
-    ("MAIZ", 4),
-]
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+)
 
 industry.add_tile(
     id="brewery_tile_1",

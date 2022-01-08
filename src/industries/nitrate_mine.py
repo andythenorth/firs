@@ -2,7 +2,10 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(
     id="nitrate_mine",
-    prod_cargo_types_with_multipliers=[("FMSP", 12), ("NITR", 17)],
+    prod_cargo_types_with_multipliers=[
+        ("FMSP", 12),
+        ("NITR", 17),
+    ],
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="121",
@@ -14,7 +17,9 @@ industry = IndustryPrimaryExtractive(
     pollution_and_squalor_factor=1,
 )
 
-industry.economy_variations["BASIC_TROPIC"].enabled = True
+industry.enable_in_economy(
+    "BASIC_TROPIC",
+)
 
 industry.add_tile(
     id="nitrate_mine_tile_1",

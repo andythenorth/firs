@@ -2,7 +2,10 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(
     id="ranch",
-    prod_cargo_types_with_multipliers=[("LVST", 14), ("WOOL", 13)],
+    prod_cargo_types_with_multipliers=[
+        ("LVST", 14),
+        ("WOOL", 13),
+    ],
     prob_in_game="4",
     prob_map_gen="11",
     map_colour="168",
@@ -14,7 +17,9 @@ industry = IndustryPrimaryOrganic(
     provides_snow=True,
 )
 
-industry.economy_variations["BASIC_TROPIC"].enabled = True
+industry.enable_in_economy(
+    "BASIC_TROPIC",
+)
 
 industry.add_tile(
     id="ranch_tile_1",

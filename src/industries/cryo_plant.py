@@ -3,7 +3,9 @@ from industry import IndustryPrimaryNoSupplies, TileLocationChecks
 industry = IndustryPrimaryNoSupplies(
     id="cryo_plant",
     accept_cargo_types=[],
-    prod_cargo_types_with_multipliers=[("O2__", 14)],
+    prod_cargo_types_with_multipliers=[
+        ("O2__", 14),
+    ],
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="189",
@@ -15,7 +17,9 @@ industry = IndustryPrimaryNoSupplies(
     fund_cost_multiplier="45",
 )
 
-industry.economy_variations["STEELTOWN"].enabled = True
+industry.enable_in_economy(
+    "STEELTOWN",
+)
 
 industry.add_tile(
     id="cryo_plant_tile_1",

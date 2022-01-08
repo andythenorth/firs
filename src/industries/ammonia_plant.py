@@ -4,8 +4,13 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="ammonia_plant",
-    accept_cargos_with_input_ratios=[("NAPH", 8)],
-    prod_cargo_types_with_output_ratios=[("NH3_", 3), ("UREA", 2), ("NHNO", 3)],
+    accept_cargos_with_input_ratios=[
+        ("NAPH", 8),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("NH3_", 6),
+        ("NIAC", 2),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="173",
@@ -15,8 +20,6 @@ industry = IndustrySecondary(
     graphics_change_dates=[1952],
     provides_snow=True,
 )
-
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(
     id="ammonia_plant_tile_1",

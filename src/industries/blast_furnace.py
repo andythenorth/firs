@@ -2,11 +2,19 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="blast_furnace",
-    accept_cargos_with_input_ratios=[("IORE", 3), ("COAL", 2), ("SCMT", 3)],
+    accept_cargos_with_input_ratios=[
+        ("IORE", 3),
+        ("COKE", 3),
+        ("LIME", 2),
+    ],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("STEL", 8)],
-    prob_in_game="3",
-    prob_map_gen="5",
+    prod_cargo_types_with_output_ratios=[
+        ("IRON", 4),
+        ("CSTI", 2),
+        ("SLAG", 2),
+    ],
+    prob_in_game="0",  # do not build during gameplay
+    prob_map_gen="3",
     map_colour="10",
     name="string(STR_IND_BLAST_FURNACE)",
     nearby_station_name="string(STR_STATION_FURNACE)",
@@ -14,21 +22,9 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=2,
 )
 
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
-    ("IORE", 3),
-    ("COKE", 3),
-    ("LIME", 2),
-]
-industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
-    ("IRON", 4),
-    ("CSTI", 2),
-    ("SLAG", 2),
-]
-industry.economy_variations["STEELTOWN"].prob_map_gen = "3"
-industry.economy_variations[
-    "STEELTOWN"
-].prob_in_game = "0"  # do not build during gameplay
+industry.enable_in_economy(
+    "STEELTOWN",
+)
 
 industry.add_tile(
     id="blast_furnace_tile_1",

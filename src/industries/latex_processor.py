@@ -2,9 +2,14 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="latex_processor",
-    accept_cargos_with_input_ratios=[("LATX", 6), ("FORM", 2)],
+    accept_cargos_with_input_ratios=[
+        ("LATX", 6),
+        ("FORM", 2),
+    ],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("RUBR", 8)],
+    prod_cargo_types_with_output_ratios=[
+        ("RUBR", 8),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="151",

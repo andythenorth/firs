@@ -2,13 +2,17 @@ from industry import IndustryTertiary, TileLocationChecks
 
 industry = IndustryTertiary(
     id="vehicle_distributor",
-    accept_cargo_types=["VEHI"],
+    accept_cargo_types=[
+        "VEHI",
+    ],
     prod_cargo_types_with_multipliers=[],
     prob_in_game="3",
     prob_map_gen="10",
     map_colour="207",
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
-    location_checks=dict(same_type_distance=32),
+    location_checks=dict(
+        same_type_distance=32,
+    ),
     prospect_chance="0.75",
     name="string(STR_IND_VEHICLE_DISTRIBUTOR)",
     nearby_station_name="string(STR_STATION_VEHICLE_DISTRIBUTOR)",
@@ -16,7 +20,9 @@ industry = IndustryTertiary(
     provides_snow=True,
 )
 
-industry.economy_variations["STEELTOWN"].enabled = True
+industry.enable_in_economy(
+    "STEELTOWN",
+)
 
 industry.add_tile(
     id="vehicle_distributor_tile_1",

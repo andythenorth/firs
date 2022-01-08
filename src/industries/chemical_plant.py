@@ -2,8 +2,8 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="chemical_plant",
-    accept_cargos_with_input_ratios=[("OIL_", 4), ("NITR", 4)],
-    prod_cargo_types_with_output_ratios=[("RFPR", 8)],
+    accept_cargos_with_input_ratios=[],
+    prod_cargo_types_with_output_ratios=[],
     combined_cargos_boost_prod=True,
     prob_in_game="3",
     prob_map_gen="5",
@@ -11,6 +11,7 @@ industry = IndustrySecondary(
     # it's rare to force co-location of secondaries, but this one is near port by design
     # !! this will fail if port is not available in economy
     # wharf was added to avoid pathological case in Arctic Basic where checking for only port would often fail to yield a location (for reasons I didn't fully understand eh)
+    # ?? might have been due to industry ID ordering issue, but really not sure about that
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[["port", "wharf"], 96],
         same_type_distance=128,
@@ -21,23 +22,34 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=2,
 )
 
-industry.economy_variations["BASIC_TROPIC"].enabled = True
+industry.enable_in_economy(
+    "BASIC_TROPIC",
+    accept_cargos_with_input_ratios=[
+        ("OIL_", 4),
+        ("NITR", 4),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("RFPR", 8),
+    ],
+)
 
-industry.economy_variations["BASIC_ARCTIC"].enabled = True
-industry.economy_variations["BASIC_ARCTIC"].accept_cargos_with_input_ratios = [
-    ("SULP", 2),
-    ("PHOS", 2),
-    ("NH3_", 2),
-    ("POTA", 2),
-]
-industry.economy_variations["BASIC_ARCTIC"].prod_cargo_types_with_output_ratios = [
-    ("FERT", 4),
-    ("BOOM", 4),
-]
+industry.enable_in_economy(
+    "BASIC_ARCTIC",
+    accept_cargos_with_input_ratios=[
+        ("SULP", 2),
+        ("PHOS", 2),
+        ("NH3_", 2),
+        ("POTA", 2),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("FERT", 4),
+        ("BOOM", 4),
+    ],
+)
 
 # should be Specialty Chemicals Plant, and should also accept ACID??
 # also this should not be forced to be near port in BLTC
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('SASH', 1), ('LYE_', 2), ('NH3_', 2), ('CHLO', 2), ('PHAC', 1)]
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_output_ratios = [('SOAP', 4), ('ENUM', 4)]
 

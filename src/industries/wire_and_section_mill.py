@@ -2,14 +2,18 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="wire_and_section_mill",
-    accept_cargos_with_input_ratios=[("STCB", 4), ("ACID", 2), ("SOAP", 2)],
+    accept_cargos_with_input_ratios=[
+        ("STCB", 4),
+        ("ACID", 2),
+        ("SOAP", 2),
+    ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
         ("STSE", 4),
         ("STWR", 3),
         ("ENSP", 1),
     ],  # balance is deliberate, steel sections need to feed wharf, vehicle chain is already well supplied
-    prob_in_game="3",
+    prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",
     map_colour="43",
     name="string(STR_IND_WIRE_AND_SECTION_MILL)",
@@ -19,10 +23,9 @@ industry = IndustrySecondary(
 )
 
 
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations[
-    "STEELTOWN"
-].prob_in_game = "0"  # do not build during gameplay
+industry.enable_in_economy(
+    "STEELTOWN",
+)
 
 industry.add_tile(
     id="wire_and_section_mill_tile_1",

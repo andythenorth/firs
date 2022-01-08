@@ -2,7 +2,9 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(
     id="potash_mine",
-    prod_cargo_types_with_multipliers=[("POTA", 20)],
+    prod_cargo_types_with_multipliers=[
+        ("POTA", 20),
+    ],
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="125",
@@ -14,14 +16,14 @@ industry = IndustryPrimaryExtractive(
     pollution_and_squalor_factor=1,
 )
 
-# industry.economy_variations['BASIC_ARCTIC'].enabled = True
-
 # exists in Steeltown primarily to give a direct cargo to Bulk Terminal
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations["STEELTOWN"].prod_cargo_types_with_multipliers = [
-    ("POTA", 20),
-    ("SALT", 15),
-]
+industry.enable_in_economy(
+    "STEELTOWN",
+    prod_cargo_types_with_multipliers=[
+        ("POTA", 20),
+        ("SALT", 15),
+    ],
+)
 
 industry.add_tile(
     id="potash_mine_tile_1",

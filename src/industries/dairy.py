@@ -2,9 +2,11 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="dairy",
-    accept_cargos_with_input_ratios=[("MILK", 6)],
+    accept_cargos_with_input_ratios=[],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("FOOD", 8)],
+    prod_cargo_types_with_output_ratios=[
+        ("FOOD", 8),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="169",
@@ -18,12 +20,14 @@ industry = IndustrySecondary(
     fund_cost_multiplier="45",
 )
 
-industry.economy_variations["BASIC_TEMPERATE"].enabled = True
-industry.economy_variations["BASIC_TEMPERATE"].accept_cargos_with_input_ratios = [
-    ("MILK", 6)
-]
+industry.enable_in_economy(
+    "BASIC_TEMPERATE",
+    accept_cargos_with_input_ratios=[
+        ("MILK", 6),
+    ],
+)
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('MILK', 6), ('MNSP', 2)]
 
 # tile with animation for flag

@@ -2,7 +2,11 @@ from industry import IndustryTertiary, TileLocationChecks
 
 industry = IndustryTertiary(
     id="general_store",
-    accept_cargo_types=["FOOD", "GOOD", "BEER"],
+    accept_cargo_types=[
+        "FOOD",
+        "GOOD",
+        "BEER",
+    ],
     prod_cargo_types=[],
     prob_in_game="12",
     prob_map_gen="24",
@@ -18,24 +22,34 @@ industry = IndustryTertiary(
     provides_snow=True,
 )
 
-industry.economy_variations["BASIC_TEMPERATE"].enabled = True
+industry.enable_in_economy(
+    "BASIC_TEMPERATE",
+)
 
-industry.economy_variations["BASIC_ARCTIC"].enabled = True
-industry.economy_variations["BASIC_ARCTIC"].accept_cargo_types = [
-    "FOOD",
-]
+industry.enable_in_economy(
+    "BASIC_ARCTIC",
+    accept_cargo_types=[
+        "FOOD",
+    ],
+)
 
-industry.economy_variations["BASIC_TROPIC"].enabled = True
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+industry.enable_in_economy(
+    "BASIC_TROPIC",
+)
+###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
-industry.economy_variations["IN_A_HOT_COUNTRY"].prob_map_gen = "14"
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+    prob_map_gen="14",
+)
 # industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['FOOD', 'GOOD', 'BEER', 'TEXT']
 
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations["STEELTOWN"].accept_cargo_types = [
-    "FOOD",
-]
+industry.enable_in_economy(
+    "STEELTOWN",
+    accept_cargo_types=[
+        "FOOD",
+    ],
+)
 
 industry.add_tile(
     id="general_store_tile_1",

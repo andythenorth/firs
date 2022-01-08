@@ -2,9 +2,14 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="ethylene_cracker",
-    accept_cargos_with_input_ratios=[("NAPH", 8)],
+    accept_cargos_with_input_ratios=[
+        ("NAPH", 8),
+    ],
     # not combinatorial, accept naptha or Methane
-    prod_cargo_types_with_output_ratios=[("C2H4", 4), ("C3H6", 3)],
+    prod_cargo_types_with_output_ratios=[
+        ("C2H4", 4),
+        ("C3H6", 3),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="191",
@@ -14,7 +19,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="170",
 )
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY",)
 
 industry.add_tile(
     id="ethylene_cracker_tile_1",

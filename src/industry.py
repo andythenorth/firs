@@ -1314,6 +1314,7 @@ class IndustryProperties(object):
         self.remove_cost_multiplier = kwargs.get("remove_cost_multiplier", "0")
         self._special_flags = kwargs.get("special_flags", [])
         # not nml properties
+        self.enabled = kwargs.get("enabled", False)
         self.accept_cargo_types = kwargs.get("accept_cargo_types", None)
         self.accept_cargos_with_input_ratios = kwargs.get(
             "accept_cargos_with_input_ratios", None
@@ -1325,7 +1326,6 @@ class IndustryProperties(object):
             "prod_cargo_types_with_output_ratios", None
         )
         self.prod_multiplier = kwargs.get("prod_multiplier", None)
-        self.enabled = kwargs.get("enabled", False)
         self.override_default_construction_states = kwargs.get(
             "override_default_construction_states", False
         )
@@ -1362,6 +1362,8 @@ class Industry(object):
         self.extra_graphics_switches = []
         self._industry_layouts = {"core": [], "outposts": []}
         self.default_industry_properties = IndustryProperties(**kwargs)
+        # economy variation structure is provisioned containing all economies, but with empty industry config, industry is then enabled for economies later
+        # this could be changed so that economies are only provisioned by enable_in_economy(), but it's easy to ensure economy looks up don't fail this way
         self.economy_variations = {}
         for economy in registered_economies:
             self.add_economy_variation(economy)

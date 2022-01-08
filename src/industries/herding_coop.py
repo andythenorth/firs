@@ -2,7 +2,9 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(
     id="herding_coop",
-    prod_cargo_types_with_multipliers=[("FOOD", 7)],
+    prod_cargo_types_with_multipliers=[
+        ("FOOD", 7),
+    ],
     prob_in_game="14",
     prob_map_gen="14",
     map_colour="207",
@@ -15,7 +17,9 @@ industry = IndustryPrimaryOrganic(
     fund_cost_multiplier="88",
 )
 
-industry.economy_variations["BASIC_ARCTIC"].enabled = True
+industry.enable_in_economy(
+    "BASIC_ARCTIC",
+)
 
 industry.add_tile(
     id="herding_coop_tile_1",

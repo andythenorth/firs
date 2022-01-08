@@ -16,32 +16,36 @@ industry = IndustryPrimaryPort(
     override_default_construction_states=True,
 )
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+    accept_cargo_types=[
+        "MNO2",
+        "PHOS",
+        "BDMT",
+    ],
+    prod_cargo_types_with_multipliers=[
+        ("RFPR", 12),
+        ("FMSP", 12),
+    ],
+)
 # industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['MNO2', 'FECR', 'RUBR']
 # industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('FORM', 12)]
-industry.economy_variations["IN_A_HOT_COUNTRY"].accept_cargo_types = [
-    "MNO2",
-    "PHOS",
-    "BDMT",
-]
-industry.economy_variations["IN_A_HOT_COUNTRY"].prod_cargo_types_with_multipliers = [
-    ("RFPR", 12),
-    ("FMSP", 12),
-]
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargo_types = []
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_multipliers = [('OIL_', 20), ('POTA', 12), ('PHOS', 12), ('MEOH', 12)]
 
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations["STEELTOWN"].accept_cargo_types = ["FOOD", "POTA", "CHLO"]
-industry.economy_variations["STEELTOWN"].prod_cargo_types_with_multipliers = [
-    ("MNO2", 19),
-    ("RUBR", 16),
-    ("PLAS", 16),
-    ("FECR", 14),
-    ("ALUM", 11),
-]
+industry.enable_in_economy(
+    "STEELTOWN",
+    accept_cargo_types=["FOOD", "POTA", "CHLO"],
+    prod_cargo_types_with_multipliers=[
+        ("MNO2", 19),
+        ("RUBR", 16),
+        ("PLAS", 16),
+        ("FECR", 14),
+        ("ALUM", 11),
+    ],
+)
 
 industry.add_tile(
     id="bulk_terminal_tile_1",

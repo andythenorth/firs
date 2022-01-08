@@ -2,10 +2,14 @@ from industry import IndustryTertiary, TileLocationChecks
 
 industry = IndustryTertiary(
     id="petrol_pump",
-    accept_cargo_types=["FOOD", "GOOD", "PETR"],
+    accept_cargo_types=[
+        "FOOD",
+        "GOOD",
+        "PETR",
+    ],
     prod_cargo_types=[],
-    prob_in_game="14",
-    prob_map_gen="14",
+    prob_in_game="8",
+    prob_map_gen="8",
     prod_multiplier="[0, 0]",
     map_colour="169",
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
@@ -17,9 +21,10 @@ industry = IndustryTertiary(
     provides_snow=True,
 )
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
-industry.economy_variations["IN_A_HOT_COUNTRY"].prob_map_gen = "8"
-industry.economy_variations["IN_A_HOT_COUNTRY"].prob_in_game = "8"
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+)
+
 
 industry.add_tile(
     id="petrol_pump_tile_1",

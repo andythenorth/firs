@@ -2,9 +2,9 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="cement_plant",
-    accept_cargos_with_input_ratios=[("COAL", 2), ("CLAY", 2), ("LIME", 4)],
+    accept_cargos_with_input_ratios=[],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("CMNT", 8)],
+    prod_cargo_types_with_output_ratios=[],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="19",
@@ -23,19 +23,20 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=2,
 )
 
-# industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+# industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
-industry.economy_variations["IN_A_HOT_COUNTRY"].accept_cargos_with_input_ratios = [
-    ("PETR", 2),
-    ("CLAY", 2),
-    ("GRVL", 4),
-]
-industry.economy_variations["IN_A_HOT_COUNTRY"].prod_cargo_types_with_output_ratios = [
-    ("BDMT", 8)
-]
-# industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('COAL', 2), ('CLAY', 2), ('GRVL', 4)]
-# industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('CMNT', 8)]
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+    accept_cargos_with_input_ratios=[
+        ("PETR", 2),
+        ("CLAY", 2),
+        ("GRVL", 4),
+    ],
+    prod_cargo_types_with_output_ratios=[("BDMT", 8)],
+)
+
+# ['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('COAL', 2), ('CLAY', 2), ('GRVL', 4)]
+# ['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('CMNT', 8)]
 
 industry.add_tile(
     id="cement_plant_tile_1",

@@ -4,7 +4,7 @@ industry = IndustrySecondary(
     id="chlor_alkali_plant",
     accept_cargos_with_input_ratios=[("SALT", 8)],
     prod_cargo_types_with_output_ratios=[("ACID", 4), ("CHLO", 2), ("LYE_", 2)],
-    prob_in_game="3",
+    prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",
     prod_multiplier="[0, 0]",
     map_colour="191",
@@ -14,13 +14,12 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=2,
 )
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_output_ratios = [('HYAC', 4), ('CHLO', 2), ('LYE_', 2)]
 
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations[
-    "STEELTOWN"
-].prob_in_game = "0"  # do not build during gameplay
+industry.enable_in_economy(
+    "STEELTOWN",
+)
 
 industry.add_tile(
     id="chlor_alkali_plant_tile_1",

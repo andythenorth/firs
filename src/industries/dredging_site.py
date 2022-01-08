@@ -2,7 +2,9 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(
     id="dredging_site",
-    prod_cargo_types_with_multipliers=[("SAND", 17)],
+    prod_cargo_types_with_multipliers=[
+        ("SAND", 17),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="194",
@@ -15,12 +17,11 @@ industry = IndustryPrimaryExtractive(
     graphics_change_dates=[1906, 1945],
 )
 
-industry.economy_variations["BASIC_TEMPERATE"].enabled = True
-industry.economy_variations["BASIC_TEMPERATE"].prod_cargo_types_with_multipliers = [
-    ("SAND", 17)
-]
+industry.enable_in_economy(
+    "BASIC_TEMPERATE",
+)
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_multipliers = [('SAND', 17)]
 
 industry.add_tile(

@@ -2,7 +2,9 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(
     id="limestone_mine",
-    prod_cargo_types_with_multipliers=[("LIME", 20)],
+    prod_cargo_types_with_multipliers=[
+        ("LIME", 20),
+    ],
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="69",
@@ -14,7 +16,9 @@ industry = IndustryPrimaryExtractive(
     pollution_and_squalor_factor=1,
 )
 
-industry.economy_variations["STEELTOWN"].enabled = True
+industry.enable_in_economy(
+    "STEELTOWN",
+)
 
 
 industry.add_tile(

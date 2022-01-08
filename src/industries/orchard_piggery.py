@@ -2,7 +2,10 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(
     id="orchard_piggery",
-    prod_cargo_types_with_multipliers=[("FRUT", 9), ("LVST", 8)],
+    prod_cargo_types_with_multipliers=[
+        ("FRUT", 9),
+        ("LVST", 8),
+    ],
     map_colour="85",
     prob_in_game="4",
     prob_map_gen="11",
@@ -16,7 +19,9 @@ industry = IndustryPrimaryOrganic(
     pollution_and_squalor_factor=1,
 )
 
-industry.economy_variations["BASIC_TEMPERATE"].enabled = True
+industry.enable_in_economy(
+    "BASIC_TEMPERATE",
+)
 
 industry.add_tile(
     id="orchard_piggery_tile_1",

@@ -2,9 +2,13 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="textile_mill",
-    accept_cargos_with_input_ratios=[("FICR", 6)],
+    accept_cargos_with_input_ratios=[
+        ("FICR", 6),
+    ],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("TEXT", 8)],
+    prod_cargo_types_with_output_ratios=[
+        ("TEXT", 8),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="37",
@@ -15,16 +19,14 @@ industry = IndustrySecondary(
 )
 
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
-
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
-industry.economy_variations["IN_A_HOT_COUNTRY"].accept_cargos_with_input_ratios = [
-    ("YARN", 6)
-]
-industry.economy_variations["IN_A_HOT_COUNTRY"].prod_cargo_types_with_output_ratios = [
-    ("TEXT", 8)
-]
-
+###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
+"""
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+    accept_cargos_with_input_ratios=[("YARN", 6)],
+    prod_cargo_types_with_output_ratios=[("TEXT", 8)],
+)
+"""
 industry.add_tile(
     id="textile_mill_tile_1",
     animation_length=7,

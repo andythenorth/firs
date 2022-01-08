@@ -2,7 +2,9 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(
     id="forest",
-    prod_cargo_types_with_multipliers=[("WOOD", 19)],
+    prod_cargo_types_with_multipliers=[
+        ("WOOD", 19),
+    ],
     prob_in_game="3",
     prob_map_gen="10",
     map_colour="83",
@@ -18,11 +20,13 @@ industry = IndustryPrimaryOrganic(
     provides_snow=True,
 )
 
-industry.economy_variations["BASIC_ARCTIC"].enabled = True
-industry.economy_variations["BASIC_ARCTIC"].prod_cargo_types_with_multipliers = [
-    ("WOOD", 24)
-]
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
+industry.enable_in_economy(
+    "BASIC_ARCTIC",
+    prod_cargo_types_with_multipliers=[("WOOD", 24)],
+)
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+)
 
 industry.add_tile(
     id="forest_tile_1",

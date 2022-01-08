@@ -2,9 +2,11 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="integrated_steel_mill",
-    accept_cargos_with_input_ratios=[("IORE", 3), ("COAL", 2), ("SCMT", 3)],
+    accept_cargos_with_input_ratios=[],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("STEL", 8)],
+    prod_cargo_types_with_output_ratios=[
+        ("STEL", 8),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="10",
@@ -14,8 +16,16 @@ industry = IndustrySecondary(
 )
 
 
-industry.economy_variations["BASIC_TEMPERATE"].enabled = True
-industry.economy_variations["BASIC_TEMPERATE"].intro_year = 1800
+industry.enable_in_economy(
+    "BASIC_TEMPERATE",
+    intro_year=1800,
+    name="string(STR_IND_INTEGRATED_STEEL_MILL)",  # use the simpler name in Basic Temperate to aid players new to FIRS
+    accept_cargos_with_input_ratios=[
+        ("IORE", 3),
+        ("COAL", 2),
+        ("SCMT", 3),
+    ],
+)
 
 industry.add_tile(
     id="integrated_steel_mill_tile_1",

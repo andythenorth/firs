@@ -2,8 +2,12 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="sawmill",
-    accept_cargos_with_input_ratios=[("WOOD", 6)],
-    prod_cargo_types_with_output_ratios=[("WDPR", 8)],
+    accept_cargos_with_input_ratios=[
+        ("WOOD", 6),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("WDPR", 8),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="194",
@@ -17,8 +21,12 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=1,
 )
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
-industry.economy_variations["BASIC_ARCTIC"].enabled = True
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+)
+industry.enable_in_economy(
+    "BASIC_ARCTIC",
+)
 
 industry.add_tile(
     id="sawmill_tile_1",

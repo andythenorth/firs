@@ -2,7 +2,7 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(
     id="arable_farm",
-    prod_cargo_types_with_multipliers=[("GRAI", 14), ("BEAN", 14)],
+    prod_cargo_types_with_multipliers=[],
     prob_in_game="4",
     prob_map_gen="11",
     map_colour="209",
@@ -19,17 +19,22 @@ industry = IndustryPrimaryOrganic(
     graphics_change_dates=[1928],
 )
 
-industry.economy_variations["BASIC_TROPIC"].enabled = True
-industry.economy_variations["BASIC_TROPIC"].prod_cargo_types_with_multipliers = [
-    ("GRAI", 14),
-    ("BEAN", 14),
-]
+industry.enable_in_economy(
+    "BASIC_TROPIC",
+    prod_cargo_types_with_multipliers=[
+        ("GRAI", 14),
+        ("BEAN", 14),
+    ],
+)
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
-industry.economy_variations["IN_A_HOT_COUNTRY"].prod_cargo_types_with_multipliers = [
-    ("CASS", 14),
-    ("NUTS", 14),
-]
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+    prod_cargo_types_with_multipliers=[
+        ("CASS", 14),
+        ("NUTS", 14),
+    ],
+)
+
 
 industry.add_tile(
     id="arable_farm_tile_1",

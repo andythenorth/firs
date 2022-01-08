@@ -2,7 +2,9 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(
     id="diamond_mine",
-    prod_cargo_types_with_multipliers=[("DIAM", 12)],
+    prod_cargo_types_with_multipliers=[
+        ("DIAM", 12),
+    ],
     map_colour="69",
     prospect_chance="0.75",
     prob_map_gen="4",
@@ -17,7 +19,9 @@ industry = IndustryPrimaryExtractive(
     pollution_and_squalor_factor=1,
 )
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+)
 
 industry.add_tile(
     id="diamond_mine_tile_1",

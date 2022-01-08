@@ -2,7 +2,9 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(
     id="manganese_mine",
-    prod_cargo_types_with_multipliers=[("MNO2", 20)],
+    prod_cargo_types_with_multipliers=[
+        ("MNO2", 20),
+    ],
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="16",
@@ -14,7 +16,9 @@ industry = IndustryPrimaryExtractive(
     pollution_and_squalor_factor=1,
 )
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+)
 
 industry.add_tile(
     id="manganese_mine_tile_1",

@@ -2,8 +2,13 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="smithy_forge",
-    accept_cargos_with_input_ratios=[("STEL", 8)],
-    prod_cargo_types_with_output_ratios=[("ENSP", 4), ("FMSP", 4)],
+    accept_cargos_with_input_ratios=[
+        ("STEL", 8),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("ENSP", 4),
+        ("FMSP", 4),
+    ],
     prob_in_game="2",
     prob_map_gen="5",
     map_colour="143",

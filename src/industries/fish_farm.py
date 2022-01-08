@@ -3,7 +3,9 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 industry = IndustryPrimaryOrganic(
     id="fish_farm",
     accept_cargo_types=[],
-    prod_cargo_types_with_multipliers=[("FISH", 8)],
+    prod_cargo_types_with_multipliers=[
+        ("FISH", 8),
+    ],
     prob_in_game="14",
     prob_map_gen="14",
     substitute="5",
@@ -24,7 +26,9 @@ industry = IndustryPrimaryOrganic(
     pollution_and_squalor_factor=1,
 )
 
-industry.economy_variations["BASIC_ARCTIC"].enabled = True
+industry.enable_in_economy(
+    "BASIC_ARCTIC",
+)
 
 industry.add_tile(
     id="fish_farm_tile_1",

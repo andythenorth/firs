@@ -2,9 +2,14 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="sugar_refinery",
-    accept_cargos_with_input_ratios=[("MNSP", 3), ("SGBT", 5)],
+    accept_cargos_with_input_ratios=[
+        ("MNSP", 3),
+        ("SGBT", 5),
+    ],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("FOOD", 8)],
+    prod_cargo_types_with_output_ratios=[
+        ("FOOD", 8),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="83",
@@ -16,7 +21,7 @@ industry = IndustrySecondary(
 )
 
 # deliberately not in BLTC, requires sugar beet, which is too climate-specific for BLTC
-# industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+# industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 
 industry.add_tile(
     id="sugar_refinery_tile_1",
