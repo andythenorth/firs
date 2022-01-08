@@ -1,0 +1,89 @@
+<!--! Check distance to nearest coast does not exceed value set in grf parameter
+      water_distance checks distance to water for land-based industries, and distance to land for water-based industries -->
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_disallow_too_far_from_coast, water_distance) {
+    0 .. param_max_coastal_distance: return 1;
+    return 0;
+}
+
+<!--! Check for a minimum distance to another industry type -->
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_require_min_distance_to_another_industry_type, industry_type_numeric_id, min_distance,
+        [
+         industry_distance(industry_type_numeric_id) > min_distance
+        ]) {
+    1: return 1;
+    return 0;
+}
+
+
+<!--! Check for a maximum distance to another industry type
+      Fails if there isn't at least one of the type on the map
+      This may encounter pathological cases on small maps, or low industry counts
+      As of July 2021 permissive_flag is used to loosen restrictions in the pathological cases
+      (calculated from industry IDs, as the problem manifests most often when the current industry ID < the target industry ID) -->
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_require_max_distance_to_another_industry_type_2, industry_type_numeric_id, max_distance,
+        [
+         industry_distance(industry_type_numeric_id) <= max_distance
+        ]) {
+    1: return 1;
+    return 0;
+}
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_require_max_distance_to_another_industry_type, industry_type_numeric_id, max_distance, permissive_flag,
+    [industry_count(industry_type_numeric_id) == 0 ? permissive_flag : location_check_industry_require_max_distance_to_another_industry_type_2(industry_type_numeric_id, max_distance)]) {
+    1: return 1;
+    return 0;
+}
+
+<!--! Check for distance to related industry cluster -->
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_require_cluster, industry_type_numeric_id, cluster_factor, max_distance,
+        [
+         (industry_count(industry_type_numeric_id) < (cluster_factor * industry_clusters)) ? 1 : (industry_distance(industry_type_numeric_id) > max_distance)
+        ]) {
+    1: return 1;
+    return 0;
+}
+
+<!--! Check for count of industry type per town
+      Can be used to limit maximum count of an industry type, or to check for at least n instances already in the town (of another industry type)
+      NOTE: the nml var is industry_town_count but the check name is require_town_industry_count because it fits the FIRS conventions better -->
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_require_town_industry_count, industry_type_numeric_id, min_count, max_count,
+        [
+         min_count <= industry_town_count(industry_type_numeric_id) < max_count
+        ]) {
+    1: return 1;
+    return 0;
+}
+
+<!--! Check for minimum population of town -->
+switch (FEAT_INDUSTRIES, PARENT, location_check_industry_require_town_min_population, min_population,
+    [
+     population >= min_population
+    ]) {
+    1: return 1;
+    return 0;
+}
+
+<!--!
+    Dedicated to flour mill / windmill - restricts layouts by date.
+    This could be made more generic if needed -->
+
+<!--! After 1900, windmills will only be built during map generation, not during gameplay (fake history). -->
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_flour_mill_layouts_by_date_brick_layouts_only_check_layout, layout_num) {
+    3..5: return 0;
+    return 1;
+}
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_flour_mill_layouts_by_date_brick_layouts_only, extra_callback_info2) {
+    IND_CREATION_GENERATION: return 1;
+    location_check_industry_flour_mill_layouts_by_date_brick_layouts_only_check_layout;
+}
+<!--! Before 1870, only windmills will be built. -->
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_flour_mill_layouts_by_date_windmill_layout_only, layout_num) {
+    3..5: return 1;
+    return 0;
+}
+<!--! Both types of layouts can appear between 1870 and 1900.
+      Update the docs if changing graphics dates -->
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_flour_mill_layouts_by_date, current_year) {
+    0..1869: location_check_industry_flour_mill_layouts_by_date_windmill_layout_only;
+    1870..1900: return 1;
+    location_check_industry_flour_mill_layouts_by_date_brick_layouts_only;
+}

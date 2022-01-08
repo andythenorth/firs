@@ -1070,6 +1070,12 @@ class IndustryLocationChecks(object):
         self.near_at_least_one_of_these_keystone_industries = location_args.get(
             "near_at_least_one_of_these_keystone_industries", None
         )
+        if self.near_at_least_one_of_these_keystone_industries is not None:
+            utils.echo_message(
+                "near_at_least_one_of_these_keystone_industries set by "
+                + industry.id
+                + ", should be in economy location checks only"
+            )
         self.require_cluster = location_args.get("require_cluster", None)
         self.require_town_industry_count = location_args.get(
             "require_town_industry_count", None
@@ -1176,15 +1182,11 @@ class IndustryLocationCheck(object):
     """sparse base class for industry location checks"""
 
     @property
-    def macro(self):
-        return templates["location_check_macros_industry.pynml"].macros[self.macro_name]
-
-    @property
     def procedure_name_and_params_as_nml_string(self):
         params_as_nml_string = ",".join([str(param) for param in self.params])
         return (
             "location_check_industry_"
-            + self.macro_name
+            + self.procedure_name
             + "("
             + params_as_nml_string
             + ")"
@@ -1205,7 +1207,7 @@ class IndustryLocationCheckTownIndustryCount(IndustryLocationCheck):
             utils.echo_message(
                 "IndustryLocationCheckTownIndustryCount uses a hardcoded error string limiting to 1 instance per town, add more strings to handle higher limits"
             )
-        self.macro_name = "require_town_industry_count"
+        self.procedure_name = "require_town_industry_count"
         self.params = [self.industry_type_numeric_id, self.min_count, self.max_count]
 
 
@@ -1214,7 +1216,7 @@ class IndustryLocationCheckTownMinPopulation(IndustryLocationCheck):
 
     def __init__(self, require_town_min_population):
         self.min_population = require_town_min_population
-        self.macro_name = "require_town_min_population"
+        self.procedure_name = "require_town_min_population"
         self.params = [self.min_population]
 
 
@@ -1227,7 +1229,7 @@ class IndustryLocationCheckCluster(IndustryLocationCheck):
         self.max_distance = require_cluster[0]
         # cluster factor is a fudge, theoretically determines number of clusters per 256x256 section of map, but often irrelevant due to industry counts in any given combination of map/setting/economy/randomisation
         self.cluster_factor = require_cluster[1]
-        self.macro_name = "require_cluster"
+        self.procedure_name = "require_cluster"
         self.params = [
             self.industry_type_numeric_id,
             self.cluster_factor,
@@ -1243,7 +1245,7 @@ class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
         self.industry_type_numeric_id = get_another_industry(industry_type).numeric_id
         self.distance = distance
-        self.macro_name = "require_min_distance_to_another_industry_type"
+        self.procedure_name = "require_min_distance_to_another_industry_type"
         self.params = [self.industry_type_numeric_id, self.distance]
 
 
@@ -1255,7 +1257,7 @@ class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
         self.industry_type_numeric_id = get_another_industry(industry_type).numeric_id
         self.distance = distance
         self.permissive_flag = permissive_flag
-        self.macro_name = "require_max_distance_to_another_industry_type"
+        self.procedure_name = "require_max_distance_to_another_industry_type"
         self.params = [
             self.industry_type_numeric_id,
             self.distance,
@@ -1267,7 +1269,7 @@ class IndustryLocationCheckCoastDistance(IndustryLocationCheck):
     """Maximum distance to coast (player can vary this with parameter)"""
 
     def __init__(self):
-        self.macro_name = "disallow_too_far_from_coast"
+        self.procedure_name = "disallow_too_far_from_coast"
         self.params = []
 
 
@@ -1275,7 +1277,7 @@ class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
     """Custom check for Grain mill, layouts are restricted by date; this is a one-off, but could be made generic if needed"""
 
     def __init__(self):
-        self.macro_name = "flour_mill_layouts_by_date"
+        self.procedure_name = "flour_mill_layouts_by_date"
         self.params = []
 
 
@@ -1384,6 +1386,26 @@ class Industry(object):
         ):
             utils.echo_message(self.id + " is not used in any economy")
         registered_industries.append(self)
+
+    def enable_in_economy(self, economy_id, **kwargs):
+        self.economy_variations[economy_id].enabled = True
+        for kwarg_name, kwarg_value in kwargs.items():
+            # special case for location checks, which must be appended to the dedicated IndustryLocationChecks instance holding the standard checks for the industry
+            if kwarg_name == "locate_in_specific_regions":
+                # !!! list of possible regions, or single item?
+                self.location_checks.economy_region_checks[economy_id] = kwarg_value
+            else:
+                if hasattr(self.economy_variations[economy_id], kwarg_name):
+                    setattr(
+                        self.economy_variations[economy_id], kwarg_name, kwarg_value
+                    )
+                else:
+                    raise NameError(
+                        "unknown economy variation kwarg '"
+                        + kwarg_name
+                        + "' declared by "
+                        + self.id
+                    )
 
     def add_tile(self, *args, **kwargs):
         new_tile = Tile(self.id, *args, **kwargs)
