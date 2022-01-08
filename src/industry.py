@@ -35,6 +35,14 @@ def get_another_industry(id):
     # if none found, that's an error, don't handle the error, just blow up
 
 
+def get_economy(id):
+    # utility function to get an economy using its id string
+    for economy in registered_economies:
+        if economy.id == id:
+            return economy
+    # if none found, that's an error, don't handle the error, just blow up
+
+
 class Tile(object):
     """Base class to hold industry tiles"""
 
@@ -1090,6 +1098,8 @@ class IndustryLocationChecks(object):
         self.flour_mill_layouts_by_date = location_args.get(
             "flour_mill_layouts_by_date", None
         )
+        # economies may optionally define specific regions which industries must locate in for that economy
+        self.economy_region_checks = {}
 
     def get_pre_player_founding_checks(self, incompatible_industries):
         result = []
@@ -1174,6 +1184,11 @@ class IndustryLocationChecks(object):
             # don't check for self type, we have other ways to do that (occasionally economy cargo variations trigger this)
             if industry.id != self.industry.id:
                 result.append(IndustryLocationCheckIndustryMinDistance(industry.id, 16))
+
+        for economy_id, region_list in self.economy_region_checks.items():
+            result.append(
+                IndustryLocationCheckEconomySpecificRegion(economy_id, region_list)
+            )
 
         return result
 
@@ -1273,6 +1288,20 @@ class IndustryLocationCheckCoastDistance(IndustryLocationCheck):
         self.params = []
 
 
+class IndustryLocationCheckEconomySpecificRegion(IndustryLocationCheck):
+    """Check for a region specific to the economy"""
+
+    def __init__(self, economy_id, region_list):
+        self.procedure_name = "economy_region_test_cabbage"
+        self.economy_id = economy_id
+        # fetch and store the economy object so we can get properties off it later
+        self.economy = get_economy(economy_id)
+        self.region_list = region_list
+        self.params = [
+            self.economy.numeric_id
+        ]
+
+
 class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
     """Custom check for Grain mill, layouts are restricted by date; this is a one-off, but could be made generic if needed"""
 
@@ -1282,7 +1311,7 @@ class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
 
 
 class IndustryProperties(object):
-    """Base class to hold properties corresponding to nml industry item properties"""
+    """Base class to hold industry item properties, as the instance for defaults, or for economy variations"""
 
     def __init__(self, **kwargs):
         # nml item properties, most of these should be provided as strings for insertion into nml.  See nml docs for meaning + acceptable values.
@@ -1394,7 +1423,6 @@ class Industry(object):
         for kwarg_name, kwarg_value in kwargs.items():
             # special case for location checks, which must be appended to the dedicated IndustryLocationChecks instance holding the standard checks for the industry
             if kwarg_name == "locate_in_specific_regions":
-                # !!! list of possible regions, or single item?
                 self.location_checks.economy_region_checks[economy_id] = kwarg_value
             else:
                 if hasattr(self.economy_variations[economy_id], kwarg_name):
