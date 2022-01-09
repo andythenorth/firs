@@ -76,9 +76,17 @@ economy = Economy(
 )
 
 economy.add_region(
-    "cabbage"
+    "cabbage",
+    min_x_percent = 66,
+    max_x_percent = 100,
+    min_y_percent = 0,
+    max_y_percent = 100,
 )
 
 economy.add_region(
-    "potato"
+    "potato",
+    min_x_percent = 0,
+    max_x_percent = 33,
+    min_y_percent = 0,
+    max_y_percent = 100,
 )

@@ -90,8 +90,16 @@ switch (FEAT_INDUSTRIES, SELF, GetTileY, var[0x80, 0, 0xFFFFFFFF] / map_x_edge) 
                     <!--! always return 1 if not this economy -->
                     (economy == ${economy.numeric_id} ? 0 : 1)
                     ||
-                    <!--! crude test forces  industries to NE side of map in economy 6 (Mild Mild West) -->
-                    (GetTileX() < (map_x_edge / 2))
+                    <!--! crude test - forces a quadrant -->
+                    (
+                        (GetTileX() > ((${region.min_x_percent} * map_x_edge) / 100))
+                        &&
+                        (GetTileX() < ((${region.max_x_percent} * map_x_edge) / 100))
+                        &&
+                        (GetTileY() > ((${region.min_y_percent} * map_y_edge) / 100))
+                        &&
+                        (GetTileY() < ((${region.max_y_percent} * map_y_edge) / 100))
+                    )
                 ]) {
             return;
         }

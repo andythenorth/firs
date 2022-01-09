@@ -24,8 +24,8 @@ class Economy(object):
                 )
         registered_economies.append(self)
 
-    def add_region(self, region_id):
-        self.regions.append(Region(region_id))
+    def add_region(self, region_id, **kwargs):
+        self.regions.append(Region(region_id, **kwargs))
 
     def forcibly_space_cargo_price_factors(self, registered_cargos):
         # check for overlapping price factors (and adjust if necessary) to ensure they're all unique per economy
@@ -71,3 +71,7 @@ class Region(object):
 
     def __init__(self, id, **kwargs):
         self.id = id
+        self.min_x_percent = kwargs["min_x_percent"]
+        self.max_x_percent = kwargs["max_x_percent"]
+        self.min_y_percent = kwargs["min_y_percent"]
+        self.max_y_percent = kwargs["max_y_percent"]
