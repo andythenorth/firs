@@ -70,6 +70,19 @@ switch (FEAT_INDUSTRIES, PARENT, location_check_industry_require_town_min_popula
     this could all be done by passing parameters along to the procedures from the industry location check structure
     this way generates more switches, but not that many, and make it easier to read and reason about the actual generated region rules
 -->
+
+<!--!
+    Utilities to get x and y coordinates of industry north tile.
+    Depends on 80+ industry var 0x80, which is position in tile array (not xy), so techniques are used to convert this to x or y as needed.
+    Note that both x and y rely on map_x_edge: original code from frosch here https://github.com/OpenTTD/nml/issues/218#issuecomment-849904290
+-->
+switch (FEAT_INDUSTRIES, SELF, GetTileX, var[0x80, 0, 0xFFFFFFFF] % map_x_edge) {
+    return;
+}
+switch (FEAT_INDUSTRIES, SELF, GetTileY, var[0x80, 0, 0xFFFFFFFF] / map_x_edge) {
+    return;
+}
+
 <tal:economies repeat="economy economies">
     <tal:regions repeat="region economy.regions">
         switch (FEAT_INDUSTRIES, SELF, location_check_industry_economy_region_test_${economy.id}_${region.id},
@@ -78,18 +91,10 @@ switch (FEAT_INDUSTRIES, PARENT, location_check_industry_require_town_min_popula
                     (economy == ${economy.numeric_id} ? 0 : 1)
                     ||
                     <!--! crude test forces  industries to NE side of map in economy 6 (Mild Mild West) -->
-                    ((var[0x80, 0, 0xFFFFFFFF] % map_x_edge) < (map_x_edge / 2))
+                    (GetTileX() < (map_x_edge / 2))
                 ]) {
             return;
         }
-        <!--!
-        switch (FEAT_INDUSTRIES, SELF, location_check_industry_economy_region_test_MILD_MILD_WEST_potato,
-                [
-                    (economy == 6 ? 0 : 1)
-                    || ((var[0x80, 0, 0xFFFFFFFF] / map_x_edge) > (map_y_edge / 3))
-                ]) {
-            return;
-        }-->
     </tal:regions>
 </tal:economies>
 
