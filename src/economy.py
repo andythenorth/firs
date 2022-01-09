@@ -3,13 +3,14 @@ from economies import registered_economies
 
 
 class Economy(object):
-    """ class to hold economies, this comment is pointless eh? """
+    """class to hold economies, this comment is pointless eh?"""
 
     def __init__(self, id, **kwargs):
         self.id = id
         self.numeric_id = kwargs.get("numeric_id")
         self.cargo_ids = kwargs.get("cargos")
         self.cargoflow_graph_tuning = kwargs.get("cargoflow_graph_tuning")
+        self.regions = []
 
     def register(self):
         # guard, duplicate numeric IDs don't work :P
@@ -22,6 +23,9 @@ class Economy(object):
                     + economy.id
                 )
         registered_economies.append(self)
+
+    def add_region(self, region_id):
+        self.regions.append(Region(region_id))
 
     def forcibly_space_cargo_price_factors(self, registered_cargos):
         # check for overlapping price factors (and adjust if necessary) to ensure they're all unique per economy
@@ -60,3 +64,10 @@ class Economy(object):
             else:
                 result[cargo.id] = cargo.price_factor
         return result
+
+
+class Region(object):
+    """class to hold definitions of map regions, optionally used for cases like industry location rules"""
+
+    def __init__(self, id, **kwargs):
+        self.id = id

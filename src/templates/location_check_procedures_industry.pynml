@@ -67,18 +67,32 @@ switch (FEAT_INDUSTRIES, PARENT, location_check_industry_require_town_min_popula
     see also https://github.com/2TallTyler/lumberjack_industries/blob/main/src/functions.nml for GetTileX and similar
 -->
 <!--!
-<tal:economy repeat="economy registered_economies">
-    // ${economy.id}
-</tal:economy>
+    this could all be done by passing parameters along to the procedures from the industry location check structure
+    this way generates more switches, but not that many, and make it easier to read and reason about the actual generated region rules
 -->
-switch (FEAT_INDUSTRIES, SELF, location_check_industry_economy_region_test_cabbage, economy_numeric_id,
-        <!--! crude test forces  industries to NE side of map in economy 6 (Mild Mild West) -->
-        [
-            (economy == economy_numeric_id ? 0 : 1)
-            || ((var[0x80, 0, 0xFFFFFFFF] % map_x_edge) < (map_x_edge / 2))
-        ]) {
-    return;
-}
+<tal:economies repeat="economy economies">
+    <tal:regions repeat="region economy.regions">
+        switch (FEAT_INDUSTRIES, SELF, location_check_industry_economy_region_test_${economy.id}_${region.id},
+                [
+                    <!--! always return 1 if not this economy -->
+                    (economy == ${economy.numeric_id} ? 0 : 1)
+                    ||
+                    <!--! crude test forces  industries to NE side of map in economy 6 (Mild Mild West) -->
+                    ((var[0x80, 0, 0xFFFFFFFF] % map_x_edge) < (map_x_edge / 2))
+                ]) {
+            return;
+        }
+        <!--!
+        switch (FEAT_INDUSTRIES, SELF, location_check_industry_economy_region_test_MILD_MILD_WEST_potato,
+                [
+                    (economy == 6 ? 0 : 1)
+                    || ((var[0x80, 0, 0xFFFFFFFF] / map_x_edge) > (map_y_edge / 3))
+                ]) {
+            return;
+        }-->
+    </tal:regions>
+</tal:economies>
+
 <!--!
     Dedicated to flour mill / windmill - restricts layouts by date.
     This could be made more generic if needed -->

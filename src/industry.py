@@ -35,14 +35,6 @@ def get_another_industry(id):
     # if none found, that's an error, don't handle the error, just blow up
 
 
-def get_economy(id):
-    # utility function to get an economy using its id string
-    for economy in registered_economies:
-        if economy.id == id:
-            return economy
-    # if none found, that's an error, don't handle the error, just blow up
-
-
 class Tile(object):
     """Base class to hold industry tiles"""
 
@@ -1154,15 +1146,11 @@ class IndustryLocationChecks(object):
             if industry.id != self.industry.id:
                 result.append(IndustryLocationCheckIndustryMinDistance(industry.id, 16))
 
-        for economy_id, region_list in self.economy_region_checks.items():
-            result.append(
-                IndustryLocationCheckEconomySpecificRegion(economy_id, region_list)
-            )
-
         return result
 
     def get_post_player_founding_checks_OR(self, incompatible_industries):
-        # checks where satisyfing any of the conditions is enough
+        # checks structured in OR groups
+        # within each OR group, satisyfing any one of the conditions is enough
         result = []
 
         keystone_industries = {
@@ -1202,6 +1190,11 @@ class IndustryLocationChecks(object):
             "location_checks": [],
             "next_switch_name": "",
         }
+        for economy_id, region_list in self.economy_region_checks.items():
+            for region_id in region_list:
+                economy_specific_regions["location_checks"].append(
+                    IndustryLocationCheckEconomySpecificRegion(economy_id, region_id)
+                )
         result.append(economy_specific_regions)
 
         for counter, group in enumerate(result):
@@ -1312,13 +1305,9 @@ class IndustryLocationCheckCoastDistance(IndustryLocationCheck):
 class IndustryLocationCheckEconomySpecificRegion(IndustryLocationCheck):
     """Check for a region specific to the economy"""
 
-    def __init__(self, economy_id, region_list):
-        self.procedure_name = "economy_region_test_cabbage"
-        self.economy_id = economy_id
-        # fetch and store the economy object so we can get properties off it later
-        self.economy = get_economy(economy_id)
-        self.region_list = region_list
-        self.params = [self.economy.numeric_id]
+    def __init__(self, economy_id, region_id):
+        self.procedure_name = "economy_region_test_" + economy_id + "_" + region_id
+        self.params = []
 
 
 class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
