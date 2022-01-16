@@ -4,6 +4,21 @@
 
 <!--! called from monthly 'town' loop (actually monthly industry loop)
       *all* industries must handle monthly_town_loop, or town behaviour will fail on wrong industry counts -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_debug_stuff,
+    [
+        <!--! push result to register 0x100 (256d)
+              1. news string in bits 0..15
+              2. new value for production_level, shifted into bits 16..23; max value 128 (800%), default 16 (100%) -->
+        STORE_TEMP(
+            string(STR_PROD_CHANGE_TEST) | (${'16'} << 16),
+            256
+        ),
+        gs_disallows_prod_decrease
+    ]) {
+    0: return CB_RESULT_IND_PROD_NO_CHANGE;
+    return CB_RESULT_IND_PROD_SET_BY_0x100 | (1 << 8);  <!--! set bit 8 to show custom text result -->
+}
+
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
     [
         monthly_town_loop(
@@ -11,6 +26,6 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
             ${industry.pollution_and_squalor_score}
         )
     ]) {
-    return CB_RESULT_IND_PROD_NO_CHANGE;
+    return ${industry.id}_monthly_prod_change_debug_stuff;
 }
 <!--! end from monthly 'town' loop (actually monthly industry loop) -->
