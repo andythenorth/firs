@@ -62,13 +62,13 @@ switch (FEAT_INDUSTRIES, PARENT, location_check_industry_require_town_min_popula
     return 0;
 }
 
-<!--! Experimental check for economy-specific region -->
+<!--! Experimental check for economy-specific biome -->
 <!--! !!!!
     see also https://github.com/2TallTyler/lumberjack_industries/blob/main/src/functions.nml for GetTileX and similar
 -->
 <!--!
     this could all be done by passing parameters along to the procedures from the industry location check structure
-    this way generates more switches, but not that many, and make it easier to read and reason about the actual generated region rules
+    this way generates more switches, but not that many, and make it easier to read and reason about the actual generated biome rules
 -->
 
 <!--!
@@ -84,26 +84,26 @@ switch (FEAT_INDUSTRIES, SELF, GetTileY, var[0x80, 0, 0xFFFFFFFF] / map_x_edge) 
 }
 
 <tal:economies repeat="economy economies">
-    <tal:regions repeat="region economy.regions">
-        switch (FEAT_INDUSTRIES, SELF, location_check_industry_economy_region_test_${economy.id}_${region.id},
+    <tal:biomes repeat="biome economy.biomes">
+        switch (FEAT_INDUSTRIES, SELF, location_check_industry_economy_biome_test_${economy.id}_${biome.id},
                 [
                     <!--! always return 1 if not this economy -->
                     (economy == ${economy.numeric_id} ? 0 : 1)
                     ||
                     <!--! crude test - forces a quadrant -->
                     (
-                        (GetTileX() > ((${region.min_x_percent} * map_x_edge) / 100))
+                        (GetTileX() > ((${biome.min_x_percent} * map_x_edge) / 100))
                         &&
-                        (GetTileX() < ((${region.max_x_percent} * map_x_edge) / 100))
+                        (GetTileX() < ((${biome.max_x_percent} * map_x_edge) / 100))
                         &&
-                        (GetTileY() > ((${region.min_y_percent} * map_y_edge) / 100))
+                        (GetTileY() > ((${biome.min_y_percent} * map_y_edge) / 100))
                         &&
-                        (GetTileY() < ((${region.max_y_percent} * map_y_edge) / 100))
+                        (GetTileY() < ((${biome.max_y_percent} * map_y_edge) / 100))
                     )
                 ]) {
             return;
         }
-    </tal:regions>
+    </tal:biomes>
 </tal:economies>
 
 <!--!

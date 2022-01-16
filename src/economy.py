@@ -10,7 +10,7 @@ class Economy(object):
         self.numeric_id = kwargs.get("numeric_id")
         self.cargo_ids = kwargs.get("cargos")
         self.cargoflow_graph_tuning = kwargs.get("cargoflow_graph_tuning")
-        self.regions = []
+        self.biomes = []
 
     def register(self):
         # guard, duplicate numeric IDs don't work :P
@@ -24,8 +24,8 @@ class Economy(object):
                 )
         registered_economies.append(self)
 
-    def add_region(self, region_id, **kwargs):
-        self.regions.append(Region(region_id, **kwargs))
+    def add_biome(self, biome_id, **kwargs):
+        self.biomes.append(Biome(biome_id, **kwargs))
 
     def forcibly_space_cargo_price_factors(self, registered_cargos):
         # check for overlapping price factors (and adjust if necessary) to ensure they're all unique per economy
@@ -66,8 +66,11 @@ class Economy(object):
         return result
 
 
-class Region(object):
-    """class to hold definitions of map regions, optionally used for cases like industry location rules"""
+class Biome(object):
+    """
+        class to hold definitions of map biomes, optionally used for cases like industry location rules
+        they're not really 'biomes', but it's an easy way to avoid clash with 'regions' for other purposes
+    """
 
     def __init__(self, id, **kwargs):
         self.id = id

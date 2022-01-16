@@ -1090,8 +1090,8 @@ class IndustryLocationChecks(object):
         self.flour_mill_layouts_by_date = location_args.get(
             "flour_mill_layouts_by_date", None
         )
-        # economies may optionally define specific regions which industries must locate in for that economy
-        self.economy_region_checks = {}
+        # economies may optionally define specific biomes which industries must locate in for that economy
+        self.economy_biome_checks = {}
 
     def get_pre_player_founding_checks(self, incompatible_industries):
         result = []
@@ -1185,17 +1185,17 @@ class IndustryLocationChecks(object):
                 )
         result.append(keystone_industries)
 
-        economy_specific_regions = {
-            "OR_group_name": "economy_specific_regions",
+        economy_specific_biomes = {
+            "OR_group_name": "economy_specific_biomes",
             "location_checks": [],
             "next_switch_name": "",
         }
-        for economy_id, region_list in self.economy_region_checks.items():
-            for region_id in region_list:
-                economy_specific_regions["location_checks"].append(
-                    IndustryLocationCheckEconomySpecificRegion(economy_id, region_id)
+        for economy_id, biome_list in self.economy_biome_checks.items():
+            for biome_id in biome_list:
+                economy_specific_biomes["location_checks"].append(
+                    IndustryLocationCheckEconomySpecificBiome(economy_id, biome_id)
                 )
-        result.append(economy_specific_regions)
+        result.append(economy_specific_biomes)
 
         for counter, group in enumerate(result):
             if counter == 0:
@@ -1302,11 +1302,11 @@ class IndustryLocationCheckCoastDistance(IndustryLocationCheck):
         self.params = []
 
 
-class IndustryLocationCheckEconomySpecificRegion(IndustryLocationCheck):
-    """Check for a region specific to the economy"""
+class IndustryLocationCheckEconomySpecificBiome(IndustryLocationCheck):
+    """Check for a biome specific to the economy"""
 
-    def __init__(self, economy_id, region_id):
-        self.procedure_name = "economy_region_test_" + economy_id + "_" + region_id
+    def __init__(self, economy_id, biome_id):
+        self.procedure_name = "economy_biome_test_" + economy_id + "_" + biome_id
         self.params = []
 
 
@@ -1430,8 +1430,8 @@ class Industry(object):
         self.economy_variations[economy_id].enabled = True
         for kwarg_name, kwarg_value in kwargs.items():
             # special case for location checks, which must be appended to the dedicated IndustryLocationChecks instance holding the standard checks for the industry
-            if kwarg_name == "locate_in_specific_regions":
-                self.location_checks.economy_region_checks[economy_id] = kwarg_value
+            if kwarg_name == "locate_in_specific_biomes":
+                self.location_checks.economy_biome_checks[economy_id] = kwarg_value
             else:
                 if hasattr(self.economy_variations[economy_id], kwarg_name):
                     setattr(
