@@ -2,7 +2,7 @@
  * This file is part of MinimalGS, which is a GameScript for OpenTTD
  * Copyright (C) 2012-2013  Leif Linse
  *
- * MinimalGS is free software; you can redistribute it and/or modify it 
+ * MinimalGS is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 2 of the License
  *
@@ -13,7 +13,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with MinimalGS; If not, see <http://www.gnu.org/licenses/> or
- * write to the Free Software Foundation, Inc., 51 Franklin Street, 
+ * write to the Free Software Foundation, Inc., 51 Franklin Street,
  * Fifth Floor, Boston, MA 02110-1301 USA.
  *
  */
@@ -28,7 +28,7 @@ class FMainClass extends GSInfo {
 	function GetDate()			{ return "2013-11-05"; }
 	function CreateInstance()	{ return "MainClass"; }
 	function GetShortName()		{ return "MINI"; } // Replace this with your own unique 4 letter string
-	function GetAPIVersion()	{ return "1.2"; }
+	function GetAPIVersion()	{ return "13"; }
 	function GetURL()			{ return ""; }
 
 	function GetSettings() {

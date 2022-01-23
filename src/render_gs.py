@@ -51,6 +51,10 @@ class GSHelper(object):
             result = result + " " + cargo_label
         return result
 
+    def get_grfid(self):
+        # !! grfid needs moved out of header.pynml to global constants (may have done this for other grfs already?)
+        utils.echo_message("GSHelper.get_grf_id incomplete, returning hard-coded value")
+        return "0xF1250008";
 
 def main():
     start = time()
@@ -74,6 +78,7 @@ def main():
         "firs",
         "info",
         "main",
+        "pylons",
         "temp_prototyping",
         "version",
     ]

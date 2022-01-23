@@ -1,0 +1,356 @@
+power_grid <- {}
+power_grid.power_station_empty_tiles <- [];
+power_grid.pylon_gap <- 4;
+
+function find_power_sources()
+/* find all the industries that generate power */
+{
+    // !! todo: find more than just power station
+    local power_plant_id = GSIndustryType.ResolveNewGRFID(firs.grfid, 0x42);
+    GSLog.Info("power_plant_id " + power_plant_id);
+
+    // clear the existing list
+    power_grid.power_station_empty_tiles.clear();
+
+    local industry_list = GSIndustryList();
+    foreach (industry, _ in industry_list) {
+        if (GSIndustry.GetIndustryType(industry) == power_plant_id) {
+            GSLog.Info("found " + GSIndustry.GetName(industry) + " at tile " + GSIndustry.GetLocation(industry));
+            local pylon_start_location = find_empty_tile_near_industry(industry);
+            if (pylon_start_location != null)
+            {
+                power_grid.power_station_empty_tiles.append(pylon_start_location);
+                local pylon_object_id = GSObjectType.ResolveNewGRFID(0x47477015, 0x51);
+                GSObjectType.BuildObject(pylon_object_id, 0, pylon_start_location);
+            }
+        }
+    }
+    create_lineman_graph(power_grid.power_station_empty_tiles);
+}
+
+function find_empty_tile_near_industry(industry)
+{
+	// Create spiral walker
+	local SPIRAL_WALKER = SpiralWalker();
+	SPIRAL_WALKER.Start(GSIndustry.GetLocation(industry));
+
+	// Create try counter
+	local TRIES = 0;
+	// if no tile found within this distance, don't bother
+	local MAX_TRIES = 16 * 16;
+
+	while(TRIES < MAX_TRIES)
+	{
+		// Inc tries
+		TRIES++;
+
+		// Walk one tile
+		SPIRAL_WALKER.Walk();
+		// Get tile
+		local CURRENT_TILE = SPIRAL_WALKER.GetTile();
+	    if (GSTile.IsBuildable(CURRENT_TILE) && (TRIES > 38))
+	    {
+	        return CURRENT_TILE;
+	    }
+	}
+	// no buildable tile found
+	return null;
+}
+
+function lineman_find_empty_tile_for_pylon(location_tile_index)
+{
+	// Create spiral walker
+	local SPIRAL_WALKER = SpiralWalker();
+	SPIRAL_WALKER.Start(location_tile_index);
+
+	// Create try counter
+	local TRIES = 0;
+	// if no tile found within this distance, don't bother
+	local MAX_TRIES = 3 * 3;
+
+	while(TRIES < MAX_TRIES)
+	{
+		// Inc tries
+		TRIES++;
+
+		// Walk one tile
+		SPIRAL_WALKER.Walk();
+		// Get tile
+		local CURRENT_TILE = SPIRAL_WALKER.GetTile();
+	    if (GSTile.IsBuildable(CURRENT_TILE) && (!GSTile.IsCoastTile(CURRENT_TILE)))
+	    {
+	        return CURRENT_TILE;
+	    }
+	}
+	// no buildable tile found
+	return null;
+}
+
+function lineman_sort_by_distance(a, b)
+{
+    if (a[0] > b[0]) return 1;
+    if (a[0] < b[0]) return -1;
+    return 0;
+}
+
+function create_lineman_graph(nodes)
+{
+    //power_grid.all_nodes <- clone power_grid.power_station_empty_tiles;
+    //power_grid.unconnected_nodes <- clone power_grid.all_nodes;
+    // power_grid.ind <- [];
+
+    // Prim minimum spanning tree implementation by _dp_
+    local ind = [];
+    local cost = [];
+    local prev = [];
+    local vis = []; // vis - visited nodes, i.e. added to mst
+
+    GSLog.Info("Nodes:");
+    foreach (node in nodes) {
+        GSLog.Info("  " + node);
+        ind.append(node);
+        cost.append(0xffffffff);
+        prev.append(0);
+        vis.append(false);
+    }
+
+    local n = ind.len();
+    for (local j = 0; j < n; j++) {
+        local mi = 0; // mi - i with min cost, i.e. node that is currently being added
+        for (local i = 1; i < n; i++) {
+            if (!vis[i] && cost[i] < cost[mi])
+                mi = i
+        }
+        vis[mi] = true;
+        for (local i = 1; i < n; i++) {
+            if (vis[i]) continue;
+            local d = GSTile.GetDistanceManhattanToTile(ind[mi], ind[i]);
+            if (d < cost[i]) {
+                cost[i] = d;
+                prev[i] = mi;
+            }
+        }
+    }
+    power_grid.ind <- ind;
+    power_grid.prev <- prev;
+    power_grid.complete <- false;
+}
+
+function lineman_build_pylon(location, current_direction)
+{
+    local pylons = [0x87, 0x51];
+    local pylon_views = [1, 1, 0, 0];
+    //local pylon_object_id = GSObjectType.ResolveNewGRFID(0x47477015, pylons[current_direction]);
+    local pylon_object_id = GSObjectType.ResolveNewGRFID(0x47477015, pylons[current_direction % 2]);
+    // GSLog.Info("pylon_object_id " + pylon_object_id);
+    GSObjectType.BuildObject(pylon_object_id, pylon_views[current_direction % 4], location);
+}
+
+function math_abs(_value)
+// GS seems to miss the squirrel math module
+{
+    return (_value > 0 ? _value : -_value);
+}
+
+function array_has_item(_array, _value)
+// GS misses squirrel array.find()
+// just returns simple bool, doesn't find the position
+{
+    foreach (_item in _array)
+    {
+        if (_item == _value)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+function get_direction_options(current_x, current_y, dest_x, dest_y)
+{
+    // 0 = compass north (not TTD grid north curently?), then clockwise 45 degree increments
+    //local all_directions = [0, 1, 2, 3, 4, 5, 6, 7];
+    local result = [];
+
+    local delta_x = current_x - dest_x;
+    local delta_y = current_y - dest_y;
+
+    GSLog.Info("delta_x " + delta_x);
+    GSLog.Info("delta_y " + delta_y);
+
+    local move_pos_x = delta_x <= -power_grid.pylon_gap;
+    local move_neg_x = delta_x > power_grid.pylon_gap;
+    local move_pos_y = delta_y <= -power_grid.pylon_gap;
+    local move_neg_y = delta_y > power_grid.pylon_gap;
+
+    if (move_pos_x) // need to go +ve x
+    {
+        result.append(5);
+    }
+    if (move_neg_x) // need to go -ve x
+    {
+        result.append(1);
+    }
+    if (move_pos_y) // need to go +ve y
+    {
+        result.append(3);
+    }
+    if (move_neg_y) // need to go -ve y
+    {
+        result.append(7);
+    }
+
+    if (move_pos_x && move_pos_y) // need to go +ve x and +ve y (south)
+    {
+        result.append(4);
+    }
+    if (move_neg_x && move_pos_y) // need to go -ve x and +ve y (east)
+    {
+        result.append(2);
+    }
+    if (move_pos_x && move_neg_y) // need to go +ve x and -ve y (west)
+    {
+        result.append(6);
+    }
+    if (move_neg_x && move_neg_y) // need to go -ve x and -ve y (north)
+    {
+        result.append(0);
+    }
+
+    return result;
+}
+
+function get_direction_vector(direction_options, direction_leg_counter, previous_direction)
+// has to be a function returning, because squirrel vars aren't reusable outside a conditional block, so can't write inline if/else for this
+// 'the lolz'
+{
+    if ((direction_leg_counter == power_grid.pylon_gap) || (previous_direction == null))
+    {
+        return direction_options[GSBase.RandRange(direction_options.len())];
+    }
+    else
+    {
+        return previous_direction;
+    }
+}
+
+function pathfinder_test()
+{
+    if (power_grid.complete)
+    {
+        GSLog.Info("Lineman: Power grid complete, nothing to do");
+        return;
+    }
+
+    // 8 directions, indexed as 0..7.
+    // on the map: +ve x goes towards SW (direction 5), +ve y goes towards SE (direction 3)
+    local direction_vectors = [
+        [-1, -1], // 0: North
+        [-1,  0], // 1: NE
+        [-1,  1], // 2: East
+        [ 0,  1], // 3: SE
+        [ 1,  1], // 4: South
+        [ 1,  0], // 5: SW
+        [ 1, -1], // 6: West
+        [ 0, -1], // 7: NW
+    ];
+
+    GSLog.Info("Connections:");
+    for (local i = 1; i < power_grid.ind.len(); i++) {
+        GSLog.Info("=========");
+        GSLog.Info("  " + power_grid.ind[i] + " " + power_grid.ind[power_grid.prev[i]]);
+        local start_x = GSMap.GetTileX(power_grid.ind[i]);
+        local start_y = GSMap.GetTileY(power_grid.ind[i]);
+        local dest_x = GSMap.GetTileX(power_grid.ind[power_grid.prev[i]]);
+        local dest_y = GSMap.GetTileY(power_grid.ind[power_grid.prev[i]]);
+        local current_x = start_x;
+        local current_y = start_y;
+
+        local direction_leg_counter = 0;
+        local previous_direction = null;
+
+
+        while ((math_abs(current_x - dest_x) > power_grid.pylon_gap) || (math_abs(current_y - dest_y) > power_grid.pylon_gap)) {
+            local direction_options = get_direction_options(current_x, current_y, dest_x, dest_y);
+            local current_direction = get_direction_vector(direction_options, direction_leg_counter, previous_direction);
+            local direction_vector = direction_vectors[current_direction];
+
+            current_x = current_x + (direction_vector[0] * 1);
+            current_y = current_y + (direction_vector[1] * 1);
+
+            previous_direction = current_direction;
+
+            if (direction_leg_counter == power_grid.pylon_gap)
+            {
+                //lineman_build_pylon(GSMap.GetTileIndex(current_x, current_y), current_direction);
+                local nearest_buildable_tile_to_next_loc = lineman_find_empty_tile_for_pylon(GSMap.GetTileIndex(current_x, current_y));
+                if (nearest_buildable_tile_to_next_loc != null)
+                {
+                    //GSLog.Info("building a pylon...");
+                    lineman_build_pylon(nearest_buildable_tile_to_next_loc, current_direction);
+                }
+                direction_leg_counter = 0;
+            }
+            else
+            {
+                direction_leg_counter = direction_leg_counter + 1;
+            }
+
+
+        }
+
+
+        <!--!
+        // local d = math.max((math.abs(dx) + math.abs(dy)) / 4, 1);
+        local d = ((dx > 0 ? dx : -dx) + (dy > 0 ? dy : -dy)) / 10;
+        if (d <= 0) d = 1;
+        for (local j = 0; j <= d; j++) {
+            local xy = GSMap.GetTileIndex(x + dx * j / d, y + dy * j / d);
+            local nearest_buildable_tile_to_next_loc = lineman_find_empty_tile_for_pylon(xy);
+            if (nearest_buildable_tile_to_next_loc != null)
+            {
+                //GSLog.Info("building a pylon...");
+                lineman_build_pylon(nearest_buildable_tile_to_next_loc);
+            }
+        }
+        -->
+        power_grid.complete <- true;
+    }
+    GSLog.Info("power_grid.complete " + power_grid.complete);
+
+    <!--!
+    local current_link = power_grid.links.pop();
+    local start_node = current_link[0];
+    local dest_node = current_link[1];
+
+    /* Print the names of the towns we'll try to connect. */
+    GSLog.Info("Going to connect " + start_node + " to " + dest_node);
+
+    GSLog.Info("Manhattan distance " + GSTile.GetDistanceManhattanToTile(start_node, dest_node));
+    local num_pylons_to_build = GSTile.GetDistanceManhattanToTile(start_node, dest_node) / 10;
+    GSLog.Info("num_pylons_to_build " + num_pylons_to_build);
+
+    local start_x = GSMap.GetTileX(start_node);
+    local delta_x = (start_x - GSMap.GetTileX(dest_node)) / num_pylons_to_build;
+    local start_y = GSMap.GetTileY(start_node);
+    local delta_y = (start_y - GSMap.GetTileY(dest_node)) / num_pylons_to_build;
+
+    local num_pylons_built = 0;
+    while (num_pylons_built < num_pylons_to_build)
+    {
+        num_pylons_built = num_pylons_built + 1;
+        local next_loc_x = start_x - (num_pylons_built * delta_x);
+        local next_loc_y = start_y - (num_pylons_built * delta_y);
+        local next_loc_tile_index = GSMap.GetTileIndex(next_loc_x, next_loc_y)
+        GSLog.Info("next_loc_x: " + next_loc_x);
+        GSLog.Info("next_loc_y: " + next_loc_y);
+        GSLog.Info("tile index for next loc: " + next_loc_tile_index);
+        local nearest_buildable_tile_to_next_loc = lineman_find_empty_tile_for_pylon(next_loc_tile_index);
+        if (nearest_buildable_tile_to_next_loc != null)
+        {
+            GSLog.Info("building a pylon...");
+            lineman_build_pylon(nearest_buildable_tile_to_next_loc);
+        }
+    }
+    -->
+}

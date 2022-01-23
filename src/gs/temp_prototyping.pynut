@@ -1,4 +1,4 @@
-function set_var_47_bits()
+function set_var_47_bits_test()
 {
     /* proof of concept for setting var 47 bits */
     local industry_list = GSIndustryList();
@@ -7,11 +7,12 @@ function set_var_47_bits()
         GSIndustry.SetControlFlags(industry, industry_flags | GSIndustry.INDCTL_NO_CLOSURE | GSIndustry.INDCTL_NO_PRODUCTION_INCREASE | GSIndustry.INDCTL_NO_PRODUCTION_DECREASE)
 
         /* unrelated test for getting nearest town name */
+        /*
         local closest_town = GSTile.GetClosestTown(GSIndustry.GetLocation(industry));
         Log.Info(GSIndustry.GetName(industry) + " " + GSTown.GetName(closest_town), Log.LVL_INFO);
+        */
     }
 }
-
 
 function set_town_text_test()
 {

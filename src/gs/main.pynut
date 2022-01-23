@@ -31,9 +31,15 @@ Story <- SuperLib.Story;
 // Additional SuperLib sub libraries can be found here:
 // http://dev.openttdcoop.org/projects/superlib/repository
 
+/**  Import Road Pathfinder as Road **/
+// Road <- import("Pathfinder.Road", "", 4);
+
+/**  Import Minchinweb for GameScript **/
+// import("util.MinchinWeb", "MinchinWeb", 6);
+// SpiralWalker <- MinchinWeb.SpiralWalker;
+
 /** Import other libs **/
-// There are several other libraries for Game Scripts out there. Check out
-// http://bananas.openttd.org/en/gslibrary/ for an up to date list.
+
 //
 // Remember to set dependencies in the bananas web manager for all libraries
 // that you use. This way users will automatically get all libraries of the
@@ -44,10 +50,14 @@ Story <- SuperLib.Story;
 require("version.nut"); // get SELF_VERSION
 require("constants.nut");
 require("firs.nut");
+require("pylons.nut");
+// require("power_grid.nut");
 require("temp_prototyping.nut");
+
 //require("some_file.nut");
 //..
 
+PowerGrid <- PowerGrid();
 
 class MainClass extends GSController
 {
@@ -162,9 +172,17 @@ function MainClass::Init()
 
     local economy_id = firs.get_economy_id();
 
-    set_var_47_bits();
+    PowerGrid.build_
+    (
+        GSObjectType.ResolveNewGRFID(0x47477015, 0x51),
+        GSIndustryType.ResolveNewGRFID(firs.grfid, 0x42) // to-do: convert to list of industries
+    );
+
+    // set_var_47_bits_test();
 
     set_town_text_test();
+
+    //find_power_sources();
 
 	// Indicate that all data structures has been initialized/restored.
 	this._init_done = true;
@@ -182,6 +200,7 @@ function MainClass::HandleEvents()
 
 		local ev_type = ev.GetEventType();
 		switch (ev_type) {
+		    /*
 			case GSEvent.ET_COMPANY_NEW: {
 				local company_event = GSEventCompanyNew.Convert(ev);
 				local company_id = company_event.GetCompanyID();
@@ -190,7 +209,7 @@ function MainClass::HandleEvents()
 				Story.ShowMessage(company_id, GSText(GSText.STR_WELCOME, company_id, GIT_VERSION));
 				break;
 			}
-
+            */
 			// other events ...
 		}
 	}

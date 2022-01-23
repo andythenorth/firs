@@ -1,0 +1,169 @@
+// pylon graph builder by dP
+
+class PowerGrid
+{
+	signs = {};
+	q = GSPriorityQueue();
+	n = 0;
+	ivis = [];
+	ind = [];
+
+    function geth(ax, ay, tile) {
+        local edx = abs(ax - GSMap.GetTileX(tile));
+        local edy = abs(ay - GSMap.GetTileY(tile));
+        local maxeh = max(edx, edy);
+        local mineh = min(edx, edy);
+        // straight - 5, diagonal - 7
+        return mineh * 2 + maxeh * 5;
+    }
+
+	function Sign(tile, text) {
+		return;
+		if (this.signs.rawin(tile)) GSSign.RemoveSign(this.signs.rawget(tile));
+		this.signs[tile] <- GSSign.BuildSign(tile, text);
+	}
+
+	function Add(tlist) {
+		local minth = 0xffffffff;
+		foreach(t in tlist) {
+			local tx = GSMap.GetTileX(t);
+			local ty = GSMap.GetTileY(t);
+			local minh = minth + 10 * 7;
+			for(local i = 0; i < this.n; i++) {
+				if (this.ivis[i]) continue;
+				local h = geth(tx, ty, this.ind[i]);
+				if (h > 2 * minh) continue;
+				minh = min(minh, h);
+				this.q.Insert([t, i, 0, 0], h * 100001);
+			}
+			minth = min(minh, minth);
+		}
+	}
+
+	function build_(pylon_object_id, power_industry_id) {
+		local DX = [ 0, -1,  1,  0, -1,  1, -1,  1];
+		local DY = [-1,  0,  0,  1, -1, -1,  1,  1];
+		local DG = [ 5,  5,  5,  5,  7,  7,  7,  7];
+		local DW = [10, 10, 10, 10, 14, 14, 14, 14];
+
+		local pylon_interval = 5;
+
+		local ind_tiles = [];
+		local revi = {};
+
+		local start_date = GSDate.GetCurrentDate();
+		GSLog.Info("Industries:");
+		local map_x = GSMap.GetMapSizeX();
+		local loc_offset = -1 - map_x;
+
+		this.n = 0;
+		foreach (i, _ in GSIndustryList()) {
+			if (GSIndustry.GetIndustryType(i) != power_industry_id) continue;
+			local loc = GSIndustry.GetLocation(i) + loc_offset;
+
+			// Iterate 10x10 area and mark any tiles neighbouring the indusry
+			// as a possible connection points
+			local free_tiles = [];
+			local sumdx = 0, sumdy = 0;
+			for (local dy = 0; dy < 10; dy++) {
+				for (local dx = 0; dx < 10; dx++) {
+					local tile = loc + dx + dy * map_x;
+					if (GSIndustry.GetIndustryID(tile) != i) continue;
+					for (local i = 0; i < 8; i++) {
+						local nt = tile + DX[i] + DY[i] * map_x;
+						if (!GSTile.IsBuildable(nt)) continue
+						if (revi.rawin(nt)) continue;
+						revi[nt] <- this.n;
+						sumdx += dx;
+						sumdy += dy;
+						free_tiles.append(nt);
+					}
+				}
+			}
+			if (free_tiles.len() <= 0) continue;
+			loc += (sumdx / free_tiles.len()) + (sumdy / free_tiles.len()) * map_x;
+
+			GSLog.Info("" + this.n + ": " + loc);
+			this.Sign(loc, "[" + this.n + "]");
+
+			this.ind.append(loc);
+			ind_tiles.append(free_tiles);
+			this.ivis.append(false);
+			this.n++;
+		}
+
+		if (n <= 0) return;
+
+		GSLog.Info("Calculating network... " + (GSDate.GetCurrentDate() - start_date));
+		GSLog.Info("Start: " + ind_tiles[0][0]);
+
+		local vis = {}
+		this.q.Insert([ind_tiles[0][0], 0, 0, 0], 0);
+		while (!this.q.IsEmpty()) {
+			local xa = this.q.Pop();
+			local xtile = xa[0];
+			local xtarget = xa[1]
+			local xg = xa[2];
+			local xprev = xa[3];
+			local xkey = (xtarget << 24) | xtile;
+			if (vis.rawin(xkey)) continue;
+			vis[xkey] <- xprev;
+			this.Sign(xtile, "" + xtarget);
+
+			local xx = GSMap.GetTileX(xtile);
+			local xy = GSMap.GetTileY(xtile);
+
+			if (revi.rawin(xtile) && revi.rawget(xtile) == xtarget && !this.ivis[xtarget]) {
+				this.ivis[xtarget] = true;
+				local qlen = this.q.Count();
+				this.Sign(xtile, "<>");
+
+				// Add all tiles around the connected industry
+				this.Add(ind_tiles[xtarget]);
+
+				local p = xtile ? xkey : 0;
+				local cc = pylon_interval;
+				while (p) {
+					local ptile = p & 0xffffff;
+					local pn = vis.rawget(p);
+
+					if (++cc >= pylon_interval || pn == 0) {
+						GSObjectType.BuildObject(pylon_object_id, 0, ptile);
+
+						// Add a pylon as a posssible starting point for the connection
+						local minh = 0xffffffff;
+						this.Add([ptile]);
+
+						cc = 0;
+					}
+
+					p = pn;
+				}
+
+				// No vertices to add means we're done
+				if (q.Count() == qlen) break;
+				continue;
+			}
+
+			if (this.ivis[xtarget]) continue;
+
+			for (local di = 0; di < 8; di++) {
+				local nx = xx + DX[di];
+				local ny = xy + DY[di];
+				local nt = GSMap.GetTileIndex(nx, ny);
+				local nkey = (xtarget << 24) | nt;
+				if (vis.rawin(nkey)) continue;
+				local water = GSTile.IsWaterTile(nt);
+				if (!water && !GSTile.IsBuildable(nt)) continue;
+				local ng = xg + (water ? DW[di] : DG[di]);
+				local nh = geth(nx, ny, this.ind[xtarget])
+				this.Sign(nt, "->" + xtarget+ " : " + (ng + nh) + " g:" + ng);
+				this.q.Insert([nt, xtarget, ng, xkey], (ng + nh) * 100000 + nh);
+			}
+		}
+		GSLog.Info("Done! " + (GSDate.GetCurrentDate() - start_date));
+		while(true) {
+			GSController.Sleep(10);
+		}
+	}
+}

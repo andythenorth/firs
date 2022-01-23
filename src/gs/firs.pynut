@@ -1,5 +1,7 @@
 firs <- {};
 
+firs.grfid <- ${gs_helper.get_grfid()};
+
 firs.industries <- {};
 
 <tal:industries repeat="industry registered_industries">
