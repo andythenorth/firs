@@ -84,7 +84,7 @@ class PowerGrid
 			loc += (sumdx / free_tiles.len()) + (sumdy / free_tiles.len()) * map_x;
 
 			GSLog.Info("" + this.n + ": " + loc);
-			this.Sign(loc, "[" + this.n + "]");
+			//this.Sign(loc, "[" + this.n + "]");
 
 			this.ind.append(loc);
 			ind_tiles.append(free_tiles);
@@ -108,7 +108,7 @@ class PowerGrid
 			local xkey = (xtarget << 24) | xtile;
 			if (vis.rawin(xkey)) continue;
 			vis[xkey] <- xprev;
-			this.Sign(xtile, "" + xtarget);
+			//this.Sign(xtile, "" + xtarget);
 
 			local xx = GSMap.GetTileX(xtile);
 			local xy = GSMap.GetTileY(xtile);
@@ -116,7 +116,7 @@ class PowerGrid
 			if (revi.rawin(xtile) && revi.rawget(xtile) == xtarget && !this.ivis[xtarget]) {
 				this.ivis[xtarget] = true;
 				local qlen = this.q.Count();
-				this.Sign(xtile, "<>");
+				//this.Sign(xtile, "<>");
 
 				// Add all tiles around the connected industry
 				this.Add(ind_tiles[xtarget]);
@@ -157,7 +157,7 @@ class PowerGrid
 				if (!water && !GSTile.IsBuildable(nt)) continue;
 				local ng = xg + (water ? DW[di] : DG[di]);
 				local nh = geth(nx, ny, this.ind[xtarget])
-				this.Sign(nt, "->" + xtarget+ " : " + (ng + nh) + " g:" + ng);
+				//this.Sign(nt, "->" + xtarget+ " : " + (ng + nh) + " g:" + ng);
 				this.q.Insert([nt, xtarget, ng, xkey], (ng + nh) * 100000 + nh);
 			}
 		}

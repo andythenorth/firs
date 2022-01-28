@@ -22,12 +22,12 @@ require("version.nut");
 
 class FMainClass extends GSInfo {
 	function GetAuthor()		{ return "[Insert your name here]"; }
-	function GetName()			{ return "MinimalGS"; }
-	function GetDescription() 	{ return "Minimal GS is a Game Script boilerplate"; }
+	function GetName()			{ return "FIRS GS"; }
+	function GetDescription() 	{ return "FIRS GS, derived from Minimal GS boilerplate"; }
 	function GetVersion()		{ return SELF_VERSION; }
-	function GetDate()			{ return "2013-11-05"; }
+	function GetDate()			{ return "2023-15-01"; }
 	function CreateInstance()	{ return "MainClass"; }
-	function GetShortName()		{ return "MINI"; } // Replace this with your own unique 4 letter string
+	function GetShortName()		{ return "FIRS"; } // Replace this with your own unique 4 letter string
 	function GetAPIVersion()	{ return "13"; }
 	function GetURL()			{ return ""; }
 
