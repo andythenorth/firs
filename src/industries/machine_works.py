@@ -16,7 +16,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="120",
 )
 
-# industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(
     id="machine_works_tile_1",

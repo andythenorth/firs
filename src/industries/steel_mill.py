@@ -21,7 +21,7 @@ industry = IndustrySecondary(
 )
 
 
-# industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(
     id="steel_mill_tile_1",

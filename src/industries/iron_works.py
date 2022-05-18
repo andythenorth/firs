@@ -50,7 +50,7 @@ industry.add_tile(
 
 
 spriteset_ground = industry.add_spriteset(
-    type="cobble",
+    type="concrete",
 )
 spriteset_ground_overlay = industry.add_spriteset(
     type="empty",

@@ -14,7 +14,7 @@ industry = IndustrySecondary(
 )
 
 # Tinplate is *not* in Steeltown because it fragments the consumers of Acid too much.  Maybe Better Living Through Chemistry?
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(
     id="tinplate_works_tile_1",

@@ -26,6 +26,8 @@ industry = IndustryPrimaryOrganic(
 
 industry.economy_variations["BASIC_ARCTIC"].enabled = True
 
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+
 industry.add_tile(
     id="fish_farm_tile_1",
     land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",

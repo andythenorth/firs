@@ -13,7 +13,7 @@ FIND_FILES = bin/find-files
 MK_ARCHIVE = bin/mk-archive
 
 # Project details
-PROJECT_NAME = firs
+PROJECT_NAME = xis2
 
 # lang is not copied to generated currently in FIRS, unlike RH, IH etc - could be changed
 LANG_DIR = generated/lang

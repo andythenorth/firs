@@ -14,7 +14,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="170",
 )
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(
     id="civil_explosives_facility_tile_1",

@@ -17,6 +17,8 @@ industry = IndustryTertiary(
     fund_cost_multiplier="15",
 )
 
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+
 industry.add_tile(
     id="food_market_tile_1",
     location_checks=TileLocationChecks(require_road_adjacent=True),
