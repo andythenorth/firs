@@ -17,6 +17,16 @@ industry = IndustrySecondary(
 
 industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
+    ("RFPR", 8),
+]
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
+    ("NH3_", 8),
+]
+
+
+
 industry.add_tile(
     id="ammonia_plant_tile_1",
     animation_length=7,

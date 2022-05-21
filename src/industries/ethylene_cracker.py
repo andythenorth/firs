@@ -16,6 +16,14 @@ industry = IndustrySecondary(
 
 industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
+industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [('RFPR', 5), ('CTAR', 3)]
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
+    ("C2H4", 4),
+#separate cracker for fuel?
+]
+
+
 industry.add_tile(
     id="ethylene_cracker_tile_1",
     animation_length=7,

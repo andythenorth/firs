@@ -3,10 +3,9 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="assembly_plant",
     accept_cargos_with_input_ratios=[
-        ("VPTS", 2),
+        ("VPTS", 4),
         ("VBOD", 2),
         ("VENG", 2),
-        ("TYRE", 2),
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[("VEHI", 6), ("ENSP", 1), ("FMSP", 1)],

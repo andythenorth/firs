@@ -19,8 +19,7 @@ industry = IndustryPrimaryExtractive(
 # exists in Steeltown primarily to give a direct cargo to Bulk Terminal
 industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].prod_cargo_types_with_multipliers = [
-    ("POTA", 20),
-    ("SALT", 15),
+    ("SALT", 20),
 ]
 
 industry.add_tile(

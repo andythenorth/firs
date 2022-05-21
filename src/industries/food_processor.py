@@ -30,6 +30,12 @@ industry.economy_variations["IN_A_HOT_COUNTRY"].prod_cargo_types_with_output_rat
     ("FOOD", 4),
 ]
 
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["IN_A_HOT_COUNTRY"].accept_cargos_with_input_ratios = [
+    ("MNSP", 2),
+    ("FRUT", 6),
+]
+
 industry.add_tile(
     id="food_processor_tile_1",
     location_checks=TileLocationChecks(

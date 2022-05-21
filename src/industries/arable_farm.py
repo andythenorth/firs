@@ -31,6 +31,11 @@ industry.economy_variations["IN_A_HOT_COUNTRY"].prod_cargo_types_with_multiplier
     ("NUTS", 14),
 ]
 
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_multipliers = [
+    ("GRAI", 28),
+]
+
 industry.add_tile(
     id="arable_farm_tile_1",
     location_checks=TileLocationChecks(

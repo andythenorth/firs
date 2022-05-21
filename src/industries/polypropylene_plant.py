@@ -16,6 +16,16 @@ industry = IndustrySecondary(
 
 industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
+    ("C2H4", 8),
+]
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
+    ("RUBR", 8),
+]
+
+
+
 industry.add_tile(
     id="polypropylene_plant_tile_1",
     location_checks=TileLocationChecks(

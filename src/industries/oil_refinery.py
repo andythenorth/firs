@@ -13,7 +13,15 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_REFINERY)",
 )
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
+    ("RFPR", 5),
+    ("PETR", 2),
+    ("SULP", 1),
+]
+
 
 industry.add_tile(
     id="oil_refinery_tile_1",

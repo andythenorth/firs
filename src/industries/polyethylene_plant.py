@@ -16,6 +16,10 @@ industry = IndustrySecondary(
 
 industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
+industry.economy_variations["STEELTOWN"].enabled = True
+
+
+
 industry.add_tile(
     id="polyethylene_plant_tile_1",
     location_checks=TileLocationChecks(

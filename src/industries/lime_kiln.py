@@ -29,6 +29,13 @@ industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations[
     "STEELTOWN"
 ].prob_in_game = "1"  # low probability of build during gameplay
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
+    ("LIME", 4),
+    ("PETR", 1),
+    ("CLAY", 3),
+]
+
+
 
 industry.add_tile(
     id="lime_kiln_tile_1",

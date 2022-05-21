@@ -25,6 +25,14 @@ industry.economy_variations["IN_A_HOT_COUNTRY"].prod_cargo_types_with_output_rat
     ("BDMT", 8)
 ]
 
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
+    ("BDMT", 6),
+    ("ENSP", 2),
+]
+
+
+
 # non-animated tile, allowed on slopes
 industry.add_tile(
     id="lumber_yard_tile_1",

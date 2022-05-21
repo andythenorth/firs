@@ -23,6 +23,14 @@ industry.economy_variations["IN_A_HOT_COUNTRY"].accept_cargos_with_input_ratios 
 ]
 # industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('CMNT', 8), ('PETR', 8), ('VEHI', 8), ('BOOM', 8), ('WDPR', 8)]
 
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
+    ("VEHI", 8),
+    ("PETR", 8),
+#    ("FERT", 8),
+]
+
+
 industry.add_tile(
     id="supply_yard_tile_1",
     animation_length=71,

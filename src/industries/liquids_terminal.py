@@ -30,6 +30,10 @@ industry.economy_variations["IN_A_HOT_COUNTRY"].prod_cargo_types_with_multiplier
     ("PETR", 7),
 ]
 
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].accept_cargo_types = ["PETR", "NH3_"]
+industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('OIL_', 20), ('CHLO', 20)]
+
 industry.add_tile(
     id="liquids_terminal_tile_1",
     land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",

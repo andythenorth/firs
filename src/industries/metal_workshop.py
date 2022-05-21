@@ -23,6 +23,16 @@ industry.economy_variations["BASIC_TEMPERATE"].prod_cargo_types_with_output_rati
     ("GOOD", 8)
 ]
 
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
+    ("STCB", 4),
+    ("ALUM", 2),
+    ("STAL", 2),
+]
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
+    ("GOOD", 8),
+]
+
 industry.add_tile(
     id="metal_workshop_tile_1",
     animation_length=47,

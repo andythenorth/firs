@@ -14,6 +14,17 @@ industry = IndustrySecondary(
 
 industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
+    ("WDPR", 4),
+    ("COAT", 1),
+    ("TEXT", 1),
+    ("GLAS", 2),
+]
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
+    ("GOOD", 8),
+]
+
 industry.add_tile(
     id="furniture_factory_tile_1",
     location_checks=TileLocationChecks(

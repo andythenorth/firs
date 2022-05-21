@@ -27,6 +27,20 @@ industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
 # industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('COCO', 8)]
 # industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('COPR', 4), ('SULP', 4)]
 
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
+    ("CORE", 4),
+    ("SCMT", 2),
+    ("ACID", 2),
+]
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
+    ("COPR", 6),
+    ("SULP", 1),
+    ("SLAG", 1),
+]
+
+
+
 industry.add_tile(
     id="copper_refinery_tile_1",
     animation_length=47,

@@ -24,6 +24,17 @@ industry.economy_variations["IN_A_HOT_COUNTRY"].prod_cargo_types_with_output_rat
     ("TEXT", 8)
 ]
 
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
+    ("FICR", 4),
+    ("PLAS", 4),
+]
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
+    ("TEXT", 6),
+    ("GOOD", 2),
+]
+
+
 industry.add_tile(
     id="textile_mill_tile_1",
     animation_length=7,

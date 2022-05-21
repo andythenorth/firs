@@ -17,6 +17,7 @@ industry = IndustryTownProducerPopulationDependent(
     intro_year=1978,
 )
 
+industry.economy_variations["STEELTOWN"].enabled = True
 
 industry.add_tile(
     id="recycling_depot_tile_1",

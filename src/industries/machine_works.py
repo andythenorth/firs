@@ -5,7 +5,7 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="machine_works",
-    accept_cargos_with_input_ratios=[("STEL", 4), ("COPR", 4)],
+    accept_cargos_with_input_ratios=[("STAL", 4), ("COPR", 3), ("RFPR", 1)],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[("POWR", 8)],
     prob_in_game="3",

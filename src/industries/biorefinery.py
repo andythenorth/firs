@@ -13,6 +13,12 @@ industry = IndustrySecondary(
     fund_cost_multiplier="170",
 )
 
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
+    ("GRAI", 4),
+    ("FICR", 4),  
+]
+
 
 industry.add_tile(
     id="biorefinery_tile_1",
