@@ -86,7 +86,8 @@ class Tile(object):
         flags.extend(self._special_flags)
         return "bitmask(" + ",".join(flags) + ")"
 
-    def get_animation_triggers(self):
+    @property
+    def animation_triggers(self):
         if self.custom_animation_control is None:
             return "bitmask()"
         else:
@@ -1279,7 +1280,8 @@ class Industry(object):
                 + '.png"'
             )
 
-    def get_switch_name_for_construction_states(self):
+    @property
+    def switch_name_for_construction_states(self):
         # industries use the default construction sprites (shared), or their own handled by automagic spritesets / spritelayouts (graphics in spritesheets with same layout as industry)
         if (
             self.default_industry_properties.override_default_construction_states
@@ -1324,7 +1326,8 @@ class Industry(object):
                 + str(self.graphics_change_dates[date_variation_index])
             )
 
-    def get_industry_layouts_as_property(self):
+    @property
+    def industry_layouts_as_nml_property(self):
         result = [
             industry_layout.id + "_tilelayout"
             for industry_layout in self.industry_layouts
@@ -1430,7 +1433,8 @@ class Industry(object):
         else:
             return property_name + ": " + value + ";"
 
-    def get_nearby_station_name_declaration(self):
+    @property
+    def nearby_station_name_as_nml_property(self):
         return (
             "nearby_station_name: string(STR_STATION, string(STR_TOWN),"
             + self.get_property("nearby_station_name", None)

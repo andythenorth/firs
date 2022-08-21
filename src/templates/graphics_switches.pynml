@@ -30,7 +30,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_graphics_switch_layou
 </tal:block>
 
 switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_industry_construction_state_graphics_switch, construction_state) {
-    0..2: ${industry.get_switch_name_for_construction_states()};
+    0..2: ${industry.switch_name_for_construction_states};
     <!--! tiny optimisation to avoid generating ranges when there is only one industry layout -->
     ${industry.id + '_industry_graphics_switch_layouts' if len(industry.industry_layouts) > 1 else industry.industry_layouts[0].id + '_graphics_switch'}; // default
 }

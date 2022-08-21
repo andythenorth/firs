@@ -12,7 +12,7 @@
             <tal:animation_speed condition="tile.animation_speed > 0">
                 animation_speed: ${tile.animation_speed};
             </tal:animation_speed>
-            animation_triggers: ${tile.get_animation_triggers()};
+            animation_triggers: ${tile.animation_triggers};
         }
 
         graphics {
