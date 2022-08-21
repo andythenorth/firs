@@ -1173,7 +1173,7 @@ class Industry(object):
         self.spritesets = []
         self.spritelayouts = []  # by convention spritelayout is one word :P
         self.extra_graphics_switches = []
-        self._industry_layouts = []
+        self._industry_layouts = {'core': [], 'outposts': []}
         self.default_industry_properties = IndustryProperties(**kwargs)
         self.economy_variations = {}
         for economy in registered_economies:
@@ -1240,7 +1240,7 @@ class Industry(object):
 
     def add_industry_layout(self, *args, **kwargs):
         new_industry_layout = IndustryLayout(*args, **kwargs)
-        self._industry_layouts.append(new_industry_layout)
+        self._industry_layouts["core"].append(new_industry_layout)
         return new_industry_layout  # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
     def add_economy_variation(self, economy):
@@ -1331,7 +1331,7 @@ class Industry(object):
         # industry layouts are composed from main layouts in _industry_layouts and optional outpost layouts
         # I did faff around with names like "raw_industry_layouts" but an "_" prefix does the job simply
         result = []
-        for layout in self._industry_layouts:
+        for layout in self._industry_layouts["core"]:
             result.append(layout)
         return result
 
