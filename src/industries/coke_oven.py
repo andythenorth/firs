@@ -238,8 +238,8 @@ industry.add_industry_layout(
     layout=[
         # test outpost layout
         (0, 7, "coke_oven_tile_1", "coke_oven_spritelayout_coal_handling_rear"),
-        (0, 8, "coke_oven_tile_1", "coke_oven_spritelayout_coal_handling_front"),
-        (1, 7, "coke_oven_tile_1", "coke_oven_spritelayout_coal_handling_rear"),
+        (0, 8, "coke_oven_tile_1", "coke_oven_spritelayout_coal_handling_rear"),
+        (1, 7, "coke_oven_tile_1", "coke_oven_spritelayout_coal_handling_front"),
         (1, 8, "coke_oven_tile_1", "coke_oven_spritelayout_coal_handling_front"),
         # main layout, shifted by 2 in x direction
         (2, 0, "coke_oven_tile_2", "coke_oven_spritelayout_oven_battery_larry_car"),
