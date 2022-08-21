@@ -238,5 +238,10 @@ industry.add_industry_layout(
         (4, 2, "assembly_plant_tile_1", "assembly_plant_spritelayout_tyres"),
         (4, 3, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_3"),
         (4, 4, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_3"),
+        # test outpost layout
+        (5, 7, "assembly_plant_tile_1", "assembly_plant_spritelayout_offices"),
+        (5, 8, "assembly_plant_tile_1", "assembly_plant_spritelayout_tyres"),
+        (6, 7, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_2"),
+        (6, 8, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_3"),
     ],
 )
