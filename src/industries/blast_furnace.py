@@ -249,8 +249,14 @@ industry.add_industry_layout(
         (3, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
         (3, 4, "blast_furnace_tile_1", "blast_furnace_spritelayout_greeble"),
         (3, 5, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
+        # test outpost layout
+        (4, 8, "blast_furnace_tile_1", "blast_furnace_spritelayout_brick_building"),
+        (4, 9, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_shed"),
+        (5, 8, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_shed"),
+        (5, 9, "blast_furnace_tile_1", "blast_furnace_spritelayout_greeble"),
     ],
 )
+"""
 industry.add_industry_layout(
     id="blast_furnace_industry_layout_2",
     layout=[
@@ -316,3 +322,4 @@ industry.add_industry_layout(
         (9, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_greeble"),
     ],
 )
+"""
