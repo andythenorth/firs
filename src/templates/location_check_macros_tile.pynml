@@ -107,6 +107,7 @@
     <!--! repeat over all the search points, if houses are found in any, a flag is set 1, which is checked at end -->
     <tal:search_point repeat="search_point location_check.search_points">
         <tal:switch_num define="switch_num len(location_check.search_points) - repeat.search_point.number">
+            // this ternary needs replaced with, writing to registers with ternary is unreliable - see https://github.com/OpenTTD/nml/issues/241
             switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}_${switch_num}, [
                  nearby_tile_class(${search_point[0]}, ${search_point[1]}) == TILE_CLASS_HOUSE ? STORE_TEMP(1, 0) : 0,
                  LOAD_TEMP(0)
