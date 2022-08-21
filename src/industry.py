@@ -1173,7 +1173,7 @@ class Industry(object):
         self.spritesets = []
         self.spritelayouts = []  # by convention spritelayout is one word :P
         self.extra_graphics_switches = []
-        self.industry_layouts = []
+        self.raw_industry_layouts = []
         self.default_industry_properties = IndustryProperties(**kwargs)
         self.economy_variations = {}
         for economy in registered_economies:
@@ -1240,7 +1240,7 @@ class Industry(object):
 
     def add_industry_layout(self, *args, **kwargs):
         new_industry_layout = IndustryLayout(*args, **kwargs)
-        self.industry_layouts.append(new_industry_layout)
+        self.raw_industry_layouts.append(new_industry_layout)
         return new_industry_layout  # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
     def add_economy_variation(self, economy):
@@ -1325,6 +1325,13 @@ class Industry(object):
                 + ") >= "
                 + str(self.graphics_change_dates[date_variation_index])
             )
+
+    @property
+    def industry_layouts(self):
+        result = []
+        for layout in self.raw_industry_layouts:
+            result.append(layout)
+        return result
 
     @property
     def industry_layouts_as_nml_property(self):
