@@ -321,8 +321,14 @@ industry.add_industry_layout(
             "sheet_and_pipe_mill_spritelayout_greeble",
         ),
         (5, 3, "sheet_and_pipe_mill_tile_1", "sheet_and_pipe_mill_spritelayout_office"),
+        # test outpost layout
+        (6, 6, "sheet_and_pipe_mill_tile_1", "sheet_and_pipe_mill_spritelayout_shed_sw_ne_2"),
+        (6, 7, "sheet_and_pipe_mill_tile_1", "sheet_and_pipe_mill_spritelayout_open_shed_coils"),
+        (7, 6, "sheet_and_pipe_mill_tile_1", "sheet_and_pipe_mill_spritelayout_office"),
+        (7, 7, "sheet_and_pipe_mill_tile_1", "sheet_and_pipe_mill_spritelayout_steel_pile_se_nw"),
     ],
 )
+"""
 industry.add_industry_layout(
     id="sheet_and_pipe_mill_industry_layout_2",
     layout=[
@@ -450,5 +456,12 @@ industry.add_industry_layout(
             "sheet_and_pipe_mill_spritelayout_pipe_stack_se_nw",
         ),
         (3, 5, "sheet_and_pipe_mill_tile_1", "sheet_and_pipe_mill_spritelayout_office"),
+        # test outpost layout
+        # !!!! something was broken about this, there were cases where it simply wouldn't fund this layout in game, for no obvious reason.  Scenario editor was fine.
+        (4, 8, "sheet_and_pipe_mill_tile_1", "sheet_and_pipe_mill_spritelayout_shed_sw_ne_2"),
+        (4, 9, "sheet_and_pipe_mill_tile_1", "sheet_and_pipe_mill_spritelayout_open_shed_coils"),
+        (5, 8, "sheet_and_pipe_mill_tile_1", "sheet_and_pipe_mill_spritelayout_office"),
+        (5, 9, "sheet_and_pipe_mill_tile_1", "sheet_and_pipe_mill_spritelayout_steel_pile_se_nw"),
     ],
 )
+"""
