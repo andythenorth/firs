@@ -173,8 +173,18 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 
-# min 6x4 or 5x5 as there are lots of output cargos
-"""
+# this industry needs outpost layout as there are lots of cargos
+industry.add_industry_outpost_layout(
+    id="basic_oxygen_furnace_industry_outpost_layout_1",
+    layout=[
+        # test outpost layout
+        (0, 0, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_shed"),
+        (0, 1, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_shed"),
+        (1, 0, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_metal_3"),
+        (1, 1, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_metal_2"),
+    ],
+)
+# core layouts are roughly 6x4 or 5x5
 industry.add_industry_layout(
     id="basic_oxygen_furnace_industry_layout_1",
     layout=[
@@ -454,159 +464,151 @@ industry.add_industry_layout(
         ),
     ],
 )
-"""
 industry.add_industry_layout(
     id="basic_oxygen_furnace_industry_layout_3",
     layout=[
-        # test outpost layout
-        (5, 0, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_shed"),
-        (5, 1, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_shed"),
-        (6, 0, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_metal_3"),
-        (6, 1, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_metal_2"),
-        # main layout, shifted by 2 in x direction
         (
             0,
-            4,
+            0,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_metal_3",
         ),
         (
             0,
-            5,
+            1,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_caster",
         ),
         (
             0,
-            6,
+            2,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_caster",
         ),
         (
             0,
-            7,
+            3,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_caster",
         ),
         (
             0,
-            8,
+            4,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_air_plant",
         ),
         (
             1,
-            4,
+            0,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_metal_3",
         ),
         (
             1,
-            5,
+            1,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_furnace",
         ),
         (
             1,
-            6,
+            2,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_furnace",
         ),
         (
             1,
-            7,
+            3,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_caster",
         ),
         (
             1,
-            8,
+            4,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_tanks",
         ),
         (
             2,
-            4,
+            0,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_metal_3",
         ),
         (
             2,
-            5,
+            1,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_furnace",
         ),
         (
             2,
-            6,
+            2,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_furnace",
         ),
         (
             2,
-            7,
+            3,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_caster",
         ),
         (
             2,
-            8,
+            4,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_tanks",
         ),
         (
             3,
-            4,
+            0,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_metal_4",
         ),
         (
             3,
-            5,
+            1,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_empty",
         ),
         (
             3,
-            6,
+            2,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_metal_2",
         ),
         (
             3,
-            7,
+            3,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_metal_1",
         ),
         (
             3,
-            8,
+            4,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_empty",
         ),
         (
             4,
-            4,
+            0,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_metal_3",
         ),
-        (4, 5, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_shed"),
-        (4, 6, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_shed"),
+        (4, 1, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_shed"),
+        (4, 2, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_shed"),
         (
             4,
-            7,
+            3,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_metal_4",
         ),
         (
             4,
-            8,
+            4,
             "basic_oxygen_furnace_tile_1",
             "basic_oxygen_furnace_spritelayout_manganese_1",
         ),
     ],
 )
-"""
 industry.add_industry_layout(
     id="basic_oxygen_furnace_industry_layout_4",
     layout=[
@@ -746,4 +748,3 @@ industry.add_industry_layout(
         (5, 3, "basic_oxygen_furnace_tile_1", "basic_oxygen_furnace_spritelayout_shed"),
     ],
 )
-"""
