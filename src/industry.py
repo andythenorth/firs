@@ -887,6 +887,27 @@ class IndustryLayout(object):
         self.id = id
         self.layout = layout  # a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spriteset or next nml switch)
 
+    @property
+    def min_x(self):
+        return min([i[0] for i in self.layout])
+
+    @property
+    def min_y(self):
+        return min([i[1] for i in self.layout])
+
+    @property
+    def max_x(self):
+        return max([i[0] for i in self.layout])
+
+    @property
+    def max_y(self):
+        return max([i[1] for i in self.layout])
+
+    @property
+    def xy_dimensions(self):
+        # add 1 as the xy are zero based indexes, and we want total tiles
+        return (1 + self.max_x - self.min_x, 1 + self.max_y - self.min_y)
+
 
 class IndustryLocationChecks(object):
     """Class to hold location checks for an industry"""
@@ -1338,22 +1359,96 @@ class Industry(object):
 
     @property
     def industry_layouts(self):
-        # industry layouts are composed from main layouts in _industry_layouts and optional outpost layouts
-        # I did faff around with names like "raw_industry_layouts" but an "_" prefix does the job simply
+        # industry layouts are composed from
+        # - main layouts in _industry_layouts
+        # - optional outpost layouts
+        # the outpost layouts increase total catchment area for station building, whilst leaving plenty of room to actually build the stations
+        # when outposts are used, 8 layouts are created, distributing outpusts at compass points around the core layout
+        # outposts are intended for industries with many pickup cargos, where multiple stations are required, outposts are not otherwise advised
         result = []
         for core_layout in self._industry_layouts["core"]:
             if len(self._industry_layouts["outposts"]) == 0:
                 result.append(core_layout)
             else:
-                offset = [(2, 2)]
-                print(self._industry_layouts["outposts"])
-                max_x = max([i[0] for i in core_layout.layout])
-                max_y = max([i[1] for i in core_layout.layout])
-                new_id = core_layout.id + "_cabbage"  # !! temp
-                new_layout = []
-                for tile in core_layout.layout:
-                    new_layout.append(tile)
-                result.append(IndustryLayout(id=new_id, layout=new_layout))
+                for outpost_layout in self._industry_layouts["outposts"]:
+                    # NOTE the required xy offset depends on size of outpost layout as it reflects how far 0,0 tile is shifted - this is handled by checking outpost dimensions
+                    # 8 outpost placements, 2 for each compass point, leaving a sufficient 2 tile gap to fit a double track / platform in straight, or diagonal double track
+                    # I didn't do NE, SW etc, seems to look better at N, S etc diagonal offsets from core layout
+                    outpost_xy_offsets = [
+                        # north
+                        (
+                            0 - (outpost_layout.xy_dimensions[0] + 2),
+                            0 - (outpost_layout.xy_dimensions[1]),
+                        ),
+                        (
+                            0 - (outpost_layout.xy_dimensions[0]),
+                            0 - (outpost_layout.xy_dimensions[1] + 2),
+                        ),
+                        # south
+                        (
+                            core_layout.xy_dimensions[0],
+                            core_layout.xy_dimensions[1] + 2,
+                        ),
+                        (
+                            core_layout.xy_dimensions[0] + 2,
+                            core_layout.xy_dimensions[1],
+                        ),
+                        # east
+                        (
+                            0 - (outpost_layout.xy_dimensions[0] + 2),
+                            core_layout.xy_dimensions[1],
+                        ),
+                        (
+                            0 - (outpost_layout.xy_dimensions[0]),
+                            core_layout.xy_dimensions[1] + 2,
+                        ),
+                        # west
+                        (
+                            core_layout.xy_dimensions[0] + 2,
+                            0 - (outpost_layout.xy_dimensions[1]),
+                        ),
+                        (
+                            core_layout.xy_dimensions[0],
+                            0 - (outpost_layout.xy_dimensions[1] + 2),
+                        ),
+                    ]
+                    for counter, xy_offset in enumerate(outpost_xy_offsets):
+                        combined_layout = core_layout.layout.copy()
+                        # !! might want to improve this id generation - calculate the actual layout number - eases grf debugging?
+                        new_id = (
+                            core_layout.id
+                            + "_"
+                            + outpost_layout.id
+                            + "_"
+                            + str(counter)
+                        )
+                        for tile_def in outpost_layout.layout:
+                            new_tile_def = (
+                                xy_offset[0] + tile_def[0],
+                                xy_offset[1] + tile_def[1],
+                                tile_def[2],
+                                tile_def[3],
+                            )
+                            combined_layout.append(new_tile_def)
+                        # layouts can't use -ve xy values,
+                        # ensure that the layout is valid by transposing it to put north tile on 0,0
+                        # temp IndustryLayout objs created here just to use their min_x, min_y methods for convenience
+                        shift_x = (
+                            -1 * IndustryLayout(id=new_id, layout=combined_layout).min_x
+                        )
+                        shift_y = (
+                            -1 * IndustryLayout(id=new_id, layout=combined_layout).min_y
+                        )
+                        shifted_layout = []
+                        for tile_def in combined_layout:
+                            shifted_tile_def = (
+                                tile_def[0] + shift_x,
+                                tile_def[1] + shift_y,
+                                tile_def[2],
+                                tile_def[3],
+                            )
+                            shifted_layout.append(shifted_tile_def)
+                        result.append(IndustryLayout(id=new_id, layout=shifted_layout))
         return result
 
     @property
