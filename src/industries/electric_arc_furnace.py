@@ -156,107 +156,112 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 
-# min 6x4 or 5x5 as there are lots of output cargos
+# this industry needs outpost layout as there are lots of cargos
+industry.add_industry_outpost_layout(
+    id="electric_arc_furnace_industry_outpost_layout_1",
+    layout=[
+        # test outpost layout
+        (0, 0, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_metal_2"),
+        (0, 1, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_metal_1"),
+        (1, 0, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_metal_2"),
+        (1, 1, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_crane_2"),
+    ],
+)
+# core layouts are roughly 6x4 or 5x5
 industry.add_industry_layout(
     id="electric_arc_furnace_industry_layout_1",
     layout=[
-        # test outpost layout
-        (4, 0, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_metal_2"),
-        (4, 1, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_metal_1"),
-        (5, 0, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_metal_2"),
-        (5, 1, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_crane_2"),
-        # main layout, shifted by 4 in y direction
-        (0, 4, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_2"),
-        (0, 5, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_2"),
-        (0, 6, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_2"),
-        (0, 7, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_2"),
-        (0, 8, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_3"),
-        (0, 9, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_3"),
-        (1, 4, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_1"),
-        (1, 5, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_1"),
-        (1, 6, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_1"),
-        (1, 7, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_1"),
+        (0, 0, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_2"),
+        (0, 1, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_2"),
+        (0, 2, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_2"),
+        (0, 3, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_2"),
+        (0, 4, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_3"),
+        (0, 5, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_3"),
+        (1, 0, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_1"),
+        (1, 1, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_1"),
+        (1, 2, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_1"),
+        (1, 3, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_1"),
         (
             1,
-            8,
-            "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_scrap_1",
-        ),
-        (
-            1,
-            9,
-            "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_scrap_1",
-        ),
-        (
-            2,
             4,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_metal_2",
+            "electric_arc_furnace_spritelayout_scrap_1",
+        ),
+        (
+            1,
+            5,
+            "electric_arc_furnace_tile_1",
+            "electric_arc_furnace_spritelayout_scrap_1",
         ),
         (
             2,
-            5,
+            0,
             "electric_arc_furnace_tile_1",
             "electric_arc_furnace_spritelayout_metal_2",
         ),
         (
             2,
-            6,
+            1,
+            "electric_arc_furnace_tile_1",
+            "electric_arc_furnace_spritelayout_metal_2",
+        ),
+        (
+            2,
+            2,
             "electric_arc_furnace_tile_1",
             "electric_arc_furnace_spritelayout_metal_1",
         ),
         (
             2,
-            7,
+            3,
             "electric_arc_furnace_tile_1",
             "electric_arc_furnace_spritelayout_empty",
         ),
         (
             2,
-            8,
+            4,
             "electric_arc_furnace_tile_1",
             "electric_arc_furnace_spritelayout_crane_1",
         ),
         (
             2,
-            9,
+            5,
             "electric_arc_furnace_tile_1",
             "electric_arc_furnace_spritelayout_scrap_1",
         ),
         (
             3,
-            4,
+            0,
             "electric_arc_furnace_tile_1",
             "electric_arc_furnace_spritelayout_metal_2",
         ),
         (
             3,
-            5,
+            1,
             "electric_arc_furnace_tile_1",
             "electric_arc_furnace_spritelayout_metal_2",
         ),
         (
             3,
-            6,
+            2,
             "electric_arc_furnace_tile_1",
             "electric_arc_furnace_spritelayout_crane_2",
         ),
         (
             3,
-            7,
+            3,
             "electric_arc_furnace_tile_1",
             "electric_arc_furnace_spritelayout_empty",
         ),
         (
             3,
-            8,
+            4,
             "electric_arc_furnace_tile_1",
             "electric_arc_furnace_spritelayout_scrap_2",
         ),
         (
             3,
-            9,
+            5,
             "electric_arc_furnace_tile_1",
             "electric_arc_furnace_spritelayout_crane_1",
         ),
