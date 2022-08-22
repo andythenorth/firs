@@ -883,9 +883,24 @@ class GraphicsSwitchSlopes(GraphicsSwitch):
 class IndustryLayout(object):
     """Base class to hold industry layouts"""
 
-    def __init__(self, id, layout):
+    def __init__(self, id, layout, validate=True):
         self.id = id
         self.layout = layout  # a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spriteset or next nml switch)
+        # validation can be optionally suppressed as combined layouts may be invalid until their xy offsets are shifted positive (for example)
+        if validate:
+            self.validate()
+
+    def validate(self):
+        # in-game industry layouts must not have negative xy offsets
+        for x, y, tile_id, spritelayout_id in self.layout:
+            for offset_dir in [x, y]:
+                if offset_dir < 0:
+                    raise BaseException("Negative values are invalid for x or y offsets: " + self.id + " (" + str(x) + ", " + str(y) + ")")
+        # xy offset pairs must be unique per layout
+        xy_offsets = [(i[0], i[1]) for i in self.layout]
+        for x, y in xy_offsets:
+            if xy_offsets.count((x, y)) > 1:
+                raise BaseException("Repeated xy offset pair: " + self.id + " " + str((x, y)))
 
     @property
     def min_x(self):
@@ -1434,10 +1449,10 @@ class Industry(object):
                         # ensure that the layout is valid by transposing it to put north tile on 0,0
                         # temp IndustryLayout objs created here just to use their min_x, min_y methods for convenience
                         shift_x = (
-                            -1 * IndustryLayout(id=new_id, layout=combined_layout).min_x
+                            -1 * IndustryLayout(id=new_id, layout=combined_layout, validate=False).min_x
                         )
                         shift_y = (
-                            -1 * IndustryLayout(id=new_id, layout=combined_layout).min_y
+                            -1 * IndustryLayout(id=new_id, layout=combined_layout, validate=False).min_y
                         )
                         shifted_layout = []
                         for tile_def in combined_layout:
