@@ -202,6 +202,16 @@ industry.add_spritelayout(
 # very large layouts for this industry type
 # layout 1 is smallest (6x4), to give a chance of locating on adverse maps
 # other layouts are larger
+industry.add_industry_outpost_layout(
+    id="blast_furnace_industry_outpost_layout_1",
+    layout=[
+        # test outpost layout
+        (0, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_brick_building"),
+        (0, 1, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_shed"),
+        (1, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_shed"),
+        (1, 1, "blast_furnace_tile_1", "blast_furnace_spritelayout_greeble"),
+    ],
+)
 industry.add_industry_layout(
     id="blast_furnace_industry_layout_1",
     layout=[
@@ -251,17 +261,6 @@ industry.add_industry_layout(
         (3, 5, "blast_furnace_tile_1", "blast_furnace_spritelayout_empty"),
     ],
 )
-industry.add_industry_outpost_layout(
-    id="blast_furnace_industry_outpost_layout_1",
-    layout=[
-        # test outpost layout
-        (0, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_brick_building"),
-        (0, 1, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_shed"),
-        (1, 0, "blast_furnace_tile_1", "blast_furnace_spritelayout_small_shed"),
-        (1, 1, "blast_furnace_tile_1", "blast_furnace_spritelayout_greeble"),
-    ],
-)
-"""
 industry.add_industry_layout(
     id="blast_furnace_industry_layout_2",
     layout=[
@@ -327,4 +326,3 @@ industry.add_industry_layout(
         (9, 3, "blast_furnace_tile_1", "blast_furnace_spritelayout_greeble"),
     ],
 )
-"""
