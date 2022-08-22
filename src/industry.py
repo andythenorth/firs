@@ -895,12 +895,22 @@ class IndustryLayout(object):
         for x, y, tile_id, spritelayout_id in self.layout:
             for offset_dir in [x, y]:
                 if offset_dir < 0:
-                    raise BaseException("Negative values are invalid for x or y offsets: " + self.id + " (" + str(x) + ", " + str(y) + ")")
+                    raise BaseException(
+                        "Negative values are invalid for x or y offsets: "
+                        + self.id
+                        + " ("
+                        + str(x)
+                        + ", "
+                        + str(y)
+                        + ")"
+                    )
         # xy offset pairs must be unique per layout
         xy_offsets = [(i[0], i[1]) for i in self.layout]
         for x, y in xy_offsets:
             if xy_offsets.count((x, y)) > 1:
-                raise BaseException("Repeated xy offset pair: " + self.id + " " + str((x, y)))
+                raise BaseException(
+                    "Repeated xy offset pair: " + self.id + " " + str((x, y))
+                )
 
     @property
     def min_x(self):
@@ -1381,6 +1391,7 @@ class Industry(object):
         # when outposts are used, 8 layouts are created, distributing outpusts at compass points around the core layout
         # outposts are intended for industries with many pickup cargos, where multiple stations are required, outposts are not otherwise advised
         result = []
+        composite_layout_counter = 0
         for core_layout in self._industry_layouts["core"]:
             if len(self._industry_layouts["outposts"]) == 0:
                 result.append(core_layout)
@@ -1427,7 +1438,10 @@ class Industry(object):
                             0 - (outpost_layout.xy_dimensions[1] + 2),
                         ),
                     ]
-                    for counter, xy_offset in enumerate(outpost_xy_offsets):
+                    for outpust_direction_counter, xy_offset in enumerate(
+                        outpost_xy_offsets
+                    ):
+                        composite_layout_counter += 1
                         combined_layout = core_layout.layout.copy()
                         # !! might want to improve this id generation - calculate the actual layout number - eases grf debugging?
                         new_id = (
@@ -1435,7 +1449,9 @@ class Industry(object):
                             + "_"
                             + outpost_layout.id
                             + "_"
-                            + str(counter)
+                            + str(outpust_direction_counter)
+                            + "_composite_layout_num_"
+                            + str(composite_layout_counter)
                         )
                         for tile_def in outpost_layout.layout:
                             new_tile_def = (
@@ -1449,10 +1465,16 @@ class Industry(object):
                         # ensure that the layout is valid by transposing it to put north tile on 0,0
                         # temp IndustryLayout objs created here just to use their min_x, min_y methods for convenience
                         shift_x = (
-                            -1 * IndustryLayout(id=new_id, layout=combined_layout, validate=False).min_x
+                            -1
+                            * IndustryLayout(
+                                id=new_id, layout=combined_layout, validate=False
+                            ).min_x
                         )
                         shift_y = (
-                            -1 * IndustryLayout(id=new_id, layout=combined_layout, validate=False).min_y
+                            -1
+                            * IndustryLayout(
+                                id=new_id, layout=combined_layout, validate=False
+                            ).min_y
                         )
                         shifted_layout = []
                         for tile_def in combined_layout:
