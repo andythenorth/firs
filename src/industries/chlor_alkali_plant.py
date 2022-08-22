@@ -190,7 +190,38 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 
-"""
+# this industry needs outpost layout as there are lots of cargos
+industry.add_industry_outpost_layout(
+    id="coke_oven_industry_outpost_layout_1",
+    layout=[
+        # test outpost layout
+        (
+            0,
+            0,
+            "chlor_alkali_plant_tile_1",
+            "chlor_alkali_plant_spritelayout_vertical_tanks",
+        ),
+        (
+            0,
+            1,
+            "chlor_alkali_plant_tile_1",
+            "chlor_alkali_plant_spritelayout_vertical_tanks",
+        ),
+        (
+            1,
+            0,
+            "chlor_alkali_plant_tile_1",
+            "chlor_alkali_plant_spritelayout_spherical_tanks",
+        ),
+        (
+            1,
+            1,
+            "chlor_alkali_plant_tile_1",
+            "chlor_alkali_plant_spritelayout_spherical_tanks",
+        ),
+    ],
+)
+# core layouts are roughly 6x4 or 5x5
 industry.add_industry_layout(
     id="chlor_alkali_plant_industry_layout_1",
     layout=[
@@ -360,7 +391,6 @@ industry.add_industry_layout(
         ),
     ],
 )
-"""
 industry.add_industry_layout(
     id="chlor_alkali_plant_industry_layout_3",
     layout=[
@@ -444,34 +474,8 @@ industry.add_industry_layout(
             "chlor_alkali_plant_tile_2",
             "chlor_alkali_plant_spritelayout_vertical_tanks",
         ),
-        # test outpost layout
-        (
-            3,
-            7,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_vertical_tanks",
-        ),
-        (
-            3,
-            8,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_vertical_tanks",
-        ),
-        (
-            4,
-            7,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_spherical_tanks",
-        ),
-        (
-            4,
-            8,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_spherical_tanks",
-        ),
     ],
 )
-"""
 industry.add_industry_layout(
     id="chlor_alkali_plant_industry_layout_4",
     layout=[
@@ -647,7 +651,6 @@ industry.add_industry_layout(
         ),
     ],
 )
-"""
 industry.add_industry_layout(
     id="chlor_alkali_plant_industry_layout_6",
     layout=[
@@ -739,31 +742,6 @@ industry.add_industry_layout(
         (
             3,
             3,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_spherical_tanks",
-        ),
-        # test outpost layout
-        (
-            4,
-            6,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_vertical_tanks",
-        ),
-        (
-            4,
-            7,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_vertical_tanks",
-        ),
-        (
-            5,
-            6,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_spherical_tanks",
-        ),
-        (
-            5,
-            7,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_spherical_tanks",
         ),
