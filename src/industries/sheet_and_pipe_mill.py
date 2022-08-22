@@ -191,9 +191,35 @@ industry.add_spritelayout(
     fences=[],
 )
 
+# this industry needs outpost layout as there are lots of cargos
+industry.add_industry_outpost_layout(
+    id="sheet_and_pipe_mill_industry_outpost_layout_1",
+    layout=[
+        # test outpost layout
+        (
+            0,
+            0,
+            "sheet_and_pipe_mill_tile_1",
+            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_2",
+        ),
+        (
+            0,
+            1,
+            "sheet_and_pipe_mill_tile_1",
+            "sheet_and_pipe_mill_spritelayout_open_shed_coils",
+        ),
+        (1, 0, "sheet_and_pipe_mill_tile_1", "sheet_and_pipe_mill_spritelayout_office"),
+        (
+            1,
+            1,
+            "sheet_and_pipe_mill_tile_1",
+            "sheet_and_pipe_mill_spritelayout_steel_pile_se_nw",
+        ),
+    ],
+)
+# core layouts are roughly 6x4 or 5x5
 # long products mill uses non-standard layouts where some sprites only used for some orientiations (sw_ne or se_nw)
 # this is to achieve the appearance of 'long'
-# min 6x4 as there are lots of output cargos
 industry.add_industry_layout(
     id="sheet_and_pipe_mill_industry_layout_1",
     layout=[
