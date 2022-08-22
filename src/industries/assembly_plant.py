@@ -149,7 +149,18 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 
-# min 6x4 or 5x5 as there are lots of output cargos
+# this industry needs outpost layout as there are lots of cargos
+industry.add_industry_outpost_layout(
+    id="assembly_plant_industry_outpost_layout_1",
+    layout=[
+        # test outpost layout
+        (0, 0, "assembly_plant_tile_1", "assembly_plant_spritelayout_offices"),
+        (0, 1, "assembly_plant_tile_1", "assembly_plant_spritelayout_tyres"),
+        (1, 0, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_2"),
+        (1, 1, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_3"),
+    ],
+)
+# core layouts are roughly 6x4 or 5x5
 industry.add_industry_layout(
     id="assembly_plant_industry_layout_1",
     layout=[
@@ -238,10 +249,5 @@ industry.add_industry_layout(
         (4, 2, "assembly_plant_tile_1", "assembly_plant_spritelayout_tyres"),
         (4, 3, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_3"),
         (4, 4, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_3"),
-        # test outpost layout
-        (5, 7, "assembly_plant_tile_1", "assembly_plant_spritelayout_offices"),
-        (5, 8, "assembly_plant_tile_1", "assembly_plant_spritelayout_tyres"),
-        (6, 7, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_2"),
-        (6, 8, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_3"),
     ],
 )
