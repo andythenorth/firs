@@ -1399,7 +1399,7 @@ class Industry(object):
                 for outpost_layout in self._industry_layouts["outposts"]:
                     # NOTE the required xy offset depends on size of outpost layout as it reflects how far 0,0 tile is shifted - this is handled by checking outpost dimensions
                     # 8 outpost placements, 2 for each compass point, leaving a sufficient 2 tile gap to fit a double track / platform in straight, or diagonal double track
-                    # I didn't do NE, SW etc, seems to look better at N, S etc diagonal offsets from core layout
+                    # I tested NE, SW etc, but didn't like it - seems to look better at N, S etc diagonal offsets from core layout
                     outpost_xy_offsets = [
                         # north
                         (
