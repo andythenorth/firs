@@ -883,9 +883,10 @@ class GraphicsSwitchSlopes(GraphicsSwitch):
 class IndustryLayout(object):
     """Base class to hold industry layouts"""
 
-    def __init__(self, id, layout, validate=True):
+    def __init__(self, id, layout, excluded_outpost_layouts=[], validate=True):
         self.id = id
         self.layout = layout  # a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spriteset or next nml switch)
+        self.excluded_outpost_layouts = excluded_outpost_layouts
         # validation can be optionally suppressed as combined layouts may be invalid until their xy offsets are shifted positive (for example)
         if validate:
             self.validate()
@@ -1397,108 +1398,109 @@ class Industry(object):
                 result.append(core_layout)
             else:
                 for outpost_layout in self._industry_layouts["outposts"]:
-                    # NOTE the required xy offset depends on size of outpost layout as it reflects how far 0,0 tile is shifted - this is handled by checking outpost dimensions
-                    # 8 outpost placements, 2 for each compass point, leaving a sufficient 2 tile gap to fit a double track / platform in straight, or diagonal double track
-                    # I tested NE, SW etc, but didn't like it - seems to look better at N, S etc diagonal offsets from core layout
-                    outpost_xy_offsets = [
-                        # north
-                        (
-                            0 - (outpost_layout.xy_dimensions[0] + 2),
-                            0 - (outpost_layout.xy_dimensions[1]),
-                        ),
-                        (
-                            0 - (outpost_layout.xy_dimensions[0]),
-                            0 - (outpost_layout.xy_dimensions[1] + 2),
-                        ),
-                        # south
-                        (
-                            core_layout.xy_dimensions[0],
-                            core_layout.xy_dimensions[1] + 2,
-                        ),
-                        (
-                            core_layout.xy_dimensions[0] + 2,
-                            core_layout.xy_dimensions[1],
-                        ),
+                    if outpost_layout.id not in core_layout.excluded_outpost_layouts:
+                        # NOTE the required xy offset depends on size of outpost layout as it reflects how far 0,0 tile is shifted - this is handled by checking outpost dimensions
+                        # 8 outpost placements, 2 for each compass point, leaving a sufficient 2 tile gap to fit a double track / platform in straight, or diagonal double track
+                        # I tested NE, SW etc, but didn't like it - seems to look better at N, S etc diagonal offsets from core layout
+                        outpost_xy_offsets = [
+                            # north
+                            (
+                                0 - (outpost_layout.xy_dimensions[0] + 2),
+                                0 - (outpost_layout.xy_dimensions[1]),
+                            ),
+                            (
+                                0 - (outpost_layout.xy_dimensions[0]),
+                                0 - (outpost_layout.xy_dimensions[1] + 2),
+                            ),
+                            # south
+                            (
+                                core_layout.xy_dimensions[0],
+                                core_layout.xy_dimensions[1] + 2,
+                            ),
+                            (
+                                core_layout.xy_dimensions[0] + 2,
+                                core_layout.xy_dimensions[1],
+                            ),
 
-                        # east
-                        (
-                            0,
-                            core_layout.xy_dimensions[1] + 2,
-                        ),
-                        # this offset removed because it creates a layout with no tiles on N tile
-                        #(
-                            #0 - (outpost_layout.xy_dimensions[0] + 2),
-                            #core_layout.xy_dimensions[1],
-                        #),
-                        # this offset removed because it creates a layout with no tiles on N tile
-                        #(
-                            #0 - (outpost_layout.xy_dimensions[0]),
-                            #core_layout.xy_dimensions[1] + 2,
-                        #),
-                        # west
-                        (
-                            core_layout.xy_dimensions[0] + 2,
-                            0,
-                        ),
-                        # this offset removed because it creates a layout with no tiles on N tile
-                        #(
-                            #core_layout.xy_dimensions[0] + 2,
-                            #0 - (outpost_layout.xy_dimensions[1]),
-                        #),
-                        # this offset removed because it creates a layout with no tiles on N tile
-                        #(
-                            #core_layout.xy_dimensions[0],
-                            #0 - (outpost_layout.xy_dimensions[1] + 2),
-                        #),
-                    ]
-                    for outpust_direction_counter, xy_offset in enumerate(
-                        outpost_xy_offsets
-                    ):
-                        composite_layout_counter += 1
-                        combined_layout = core_layout.layout.copy()
-                        # !! might want to improve this id generation - calculate the actual layout number - eases grf debugging?
-                        new_id = (
-                            core_layout.id
-                            + "_"
-                            + outpost_layout.id
-                            + "_"
-                            + str(outpust_direction_counter)
-                            + "_composite_layout_num_"
-                            + str(composite_layout_counter)
-                        )
-                        for tile_def in outpost_layout.layout:
-                            new_tile_def = (
-                                xy_offset[0] + tile_def[0],
-                                xy_offset[1] + tile_def[1],
-                                tile_def[2],
-                                tile_def[3],
+                            # east
+                            (
+                                0,
+                                core_layout.xy_dimensions[1] + 2,
+                            ),
+                            # this offset removed because it creates a layout with no tiles on N tile
+                            #(
+                                #0 - (outpost_layout.xy_dimensions[0] + 2),
+                                #core_layout.xy_dimensions[1],
+                            #),
+                            # this offset removed because it creates a layout with no tiles on N tile
+                            #(
+                                #0 - (outpost_layout.xy_dimensions[0]),
+                                #core_layout.xy_dimensions[1] + 2,
+                            #),
+                            # west
+                            (
+                                core_layout.xy_dimensions[0] + 2,
+                                0,
+                            ),
+                            # this offset removed because it creates a layout with no tiles on N tile
+                            #(
+                                #core_layout.xy_dimensions[0] + 2,
+                                #0 - (outpost_layout.xy_dimensions[1]),
+                            #),
+                            # this offset removed because it creates a layout with no tiles on N tile
+                            #(
+                                #core_layout.xy_dimensions[0],
+                                #0 - (outpost_layout.xy_dimensions[1] + 2),
+                            #),
+                        ]
+                        for outpust_direction_counter, xy_offset in enumerate(
+                            outpost_xy_offsets
+                        ):
+                            composite_layout_counter += 1
+                            combined_layout = core_layout.layout.copy()
+                            # !! might want to improve this id generation - calculate the actual layout number - eases grf debugging?
+                            new_id = (
+                                core_layout.id
+                                + "_"
+                                + outpost_layout.id
+                                + "_"
+                                + str(outpust_direction_counter)
+                                + "_composite_layout_num_"
+                                + str(composite_layout_counter)
                             )
-                            combined_layout.append(new_tile_def)
-                        # layouts can't use -ve xy values,
-                        # ensure that the layout is valid by transposing it to put north tile on 0,0
-                        # temp IndustryLayout objs created here just to use their min_x, min_y methods for convenience
-                        shift_x = (
-                            -1
-                            * IndustryLayout(
-                                id=new_id, layout=combined_layout, validate=False
-                            ).min_x
-                        )
-                        shift_y = (
-                            -1
-                            * IndustryLayout(
-                                id=new_id, layout=combined_layout, validate=False
-                            ).min_y
-                        )
-                        shifted_layout = []
-                        for tile_def in combined_layout:
-                            shifted_tile_def = (
-                                tile_def[0] + shift_x,
-                                tile_def[1] + shift_y,
-                                tile_def[2],
-                                tile_def[3],
+                            for tile_def in outpost_layout.layout:
+                                new_tile_def = (
+                                    xy_offset[0] + tile_def[0],
+                                    xy_offset[1] + tile_def[1],
+                                    tile_def[2],
+                                    tile_def[3],
+                                )
+                                combined_layout.append(new_tile_def)
+                            # layouts can't use -ve xy values,
+                            # ensure that the layout is valid by transposing it to put north tile on 0,0
+                            # temp IndustryLayout objs created here just to use their min_x, min_y methods for convenience
+                            shift_x = (
+                                -1
+                                * IndustryLayout(
+                                    id=new_id, layout=combined_layout, validate=False
+                                ).min_x
                             )
-                            shifted_layout.append(shifted_tile_def)
-                        result.append(IndustryLayout(id=new_id, layout=shifted_layout))
+                            shift_y = (
+                                -1
+                                * IndustryLayout(
+                                    id=new_id, layout=combined_layout, validate=False
+                                ).min_y
+                            )
+                            shifted_layout = []
+                            for tile_def in combined_layout:
+                                shifted_tile_def = (
+                                    tile_def[0] + shift_x,
+                                    tile_def[1] + shift_y,
+                                    tile_def[2],
+                                    tile_def[3],
+                                )
+                                shifted_layout.append(shifted_tile_def)
+                            result.append(IndustryLayout(id=new_id, layout=shifted_layout))
         return result
 
     @property
