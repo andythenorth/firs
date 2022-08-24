@@ -25,6 +25,10 @@ industry.add_tile(
     animation_length=71,
     animation_looping=True,
     animation_speed=2,
+    custom_animation_control={
+        "macro": "random_first_frame",
+        "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
+    },
     location_checks=TileLocationChecks(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
@@ -192,38 +196,63 @@ industry.add_spritelayout(
 )
 
 # this industry needs outpost layout as there are lots of cargos
-"""
+# note there are two outposts, as this industry has sprites oriented sw_ne or se_nw, will select outpost to match main layout orientation
 industry.add_industry_outpost_layout(
-    id="sheet_and_pipe_mill_industry_outpost_layout_1",
+    id="sheet_and_pipe_mill_industry_outpost_layout_sw_ne",
     layout=[
         # test outpost layout
         (
             0,
             0,
             "sheet_and_pipe_mill_tile_1",
-            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_2",
+            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_1",
         ),
         (
             0,
             1,
             "sheet_and_pipe_mill_tile_1",
-            "sheet_and_pipe_mill_spritelayout_open_shed_coils",
+            "sheet_and_pipe_mill_spritelayout_boilerhouse",
         ),
-        (1, 0, "sheet_and_pipe_mill_tile_1", "sheet_and_pipe_mill_spritelayout_office"),
+        (1, 0, "sheet_and_pipe_mill_tile_1", "sheet_and_pipe_mill_spritelayout_tanks"),
         (
             1,
             1,
             "sheet_and_pipe_mill_tile_1",
-            "sheet_and_pipe_mill_spritelayout_steel_pile_se_nw",
+            "sheet_and_pipe_mill_spritelayout_open_shed_coils",
         ),
     ],
 )
-"""
+industry.add_industry_outpost_layout(
+    id="sheet_and_pipe_mill_industry_outpost_layout_se_nw",
+    layout=[
+        # test outpost layout
+        (
+            0,
+            0,
+            "sheet_and_pipe_mill_tile_1",
+            "sheet_and_pipe_mill_spritelayout_shed_se_nw_1",
+        ),
+        (
+            0,
+            1,
+            "sheet_and_pipe_mill_tile_1",
+            "sheet_and_pipe_mill_spritelayout_boilerhouse",
+        ),
+        (1, 0, "sheet_and_pipe_mill_tile_1", "sheet_and_pipe_mill_spritelayout_tanks"),
+        (
+            1,
+            1,
+            "sheet_and_pipe_mill_tile_1",
+            "sheet_and_pipe_mill_spritelayout_open_shed_coils",
+        ),
+    ],
+)
 # core layouts are roughly 6x4 or 5x5
 # long products mill uses non-standard layouts where some sprites only used for some orientiations (sw_ne or se_nw)
 # this is to achieve the appearance of 'long'
 industry.add_industry_layout(
     id="sheet_and_pipe_mill_industry_layout_1",
+    excluded_outpost_layouts=["sheet_and_pipe_mill_industry_outpost_layout_se_nw"],
     layout=[
         (
             0,
@@ -353,6 +382,7 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id="sheet_and_pipe_mill_industry_layout_2",
+    excluded_outpost_layouts=["sheet_and_pipe_mill_industry_outpost_layout_sw_ne"],
     layout=[
         (
             0,
