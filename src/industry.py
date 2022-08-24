@@ -1419,24 +1419,37 @@ class Industry(object):
                             core_layout.xy_dimensions[0] + 2,
                             core_layout.xy_dimensions[1],
                         ),
+
                         # east
                         (
-                            0 - (outpost_layout.xy_dimensions[0] + 2),
-                            core_layout.xy_dimensions[1],
-                        ),
-                        (
-                            0 - (outpost_layout.xy_dimensions[0]),
+                            0,
                             core_layout.xy_dimensions[1] + 2,
                         ),
+                        # this offset removed because it creates a layout with no tiles on N tile
+                        #(
+                            #0 - (outpost_layout.xy_dimensions[0] + 2),
+                            #core_layout.xy_dimensions[1],
+                        #),
+                        # this offset removed because it creates a layout with no tiles on N tile
+                        #(
+                            #0 - (outpost_layout.xy_dimensions[0]),
+                            #core_layout.xy_dimensions[1] + 2,
+                        #),
                         # west
                         (
                             core_layout.xy_dimensions[0] + 2,
-                            0 - (outpost_layout.xy_dimensions[1]),
+                            0,
                         ),
-                        (
-                            core_layout.xy_dimensions[0],
-                            0 - (outpost_layout.xy_dimensions[1] + 2),
-                        ),
+                        # this offset removed because it creates a layout with no tiles on N tile
+                        #(
+                            #core_layout.xy_dimensions[0] + 2,
+                            #0 - (outpost_layout.xy_dimensions[1]),
+                        #),
+                        # this offset removed because it creates a layout with no tiles on N tile
+                        #(
+                            #core_layout.xy_dimensions[0],
+                            #0 - (outpost_layout.xy_dimensions[1] + 2),
+                        #),
                     ]
                     for outpust_direction_counter, xy_offset in enumerate(
                         outpost_xy_offsets
