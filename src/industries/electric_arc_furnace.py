@@ -157,6 +157,7 @@ industry.add_spritelayout(
 )
 
 # this industry needs outpost layout as there are lots of cargos
+"""
 industry.add_industry_outpost_layout(
     id="electric_arc_furnace_industry_outpost_layout_1",
     layout=[
@@ -167,6 +168,7 @@ industry.add_industry_outpost_layout(
         (1, 1, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_crane_2"),
     ],
 )
+"""
 # core layouts are roughly 6x4 or 5x5
 industry.add_industry_layout(
     id="electric_arc_furnace_industry_layout_1",

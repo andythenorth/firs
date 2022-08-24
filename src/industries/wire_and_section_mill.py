@@ -149,6 +149,7 @@ industry.add_spritelayout(
 )
 
 # this industry needs outpost layout as there are lots of cargos
+"""
 industry.add_industry_outpost_layout(
     id="wire_and_section_mill_industry_outpost_layout_1",
     layout=[
@@ -159,6 +160,7 @@ industry.add_industry_outpost_layout(
         (1, 1, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_gantry"),
     ],
 )
+"""
 # core layouts are roughly 6x4 or 5x5
 # long products mill uses non-standard layouts where some sprites only used for some orientiations (sw_ne or se_nw)
 # this is to achieve the appearance of 'long'

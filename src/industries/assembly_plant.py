@@ -150,6 +150,7 @@ industry.add_spritelayout(
 )
 
 # this industry needs outpost layout as there are lots of cargos
+"""
 industry.add_industry_outpost_layout(
     id="assembly_plant_industry_outpost_layout_1",
     layout=[
@@ -160,6 +161,7 @@ industry.add_industry_outpost_layout(
         (1, 1, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_3"),
     ],
 )
+"""
 # core layouts are roughly 6x4 or 5x5
 industry.add_industry_layout(
     id="assembly_plant_industry_layout_1",
