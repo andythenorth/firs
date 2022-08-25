@@ -200,7 +200,6 @@ industry.add_spritelayout(
 industry.add_industry_outpost_layout(
     id="sheet_and_pipe_mill_industry_outpost_layout_sw_ne",
     layout=[
-        # test outpost layout
         (
             0,
             0,
@@ -225,7 +224,6 @@ industry.add_industry_outpost_layout(
 industry.add_industry_outpost_layout(
     id="sheet_and_pipe_mill_industry_outpost_layout_se_nw",
     layout=[
-        # test outpost layout
         (
             0,
             0,

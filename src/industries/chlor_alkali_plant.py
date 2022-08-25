@@ -195,7 +195,6 @@ industry.add_spritelayout(
 industry.add_industry_outpost_layout(
     id="coke_oven_industry_outpost_layout_1",
     layout=[
-        # test outpost layout
         (
             0,
             0,
@@ -237,7 +236,6 @@ industry.add_industry_outpost_layout(
 industry.add_industry_outpost_layout(
     id="coke_oven_industry_outpost_layout_2",
     layout=[
-        # test outpost layout
         (
             0,
             0,

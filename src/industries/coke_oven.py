@@ -195,7 +195,6 @@ industry.add_spritelayout(
 industry.add_industry_outpost_layout(
     id="coke_oven_industry_outpost_layout_1",
     layout=[
-        # test outpost layout
         (0, 0, "coke_oven_tile_1", "coke_oven_spritelayout_coal_handling_rear"),
         (0, 1, "coke_oven_tile_1", "coke_oven_spritelayout_gas_plant_1"),
         (1, 0, "coke_oven_tile_1", "coke_oven_spritelayout_coal_handling_front"),
@@ -205,7 +204,6 @@ industry.add_industry_outpost_layout(
 industry.add_industry_outpost_layout(
     id="coke_oven_industry_outpost_layout_2",
     layout=[
-        # test outpost layout
         (0, 0, "coke_oven_tile_1", "coke_oven_spritelayout_gas_plant_1"),
         (0, 1, "coke_oven_tile_1", "coke_oven_spritelayout_coal_handling_rear"),
         (1, 0, "coke_oven_tile_2", "coke_oven_spritelayout_gas_plant_1"),

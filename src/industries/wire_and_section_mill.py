@@ -157,7 +157,6 @@ industry.add_spritelayout(
 industry.add_industry_outpost_layout(
     id="wire_and_section_mill_industry_outpost_layout_se_nw",
     layout=[
-        # test outpost layout
         (0, 0, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_shed_se_nw_1"),
         (0, 1, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_shed_se_nw_2"),
         (1, 0, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_small_shed_2"), # shed 2 used as it has smoke
@@ -167,7 +166,6 @@ industry.add_industry_outpost_layout(
 industry.add_industry_outpost_layout(
     id="wire_and_section_mill_industry_outpost_layout_sw_ne",
     layout=[
-        # test outpost layout
         (0, 0, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_shed_sw_ne_1"),
         (0, 1, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_tanks"),
         (1, 0, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_shed_sw_ne_2"),
