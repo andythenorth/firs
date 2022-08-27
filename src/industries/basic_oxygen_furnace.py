@@ -493,7 +493,7 @@ industry.add_industry_layout(
             0,
             0,
             "basic_oxygen_furnace_tile_1",
-            "basic_oxygen_furnace_spritelayout_furnace",
+            "basic_oxygen_furnace_spritelayout_casting_shed",
         ),
         (
             0,
@@ -541,7 +541,7 @@ industry.add_industry_layout(
             2,
             0,
             "basic_oxygen_furnace_tile_1",
-            "basic_oxygen_furnace_spritelayout_furnace",
+            "basic_oxygen_furnace_spritelayout_casting_shed",
         ),
         (
             2,
@@ -565,7 +565,7 @@ industry.add_industry_layout(
             3,
             0,
             "basic_oxygen_furnace_tile_1",
-            "basic_oxygen_furnace_spritelayout_furnace",
+            "basic_oxygen_furnace_spritelayout_casting_shed",
         ),
         (
             3,
