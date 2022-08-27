@@ -172,21 +172,21 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_slag_dump_1],
-    fences=["nw", "ne", "se", "sw"],
+    fences=["nw", "ne"],
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_slag_dump_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_slag_dump_2],
-    fences=["nw", "ne", "se", "sw"],
+    fences=["nw", "ne"],
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_slag_dump_dozer",
     ground_sprite=spriteset_animated_ground,
     ground_overlay=spriteset_animated_ground_overlay,
     building_sprites=[spriteset_animated_slag_dump_1, spriteset_animated_dozer],
-    fences=["nw", "ne", "se", "sw"],
+    fences=["nw", "ne"],
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_office",
