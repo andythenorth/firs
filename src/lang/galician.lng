@@ -30,10 +30,8 @@ STR_PARAM_VALUE_ECONOMIES_BETTER_LIVING_THROUGH_CHEMISTRY                       
 STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                      :Nun país cálido
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Cidade Siderúrxica
 
-STR_CARGO_SUBTYPE_DISPLAY_SECONDARY_CARGO_DELIVERED                             : {BLACK}(fornecido)
 STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Produce ao máximo se se fornece{WHITE} calquera {BLACK} carga requirida.
 STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}Para producir ao máximo, subministra {WHITE}todas {BLACK}as mercadorías requeridas polo menos unha vez cada tres meses.
-STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}A produción é proporcional á poboación da localidade.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produción actual: {YELLOW}normal {}{}{BLACK}Para produción {WHITE}mellorada {BLACK} entrega {SIGNED_WORD} caixas de abastecemento nun trimestre.{}Para produción {WHITE}ao límite{BLACK} entrega {SIGNED_WORD} caixas.
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produción actual: {YELLOW}mellorada {}{}{BLACK}Para manter este nivel, entrega {SIGNED_WORD} caixas de abastecemento nun trimestre.{}Para produción {WHITE}ao límite {BLACK} entrega {SIGNED_WORD} caixas.
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Produción actual: {YELLOW}ao límite {}{}{BLACK}Para manter este nivel, entrega {SKIP}{SIGNED_WORD} caixas de mercadorías nun trimestre.
@@ -367,7 +365,6 @@ STR_IND_ALUMINIUM_PLANT                                                         
 STR_IND_AMMONIA_PLANT                                                           :{G=f}Fábrica de amoníaco
 STR_IND_ARABLE_FARM                                                             :{G=f}Explotación agrícola arable
 STR_IND_ASSEMBLY_PLANT                                                          :Fábrica de vehículos
-STR_IND_BASICFARM                                                               :{G=f}Explotación agrícola
 STR_IND_BASIC_OXYGEN_FURNACE                                                    :Forno básico de osíxeno
 STR_IND_BIOREFINERY                                                             :{G=f}Biorrefinería
 STR_IND_BLAST_FURNACE                                                           :Alto forno
@@ -424,7 +421,6 @@ STR_IND_LIQUIDS_TERMINAL                                                        
 STR_IND_LUMBER_YARD                                                             :Madeireira
 STR_IND_MACHINE_SHOP                                                            :{G=f}Fábrica de maquinaria
 STR_IND_MANGANESE_MINE                                                          :Mina de manganeso
-STR_IND_METAL_FABRICATION_PLANT                                                 :{G=f}Carpintería metálica
 STR_IND_METAL_WORKSHOP                                                          :Taller metálico
 STR_IND_MIXEDFARM                                                               :{G=f}Explotación mixta
 STR_IND_NITRATE_MINE                                                            :Mina de nitratos
@@ -436,7 +432,7 @@ STR_IND_PHOSPHORIC_ACID_PLANT                                                   
 STR_IND_PLASTICS_PLANT                                                          :{G=f}Fábrica de plásticos
 STR_IND_PLAZA                                                                   :Plaza
 STR_IND_POLYETHYLENE_PLANT                                                      :Planta de polietileno
-STR_IND_POLYPROPYLENE_PLANT                                                     :Planta de polipropileno 
+STR_IND_POLYPROPYLENE_PLANT                                                     :Planta de polipropileno
 STR_IND_PORT                                                                    :{G=m}Peirao comercial
 STR_IND_POTASH_MINE                                                             :Mina de potasa
 STR_IND_PYRITE_MINE                                                             :Mina de pirita
@@ -475,7 +471,6 @@ STR_FUND_FARM                                                                   
 STR_FUND_FOREST                                                                 :{}{BLACK}Localización: {YELLOW}Non pode fundarse en desertos.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Localización: {YELLOW}Non pode fundarse na neve.
 STR_FUND_HERDING_COOP                                                           :{}{BLACK}Localización: {YELLOW}Só pode fundarse na neve.
-STR_FUND_MIXED_FARM                                                             :{}{BLACK}Localización: {YELLOW}Non pode fundarse na neve ou en desertos.
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Localización: {YELLOW}Non pode fundarse na neve ou en desertos.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Localización: {YELLOW}Non pode fundarse na neve ou en desertos.
 STR_FUND_VINEYARD                                                               :{}{BLACK}Localización: {YELLOW}Non pode fundarse na neve ou en desertos.
