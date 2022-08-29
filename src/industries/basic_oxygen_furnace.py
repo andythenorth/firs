@@ -284,7 +284,7 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="basic_oxygen_furnace_spritelayout_animated_ladle_rear_part",
+    id="basic_oxygen_furnace_spritelayout_animated_casting_rear_part",
     ground_sprite=spriteset_ground_tile_animated_metal_run,
     ground_overlay=spriteset_ground_tile_animated_metal_run,
     building_sprites=[
@@ -417,7 +417,7 @@ industry.add_industry_layout(
             2,
             2,
             "basic_oxygen_furnace_tile_2",
-            "basic_oxygen_furnace_spritelayout_animated_ladle_rear_part",
+            "basic_oxygen_furnace_spritelayout_animated_casting_rear_part",
         ),
         (
             2,
@@ -542,7 +542,7 @@ industry.add_industry_layout(
             3,
             2,
             "basic_oxygen_furnace_tile_2",
-            "basic_oxygen_furnace_spritelayout_animated_ladle_rear_part",
+            "basic_oxygen_furnace_spritelayout_animated_casting_rear_part",
         ),
         (
             3,
@@ -667,7 +667,7 @@ industry.add_industry_layout(
             4,
             1,
             "basic_oxygen_furnace_tile_2",
-            "basic_oxygen_furnace_spritelayout_animated_ladle_rear_part",
+            "basic_oxygen_furnace_spritelayout_animated_casting_rear_part",
         ),
         (
             4,
@@ -762,7 +762,7 @@ industry.add_industry_layout(
             4,
             0,
             "basic_oxygen_furnace_tile_2",
-            "basic_oxygen_furnace_spritelayout_animated_ladle_rear_part",
+            "basic_oxygen_furnace_spritelayout_animated_casting_rear_part",
         ),
         (
             4,
@@ -863,7 +863,7 @@ industry.add_industry_layout(
             3,
             1,
             "basic_oxygen_furnace_tile_2",
-            "basic_oxygen_furnace_spritelayout_animated_ladle_rear_part",
+            "basic_oxygen_furnace_spritelayout_animated_casting_rear_part",
         ),
         (
             3,
