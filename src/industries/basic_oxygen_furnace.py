@@ -44,9 +44,9 @@ industry.add_tile(
 )
 industry.add_tile(
     id="basic_oxygen_furnace_tile_2",
-    animation_length=20, # should be about 36, 20 is just for testing
+    animation_length=28, # should be about 36, 26 is just for testing
     animation_looping=True,
-    animation_speed=6, # 3 is better, 6 is just for testing
+    animation_speed=5, # 3 is better, 5 is just for testing
     location_checks=TileLocationChecks(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
@@ -96,6 +96,13 @@ spriteset_caster_crane_animated = industry.add_spriteset(
         (430, 250, 64, 64, -31, -33),
         (500, 250, 64, 64, -31, -33),
         (570, 250, 64, 64, -31, -33),
+        # repeat the pour for 7 frames
+        (640, 250, 64, 64, -31, -33),
+        (640, 250, 64, 64, -31, -33),
+        (640, 250, 64, 64, -31, -33),
+        (640, 250, 64, 64, -31, -33),
+        (640, 250, 64, 64, -31, -33),
+        (640, 250, 64, 64, -31, -33),
         (640, 250, 64, 64, -31, -33),
         (710, 250, 64, 64, -31, -33),
         (780, 250, 64, 64, -31, -33),
@@ -109,7 +116,7 @@ spriteset_caster_crane_animated = industry.add_spriteset(
     ],
     animation_rate=1,
     # the offset here acts to extend the animation, and for this case should be the total number of animation frames provided in the spriteset
-    custom_sprite_selector="(animation_frame < 19) ? (animation_frame % 19) : 0",
+    custom_sprite_selector="(animation_frame < 25) ? (animation_frame % 25) : 0",
 )
 spriteset_caster_gantry_animated = industry.add_spriteset(
     sprites=[
@@ -118,13 +125,22 @@ spriteset_caster_gantry_animated = industry.add_spriteset(
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_caster_crane_animated.sprites),
 )
-spriteset_ground_tile_animated = industry.add_spriteset(
+spriteset_ground_tile_animated_crane = industry.add_spriteset(
     sprites=[(80, 10, 64, 122, -31, -91)],
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_caster_crane_animated.sprites),
 )
 spriteset_caster_metal_run_animated = industry.add_spriteset(
     sprites=[
+        # repeat the empty frame until the crane pour starts
+        (10, 430, 64, 64, -31, -33),
+        (10, 430, 64, 64, -31, -33),
+        (10, 430, 64, 64, -31, -33),
+        (10, 430, 64, 64, -31, -33),
+        (10, 430, 64, 64, -31, -33),
+        (10, 430, 64, 64, -31, -33),
+        (10, 430, 64, 64, -31, -33),
+        (10, 430, 64, 64, -31, -33),
         (10, 430, 64, 64, -31, -33),
         (80, 430, 64, 64, -31, -33),
         (150, 430, 64, 64, -31, -33),
@@ -133,26 +149,29 @@ spriteset_caster_metal_run_animated = industry.add_spriteset(
         (360, 430, 64, 64, -31, -33),
         (430, 430, 64, 64, -31, -33),
         (500, 430, 64, 64, -31, -33),
+        # repeat the pour for 2 frames
+        (570, 430, 64, 64, -31, -33),
         (570, 430, 64, 64, -31, -33),
         (640, 430, 64, 64, -31, -33),
         (710, 430, 64, 64, -31, -33),
         (780, 430, 64, 64, -31, -33),
         (850, 430, 64, 64, -31, -33),
         (920, 430, 64, 64, -31, -33),
-        (990, 430, 64, 64, -31, -33),
-        (1060, 430, 64, 64, -31, -33),
-        (1130, 430, 64, 64, -31, -33),
-        (1200, 430, 64, 64, -31, -33),
-        (1270, 430, 64, 64, -31, -33),
     ],
     animation_rate=1,
     # the offset here acts to extend the animation, and for this case should be the total number of animation frames provided in the spriteset
-    custom_sprite_selector="(animation_frame < 19) ? (animation_frame % 19) : 0",
+    # note the crane and caster have different animation lengths, the caster only needs to be long enough for the pour to run and clear
+    custom_sprite_selector="(animation_frame < 24) ? (animation_frame % 24) : 0",
 )
 spriteset_caster_machinery_animated = industry.add_spriteset(
     sprites=[
         (10, 340, 64, 64, -31, -33),
     ],
+    # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
+    num_sprites_to_autofill=len(spriteset_caster_metal_run_animated.sprites),
+)
+spriteset_ground_tile_animated_metal_run = industry.add_spriteset(
+    sprites=[(80, 10, 64, 122, -31, -91)],
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_caster_metal_run_animated.sprites),
 )
@@ -243,8 +262,8 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_animated_casting_front_part",
-    ground_sprite=spriteset_ground_tile_animated,
-    ground_overlay=spriteset_ground_tile_animated,
+    ground_sprite=spriteset_ground_tile_animated_crane,
+    ground_overlay=spriteset_ground_tile_animated_crane,
     building_sprites=[
         spriteset_caster_gantry_animated,
         spriteset_caster_crane_animated,
@@ -253,8 +272,8 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_animated_ladle_rear_part",
-    ground_sprite=spriteset_ground_tile_animated,
-    ground_overlay=spriteset_ground_tile_animated,
+    ground_sprite=spriteset_ground_tile_animated_metal_run,
+    ground_overlay=spriteset_ground_tile_animated_metal_run,
     building_sprites=[
         spriteset_caster_machinery_animated,
         spriteset_caster_metal_run_animated,
