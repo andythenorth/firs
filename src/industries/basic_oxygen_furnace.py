@@ -97,16 +97,17 @@ spriteset_caster_crane_animated = industry.add_spriteset(
         (500, 250, 64, 64, -31, -33),
         (570, 250, 64, 64, -31, -33),
         (640, 250, 64, 64, -31, -33),
+        # repeat the pour for 9 frames
         (710, 250, 64, 64, -31, -33),
-        # repeat the pour for 10 frames
-        (780, 250, 64, 64, -31, -33),
-        (780, 250, 64, 64, -31, -33),
-        (780, 250, 64, 64, -31, -33),
-        (780, 250, 64, 64, -31, -33),
-        (780, 250, 64, 64, -31, -33),
-        (780, 250, 64, 64, -31, -33),
-        (780, 250, 64, 64, -31, -33),
-        (780, 250, 64, 64, -31, -33),
+        (710, 250, 64, 64, -31, -33),
+        (710, 250, 64, 64, -31, -33),
+        (710, 250, 64, 64, -31, -33),
+        (710, 250, 64, 64, -31, -33),
+        (710, 250, 64, 64, -31, -33),
+        (710, 250, 64, 64, -31, -33),
+        (710, 250, 64, 64, -31, -33),
+        (710, 250, 64, 64, -31, -33),
+        # repeat the end of the pour for 2 frames
         (780, 250, 64, 64, -31, -33),
         (780, 250, 64, 64, -31, -33),
         (850, 250, 64, 64, -31, -33),
@@ -127,6 +128,14 @@ spriteset_caster_crane_animated = industry.add_spriteset(
 spriteset_caster_gantry_animated = industry.add_spriteset(
     sprites=[
         (10, 160, 64, 64, -31, -33),
+    ],
+    # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
+    num_sprites_to_autofill=len(spriteset_caster_crane_animated.sprites),
+)
+# needed to overlay the ladle
+spriteset_caster_gantry_overlay_animated = industry.add_spriteset(
+    sprites=[
+        (80, 160, 64, 64, -31, -33),
     ],
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_caster_crane_animated.sprites),
@@ -171,10 +180,11 @@ spriteset_caster_metal_run_animated = industry.add_spriteset(
         (1200, 430, 64, 64, -31, -33),
         (1270, 430, 64, 64, -31, -33),
         (1340, 430, 64, 64, -31, -33),
+        (1410, 430, 64, 64, -31, -33),
     ],
     animation_rate=1,
     # the offset here acts to extend the animation, and for this case should be the total number of animation frames provided in the spriteset
-    custom_sprite_selector="(animation_frame < 31) ? (animation_frame % 31) : 0",
+    custom_sprite_selector="(animation_frame < 32) ? (animation_frame % 32) : 0",
 )
 spriteset_caster_machinery_animated = industry.add_spriteset(
     sprites=[
@@ -280,6 +290,7 @@ industry.add_spritelayout(
     building_sprites=[
         spriteset_caster_gantry_animated,
         spriteset_caster_crane_animated,
+        spriteset_caster_gantry_overlay_animated,
     ],
     fences=["nw", "ne", "se", "sw"],
 )
