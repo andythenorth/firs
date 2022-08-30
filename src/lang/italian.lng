@@ -54,7 +54,7 @@ STR_CARGO_NAME_CARBON_BLACK                                                     
 STR_CARGO_NAME_CARBON_STEEL                                                     :{G=m}Acciaio al carbonio
 STR_CARGO_NAME_CASSAVA                                                          :{G=f}Manioca
 STR_CARGO_NAME_CAST_IRON                                                        :{G=m}Ferro spugnoso
-STR_CARGO_NAME_CEMENT                                                           :Cemento
+STR_CARGO_NAME_CEMENT                                                           :{G=m}Cemento
 STR_CARGO_NAME_CHEMICALS                                                        :{G=m}Prodotti chimici
 STR_CARGO_NAME_CHLORINE                                                         :{G=m}Cloro
 STR_CARGO_NAME_CHROMITE_ORE                                                     :{G=m}Minerale di cromite
@@ -78,9 +78,9 @@ STR_CARGO_NAME_FERTILISER                                                       
 STR_CARGO_NAME_FOOD_ADDITIVES                                                   :{G=m}Additivi alimentari
 STR_CARGO_NAME_FORMIC_ACID                                                      :{G=m}Acido formico
 STR_CARGO_NAME_FRUITS                                                           :{G=f}Frutta
-STR_CARGO_NAME_FURNITURE                                                        :G=m}Mobili
-STR_CARGO_NAME_GLASS                                                            :G=m}Vetro
-STR_CARGO_NAME_HYDROCHLORIC_ACID                                                :G=m}Acido cloridrico
+STR_CARGO_NAME_FURNITURE                                                        :{G=m}Mobili
+STR_CARGO_NAME_GLASS                                                            :{G=m}Vetro
+STR_CARGO_NAME_HYDROCHLORIC_ACID                                                :{G=m}Acido cloridrico
 STR_CARGO_NAME_KAOLIN                                                           :{G=m}Caolino
 STR_CARGO_NAME_LIMESTONE                                                        :{G=m}Calcare
 STR_CARGO_NAME_LOGS                                                             :{G=m}Tronchi
@@ -93,7 +93,7 @@ STR_CARGO_NAME_METHANOL                                                         
 STR_CARGO_NAME_MILK                                                             :{G=m}Latte
 STR_CARGO_NAME_MANGANESE                                                        :{G=m}Manganese
 STR_CARGO_NAME_NAPHTHA                                                          :{G=f}Nafta
-STR_CARGO_NAME_NICKEL                                                           :{G=m}Nickel
+STR_CARGO_NAME_NICKEL                                                           :{G=m}Nichel
 STR_CARGO_NAME_NITRATES                                                         :{G=m}Nitrati
 STR_CARGO_NAME_NUTS                                                             :{G=f}Noci
 STR_CARGO_NAME_OXYGEN                                                           :{G=m}Ossigeno
@@ -141,7 +141,7 @@ STR_CARGO_NAME_YARN                                                             
 STR_CARGO_NAME_ZINC                                                             :{G=m}Zinco
 
 STR_CARGO_UNIT_ACID                                                             :{VOLUME} di acidi
-STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} di alcoolici
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} di alcolici
 STR_CARGO_UNIT_ALLOY_STEEL                                                      :{WEIGHT} di acciai legati
 STR_CARGO_UNIT_ALUMINIA                                                         :{WEIGHT} di allumina
 STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} di alluminio
@@ -266,7 +266,7 @@ STR_CID_COKE                                                                    
 STR_CID_COPPER                                                                  :{TINYFONT}RA
 STR_CID_COPPER_CONCENTRATE                                                      :{TINYFONT}RC
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}OL
-STR_CID_ELECTRICAL_PARTS                            				 			:{TINYFONT}CE
+STR_CID_ELECTRICAL_PARTS                            				:{TINYFONT}CE
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}FM
 STR_CID_ETHYLENE                                                                :{TINYFONT}ET
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}ES
@@ -388,13 +388,13 @@ STR_IND_ELECTRIC_ARC_FURNACE                                                    
 STR_IND_ENGINE_PLANT                                                            :{G=f}Fabbrica di motori
 STR_IND_ETHYLENE_CRACKER                                                        :{G=f}Raffineria di Nafta
 STR_IND_FARM                                                                    :{G=f}Fattoria
-STR_IND_FERROCHROME_SMELTER                                                     :G=f}Fonderia di ferrocromo
-STR_IND_FERTILISER_PLANT                                                        :G=f}Fabbrica di fertilizzanti
-STR_IND_FACTORY_1                                                               :G=f}Fabbrica 1
-STR_IND_FACTORY_2                                                               :G=f}Fabbrica 2
-STR_IND_FACTORY_3                                                               :G=f}Fabbrica 3
-STR_IND_FISCHER_TROPSCH_PLANT                                                   :G=m}Stabilimento Fischer-Tropsch
-STR_IND_FISH_FARM                                                               :G=f}Azienda ittica
+STR_IND_FERROCHROME_SMELTER                                                     :{G=f}Fonderia di ferrocromo
+STR_IND_FERTILISER_PLANT                                                        :{G=f}Fabbrica di fertilizzanti
+STR_IND_FACTORY_1                                                               :{G=f}Fabbrica 1
+STR_IND_FACTORY_2                                                               :{G=f}Fabbrica 2
+STR_IND_FACTORY_3                                                               :{G=f}Fabbrica 3
+STR_IND_FISCHER_TROPSCH_PLANT                                                   :{G=m}Stabilimento Fischer-Tropsch
+STR_IND_FISH_FARM                                                               :{G=f}Azienda ittica
 STR_IND_FISHING_GROUND                                                          :{G=f}Zona di pesca
 STR_IND_FISHING_HARBOUR                                                         :{G=m}Porto di pesca
 STR_IND_FISHING_VILLAGE                                                         :{G=m}Villaggio di pescatori
@@ -453,7 +453,7 @@ STR_IND_SUGAR_REFINERY                                                          
 STR_IND_SULPHURIC_ACID_PLANT                                                    :{G=f}Fabbrica di acido solforico
 STR_IND_SUPPLY_YARD                                                             :{G=m}Deposito di forniture
 STR_IND_TEXTILE_MILL                                                            :{G=m}Industria tessile
-STR_IND_TINPLATE_WORKS                                                          :G=f}Fabbrica di prodotti in latta
+STR_IND_TINPLATE_WORKS                                                          :{G=f}Fabbrica di prodotti in latta
 STR_IND_TRADING_POST                                                            :{G=f}Stazione commerciale
 STR_IND_TYRE_PLANT                                                              :{G=f}Fabbrica di pneumatici
 STR_IND_VINEYARD                                                                :{G=f}Vigna
@@ -530,7 +530,7 @@ STR_STATION_MINE                                                                
 STR_STATION_MOULDINGS                                                           :{G=f}Fabbrica di cornici
 STR_STATION_OIL_RIG                                                             :{G=f}Piattaforma di trivellazione
 STR_STATION_ORCHARDS                                                            :{G=m}Frutteti
-STR_STATION_PHENOLS                                                             :G=m}Fenoli
+STR_STATION_PHENOLS                                                             :{G=m}Fenoli
 STR_STATION_PIT                                                                 :{G=m}Scavo
 STR_STATION_PIPE_MILL                                                           :{G=f}Fabbrica di tubi	
 STR_STATION_PLANTATION                                                          :{G=f}Piantagioni
