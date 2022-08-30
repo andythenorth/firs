@@ -296,6 +296,7 @@ industry.add_spritelayout(
         spriteset_caster_gantry_overlay_animated,
     ],
     fences=["nw", "ne", "se", "sw"],
+    perma_fences=["sw"],
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_animated_casting_rear_part",
@@ -306,6 +307,7 @@ industry.add_spritelayout(
         spriteset_caster_metal_run_animated,
     ],
     fences=["nw", "ne", "se", "sw"],
+    perma_fences=["sw"],
 )
 
 # this industry needs outpost layout as there are lots of cargos

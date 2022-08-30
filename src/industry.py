@@ -459,6 +459,7 @@ class SpriteLayout(object):
         building_sprites,
         smoke_sprites=[],
         fences=[],
+        perma_fences=[],
         magic_trees=[],
         terrain_aware_ground=False,
     ):
@@ -467,7 +468,10 @@ class SpriteLayout(object):
         self.ground_overlay = ground_overlay
         self.building_sprites = building_sprites
         self.smoke_sprites = smoke_sprites
-        self.fences = fences  # a simple list of keywords.  Valid values: 'ne', 'se', 'sw', 'nw'.  Order is arbitrary.
+        # Valid fence values: 'ne', 'se', 'sw', 'nw'.  Order is arbitrary.
+        self.fences = fences
+        # optionally prevent fences hiding when a station is adjacent.  Same string values as fences.
+        self.perma_fences=perma_fences
         self.magic_trees = magic_trees
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
 
