@@ -227,7 +227,7 @@ industry.add_industry_outpost_layout(
             0,
             1,
             "sheet_and_pipe_mill_tile_1",
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_1",
+            "sheet_and_pipe_mill_spritelayout_shed_se_nw_2",
         ),
         (
             0,
