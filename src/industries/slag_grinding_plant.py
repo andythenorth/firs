@@ -77,7 +77,7 @@ spriteset_slag_dump_2 = industry.add_spriteset(
 )
 # non-standard offsets to position crane over slag pit, may be regrettable
 spriteset_crane = industry.add_spriteset(
-    sprites=[(500, 10, 64, 120, -1, -89)],
+    sprites=[(500, 10, 64, 120, -6, -89)],
 )
 spriteset_office = industry.add_spriteset(
     sprites=[(570, 10, 64, 120, -31, -89)],
@@ -102,7 +102,7 @@ spriteset_animated_dozer = industry.add_spriteset(
 )
 # filled out version of ground for slag pit with animation frames
 spriteset_animated_ground = industry.add_spriteset(
-    type="concrete",
+    type="dirty_concrete",
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_animated_dozer.sprites),
 )
@@ -164,7 +164,7 @@ industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_conveyors_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_conveyors_2, spriteset_crane],
+    building_sprites=[spriteset_conveyors_2],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
@@ -202,20 +202,20 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "slag_grinding_plant_tile_2",
-            "slag_grinding_plant_spritelayout_slag_dump_dozer",
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_large_silo",
         ),
         (
             0,
             1,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_slag_dump_2",
+            "slag_grinding_plant_spritelayout_large_silo",
         ),
         (
             0,
             2,
-            "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_slag_dump_1",
+            "slag_grinding_plant_tile_2",
+            "slag_grinding_plant_spritelayout_slag_dump_dozer",
         ),
         (
             0,
@@ -227,19 +227,19 @@ industry.add_industry_layout(
             1,
             0,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_tile_empty",
+            "slag_grinding_plant_spritelayout_large_shed",
         ),
         (
             1,
             1,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_tile_empty",
+            "slag_grinding_plant_spritelayout_grinding_tower",
         ),
         (
             1,
             2,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_tile_empty",
+            "slag_grinding_plant_spritelayout_conveyors_1",
         ),
         (
             1,
@@ -251,25 +251,25 @@ industry.add_industry_layout(
             2,
             0,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_large_silo",
+            "slag_grinding_plant_spritelayout_large_shed",
         ),
         (
             2,
             1,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_large_shed",
+            "slag_grinding_plant_spritelayout_grinding_tower",
         ),
         (
             2,
             2,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_grinding_tower",
+            "slag_grinding_plant_spritelayout_conveyors_1",
         ),
         (
             2,
             3,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_conveyors_1",
+            "slag_grinding_plant_spritelayout_conveyors_2",
         ),
         (
             3,
@@ -280,14 +280,14 @@ industry.add_industry_layout(
         (
             3,
             1,
-            "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_large_shed",
+            "slag_grinding_plant_tile_2",
+            "slag_grinding_plant_spritelayout_slag_dump_dozer",
         ),
         (
             3,
             2,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_tile_empty",
+            "slag_grinding_plant_spritelayout_slag_dump_2",
         ),
         (3, 3, "slag_grinding_plant_tile_1", "slag_grinding_plant_spritelayout_office"),
     ],
@@ -298,23 +298,23 @@ industry.add_industry_layout(
         (
             0,
             0,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_large_silo",
+        ),
+        (
+            0,
+            1,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_large_shed",
+        ),
+        (
+            0,
+            2,
             "slag_grinding_plant_tile_2",
             "slag_grinding_plant_spritelayout_slag_dump_dozer",
         ),
         (
             0,
-            1,
-            "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_slag_dump_2",
-        ),
-        (
-            0,
-            2,
-            "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_slag_dump_1",
-        ),
-        (
-            0,
             3,
             "slag_grinding_plant_tile_1",
             "slag_grinding_plant_spritelayout_slag_dump_2",
@@ -323,23 +323,112 @@ industry.add_industry_layout(
             1,
             0,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_tile_empty",
+            "slag_grinding_plant_spritelayout_large_shed",
         ),
         (
             1,
             1,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_tile_empty",
+            "slag_grinding_plant_spritelayout_grinding_tower",
         ),
         (
             1,
             2,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_tile_empty",
+            "slag_grinding_plant_spritelayout_conveyors_1",
         ),
         (
             1,
             3,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_conveyors_2",
+        ),
+        (
+            2,
+            0,
+            "slag_grinding_plant_tile_2",
+            "slag_grinding_plant_spritelayout_slag_dump_dozer",
+        ),
+        (
+            2,
+            1,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_slag_dump_2",
+        ),
+        (
+            2,
+            2,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_large_silo",
+        ),
+        (
+            2,
+            3,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_large_silo",
+        ),
+        (
+            3,
+            0,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_grinding_tower",
+        ),
+        (
+            3,
+            1,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_conveyors_1",
+        ),
+        (
+            3,
+            2,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_conveyors_2",
+        ),
+        (
+            3,
+            3,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_office",
+        ),
+    ],
+)
+industry.add_industry_layout(
+    id="slag_grinding_plant_industry_layout_3",
+    layout=[
+        (
+            0,
+            0,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_large_silo",
+        ),
+        (
+            0,
+            1,
+            "slag_grinding_plant_tile_2",
+            "slag_grinding_plant_spritelayout_slag_dump_dozer",
+        ),
+        (
+            0,
+            2,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_slag_dump_2",
+        ),
+        (
+            1,
+            0,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_grinding_tower",
+        ),
+        (
+            1,
+            1,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_conveyors_1",
+        ),
+        (
+            1,
+            2,
             "slag_grinding_plant_tile_1",
             "slag_grinding_plant_spritelayout_conveyors_2",
         ),
@@ -353,38 +442,144 @@ industry.add_industry_layout(
             2,
             1,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_large_shed",
+            "slag_grinding_plant_spritelayout_large_silo",
         ),
         (
             2,
             2,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_grinding_tower",
-        ),
-        (
-            2,
-            3,
-            "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_conveyors_1",
+            "slag_grinding_plant_spritelayout_large_silo",
         ),
         (
             3,
             0,
-            "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_large_silo",
+            "slag_grinding_plant_tile_2",
+            "slag_grinding_plant_spritelayout_slag_dump_dozer",
         ),
         (
             3,
             1,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_large_silo",
+            "slag_grinding_plant_spritelayout_slag_dump_2",
         ),
         (
             3,
             2,
             "slag_grinding_plant_tile_1",
-            "slag_grinding_plant_spritelayout_tile_empty",
+            "slag_grinding_plant_spritelayout_office",
         ),
-        (3, 3, "slag_grinding_plant_tile_1", "slag_grinding_plant_spritelayout_office"),
+        (
+            4,
+            0,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_grinding_tower",
+        ),
+        (
+            4,
+            1,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_conveyors_1",
+        ),
+        (
+            4,
+            2,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_conveyors_2",
+        ),
+    ],
+)
+industry.add_industry_layout(
+    id="slag_grinding_plant_industry_layout_4",
+    layout=[
+        (
+            0,
+            0,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_large_silo",
+        ),
+        (
+            0,
+            1,
+            "slag_grinding_plant_tile_2",
+            "slag_grinding_plant_spritelayout_slag_dump_dozer",
+        ),
+        (
+            0,
+            2,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_slag_dump_2",
+        ),
+        (
+            0,
+            3,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_large_silo",
+        ),
+        (
+            0,
+            4,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_large_silo",
+        ),
+        (
+            1,
+            0,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_grinding_tower",
+        ),
+        (
+            1,
+            1,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_conveyors_1",
+        ),
+        (
+            1,
+            2,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_conveyors_2",
+        ),
+        (
+            1,
+            3,
+            "slag_grinding_plant_tile_2",
+            "slag_grinding_plant_spritelayout_slag_dump_dozer",
+        ),
+        (
+            1,
+            4,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_slag_dump_2",
+        ),
+        (
+            2,
+            0,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_large_shed",
+        ),
+        (
+            2,
+            1,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_grinding_tower",
+        ),
+        (
+            2,
+            2,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_conveyors_1",
+        ),
+        (
+            2,
+            3,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_conveyors_2",
+        ),
+        (
+            2,
+            4,
+            "slag_grinding_plant_tile_1",
+            "slag_grinding_plant_spritelayout_office",
+        ),
     ],
 )

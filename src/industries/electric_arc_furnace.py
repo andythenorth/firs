@@ -156,7 +156,20 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 
-# min 6x4 or 5x5 as there are lots of output cargos
+# this industry needs outpost layout as there are lots of cargos
+"""
+industry.add_industry_outpost_layout(
+    id="electric_arc_furnace_industry_outpost_layout_1",
+    layout=[
+        # test outpost layout
+        (0, 0, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_metal_2"),
+        (0, 1, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_metal_1"),
+        (1, 0, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_metal_2"),
+        (1, 1, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_crane_2"),
+    ],
+)
+"""
+# core layouts are roughly 6x4 or 5x5
 industry.add_industry_layout(
     id="electric_arc_furnace_industry_layout_1",
     layout=[

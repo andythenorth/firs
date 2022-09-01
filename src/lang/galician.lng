@@ -1,0 +1,579 @@
+##grflangid 0x31
+##plural 0
+##gender m f
+
+
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Creado por andythenorth, FooBar, planetmaker, Terkhen e Yexo, coa axuda de moitos outros. {SILVER}Consulta o Readme para máis información, incluíndo como usar o FIRS. {BLACK}Licencia: GPL v2.
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distancia máxima de caladoiros, plataformas petrolíferas e dragados dende a costa, en cadrados.
+STR_PARAM_DESC_ECONOMIES                                                        :Cada un dos tipos de economía contén unha combinación diferente de industrias e cargas.{}{}Para xogadores que busquen partidas máis sinxelas, as {BLACK}economías {SILVER}básicas conteñen menos industrias e cargas que outras economías FIRS.{}{} A páxina web de FIRST proporciona información máis detallada sobre cada economía.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Por defecto aparecerán industrias novas durante a partida.{}{} Se {SILVER}impedir apertura {BLACK}se activa, non aparecerán industrias durante a partida, e os xogadores non poderán financiar ou efectuar prospeccións para novas industrias.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distancia máxima de industrias marítimas, en cadrados.
+STR_PARAM_NAME_ECONOMIES                                                        :Economía
+STR_PARAM_NAME_NO_OPENINGS                                                      :Impide que abran industrias durante a partida.
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Sen límite
+
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Caixas de abastecemento precisas para a produción primaria mellorada (16 por defecto).
+STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Caixas de abastecemento para a produción primaria ao límite (80 por defecto).
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :As granxas, minas e industrias similares aumentarán a produción ao recibir caixas de abastecemento, primeiro a nivel {SILVER}mellorado{BLACK}, e logo {SILVER}ao límite{BLACK}. {}{}. Os valores por defecto están ben, pero, se precisas, podes modificalos aquí. {}{} Os requirimentos de carga para industrias portuarias serán 8 veces superiores aos establecidos por este parámetro.
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Nivel de produción primaria mellorada (%)
+STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Nivel de produción primaria ao límite(%)
+STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Produción nas granxas, minas e industrias similares cando se cumpren os requirimentos de abastecemento (amosado como porcentaxe do nivel de produción {SILVER}normal{BLACK}).
+
+STR_PARAM_NAME_EXPERIMENTAL_FEATURES                                            :Habilitar características experimentais
+STR_PARAM_DESC_EXPERIMENTAL_FEATURES                                            :Activa ou desactiva as características experimentais
+
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Temperada básica
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Ártica básica
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tropical básica
+STR_PARAM_VALUE_ECONOMIES_BETTER_LIVING_THROUGH_CHEMISTRY                       :Mellor vivir a través da qúimica
+STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                      :Nun país cálido
+STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Cidade Siderúrxica
+
+STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Produce ao máximo se se fornece{WHITE} calquera {BLACK} carga requirida.
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}Para producir ao máximo, subministra {WHITE}todas {BLACK}as mercadorías requeridas polo menos unha vez cada tres meses.
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produción actual: {YELLOW}normal {}{}{BLACK}Para produción {WHITE}mellorada {BLACK} entrega {SIGNED_WORD} caixas de abastecemento nun trimestre.{}Para produción {WHITE}ao límite{BLACK} entrega {SIGNED_WORD} caixas.
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produción actual: {YELLOW}mellorada {}{}{BLACK}Para manter este nivel, entrega {SIGNED_WORD} caixas de abastecemento nun trimestre.{}Para produción {WHITE}ao límite {BLACK} entrega {SIGNED_WORD} caixas.
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Produción actual: {YELLOW}ao límite {}{}{BLACK}Para manter este nivel, entrega {SKIP}{SIGNED_WORD} caixas de mercadorías nun trimestre.
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Produción actual: {YELLOW}normal {}{}{BLACK}Para produción {WHITE}mellorada {BLACK} entrega {SIGNED_WORD} unidades de cargas requiridas nun trimestre.{}Para produción {WHITE}ao límite {BLACK} entrega {SIGNED_WORD} unidades.
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Produción actual: {YELLOW}mellorada {}{}{BLACK}Para manter este nivel, entrega {SIGNED_WORD} unidades de cargas requeridas nun trimestre.{}Para produción {WHITE}ao límite {BLACK} entrega {SIGNED_WORD} unidades.
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Produción actual: {YELLOW}ao límite {}{}{BLACK}Para manter este nivel, entrega {SKIP}{SIGNED_WORD} unidades de cargas requeridas nun trimestre.
+
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA                                                :{SKIP}{SKIP}Ánimo da poboación:{} {STRING}{STRING}{}{}{BLACK}Puntuación optimista: {STRING}{SIGNED_WORD} punto{P 2 "" s}{}{BLACK} Necesidades e luxos se cumpren : {YELLOW}{SIGNED_WORD} punto{P 3 "" s} {}{BLACK} Polución e miseria: {YELLOW}{SIGNED_WORD} punto{P 4 "" s} {}{}{BLACK}A polución e a miseria medran con poboación e certos tipos de industria.{}{}As necesidades e luxos cúmprense entregando cargas a certas industrias.{}{}Se a puntuación optimista é maior de 10, o ánimo da poboación será {WHITE}optimista{BLACK}. Se a puntuación optmista é menos de -10, o ánimo da poboación será {WHITE}sombrío{BLACK}.
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC                                :Optimista
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY                                    :Sombrío
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL                                   :Neutral
+
+STR_CARGO_NAME_ACID                                                             :Ácido
+STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alcohol
+STR_CARGO_NAME_ALLOY_STEEL                                                      :Aceiro de aleación
+STR_CARGO_NAME_ALUMINIUM                                                        :Aluminio
+STR_CARGO_NAME_ALUMINIA                                                         :Alúmina
+STR_CARGO_NAME_AMMONIA                                                          :Amonio
+STR_CARGO_NAME_AMMONIUM_NITRATE                                                 :Nitrato de Amonio
+STR_CARGO_NAME_BAUXITE                                                          :{G=f}Bauxita
+STR_CARGO_NAME_BEANS                                                            :Feixóns
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=m}Material de construción
+STR_CARGO_NAME_CARBON_BLACK                                                     :{G=m}Negro de carbón
+STR_CARGO_NAME_CARBON_STEEL                                                     :{G=m}Aceiro ó carbón
+STR_CARGO_NAME_CASSAVA                                                          :Mandioca
+STR_CARGO_NAME_CAST_IRON                                                        :{G=m}Fundición de ferro
+STR_CARGO_NAME_CEMENT                                                           :{G=m}Cemento
+STR_CARGO_NAME_CHEMICALS                                                        :{G=m}Produtos químicos
+STR_CARGO_NAME_CHLORINE                                                         :Cloro
+STR_CARGO_NAME_CHROMITE_ORE                                                     :{G=m}Mineral de cromita
+STR_CARGO_NAME_CLAY                                                             :{G=f}Arxila
+STR_CARGO_NAME_CLEANING_AGENTS                                                  :{G=m}Axentes de limpeza
+STR_CARGO_NAME_COFFEE                                                           :Café
+STR_CARGO_NAME_COAL_TAR                                                         :{G=m}Alcatrán de hulla
+STR_CARGO_NAME_COKE                                                             :Coque
+STR_CARGO_NAME_COPPER                                                           :Cobre
+STR_CARGO_NAME_COPPER_CONCENTRATE                                               :Concentrado de cobre
+STR_CARGO_NAME_EDIBLE_OIL                                                       :Aceite alimentario
+STR_CARGO_NAME_ELECTRICAL_PARTS                                              	:Pezas eléctricas
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Abastecementos de enxeñería
+STR_CARGO_NAME_ETHYLENE                                                         :Etileno
+STR_CARGO_NAME_EXPLOSIVES                                                       :Explosivos
+STR_CARGO_NAME_FERROCHROME                                                      :{G=m}Ferrocromo
+STR_CARGO_NAME_FIBRES                                                           :{G=f}Fibras vexetais
+STR_CARGO_NAME_FISH                                                             :{G=m}Peixe
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=m}Abastecementos agrícolas
+STR_CARGO_NAME_FERTILISER                                                       :Fertilizante
+STR_CARGO_NAME_FOOD_ADDITIVES                                                   :{G=m}Aditivos alimentarios
+STR_CARGO_NAME_FORMIC_ACID                                                      :{G=m}Ácido fórmico
+STR_CARGO_NAME_FRUITS                                                           :Froita
+STR_CARGO_NAME_FURNITURE                                                        :{G=m}Mobres
+STR_CARGO_NAME_GLASS                                                            :{G=m}Cristal
+STR_CARGO_NAME_HYDROCHLORIC_ACID                                                :{G=m}Ácido clorhídrico
+STR_CARGO_NAME_KAOLIN                                                           :Caolín
+STR_CARGO_NAME_LIMESTONE                                                        :Calcaria
+STR_CARGO_NAME_LOGS                                                             :Madeira
+STR_CARGO_NAME_LUMBER                                                           :{G=m}Taboróns
+# cargo uses Sodium Hydroxide as string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
+STR_CARGO_NAME_LYE                                                              :Hidróxido de Sodio
+STR_CARGO_NAME_METAL                                                            :{G=m}Metal
+STR_CARGO_NAME_METHANE                                                          :{G=m}Metano
+STR_CARGO_NAME_METHANOL                                                         :{G=m}Metanol
+STR_CARGO_NAME_MILK                                                             :{G=m}Leite
+STR_CARGO_NAME_MANGANESE                                                        :Manganeso
+STR_CARGO_NAME_NAPHTHA                                                          :{G=f}Nafta
+STR_CARGO_NAME_NICKEL                                                           :{G=m}Níquel
+STR_CARGO_NAME_NITRATES                                                         :Nitratos
+STR_CARGO_NAME_NUTS                                                             :Froitos secos
+STR_CARGO_NAME_OXYGEN                                                           :Osíxeno
+STR_CARGO_NAME_PACKAGING                                                        :Paquetería
+STR_CARGO_NAME_PAINTS_AND_COATINGS                                              :Pinturas e revestimentos
+STR_CARGO_NAME_PEAT                                                             :Turba
+STR_CARGO_NAME_PETROL                                                           :Combustibles do petróleo
+STR_CARGO_NAME_PHOSPHATE                                                        :Fosfato
+STR_CARGO_NAME_PHOSPHORIC_ACID                                                  :{G=m}Ácido fosfórico
+STR_CARGO_NAME_PIG_IRON                                                         :Ferro-gusa
+STR_CARGO_NAME_PIPE                                                             :Tuberías
+STR_CARGO_NAME_PLASTICS                                                         :{G=m}Plásticos
+STR_CARGO_NAME_POTASH                                                           :Potasa
+STR_CARGO_NAME_PROPYLENE                                                        :{G=m}Propileno
+STR_CARGO_NAME_PYRITE_ORE                                                       :Mineral de pirita
+STR_CARGO_NAME_QUICKLIME                                                        :Cal
+STR_CARGO_NAME_RAW_LATEX                                                        :{G=m}Látex en crú
+STR_CARGO_NAME_REBAR                                                            :{G=m}Aceiro corrugado
+STR_CARGO_NAME_RECYCLABLES                                                      :{G=m}Reciclables
+STR_CARGO_NAME_SALT                                                             :{G=m}Sal
+STR_CARGO_NAME_SAND                                                             :{G=f}Area
+STR_CARGO_NAME_SCRAP_METAL                                                      :{G=f}Ferralla
+STR_CARGO_NAME_SLAG                                                             :Escoura
+STR_CARGO_NAME_SODA_ASH                                                         :Natrón
+STR_CARGO_NAME_STAINLESS_STEEL                                                  :{G=m}Aceiro inoxidable
+STR_CARGO_NAME_STEEL                                                            :{G=m}Aceiro
+STR_CARGO_NAME_STEEL_SECTIONS                                                   :{G=f}Seccións de aceiro
+STR_CARGO_NAME_STEEL_SHEET                                                      :{G=f}Láminas de aceiro
+STR_CARGO_NAME_STEEL_WIRE_ROD                                                   :{G=f}Arames de aceiro
+STR_CARGO_NAME_STONE                                                            :{G=f}Pedra
+STR_CARGO_NAME_SUGAR_BEET                                                       :{G=f}Remolacha azucreira
+STR_CARGO_NAME_SULPHUR                                                          :Xofre
+STR_CARGO_NAME_SULPHURIC_ACID                                                   :{G=m}Ácido sulfúrico
+STR_CARGO_NAME_TEXTILES                                                         :{G=m}Textis
+STR_CARGO_NAME_TIN                                                              :{G=m}Estano
+STR_CARGO_NAME_TINPLATE                                                         :{G=f}Folla de lata
+STR_CARGO_NAME_TYRES                                                            :{G=f}Rodas
+STR_CARGO_NAME_UREA                                                             :{G=f}Urea
+STR_CARGO_NAME_VEHICLE_BODIES                                                   :Carrocerías
+STR_CARGO_NAME_VEHICLE_ENGINES                                                  :Motores de vehículos
+STR_CARGO_NAME_VEHICLE_PARTS                                                    :Pezas de vehículos
+STR_CARGO_NAME_VEHICLES                                                         :Vehículos
+STR_CARGO_NAME_WOOL                                                             :{G=f}La
+STR_CARGO_NAME_YARN                                                             :{G=m}Fío
+STR_CARGO_NAME_ZINC                                                             :Cinc
+
+STR_CARGO_UNIT_ACID                                                             :{VOLUME} de ácido
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} de alcohol
+STR_CARGO_UNIT_ALLOY_STEEL                                                      :{WEIGHT} de aleación de aceiro
+STR_CARGO_UNIT_ALUMINIA                                                         :{WEIGHT} de alúmina
+STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} de aluminio
+STR_CARGO_UNIT_AMMONIA                                                          :{VOLUME} de amonio
+STR_CARGO_UNIT_AMMONIUM_NITRATE                                                 :{VOLUME} de nitrato de amonio
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} de bauxita
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} de feixóns
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} de materiais de construción
+STR_CARGO_UNIT_CARBON_BLACK                                                     :{WEIGHT} de carbón negro
+STR_CARGO_UNIT_CARBON_STEEL                                                     :{WEIGHT} de aceiro carbonizado
+STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} de mandioca
+STR_CARGO_UNIT_CAST_IRON                                                        :{WEIGHT} de ferro de fundición
+STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} de cemento
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de produtos químicos
+STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} de cloro
+STR_CARGO_UNIT_CHROMITE_ORE                                                     :{WEIGHT} de mineral de cromita
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} de arxila
+STR_CARGO_UNIT_CLEANING_AGENTS                                                  :{WEIGHT} de axentes de limpeza
+STR_CARGO_UNIT_COAL_TAR                                                         :{VOLUME} de alcatrán de hulla
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} saco{P 0 "" s} de café
+STR_CARGO_UNIT_COKE                                                             :{WEIGHT} de coque
+STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} de cobre
+STR_CARGO_UNIT_COPPER_CONCENTRATE                                               :{WEIGHT} de concentrado de cobre
+STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} de aceite alimentario
+STR_CARGO_UNIT_ELECTRICAL_PARTS                                                 :{WEIGHT} de partes eléctricas
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} caixa{P 0 "" s} de abastecementos de enxeñería
+STR_CARGO_UNIT_ETHYLENE                                                         :{VOLUME} de etileno
+STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} caixa{P 0 "" s} de explosivos
+STR_CARGO_UNIT_FERROCHROME                                                      :{WEIGHT} de ferrocromo
+STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} de fertilizante
+STR_CARGO_UNIT_FOOD_ADDITIVES                                                   :{WEIGHT} de aditivos alimentarios
+STR_CARGO_UNIT_FORMIC_ACID                                                      :{VOLUME} de acido fórmico
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} paca{P 0 "" s} de fibras vexetais
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} de peixe
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} caixa{P 0 "" s} de abastecementos agrícolas
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} de froita
+STR_CARGO_UNIT_FURNITURE                                                        :{WEIGHT} de mobles
+STR_CARGO_UNIT_GLASS                                                            :{WEIGHT} de cristais
+STR_CARGO_UNIT_HYDROCHLORIC_ACID                                                :{VOLUME} de acido clorhídrico
+STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} de caolín
+STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} de calcaria
+STR_CARGO_UNIT_LOGS                                                             :{WEIGHT} de madeira
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de taboróns
+# cargo uses Sodium Hydroxide as string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
+STR_CARGO_UNIT_LYE                                                              :{VOLUME} de sosa cáustica
+STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} de manganeso
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de metal
+STR_CARGO_UNIT_METHANE                                                          :{VOLUME} de metano
+STR_CARGO_UNIT_METHANOL                                                         :{VOLUME} de metanol
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} de leite
+STR_CARGO_UNIT_NAPHTHA                                                          :{VOLUME} de naphta
+STR_CARGO_UNIT_NICKEL                                                           :{WEIGHT} de níquel
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} de nitratos
+STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} saco{P 0 "" s} de froitos secos
+STR_CARGO_UNIT_OXYGEN                                                           :{VOLUME} de osíxeno
+STR_CARGO_UNIT_PACKAGING                                                        :{WEIGHT} de paquetería
+STR_CARGO_UNIT_PAINTS_AND_COATINGS                                              :{VOLUME} de pinturas e revistimentos
+STR_CARGO_UNIT_PEAT                                                             :{WEIGHT} de turba
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} de combustíbel do petróleo
+STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} de fosfato
+STR_CARGO_UNIT_PHOSPHORIC_ACID                                                  :{VOLUME} de ácido fosfórico
+STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} de ferro-gusa
+STR_CARGO_UNIT_PIPE                                                             :{WEIGHT} de tuberías
+STR_CARGO_UNIT_PLASTICS                                                         :{WEIGHT} de plásticos
+STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} de potasa
+STR_CARGO_UNIT_PROPYLENE                                                        :{VOLUME} de propileno
+STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} de mineral de pirita
+STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} de cal
+STR_CARGO_UNIT_RAW_LATEX                                                        :{VOLUME} de latex crú
+STR_CARGO_UNIT_REBAR                                                            :{WEIGHT} de aceiro corrugado
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} de materiais reciclábeis
+STR_CARGO_UNIT_SALT                                                             :{WEIGHT} de sal
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} de area
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} de ferralla
+STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} de escoura
+STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} de natrón
+STR_CARGO_UNIT_STAINLESS_STEEL                                                  :{WEIGHT} de aceiro inoxidable
+STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} de aceiro
+STR_CARGO_UNIT_STEEL_SECTIONS                                                   :{WEIGHT} de seccións de aceiro
+STR_CARGO_UNIT_STEEL_SHEET                                                      :{WEIGHT} de follas de aceiro
+STR_CARGO_UNIT_STEEL_WIRE_ROD                                                   :{WEIGHT} de varas de aceiro
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} de pedra
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} de remolacha azucreira
+STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} de xofre
+STR_CARGO_UNIT_SULPHURIC_ACID                                                   :{VOLUME} de ácido sulfúrico
+STR_CARGO_UNIT_TEXTILES                                                         :{WEIGHT} de textis
+STR_CARGO_UNIT_TIN                                                              :{WEIGHT} de latas
+STR_CARGO_UNIT_TINPLATE                                                         :{WEIGHT} de follas de lata
+STR_CARGO_UNIT_TYRES                                                            :{WEIGHT} de pneumáticos
+STR_CARGO_UNIT_UREA                                                             :{WEIGHT} de urea
+STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} de carrocerías
+STR_CARGO_UNIT_VEHICLE_ENGINES                                                  :{WEIGHT} de motores de vehículos
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{WEIGHT} de pezas de vehículos
+STR_CARGO_UNIT_VEHICLES                                                         :{WEIGHT} de vehículos
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} paca{P 0 "" s} de la
+STR_CARGO_UNIT_YARN                                                             :{SIGNED_WORD} paca{P 0 "" s} de fíos
+STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} de cinc
+
+# it seems that using 2 chars for these is a convention not a limit, I tested 4 chars and OpenTTD renders it fine - May 2020
+STR_CID_ACID                                                                    :{TINYFONT}AC
+STR_CID_ALCOHOL                                                                 :{TINYFONT}OH
+STR_CID_ALLOY_STEEL                                                             :{TINYFONT}AACE
+STR_CID_ALUMINIA                                                                :{TINYFONT}ALUA
+STR_CID_ALUMINIUM                                                               :{TINYFONT}AMUM
+STR_CID_AMMONIA                                                                 :{TINYFONT}AMON
+STR_CID_AMMONIUM_NITRATE                                                        :{TINYFONT}NIAM
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BEANS                                                                   :{TINYFONT}FX
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
+STR_CID_CARBON_BLACK                                                            :{TINYFONT}CANE
+STR_CID_CARBON_STEEL                                                            :{TINYFONT}ACEC
+STR_CID_CASSAVA                                                                 :{TINYFONT}MD
+STR_CID_CAST_IRON                                                               :{TINYFONT}FEFU
+STR_CID_CEMENT                                                                  :{TINYFONT}CE
+STR_CID_CHEMICALS                                                               :{TINYFONT}PQ
+STR_CID_CHROMITE_ORE                                                            :{TINYFONT}MICR
+STR_CID_CHLORINE                                                                :{TINYFONT}CL
+STR_CID_CLAY                                                                    :{TINYFONT}AX
+STR_CID_CLEANING_AGENTS                                                         :{TINYFONT}AXLP
+STR_CID_COFFEE                                                                  :{TINYFONT}CF
+STR_CID_COAL_TAR                                                                :{TINYFONT}ALHU
+STR_CID_COKE                                                                    :{TINYFONT}CQ
+STR_CID_COPPER                                                                  :{TINYFONT}CU
+STR_CID_COPPER_CONCENTRATE                                                      :{TINYFONT}COCU
+STR_CID_EDIBLE_OIL                                                              :{TINYFONT}AA
+STR_CID_ELECTRICAL_PARTS                                                        :{TINYFONT}PTEL
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}AE
+STR_CID_ETHYLENE                                                                :{TINYFONT}ETIL
+STR_CID_EXPLOSIVES                                                              :{TINYFONT}XP
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}AG
+STR_CID_FERROCHROME                                                             :{TINYFONT}FRCR
+STR_CID_FERTILISER                                                              :{TINYFONT}FZ
+STR_CID_FIBRES                                                                  :{TINYFONT}FV
+STR_CID_FISH                                                                    :{TINYFONT}PS
+STR_CID_FOOD_ADDITIVES                                                          :{TINYFONT}ADAL
+STR_CID_FORMIC_ACID                                                             :{TINYFONT}ACFM
+STR_CID_FURNITURE                                                               :{TINYFONT}MOBL
+STR_CID_GLASS                                                                   :{TINYFONT}CRIS
+STR_CID_HYDROCHLORIC_ACID                                                       :{TINYFONT}ACHC
+STR_CID_KAOLIN                                                                  :{TINYFONT}KA
+STR_CID_LIMESTONE                                                               :{TINYFONT}PC
+STR_CID_LOGS                                                                    :{TINYFONT}MADE
+STR_CID_LUMBER                                                                  :{TINYFONT}TB
+# cargo uses Sodium Hydroxide as name string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
+STR_CID_LYE                                                                     :{TINYFONT}SC
+STR_CID_MANGANESE                                                               :{TINYFONT}MN
+STR_CID_METAL                                                                   :{TINYFONT}MT
+STR_CID_METHANE                                                                 :{TINYFONT}METN
+STR_CID_METHANOL                                                                :{TINYFONT}MENL
+STR_CID_MILK                                                                    :{TINYFONT}LE
+STR_CID_NAPHTHA                                                                 :{TINYFONT}NAFT
+STR_CID_NICKEL                                                                  :{TINYFONT}NI
+STR_CID_NITRATES                                                                :{TINYFONT}NT
+STR_CID_NUTS                                                                    :{TINYFONT}FS
+STR_CID_OXYGEN                                                                  :{TINYFONT}O2
+STR_CID_PACKAGING                                                               :{TINYFONT}PQ
+STR_CID_PAINTS_AND_COATINGS                                                     :{TINYFONT}PIRV
+STR_CID_PEAT                                                                    :{TINYFONT}TU
+STR_CID_PETROL                                                                  :{TINYFONT}CP
+STR_CID_PIG_IRON                                                                :{TINYFONT}FG
+STR_CID_PIPE                                                                    :{TINYFONT}TB
+STR_CID_PHOSPHATE                                                               :{TINYFONT}PO
+STR_CID_PHOSPHORIC_ACID                                                         :{TINYFONT}ACPO
+STR_CID_PLASTICS                                                                :{TINYFONT}PLAS
+STR_CID_POTASH                                                                  :{TINYFONT}PT
+STR_CID_PROPYLENE                                                               :{TINYFONT}PPLN
+STR_CID_PYRITE_ORE                                                              :{TINYFONT}MP
+STR_CID_QUICKLIME                                                               :{TINYFONT}CV
+STR_CID_RAW_LATEX                                                               :{TINYFONT}LXCR
+STR_CID_REBAR                                                                   :{TINYFONT}CACE
+STR_CID_RECYCLABLES                                                             :{TINYFONT}RR
+STR_CID_SALT                                                                    :{TINYFONT}NA
+STR_CID_SAND                                                                    :{TINYFONT}AR
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}FL
+STR_CID_SLAG                                                                    :{TINYFONT}ES
+STR_CID_SODA_ASH                                                                :{TINYFONT}NR
+STR_CID_STAINLESS_STEEL                                                         :{TINYFONT}SS
+STR_CID_STEEL                                                                   :{TINYFONT}ACEI
+STR_CID_STONE                                                                   :{TINYFONT}PD
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}RA
+STR_CID_SULPHUR                                                                 :{TINYFONT}SU
+STR_CID_SULPHURIC_ACID                                                          :{TINYFONT}ACSU
+STR_CID_STEEL_SECTIONS                                                          :{TINYFONT}SACE
+STR_CID_STEEL_SHEET                                                             :{TINYFONT}FACE
+STR_CID_STEEL_WIRE_ROD                                                          :{TINYFONT}VACE
+STR_CID_TEXTILES                                                                :{TINYFONT}TEXT
+STR_CID_TIN                                                                     :{TINYFONT}TI
+STR_CID_TINPLATE                                                                :{TINYFONT}LATA
+STR_CID_TYRES                                                                   :{TINYFONT}FOLT
+STR_CID_UREA                                                                    :{TINYFONT}UREA
+STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}CR
+STR_CID_VEHICLE_ENGINES                                                         :{TINYFONT}MOVH
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}PV
+STR_CID_VEHICLES                                                                :{TINYFONT}VH
+STR_CID_WOOL                                                                    :{TINYFONT}LA
+STR_CID_YARN                                                                    :{TINYFONT}FIO
+STR_CID_ZINC                                                                    :{TINYFONT}ZN
+
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS non está deseñado para ser usado no clima Terra de xoguetes
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS precisa OpenTTD 1.7.0 / r27769 ou superior
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Set incompatible: {ORANGE}{STRING} {YELLOW}Consulta o Léame de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Parámetro incompatible: {ORANGE}O parámetro 2 de CanSet debe de ser 0 para funcionar con FIRS. {YELLOW}Consulta o Léame de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Parámetro incompatible: {ORANGE}O parámetro 2 de NA City Set debe de ser 0 para funcionar con FIRS. {YELLOW}Consulta o Léame de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Versión incompatible: {ORANGE}Ten que usarse unha versión de Total Town Replacement Set igual ou superior a 3.11. {YELLOW}Consulta o Léame de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :debe situarse por baixo da liña de neve.
+STR_ERR_LOCATION_NOT_BELOW_SNOWLINE                                             :debe situarse por riba da liña de neve.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :debe situarse en terra seca.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :non pode situarse no deserto.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :non pode situarse en pendentes agudas.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :só se permite unha industria deste tipo por localidade.
+
+STR_PROD_CHANGE_TEST                                                            :{BIGFONT}{BLACK}A rata saltou sobre o gato
+
+STR_IND_ALUMINIUM_PLANT                                                         :{G=f}Fábrica de aluminio
+STR_IND_AMMONIA_PLANT                                                           :{G=f}Fábrica de amoníaco
+STR_IND_ARABLE_FARM                                                             :{G=f}Explotación agrícola arable
+STR_IND_ASSEMBLY_PLANT                                                          :Fábrica de vehículos
+STR_IND_BASIC_OXYGEN_FURNACE                                                    :Forno básico de osíxeno
+STR_IND_BIOREFINERY                                                             :{G=f}Biorrefinería
+STR_IND_BLAST_FURNACE                                                           :Alto forno
+STR_IND_BREWERY                                                                 :{G=f}Cervexeira
+STR_IND_CIDER_MILL                                                              :Lagar
+STR_IND_BRICK_WORKS                                                             :Fábrica de ladrillos
+STR_IND_BUILDERS_YARD                                                           :{G=m}Almacén de construción
+STR_IND_BULK_TERMINAL                                                           :Terminal de carga a granel de sólidos
+STR_IND_CARBON_BLACK_PLANT                                                      :Planta de carbón negro
+STR_IND_CEMENT_PLANT                                                            :{G=f}Fábrica de cemento
+STR_IND_CHEMICAL_PLANT                                                          :Planta química
+STR_IND_CHLOR_ALKALI_PLANT                                                      :Planta de Procesos Cloroalcalinos
+STR_IND_CHROMITE_MINE                                                           :Mina de Cromita
+STR_IND_CIVIL_EXPLOSIVES_FACILITY                                               :Instalación de explosivos civís
+STR_IND_CLAY_PIT                                                                :{G=m}Pozo de arxila
+STR_IND_COFFEE_ESTATE                                                           :Plantación de café
+STR_IND_COKE_OVEN                                                               :Forno de coque
+STR_IND_COMPONENT_FACTORY                                                       :Fábrica de componentes
+STR_IND_COPPER_CONCENTRATOR                                                     :Concentrador de cobre
+STR_IND_COPPER_REFINERY                                                         :Refinería de cobre
+STR_IND_CRYO_PLANT                                                              :Planta crioxénica
+STR_IND_DAIRY                                                                   :Central leiteira
+STR_IND_DAIRY_FARM                                                              :Explotación leiteira
+STR_IND_DREDGING_SITE                                                           :{G=f}Zona de dragaxe
+STR_IND_ELECTRIC_ARC_FURNACE                                                    :Forno de arco eléctrico
+STR_IND_ENGINE_PLANT                                                            :Planta de motores
+STR_IND_ETHYLENE_CRACKER                                                        :Planta de Craqueo de Nafta
+STR_IND_FARM                                                                    :Granxa
+STR_IND_FERROCHROME_SMELTER                                                     :Fundición de ferrocromo
+STR_IND_FERTILISER_PLANT                                                        :Planta de fertilizantes
+STR_IND_FACTORY_1                                                               :Fábrica 1
+STR_IND_FACTORY_2                                                               :Fábrica 2
+STR_IND_FACTORY_3                                                               :Fábrica 3
+STR_IND_FISCHER_TROPSCH_PLANT                                                   :Planta de Proceso Fischer-Tropsch
+STR_IND_FISH_FARM                                                               :Piscifactoría
+STR_IND_FISHING_GROUND                                                          :{G=f}Caladoiro
+STR_IND_FISHING_HARBOUR                                                         :Lonxa
+STR_IND_FISHING_VILLAGE                                                         :Vila mariñeira
+STR_IND_FLOUR_MILL                                                              :Panificadora
+STR_IND_FOOD_MARKET                                                             :Praza de abastos
+STR_IND_FOOD_PROCESSOR                                                          :Planta procesadora de alimentos
+STR_IND_FURNITURE_FACTORY                                                       :{G=f}Fábrica de mobles
+STR_IND_GENERAL_STORE                                                           :{G=m}Ultramarinos
+STR_IND_GLASS_WORKS                                                             :{G=f}Cristalaría
+STR_IND_HARDWARE_STORE                                                          :{G=m}Grandes almacéns
+STR_IND_HOTEL                                                                   :{G=m}Hotel
+STR_IND_HERDING_COOP                                                            :Cooperativa de pastoreo
+STR_IND_IRON_WORKS                                                              :Siderúrxica
+STR_IND_JUNKYARD                                                                :Punto limpo
+STR_IND_LATEX_PROCESSOR                                                         :Procesador de látex
+STR_IND_LIME_KILN                                                               :{G=m}Forno de cal
+STR_IND_LIMESTONE_MINE                                                          :Mina de calcaria
+STR_IND_LIQUIDS_TERMINAL                                                        :Terminal de carga a granel de líquidos
+STR_IND_LUMBER_YARD                                                             :Madeireira
+STR_IND_MACHINE_SHOP                                                            :{G=f}Fábrica de maquinaria
+STR_IND_MANGANESE_MINE                                                          :Mina de manganeso
+STR_IND_METAL_WORKSHOP                                                          :Taller metálico
+STR_IND_MIXEDFARM                                                               :{G=f}Explotación mixta
+STR_IND_NITRATE_MINE                                                            :Mina de nitratos
+STR_IND_ORCHARD_PIGGERY                                                         :Horta e cortello
+STR_IND_PEATLANDS                                                               :Turbeira
+STR_IND_PETROLPUMP                                                              :{G=f}Gasolineira
+STR_IND_PHOSPHATE_MINE                                                          :Mina de fosfatos
+STR_IND_PHOSPHORIC_ACID_PLANT                                                   :Planta de ácido fosfórico
+STR_IND_PLASTICS_PLANT                                                          :{G=f}Fábrica de plásticos
+STR_IND_PLAZA                                                                   :Plaza
+STR_IND_POLYETHYLENE_PLANT                                                      :Planta de polietileno
+STR_IND_POLYPROPYLENE_PLANT                                                     :Planta de polipropileno
+STR_IND_PORT                                                                    :{G=m}Peirao comercial
+STR_IND_POTASH_MINE                                                             :Mina de potasa
+STR_IND_PYRITE_MINE                                                             :Mina de pirita
+STR_IND_PYRITE_SMELTER                                                          :Fundición de pirita
+STR_IND_POWER_PLANT                                                             :Central enerxética
+STR_IND_QUARRY                                                                  :{G=f}Canteira
+STR_IND_RANCH                                                                   :{G=m}Rancho
+STR_IND_RECYCLING_DEPOT                                                         :{G=m}Depósito de reciclaxe
+STR_IND_RECYCLING_PLANT                                                         :{G=f}Planta de reciclaxe
+STR_IND_REINDEER_FARM                                                           :Granxa de renos
+STR_IND_SALT_MINE                                                               :Minas de sal
+STR_IND_SHEEPFARM                                                               :{G=f}Granxa ovina
+STR_IND_SLAG_GRINDING_PLANT                                                     :Planta de triturado de escoura
+STR_IND_SMITHY_FORGE                                                            :{G=f}Forxa
+STR_IND_SODA_ASH_MINE                                                           :Mina de natrón
+STR_IND_SOLVAY_PLANT                                                            :Planta de proceso Solvay
+# we use 'integrated_steel_mill' in code to avoid confusion with Steeltown mills, but it's easier to just use 'Steel Mill' for name that players see
+STR_IND_INTEGRATED_STEEL_MILL                                                   :Acería
+STR_IND_SHEET_AND_PIPE_MILL                                                     :Fábrica de follas e tuberías
+STR_IND_STOCKYARD                                                               :{G=m}Matadoiro
+STR_IND_SUGAR_REFINERY                                                          :{G=f}Refinería de azucre
+STR_IND_SUPPLY_YARD                                                             :{G=m}Almacén de abastecementos
+STR_IND_TEXTILE_MILL                                                            :{G=f}Industria téxtil
+STR_IND_TINPLATE_WORKS                                                          :Fábrica de latas
+STR_IND_TRADING_POST                                                            :Posto comercial
+STR_IND_TYRE_PLANT                                                              :Fábrica de pneumáticos
+STR_IND_VINEYARD                                                                :Viñedo
+STR_IND_VEHICLE_DISTRIBUTOR                                                     :Concesionario
+STR_IND_WHARF                                                                   :Peirao
+STR_IND_WIRE_AND_SECTION_MILL                                                   :Fábrica de arames e seccións
+
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Localización: {YELLOW}Non pode fundarse na neve ou en desertos.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Localización: {YELLOW}Non pode fundarse na neve ou en desertos.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Localización: {YELLOW}Non pode fundarse na neve ou en desertos.
+STR_FUND_FARM                                                                   :{}{BLACK}Localización: {YELLOW}Non pode fundarse na neve ou en desertos.
+STR_FUND_FOREST                                                                 :{}{BLACK}Localización: {YELLOW}Non pode fundarse en desertos.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Localización: {YELLOW}Non pode fundarse na neve.
+STR_FUND_HERDING_COOP                                                           :{}{BLACK}Localización: {YELLOW}Só pode fundarse na neve.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Localización: {YELLOW}Non pode fundarse na neve ou en desertos.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Localización: {YELLOW}Non pode fundarse na neve ou en desertos.
+STR_FUND_VINEYARD                                                               :{}{BLACK}Localización: {YELLOW}Non pode fundarse na neve ou en desertos.
+
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Dispoñible dende: {YELLOW}{COMMA}
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Non dispoñible a partir de: {YELLOW}{COMMA}
+
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{1:STRING} de {0:STRING}
+
+STR_STATION_ANIMALS                                                             :Matadoiro
+STR_STATION_AUTOMOTIVE                                                          :Planta automotriz
+STR_STATION_BAR_GRILL_AND_ROOMS                                                 :Albergue
+STR_STATION_BARNS                                                               :Celeiros
+STR_STATION_BARREL_AND_KEG                                                      :Cervexería
+STR_STATION_BASE                                                                :Base
+STR_STATION_BONEYARD                                                            :Punto limpo
+STR_STATION_BANK_TOP                                                            :Banco
+STR_STATION_BRINE_WORKS                                                         :Salgueiral
+STR_STATION_CASTINGS                                                            :Fundicións
+STR_STATION_COLLIERY                                                            :Mina de carbón
+STR_STATION_COMPONENTS                                                          :Componentes
+STR_STATION_COPPER_LODE                                                         :Veta de cobre
+STR_STATION_CREOSOTING                                                          :Madeireira
+STR_STATION_CRYO_PLANT                                                          :Planta crioxénica
+STR_STATION_DAIRY_LANE                                                          :Produtora láctea
+STR_STATION_DYNAMO                                                              :Dinamo
+STR_STATION_ESTATE                                                              :Leiras e ferrados
+STR_STATION_EXCHANGE                                                            :Intermodal
+STR_STATION_FARM_1                                                              :Pazo
+STR_STATION_FARM_2                                                              :Prados
+STR_STATION_FARM_3                                                              :{G=m}Rancho
+STR_STATION_FISHMARKET                                                          :Lonxa
+STR_STATION_FISH_PENS                                                           :Piscifactorías
+STR_STATION_FOOD_CORPORATION                                                    :Cooperativa alimentaria
+STR_STATION_FOREST                                                              :Bosque
+STR_STATION_FORGE                                                               :Forxa
+STR_STATION_FURNACE                                                             :Fornos
+STR_STATION_HEAVY_EQUIPMENT_YARD                                                :Almacén de maquinaria pesada
+STR_STATION_HEAVY_INDUSTRY_2                                                    :Fábrica
+STR_STATION_HERDING_COOP                                                        :Cooperativa
+STR_STATION_INDUSTRY_ESTATE_1                                                   :Planta de reciclaxe
+STR_STATION_INDUSTRY_HARBOUR_1                                                  :Peirao industrial
+STR_STATION_INDUSTRY_HARBOUR_2                                                  :Peirao comercial
+STR_STATION_INDUSTRY_HARBOUR_3                                                  :Embarcadoiro
+STR_STATION_INDUSTRY_HARBOUR_4                                                  :Peirao
+STR_STATION_IRONSTONE                                                           :Mina de ferro
+STR_STATION_JOINERS_SHOP                                                        :Fabrica de mobles
+STR_STATION_KILNS                                                               :Fornos
+STR_STATION_KIMBERLITE_DEPOSITS                                                 :Xacemento de kimberlita
+STR_STATION_LIMESTONE_MINES                                                     :Minas de calcaria
+STR_STATION_MANGANESE_MINES                                                     :Minas de manganeso
+STR_STATION_MARKET                                                              :Mercado
+STR_STATION_MERCHANTS_LANE                                                      :Almacén de construción
+STR_STATION_MILL                                                                :Panificadora
+STR_STATION_MINE                                                                :Mina de potasa
+STR_STATION_MOULDINGS                                                           :Fábrica de plásticos
+STR_STATION_OIL_RIG                                                             :Xacemento de petróleo
+STR_STATION_ORCHARDS                                                            :Hortas froiteiras
+STR_STATION_PHENOLS                                                             :Fenois
+STR_STATION_PIT                                                                 :Fosos
+STR_STATION_PIPE_MILL                                                           :Fábrica de Tuberías
+STR_STATION_PLANTATION                                                          :Plantación
+STR_STATION_PLAZA                                                               :Praza
+STR_STATION_POWERHUNGRY                                                         :Central eléctrica
+STR_STATION_POWERTRAIN                                                          :Sistemas de propulsion
+STR_STATION_PUMPS                                                               :Gasolineira
+STR_STATION_PYRITES                                                             :Depósitos de pirita
+STR_STATION_ROD_MILL                                                            :Muíño de varas
+STR_STATION_REFINERY                                                            :Refinería
+STR_STATION_RUBBER_COMPANY                                                      :Compañía de caucho
+STR_STATION_SALTPETER_WORKS                                                     :Minas de nitrato
+STR_STATION_SEAFOOD                                                             :Mariscos
+STR_STATION_SHARP_STREET                                                        :{G=f}Cristalaría
+STR_STATION_SHEEP_FOLD                                                          :{G=f}Granxa ovina
+STR_STATION_SHOALS                                                              :Caladoiro
+STR_STATION_SILO                                                                :Celeiro
+STR_STATION_SMELTER                                                             :Fundición
+STR_STATION_SOOT_FURNACE                                                        :Forno de tisne
+STR_STATION_STACKS                                                              :Depósitos
+STR_STATION_STAMP_AND_PLATE                                                     :Carpintería metálica
+STR_STATION_SUGAR_COMPANY                                                       :Azucreira
+STR_STATION_TANK_FARM                                                           :Petroleira
+STR_STATION_TAPPERS_SHED                                                        :Resineiro
+STR_STATION_TOWN_1                                                              :Praza de Galicia
+STR_STATION_TOWN_2                                                              :Depósito de reciclaxe
+STR_STATION_TOWN_3                                                              :Praza de abastos
+STR_STATION_TRONA_BEDS                                                          :Depósito de natrón
+STR_STATION_WATER                                                               :Baixíos
+STR_STATION_WEAVE_AND_DYE                                                       :Industria téxtil
+STR_STATION_WELLS                                                               :Explotación petrolífera
+STR_STATION_WINERY                                                              :Adega
+STR_STATION_VEHICLE_DISTRIBUTOR                                                 :Concesionario
+
+
+# do not translate these
+STR_GENERIC_NEWLINE                                                             :{}
+# to use when dynamically choosing text colours, and we can't return a colour code directly
+STR_COLOUR_BLUE                                                                 :{BLUE}
+STR_COLOUR_GOLD                                                                 :{GOLD}
+STR_COLOUR_GREEN                                                                :{GREEN}
+STR_COLOUR_LTBLUE                                                               :{LTBLUE}
+STR_COLOUR_RED                                                                  :{RED}
+STR_COLOUR_YELLOW                                                               :{YELLOW}
+STR_COLOUR_WHITE                                                                :{WHITE}
+

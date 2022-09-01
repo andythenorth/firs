@@ -29,6 +29,10 @@ industry.add_tile(
     animation_length=71,
     animation_looping=True,
     animation_speed=2,
+    custom_animation_control={
+        "macro": "random_first_frame",
+        "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
+    },
     location_checks=TileLocationChecks(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
@@ -69,6 +73,9 @@ spriteset_9 = industry.add_spriteset(
 spriteset_10 = industry.add_spriteset(
     sprites=[(500, 60, 64, 51, -31, -21)],
 )
+spriteset_11 = industry.add_spriteset(
+    sprites=[(570, 60, 64, 51, -31, -21)],
+)
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type="white_smoke_small",
     xoffset=-5,
@@ -81,35 +88,35 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
-    fences=["nw", "ne", "se", "sw"],
+    fences=[],
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_shed_sw_ne_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    fences=["nw", "ne", "se", "sw"],
+    fences=[],
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_shed_se_nw_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    fences=["nw", "ne", "se", "sw"],
+    fences=[],
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_shed_se_nw_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    fences=["nw", "ne", "se", "sw"],
+    fences=[],
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_small_shed_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
-    fences=["nw", "ne", "se", "sw"],
+    fences=["nw", "ne", "sw", "se"],
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_small_shed_2",
@@ -127,32 +134,64 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="wire_and_section_mill_spritelayout_6",
+    id="wire_and_section_mill_spritelayout_wire_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
-    fences=["nw", "ne", "se", "sw"],
+    fences=["nw", "ne", "sw", "se"],
 )
 industry.add_spritelayout(
-    id="wire_and_section_mill_spritelayout_7",
+    id="wire_and_section_mill_spritelayout_wire_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
-    fences=["nw", "ne", "se", "sw"],
+    fences=["nw", "ne", "sw", "se"],
 )
 industry.add_spritelayout(
-    id="wire_and_section_mill_spritelayout_gantry",
+    id="wire_and_section_mill_spritelayout_gantry_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
     fences=["nw", "ne", "se", "sw"],
 )
+industry.add_spritelayout(
+    id="wire_and_section_mill_spritelayout_gantry_2",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_11],
+    fences=["nw", "ne", "se", "sw"],
+)
 
+# this industry needs outpost layout as there are lots of cargos
+# note there are two outposts, as this industry has sprites oriented sw_ne or se_nw, will select outpost to match main layout orientation
+industry.add_industry_outpost_layout(
+    id="wire_and_section_mill_industry_outpost_layout_se_nw",
+    layout=[
+        (0, 0, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_shed_se_nw_2"),
+        (0, 1, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_shed_se_nw_2"),
+        (0, 2, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_tanks"),
+        (1, 0, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_shed_se_nw_2"),
+        (1, 1, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_gantry_2"),
+        (1, 2, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_small_shed_2"), # shed 2 used as it has smoke
+    ],
+)
+industry.add_industry_outpost_layout(
+    id="wire_and_section_mill_industry_outpost_layout_sw_ne",
+    layout=[
+        (0, 0, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_shed_sw_ne_1"),
+        (0, 1, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_tanks"),
+        (1, 0, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_shed_sw_ne_2"),
+        (1, 1, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_small_shed_2"), # shed 2 used as it has smoke
+        (2, 0, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_small_shed_1"),
+        (2, 1, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_gantry_1"),
+    ],
+)
+# core layouts are roughly 6x4 or 5x5
 # long products mill uses non-standard layouts where some sprites only used for some orientiations (sw_ne or se_nw)
 # this is to achieve the appearance of 'long'
-# min 6x4 as there are lots of output cargos
 industry.add_industry_layout(
     id="wire_and_section_mill_industry_layout_1",
+    excluded_outpost_layouts=["wire_and_section_mill_industry_outpost_layout_se_nw"],
     layout=[
         (
             0,
@@ -173,12 +212,6 @@ industry.add_industry_layout(
             "wire_and_section_mill_spritelayout_shed_sw_ne_2",
         ),
         (
-            0,
-            3,
-            "wire_and_section_mill_tile_1",
-            "wire_and_section_mill_spritelayout_shed_sw_ne_2",
-        ),
-        (
             1,
             0,
             "wire_and_section_mill_tile_1",
@@ -197,12 +230,6 @@ industry.add_industry_layout(
             "wire_and_section_mill_spritelayout_shed_sw_ne_2",
         ),
         (
-            1,
-            3,
-            "wire_and_section_mill_tile_1",
-            "wire_and_section_mill_spritelayout_shed_sw_ne_2",
-        ),
-        (
             2,
             0,
             "wire_and_section_mill_tile_1",
@@ -214,13 +241,7 @@ industry.add_industry_layout(
             "wire_and_section_mill_tile_1",
             "wire_and_section_mill_spritelayout_shed_sw_ne_1",
         ),
-        (2, 2, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_7"),
-        (
-            2,
-            3,
-            "wire_and_section_mill_tile_1",
-            "wire_and_section_mill_spritelayout_gantry",
-        ),
+        (2, 2, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_wire_1"),
         (
             3,
             0,
@@ -233,13 +254,7 @@ industry.add_industry_layout(
             "wire_and_section_mill_tile_1",
             "wire_and_section_mill_spritelayout_shed_sw_ne_1",
         ),
-        (3, 2, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_6"),
-        (
-            3,
-            3,
-            "wire_and_section_mill_tile_1",
-            "wire_and_section_mill_spritelayout_gantry",
-        ),
+        (3, 2, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_wire_1"),
         (
             4,
             0,
@@ -252,8 +267,7 @@ industry.add_industry_layout(
             "wire_and_section_mill_tile_1",
             "wire_and_section_mill_spritelayout_small_shed_2",
         ),
-        (4, 2, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_6"),
-        (4, 3, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_7"),
+        (4, 2, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_gantry_1"),
         (
             5,
             0,
@@ -266,12 +280,12 @@ industry.add_industry_layout(
             "wire_and_section_mill_tile_1",
             "wire_and_section_mill_spritelayout_small_shed_1",
         ),
-        (5, 2, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_6"),
-        (5, 3, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_7"),
+        (5, 2, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_gantry_1"),
     ],
 )
 industry.add_industry_layout(
     id="wire_and_section_mill_industry_layout_2",
+    excluded_outpost_layouts=["wire_and_section_mill_industry_outpost_layout_sw_ne"],
     layout=[
         (
             0,
@@ -357,35 +371,9 @@ industry.add_industry_layout(
             "wire_and_section_mill_tile_1",
             "wire_and_section_mill_spritelayout_shed_se_nw_2",
         ),
-        (2, 2, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_6"),
-        (2, 3, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_7"),
-        (2, 4, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_7"),
-        (2, 5, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_7"),
-        (
-            3,
-            0,
-            "wire_and_section_mill_tile_1",
-            "wire_and_section_mill_spritelayout_shed_se_nw_2",
-        ),
-        (
-            3,
-            1,
-            "wire_and_section_mill_tile_1",
-            "wire_and_section_mill_spritelayout_shed_se_nw_2",
-        ),
-        (
-            3,
-            2,
-            "wire_and_section_mill_tile_1",
-            "wire_and_section_mill_spritelayout_gantry",
-        ),
-        (
-            3,
-            3,
-            "wire_and_section_mill_tile_1",
-            "wire_and_section_mill_spritelayout_gantry",
-        ),
-        (3, 4, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_6"),
-        (3, 5, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_6"),
+        (2, 2, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_wire_2"),
+        (2, 3, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_wire_2"),
+        (2, 4, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_gantry_2"),
+        (2, 5, "wire_and_section_mill_tile_1", "wire_and_section_mill_spritelayout_gantry_2"),
     ],
 )

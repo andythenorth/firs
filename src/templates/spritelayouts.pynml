@@ -48,7 +48,9 @@
             <!--! fences NE -->
             building {
                 sprite: 1302 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_ne});
-                hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_ne}) == 0);
+                <tal:hide_sprite condition="'ne' not in spritelayout.perma_fences">
+                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_ne}) == 0);
+                </tal:hide_sprite>
                 xoffset:  0;
                 yoffset:  0;
                 zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_ne}) * 8;
@@ -63,7 +65,9 @@
             <!--! fences NW -->
             building {
                 sprite: 1301 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_nw});
-                hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_nw}) == 0);
+                <tal:hide_sprite condition="'nw' not in spritelayout.perma_fences">
+                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_nw}) == 0);
+                </tal:hide_sprite>
                 xoffset:  0;
                 yoffset:  0;
                 zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_nw}) * 8;
@@ -207,7 +211,9 @@
             <!--! fences SE -->
             building {
                 sprite: 1301 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_se});
-                hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_se}) == 0);
+                <tal:hide_sprite condition="'se' not in spritelayout.perma_fences">
+                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_se}) == 0);
+                </tal:hide_sprite>
                 xoffset: 0;
                 yoffset:  16;
                 zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_se}) * 8;
@@ -222,7 +228,9 @@
             <!--! fences SW -->
             building {
                 sprite: 1302 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_sw});
-                hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_sw}) == 0);
+                <tal:hide_sprite condition="'sw' not in spritelayout.perma_fences">
+                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_sw}) == 0);
+                </tal:hide_sprite>
                 xoffset: 16;
                 yoffset:  0;
                 zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_sw}) * 8;

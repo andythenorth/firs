@@ -25,6 +25,7 @@ from perm_storage_mappings import register_perm_storage_mapping, get_perm_num
 from economies import registered_economies
 from industries import registered_industries
 
+
 def get_another_industry(id):
     # utility function so that we can provide numeric ids in nml output, rather than relying identifiers
     # this enables compiling single-industries without nml barfing on missing identifiers (in location checks and such)
@@ -33,8 +34,9 @@ def get_another_industry(id):
             return industry
     # if none found, that's an error, don't handle the error, just blow up
 
+
 class Tile(object):
-    """ Base class to hold industry tiles"""
+    """Base class to hold industry tiles"""
 
     def __init__(self, industry_id, id, **kwargs):
         self.id = id
@@ -86,7 +88,8 @@ class Tile(object):
         flags.extend(self._special_flags)
         return "bitmask(" + ",".join(flags) + ")"
 
-    def get_animation_triggers(self):
+    @property
+    def animation_triggers(self):
         if self.custom_animation_control is None:
             return "bitmask()"
         else:
@@ -98,7 +101,7 @@ class Tile(object):
 
 
 class TileLocationChecks(object):
-    """ Class to hold location checks for a tile """
+    """Class to hold location checks for a tile"""
 
     def __init__(self, **kwargs):
         self.always_allow_founder = kwargs.get(
@@ -178,7 +181,7 @@ class TileLocationChecks(object):
 
 
 class TileLocationCheck(object):
-    """ Sparse class to base TileLocationCheck subclasses on """
+    """Sparse class to base TileLocationCheck subclasses on"""
 
     @property
     def macro(self):
@@ -198,7 +201,7 @@ class TileLocationCheckDisallowSlopes(TileLocationCheck):
 
 
 class TileLocationCheckDisallowSteepSlopes(TileLocationCheck):
-    """ Prevent building on steep slopes (but not normal slopes) """
+    """Prevent building on steep slopes (but not normal slopes)"""
 
     def __init__(self):
         self.switch_result = None  # no default value for this check, it may not be the last check in a chain
@@ -234,7 +237,7 @@ class TileLocationCheckRequireEffectivelyFlat(TileLocationCheck):
 
 
 class TileLocationCheckRequireHousesNearby(TileLocationCheck):
-    """ Requires houses at offset x, y (to be fed by circular tile search) """
+    """Requires houses at offset x, y (to be fed by circular tile search)"""
 
     def __init__(self, search_points):
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
@@ -244,7 +247,7 @@ class TileLocationCheckRequireHousesNearby(TileLocationCheck):
 
 
 class TileLocationCheckRequireRoadAdjacent(TileLocationCheck):
-    """ Requires road on adjacent tile(s), with configurable directions """
+    """Requires road on adjacent tile(s), with configurable directions"""
 
     def __init__(self):
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
@@ -267,7 +270,7 @@ class TileLocationCheckRequireSlope(TileLocationCheck):
 
 
 class TileLocationCheckDisallowDesert(TileLocationCheck):
-    """ Prevent building on desert tiles """
+    """Prevent building on desert tiles"""
 
     def __init__(self):
         self.switch_result = None  # no default value for this check, it may not be the last check in a chain
@@ -276,7 +279,7 @@ class TileLocationCheckDisallowDesert(TileLocationCheck):
 
 
 class TileLocationCheckDisallowCoast(TileLocationCheck):
-    """ Prevent building on desert tiles """
+    """Prevent building on desert tiles"""
 
     def __init__(self):
         self.switch_result = None  # no default value for this check, it may not be the last check in a chain
@@ -285,7 +288,7 @@ class TileLocationCheckDisallowCoast(TileLocationCheck):
 
 
 class TileLocationCheckDisallowAboveSnowline(TileLocationCheck):
-    """ Prevent building above snowline """
+    """Prevent building above snowline"""
 
     def __init__(self):
         self.switch_result = None  # no default value for this check, it may not be the last check in a chain
@@ -297,7 +300,7 @@ class TileLocationCheckDisallowAboveSnowline(TileLocationCheck):
 
 
 class TileLocationCheckDisallowBelowSnowline(TileLocationCheck):
-    """ Prevent building above snowline """
+    """Prevent building above snowline"""
 
     def __init__(self):
         self.switch_result = None  # no default value for this check, it may not be the last check in a chain
@@ -355,7 +358,7 @@ class Sprite(object):
 
 
 class SmokeSprite(object):
-    """ Base class to handle smoke sprites (using smoke sprite numbers from a base set) """
+    """Base class to handle smoke sprites (using smoke sprite numbers from a base set)"""
 
     def __init__(
         self,
@@ -397,7 +400,7 @@ class SmokeSprite(object):
 
 
 class Spriteset(object):
-    """ Base class to hold industry spritesets """
+    """Base class to hold industry spritesets"""
 
     # !! arguably this should be two different classes, one for building/feature spritesets, and one for ground spritesets
     def __init__(
@@ -446,7 +449,7 @@ class Spriteset(object):
 
 
 class SpriteLayout(object):
-    """ Base class to hold spritelayouts for industry spritelayouts """
+    """Base class to hold spritelayouts for industry spritelayouts"""
 
     def __init__(
         self,
@@ -456,6 +459,7 @@ class SpriteLayout(object):
         building_sprites,
         smoke_sprites=[],
         fences=[],
+        perma_fences=[],
         magic_trees=[],
         terrain_aware_ground=False,
     ):
@@ -464,13 +468,16 @@ class SpriteLayout(object):
         self.ground_overlay = ground_overlay
         self.building_sprites = building_sprites
         self.smoke_sprites = smoke_sprites
-        self.fences = fences  # a simple list of keywords.  Valid values: 'ne', 'se', 'sw', 'nw'.  Order is arbitrary.
+        # Valid fence values: 'ne', 'se', 'sw', 'nw'.  Order is arbitrary.
+        self.fences = fences
+        # optionally prevent fences hiding when a station is adjacent.  Same string values as fences.
+        self.perma_fences=perma_fences
         self.magic_trees = magic_trees
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
 
 
 class MagicSpritelayoutSlopeAwareTrees(object):
-    """ Occasionally we need magic.  If we're going magic, let's go full on magic.  This one makes 4 climate-aware trees on a slope-aware ground tile """
+    """Occasionally we need magic.  If we're going magic, let's go full on magic.  This one makes 4 climate-aware trees on a slope-aware ground tile"""
 
     # Class attributes eh?  Might as well, these aren't supposed to be mutable
 
@@ -783,7 +790,7 @@ class MagicSpritelayoutSlopeAwareTrees(object):
 
 
 class MagicTree(object):
-    """ Stubby class used in MagicSpriteLayoutSlopeAwareTrees; I just prefer object attribute access over an equivalent dict - Andy"""
+    """Stubby class used in MagicSpriteLayoutSlopeAwareTrees; I just prefer object attribute access over an equivalent dict - Andy"""
 
     def __init__(self, trees, offsets, tree_num):
         self.default = trees["default"][tree_num]
@@ -862,14 +869,14 @@ class MagicSpritelayoutHarbourCoastFoundations(object):
 
 
 class GraphicsSwitch(object):
-    """ base class for extra graphics switches """
+    """base class for extra graphics switches"""
 
     def __init__(self, id, **kwargs):
         self.id = id
 
 
 class GraphicsSwitchSlopes(GraphicsSwitch):
-    """ Class from which a slope-checking graphics switch can be generated, routing to appropriate spritelayout per slope type """
+    """Class from which a slope-checking graphics switch can be generated, routing to appropriate spritelayout per slope type"""
 
     def __init__(self, id, slope_spritelayout_mapping, default_result):
         super().__init__(id)
@@ -878,15 +885,62 @@ class GraphicsSwitchSlopes(GraphicsSwitch):
 
 
 class IndustryLayout(object):
-    """ Base class to hold industry layouts """
+    """Base class to hold industry layouts"""
 
-    def __init__(self, id, layout):
+    def __init__(self, id, layout, excluded_outpost_layouts=[], validate=True):
         self.id = id
         self.layout = layout  # a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spriteset or next nml switch)
+        self.excluded_outpost_layouts = excluded_outpost_layouts
+        # validation can be optionally suppressed as combined layouts may be invalid until their xy offsets are shifted positive (for example)
+        if validate:
+            self.validate()
+
+    def validate(self):
+        # in-game industry layouts must not have negative xy offsets
+        for x, y, tile_id, spritelayout_id in self.layout:
+            for offset_dir in [x, y]:
+                if offset_dir < 0:
+                    raise BaseException(
+                        "Negative values are invalid for x or y offsets: "
+                        + self.id
+                        + " ("
+                        + str(x)
+                        + ", "
+                        + str(y)
+                        + ")"
+                    )
+        # xy offset pairs must be unique per layout
+        xy_offsets = [(i[0], i[1]) for i in self.layout]
+        for x, y in xy_offsets:
+            if xy_offsets.count((x, y)) > 1:
+                raise BaseException(
+                    "Repeated xy offset pair: " + self.id + " " + str((x, y))
+                )
+
+    @property
+    def min_x(self):
+        return min([i[0] for i in self.layout])
+
+    @property
+    def min_y(self):
+        return min([i[1] for i in self.layout])
+
+    @property
+    def max_x(self):
+        return max([i[0] for i in self.layout])
+
+    @property
+    def max_y(self):
+        return max([i[1] for i in self.layout])
+
+    @property
+    def xy_dimensions(self):
+        # add 1 as the xy are zero based indexes, and we want total tiles
+        return (1 + self.max_x - self.min_x, 1 + self.max_y - self.min_y)
 
 
 class IndustryLocationChecks(object):
-    """ Class to hold location checks for an industry """
+    """Class to hold location checks for an industry"""
 
     def __init__(self, industry, location_args={}):
         self.industry = industry
@@ -997,7 +1051,7 @@ class IndustryLocationChecks(object):
 
 
 class IndustryLocationCheck(object):
-    """ sparse base class for industry location checks """
+    """sparse base class for industry location checks"""
 
     @property
     def macro(self):
@@ -1016,7 +1070,7 @@ class IndustryLocationCheck(object):
 
 
 class IndustryLocationCheckTownIndustryCount(IndustryLocationCheck):
-    """ Require specific count of industry type in a town """
+    """Require specific count of industry type in a town"""
 
     def __init__(self, require_town_industry_count):
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
@@ -1034,7 +1088,7 @@ class IndustryLocationCheckTownIndustryCount(IndustryLocationCheck):
 
 
 class IndustryLocationCheckTownMinPopulation(IndustryLocationCheck):
-    """ Require the nearest town to have a minimum population """
+    """Require the nearest town to have a minimum population"""
 
     def __init__(self, require_town_min_population):
         self.min_population = require_town_min_population
@@ -1043,7 +1097,7 @@ class IndustryLocationCheckTownMinPopulation(IndustryLocationCheck):
 
 
 class IndustryLocationCheckCluster(IndustryLocationCheck):
-    """ Require industries to locate in n clusters """
+    """Require industries to locate in n clusters"""
 
     def __init__(self, industry_type, require_cluster):
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
@@ -1060,7 +1114,7 @@ class IndustryLocationCheckCluster(IndustryLocationCheck):
 
 
 class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
-    """ Prevent locating near incompatible industry types """
+    """Prevent locating near incompatible industry types"""
 
     def __init__(self, industry_type, distance):
         self.industry_type = industry_type
@@ -1072,7 +1126,7 @@ class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
 
 
 class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
-    """ Check distance to another industry type """
+    """Check distance to another industry type"""
 
     def __init__(self, industry_type, distance, permissive_flag):
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
@@ -1088,7 +1142,7 @@ class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
 
 
 class IndustryLocationCheckCoastDistance(IndustryLocationCheck):
-    """ Maximum distance to coast (player can vary this with parameter) """
+    """Maximum distance to coast (player can vary this with parameter)"""
 
     def __init__(self):
         self.macro_name = "disallow_too_far_from_coast"
@@ -1096,7 +1150,7 @@ class IndustryLocationCheckCoastDistance(IndustryLocationCheck):
 
 
 class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
-    """ Custom check for Grain mill, layouts are restricted by date; this is a one-off, but could be made generic if needed """
+    """Custom check for Grain mill, layouts are restricted by date; this is a one-off, but could be made generic if needed"""
 
     def __init__(self):
         self.macro_name = "flour_mill_layouts_by_date"
@@ -1104,7 +1158,7 @@ class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
 
 
 class IndustryProperties(object):
-    """ Base class to hold properties corresponding to nml industry item properties """
+    """Base class to hold properties corresponding to nml industry item properties"""
 
     def __init__(self, **kwargs):
         # nml item properties, most of these should be provided as strings for insertion into nml.  See nml docs for meaning + acceptable values.
@@ -1157,11 +1211,16 @@ class IndustryProperties(object):
             raise Exception(
                 "Don't set conflicting_ind_types property; use the FIRS location checks for conflicting industry (these are more flexible)."
             )
-        self.basic_needs_and_luxuries_factor = kwargs.get("basic_needs_and_luxuries_factor", 0)
-        self.pollution_and_squalor_factor = kwargs.get("pollution_and_squalor_factor", 0)
+        self.basic_needs_and_luxuries_factor = kwargs.get(
+            "basic_needs_and_luxuries_factor", 0
+        )
+        self.pollution_and_squalor_factor = kwargs.get(
+            "pollution_and_squalor_factor", 0
+        )
+
 
 class Industry(object):
-    """ Base class for all types of industry """
+    """Base class for all types of industry"""
 
     def __init__(self, id, graphics_change_dates=[], **kwargs):
         self.id = id
@@ -1172,7 +1231,7 @@ class Industry(object):
         self.spritesets = []
         self.spritelayouts = []  # by convention spritelayout is one word :P
         self.extra_graphics_switches = []
-        self.industry_layouts = []
+        self._industry_layouts = {"core": [], "outposts": []}
         self.default_industry_properties = IndustryProperties(**kwargs)
         self.economy_variations = {}
         for economy in registered_economies:
@@ -1237,10 +1296,13 @@ class Industry(object):
         self.extra_graphics_switches.append(new_graphics_switch)
         return new_graphics_switch  # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
-    def add_industry_layout(self, *args, **kwargs):
+    def add_industry_layout(self, layout_type="core", *args, **kwargs):
         new_industry_layout = IndustryLayout(*args, **kwargs)
-        self.industry_layouts.append(new_industry_layout)
+        self._industry_layouts[layout_type].append(new_industry_layout)
         return new_industry_layout  # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
+
+    def add_industry_outpost_layout(self, *args, **kwargs):
+        return self.add_industry_layout("outposts", *args, **kwargs)
 
     def add_economy_variation(self, economy):
         self.economy_variations[economy.id] = IndustryProperties()
@@ -1279,7 +1341,8 @@ class Industry(object):
                 + '.png"'
             )
 
-    def get_switch_name_for_construction_states(self):
+    @property
+    def switch_name_for_construction_states(self):
         # industries use the default construction sprites (shared), or their own handled by automagic spritesets / spritelayouts (graphics in spritesheets with same layout as industry)
         if (
             self.default_industry_properties.override_default_construction_states
@@ -1324,7 +1387,128 @@ class Industry(object):
                 + str(self.graphics_change_dates[date_variation_index])
             )
 
-    def get_industry_layouts_as_property(self):
+    @property
+    def industry_layouts(self):
+        # industry layouts are composed from
+        # - main layouts in _industry_layouts
+        # - optional outpost layouts
+        # the outpost layouts increase total catchment area for station building, whilst leaving plenty of room to actually build the stations
+        # when outposts are used, 8 layouts are created, distributing outpusts at compass points around the core layout
+        # outposts are intended for industries with many pickup cargos, where multiple stations are required, outposts are not otherwise advised
+        result = []
+        composite_layout_counter = 0
+        for core_layout in self._industry_layouts["core"]:
+            if len(self._industry_layouts["outposts"]) == 0:
+                result.append(core_layout)
+            else:
+                for outpost_layout in self._industry_layouts["outposts"]:
+                    if outpost_layout.id not in core_layout.excluded_outpost_layouts:
+                        # NOTE the required xy offset depends on size of outpost layout as it reflects how far 0,0 tile is shifted - this is handled by checking outpost dimensions
+                        # 8 outpost placements, 2 for each compass point, leaving a sufficient 2 tile gap to fit a double track / platform in straight, or diagonal double track
+                        # I tested NE, SW etc, but didn't like it - seems to look better at N, S etc diagonal offsets from core layout
+                        outpost_xy_offsets = [
+                            # north
+                            (
+                                0 - (outpost_layout.xy_dimensions[0] + 2),
+                                0 - (outpost_layout.xy_dimensions[1]),
+                            ),
+                            (
+                                0 - (outpost_layout.xy_dimensions[0]),
+                                0 - (outpost_layout.xy_dimensions[1] + 2),
+                            ),
+                            # south
+                            (
+                                core_layout.xy_dimensions[0],
+                                core_layout.xy_dimensions[1] + 2,
+                            ),
+                            (
+                                core_layout.xy_dimensions[0] + 2,
+                                core_layout.xy_dimensions[1],
+                            ),
+
+                            # east
+                            (
+                                0,
+                                core_layout.xy_dimensions[1] + 2,
+                            ),
+                            # this offset removed because it creates a layout with no tiles on N tile
+                            #(
+                                #0 - (outpost_layout.xy_dimensions[0] + 2),
+                                #core_layout.xy_dimensions[1],
+                            #),
+                            # this offset removed because it creates a layout with no tiles on N tile
+                            #(
+                                #0 - (outpost_layout.xy_dimensions[0]),
+                                #core_layout.xy_dimensions[1] + 2,
+                            #),
+                            # west
+                            (
+                                core_layout.xy_dimensions[0] + 2,
+                                0,
+                            ),
+                            # this offset removed because it creates a layout with no tiles on N tile
+                            #(
+                                #core_layout.xy_dimensions[0] + 2,
+                                #0 - (outpost_layout.xy_dimensions[1]),
+                            #),
+                            # this offset removed because it creates a layout with no tiles on N tile
+                            #(
+                                #core_layout.xy_dimensions[0],
+                                #0 - (outpost_layout.xy_dimensions[1] + 2),
+                            #),
+                        ]
+                        for outpust_direction_counter, xy_offset in enumerate(
+                            outpost_xy_offsets
+                        ):
+                            composite_layout_counter += 1
+                            combined_layout = core_layout.layout.copy()
+                            # !! might want to improve this id generation - calculate the actual layout number - eases grf debugging?
+                            new_id = (
+                                core_layout.id
+                                + "_"
+                                + outpost_layout.id
+                                + "_"
+                                + str(outpust_direction_counter)
+                                + "_composite_layout_num_"
+                                + str(composite_layout_counter)
+                            )
+                            for tile_def in outpost_layout.layout:
+                                new_tile_def = (
+                                    xy_offset[0] + tile_def[0],
+                                    xy_offset[1] + tile_def[1],
+                                    tile_def[2],
+                                    tile_def[3],
+                                )
+                                combined_layout.append(new_tile_def)
+                            # layouts can't use -ve xy values,
+                            # ensure that the layout is valid by transposing it to put north tile on 0,0
+                            # temp IndustryLayout objs created here just to use their min_x, min_y methods for convenience
+                            shift_x = (
+                                -1
+                                * IndustryLayout(
+                                    id=new_id, layout=combined_layout, validate=False
+                                ).min_x
+                            )
+                            shift_y = (
+                                -1
+                                * IndustryLayout(
+                                    id=new_id, layout=combined_layout, validate=False
+                                ).min_y
+                            )
+                            shifted_layout = []
+                            for tile_def in combined_layout:
+                                shifted_tile_def = (
+                                    tile_def[0] + shift_x,
+                                    tile_def[1] + shift_y,
+                                    tile_def[2],
+                                    tile_def[3],
+                                )
+                                shifted_layout.append(shifted_tile_def)
+                            result.append(IndustryLayout(id=new_id, layout=shifted_layout))
+        return result
+
+    @property
+    def industry_layouts_as_nml_property(self):
         result = [
             industry_layout.id + "_tilelayout"
             for industry_layout in self.industry_layouts
@@ -1430,7 +1614,8 @@ class Industry(object):
         else:
             return property_name + ": " + value + ";"
 
-    def get_nearby_station_name_declaration(self):
+    @property
+    def nearby_station_name_as_nml_property(self):
         return (
             "nearby_station_name: string(STR_STATION, string(STR_TOWN),"
             + self.get_property("nearby_station_name", None)
@@ -1519,7 +1704,7 @@ class Industry(object):
     @property
     def pollution_and_squalor_score(self):
         # handled via a method so that multipliers can be applied to adjust scoring, this might not be necessary
-        return self.get_property('pollution_and_squalor_factor', None)
+        return self.get_property("pollution_and_squalor_factor", None)
 
     def validate_map_colour(self, value):
         # we need to guard against map colours that have poor contrast with the green, dark green and purple maps
@@ -1606,9 +1791,7 @@ class Industry(object):
         # just a silly pass-through to perm_storage_mappings.get_perm_num
         return get_perm_num(identifier, industry_type=self.__class__.__name__)
 
-    def render_nml(
-        self, incompatible_industries
-    ):
+    def render_nml(self, incompatible_industries):
         # incompatible industries isn't known at init time, only at compile time, so it has to be passed in
         industry_template = templates[self.template]
         templated_nml = utils.unescape_chameleon_output(
@@ -1627,7 +1810,7 @@ class Industry(object):
 
 
 class IndustryInformative(Industry):
-    """ Industries used solely to explain advanced game mechanics to players via industry window text."""
+    """Industries used solely to explain advanced game mechanics to players via industry window text."""
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -1646,7 +1829,7 @@ class IndustryInformative(Industry):
 
 
 class IndustryPrimary(Industry):
-    """ Industries that produce cargo and (optionally) boost production if supplies are delivered """
+    """Industries that produce cargo and (optionally) boost production if supplies are delivered"""
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -1786,7 +1969,7 @@ class IndustryPrimaryPort(IndustryPrimary):
 
 
 class IndustryPrimaryNoSupplies(IndustryPrimary):
-    """ Industry that does not accept supplies and does not change production amounts during game """
+    """Industry that does not accept supplies and does not change production amounts during game"""
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -1795,7 +1978,7 @@ class IndustryPrimaryNoSupplies(IndustryPrimary):
 
 
 class IndustryTownProducerPopulationDependent(IndustryPrimary):
-    """ Industry that locates near towns, with production amount related to town population """
+    """Industry that locates near towns, with production amount related to town population"""
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -1838,7 +2021,7 @@ class IndustryTownProducerPopulationDependent(IndustryPrimary):
 
 
 class IndustrySecondary(Industry):
-    """ Processing industries: input cargo(s) -> output cargo(s) """
+    """Processing industries: input cargo(s) -> output cargo(s)"""
 
     def __init__(self, **kwargs):
         kwargs["life_type"] = "IND_LIFE_TYPE_PROCESSING"
@@ -1937,7 +2120,7 @@ class IndustrySecondary(Industry):
 
 
 class IndustryTertiary(Industry):
-    """ Industries that are typically black holes in or near towns. Consume cargo, may also produce town-type cargos (e.g. pax) at a constant rate unrelated to delivery."""
+    """Industries that are typically black holes in or near towns. Consume cargo, may also produce town-type cargos (e.g. pax) at a constant rate unrelated to delivery."""
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

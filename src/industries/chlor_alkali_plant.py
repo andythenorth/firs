@@ -190,7 +190,91 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 
-
+# this industry needs outpost layout as there are lots of cargos
+# generally outposts are 2x2, but this industry uses 3x2 or so as the sprites seem to work better with it
+industry.add_industry_outpost_layout(
+    id="coke_oven_industry_outpost_layout_1",
+    layout=[
+        (
+            0,
+            0,
+            "chlor_alkali_plant_tile_2",
+            "chlor_alkali_plant_spritelayout_fat_chimney",
+        ),
+        (
+            0,
+            1,
+            "chlor_alkali_plant_tile_1",
+            "chlor_alkali_plant_spritelayout_drop_tower_and_thin_chimney",
+        ),
+        (
+            0,
+            2,
+            "chlor_alkali_plant_tile_1",
+            "chlor_alkali_plant_spritelayout_spherical_tanks",
+        ),
+        (
+            1,
+            0,
+            "chlor_alkali_plant_tile_2",
+            "chlor_alkali_plant_spritelayout_large_building",
+        ),
+        (
+            1,
+            1,
+            "chlor_alkali_plant_tile_1",
+            "chlor_alkali_plant_spritelayout_frac_columns",
+        ),
+        (
+            1,
+            2,
+            "chlor_alkali_plant_tile_1",
+            "chlor_alkali_plant_spritelayout_horizontal_tanks",
+        ),
+    ],
+)
+industry.add_industry_outpost_layout(
+    id="coke_oven_industry_outpost_layout_2",
+    layout=[
+        (
+            0,
+            0,
+            "chlor_alkali_plant_tile_1",
+            "chlor_alkali_plant_spritelayout_horizontal_tanks",
+        ),
+        (
+            0,
+            1,
+            "chlor_alkali_plant_tile_2",
+            "chlor_alkali_plant_spritelayout_fat_chimney",
+        ),
+        (
+            1,
+            0,
+            "chlor_alkali_plant_tile_1",
+            "chlor_alkali_plant_spritelayout_frac_columns",
+        ),
+        (
+            1,
+            1,
+            "chlor_alkali_plant_tile_2",
+            "chlor_alkali_plant_spritelayout_large_building",
+        ),
+        (
+            2,
+            0,
+            "chlor_alkali_plant_tile_1",
+            "chlor_alkali_plant_spritelayout_drop_tower_and_thin_chimney",
+        ),
+        (
+            2,
+            1,
+            "chlor_alkali_plant_tile_1",
+            "chlor_alkali_plant_spritelayout_spherical_tanks",
+        ),
+    ],
+)
+# core layouts are roughly 3x4 or 3x3
 industry.add_industry_layout(
     id="chlor_alkali_plant_industry_layout_1",
     layout=[
@@ -229,47 +313,34 @@ industry.add_industry_layout(
             2,
             0,
             "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_horizontal_tanks",
+            "chlor_alkali_plant_spritelayout_frac_columns",
         ),
         (
             2,
             1,
             "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_horizontal_tanks",
-        ),
-        (2, 2, "chlor_alkali_plant_tile_1", "chlor_alkali_plant_spritelayout_barrels"),
-        (
-            3,
-            0,
-            "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_frac_columns",
         ),
         (
-            3,
-            1,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_frac_columns",
-        ),
-        (
-            3,
+            2,
             2,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_vertical_tanks",
         ),
         (
-            4,
+            3,
             0,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_drop_tower_and_thin_chimney",
         ),
         (
-            4,
+            3,
             1,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_horizontal_tanks",
         ),
         (
-            4,
+            3,
             2,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_vertical_tanks",
@@ -281,15 +352,21 @@ industry.add_industry_layout(
     layout=[
         (
             0,
-            1,
+            0,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_drop_tower_and_thin_chimney",
         ),
         (
             0,
-            2,
+            1,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_horizontal_tanks",
+        ),
+        (
+            0,
+            2,
+            "chlor_alkali_plant_tile_2",
+            "chlor_alkali_plant_spritelayout_fat_chimney",
         ),
         (
             0,
@@ -298,38 +375,26 @@ industry.add_industry_layout(
             "chlor_alkali_plant_spritelayout_fat_chimney",
         ),
         (
-            0,
-            4,
-            "chlor_alkali_plant_tile_2",
-            "chlor_alkali_plant_spritelayout_fat_chimney",
-        ),
-        (
             1,
             0,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_horizontal_tanks",
-        ),
-        (
-            1,
-            1,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_frac_columns",
         ),
         (
             1,
-            2,
+            1,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_horizontal_tanks",
         ),
         (
             1,
-            3,
+            2,
             "chlor_alkali_plant_tile_2",
             "chlor_alkali_plant_spritelayout_large_building",
         ),
         (
             1,
-            4,
+            3,
             "chlor_alkali_plant_tile_2",
             "chlor_alkali_plant_spritelayout_large_building",
         ),
@@ -339,22 +404,16 @@ industry.add_industry_layout(
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_vertical_tanks",
         ),
+        (2, 1, "chlor_alkali_plant_tile_1", "chlor_alkali_plant_spritelayout_barrels"),
         (
             2,
-            1,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_vertical_tanks",
-        ),
-        (2, 2, "chlor_alkali_plant_tile_1", "chlor_alkali_plant_spritelayout_barrels"),
-        (
             2,
-            3,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_spherical_tanks",
         ),
         (
             2,
-            4,
+            3,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_spherical_tanks",
         ),
@@ -379,17 +438,11 @@ industry.add_industry_layout(
             0,
             2,
             "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_horizontal_tanks",
-        ),
-        (
-            0,
-            3,
-            "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_frac_columns",
         ),
         (
             0,
-            4,
+            3,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_horizontal_tanks",
         ),
@@ -409,17 +462,11 @@ industry.add_industry_layout(
             1,
             2,
             "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_horizontal_tanks",
-        ),
-        (
-            1,
-            3,
-            "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_frac_columns",
         ),
         (
             1,
-            4,
+            3,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_drop_tower_and_thin_chimney",
         ),
@@ -430,16 +477,15 @@ industry.add_industry_layout(
             "chlor_alkali_plant_spritelayout_spherical_tanks",
         ),
         (2, 1, "chlor_alkali_plant_tile_2", "chlor_alkali_plant_spritelayout_barrels"),
-        (2, 2, "chlor_alkali_plant_tile_2", "chlor_alkali_plant_spritelayout_barrels"),
         (
             2,
-            3,
+            2,
             "chlor_alkali_plant_tile_2",
             "chlor_alkali_plant_spritelayout_vertical_tanks",
         ),
         (
             2,
-            4,
+            3,
             "chlor_alkali_plant_tile_2",
             "chlor_alkali_plant_spritelayout_vertical_tanks",
         ),
@@ -452,13 +498,19 @@ industry.add_industry_layout(
             0,
             0,
             "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_vertical_tanks",
+            "chlor_alkali_plant_spritelayout_horizontal_tanks",
         ),
         (
             0,
             1,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_vertical_tanks",
+            "chlor_alkali_plant_tile_2",
+            "chlor_alkali_plant_spritelayout_fat_chimney",
+        ),
+        (
+            0,
+            2,
+            "chlor_alkali_plant_tile_2",
+            "chlor_alkali_plant_spritelayout_fat_chimney",
         ),
         (
             1,
@@ -469,61 +521,30 @@ industry.add_industry_layout(
         (
             1,
             1,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_frac_columns",
-        ),
-        (
-            2,
-            0,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_horizontal_tanks",
-        ),
-        (
-            2,
-            1,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_horizontal_tanks",
-        ),
-        (
-            3,
-            0,
-            "chlor_alkali_plant_tile_2",
-            "chlor_alkali_plant_spritelayout_fat_chimney",
-        ),
-        (
-            3,
-            1,
-            "chlor_alkali_plant_tile_2",
-            "chlor_alkali_plant_spritelayout_fat_chimney",
-        ),
-        (
-            4,
-            0,
             "chlor_alkali_plant_tile_2",
             "chlor_alkali_plant_spritelayout_large_building",
         ),
         (
-            4,
             1,
+            2,
             "chlor_alkali_plant_tile_2",
             "chlor_alkali_plant_spritelayout_large_building",
         ),
         (
-            5,
+            2,
             0,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_drop_tower_and_thin_chimney",
         ),
-        (5, 1, "chlor_alkali_plant_tile_1", "chlor_alkali_plant_spritelayout_barrels"),
         (
-            6,
-            0,
+            2,
+            1,
             "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_spherical_tanks",
+            "chlor_alkali_plant_spritelayout_vertical_tanks",
         ),
         (
-            6,
-            1,
+            2,
+            2,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_spherical_tanks",
         ),
@@ -535,97 +556,6 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_horizontal_tanks",
-        ),
-        (
-            0,
-            1,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_horizontal_tanks",
-        ),
-        (
-            0,
-            2,
-            "chlor_alkali_plant_tile_2",
-            "chlor_alkali_plant_spritelayout_fat_chimney",
-        ),
-        (
-            0,
-            3,
-            "chlor_alkali_plant_tile_2",
-            "chlor_alkali_plant_spritelayout_fat_chimney",
-        ),
-        (
-            1,
-            0,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_drop_tower_and_thin_chimney",
-        ),
-        (
-            1,
-            1,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_frac_columns",
-        ),
-        (
-            1,
-            2,
-            "chlor_alkali_plant_tile_2",
-            "chlor_alkali_plant_spritelayout_large_building",
-        ),
-        (
-            1,
-            3,
-            "chlor_alkali_plant_tile_2",
-            "chlor_alkali_plant_spritelayout_large_building",
-        ),
-        (
-            2,
-            0,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_horizontal_tanks",
-        ),
-        (
-            2,
-            1,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_horizontal_tanks",
-        ),
-        (2, 2, "chlor_alkali_plant_tile_1", "chlor_alkali_plant_spritelayout_barrels"),
-        (
-            2,
-            3,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_spherical_tanks",
-        ),
-        (
-            3,
-            0,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_vertical_tanks",
-        ),
-        (
-            3,
-            1,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_vertical_tanks",
-        ),
-        (3, 2, "chlor_alkali_plant_tile_1", "chlor_alkali_plant_spritelayout_barrels"),
-        (
-            3,
-            3,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_spherical_tanks",
-        ),
-    ],
-)
-industry.add_industry_layout(
-    id="chlor_alkali_plant_industry_layout_6",
-    layout=[
-        (
-            0,
-            0,
             "chlor_alkali_plant_tile_2",
             "chlor_alkali_plant_spritelayout_fat_chimney",
         ),
@@ -638,12 +568,6 @@ industry.add_industry_layout(
         (
             0,
             2,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_vertical_tanks",
-        ),
-        (
-            0,
-            3,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_vertical_tanks",
         ),
@@ -666,12 +590,6 @@ industry.add_industry_layout(
             "chlor_alkali_plant_spritelayout_drop_tower_and_thin_chimney",
         ),
         (
-            1,
-            3,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_horizontal_tanks",
-        ),
-        (
             2,
             0,
             "chlor_alkali_plant_tile_2",
@@ -688,12 +606,6 @@ industry.add_industry_layout(
             2,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_frac_columns",
-        ),
-        (
-            2,
-            3,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_horizontal_tanks",
         ),
         (
             3,
@@ -705,12 +617,6 @@ industry.add_industry_layout(
         (
             3,
             2,
-            "chlor_alkali_plant_tile_1",
-            "chlor_alkali_plant_spritelayout_spherical_tanks",
-        ),
-        (
-            3,
-            3,
             "chlor_alkali_plant_tile_1",
             "chlor_alkali_plant_spritelayout_spherical_tanks",
         ),

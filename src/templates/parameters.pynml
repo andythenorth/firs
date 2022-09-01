@@ -11,6 +11,8 @@ if (marine_industry_max_coastal_distance == 0) {
 	param_max_coastal_distance = 255;
 }
 
+experimental_features = 0;
+
 // I want to specify the order of the economies in parameter menu without worrying about breaking savegames etc
 // but action 14 can't separate parameter value and position in menu for economies
 // so here we remap selected economy to actual numeric value
