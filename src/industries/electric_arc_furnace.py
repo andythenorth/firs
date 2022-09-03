@@ -26,7 +26,7 @@ industry.economy_variations[
 
 industry.add_tile(
     id="electric_arc_furnace_tile_1",
-    animation_length=56,
+    animation_length=22,
     animation_looping=True,
     animation_speed=2,
     custom_animation_control={
