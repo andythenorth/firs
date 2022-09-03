@@ -37,6 +37,15 @@ industry.add_tile(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
 )
+industry.add_tile(
+    id="electric_arc_furnace_tile_2",
+    animation_length=10,
+    animation_looping=True,
+    animation_speed=4,
+    location_checks=TileLocationChecks(
+        require_effectively_flat=True, disallow_industry_adjacent=True
+    ),
+)
 
 spriteset_ground = industry.add_spriteset(
     type="hard_standing_dirt",
@@ -74,14 +83,30 @@ spriteset_casting_shed_2 = industry.add_spriteset(
 spriteset_casting_shed_3 = industry.add_spriteset(
     sprites=[(150, 160, 64, 64, -31, -33)],
 )
-spriteset_caster_line_roof_animated = industry.add_spriteset(
-    sprites=[(80, 160, 64, 64, -31, -33)],
+spriteset_caster_line_metal_animated = industry.add_spriteset(
+    sprites=[
+        (10, 340, 64, 64, -31, -33),
+        (80, 340, 64, 64, -31, -33),
+        (150, 340, 64, 64, -31, -33),
+        (220, 340, 64, 64, -31, -33),
+        (290, 340, 64, 64, -31, -33),
+        (360, 340, 64, 64, -31, -33),
+        (430, 340, 64, 64, -31, -33),
+        (500, 340, 64, 64, -31, -33),
+        (570, 340, 64, 64, -31, -33),
+        (640, 340, 64, 64, -31, -33),
+    ],
+    animation_rate=1,
 )
 spriteset_caster_line_1_animated = industry.add_spriteset(
     sprites=[(10, 250, 64, 64, -31, -33)],
+    # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
+    num_sprites_to_autofill=len(spriteset_caster_line_metal_animated.sprites),
 )
-spriteset_caster_line_metal_animated = industry.add_spriteset(
-    sprites=[(10, 340, 64, 64, -31, -33)],
+spriteset_ground_tile_animated_caster_line = industry.add_spriteset(
+    sprites=[(500, 10, 64, 64, -31, -33)],
+    # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
+    num_sprites_to_autofill=len(spriteset_caster_line_metal_animated.sprites),
 )
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type="white_smoke_small",
@@ -141,9 +166,12 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_caster_line_animated",
-    ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_caster_line_1_animated, spriteset_caster_line_metal_animated],
+    ground_sprite=spriteset_ground_tile_animated_caster_line,
+    ground_overlay=spriteset_ground_tile_animated_caster_line,
+    building_sprites=[
+        spriteset_caster_line_1_animated,
+        spriteset_caster_line_metal_animated,
+    ],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
@@ -159,7 +187,9 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_air_plant],
     fences=["nw", "ne", "se", "sw"],
-    smoke_sprites=[sprite_smoke_1,],
+    smoke_sprites=[
+        sprite_smoke_1,
+    ],
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_metal_1",
@@ -180,12 +210,42 @@ industry.add_industry_outpost_layout(
     id="electric_arc_furnace_industry_outpost_layout_1",
     layout=[
         # test outpost layout
-        (0, 0, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_casting_shed_1"),
-        (0, 1, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_casting_shed_2"),
-        (0, 2, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_casting_shed_3"),
-        (1, 0, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_air_plant"),
-        (1, 1, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_tanks"),
-        (1, 2, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_metal_1"),
+        (
+            0,
+            0,
+            "electric_arc_furnace_tile_1",
+            "electric_arc_furnace_spritelayout_casting_shed_1",
+        ),
+        (
+            0,
+            1,
+            "electric_arc_furnace_tile_1",
+            "electric_arc_furnace_spritelayout_casting_shed_2",
+        ),
+        (
+            0,
+            2,
+            "electric_arc_furnace_tile_1",
+            "electric_arc_furnace_spritelayout_casting_shed_3",
+        ),
+        (
+            1,
+            0,
+            "electric_arc_furnace_tile_1",
+            "electric_arc_furnace_spritelayout_air_plant",
+        ),
+        (
+            1,
+            1,
+            "electric_arc_furnace_tile_1",
+            "electric_arc_furnace_spritelayout_tanks",
+        ),
+        (
+            1,
+            2,
+            "electric_arc_furnace_tile_1",
+            "electric_arc_furnace_spritelayout_metal_1",
+        ),
     ],
 )
 # core layouts are roughly 6x4 or 5x5
@@ -237,7 +297,7 @@ industry.add_industry_layout(
         (
             1,
             2,
-            "electric_arc_furnace_tile_1",
+            "electric_arc_furnace_tile_2",
             "electric_arc_furnace_spritelayout_caster_line_animated",
         ),
         (
@@ -333,7 +393,7 @@ industry.add_industry_layout(
         (
             1,
             2,
-            "electric_arc_furnace_tile_1",
+            "electric_arc_furnace_tile_2",
             "electric_arc_furnace_spritelayout_caster_line_animated",
         ),
         (
