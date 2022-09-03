@@ -42,6 +42,10 @@ industry.add_tile(
     animation_length=10,
     animation_looping=True,
     animation_speed=4,
+    custom_animation_control={
+        "macro": "random_first_frame",
+        "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
+    },
     location_checks=TileLocationChecks(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
