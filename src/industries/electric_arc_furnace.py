@@ -85,15 +85,9 @@ spriteset_caster_line_metal_animated = industry.add_spriteset(
 )
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type="white_smoke_small",
-    xoffset=-5,
+    xoffset=2,
     yoffset=0,
-    zoffset=40,
-)
-sprite_smoke_2 = industry.add_smoke_sprite(
-    smoke_type="white_smoke_small",
-    xoffset=-5,
-    yoffset=5,
-    zoffset=40,
+    zoffset=56,
 )
 
 industry.add_spritelayout(
@@ -165,6 +159,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_air_plant],
     fences=["nw", "ne", "se", "sw"],
+    smoke_sprites=[sprite_smoke_1,],
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_metal_1",
