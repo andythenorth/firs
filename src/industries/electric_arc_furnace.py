@@ -71,6 +71,9 @@ spriteset_casting_shed_1 = industry.add_spriteset(
 spriteset_casting_shed_2 = industry.add_spriteset(
     sprites=[(80, 160, 64, 64, -31, -33)],
 )
+spriteset_casting_shed_3 = industry.add_spriteset(
+    sprites=[(150, 160, 64, 64, -31, -33)],
+)
 spriteset_caster_line_roof_animated = industry.add_spriteset(
     sprites=[(80, 160, 64, 64, -31, -33)],
 )
@@ -136,6 +139,13 @@ industry.add_spritelayout(
     fences=["nw", "ne"],
 )
 industry.add_spritelayout(
+    id="electric_arc_furnace_spritelayout_casting_shed_3",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_casting_shed_3],
+    fences=["nw", "ne"],
+)
+industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_caster_line_animated",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
@@ -176,8 +186,8 @@ industry.add_industry_outpost_layout(
     layout=[
         # test outpost layout
         (0, 0, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_casting_shed_1"),
-        (0, 1, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_casting_shed_1"),
-        (0, 2, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_casting_shed_2"),
+        (0, 1, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_casting_shed_2"),
+        (0, 2, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_casting_shed_3"),
         (1, 0, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_air_plant"),
         (1, 1, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_tanks"),
         (1, 2, "electric_arc_furnace_tile_1", "electric_arc_furnace_spritelayout_metal_1"),
@@ -209,7 +219,7 @@ industry.add_industry_layout(
             0,
             3,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_casting_shed_1",
+            "electric_arc_furnace_spritelayout_casting_shed_2",
         ),
         (
             0,
@@ -239,13 +249,13 @@ industry.add_industry_layout(
             1,
             3,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_casting_shed_1",
+            "electric_arc_furnace_spritelayout_casting_shed_2",
         ),
         (
             1,
             4,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_casting_shed_2",
+            "electric_arc_furnace_spritelayout_casting_shed_3",
         ),
         (
             2,
@@ -305,7 +315,7 @@ industry.add_industry_layout(
             0,
             3,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_casting_shed_1",
+            "electric_arc_furnace_spritelayout_casting_shed_2",
         ),
         (
             0,
@@ -335,13 +345,13 @@ industry.add_industry_layout(
             1,
             3,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_casting_shed_1",
+            "electric_arc_furnace_spritelayout_casting_shed_2",
         ),
         (
             1,
             4,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_casting_shed_2",
+            "electric_arc_furnace_spritelayout_casting_shed_3",
         ),
         (
             2,
