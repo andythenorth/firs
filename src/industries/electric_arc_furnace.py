@@ -26,7 +26,7 @@ industry.economy_variations[
 
 industry.add_tile(
     id="electric_arc_furnace_tile_1",
-    animation_length=22,
+    animation_length=47,
     animation_looping=True,
     animation_speed=2,
     custom_animation_control={
@@ -112,11 +112,53 @@ spriteset_ground_tile_animated_caster_line = industry.add_spriteset(
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_caster_line_metal_animated.sprites),
 )
-sprite_smoke_1 = industry.add_smoke_sprite(
+sprite_smoke_main_stack_1 = industry.add_smoke_sprite(
     smoke_type="white_smoke_small",
     xoffset=2,
     yoffset=0,
     zoffset=56,
+)
+sprite_smoke_main_stack_2 = industry.add_smoke_sprite(
+    smoke_type="white_smoke_small",
+    xoffset=2,
+    yoffset=1,
+    zoffset=59,
+)
+sprite_smoke_coolers_1 = industry.add_smoke_sprite(
+    smoke_type="white_smoke_small",
+    xoffset=5,
+    yoffset=-2,
+    zoffset=13,
+)
+sprite_smoke_coolers_2 = industry.add_smoke_sprite(
+    smoke_type="white_smoke_small",
+    xoffset=5,
+    yoffset=0,
+    zoffset=14,
+)
+sprite_smoke_coolers_3 = industry.add_smoke_sprite(
+    smoke_type="white_smoke_small",
+    xoffset=5,
+    yoffset=2,
+    zoffset=12,
+)
+sprite_smoke_coolers_4 = industry.add_smoke_sprite(
+    smoke_type="white_smoke_small",
+    xoffset=5,
+    yoffset=4,
+    zoffset=13,
+)
+sprite_smoke_coolers_5 = industry.add_smoke_sprite(
+    smoke_type="white_smoke_small",
+    xoffset=5,
+    yoffset=7,
+    zoffset=13,
+)
+sprite_smoke_coolers_6 = industry.add_smoke_sprite(
+    smoke_type="white_smoke_small",
+    xoffset=5,
+    yoffset=9,
+    zoffset=14,
 )
 
 industry.add_spritelayout(
@@ -146,6 +188,14 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_large_shed_3],
     fences=["nw", "ne", "se", "sw"],
+    smoke_sprites=[
+        sprite_smoke_coolers_1,
+        sprite_smoke_coolers_2,
+        sprite_smoke_coolers_3,
+        sprite_smoke_coolers_4,
+        sprite_smoke_coolers_5,
+        sprite_smoke_coolers_6,
+    ],
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_casting_shed_1",
@@ -192,7 +242,8 @@ industry.add_spritelayout(
     building_sprites=[spriteset_air_plant],
     fences=["nw", "ne", "se", "sw"],
     smoke_sprites=[
-        sprite_smoke_1,
+        sprite_smoke_main_stack_1,
+        sprite_smoke_main_stack_2,
     ],
 )
 industry.add_spritelayout(
