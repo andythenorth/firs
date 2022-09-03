@@ -26,7 +26,7 @@ industry.economy_variations[
 
 industry.add_tile(
     id="electric_arc_furnace_tile_1",
-    animation_length=71,
+    animation_length=56,
     animation_looping=True,
     animation_speed=2,
     custom_animation_control={
@@ -332,13 +332,13 @@ industry.add_industry_layout(
             1,
             0,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_large_furnace_shed_1",
+            "electric_arc_furnace_spritelayout_large_furnace_shed_3",
         ),
         (
             1,
             1,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_large_furnace_shed_3",
+            "electric_arc_furnace_spritelayout_large_furnace_shed_1",
         ),
         (
             1,
@@ -421,7 +421,7 @@ industry.add_industry_layout(
             1,
             1,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_large_furnace_shed_1",
+            "electric_arc_furnace_spritelayout_large_furnace_shed_3",
         ),
         (
             1,
@@ -433,7 +433,7 @@ industry.add_industry_layout(
             2,
             0,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_large_furnace_shed_3",
+            "electric_arc_furnace_spritelayout_large_furnace_shed_1",
         ),
         (
             2,
@@ -522,7 +522,7 @@ industry.add_industry_layout(
             1,
             1,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_large_furnace_shed_1",
+            "electric_arc_furnace_spritelayout_large_furnace_shed_3",
         ),
         (
             1,
@@ -540,7 +540,7 @@ industry.add_industry_layout(
             2,
             0,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_large_furnace_shed_3",
+            "electric_arc_furnace_spritelayout_large_furnace_shed_1",
         ),
         (
             2,
@@ -635,7 +635,7 @@ industry.add_industry_layout(
             1,
             2,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_large_furnace_shed_3",
+            "electric_arc_furnace_spritelayout_large_furnace_shed_1",
         ),
         (
             1,
@@ -653,13 +653,13 @@ industry.add_industry_layout(
             2,
             0,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_large_furnace_shed_1",
+            "electric_arc_furnace_spritelayout_large_furnace_shed_3",
         ),
         (
             2,
             1,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_large_furnace_shed_3",
+            "electric_arc_furnace_spritelayout_large_furnace_shed_1",
         ),
         (
             2,
@@ -754,7 +754,7 @@ industry.add_industry_layout(
             1,
             2,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_large_furnace_shed_1",
+            "electric_arc_furnace_spritelayout_large_furnace_shed_3",
         ),
         (
             1,
@@ -772,7 +772,7 @@ industry.add_industry_layout(
             2,
             1,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_large_furnace_shed_3",
+            "electric_arc_furnace_spritelayout_large_furnace_shed_1",
         ),
         (
             2,
@@ -790,7 +790,7 @@ industry.add_industry_layout(
             3,
             0,
             "electric_arc_furnace_tile_1",
-            "electric_arc_furnace_spritelayout_large_furnace_shed_3",
+            "electric_arc_furnace_spritelayout_large_furnace_shed_1",
         ),
         (
             3,
