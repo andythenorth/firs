@@ -2,6 +2,37 @@ Changelog
 =========
 
 
+4.8.0 Release
+-------------
+
+**FIRS 4.8.0 is not savegame-compatible with any previous version of FIRS.**
+
+
+*Changes*
+
+- reworked Electric Arc Furnace
+    - entirely new sprites
+    - new larger layouts using 'outpost' approach
+- tweaked fences at Basic Oxygen Furnace so that the casting line is always fenced, even if a station is adjacent
+- added ECS Basic Vector II to list of incompatible grfs
+
+
+*Fixes*
+
+- removed pink scaffolding pixels from Basic Oxygen Furnace, as they are hidden with original baseset, but show up with OpenGFX
+
+
+*Docs*
+
+- note in docs that since OpenTTD 12.0, FIRS is supported by default vehicles
+
+
+*Translations*
+
+- translation updates (thanks translators)
+
+
+
 4.7.0 Release
 -------------
 
