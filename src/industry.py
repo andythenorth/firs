@@ -1409,23 +1409,14 @@ class Industry(object):
                         outpost_xy_offsets = [
                             # north
                             (
-                                0 - (outpost_layout.xy_dimensions[0] + 2),
-                                0 - (outpost_layout.xy_dimensions[1]),
-                            ),
-                            (
-                                0 - (outpost_layout.xy_dimensions[0]),
-                                0 - (outpost_layout.xy_dimensions[1] + 2),
+                                0 - (outpost_layout.xy_dimensions[0] + 1),
+                                0 - (outpost_layout.xy_dimensions[1] + 1),
                             ),
                             # south
                             (
-                                core_layout.xy_dimensions[0],
-                                core_layout.xy_dimensions[1] + 2,
+                                core_layout.xy_dimensions[0] + 1,
+                                core_layout.xy_dimensions[1] + 1,
                             ),
-                            (
-                                core_layout.xy_dimensions[0] + 2,
-                                core_layout.xy_dimensions[1],
-                            ),
-
                             # east
                             (
                                 0,
