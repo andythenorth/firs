@@ -340,7 +340,6 @@ STR_ERR_LOCATION_NOT_ON_WATER                                                   
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :사막에 지을 수 없습니다.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :가파른 경사 위에 지을 수 없습니다.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :이 종류의 산업 시설은 한 도시에 하나만 지을 수 있습니다.
-
 STR_IND_ALUMINIUM_PLANT                                                         :{G=f}알루미늄 제련소
 STR_IND_AMMONIA_PLANT                                                           :{G=m}암모니아 공장
 STR_IND_ARABLE_FARM                                                             :{G=m}경작 농장
@@ -412,6 +411,7 @@ STR_IND_PETROLPUMP                                                              
 STR_IND_PHOSPHATE_MINE                                                          :{G=m}인산염 광산
 STR_IND_PHOSPHORIC_ACID_PLANT                                                   :{G=m}인산 공장
 STR_IND_PLASTICS_PLANT                                                          :{G=m}플라스틱 공장
+STR_IND_PLAZA                                                                   :{G=m}광장
 STR_IND_POLYETHYLENE_PLANT                                                      :{G=m}폴리에틸렌 공장
 STR_IND_POLYPROPYLENE_PLANT                                                     :{G=m}폴리프로필렌 공장
 STR_IND_PORT                                                                    :{G=f}항구
@@ -430,7 +430,8 @@ STR_IND_SLAG_GRINDING_PLANT                                                     
 STR_IND_SMITHY_FORGE                                                            :{G=m}대장간
 STR_IND_SODA_ASH_MINE                                                           :{G=m}소다회 광산
 STR_IND_SOLVAY_PLANT                                                            :{G=m}솔베이 공장
-STR_IND_STEEL_MILL                                                              :{G=f}제철소
+# we use 'integrated_steel_mill' in code to avoid confusion with Steeltown mills, but it's easier to just use 'Steel Mill' for name that players see
+STR_IND_INTEGRATED_STEEL_MILL                                                   :{G=f}제철소
 STR_IND_SHEET_AND_PIPE_MILL                                                     :{G=m}강판 파이프 공장
 STR_IND_STOCKYARD                                                               :{G=m}도축장
 STR_IND_SUGAR_REFINERY                                                          :{G=f}제당소
