@@ -123,6 +123,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
     fences=["nw", "ne", "se", "sw"],
+    object_group=2,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_tyres",
