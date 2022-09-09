@@ -462,6 +462,7 @@ class SpriteLayout(object):
         perma_fences=[],
         magic_trees=[],
         terrain_aware_ground=False,
+        as_object=False,
     ):
         self.id = id
         self.ground_sprite = ground_sprite
@@ -474,7 +475,8 @@ class SpriteLayout(object):
         self.perma_fences=perma_fences
         self.magic_trees = magic_trees
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
-
+        # test objects
+        self.as_object = as_object
 
 class MagicSpritelayoutSlopeAwareTrees(object):
     """Occasionally we need magic.  If we're going magic, let's go full on magic.  This one makes 4 climate-aware trees on a slope-aware ground tile"""
