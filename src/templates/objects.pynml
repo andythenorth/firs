@@ -1,7 +1,8 @@
 <tal:industries repeat="industry registered_industries">
-    <tal:spritelayouts repeat="spritelayout industry.spritelayouts">
-        <tal:as_object condition="spritelayout.as_object">
-            spritelayout ${spritelayout.id}_object_spritelayout {
+    <tal:objects repeat="object industry.objects.items()">
+        <tal:spritelayouts repeat="spritelayout object[1]">
+            // for debug to match to actual declared layout name: ${spritelayout.id}
+            spritelayout ${industry.id}_object_${object[0]}_spritelayout_${repeat.spritelayout.index} {
                 childsprite {
                     sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
                     always_draw: 1;
@@ -42,28 +43,34 @@
                     */
                 </tal:build_building_sprites>
             }
-            item(FEAT_OBJECTS, ${spritelayout.id}_object) {
-                property {
-                    class:                  "FIRS";
-                    classname:              string(STR_OBJ_CLASSNAME_FIRS);
-                    name:                   string(${spritelayout.id});
-                    climates_available:     ALL_CLIMATES;
-                    size:                   [1, 1];
-                    build_cost_multiplier:  1;
-                    remove_cost_multiplier: 1;
-                    introduction_date:      date(1,1,1);        // available from day 1
-                    end_of_life_date:       date(10000,1,1);    // available till year 10000
-                    /* Anything can overbuild the object, removing returns the money, we don't want foundations and we want to allow bridges */
-                    object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_REMOVE_IS_INCOME);
-                    height:                 1;
-                    num_views:              1;
-                }
-                graphics {
-                    //additional_text:        return string(STR_OBJ_TEST_CABBAGE);
-                    purchase:               ${spritelayout.id}_object_spritelayout;
-                    ${spritelayout.id}_object_spritelayout;
-                }
+            </tal:spritelayouts>
+        switch(FEAT_OBJECTS, SELF, ${industry.id}_object_${object[0]}_switch_graphics, view) {
+            <tal:views repeat="view_num range(len(object[1]))">
+                ${view_num}: ${industry.id}_object_${object[0]}_spritelayout_${view_num};
+            </tal:views>
+        }
+        item(FEAT_OBJECTS, ${industry.id}_object_${object[0]}) {
+            property {
+                class:                  "FIRS";
+                classname:              string(STR_OBJ_CLASSNAME_FIRS);
+                climates_available:     ALL_CLIMATES;
+                size:                   [1, 1];
+                build_cost_multiplier:  1;
+                remove_cost_multiplier: 1;
+                introduction_date:      date(1,1,1);        // available from day 1
+                end_of_life_date:       date(10000,1,1);    // available till year 10000
+                /* Anything can overbuild the object, removing returns the money, we don't want foundations and we want to allow bridges */
+                object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_REMOVE_IS_INCOME);
+                height:                 6;
+                num_views:              ${len(object[1])};
+                // name derived from industry currently
+                ${industry.get_property_declaration('name', None)}
             }
-        </tal:as_object>
-    </tal:spritelayouts>
+            graphics {
+                //additional_text:      return string(STR_OBJ_TEST_CABBAGE);
+                purchase:               ${industry.id}_object_${object[0]}_switch_graphics;
+                ${industry.id}_object_${object[0]}_switch_graphics;
+            }
+        }
+    </tal:objects>
 </tal:industries>

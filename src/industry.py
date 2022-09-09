@@ -462,7 +462,7 @@ class SpriteLayout(object):
         perma_fences=[],
         magic_trees=[],
         terrain_aware_ground=False,
-        as_object=False,
+        object_group=None,
     ):
         self.id = id
         self.ground_sprite = ground_sprite
@@ -475,8 +475,8 @@ class SpriteLayout(object):
         self.perma_fences=perma_fences
         self.magic_trees = magic_trees
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
-        # test objects
-        self.as_object = as_object
+        # optionally spritelayouts can cause objects to be defined
+        self.object_group = object_group
 
 class MagicSpritelayoutSlopeAwareTrees(object):
     """Occasionally we need magic.  If we're going magic, let's go full on magic.  This one makes 4 climate-aware trees on a slope-aware ground tile"""
@@ -1698,6 +1698,21 @@ class Industry(object):
     def pollution_and_squalor_score(self):
         # handled via a method so that multipliers can be applied to adjust scoring, this might not be necessary
         return self.get_property("pollution_and_squalor_factor", None)
+
+    @property
+    def objects(self):
+        result = {}
+        for spritelayout in self.spritelayouts:
+            if spritelayout.object_group is not None:
+                if spritelayout.object_group not in result.keys():
+                    result[spritelayout.object_group] = [spritelayout]
+                else:
+                    result[spritelayout.object_group].append(spritelayout)
+        # validation - must be 1, 2, or 4 views https://newgrf-specs.tt-wiki.net/wiki/NML:Objects#Location_check_results
+        for object_group in result.values():
+            if len(object_group) not in [1, 2, 4]:
+                raise BaseException("CABBAGE")
+        return result
 
     def validate_map_colour(self, value):
         # we need to guard against map colours that have poor contrast with the green, dark green and purple maps
