@@ -92,6 +92,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
+    as_object=True,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_front_assembly_hall_windows",
@@ -99,6 +100,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se", "sw"],
+    as_object=True,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_front_assembly_hall_doors",
@@ -106,6 +108,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se", "sw"],
+    as_object=True,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_goods_in_1",
