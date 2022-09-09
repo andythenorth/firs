@@ -245,14 +245,53 @@
     }
 
     <tal:as_object condition="spritelayout.as_object">
+        spritelayout ${spritelayout.id}_object_spritelayout {
+            childsprite {
+                sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
+                always_draw: 1;
+            }
+            /* snow nerfed
+            childsprite {
+                sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite, snow_overlay=True)};
+                //hide_sprite: (!LOAD_TEMP(13));
+                always_draw: 1;
+            }
+             */
+            <tal:build_building_sprites repeat="building_sprite spritelayout.building_sprites">
+                <!--! buildings (snow aware) -->
+                building {
+                    sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3)};
+                    recolour_mode: RECOLOUR_REMAP;
+                    palette: PALETTE_USE_DEFAULT;
+                    xoffset: ${building_sprite.xoffset};
+                    yoffset: ${building_sprite.yoffset};
+                    zoffset: ${building_sprite.zoffset};
+                    xextent: ${building_sprite.xextent};
+                    yextent: ${building_sprite.yextent};
+                    zextent: ${building_sprite.zextent};
+                    always_draw: ${building_sprite.always_draw};
+                }
+                /* snow nerfed
+                building {
+                    sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3, snow_overlay=True)};
+                    recolour_mode: RECOLOUR_REMAP;
+                    palette: PALETTE_USE_DEFAULT;
+                    xoffset: ${building_sprite.xoffset};
+                    yoffset: ${building_sprite.yoffset};
+                    zoffset: ${building_sprite.zoffset};
+                    xextent: ${building_sprite.xextent};
+                    yextent: ${building_sprite.yextent};
+                    zextent: ${building_sprite.zextent};
+                    always_draw: ${building_sprite.always_draw};
+                }
+                */
+            </tal:build_building_sprites>
+        }
         item(FEAT_OBJECTS, ${spritelayout.id}_object) {
             property {
-                /* The class allows to sort objects into categories. This is 'infrastructure' */
-                class:                  "INFR";
-                /* If no other NewGRF provides this class before us, we have to name it */
+                class:                  "FIRS";
                 classname:              string(STR_OBJ_CLASSNAME_FIRS);
-                /* Name of this particular object */
-                name:                   string(STR_OBJ_TEST);
+                name:                   string(${spritelayout.id});
                 climates_available:     ALL_CLIMATES;
                 size:                   [1, 1];
                 build_cost_multiplier:  1;
@@ -260,15 +299,14 @@
                 introduction_date:      date(1,1,1);        // available from day 1
                 end_of_life_date:       date(10000,1,1);    // available till year 10000
                 /* Anything can overbuild the object, removing returns the money, we don't want foundations and we want to allow bridges */
-                object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_NO_FOUNDATIONS, OBJ_FLAG_ALLOW_BRIDGE);
-                height:                 128;                  // it's only a ground tile
+                object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_REMOVE_IS_INCOME);
+                height:                 1;
                 num_views:              1;
             }
             graphics {
-                purchase: ${spritelayout.id};
-                tile_check:          return 0;
-                additional_text:     return string(STR_OBJ_TEST);
-                ${spritelayout.id};
+                //additional_text:        return string(STR_OBJ_TEST_CABBAGE);
+                purchase:               ${spritelayout.id}_object_spritelayout;
+                ${spritelayout.id}_object_spritelayout;
             }
         }
     </tal:as_object>
