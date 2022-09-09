@@ -67,7 +67,6 @@
                 ${industry.get_property_declaration('name', None)}
             }
             graphics {
-                //additional_text:      return string(STR_OBJ_TEST_CABBAGE);
                 purchase:               ${industry.id}_object_${object[0]}_switch_graphics;
                 ${industry.id}_object_${object[0]}_switch_graphics;
             }
