@@ -99,6 +99,7 @@ def main():
         "ground_tiles",
         "location_checks_industry",
         "magic_trees",
+        "objects",
         "perm_storage_mappings",
         "randomise_primary_production_on_build",
         "monthly_town_loop",
