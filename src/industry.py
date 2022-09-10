@@ -798,9 +798,13 @@ class GRFObject(object):
         self.id = industry.id + "_object_" + str(object_group_num)
         self.object_group_num = object_group_num
         self.views = views
-        # validation - must be 1, 2, or 4 views https://newgrf-specs.tt-wiki.net/wiki/NML:Objects#Location_check_results
-        if len(self.views) not in [1, 2, 4]:
-            raise BaseException("CABBAGE") # could do better eh?
+        # must be 1, 2, or 4 views https://newgrf-specs.tt-wiki.net/wiki/NML:Objects#Location_check_results
+        # to handle case of 3 views, just repeat 3rd view for now
+        if len(self.views) == 3:
+            self.views.append(self.views[2])
+        # validation for case of too many views - shouldn't happen but eh
+        if len(self.views) > 4:
+            raise BaseException("CABBAGE") # yair could do better?
 
 
 class MagicTree(object):
