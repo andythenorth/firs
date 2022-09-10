@@ -332,6 +332,9 @@ object_numeric_ids = dict(
     chemical_plant_object_2=29,
     paper_mill_object_1=30,
     paper_mill_object_2=31,
+    power_plant_object_1=32,
+    pyrite_mine_object_1=33,
+    pyrite_mine_object_2=34,
     #unused=254,
 )
 
