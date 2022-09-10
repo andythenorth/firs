@@ -251,10 +251,6 @@ from industries import iron_works
 iron_works.industry.register()
 """
 
-from industries import junk_yard
-
-junk_yard.industry.register()
-
 """
 from industries import latex_processor
 latex_processor.industry.register()
@@ -403,6 +399,10 @@ salt_mine.industry.register()
 from industries import sawmill
 
 sawmill.industry.register()
+
+from industries import scrap_yard
+
+scrap_yard.industry.register()
 
 """
 from industries import sheep_farm
