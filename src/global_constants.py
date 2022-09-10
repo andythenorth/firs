@@ -325,7 +325,7 @@ object_numeric_ids = dict(
     slag_grinding_plant_object_2=22,
     slag_grinding_plant_object_1=23,
     orchard_piggery_object_1=24,
-    junk_yard_object_1=25,
+    scrap_yard_object_1=25,
     integrated_steel_mill_object_1=26,
     integrated_steel_mill_object_2=27,
     chemical_plant_object_1=28,
@@ -338,8 +338,8 @@ object_numeric_ids = dict(
     sawmill_object_1=35,
     arable_farm_object_1=36,
     coffee_estate_object_1=37,
-    copper_refinery_object_1=38,
-    copper_refinery_object_2=39,
+    copper_smelter_object_1=38,
+    copper_smelter_object_2=39,
     #unused=254,
 )
 
