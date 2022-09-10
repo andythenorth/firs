@@ -299,7 +299,7 @@ tile_numeric_ids = dict(
 
 # object numeric IDs, as we don't want to be breaking everyone's savegames any time spritelayout order changes eh?
 # max 254 as of Sept 2022
-# no particular order, just append upwards from 0
+# UI display order will depend on id as of Sept 2022, so it may be necessary to re-shuffle these from time to time
 object_numeric_ids = dict(
     electric_arc_furnace_object_1=0,
     electric_arc_furnace_object_2=1,
@@ -307,7 +307,7 @@ object_numeric_ids = dict(
     assembly_plant_object_1=4,
     assembly_plant_object_2=5,
     basic_oxygen_furnace_object_1=6,
-    carbon_black_plant_object_1=7,
+    basic_oxygen_furnace_object_2=7,
     chlor_alkali_plant_object_1=8,
     chlor_alkali_plant_object_2=9,
     coal_mine_object_1=10,
@@ -354,6 +354,9 @@ object_numeric_ids = dict(
     supply_yard_object_2=51,
     timber_yard_object_1=52,
     timber_yard_object_2=53,
+    carbon_black_plant_object_1=54,
+    body_plant_object_1=55,
+    body_plant_object_2=56,
     #unused=254,
 )
 
