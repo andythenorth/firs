@@ -31,7 +31,7 @@ economy = Economy(
         "hydrochloric_acid",
         "limestone",
         "livestock",
-        "lumber",
+        "timber",
         "lye",
         "milk",
         "methanol",

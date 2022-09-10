@@ -27,7 +27,7 @@ economy = Economy(
         "fruits",
         "livestock",
         "logs",
-        "lumber",
+        "timber",
         "maize",
         "manganese",
         "nuts",
