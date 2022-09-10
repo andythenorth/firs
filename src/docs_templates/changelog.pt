@@ -2,6 +2,51 @@ Changelog
 =========
 
 
+--------------
+4.10.0 Release
+--------------
+
+
+**FIRS 4.10.0 is not savegame-compatible with any previous version of FIRS.**
+
+
+*Changes*
+
+- switched Assembly Plant to use 'outpost' layout
+- (experimental) added a set of FIRS landscaping objects, which players can place to make certain industries appear larger
+    - landscape object have no gameplay effect
+    - landscaping objects can be turned on or off via parameter
+    - this is the first version of landscaping objects, there may be bugs
+    - limitations /
+        - not all industry tiles have equivalent objects (for a range of reasons)
+        - no objects can build on water
+        - no objects can build on steep slopes
+        - no objects feature animation, this includes smoke which is missing in all cases
+        - no objects have snow sprites
+        - no objects show fences
+        - all objects are currently 1x1 tiles
+        - some objects have sliced sprites and must be combined precisely with other objects to get the correct appearance
+        - any objects using company colour will use the player company colour (no method exists to match colour to an industry)
+        - by design, objects are only available in the same FIRS economies as their industry
+        - by design, objects have no date restrictions
+        - objects cannot easily be made free to build, but they are set to the lowest possible build cost
+        - objects are not ordered alphabetically in the object menu
+        - order of object views is not yet designed, they come as they are
+        - changes are likely to be made to how objects are provided in forthcoming release
+    - this is not intended to replace existing grfs such as 'FIRS and CHIPS objects', which are more full-featured
+        - it just happens be very easy and very little work to make FIRS provide these objects, within the limits above
+
+
+*Docs*
+
+- updated some industry docs images
+
+
+*Codechanges*
+
+- renamed some industries and cargos in code to be consistent with their names in game
+
+
 -------------
 4.9.0 Release
 -------------
