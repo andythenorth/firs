@@ -324,7 +324,9 @@ object_numeric_ids = dict(
     pyrite_smelter_object_1=21,
     slag_grinding_plant_object_2=22,
     slag_grinding_plant_object_1=23,
-    #unused=24,
+    orchard_piggery_object_1=24,
+    junk_yard_object_1=25,
+    #unused=254,
 )
 
 metadata = {

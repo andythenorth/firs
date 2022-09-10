@@ -64,24 +64,28 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="scrap_yard_spritelayout_2",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="scrap_yard_spritelayout_3",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="scrap_yard_spritelayout_4",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="scrap_yard_spritelayout_5",
