@@ -59,12 +59,12 @@
                             classname:              string(STR_OBJ_CLASSNAME_FIRS);
                             climates_available:     ALL_CLIMATES;
                             size:                   [1, 1];
-                            build_cost_multiplier:  1;
-                            remove_cost_multiplier: 1;
+                            build_cost_multiplier:  0;
+                            remove_cost_multiplier: 0;
                             introduction_date:      date(1,1,1);        // available from day 1
                             end_of_life_date:       date(10000,1,1);    // available till year 10000
                             /* Anything can overbuild the object, removing returns the money, we don't want foundations and we want to allow bridges */
-                            object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_REMOVE_IS_INCOME);
+                            object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE);
                             height:                 6;
                             num_views:              ${len(grf_object.views)};
                             // name derived from industry currently
