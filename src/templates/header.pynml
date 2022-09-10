@@ -77,6 +77,14 @@ grf {
 			};
 		}
 	}
+	param 9 {
+		objects {
+			name: string(STR_PARAM_NAME_OBJECTS);
+			desc: string(STR_PARAM_DESC_OBJECTS);
+			type: bool;
+			bit: 9;
+		}
+	}
 	<!--!
 	param 5 {
 		experimental_features {

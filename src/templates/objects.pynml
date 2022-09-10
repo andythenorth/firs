@@ -52,7 +52,7 @@
                 </tal:views>
             }
             <tal:economies repeat="economy industry.economies_enabled_for_industry">
-                if (economy==${economy.numeric_id}) {
+                if (economy==${economy.numeric_id} && objects) {
                     item(FEAT_OBJECTS, ${grf_object.id}, ${grf_object.numeric_id}) {
                         property {
                             class:                  "FIRS";
