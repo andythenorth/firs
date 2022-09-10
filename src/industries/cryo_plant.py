@@ -57,7 +57,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
-    object_group=1,
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="cryo_plant_spritelayout_large_shed",
@@ -65,7 +65,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
-    object_group=1,
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="cryo_plant_spritelayout_purification_unit",
@@ -73,7 +73,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
-    object_group=1,
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="cryo_plant_spritelayout_horizontal_tanks",
@@ -81,7 +81,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se", "sw"],
-    object_group=1,
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="cryo_plant_spritelayout_storage_tank_blue",
@@ -89,7 +89,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se", "sw"],
-    object_group=2,
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="cryo_plant_spritelayout_storage_tank_yellow",
@@ -97,7 +97,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
-    object_group=2,
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="cryo_plant_spritelayout_empty",

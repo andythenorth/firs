@@ -462,7 +462,7 @@ class SpriteLayout(object):
         perma_fences=[],
         magic_trees=[],
         terrain_aware_ground=False,
-        object_group=None,
+        object_group_num=None,
     ):
         self.id = id
         self.ground_sprite = ground_sprite
@@ -476,7 +476,7 @@ class SpriteLayout(object):
         self.magic_trees = magic_trees
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
         # optionally spritelayouts can cause objects to be defined
-        self.object_group = object_group
+        self.object_group_num = object_group_num
 
 class MagicSpritelayoutSlopeAwareTrees(object):
     """Occasionally we need magic.  If we're going magic, let's go full on magic.  This one makes 4 climate-aware trees on a slope-aware ground tile"""
@@ -794,8 +794,9 @@ class MagicSpritelayoutSlopeAwareTrees(object):
 class GRFObject(object):
     """Stubby class to hold objects - GRFObject to avoid conflating with built-in python classname"""
 
-    def __init__(self, local_id, views):
-        self.local_id = local_id
+    def __init__(self, industry, object_group_num, views):
+        self.id = industry.id + "_object_" + str(object_group_num)
+        self.object_group_num = object_group_num
         self.views = views
         # validation - must be 1, 2, or 4 views https://newgrf-specs.tt-wiki.net/wiki/NML:Objects#Location_check_results
         if len(self.views) not in [1, 2, 4]:
@@ -1714,14 +1715,14 @@ class Industry(object):
     def objects(self):
         objects_temp = {}
         for spritelayout in self.spritelayouts:
-            if spritelayout.object_group is not None:
-                if spritelayout.object_group not in objects_temp.keys():
-                    objects_temp[spritelayout.object_group] = [spritelayout]
+            if spritelayout.object_group_num is not None:
+                if spritelayout.object_group_num not in objects_temp.keys():
+                    objects_temp[spritelayout.object_group_num] = [spritelayout]
                 else:
-                    objects_temp[spritelayout.object_group].append(spritelayout)
+                    objects_temp[spritelayout.object_group_num].append(spritelayout)
         result = []
-        for object_num, views in objects_temp.items():
-            result.append(GRFObject(object_num, views))
+        for object_group_num, views in objects_temp.items():
+            result.append(GRFObject(self, object_group_num, views))
         return result
 
     def validate_map_colour(self, value):

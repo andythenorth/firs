@@ -1,8 +1,9 @@
 <tal:industries repeat="industry registered_industries">
-    <tal:objects repeat="object industry.objects">
-        <tal:spritelayouts repeat="spritelayout object.views">
+    <!--! grf_object not object in case it conflicts with python 'object' at any point (might not, but who wants to test that? -->
+    <tal:objects repeat="grf_object industry.objects">
+        <tal:spritelayouts repeat="spritelayout grf_object.views">
             // for debug to match to actual declared layout name: ${spritelayout.id}
-            spritelayout ${industry.id}_object_${object.local_id}_spritelayout_${repeat.spritelayout.index} {
+            spritelayout ${grf_object.id}_spritelayout_${repeat.spritelayout.index} {
                 childsprite {
                     sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
                     always_draw: 1;
@@ -45,14 +46,14 @@
             }
             </tal:spritelayouts>
 
-            switch(FEAT_OBJECTS, SELF, ${industry.id}_object_${object.local_id}_switch_graphics, view) {
-                <tal:views repeat="view_num range(len(object.views))">
-                    ${view_num}: ${industry.id}_object_${object.local_id}_spritelayout_${view_num};
+            switch(FEAT_OBJECTS, SELF, ${grf_object.id}_switch_graphics, view) {
+                <tal:views repeat="view_num range(len(grf_object.views))">
+                    ${view_num}: ${grf_object.id}_spritelayout_${view_num};
                 </tal:views>
             }
             <tal:economies repeat="economy industry.economies_enabled_for_industry">
                 if (economy==${economy.numeric_id}) {
-                    item(FEAT_OBJECTS, ${industry.id}_object_${object.local_id}) {
+                    item(FEAT_OBJECTS, ${grf_object.id}) {
                         property {
                             class:                  "FIRS";
                             classname:              string(STR_OBJ_CLASSNAME_FIRS);
@@ -65,13 +66,13 @@
                             /* Anything can overbuild the object, removing returns the money, we don't want foundations and we want to allow bridges */
                             object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_REMOVE_IS_INCOME);
                             height:                 6;
-                            num_views:              ${len(object.views)};
+                            num_views:              ${len(grf_object.views)};
                             // name derived from industry currently
                             ${industry.get_property_declaration('name', None)}
                         }
                         graphics {
-                            purchase:               ${industry.id}_object_${object.local_id}_switch_graphics;
-                            ${industry.id}_object_${object.local_id}_switch_graphics;
+                            purchase:               ${grf_object.id}_switch_graphics;
+                            ${grf_object.id}_switch_graphics;
                         }
                     }
                 }

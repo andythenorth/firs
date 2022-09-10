@@ -140,6 +140,6 @@ for industry in registered_industries:
     if len(industry.objects) > 0:
         print(industry.objects)
         for grf_object in industry.objects:
-            print(industry.id + "_object_" + str(grf_object.local_id))
+            print(grf_object.id)
     # also check for unused IDs
 
