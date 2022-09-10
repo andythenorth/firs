@@ -91,18 +91,21 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="paper_mill_spritelayout_paper_store_full",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="paper_mill_spritelayout_wood_store_forklift",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="paper_mill_spritelayout_wood_store_full",
@@ -115,24 +118,28 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="paper_mill_spritelayout_tall_building_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="paper_mill_spritelayout_tall_building_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="paper_mill_spritelayout_pulp_processor",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="paper_mill_spritelayout_boilerhouse",
@@ -140,6 +147,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
     smoke_sprites=[sprite_smoke_1, sprite_smoke_2],
+    object_group_num=2,
 )
 
 industry.add_industry_layout(

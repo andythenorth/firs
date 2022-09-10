@@ -161,6 +161,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_horizontal_tanks],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="chemical_plant_spritelayout_frac_columns",
@@ -168,6 +169,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_frac_columns],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="chemical_plant_spritelayout_drop_tower_and_thin_chimney",
@@ -176,6 +178,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_drop_tower_and_thin_chimney],
     smoke_sprites=[sprite_smoke_1],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="chemical_plant_spritelayout_large_building",
@@ -184,6 +187,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_large_building],
     smoke_sprites=[sprite_smoke_2, sprite_smoke_3, sprite_smoke_4, sprite_smoke_5],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="chemical_plant_spritelayout_fat_chimney",
@@ -192,6 +196,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_fat_chimney],
     smoke_sprites=[sprite_smoke_6, sprite_smoke_7, sprite_smoke_8, sprite_smoke_9],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="chemical_plant_spritelayout_spherical_tanks",
@@ -199,6 +204,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_spherical_tanks],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="chemical_plant_spritelayout_vertical_tanks",
@@ -206,6 +212,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_vertical_tanks],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="chemical_plant_spritelayout_barrels",
@@ -213,6 +220,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_barrels],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=2,
 )
 
 
