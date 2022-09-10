@@ -352,6 +352,8 @@ object_numeric_ids = dict(
     rubber_plantation_object_1=49,
     supply_yard_object_1=50,
     supply_yard_object_2=51,
+    timber_yard_object_1=52,
+    timber_yard_object_2=53,
     #unused=254,
 )
 
