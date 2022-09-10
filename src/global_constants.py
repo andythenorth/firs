@@ -350,6 +350,8 @@ object_numeric_ids = dict(
     manganese_mine_object_1=47,
     manganese_mine_object_2=48,
     rubber_plantation_object_1=49,
+    supply_yard_object_1=50,
+    supply_yard_object_2=51,
     #unused=254,
 )
 
