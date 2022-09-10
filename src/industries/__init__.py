@@ -113,9 +113,9 @@ from industries import copper_concentrator
 copper_concentrator.industry.register()
 """
 
-from industries import copper_refinery
+from industries import copper_smelter
 
-copper_refinery.industry.register()
+copper_smelter.industry.register()
 
 from industries import cryo_plant
 
