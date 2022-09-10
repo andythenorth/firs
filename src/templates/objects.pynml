@@ -57,7 +57,10 @@
                         property {
                             <!--!class:                  "FIRS";-->
                             <!--!classname:              string(STR_OBJ_CLASSNAME_FIRS);-->
-                            class                   :"${str(industry.numeric_id).zfill(4)}";
+                            <!--! class is: industry ID, padded out with 0s and F pre-pended, e.g. F001 etc
+                                  it's accepted that this might collide with other sets but eh
+                            -->
+                            class                   :"${'F' + str(industry.numeric_id).zfill(3)}";
                             classname:              ${industry.get_property('name', None)};
                             climates_available:     ALL_CLIMATES;
                             size:                   [1, 1];
