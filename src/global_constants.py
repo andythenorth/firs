@@ -297,6 +297,36 @@ tile_numeric_ids = dict(
     chemical_plant_tile_2=254,
 )
 
+# object numeric IDs, as we don't want to be breaking everyone's savegames any time spritelayout order changes eh?
+# max 254 as of Sept 2022
+# no particular order, just append upwards from 0
+object_numeric_ids = dict(
+    electric_arc_furnace_object_1=0,
+    electric_arc_furnace_object_2=1,
+    electric_arc_furnace_object_3=3,
+    assembly_plant_object_1=4,
+    assembly_plant_object_2=5,
+    basic_oxygen_furnace_object_1=6,
+    carbon_black_plant_object_1=7,
+    chlor_alkali_plant_object_1=8,
+    chlor_alkali_plant_object_2=9,
+    coal_mine_object_1=10,
+    coke_oven_object_1=11,
+    coke_oven_object_2=12,
+    coke_oven_object_3=13,
+    cryo_plant_object_1=14,
+    cryo_plant_object_2=15,
+    dairy_farm_object_1=16,
+    iron_ore_mine_object_1=17,
+    iron_ore_mine_object_2=18,
+    metal_workshop_object_1=19,
+    pyrite_smelter_object_2=20,
+    pyrite_smelter_object_1=21,
+    slag_grinding_plant_object_2=22,
+    slag_grinding_plant_object_1=23,
+    #unused=24,
+)
+
 metadata = {
     "dev_thread_url": "http://www.tt-forums.net/viewtopic.php?t=41607",
     "repo_url": "https://github.com/andythenorth/firs",

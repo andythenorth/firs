@@ -796,11 +796,12 @@ class GRFObject(object):
 
     def __init__(self, industry, object_group_num, views):
         self.id = industry.id + "_object_" + str(object_group_num)
+        self.numeric_id = global_constants.object_numeric_ids[self.id]
         self.object_group_num = object_group_num
         self.views = views
         # validation - must be 1, 2, or 4 views https://newgrf-specs.tt-wiki.net/wiki/NML:Objects#Location_check_results
         if len(self.views) not in [1, 2, 4]:
-            raise BaseException("CABBAGE")
+            raise BaseException("CABBAGE") # could do better eh?
 
 
 class MagicTree(object):

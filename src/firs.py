@@ -134,12 +134,14 @@ for industry_id, industry_numeric_id in global_constants.industry_numeric_ids.it
     if found == False:
         utils.echo_message("Not found: " + industry_id + " from global_constants")
 
-# guard for object IDs
-for industry in registered_industries:
-    # check for missing IDs
-    if len(industry.objects) > 0:
-        print(industry.objects)
+# guard against unused / wasted object IDs
+# n.b. sometimes there are valid unused object IDs during development
+for object_id, object_numeric_id in global_constants.object_numeric_ids.items():
+    found = False
+    for industry in registered_industries:
         for grf_object in industry.objects:
-            print(grf_object.id)
-    # also check for unused IDs
-
+            if grf_object.id == object_id:
+                found = True
+                break
+    if found == False:
+        utils.echo_message("Not found: " + object_id + " from global_constants")
