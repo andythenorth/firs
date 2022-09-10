@@ -340,6 +340,9 @@ object_numeric_ids = dict(
     coffee_estate_object_1=37,
     copper_smelter_object_1=38,
     copper_smelter_object_2=39,
+    food_processor_object_1=40,
+    nitrate_mine_object_1=41,
+    nitrate_mine_object_2=42,
     #unused=254,
 )
 
