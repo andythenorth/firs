@@ -344,6 +344,9 @@ object_numeric_ids = dict(
     nitrate_mine_object_1=41,
     nitrate_mine_object_2=42,
     vineyard_object_1=43,
+    diamond_mine_object_1=44,
+    diamond_mine_object_2=45,
+    fruit_plantation_object_1=46,
     #unused=254,
 )
 
