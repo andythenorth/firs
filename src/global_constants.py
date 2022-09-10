@@ -326,6 +326,8 @@ object_numeric_ids = dict(
     slag_grinding_plant_object_1=23,
     orchard_piggery_object_1=24,
     junk_yard_object_1=25,
+    integrated_steel_mill_object_1=26,
+    integrated_steel_mill_object_2=27,
     #unused=254,
 )
 

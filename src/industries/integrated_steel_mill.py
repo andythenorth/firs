@@ -129,6 +129,7 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_greeble],
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_integrated_steel_mill_1",
@@ -136,18 +137,21 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_integrated_steel_mill_1],
     smoke_sprites=[sprite_smoke],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_integrated_steel_mill_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_integrated_steel_mill_2],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_small_shed",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_small_shed],
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_ladle_transporter",
@@ -160,12 +164,14 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_brick_building],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_small_tanks",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_small_tanks],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_large_shed_rear_part",
