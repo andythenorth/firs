@@ -133,3 +133,13 @@ for industry_id, industry_numeric_id in global_constants.industry_numeric_ids.it
             break
     if found == False:
         utils.echo_message("Not found: " + industry_id + " from global_constants")
+
+# guard for object IDs
+for industry in registered_industries:
+    # check for missing IDs
+    if len(industry.objects) > 0:
+        print(industry.objects)
+        for grf_object in industry.objects:
+            print(industry.id + "_object_" + str(grf_object.local_id))
+    # also check for unused IDs
+

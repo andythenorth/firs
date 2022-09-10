@@ -791,6 +791,17 @@ class MagicSpritelayoutSlopeAwareTrees(object):
         )
 
 
+class GRFObject(object):
+    """Stubby class to hold objects - GRFObject to avoid conflating with built-in python classname"""
+
+    def __init__(self, local_id, views):
+        self.local_id = local_id
+        self.views = views
+        # validation - must be 1, 2, or 4 views https://newgrf-specs.tt-wiki.net/wiki/NML:Objects#Location_check_results
+        if len(self.views) not in [1, 2, 4]:
+            raise BaseException("CABBAGE")
+
+
 class MagicTree(object):
     """Stubby class used in MagicSpriteLayoutSlopeAwareTrees; I just prefer object attribute access over an equivalent dict - Andy"""
 
@@ -1701,17 +1712,16 @@ class Industry(object):
 
     @property
     def objects(self):
-        result = {}
+        objects_temp = {}
         for spritelayout in self.spritelayouts:
             if spritelayout.object_group is not None:
-                if spritelayout.object_group not in result.keys():
-                    result[spritelayout.object_group] = [spritelayout]
+                if spritelayout.object_group not in objects_temp.keys():
+                    objects_temp[spritelayout.object_group] = [spritelayout]
                 else:
-                    result[spritelayout.object_group].append(spritelayout)
-        # validation - must be 1, 2, or 4 views https://newgrf-specs.tt-wiki.net/wiki/NML:Objects#Location_check_results
-        for object_group in result.values():
-            if len(object_group) not in [1, 2, 4]:
-                raise BaseException("CABBAGE")
+                    objects_temp[spritelayout.object_group].append(spritelayout)
+        result = []
+        for object_num, views in objects_temp.items():
+            result.append(GRFObject(object_num, views))
         return result
 
     def validate_map_colour(self, value):
