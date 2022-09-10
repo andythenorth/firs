@@ -357,6 +357,8 @@ object_numeric_ids = dict(
     carbon_black_plant_object_1=54,
     body_plant_object_1=55,
     body_plant_object_2=56,
+    engine_plant_object_1=57,
+    lime_kiln_object_1=58,
     #unused=254,
 )
 
