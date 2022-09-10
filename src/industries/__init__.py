@@ -268,10 +268,6 @@ from industries import liquids_terminal
 
 liquids_terminal.industry.register()
 
-from industries import lumber_yard
-
-lumber_yard.industry.register()
-
 """
 from industries import machine_shop
 machine_shop.industry.register()
@@ -453,6 +449,10 @@ supply_yard.industry.register()
 from industries import textile_mill
 textile_mill.industry.register()
 """
+
+from industries import timber_yard
+
+timber_yard.industry.register()
 
 """ BLTC
 from industries import tinplate_works
