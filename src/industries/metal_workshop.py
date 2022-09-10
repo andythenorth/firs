@@ -86,6 +86,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se"],
+    object_group=1,
 )
 industry.add_spritelayout(
     id="metal_workshop_spritelayout_4",
@@ -93,6 +94,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se"],
+    object_group=1,
 )
 industry.add_spritelayout(
     id="metal_workshop_spritelayout_5",
@@ -100,6 +102,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se"],
+    object_group=1,
 )
 industry.add_spritelayout(
     id="metal_workshop_spritelayout_6",
@@ -114,6 +117,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
     fences=["nw", "ne", "se", "sw"],
+    object_group=1,
 )
 
 industry.add_industry_layout(

@@ -141,30 +141,35 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[],
+    object_group=1,
 )
 industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_headgear_animated",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_headgear_animated],
+    object_group=1,
 )
 industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_exit_trestle_animated",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_exit_trestle_animated],
+    object_group=2,
 )
 industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_crusher_front_part",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_crusher_front_part],
+    object_group=1,
 )
 industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_crusher_rear_part",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_crusher_rear_part],
+    object_group=1,
 )
 industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_ore_truck",
@@ -190,18 +195,21 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_boiler_house],
     smoke_sprites=[sprite_smoke_1, sprite_smoke_2],
+    object_group=2,
 )
 industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_winding_house",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_winding_house],
+    object_group=2,
 )
 industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_exit_shed_rear",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_exit_shed_rear],
+    object_group=2,
 )
 
 industry.add_industry_layout(
