@@ -363,6 +363,11 @@ object_numeric_ids = dict(
     limestone_mine_object_2=60,
     potash_mine_object_1=61,
     potash_mine_object_2=62,
+    sheet_and_pipe_mill_object_1=63,
+    sheet_and_pipe_mill_object_2=64,
+    sheet_and_pipe_mill_object_3=65,
+    soda_ash_mine_object_1=66,
+    soda_ash_mine_object_2=67,
     #unused=254,
 )
 
