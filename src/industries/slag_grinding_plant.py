@@ -137,7 +137,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_silos],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=2,
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_large_shed",
@@ -146,7 +146,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_large_shed],
     smoke_sprites=[sprite_smoke_1],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=6,
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_grinding_tower",
@@ -154,7 +154,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_grinding_tower],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=5,
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_conveyors_1",
@@ -162,7 +162,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_conveyors_1],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=4,
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_conveyors_2",
@@ -170,7 +170,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_conveyors_2],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=3,
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_slag_dump_1",
@@ -178,6 +178,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_slag_dump_1],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=7,
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_slag_dump_2",
@@ -185,6 +186,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_slag_dump_2],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=7,
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_slag_dump_dozer",

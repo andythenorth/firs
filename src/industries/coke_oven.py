@@ -177,7 +177,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_quench_tower],
     smoke_sprites=[sprite_smoke_big_2],
-    object_group_num=1,
+    object_group_num=3,
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_gas_plant_1",
