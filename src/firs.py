@@ -134,14 +134,15 @@ for industry_id, industry_numeric_id in global_constants.industry_numeric_ids.it
     if found == False:
         utils.echo_message("Not found: " + industry_id + " from global_constants")
 
-# guard against unused / wasted object IDs
-# n.b. sometimes there are valid unused object IDs during development
-for object_id, object_numeric_id in global_constants.object_numeric_ids.items():
-    found = False
-    for industry in registered_industries:
-        for grf_object in industry.objects:
-            if grf_object.id == object_id:
-                found = True
-                break
-    if found == False:
-        utils.echo_message("Not found: " + object_id + " from global_constants")
+# objects have no order control other than by id
+# so auto-generate object ids in alphabetical order, using the industry id as key
+# this could be made more accurate by using the industry name string, but id will do for now
+# this approach means that object IDs will not be stable across changes, but it's the best of the available choices currently
+object_ids = {}
+counter = 0
+for industry in sorted(registered_industries, key=lambda industry: industry.id):
+    for grf_object in industry.objects:
+        object_ids[grf_object.id] = counter
+        counter += 1
+        if counter > 254:
+            raise BaseException("CABBAGE")
