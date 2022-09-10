@@ -106,6 +106,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_thickening_tank",
@@ -113,6 +114,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_big_shed",
@@ -120,6 +122,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_flue_stack",
@@ -128,6 +131,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_4],
     smoke_sprites=[sprite_smoke_1],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_ore_handling_front",
@@ -136,6 +140,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_5],
     smoke_sprites=[sprite_smoke_2, sprite_smoke_3],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_ore_handling_rear",
@@ -143,6 +148,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_copper_forklift",
@@ -157,6 +163,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_stack_vent_thing",
@@ -164,6 +171,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_ground",
