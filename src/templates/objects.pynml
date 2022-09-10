@@ -55,8 +55,10 @@
                 if (economy==${economy.numeric_id} && objects) {
                     item(FEAT_OBJECTS, ${grf_object.id}, ${object_ids[grf_object.id]}) {
                         property {
-                            class:                  "FIRS";
-                            classname:              string(STR_OBJ_CLASSNAME_FIRS);
+                            <!--!class:                  "FIRS";-->
+                            <!--!classname:              string(STR_OBJ_CLASSNAME_FIRS);-->
+                            class                   :"${str(industry.numeric_id).zfill(4)}";
+                            classname:              ${industry.get_property('name', None)};
                             climates_available:     ALL_CLIMATES;
                             size:                   [1, 1];
                             build_cost_multiplier:  0;
