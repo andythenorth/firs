@@ -795,7 +795,8 @@ class GRFObject(object):
     """Stubby class to hold objects - GRFObject to avoid conflating with built-in python classname"""
 
     def __init__(self, industry, object_group_num, views):
-        self.id = industry.id + "_object_" + str(object_group_num)
+        # note spacing numeric part of id to add a leading 0 if needed, otherwise python lexical sort returns 'foo_1, foo_10, foo_2' etc
+        self.id = f"{industry.id}_object_{object_group_num:02}"
         self.object_group_num = object_group_num
         self.views = views
         # must be 1, 2, or 4 views https://newgrf-specs.tt-wiki.net/wiki/NML:Objects#Location_check_results
