@@ -807,15 +807,11 @@ class GRFObject(object):
 
     def validate(self):
         # must be 1, 2, or 4 views https://newgrf-specs.tt-wiki.net/wiki/NML:Objects#Location_check_results
-        if len(self.views) == 2 or len(self.views) == 4:
-            print(self.id)
         if len(self.views) == 3:
-            utils.echo_message(self.id + " has 3 views defined, not permitted by spec, patching")
-            # fix for now by copying 3rd view to repeat as 4th
-            self.views.append(self.views[2])
+            raise BaseException(self.id, "has 3 views defined, which is not permitted by spec")
         # validation for case of too many views - shouldn't happen but eh
         if len(self.views) > 4:
-            print(self.views)
+            utils.echo_message(self.views)
             raise BaseException(self.id, "has too many views defined")  # yair could do better?
 
     @property
@@ -1372,8 +1368,6 @@ class Industry(object):
         self.objects[add_to_object_num].add_view(view)
 
     def add_multi_tile_object(self, **kwargs):
-        print(kwargs["add_to_object_num"])
-        print(kwargs["view_layout"])
         view = []
         for x_y_spritelayout in kwargs["view_layout"]:
             for spritelayout in self.spritelayouts:

@@ -73,7 +73,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_1],
     smoke_sprites=[sprite_smoke_1],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=3,
+    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_large_shed",
@@ -81,7 +81,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_conveyors",
@@ -89,7 +88,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=2,
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_processor",
@@ -97,7 +95,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=2,
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_raised_tanks",
@@ -105,7 +102,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=4,
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_raised_shed",
@@ -113,7 +110,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=5,
+    add_to_object_num=2,
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_machinery",
@@ -128,7 +125,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=6,
+    add_to_object_num=5,
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_nitrate_pile",
@@ -136,6 +133,15 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
     fences=["nw", "ne", "se", "sw"],
+)
+
+industry.add_multi_tile_object(
+    add_to_object_num=1,
+    view_layout=[
+        (0, 0, "nitrate_mine_spritelayout_processor"),
+        (1, 0, "nitrate_mine_spritelayout_conveyors"),
+        (2, 0, "nitrate_mine_spritelayout_large_shed"),
+    ]
 )
 
 industry.add_industry_layout(

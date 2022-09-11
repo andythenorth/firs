@@ -140,7 +140,6 @@ industry.add_spritelayout(
     building_sprites=[spriteset_5],
     smoke_sprites=[sprite_smoke_2, sprite_smoke_3],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_ore_handling_rear",
@@ -148,7 +147,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_copper_forklift",
@@ -187,6 +185,14 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_transformer],
     fences=["nw", "ne", "se", "sw"],
+)
+
+industry.add_multi_tile_object(
+    add_to_object_num=4,
+    view_layout=[
+        (0, 0, "copper_smelter_spritelayout_ore_handling_rear"),
+        (1, 0, "copper_smelter_spritelayout_ore_handling_front"),
+    ]
 )
 
 industry.add_industry_layout(
