@@ -41,6 +41,6 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
 		location_check:           ${industry.id}_check_location;
         monthly_prod_change:      ${industry.id}_monthly_prod_change;
 		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
-		colour:                   switch_colour;
+        colour:                   switch_colour(${industry.numeric_id});
 	}
 }

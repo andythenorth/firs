@@ -48,7 +48,7 @@
                 extra_text_fund:          ${industry.get_extra_text_fund(economy)};
                 extra_text_industry:      ${industry.id}_extra_text;
                 cargo_subtype_display:    ${industry.id}_cargo_subtype_display;
-                colour:                   switch_colour;
+                colour:                   switch_colour(${industry.numeric_id});
             }
         }
     }

@@ -76,6 +76,7 @@
                             ${industry.get_property_declaration('name', None)}
                         }
                         graphics {
+                            colour:                 switch_colour_object(${industry.numeric_id});
                             purchase:               ${grf_object.id}_switch_graphics;
                             ${grf_object.id}_switch_graphics;
                         }
