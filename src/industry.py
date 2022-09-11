@@ -807,6 +807,8 @@ class GRFObject(object):
 
     def validate(self):
         # must be 1, 2, or 4 views https://newgrf-specs.tt-wiki.net/wiki/NML:Objects#Location_check_results
+        if len(self.views) == 2 or len(self.views) == 4:
+            print(self.id)
         if len(self.views) == 3:
             utils.echo_message(self.id + " has 3 views defined, not permitted by spec, patching")
             # fix for now by copying 3rd view to repeat as 4th
@@ -815,6 +817,19 @@ class GRFObject(object):
         if len(self.views) > 4:
             print(self.views)
             raise BaseException(self.id, "has too many views defined")  # yair could do better?
+
+    @property
+    def size(self):
+        view_sizes = []
+        for view in self.views:
+            x_values = [i[0] for i in view]
+            y_values = [i[1] for i in view]
+            view_size = (max(x_values), max(y_values))
+            view_sizes.append(view_size)
+        unique_sizes = list(set(view_sizes))
+        if len(unique_sizes) > 1:
+            raise BaseException(self.id, "views have different sizes / tile layouts")
+        return [1 + unique_sizes[0][0], 1 + unique_sizes[0][1]]
 
 
 class MagicTree(object):
@@ -1356,9 +1371,16 @@ class Industry(object):
             self.objects[add_to_object_num] = GRFObject(self, add_to_object_num)
         self.objects[add_to_object_num].add_view(view)
 
-    def add_multi_tile_object(self, **kwards):
-        print("cabbage")
-        pass
+    def add_multi_tile_object(self, **kwargs):
+        print(kwargs["add_to_object_num"])
+        print(kwargs["view_layout"])
+        view = []
+        for x_y_spritelayout in kwargs["view_layout"]:
+            for spritelayout in self.spritelayouts:
+                if spritelayout.id == x_y_spritelayout[2]:
+                    view.append((x_y_spritelayout[0], x_y_spritelayout[1], spritelayout))
+        self.add_view_for_object(view, **kwargs)
+
 
     @property
     def numeric_id(self):

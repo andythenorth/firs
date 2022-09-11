@@ -6,7 +6,7 @@
             // CABBAGE views ${view}
             <tal:spritelayouts repeat="x_y_spritelayout view">
                 // CABBAGE x_y_spritelayout ${x_y_spritelayout}
-                // for debug to match to actual declared layout name: ${x_y_spritelayout[2].id}
+                // for debug: object layout derived from industry layout name ${x_y_spritelayout[2].id}
                 spritelayout ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index} {
                     childsprite {
                         sprite: ${industry.unpack_sprite_or_spriteset(x_y_spritelayout[2].ground_sprite)};
@@ -59,7 +59,7 @@
 
             switch(FEAT_OBJECTS, SELF, ${grf_object.id}_switch_graphics, view) {
                 <tal:views repeat="view_num range(len(grf_object.views))">
-                    ${view_num}: ${grf_object.id}_view_${view_num}_spritelayout_${0};
+                    ${view_num}: ${grf_object.id}_view_${view_num}_switch_graphics_layout;
                 </tal:views>
             }
 
@@ -73,7 +73,7 @@
                             class                   :"${'F' + str(industry.numeric_id).zfill(3)}";
                             classname:              ${industry.get_property('name', None)};
                             climates_available:     ALL_CLIMATES;
-                            size:                   [1, 1];
+                            size:                   ${grf_object.size};
                             build_cost_multiplier:  0;
                             remove_cost_multiplier: 0;
                             introduction_date:      date(1, 1, 1);

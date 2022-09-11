@@ -142,7 +142,6 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[],
-    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="potash_mine_spritelayout_headgear_animated",
@@ -156,21 +155,18 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_exit_trestle_animated],
-    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="potash_mine_spritelayout_crusher_front_part",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_crusher_front_part],
-    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="potash_mine_spritelayout_crusher_rear_part",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_crusher_rear_part],
-    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="potash_mine_spritelayout_hut_vents",
@@ -204,7 +200,22 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_exit_shed_rear],
+)
+
+industry.add_multi_tile_object(
+    add_to_object_num=4,
+    view_layout=[
+        (0, 0, "potash_mine_spritelayout_crusher_rear_part"),
+        (1, 0, "potash_mine_spritelayout_tile_empty"),
+        (2, 0, "potash_mine_spritelayout_crusher_front_part"),
+    ]
+)
+industry.add_multi_tile_object(
     add_to_object_num=3,
+    view_layout=[
+        (0, 0, "potash_mine_spritelayout_exit_shed_rear"),
+        (1, 0, "potash_mine_spritelayout_exit_trestle_animated"),
+    ]
 )
 
 industry.add_industry_layout(

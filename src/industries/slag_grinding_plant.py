@@ -146,7 +146,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_large_shed],
     smoke_sprites=[sprite_smoke_1],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=6,
+    add_to_object_num=5,
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_grinding_tower",
@@ -154,7 +154,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_grinding_tower],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=5,
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_conveyors_1",
@@ -162,7 +161,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_conveyors_1],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_conveyors_2",
@@ -178,7 +176,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_slag_dump_1],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=7,
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_slag_dump_2",
@@ -186,7 +183,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_slag_dump_2],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=7,
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_slag_dump_dozer",
@@ -202,6 +198,21 @@ industry.add_spritelayout(
     building_sprites=[spriteset_office],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=2,
+)
+
+industry.add_multi_tile_object(
+    add_to_object_num=4,
+    view_layout=[
+        (0, 0, "slag_grinding_plant_spritelayout_grinding_tower"),
+        (0, 1, "slag_grinding_plant_spritelayout_conveyors_1"),
+    ]
+)
+industry.add_multi_tile_object(
+    add_to_object_num=6,
+    view_layout=[
+        (0, 0, "slag_grinding_plant_spritelayout_slag_dump_1"),
+        (0, 1, "slag_grinding_plant_spritelayout_slag_dump_2"),
+    ]
 )
 
 industry.add_industry_layout(
