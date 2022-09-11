@@ -65,7 +65,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
-    object_group_num=1,
+    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="arable_farm_spritelayout_2",
@@ -86,7 +86,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    object_group_num=2,
+    add_to_object_num=2,
 )
 industry.add_spritelayout(
     id="arable_farm_spritelayout_5",

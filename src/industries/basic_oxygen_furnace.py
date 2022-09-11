@@ -218,7 +218,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_tanks_ground_shading,
     building_sprites=[spriteset_tanks],
     fences=[],
-    object_group_num=4,
+    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_air_plant",
@@ -227,7 +227,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_air_plant],
     smoke_sprites=[sprite_smoke_2],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=3,
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_furnace",
@@ -235,7 +235,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_furnace],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_casting_shed",
@@ -244,7 +244,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_caster],
     smoke_sprites=[sprite_smoke_1],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=2,
+    add_to_object_num=2,
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_metal_1",
@@ -252,7 +252,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_metal_1],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=6,
+    add_to_object_num=6,
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_small_shed",
@@ -260,7 +260,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_shed],
     fences=["nw", "se"],
-    object_group_num=5,
+    add_to_object_num=5,
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_animated_casting_front_part",

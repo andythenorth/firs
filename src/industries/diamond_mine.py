@@ -88,7 +88,7 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=3,
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="diamond_mine_spritelayout_headgear_animated",
@@ -96,7 +96,7 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_headgear_animated],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="diamond_mine_spritelayout_crusher_front_part",
@@ -105,7 +105,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_crusher_front_part],
     smoke_sprites=[sprite_smoke_1],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=3,
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="diamond_mine_spritelayout_crusher_rear_part",
@@ -113,7 +113,7 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_crusher_rear_part],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=3,
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="diamond_mine_spritelayout_misc_building",
@@ -121,7 +121,7 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_misc_building],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=5,
+    add_to_object_num=5,
 )
 industry.add_spritelayout(
     id="diamond_mine_spritelayout_vents_shed",
@@ -129,7 +129,7 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_vents_shed],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=4,
+    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="diamond_mine_spritelayout_winding_house",
@@ -137,7 +137,7 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_winding_house],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=2,
+    add_to_object_num=2,
 )
 
 industry.add_industry_layout(

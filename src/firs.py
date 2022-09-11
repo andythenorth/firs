@@ -142,7 +142,8 @@ object_ids = {}
 counter = 0
 for industry in sorted(registered_industries, key=lambda industry: industry.id):
     for grf_object in sorted(industry.objects.values(), key=lambda grf_object: grf_object.id):
+        grf_object.validate()
         object_ids[grf_object.id] = counter
         counter += 1
         if counter > 254:
-            raise BaseException("CABBAGE")
+            raise BaseException("CABBAGE") # yair, try harder

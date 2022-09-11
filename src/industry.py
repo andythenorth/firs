@@ -462,7 +462,7 @@ class SpriteLayout(object):
         perma_fences=[],
         magic_trees=[],
         terrain_aware_ground=False,
-        object_group_num=None,
+        add_to_object_num=None,
     ):
         self.id = id
         self.ground_sprite = ground_sprite
@@ -476,7 +476,7 @@ class SpriteLayout(object):
         self.magic_trees = magic_trees
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
         # optionally spritelayouts can cause objects to be defined
-        self.object_group_num = object_group_num
+        self.add_to_object_num = add_to_object_num
 
 
 class MagicSpritelayoutSlopeAwareTrees(object):
@@ -795,24 +795,26 @@ class MagicSpritelayoutSlopeAwareTrees(object):
 class GRFObject(object):
     """Stubby class to hold objects - GRFObject to avoid conflating with built-in python classname"""
 
-    def __init__(self, industry, object_group_num):
+    def __init__(self, industry, add_to_object_num):
         # note spacing numeric part of id to add a leading 0 if needed, otherwise python lexical sort returns 'foo_1, foo_10, foo_2' etc
-        self.id = f"{industry.id}_object_{object_group_num:02}"
-        self.object_group_num = object_group_num
+        self.id = f"{industry.id}_object_{add_to_object_num:02}"
+        self.add_to_object_num = add_to_object_num
         self.views = []
 
     def add_view(self, spritelayout):
         self.views.append(spritelayout)
-        self.validate()
+        #self.validate()
 
     def validate(self):
         # must be 1, 2, or 4 views https://newgrf-specs.tt-wiki.net/wiki/NML:Objects#Location_check_results
-        # to handle case of 3 views, just repeat 3rd view for now
-        # if len(self.views) == 3:
-        # self.views.append(self.views[2])
+        if len(self.views) == 3:
+            utils.echo_message(self.id + " has 3 views defined, not permitted by spec, patching")
+            # fix for now by copying 3rd view to repeat as 4th
+            self.views.append(self.views[2])
         # validation for case of too many views - shouldn't happen but eh
         if len(self.views) > 4:
-            raise BaseException("CABBAGE")  # yair could do better?
+            print(self.views)
+            raise BaseException(self.id, "has too many views defined")  # yair could do better?
 
 
 class MagicTree(object):
@@ -1255,7 +1257,9 @@ class Industry(object):
         self.sprites = []
         self.smoke_sprites = []
         self.spritesets = []
-        self.spritelayouts = []  # by convention spritelayout is one word :P
+        # by convention spritelayout is one word :P
+        self.spritelayouts = []
+        # objects dict keyed on the object num local to the industry, for convenience of access creating/appending - isn't significant for rendering
         self.objects = {}
         self.extra_graphics_switches = []
         self._industry_layouts = {"core": [], "outposts": []}
@@ -1311,8 +1315,10 @@ class Industry(object):
     def add_spritelayout(self, *args, **kwargs):
         new_spritelayout = SpriteLayout(*args, **kwargs)
         self.spritelayouts.append(new_spritelayout)
-        if kwargs.get("object_group_num", None) is not None:
-            self.add_object(new_spritelayout, **kwargs)
+        if kwargs.get("add_to_object_num", None) is not None:
+            # when adding spritelayouts this way, all views will be single tile, 0-indexed
+            view = [(0, 0, new_spritelayout)]
+            self.add_view_for_object(view, **kwargs)
         # returning the new spritelayout isn't essential, but permits the caller giving it a reference for use elsewhere
         return new_spritelayout
 
@@ -1342,12 +1348,13 @@ class Industry(object):
     def add_economy_variation(self, economy):
         self.economy_variations[economy.id] = IndustryProperties()
 
-    def add_object(self, spritelayout, **kwargs):
-        # store objects in a dict keyed on the group num, this is just for convenience of access here, and isn't significant for rendering
-        object_group_num = kwargs["object_group_num"]
-        if object_group_num not in self.objects.keys():
-            self.objects[object_group_num] = GRFObject(self, object_group_num)
-        self.objects[object_group_num].add_view(spritelayout)
+    def add_view_for_object(self, view, **kwargs):
+        # view is a list of tuples as [(x, y, spritelayout)], similar to industry layouts, but there's no need for a stubby class for view
+        add_to_object_num = kwargs["add_to_object_num"]
+        # create object with this num if it doesn't exist
+        if add_to_object_num not in self.objects.keys():
+            self.objects[add_to_object_num] = GRFObject(self, add_to_object_num)
+        self.objects[add_to_object_num].add_view(view)
 
     def add_multi_tile_object(self, **kwards):
         print("cabbage")

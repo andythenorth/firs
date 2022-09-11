@@ -128,7 +128,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_oven_battery],
-    object_group_num=2,
+    add_to_object_num=2,
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_oven_battery_larry_car",
@@ -136,7 +136,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_oven_battery_larry_car],
     smoke_sprites=[sprite_smoke_small_1, sprite_smoke_small_2],
-    object_group_num=2,
+    add_to_object_num=2,
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_silo",
@@ -144,14 +144,14 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_silo],
     smoke_sprites=[sprite_smoke_big_1],
-    object_group_num=1,
+    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_pusher_rails_empty",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_pusher_rails_base, spriteset_pipe_gantry],
-    object_group_num=5,
+    add_to_object_num=5,
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_pusher_rails_animated",
@@ -162,14 +162,14 @@ industry.add_spritelayout(
         spriteset_pusher_car,
         spriteset_pipe_gantry,
     ],
-    object_group_num=5,
+    add_to_object_num=5,
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_pusher_rails_with_house",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_pusher_rails_base, spriteset_pipe_gantry_house],
-    object_group_num=4,
+    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_quench_tower",
@@ -177,28 +177,28 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_quench_tower],
     smoke_sprites=[sprite_smoke_big_2],
-    object_group_num=3,
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_gas_plant_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_gas_plant_1],
-    object_group_num=8,
+    add_to_object_num=8,
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_coal_handling_front",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_coal_handling_front],
-    object_group_num=7,
+    add_to_object_num=7,
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_coal_handling_rear",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_coal_handling_rear],
-    object_group_num=6,
+    add_to_object_num=6,
 )
 
 # this industry needs outpost layout as there are lots of cargos

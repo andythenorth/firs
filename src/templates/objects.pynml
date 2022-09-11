@@ -1,56 +1,68 @@
 <tal:industries repeat="industry registered_industries">
     <!--! grf_object not object in case it conflicts with python 'object' at any point (might not, but who wants to test that? -->
     <tal:objects repeat="grf_object industry.objects.values()">
-        <tal:spritelayouts repeat="spritelayout grf_object.views">
-            // for debug to match to actual declared layout name: ${spritelayout.id}
-            spritelayout ${grf_object.id}_spritelayout_${repeat.spritelayout.index} {
-                childsprite {
-                    sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
-                    always_draw: 1;
-                }
-                /* snow nerfed
-                childsprite {
-                    sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite, snow_overlay=True)};
-                    //hide_sprite: (!LOAD_TEMP(13));
-                    always_draw: 1;
-                }
-                 */
-                <tal:build_building_sprites repeat="building_sprite spritelayout.building_sprites">
-                    building {
-                        sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3)};
-                        recolour_mode: RECOLOUR_REMAP;
-                        palette: PALETTE_USE_DEFAULT;
-                        xoffset: ${building_sprite.xoffset};
-                        yoffset: ${building_sprite.yoffset};
-                        zoffset: ${building_sprite.zoffset};
-                        xextent: ${building_sprite.xextent};
-                        yextent: ${building_sprite.yextent};
-                        zextent: ${building_sprite.zextent};
-                        always_draw: ${building_sprite.always_draw};
+        // CABBAGE view ${grf_object.views}
+        <tal:view repeat="view grf_object.views">
+            // CABBAGE views ${view}
+            <tal:spritelayouts repeat="x_y_spritelayout view">
+                // CABBAGE x_y_spritelayout ${x_y_spritelayout}
+                // for debug to match to actual declared layout name: ${x_y_spritelayout[2].id}
+                spritelayout ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index} {
+                    childsprite {
+                        sprite: ${industry.unpack_sprite_or_spriteset(x_y_spritelayout[2].ground_sprite)};
+                        always_draw: 1;
                     }
                     /* snow nerfed
-                    building {
-                        sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3, snow_overlay=True)};
-                        recolour_mode: RECOLOUR_REMAP;
-                        palette: PALETTE_USE_DEFAULT;
-                        xoffset: ${building_sprite.xoffset};
-                        yoffset: ${building_sprite.yoffset};
-                        zoffset: ${building_sprite.zoffset};
-                        xextent: ${building_sprite.xextent};
-                        yextent: ${building_sprite.yextent};
-                        zextent: ${building_sprite.zextent};
-                        always_draw: ${building_sprite.always_draw};
+                    childsprite {
+                        sprite: ${industry.unpack_sprite_or_spriteset(x_y_spritelayout[2].ground_sprite, snow_overlay=True)};
+                        //hide_sprite: (!LOAD_TEMP(13));
+                        always_draw: 1;
                     }
-                    */
-                </tal:build_building_sprites>
-            }
-            </tal:spritelayouts>
+                     */
+                    <tal:build_building_sprites repeat="building_sprite x_y_spritelayout[2].building_sprites">
+                        building {
+                            sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3)};
+                            recolour_mode: RECOLOUR_REMAP;
+                            palette: PALETTE_USE_DEFAULT;
+                            xoffset: ${building_sprite.xoffset};
+                            yoffset: ${building_sprite.yoffset};
+                            zoffset: ${building_sprite.zoffset};
+                            xextent: ${building_sprite.xextent};
+                            yextent: ${building_sprite.yextent};
+                            zextent: ${building_sprite.zextent};
+                            always_draw: ${building_sprite.always_draw};
+                        }
+                        /* snow nerfed
+                        building {
+                            sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3, snow_overlay=True)};
+                            recolour_mode: RECOLOUR_REMAP;
+                            palette: PALETTE_USE_DEFAULT;
+                            xoffset: ${building_sprite.xoffset};
+                            yoffset: ${building_sprite.yoffset};
+                            zoffset: ${building_sprite.zoffset};
+                            xextent: ${building_sprite.xextent};
+                            yextent: ${building_sprite.yextent};
+                            zextent: ${building_sprite.zextent};
+                            always_draw: ${building_sprite.always_draw};
+                        }
+                        */
+                    </tal:build_building_sprites>
+                    }
+                </tal:spritelayouts>
+
+                switch(FEAT_OBJECTS, SELF, ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout, relative_pos) {
+                    <tal:spritelayouts repeat="x_y_spritelayout view">
+                        relative_coord(${x_y_spritelayout[0]}, ${x_y_spritelayout[1]}): ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index};
+                    </tal:spritelayouts>
+                }
+            </tal:view>
 
             switch(FEAT_OBJECTS, SELF, ${grf_object.id}_switch_graphics, view) {
                 <tal:views repeat="view_num range(len(grf_object.views))">
-                    ${view_num}: ${grf_object.id}_spritelayout_${view_num};
+                    ${view_num}: ${grf_object.id}_view_${view_num}_spritelayout_${0};
                 </tal:views>
             }
+
             <tal:economies repeat="economy industry.economies_enabled_for_industry">
                 if (economy==${economy.numeric_id} && objects) {
                     item(FEAT_OBJECTS, ${grf_object.id}, ${object_ids[grf_object.id]}) {
