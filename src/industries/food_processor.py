@@ -65,7 +65,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="food_processor_spritelayout_3",
@@ -73,7 +73,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=3,
 )
 industry.add_spritelayout(
     id="food_processor_spritelayout_4",
@@ -81,7 +81,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=4,
 )
 
 industry.add_industry_layout(

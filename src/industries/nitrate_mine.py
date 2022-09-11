@@ -73,7 +73,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_1],
     smoke_sprites=[sprite_smoke_1],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=3,
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_large_shed",
@@ -89,7 +89,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_processor",
@@ -97,7 +97,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_raised_tanks",
@@ -105,7 +105,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=2,
+    object_group_num=4,
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_raised_shed",
@@ -113,7 +113,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=2,
+    object_group_num=5,
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_machinery",
@@ -128,7 +128,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=2,
+    object_group_num=6,
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_nitrate_pile",
@@ -136,7 +136,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=2,
 )
 
 industry.add_industry_layout(
