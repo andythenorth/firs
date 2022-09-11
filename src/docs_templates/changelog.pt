@@ -3,6 +3,24 @@ Changelog
 
 
 --------------
+4.11.0 Release
+--------------
+
+
+**FIRS 4.11.0 is not savegame-compatible with any previous version of FIRS.**
+
+
+*Changes*
+
+- grouped FIRS landscaping objects into classes per industry (experimental)
+- split most industry buildings / assets into separate objects, instead of using views within an object
+- added better control over order of objects (but not order of object views)
+- if there are 3 views for an object, repeat the 3rd view to make a 4th, as the spec does not support having 3 views
+- forced 'FIRS landscape objects' parameter to default to 'On'
+- the remaining limitations from FIRS 4.10.0 still apply to FIRS landscaping objects
+
+
+--------------
 4.10.0 Release
 --------------
 
