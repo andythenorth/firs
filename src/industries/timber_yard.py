@@ -65,7 +65,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="timber_yard_spritelayout_2",
@@ -74,7 +74,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_2],
     smoke_sprites=[sprite_smoke],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=2,
 )
 # no spritelayout 3 for this industry, historical reasons
 industry.add_spritelayout(
@@ -91,7 +91,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=3,
 )
 industry.add_spritelayout(
     id="timber_yard_spritelayout_6",
@@ -99,7 +99,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=2,
+    object_group_num=4,
 )
 industry.add_spritelayout(
     id="timber_yard_spritelayout_7",
@@ -114,7 +114,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=2,
+    object_group_num=5,
 )
 
 industry.add_industry_layout(
