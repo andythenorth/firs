@@ -70,7 +70,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    object_group_num=1,
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="scrap_yard_spritelayout_3",
@@ -104,12 +104,14 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
+    object_group_num=3,
 )
 industry.add_spritelayout(
     id="scrap_yard_spritelayout_8",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
+    object_group_num=1,
 )
 industry.add_spritelayout(
     id="scrap_yard_spritelayout_9",

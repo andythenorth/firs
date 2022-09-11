@@ -68,13 +68,14 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_silo],
-    object_group_num=1,
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="dairy_farm_spritelayout_barn2",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_barn2],
+    object_group_num=3,
 )
 industry.add_spritelayout(
     id="dairy_farm_spritelayout_house",
@@ -102,14 +103,14 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_cows_bw],
-    object_group_num=1,
+    object_group_num=4,
 )
 industry.add_spritelayout(
     id="dairy_farm_spritelayout_cows_brown_dirt",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_cows_brown],
-    object_group_num=1,
+    object_group_num=5,
 )
 
 industry.add_industry_layout(
