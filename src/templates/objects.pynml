@@ -1,6 +1,6 @@
 <tal:industries repeat="industry registered_industries">
     <!--! grf_object not object in case it conflicts with python 'object' at any point (might not, but who wants to test that? -->
-    <tal:objects repeat="grf_object industry.objects">
+    <tal:objects repeat="grf_object industry.objects.values()">
         <tal:spritelayouts repeat="spritelayout grf_object.views">
             // for debug to match to actual declared layout name: ${spritelayout.id}
             spritelayout ${grf_object.id}_spritelayout_${repeat.spritelayout.index} {

@@ -141,7 +141,7 @@ for industry_id, industry_numeric_id in global_constants.industry_numeric_ids.it
 object_ids = {}
 counter = 0
 for industry in sorted(registered_industries, key=lambda industry: industry.id):
-    for grf_object in sorted(industry.objects, key=lambda grf_object: grf_object.id):
+    for grf_object in sorted(industry.objects.values(), key=lambda grf_object: grf_object.id):
         object_ids[grf_object.id] = counter
         counter += 1
         if counter > 254:

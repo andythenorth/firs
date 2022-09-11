@@ -110,6 +110,10 @@ industry.add_spritelayout(
     object_group_num=5,
 )
 
+industry.add_multi_tile_object(
+    object_group_num=3,
+)
+
 industry.add_industry_layout(
     id="body_plant_industry_layout_1",
     layout=[
