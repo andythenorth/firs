@@ -3,6 +3,28 @@ Changelog
 
 
 --------------
+4.12.0 Release
+--------------
+
+
+**FIRS 4.12.0 is not savegame-compatible with any previous version of FIRS.**
+
+
+*Changes*
+
+
+- added support for multi-tile objects (no longer limited to 1x1)
+    - converted all objects that are more than 1x1 to multi-tile layouts
+    - note that Object Selection window is still limited to showing these objects as 1x1 with sliced sprites, but they will be correct when built
+- changed how colours are chosen for industries and objects
+    - each industry type will now take its random colour from the nearest town, not global random
+    - objects matching the industry type will use the same colour as the industry type when built in the same town
+    - notes:
+        - objects will use company colour in the Object Selection window, and may show a different colour when built
+        - object colour may not match a nearby industry if they are built in the catchment of a different nearby town
+
+
+--------------
 4.11.0 Release
 --------------
 
