@@ -113,7 +113,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[],
-    object_group_num=2,
+    object_group_num=3,
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_headgear_animated",
@@ -127,7 +127,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_exit_trestle],
-    object_group_num=1,
+    object_group_num=4,
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_crusher_front_part",
@@ -135,7 +135,7 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_crusher_front_part],
     smoke_sprites=[sprite_smoke_1, sprite_smoke_2],
-    object_group_num=2,
+    object_group_num=3,
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_crusher_rear_part",
@@ -143,14 +143,14 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_crusher_rear_part],
     smoke_sprites=[sprite_smoke_3, sprite_smoke_4],
-    object_group_num=2,
+    object_group_num=3,
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_misc_building_tanks",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_misc_building_tanks],
-    object_group_num=2,
+    object_group_num=6,
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_ore_1",
@@ -169,14 +169,14 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_winding_house],
-    object_group_num=1,
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_silo_conveyor",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_exit_silo_conveyor],
-    object_group_num=1,
+    object_group_num=5,
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_truck",
