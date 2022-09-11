@@ -50,7 +50,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_hut_2],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="sawmill_spritelayout_3",
@@ -58,7 +58,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_logs_1],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=3,
 )
 industry.add_spritelayout(
     id="sawmill_spritelayout_4",
@@ -66,7 +66,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_logs_2],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=4,
 )
 industry.add_spritelayout(
     id="sawmill_spritelayout_5",
@@ -74,6 +74,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_logs_3],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=5,
 )
 
 industry.add_industry_layout(
