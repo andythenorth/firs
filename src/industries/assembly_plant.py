@@ -92,7 +92,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=2,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_front_assembly_hall_windows",
@@ -100,7 +100,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=3,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_front_assembly_hall_doors",
@@ -108,7 +108,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=1,
+    object_group_num=3,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_goods_in_1",
@@ -116,6 +116,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=5,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_offices",
@@ -123,7 +124,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
     fences=["nw", "ne", "se", "sw"],
-    object_group_num=2,
+    object_group_num=4,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_tyres",
@@ -131,6 +132,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=6,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_vehicles_1",
@@ -138,6 +140,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=7,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_vehicles_2",
@@ -145,6 +148,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_11],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=8,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_vehicles_3",
@@ -152,6 +156,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_12],
     fences=["nw", "ne", "se", "sw"],
+    object_group_num=9,
 )
 
 # this industry needs outpost layout as there are lots of cargos
