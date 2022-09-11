@@ -77,12 +77,11 @@ grf {
 			};
 		}
 	}
-	param 9 {
+	param 10 {
 		objects {
 			name: string(STR_PARAM_NAME_OBJECTS);
 			desc: string(STR_PARAM_DESC_OBJECTS);
 			type: bool;
-			bit: 9;
 			def_value: 1;
 		}
 	}
