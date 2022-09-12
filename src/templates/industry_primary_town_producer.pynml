@@ -42,7 +42,7 @@
                 random_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
                 extra_text_fund:         ${industry.get_extra_text_fund(economy)};
                 extra_text_industry:     return string(STR_EXTRA_TEXT_TOWN_PRODUCER, ${industry.min_production}, ${industry.max_production});
-                colour:                  switch_colour;
+                colour:                  switch_colour(${industry.numeric_id});
             }
         }
     }

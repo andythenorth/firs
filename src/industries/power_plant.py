@@ -49,6 +49,7 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_1],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="power_plant_spritelayout_large_building",
@@ -57,6 +58,7 @@ industry.add_spritelayout(
     building_sprites=[sprite_2],
     smoke_sprites=[sprite_smoke_1],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=2,
 )
 industry.add_spritelayout(
     id="power_plant_spritelayout_small_building",
@@ -64,6 +66,7 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_3],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="power_plant_spritelayout_substation",
@@ -71,6 +74,7 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_4],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=4,
 )
 
 industry.add_industry_layout(

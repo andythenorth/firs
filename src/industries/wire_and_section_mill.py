@@ -89,6 +89,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
     fences=[],
+    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_shed_sw_ne_2",
@@ -96,6 +97,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
     fences=[],
+    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_shed_se_nw_1",
@@ -103,6 +105,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=[],
+    add_to_object_num=2,
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_shed_se_nw_2",
@@ -110,6 +113,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     fences=[],
+    add_to_object_num=2,
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_small_shed_1",
@@ -117,6 +121,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "sw", "se"],
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_small_shed_2",
@@ -125,6 +130,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_6],
     smoke_sprites=[sprite_smoke],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_tanks",
@@ -132,6 +138,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_wire_1",
@@ -139,6 +146,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
     fences=["nw", "ne", "sw", "se"],
+    add_to_object_num=7,
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_wire_2",
@@ -146,6 +154,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
     fences=["nw", "ne", "sw", "se"],
+    add_to_object_num=8,
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_gantry_1",
@@ -153,6 +162,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=5,
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_gantry_2",
@@ -160,6 +170,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_11],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=6,
 )
 
 # this industry needs outpost layout as there are lots of cargos

@@ -378,7 +378,7 @@ STR_IND_COFFEE_ESTATE                                                           
 STR_IND_COKE_OVEN                                                               :{G=m}Forno per coke
 STR_IND_COMPONENT_FACTORY                                                       :{G=f}Fabbrica di componenti
 STR_IND_COPPER_CONCENTRATOR                                                     :{G=m}Concentratore di rame
-STR_IND_COPPER_SMELTER                                                         :{G=f}Fonderia di rame
+STR_IND_COPPER_SMELTER                                                          :{G=f}Fonderia di rame
 STR_IND_CRYO_PLANT                                                              :{G=m}Impianto criogenico
 STR_IND_DAIRY                                                                   :{G=f}Azienda casearia
 STR_IND_DAIRY_FARM                                                              :{G=m}Cascina
@@ -407,7 +407,7 @@ STR_IND_HARDWARE_STORE                                                          
 STR_IND_HOTEL                                                                   :{G=m}Hotel
 STR_IND_HERDING_COOP                                                            :{G=f}Cooperativa di pastori
 STR_IND_IRON_WORKS                                                              :{G=f}Fucina
-STR_IND_SCRAP_YARD                                                                :{G=m}Deposito di rottami
+STR_IND_SCRAP_YARD                                                              :{G=m}Deposito di rottami
 STR_IND_LATEX_PROCESSOR                                                         :{G=f}Lavorazione del lattice
 STR_IND_LIME_KILN                                                               :{G=m}Forno per calce
 STR_IND_LIMESTONE_MINE                                                          :{G=f}Miniere di calcare
@@ -610,7 +610,7 @@ STR_CARGO_NAME_HYDROCHLORIC_ACID                                                
 STR_CARGO_NAME_KAOLIN                                                           :{G=m}Caolino
 STR_CARGO_NAME_LIMESTONE                                                        :{G=m}Calcare
 STR_CARGO_NAME_LOGS                                                             :{G=m}Tronchi
-STR_CARGO_NAME_LUMBER                                                           :{G=m}Legname
+STR_CARGO_NAME_TIMBER                                                           :{G=m}Legname
 # la stringa del carico utilizza il termine "idrossido di sodio", in quanto è intercambiabile con "soda\liscivia" (lye), ma "lye" è più comodo per il nome del file / l'etichetta del carico.
 STR_CARGO_NAME_LYE                                                              :{G=m}Idrossido di sodio
 STR_CARGO_NAME_METAL                                                            :{G=m}Metalli
@@ -710,7 +710,7 @@ STR_CARGO_UNIT_HYDROCHLORIC_ACID                                                
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} di caolino
 STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} di calcare
 STR_CARGO_UNIT_LOGS                                                             :{WEIGHT} di tronchi
-STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} di legname
+STR_CARGO_UNIT_TIMBER                                                           :{WEIGHT} di legname
 # la stringa del carico utilizza il termine "idrossido di sodio", in quanto è intercambiabile con "soda\liscivia" (lye), ma "lye" è più comodo per il nome del file / l'etichetta del carico.
 STR_CARGO_UNIT_LYE                                                              :{VOLUME} di idrossido di sodio
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} di manganese
@@ -809,7 +809,7 @@ STR_CID_HYDROCHLORIC_ACID                                                       
 STR_CID_KAOLIN                                                                  :{TINYFONT}CN
 STR_CID_LIMESTONE                                                               :{TINYFONT}CC
 STR_CID_LOGS                                                                    :{TINYFONT}TR
-STR_CID_LUMBER                                                                  :{TINYFONT}LE
+STR_CID_TIMBER                                                                  :{TINYFONT}LE
 # la stringa del carico utilizza il termine "idrossido di sodio", in quanto è intercambiabile con "soda\liscivia" (lye), ma "lye" è più comodo per il nome del file / l'etichetta del carico.
 STR_CID_LYE                                                                     :{TINYFONT}IS
 STR_CID_MANGANESE                                                               :{TINYFONT}MA
@@ -905,7 +905,7 @@ STR_IND_COFFEE_ESTATE                                                           
 STR_IND_COKE_OVEN                                                               :{G=m}Forno per coke
 STR_IND_COMPONENT_FACTORY                                                       :{G=f}Fabbrica di componenti
 STR_IND_COPPER_CONCENTRATOR                                                     :{G=m}Concentratore di rame
-STR_IND_COPPER_REFINERY                                                         :{G=f}Raffineria di rame
+STR_IND_COPPER_SMELTER                                                          :{G=f}Fonderia di rame
 STR_IND_CRYO_PLANT                                                              :{G=m}Impianto criogenico
 STR_IND_DAIRY                                                                   :{G=f}Azienda casearia
 STR_IND_DAIRY_FARM                                                              :{G=m}Cascina
@@ -934,12 +934,12 @@ STR_IND_HARDWARE_STORE                                                          
 STR_IND_HOTEL                                                                   :{G=m}Hotel
 STR_IND_HERDING_COOP                                                            :{G=f}Cooperativa di pastori
 STR_IND_IRON_WORKS                                                              :{G=f}Fucina
-STR_IND_JUNKYARD                                                                :{G=m}Deposito di rottami
+STR_IND_SCRAP_YARD                                                              :{G=m}Deposito di rottami
 STR_IND_LATEX_PROCESSOR                                                         :{G=f}Lavorazione del lattice
 STR_IND_LIME_KILN                                                               :{G=m}Forno per calce
 STR_IND_LIMESTONE_MINE                                                          :{G=f}Miniere di calcare
 STR_IND_LIQUIDS_TERMINAL                                                        :{G=m}Centro di stoccaggio liquidi
-STR_IND_LUMBER_YARD                                                             :{G=m}Deposito di legname
+STR_IND_TIMBER_YARD                                                             :{G=m}Deposito di legname
 STR_IND_MACHINE_SHOP                                                            :{G=m}Negozio di macchinari
 STR_IND_MACHINE_WORKS                                                           :{G=f}Officina macchinari
 STR_IND_MANGANESE_MINE                                                          :{G=f}Miniera di manganese
@@ -979,7 +979,7 @@ STR_IND_SUGAR_REFINERY                                                          
 STR_IND_SULPHURIC_ACID_PLANT                                                    :{G=f}Fabbrica di acido solforico
 STR_IND_SUPPLY_YARD                                                             :{G=m}Deposito di forniture
 STR_IND_TEXTILE_MILL                                                            :{G=m}Industria tessile
-STR_IND_TINPLATE_WORKS                                                          :{G=f}Laboratorio di lattoneria
+STR_IND_TINPLATE_WORKS                                                          :{G=f}Fabbrica di lattoneria
 STR_IND_TRADING_POST                                                            :{G=f}Stazione commerciale
 STR_IND_TYRE_PLANT                                                              :{G=f}Fabbrica di pneumatici
 STR_IND_VINEYARD                                                                :{G=f}Vigna

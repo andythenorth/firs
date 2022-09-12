@@ -95,6 +95,7 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_headgear_animated],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="diamond_mine_spritelayout_crusher_front_part",
@@ -117,6 +118,7 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_misc_building],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=5,
 )
 industry.add_spritelayout(
     id="diamond_mine_spritelayout_vents_shed",
@@ -124,6 +126,7 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_vents_shed],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="diamond_mine_spritelayout_winding_house",
@@ -131,6 +134,16 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_winding_house],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=2,
+)
+
+industry.add_multi_tile_object(
+    add_to_object_num=3,
+    view_layout=[
+        (0, 0, "diamond_mine_spritelayout_crusher_rear_part"),
+        (1, 0, "diamond_mine_spritelayout_tile_empty"),
+        (2, 0, "diamond_mine_spritelayout_crusher_front_part"),
+    ]
 )
 
 industry.add_industry_layout(

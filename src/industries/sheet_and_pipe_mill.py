@@ -95,6 +95,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_1],
     smoke_sprites=[sprite_smoke],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="sheet_and_pipe_mill_spritelayout_shed_sw_ne_1",
@@ -102,6 +103,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
     fences=[],
+    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="sheet_and_pipe_mill_spritelayout_shed_sw_ne_2",
@@ -109,6 +111,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=[],
+    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="sheet_and_pipe_mill_spritelayout_shed_se_nw_1",
@@ -116,6 +119,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     fences=[],
+    add_to_object_num=2,
 )
 industry.add_spritelayout(
     id="sheet_and_pipe_mill_spritelayout_shed_se_nw_2",
@@ -123,6 +127,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
     fences=[],
+    add_to_object_num=2,
 )
 industry.add_spritelayout(
     id="sheet_and_pipe_mill_spritelayout_open_shed_pipes",
@@ -130,6 +135,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=5,
 )
 industry.add_spritelayout(
     id="sheet_and_pipe_mill_spritelayout_tanks",
@@ -137,6 +143,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="sheet_and_pipe_mill_spritelayout_office",
@@ -144,6 +151,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
     fences=["nw", "ne", "sw"],
+    add_to_object_num=6,
 )
 industry.add_spritelayout(
     id="sheet_and_pipe_mill_spritelayout_steel_pile_sw_ne",
@@ -165,6 +173,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_13],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=7,
 )
 industry.add_spritelayout(
     id="sheet_and_pipe_mill_spritelayout_pipe_stack_se_nw",
@@ -172,6 +181,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_14],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=8,
 )
 industry.add_spritelayout(
     id="sheet_and_pipe_mill_spritelayout_empty",
@@ -227,7 +237,7 @@ industry.add_industry_outpost_layout(
             0,
             1,
             "sheet_and_pipe_mill_tile_1",
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_1",
+            "sheet_and_pipe_mill_spritelayout_shed_se_nw_2",
         ),
         (
             0,

@@ -207,10 +207,6 @@ from cargos import livestock
 
 livestock.cargo.register()
 
-from cargos import lumber
-
-lumber.cargo.register()
-
 from cargos import limestone
 
 limestone.cargo.register()
@@ -425,6 +421,10 @@ sugar_beet.cargo.register()
 from cargos import textiles
 textiles.cargo.register()
 """
+
+from cargos import timber
+
+timber.cargo.register()
 
 """ BLTC
 from cargos import tin

@@ -92,6 +92,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_boiler],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_chimneys",
@@ -100,6 +101,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_chimneys],
     smoke_sprites=[sprite_smoke_1, sprite_smoke_2, sprite_smoke_3],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=5,
 )
 industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_tanks_group",
@@ -107,6 +109,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_tanks_group],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_silos",
@@ -114,6 +117,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_silos],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=2,
 )
 industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_silos_with_office",
@@ -121,6 +125,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_silos_with_office],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=1,
 )
 
 industry.add_industry_layout(

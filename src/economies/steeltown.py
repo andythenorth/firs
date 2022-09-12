@@ -103,7 +103,7 @@ economy = Economy(
             },
             {"nodes": ["oxygen", "quicklime"], "rank": "same", "color": "white"},
             {
-                "nodes": ["junk_yard", "scrap_metal", "electric_arc_furnace"],
+                "nodes": ["scrap_yard", "scrap_metal", "electric_arc_furnace"],
                 "rank": "same",
             },
             {

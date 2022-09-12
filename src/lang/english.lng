@@ -28,6 +28,9 @@ STR_PARAM_VALUE_ECONOMIES_BETTER_LIVING_THROUGH_CHEMISTRY                       
 STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                      :In A Hot Country
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Steeltown
 
+STR_PARAM_NAME_OBJECTS                                                          :FIRS landscaping objects
+STR_PARAM_DESC_OBJECTS                                                          :FIRS includes a set of landscaping objects, which players can place to make certain industries appear larger. Landscape object have no gameplay effect. Landscaping objects can be turned on or off.
+
 STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG                                   : {BLACK}(supplied)
 STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Produces at maximum rate if {WHITE}any {BLACK}required cargo is supplied.
 STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}For maximum production rate, supply {WHITE}all {BLACK}required cargos at least once every three months.
@@ -88,7 +91,7 @@ STR_CARGO_NAME_HYDROCHLORIC_ACID                                                
 STR_CARGO_NAME_KAOLIN                                                           :Kaolin
 STR_CARGO_NAME_LIMESTONE                                                        :Limestone
 STR_CARGO_NAME_LOGS                                                             :Logs
-STR_CARGO_NAME_LUMBER                                                           :Timber
+STR_CARGO_NAME_TIMBER                                                           :Timber
 # cargo uses Sodium Hydroxide as string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
 STR_CARGO_NAME_LYE                                                              :Sodium Hydroxide
 STR_CARGO_NAME_METAL                                                            :Metal
@@ -188,7 +191,7 @@ STR_CARGO_UNIT_HYDROCHLORIC_ACID                                                
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} of kaolin
 STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} of limestone
 STR_CARGO_UNIT_LOGS                                                             :{WEIGHT} of logs
-STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} of timber
+STR_CARGO_UNIT_TIMBER                                                           :{WEIGHT} of timber
 # cargo uses Sodium Hydroxide as string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
 STR_CARGO_UNIT_LYE                                                              :{VOLUME} of sodium hydroxide
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} of manganese
@@ -288,7 +291,7 @@ STR_CID_HYDROCHLORIC_ACID                                                       
 STR_CID_KAOLIN                                                                  :{TINYFONT}KA
 STR_CID_LIMESTONE                                                               :{TINYFONT}LS
 STR_CID_LOGS                                                                    :{TINYFONT}LG
-STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_CID_TIMBER                                                                  :{TINYFONT}LU
 # cargo uses Sodium Hydroxide as name string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
 STR_CID_LYE                                                                     :{TINYFONT}SY
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
@@ -385,7 +388,7 @@ STR_IND_COFFEE_ESTATE                                                           
 STR_IND_COKE_OVEN                                                               :Coke Oven
 STR_IND_COMPONENT_FACTORY                                                       :Component Factory
 STR_IND_COPPER_CONCENTRATOR                                                     :Copper Concentrator
-STR_IND_COPPER_REFINERY                                                         :Copper Smelter
+STR_IND_COPPER_SMELTER                                                         :Copper Smelter
 STR_IND_CRYO_PLANT                                                              :Cryo Plant
 STR_IND_DAIRY                                                                   :Dairy
 STR_IND_DAIRY_FARM                                                              :Dairy Farm
@@ -414,12 +417,12 @@ STR_IND_HARDWARE_STORE                                                          
 STR_IND_HOTEL                                                                   :Hotel
 STR_IND_HERDING_COOP                                                            :Herding Co-op
 STR_IND_IRON_WORKS                                                              :Iron Works
-STR_IND_JUNKYARD                                                                :Scrap Yard
+STR_IND_SCRAP_YARD                                                                :Scrap Yard
 STR_IND_LATEX_PROCESSOR                                                         :Latex Processor
 STR_IND_LIME_KILN                                                               :Lime Kiln
 STR_IND_LIMESTONE_MINE                                                          :Limestone Mine
 STR_IND_LIQUIDS_TERMINAL                                                        :Liquids Terminal
-STR_IND_LUMBER_YARD                                                             :Timber Yard
+STR_IND_TIMBER_YARD                                                             :Timber Yard
 STR_IND_MACHINE_SHOP                                                            :Machine Shop
 STR_IND_MACHINE_WORKS                                                           :Machine Works
 STR_IND_MANGANESE_MINE                                                          :Manganese Mine
@@ -579,3 +582,5 @@ STR_COLOUR_RED                                                                  
 STR_COLOUR_YELLOW                                                               :{YELLOW}
 STR_COLOUR_WHITE                                                                :{WHITE}
 
+# objects lolz
+STR_OBJ_CLASSNAME_FIRS                                                          :FIRS industry objects (experimental)

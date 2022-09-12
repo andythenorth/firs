@@ -113,9 +113,9 @@ from industries import copper_concentrator
 copper_concentrator.industry.register()
 """
 
-from industries import copper_refinery
+from industries import copper_smelter
 
-copper_refinery.industry.register()
+copper_smelter.industry.register()
 
 from industries import cryo_plant
 
@@ -251,10 +251,6 @@ from industries import iron_works
 iron_works.industry.register()
 """
 
-from industries import junk_yard
-
-junk_yard.industry.register()
-
 """
 from industries import latex_processor
 latex_processor.industry.register()
@@ -271,10 +267,6 @@ limestone_mine.industry.register()
 from industries import liquids_terminal
 
 liquids_terminal.industry.register()
-
-from industries import lumber_yard
-
-lumber_yard.industry.register()
 
 """
 from industries import machine_shop
@@ -404,6 +396,10 @@ from industries import sawmill
 
 sawmill.industry.register()
 
+from industries import scrap_yard
+
+scrap_yard.industry.register()
+
 """
 from industries import sheep_farm
 sheep_farm.industry.register()
@@ -431,11 +427,6 @@ from industries import smithy_forge
 smithy_forge.industry.register()
 """
 
-"""
-from industries import steel_mill
-steel_mill.industry.register()
-"""
-
 from industries import stockyard
 
 stockyard.industry.register()
@@ -458,6 +449,10 @@ supply_yard.industry.register()
 from industries import textile_mill
 textile_mill.industry.register()
 """
+
+from industries import timber_yard
+
+timber_yard.industry.register()
 
 """ BLTC
 from industries import tinplate_works

@@ -462,6 +462,7 @@ class SpriteLayout(object):
         perma_fences=[],
         magic_trees=[],
         terrain_aware_ground=False,
+        add_to_object_num=None,
     ):
         self.id = id
         self.ground_sprite = ground_sprite
@@ -471,9 +472,11 @@ class SpriteLayout(object):
         # Valid fence values: 'ne', 'se', 'sw', 'nw'.  Order is arbitrary.
         self.fences = fences
         # optionally prevent fences hiding when a station is adjacent.  Same string values as fences.
-        self.perma_fences=perma_fences
+        self.perma_fences = perma_fences
         self.magic_trees = magic_trees
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
+        # optionally spritelayouts can cause objects to be defined
+        self.add_to_object_num = add_to_object_num
 
 
 class MagicSpritelayoutSlopeAwareTrees(object):
@@ -787,6 +790,42 @@ class MagicSpritelayoutSlopeAwareTrees(object):
                 slope: slope_id for slope_id, slope in id_slope_mapping.items()
             },
         )
+
+
+class GRFObject(object):
+    """Stubby class to hold objects - GRFObject to avoid conflating with built-in python classname"""
+
+    def __init__(self, industry, add_to_object_num):
+        # note spacing numeric part of id to add a leading 0 if needed, otherwise python lexical sort returns 'foo_1, foo_10, foo_2' etc
+        self.id = f"{industry.id}_object_{add_to_object_num:02}"
+        self.add_to_object_num = add_to_object_num
+        self.views = []
+
+    def add_view(self, spritelayout):
+        self.views.append(spritelayout)
+        #self.validate()
+
+    def validate(self):
+        # must be 1, 2, or 4 views https://newgrf-specs.tt-wiki.net/wiki/NML:Objects#Location_check_results
+        if len(self.views) == 3:
+            raise BaseException(self.id, "has 3 views defined, which is not permitted by spec")
+        # validation for case of too many views - shouldn't happen but eh
+        if len(self.views) > 4:
+            utils.echo_message(self.views)
+            raise BaseException(self.id, "has too many views defined")  # yair could do better?
+
+    @property
+    def size(self):
+        view_sizes = []
+        for view in self.views:
+            x_values = [i[0] for i in view]
+            y_values = [i[1] for i in view]
+            view_size = (max(x_values), max(y_values))
+            view_sizes.append(view_size)
+        unique_sizes = list(set(view_sizes))
+        if len(unique_sizes) > 1:
+            raise BaseException(self.id, "views have different sizes / tile layouts")
+        return [1 + unique_sizes[0][0], 1 + unique_sizes[0][1]]
 
 
 class MagicTree(object):
@@ -1229,7 +1268,10 @@ class Industry(object):
         self.sprites = []
         self.smoke_sprites = []
         self.spritesets = []
-        self.spritelayouts = []  # by convention spritelayout is one word :P
+        # by convention spritelayout is one word :P
+        self.spritelayouts = []
+        # objects dict keyed on the object num local to the industry, for convenience of access creating/appending - isn't significant for rendering
+        self.objects = {}
         self.extra_graphics_switches = []
         self._industry_layouts = {"core": [], "outposts": []}
         self.default_industry_properties = IndustryProperties(**kwargs)
@@ -1265,23 +1307,31 @@ class Industry(object):
     def add_sprite(self, *args, **kwargs):
         new_sprite = Sprite(*args, **kwargs)
         self.sprites.append(new_sprite)
-        return new_sprite  # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
+        # returning the new sprite isn't essential, but permits the caller giving it a reference for use elsewhere
+        return new_sprite
 
     def add_smoke_sprite(self, *args, **kwargs):
         new_smoke_sprite = SmokeSprite(*args, **kwargs)
         self.smoke_sprites.append(new_smoke_sprite)
-        return new_smoke_sprite  # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
+        # returning the new smokesprite isn't essential, but permits the caller giving it a reference for use elsewhere
+        return new_smoke_sprite
 
     def add_spriteset(self, *args, **kwargs):
         id = self.id + "_spriteset_" + str(len(self.spritesets))
         new_spriteset = Spriteset(id=id, *args, **kwargs)
         self.spritesets.append(new_spriteset)
-        return new_spriteset  # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
+        # returning the new spriteset isn't essential, but permits the caller giving it a reference for use elsewhere
+        return new_spriteset
 
     def add_spritelayout(self, *args, **kwargs):
         new_spritelayout = SpriteLayout(*args, **kwargs)
         self.spritelayouts.append(new_spritelayout)
-        return new_spritelayout  # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
+        if kwargs.get("add_to_object_num", None) is not None:
+            # when adding spritelayouts this way, all views will be single tile, 0-indexed
+            view = [(0, 0, new_spritelayout)]
+            self.add_view_for_object(view, **kwargs)
+        # returning the new spritelayout isn't essential, but permits the caller giving it a reference for use elsewhere
+        return new_spritelayout
 
     def add_magic_spritelayout(self, type, base_id, config):
         # sometimes magic is the only way
@@ -1294,18 +1344,37 @@ class Industry(object):
     def add_slope_graphics_switch(self, *args, **kwargs):
         new_graphics_switch = GraphicsSwitchSlopes(*args, **kwargs)
         self.extra_graphics_switches.append(new_graphics_switch)
-        return new_graphics_switch  # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
+        # returning the new switch isn't essential, but permits the caller giving it a reference for use elsewhere
+        return new_graphics_switch
 
     def add_industry_layout(self, layout_type="core", *args, **kwargs):
         new_industry_layout = IndustryLayout(*args, **kwargs)
         self._industry_layouts[layout_type].append(new_industry_layout)
-        return new_industry_layout  # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
+        # returning the new layout isn't essential, but permits the caller giving it a reference for use elsewhere
+        return new_industry_layout
 
     def add_industry_outpost_layout(self, *args, **kwargs):
         return self.add_industry_layout("outposts", *args, **kwargs)
 
     def add_economy_variation(self, economy):
         self.economy_variations[economy.id] = IndustryProperties()
+
+    def add_view_for_object(self, view, **kwargs):
+        # view is a list of tuples as [(x, y, spritelayout)], similar to industry layouts, but there's no need for a stubby class for view
+        add_to_object_num = kwargs["add_to_object_num"]
+        # create object with this num if it doesn't exist
+        if add_to_object_num not in self.objects.keys():
+            self.objects[add_to_object_num] = GRFObject(self, add_to_object_num)
+        self.objects[add_to_object_num].add_view(view)
+
+    def add_multi_tile_object(self, **kwargs):
+        view = []
+        for x_y_spritelayout in kwargs["view_layout"]:
+            for spritelayout in self.spritelayouts:
+                if spritelayout.id == x_y_spritelayout[2]:
+                    view.append((x_y_spritelayout[0], x_y_spritelayout[1], spritelayout))
+        self.add_view_for_object(view, **kwargs)
+
 
     @property
     def numeric_id(self):
@@ -1409,53 +1478,44 @@ class Industry(object):
                         outpost_xy_offsets = [
                             # north
                             (
-                                0 - (outpost_layout.xy_dimensions[0] + 2),
-                                0 - (outpost_layout.xy_dimensions[1]),
-                            ),
-                            (
-                                0 - (outpost_layout.xy_dimensions[0]),
-                                0 - (outpost_layout.xy_dimensions[1] + 2),
+                                0 - (outpost_layout.xy_dimensions[0] + 1),
+                                0 - (outpost_layout.xy_dimensions[1] + 1),
                             ),
                             # south
                             (
-                                core_layout.xy_dimensions[0],
-                                core_layout.xy_dimensions[1] + 2,
+                                core_layout.xy_dimensions[0] + 1,
+                                core_layout.xy_dimensions[1] + 1,
                             ),
-                            (
-                                core_layout.xy_dimensions[0] + 2,
-                                core_layout.xy_dimensions[1],
-                            ),
-
                             # east
                             (
                                 0,
                                 core_layout.xy_dimensions[1] + 2,
                             ),
                             # this offset removed because it creates a layout with no tiles on N tile
-                            #(
-                                #0 - (outpost_layout.xy_dimensions[0] + 2),
-                                #core_layout.xy_dimensions[1],
-                            #),
+                            # (
+                            # 0 - (outpost_layout.xy_dimensions[0] + 2),
+                            # core_layout.xy_dimensions[1],
+                            # ),
                             # this offset removed because it creates a layout with no tiles on N tile
-                            #(
-                                #0 - (outpost_layout.xy_dimensions[0]),
-                                #core_layout.xy_dimensions[1] + 2,
-                            #),
+                            # (
+                            # 0 - (outpost_layout.xy_dimensions[0]),
+                            # core_layout.xy_dimensions[1] + 2,
+                            # ),
                             # west
                             (
                                 core_layout.xy_dimensions[0] + 2,
                                 0,
                             ),
                             # this offset removed because it creates a layout with no tiles on N tile
-                            #(
-                                #core_layout.xy_dimensions[0] + 2,
-                                #0 - (outpost_layout.xy_dimensions[1]),
-                            #),
+                            # (
+                            # core_layout.xy_dimensions[0] + 2,
+                            # 0 - (outpost_layout.xy_dimensions[1]),
+                            # ),
                             # this offset removed because it creates a layout with no tiles on N tile
-                            #(
-                                #core_layout.xy_dimensions[0],
-                                #0 - (outpost_layout.xy_dimensions[1] + 2),
-                            #),
+                            # (
+                            # core_layout.xy_dimensions[0],
+                            # 0 - (outpost_layout.xy_dimensions[1] + 2),
+                            # ),
                         ]
                         for outpust_direction_counter, xy_offset in enumerate(
                             outpost_xy_offsets
@@ -1504,7 +1564,9 @@ class Industry(object):
                                     tile_def[3],
                                 )
                                 shifted_layout.append(shifted_tile_def)
-                            result.append(IndustryLayout(id=new_id, layout=shifted_layout))
+                            result.append(
+                                IndustryLayout(id=new_id, layout=shifted_layout)
+                            )
         return result
 
     @property

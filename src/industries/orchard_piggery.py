@@ -50,6 +50,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
+    add_to_object_num=1,
 )
 industry.add_magic_spritelayout(
     type="slope_aware_trees",

@@ -84,6 +84,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_central_assembly_hall",
@@ -91,6 +92,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=2,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_front_assembly_hall_windows",
@@ -98,6 +100,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_front_assembly_hall_doors",
@@ -105,6 +108,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_goods_in_1",
@@ -112,6 +116,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=5,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_offices",
@@ -119,6 +124,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_tyres",
@@ -126,6 +132,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=6,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_vehicles_1",
@@ -133,6 +140,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=7,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_vehicles_2",
@@ -140,6 +148,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_11],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=8,
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_vehicles_3",
@@ -147,22 +156,22 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_12],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=9,
 )
 
 # this industry needs outpost layout as there are lots of cargos
-"""
 industry.add_industry_outpost_layout(
     id="assembly_plant_industry_outpost_layout_1",
     layout=[
         # test outpost layout
-        (0, 0, "assembly_plant_tile_1", "assembly_plant_spritelayout_offices"),
-        (0, 1, "assembly_plant_tile_1", "assembly_plant_spritelayout_tyres"),
-        (1, 0, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_2"),
-        (1, 1, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_3"),
+        (0, 0, "assembly_plant_tile_1", "assembly_plant_spritelayout_rear_assembly_hall_windows"),
+        (0, 1, "assembly_plant_tile_1", "assembly_plant_spritelayout_central_assembly_hall"),
+        (0, 2, "assembly_plant_tile_1", "assembly_plant_spritelayout_front_assembly_hall_doors"),
+        (1, 0, "assembly_plant_tile_1", "assembly_plant_spritelayout_offices"),
+        (1, 1, "assembly_plant_tile_1", "assembly_plant_spritelayout_tyres"),
+        (1, 2, "assembly_plant_tile_1", "assembly_plant_spritelayout_offices"),
     ],
 )
-"""
-# core layouts are roughly 6x4 or 5x5
 industry.add_industry_layout(
     id="assembly_plant_industry_layout_1",
     layout=[
@@ -190,7 +199,6 @@ industry.add_industry_layout(
             "assembly_plant_tile_1",
             "assembly_plant_spritelayout_front_assembly_hall_doors",
         ),
-        (0, 4, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_1"),
         (
             1,
             0,
@@ -215,41 +223,9 @@ industry.add_industry_layout(
             "assembly_plant_tile_1",
             "assembly_plant_spritelayout_front_assembly_hall_windows",
         ),
-        (1, 4, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_2"),
-        (
-            2,
-            0,
-            "assembly_plant_tile_1",
-            "assembly_plant_spritelayout_rear_assembly_hall_windows",
-        ),
-        (
-            2,
-            1,
-            "assembly_plant_tile_1",
-            "assembly_plant_spritelayout_central_assembly_hall",
-        ),
-        (
-            2,
-            2,
-            "assembly_plant_tile_1",
-            "assembly_plant_spritelayout_central_assembly_hall",
-        ),
-        (
-            2,
-            3,
-            "assembly_plant_tile_1",
-            "assembly_plant_spritelayout_front_assembly_hall_doors",
-        ),
-        (2, 4, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_1"),
-        (3, 0, "assembly_plant_tile_1", "assembly_plant_spritelayout_offices"),
-        (3, 1, "assembly_plant_tile_1", "assembly_plant_spritelayout_offices"),
-        (3, 2, "assembly_plant_tile_1", "assembly_plant_spritelayout_offices"),
-        (3, 3, "assembly_plant_tile_1", "assembly_plant_spritelayout_tyres"),
-        (3, 4, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_2"),
-        (4, 0, "assembly_plant_tile_1", "assembly_plant_spritelayout_goods_in_1"),
-        (4, 1, "assembly_plant_tile_1", "assembly_plant_spritelayout_tyres"),
-        (4, 2, "assembly_plant_tile_1", "assembly_plant_spritelayout_tyres"),
-        (4, 3, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_3"),
-        (4, 4, "assembly_plant_tile_1", "assembly_plant_spritelayout_vehicles_3"),
+        (2, 0, "assembly_plant_tile_1", "assembly_plant_spritelayout_goods_in_1"),
+        (2, 1, "assembly_plant_tile_1", "assembly_plant_spritelayout_offices"),
+        (2, 2, "assembly_plant_tile_1", "assembly_plant_spritelayout_offices"),
+        (2, 3, "assembly_plant_tile_1", "assembly_plant_spritelayout_tyres"),
     ],
 )

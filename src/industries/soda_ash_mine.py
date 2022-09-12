@@ -119,12 +119,14 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_headgear_animated],
+    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_silos",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_exit_trestle],
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_crusher_front_part",
@@ -145,6 +147,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_misc_building_tanks],
+    add_to_object_num=5,
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_ore_1",
@@ -169,12 +172,22 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_exit_silo_conveyor],
+    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_truck",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_truck],
+)
+
+industry.add_multi_tile_object(
+    add_to_object_num=2,
+    view_layout=[
+        (0, 0, "soda_ash_mine_spritelayout_crusher_rear_part"),
+        (1, 0, "soda_ash_mine_spritelayout_tile_empty"),
+        (2, 0, "soda_ash_mine_spritelayout_crusher_front_part"),
+    ]
 )
 
 industry.add_industry_layout(

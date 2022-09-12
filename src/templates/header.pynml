@@ -4,7 +4,7 @@ grf {
 	desc: string(STR_GRF_DESC);
 	url: string(STR_GRF_DOCS_URL);
 	version: ${git_info.get_revision()};
-	min_compatible_version: 6695;
+	min_compatible_version: 6811;
 	param 0 {
 	    <!--! 'economy_selection' is remapped to 'economy' later because we can't control order and value separately here -->
 		economy_selection {
@@ -75,6 +75,14 @@ grf {
 			names: {
 				0: string(STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0);
 			};
+		}
+	}
+	param 10 {
+		objects {
+			name: string(STR_PARAM_NAME_OBJECTS);
+			desc: string(STR_PARAM_DESC_OBJECTS);
+			type: bool;
+			def_value: 1;
 		}
 	}
 	<!--!

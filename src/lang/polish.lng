@@ -207,9 +207,9 @@ STR_CARGO_NAME_LIMESTONE.d                                                      
 STR_CARGO_NAME_LOGS                                                             :{G=n}Drewno
 STR_CARGO_NAME_LOGS.b                                                           :drewno
 STR_CARGO_NAME_LOGS.d                                                           :drewna
-STR_CARGO_NAME_LUMBER                                                           :{G=f}Deski
-STR_CARGO_NAME_LUMBER.b                                                         :deski
-STR_CARGO_NAME_LUMBER.d                                                         :desek
+STR_CARGO_NAME_TIMBER                                                           :{G=f}Deski
+STR_CARGO_NAME_TIMBER.b                                                         :deski
+STR_CARGO_NAME_TIMBER.d                                                         :desek
 # cargo uses Sodium Hydroxide (wodorotlenek sodu) as string as it's interchangeable with Lye (ług), but lye is convenient for filename / cargo label
 STR_CARGO_NAME_LYE                                                              :{G=m}Wodorotlenek sodu
 STR_CARGO_NAME_LYE.b                                                            :wodorotlenek sodu
@@ -466,7 +466,7 @@ STR_CARGO_UNIT_HYDROCHLORIC_ACID                                                
 STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} kaolinitu
 STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} wapienia
 STR_CARGO_UNIT_LOGS                                                             :{WEIGHT} drewna
-STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} desek
+STR_CARGO_UNIT_TIMBER                                                           :{WEIGHT} desek
 # cargo uses Sodium Hydroxide (wodorotlenek sodu) as string as it's interchangeable with Lye (ług), but lye is convenient for filename / cargo label
 STR_CARGO_UNIT_LYE                                                              :{VOLUME} wodorotlenku sodu
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} manganu
@@ -566,7 +566,7 @@ STR_CID_HYDROCHLORIC_ACID                                                       
 STR_CID_KAOLIN                                                                  :{TINYFONT}KA
 STR_CID_LIMESTONE                                                               :{TINYFONT}WP
 STR_CID_LOGS                                                                    :{TINYFONT}DW
-STR_CID_LUMBER                                                                  :{TINYFONT}DS
+STR_CID_TIMBER                                                                  :{TINYFONT}DS
 # cargo uses Sodium Hydroxide (wodorotlenek sodu) as string as it's interchangeable with Lye (ług), but lye is convenient for filename / cargo label
 STR_CID_LYE                                                                     :{TINYFONT}WS
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
@@ -706,11 +706,11 @@ STR_IND_COMPONENT_FACTORY                                                       
 STR_IND_COMPONENT_FACTORY.d                                                     :fabryki części samochodowych
 # STR_IND_COPPER_CONCENTRATOR                                                     :Copper Concentrator //depends on COPPER_CONCENTRATE translation
 # STR_IND_COPPER_CONCENTRATOR.d                                                   :Copper Concentrator //depends on COPPER_CONCENTRATE translation
-STR_IND_COPPER_REFINERY                                                         :{G=f}Rafineria miedzi
-STR_IND_COPPER_REFINERY.b                                                       :rafinerię miedzi
-STR_IND_COPPER_REFINERY.c                                                       :rafinerii miedzi
-STR_IND_COPPER_REFINERY.d                                                       :rafinerii miedzi
-STR_IND_COPPER_REFINERY.n                                                       :rafinerią miedzi
+STR_IND_COPPER_SMELTER                                                         :{G=f}Rafineria miedzi
+STR_IND_COPPER_SMELTER.b                                                       :rafinerię miedzi
+STR_IND_COPPER_SMELTER.c                                                       :rafinerii miedzi
+STR_IND_COPPER_SMELTER.d                                                       :rafinerii miedzi
+STR_IND_COPPER_SMELTER.n                                                       :rafinerią miedzi
 STR_IND_CRYO_PLANT                                                              :{G=m}Generator tlenu
 STR_IND_CRYO_PLANT.d                                                            :generatora tlenu
 STR_IND_DAIRY                                                                   :{G=f}Mleczarnia
@@ -787,8 +787,8 @@ STR_IND_HERDING_COOP.n                                                          
 STR_IND_HERDING_COOP.w                                                          :hodowlo bydła
 STR_IND_IRON_WORKS                                                              :{G=m}Piec hutniczy
 STR_IND_IRON_WORKS.d                                                            :pieca hutniczego
-STR_IND_JUNKYARD                                                                :{G=n}Złomowisko
-STR_IND_JUNKYARD.d                                                              :złomowiska
+STR_IND_SCRAP_YARD                                                                :{G=n}Złomowisko
+STR_IND_SCRAP_YARD.d                                                              :złomowiska
 # STR_IND_LATEX_PROCESSOR                                                         :Latex Processor //depends on RAW_LATEX translation
 # STR_IND_LATEX_PROCESSOR.d                                                       :Latex Processor
 STR_IND_LIME_KILN                                                               :{G=m}Wapiennik
@@ -801,8 +801,8 @@ STR_IND_LIQUIDS_TERMINAL.d                                                      
 STR_IND_LIQUIDS_TERMINAL.m                                                      :Porcie ładunków ciekłych
 STR_IND_LIQUIDS_TERMINAL.n                                                      :Portem ładunków ciekłych
 STR_IND_LIQUIDS_TERMINAL.w                                                      :Port ładunków ciekłych
-STR_IND_LUMBER_YARD                                                             :{G=f}Stolarnia
-STR_IND_LUMBER_YARD.d                                                           :stolarni
+STR_IND_TIMBER_YARD                                                             :{G=f}Stolarnia
+STR_IND_TIMBER_YARD.d                                                           :stolarni
 STR_IND_MACHINE_SHOP                                                            :{G=f}Fabryka maszyn
 STR_IND_MACHINE_SHOP.d                                                          :fabryki maszyn
 STR_IND_MACHINE_WORKS                                                           :{G=f}Wytwórnia części elektrycznych

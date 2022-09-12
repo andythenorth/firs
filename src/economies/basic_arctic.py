@@ -18,7 +18,7 @@ economy = Economy(
         "fish",
         "kaolin",
         "logs",
-        "lumber",
+        "timber",
         "food",
         "paper",
         "peat",
