@@ -49,12 +49,14 @@ sprite_building_2 = industry.add_sprite(
 
 industry.add_spritelayout(
     id="hotel_spritelayout_1",
+    tile="hotel_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_building_1],
 )
 industry.add_spritelayout(
     id="hotel_spritelayout_2",
+    tile="hotel_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_building_2],
@@ -63,9 +65,9 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="hotel_industry_layout",
     layout=[
-        (0, 0, "hotel_tile_1", "hotel_spritelayout_1"),
-        (1, 0, "hotel_tile_1", "hotel_spritelayout_1"),
-        (0, 1, "hotel_tile_1", "hotel_spritelayout_2"),
-        (1, 1, "hotel_tile_1", "hotel_spritelayout_2"),
+        (0, 0, "hotel_spritelayout_1"),
+        (1, 0, "hotel_spritelayout_1"),
+        (0, 1, "hotel_spritelayout_2"),
+        (1, 1, "hotel_spritelayout_2"),
     ],
 )

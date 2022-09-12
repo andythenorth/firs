@@ -89,6 +89,7 @@ spriteset_8 = industry.add_spriteset(
 
 industry.add_spritelayout(
     id="farm_spritelayout_1",
+    tile="farm_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_1_ground,
     building_sprites=[spriteset_1],
@@ -96,6 +97,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="farm_spritelayout_2",
+    tile="farm_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_2_ground,
     building_sprites=[spriteset_2],
@@ -103,12 +105,14 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="farm_spritelayout_3",
+    tile="farm_tile_1",
     ground_sprite=sprite_ground_mud,
     ground_overlay=spriteset_3_ground,
     building_sprites=[spriteset_3],
 )
 industry.add_spritelayout(
     id="farm_spritelayout_4",
+    tile="farm_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_4_ground,
     building_sprites=[spriteset_4],
@@ -116,6 +120,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="farm_spritelayout_5",
+    tile="farm_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -123,6 +128,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="farm_spritelayout_6",
+    tile="farm_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
@@ -130,6 +136,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="farm_spritelayout_7",
+    tile="farm_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
@@ -137,6 +144,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="farm_spritelayout_8",
+    tile="farm_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
@@ -146,39 +154,39 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="farm_industry_layout_1",
     layout=[
-        (0, 2, "farm_tile_1", "farm_spritelayout_8"),
-        (0, 3, "farm_tile_1", "farm_spritelayout_3"),
-        (1, 0, "farm_tile_1", "farm_spritelayout_2"),
-        (2, 0, "farm_tile_1", "farm_spritelayout_1"),
-        (2, 2, "farm_tile_1", "farm_spritelayout_5"),
-        (2, 3, "farm_tile_1", "farm_spritelayout_7"),
-        (3, 2, "farm_tile_1", "farm_spritelayout_6"),
-        (3, 3, "farm_tile_1", "farm_spritelayout_4"),
+        (0, 2, "farm_spritelayout_8"),
+        (0, 3, "farm_spritelayout_3"),
+        (1, 0, "farm_spritelayout_2"),
+        (2, 0, "farm_spritelayout_1"),
+        (2, 2, "farm_spritelayout_5"),
+        (2, 3, "farm_spritelayout_7"),
+        (3, 2, "farm_spritelayout_6"),
+        (3, 3, "farm_spritelayout_4"),
     ],
 )
 industry.add_industry_layout(
     id="farm_industry_layout_2",
     layout=[
-        (0, 0, "farm_tile_1", "farm_spritelayout_4"),
-        (0, 2, "farm_tile_1", "farm_spritelayout_7"),
-        (0, 3, "farm_tile_1", "farm_spritelayout_6"),
-        (1, 0, "farm_tile_1", "farm_spritelayout_5"),
-        (1, 3, "farm_tile_1", "farm_spritelayout_1"),
-        (2, 0, "farm_tile_1", "farm_spritelayout_8"),
-        (2, 1, "farm_tile_1", "farm_spritelayout_3"),
-        (2, 2, "farm_tile_1", "farm_spritelayout_2"),
+        (0, 0, "farm_spritelayout_4"),
+        (0, 2, "farm_spritelayout_7"),
+        (0, 3, "farm_spritelayout_6"),
+        (1, 0, "farm_spritelayout_5"),
+        (1, 3, "farm_spritelayout_1"),
+        (2, 0, "farm_spritelayout_8"),
+        (2, 1, "farm_spritelayout_3"),
+        (2, 2, "farm_spritelayout_2"),
     ],
 )
 industry.add_industry_layout(
     id="farm_industry_layout_3",
     layout=[
-        (0, 0, "farm_tile_1", "farm_spritelayout_8"),
-        (0, 1, "farm_tile_1", "farm_spritelayout_1"),
-        (0, 2, "farm_tile_1", "farm_spritelayout_5"),
-        (1, 0, "farm_tile_1", "farm_spritelayout_2"),
-        (1, 2, "farm_tile_1", "farm_spritelayout_3"),
-        (2, 0, "farm_tile_1", "farm_spritelayout_7"),
-        (3, 0, "farm_tile_1", "farm_spritelayout_4"),
-        (3, 2, "farm_tile_1", "farm_spritelayout_6"),
+        (0, 0, "farm_spritelayout_8"),
+        (0, 1, "farm_spritelayout_1"),
+        (0, 2, "farm_spritelayout_5"),
+        (1, 0, "farm_spritelayout_2"),
+        (1, 2, "farm_spritelayout_3"),
+        (2, 0, "farm_spritelayout_7"),
+        (3, 0, "farm_spritelayout_4"),
+        (3, 2, "farm_spritelayout_6"),
     ],
 )

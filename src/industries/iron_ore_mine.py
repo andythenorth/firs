@@ -224,14 +224,14 @@ industry.add_multi_tile_object(
         (0, 0, "iron_ore_mine_spritelayout_crusher_rear_part"),
         (1, 0, "iron_ore_mine_spritelayout_tile_empty"),
         (2, 0, "iron_ore_mine_spritelayout_crusher_front_part"),
-    ]
+    ],
 )
 industry.add_multi_tile_object(
     add_to_object_num=4,
     view_layout=[
         (0, 0, "iron_ore_mine_spritelayout_exit_shed_rear"),
         (1, 0, "iron_ore_mine_spritelayout_exit_trestle_animated"),
-    ]
+    ],
 )
 
 industry.add_industry_layout(

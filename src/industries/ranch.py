@@ -42,6 +42,7 @@ spriteset_5 = industry.add_spriteset(
 
 industry.add_spritelayout(
     id="ranch_spritelayout_1",
+    tile="ranch_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -49,6 +50,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ranch_spritelayout_2",
+    tile="ranch_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -56,6 +58,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ranch_spritelayout_3",
+    tile="ranch_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -63,6 +66,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ranch_spritelayout_4",
+    tile="ranch_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -70,6 +74,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ranch_spritelayout_5",
+    tile="ranch_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -79,20 +84,20 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="ranch_industry_layout_1",
     layout=[
-        (0, 0, "ranch_tile_1", "ranch_spritelayout_3"),
-        (1, 0, "ranch_tile_1", "ranch_spritelayout_2"),
-        (1, 2, "ranch_tile_1", "ranch_spritelayout_4"),
-        (3, 0, "ranch_tile_1", "ranch_spritelayout_1"),
-        (3, 1, "ranch_tile_1", "ranch_spritelayout_5"),
+        (0, 0, "ranch_spritelayout_3"),
+        (1, 0, "ranch_spritelayout_2"),
+        (1, 2, "ranch_spritelayout_4"),
+        (3, 0, "ranch_spritelayout_1"),
+        (3, 1, "ranch_spritelayout_5"),
     ],
 )
 industry.add_industry_layout(
     id="ranch_industry_layout_2",
     layout=[
-        (0, 0, "ranch_tile_1", "ranch_spritelayout_2"),
-        (0, 1, "ranch_tile_1", "ranch_spritelayout_1"),
-        (0, 2, "ranch_tile_1", "ranch_spritelayout_4"),
-        (2, 0, "ranch_tile_1", "ranch_spritelayout_3"),
-        (2, 2, "ranch_tile_1", "ranch_spritelayout_5"),
+        (0, 0, "ranch_spritelayout_2"),
+        (0, 1, "ranch_spritelayout_1"),
+        (0, 2, "ranch_spritelayout_4"),
+        (2, 0, "ranch_spritelayout_3"),
+        (2, 2, "ranch_spritelayout_5"),
     ],
 )

@@ -62,6 +62,7 @@ sprite_smoke = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="body_plant_spritelayout_1",
+    tile="body_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -69,6 +70,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="body_plant_spritelayout_2",
+    tile="body_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -76,6 +78,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="body_plant_spritelayout_3",
+    tile="body_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -84,6 +87,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="body_plant_spritelayout_4",
+    tile="body_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -93,6 +97,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="body_plant_spritelayout_5",
+    tile="body_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -101,6 +106,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="body_plant_spritelayout_6",
+    tile="body_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
@@ -113,29 +119,29 @@ industry.add_multi_tile_object(
     view_layout=[
         (0, 0, "body_plant_spritelayout_1"),
         (0, 1, "body_plant_spritelayout_2"),
-    ]
+    ],
 )
 
 industry.add_industry_layout(
     id="body_plant_industry_layout_1",
     layout=[
-        (0, 0, "body_plant_tile_1", "body_plant_spritelayout_3"),
-        (0, 1, "body_plant_tile_1", "body_plant_spritelayout_3"),
-        (0, 2, "body_plant_tile_1", "body_plant_spritelayout_3"),
-        (0, 3, "body_plant_tile_1", "body_plant_spritelayout_3"),
-        (0, 4, "body_plant_tile_1", "body_plant_spritelayout_6"),
-        (0, 5, "body_plant_tile_1", "body_plant_spritelayout_4"),
-        (1, 0, "body_plant_tile_1", "body_plant_spritelayout_3"),
-        (1, 1, "body_plant_tile_1", "body_plant_spritelayout_3"),
-        (1, 2, "body_plant_tile_1", "body_plant_spritelayout_3"),
-        (1, 3, "body_plant_tile_1", "body_plant_spritelayout_3"),
-        (1, 4, "body_plant_tile_1", "body_plant_spritelayout_6"),
-        (1, 5, "body_plant_tile_1", "body_plant_spritelayout_5"),
-        (2, 0, "body_plant_tile_1", "body_plant_spritelayout_3"),
-        (2, 1, "body_plant_tile_1", "body_plant_spritelayout_1"),
-        (2, 2, "body_plant_tile_1", "body_plant_spritelayout_2"),
-        (2, 3, "body_plant_tile_1", "body_plant_spritelayout_1"),
-        (2, 4, "body_plant_tile_1", "body_plant_spritelayout_2"),
-        (2, 5, "body_plant_tile_1", "body_plant_spritelayout_6"),
+        (0, 0, "body_plant_spritelayout_3"),
+        (0, 1, "body_plant_spritelayout_3"),
+        (0, 2, "body_plant_spritelayout_3"),
+        (0, 3, "body_plant_spritelayout_3"),
+        (0, 4, "body_plant_spritelayout_6"),
+        (0, 5, "body_plant_spritelayout_4"),
+        (1, 0, "body_plant_spritelayout_3"),
+        (1, 1, "body_plant_spritelayout_3"),
+        (1, 2, "body_plant_spritelayout_3"),
+        (1, 3, "body_plant_spritelayout_3"),
+        (1, 4, "body_plant_spritelayout_6"),
+        (1, 5, "body_plant_spritelayout_5"),
+        (2, 0, "body_plant_spritelayout_3"),
+        (2, 1, "body_plant_spritelayout_1"),
+        (2, 2, "body_plant_spritelayout_2"),
+        (2, 3, "body_plant_spritelayout_1"),
+        (2, 4, "body_plant_spritelayout_2"),
+        (2, 5, "body_plant_spritelayout_6"),
     ],
 )

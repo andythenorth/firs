@@ -33,13 +33,16 @@ spriteset_ground_overlay = industry.add_spriteset(
     sprites=[(10, 10, 64, 31, -31, 0)],
 )
 spriteset_1 = industry.add_spriteset(sprites=[(10, 60, 64, 48, -31, -18)])
+
 industry.add_spritelayout(
+    tile="plaza_tile_1",
     id="plaza_spritelayout",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
 )
+
 industry.add_industry_layout(
     id="plaza_industry_layout",
-    layout=[(0, 0, "plaza_tile_1", "plaza_spritelayout")],
+    layout=[(0, 0, "plaza_spritelayout")],
 )

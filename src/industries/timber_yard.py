@@ -61,6 +61,7 @@ sprite_smoke = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="timber_yard_spritelayout_1",
+    tile="timber_yard_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -68,6 +69,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="timber_yard_spritelayout_2",
+    tile="timber_yard_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -77,6 +79,7 @@ industry.add_spritelayout(
 # no spritelayout 3 for this industry, historical reasons
 industry.add_spritelayout(
     id="timber_yard_spritelayout_4",
+    tile="timber_yard_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -85,6 +88,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="timber_yard_spritelayout_5",
+    tile="timber_yard_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -93,6 +97,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="timber_yard_spritelayout_6",
+    tile="timber_yard_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
@@ -101,6 +106,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="timber_yard_spritelayout_7",
+    tile="timber_yard_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
@@ -108,6 +114,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="timber_yard_spritelayout_8",
+    tile="timber_yard_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
@@ -120,70 +127,70 @@ industry.add_multi_tile_object(
     view_layout=[
         (0, 0, "timber_yard_spritelayout_2"),
         (0, 1, "timber_yard_spritelayout_1"),
-    ]
+    ],
 )
 
 industry.add_industry_layout(
     id="timber_yard_industry_layout_1",
     layout=[
-        (0, 0, "timber_yard_tile_2", "timber_yard_spritelayout_2"),
-        (0, 1, "timber_yard_tile_2", "timber_yard_spritelayout_1"),
-        (0, 2, "timber_yard_tile_1", "timber_yard_spritelayout_5"),
-        (1, 0, "timber_yard_tile_1", "timber_yard_spritelayout_6"),
-        (1, 1, "timber_yard_tile_1", "timber_yard_spritelayout_4"),
-        (1, 2, "timber_yard_tile_1", "timber_yard_spritelayout_8"),
-        (2, 0, "timber_yard_tile_1", "timber_yard_spritelayout_8"),
-        (2, 1, "timber_yard_tile_1", "timber_yard_spritelayout_4"),
-        (2, 2, "timber_yard_tile_1", "timber_yard_spritelayout_7"),
-        (3, 0, "timber_yard_tile_1", "timber_yard_spritelayout_6"),
-        (3, 1, "timber_yard_tile_1", "timber_yard_spritelayout_5"),
-        (3, 2, "timber_yard_tile_1", "timber_yard_spritelayout_6"),
+        (0, 0, "timber_yard_spritelayout_2"),
+        (0, 1, "timber_yard_spritelayout_1"),
+        (0, 2, "timber_yard_spritelayout_5"),
+        (1, 0, "timber_yard_spritelayout_6"),
+        (1, 1, "timber_yard_spritelayout_4"),
+        (1, 2, "timber_yard_spritelayout_8"),
+        (2, 0, "timber_yard_spritelayout_8"),
+        (2, 1, "timber_yard_spritelayout_4"),
+        (2, 2, "timber_yard_spritelayout_7"),
+        (3, 0, "timber_yard_spritelayout_6"),
+        (3, 1, "timber_yard_spritelayout_5"),
+        (3, 2, "timber_yard_spritelayout_6"),
     ],
 )
 industry.add_industry_layout(
     id="timber_yard_industry_layout_2",
     layout=[
-        (0, 0, "timber_yard_tile_2", "timber_yard_spritelayout_2"),
-        (0, 1, "timber_yard_tile_2", "timber_yard_spritelayout_1"),
-        (0, 2, "timber_yard_tile_1", "timber_yard_spritelayout_5"),
-        (0, 3, "timber_yard_tile_1", "timber_yard_spritelayout_6"),
-        (1, 0, "timber_yard_tile_1", "timber_yard_spritelayout_8"),
-        (1, 1, "timber_yard_tile_1", "timber_yard_spritelayout_8"),
-        (1, 2, "timber_yard_tile_1", "timber_yard_spritelayout_4"),
-        (1, 3, "timber_yard_tile_1", "timber_yard_spritelayout_6"),
-        (2, 0, "timber_yard_tile_1", "timber_yard_spritelayout_5"),
-        (2, 1, "timber_yard_tile_1", "timber_yard_spritelayout_6"),
-        (2, 2, "timber_yard_tile_1", "timber_yard_spritelayout_4"),
-        (2, 3, "timber_yard_tile_1", "timber_yard_spritelayout_7"),
+        (0, 0, "timber_yard_spritelayout_2"),
+        (0, 1, "timber_yard_spritelayout_1"),
+        (0, 2, "timber_yard_spritelayout_5"),
+        (0, 3, "timber_yard_spritelayout_6"),
+        (1, 0, "timber_yard_spritelayout_8"),
+        (1, 1, "timber_yard_spritelayout_8"),
+        (1, 2, "timber_yard_spritelayout_4"),
+        (1, 3, "timber_yard_spritelayout_6"),
+        (2, 0, "timber_yard_spritelayout_5"),
+        (2, 1, "timber_yard_spritelayout_6"),
+        (2, 2, "timber_yard_spritelayout_4"),
+        (2, 3, "timber_yard_spritelayout_7"),
     ],
 )
 industry.add_industry_layout(
     id="timber_yard_industry_layout_3",
     layout=[
-        (0, 0, "timber_yard_tile_1", "timber_yard_spritelayout_6"),
-        (0, 1, "timber_yard_tile_1", "timber_yard_spritelayout_4"),
-        (0, 2, "timber_yard_tile_2", "timber_yard_spritelayout_2"),
-        (0, 3, "timber_yard_tile_2", "timber_yard_spritelayout_1"),
-        (0, 4, "timber_yard_tile_1", "timber_yard_spritelayout_8"),
-        (1, 0, "timber_yard_tile_1", "timber_yard_spritelayout_8"),
-        (1, 1, "timber_yard_tile_1", "timber_yard_spritelayout_4"),
-        (1, 2, "timber_yard_tile_1", "timber_yard_spritelayout_6"),
-        (1, 3, "timber_yard_tile_1", "timber_yard_spritelayout_5"),
-        (1, 4, "timber_yard_tile_1", "timber_yard_spritelayout_7"),
+        (0, 0, "timber_yard_spritelayout_6"),
+        (0, 1, "timber_yard_spritelayout_4"),
+        (0, 2, "timber_yard_spritelayout_2"),
+        (0, 3, "timber_yard_spritelayout_1"),
+        (0, 4, "timber_yard_spritelayout_8"),
+        (1, 0, "timber_yard_spritelayout_8"),
+        (1, 1, "timber_yard_spritelayout_4"),
+        (1, 2, "timber_yard_spritelayout_6"),
+        (1, 3, "timber_yard_spritelayout_5"),
+        (1, 4, "timber_yard_spritelayout_7"),
     ],
 )
 industry.add_industry_layout(
     id="timber_yard_industry_layout_4",
     layout=[
-        (0, 0, "timber_yard_tile_1", "timber_yard_spritelayout_4"),
-        (0, 1, "timber_yard_tile_1", "timber_yard_spritelayout_7"),
-        (1, 0, "timber_yard_tile_1", "timber_yard_spritelayout_4"),
-        (1, 1, "timber_yard_tile_1", "timber_yard_spritelayout_6"),
-        (2, 0, "timber_yard_tile_2", "timber_yard_spritelayout_2"),
-        (2, 1, "timber_yard_tile_2", "timber_yard_spritelayout_1"),
-        (3, 0, "timber_yard_tile_1", "timber_yard_spritelayout_8"),
-        (3, 1, "timber_yard_tile_1", "timber_yard_spritelayout_6"),
-        (4, 0, "timber_yard_tile_1", "timber_yard_spritelayout_5"),
-        (4, 1, "timber_yard_tile_1", "timber_yard_spritelayout_6"),
+        (0, 0, "timber_yard_spritelayout_4"),
+        (0, 1, "timber_yard_spritelayout_7"),
+        (1, 0, "timber_yard_spritelayout_4"),
+        (1, 1, "timber_yard_spritelayout_6"),
+        (2, 0, "timber_yard_spritelayout_2"),
+        (2, 1, "timber_yard_spritelayout_1"),
+        (3, 0, "timber_yard_spritelayout_8"),
+        (3, 1, "timber_yard_spritelayout_6"),
+        (4, 0, "timber_yard_spritelayout_5"),
+        (4, 1, "timber_yard_spritelayout_6"),
     ],
 )

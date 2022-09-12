@@ -49,6 +49,7 @@ spriteset_2 = industry.add_spriteset(
 
 industry.add_spritelayout(
     id="fruit_plantation_house_spritelayout",
+    tile="fruit_plantation_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -56,6 +57,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="fruit_plantation_shed_spritelayout",
+    tile="fruit_plantation_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -64,6 +66,7 @@ industry.add_spritelayout(
 industry.add_magic_spritelayout(
     type="slope_aware_trees",
     base_id="fruit_plantation_slope_aware_ground_with_trees_1",
+    tile="fruit_plantation_tile_1",
     config={
         "ground_sprite": 4145,
         "trees_default": [1620, 1620, 1620, 1620],
@@ -73,6 +76,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="slope_aware_trees",
     base_id="fruit_plantation_slope_aware_ground_with_trees_2",
+    tile="fruit_plantation_tile_1",
     config={
         "ground_sprite": 4145,
         "trees_default": [1621, 1622, 1623, 1620],
@@ -86,41 +90,35 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             1,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             2,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             0,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             1,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             2,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_2",
         ),
-        (2, 1, "fruit_plantation_tile_2", "fruit_plantation_house_spritelayout"),
-        (2, 2, "fruit_plantation_tile_2", "fruit_plantation_shed_spritelayout"),
+        (2, 1, "fruit_plantation_house_spritelayout"),
+        (2, 2, "fruit_plantation_shed_spritelayout"),
     ],
 )
 industry.add_industry_layout(
@@ -129,41 +127,35 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             1,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             2,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_2",
         ),
-        (0, 3, "fruit_plantation_tile_2", "fruit_plantation_house_spritelayout"),
+        (0, 3, "fruit_plantation_house_spritelayout"),
         (
             1,
             1,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             2,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             3,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
-        (1, 4, "fruit_plantation_tile_2", "fruit_plantation_shed_spritelayout"),
+        (1, 4, "fruit_plantation_shed_spritelayout"),
     ],
 )
 industry.add_industry_layout(
@@ -172,41 +164,35 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             1,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             0,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             1,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             2,
             0,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
-        (2, 1, "fruit_plantation_tile_2", "fruit_plantation_shed_spritelayout"),
+        (2, 1, "fruit_plantation_shed_spritelayout"),
         (
             3,
             0,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_2",
         ),
-        (3, 1, "fruit_plantation_tile_2", "fruit_plantation_house_spritelayout"),
+        (3, 1, "fruit_plantation_house_spritelayout"),
     ],
 )
 industry.add_industry_layout(
@@ -215,87 +201,73 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             1,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             3,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             4,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             0,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             1,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             3,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             4,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             3,
             0,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_2",
         ),
-        (3, 1, "fruit_plantation_tile_2", "fruit_plantation_shed_spritelayout"),
+        (3, 1, "fruit_plantation_shed_spritelayout"),
         (
             3,
             3,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             3,
             4,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             4,
             0,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
-        (4, 1, "fruit_plantation_tile_2", "fruit_plantation_house_spritelayout"),
+        (4, 1, "fruit_plantation_house_spritelayout"),
         (
             4,
             3,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             4,
             4,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
     ],
@@ -306,111 +278,93 @@ industry.add_industry_layout(
         (
             0,
             1,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             2,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             3,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             4,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             0,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             1,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             2,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             3,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             4,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             5,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             3,
             0,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             3,
             1,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             3,
             2,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             3,
             3,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
-        (3, 4, "fruit_plantation_tile_2", "fruit_plantation_shed_spritelayout"),
-        (3, 5, "fruit_plantation_tile_2", "fruit_plantation_house_spritelayout"),
+        (3, 4, "fruit_plantation_shed_spritelayout"),
+        (3, 5, "fruit_plantation_house_spritelayout"),
         (
             4,
             1,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             4,
             2,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             4,
             3,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             4,
             4,
-            "fruit_plantation_tile_1",
             "fruit_plantation_slope_aware_ground_with_trees_2",
         ),
     ],

@@ -50,11 +50,12 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_1 = industry.add_spriteset(sprites=[(10, 60, 64, 48, -31, -18)])
 industry.add_spritelayout(
     id="general_store_spritelayout",
+    tile="general_store_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
 )
 industry.add_industry_layout(
     id="general_store_industry_layout",
-    layout=[(0, 0, "general_store_tile_1", "general_store_spritelayout")],
+    layout=[(0, 0, "general_store_spritelayout")],
 )

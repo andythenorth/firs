@@ -82,12 +82,14 @@ sprite_smoke_3 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_empty",
+    tile="carbon_black_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
 )
 industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_boiler",
+    tile="carbon_black_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_boiler],
@@ -96,6 +98,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_chimneys",
+    tile="carbon_black_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_chimneys],
@@ -105,6 +108,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_tanks_group",
+    tile="carbon_black_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_tanks_group],
@@ -113,6 +117,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_silos",
+    tile="carbon_black_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_silos],
@@ -121,6 +126,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_silos_with_office",
+    tile="carbon_black_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_silos_with_office],
@@ -131,85 +137,76 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="carbon_black_plant_industry_layout_1",
     layout=[
-        (0, 0, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_chimneys"),
-        (0, 1, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_boiler"),
+        (0, 0, "carbon_black_plant_spritelayout_chimneys"),
+        (0, 1, "carbon_black_plant_spritelayout_boiler"),
         (
             0,
             2,
-            "carbon_black_plant_tile_1",
             "carbon_black_plant_spritelayout_tanks_group",
         ),
-        (1, 0, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_chimneys"),
-        (1, 1, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_boiler"),
+        (1, 0, "carbon_black_plant_spritelayout_chimneys"),
+        (1, 1, "carbon_black_plant_spritelayout_boiler"),
         (
             1,
             2,
-            "carbon_black_plant_tile_1",
             "carbon_black_plant_spritelayout_tanks_group",
         ),
         (
             2,
             0,
-            "carbon_black_plant_tile_1",
             "carbon_black_plant_spritelayout_silos_with_office",
         ),
-        (2, 1, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_silos"),
-        (2, 2, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_empty"),
+        (2, 1, "carbon_black_plant_spritelayout_silos"),
+        (2, 2, "carbon_black_plant_spritelayout_empty"),
     ],
 )
 industry.add_industry_layout(
     id="carbon_black_plant_industry_layout_2",
     layout=[
-        (0, 0, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_boiler"),
+        (0, 0, "carbon_black_plant_spritelayout_boiler"),
         (
             0,
             1,
-            "carbon_black_plant_tile_1",
             "carbon_black_plant_spritelayout_tanks_group",
         ),
-        (1, 0, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_boiler"),
+        (1, 0, "carbon_black_plant_spritelayout_boiler"),
         (
             1,
             1,
-            "carbon_black_plant_tile_1",
             "carbon_black_plant_spritelayout_tanks_group",
         ),
-        (2, 0, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_chimneys"),
-        (2, 1, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_silos"),
+        (2, 0, "carbon_black_plant_spritelayout_chimneys"),
+        (2, 1, "carbon_black_plant_spritelayout_silos"),
         (
             3,
             0,
-            "carbon_black_plant_tile_1",
             "carbon_black_plant_spritelayout_silos_with_office",
         ),
-        (3, 1, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_empty"),
+        (3, 1, "carbon_black_plant_spritelayout_empty"),
     ],
 )
 industry.add_industry_layout(
     id="carbon_black_plant_industry_layout_3",
     layout=[
-        (0, 0, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_boiler"),
+        (0, 0, "carbon_black_plant_spritelayout_boiler"),
         (
             0,
             1,
-            "carbon_black_plant_tile_1",
             "carbon_black_plant_spritelayout_tanks_group",
         ),
-        (0, 2, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_chimneys"),
-        (0, 3, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_silos"),
-        (1, 0, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_boiler"),
+        (0, 2, "carbon_black_plant_spritelayout_chimneys"),
+        (0, 3, "carbon_black_plant_spritelayout_silos"),
+        (1, 0, "carbon_black_plant_spritelayout_boiler"),
         (
             1,
             1,
-            "carbon_black_plant_tile_1",
             "carbon_black_plant_spritelayout_tanks_group",
         ),
         (
             1,
             2,
-            "carbon_black_plant_tile_1",
             "carbon_black_plant_spritelayout_silos_with_office",
         ),
-        (1, 3, "carbon_black_plant_tile_1", "carbon_black_plant_spritelayout_empty"),
+        (1, 3, "carbon_black_plant_spritelayout_empty"),
     ],
 )

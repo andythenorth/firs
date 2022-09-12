@@ -53,6 +53,7 @@ spriteset_2 = industry.add_spriteset(
 
 industry.add_spritelayout(
     id="rubber_plantation_house_spritelayout",
+    tile="rubber_plantation_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -60,6 +61,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="rubber_plantation_shed_spritelayout",
+    tile="rubber_plantation_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -68,11 +70,13 @@ industry.add_spritelayout(
 industry.add_magic_spritelayout(
     type="slope_aware_trees",
     base_id="rubber_plantation_slope_aware_ground_with_trees_1",
+    tile="rubber_plantation_tile_1",
     config={"ground_sprite": 4145, "trees_default": [1908, 1908, 1908, 1908]},
 )
 industry.add_magic_spritelayout(
     type="slope_aware_trees",
     base_id="rubber_plantation_slope_aware_ground_with_trees_2",
+    tile="rubber_plantation_tile_1",
     config={"ground_sprite": 4145, "trees_default": [1906, 1905, 1905, 1907]},
 )
 
@@ -82,41 +86,35 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             1,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             2,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             0,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             1,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
-        (1, 2, "rubber_plantation_tile_2", "rubber_plantation_shed_spritelayout"),
+        (1, 2, "rubber_plantation_shed_spritelayout"),
         (
             2,
             1,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_2",
         ),
-        (2, 2, "rubber_plantation_tile_2", "rubber_plantation_house_spritelayout"),
+        (2, 2, "rubber_plantation_house_spritelayout"),
     ],
 )
 industry.add_industry_layout(
@@ -125,41 +123,35 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             1,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
-        (0, 2, "rubber_plantation_tile_2", "rubber_plantation_shed_spritelayout"),
+        (0, 2, "rubber_plantation_shed_spritelayout"),
         (
             0,
             3,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             1,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             2,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             3,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_2",
         ),
-        (1, 4, "rubber_plantation_tile_2", "rubber_plantation_house_spritelayout"),
+        (1, 4, "rubber_plantation_house_spritelayout"),
     ],
 )
 industry.add_industry_layout(
@@ -168,53 +160,45 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             1,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             0,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_2",
         ),
         (
             1,
             1,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             2,
             0,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             2,
             1,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
-        (3, 0, "rubber_plantation_tile_2", "rubber_plantation_shed_spritelayout"),
+        (3, 0, "rubber_plantation_shed_spritelayout"),
         (
             3,
             1,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_2",
         ),
         (
             4,
             0,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
-        (4, 1, "rubber_plantation_tile_2", "rubber_plantation_house_spritelayout"),
+        (4, 1, "rubber_plantation_house_spritelayout"),
     ],
 )
 industry.add_industry_layout(
@@ -223,87 +207,73 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             1,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             3,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             4,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             0,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             1,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             3,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             4,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             3,
             0,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
-        (3, 1, "rubber_plantation_tile_2", "rubber_plantation_shed_spritelayout"),
+        (3, 1, "rubber_plantation_shed_spritelayout"),
         (
             3,
             3,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             3,
             4,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             4,
             0,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_2",
         ),
-        (4, 1, "rubber_plantation_tile_2", "rubber_plantation_house_spritelayout"),
+        (4, 1, "rubber_plantation_house_spritelayout"),
         (
             4,
             3,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             4,
             4,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
     ],
@@ -314,111 +284,93 @@ industry.add_industry_layout(
         (
             0,
             1,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             2,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             4,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             0,
             5,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             0,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             1,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
-        (1, 2, "rubber_plantation_tile_2", "rubber_plantation_shed_spritelayout"),
+        (1, 2, "rubber_plantation_shed_spritelayout"),
         (
             1,
             4,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             5,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             1,
             6,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             2,
             0,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             2,
             1,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
-        (2, 2, "rubber_plantation_tile_2", "rubber_plantation_house_spritelayout"),
+        (2, 2, "rubber_plantation_house_spritelayout"),
         (
             2,
             4,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             2,
             5,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             2,
             6,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             3,
             1,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             3,
             2,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_2",
         ),
         (
             3,
             5,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
         (
             3,
             6,
-            "rubber_plantation_tile_1",
             "rubber_plantation_slope_aware_ground_with_trees_1",
         ),
     ],

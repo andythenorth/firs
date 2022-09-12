@@ -65,6 +65,7 @@ sprite_smoke = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="engine_plant_spritelayout_1",
+    tile="engine_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -74,6 +75,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="engine_plant_spritelayout_2",
+    tile="engine_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -81,6 +83,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="engine_plant_spritelayout_3",
+    tile="engine_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -89,6 +92,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="engine_plant_spritelayout_4",
+    tile="engine_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -97,6 +101,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="engine_plant_spritelayout_5",
+    tile="engine_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -105,6 +110,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="engine_plant_spritelayout_6",
+    tile="engine_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
@@ -112,6 +118,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="engine_plant_spritelayout_7",
+    tile="engine_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
@@ -121,39 +128,39 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="engine_plant_industry_layout_1",
     layout=[
-        (0, 0, "engine_plant_tile_1", "engine_plant_spritelayout_3"),
-        (0, 1, "engine_plant_tile_1", "engine_plant_spritelayout_3"),
-        (0, 2, "engine_plant_tile_1", "engine_plant_spritelayout_5"),
-        (0, 3, "engine_plant_tile_1", "engine_plant_spritelayout_4"),
-        (0, 4, "engine_plant_tile_1", "engine_plant_spritelayout_5"),
-        (1, 0, "engine_plant_tile_1", "engine_plant_spritelayout_3"),
-        (1, 1, "engine_plant_tile_1", "engine_plant_spritelayout_3"),
-        (1, 2, "engine_plant_tile_1", "engine_plant_spritelayout_5"),
-        (1, 3, "engine_plant_tile_1", "engine_plant_spritelayout_4"),
-        (1, 4, "engine_plant_tile_1", "engine_plant_spritelayout_6"),
-        (2, 0, "engine_plant_tile_1", "engine_plant_spritelayout_3"),
-        (2, 1, "engine_plant_tile_1", "engine_plant_spritelayout_1"),
-        (2, 2, "engine_plant_tile_1", "engine_plant_spritelayout_2"),
-        (2, 3, "engine_plant_tile_1", "engine_plant_spritelayout_7"),
-        (2, 4, "engine_plant_tile_1", "engine_plant_spritelayout_7"),
+        (0, 0, "engine_plant_spritelayout_3"),
+        (0, 1, "engine_plant_spritelayout_3"),
+        (0, 2, "engine_plant_spritelayout_5"),
+        (0, 3, "engine_plant_spritelayout_4"),
+        (0, 4, "engine_plant_spritelayout_5"),
+        (1, 0, "engine_plant_spritelayout_3"),
+        (1, 1, "engine_plant_spritelayout_3"),
+        (1, 2, "engine_plant_spritelayout_5"),
+        (1, 3, "engine_plant_spritelayout_4"),
+        (1, 4, "engine_plant_spritelayout_6"),
+        (2, 0, "engine_plant_spritelayout_3"),
+        (2, 1, "engine_plant_spritelayout_1"),
+        (2, 2, "engine_plant_spritelayout_2"),
+        (2, 3, "engine_plant_spritelayout_7"),
+        (2, 4, "engine_plant_spritelayout_7"),
     ],
 )
 industry.add_industry_layout(
     id="engine_plant_industry_layout_2",
     layout=[
-        (0, 2, "engine_plant_tile_1", "engine_plant_spritelayout_3"),
-        (0, 3, "engine_plant_tile_1", "engine_plant_spritelayout_3"),
-        (1, 0, "engine_plant_tile_1", "engine_plant_spritelayout_1"),
-        (1, 1, "engine_plant_tile_1", "engine_plant_spritelayout_2"),
-        (1, 2, "engine_plant_tile_1", "engine_plant_spritelayout_3"),
-        (1, 3, "engine_plant_tile_1", "engine_plant_spritelayout_3"),
-        (2, 0, "engine_plant_tile_1", "engine_plant_spritelayout_4"),
-        (2, 1, "engine_plant_tile_1", "engine_plant_spritelayout_7"),
-        (2, 2, "engine_plant_tile_1", "engine_plant_spritelayout_6"),
-        (2, 3, "engine_plant_tile_1", "engine_plant_spritelayout_6"),
-        (3, 0, "engine_plant_tile_1", "engine_plant_spritelayout_4"),
-        (3, 1, "engine_plant_tile_1", "engine_plant_spritelayout_5"),
-        (3, 2, "engine_plant_tile_1", "engine_plant_spritelayout_4"),
-        (3, 3, "engine_plant_tile_1", "engine_plant_spritelayout_3"),
+        (0, 2, "engine_plant_spritelayout_3"),
+        (0, 3, "engine_plant_spritelayout_3"),
+        (1, 0, "engine_plant_spritelayout_1"),
+        (1, 1, "engine_plant_spritelayout_2"),
+        (1, 2, "engine_plant_spritelayout_3"),
+        (1, 3, "engine_plant_spritelayout_3"),
+        (2, 0, "engine_plant_spritelayout_4"),
+        (2, 1, "engine_plant_spritelayout_7"),
+        (2, 2, "engine_plant_spritelayout_6"),
+        (2, 3, "engine_plant_spritelayout_6"),
+        (3, 0, "engine_plant_spritelayout_4"),
+        (3, 1, "engine_plant_spritelayout_5"),
+        (3, 2, "engine_plant_spritelayout_4"),
+        (3, 3, "engine_plant_spritelayout_3"),
     ],
 )

@@ -807,16 +807,20 @@ class GRFObject(object):
 
     def add_view(self, spritelayout):
         self.views.append(spritelayout)
-        #self.validate()
+        # self.validate()
 
     def validate(self):
         # must be 1, 2, or 4 views https://newgrf-specs.tt-wiki.net/wiki/NML:Objects#Location_check_results
         if len(self.views) == 3:
-            raise BaseException(self.id, "has 3 views defined, which is not permitted by spec")
+            raise BaseException(
+                self.id, "has 3 views defined, which is not permitted by spec"
+            )
         # validation for case of too many views - shouldn't happen but eh
         if len(self.views) > 4:
             utils.echo_message(self.views)
-            raise BaseException(self.id, "has too many views defined")  # yair could do better?
+            raise BaseException(
+                self.id, "has too many views defined"
+            )  # yair could do better?
 
     @property
     def size(self):
@@ -846,7 +850,7 @@ class MagicTree(object):
 class MagicSpritelayoutHarbourCoastFoundations(object):
     """
     Occasionally we need magic.  If we're going magic, let's go full on magic.
-    This one makes provides the slope-aware foundations needed for coast tiles.
+    This one provides the slope-aware foundations needed for coast tiles.
     Possibly could be used generically for all slopes, there's nothing specific to coasts in it, but other cases weren't needed when writing it.
     """
 
@@ -930,7 +934,15 @@ class GraphicsSwitchSlopes(GraphicsSwitch):
 class IndustryLayout(object):
     """Base class to hold industry layouts"""
 
-    def __init__(self, industry, id, layout, excluded_outpost_layouts=[], validate=True):
+    def __init__(
+        self,
+        industry,
+        id,
+        layout,
+        excluded_outpost_layouts=[],
+        validate_xy=True,
+        validate_legacy_layout_defs=False,
+    ):
         self.id = id
         self.industry = industry
         # as of September 2022 there are 2 formats accepted when defining layout
@@ -940,10 +952,13 @@ class IndustryLayout(object):
         self._layout = layout
         self.excluded_outpost_layouts = excluded_outpost_layouts
         # validation can be optionally suppressed as combined layouts may be invalid until their xy offsets are shifted positive (for example)
-        if validate:
-            self.validate()
+        if validate_xy:
+            self.validate_xy()
+        # support whilst migrating layout_defs to remove tile ids
+        if validate_legacy_layout_defs:
+            self.validate_legacy_layout_defs()
 
-    def validate(self):
+    def validate_xy(self):
         # in-game industry layouts must not have negative xy offsets
         for x, y, tile_id, spritelayout_id in self.layout:
             for offset_dir in [x, y]:
@@ -965,24 +980,63 @@ class IndustryLayout(object):
                     "Repeated xy offset pair: " + self.id + " " + str((x, y))
                 )
 
+    def validate_legacy_layout_defs(self):
+        # catch legacy layout_defs
+        legacy_found = False
+        for layout_def in self._layout:
+            if len(layout_def) == 4:
+                legacy_found = True
+                for spritelayout in self.industry.spritelayouts:
+                    if spritelayout.id == layout_def[3]:
+                        if spritelayout.tile is not None:
+                            utils.echo_message(
+                                "tile defs migrated, but legacy layout def found for "
+                                + self.industry.id
+                                + " "
+                                + str(layout_def)
+                            )
+                            break
+        if legacy_found:
+            utils.echo_message(
+                "legacy layout def(s) found for " + self.industry.id + " " + self.id
+            )
+
     @property
     def layout(self):
         result = []
         for layout_def in self._layout:
-            # catch legacy layout_defs
-            if len(layout_def) == 4:
-                for spritelayout in self.industry.spritelayouts:
-                    if spritelayout.id == layout_def[3]:
-                        if spritelayout.tile is not None:
-                            utils.echo_message("legacy layout def found for " + self.industry.id + " " + str(layout_def))
-            # resolve the spritelayout by ID
             if len(layout_def) == 3:
+                tile = None
+                if layout_def[2] == "spritelayout_null_water":
+                    tile = "255"
+                if layout_def[2] == "spritelayout_null_station":
+                    tile = "24"
+                #  resolve the spritelayout by ID
                 for spritelayout in self.industry.spritelayouts:
                     if spritelayout.id == layout_def[2]:
                         if spritelayout.tile == None:
                             raise BaseException("No tile defined for", spritelayout.id)
-                        layout_def = (layout_def[0], layout_def[1], spritelayout.tile, layout_def[2])
+                        else:
+                            tile = spritelayout.tile
+                        break
+                # not found, look in other book-keeping lists of tile ids
+                if tile == None:
+                    tile = self.industry.magic_spritelayout_tile_ids[layout_def[2]]
+                if tile == None:
+                    raise BaseException(self.id + " - no spritelayout found matching id given by " + str(layout_def))
+                else:
+                    # redefine the layout def
+                    layout_def = (
+                        layout_def[0],
+                        layout_def[1],
+                        tile,
+                        layout_def[2],
+                    )
+            # write the original or modified layout def to result,
             result.append(layout_def)
+        if len(result) == 0:
+            # something went wrong, probably fancy conditions somewhere eh?
+            raise BaseException("layout resolver failed for " + self.id)
         return result
 
     @property
@@ -1299,6 +1353,8 @@ class Industry(object):
         self.spritesets = []
         # by convention spritelayout is one word :P
         self.spritelayouts = []
+        # magic has a cost - we can't look up tiles in magic spritelayouts using the standard (non-magic) methods, so we have to do book-keeping
+        self.magic_spritelayout_tile_ids = {}
         # objects dict keyed on the object num local to the industry, for convenience of access creating/appending - isn't significant for rendering
         self.objects = {}
         self.extra_graphics_switches = []
@@ -1362,13 +1418,17 @@ class Industry(object):
         # returning the new spritelayout isn't essential, but permits the caller giving it a reference for use elsewhere
         return new_spritelayout
 
-    def add_magic_spritelayout(self, type, base_id, config):
+    def add_magic_spritelayout(self, type, base_id, tile, config):
         # sometimes magic is the only way
         # this is for very specific spritelayout patterns that repeat across multiple industries and require long declarations and extra switches
         if type == "slope_aware_trees":
+            # the Magic is so magic that we don't have any further assignment, instantiating the class does all the registration etc (ugh)
             MagicSpritelayoutSlopeAwareTrees(self, base_id, config)
         if type == "harbour_coast_foundations":
+            # the Magic is so magic that we don't have any further assignment, instantiating the class does all the registration etc (ugh)
             MagicSpritelayoutHarbourCoastFoundations(self, base_id, config)
+        # we do have to book-keep the magic, as their are Magic taxes that must be paid
+        self.magic_spritelayout_tile_ids[base_id] = tile
 
     def add_slope_graphics_switch(self, *args, **kwargs):
         new_graphics_switch = GraphicsSwitchSlopes(*args, **kwargs)
@@ -1377,7 +1437,9 @@ class Industry(object):
         return new_graphics_switch
 
     def add_industry_layout(self, layout_type="core", *args, **kwargs):
-        new_industry_layout = IndustryLayout(self, *args, **kwargs)
+        new_industry_layout = IndustryLayout(
+            self, *args, **kwargs, validate_legacy_layout_defs=True
+        )
         self._industry_layouts[layout_type].append(new_industry_layout)
         # returning the new layout isn't essential, but permits the caller giving it a reference for use elsewhere
         return new_industry_layout
@@ -1401,9 +1463,10 @@ class Industry(object):
         for x_y_spritelayout in kwargs["view_layout"]:
             for spritelayout in self.spritelayouts:
                 if spritelayout.id == x_y_spritelayout[2]:
-                    view.append((x_y_spritelayout[0], x_y_spritelayout[1], spritelayout))
+                    view.append(
+                        (x_y_spritelayout[0], x_y_spritelayout[1], spritelayout)
+                    )
         self.add_view_for_object(view, **kwargs)
-
 
     @property
     def numeric_id(self):
@@ -1575,13 +1638,19 @@ class Industry(object):
                             shift_x = (
                                 -1
                                 * IndustryLayout(
-                                    industry=self, id=new_id, layout=combined_layout, validate=False
+                                    industry=self,
+                                    id=new_id,
+                                    layout=combined_layout,
+                                    validate_xy=False,
                                 ).min_x
                             )
                             shift_y = (
                                 -1
                                 * IndustryLayout(
-                                    industry=self, id=new_id, layout=combined_layout, validate=False
+                                    industry=self,
+                                    id=new_id,
+                                    layout=combined_layout,
+                                    validate_xy=False,
                                 ).min_y
                             )
                             shifted_layout = []
@@ -1594,7 +1663,9 @@ class Industry(object):
                                 )
                                 shifted_layout.append(shifted_tile_def)
                             result.append(
-                                IndustryLayout(industry=self, id=new_id, layout=shifted_layout)
+                                IndustryLayout(
+                                    industry=self, id=new_id, layout=shifted_layout
+                                )
                             )
         return result
 

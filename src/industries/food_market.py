@@ -46,11 +46,12 @@ sprite_tree_2 = industry.add_sprite(
 
 industry.add_spritelayout(
     id="food_market_spritelayout",
+    tile="food_market_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1, sprite_tree_1, sprite_tree_2],
 )
 industry.add_industry_layout(
     id="food_market_industry_layout",
-    layout=[(0, 0, "food_market_tile_1", "food_market_spritelayout")],
+    layout=[(0, 0, "food_market_spritelayout")],
 )

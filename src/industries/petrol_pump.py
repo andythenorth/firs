@@ -38,12 +38,14 @@ spriteset_2 = industry.add_spriteset(sprites=[(80, 60, 64, 59, -31, -28)])
 
 industry.add_spritelayout(
     id="petrol_pump_spritelayout_1",
+    tile="petrol_pump_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_1],
 )
 industry.add_spritelayout(
     id="petrol_pump_spritelayout_2",
+    tile="petrol_pump_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_2],
@@ -52,14 +54,14 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="petrol_pump_industry_layout_1",
     layout=[
-        (0, 0, "petrol_pump_tile_1", "petrol_pump_spritelayout_1"),
-        (0, 1, "petrol_pump_tile_1", "petrol_pump_spritelayout_2"),
+        (0, 0, "petrol_pump_spritelayout_1"),
+        (0, 1, "petrol_pump_spritelayout_2"),
     ],
 )
 industry.add_industry_layout(
     id="petrol_pump_industry_layout_2",
     layout=[
-        (0, 0, "petrol_pump_tile_1", "petrol_pump_spritelayout_1"),
-        (1, 0, "petrol_pump_tile_1", "petrol_pump_spritelayout_2"),
+        (0, 0, "petrol_pump_spritelayout_1"),
+        (1, 0, "petrol_pump_spritelayout_2"),
     ],
 )

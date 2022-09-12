@@ -59,6 +59,7 @@ sprite_smoke = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="copper_mine_spritelayout_1",
+    tile="copper_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_1],
@@ -66,6 +67,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_mine_spritelayout_2",
+    tile="copper_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[],
@@ -73,6 +75,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_mine_spritelayout_3_anim",
+    tile="copper_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_3_anim],
@@ -80,6 +83,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_mine_spritelayout_4",
+    tile="copper_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_4],
@@ -87,6 +91,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_mine_spritelayout_5",
+    tile="copper_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_5],
@@ -97,15 +102,15 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="copper_mine_industry_layout_1",
     layout=[
-        (0, 0, "copper_mine_tile_1", "copper_mine_spritelayout_1"),
-        (0, 1, "copper_mine_tile_1", "copper_mine_spritelayout_1"),
-        (0, 2, "copper_mine_tile_1", "copper_mine_spritelayout_1"),
-        (1, 0, "copper_mine_tile_1", "copper_mine_spritelayout_5"),
-        (1, 1, "copper_mine_tile_1", "copper_mine_spritelayout_3_anim"),
-        (1, 2, "copper_mine_tile_1", "copper_mine_spritelayout_4"),
-        (2, 0, "copper_mine_tile_1", "copper_mine_spritelayout_1"),
-        (2, 1, "copper_mine_tile_1", "copper_mine_spritelayout_1"),
-        (2, 2, "copper_mine_tile_1", "copper_mine_spritelayout_2"),
-        (3, 1, "copper_mine_tile_1", "copper_mine_spritelayout_1"),
+        (0, 0, "copper_mine_spritelayout_1"),
+        (0, 1, "copper_mine_spritelayout_1"),
+        (0, 2, "copper_mine_spritelayout_1"),
+        (1, 0, "copper_mine_spritelayout_5"),
+        (1, 1, "copper_mine_spritelayout_3_anim"),
+        (1, 2, "copper_mine_spritelayout_4"),
+        (2, 0, "copper_mine_spritelayout_1"),
+        (2, 1, "copper_mine_spritelayout_1"),
+        (2, 2, "copper_mine_spritelayout_2"),
+        (3, 1, "copper_mine_spritelayout_1"),
     ],
 )

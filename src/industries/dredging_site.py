@@ -50,6 +50,7 @@ spriteset_crane_animated = industry.add_spriteset(
 
 industry.add_spritelayout(
     id="dredging_site_spritelayout_1",
+    tile="dredging_site_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_platform,
     building_sprites=[spriteset_crane_animated, spriteset_greeble],
@@ -58,15 +59,15 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="dredging_site_industry_layout_1",
     layout=[
-        (0, 0, "255", "spritelayout_null"),
-        (0, 1, "24", "spritelayout_null"),
-        (0, 2, "24", "spritelayout_null"),
-        (0, 4, "255", "spritelayout_null"),
-        (1, 0, "255", "spritelayout_null"),
-        (1, 4, "255", "spritelayout_null"),
-        (2, 0, "255", "spritelayout_null"),
-        (2, 2, "255", "spritelayout_null"),
-        (2, 3, "dredging_site_tile_1", "dredging_site_spritelayout_1"),
-        (2, 4, "255", "spritelayout_null"),
+        (0, 0, "spritelayout_null_water"),
+        (0, 1, "spritelayout_null_station"),
+        (0, 2, "spritelayout_null_station"),
+        (0, 4, "spritelayout_null_water"),
+        (1, 0, "spritelayout_null_water"),
+        (1, 4, "spritelayout_null_water"),
+        (2, 0, "spritelayout_null_water"),
+        (2, 2, "spritelayout_null_water"),
+        (2, 3, "dredging_site_spritelayout_1"),
+        (2, 4, "spritelayout_null_water"),
     ],
 )

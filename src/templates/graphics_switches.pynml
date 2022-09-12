@@ -12,7 +12,7 @@
     switch(FEAT_INDUSTRYTILES, SELF, ${industry_layout.id}_graphics_switch, relative_pos) {
         <tal:build_industry_layout repeat="layout industry_layout.layout">
             <!--! don't provide a spritelayout for e.g. tiles 255 (water spacer), and in some cases tile 24 (water station) -->
-            <tal:not_null condition="layout[3] != 'spritelayout_null'">
+            <tal:not_null condition="layout[3] not in ['spritelayout_null_water', 'spritelayout_null_station']">
                 relative_coord(${layout[0]}, ${layout[1]}): ${layout[3]};
             </tal:not_null>
         </tal:build_industry_layout>

@@ -86,6 +86,7 @@ sprite_smoke = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="cider_mill_spritelayout_1_anim",
+    tile="cider_mill_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -94,6 +95,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="cider_mill_spritelayout_2",
+    tile="cider_mill_tile_1",
     ground_sprite=spriteset_ground_anim,
     ground_overlay=spriteset_ground_overlay_anim,
     building_sprites=[spriteset_2_anim],
@@ -101,6 +103,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="cider_mill_spritelayout_3",
+    tile="cider_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -110,42 +113,42 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="cider_mill_industry_layout_1",
     layout=[
-        (0, 2, "cider_mill_tile_1", "cider_mill_spritelayout_3"),
-        (1, 0, "cider_mill_tile_2", "cider_mill_spritelayout_1_anim"),
-        (1, 2, "cider_mill_tile_1", "cider_mill_spritelayout_2"),
+        (0, 2, "cider_mill_spritelayout_3"),
+        (1, 0, "cider_mill_spritelayout_1_anim"),
+        (1, 2, "cider_mill_spritelayout_2"),
     ],
 )
 industry.add_industry_layout(
     id="cider_mill_industry_layout_2",
     layout=[
-        (0, 0, "cider_mill_tile_1", "cider_mill_spritelayout_3"),
-        (1, 0, "cider_mill_tile_1", "cider_mill_spritelayout_2"),
-        (2, 0, "cider_mill_tile_2", "cider_mill_spritelayout_1_anim"),
+        (0, 0, "cider_mill_spritelayout_3"),
+        (1, 0, "cider_mill_spritelayout_2"),
+        (2, 0, "cider_mill_spritelayout_1_anim"),
     ],
 )
 industry.add_industry_layout(
     id="cider_mill_industry_layout_3",
     layout=[
-        (0, 1, "cider_mill_tile_1", "cider_mill_spritelayout_3"),
-        (1, 0, "cider_mill_tile_2", "cider_mill_spritelayout_1_anim"),
-        (1, 1, "cider_mill_tile_1", "cider_mill_spritelayout_2"),
+        (0, 1, "cider_mill_spritelayout_3"),
+        (1, 0, "cider_mill_spritelayout_1_anim"),
+        (1, 1, "cider_mill_spritelayout_2"),
     ],
 )
 industry.add_industry_layout(
     id="cider_mill_industry_layout_4",
     layout=[
-        (0, 0, "cider_mill_tile_2", "cider_mill_spritelayout_1_anim"),
-        (1, 0, "cider_mill_tile_1", "cider_mill_spritelayout_3"),
-        (2, 0, "cider_mill_tile_1", "cider_mill_spritelayout_2"),
+        (0, 0, "cider_mill_spritelayout_1_anim"),
+        (1, 0, "cider_mill_spritelayout_3"),
+        (2, 0, "cider_mill_spritelayout_2"),
     ],
 )
 industry.add_industry_layout(
     id="cider_mill_industry_layout_5",
     layout=[
-        (0, 0, "cider_mill_tile_1", "cider_mill_spritelayout_3"),
-        (0, 1, "cider_mill_tile_1", "cider_mill_spritelayout_3"),
-        (1, 0, "cider_mill_tile_1", "cider_mill_spritelayout_2"),
-        (1, 1, "cider_mill_tile_1", "cider_mill_spritelayout_2"),
-        (2, 0, "cider_mill_tile_2", "cider_mill_spritelayout_1_anim"),
+        (0, 0, "cider_mill_spritelayout_3"),
+        (0, 1, "cider_mill_spritelayout_3"),
+        (1, 0, "cider_mill_spritelayout_2"),
+        (1, 1, "cider_mill_spritelayout_2"),
+        (2, 0, "cider_mill_spritelayout_1_anim"),
     ],
 )

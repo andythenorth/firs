@@ -60,6 +60,7 @@ sprite_smoke = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="textile_mill_spritelayout_1_anim",
+    tile="textile_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_large_chimney],
@@ -68,6 +69,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="textile_mill_spritelayout_2",
+    tile="textile_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_large_building_lh_part],
@@ -75,6 +77,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="textile_mill_spritelayout_3",
+    tile="textile_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_large_building_rh_part],
@@ -82,6 +85,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="textile_mill_spritelayout_4",
+    tile="textile_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_crates_greeble],
@@ -89,6 +93,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="textile_mill_spritelayout_5",
+    tile="textile_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_small_warehouse],
@@ -96,6 +101,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="textile_mill_spritelayout_6",
+    tile="textile_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
@@ -105,80 +111,80 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="textile_mill_industry_layout_1",
     layout=[
-        (0, 0, "textile_mill_tile_1", "textile_mill_spritelayout_3"),
-        (0, 1, "textile_mill_tile_1", "textile_mill_spritelayout_1_anim"),
-        (1, 0, "textile_mill_tile_1", "textile_mill_spritelayout_2"),
-        (1, 1, "textile_mill_tile_1", "textile_mill_spritelayout_5"),
-        (2, 0, "textile_mill_tile_1", "textile_mill_spritelayout_3"),
-        (2, 1, "textile_mill_tile_1", "textile_mill_spritelayout_3"),
-        (3, 0, "textile_mill_tile_1", "textile_mill_spritelayout_2"),
-        (3, 1, "textile_mill_tile_1", "textile_mill_spritelayout_2"),
-        (4, 0, "textile_mill_tile_1", "textile_mill_spritelayout_5"),
-        (4, 1, "textile_mill_tile_1", "textile_mill_spritelayout_4"),
+        (0, 0, "textile_mill_spritelayout_3"),
+        (0, 1, "textile_mill_spritelayout_1_anim"),
+        (1, 0, "textile_mill_spritelayout_2"),
+        (1, 1, "textile_mill_spritelayout_5"),
+        (2, 0, "textile_mill_spritelayout_3"),
+        (2, 1, "textile_mill_spritelayout_3"),
+        (3, 0, "textile_mill_spritelayout_2"),
+        (3, 1, "textile_mill_spritelayout_2"),
+        (4, 0, "textile_mill_spritelayout_5"),
+        (4, 1, "textile_mill_spritelayout_4"),
     ],
 )
 industry.add_industry_layout(
     id="textile_mill_industry_layout_2",
     layout=[
-        (0, 0, "textile_mill_tile_1", "textile_mill_spritelayout_3"),
-        (0, 1, "textile_mill_tile_1", "textile_mill_spritelayout_4"),
-        (0, 2, "textile_mill_tile_1", "textile_mill_spritelayout_1_anim"),
-        (1, 0, "textile_mill_tile_1", "textile_mill_spritelayout_2"),
-        (1, 1, "textile_mill_tile_1", "textile_mill_spritelayout_6"),
-        (1, 2, "textile_mill_tile_1", "textile_mill_spritelayout_5"),
-        (2, 0, "textile_mill_tile_1", "textile_mill_spritelayout_5"),
-        (2, 1, "textile_mill_tile_1", "textile_mill_spritelayout_6"),
+        (0, 0, "textile_mill_spritelayout_3"),
+        (0, 1, "textile_mill_spritelayout_4"),
+        (0, 2, "textile_mill_spritelayout_1_anim"),
+        (1, 0, "textile_mill_spritelayout_2"),
+        (1, 1, "textile_mill_spritelayout_6"),
+        (1, 2, "textile_mill_spritelayout_5"),
+        (2, 0, "textile_mill_spritelayout_5"),
+        (2, 1, "textile_mill_spritelayout_6"),
     ],
 )
 industry.add_industry_layout(
     id="textile_mill_industry_layout_3",
     layout=[
-        (0, 0, "textile_mill_tile_1", "textile_mill_spritelayout_3"),
-        (0, 1, "textile_mill_tile_1", "textile_mill_spritelayout_5"),
-        (1, 0, "textile_mill_tile_1", "textile_mill_spritelayout_2"),
-        (1, 1, "textile_mill_tile_1", "textile_mill_spritelayout_4"),
-        (2, 0, "textile_mill_tile_1", "textile_mill_spritelayout_1_anim"),
+        (0, 0, "textile_mill_spritelayout_3"),
+        (0, 1, "textile_mill_spritelayout_5"),
+        (1, 0, "textile_mill_spritelayout_2"),
+        (1, 1, "textile_mill_spritelayout_4"),
+        (2, 0, "textile_mill_spritelayout_1_anim"),
     ],
 )
 industry.add_industry_layout(
     id="textile_mill_industry_layout_4",
     layout=[
-        (0, 0, "textile_mill_tile_1", "textile_mill_spritelayout_3"),
-        (0, 1, "textile_mill_tile_1", "textile_mill_spritelayout_3"),
-        (1, 0, "textile_mill_tile_1", "textile_mill_spritelayout_2"),
-        (1, 1, "textile_mill_tile_1", "textile_mill_spritelayout_2"),
-        (2, 0, "textile_mill_tile_1", "textile_mill_spritelayout_5"),
-        (2, 1, "textile_mill_tile_1", "textile_mill_spritelayout_4"),
-        (3, 0, "textile_mill_tile_1", "textile_mill_spritelayout_3"),
-        (3, 1, "textile_mill_tile_1", "textile_mill_spritelayout_5"),
-        (4, 0, "textile_mill_tile_1", "textile_mill_spritelayout_2"),
-        (4, 1, "textile_mill_tile_1", "textile_mill_spritelayout_1_anim"),
+        (0, 0, "textile_mill_spritelayout_3"),
+        (0, 1, "textile_mill_spritelayout_3"),
+        (1, 0, "textile_mill_spritelayout_2"),
+        (1, 1, "textile_mill_spritelayout_2"),
+        (2, 0, "textile_mill_spritelayout_5"),
+        (2, 1, "textile_mill_spritelayout_4"),
+        (3, 0, "textile_mill_spritelayout_3"),
+        (3, 1, "textile_mill_spritelayout_5"),
+        (4, 0, "textile_mill_spritelayout_2"),
+        (4, 1, "textile_mill_spritelayout_1_anim"),
     ],
 )
 industry.add_industry_layout(
     id="textile_mill_industry_layout_5",
     layout=[
-        (0, 0, "textile_mill_tile_1", "textile_mill_spritelayout_3"),
-        (0, 1, "textile_mill_tile_1", "textile_mill_spritelayout_3"),
-        (0, 2, "textile_mill_tile_1", "textile_mill_spritelayout_5"),
-        (0, 3, "textile_mill_tile_1", "textile_mill_spritelayout_5"),
-        (1, 0, "textile_mill_tile_1", "textile_mill_spritelayout_2"),
-        (1, 1, "textile_mill_tile_1", "textile_mill_spritelayout_2"),
-        (1, 2, "textile_mill_tile_1", "textile_mill_spritelayout_4"),
-        (1, 3, "textile_mill_tile_1", "textile_mill_spritelayout_1_anim"),
+        (0, 0, "textile_mill_spritelayout_3"),
+        (0, 1, "textile_mill_spritelayout_3"),
+        (0, 2, "textile_mill_spritelayout_5"),
+        (0, 3, "textile_mill_spritelayout_5"),
+        (1, 0, "textile_mill_spritelayout_2"),
+        (1, 1, "textile_mill_spritelayout_2"),
+        (1, 2, "textile_mill_spritelayout_4"),
+        (1, 3, "textile_mill_spritelayout_1_anim"),
     ],
 )
 industry.add_industry_layout(
     id="textile_mill_industry_layout_6",
     layout=[
-        (0, 0, "textile_mill_tile_1", "textile_mill_spritelayout_5"),
-        (0, 1, "textile_mill_tile_1", "textile_mill_spritelayout_3"),
-        (0, 2, "textile_mill_tile_1", "textile_mill_spritelayout_3"),
-        (1, 0, "textile_mill_tile_1", "textile_mill_spritelayout_5"),
-        (1, 1, "textile_mill_tile_1", "textile_mill_spritelayout_2"),
-        (1, 2, "textile_mill_tile_1", "textile_mill_spritelayout_2"),
-        (2, 0, "textile_mill_tile_1", "textile_mill_spritelayout_5"),
-        (2, 1, "textile_mill_tile_1", "textile_mill_spritelayout_1_anim"),
-        (2, 2, "textile_mill_tile_1", "textile_mill_spritelayout_4"),
+        (0, 0, "textile_mill_spritelayout_5"),
+        (0, 1, "textile_mill_spritelayout_3"),
+        (0, 2, "textile_mill_spritelayout_3"),
+        (1, 0, "textile_mill_spritelayout_5"),
+        (1, 1, "textile_mill_spritelayout_2"),
+        (1, 2, "textile_mill_spritelayout_2"),
+        (2, 0, "textile_mill_spritelayout_5"),
+        (2, 1, "textile_mill_spritelayout_1_anim"),
+        (2, 2, "textile_mill_spritelayout_4"),
     ],
 )

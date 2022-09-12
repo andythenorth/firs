@@ -62,6 +62,7 @@ spriteset_5 = industry.add_spriteset(
 
 industry.add_spritelayout(
     id="arable_farm_spritelayout_1",
+    tile="arable_farm_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -69,6 +70,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="arable_farm_spritelayout_2",
+    tile="arable_farm_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -76,6 +78,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="arable_farm_spritelayout_3",
+    tile="arable_farm_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -83,6 +86,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="arable_farm_spritelayout_4",
+    tile="arable_farm_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -90,6 +94,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="arable_farm_spritelayout_5",
+    tile="arable_farm_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -98,30 +103,30 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="arable_farm_industry_layout_1",
     layout=[
-        (0, 1, "arable_farm_tile_1", "arable_farm_spritelayout_5"),
-        (0, 2, "arable_farm_tile_1", "arable_farm_spritelayout_3"),
-        (1, 0, "arable_farm_tile_1", "arable_farm_spritelayout_1"),
-        (1, 1, "arable_farm_tile_1", "arable_farm_spritelayout_2"),
-        (2, 1, "arable_farm_tile_1", "arable_farm_spritelayout_4"),
+        (0, 1, "arable_farm_spritelayout_5"),
+        (0, 2, "arable_farm_spritelayout_3"),
+        (1, 0, "arable_farm_spritelayout_1"),
+        (1, 1, "arable_farm_spritelayout_2"),
+        (2, 1, "arable_farm_spritelayout_4"),
     ],
 )
 industry.add_industry_layout(
     id="arable_farm_industry_layout_2",
     layout=[
-        (0, 0, "arable_farm_tile_1", "arable_farm_spritelayout_5"),
-        (0, 1, "arable_farm_tile_1", "arable_farm_spritelayout_4"),
-        (1, 0, "arable_farm_tile_1", "arable_farm_spritelayout_1"),
-        (1, 1, "arable_farm_tile_1", "arable_farm_spritelayout_2"),
-        (2, 0, "arable_farm_tile_1", "arable_farm_spritelayout_3"),
+        (0, 0, "arable_farm_spritelayout_5"),
+        (0, 1, "arable_farm_spritelayout_4"),
+        (1, 0, "arable_farm_spritelayout_1"),
+        (1, 1, "arable_farm_spritelayout_2"),
+        (2, 0, "arable_farm_spritelayout_3"),
     ],
 )
 industry.add_industry_layout(
     id="arable_farm_industry_layout_3",
     layout=[
-        (0, 0, "arable_farm_tile_1", "arable_farm_spritelayout_1"),
-        (0, 1, "arable_farm_tile_1", "arable_farm_spritelayout_2"),
-        (1, 0, "arable_farm_tile_1", "arable_farm_spritelayout_5"),
-        (2, 0, "arable_farm_tile_1", "arable_farm_spritelayout_4"),
-        (2, 1, "arable_farm_tile_1", "arable_farm_spritelayout_3"),
+        (0, 0, "arable_farm_spritelayout_1"),
+        (0, 1, "arable_farm_spritelayout_2"),
+        (1, 0, "arable_farm_spritelayout_5"),
+        (2, 0, "arable_farm_spritelayout_4"),
+        (2, 1, "arable_farm_spritelayout_3"),
     ],
 )

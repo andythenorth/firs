@@ -68,6 +68,7 @@ sprite_smoke_1 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_chimney",
+    tile="nitrate_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -77,6 +78,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_large_shed",
+    tile="nitrate_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -84,6 +86,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_conveyors",
+    tile="nitrate_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -91,6 +94,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_processor",
+    tile="nitrate_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -98,6 +102,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_raised_tanks",
+    tile="nitrate_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -106,6 +111,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_raised_shed",
+    tile="nitrate_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
@@ -114,6 +120,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_machinery",
+    tile="nitrate_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
@@ -121,6 +128,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_hut",
+    tile="nitrate_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
@@ -129,6 +137,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_nitrate_pile",
+    tile="nitrate_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
@@ -141,43 +150,43 @@ industry.add_multi_tile_object(
         (0, 0, "nitrate_mine_spritelayout_processor"),
         (1, 0, "nitrate_mine_spritelayout_conveyors"),
         (2, 0, "nitrate_mine_spritelayout_large_shed"),
-    ]
+    ],
 )
 
 industry.add_industry_layout(
     id="nitrate_mine_industry_layout_1",
     layout=[
-        (0, 0, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_chimney"),
-        (0, 1, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_raised_shed"),
-        (0, 2, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_hut"),
-        (1, 0, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_raised_tanks"),
-        (1, 1, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_raised_tanks"),
-        (1, 2, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_nitrate_pile"),
-        (2, 0, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_processor"),
-        (2, 1, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_processor"),
-        (2, 2, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_nitrate_pile"),
-        (3, 0, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_conveyors"),
-        (3, 1, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_conveyors"),
-        (3, 2, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_nitrate_pile"),
-        (4, 0, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_large_shed"),
-        (4, 1, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_large_shed"),
-        (4, 2, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_machinery"),
+        (0, 0, "nitrate_mine_spritelayout_chimney"),
+        (0, 1, "nitrate_mine_spritelayout_raised_shed"),
+        (0, 2, "nitrate_mine_spritelayout_hut"),
+        (1, 0, "nitrate_mine_spritelayout_raised_tanks"),
+        (1, 1, "nitrate_mine_spritelayout_raised_tanks"),
+        (1, 2, "nitrate_mine_spritelayout_nitrate_pile"),
+        (2, 0, "nitrate_mine_spritelayout_processor"),
+        (2, 1, "nitrate_mine_spritelayout_processor"),
+        (2, 2, "nitrate_mine_spritelayout_nitrate_pile"),
+        (3, 0, "nitrate_mine_spritelayout_conveyors"),
+        (3, 1, "nitrate_mine_spritelayout_conveyors"),
+        (3, 2, "nitrate_mine_spritelayout_nitrate_pile"),
+        (4, 0, "nitrate_mine_spritelayout_large_shed"),
+        (4, 1, "nitrate_mine_spritelayout_large_shed"),
+        (4, 2, "nitrate_mine_spritelayout_machinery"),
     ],
 )
 industry.add_industry_layout(
     id="nitrate_mine_industry_layout_2",
     layout=[
-        (0, 0, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_raised_tanks"),
-        (0, 1, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_processor"),
-        (0, 2, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_processor"),
-        (0, 3, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_raised_shed"),
-        (1, 0, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_chimney"),
-        (1, 1, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_conveyors"),
-        (1, 2, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_conveyors"),
-        (1, 3, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_nitrate_pile"),
-        (2, 0, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_machinery"),
-        (2, 1, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_large_shed"),
-        (2, 2, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_large_shed"),
-        (2, 3, "nitrate_mine_tile_1", "nitrate_mine_spritelayout_hut"),
+        (0, 0, "nitrate_mine_spritelayout_raised_tanks"),
+        (0, 1, "nitrate_mine_spritelayout_processor"),
+        (0, 2, "nitrate_mine_spritelayout_processor"),
+        (0, 3, "nitrate_mine_spritelayout_raised_shed"),
+        (1, 0, "nitrate_mine_spritelayout_chimney"),
+        (1, 1, "nitrate_mine_spritelayout_conveyors"),
+        (1, 2, "nitrate_mine_spritelayout_conveyors"),
+        (1, 3, "nitrate_mine_spritelayout_nitrate_pile"),
+        (2, 0, "nitrate_mine_spritelayout_machinery"),
+        (2, 1, "nitrate_mine_spritelayout_large_shed"),
+        (2, 2, "nitrate_mine_spritelayout_large_shed"),
+        (2, 3, "nitrate_mine_spritelayout_hut"),
     ],
 )

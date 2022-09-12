@@ -78,6 +78,7 @@ sprite_smoke_2 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="tyre_plant_spritelayout_silos",
+    tile="tyre_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -86,6 +87,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="tyre_plant_spritelayout_building_large_door",
+    tile="tyre_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -94,6 +96,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="tyre_plant_spritelayout_building_roof_chimneys",
+    tile="tyre_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -102,6 +105,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="tyre_plant_spritelayout_boilerhouse",
+    tile="tyre_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -111,6 +115,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="tyre_plant_spritelayout_horizontal_tanks",
+    tile="tyre_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -119,6 +124,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="tyre_plant_spritelayout_gatehouse",
+    tile="tyre_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
@@ -127,6 +133,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="tyre_plant_spritelayout_tyres_1",
+    tile="tyre_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
@@ -135,6 +142,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="tyre_plant_spritelayout_tyres_2",
+    tile="tyre_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
@@ -145,56 +153,56 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="tyre_plant_industry_layout_1",
     layout=[
-        (0, 0, "tyre_plant_tile_1", "tyre_plant_spritelayout_building_roof_chimneys"),
-        (0, 1, "tyre_plant_tile_1", "tyre_plant_spritelayout_building_roof_chimneys"),
-        (0, 2, "tyre_plant_tile_1", "tyre_plant_spritelayout_boilerhouse"),
-        (0, 3, "tyre_plant_tile_1", "tyre_plant_spritelayout_tyres_1"),
-        (1, 0, "tyre_plant_tile_1", "tyre_plant_spritelayout_building_large_door"),
-        (1, 1, "tyre_plant_tile_1", "tyre_plant_spritelayout_building_large_door"),
-        (1, 2, "tyre_plant_tile_1", "tyre_plant_spritelayout_horizontal_tanks"),
-        (1, 3, "tyre_plant_tile_1", "tyre_plant_spritelayout_gatehouse"),
-        (2, 0, "tyre_plant_tile_1", "tyre_plant_spritelayout_building_roof_chimneys"),
-        (2, 1, "tyre_plant_tile_1", "tyre_plant_spritelayout_silos"),
-        (2, 2, "tyre_plant_tile_1", "tyre_plant_spritelayout_tyres_1"),
-        (2, 3, "tyre_plant_tile_1", "tyre_plant_spritelayout_tyres_2"),
+        (0, 0, "tyre_plant_spritelayout_building_roof_chimneys"),
+        (0, 1, "tyre_plant_spritelayout_building_roof_chimneys"),
+        (0, 2, "tyre_plant_spritelayout_boilerhouse"),
+        (0, 3, "tyre_plant_spritelayout_tyres_1"),
+        (1, 0, "tyre_plant_spritelayout_building_large_door"),
+        (1, 1, "tyre_plant_spritelayout_building_large_door"),
+        (1, 2, "tyre_plant_spritelayout_horizontal_tanks"),
+        (1, 3, "tyre_plant_spritelayout_gatehouse"),
+        (2, 0, "tyre_plant_spritelayout_building_roof_chimneys"),
+        (2, 1, "tyre_plant_spritelayout_silos"),
+        (2, 2, "tyre_plant_spritelayout_tyres_1"),
+        (2, 3, "tyre_plant_spritelayout_tyres_2"),
     ],
 )
 industry.add_industry_layout(
     id="tyre_plant_industry_layout_2",
     layout=[
-        (0, 0, "tyre_plant_tile_1", "tyre_plant_spritelayout_building_large_door"),
-        (0, 1, "tyre_plant_tile_1", "tyre_plant_spritelayout_building_large_door"),
-        (0, 2, "tyre_plant_tile_1", "tyre_plant_spritelayout_boilerhouse"),
-        (1, 0, "tyre_plant_tile_1", "tyre_plant_spritelayout_building_roof_chimneys"),
-        (1, 1, "tyre_plant_tile_1", "tyre_plant_spritelayout_building_roof_chimneys"),
-        (1, 2, "tyre_plant_tile_1", "tyre_plant_spritelayout_horizontal_tanks"),
-        (2, 0, "tyre_plant_tile_1", "tyre_plant_spritelayout_building_large_door"),
-        (2, 1, "tyre_plant_tile_1", "tyre_plant_spritelayout_tyres_1"),
-        (2, 2, "tyre_plant_tile_1", "tyre_plant_spritelayout_tyres_1"),
-        (3, 0, "tyre_plant_tile_1", "tyre_plant_spritelayout_silos"),
-        (3, 1, "tyre_plant_tile_1", "tyre_plant_spritelayout_tyres_1"),
-        (3, 2, "tyre_plant_tile_1", "tyre_plant_spritelayout_tyres_2"),
-        (4, 0, "tyre_plant_tile_1", "tyre_plant_spritelayout_tyres_1"),
-        (4, 1, "tyre_plant_tile_1", "tyre_plant_spritelayout_tyres_2"),
-        (4, 2, "tyre_plant_tile_1", "tyre_plant_spritelayout_gatehouse"),
+        (0, 0, "tyre_plant_spritelayout_building_large_door"),
+        (0, 1, "tyre_plant_spritelayout_building_large_door"),
+        (0, 2, "tyre_plant_spritelayout_boilerhouse"),
+        (1, 0, "tyre_plant_spritelayout_building_roof_chimneys"),
+        (1, 1, "tyre_plant_spritelayout_building_roof_chimneys"),
+        (1, 2, "tyre_plant_spritelayout_horizontal_tanks"),
+        (2, 0, "tyre_plant_spritelayout_building_large_door"),
+        (2, 1, "tyre_plant_spritelayout_tyres_1"),
+        (2, 2, "tyre_plant_spritelayout_tyres_1"),
+        (3, 0, "tyre_plant_spritelayout_silos"),
+        (3, 1, "tyre_plant_spritelayout_tyres_1"),
+        (3, 2, "tyre_plant_spritelayout_tyres_2"),
+        (4, 0, "tyre_plant_spritelayout_tyres_1"),
+        (4, 1, "tyre_plant_spritelayout_tyres_2"),
+        (4, 2, "tyre_plant_spritelayout_gatehouse"),
     ],
 )
 industry.add_industry_layout(
     id="tyre_plant_industry_layout_3",
     layout=[
-        (0, 0, "tyre_plant_tile_1", "tyre_plant_spritelayout_building_large_door"),
-        (0, 1, "tyre_plant_tile_1", "tyre_plant_spritelayout_building_large_door"),
-        (0, 2, "tyre_plant_tile_1", "tyre_plant_spritelayout_building_large_door"),
-        (0, 3, "tyre_plant_tile_1", "tyre_plant_spritelayout_boilerhouse"),
-        (0, 4, "tyre_plant_tile_1", "tyre_plant_spritelayout_tyres_1"),
-        (1, 0, "tyre_plant_tile_1", "tyre_plant_spritelayout_silos"),
-        (1, 1, "tyre_plant_tile_1", "tyre_plant_spritelayout_building_roof_chimneys"),
-        (1, 2, "tyre_plant_tile_1", "tyre_plant_spritelayout_building_roof_chimneys"),
-        (1, 3, "tyre_plant_tile_1", "tyre_plant_spritelayout_horizontal_tanks"),
-        (1, 4, "tyre_plant_tile_1", "tyre_plant_spritelayout_tyres_1"),
-        (2, 0, "tyre_plant_tile_1", "tyre_plant_spritelayout_tyres_1"),
-        (2, 1, "tyre_plant_tile_1", "tyre_plant_spritelayout_tyres_2"),
-        (2, 2, "tyre_plant_tile_1", "tyre_plant_spritelayout_gatehouse"),
-        (2, 3, "tyre_plant_tile_1", "tyre_plant_spritelayout_tyres_2"),
+        (0, 0, "tyre_plant_spritelayout_building_large_door"),
+        (0, 1, "tyre_plant_spritelayout_building_large_door"),
+        (0, 2, "tyre_plant_spritelayout_building_large_door"),
+        (0, 3, "tyre_plant_spritelayout_boilerhouse"),
+        (0, 4, "tyre_plant_spritelayout_tyres_1"),
+        (1, 0, "tyre_plant_spritelayout_silos"),
+        (1, 1, "tyre_plant_spritelayout_building_roof_chimneys"),
+        (1, 2, "tyre_plant_spritelayout_building_roof_chimneys"),
+        (1, 3, "tyre_plant_spritelayout_horizontal_tanks"),
+        (1, 4, "tyre_plant_spritelayout_tyres_1"),
+        (2, 0, "tyre_plant_spritelayout_tyres_1"),
+        (2, 1, "tyre_plant_spritelayout_tyres_2"),
+        (2, 2, "tyre_plant_spritelayout_gatehouse"),
+        (2, 3, "tyre_plant_spritelayout_tyres_2"),
     ],
 )

@@ -83,6 +83,7 @@ sprite_smoke_3 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="lime_kiln_spritelayout_1",
+    tile="lime_kiln_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -92,6 +93,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="lime_kiln_spritelayout_2",
+    tile="lime_kiln_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -100,6 +102,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="lime_kiln_spritelayout_3",
+    tile="lime_kiln_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -108,6 +111,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="lime_kiln_spritelayout_4",
+    tile="lime_kiln_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -116,6 +120,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="lime_kiln_spritelayout_5",
+    tile="lime_kiln_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -123,6 +128,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="lime_kiln_spritelayout_6",
+    tile="lime_kiln_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
@@ -132,35 +138,35 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="lime_kiln_industry_layout_1",
     layout=[
-        (0, 0, "lime_kiln_tile_1", "lime_kiln_spritelayout_2"),
-        (0, 1, "lime_kiln_tile_1", "lime_kiln_spritelayout_1"),
-        (0, 2, "lime_kiln_tile_1", "lime_kiln_spritelayout_6"),
-        (1, 0, "lime_kiln_tile_1", "lime_kiln_spritelayout_4"),
-        (1, 1, "lime_kiln_tile_1", "lime_kiln_spritelayout_5"),
-        (1, 2, "lime_kiln_tile_1", "lime_kiln_spritelayout_3"),
+        (0, 0, "lime_kiln_spritelayout_2"),
+        (0, 1, "lime_kiln_spritelayout_1"),
+        (0, 2, "lime_kiln_spritelayout_6"),
+        (1, 0, "lime_kiln_spritelayout_4"),
+        (1, 1, "lime_kiln_spritelayout_5"),
+        (1, 2, "lime_kiln_spritelayout_3"),
     ],
 )
 industry.add_industry_layout(
     id="lime_kiln_industry_layout_2",
     layout=[
-        (0, 0, "lime_kiln_tile_1", "lime_kiln_spritelayout_2"),
-        (0, 1, "lime_kiln_tile_1", "lime_kiln_spritelayout_1"),
-        (1, 0, "lime_kiln_tile_1", "lime_kiln_spritelayout_4"),
-        (1, 1, "lime_kiln_tile_1", "lime_kiln_spritelayout_5"),
-        (2, 0, "lime_kiln_tile_1", "lime_kiln_spritelayout_6"),
-        (2, 1, "lime_kiln_tile_1", "lime_kiln_spritelayout_3"),
+        (0, 0, "lime_kiln_spritelayout_2"),
+        (0, 1, "lime_kiln_spritelayout_1"),
+        (1, 0, "lime_kiln_spritelayout_4"),
+        (1, 1, "lime_kiln_spritelayout_5"),
+        (2, 0, "lime_kiln_spritelayout_6"),
+        (2, 1, "lime_kiln_spritelayout_3"),
     ],
 )
 industry.add_industry_layout(
     id="lime_kiln_industry_layout_3",
     layout=[
-        (0, 0, "lime_kiln_tile_1", "lime_kiln_spritelayout_2"),
-        (0, 1, "lime_kiln_tile_1", "lime_kiln_spritelayout_1"),
-        (0, 2, "lime_kiln_tile_1", "lime_kiln_spritelayout_6"),
-        (0, 3, "lime_kiln_tile_1", "lime_kiln_spritelayout_6"),
-        (1, 0, "lime_kiln_tile_1", "lime_kiln_spritelayout_4"),
-        (1, 1, "lime_kiln_tile_1", "lime_kiln_spritelayout_5"),
-        (1, 2, "lime_kiln_tile_1", "lime_kiln_spritelayout_3"),
-        (1, 3, "lime_kiln_tile_1", "lime_kiln_spritelayout_6"),
+        (0, 0, "lime_kiln_spritelayout_2"),
+        (0, 1, "lime_kiln_spritelayout_1"),
+        (0, 2, "lime_kiln_spritelayout_6"),
+        (0, 3, "lime_kiln_spritelayout_6"),
+        (1, 0, "lime_kiln_spritelayout_4"),
+        (1, 1, "lime_kiln_spritelayout_5"),
+        (1, 2, "lime_kiln_spritelayout_3"),
+        (1, 3, "lime_kiln_spritelayout_6"),
     ],
 )
