@@ -462,6 +462,7 @@ class SpriteLayout(object):
         perma_fences=[],
         magic_trees=[],
         terrain_aware_ground=False,
+        tile=None,
         add_to_object_num=None,
     ):
         self.id = id
@@ -475,6 +476,9 @@ class SpriteLayout(object):
         self.perma_fences = perma_fences
         self.magic_trees = magic_trees
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
+        # as of September 2022, spritelayouts can define which tile they use
+        # - this is optional as a migration strategy, but is intended to be the only supported approach in future
+        self.tile = tile
         # optionally spritelayouts can cause objects to be defined
         self.add_to_object_num = add_to_object_num
 
@@ -926,8 +930,9 @@ class GraphicsSwitchSlopes(GraphicsSwitch):
 class IndustryLayout(object):
     """Base class to hold industry layouts"""
 
-    def __init__(self, id, layout, excluded_outpost_layouts=[], validate=True):
+    def __init__(self, industry, id, layout, excluded_outpost_layouts=[], validate=True):
         self.id = id
+        self.industry = industry
         # as of September 2022 there are 2 formats accepted when defining layout
         #   -  a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spritelayout or next nml switch)
         #   -  a list of 3-tuples (SE offset from N tile, SW offset from N tile, identifier of spritelayout or next nml switch), where the spritelayout encapsulates the tile identifier
@@ -962,7 +967,23 @@ class IndustryLayout(object):
 
     @property
     def layout(self):
-        return self._layout
+        result = []
+        for layout_def in self._layout:
+            # catch legacy layout_defs
+            if len(layout_def) == 4:
+                for spritelayout in self.industry.spritelayouts:
+                    if spritelayout.id == layout_def[3]:
+                        if spritelayout.tile is not None:
+                            utils.echo_message("legacy layout def found for " + self.industry.id + " " + str(layout_def))
+            # resolve the spritelayout by ID
+            if len(layout_def) == 3:
+                for spritelayout in self.industry.spritelayouts:
+                    if spritelayout.id == layout_def[2]:
+                        if spritelayout.tile == None:
+                            raise BaseException("No tile defined for", spritelayout.id)
+                        layout_def = (layout_def[0], layout_def[1], spritelayout.tile, layout_def[2])
+            result.append(layout_def)
+        return result
 
     @property
     def min_x(self):
@@ -1356,7 +1377,7 @@ class Industry(object):
         return new_graphics_switch
 
     def add_industry_layout(self, layout_type="core", *args, **kwargs):
-        new_industry_layout = IndustryLayout(*args, **kwargs)
+        new_industry_layout = IndustryLayout(self, *args, **kwargs)
         self._industry_layouts[layout_type].append(new_industry_layout)
         # returning the new layout isn't essential, but permits the caller giving it a reference for use elsewhere
         return new_industry_layout
@@ -1554,13 +1575,13 @@ class Industry(object):
                             shift_x = (
                                 -1
                                 * IndustryLayout(
-                                    id=new_id, layout=combined_layout, validate=False
+                                    industry=self, id=new_id, layout=combined_layout, validate=False
                                 ).min_x
                             )
                             shift_y = (
                                 -1
                                 * IndustryLayout(
-                                    id=new_id, layout=combined_layout, validate=False
+                                    industry=self, id=new_id, layout=combined_layout, validate=False
                                 ).min_y
                             )
                             shifted_layout = []
@@ -1573,7 +1594,7 @@ class Industry(object):
                                 )
                                 shifted_layout.append(shifted_tile_def)
                             result.append(
-                                IndustryLayout(id=new_id, layout=shifted_layout)
+                                IndustryLayout(industry=self, id=new_id, layout=shifted_layout)
                             )
         return result
 
