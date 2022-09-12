@@ -928,7 +928,11 @@ class IndustryLayout(object):
 
     def __init__(self, id, layout, excluded_outpost_layouts=[], validate=True):
         self.id = id
-        self.layout = layout  # a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spriteset or next nml switch)
+        # as of September 2022 there are 2 formats accepted when defining layout
+        #   -  a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spritelayout or next nml switch)
+        #   -  a list of 3-tuples (SE offset from N tile, SW offset from N tile, identifier of spritelayout or next nml switch), where the spritelayout encapsulates the tile identifier
+        # as of September 2022 these are stored in the ._layout private attr, then resolved by a .layout property method
+        self._layout = layout
         self.excluded_outpost_layouts = excluded_outpost_layouts
         # validation can be optionally suppressed as combined layouts may be invalid until their xy offsets are shifted positive (for example)
         if validate:
@@ -955,6 +959,10 @@ class IndustryLayout(object):
                 raise BaseException(
                     "Repeated xy offset pair: " + self.id + " " + str((x, y))
                 )
+
+    @property
+    def layout(self):
+        return self._layout
 
     @property
     def min_x(self):
