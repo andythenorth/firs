@@ -9,7 +9,6 @@ industry = IndustrySecondary(
     ],
     prod_cargo_types_with_output_ratios=[
         ("NH3_", 6),
-        ("NIAC", 2),
     ],
     prob_in_game="3",
     prob_map_gen="5",
@@ -18,6 +17,13 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_HEAVY_INDUSTRY_2)",
     fund_cost_multiplier="170",
     provides_snow=True,
+)
+
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    locate_in_specific_biomes=[
+        "severnside",
+    ],
 )
 
 industry.add_tile(

@@ -26,6 +26,19 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=2,
 )
 
+"""
+industry.enable_in_economy("MILD_MILD_WEST",)
+["MILD_MILD_WEST"].accept_cargos_with_input_ratios = [
+    ("SALT", 2),
+    ("NAPH", 2),
+    ("NH3_", 2),
+]
+["MILD_MILD_WEST"].prod_cargo_types_with_output_ratios = [
+    ("LYE_", 4),
+    ("PLAS", 4)
+]
+"""
+
 industry.add_tile(
     id="methanol_plant_tile_1",
     animation_length=7,

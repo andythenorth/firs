@@ -26,6 +26,9 @@ industry = IndustryPrimaryOrganic(
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
 
 industry.add_tile(
     id="dairy_farm_tile_1",

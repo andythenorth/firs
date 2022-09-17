@@ -29,6 +29,18 @@ industry.enable_in_economy(
         ("FMSP", 9),
     ],
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargo_types=[
+        "ZINC",
+    ],
+    prod_cargo_types_with_multipliers=[
+        ("ZORE", 16),
+        ("PULP", 16),
+        ("POTA", 16),
+        ("PHOS", 16),
+    ],
+)
 
 industry.enable_in_economy(
     "STEELTOWN",

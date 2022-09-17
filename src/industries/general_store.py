@@ -41,7 +41,7 @@ industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     prob_map_gen="14",
 )
-# industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['FOOD', 'GOOD', 'BEER', 'TEXT']
+# ['IN_A_HOT_COUNTRY'].accept_cargo_types = ['FOOD', 'GOOD', 'BEER', 'TEXT']
 
 industry.enable_in_economy(
     "STEELTOWN",

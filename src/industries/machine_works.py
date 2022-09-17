@@ -22,7 +22,7 @@ industry = IndustrySecondary(
     provides_snow=True,
 )
 
-# industry.economy_variations['STEELTOWN'].enabled = True
+# ['STEELTOWN'].enabled = True
 
 industry.add_tile(
     id="machine_works_tile_1",

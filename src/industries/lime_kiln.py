@@ -33,6 +33,18 @@ industry.enable_in_economy(
     prob_in_game="1",  # low probability of build during gameplay
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("LIME", 4),
+        ("PETR", 4),
+    ],
+    locate_in_specific_biomes=[
+        "moors_and_levels",
+        "valleys_and_marches",
+    ],
+)
+
 industry.add_tile(
     id="lime_kiln_tile_1",
     animation_length=7,

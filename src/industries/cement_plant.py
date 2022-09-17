@@ -36,6 +36,21 @@ industry.enable_in_economy(
 # ['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('COAL', 2), ('CLAY', 2), ('GRVL', 4)]
 # ['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('CMNT', 8)]
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("COAL", 3),
+        ("LIME", 5),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("CMNT", 8),
+    ],
+    locate_in_specific_biomes=[
+        "moors_and_levels",
+        "severnside",
+    ],
+)
+
 industry.add_tile(
     id="cement_plant_tile_1",
     animation_length=7,

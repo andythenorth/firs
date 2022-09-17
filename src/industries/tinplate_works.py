@@ -18,6 +18,12 @@ industry = IndustrySecondary(
 )
 
 # Tinplate is *not* in Steeltown because it fragments the consumers of Acid too much.  Maybe Better Living Through Chemistry?
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    locate_in_specific_biomes=[
+        "severnside",
+    ],
+)
 
 industry.add_tile(
     id="tinplate_works_tile_1",

@@ -18,10 +18,10 @@ industry = IndustrySecondary(
     provides_snow=True,
 )
 
-industry.enable_in_economy("BASIC_TROPIC")
-industry.economy_variations["BASIC_TROPIC"].accept_cargos_with_input_ratios = [
-    ("GRAI", 6)
-]
+industry.enable_in_economy(
+    "BASIC_TROPIC",
+    accept_cargos_with_input_ratios=[("GRAI", 6)],
+)
 
 
 industry.enable_in_economy(
@@ -29,6 +29,12 @@ industry.enable_in_economy(
     accept_cargos_with_input_ratios=[
         ("CASS", 6),
         ("MAIZ", 6),
+    ],
+)
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    locate_in_specific_biomes=[
+        "severnside",
     ],
 )
 

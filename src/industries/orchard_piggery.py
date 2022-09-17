@@ -22,6 +22,18 @@ industry = IndustryPrimaryOrganic(
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    prod_cargo_types_with_multipliers=[
+        ("AAPL", 11),
+        ("LVST", 8),
+    ],
+    locate_in_specific_biomes=[
+        "far_far_west",
+        "moors_and_levels",
+        "valleys_and_marches",
+    ],
+)
 
 industry.add_tile(
     id="orchard_piggery_tile_1",

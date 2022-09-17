@@ -27,6 +27,9 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "BASIC_ARCTIC",
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
 
 industry.add_tile(
     id="sawmill_tile_1",

@@ -1,6 +1,6 @@
 registered_industries = []
 # keep these alphabetised for ease of maintaining
-
+from industries import ammonia_plant
 from industries import arable_farm
 from industries import assembly_plant
 from industries import basic_oxygen_furnace
@@ -29,6 +29,11 @@ from industries import dredging_site
 from industries import electric_arc_furnace
 from industries import engine_plant
 from industries import farm
+from industries import factory_1
+from industries import factory_3
+from industries import farm
+from industries import feed_mill
+from industries import fertiliser_plant
 from industries import flour_mill
 from industries import fish_farm
 from industries import fishing_grounds
@@ -53,12 +58,16 @@ from industries import manganese_mine
 from industries import metal_workshop
 from industries import nitrate_mine
 from industries import oil_wells
+from industries import nuclear_power_plant
+from industries import oil_wells
+from industries import oil_refinery
 from industries import oil_rig
 from industries import orchard_piggery
 from industries import paper_mill
 from industries import peatlands
 from industries import petrol_pump
 from industries import phosphate_mine
+from industries import phosphoric_acid_plant
 from industries import plaza
 from industries import port
 from industries import power_plant
@@ -73,12 +82,14 @@ from industries import sawmill
 from industries import scrap_yard
 from industries import pipework_fabricator
 from industries import pipe_mill
+from industries import sheep_farm
 from industries import slag_grinding_plant
 from industries import soda_ash_mine
 from industries import stockyard
 from industries import strip_mill
 from industries import supply_yard
 from industries import timber_yard
+from industries import tinplate_works
 from industries import trading_post
 from industries import tyre_plant
 from industries import vehicle_distributor
@@ -86,7 +97,9 @@ from industries import vineyard
 from industries import wharf
 from industries import wire_rope_factory
 from industries import wire_rod_mill
+from industries import zinc_smelter
 
+ammonia_plant.industry.register()
 arable_farm.industry.register()
 assembly_plant.industry.register()
 basic_oxygen_furnace.industry.register()
@@ -114,7 +127,11 @@ diamond_mine.industry.register()
 dredging_site.industry.register()
 electric_arc_furnace.industry.register()
 engine_plant.industry.register()
+factory_1.industry.register()
+factory_3.industry.register()
 farm.industry.register()
+#feed_mill.industry.register()
+fertiliser_plant.industry.register()
 flour_mill.industry.register()
 fish_farm.industry.register()
 fishing_grounds.industry.register()
@@ -138,13 +155,16 @@ machine_shop.industry.register()
 manganese_mine.industry.register()
 metal_workshop.industry.register()
 nitrate_mine.industry.register()
+nuclear_power_plant.industry.register()
 oil_wells.industry.register()
+oil_refinery.industry.register()
 oil_rig.industry.register()
 orchard_piggery.industry.register()
 paper_mill.industry.register()
 peatlands.industry.register()
 petrol_pump.industry.register()
 phosphate_mine.industry.register()
+phosphoric_acid_plant.industry.register()
 pipework_fabricator.industry.register()
 pipe_mill.industry.register()
 plaza.industry.register()
@@ -159,16 +179,19 @@ ranch.industry.register()
 rubber_plantation.industry.register()
 sawmill.industry.register()
 scrap_yard.industry.register()
+sheep_farm.industry.register()
 slag_grinding_plant.industry.register()
 soda_ash_mine.industry.register()
 stockyard.industry.register()
 strip_mill.industry.register()
 supply_yard.industry.register()
 timber_yard.industry.register()
+tinplate_works.industry.register()
 trading_post.industry.register()
 tyre_plant.industry.register()
 vehicle_distributor.industry.register()
 vineyard.industry.register()
 wharf.industry.register()
+#zinc_smelter.industry.register()
 wire_rope_factory.industry.register()
 wire_rod_mill.industry.register()

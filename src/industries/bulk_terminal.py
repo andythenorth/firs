@@ -28,6 +28,20 @@ industry.enable_in_economy(
         ("FMSP", 12),
     ],
 )
+# ['IN_A_HOT_COUNTRY'].accept_cargo_types = ['MNO2', 'FECR', 'RUBR']
+# ['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('FORM', 12)]
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    prod_cargo_types_with_multipliers=[
+        ("IORE", 19),
+        ("SALT", 16),
+        ("TIN_", 16),
+    ],
+    locate_in_specific_biomes=[
+        "severnside",
+    ],
+)
+
 industry.enable_in_economy(
     "STEELTOWN",
     # quite a lot of accepted types, this is intentional to provide flexibility in obtaining boost

@@ -30,6 +30,12 @@ industry.enable_in_economy(
     "STEELTOWN",
     prob_in_game="0",  # do not build during gameplay
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    locate_in_specific_biomes=[
+        "severnside",
+    ],
+)
 
 industry.add_tile(
     id="slag_grinding_plant_tile_1",

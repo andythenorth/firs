@@ -18,7 +18,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_REFINERY)",
 )
 
-# industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+# ['IN_A_HOT_COUNTRY'].enabled = True
 
 industry.add_tile(
     id="fischer_tropsch_plant_tile_1",

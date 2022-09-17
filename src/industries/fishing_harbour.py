@@ -35,8 +35,16 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "BASIC_ARCTIC",
 )
-
 # ['IN_A_HOT_COUNTRY'].enabled = True
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    locate_in_specific_biomes=[
+        "far_far_west",
+        "moors_and_levels",
+        "valleys_and_marches",
+        "fake_cumbria",
+    ],
+)
 
 industry.add_tile(
     id="fishing_harbour_tile_1",

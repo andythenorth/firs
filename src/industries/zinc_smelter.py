@@ -14,12 +14,6 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="19",
     location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[
-            [
-                "wharf",
-            ],  # assumes zinc ore from wharf in MMW
-            56,
-        ],
         same_type_distance=100,
     ),
     special_flags=["IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE"],
@@ -27,6 +21,13 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_SMELTER)",
     fund_cost_multiplier="120",
     pollution_and_squalor_factor=2,
+)
+
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    locate_in_specific_biomes=[
+        "severnside",
+    ],
 )
 
 industry.add_tile(

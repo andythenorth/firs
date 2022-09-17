@@ -31,6 +31,20 @@ industry.enable_in_economy(
     ],
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("KAOL", 2),
+        ("PULP", 2),
+        ("WOOD", 2),
+        ("PACH", 2),
+    ],
+    locate_in_specific_biomes=[
+        "fake_cumbria",
+        "severnside",
+    ],
+)
+
 industry.add_tile(
     id="paper_mill_tile_1",
     animation_length=7,

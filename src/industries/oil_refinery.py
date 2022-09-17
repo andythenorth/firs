@@ -19,6 +19,13 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_REFINERY)",
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    locate_in_specific_biomes=[
+        "severnside",
+    ],
+)
+
 industry.add_tile(
     id="oil_refinery_tile_1",
     location_checks=TileLocationChecks(

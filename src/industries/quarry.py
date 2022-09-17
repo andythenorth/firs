@@ -32,6 +32,17 @@ industry.enable_in_economy(
         ("GRVL", 14),
     ],
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    prod_cargo_types_with_multipliers=[
+        ("LIME", 16),
+    ],
+    locate_in_specific_biomes=[
+        "moors_and_levels",
+        "valleys_and_marches",
+        "fake_cumbria",
+    ],
+)
 
 # 2 tiles for this industry: pit outer tile cannot be on slopes; pit inner tiles and processor tiles can be
 # cases for both tiles ensure that tiles can only be built at same height as north tile

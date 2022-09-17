@@ -9,7 +9,7 @@ cargo = Cargo(
     weight="0.65",
     is_freight="1",
     cargo_classes="bitmask(CC_EXPRESS, CC_PIECE_GOODS)",
-    cargo_label="MNSP",  # MNSP label preserved in FIRS v3 for backwards compatibility, may remove in v4
+    cargo_label="PACK",
     # apart from TOWNGROWTH_PASSENGERS and TOWNGROWTH_MAIL, FIRS does not set any town growth effects; this has the intended effect of disabling food / water requirements for towns in desert and above snowline
     town_growth_effect="TOWNGROWTH_NONE",
     town_growth_multiplier="1.0",
@@ -17,7 +17,7 @@ cargo = Cargo(
     items_of_cargo="string(STR_CARGO_UNIT_PACKAGING)",
     penalty_lowerbound="16",
     single_penalty_length="120",
-    price_factor=131,
+    price_factor=144,
     capacity_multiplier="1",
     icon_indices=(7, 1),
     sprites_complete=False,

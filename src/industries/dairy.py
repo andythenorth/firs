@@ -26,6 +26,14 @@ industry.enable_in_economy(
         ("MILK", 6),
     ],
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("MILK", 5),
+        ("PACK", 2),
+        ("ENUM", 1),
+    ],
+)
 
 # tile with animation for flag
 industry.add_tile(

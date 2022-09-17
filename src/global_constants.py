@@ -1,12 +1,17 @@
 # Definition of numeric IDs for industries
+# 127 is last ID to be used (128 industry limit, zero-based)
+# see also why 128 is a hard limit as of 2020 http://webster.openttdcoop.org/?channel=openttd&date=1586563200#1586641232
+# if 128 is hit, will have to manually assign IDs per economy
+# possibly auto-assignment, but non-alphabetised and with a placeholder option for removals, i.e. a system of 64 slots, and slots are occupied or not
+# a pure alphabetised list for auto-IDs will constantly wreck savegames, does that matter?
 industry_numeric_ids = dict(
     coal_mine=0,
-    plaza=1,
-    ####UNUSED?####steel_mill = 2,
+    plaza = 1,
+    aluminium_plant = 2,
     cryo_plant=3,
     iron_ore_mine=4,
     peatlands=5,
-    ####UNUSED?####smithy_forge = 6,
+    nuclear_power_plant = 6,
     blast_furnace=7,
     basic_oxygen_furnace=8,
     metal_workshop=9,
@@ -17,7 +22,7 @@ industry_numeric_ids = dict(
     phosphate_mine=14,
     oil_wells=15,
     oil_rig=16,
-    ###BLTC###oil_refinery = 17,
+    oil_refinery=17,
     ###BLTC###plastics_plant = 18,
     fish_farm=19,
     dredging_site=20,
@@ -27,7 +32,7 @@ industry_numeric_ids = dict(
     ####UNUSED?####recycling_depot = 24,
     scrap_yard=25,
     arable_farm=26,
-    ####UNUSED?####sheep_farm = 27,
+    sheep_farm=27,
     dairy_farm=28,
     farm=29,
     fruit_plantation=30,
@@ -40,7 +45,7 @@ industry_numeric_ids = dict(
     stockyard=37,
     machine_shop=38,
     port=39,
-    ###BLTC###ammonia_plant = 40,
+    ammonia_plant = 40,
     timber_yard=41,
     ###BLTC###textile_mill = 42,
     vineyard=43,
@@ -97,18 +102,18 @@ industry_numeric_ids = dict(
     integrated_steel_mill=94,
     section_mill=95,
     body_plant=96,
-    ###BLTC###tinplate_works = 97,
-    cider_mill=98,
+    tinplate_works = 97,
+    cider_mill = 98,
     lime_kiln=99,
-    ###BLTC###factory_1 = 100,
+    factory_1 = 100,
     ###BLTC###factory_2 = 101,
-    ###BLTC###factory_3 = 102,
+    factory_3 = 102,
     pipe_mill=103,
     ###BLTC###solvay_plant = 104,
     ###BLTC###salt_mine = 105,
-    ###BLTC###fertiliser_plant = 106,
-    ###BLTC###civil_explosives_facility = 107,
-    ###BLTC###phosphoric_acid_plant = 108,
+    fertiliser_plant = 106,
+    civil_explosives_facility = 107,
+    phosphoric_acid_plant = 108,
     ###BLTC###sulphuric_acid_plant = 109,
     ###BLTC###polypropylene_plant = 110,
     ###BLTC###polyethylene_plant = 111,
@@ -120,16 +125,16 @@ industry_numeric_ids = dict(
     pipework_fabricator=117,
     wire_rope_factory=118,
     concrete_plant=119,
+    zinc_smelter = 120,
+    feed_mill = 121,
 )
-# 127 is last ID to be used (128 industry limit, zero-based)
-# see also why 128 is a hard limit as of 2020 http://webster.openttdcoop.org/?channel=openttd&date=1586563200#1586641232
-# if 128 is hit, will have to manually assign IDs per economy
-# possibly auto-assignment, but non-alphabetised and with a placeholder option for removals, i.e. a system of 64 slots, and slots are occupied or not
-# a pure alphabetised list for auto-IDs will constantly wreck savegames, does that matter?
 
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
 tile_numeric_ids = dict(
+    feed_mill_tile_1=73,
+    nuclear_power_plant_tile_1=74,
+    zinc_smelter_tile_1=75,
     concrete_plant_tile_1=76,
     wire_rope_factory_tile_1=77,
     pipework_fabricator_tile_1=78,

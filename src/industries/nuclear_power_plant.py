@@ -21,6 +21,16 @@ industry = IndustryPrimaryPort(
     fund_cost_multiplier="15",
 )
 
+
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    locate_in_specific_biomes=[
+        "moors_and_levels",
+        "severnside",
+        "fake_cumbria",
+    ],
+)
+
 industry.add_tile(
     id="nuclear_power_plant_tile_1",
     animation_length=7,

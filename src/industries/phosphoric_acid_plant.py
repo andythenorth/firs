@@ -19,6 +19,14 @@ industry = IndustrySecondary(
     fund_cost_multiplier="170",
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    locate_in_specific_biomes=[
+        "severnside",
+        "fake_cumbria",
+    ],
+)
+
 industry.add_tile(
     id="phosphoric_acid_plant_tile_1",
     animation_length=7,

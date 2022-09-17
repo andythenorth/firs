@@ -26,6 +26,14 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    locate_in_specific_biomes=[
+        "moors_and_levels",
+        "fake_cumbria",
+        "valleys_and_marches",
+    ],
+)
 
 industry.add_tile(
     id="forest_tile_1",

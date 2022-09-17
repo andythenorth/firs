@@ -19,7 +19,6 @@ industry = IndustryPrimaryOrganic(
 )
 
 # definitely not in Arctic Basic, farm has been added and removed more than once from that economy :P
-
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     prod_cargo_types_with_multipliers=[
@@ -28,7 +27,6 @@ industry.enable_in_economy(
     ],
     prob_map_gen="14",
 )
-
 # ['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('MAIZ', 14), ('LVST', 13), ('NUTS', 14), ('WOOL', 10),]
 
 industry.enable_in_economy(
@@ -38,6 +36,20 @@ industry.enable_in_economy(
     ],
     prob_map_gen="15",  # intended to be relatively prevalent in Steeltown, split this per economy if needed
 )
+
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    prod_cargo_types_with_multipliers=[
+        ("GRAI", 14),
+        ("LVST", 13),
+    ],
+    locate_in_specific_biomes=[
+        "moors_and_levels",
+        "severnside",
+        "valleys_and_marches",
+    ],
+)
+
 
 industry.add_tile(
     id="farm_tile_1",

@@ -32,7 +32,6 @@ industry.enable_in_economy(
         ("RFPR", 8),
     ],
 )
-
 industry.enable_in_economy(
     "BASIC_ARCTIC",
     accept_cargos_with_input_ratios=[
@@ -44,6 +43,21 @@ industry.enable_in_economy(
     prod_cargo_types_with_output_ratios=[
         ("FERT", 4),
         ("BOOM", 4),
+    ],
+)
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("SALT", 2),
+        ("NAPH", 2),
+        ("ACAC", 2),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("PLAS", 3),
+        ("CHIM", 2),
+    ],
+    locate_in_specific_biomes=[
+        "severnside",
     ],
 )
 

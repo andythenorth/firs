@@ -23,6 +23,9 @@ industry.enable_in_economy(
     "STEELTOWN",
     prob_map_gen="14",
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
 
 industry.add_tile(
     id="scrap_yard_tile_1",

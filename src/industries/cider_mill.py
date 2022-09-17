@@ -27,6 +27,20 @@ industry.enable_in_economy(
         ("FRUT", 6),
     ],
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("AAPL", 5),
+        ("PACK", 2),
+        ("ENUM", 1),
+    ],
+    locate_in_specific_biomes=[
+        "far_far_west",
+        "moors_and_levels",
+        "valleys_and_marches",
+    ],
+)
+
 
 industry.add_tile(
     id="cider_mill_tile_1",

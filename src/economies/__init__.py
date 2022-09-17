@@ -23,3 +23,7 @@ steeltown.economy.register()
 from economies import in_a_hot_country
 
 in_a_hot_country.economy.register()
+
+from economies import mild_mild_west
+
+mild_mild_west.economy.register()

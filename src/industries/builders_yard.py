@@ -35,6 +35,16 @@ industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     prob_map_gen="14",
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargo_types=[
+        "CMNT",
+        "STSE",
+        "STWR",
+        "WDPR",
+    ],
+)
+
 
 industry.add_tile(
     id="builders_yard_tile_1",

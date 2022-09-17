@@ -49,14 +49,14 @@ class Economy(object):
                     # however be aware that it could produce ping-pong where changes for one economy trigger warnings in another
                     # also the message might cascade as it checks the *adjusted* prices, not the base
                     utils.echo_message(
-                        "Cargo "
-                        + cargo.id
-                        + " has overlapping price_factor with "
-                        + previous_cargo.id
-                        + " in economy "
-                        + self.id
-                        + "; automatically adjusting (this may or not need changing).",
-                        "info",
+                        "Cargo ",
+                        cargo.id,
+                        "has overlapping price_factor with",
+                        previous_cargo.id,
+                        "in economy",
+                        self.id,
+                        "; automatically adjusting (this may or not need changing).",
+                        message_type="info",
                     )
                     result[cargo.id] = result[previous_cargo.id] + 1
                 else:

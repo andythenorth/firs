@@ -16,6 +16,16 @@ industry = IndustryPrimaryOrganic(
     provides_snow=True,
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    locate_in_specific_biomes=[
+        "far_far_west",
+        "moors_and_levels",
+        "valleys_and_marches",
+        "fake_cumbria",
+    ],
+)
+
 industry.add_tile(
     id="sheep_farm_tile_1",
     location_checks=TileLocationChecks(

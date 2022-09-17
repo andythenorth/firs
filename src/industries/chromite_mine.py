@@ -13,7 +13,7 @@ industry = IndustryPrimaryExtractive(
     fund_cost_multiplier="252",
 )
 
-# industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+# ['IN_A_HOT_COUNTRY'].enabled = True
 
 industry.add_tile(
     id="chromite_mine_tile_1",

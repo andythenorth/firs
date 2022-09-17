@@ -18,6 +18,13 @@ industry = IndustrySecondary(
     fund_cost_multiplier="170",
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    locate_in_specific_biomes=[
+        "severnside",
+    ],
+)
+
 industry.add_tile(
     id="feed_mill_tile_1",
     animation_length=7,
