@@ -25,12 +25,6 @@ industry.enable_in_economy(
     "STEELTOWN",
 )
 
-"""
-industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
-industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('FICR', 6), ('SASH', 2)]
-industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('YARN', 8)]
-"""
-
 industry.add_tile(
     id="component_factory_tile_1",
     location_checks=TileLocationChecks(
