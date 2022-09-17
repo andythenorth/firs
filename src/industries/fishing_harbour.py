@@ -36,9 +36,6 @@ industry.enable_in_economy(
     "BASIC_ARCTIC",
 )
 
-###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('FISH', 6), ('MNSP', 1), ('ENUM', 1)]
-
 # ['IN_A_HOT_COUNTRY'].enabled = True
 
 industry.add_tile(

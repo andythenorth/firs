@@ -47,12 +47,6 @@ industry.enable_in_economy(
     ],
 )
 
-# should be Specialty Chemicals Plant, and should also accept ACID??
-# also this should not be forced to be near port in BLTC
-###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('SASH', 1), ('LYE_', 2), ('NH3_', 2), ('CHLO', 2), ('PHAC', 1)]
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_output_ratios = [('SOAP', 4), ('ENUM', 4)]
-
 """
 industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('SULP', 2), ('PHOS', 2), ('NH3_', 2), ('POTA', 2)]

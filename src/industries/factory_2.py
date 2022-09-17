@@ -21,10 +21,6 @@ industry = IndustrySecondary(
     fund_cost_multiplier="95",
 )
 
-industry.enable_in_economy(
-    "BETTER_LIVING_THROUGH_CHEMISTRY",
-)
-
 industry.add_tile(
     id="factory_2_tile_1",
     animation_length=47,

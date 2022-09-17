@@ -23,8 +23,6 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=2,
 )
 
-# industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
-
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     accept_cargos_with_input_ratios=[

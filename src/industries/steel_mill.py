@@ -20,9 +20,6 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=2,
 )
 
-
-# industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
-
 industry.add_tile(
     id="steel_mill_tile_1",
     animation_length=71,

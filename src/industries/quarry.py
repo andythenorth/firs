@@ -15,7 +15,6 @@ industry = IndustryPrimaryExtractive(
     pollution_and_squalor_factor=1,
 )
 
-###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 
 industry.enable_in_economy(
     "STEELTOWN",

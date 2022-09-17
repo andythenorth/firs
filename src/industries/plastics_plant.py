@@ -21,7 +21,6 @@ industry = IndustrySecondary(
     provides_snow=True,
 )
 
-###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 
 industry.add_tile(
     id="plastics_plant_tile_1",

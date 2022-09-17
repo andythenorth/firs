@@ -34,7 +34,6 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "BASIC_ARCTIC",
 )
-###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 
 # ['IN_A_HOT_COUNTRY'].enabled = True
 

@@ -20,9 +20,6 @@ industry = IndustrySecondary(
     provides_snow=True,
 )
 
-# deliberately not in BLTC, requires sugar beet, which is too climate-specific for BLTC
-# industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
-
 industry.add_tile(
     id="sugar_refinery_tile_1",
     animation_length=7,

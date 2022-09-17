@@ -18,7 +18,6 @@ industry = IndustrySecondary(
     fund_cost_multiplier="170",
 )
 
-###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 
 industry.add_tile(
     id="sulphuric_acid_plant_tile_1",

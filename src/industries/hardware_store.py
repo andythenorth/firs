@@ -23,7 +23,6 @@ industry.enable_in_economy(
     accept_cargo_types=["GOOD", "BDMT"],
 )
 
-###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 
 industry.add_tile(
     id="hardware_store_tile_1",

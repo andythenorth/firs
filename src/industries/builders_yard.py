@@ -18,7 +18,6 @@ industry = IndustryTertiary(
     provides_snow=True,
 )
 
-###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 
 industry.enable_in_economy(
     "STEELTOWN",

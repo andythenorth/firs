@@ -33,9 +33,6 @@ industry.enable_in_economy(
     ],
 )
 
-###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('LVST', 6), ('MNSP', 1), ('ENUM', 1)]
-
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     accept_cargos_with_input_ratios=[

@@ -12,9 +12,6 @@ industry = IndustrySecondary(
     fund_cost_multiplier="110",
 )
 
-###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('VEHI', 8), ('PETR', 8)]
-
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     accept_cargos_with_input_ratios=[

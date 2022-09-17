@@ -18,7 +18,6 @@ industry = IndustrySecondary(
     intro_year="1900",
 )
 
-###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 
 industry.add_tile(
     id="polyethylene_plant_tile_1",

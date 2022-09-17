@@ -18,7 +18,6 @@ industry = IndustrySecondary(
     provides_snow=True,
 )
 
-###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 
 industry.add_tile(
     id="furniture_factory_tile_1",

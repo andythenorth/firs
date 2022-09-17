@@ -16,7 +16,6 @@ industry = IndustryPrimaryExtractive(
     fund_cost_multiplier="180",
 )
 
-###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 
 industry.add_tile(
     id="salt_mine_tile_1",

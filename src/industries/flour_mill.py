@@ -23,7 +23,6 @@ industry.economy_variations["BASIC_TROPIC"].accept_cargos_with_input_ratios = [
     ("GRAI", 6)
 ]
 
-###industry.enable_in_economy("BETTER_LIVING_THROUGH_CHEMISTRY")
 
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
