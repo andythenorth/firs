@@ -44,331 +44,241 @@ industry.add_tile(
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDSPRITE_WATER")
 spriteset_ground_empty = industry.add_spriteset(type="empty")
-spriteset_1 = industry.add_spriteset(
+spriteset_concrete = industry.add_spriteset(
     sprites=[(10, 10, 64, 39, -31, -8)],
     always_draw=1,
 )
-spriteset_2 = industry.add_spriteset(
+spriteset_jetty_se_nw = industry.add_spriteset(
     sprites=[(10, 60, 64, 39, -31, -7)],
     always_draw=1,
 )
-spriteset_3 = industry.add_spriteset(sprites=[(80, 60, 64, 39, -31, -7)], always_draw=1)
-spriteset_4 = industry.add_spriteset(
+spriteset_jetty_ne_sw = industry.add_spriteset(sprites=[(80, 60, 64, 39, -31, -7)], always_draw=1)
+spriteset_jetty_slope_nw_se = industry.add_spriteset(
     sprites=[(150, 60, 64, 39, -31, -7)],
 )
-spriteset_5 = industry.add_spriteset(
+spriteset_jetty_slope_ne_sw = industry.add_spriteset(
     sprites=[(220, 60, 64, 39, -31, -7)],
 )
-spriteset_6 = industry.add_spriteset(
+spriteset_jetty_slope_se_nw = industry.add_spriteset(
     sprites=[(290, 60, 64, 39, -31, -7)],
 )
-spriteset_7 = industry.add_spriteset(
+spriteset_jetty_slope_sw_ne = industry.add_spriteset(
     sprites=[(360, 60, 64, 39, -31, -7)],
 )
-spriteset_8 = industry.add_spriteset(sprites=[(80, 10, 64, 39, -31, 0)], zoffset=18)
-spriteset_9 = industry.add_spriteset(
+spriteset_shed = industry.add_spriteset(sprites=[(80, 10, 64, 39, -31, 0)], zoffset=18)
+spriteset_crane_1a = industry.add_spriteset(
     sprites=[(150, 10, 64, 39, -31, 0)],
     yoffset=4,
     zoffset=27,
     yextent=12,
 )
-spriteset_9b = industry.add_spriteset(
+spriteset_crane_1b = industry.add_spriteset(
     sprites=[(150, 10, 64, 39, -31, 0)],
     xoffset=5,
     zoffset=40,
     xextent=11,
 )
-spriteset_10 = industry.add_spriteset(
+spriteset_crane_2 = industry.add_spriteset(
     sprites=[(220, 10, 64, 39, -31, -7)],
     yoffset=4,
     zoffset=27,
     yextent=12,
 )
-spriteset_11 = industry.add_spriteset(
+spriteset_trawler_sw_ne = industry.add_spriteset(
     sprites=[(10, 110, 64, 39, -35, -15)],
 )
-spriteset_12 = industry.add_spriteset(
+spriteset_trawler_ne_sw = industry.add_spriteset(
     sprites=[(80, 110, 64, 39, -31, -14)],
 )
-spriteset_13 = industry.add_spriteset(
+spriteset_trawler_nw_se = industry.add_spriteset(
     sprites=[(150, 110, 64, 39, -31, -8)],
 )
-spriteset_14 = industry.add_spriteset(
+spriteset_trawler_nw_se = industry.add_spriteset(
     sprites=[(220, 110, 64, 39, -27, -12)],
 )
-spriteset_15 = industry.add_spriteset(
+spriteset_ship_ne_sw = industry.add_spriteset(
     sprites=[(290, 110, 64, 39, -15, -11)],
 )
-spriteset_16 = industry.add_spriteset(
+spriteset_ship_nw_se = industry.add_spriteset(
     sprites=[(360, 110, 64, 39, -45, -15)],
 )
-spriteset_17 = industry.add_spriteset(
+spriteset_ramp_rear = industry.add_spriteset(
     sprites=[(440, 110, 64, 74, -31, -26)], always_draw=1
 )
-spriteset_18 = industry.add_spriteset(
+spriteset_ramp_front = industry.add_spriteset(
     sprites=[(510, 110, 64, 74, -31, -42)], always_draw=1
 )
-spriteset_19 = industry.add_spriteset(
+spriteset_empty = industry.add_spriteset(
     sprites=[(360, 10, 64, 39, -31, 0)],
     zoffset=18,
 )
 
-
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_1_2",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_7, spriteset_1, spriteset_19],
-)
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_1_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_1],
-)
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_1_3",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_2, spriteset_3, spriteset_1, spriteset_19],
-)
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_1_4",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_3, spriteset_4, spriteset_1, spriteset_19],
-)
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_1_5",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_5, spriteset_4, spriteset_1, spriteset_19],
-)
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_1_6",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_5, spriteset_2, spriteset_1, spriteset_19],
-)
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_1_7",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_6, spriteset_1, spriteset_19],
-)
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_1_8",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_6, spriteset_7, spriteset_1, spriteset_19],
-)
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_2_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_7, spriteset_1, spriteset_8],
-)
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_2_2",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_1, spriteset_8],
-)
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_2_3",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_2, spriteset_3, spriteset_1, spriteset_8],
-)
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_2_4",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_3, spriteset_4, spriteset_1, spriteset_8],
-)
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_2_5",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_5, spriteset_4, spriteset_1, spriteset_8],
-)
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_2_6",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_5, spriteset_2, spriteset_1, spriteset_8],
-)
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_2_7",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_6, spriteset_1, spriteset_8],
-)
-industry.add_spritelayout(
-    id="fishing_harbour_spritelayout_land_tile_2_8",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
-    building_sprites=[spriteset_6, spriteset_7, spriteset_1, spriteset_8],
-)
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_1",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_2, spriteset_1, spriteset_19],
+    building_sprites=[spriteset_jetty_se_nw, spriteset_concrete, spriteset_empty],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_2",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_3, spriteset_1, spriteset_19],
+    building_sprites=[spriteset_jetty_ne_sw, spriteset_concrete, spriteset_empty],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_11",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_2, spriteset_1, spriteset_8],
+    building_sprites=[spriteset_jetty_se_nw, spriteset_concrete, spriteset_shed],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_12",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_3, spriteset_1, spriteset_8],
+    building_sprites=[spriteset_jetty_ne_sw, spriteset_concrete, spriteset_shed],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_13",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_2, spriteset_3, spriteset_1, spriteset_8],
+    building_sprites=[spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_shed],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_21",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_11],
+    building_sprites=[spriteset_trawler_sw_ne],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_22",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_12],
+    building_sprites=[spriteset_trawler_ne_sw],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_23",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_13],
+    building_sprites=[spriteset_trawler_nw_se],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_24",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_14],
+    building_sprites=[spriteset_trawler_nw_se],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_25",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_14],
+    building_sprites=[spriteset_trawler_nw_se],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_26",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_15],
+    building_sprites=[spriteset_ship_ne_sw],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_27",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_16],
+    building_sprites=[spriteset_ship_nw_se],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_28",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_2, spriteset_3, spriteset_1, spriteset_9],
+    building_sprites=[spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_crane_1a],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_29",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_2, spriteset_3, spriteset_1, spriteset_10],
+    building_sprites=[spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_crane_2],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_30",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_2, spriteset_3, spriteset_1, spriteset_9b],
+    building_sprites=[spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_crane_1b],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_31",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_17],
+    building_sprites=[spriteset_ramp_rear],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_32",
+    tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_18],
+    building_sprites=[spriteset_ramp_front],
 )
-
-slope_switch_1 = industry.add_slope_graphics_switch(
-    "fishing_harbour_slope_switch_1",
-    slope_spritelayout_mapping={
-        0: "fishing_harbour_spritelayout_land_tile_1_1",
-        1: "fishing_harbour_spritelayout_land_tile_1_4",
-        2: "fishing_harbour_spritelayout_land_tile_1_8",
-        3: "fishing_harbour_spritelayout_land_tile_1_2",
-        4: "fishing_harbour_spritelayout_land_tile_1_6",
-        5: "fishing_harbour_spritelayout_land_tile_1_5",
-        6: "fishing_harbour_spritelayout_land_tile_1_7",
-        7: "fishing_harbour_spritelayout_land_tile_1_1",
-        8: "fishing_harbour_spritelayout_land_tile_1_3",
-        9: "fishing_harbour_spritelayout_land_tile_1_4",
-        10: "fishing_harbour_spritelayout_land_tile_1_8",
-        11: "fishing_harbour_spritelayout_land_tile_1_2",
-        12: "fishing_harbour_spritelayout_land_tile_1_6",
-        13: "fishing_harbour_spritelayout_land_tile_1_5",
-        14: "fishing_harbour_spritelayout_land_tile_1_7",
+industry.add_magic_spritelayout(
+    type="harbour_coast_foundations",
+    base_id="port_spritelayout_coast_empty",
+    tile="fishing_harbour_tile_2",
+    config={
+        "ground_sprite": spriteset_ground_empty,  # should alqways be empty for this magic spritelayout
+        "building_sprites": [spriteset_concrete, spriteset_empty],
+        "foundation_sprites": {
+            "ne_sw": spriteset_jetty_ne_sw,
+            "se_nw": spriteset_jetty_se_nw,
+            "slope_nw_se": spriteset_jetty_slope_nw_se,
+            "slope_ne_sw": spriteset_jetty_slope_ne_sw,
+            "slope_se_nw": spriteset_jetty_slope_se_nw,
+            "slope_sw_ne": spriteset_jetty_slope_sw_ne,
+        },
     },
-    default_result="fishing_harbour_spritelayout_land_tile_1_1",
 )
-
-slope_switch_2 = industry.add_slope_graphics_switch(
-    "fishing_harbour_slope_switch_2",
-    slope_spritelayout_mapping={
-        0: "fishing_harbour_spritelayout_land_tile_2_2",
-        1: "fishing_harbour_spritelayout_land_tile_2_4",
-        2: "fishing_harbour_spritelayout_land_tile_2_8",
-        3: "fishing_harbour_spritelayout_land_tile_2_1",
-        4: "fishing_harbour_spritelayout_land_tile_2_6",
-        5: "fishing_harbour_spritelayout_land_tile_2_5",
-        6: "fishing_harbour_spritelayout_land_tile_2_7",
-        7: "fishing_harbour_spritelayout_land_tile_2_2",
-        8: "fishing_harbour_spritelayout_land_tile_2_3",
-        9: "fishing_harbour_spritelayout_land_tile_2_4",
-        10: "fishing_harbour_spritelayout_land_tile_2_8",
-        11: "fishing_harbour_spritelayout_land_tile_2_1",
-        12: "fishing_harbour_spritelayout_land_tile_2_6",
-        13: "fishing_harbour_spritelayout_land_tile_2_5",
-        14: "fishing_harbour_spritelayout_land_tile_2_7",
+industry.add_magic_spritelayout(
+    type="harbour_coast_foundations",
+    base_id="port_spritelayout_coast_shed",
+    tile="fishing_harbour_tile_2",
+    config={
+        "ground_sprite": spriteset_ground_empty,  # should alqways be empty for this magic spritelayout
+        "building_sprites": [spriteset_concrete, spriteset_shed],
+        "foundation_sprites": {
+            "ne_sw": spriteset_jetty_ne_sw,
+            "se_nw": spriteset_jetty_se_nw,
+            "slope_nw_se": spriteset_jetty_slope_nw_se,
+            "slope_ne_sw": spriteset_jetty_slope_ne_sw,
+            "slope_se_nw": spriteset_jetty_slope_se_nw,
+            "slope_sw_ne": spriteset_jetty_slope_sw_ne,
+        },
     },
-    default_result="fishing_harbour_spritelayout_land_tile_2_2",
 )
 
 industry.add_industry_layout(
     id="fishing_harbour_industry_layout_1",
     layout=[
-        (0, 3, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_27"),
-        (0, 4, "fishing_harbour_tile_2", "fishing_harbour_slope_switch_1"),
+        (0, 3, "fishing_harbour_spritelayout_27"),
+        (0, 4, "port_spritelayout_coast_empty"),
         (1, 0, "spritelayout_null_water"),
-        (1, 1, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_11"),
-        (1, 2, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_29"),
-        (1, 3, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_11"),
-        (1, 4, "fishing_harbour_tile_2", "fishing_harbour_slope_switch_2"),
-        (2, 1, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_24"),
-        (2, 2, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_24"),
+        (1, 1, "fishing_harbour_spritelayout_11"),
+        (1, 2, "fishing_harbour_spritelayout_29"),
+        (1, 3, "fishing_harbour_spritelayout_11"),
+        (1, 4, "port_spritelayout_coast_shed"),
+        (2, 1, "fishing_harbour_spritelayout_24"),
+        (2, 2, "fishing_harbour_spritelayout_24"),
     ],
 )
 industry.add_industry_layout(
@@ -377,28 +287,28 @@ industry.add_industry_layout(
         (0, 0, "spritelayout_null_water"),
         (0, 1, "spritelayout_null_water"),
         (0, 2, "spritelayout_null_water"),
-        (1, 0, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_23"),
-        (1, 1, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_23"),
+        (1, 0, "fishing_harbour_spritelayout_23"),
+        (1, 1, "fishing_harbour_spritelayout_23"),
         (1, 255, "spritelayout_null_water"),
-        (2, 0, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_30"),
-        (2, 1, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_12"),
-        (2, 2, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_21"),
+        (2, 0, "fishing_harbour_spritelayout_30"),
+        (2, 1, "fishing_harbour_spritelayout_12"),
+        (2, 2, "fishing_harbour_spritelayout_21"),
         (2, 255, "spritelayout_null_water"),
-        (3, 1, "fishing_harbour_tile_2", "fishing_harbour_slope_switch_2"),
-        (3, 2, "fishing_harbour_tile_2", "fishing_harbour_slope_switch_1"),
+        (3, 1, "port_spritelayout_coast_shed"),
+        (3, 2, "port_spritelayout_coast_empty"),
     ],
 )
 industry.add_industry_layout(
     id="fishing_harbour_industry_layout_3",
     layout=[
-        (0, 0, "fishing_harbour_tile_2", "fishing_harbour_slope_switch_2"),
-        (0, 1, "fishing_harbour_tile_2", "fishing_harbour_slope_switch_2"),
-        (0, 2, "fishing_harbour_tile_2", "fishing_harbour_slope_switch_2"),
-        (1, 0, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_24"),
-        (1, 2, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_2"),
-        (2, 1, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_26"),
-        (2, 2, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_28"),
-        (2, 3, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_22"),
+        (0, 0, "port_spritelayout_coast_shed"),
+        (0, 1, "port_spritelayout_coast_shed"),
+        (0, 2, "port_spritelayout_coast_shed"),
+        (1, 0, "fishing_harbour_spritelayout_24"),
+        (1, 2, "fishing_harbour_spritelayout_2"),
+        (2, 1, "fishing_harbour_spritelayout_26"),
+        (2, 2, "fishing_harbour_spritelayout_28"),
+        (2, 3, "fishing_harbour_spritelayout_22"),
         (2, 4, "spritelayout_null_water"),
         (3, 2, "spritelayout_null_water"),
         (3, 3, "spritelayout_null_water"),
@@ -407,16 +317,16 @@ industry.add_industry_layout(
 industry.add_industry_layout(
     id="fishing_harbour_industry_layout_4",
     layout=[
-        (0, 0, "fishing_harbour_tile_2", "fishing_harbour_slope_switch_2"),
-        (0, 1, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_11"),
-        (0, 2, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_1"),
-        (0, 3, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_1"),
-        (0, 4, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_28"),
+        (0, 0, "port_spritelayout_coast_shed"),
+        (0, 1, "fishing_harbour_spritelayout_11"),
+        (0, 2, "fishing_harbour_spritelayout_1"),
+        (0, 3, "fishing_harbour_spritelayout_1"),
+        (0, 4, "fishing_harbour_spritelayout_28"),
         (0, 5, "spritelayout_null_water"),
-        (1, 0, "fishing_harbour_tile_2", "fishing_harbour_slope_switch_1"),
-        (1, 1, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_31"),
-        (1, 2, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_32"),
-        (1, 4, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_25"),
+        (1, 0, "port_spritelayout_coast_empty"),
+        (1, 1, "fishing_harbour_spritelayout_31"),
+        (1, 2, "fishing_harbour_spritelayout_32"),
+        (1, 4, "fishing_harbour_spritelayout_25"),
         (1, 5, "spritelayout_null_water"),
         (2, 3, "spritelayout_null_water"),
         (2, 4, "spritelayout_null_water"),
@@ -426,21 +336,21 @@ industry.add_industry_layout(
 industry.add_industry_layout(
     id="fishing_harbour_industry_layout_5",
     layout=[
-        (0, 0, "fishing_harbour_tile_2", "fishing_harbour_slope_switch_1"),
-        (1, 0, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_land_tile_1_3"),
+        (0, 0, "port_spritelayout_coast_empty"),
+        (1, 0, "fishing_harbour_spritelayout_28"),
         (1, 2, "spritelayout_null_water"),
-        (2, 0, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_land_tile_1_3"),
-        (2, 1, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_31"),
-        (2, 2, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_32"),
+        (2, 0, "fishing_harbour_spritelayout_2"),
+        (2, 1, "fishing_harbour_spritelayout_31"),
+        (2, 2, "fishing_harbour_spritelayout_32"),
         (2, 3, "spritelayout_null_water"),
-        (3, 0, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_30"),
-        (3, 1, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_13"),
-        (3, 2, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_13"),
+        (3, 0, "fishing_harbour_spritelayout_30"),
+        (3, 1, "fishing_harbour_spritelayout_13"),
+        (3, 2, "fishing_harbour_spritelayout_13"),
         (3, 3, "spritelayout_null_water"),
         (4, 255, "spritelayout_null_water"),
-        (4, 0, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_24"),
-        (4, 1, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_24"),
-        (4, 2, "fishing_harbour_tile_1", "fishing_harbour_spritelayout_24"),
+        (4, 0, "fishing_harbour_spritelayout_24"),
+        (4, 1, "fishing_harbour_spritelayout_24"),
+        (4, 2, "fishing_harbour_spritelayout_24"),
         (4, 3, "spritelayout_null_water"),
         (5, 255, "spritelayout_null_water"),
         (5, 0, "spritelayout_null_water"),
