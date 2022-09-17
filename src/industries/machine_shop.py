@@ -12,6 +12,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="145",
     intro_year=1790,
     graphics_change_dates=[1920, 1945, 1970, 1990, 2010],
+    provides_snow=True,
 )
 
 

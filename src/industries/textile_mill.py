@@ -11,6 +11,7 @@ industry = IndustrySecondary(
     name="string(STR_IND_TEXTILE_MILL)",
     nearby_station_name="string(STR_STATION_WEAVE_AND_DYE)",
     fund_cost_multiplier="120",
+    provides_snow=True,
 )
 
 

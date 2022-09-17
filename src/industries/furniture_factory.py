@@ -10,6 +10,7 @@ industry = IndustrySecondary(
     name="string(STR_IND_FURNITURE_FACTORY)",
     nearby_station_name="string(STR_STATION_JOINERS_SHOP)",
     fund_cost_multiplier="95",
+    provides_snow=True,
 )
 
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True

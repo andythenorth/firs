@@ -12,6 +12,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_FURNACE)",
     fund_cost_multiplier="69",
     expiry_year=1901,
+    provides_snow=True,
 )
 
 

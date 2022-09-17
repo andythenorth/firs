@@ -15,6 +15,7 @@ industry = IndustryTownProducerPopulationDependent(
     nearby_station_name="string(STR_STATION_TOWN_2)",
     fund_cost_multiplier="118",
     intro_year=1978,
+    provides_snow=True,
 )
 
 

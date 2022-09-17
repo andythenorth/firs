@@ -11,6 +11,7 @@ industry = IndustryPrimaryOrganic(
     name="string(STR_IND_SHEEPFARM)",
     nearby_station_name="string(STR_STATION_SHEEP_FOLD)",
     fund_cost_multiplier="45",
+    provides_snow=True,
 )
 
 

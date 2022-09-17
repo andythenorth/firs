@@ -15,6 +15,7 @@ industry = IndustryTertiary(
     name="string(STR_IND_HARDWARE_STORE)",
     nearby_station_name="string(STR_STATION_TOWN_1)",
     fund_cost_multiplier="15",
+    provides_snow=True,
 )
 
 industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True

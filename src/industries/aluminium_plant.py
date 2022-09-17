@@ -12,6 +12,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_SMELTER)",
     fund_cost_multiplier="200",
     graphics_change_dates=[1942, 1980],
+    provides_snow=True,
 )
 
 # industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True

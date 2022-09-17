@@ -13,6 +13,7 @@ industry = IndustryTertiary(
     name="string(STR_IND_BUILDERS_YARD)",
     nearby_station_name="string(STR_STATION_MERCHANTS_LANE)",
     fund_cost_multiplier="16",
+    provides_snow=True,
 )
 
 ###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True

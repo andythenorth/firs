@@ -13,6 +13,7 @@ industry = IndustryTertiary(
     name="string(STR_IND_VEHICLE_DISTRIBUTOR)",
     nearby_station_name="string(STR_STATION_VEHICLE_DISTRIBUTOR)",
     fund_cost_multiplier="8",
+    provides_snow=True,
 )
 
 industry.economy_variations["STEELTOWN"].enabled = True

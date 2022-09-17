@@ -12,6 +12,7 @@ industry = IndustrySecondary(
     name="string(STR_IND_SUGAR_REFINERY)",
     nearby_station_name="string(STR_STATION_SUGAR_COMPANY)",
     fund_cost_multiplier="140",
+    provides_snow=True,
 )
 
 # deliberately not in BLTC, requires sugar beet, which is too climate-specific for BLTC

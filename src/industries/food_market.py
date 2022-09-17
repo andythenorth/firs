@@ -15,6 +15,7 @@ industry = IndustryTertiary(
     name="string(STR_IND_FOOD_MARKET)",
     nearby_station_name="string(STR_STATION_TOWN_3)",
     fund_cost_multiplier="15",
+    provides_snow=True,
 )
 
 industry.add_tile(
