@@ -28,6 +28,7 @@ ammonia.cargo.register()
 
 """
 from cargos import bauxite
+
 bauxite.cargo.register()
 """
 
@@ -67,8 +68,9 @@ from cargos import chlorine
 
 chlorine.cargo.register()
 
-"""
+""" IAHC
 from cargos import chromite_ore
+
 chromite_ore.cargo.register()
 """
 
@@ -100,8 +102,9 @@ from cargos import copper
 
 copper.cargo.register()
 
-"""
+""" IAHC
 from cargos import copper_concentrate
+
 copper_concentrate.cargo.register()
 """
 
@@ -124,11 +127,6 @@ electrical_parts.cargo.register()
 from cargos import engineering_supplies
 
 engineering_supplies.cargo.register()
-
-""" BLTC
-from cargos import ethylene
-ethylene.cargo.register()
-"""
 
 from cargos import explosives
 
@@ -161,17 +159,13 @@ food_additives.cargo.register()
 
 """ IAHC
 from cargos import formic_acid
+
 formic_acid.cargo.register()
 """
 
 from cargos import fruits
 
 fruits.cargo.register()
-
-""" BLTC
-from cargos import furniture
-furniture.cargo.register()
-"""
 
 from cargos import glass
 
@@ -227,11 +221,6 @@ from cargos import manganese
 manganese.cargo.register()
 
 """
-from cargos import metal
-metal.cargo.register()
-"""
-
-""" BLTC
 from cargos import methanol
 methanol.cargo.register()
 """
@@ -309,11 +298,6 @@ from cargos import pipe
 
 pipe.cargo.register()
 
-""" BLTC
-from cargos import plant_fibres
-plant_fibres.cargo.register()
-"""
-
 from cargos import plastics
 
 plastics.cargo.register()
@@ -321,11 +305,6 @@ plastics.cargo.register()
 from cargos import potash
 
 potash.cargo.register()
-
-""" BLTC
-from cargos import propylene
-propylene.cargo.register()
-"""
 
 from cargos import pyrite_ore
 
@@ -335,7 +314,7 @@ from cargos import quicklime
 
 quicklime.cargo.register()
 
-"""
+""" IAHC
 from cargos import raw_latex
 raw_latex.cargo.register()
 """
@@ -343,11 +322,6 @@ raw_latex.cargo.register()
 """
 from cargos import recyclables
 recyclables.cargo.register()
-"""
-
-"""
-from cargos import rebar
-rebar.cargo.register()
 """
 
 from cargos import rubber
@@ -407,16 +381,6 @@ from cargos import sulphuric_acid
 sulphuric_acid.cargo.register()
 """
 
-"""
-from cargos import sugar_beet
-sugar_beet.cargo.register()
-"""
-
-""" BLTC
-from cargos import textiles
-textiles.cargo.register()
-"""
-
 from cargos import timber
 
 timber.cargo.register()
@@ -434,11 +398,6 @@ tinplate.cargo.register()
 from cargos import tyres
 
 tyres.cargo.register()
-
-""" BLTC
-from cargos import urea
-urea.cargo.register()
-"""
 
 from cargos import vehicle_bodies
 
