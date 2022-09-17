@@ -26,11 +26,6 @@ from cargos import ammonia
 
 ammonia.cargo.register()
 
-""" BLTC
-from cargos import ammonium_nitrate
-ammonium_nitrate.cargo.register()
-"""
-
 """
 from cargos import bauxite
 bauxite.cargo.register()
