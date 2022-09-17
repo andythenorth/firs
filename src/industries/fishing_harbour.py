@@ -52,7 +52,9 @@ spriteset_jetty_se_nw = industry.add_spriteset(
     sprites=[(10, 60, 64, 39, -31, -7)],
     always_draw=1,
 )
-spriteset_jetty_ne_sw = industry.add_spriteset(sprites=[(80, 60, 64, 39, -31, -7)], always_draw=1)
+spriteset_jetty_ne_sw = industry.add_spriteset(
+    sprites=[(80, 60, 64, 39, -31, -7)], always_draw=1
+)
 spriteset_jetty_slope_nw_se = industry.add_spriteset(
     sprites=[(150, 60, 64, 39, -31, -7)],
 )
@@ -146,7 +148,12 @@ industry.add_spritelayout(
     tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_shed],
+    building_sprites=[
+        spriteset_jetty_se_nw,
+        spriteset_jetty_ne_sw,
+        spriteset_concrete,
+        spriteset_shed,
+    ],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_21",
@@ -202,21 +209,36 @@ industry.add_spritelayout(
     tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_crane_1a],
+    building_sprites=[
+        spriteset_jetty_se_nw,
+        spriteset_jetty_ne_sw,
+        spriteset_concrete,
+        spriteset_crane_1a,
+    ],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_29",
     tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_crane_2],
+    building_sprites=[
+        spriteset_jetty_se_nw,
+        spriteset_jetty_ne_sw,
+        spriteset_concrete,
+        spriteset_crane_2,
+    ],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_30",
     tile="fishing_harbour_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground,
-    building_sprites=[spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_crane_1b],
+    building_sprites=[
+        spriteset_jetty_se_nw,
+        spriteset_jetty_ne_sw,
+        spriteset_concrete,
+        spriteset_crane_1b,
+    ],
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_31",
