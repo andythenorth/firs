@@ -24,8 +24,14 @@ def copy_docs_from_current_project():
     common_parent_path = os.path.dirname(os.path.dirname(os.path.abspath(currentdir)))
     grf_farm_path = os.path.join(common_parent_path, "grf.farm", "src", project_name)
 
+    if len(sys.argv) > 2:
+        if sys.argv[2] == "--nested-docs-by-grf":
+            optional_nested_dir_name = project_name
+        else:
+            optional_nested_dir_name = ''
+
     shutil.copytree(
-        os.path.join(currentdir, "docs"), os.path.join(currentdir, tag_name)
+        os.path.join(currentdir, "docs", optional_nested_dir_name), os.path.join(currentdir, tag_name)
     )
     try:
         shutil.move(os.path.join(currentdir, tag_name), grf_farm_path)
