@@ -1369,6 +1369,7 @@ class Industry(object):
         self.location_checks = IndustryLocationChecks(
             self, kwargs.get("location_checks", {})
         )
+        self.provides_snow = kwargs.get("provides_snow", False)
 
     def register(self):
         if (
@@ -1481,8 +1482,12 @@ class Industry(object):
         return result
 
     def get_graphics_file_path(
-        self, date_variation_num=None, terrain="", construction_state_num=None
+        self, date_variation_num=None, terrain=None, construction_state_num=None
     ):
+        if terrain == 'snow' and self.provides_snow:
+            terrain_suffix = '_snow'
+        else:
+            terrain_suffix = ''
         # don't use os.path.join here, this returns a string for use by nml
         if construction_state_num != None:
             return (
@@ -1498,7 +1503,7 @@ class Industry(object):
                 + self.id
                 + "_"
                 + str(date_variation_num + 1)
-                + terrain
+                + terrain_suffix
                 + '.png"'
             )
 
