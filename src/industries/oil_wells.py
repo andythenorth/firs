@@ -30,7 +30,7 @@ industry.add_tile(
     animation_looping=True,
     animation_speed=3,
     special_flags=["INDTILE_FLAG_RANDOM_ANIMATION"],
-    random_trigger="oil_wells_tile_1_anim_control",
+    random_trigger="oil_wells_tile_1_industry_anim_control",
     custom_animation_next_frame="oil_wells_tile_1_anim_next_frame",
     custom_animation_control={
         "macro": "oil_wells",

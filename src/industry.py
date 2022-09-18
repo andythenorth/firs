@@ -6,7 +6,7 @@
 """
 
 from collections import deque
-
+import copy
 import os.path
 
 currentdir = os.curdir
@@ -482,6 +482,11 @@ class SpriteLayout(object):
         # optionally spritelayouts can cause objects to be defined
         self.add_to_object_num = add_to_object_num
 
+    def resolve_tile(self, industry):
+        for tile in industry.tiles:
+            if tile.id == self.tile:
+                return tile
+
 
 class MagicSpritelayoutSlopeAwareTrees(object):
     """Occasionally we need magic.  If we're going magic, let's go full on magic.  This one makes 4 climate-aware trees on a slope-aware ground tile"""
@@ -804,6 +809,7 @@ class GRFObject(object):
         self.id = f"{industry.id}_object_{add_to_object_num:02}"
         self.add_to_object_num = add_to_object_num
         self.views = []
+        self.industry = industry
 
     def add_view(self, spritelayout):
         self.views.append(spritelayout)
@@ -821,6 +827,38 @@ class GRFObject(object):
             raise BaseException(
                 self.id, "has too many views defined"
             )  # yair could do better?
+
+    @property
+    def tile(self):
+        # all views in the object must resolve to one and only one industry tile
+        # we use this for certain object properties / callbacks (such as animation, and possibly location checks)
+        # check for mismatched tiles
+        found_tiles = []
+        for view in self.views:
+            for x, y, spritelayout in view:
+                found_tiles.append(spritelayout.resolve_tile(self.industry))
+        if len(set(found_tiles)) != 1:
+            raise BaseException(self.id, "tiles don't match:", found_tiles)
+        else:
+            # we have one and only one tile
+            return found_tiles[0]
+
+    @property
+    def animation_triggers(self):
+        # object animation triggers don't match industry tile triggers, so remap
+        result = []
+        trigger_remap = {
+            "ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE": "ANIM_TRIGGER_OBJ_BUILT",
+            "ANIM_TRIGGER_INDTILE_TILE_LOOP": "ANIM_TRIGGER_OBJ_TILELOOP",
+        }
+        # split off some nml formatting to get the raw list
+        triggers = self.tile.animation_triggers.split("bitmask(")[1].split(")")[0].split(",")
+        # triggers from tile might be empty, strip those
+        triggers = [i for i in triggers if i != '']
+        # this is expected to error if the trigger isn't found, it only mapped the triggers in use as of September 2022, not all possible triggers
+        for trigger in triggers:
+            result.append(trigger_remap[trigger])
+        return "bitmask(" + ",".join(result) + ")"
 
     @property
     def size(self):
@@ -1023,7 +1061,11 @@ class IndustryLayout(object):
                 if tile == None:
                     tile = self.industry.magic_spritelayout_tile_ids[layout_def[2]]
                 if tile == None:
-                    raise BaseException(self.id + " - no spritelayout found matching id given by " + str(layout_def))
+                    raise BaseException(
+                        self.id
+                        + " - no spritelayout found matching id given by "
+                        + str(layout_def)
+                    )
                 else:
                     # redefine the layout def
                     layout_def = (
@@ -1544,10 +1586,10 @@ class Industry(object):
     def get_graphics_file_path(
         self, date_variation_num=None, terrain=None, construction_state_num=None
     ):
-        if terrain == 'snow' and self.provides_snow:
-            terrain_suffix = '_snow'
+        if terrain == "snow" and self.provides_snow:
+            terrain_suffix = "_snow"
         else:
-            terrain_suffix = ''
+            terrain_suffix = ""
         # don't use os.path.join here, this returns a string for use by nml
         if construction_state_num != None:
             return (
@@ -1898,6 +1940,20 @@ class Industry(object):
         # stub, this should be handled in Industry subclasses
         raise Exception("get_prod_cargo_types called", self.id)
         return []
+
+    def get_animation_macro_config(self, animation_context):
+        if animation_context == 'industry':
+            tiles = self.tiles
+            feature = "FEAT_INDUSTRYTILES"
+        elif animation_context == 'object':
+            all_tiles = []
+            for grf_object in self.objects.values():
+                all_tiles.append(grf_object.tile)
+            tiles = list(set(all_tiles))
+            feature = "FEAT_OBJECTS"
+        else:
+            raise BaseException("Unknown animation_context ", animation_context)
+        return {"tiles": tiles, "feature": feature}
 
     def get_another_industry(self, id):
         return get_another_industry(id)

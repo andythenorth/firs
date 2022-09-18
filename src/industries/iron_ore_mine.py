@@ -218,7 +218,8 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_exit_shed_rear",
-    tile="iron_ore_mine_tile_2",
+    # tile has to match trestle for multi-tile object case
+    tile="iron_ore_mine_tile_3",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_exit_shed_rear],

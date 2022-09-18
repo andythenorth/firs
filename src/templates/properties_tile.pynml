@@ -29,7 +29,7 @@
         		    anim_control: 0;
                 </tal:block>
                 <tal:block condition="tile.custom_animation_control['macro'] != 'first_frame_is_0'">
-        		    anim_control: ${tile.id}_anim_control;
+        		    anim_control: ${tile.id}_industry_anim_control;
                 </tal:block>
     		</tal:anim_control>
             <tal:random_trigger condition="tile.random_trigger is not None">

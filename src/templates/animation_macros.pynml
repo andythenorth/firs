@@ -1,9 +1,12 @@
 <!--! Loop to render animation macro for each tile (if required) -->
 
 <metal:tile_animation metal:define-macro="tile_animation">
-    <tal:block repeat="tile industry.tiles">
-        <tal:conditional_macro_call condition="tile.custom_animation_control is not None"
-                                    metal:use-macro="tile.animation_macros()[tile.custom_animation_control['macro']]" />
+    <tal:block define="animation_macro_config industry.get_animation_macro_config(animation_context);
+                       feature animation_macro_config['feature'];">
+        <tal:tiles repeat="tile animation_macro_config['tiles']">
+            <tal:conditional_macro_call condition="tile.custom_animation_control is not None"
+                                        metal:use-macro="tile.animation_macros()[tile.custom_animation_control['macro']]" />
+        </tal:tiles>
     </tal:block>
 </metal:tile_animation>
 
@@ -28,7 +31,7 @@
         Would save building a silly switch with a value for every frame.
         But is slightly more complex to configure in the python industry definition, so eh.
     -->
-    switch(FEAT_INDUSTRYTILES, SELF, ${tile.id}_anim_control, (extra_callback_info1 % ${tile.animation_length})) {
+    switch(${feature}, SELF, ${tile.id}_${animation_context}_anim_control, (extra_callback_info1 % ${tile.animation_length})) {
         <tal:frames repeat="frame range(tile.animation_length)">
             ${repeat.frame.index}: return ${repeat.frame.index};
         </tal:frames>
@@ -43,7 +46,7 @@
 
 <metal:oil_wells metal:define-macro="oil_wells">
     <!--! random stop/start, dedicated to oil wells, not reuseable eh? -->
-    switch (FEAT_INDUSTRYTILES, SELF, ${tile.id}_stop_anim, animation_frame) {
+    switch (${feature}, SELF, ${tile.id}_${animation_context}_stop_anim, animation_frame) {
         1: return 11; // jump to the 'stop animation cycle' when triggered and currently animated
         2: return 12;
         3: return 13;
@@ -57,7 +60,7 @@
         return CB_RESULT_DO_NOTHING;
     }
 
-    switch (FEAT_INDUSTRYTILES, SELF, ${tile.id}_start_anim, animation_frame) {
+    switch (${feature}, SELF, ${tile.id}_${animation_context}_start_anim, animation_frame) {
         11: return 1;
         12: return 2;
         13: return 3;
@@ -71,12 +74,14 @@
         return CB_RESULT_START_ANIMATION;
     }
 
-    random_switch (FEAT_INDUSTRYTILES, SELF, ${tile.id}_anim_control, bitmask(TRIGGER_INDUSTRYTILE_TILELOOP)) {
-        1: return ${tile.id}_stop_anim;
-        1: return ${tile.id}_start_anim;
+    <!--! !! this won't work with objects, needs the trigger remapped if we want that done - see GRFObject remapping for ideas -->
+    random_switch (${feature}, SELF, ${tile.id}_${animation_context}_anim_control, bitmask(TRIGGER_INDUSTRYTILE_TILELOOP)) {
+        1: return ${tile.id}_${animation_context}_stop_anim;
+        1: return ${tile.id}_${animation_context}_start_anim;
     }
 
-    switch (FEAT_INDUSTRYTILES, SELF, ${tile.custom_animation_next_frame}, animation_frame) {
+    <!--! !! next frame would need to know animation context -->
+    switch (${feature}, SELF, ${tile.custom_animation_next_frame}, animation_frame) {
         10: return 1;
         11: return CB_RESULT_STOP_ANIMATION; // Don't actually stop animation, just keep looping the same frame over and over.
         20: return 11;

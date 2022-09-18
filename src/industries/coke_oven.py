@@ -130,7 +130,8 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_oven_battery_pipes_only",
-    tile="coke_oven_tile_1",
+    # tile id has to match larry car spritelayout for the multiple-view object case
+    tile="coke_oven_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_oven_battery],

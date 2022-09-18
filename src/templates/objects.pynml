@@ -1,183 +1,81 @@
 <tal:industries repeat="industry registered_industries">
+
+    <tal:include metal:use-macro="load: spritelayouts_object.pynml" />
+
+    <!--! the 'tiles' for all objects for the industry are resolved to a single set, and a shared set of animation switches provided -->
+    <tal:include define="animation_context 'object';
+                         animation_macros load: animation_macros.pynml"
+                 metal:use-macro="animation_macros.macros['tile_animation']" />
+
     <!--! grf_object not object in case it conflicts with python 'object' at any point (might not, but who wants to test that? -->
     <tal:objects repeat="grf_object industry.objects.values()">
         <tal:view repeat="view grf_object.views">
-            <tal:spritelayouts repeat="x_y_spritelayout view">
-                <tal:spritelayout define="spritelayout x_y_spritelayout[2]">
-                    spritelayout ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index} {
-                        <tal:ground_sprite switch="spritelayout.terrain_aware_ground">
-                            <tal:case_terrain case="True">
-                                <!--! ground sprite from terrain -->
-                                ground {
-                                    sprite: (LOAD_TEMP(${graphics_temp_storage.var_terrain_sprite}));
-                                }
-                            </tal:case_terrain>
-                            <tal:case_industry case="False">
-                                <!--! explicit ground sprite from industry, if not empty -->
-                                <tal:not_empty condition="getattr(spritelayout.ground_sprite, 'type', None) != 'empty'">
-                                    childsprite {
-                                        sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
-                                        hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
-                                        always_draw: 1;
-                                    }
-                                    <!--! ...explicit ground sprite from industry with snow -->
-                                    childsprite {
-                                        sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite, snow_overlay=True)};
-                                        hide_sprite: (!LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
-                                        always_draw: 1;
-                                    }
-                                </tal:not_empty>
-                            </tal:case_industry>
-                        </tal:ground_sprite>
-
-                        <tal:optional_fence condition="'ne' in spritelayout.fences">
-                            <!--! fences NE -->
-                            building {
-                                sprite: 1302 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_ne});
-                                <tal:hide_sprite condition="'ne' not in spritelayout.perma_fences">
-                                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_ne}) == 0);
-                                </tal:hide_sprite>
-                                xoffset:  0;
-                                yoffset:  0;
-                                zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_ne}) * 8;
-                                xextent: 1;
-                                yextent: 16;
-                                zextent: 6;
-                                recolour_mode: RECOLOUR_REMAP;
-                                palette:       PALETTE_USE_DEFAULT;
-                            }
-                        </tal:optional_fence>
-                        <tal:optional_fence condition="'nw' in spritelayout.fences">
-                            <!--! fences NW -->
-                            building {
-                                sprite: 1301 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_nw});
-                                <tal:hide_sprite condition="'nw' not in spritelayout.perma_fences">
-                                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_nw}) == 0);
-                                </tal:hide_sprite>
-                                xoffset:  0;
-                                yoffset:  0;
-                                zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_nw}) * 8;
-                                xextent: 16;
-                                yextent: 1;
-                                zextent: 6;
-                                recolour_mode: RECOLOUR_REMAP;
-                                palette:       PALETTE_USE_DEFAULT;
-                            }
-                        </tal:optional_fence>
-
-                        <tal:building_sprites repeat="building_sprite spritelayout.building_sprites">
-                            building {
-                                sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3)};
-                                recolour_mode: RECOLOUR_REMAP;
-                                palette: PALETTE_USE_DEFAULT;
-                                xoffset: ${building_sprite.xoffset};
-                                yoffset: ${building_sprite.yoffset};
-                                zoffset: ${building_sprite.zoffset};
-                                xextent: ${building_sprite.xextent};
-                                yextent: ${building_sprite.yextent};
-                                zextent: ${building_sprite.zextent};
-                                hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
-                                always_draw: ${building_sprite.always_draw};
-                            }
-                            building {
-                                sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3, snow_overlay=True)};
-                                recolour_mode: RECOLOUR_REMAP;
-                                palette: PALETTE_USE_DEFAULT;
-                                xoffset: ${building_sprite.xoffset};
-                                yoffset: ${building_sprite.yoffset};
-                                zoffset: ${building_sprite.zoffset};
-                                xextent: ${building_sprite.xextent};
-                                yextent: ${building_sprite.yextent};
-                                zextent: ${building_sprite.zextent};
-                                hide_sprite: (!LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
-                                always_draw: ${building_sprite.always_draw};
-                            }
-                        </tal:building_sprites>
-
-                        <tal:optional_fence condition="'se' in spritelayout.fences">
-                            <!--! fences SE -->
-                            building {
-                                sprite: 1301 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_se});
-                                <tal:hide_sprite condition="'se' not in spritelayout.perma_fences">
-                                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_se}) == 0);
-                                </tal:hide_sprite>
-                                xoffset: 0;
-                                yoffset:  16;
-                                zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_se}) * 8;
-                                xextent: 16;
-                                yextent: 1;
-                                zextent: 6;
-                                recolour_mode: RECOLOUR_REMAP;
-                                palette:       PALETTE_USE_DEFAULT;
-                            }
-                        </tal:optional_fence>
-                        <tal:optional_fence condition="'sw' in spritelayout.fences">
-                            <!--! fences SW -->
-                            building {
-                                sprite: 1302 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_sw});
-                                <tal:hide_sprite condition="'sw' not in spritelayout.perma_fences">
-                                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_sw}) == 0);
-                                </tal:hide_sprite>
-                                xoffset: 16;
-                                yoffset:  0;
-                                zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_sw}) * 8;
-                                xextent: 1;
-                                yextent: 16;
-                                zextent: 6;
-                                recolour_mode: RECOLOUR_REMAP;
-                                palette:       PALETTE_USE_DEFAULT;
-                            }
-                        </tal:optional_fence>
-                        }
-                    </tal:spritelayout>
+            switch(FEAT_OBJECTS, SELF, ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout, relative_pos) {
+                <tal:spritelayouts repeat="x_y_spritelayout view">
+                    relative_coord(${x_y_spritelayout[0]}, ${x_y_spritelayout[1]}): ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index};
                 </tal:spritelayouts>
-
-                switch(FEAT_OBJECTS, SELF, ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout, relative_pos) {
-                    <tal:spritelayouts repeat="x_y_spritelayout view">
-                        relative_coord(${x_y_spritelayout[0]}, ${x_y_spritelayout[1]}): ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index};
-                    </tal:spritelayouts>
-                }
-            </tal:view>
-
-            switch(FEAT_OBJECTS, SELF, ${grf_object.id}_switch_graphics, [
-                                                switch_tile_fences_object(),
-                                                switch_terrain_object(),
-                                                view
-                                            ]) {
-                <tal:views repeat="view_num range(len(grf_object.views))">
-                    ${view_num}: ${grf_object.id}_view_${view_num}_switch_graphics_layout;
-                </tal:views>
             }
+        </tal:view>
 
-            <tal:economies repeat="economy industry.economies_enabled_for_industry">
-                if (economy==${economy.numeric_id} && objects) {
-                    item(FEAT_OBJECTS, ${grf_object.id}, ${object_ids[grf_object.id]}) {
-                        property {
-                            <!--! class is: industry ID, padded out with 0s and F pre-pended, e.g. F001 etc
-                                  it's accepted that this might collide with other sets but eh
-                            -->
-                            class                   :"${'F' + str(industry.numeric_id).zfill(3)}";
-                            classname:              ${industry.get_property('name', None)};
-                            climates_available:     ALL_CLIMATES;
-                            size:                   ${grf_object.size};
-                            build_cost_multiplier:  0;
-                            remove_cost_multiplier: 0;
-                            introduction_date:      date(1, 1, 1);
-                            end_of_life_date:       date(${global_constants.max_game_date}, 1, 1);
-                            /* Anything can overbuild the object, removing returns the money, we don't want foundations and we want to allow bridges */
-                            object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE);
-                            height:                 6;
-                            num_views:              ${len(grf_object.views)};
-                            // name derived from industry currently
-                            ${industry.get_property_declaration('name', None)}
-                        }
-                        graphics {
-                            colour:                 switch_colour_object(${industry.numeric_id});
-                            purchase:               ${grf_object.id}_switch_graphics;
-                            ${grf_object.id}_switch_graphics;
-                        }
+        switch(FEAT_OBJECTS, SELF, ${grf_object.id}_switch_graphics, [
+                                            switch_tile_fences_object(),
+                                            switch_terrain_object(),
+                                            view
+                                        ]) {
+            <tal:views repeat="view_num range(len(grf_object.views))">
+                ${view_num}: ${grf_object.id}_view_${view_num}_switch_graphics_layout;
+            </tal:views>
+        }
+
+        <tal:economies repeat="economy industry.economies_enabled_for_industry">
+            if (economy==${economy.numeric_id} && objects) {
+                item(FEAT_OBJECTS, ${grf_object.id}, ${object_ids[grf_object.id]}) {
+                    property {
+                        <!--! class is: industry ID, padded out with 0s and F pre-pended, e.g. F001 etc
+                              it's accepted that this might collide with other sets but eh
+                        -->
+                        class                   :"${'F' + str(industry.numeric_id).zfill(3)}";
+                        classname:              ${industry.get_property('name', None)};
+                        climates_available:     ALL_CLIMATES;
+                        size:                   ${grf_object.size};
+                        build_cost_multiplier:  0;
+                        remove_cost_multiplier: 0;
+                        introduction_date:      date(1, 1, 1);
+                        end_of_life_date:       date(${global_constants.max_game_date}, 1, 1);
+                        /* Anything can overbuild the object, removing returns the money, we don't want foundations and we want to allow bridges */
+                        object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_ANIMATED);
+                        height:                 6;
+                        num_views:              ${len(grf_object.views)};
+                        // name derived from industry currently
+                        ${industry.get_property_declaration('name', None)}
+                        <tal:animation_info condition="grf_object.tile.animation_length > 1">
+                            animation_info:     [${'ANIMATION_LOOPING' if grf_object.tile.animation_looping else 'ANIMATION_NON_LOOPING'}, ${grf_object.tile.animation_length}];
+                        </tal:animation_info>
+                        <tal:animation_speed condition="grf_object.tile.animation_speed > 0">
+                            animation_speed:    ${grf_object.tile.animation_speed};
+                        </tal:animation_speed>
+                        animation_triggers:     ${grf_object.animation_triggers};
+                    }
+                    graphics {
+                        colour:                 switch_colour_object(${industry.numeric_id});
+                        <tal:anim_next_frame condition="grf_object.tile.custom_animation_next_frame">
+                            anim_next_frame: return ${grf_object.tile.custom_animation_next_frame};
+                        </tal:anim_next_frame>
+                        <tal:anim_control condition="grf_object.tile.custom_animation_control is not None">
+                            <!--! tedious optimisation to avoid a switch that returns 0 for one macro -->
+                            <tal:block condition="grf_object.tile.custom_animation_control['macro'] == 'first_frame_is_0'">
+                                <!--! starts animation on first frame, intended to be called by periodic tile loop -->
+                                anim_control: 0;
+                            </tal:block>
+                            <tal:block condition="grf_object.tile.custom_animation_control['macro'] != 'first_frame_is_0'">
+                                anim_control: ${grf_object.tile.id}_object_anim_control;
+                            </tal:block>
+                        </tal:anim_control>
+                        purchase:               ${grf_object.id}_switch_graphics;
+                        ${grf_object.id}_switch_graphics;
                     }
                 }
-            </tal:economies>
+            }
+        </tal:economies>
     </tal:objects>
 </tal:industries>
