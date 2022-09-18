@@ -5,17 +5,30 @@
             <tal:spritelayouts repeat="x_y_spritelayout view">
                 <tal:spritelayout define="spritelayout x_y_spritelayout[2]">
                     spritelayout ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index} {
-                        childsprite {
-                            sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
-                            always_draw: 1;
-                        }
-                        /* snow nerfed
-                        childsprite {
-                            sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite, snow_overlay=True)};
-                            //hide_sprite: (!LOAD_TEMP(13));
-                            always_draw: 1;
-                        }
-                         */
+                        <tal:ground_sprite switch="spritelayout.terrain_aware_ground">
+                            <tal:case_terrain case="True">
+                                <!--! ground sprite from terrain -->
+                                ground {
+                                    sprite: (LOAD_TEMP(${graphics_temp_storage.var_terrain_sprite}));
+                                }
+                            </tal:case_terrain>
+                            <tal:case_industry case="False">
+                                <!--! explicit ground sprite from industry, if not empty -->
+                                <tal:not_empty condition="getattr(spritelayout.ground_sprite, 'type', None) != 'empty'">
+                                    childsprite {
+                                        sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
+                                        hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
+                                        always_draw: 1;
+                                    }
+                                    <!--! ...explicit ground sprite from industry with snow -->
+                                    childsprite {
+                                        sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite, snow_overlay=True)};
+                                        hide_sprite: (!LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
+                                        always_draw: 1;
+                                    }
+                                </tal:not_empty>
+                            </tal:case_industry>
+                        </tal:ground_sprite>
 
                         <tal:optional_fence condition="'ne' in spritelayout.fences">
                             <!--! fences NE -->
@@ -63,9 +76,9 @@
                                 xextent: ${building_sprite.xextent};
                                 yextent: ${building_sprite.yextent};
                                 zextent: ${building_sprite.zextent};
+                                hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
                                 always_draw: ${building_sprite.always_draw};
                             }
-                            /* snow nerfed
                             building {
                                 sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3, snow_overlay=True)};
                                 recolour_mode: RECOLOUR_REMAP;
@@ -76,9 +89,9 @@
                                 xextent: ${building_sprite.xextent};
                                 yextent: ${building_sprite.yextent};
                                 zextent: ${building_sprite.zextent};
+                                hide_sprite: (!LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
                                 always_draw: ${building_sprite.always_draw};
                             }
-                            */
                         </tal:building_sprites>
 
                         <tal:optional_fence condition="'se' in spritelayout.fences">
@@ -128,6 +141,7 @@
 
             switch(FEAT_OBJECTS, SELF, ${grf_object.id}_switch_graphics, [
                                                 switch_tile_fences_object(),
+                                                switch_terrain_object(),
                                                 view
                                             ]) {
                 <tal:views repeat="view_num range(len(grf_object.views))">

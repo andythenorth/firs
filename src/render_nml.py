@@ -89,11 +89,12 @@ def main():
         os.path.join(firs.generated_files_path, "firs.nml"), "w", "utf8"
     )
     header_items = [
+        # items that must be defined first
         "header",
         "checks",
         "parameters",
         "sprite_templates",
-        # alphabetise below here for simplicity
+        # items for which order is not significant, so alphabetise for simplicity
         "cargos",
         "colour",
         "construction_states",
@@ -101,11 +102,12 @@ def main():
         "ground_tiles",
         "location_check_procedures_industry",
         "magic_trees",
-        "objects",
+        "monthly_town_loop",
         "perm_storage_mappings",
         "randomise_primary_production_on_build",
-        "monthly_town_loop",
-        "terrain_sprite",
+        "terrain",
+        # items that depend on procedures defined above, so must be defined last
+        "objects",
     ]
     for header_item in header_items:
         grf_nml.write(render_header_item_nml(header_item))

@@ -53,7 +53,7 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_store_temp_vars,
 
 switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_switch_graphics, [
                                     switch_tile_fences_industry(),
-                                    switch_terrain_sprite(),
+                                    switch_terrain_industry(),
                                     ${'switch_magic_trees()' if industry.uses_magic_trees else ''}
                                  ]) {
     ${industry.id}_store_temp_vars;

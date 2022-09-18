@@ -1,0 +1,61 @@
+<tal:terrain repeat="feature_config [
+                                  ('FEAT_INDUSTRYTILES', 'industry'),
+                                  ('FEAT_OBJECTS', 'object'),
+                                  ]">
+    <tal:feature define="feature feature_config[0]; feature_suffix feature_config[1]">
+        switch (${feature}, SELF, switch_terrain_${feature_suffix}_normal, [STORE_TEMP(GROUNDSPRITE_NORMAL, ${graphics_temp_storage.var_terrain_sprite})]) {
+            return 1;
+        }
+
+        switch (${feature}, SELF, switch_terrain_${feature_suffix}_arctic_full_snow, [STORE_TEMP(GROUNDSPRITE_SNOW_4_4, ${graphics_temp_storage.var_terrain_sprite})]) {
+            return 1;
+        }
+        switch (${feature}, SELF, switch_terrain_${feature_suffix}_arctic_three_quarter_snow, [STORE_TEMP(GROUNDSPRITE_SNOW_3_4, ${graphics_temp_storage.var_terrain_sprite})]) {
+            return 1;
+        }
+        switch (${feature}, SELF, switch_terrain_${feature_suffix}_arctic_half_snow, [STORE_TEMP(GROUNDSPRITE_SNOW_2_4, ${graphics_temp_storage.var_terrain_sprite})]) {
+            return 1;
+        }
+        switch (${feature}, SELF, switch_terrain_${feature_suffix}_arctic_quarter_snow, [STORE_TEMP(GROUNDSPRITE_SNOW_1_4, ${graphics_temp_storage.var_terrain_sprite})]) {
+            return 1;
+        }
+        switch (${feature}, SELF, switch_terrain_${feature_suffix}_arctic, [nearby_tile_height(0, 0) - snowline_height]) {
+            2..255: switch_terrain_${feature_suffix}_arctic_full_snow;
+            1: switch_terrain_${feature_suffix}_arctic_three_quarter_snow;
+            0: switch_terrain_${feature_suffix}_arctic_half_snow;
+            -1: switch_terrain_${feature_suffix}_arctic_quarter_snow;
+            switch_terrain_${feature_suffix}_normal;
+        }
+
+        switch (${feature}, SELF, switch_terrain_${feature_suffix}_tropic_full_desert, [STORE_TEMP(GROUNDSPRITE_DESERT, ${graphics_temp_storage.var_terrain_sprite})]) {
+            return 1;
+        }
+        switch (${feature}, SELF, switch_terrain_${feature_suffix}_tropic_half_desert, [STORE_TEMP(GROUNDSPRITE_DESERT_1_2, ${graphics_temp_storage.var_terrain_sprite})]) {
+            return 1;
+        }
+        <!--! check neighbouring tiles, if any are not desert, we need half desert -->
+        switch (${feature}, SELF, switch_terrain_${feature_suffix}_tropic_desert,
+                                                                [(nearby_tile_terrain_type(1, 0) != TILETYPE_DESERT)
+                                                                 || (nearby_tile_terrain_type(-1, 0) != TILETYPE_DESERT)
+                                                                 || (nearby_tile_terrain_type(0, 1) != TILETYPE_DESERT)
+                                                                 || (nearby_tile_terrain_type(0, -1) != TILETYPE_DESERT)]) {
+            1: switch_terrain_${feature_suffix}_tropic_half_desert;
+            switch_terrain_${feature_suffix}_tropic_full_desert;
+        }
+        switch (${feature}, SELF, switch_terrain_${feature_suffix}_tropic, nearby_tile_terrain_type(0, 0)) {
+            TILETYPE_DESERT: switch_terrain_${feature_suffix}_tropic_desert;
+            switch_terrain_${feature_suffix}_normal;
+        }
+
+        switch (${feature}, SELF, switch_terrain_${feature_suffix}, [
+                        <!--! always store snow flag for all climates, as we need to know explicitly if it's true/false -->
+                        STORE_TEMP(terrain_type == TILETYPE_SNOW, ${graphics_temp_storage.var_terrain_is_snow}),
+                        <!--! then check climates for other checks -->
+                        climate,
+                    ]) {
+            CLIMATE_ARCTIC: switch_terrain_${feature_suffix}_arctic;
+            CLIMATE_TROPIC: switch_terrain_${feature_suffix}_tropic;
+            switch_terrain_${feature_suffix}_normal; <!--! temperate always GROUNDSPRITE_NORMAL -->
+        }
+    </tal:feature>
+</tal:terrain>
