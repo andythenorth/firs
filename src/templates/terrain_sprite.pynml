@@ -42,8 +42,14 @@ switch (FEAT_INDUSTRYTILES, SELF, switch_terrain_sprite_tropic, nearby_tile_terr
     switch_terrain_sprite_normal;
 }
 
-switch (FEAT_INDUSTRYTILES, SELF, switch_terrain_sprite, climate) {
+switch (FEAT_INDUSTRYTILES, SELF, switch_terrain_sprite, [
+                <!--! always store snow flag for all climates, as we need to know explicitly if it's true/false -->
+                STORE_TEMP(terrain_type == TILETYPE_SNOW, ${graphics_temp_storage.var_terrain_is_snow}),
+                <!--! then check climates for other checks -->
+                climate,
+            ]) {
     CLIMATE_ARCTIC: switch_terrain_sprite_arctic;
     CLIMATE_TROPIC: switch_terrain_sprite_tropic;
     switch_terrain_sprite_normal; <!--! temperate always GROUNDSPRITE_NORMAL -->
 }
+
