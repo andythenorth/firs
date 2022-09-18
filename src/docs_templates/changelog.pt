@@ -3,11 +3,41 @@ Changelog
 
 
 --------------
+4.13.0 Release
+--------------
+
+
+*Changes*
+
+- added magic fences to objects
+    - these work the same as existing industry fences
+    - the object defines whether fences show or not by default
+    - fences will hide if the adjacent tile is an industry, an object, or a station tile
+- added object detection to industry magic fences
+    - industry fences will now hide if the adjacent tile is an object, as well as the existing checks for industry and station tiles
+- magic fences may hide sometimes in unwanted/unexpected ways
+    - for example, fences will hide if the adjacent tile is a lighthouse or transmitter, or similar scenic object types
+    - there is no current way to solve this in the grf spec, so we'll live with it, it's probably fine
+- renamed 'Kaolin' to 'China Clay', as it's the more common term in British English
+
+
+*Codechanges*
+
+- refactored some internals which should have no visible gameplay effect, but have probably introduced bugs (version number is unlucky 13)
+    - spritelayouts now provision their tile ID reference directly, not via the industry layout
+    - industry economy variations now provisioned by a defined init method, not via directly rewriting properties of the economy variation object after init
+    - refactored OR logic of industry location checks
+    - support for creating industries in defined map regions ('biomes') - not used currently, no gameplay effect
+    - removed some leftover elements from economy experiments
+    - make snow support explicitly defined instead of assuming every industry has snow, this allows the removal of many redundant spritesheets
+
+
+--------------
 4.12.1 Release
 --------------
 
-*Fixes*
 
+*Fixes*
 
 - Gung-Ho % parameter overlapped with Landscaping Objects parameter, causing Gung-Ho to have incorrect values
 
@@ -21,7 +51,6 @@ Changelog
 
 
 *Changes*
-
 
 - added support for multi-tile objects (no longer limited to 1x1)
     - converted all objects that are more than 1x1 to multi-tile layouts
