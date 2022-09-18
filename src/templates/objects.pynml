@@ -1,53 +1,122 @@
 <tal:industries repeat="industry registered_industries">
     <!--! grf_object not object in case it conflicts with python 'object' at any point (might not, but who wants to test that? -->
     <tal:objects repeat="grf_object industry.objects.values()">
-        // CABBAGE view ${grf_object.views}
         <tal:view repeat="view grf_object.views">
-            // CABBAGE views ${view}
             <tal:spritelayouts repeat="x_y_spritelayout view">
-                // CABBAGE x_y_spritelayout ${x_y_spritelayout}
-                // for debug: object layout derived from industry layout name ${x_y_spritelayout[2].id}
-                spritelayout ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index} {
-                    childsprite {
-                        sprite: ${industry.unpack_sprite_or_spriteset(x_y_spritelayout[2].ground_sprite)};
-                        always_draw: 1;
-                    }
-                    /* snow nerfed
-                    childsprite {
-                        sprite: ${industry.unpack_sprite_or_spriteset(x_y_spritelayout[2].ground_sprite, snow_overlay=True)};
-                        //hide_sprite: (!LOAD_TEMP(13));
-                        always_draw: 1;
-                    }
-                     */
-                    <tal:build_building_sprites repeat="building_sprite x_y_spritelayout[2].building_sprites">
-                        building {
-                            sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3)};
-                            recolour_mode: RECOLOUR_REMAP;
-                            palette: PALETTE_USE_DEFAULT;
-                            xoffset: ${building_sprite.xoffset};
-                            yoffset: ${building_sprite.yoffset};
-                            zoffset: ${building_sprite.zoffset};
-                            xextent: ${building_sprite.xextent};
-                            yextent: ${building_sprite.yextent};
-                            zextent: ${building_sprite.zextent};
-                            always_draw: ${building_sprite.always_draw};
+                <tal:spritelayout define="spritelayout x_y_spritelayout[2]">
+                    spritelayout ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index} {
+                        childsprite {
+                            sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
+                            always_draw: 1;
                         }
                         /* snow nerfed
-                        building {
-                            sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3, snow_overlay=True)};
-                            recolour_mode: RECOLOUR_REMAP;
-                            palette: PALETTE_USE_DEFAULT;
-                            xoffset: ${building_sprite.xoffset};
-                            yoffset: ${building_sprite.yoffset};
-                            zoffset: ${building_sprite.zoffset};
-                            xextent: ${building_sprite.xextent};
-                            yextent: ${building_sprite.yextent};
-                            zextent: ${building_sprite.zextent};
-                            always_draw: ${building_sprite.always_draw};
+                        childsprite {
+                            sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite, snow_overlay=True)};
+                            //hide_sprite: (!LOAD_TEMP(13));
+                            always_draw: 1;
                         }
-                        */
-                    </tal:build_building_sprites>
-                    }
+                         */
+
+                        <tal:optional_fence condition="'ne' in spritelayout.fences">
+                            <!--! fences NE -->
+                            building {
+                                sprite: 1302 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_ne});
+                                <tal:hide_sprite condition="'ne' not in spritelayout.perma_fences">
+                                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_ne}) == 0);
+                                </tal:hide_sprite>
+                                xoffset:  0;
+                                yoffset:  0;
+                                zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_ne}) * 8;
+                                xextent: 1;
+                                yextent: 16;
+                                zextent: 6;
+                                recolour_mode: RECOLOUR_REMAP;
+                                palette:       PALETTE_USE_DEFAULT;
+                            }
+                        </tal:optional_fence>
+                        <tal:optional_fence condition="'nw' in spritelayout.fences">
+                            <!--! fences NW -->
+                            building {
+                                sprite: 1301 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_nw});
+                                <tal:hide_sprite condition="'nw' not in spritelayout.perma_fences">
+                                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_nw}) == 0);
+                                </tal:hide_sprite>
+                                xoffset:  0;
+                                yoffset:  0;
+                                zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_nw}) * 8;
+                                xextent: 16;
+                                yextent: 1;
+                                zextent: 6;
+                                recolour_mode: RECOLOUR_REMAP;
+                                palette:       PALETTE_USE_DEFAULT;
+                            }
+                        </tal:optional_fence>
+
+                        <tal:building_sprites repeat="building_sprite spritelayout.building_sprites">
+                            building {
+                                sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3)};
+                                recolour_mode: RECOLOUR_REMAP;
+                                palette: PALETTE_USE_DEFAULT;
+                                xoffset: ${building_sprite.xoffset};
+                                yoffset: ${building_sprite.yoffset};
+                                zoffset: ${building_sprite.zoffset};
+                                xextent: ${building_sprite.xextent};
+                                yextent: ${building_sprite.yextent};
+                                zextent: ${building_sprite.zextent};
+                                always_draw: ${building_sprite.always_draw};
+                            }
+                            /* snow nerfed
+                            building {
+                                sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3, snow_overlay=True)};
+                                recolour_mode: RECOLOUR_REMAP;
+                                palette: PALETTE_USE_DEFAULT;
+                                xoffset: ${building_sprite.xoffset};
+                                yoffset: ${building_sprite.yoffset};
+                                zoffset: ${building_sprite.zoffset};
+                                xextent: ${building_sprite.xextent};
+                                yextent: ${building_sprite.yextent};
+                                zextent: ${building_sprite.zextent};
+                                always_draw: ${building_sprite.always_draw};
+                            }
+                            */
+                        </tal:building_sprites>
+
+                        <tal:optional_fence condition="'se' in spritelayout.fences">
+                            <!--! fences SE -->
+                            building {
+                                sprite: 1301 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_se});
+                                <tal:hide_sprite condition="'se' not in spritelayout.perma_fences">
+                                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_se}) == 0);
+                                </tal:hide_sprite>
+                                xoffset: 0;
+                                yoffset:  16;
+                                zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_se}) * 8;
+                                xextent: 16;
+                                yextent: 1;
+                                zextent: 6;
+                                recolour_mode: RECOLOUR_REMAP;
+                                palette:       PALETTE_USE_DEFAULT;
+                            }
+                        </tal:optional_fence>
+                        <tal:optional_fence condition="'sw' in spritelayout.fences">
+                            <!--! fences SW -->
+                            building {
+                                sprite: 1302 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_sw});
+                                <tal:hide_sprite condition="'sw' not in spritelayout.perma_fences">
+                                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_sw}) == 0);
+                                </tal:hide_sprite>
+                                xoffset: 16;
+                                yoffset:  0;
+                                zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_sw}) * 8;
+                                xextent: 1;
+                                yextent: 16;
+                                zextent: 6;
+                                recolour_mode: RECOLOUR_REMAP;
+                                palette:       PALETTE_USE_DEFAULT;
+                            }
+                        </tal:optional_fence>
+                        }
+                    </tal:spritelayout>
                 </tal:spritelayouts>
 
                 switch(FEAT_OBJECTS, SELF, ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout, relative_pos) {
@@ -57,7 +126,10 @@
                 }
             </tal:view>
 
-            switch(FEAT_OBJECTS, SELF, ${grf_object.id}_switch_graphics, view) {
+            switch(FEAT_OBJECTS, SELF, ${grf_object.id}_switch_graphics, [
+                                                switch_tile_fences_object(),
+                                                view
+                                            ]) {
                 <tal:views repeat="view_num range(len(grf_object.views))">
                     ${view_num}: ${grf_object.id}_view_${view_num}_switch_graphics_layout;
                 </tal:views>
