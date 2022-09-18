@@ -28,6 +28,10 @@ industry.enable_in_economy(
     "BASIC_ARCTIC",
 )
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+)
+
 industry.add_tile(
     id="sawmill_tile_1",
     location_checks=TileLocationChecks(disallow_industry_adjacent=True),

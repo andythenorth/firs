@@ -38,6 +38,15 @@ industry.enable_in_economy(
     prob_map_gen="14",
 )
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    accept_cargo_types=[
+        "CMNT",
+        "STEL",
+        "WDPR",
+    ],
+)
+
 industry.add_tile(
     id="builders_yard_tile_1",
     location_checks=TileLocationChecks(

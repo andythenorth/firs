@@ -43,6 +43,15 @@ industry.enable_in_economy(
     ],
 )
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    accept_cargo_types=["RFPR", "FOOD"],
+    prod_cargo_types_with_multipliers=[
+        ("PLAS", 10),
+        ("ALUM", 12),
+    ],
+)
+
 industry.add_tile(
     id="bulk_terminal_tile_1",
     land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",

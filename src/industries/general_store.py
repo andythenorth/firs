@@ -50,6 +50,13 @@ industry.enable_in_economy(
     ],
 )
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    accept_cargo_types=[
+        "FOOD",
+    ],
+)
+
 industry.add_tile(
     id="general_store_tile_1",
     location_checks=TileLocationChecks(require_road_adjacent=True),

@@ -29,6 +29,15 @@ industry.enable_in_economy(
     ],
 )
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    prod_cargo_types_with_output_ratios=[
+        ("COKE", 6),
+    ],
+)
+
+
+
 industry.add_tile(
     id="coke_oven_tile_1",
     animation_length=7,

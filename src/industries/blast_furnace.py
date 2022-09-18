@@ -26,6 +26,16 @@ industry.enable_in_economy(
     "STEELTOWN",
 )
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    prod_cargo_types_with_output_ratios=[
+        ("IRON", 3),
+        ("SLAG", 2),
+    ],
+)
+
+
+
 industry.add_tile(
     id="blast_furnace_tile_1",
     animation_length=7,

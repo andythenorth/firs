@@ -39,6 +39,14 @@ industry.enable_in_economy(
     prob_map_gen="15",  # intended to be relatively prevalent in Steeltown, split this per economy if needed
 )
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    prod_cargo_types_with_multipliers=[
+        ("FOOD", 14),
+    ],
+    prob_map_gen="15",  # intended to be relatively prevalent in Steeltown, split this per economy if needed
+)
+
 industry.add_tile(
     id="farm_tile_1",
     location_checks=TileLocationChecks(

@@ -19,6 +19,14 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_REFINERY)",
 )
 
+industry.enable_in_economy(
+    "ADVANCE_TEMPERATE",
+    prod_cargo_types_with_output_ratios=[
+        ("PETR", 4),
+        ("CHEM", 4),
+    ],
+)
+
 industry.add_tile(
     id="oil_refinery_tile_1",
     location_checks=TileLocationChecks(

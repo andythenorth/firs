@@ -25,6 +25,11 @@ industry.enable_in_economy(
     prob_map_gen="14",
 )
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    prob_map_gen="10",
+)
+
 industry.add_tile(
     id="scrap_yard_tile_1",
     location_checks=TileLocationChecks(

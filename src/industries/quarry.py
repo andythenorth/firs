@@ -32,6 +32,14 @@ industry.enable_in_economy(
     ],
 )
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    prod_cargo_types_with_multipliers=[
+        ("GRVL", 14),
+        ("LIME", 14),
+    ],
+)
+
 # 2 tiles for this industry: pit outer tile cannot be on slopes; pit inner tiles and processor tiles can be
 # cases for both tiles ensure that tiles can only be built at same height as north tile
 industry.add_tile(

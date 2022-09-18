@@ -25,6 +25,17 @@ industry.enable_in_economy(
     "STEELTOWN",
 )
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    accept_cargos_with_input_ratios=[
+        ("PLAS", 3),
+        ("ALUM", 2),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("VPTS", 5),
+    ],
+)
+
 industry.add_tile(
     id="component_factory_tile_1",
     location_checks=TileLocationChecks(

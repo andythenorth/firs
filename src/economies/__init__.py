@@ -23,3 +23,7 @@ steeltown.economy.register()
 from economies import in_a_hot_country
 
 in_a_hot_country.economy.register()
+
+from economies import andybiotic_temperate
+
+andybiotic_temperate.economy.register()

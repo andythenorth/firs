@@ -26,6 +26,15 @@ industry.enable_in_economy(
     "STEELTOWN",
 )
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    accept_cargos_with_input_ratios=[
+        ("VPTS", 2),
+        ("ALUM", 1),
+        ("STEL", 2),
+    ],
+)
+
 industry.add_tile(
     id="assembly_plant_tile_1",
     animation_length=71,

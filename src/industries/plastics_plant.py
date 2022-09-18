@@ -21,6 +21,16 @@ industry = IndustrySecondary(
     provides_snow=True,
 )
 
+industry.enable_in_economy(
+    "ADVANCE_TEMPERATE",
+    accept_cargos_with_input_ratios=[
+        ("CHEM", 4),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("PLAS", 2),
+    ],
+)
+
 
 industry.add_tile(
     id="plastics_plant_tile_1",

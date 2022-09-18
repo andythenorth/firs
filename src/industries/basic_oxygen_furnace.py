@@ -32,6 +32,18 @@ industry.enable_in_economy(
     "STEELTOWN",
 )
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    accept_cargos_with_input_ratios=[
+        ("IRON", 4),
+        ("QLME", 1),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("STEL", 3),
+        ("SLAG", 2),
+    ]
+)
+
 industry.add_tile(
     id="basic_oxygen_furnace_tile_1",
     animation_length=7,

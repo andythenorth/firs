@@ -22,6 +22,13 @@ industry.enable_in_economy(
     accept_cargo_types=["PEAT"],
 )
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    accept_cargo_types=["COAL", "OIL_",],
+)
+
+
+
 industry.add_tile(
     id="power_plant_tile_1",
     animation_length=7,
