@@ -27,8 +27,8 @@ def copy_docs_from_current_project():
     if len(sys.argv) > 2:
         if sys.argv[2] == "--nested-docs-by-grf":
             optional_nested_dir_name = project_name
-        else:
-            optional_nested_dir_name = ''
+    else:
+        optional_nested_dir_name = ''
 
     shutil.copytree(
         os.path.join(currentdir, "docs", optional_nested_dir_name), os.path.join(currentdir, tag_name)
