@@ -23,6 +23,10 @@ industry.enable_in_economy(
     "STEELTOWN",
     prob_map_gen="10",
 )
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    prob_map_gen="10",
+)
 
 # industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 

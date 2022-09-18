@@ -37,11 +37,11 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "ANDYBIOTIC_TEMPERATE",
     accept_cargos_with_input_ratios=[
-        ("LIME", 5),
-        ("COAL", 5),
+        ("LIME", 8),
+        ("COAL", 4),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("QLME", 4),
+        ("QLME", 6),
     ],
     prob_in_game="1",  # low probability of build during gameplay
 )

@@ -357,7 +357,7 @@ default_cargos = {
     "silo_cement": ["CMNT", "BDMT", "QLME"],
     "silo_chemical": ["SASH", "RFPR", "QLME", "SAND", "FMSP"],
     "supplies": ["ENSP"],
-    "tank": ["OIL_", "CTAR", "SULP", "KAOL", "RUBR"],
+    "tank": ["OIL_", "CTAR", "SULP", "KAOL", "RUBR", "NAPH", "BITU"],
 }
 
 

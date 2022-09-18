@@ -23,7 +23,6 @@ industry.enable_in_economy(
         ("LIME", 14),
     ],
 )
-
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     prod_cargo_types_with_multipliers=[
@@ -31,7 +30,6 @@ industry.enable_in_economy(
         ("GRVL", 14),
     ],
 )
-
 industry.enable_in_economy(
     "ANDYBIOTIC_TEMPERATE",
     prod_cargo_types_with_multipliers=[

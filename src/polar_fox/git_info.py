@@ -22,7 +22,7 @@ def exe_cmd(cmd):
         lines = output.splitlines()
         return lines
     except:
-        return ["undefined"]
+        return ["- Andybiotic Mod."]
 
 
 def get_revision():

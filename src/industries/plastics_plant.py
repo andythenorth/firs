@@ -4,7 +4,6 @@ industry = IndustrySecondary(
     id="plastics_plant",
     accept_cargos_with_input_ratios=[
         ("CHLO", 4),
-        ("C2H4", 4),
     ],
     prod_cargo_types_with_output_ratios=[
         ("PLAS", 3),
@@ -22,13 +21,14 @@ industry = IndustrySecondary(
 )
 
 industry.enable_in_economy(
-    "ADVANCE_TEMPERATE",
+    "ANDYBIOTIC_TEMPERATE",
     accept_cargos_with_input_ratios=[
-        ("CHEM", 4),
+        ("RFPR", 4),
     ],
     prod_cargo_types_with_output_ratios=[
         ("PLAS", 2),
     ],
+    intro_year=1940,
 )
 
 

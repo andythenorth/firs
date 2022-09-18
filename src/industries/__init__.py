@@ -254,6 +254,10 @@ from industries import nitrate_mine
 
 nitrate_mine.industry.register()
 
+from industries import oil_refinery
+
+oil_refinery.industry.register()
+
 from industries import oil_wells
 
 oil_wells.industry.register()
@@ -281,6 +285,10 @@ petrol_pump.industry.register()
 from industries import phosphate_mine
 
 phosphate_mine.industry.register()
+
+from industries import plastics_plant
+
+plastics_plant.industry.register()
 
 from industries import plaza
 

@@ -25,7 +25,6 @@ industry = IndustrySecondary(
 industry.enable_in_economy(
     "STEELTOWN",
 )
-
 industry.enable_in_economy(
     "ANDYBIOTIC_TEMPERATE",
     accept_cargos_with_input_ratios=[
@@ -33,6 +32,8 @@ industry.enable_in_economy(
         ("ALUM", 1),
         ("STEL", 2),
     ],
+    intro_year=1890,
+    fund_cost_multiplier="30",
 )
 
 industry.add_tile(

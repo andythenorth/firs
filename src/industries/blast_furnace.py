@@ -29,7 +29,7 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "ANDYBIOTIC_TEMPERATE",
     prod_cargo_types_with_output_ratios=[
-        ("IRON", 3),
+        ("IRON", 4),
         ("SLAG", 2),
     ],
 )

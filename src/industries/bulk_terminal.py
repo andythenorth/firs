@@ -42,7 +42,6 @@ industry.enable_in_economy(
         ("ALUM", 11),
     ],
 )
-
 industry.enable_in_economy(
     "ANDYBIOTIC_TEMPERATE",
     accept_cargo_types=["RFPR", "FOOD"],
@@ -50,6 +49,8 @@ industry.enable_in_economy(
         ("PLAS", 10),
         ("ALUM", 12),
     ],
+    intro_year=1940,
+    fund_cost_multiplier="90",
 )
 
 industry.add_tile(

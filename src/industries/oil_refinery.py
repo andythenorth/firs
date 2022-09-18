@@ -7,8 +7,8 @@ industry = IndustrySecondary(
     ],
     prod_cargo_types_with_output_ratios=[
         ("PETR", 3),
-        ("NAPH", 3),
-        ("BITU", 2),
+        ("RFPR", 3),
+
     ],
     prob_in_game="3",
     prob_map_gen="5",
@@ -20,11 +20,12 @@ industry = IndustrySecondary(
 )
 
 industry.enable_in_economy(
-    "ADVANCE_TEMPERATE",
+    "ANDYBIOTIC_TEMPERATE",
     prod_cargo_types_with_output_ratios=[
         ("PETR", 4),
-        ("CHEM", 4),
+        ("RFPR", 4),
     ],
+    intro_year=1967,
 )
 
 industry.add_tile(

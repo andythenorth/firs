@@ -31,7 +31,6 @@ industry = IndustrySecondary(
 industry.enable_in_economy(
     "STEELTOWN",
 )
-
 industry.enable_in_economy(
     "ANDYBIOTIC_TEMPERATE",
     accept_cargos_with_input_ratios=[

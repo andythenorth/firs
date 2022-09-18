@@ -19,12 +19,10 @@ industry = IndustryTownProducerPopulationDependent(
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
 )
-
 industry.enable_in_economy(
     "STEELTOWN",
     prob_map_gen="14",
 )
-
 industry.enable_in_economy(
     "ANDYBIOTIC_TEMPERATE",
     prob_map_gen="10",

@@ -49,7 +49,6 @@ industry.enable_in_economy(
         "FOOD",
     ],
 )
-
 industry.enable_in_economy(
     "ANDYBIOTIC_TEMPERATE",
     accept_cargo_types=[

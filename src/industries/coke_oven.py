@@ -28,7 +28,6 @@ industry.enable_in_economy(
         ("SULP", 1),
     ],
 )
-
 industry.enable_in_economy(
     "ANDYBIOTIC_TEMPERATE",
     prod_cargo_types_with_output_ratios=[

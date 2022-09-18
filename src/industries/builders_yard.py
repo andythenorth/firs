@@ -37,7 +37,6 @@ industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     prob_map_gen="14",
 )
-
 industry.enable_in_economy(
     "ANDYBIOTIC_TEMPERATE",
     accept_cargo_types=[

@@ -32,7 +32,6 @@ industry.enable_in_economy(
     ],
     prod_cargo_types_with_output_ratios=[("BDMT", 8)],
 )
-
 industry.enable_in_economy(
     "ANDYBIOTIC_TEMPERATE",
     accept_cargos_with_input_ratios=[
@@ -41,6 +40,7 @@ industry.enable_in_economy(
         ("GRVL", 4),
     ],
     prod_cargo_types_with_output_ratios=[("CMNT", 8)],
+    intro_year=1930,
 ),
 
 # ['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('COAL', 2), ('CLAY', 2), ('GRVL', 4)]

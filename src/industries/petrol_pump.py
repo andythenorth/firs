@@ -31,6 +31,7 @@ industry.enable_in_economy(
         "FOOD",
         "PETR",
     ],
+    intro_year=1920,
 )
 
 industry.add_tile(
