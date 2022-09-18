@@ -1,4 +1,4 @@
-<!--! fence switches -->
+<!--! industry tiles -->
 switch (FEAT_INDUSTRYTILES, SELF, switch_tile_fences_neighbouring_station, [
             STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_ne}) * (nearby_tile_class(-1,  0) != TILE_CLASS_STATION), ${graphics_temp_storage.var_use_fence_ne}),
             STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_nw}) * (nearby_tile_class( 0, -1) != TILE_CLASS_STATION), ${graphics_temp_storage.var_use_fence_nw}),
@@ -8,16 +8,25 @@ switch (FEAT_INDUSTRYTILES, SELF, switch_tile_fences_neighbouring_station, [
     return 1;
 }
 
+switch (FEAT_INDUSTRYTILES, SELF, switch_tile_fences_neighbouring_object, [
+            STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_ne}) * (nearby_tile_class(-1,  0) != TILE_CLASS_OBJECTS), ${graphics_temp_storage.var_use_fence_ne}),
+            STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_nw}) * (nearby_tile_class( 0, -1) != TILE_CLASS_OBJECTS), ${graphics_temp_storage.var_use_fence_nw}),
+            STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_se}) * (nearby_tile_class( 0,  1) != TILE_CLASS_OBJECTS), ${graphics_temp_storage.var_use_fence_se}),
+            STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_sw}) * (nearby_tile_class( 1,  0) != TILE_CLASS_OBJECTS), ${graphics_temp_storage.var_use_fence_sw}),
+        ]) {
+    switch_tile_fences_neighbouring_station;
+}
+
 switch (FEAT_INDUSTRYTILES, SELF, switch_tile_fences_neighbouring_industry, [
             STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_ne}) * !nearby_tile_is_same_industry(-1,  0), ${graphics_temp_storage.var_use_fence_ne}),
             STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_nw}) * !nearby_tile_is_same_industry( 0, -1), ${graphics_temp_storage.var_use_fence_nw}),
             STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_se}) * !nearby_tile_is_same_industry( 0,  1), ${graphics_temp_storage.var_use_fence_se}),
             STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_sw}) * !nearby_tile_is_same_industry( 1,  0), ${graphics_temp_storage.var_use_fence_sw}),
         ]) {
-    switch_tile_fences_neighbouring_station;
+    switch_tile_fences_neighbouring_object;
 }
 
-switch (FEAT_INDUSTRYTILES, SELF, switch_tile_fences, [
+switch (FEAT_INDUSTRYTILES, SELF, switch_tile_fences_industry, [
             STORE_TEMP(0, ${graphics_temp_storage.var_fencesprite_ne}),
             STORE_TEMP(0, ${graphics_temp_storage.var_fencesprite_nw}),
             STORE_TEMP(0, ${graphics_temp_storage.var_fencesprite_se}),
@@ -35,4 +44,4 @@ switch (FEAT_INDUSTRYTILES, SELF, switch_tile_fences, [
             ]) {
     switch_tile_fences_neighbouring_industry;
 }
-<!--! end fence switches -->
+<!--! end industry tiles -->
