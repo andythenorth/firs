@@ -27,12 +27,14 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "ANDYBIOTIC_TEMPERATE",
     accept_cargos_with_input_ratios=[
-        ("PLAS", 3),
-        ("ALUM", 2),
+        ("PLAS", 5),
+        ("ALUM", 3),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("VPTS", 5),
+        ("VPTS", 4),
+        ("GOOD", 4),
     ],
+    intro_year=1890,
 )
 
 industry.add_tile(

@@ -29,9 +29,10 @@ industry.enable_in_economy(
     "ANDYBIOTIC_TEMPERATE",
     accept_cargo_types=[
         "FOOD",
+        "GOOD",
         "PETR",
     ],
-    intro_year=1920,
+    intro_year=1890,
 )
 
 industry.add_tile(

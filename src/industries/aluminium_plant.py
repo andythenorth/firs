@@ -19,6 +19,15 @@ industry = IndustrySecondary(
     provides_snow=True,
 )
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    accept_cargos_with_input_ratios=[
+        ("AORE", 10),
+    ],
+    intro_year=1890,
+    fund_cost_multiplier="110",
+)
+
 # industry.enable_in_economy("MILD_MILD_WEST",)
 
 industry.add_tile(

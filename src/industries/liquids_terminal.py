@@ -32,6 +32,7 @@ industry.enable_in_economy(
         ("RFPR", 10),
         ("PETR", 15),
     ],
+    intro_year=1890,
 )
 
 industry.add_tile(

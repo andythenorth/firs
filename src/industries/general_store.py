@@ -53,6 +53,7 @@ industry.enable_in_economy(
     "ANDYBIOTIC_TEMPERATE",
     accept_cargo_types=[
         "FOOD",
+        "GOOD",
     ],
 )
 

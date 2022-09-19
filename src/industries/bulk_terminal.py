@@ -44,12 +44,12 @@ industry.enable_in_economy(
 )
 industry.enable_in_economy(
     "ANDYBIOTIC_TEMPERATE",
-    accept_cargo_types=["RFPR", "FOOD"],
+    accept_cargo_types=["COAL"],
     prod_cargo_types_with_multipliers=[
-        ("PLAS", 10),
-        ("ALUM", 12),
+        ("AORE", 8),
+        ("IORE", 10),
     ],
-    intro_year=1940,
+    intro_year=1890,
     fund_cost_multiplier="90",
 )
 

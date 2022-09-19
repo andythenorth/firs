@@ -26,11 +26,9 @@ from cargos import ammonia
 
 ammonia.cargo.register()
 
-"""
 from cargos import bauxite
 
 bauxite.cargo.register()
-"""
 
 from cargos import beans
 

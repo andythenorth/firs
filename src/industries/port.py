@@ -78,6 +78,18 @@ industry.enable_in_economy(
 # industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['DIAM', 'EOIL', 'JAVA', 'WDPR']
 # industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('GOOD', 14), ('SASH', 12)]
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    accept_cargo_types=[
+        "VPTS",
+        "GOOD",
+    ],
+    prod_cargo_types_with_multipliers=[
+        ("GOOD", 15),
+        ("PLAS", 10),
+    ],
+)
+
 industry.add_tile(
     id="port_tile_1",
     land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",

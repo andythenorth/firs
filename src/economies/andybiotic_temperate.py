@@ -13,7 +13,7 @@ economy = Economy(
         "mail",
         "chemicals",
         "coal",
-        "coke",
+        "goods",
         "engineering_supplies",
         "farm_supplies",
         "iron_ore",
@@ -33,7 +33,9 @@ economy = Economy(
         "vehicle_parts",
         "vehicles",
         "aluminium",
+        "bauxite",
         "clay",
+        "coke",
     ],
     # as of March 2021 this cargoflow tuning is a temporary patch up, might need more work
     cargoflow_graph_tuning={
