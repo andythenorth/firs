@@ -1116,7 +1116,9 @@ class IndustryLocationChecks(object):
             utils.echo_message(
                 "near_at_least_one_of_these_keystone_industries set by",
                 industry.id,
-                "- should be in economy location checks only"
+                "- should be in economy location checks only",
+                "(is this supported yet?)",
+                message_type="info"
             )
         self.require_cluster = location_args.get("require_cluster", None)
         self.require_town_industry_count = location_args.get(
