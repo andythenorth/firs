@@ -36,17 +36,15 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_industry_construction_state_grap
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_store_temp_vars,
-        [STORE_TEMP(random_bits, ${graphics_temp_storage.var_random_bits})
-            <tal:date_variations repeat="date_variation_num range(len(industry.graphics_change_dates)+1)"><!--! +1 because we need to run repeat at least once -->
-                , STORE_TEMP(${industry.get_date_conditions_for_hide_sprites(repeat.date_variation_num.index)},
-                             ${127 - date_variation_num}) <!--! dangerous counting down for these registers :D -->
-                , STORE_TEMP(construction_state != 3 ? 1 : LOAD_TEMP(${127 - date_variation_num}),
-                             ${127 - date_variation_num})
-                , STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}) == 0 ? 1 : LOAD_TEMP(${127 - date_variation_num}), <!--! copy a register for snow case -->
-                             ${117 - date_variation_num}) <!--! eh, these count down from 117, max 10 date variations is plenty -->
-                , STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}) == 1 ? 1 : LOAD_TEMP(${127 - date_variation_num}), <!--! non-snow case -->
-                             ${127 - date_variation_num})
-            </tal:date_variations>
+        [
+            STORE_TEMP(random_bits, ${graphics_temp_storage.var_random_bits}),
+            <!--! this is hide sprite calculation stuff for buildings, and 99% can be simplified (also use proper register names) -->
+            <!--! eh, these count down from 127 / 117, legacy date variation crap -->
+            STORE_TEMP(construction_state != 3 ? 1 : LOAD_TEMP(${127}), ${127}),
+             <!--! copy a register for snow case -->
+            STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}) == 0 ? 1 : LOAD_TEMP(${127}), ${117}),
+            <!--! non-snow case -->
+            STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}) == 1 ? 1 : LOAD_TEMP(${127}), ${127}),
         ]) {
     ${industry.id}_industry_construction_state_graphics_switch; // default
 }

@@ -1416,9 +1416,8 @@ class IndustryProperties(object):
 class Industry(object):
     """Base class for all types of industry"""
 
-    def __init__(self, id, graphics_change_dates=[], **kwargs):
+    def __init__(self, id, **kwargs):
         self.id = id
-        self.graphics_change_dates = graphics_change_dates  # 0-based, ordered list of dates for which graphics should change, match to graphics suffixed _1, _2, _3 etc.
         self.tiles = []
         self.sprites = []
         self.smoke_sprites = []
@@ -1579,7 +1578,7 @@ class Industry(object):
         return result
 
     def get_graphics_file_path(
-        self, date_variation_num=None, terrain=None, construction_state_num=None
+        self, terrain=None, construction_state_num=None
     ):
         if terrain == "snow" and self.provides_snow:
             terrain_suffix = "_snow"
@@ -1598,8 +1597,6 @@ class Industry(object):
             return (
                 '"src/graphics/industries/'
                 + self.id
-                + "_"
-                + str(date_variation_num + 1)
                 + terrain_suffix
                 + '.png"'
             )
@@ -1614,41 +1611,6 @@ class Industry(object):
             return self.id + "_industry_graphics_switch_layouts"
         else:
             return "spritelayout_default_construction_states"
-
-    def get_date_conditions_for_hide_sprites(self, date_variation_index):
-        temp_store_random_bits = global_constants.graphics_temp_storage[
-            "var_random_bits"
-        ]
-        random_offset = (
-            "5 * LOAD_TEMP(" + str(temp_store_random_bits) + ") / 0x10000"
-        )  # random is in nml at run-time, not compile-time python, so this is a string
-        if len(self.graphics_change_dates) == 0:
-            return "0"  # no date variations, just one set of graphics, never hide
-        elif date_variation_index == 0:
-            return (
-                "(current_year + "
-                + random_offset
-                + ") >= "
-                + str(self.graphics_change_dates[date_variation_index])
-            )  # first set of graphics, hide after first change date
-        elif date_variation_index == len(self.graphics_change_dates):
-            return (
-                "(current_year + "
-                + random_offset
-                + ") < "
-                + str(self.graphics_change_dates[date_variation_index - 1])
-            )  # last set of graphics, hide before last change date
-        else:
-            return (
-                "(current_year + "
-                + random_offset
-                + ") < "
-                + str(self.graphics_change_dates[date_variation_index - 1])
-                + " || (current_year + "
-                + random_offset
-                + ") >= "
-                + str(self.graphics_change_dates[date_variation_index])
-            )
 
     @property
     def industry_layouts(self):
@@ -2002,7 +1964,6 @@ class Industry(object):
         sprite_or_spriteset,
         construction_state_num=3,
         snow_overlay=False,
-        date_variation_num="0",
     ):
         # note the annoying edge case where 'empty' should not have a snow overlay
         if (
@@ -2013,7 +1974,6 @@ class Industry(object):
         else:
             suffix = ""
         if isinstance(sprite_or_spriteset, Spriteset):
-            date_variation_suffix = "_" + str(date_variation_num)
             # tiny optimisation, don't use an animation sprite selector if there is no animation
             if sprite_or_spriteset.animation_rate > 0:
                 if sprite_or_spriteset.custom_sprite_selector:
@@ -2058,7 +2018,6 @@ class Industry(object):
                 # default result is a spriteset name and optional frame number
                 return (
                     sprite_or_spriteset.id
-                    + date_variation_suffix
                     + suffix
                     + "("
                     + sprite_selector

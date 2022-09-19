@@ -11,7 +11,6 @@ industry = IndustryTownProducerPopulationDependent(
     name="string(STR_IND_SCRAP_YARD)",
     nearby_station_name="string(STR_STATION_BONEYARD)",
     fund_cost_multiplier="101",
-    graphics_change_dates=[1949, 1960, 1980, 2000],
     provides_snow=True,
 )
 

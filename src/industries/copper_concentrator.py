@@ -17,7 +17,6 @@ industry = IndustrySecondary(
     name="string(STR_IND_COPPER_CONCENTRATOR)",
     nearby_station_name="string(STR_STATION_SMELTER)",
     fund_cost_multiplier="200",
-    graphics_change_dates=[],
 )
 
 # currently unused

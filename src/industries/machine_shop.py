@@ -17,7 +17,6 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_HEAVY_EQUIPMENT_YARD)",
     fund_cost_multiplier="145",
     intro_year=1790,
-    graphics_change_dates=[1920, 1945, 1970, 1990, 2010],
     provides_snow=True,
 )
 
