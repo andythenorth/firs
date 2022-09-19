@@ -24,6 +24,9 @@ industry.enable_in_economy(
         ("GRAI", 14),
         ("BEAN", 14),
     ],
+    locate_in_specific_biomes=[
+        "less_west",
+    ],
 )
 
 industry.enable_in_economy(

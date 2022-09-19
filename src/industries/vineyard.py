@@ -21,6 +21,9 @@ industry = IndustryPrimaryOrganic(
 
 industry.enable_in_economy(
     "BASIC_TROPIC",
+    locate_in_specific_biomes=[
+        "less_west",
+    ],
 )
 
 industry.add_tile(

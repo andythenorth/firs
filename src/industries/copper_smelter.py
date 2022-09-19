@@ -22,7 +22,12 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=2,
 )
 
-industry.enable_in_economy("BASIC_TROPIC")
+industry.enable_in_economy(
+    "BASIC_TROPIC",
+    locate_in_specific_biomes=[
+        "more_west",
+    ],
+)
 
 industry.enable_in_economy("IN_A_HOT_COUNTRY")
 # industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('COCO', 8)]
@@ -206,7 +211,9 @@ industry.add_multi_tile_object(
         (1, 0, "copper_smelter_spritelayout_ore_handling_front"),
     ],
     # ground, building(s), to avoid comping purchase sprites where possible in spritesheet, unless really needed
-    purchase_sprites={'buildings':[(290, 10, 64, 128, -32, -56), (360, 10, 64, 128, 0, -72)]},
+    purchase_sprites={
+        "buildings": [(290, 10, 64, 128, -32, -56), (360, 10, 64, 128, 0, -72)]
+    },
 )
 
 industry.add_industry_layout(

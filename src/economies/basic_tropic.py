@@ -58,3 +58,19 @@ economy = Economy(
         ],
     },
 )
+
+# some deliberate overlapping of biomes for mixing at boundaries
+economy.add_biome(
+    "more_west",
+    min_x_percent = 0,
+    max_x_percent = 100,
+    min_y_percent = 0,
+    max_y_percent = 60,
+)
+economy.add_biome(
+    "less_west",
+    min_x_percent = 0,
+    max_x_percent = 100,
+    min_y_percent = 40,
+    max_y_percent = 100,
+)
