@@ -9,6 +9,28 @@
 
     <!--! grf_object not object in case it conflicts with python 'object' at any point (might not, but who wants to test that? -->
     <tal:objects repeat="grf_object industry.objects.values()">
+
+        <!--! multi-tile objects need dedicated purchase sprite;
+              - did consider automating purchase sprite generation for multi-tile objects, but not something that was pursued as of Sept 2022
+              - be better to avoid multi-tile objects where possible
+        -->
+        <tal:purchase_sprites condition="grf_object.purchase_sprites is not None">
+            <tal:spriteset repeat="sprite grf_object.purchase_sprites['buildings']">
+                spriteset(${grf_object.id}_spriteset_purchase_${repeat.sprite.index}) {
+                    [${sprite[0]}, ${sprite[1]}, ${sprite[2]}, ${sprite[3]}, ${sprite[4]}, ${sprite[5]}, ANIM | NOCROP, ${industry.get_graphics_file_path(0)}]
+                }
+            </tal:spriteset>
+            spritelayout ${grf_object.id}_spritelayout_purchase {
+                <tal:building repeat="building grf_object.purchase_sprites['buildings']">
+                    building {
+                        sprite: ${grf_object.id}_spriteset_purchase_${repeat.building.index};
+                        recolour_mode: RECOLOUR_REMAP;
+                        palette:       PALETTE_USE_DEFAULT;
+                    }
+                </tal:building>
+            }
+        </tal:purchase_sprites>
+
         <tal:view repeat="view grf_object.views">
             switch(FEAT_OBJECTS, SELF, ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout, relative_pos) {
                 <tal:spritelayouts repeat="x_y_spritelayout view">
@@ -44,7 +66,7 @@
                         end_of_life_date:       date(${global_constants.max_game_date}, 1, 1);
                         /* Anything can overbuild the object, removing returns the money, we don't want foundations and we want to allow bridges */
                         object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_ANIMATED);
-                        height:                 6;
+                        height:                 8;
                         num_views:              ${len(grf_object.views)};
                         // name derived from industry currently
                         ${industry.get_property_declaration('name', None)}
@@ -71,7 +93,9 @@
                                 anim_control: ${grf_object.tile.id}_object_anim_control;
                             </tal:block>
                         </tal:anim_control>
-                        purchase:               ${grf_object.id}_switch_graphics;
+                        <tal:purchase_spritelayout condition="grf_object.purchase_sprites is not None">
+                            purchase:               ${grf_object.id}_spritelayout_purchase;
+                        </tal:purchase_spritelayout>
                         ${grf_object.id}_switch_graphics;
                     }
                 }

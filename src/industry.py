@@ -1563,6 +1563,7 @@ class Industry(object):
         if add_to_object_num not in self.objects.keys():
             self.objects[add_to_object_num] = GRFObject(self, add_to_object_num)
         self.objects[add_to_object_num].add_view(view)
+        self.objects[add_to_object_num].purchase_sprites = kwargs.get("purchase_sprites", None)
 
     def add_multi_tile_object(self, **kwargs):
         view = []
@@ -1572,7 +1573,8 @@ class Industry(object):
                     view.append(
                         (x_y_spritelayout[0], x_y_spritelayout[1], spritelayout)
                     )
-        print(self.id, "- adding multi-tile object num", kwargs['add_to_object_num'])
+        if "purchase_sprites" not in kwargs:
+            utils.echo_message(self.id, "- adding multi-tile object num", str(kwargs['add_to_object_num']))
         self.add_view_for_object(view, **kwargs)
 
     @property

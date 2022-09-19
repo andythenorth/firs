@@ -206,6 +206,8 @@ industry.add_multi_tile_object(
         (0, 0, "copper_smelter_spritelayout_ore_handling_rear"),
         (1, 0, "copper_smelter_spritelayout_ore_handling_front"),
     ],
+    # ground, building(s), to avoid comping purchase sprites where possible in spritesheet, unless really needed
+    purchase_sprites={'buildings':[(290, 10, 64, 128, -32, -56), (360, 10, 64, 128, 0, -72)]},
 )
 
 industry.add_industry_layout(

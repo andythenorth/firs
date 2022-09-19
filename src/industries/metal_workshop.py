@@ -134,6 +134,8 @@ industry.add_multi_tile_object(
         (0, 0, "metal_workshop_spritelayout_1"),
         (0, 1, "metal_workshop_spritelayout_2"),
     ],
+    # ground, building(s), to avoid comping purchase sprites where possible in spritesheet, unless really needed
+    purchase_sprites={'buildings':[(10, 60, 64, 70, -48, -72), (80, 60, 64, 70, -16, -56)]},
 )
 
 industry.add_industry_layout(
