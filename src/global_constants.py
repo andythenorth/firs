@@ -344,7 +344,7 @@ graphics_temp_storage = dict(
 animated_ground_tile_frame_counts = [1, 6, 7, 10, 12, 31, 32]
 
 # valid industry map colours, derived from an algorithm to ensure contrast against green / dark green / purple minimaps
-# based on work by frosch, https://devs.openttd.org/~frosch/texts/industrymap_green_darkgreen_violet.html
+# based on work by frosch, https://github.com/frosch123/quaking/tree/main/TTDPalette
 valid_industry_map_colours = [
     183,
     64,
