@@ -1572,6 +1572,7 @@ class Industry(object):
                     view.append(
                         (x_y_spritelayout[0], x_y_spritelayout[1], spritelayout)
                     )
+        print(self.id, "- adding multi-tile object num", kwargs['add_to_object_num'])
         self.add_view_for_object(view, **kwargs)
 
     @property
