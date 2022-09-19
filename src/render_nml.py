@@ -95,6 +95,7 @@ def main():
         "parameters",
         "sprite_templates",
         # items for which order is not significant, so alphabetise for simplicity
+        "buildings",
         "cargos",
         "colour",
         "construction_states",

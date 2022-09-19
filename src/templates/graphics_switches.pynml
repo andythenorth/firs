@@ -35,24 +35,12 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_industry_construction_state_grap
     ${industry.id + '_industry_graphics_switch_layouts' if len(industry.industry_layouts) > 1 else industry.industry_layouts[0].id + '_graphics_switch'}; // default
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_store_temp_vars,
-        [
-            STORE_TEMP(random_bits, ${graphics_temp_storage.var_random_bits}),
-            <!--! this is hide sprite calculation stuff for buildings, and 99% can be simplified (also use proper register names) -->
-            <!--! eh, these count down from 127 / 117, legacy date variation crap -->
-            STORE_TEMP(construction_state != 3 ? 1 : LOAD_TEMP(${127}), ${127}),
-             <!--! copy a register for snow case -->
-            STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}) == 0 ? 1 : LOAD_TEMP(${127}), ${117}),
-            <!--! non-snow case -->
-            STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}) == 1 ? 1 : LOAD_TEMP(${127}), ${127}),
-        ]) {
-    ${industry.id}_industry_construction_state_graphics_switch; // default
-}
-
 switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_switch_graphics, [
                                     switch_tile_fences_industry(),
                                     switch_terrain_industry(),
-                                    ${'switch_magic_trees()' if industry.uses_magic_trees else ''}
+                                    switch_tile_buildings(),
+                                    ${'switch_magic_trees(),' if industry.uses_magic_trees else ''}
+                                    STORE_TEMP(random_bits, ${graphics_temp_storage.var_random_bits})
                                  ]) {
-    ${industry.id}_store_temp_vars;
+    ${industry.id}_industry_construction_state_graphics_switch;
 }

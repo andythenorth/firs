@@ -338,6 +338,8 @@ graphics_temp_storage = dict(
     var_magic_trees_hide_default=15,  # hide tree sprite for default (temperate, arctic below snowline)
     var_magic_trees_hide_snow=16,  # hide tree sprite for snow
     var_magic_trees_hide_tropic=17,  # hide tree sprite for snow
+    var_hide_building=18, # hide a building in spritelayout, must be set to 1 (true) or 0 (false)
+    var_hide_building_snow=19, # hide a snow building in spritelayout, must be set to 1 (true) or 0 (false)
 )  # max register number must be 235; registers 236-255 are reserved for building sprite hide/show values
 
 # used to magically extend ground spritesets for animated tiles, add a count for each industry animation length

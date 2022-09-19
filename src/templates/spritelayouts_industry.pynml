@@ -138,7 +138,7 @@
                 yextent: ${building_sprite.yextent};
                 zextent: ${building_sprite.zextent};
                 always_draw: ${building_sprite.always_draw};
-                hide_sprite: (LOAD_TEMP(${127}));
+                hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_hide_building}));
             }
             building {
                 sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3, snow_overlay=True)};
@@ -151,7 +151,7 @@
                 yextent: ${building_sprite.yextent};
                 zextent: ${building_sprite.zextent};
                 always_draw: ${building_sprite.always_draw};
-                hide_sprite: (LOAD_TEMP(${117}));
+                hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_hide_building_snow}));
             }
         </tal:building_sprites>
 

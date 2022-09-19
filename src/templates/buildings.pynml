@@ -1,0 +1,13 @@
+<!--! determines whether buildings will show or not in spritelayout -->
+switch(FEAT_INDUSTRYTILES, SELF, switch_tile_buildings,
+        [
+            <!--! this is hide sprite calculation stuff for buildings, and 99% can be simplified (also use proper register names) -->
+            <!--! eh, these count down from 127 / 117, legacy date variation crap -->
+            STORE_TEMP(construction_state != 3 ? 1 : LOAD_TEMP(${graphics_temp_storage.var_hide_building}), ${graphics_temp_storage.var_hide_building}),
+             <!--! copy a register for snow case -->
+            STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}) == 0 ? 1 : LOAD_TEMP(${graphics_temp_storage.var_hide_building}), ${graphics_temp_storage.var_hide_building_snow}),
+            <!--! non-snow case -->
+            STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}) == 1 ? 1 : LOAD_TEMP(${graphics_temp_storage.var_hide_building}), ${graphics_temp_storage.var_hide_building}),
+        ]) {
+    return;
+}
