@@ -1114,9 +1114,9 @@ class IndustryLocationChecks(object):
         )
         if self.near_at_least_one_of_these_keystone_industries is not None:
             utils.echo_message(
-                "near_at_least_one_of_these_keystone_industries set by "
-                + industry.id
-                + ", should be in economy location checks only"
+                "near_at_least_one_of_these_keystone_industries set by",
+                industry.id,
+                "- should be in economy location checks only"
             )
         self.require_cluster = location_args.get("require_cluster", None)
         self.require_town_industry_count = location_args.get(
