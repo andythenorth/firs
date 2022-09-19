@@ -31,6 +31,11 @@ industry.enable_in_economy(
     prob_in_game="0",  # do not build during gameplay
 )
 
+industry.enable_in_economy(
+    "ANDYBIOTIC_TEMPERATE",
+    prob_in_game="0",  # do not build during gameplay
+)
+
 industry.add_tile(
     id="slag_grinding_plant_tile_1",
     animation_length=7,
