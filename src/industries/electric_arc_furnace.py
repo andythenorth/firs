@@ -111,10 +111,11 @@ spriteset_caster_line_1_animated = industry.add_spriteset(
     num_sprites_to_autofill=len(spriteset_caster_line_metal_animated.sprites),
 )
 spriteset_ground_tile_animated_caster_line = industry.add_spriteset(
-    sprites=[(500, 10, 64, 64, -31, -33)],
+    type="hard_standing_dirt",
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_caster_line_metal_animated.sprites),
 )
+
 sprite_smoke_main_stack_1 = industry.add_smoke_sprite(
     smoke_type="white_smoke_small",
     xoffset=2,

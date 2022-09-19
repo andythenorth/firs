@@ -340,6 +340,9 @@ graphics_temp_storage = dict(
     var_magic_trees_hide_tropic=17,  # hide tree sprite for snow
 )  # max register number must be 235; registers 236-255 are reserved for building sprite hide/show values
 
+# used to magically extend ground spritesets for animated tiles, add a count for each industry animation length
+animated_ground_tile_frame_counts = [1, 6, 7, 10, 12, 31, 32]
+
 # valid industry map colours, derived from an algorithm to ensure contrast against green / dark green / purple minimaps
 # based on work by frosch, https://devs.openttd.org/~frosch/texts/industrymap_green_darkgreen_violet.html
 valid_industry_map_colours = [

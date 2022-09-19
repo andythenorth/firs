@@ -2032,6 +2032,8 @@ class Industry(object):
                 # ground tile assumes sprite_or_spriteset.type will always map to a ground_tile type
                 # have to accomodate number of frames needed (num_sprites_to_autofill) for animated spritelayouts
                 # !! if this is failing, look if the required number of frames is provided in ground_tiles.pynml
+                if sprite_or_spriteset.num_sprites_to_autofill not in global_constants.animated_ground_tile_frame_counts:
+                    raise BaseException(self.id + " needs global_constants.animated_ground_tile_frame_counts extended to add a frame count of " + str(sprite_or_spriteset.num_sprites_to_autofill))
                 return (
                     "spriteset_ground_tile_"
                     + sprite_or_spriteset.type
