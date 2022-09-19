@@ -13,23 +13,39 @@
         <!--! multi-tile objects need dedicated purchase sprite;
               - did consider automating purchase sprite generation for multi-tile objects, but not something that was pursued as of Sept 2022
               - be better to avoid multi-tile objects where possible
+              - only one view supported for multi-tile objects
         -->
-        <tal:purchase_sprites condition="grf_object.purchase_sprites is not None">
-            <tal:spriteset repeat="sprite grf_object.purchase_sprites['buildings']">
-                spriteset(${grf_object.id}_spriteset_purchase_${repeat.sprite.index}) {
+        <tal:buildings repeat="x_y_spritelayout grf_object.multi_tile_buildings">
+            <tal:spriteset repeat="sprite getattr(x_y_spritelayout[2], 'sprites', None)">
+                spriteset(${grf_object.id}_spriteset_purchase_${repeat.x_y_spritelayout.index}_${repeat.sprite.index}) {
                     [${sprite[0]}, ${sprite[1]}, ${sprite[2]}, ${sprite[3]}, ${sprite[4]}, ${sprite[5]}, ANIM | NOCROP, ${industry.get_graphics_file_path()}]
                 }
             </tal:spriteset>
-            spritelayout ${grf_object.id}_spritelayout_purchase {
-                <tal:building repeat="building grf_object.purchase_sprites['buildings']">
+        </tal:buildings>
+        spritelayout ${grf_object.id}_spritelayout_purchase {
+            <tal:ground repeat="ground grf_object.multi_tile_ground">
+                building {
+                    sprite: ${industry.unpack_sprite_or_spriteset(ground[2])};
+                    <!--! this offset adjustment is a crude hack that appears to remarkably work
+                          if we want to tweak further, provide some constants that can also adjust the building sprites beyond the positions passed from the industry
+                          note that these are tile xy offsets (from NW/NE edge) not screen xy offsets, can be confusing -->
+                    xoffset: 16 * ${ground[0]};
+                    yoffset: 16 * ${ground[1]};
+                }
+            </tal:ground>
+            <tal:buildings repeat="x_y_spritelayout grf_object.multi_tile_buildings">
+                <tal:building repeat="building getattr(x_y_spritelayout[2], 'sprites', None)">
                     building {
-                        sprite: ${grf_object.id}_spriteset_purchase_${repeat.building.index};
+                        sprite: ${grf_object.id}_spriteset_purchase_${repeat.x_y_spritelayout.index}_${repeat.building.index};
                         recolour_mode: RECOLOUR_REMAP;
                         palette:       PALETTE_USE_DEFAULT;
+                        <!--! note that these are tile xy offsets (from NW/NE edge) not screen xy offsets, can be confusing -->
+                        xoffset: 16 * ${x_y_spritelayout[0]};
+                        yoffset: 16 * ${x_y_spritelayout[1]};
                     }
                 </tal:building>
-            }
-        </tal:purchase_sprites>
+            </tal:buildings>
+        }
 
         <tal:view repeat="view grf_object.views">
             switch(FEAT_OBJECTS, SELF, ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout, relative_pos) {
@@ -66,7 +82,7 @@
                         end_of_life_date:       date(${global_constants.max_game_date}, 1, 1);
                         /* Anything can overbuild the object, removing returns the money, we don't want foundations and we want to allow bridges */
                         object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_ANIMATED);
-                        height:                 8;
+                        height:                 6;
                         num_views:              ${len(grf_object.views)};
                         // name derived from industry currently
                         ${industry.get_property_declaration('name', None)}
@@ -93,9 +109,7 @@
                                 anim_control: ${grf_object.tile.id}_object_anim_control;
                             </tal:block>
                         </tal:anim_control>
-                        <tal:purchase_spritelayout condition="grf_object.purchase_sprites is not None">
-                            purchase:               ${grf_object.id}_spritelayout_purchase;
-                        </tal:purchase_spritelayout>
+                        purchase:               ${grf_object.id}_spritelayout_purchase;
                         ${grf_object.id}_switch_graphics;
                     }
                 }

@@ -217,8 +217,6 @@ industry.add_multi_tile_object(
         (1, 0, "manganese_mine_spritelayout_tile_empty"),
         (2, 0, "manganese_mine_spritelayout_crusher_front_part"),
     ],
-    # ground, building(s), to avoid comping purchase sprites where possible in spritesheet, unless really needed
-    purchase_sprites={'buildings':[(10, 10, 64, 122, -48, -56), (80, 10, 64, 122, 16, -72)]},
 )
 industry.add_multi_tile_object(
     add_to_object_num=4,
@@ -226,8 +224,6 @@ industry.add_multi_tile_object(
         (0, 0, "manganese_mine_spritelayout_exit_shed_rear"),
         (1, 0, "manganese_mine_spritelayout_exit_trestle_animated"),
     ],
-    # ground, building(s), to avoid comping purchase sprites where possible in spritesheet, unless really needed
-    purchase_sprites={'buildings':[(430, 10, 64, 122, -16, -72), (10, 160, 64, 122, -48, -54)]},
 )
 
 industry.add_industry_layout(

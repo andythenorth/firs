@@ -833,6 +833,23 @@ class GRFObject(object):
             return found_tiles[0]
 
     @property
+    def multi_tile_ground(self):
+        result = []
+        # only one view supported currently for multi_tile objects (could do more, but just 1 currently for basic simplicity)
+        for x, y, spritelayout in self.views[0]:
+            result.append([x, y, spritelayout.ground_sprite])
+        return result
+
+    @property
+    def multi_tile_buildings(self):
+        result = []
+        # only one view supported currently for multi_tile objects (could do more, but just 1 currently for basic simplicity)
+        for x, y, spritelayout in self.views[0]:
+            for building_sprite in spritelayout.building_sprites:
+                result.append([x, y, building_sprite])
+        return result
+
+    @property
     def animation_triggers(self):
         # object animation triggers don't match industry tile triggers, so remap
         result = []
@@ -1551,18 +1568,16 @@ class Industry(object):
         if add_to_object_num not in self.objects.keys():
             self.objects[add_to_object_num] = GRFObject(self, add_to_object_num)
         self.objects[add_to_object_num].add_view(view)
-        self.objects[add_to_object_num].purchase_sprites = kwargs.get("purchase_sprites", None)
 
     def add_multi_tile_object(self, **kwargs):
         view = []
         for x_y_spritelayout in kwargs["view_layout"]:
+            # does not handle case of invalid spritelayout id currently, so...don't do that :)
             for spritelayout in self.spritelayouts:
                 if spritelayout.id == x_y_spritelayout[2]:
                     view.append(
                         (x_y_spritelayout[0], x_y_spritelayout[1], spritelayout)
                     )
-        if "purchase_sprites" not in kwargs:
-            utils.echo_message(self.id, "- adding multi-tile object num", str(kwargs['add_to_object_num']))
         self.add_view_for_object(view, **kwargs)
 
     @property

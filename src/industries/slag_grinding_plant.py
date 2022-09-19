@@ -221,17 +221,13 @@ industry.add_multi_tile_object(
         (0, 0, "slag_grinding_plant_spritelayout_grinding_tower"),
         (0, 1, "slag_grinding_plant_spritelayout_conveyors_1"),
     ],
-    # ground, building(s), to avoid comping purchase sprites where possible in spritesheet, unless really needed
-    purchase_sprites={'buildings':[(150, 10, 64, 120, -56, -72), (220, 10, 64, 120, -24, -56)]},
 )
 industry.add_multi_tile_object(
     add_to_object_num=6,
     view_layout=[
-        (0, 0, "slag_grinding_plant_spritelayout_slag_dump_1"),
         (0, 1, "slag_grinding_plant_spritelayout_slag_dump_2"),
+        (0, 0, "slag_grinding_plant_spritelayout_slag_dump_1"),
     ],
-    # ground, building(s), to avoid comping purchase sprites where possible in spritesheet, unless really needed
-    purchase_sprites={'buildings':[(360, 10, 64, 120, -56, -72), (430, 10, 64, 120, -24, -56)]},
 )
 
 industry.add_industry_layout(
