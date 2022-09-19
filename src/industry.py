@@ -436,17 +436,6 @@ class Spriteset(object):
         self.zextent = 32  # it's of limited use setting zextent, just make it 32 and be done with it
         self.always_draw = always_draw
 
-    def get_ground_tile_x_start(self, type):
-        print("get_ground_tile_x_start needs deleted")
-        return {
-            "mud": 0,
-            "concrete": 80,
-            "cobble": 150,
-            "snow": 220,
-            "slab": 290,
-            "empty": 360,
-        }[type]
-
 
 class SpriteLayout(object):
     """Base class to hold spritelayouts for industry spritelayouts"""
