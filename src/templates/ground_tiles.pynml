@@ -3,7 +3,7 @@ template tmpl_ground_tile(x, y) {
 	[x, y, 64, 31, -31, 0, ANIM]
 }
 
-<tal:spritesets repeat="ground_tile [('mud', 0), ('concrete', 80), ('cobble', 150), ('snow', 220), ('slab', 290), ('dirty_concrete', 360), ('hard_standing_dirt', 430)]">
+<tal:spritesets repeat="ground_tile [('mud', 0), ('dirty_concrete', 80), ('hard_standing_dirt', 150), ('cobble', 220), ('snow', 290), ('slab', 360)]">
     <!--! the frame variants are to support animated, they're hard-coded to match current animation amounts and must be extended if industry animations evolve -->
     <tal:frame_variants repeat="num_frames [1, 6, 7, 12]">
         spriteset(spriteset_ground_tile_${ground_tile[0]}_${num_frames}, "src/graphics/other/ground_tiles.png") {
