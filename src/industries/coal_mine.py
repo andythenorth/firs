@@ -18,6 +18,9 @@ industry = IndustryPrimaryExtractive(
 
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
+    locate_in_specific_biomes=[
+        "less_south_west",
+    ],
 )
 industry.enable_in_economy(
     "STEELTOWN",

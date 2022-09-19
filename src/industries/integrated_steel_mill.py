@@ -25,6 +25,9 @@ industry.enable_in_economy(
         ("COAL", 2),
         ("SCMT", 3),
     ],
+    locate_in_specific_biomes=[
+        "less_south_west",
+    ],
 )
 
 industry.add_tile(

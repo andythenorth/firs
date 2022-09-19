@@ -17,6 +17,9 @@ industry = IndustryPrimaryExtractive(
 
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
+    locate_in_specific_biomes=[
+        "more_south_west",
+    ],
 )
 
 # 2 tiles for this industry: pit outer tile cannot be on slopes; pit inner tiles and processor tiles can be
