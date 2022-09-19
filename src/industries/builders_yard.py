@@ -48,7 +48,7 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(
-    type="concrete",
+    type="dirty_concrete",
 )
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 stacks_1 = industry.add_spriteset(

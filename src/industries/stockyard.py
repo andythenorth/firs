@@ -50,7 +50,7 @@ industry.add_tile(
     ),
 )
 
-spriteset_ground = industry.add_spriteset(type="concrete")
+spriteset_ground = industry.add_spriteset(type="dirty_concrete")
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 44, -31, -13)],
