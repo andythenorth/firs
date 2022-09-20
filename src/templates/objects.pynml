@@ -34,16 +34,26 @@
                 }
             </tal:ground>
             <tal:buildings repeat="x_y_spritelayout grf_object.multi_tile_buildings">
-                <tal:building repeat="building getattr(x_y_spritelayout[2], 'sprites', None)">
+                <tal:building_single_baseset_sprite condition="getattr(x_y_spritelayout[2], 'sprite_number', None) is not None">
                     building {
-                        sprite: ${grf_object.id}_spriteset_purchase_${repeat.x_y_spritelayout.index}_${repeat.building.index};
+                        sprite: ${getattr(x_y_spritelayout[2], 'sprite_number', None)};
                         recolour_mode: RECOLOUR_REMAP;
                         palette:       PALETTE_USE_DEFAULT;
                         <!--! note that these are tile xy offsets (from NW/NE edge) not screen xy offsets, can be confusing -->
                         xoffset: 16 * ${x_y_spritelayout[0]};
                         yoffset: 16 * ${x_y_spritelayout[1]};
                     }
-                </tal:building>
+                </tal:building_single_baseset_sprite>
+                <tal:building_multiple_realsprites repeat="sprites getattr(x_y_spritelayout[2], 'sprites', None)">
+                    building {
+                        sprite: ${grf_object.id}_spriteset_purchase_${repeat.x_y_spritelayout.index}_${repeat.sprites.index};
+                        recolour_mode: RECOLOUR_REMAP;
+                        palette:       PALETTE_USE_DEFAULT;
+                        <!--! note that these are tile xy offsets (from NW/NE edge) not screen xy offsets, can be confusing -->
+                        xoffset: 16 * ${x_y_spritelayout[0]};
+                        yoffset: 16 * ${x_y_spritelayout[1]};
+                    }
+                </tal:building_multiple_realsprites>
             </tal:buildings>
         }
 
