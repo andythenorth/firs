@@ -20,6 +20,13 @@ industry.enable_in_economy(
     "BASIC_TEMPERATE",
 )
 
+industry.enable_in_economy(
+    "STEELTOWN",
+    prod_cargo_types_with_multipliers=[
+        ("GRVL", 17),
+    ],
+)
+
 industry.add_tile(
     id="dredging_site_tile_1",
     location_checks=TileLocationChecks(

@@ -3,14 +3,19 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="component_factory",
     accept_cargos_with_input_ratios=[
-        ("STST", 2),
-        ("PLAS", 2),
-        ("STAL", 2),
+        # 5 cargos eh? pretty rare
+        # realism calls also for Steel Wire Rod, but it's a step too far eh
+        ("STBR", 2),
+        ("TUBE", 1),
+        ("FOCA", 2),
         ("POWR", 2),
+        ("PLAS", 1),
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
-        ("VPTS", 8),
+        ("VPTS", 3),
+        ("PUMP", 3),
+        ("LFEQ", 2),
     ],
     prob_in_game="1",  # low chance of build during gameplay
     prob_map_gen="8",

@@ -21,6 +21,7 @@ industry.enable_in_economy(
     prod_cargo_types_with_multipliers=[
         ("SAND", 14),
         ("LIME", 14),
+        ("GRVL", 14),
     ],
 )
 

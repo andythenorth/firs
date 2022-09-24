@@ -22,6 +22,10 @@ industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     accept_cargo_types=["GOOD", "BDMT"],
 )
+industry.enable_in_economy(
+    "STEELTOWN",
+    accept_cargo_types=["HWAR"],
+)
 
 
 industry.add_tile(

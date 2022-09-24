@@ -1,7 +1,7 @@
 # Definition of numeric IDs for industries
 industry_numeric_ids = dict(
     coal_mine=0,
-    plaza = 1,
+    plaza=1,
     ####UNUSED?####steel_mill = 2,
     cryo_plant=3,
     iron_ore_mine=4,
@@ -38,7 +38,7 @@ industry_numeric_ids = dict(
     brewery=35,
     dairy=36,
     stockyard=37,
-    ####UNUSED?####machine_shop = 38,
+    machine_shop=38,
     port=39,
     ###BLTC###ammonia_plant = 40,
     timber_yard=41,
@@ -77,7 +77,7 @@ industry_numeric_ids = dict(
     liquids_terminal=74,
     manganese_mine=75,
     potash_mine=76,
-    #unused=77,
+    # unused=77,
     coke_oven=78,
     electric_arc_furnace=79,
     slag_grinding_plant=80,
@@ -95,15 +95,15 @@ industry_numeric_ids = dict(
     ##IAHC##fischer_tropsch_plant = 92,
     ##IAHC##latex_processor = 93,
     integrated_steel_mill=94,
-    wire_and_section_mill=95,
+    section_mill=95,
     body_plant=96,
     ###BLTC###tinplate_works = 97,
-    cider_mill = 98,
+    cider_mill=98,
     lime_kiln=99,
     ###BLTC###factory_1 = 100,
     ###BLTC###factory_2 = 101,
     ###BLTC###factory_3 = 102,
-    sheet_and_pipe_mill=103,
+    pipe_mill=103,
     ###BLTC###solvay_plant = 104,
     ###BLTC###salt_mine = 105,
     ###BLTC###fertiliser_plant = 106,
@@ -114,6 +114,12 @@ industry_numeric_ids = dict(
     ###BLTC###polyethylene_plant = 111,
     ###BLTC###ethylene_cracker = 112,
     ##IAHC?##sugar_refinery = 113,
+    foundry=114,
+    wire_rod_mill=115,
+    strip_mill=116,
+    pipework_fabricator=117,
+    wire_rope_factory=118,
+    concrete_plant=119,
 )
 # 127 is last ID to be used (128 industry limit, zero-based)
 # see also why 128 is a hard limit as of 2020 http://webster.openttdcoop.org/?channel=openttd&date=1586563200#1586641232
@@ -124,6 +130,14 @@ industry_numeric_ids = dict(
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
 tile_numeric_ids = dict(
+    concrete_plant_tile_1=76,
+    wire_rope_factory_tile_1=77,
+    pipework_fabricator_tile_1=78,
+    strip_mill_tile_1=79,
+    wire_rod_mill_tile_1=80,
+    foundry_tile_1=81,
+    foundry_tile_2=82,
+    foundry_tile_3=83,
     electric_arc_furnace_tile_2=84,
     plaza_tile_1=85,
     integrated_steel_mill_tile_1=86,
@@ -152,7 +166,7 @@ tile_numeric_ids = dict(
     ethylene_cracker_tile_2=109,
     basic_oxygen_furnace_tile_2=110,
     tinplate_works_tile_1=111,
-    wire_and_section_mill_tile_1=112,
+    section_mill_tile_1=112,
     slag_grinding_plant_tile_1=113,
     slag_grinding_plant_tile_2=114,
     wharf_tile_3=115,
@@ -240,7 +254,7 @@ tile_numeric_ids = dict(
     tyre_plant_tile_1=197,
     dredging_site_tile_1=198,
     metal_workshop_tile_1=199,
-    sheet_and_pipe_mill_tile_1=200,
+    pipe_mill_tile_1=200,
     recycling_plant_tile_1=201,
     recycling_depot_tile_1=202,
     petrol_pump_tile_1=203,
@@ -298,7 +312,6 @@ tile_numeric_ids = dict(
 )
 
 
-
 metadata = {
     "dev_thread_url": "http://www.tt-forums.net/viewtopic.php?t=41607",
     "repo_url": "https://github.com/andythenorth/firs",
@@ -338,12 +351,12 @@ graphics_temp_storage = dict(
     var_magic_trees_hide_default=15,  # hide tree sprite for default (temperate, arctic below snowline)
     var_magic_trees_hide_snow=16,  # hide tree sprite for snow
     var_magic_trees_hide_tropic=17,  # hide tree sprite for snow
-    var_hide_building=18, # hide a building in spritelayout, must be set to 1 (true) or 0 (false)
-    var_hide_building_snow=19, # hide a snow building in spritelayout, must be set to 1 (true) or 0 (false)
+    var_hide_building=18,  # hide a building in spritelayout, must be set to 1 (true) or 0 (false)
+    var_hide_building_snow=19,  # hide a snow building in spritelayout, must be set to 1 (true) or 0 (false)
 )  # max register number must be 235; registers 236-255 are reserved for building sprite hide/show values
 
 # used to magically extend ground spritesets for animated tiles, add a count for each industry animation length
-animated_ground_tile_frame_counts = [1, 6, 7, 10, 12, 31, 32]
+animated_ground_tile_frame_counts = [1, 3, 6, 7, 10, 12, 31, 32]
 
 # valid industry map colours, derived from an algorithm to ensure contrast against green / dark green / purple minimaps
 # based on work by frosch, https://github.com/frosch123/quaking/tree/main/TTDPalette
