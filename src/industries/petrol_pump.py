@@ -2,10 +2,14 @@ from industry import IndustryTertiary, TileLocationChecks
 
 industry = IndustryTertiary(
     id="petrol_pump",
-    accept_cargo_types=["FOOD", "GOOD", "PETR"],
+    accept_cargo_types=[
+        "FOOD",
+        "GOOD",
+        "PETR",
+    ],
     prod_cargo_types=[],
-    prob_in_game="14",
-    prob_map_gen="14",
+    prob_in_game="8",
+    prob_map_gen="8",
     prod_multiplier="[0, 0]",
     map_colour="169",
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
@@ -14,11 +18,13 @@ industry = IndustryTertiary(
     name="string(STR_IND_PETROLPUMP)",
     nearby_station_name="string(STR_STATION_PUMPS)",
     fund_cost_multiplier="8",
+    provides_snow=True,
 )
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
-industry.economy_variations["IN_A_HOT_COUNTRY"].prob_map_gen = "8"
-industry.economy_variations["IN_A_HOT_COUNTRY"].prob_in_game = "8"
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+)
+
 
 industry.add_tile(
     id="petrol_pump_tile_1",
@@ -38,12 +44,14 @@ spriteset_2 = industry.add_spriteset(sprites=[(80, 60, 64, 59, -31, -28)])
 
 industry.add_spritelayout(
     id="petrol_pump_spritelayout_1",
+    tile="petrol_pump_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_1],
 )
 industry.add_spritelayout(
     id="petrol_pump_spritelayout_2",
+    tile="petrol_pump_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_2],
@@ -52,14 +60,14 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="petrol_pump_industry_layout_1",
     layout=[
-        (0, 0, "petrol_pump_tile_1", "petrol_pump_spritelayout_1"),
-        (0, 1, "petrol_pump_tile_1", "petrol_pump_spritelayout_2"),
+        (0, 0, "petrol_pump_spritelayout_1"),
+        (0, 1, "petrol_pump_spritelayout_2"),
     ],
 )
 industry.add_industry_layout(
     id="petrol_pump_industry_layout_2",
     layout=[
-        (0, 0, "petrol_pump_tile_1", "petrol_pump_spritelayout_1"),
-        (1, 0, "petrol_pump_tile_1", "petrol_pump_spritelayout_2"),
+        (0, 0, "petrol_pump_spritelayout_1"),
+        (1, 0, "petrol_pump_spritelayout_2"),
     ],
 )

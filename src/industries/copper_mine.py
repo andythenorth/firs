@@ -2,7 +2,9 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(
     id="copper_mine",
-    prod_cargo_types_with_multipliers=[("CORE", 20)],
+    prod_cargo_types_with_multipliers=[
+        ("CORE", 20),
+    ],
     prob_in_game="7",
     prob_map_gen="7",
     map_colour="10",
@@ -14,8 +16,15 @@ industry = IndustryPrimaryExtractive(
     pollution_and_squalor_factor=1,
 )
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
-industry.economy_variations["BASIC_TROPIC"].enabled = True
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+)
+industry.enable_in_economy(
+    "BASIC_TROPIC",
+    locate_in_specific_biomes=[
+        "more_west",
+    ],
+)
 
 industry.add_tile(
     id="copper_mine_tile_1",
@@ -59,6 +68,7 @@ sprite_smoke = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="copper_mine_spritelayout_1",
+    tile="copper_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_1],
@@ -66,6 +76,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_mine_spritelayout_2",
+    tile="copper_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[],
@@ -73,6 +84,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_mine_spritelayout_3_anim",
+    tile="copper_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_3_anim],
@@ -80,6 +92,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_mine_spritelayout_4",
+    tile="copper_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_4],
@@ -87,6 +100,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_mine_spritelayout_5",
+    tile="copper_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_5],
@@ -97,15 +111,15 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="copper_mine_industry_layout_1",
     layout=[
-        (0, 0, "copper_mine_tile_1", "copper_mine_spritelayout_1"),
-        (0, 1, "copper_mine_tile_1", "copper_mine_spritelayout_1"),
-        (0, 2, "copper_mine_tile_1", "copper_mine_spritelayout_1"),
-        (1, 0, "copper_mine_tile_1", "copper_mine_spritelayout_5"),
-        (1, 1, "copper_mine_tile_1", "copper_mine_spritelayout_3_anim"),
-        (1, 2, "copper_mine_tile_1", "copper_mine_spritelayout_4"),
-        (2, 0, "copper_mine_tile_1", "copper_mine_spritelayout_1"),
-        (2, 1, "copper_mine_tile_1", "copper_mine_spritelayout_1"),
-        (2, 2, "copper_mine_tile_1", "copper_mine_spritelayout_2"),
-        (3, 1, "copper_mine_tile_1", "copper_mine_spritelayout_1"),
+        (0, 0, "copper_mine_spritelayout_1"),
+        (0, 1, "copper_mine_spritelayout_1"),
+        (0, 2, "copper_mine_spritelayout_1"),
+        (1, 0, "copper_mine_spritelayout_5"),
+        (1, 1, "copper_mine_spritelayout_3_anim"),
+        (1, 2, "copper_mine_spritelayout_4"),
+        (2, 0, "copper_mine_spritelayout_1"),
+        (2, 1, "copper_mine_spritelayout_1"),
+        (2, 2, "copper_mine_spritelayout_2"),
+        (3, 1, "copper_mine_spritelayout_1"),
     ],
 )

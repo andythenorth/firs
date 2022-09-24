@@ -9,8 +9,10 @@ industry = IndustrySecondary(
         ("POWR", 2),
     ],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("VPTS", 8)],
-    prob_in_game="7",
+    prod_cargo_types_with_output_ratios=[
+        ("VPTS", 8),
+    ],
+    prob_in_game="1",  # low chance of build during gameplay
     prob_map_gen="8",
     map_colour="166",
     name="string(STR_IND_COMPONENT_FACTORY)",
@@ -19,16 +21,9 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=1,
 )
 
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations[
-    "STEELTOWN"
-].prob_in_game = "1"  # low chance of build during gameplay
-
-"""
-industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
-industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('FICR', 6), ('SASH', 2)]
-industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('YARN', 8)]
-"""
+industry.enable_in_economy(
+    "STEELTOWN",
+)
 
 industry.add_tile(
     id="component_factory_tile_1",
@@ -38,7 +33,7 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(
-    type="concrete",
+    type="dirty_concrete",
 )
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
@@ -65,6 +60,7 @@ spriteset_7 = industry.add_spriteset(
 
 industry.add_spritelayout(
     id="component_factory_spritelayout_large_building_1",
+    tile="component_factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -72,6 +68,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="component_factory_spritelayout_large_building_2",
+    tile="component_factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -79,6 +76,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="component_factory_spritelayout_large_building_3",
+    tile="component_factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -86,6 +84,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="component_factory_spritelayout_4",
+    tile="component_factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -93,6 +92,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="component_factory_spritelayout_5",
+    tile="component_factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[
@@ -107,57 +107,49 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "component_factory_tile_1",
             "component_factory_spritelayout_large_building_2",
         ),
         (
             0,
             1,
-            "component_factory_tile_1",
             "component_factory_spritelayout_large_building_3",
         ),
         (
             0,
             2,
-            "component_factory_tile_1",
             "component_factory_spritelayout_large_building_2",
         ),
         (
             0,
             3,
-            "component_factory_tile_1",
             "component_factory_spritelayout_large_building_3",
         ),
         (
             0,
             4,
-            "component_factory_tile_1",
             "component_factory_spritelayout_large_building_3",
         ),
         (
             1,
             0,
-            "component_factory_tile_1",
             "component_factory_spritelayout_large_building_1",
         ),
-        (1, 1, "component_factory_tile_1", "component_factory_spritelayout_4"),
-        (1, 2, "component_factory_tile_1", "component_factory_spritelayout_5"),
-        (1, 3, "component_factory_tile_1", "component_factory_spritelayout_4"),
-        (1, 4, "component_factory_tile_1", "component_factory_spritelayout_4"),
+        (1, 1, "component_factory_spritelayout_4"),
+        (1, 2, "component_factory_spritelayout_5"),
+        (1, 3, "component_factory_spritelayout_4"),
+        (1, 4, "component_factory_spritelayout_4"),
         (
             2,
             0,
-            "component_factory_tile_1",
             "component_factory_spritelayout_large_building_2",
         ),
         (
             2,
             1,
-            "component_factory_tile_1",
             "component_factory_spritelayout_large_building_3",
         ),
-        (2, 2, "component_factory_tile_1", "component_factory_spritelayout_5"),
-        (2, 3, "component_factory_tile_1", "component_factory_spritelayout_5"),
-        (2, 4, "component_factory_tile_1", "component_factory_spritelayout_5"),
+        (2, 2, "component_factory_spritelayout_5"),
+        (2, 3, "component_factory_spritelayout_5"),
+        (2, 4, "component_factory_spritelayout_5"),
     ],
 )

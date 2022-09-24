@@ -384,7 +384,7 @@ def main():
     cargo_icons_spritesheet = Image.open(os.path.join(cargo_icons_src))
     processed_cargo_icons_spritesheet = cargo_icons_spritesheet.resize(
         (2 * cargo_icons_spritesheet.size[0], 2 * cargo_icons_spritesheet.size[1]),
-        resample=Image.NEAREST,
+        resample=Image.Resampling.NEAREST,
     )
     output_path = os.path.join(images_dir_dst, "cargoicons.png")
     processed_cargo_icons_spritesheet.save(output_path, optimize=True, transparency=0)

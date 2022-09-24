@@ -3,13 +3,14 @@ from economies import registered_economies
 
 
 class Economy(object):
-    """ class to hold economies, this comment is pointless eh? """
+    """class to hold economies, this comment is pointless eh?"""
 
     def __init__(self, id, **kwargs):
         self.id = id
         self.numeric_id = kwargs.get("numeric_id")
         self.cargo_ids = kwargs.get("cargos")
         self.cargoflow_graph_tuning = kwargs.get("cargoflow_graph_tuning")
+        self.biomes = []
 
     def register(self):
         # guard, duplicate numeric IDs don't work :P
@@ -22,6 +23,9 @@ class Economy(object):
                     + economy.id
                 )
         registered_economies.append(self)
+
+    def add_biome(self, biome_id, **kwargs):
+        self.biomes.append(Biome(biome_id, **kwargs))
 
     def forcibly_space_cargo_price_factors(self, registered_cargos):
         # check for overlapping price factors (and adjust if necessary) to ensure they're all unique per economy
@@ -60,3 +64,17 @@ class Economy(object):
             else:
                 result[cargo.id] = cargo.price_factor
         return result
+
+
+class Biome(object):
+    """
+        class to hold definitions of map biomes, optionally used for cases like industry location rules
+        they're not really 'biomes', but it's an easy way to avoid clash with 'regions' for other purposes
+    """
+
+    def __init__(self, id, **kwargs):
+        self.id = id
+        self.min_x_percent = kwargs["min_x_percent"]
+        self.max_x_percent = kwargs["max_x_percent"]
+        self.min_y_percent = kwargs["min_y_percent"]
+        self.max_y_percent = kwargs["max_y_percent"]

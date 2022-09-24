@@ -146,4 +146,4 @@ for industry in sorted(registered_industries, key=lambda industry: industry.id):
         object_ids[grf_object.id] = counter
         counter += 1
         if counter > 254:
-            raise BaseException("CABBAGE") # yair, try harder
+            raise BaseException("Object ID limit exceeded", counter, grf_object.id) # yair, try harder

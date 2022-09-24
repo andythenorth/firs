@@ -2,9 +2,11 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="stockyard",
-    accept_cargos_with_input_ratios=[("LVST", 6)],
+    accept_cargos_with_input_ratios=[],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("FOOD", 8)],
+    prod_cargo_types_with_output_ratios=[
+        ("FOOD", 8),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="177",
@@ -13,26 +15,30 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_ANIMALS)",
     fund_cost_multiplier="115",
     pollution_and_squalor_factor=2,
+    provides_snow=True,
 )
 
 
-industry.economy_variations["BASIC_TEMPERATE"].enabled = True
-industry.economy_variations["BASIC_TEMPERATE"].accept_cargos_with_input_ratios = [
-    ("LVST", 6)
-]
+industry.enable_in_economy(
+    "BASIC_TEMPERATE",
+    accept_cargos_with_input_ratios=[
+        ("LVST", 6),
+    ],
+)
 
-industry.economy_variations["BASIC_TROPIC"].enabled = True
-industry.economy_variations["BASIC_TROPIC"].accept_cargos_with_input_ratios = [
-    ("LVST", 6)
-]
+industry.enable_in_economy(
+    "BASIC_TROPIC",
+    accept_cargos_with_input_ratios=[
+        ("LVST", 6),
+    ],
+)
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('LVST', 6), ('MNSP', 1), ('ENUM', 1)]
-
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
-industry.economy_variations["IN_A_HOT_COUNTRY"].accept_cargos_with_input_ratios = [
-    ("LVST", 6)
-]
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+    accept_cargos_with_input_ratios=[
+        ("LVST", 6),
+    ],
+)
 
 industry.add_tile(
     id="stockyard_tile_1",
@@ -44,7 +50,7 @@ industry.add_tile(
     ),
 )
 
-spriteset_ground = industry.add_spriteset(type="concrete")
+spriteset_ground = industry.add_spriteset(type="dirty_concrete")
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 44, -31, -13)],
@@ -95,6 +101,7 @@ sprite_smoke_2 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="stockyard_spritelayout_1",
+    tile="stockyard_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -102,6 +109,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="stockyard_spritelayout_2",
+    tile="stockyard_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -109,6 +117,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="stockyard_spritelayout_3",
+    tile="stockyard_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -116,6 +125,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="stockyard_spritelayout_4",
+    tile="stockyard_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -123,6 +133,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="stockyard_spritelayout_5",
+    tile="stockyard_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -131,6 +142,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="stockyard_spritelayout_6",
+    tile="stockyard_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
@@ -138,6 +150,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="stockyard_spritelayout_7",
+    tile="stockyard_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
@@ -145,6 +158,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="stockyard_spritelayout_8",
+    tile="stockyard_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
@@ -152,6 +166,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="stockyard_spritelayout_9",
+    tile="stockyard_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
@@ -159,6 +174,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="stockyard_spritelayout_10",
+    tile="stockyard_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
@@ -166,6 +182,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="stockyard_spritelayout_11",
+    tile="stockyard_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_11],
@@ -173,6 +190,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="stockyard_spritelayout_12",
+    tile="stockyard_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
@@ -182,21 +200,21 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="stockyard_industry_layout_1",
     layout=[
-        (0, 0, "stockyard_tile_1", "stockyard_spritelayout_12"),
-        (0, 1, "stockyard_tile_1", "stockyard_spritelayout_12"),
-        (0, 2, "stockyard_tile_1", "stockyard_spritelayout_11"),
-        (0, 3, "stockyard_tile_1", "stockyard_spritelayout_12"),
-        (1, 0, "stockyard_tile_1", "stockyard_spritelayout_12"),
-        (1, 1, "stockyard_tile_1", "stockyard_spritelayout_8"),
-        (1, 2, "stockyard_tile_1", "stockyard_spritelayout_9"),
-        (1, 3, "stockyard_tile_1", "stockyard_spritelayout_10"),
-        (3, 0, "stockyard_tile_1", "stockyard_spritelayout_12"),
-        (3, 1, "stockyard_tile_1", "stockyard_spritelayout_5"),
-        (3, 2, "stockyard_tile_1", "stockyard_spritelayout_6"),
-        (3, 3, "stockyard_tile_1", "stockyard_spritelayout_7"),
-        (4, 0, "stockyard_tile_1", "stockyard_spritelayout_1"),
-        (4, 1, "stockyard_tile_1", "stockyard_spritelayout_2"),
-        (4, 2, "stockyard_tile_1", "stockyard_spritelayout_3"),
-        (4, 3, "stockyard_tile_1", "stockyard_spritelayout_4"),
+        (0, 0, "stockyard_spritelayout_12"),
+        (0, 1, "stockyard_spritelayout_12"),
+        (0, 2, "stockyard_spritelayout_11"),
+        (0, 3, "stockyard_spritelayout_12"),
+        (1, 0, "stockyard_spritelayout_12"),
+        (1, 1, "stockyard_spritelayout_8"),
+        (1, 2, "stockyard_spritelayout_9"),
+        (1, 3, "stockyard_spritelayout_10"),
+        (3, 0, "stockyard_spritelayout_12"),
+        (3, 1, "stockyard_spritelayout_5"),
+        (3, 2, "stockyard_spritelayout_6"),
+        (3, 3, "stockyard_spritelayout_7"),
+        (4, 0, "stockyard_spritelayout_1"),
+        (4, 1, "stockyard_spritelayout_2"),
+        (4, 2, "stockyard_spritelayout_3"),
+        (4, 3, "stockyard_spritelayout_4"),
     ],
 )

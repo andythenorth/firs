@@ -2,7 +2,9 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(
     id="sheep_farm",
-    prod_cargo_types_with_multipliers=[("LVST", 12), ("WOOL", 14)],
+    prod_cargo_types_with_multipliers=[
+        ("LVST", 12),
+    ],
     prob_in_game="4",
     prob_map_gen="11",
     map_colour="168",
@@ -11,8 +13,8 @@ industry = IndustryPrimaryOrganic(
     name="string(STR_IND_SHEEPFARM)",
     nearby_station_name="string(STR_STATION_SHEEP_FOLD)",
     fund_cost_multiplier="45",
+    provides_snow=True,
 )
-
 
 industry.add_tile(
     id="sheep_farm_tile_1",

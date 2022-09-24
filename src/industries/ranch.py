@@ -2,7 +2,10 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(
     id="ranch",
-    prod_cargo_types_with_multipliers=[("LVST", 14), ("WOOL", 13)],
+    prod_cargo_types_with_multipliers=[
+        ("LVST", 14),
+        ("WOOL", 13),
+    ],
     prob_in_game="4",
     prob_map_gen="11",
     map_colour="168",
@@ -11,9 +14,12 @@ industry = IndustryPrimaryOrganic(
     name="string(STR_IND_RANCH)",
     nearby_station_name="string(STR_STATION_FARM_3)",
     fund_cost_multiplier="45",
+    provides_snow=True,
 )
 
-industry.economy_variations["BASIC_TROPIC"].enabled = True
+industry.enable_in_economy(
+    "BASIC_TROPIC",
+)
 
 industry.add_tile(
     id="ranch_tile_1",
@@ -42,6 +48,7 @@ spriteset_5 = industry.add_spriteset(
 
 industry.add_spritelayout(
     id="ranch_spritelayout_1",
+    tile="ranch_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -49,6 +56,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ranch_spritelayout_2",
+    tile="ranch_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -56,6 +64,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ranch_spritelayout_3",
+    tile="ranch_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -63,6 +72,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ranch_spritelayout_4",
+    tile="ranch_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -70,6 +80,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ranch_spritelayout_5",
+    tile="ranch_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -79,20 +90,20 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="ranch_industry_layout_1",
     layout=[
-        (0, 0, "ranch_tile_1", "ranch_spritelayout_3"),
-        (1, 0, "ranch_tile_1", "ranch_spritelayout_2"),
-        (1, 2, "ranch_tile_1", "ranch_spritelayout_4"),
-        (3, 0, "ranch_tile_1", "ranch_spritelayout_1"),
-        (3, 1, "ranch_tile_1", "ranch_spritelayout_5"),
+        (0, 0, "ranch_spritelayout_3"),
+        (1, 0, "ranch_spritelayout_2"),
+        (1, 2, "ranch_spritelayout_4"),
+        (3, 0, "ranch_spritelayout_1"),
+        (3, 1, "ranch_spritelayout_5"),
     ],
 )
 industry.add_industry_layout(
     id="ranch_industry_layout_2",
     layout=[
-        (0, 0, "ranch_tile_1", "ranch_spritelayout_2"),
-        (0, 1, "ranch_tile_1", "ranch_spritelayout_1"),
-        (0, 2, "ranch_tile_1", "ranch_spritelayout_4"),
-        (2, 0, "ranch_tile_1", "ranch_spritelayout_3"),
-        (2, 2, "ranch_tile_1", "ranch_spritelayout_5"),
+        (0, 0, "ranch_spritelayout_2"),
+        (0, 1, "ranch_spritelayout_1"),
+        (0, 2, "ranch_spritelayout_4"),
+        (2, 0, "ranch_spritelayout_3"),
+        (2, 2, "ranch_spritelayout_5"),
     ],
 )

@@ -2,10 +2,12 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(
     id="manganese_mine",
-    prod_cargo_types_with_multipliers=[("MNO2", 20)],
+    prod_cargo_types_with_multipliers=[
+        ("MNO2", 20),
+    ],
     prob_in_game="4",
     prob_map_gen="7",
-    map_colour="16",
+    map_colour="19",
     location_checks=dict(require_cluster=[70, 3]),
     prospect_chance="0.75",
     name="string(STR_IND_MANGANESE_MINE)",
@@ -14,7 +16,9 @@ industry = IndustryPrimaryExtractive(
     pollution_and_squalor_factor=1,
 )
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+)
 
 industry.add_tile(
     id="manganese_mine_tile_1",
@@ -132,12 +136,14 @@ sprite_smoke_2 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="manganese_mine_spritelayout_tile_empty",
+    tile="manganese_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[],
 )
 industry.add_spritelayout(
     id="manganese_mine_spritelayout_headgear_animated",
+    tile="manganese_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_headgear_animated],
@@ -145,24 +151,28 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="manganese_mine_spritelayout_exit_trestle_animated",
+    tile="manganese_mine_tile_3",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_exit_trestle_animated],
 )
 industry.add_spritelayout(
     id="manganese_mine_spritelayout_crusher_front_part",
+    tile="manganese_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_crusher_front_part],
 )
 industry.add_spritelayout(
     id="manganese_mine_spritelayout_crusher_rear_part",
+    tile="manganese_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_crusher_rear_part],
 )
 industry.add_spritelayout(
     id="manganese_mine_spritelayout_hut_vents",
+    tile="manganese_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_hut_vents],
@@ -170,18 +180,21 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="manganese_mine_spritelayout_ore_1",
+    tile="manganese_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_ore_1],
 )
 industry.add_spritelayout(
     id="manganese_mine_spritelayout_ore_2",
+    tile="manganese_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_ore_2],
 )
 industry.add_spritelayout(
     id="manganese_mine_spritelayout_winding_house",
+    tile="manganese_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_winding_house],
@@ -190,6 +203,8 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="manganese_mine_spritelayout_exit_shed_rear",
+    # tile has to match trestle for multi-tile object case
+    tile="manganese_mine_tile_3",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_exit_shed_rear],
@@ -201,14 +216,14 @@ industry.add_multi_tile_object(
         (0, 0, "manganese_mine_spritelayout_crusher_rear_part"),
         (1, 0, "manganese_mine_spritelayout_tile_empty"),
         (2, 0, "manganese_mine_spritelayout_crusher_front_part"),
-    ]
+    ],
 )
 industry.add_multi_tile_object(
     add_to_object_num=4,
     view_layout=[
         (0, 0, "manganese_mine_spritelayout_exit_shed_rear"),
         (1, 0, "manganese_mine_spritelayout_exit_trestle_animated"),
-    ]
+    ],
 )
 
 industry.add_industry_layout(
@@ -217,34 +232,30 @@ industry.add_industry_layout(
         (
             0,
             1,
-            "manganese_mine_tile_1",
             "manganese_mine_spritelayout_headgear_animated",
         ),
-        (0, 2, "manganese_mine_tile_2", "manganese_mine_spritelayout_winding_house"),
+        (0, 2, "manganese_mine_spritelayout_winding_house"),
         (
             1,
             0,
-            "manganese_mine_tile_2",
             "manganese_mine_spritelayout_crusher_rear_part",
         ),
-        (1, 1, "manganese_mine_tile_2", "manganese_mine_spritelayout_exit_shed_rear"),
-        (1, 2, "manganese_mine_tile_2", "manganese_mine_spritelayout_hut_vents"),
-        (2, 0, "manganese_mine_tile_2", "manganese_mine_spritelayout_tile_empty"),
+        (1, 1, "manganese_mine_spritelayout_exit_shed_rear"),
+        (1, 2, "manganese_mine_spritelayout_hut_vents"),
+        (2, 0, "manganese_mine_spritelayout_tile_empty"),
         (
             2,
             1,
-            "manganese_mine_tile_3",
             "manganese_mine_spritelayout_exit_trestle_animated",
         ),
-        (2, 2, "manganese_mine_tile_2", "manganese_mine_spritelayout_tile_empty"),
+        (2, 2, "manganese_mine_spritelayout_tile_empty"),
         (
             3,
             0,
-            "manganese_mine_tile_2",
             "manganese_mine_spritelayout_crusher_front_part",
         ),
-        (3, 1, "manganese_mine_tile_2", "manganese_mine_spritelayout_ore_1"),
-        (3, 2, "manganese_mine_tile_2", "manganese_mine_spritelayout_ore_2"),
+        (3, 1, "manganese_mine_spritelayout_ore_1"),
+        (3, 2, "manganese_mine_spritelayout_ore_2"),
     ],
 )
 
@@ -254,48 +265,42 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "manganese_mine_tile_2",
             "manganese_mine_spritelayout_crusher_rear_part",
         ),
         (
             0,
             1,
-            "manganese_mine_tile_1",
             "manganese_mine_spritelayout_headgear_animated",
         ),
-        (0, 2, "manganese_mine_tile_2", "manganese_mine_spritelayout_winding_house"),
+        (0, 2, "manganese_mine_spritelayout_winding_house"),
         (
             0,
             3,
-            "manganese_mine_tile_1",
             "manganese_mine_spritelayout_headgear_animated",
         ),
-        (0, 4, "manganese_mine_tile_2", "manganese_mine_spritelayout_winding_house"),
-        (1, 0, "manganese_mine_tile_2", "manganese_mine_spritelayout_tile_empty"),
-        (1, 1, "manganese_mine_tile_2", "manganese_mine_spritelayout_exit_shed_rear"),
-        (1, 2, "manganese_mine_tile_2", "manganese_mine_spritelayout_tile_empty"),
-        (1, 3, "manganese_mine_tile_2", "manganese_mine_spritelayout_exit_shed_rear"),
-        (1, 4, "manganese_mine_tile_2", "manganese_mine_spritelayout_hut_vents"),
+        (0, 4, "manganese_mine_spritelayout_winding_house"),
+        (1, 0, "manganese_mine_spritelayout_tile_empty"),
+        (1, 1, "manganese_mine_spritelayout_exit_shed_rear"),
+        (1, 2, "manganese_mine_spritelayout_tile_empty"),
+        (1, 3, "manganese_mine_spritelayout_exit_shed_rear"),
+        (1, 4, "manganese_mine_spritelayout_hut_vents"),
         (
             2,
             0,
-            "manganese_mine_tile_2",
             "manganese_mine_spritelayout_crusher_front_part",
         ),
         (
             2,
             1,
-            "manganese_mine_tile_3",
             "manganese_mine_spritelayout_exit_trestle_animated",
         ),
-        (2, 2, "manganese_mine_tile_2", "manganese_mine_spritelayout_ore_1"),
+        (2, 2, "manganese_mine_spritelayout_ore_1"),
         (
             2,
             3,
-            "manganese_mine_tile_3",
             "manganese_mine_spritelayout_exit_trestle_animated",
         ),
-        (2, 4, "manganese_mine_tile_2", "manganese_mine_spritelayout_ore_2"),
+        (2, 4, "manganese_mine_spritelayout_ore_2"),
     ],
 )
 
@@ -305,49 +310,43 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "manganese_mine_tile_1",
             "manganese_mine_spritelayout_headgear_animated",
         ),
-        (0, 1, "manganese_mine_tile_2", "manganese_mine_spritelayout_winding_house"),
-        (1, 0, "manganese_mine_tile_2", "manganese_mine_spritelayout_exit_shed_rear"),
-        (1, 1, "manganese_mine_tile_2", "manganese_mine_spritelayout_ore_2"),
-        (1, 2, "manganese_mine_tile_2", "manganese_mine_spritelayout_tile_empty"),
+        (0, 1, "manganese_mine_spritelayout_winding_house"),
+        (1, 0, "manganese_mine_spritelayout_exit_shed_rear"),
+        (1, 1, "manganese_mine_spritelayout_ore_2"),
+        (1, 2, "manganese_mine_spritelayout_tile_empty"),
         (
             2,
             0,
-            "manganese_mine_tile_3",
             "manganese_mine_spritelayout_exit_trestle_animated",
         ),
         (
             2,
             1,
-            "manganese_mine_tile_1",
             "manganese_mine_spritelayout_headgear_animated",
         ),
-        (2, 2, "manganese_mine_tile_2", "manganese_mine_spritelayout_winding_house"),
-        (3, 2, "manganese_mine_tile_2", "manganese_mine_spritelayout_hut_vents"),
-        (3, 1, "manganese_mine_tile_2", "manganese_mine_spritelayout_exit_shed_rear"),
+        (2, 2, "manganese_mine_spritelayout_winding_house"),
+        (3, 2, "manganese_mine_spritelayout_hut_vents"),
+        (3, 1, "manganese_mine_spritelayout_exit_shed_rear"),
         (
             3,
             0,
-            "manganese_mine_tile_2",
             "manganese_mine_spritelayout_crusher_rear_part",
         ),
-        (4, 0, "manganese_mine_tile_2", "manganese_mine_spritelayout_tile_empty"),
+        (4, 0, "manganese_mine_spritelayout_tile_empty"),
         (
             4,
             1,
-            "manganese_mine_tile_3",
             "manganese_mine_spritelayout_exit_trestle_animated",
         ),
-        (4, 2, "manganese_mine_tile_2", "manganese_mine_spritelayout_ore_2"),
+        (4, 2, "manganese_mine_spritelayout_ore_2"),
         (
             5,
             0,
-            "manganese_mine_tile_2",
             "manganese_mine_spritelayout_crusher_front_part",
         ),
-        (5, 1, "manganese_mine_tile_2", "manganese_mine_spritelayout_ore_1"),
+        (5, 1, "manganese_mine_spritelayout_ore_1"),
     ],
 )
 
@@ -357,46 +356,40 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "manganese_mine_tile_1",
             "manganese_mine_spritelayout_headgear_animated",
         ),
-        (0, 1, "manganese_mine_tile_2", "manganese_mine_spritelayout_winding_house"),
+        (0, 1, "manganese_mine_spritelayout_winding_house"),
         (
             0,
             2,
-            "manganese_mine_tile_1",
             "manganese_mine_spritelayout_headgear_animated",
         ),
-        (0, 3, "manganese_mine_tile_2", "manganese_mine_spritelayout_winding_house"),
+        (0, 3, "manganese_mine_spritelayout_winding_house"),
         (
             0,
             4,
-            "manganese_mine_tile_2",
             "manganese_mine_spritelayout_crusher_rear_part",
         ),
-        (1, 0, "manganese_mine_tile_2", "manganese_mine_spritelayout_exit_shed_rear"),
-        (1, 1, "manganese_mine_tile_2", "manganese_mine_spritelayout_ore_2"),
-        (1, 2, "manganese_mine_tile_2", "manganese_mine_spritelayout_exit_shed_rear"),
-        (1, 3, "manganese_mine_tile_2", "manganese_mine_spritelayout_tile_empty"),
-        (1, 4, "manganese_mine_tile_2", "manganese_mine_spritelayout_tile_empty"),
+        (1, 0, "manganese_mine_spritelayout_exit_shed_rear"),
+        (1, 1, "manganese_mine_spritelayout_ore_2"),
+        (1, 2, "manganese_mine_spritelayout_exit_shed_rear"),
+        (1, 3, "manganese_mine_spritelayout_tile_empty"),
+        (1, 4, "manganese_mine_spritelayout_tile_empty"),
         (
             2,
             0,
-            "manganese_mine_tile_3",
             "manganese_mine_spritelayout_exit_trestle_animated",
         ),
-        (2, 1, "manganese_mine_tile_2", "manganese_mine_spritelayout_hut_vents"),
+        (2, 1, "manganese_mine_spritelayout_hut_vents"),
         (
             2,
             2,
-            "manganese_mine_tile_3",
             "manganese_mine_spritelayout_exit_trestle_animated",
         ),
-        (2, 3, "manganese_mine_tile_2", "manganese_mine_spritelayout_ore_1"),
+        (2, 3, "manganese_mine_spritelayout_ore_1"),
         (
             2,
             4,
-            "manganese_mine_tile_2",
             "manganese_mine_spritelayout_crusher_front_part",
         ),
     ],

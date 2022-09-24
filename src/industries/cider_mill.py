@@ -2,9 +2,11 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="cider_mill",
-    accept_cargos_with_input_ratios=[("FRUT", 6)],
+    accept_cargos_with_input_ratios=[],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("BEER", 8)],
+    prod_cargo_types_with_output_ratios=[
+        ("BEER", 8),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="191",
@@ -16,9 +18,15 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_BARREL_AND_KEG)",
     fund_cost_multiplier="50",
     pollution_and_squalor_factor=1,
+    provides_snow=True,
 )
 
-industry.economy_variations["BASIC_TEMPERATE"].enabled = True
+industry.enable_in_economy(
+    "BASIC_TEMPERATE",
+    accept_cargos_with_input_ratios=[
+        ("FRUT", 6),
+    ],
+)
 
 industry.add_tile(
     id="cider_mill_tile_1",
@@ -86,6 +94,7 @@ sprite_smoke = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="cider_mill_spritelayout_1_anim",
+    tile="cider_mill_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -94,6 +103,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="cider_mill_spritelayout_2",
+    tile="cider_mill_tile_1",
     ground_sprite=spriteset_ground_anim,
     ground_overlay=spriteset_ground_overlay_anim,
     building_sprites=[spriteset_2_anim],
@@ -101,6 +111,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="cider_mill_spritelayout_3",
+    tile="cider_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -110,42 +121,42 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="cider_mill_industry_layout_1",
     layout=[
-        (0, 2, "cider_mill_tile_1", "cider_mill_spritelayout_3"),
-        (1, 0, "cider_mill_tile_2", "cider_mill_spritelayout_1_anim"),
-        (1, 2, "cider_mill_tile_1", "cider_mill_spritelayout_2"),
+        (0, 2, "cider_mill_spritelayout_3"),
+        (1, 0, "cider_mill_spritelayout_1_anim"),
+        (1, 2, "cider_mill_spritelayout_2"),
     ],
 )
 industry.add_industry_layout(
     id="cider_mill_industry_layout_2",
     layout=[
-        (0, 0, "cider_mill_tile_1", "cider_mill_spritelayout_3"),
-        (1, 0, "cider_mill_tile_1", "cider_mill_spritelayout_2"),
-        (2, 0, "cider_mill_tile_2", "cider_mill_spritelayout_1_anim"),
+        (0, 0, "cider_mill_spritelayout_3"),
+        (1, 0, "cider_mill_spritelayout_2"),
+        (2, 0, "cider_mill_spritelayout_1_anim"),
     ],
 )
 industry.add_industry_layout(
     id="cider_mill_industry_layout_3",
     layout=[
-        (0, 1, "cider_mill_tile_1", "cider_mill_spritelayout_3"),
-        (1, 0, "cider_mill_tile_2", "cider_mill_spritelayout_1_anim"),
-        (1, 1, "cider_mill_tile_1", "cider_mill_spritelayout_2"),
+        (0, 1, "cider_mill_spritelayout_3"),
+        (1, 0, "cider_mill_spritelayout_1_anim"),
+        (1, 1, "cider_mill_spritelayout_2"),
     ],
 )
 industry.add_industry_layout(
     id="cider_mill_industry_layout_4",
     layout=[
-        (0, 0, "cider_mill_tile_2", "cider_mill_spritelayout_1_anim"),
-        (1, 0, "cider_mill_tile_1", "cider_mill_spritelayout_3"),
-        (2, 0, "cider_mill_tile_1", "cider_mill_spritelayout_2"),
+        (0, 0, "cider_mill_spritelayout_1_anim"),
+        (1, 0, "cider_mill_spritelayout_3"),
+        (2, 0, "cider_mill_spritelayout_2"),
     ],
 )
 industry.add_industry_layout(
     id="cider_mill_industry_layout_5",
     layout=[
-        (0, 0, "cider_mill_tile_1", "cider_mill_spritelayout_3"),
-        (0, 1, "cider_mill_tile_1", "cider_mill_spritelayout_3"),
-        (1, 0, "cider_mill_tile_1", "cider_mill_spritelayout_2"),
-        (1, 1, "cider_mill_tile_1", "cider_mill_spritelayout_2"),
-        (2, 0, "cider_mill_tile_2", "cider_mill_spritelayout_1_anim"),
+        (0, 0, "cider_mill_spritelayout_3"),
+        (0, 1, "cider_mill_spritelayout_3"),
+        (1, 0, "cider_mill_spritelayout_2"),
+        (1, 1, "cider_mill_spritelayout_2"),
+        (2, 0, "cider_mill_spritelayout_1_anim"),
     ],
 )

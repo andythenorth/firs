@@ -2,8 +2,14 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="biorefinery",
-    accept_cargos_with_input_ratios=[("GRAI", 6), ("SGBT", 6)],
-    prod_cargo_types_with_output_ratios=[("RFPR", 4), ("PETR", 4)],
+    accept_cargos_with_input_ratios=[
+        ("GRAI", 6),
+        ("SGBT", 6),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("RFPR", 4),
+        ("PETR", 4),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="186",
@@ -11,6 +17,7 @@ industry = IndustrySecondary(
     name="string(STR_IND_BIOREFINERY)",
     nearby_station_name="string(STR_STATION_REFINERY)",
     fund_cost_multiplier="170",
+    provides_snow=True,
 )
 
 
@@ -25,7 +32,7 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(
-    type="concrete",
+    type="dirty_concrete",
 )
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(

@@ -9,8 +9,12 @@ industry = IndustrySecondary(
         ("TYRE", 2),
     ],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("VEHI", 6), ("ENSP", 1), ("FMSP", 1)],
-    prob_in_game="3",
+    prod_cargo_types_with_output_ratios=[
+        ("VEHI", 6),
+        ("ENSP", 1),
+        ("FMSP", 1),
+    ],
+    prob_in_game="1",  # low chance of build during gameplay
     prob_map_gen="5",
     map_colour="141",
     name="string(STR_IND_ASSEMBLY_PLANT)",
@@ -18,10 +22,9 @@ industry = IndustrySecondary(
     fund_cost_multiplier="145",
 )
 
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations[
-    "STEELTOWN"
-].prob_in_game = "1"  # low chance of build during gameplay
+industry.enable_in_economy(
+    "STEELTOWN",
+)
 
 industry.add_tile(
     id="assembly_plant_tile_1",
@@ -34,7 +37,7 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(
-    type="concrete",
+    type="dirty_concrete",
 )
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
@@ -80,6 +83,7 @@ sprite_smoke = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_rear_assembly_hall_windows",
+    tile="assembly_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -88,6 +92,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_central_assembly_hall",
+    tile="assembly_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -96,6 +101,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_front_assembly_hall_windows",
+    tile="assembly_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -104,6 +110,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_front_assembly_hall_doors",
+    tile="assembly_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -112,6 +119,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_goods_in_1",
+    tile="assembly_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
@@ -120,6 +128,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_offices",
+    tile="assembly_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
@@ -128,6 +137,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_tyres",
+    tile="assembly_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
@@ -136,6 +146,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_vehicles_1",
+    tile="assembly_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
@@ -144,6 +155,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_vehicles_2",
+    tile="assembly_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_11],
@@ -152,6 +164,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_vehicles_3",
+    tile="assembly_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_12],
@@ -164,12 +177,12 @@ industry.add_industry_outpost_layout(
     id="assembly_plant_industry_outpost_layout_1",
     layout=[
         # test outpost layout
-        (0, 0, "assembly_plant_tile_1", "assembly_plant_spritelayout_rear_assembly_hall_windows"),
-        (0, 1, "assembly_plant_tile_1", "assembly_plant_spritelayout_central_assembly_hall"),
-        (0, 2, "assembly_plant_tile_1", "assembly_plant_spritelayout_front_assembly_hall_doors"),
-        (1, 0, "assembly_plant_tile_1", "assembly_plant_spritelayout_offices"),
-        (1, 1, "assembly_plant_tile_1", "assembly_plant_spritelayout_tyres"),
-        (1, 2, "assembly_plant_tile_1", "assembly_plant_spritelayout_offices"),
+        (0, 0, "assembly_plant_spritelayout_rear_assembly_hall_windows"),
+        (0, 1, "assembly_plant_spritelayout_central_assembly_hall"),
+        (0, 2, "assembly_plant_spritelayout_front_assembly_hall_doors"),
+        (1, 0, "assembly_plant_spritelayout_offices"),
+        (1, 1, "assembly_plant_spritelayout_tyres"),
+        (1, 2, "assembly_plant_spritelayout_offices"),
     ],
 )
 industry.add_industry_layout(
@@ -178,54 +191,46 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "assembly_plant_tile_1",
             "assembly_plant_spritelayout_rear_assembly_hall_windows",
         ),
         (
             0,
             1,
-            "assembly_plant_tile_1",
             "assembly_plant_spritelayout_central_assembly_hall",
         ),
         (
             0,
             2,
-            "assembly_plant_tile_1",
             "assembly_plant_spritelayout_central_assembly_hall",
         ),
         (
             0,
             3,
-            "assembly_plant_tile_1",
             "assembly_plant_spritelayout_front_assembly_hall_doors",
         ),
         (
             1,
             0,
-            "assembly_plant_tile_1",
             "assembly_plant_spritelayout_rear_assembly_hall_windows",
         ),
         (
             1,
             1,
-            "assembly_plant_tile_1",
             "assembly_plant_spritelayout_central_assembly_hall",
         ),
         (
             1,
             2,
-            "assembly_plant_tile_1",
             "assembly_plant_spritelayout_central_assembly_hall",
         ),
         (
             1,
             3,
-            "assembly_plant_tile_1",
             "assembly_plant_spritelayout_front_assembly_hall_windows",
         ),
-        (2, 0, "assembly_plant_tile_1", "assembly_plant_spritelayout_goods_in_1"),
-        (2, 1, "assembly_plant_tile_1", "assembly_plant_spritelayout_offices"),
-        (2, 2, "assembly_plant_tile_1", "assembly_plant_spritelayout_offices"),
-        (2, 3, "assembly_plant_tile_1", "assembly_plant_spritelayout_tyres"),
+        (2, 0, "assembly_plant_spritelayout_goods_in_1"),
+        (2, 1, "assembly_plant_spritelayout_offices"),
+        (2, 2, "assembly_plant_spritelayout_offices"),
+        (2, 3, "assembly_plant_spritelayout_tyres"),
     ],
 )

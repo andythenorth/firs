@@ -14,12 +14,21 @@ industry = IndustryInformative(
     fund_cost_multiplier="15",
 )
 
-industry.economy_variations["BASIC_TEMPERATE"].enabled = True
-industry.economy_variations["BASIC_ARCTIC"].enabled = True
-industry.economy_variations["BASIC_TROPIC"].enabled = True
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
-industry.economy_variations["STEELTOWN"].enabled = True
+industry.enable_in_economy(
+    "BASIC_TEMPERATE",
+)
+industry.enable_in_economy(
+    "BASIC_ARCTIC",
+)
+industry.enable_in_economy(
+    "BASIC_TROPIC",
+)
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+)
+industry.enable_in_economy(
+    "STEELTOWN",
+)
 
 industry.add_tile(
     id="plaza_tile_1",
@@ -33,13 +42,16 @@ spriteset_ground_overlay = industry.add_spriteset(
     sprites=[(10, 10, 64, 31, -31, 0)],
 )
 spriteset_1 = industry.add_spriteset(sprites=[(10, 60, 64, 48, -31, -18)])
+
 industry.add_spritelayout(
+    tile="plaza_tile_1",
     id="plaza_spritelayout",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
 )
+
 industry.add_industry_layout(
     id="plaza_industry_layout",
-    layout=[(0, 0, "plaza_tile_1", "plaza_spritelayout")],
+    layout=[(0, 0, "plaza_spritelayout")],
 )

@@ -2,9 +2,11 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="dairy",
-    accept_cargos_with_input_ratios=[("MILK", 6)],
+    accept_cargos_with_input_ratios=[],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("FOOD", 8)],
+    prod_cargo_types_with_output_ratios=[
+        ("FOOD", 8),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="169",
@@ -18,13 +20,12 @@ industry = IndustrySecondary(
     fund_cost_multiplier="45",
 )
 
-industry.economy_variations["BASIC_TEMPERATE"].enabled = True
-industry.economy_variations["BASIC_TEMPERATE"].accept_cargos_with_input_ratios = [
-    ("MILK", 6)
-]
-
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargos_with_input_ratios = [('MILK', 6), ('MNSP', 2)]
+industry.enable_in_economy(
+    "BASIC_TEMPERATE",
+    accept_cargos_with_input_ratios=[
+        ("MILK", 6),
+    ],
+)
 
 # tile with animation for flag
 industry.add_tile(
@@ -53,7 +54,7 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(
-    type="concrete",
+    type="dirty_concrete",
 )
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
@@ -71,7 +72,7 @@ spriteset_flag_anim = industry.add_spriteset(
     animation_rate=1,
 )
 spriteset_ground_anim = industry.add_spriteset(
-    type="concrete",
+    type="dirty_concrete",
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_flag_anim.sprites),
 )
@@ -112,6 +113,7 @@ sprite_smoke = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="dairy_spritelayout_1",
+    tile="dairy_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -119,6 +121,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="dairy_spritelayout_2",
+    tile="dairy_tile_1",
     ground_sprite=spriteset_ground_anim,
     ground_overlay=spriteset_ground_overlay_anim,
     building_sprites=[spriteset_2, spriteset_flag_anim],
@@ -126,6 +129,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="dairy_spritelayout_3",
+    tile="dairy_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -133,6 +137,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="dairy_spritelayout_4",
+    tile="dairy_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -140,6 +145,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="dairy_spritelayout_5",
+    tile="dairy_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -147,6 +153,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="dairy_spritelayout_6",
+    tile="dairy_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
@@ -154,6 +161,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="dairy_spritelayout_7",
+    tile="dairy_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
@@ -162,6 +170,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="dairy_spritelayout_8",
+    tile="dairy_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
@@ -171,94 +180,94 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="dairy_industry_layout_1",
     layout=[
-        (0, 0, "dairy_tile_2", "dairy_spritelayout_7"),
-        (0, 1, "dairy_tile_1", "dairy_spritelayout_5"),
-        (1, 0, "dairy_tile_1", "dairy_spritelayout_6"),
-        (1, 1, "dairy_tile_1", "dairy_spritelayout_4"),
-        (2, 0, "dairy_tile_1", "dairy_spritelayout_8"),
-        (2, 1, "dairy_tile_1", "dairy_spritelayout_3"),
-        (3, 0, "dairy_tile_1", "dairy_spritelayout_1"),
-        (3, 1, "dairy_tile_1", "dairy_spritelayout_2"),
+        (0, 0, "dairy_spritelayout_7"),
+        (0, 1, "dairy_spritelayout_5"),
+        (1, 0, "dairy_spritelayout_6"),
+        (1, 1, "dairy_spritelayout_4"),
+        (2, 0, "dairy_spritelayout_8"),
+        (2, 1, "dairy_spritelayout_3"),
+        (3, 0, "dairy_spritelayout_1"),
+        (3, 1, "dairy_spritelayout_2"),
     ],
 )
 industry.add_industry_layout(
     id="dairy_industry_layout_2",
     layout=[
-        (0, 1, "dairy_tile_2", "dairy_spritelayout_7"),
-        (0, 2, "dairy_tile_1", "dairy_spritelayout_5"),
-        (1, 1, "dairy_tile_1", "dairy_spritelayout_6"),
-        (1, 2, "dairy_tile_1", "dairy_spritelayout_4"),
-        (2, 0, "dairy_tile_1", "dairy_spritelayout_8"),
-        (2, 1, "dairy_tile_1", "dairy_spritelayout_3"),
-        (2, 2, "dairy_tile_1", "dairy_spritelayout_8"),
-        (3, 0, "dairy_tile_1", "dairy_spritelayout_1"),
-        (3, 1, "dairy_tile_1", "dairy_spritelayout_2"),
-        (3, 2, "dairy_tile_1", "dairy_spritelayout_8"),
+        (0, 1, "dairy_spritelayout_7"),
+        (0, 2, "dairy_spritelayout_5"),
+        (1, 1, "dairy_spritelayout_6"),
+        (1, 2, "dairy_spritelayout_4"),
+        (2, 0, "dairy_spritelayout_8"),
+        (2, 1, "dairy_spritelayout_3"),
+        (2, 2, "dairy_spritelayout_8"),
+        (3, 0, "dairy_spritelayout_1"),
+        (3, 1, "dairy_spritelayout_2"),
+        (3, 2, "dairy_spritelayout_8"),
     ],
 )
 industry.add_industry_layout(
     id="dairy_industry_layout_3",
     layout=[
-        (0, 0, "dairy_tile_2", "dairy_spritelayout_7"),
-        (0, 1, "dairy_tile_1", "dairy_spritelayout_5"),
-        (0, 2, "dairy_tile_1", "dairy_spritelayout_8"),
-        (1, 0, "dairy_tile_1", "dairy_spritelayout_6"),
-        (1, 1, "dairy_tile_1", "dairy_spritelayout_4"),
-        (1, 2, "dairy_tile_1", "dairy_spritelayout_8"),
-        (2, 1, "dairy_tile_1", "dairy_spritelayout_8"),
-        (2, 2, "dairy_tile_1", "dairy_spritelayout_3"),
-        (3, 1, "dairy_tile_1", "dairy_spritelayout_1"),
-        (3, 2, "dairy_tile_1", "dairy_spritelayout_2"),
+        (0, 0, "dairy_spritelayout_7"),
+        (0, 1, "dairy_spritelayout_5"),
+        (0, 2, "dairy_spritelayout_8"),
+        (1, 0, "dairy_spritelayout_6"),
+        (1, 1, "dairy_spritelayout_4"),
+        (1, 2, "dairy_spritelayout_8"),
+        (2, 1, "dairy_spritelayout_8"),
+        (2, 2, "dairy_spritelayout_3"),
+        (3, 1, "dairy_spritelayout_1"),
+        (3, 2, "dairy_spritelayout_2"),
     ],
 )
 industry.add_industry_layout(
     id="dairy_industry_layout_4",
     layout=[
-        (0, 0, "dairy_tile_2", "dairy_spritelayout_7"),
-        (0, 1, "dairy_tile_1", "dairy_spritelayout_5"),
-        (0, 2, "dairy_tile_2", "dairy_spritelayout_7"),
-        (0, 3, "dairy_tile_1", "dairy_spritelayout_5"),
-        (1, 0, "dairy_tile_1", "dairy_spritelayout_6"),
-        (1, 1, "dairy_tile_1", "dairy_spritelayout_4"),
-        (1, 2, "dairy_tile_1", "dairy_spritelayout_6"),
-        (1, 3, "dairy_tile_1", "dairy_spritelayout_4"),
-        (2, 0, "dairy_tile_1", "dairy_spritelayout_8"),
-        (2, 1, "dairy_tile_1", "dairy_spritelayout_8"),
-        (2, 2, "dairy_tile_1", "dairy_spritelayout_3"),
-        (2, 3, "dairy_tile_1", "dairy_spritelayout_8"),
-        (3, 1, "dairy_tile_1", "dairy_spritelayout_1"),
-        (3, 2, "dairy_tile_1", "dairy_spritelayout_2"),
+        (0, 0, "dairy_spritelayout_7"),
+        (0, 1, "dairy_spritelayout_5"),
+        (0, 2, "dairy_spritelayout_7"),
+        (0, 3, "dairy_spritelayout_5"),
+        (1, 0, "dairy_spritelayout_6"),
+        (1, 1, "dairy_spritelayout_4"),
+        (1, 2, "dairy_spritelayout_6"),
+        (1, 3, "dairy_spritelayout_4"),
+        (2, 0, "dairy_spritelayout_8"),
+        (2, 1, "dairy_spritelayout_8"),
+        (2, 2, "dairy_spritelayout_3"),
+        (2, 3, "dairy_spritelayout_8"),
+        (3, 1, "dairy_spritelayout_1"),
+        (3, 2, "dairy_spritelayout_2"),
     ],
 )
 industry.add_industry_layout(
     id="dairy_industry_layout_5",
     layout=[
-        (0, 0, "dairy_tile_1", "dairy_spritelayout_8"),
-        (0, 1, "dairy_tile_1", "dairy_spritelayout_3"),
-        (0, 2, "dairy_tile_2", "dairy_spritelayout_7"),
-        (0, 3, "dairy_tile_1", "dairy_spritelayout_5"),
-        (1, 0, "dairy_tile_1", "dairy_spritelayout_1"),
-        (1, 1, "dairy_tile_1", "dairy_spritelayout_2"),
-        (1, 2, "dairy_tile_1", "dairy_spritelayout_6"),
-        (1, 3, "dairy_tile_1", "dairy_spritelayout_4"),
+        (0, 0, "dairy_spritelayout_8"),
+        (0, 1, "dairy_spritelayout_3"),
+        (0, 2, "dairy_spritelayout_7"),
+        (0, 3, "dairy_spritelayout_5"),
+        (1, 0, "dairy_spritelayout_1"),
+        (1, 1, "dairy_spritelayout_2"),
+        (1, 2, "dairy_spritelayout_6"),
+        (1, 3, "dairy_spritelayout_4"),
     ],
 )
 industry.add_industry_layout(
     id="dairy_industry_layout_6",
     layout=[
-        (0, 0, "dairy_tile_2", "dairy_spritelayout_7"),
-        (0, 1, "dairy_tile_1", "dairy_spritelayout_5"),
-        (0, 2, "dairy_tile_2", "dairy_spritelayout_7"),
-        (0, 3, "dairy_tile_1", "dairy_spritelayout_5"),
-        (1, 0, "dairy_tile_1", "dairy_spritelayout_6"),
-        (1, 1, "dairy_tile_1", "dairy_spritelayout_4"),
-        (1, 2, "dairy_tile_1", "dairy_spritelayout_6"),
-        (1, 3, "dairy_tile_1", "dairy_spritelayout_4"),
-        (2, 0, "dairy_tile_1", "dairy_spritelayout_8"),
-        (2, 1, "dairy_tile_1", "dairy_spritelayout_3"),
-        (2, 2, "dairy_tile_1", "dairy_spritelayout_8"),
-        (2, 3, "dairy_tile_1", "dairy_spritelayout_8"),
-        (3, 0, "dairy_tile_1", "dairy_spritelayout_1"),
-        (3, 1, "dairy_tile_1", "dairy_spritelayout_2"),
+        (0, 0, "dairy_spritelayout_7"),
+        (0, 1, "dairy_spritelayout_5"),
+        (0, 2, "dairy_spritelayout_7"),
+        (0, 3, "dairy_spritelayout_5"),
+        (1, 0, "dairy_spritelayout_6"),
+        (1, 1, "dairy_spritelayout_4"),
+        (1, 2, "dairy_spritelayout_6"),
+        (1, 3, "dairy_spritelayout_4"),
+        (2, 0, "dairy_spritelayout_8"),
+        (2, 1, "dairy_spritelayout_3"),
+        (2, 2, "dairy_spritelayout_8"),
+        (2, 3, "dairy_spritelayout_8"),
+        (3, 0, "dairy_spritelayout_1"),
+        (3, 1, "dairy_spritelayout_2"),
     ],
 )

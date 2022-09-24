@@ -15,12 +15,14 @@ industry = IndustryTertiary(
     name="string(STR_IND_HARDWARE_STORE)",
     nearby_station_name="string(STR_STATION_TOWN_1)",
     fund_cost_multiplier="15",
+    provides_snow=True,
 )
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
-industry.economy_variations["IN_A_HOT_COUNTRY"].accept_cargo_types = ["GOOD", "BDMT"]
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+    accept_cargo_types=["GOOD", "BDMT"],
+)
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(
     id="hardware_store_tile_1",
@@ -37,11 +39,12 @@ hardware_store_spriteset = industry.add_spriteset(sprites=[(0, 0, 64, 64, -31, -
 
 industry.add_spritelayout(
     id="hardware_store_spritelayout",
+    tile="hardware_store_tile_1",
     ground_sprite=hardware_store_spriteset_ground,
     ground_overlay=hardware_store_spriteset_ground_overlay,
     building_sprites=[hardware_store_spriteset],
 )
 industry.add_industry_layout(
     id="hardware_store_industry_layout",
-    layout=[(0, 0, "hardware_store_tile_1", "hardware_store_spritelayout")],
+    layout=[(0, 0, "hardware_store_spritelayout")],
 )

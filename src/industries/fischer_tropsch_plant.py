@@ -2,8 +2,13 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="fischer_tropsch_plant",
-    accept_cargos_with_input_ratios=[("COAL", 6)],
-    prod_cargo_types_with_output_ratios=[("NH3_", 2), ("PETR", 6)],
+    accept_cargos_with_input_ratios=[
+        ("COAL", 6),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("NH3_", 2),
+        ("PETR", 6),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="191",
@@ -23,7 +28,7 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(
-    type="concrete",
+    type="dirty_concrete",
 )
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(

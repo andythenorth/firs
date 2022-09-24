@@ -6,7 +6,7 @@
 """
 
 from collections import deque
-
+import copy
 import os.path
 
 currentdir = os.curdir
@@ -436,17 +436,6 @@ class Spriteset(object):
         self.zextent = 32  # it's of limited use setting zextent, just make it 32 and be done with it
         self.always_draw = always_draw
 
-    def get_ground_tile_x_start(self, type):
-        print("get_ground_tile_x_start needs deleted")
-        return {
-            "mud": 0,
-            "concrete": 80,
-            "cobble": 150,
-            "snow": 220,
-            "slab": 290,
-            "empty": 360,
-        }[type]
-
 
 class SpriteLayout(object):
     """Base class to hold spritelayouts for industry spritelayouts"""
@@ -462,6 +451,7 @@ class SpriteLayout(object):
         perma_fences=[],
         magic_trees=[],
         terrain_aware_ground=False,
+        tile=None,
         add_to_object_num=None,
     ):
         self.id = id
@@ -475,8 +465,16 @@ class SpriteLayout(object):
         self.perma_fences = perma_fences
         self.magic_trees = magic_trees
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
+        # as of September 2022, spritelayouts can define which tile they use
+        # - this is optional as a migration strategy, but is intended to be the only supported approach in future
+        self.tile = tile
         # optionally spritelayouts can cause objects to be defined
         self.add_to_object_num = add_to_object_num
+
+    def resolve_tile(self, industry):
+        for tile in industry.tiles:
+            if tile.id == self.tile:
+                return tile
 
 
 class MagicSpritelayoutSlopeAwareTrees(object):
@@ -800,19 +798,73 @@ class GRFObject(object):
         self.id = f"{industry.id}_object_{add_to_object_num:02}"
         self.add_to_object_num = add_to_object_num
         self.views = []
+        self.industry = industry
 
     def add_view(self, spritelayout):
         self.views.append(spritelayout)
-        #self.validate()
+        # self.validate()
 
     def validate(self):
         # must be 1, 2, or 4 views https://newgrf-specs.tt-wiki.net/wiki/NML:Objects#Location_check_results
         if len(self.views) == 3:
-            raise BaseException(self.id, "has 3 views defined, which is not permitted by spec")
+            raise BaseException(
+                self.id, "has 3 views defined, which is not permitted by spec"
+            )
         # validation for case of too many views - shouldn't happen but eh
         if len(self.views) > 4:
             utils.echo_message(self.views)
-            raise BaseException(self.id, "has too many views defined")  # yair could do better?
+            raise BaseException(
+                self.id, "has too many views defined"
+            )  # yair could do better?
+
+    @property
+    def tile(self):
+        # all views in the object must resolve to one and only one industry tile
+        # we use this for certain object properties / callbacks (such as animation, and possibly location checks)
+        # check for mismatched tiles
+        found_tiles = []
+        for view in self.views:
+            for x, y, spritelayout in view:
+                found_tiles.append(spritelayout.resolve_tile(self.industry))
+        if len(set(found_tiles)) != 1:
+            raise BaseException(self.id, "tiles don't match:", found_tiles)
+        else:
+            # we have one and only one tile
+            return found_tiles[0]
+
+    @property
+    def multi_tile_ground(self):
+        result = []
+        # only one view supported currently for multi_tile objects (could do more, but just 1 currently for basic simplicity)
+        for x, y, spritelayout in self.views[0]:
+            result.append([x, y, spritelayout.ground_sprite])
+        return result
+
+    @property
+    def multi_tile_buildings(self):
+        result = []
+        # only one view supported currently for multi_tile objects (could do more, but just 1 currently for basic simplicity)
+        for x, y, spritelayout in self.views[0]:
+            for building_sprite in spritelayout.building_sprites:
+                result.append([x, y, building_sprite])
+        return result
+
+    @property
+    def animation_triggers(self):
+        # object animation triggers don't match industry tile triggers, so remap
+        result = []
+        trigger_remap = {
+            "ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE": "ANIM_TRIGGER_OBJ_BUILT",
+            "ANIM_TRIGGER_INDTILE_TILE_LOOP": "ANIM_TRIGGER_OBJ_TILELOOP",
+        }
+        # split off some nml formatting to get the raw list
+        triggers = self.tile.animation_triggers.split("bitmask(")[1].split(")")[0].split(",")
+        # triggers from tile might be empty, strip those
+        triggers = [i for i in triggers if i != '']
+        # this is expected to error if the trigger isn't found, it only mapped the triggers in use as of September 2022, not all possible triggers
+        for trigger in triggers:
+            result.append(trigger_remap[trigger])
+        return "bitmask(" + ",".join(result) + ")"
 
     @property
     def size(self):
@@ -842,7 +894,7 @@ class MagicTree(object):
 class MagicSpritelayoutHarbourCoastFoundations(object):
     """
     Occasionally we need magic.  If we're going magic, let's go full on magic.
-    This one makes provides the slope-aware foundations needed for coast tiles.
+    This one provides the slope-aware foundations needed for coast tiles.
     Possibly could be used generically for all slopes, there's nothing specific to coasts in it, but other cases weren't needed when writing it.
     """
 
@@ -926,15 +978,31 @@ class GraphicsSwitchSlopes(GraphicsSwitch):
 class IndustryLayout(object):
     """Base class to hold industry layouts"""
 
-    def __init__(self, id, layout, excluded_outpost_layouts=[], validate=True):
+    def __init__(
+        self,
+        industry,
+        id,
+        layout,
+        excluded_outpost_layouts=[],
+        validate_xy=True,
+        validate_legacy_layout_defs=False,
+    ):
         self.id = id
-        self.layout = layout  # a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spriteset or next nml switch)
+        self.industry = industry
+        # as of September 2022 there are 2 formats accepted when defining layout
+        #   -  a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spritelayout or next nml switch)
+        #   -  a list of 3-tuples (SE offset from N tile, SW offset from N tile, identifier of spritelayout or next nml switch), where the spritelayout encapsulates the tile identifier
+        # as of September 2022 these are stored in the ._layout private attr, then resolved by a .layout property method
+        self._layout = layout
         self.excluded_outpost_layouts = excluded_outpost_layouts
         # validation can be optionally suppressed as combined layouts may be invalid until their xy offsets are shifted positive (for example)
-        if validate:
-            self.validate()
+        if validate_xy:
+            self.validate_xy()
+        # support whilst migrating layout_defs to remove tile ids
+        if validate_legacy_layout_defs:
+            self.validate_legacy_layout_defs()
 
-    def validate(self):
+    def validate_xy(self):
         # in-game industry layouts must not have negative xy offsets
         for x, y, tile_id, spritelayout_id in self.layout:
             for offset_dir in [x, y]:
@@ -955,6 +1023,69 @@ class IndustryLayout(object):
                 raise BaseException(
                     "Repeated xy offset pair: " + self.id + " " + str((x, y))
                 )
+
+    def validate_legacy_layout_defs(self):
+        # catch legacy layout_defs
+        legacy_found = False
+        for layout_def in self._layout:
+            if len(layout_def) == 4:
+                legacy_found = True
+                for spritelayout in self.industry.spritelayouts:
+                    if spritelayout.id == layout_def[3]:
+                        if spritelayout.tile is not None:
+                            utils.echo_message(
+                                "tile defs migrated, but legacy layout def found for "
+                                + self.industry.id
+                                + " "
+                                + str(layout_def)
+                            )
+                            break
+        if legacy_found:
+            utils.echo_message(
+                "legacy layout def(s) found for " + self.industry.id + " " + self.id
+            )
+
+    @property
+    def layout(self):
+        result = []
+        for layout_def in self._layout:
+            if len(layout_def) == 3:
+                tile = None
+                if layout_def[2] == "spritelayout_null_water":
+                    tile = "255"
+                if layout_def[2] == "spritelayout_null_station":
+                    tile = "24"
+                #  resolve the spritelayout by ID
+                for spritelayout in self.industry.spritelayouts:
+                    if spritelayout.id == layout_def[2]:
+                        if spritelayout.tile == None:
+                            raise BaseException("No tile defined for", spritelayout.id)
+                        else:
+                            tile = spritelayout.tile
+                        break
+                # not found, look in other book-keeping lists of tile ids
+                if tile == None:
+                    tile = self.industry.magic_spritelayout_tile_ids[layout_def[2]]
+                if tile == None:
+                    raise BaseException(
+                        self.id
+                        + " - no spritelayout found matching id given by "
+                        + str(layout_def)
+                    )
+                else:
+                    # redefine the layout def
+                    layout_def = (
+                        layout_def[0],
+                        layout_def[1],
+                        tile,
+                        layout_def[2],
+                    )
+            # write the original or modified layout def to result,
+            result.append(layout_def)
+        if len(result) == 0:
+            # something went wrong, probably fancy conditions somewhere eh?
+            raise BaseException("layout resolver failed for " + self.id)
+        return result
 
     @property
     def min_x(self):
@@ -987,6 +1118,14 @@ class IndustryLocationChecks(object):
         self.near_at_least_one_of_these_keystone_industries = location_args.get(
             "near_at_least_one_of_these_keystone_industries", None
         )
+        if self.near_at_least_one_of_these_keystone_industries is not None:
+            utils.echo_message(
+                "near_at_least_one_of_these_keystone_industries set by",
+                industry.id,
+                "- should be in economy location checks only",
+                "(is this supported yet?)",
+                message_type="info"
+            )
         self.require_cluster = location_args.get("require_cluster", None)
         self.require_town_industry_count = location_args.get(
             "require_town_industry_count", None
@@ -1001,6 +1140,8 @@ class IndustryLocationChecks(object):
         self.flour_mill_layouts_by_date = location_args.get(
             "flour_mill_layouts_by_date", None
         )
+        # economies may optionally define specific biomes which industries must locate in for that economy
+        self.economy_biome_checks = {}
 
     def get_pre_player_founding_checks(self, incompatible_industries):
         result = []
@@ -1008,37 +1149,6 @@ class IndustryLocationChecks(object):
         if self.flour_mill_layouts_by_date:
             result.append(IndustryLocationCheckGrainMillLayoutsByDate())
 
-        return result
-
-    def get_post_player_founding_checks_OR(self, incompatible_industries):
-        # checks where satisyfing any of the conditions is enough
-        result = []
-
-        if self.near_at_least_one_of_these_keystone_industries:
-            for industry_type in self.near_at_least_one_of_these_keystone_industries[0]:
-                # if the ID of the keystone type is higher than the current industry, the current industry won't be built on smaller maps or low industry settings
-                # this is because OpenTTD places first round of industries sequentially by ID (lowest first) at map gen time
-                if self.industry.numeric_id < (
-                    get_another_industry(industry_type).numeric_id
-                ):
-                    utils.echo_message(
-                        self.industry.id
-                        + " declares a keystone with higher ID ("
-                        + industry_type
-                        + ") - keystones must have lower ID than declaring industry, as industries are placed sequentially by ID (lowest first) when generating map.  Move "
-                        + self.industry.id
-                        + " to a higher ID (probably breaks savegames)."
-                    )
-                    permissive_flag = 1
-                else:
-                    permissive_flag = 0
-                result.append(
-                    IndustryLocationCheckIndustryMaxDistance(
-                        industry_type,
-                        self.near_at_least_one_of_these_keystone_industries[1],
-                        permissive_flag,
-                    )
-                )
         return result
 
     def get_post_player_founding_checks_AND(self, incompatible_industries):
@@ -1088,20 +1198,74 @@ class IndustryLocationChecks(object):
 
         return result
 
+    def get_post_player_founding_checks_OR(self, incompatible_industries):
+        # checks structured in OR groups
+        # within each OR group, satisyfing any one of the conditions is enough
+        result = []
+
+        keystone_industries = {
+            "OR_group_name": "keystone_industries",
+            "location_checks": [],
+            "next_switch_name": "",
+        }
+        if self.near_at_least_one_of_these_keystone_industries:
+            for industry_type in self.near_at_least_one_of_these_keystone_industries[0]:
+                # if the ID of the keystone type is higher than the current industry, the current industry won't be built on smaller maps or low industry settings
+                # this is because OpenTTD places first round of industries sequentially by ID (lowest first) at map gen time
+                if self.industry.numeric_id < (
+                    get_another_industry(industry_type).numeric_id
+                ):
+                    utils.echo_message(
+                        self.industry.id
+                        + " declares a keystone with higher ID ("
+                        + industry_type
+                        + ") - keystones must have lower ID than declaring industry, as industries are placed sequentially by ID (lowest first) when generating map.  Move "
+                        + self.industry.id
+                        + " to a higher ID (probably breaks savegames)."
+                    )
+                    permissive_flag = 1
+                else:
+                    permissive_flag = 0
+                keystone_industries["location_checks"].append(
+                    IndustryLocationCheckIndustryMaxDistance(
+                        industry_type,
+                        self.near_at_least_one_of_these_keystone_industries[1],
+                        permissive_flag,
+                    )
+                )
+        result.append(keystone_industries)
+
+        economy_specific_biomes = {
+            "OR_group_name": "economy_specific_biomes",
+            "location_checks": [],
+            "next_switch_name": "",
+        }
+        for economy_id, biome_list in self.economy_biome_checks.items():
+            for biome_id in biome_list:
+                economy_specific_biomes["location_checks"].append(
+                    IndustryLocationCheckEconomySpecificBiome(economy_id, biome_id)
+                )
+        result.append(economy_specific_biomes)
+
+        for counter, group in enumerate(result):
+            if counter == 0:
+                # last result (switches tree is reversed list order), so branch to AND checks
+                group["next_switch_name"] = "AND"
+            else:
+                group["next_switch_name"] = "OR_" + result[counter - 1]["OR_group_name"]
+
+        return result
+
 
 class IndustryLocationCheck(object):
     """sparse base class for industry location checks"""
-
-    @property
-    def macro(self):
-        return templates["location_check_macros_industry.pynml"].macros[self.macro_name]
 
     @property
     def procedure_name_and_params_as_nml_string(self):
         params_as_nml_string = ",".join([str(param) for param in self.params])
         return (
             "location_check_industry_"
-            + self.macro_name
+            + self.procedure_name
             + "("
             + params_as_nml_string
             + ")"
@@ -1122,7 +1286,7 @@ class IndustryLocationCheckTownIndustryCount(IndustryLocationCheck):
             utils.echo_message(
                 "IndustryLocationCheckTownIndustryCount uses a hardcoded error string limiting to 1 instance per town, add more strings to handle higher limits"
             )
-        self.macro_name = "require_town_industry_count"
+        self.procedure_name = "require_town_industry_count"
         self.params = [self.industry_type_numeric_id, self.min_count, self.max_count]
 
 
@@ -1131,7 +1295,7 @@ class IndustryLocationCheckTownMinPopulation(IndustryLocationCheck):
 
     def __init__(self, require_town_min_population):
         self.min_population = require_town_min_population
-        self.macro_name = "require_town_min_population"
+        self.procedure_name = "require_town_min_population"
         self.params = [self.min_population]
 
 
@@ -1144,7 +1308,7 @@ class IndustryLocationCheckCluster(IndustryLocationCheck):
         self.max_distance = require_cluster[0]
         # cluster factor is a fudge, theoretically determines number of clusters per 256x256 section of map, but often irrelevant due to industry counts in any given combination of map/setting/economy/randomisation
         self.cluster_factor = require_cluster[1]
-        self.macro_name = "require_cluster"
+        self.procedure_name = "require_cluster"
         self.params = [
             self.industry_type_numeric_id,
             self.cluster_factor,
@@ -1160,7 +1324,7 @@ class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
         self.industry_type_numeric_id = get_another_industry(industry_type).numeric_id
         self.distance = distance
-        self.macro_name = "require_min_distance_to_another_industry_type"
+        self.procedure_name = "require_min_distance_to_another_industry_type"
         self.params = [self.industry_type_numeric_id, self.distance]
 
 
@@ -1172,7 +1336,7 @@ class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
         self.industry_type_numeric_id = get_another_industry(industry_type).numeric_id
         self.distance = distance
         self.permissive_flag = permissive_flag
-        self.macro_name = "require_max_distance_to_another_industry_type"
+        self.procedure_name = "require_max_distance_to_another_industry_type"
         self.params = [
             self.industry_type_numeric_id,
             self.distance,
@@ -1184,7 +1348,15 @@ class IndustryLocationCheckCoastDistance(IndustryLocationCheck):
     """Maximum distance to coast (player can vary this with parameter)"""
 
     def __init__(self):
-        self.macro_name = "disallow_too_far_from_coast"
+        self.procedure_name = "disallow_too_far_from_coast"
+        self.params = []
+
+
+class IndustryLocationCheckEconomySpecificBiome(IndustryLocationCheck):
+    """Check for a biome specific to the economy"""
+
+    def __init__(self, economy_id, biome_id):
+        self.procedure_name = "economy_biome_test_" + economy_id + "_" + biome_id
         self.params = []
 
 
@@ -1192,12 +1364,12 @@ class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
     """Custom check for Grain mill, layouts are restricted by date; this is a one-off, but could be made generic if needed"""
 
     def __init__(self):
-        self.macro_name = "flour_mill_layouts_by_date"
+        self.procedure_name = "flour_mill_layouts_by_date"
         self.params = []
 
 
 class IndustryProperties(object):
-    """Base class to hold properties corresponding to nml industry item properties"""
+    """Base class to hold industry item properties, as the instance for defaults, or for economy variations"""
 
     def __init__(self, **kwargs):
         # nml item properties, most of these should be provided as strings for insertion into nml.  See nml docs for meaning + acceptable values.
@@ -1229,6 +1401,7 @@ class IndustryProperties(object):
         self.remove_cost_multiplier = kwargs.get("remove_cost_multiplier", "0")
         self._special_flags = kwargs.get("special_flags", [])
         # not nml properties
+        self.enabled = kwargs.get("enabled", False)
         self.accept_cargo_types = kwargs.get("accept_cargo_types", None)
         self.accept_cargos_with_input_ratios = kwargs.get(
             "accept_cargos_with_input_ratios", None
@@ -1240,7 +1413,6 @@ class IndustryProperties(object):
             "prod_cargo_types_with_output_ratios", None
         )
         self.prod_multiplier = kwargs.get("prod_multiplier", None)
-        self.enabled = kwargs.get("enabled", False)
         self.override_default_construction_states = kwargs.get(
             "override_default_construction_states", False
         )
@@ -1261,29 +1433,34 @@ class IndustryProperties(object):
 class Industry(object):
     """Base class for all types of industry"""
 
-    def __init__(self, id, graphics_change_dates=[], **kwargs):
+    def __init__(self, id, **kwargs):
         self.id = id
-        self.graphics_change_dates = graphics_change_dates  # 0-based, ordered list of dates for which graphics should change, match to graphics suffixed _1, _2, _3 etc.
         self.tiles = []
         self.sprites = []
         self.smoke_sprites = []
         self.spritesets = []
         # by convention spritelayout is one word :P
         self.spritelayouts = []
+        # magic has a cost - we can't look up tiles in magic spritelayouts using the standard (non-magic) methods, so we have to do book-keeping
+        self.magic_spritelayout_tile_ids = {}
         # objects dict keyed on the object num local to the industry, for convenience of access creating/appending - isn't significant for rendering
         self.objects = {}
         self.extra_graphics_switches = []
         self._industry_layouts = {"core": [], "outposts": []}
         self.default_industry_properties = IndustryProperties(**kwargs)
+        # economy variation structure is provisioned containing all economies, but with empty industry config, industry is then enabled for economies later
+        # this could be changed so that economies are only provisioned by enable_in_economy(), but it's easy to ensure economy looks up don't fail this way
         self.economy_variations = {}
         for economy in registered_economies:
             self.add_economy_variation(economy)
+        # template will be set by subcass, and/or by individual industry instances
         self.template = kwargs.get(
             "template", None
-        )  # template will be set by subcass, and/or by individual industry instances
+        )
         self.location_checks = IndustryLocationChecks(
             self, kwargs.get("location_checks", {})
         )
+        self.provides_snow = kwargs.get("provides_snow", False)
 
     def register(self):
         if (
@@ -1298,6 +1475,25 @@ class Industry(object):
         ):
             utils.echo_message(self.id + " is not used in any economy")
         registered_industries.append(self)
+
+    def enable_in_economy(self, economy_id, **kwargs):
+        self.economy_variations[economy_id].enabled = True
+        for kwarg_name, kwarg_value in kwargs.items():
+            # special case for location checks, which must be appended to the dedicated IndustryLocationChecks instance holding the standard checks for the industry
+            if kwarg_name == "locate_in_specific_biomes":
+                self.location_checks.economy_biome_checks[economy_id] = kwarg_value
+            else:
+                if hasattr(self.economy_variations[economy_id], kwarg_name):
+                    setattr(
+                        self.economy_variations[economy_id], kwarg_name, kwarg_value
+                    )
+                else:
+                    raise NameError(
+                        "unknown economy variation kwarg '"
+                        + kwarg_name
+                        + "' declared by "
+                        + self.id
+                    )
 
     def add_tile(self, *args, **kwargs):
         new_tile = Tile(self.id, *args, **kwargs)
@@ -1333,13 +1529,17 @@ class Industry(object):
         # returning the new spritelayout isn't essential, but permits the caller giving it a reference for use elsewhere
         return new_spritelayout
 
-    def add_magic_spritelayout(self, type, base_id, config):
+    def add_magic_spritelayout(self, type, base_id, tile, config):
         # sometimes magic is the only way
         # this is for very specific spritelayout patterns that repeat across multiple industries and require long declarations and extra switches
         if type == "slope_aware_trees":
+            # the Magic is so magic that we don't have any further assignment, instantiating the class does all the registration etc (ugh)
             MagicSpritelayoutSlopeAwareTrees(self, base_id, config)
         if type == "harbour_coast_foundations":
+            # the Magic is so magic that we don't have any further assignment, instantiating the class does all the registration etc (ugh)
             MagicSpritelayoutHarbourCoastFoundations(self, base_id, config)
+        # we do have to book-keep the magic, as their are Magic taxes that must be paid
+        self.magic_spritelayout_tile_ids[base_id] = tile
 
     def add_slope_graphics_switch(self, *args, **kwargs):
         new_graphics_switch = GraphicsSwitchSlopes(*args, **kwargs)
@@ -1348,7 +1548,9 @@ class Industry(object):
         return new_graphics_switch
 
     def add_industry_layout(self, layout_type="core", *args, **kwargs):
-        new_industry_layout = IndustryLayout(*args, **kwargs)
+        new_industry_layout = IndustryLayout(
+            self, *args, **kwargs, validate_legacy_layout_defs=True
+        )
         self._industry_layouts[layout_type].append(new_industry_layout)
         # returning the new layout isn't essential, but permits the caller giving it a reference for use elsewhere
         return new_industry_layout
@@ -1370,11 +1572,13 @@ class Industry(object):
     def add_multi_tile_object(self, **kwargs):
         view = []
         for x_y_spritelayout in kwargs["view_layout"]:
+            # does not handle case of invalid spritelayout id currently, so...don't do that :)
             for spritelayout in self.spritelayouts:
                 if spritelayout.id == x_y_spritelayout[2]:
-                    view.append((x_y_spritelayout[0], x_y_spritelayout[1], spritelayout))
+                    view.append(
+                        (x_y_spritelayout[0], x_y_spritelayout[1], spritelayout)
+                    )
         self.add_view_for_object(view, **kwargs)
-
 
     @property
     def numeric_id(self):
@@ -1389,8 +1593,12 @@ class Industry(object):
         return result
 
     def get_graphics_file_path(
-        self, date_variation_num=None, terrain="", construction_state_num=None
+        self, terrain=None, construction_state_num=None
     ):
+        if terrain == "snow" and self.provides_snow:
+            terrain_suffix = "_snow"
+        else:
+            terrain_suffix = ""
         # don't use os.path.join here, this returns a string for use by nml
         if construction_state_num != None:
             return (
@@ -1404,9 +1612,7 @@ class Industry(object):
             return (
                 '"src/graphics/industries/'
                 + self.id
-                + "_"
-                + str(date_variation_num + 1)
-                + terrain
+                + terrain_suffix
                 + '.png"'
             )
 
@@ -1420,41 +1626,6 @@ class Industry(object):
             return self.id + "_industry_graphics_switch_layouts"
         else:
             return "spritelayout_default_construction_states"
-
-    def get_date_conditions_for_hide_sprites(self, date_variation_index):
-        temp_store_random_bits = global_constants.graphics_temp_storage[
-            "var_random_bits"
-        ]
-        random_offset = (
-            "5 * LOAD_TEMP(" + str(temp_store_random_bits) + ") / 0x10000"
-        )  # random is in nml at run-time, not compile-time python, so this is a string
-        if len(self.graphics_change_dates) == 0:
-            return "0"  # no date variations, just one set of graphics, never hide
-        elif date_variation_index == 0:
-            return (
-                "(current_year + "
-                + random_offset
-                + ") >= "
-                + str(self.graphics_change_dates[date_variation_index])
-            )  # first set of graphics, hide after first change date
-        elif date_variation_index == len(self.graphics_change_dates):
-            return (
-                "(current_year + "
-                + random_offset
-                + ") < "
-                + str(self.graphics_change_dates[date_variation_index - 1])
-            )  # last set of graphics, hide before last change date
-        else:
-            return (
-                "(current_year + "
-                + random_offset
-                + ") < "
-                + str(self.graphics_change_dates[date_variation_index - 1])
-                + " || (current_year + "
-                + random_offset
-                + ") >= "
-                + str(self.graphics_change_dates[date_variation_index])
-            )
 
     @property
     def industry_layouts(self):
@@ -1546,13 +1717,19 @@ class Industry(object):
                             shift_x = (
                                 -1
                                 * IndustryLayout(
-                                    id=new_id, layout=combined_layout, validate=False
+                                    industry=self,
+                                    id=new_id,
+                                    layout=combined_layout,
+                                    validate_xy=False,
                                 ).min_x
                             )
                             shift_y = (
                                 -1
                                 * IndustryLayout(
-                                    id=new_id, layout=combined_layout, validate=False
+                                    industry=self,
+                                    id=new_id,
+                                    layout=combined_layout,
+                                    validate_xy=False,
                                 ).min_y
                             )
                             shifted_layout = []
@@ -1565,7 +1742,9 @@ class Industry(object):
                                 )
                                 shifted_layout.append(shifted_tile_def)
                             result.append(
-                                IndustryLayout(id=new_id, layout=shifted_layout)
+                                IndustryLayout(
+                                    industry=self, id=new_id, layout=shifted_layout
+                                )
                             )
         return result
 
@@ -1734,6 +1913,20 @@ class Industry(object):
         raise Exception("get_prod_cargo_types called", self.id)
         return []
 
+    def get_animation_macro_config(self, animation_context):
+        if animation_context == 'industry':
+            tiles = self.tiles
+            feature = "FEAT_INDUSTRYTILES"
+        elif animation_context == 'object':
+            all_tiles = []
+            for grf_object in self.objects.values():
+                all_tiles.append(grf_object.tile)
+            tiles = list(set(all_tiles))
+            feature = "FEAT_OBJECTS"
+        else:
+            raise BaseException("Unknown animation_context ", animation_context)
+        return {"tiles": tiles, "feature": feature}
+
     def get_another_industry(self, id):
         return get_another_industry(id)
 
@@ -1786,7 +1979,6 @@ class Industry(object):
         sprite_or_spriteset,
         construction_state_num=3,
         snow_overlay=False,
-        date_variation_num="0",
     ):
         # note the annoying edge case where 'empty' should not have a snow overlay
         if (
@@ -1797,7 +1989,6 @@ class Industry(object):
         else:
             suffix = ""
         if isinstance(sprite_or_spriteset, Spriteset):
-            date_variation_suffix = "_" + str(date_variation_num)
             # tiny optimisation, don't use an animation sprite selector if there is no animation
             if sprite_or_spriteset.animation_rate > 0:
                 if sprite_or_spriteset.custom_sprite_selector:
@@ -1816,6 +2007,8 @@ class Industry(object):
                 # ground tile assumes sprite_or_spriteset.type will always map to a ground_tile type
                 # have to accomodate number of frames needed (num_sprites_to_autofill) for animated spritelayouts
                 # !! if this is failing, look if the required number of frames is provided in ground_tiles.pynml
+                if sprite_or_spriteset.num_sprites_to_autofill not in global_constants.animated_ground_tile_frame_counts:
+                    raise BaseException(self.id + " needs global_constants.animated_ground_tile_frame_counts extended to add a frame count of " + str(sprite_or_spriteset.num_sprites_to_autofill))
                 return (
                     "spriteset_ground_tile_"
                     + sprite_or_spriteset.type
@@ -1840,7 +2033,6 @@ class Industry(object):
                 # default result is a spriteset name and optional frame number
                 return (
                     sprite_or_spriteset.id
-                    + date_variation_suffix
                     + suffix
                     + "("
                     + sprite_selector

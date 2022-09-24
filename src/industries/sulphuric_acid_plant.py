@@ -2,8 +2,12 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="sulphuric_acid_plant",
-    accept_cargos_with_input_ratios=[("SULP", 8)],
-    prod_cargo_types_with_output_ratios=[("SUAC", 6)],
+    accept_cargos_with_input_ratios=[
+        ("SULP", 8),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("SUAC", 6),
+    ],
     combined_cargos_boost_prod=True,
     prob_in_game="3",
     prob_map_gen="5",
@@ -14,7 +18,6 @@ industry = IndustrySecondary(
     fund_cost_multiplier="170",
 )
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(
     id="sulphuric_acid_plant_tile_1",
@@ -40,7 +43,7 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(
-    type="concrete",
+    type="dirty_concrete",
 )
 spriteset_ground_overlay = industry.add_spriteset(
     type="empty",

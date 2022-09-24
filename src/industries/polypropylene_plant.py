@@ -2,8 +2,12 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="polypropylene_plant",
-    accept_cargos_with_input_ratios=[("C3H6", 8)],
-    prod_cargo_types_with_output_ratios=[("PLAS", 8)],
+    accept_cargos_with_input_ratios=[
+        ("C3H6", 8),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("PLAS", 8),
+    ],
     combined_cargos_boost_prod=True,
     prob_in_game="3",
     prob_map_gen="5",
@@ -14,7 +18,6 @@ industry = IndustrySecondary(
     intro_year="1900",
 )
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(
     id="polypropylene_plant_tile_1",
@@ -23,7 +26,7 @@ industry.add_tile(
     ),
 )
 
-spriteset_ground = industry.add_spriteset(type="concrete")
+spriteset_ground = industry.add_spriteset(type="dirty_concrete")
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 62, -31, -31)],

@@ -12,12 +12,20 @@ industry = IndustryPrimaryExtractive(
     nearby_station_name="string(STR_STATION_COLLIERY)",
     fund_cost_multiplier="252",
     pollution_and_squalor_factor=1,
+    provides_snow=True,
 )
 
 
-industry.economy_variations["BASIC_TEMPERATE"].enabled = True
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations["STEELTOWN"].prob_map_gen = "10"
+industry.enable_in_economy(
+    "BASIC_TEMPERATE",
+    locate_in_specific_biomes=[
+        "less_south_west",
+    ],
+)
+industry.enable_in_economy(
+    "STEELTOWN",
+    prob_map_gen="10",
+)
 
 # industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 
@@ -76,6 +84,7 @@ spriteset_6 = industry.add_spriteset(
 
 industry.add_spritelayout(
     id="coal_mine_spritelayout_1",
+    tile="coal_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_1],
@@ -83,6 +92,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="coal_mine_spritelayout_2",
+    tile="coal_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_2],
@@ -90,6 +100,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="coal_mine_spritelayout_3",
+    tile="coal_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_3],
@@ -97,18 +108,21 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="coal_mine_spritelayout_4",
+    tile="coal_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_4],
 )
 industry.add_spritelayout(
     id="coal_mine_spritelayout_5",
+    tile="coal_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_5],
 )
 industry.add_spritelayout(
     id="coal_mine_spritelayout_6",
+    tile="coal_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_6],
@@ -117,84 +131,84 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="coal_mine_industry_layout_1",
     layout=[
-        (0, 1, "coal_mine_tile_1", "coal_mine_spritelayout_1"),
-        (0, 2, "coal_mine_tile_1", "coal_mine_spritelayout_2"),
-        (0, 3, "coal_mine_tile_1", "coal_mine_spritelayout_4"),
-        (1, 0, "coal_mine_tile_1", "coal_mine_spritelayout_6"),
-        (1, 1, "coal_mine_tile_1", "coal_mine_spritelayout_1"),
-        (1, 2, "coal_mine_tile_1", "coal_mine_spritelayout_2"),
-        (1, 3, "coal_mine_tile_1", "coal_mine_spritelayout_3"),
-        (2, 0, "coal_mine_tile_1", "coal_mine_spritelayout_5"),
-        (2, 1, "coal_mine_tile_1", "coal_mine_spritelayout_4"),
-        (2, 2, "coal_mine_tile_1", "coal_mine_spritelayout_3"),
+        (0, 1, "coal_mine_spritelayout_1"),
+        (0, 2, "coal_mine_spritelayout_2"),
+        (0, 3, "coal_mine_spritelayout_4"),
+        (1, 0, "coal_mine_spritelayout_6"),
+        (1, 1, "coal_mine_spritelayout_1"),
+        (1, 2, "coal_mine_spritelayout_2"),
+        (1, 3, "coal_mine_spritelayout_3"),
+        (2, 0, "coal_mine_spritelayout_5"),
+        (2, 1, "coal_mine_spritelayout_4"),
+        (2, 2, "coal_mine_spritelayout_3"),
     ],
 )
 industry.add_industry_layout(
     id="coal_mine_industry_layout_2",
     layout=[
-        (0, 0, "coal_mine_tile_1", "coal_mine_spritelayout_1"),
-        (0, 1, "coal_mine_tile_1", "coal_mine_spritelayout_2"),
-        (0, 2, "coal_mine_tile_1", "coal_mine_spritelayout_6"),
-        (1, 0, "coal_mine_tile_1", "coal_mine_spritelayout_3"),
-        (1, 1, "coal_mine_tile_1", "coal_mine_spritelayout_3"),
-        (1, 2, "coal_mine_tile_1", "coal_mine_spritelayout_5"),
+        (0, 0, "coal_mine_spritelayout_1"),
+        (0, 1, "coal_mine_spritelayout_2"),
+        (0, 2, "coal_mine_spritelayout_6"),
+        (1, 0, "coal_mine_spritelayout_3"),
+        (1, 1, "coal_mine_spritelayout_3"),
+        (1, 2, "coal_mine_spritelayout_5"),
     ],
 )
 industry.add_industry_layout(
     id="coal_mine_industry_layout_3",
     layout=[
-        (0, 0, "coal_mine_tile_1", "coal_mine_spritelayout_4"),
-        (1, 0, "coal_mine_tile_1", "coal_mine_spritelayout_4"),
-        (1, 1, "coal_mine_tile_1", "coal_mine_spritelayout_1"),
-        (1, 2, "coal_mine_tile_1", "coal_mine_spritelayout_2"),
-        (2, 0, "coal_mine_tile_1", "coal_mine_spritelayout_6"),
-        (2, 2, "coal_mine_tile_1", "coal_mine_spritelayout_5"),
+        (0, 0, "coal_mine_spritelayout_4"),
+        (1, 0, "coal_mine_spritelayout_4"),
+        (1, 1, "coal_mine_spritelayout_1"),
+        (1, 2, "coal_mine_spritelayout_2"),
+        (2, 0, "coal_mine_spritelayout_6"),
+        (2, 2, "coal_mine_spritelayout_5"),
     ],
 )
 industry.add_industry_layout(
     id="coal_mine_industry_layout_4",
     layout=[
-        (0, 0, "coal_mine_tile_1", "coal_mine_spritelayout_3"),
-        (0, 1, "coal_mine_tile_1", "coal_mine_spritelayout_4"),
-        (0, 2, "coal_mine_tile_1", "coal_mine_spritelayout_4"),
-        (1, 0, "coal_mine_tile_1", "coal_mine_spritelayout_3"),
-        (1, 1, "coal_mine_tile_1", "coal_mine_spritelayout_1"),
-        (1, 2, "coal_mine_tile_1", "coal_mine_spritelayout_2"),
-        (2, 0, "coal_mine_tile_1", "coal_mine_spritelayout_1"),
-        (2, 1, "coal_mine_tile_1", "coal_mine_spritelayout_2"),
-        (2, 2, "coal_mine_tile_1", "coal_mine_spritelayout_6"),
-        (3, 0, "coal_mine_tile_1", "coal_mine_spritelayout_3"),
-        (3, 1, "coal_mine_tile_1", "coal_mine_spritelayout_4"),
-        (3, 2, "coal_mine_tile_1", "coal_mine_spritelayout_5"),
+        (0, 0, "coal_mine_spritelayout_3"),
+        (0, 1, "coal_mine_spritelayout_4"),
+        (0, 2, "coal_mine_spritelayout_4"),
+        (1, 0, "coal_mine_spritelayout_3"),
+        (1, 1, "coal_mine_spritelayout_1"),
+        (1, 2, "coal_mine_spritelayout_2"),
+        (2, 0, "coal_mine_spritelayout_1"),
+        (2, 1, "coal_mine_spritelayout_2"),
+        (2, 2, "coal_mine_spritelayout_6"),
+        (3, 0, "coal_mine_spritelayout_3"),
+        (3, 1, "coal_mine_spritelayout_4"),
+        (3, 2, "coal_mine_spritelayout_5"),
     ],
 )
 industry.add_industry_layout(
     id="coal_mine_industry_layout_5",
     layout=[
-        (0, 0, "coal_mine_tile_1", "coal_mine_spritelayout_4"),
-        (0, 1, "coal_mine_tile_1", "coal_mine_spritelayout_6"),
-        (1, 0, "coal_mine_tile_1", "coal_mine_spritelayout_3"),
-        (1, 1, "coal_mine_tile_1", "coal_mine_spritelayout_5"),
-        (2, 0, "coal_mine_tile_1", "coal_mine_spritelayout_1"),
-        (2, 1, "coal_mine_tile_1", "coal_mine_spritelayout_2"),
-        (3, 0, "coal_mine_tile_1", "coal_mine_spritelayout_1"),
-        (3, 1, "coal_mine_tile_1", "coal_mine_spritelayout_2"),
-        (4, 0, "coal_mine_tile_1", "coal_mine_spritelayout_3"),
-        (4, 1, "coal_mine_tile_1", "coal_mine_spritelayout_4"),
+        (0, 0, "coal_mine_spritelayout_4"),
+        (0, 1, "coal_mine_spritelayout_6"),
+        (1, 0, "coal_mine_spritelayout_3"),
+        (1, 1, "coal_mine_spritelayout_5"),
+        (2, 0, "coal_mine_spritelayout_1"),
+        (2, 1, "coal_mine_spritelayout_2"),
+        (3, 0, "coal_mine_spritelayout_1"),
+        (3, 1, "coal_mine_spritelayout_2"),
+        (4, 0, "coal_mine_spritelayout_3"),
+        (4, 1, "coal_mine_spritelayout_4"),
     ],
 )
 industry.add_industry_layout(
     id="coal_mine_industry_layout_6",
     layout=[
-        (0, 0, "coal_mine_tile_1", "coal_mine_spritelayout_1"),
-        (0, 1, "coal_mine_tile_1", "coal_mine_spritelayout_2"),
-        (0, 2, "coal_mine_tile_1", "coal_mine_spritelayout_1"),
-        (0, 3, "coal_mine_tile_1", "coal_mine_spritelayout_2"),
-        (0, 4, "coal_mine_tile_1", "coal_mine_spritelayout_6"),
-        (1, 0, "coal_mine_tile_1", "coal_mine_spritelayout_3"),
-        (1, 1, "coal_mine_tile_1", "coal_mine_spritelayout_4"),
-        (1, 2, "coal_mine_tile_1", "coal_mine_spritelayout_3"),
-        (1, 3, "coal_mine_tile_1", "coal_mine_spritelayout_4"),
-        (1, 4, "coal_mine_tile_1", "coal_mine_spritelayout_5"),
+        (0, 0, "coal_mine_spritelayout_1"),
+        (0, 1, "coal_mine_spritelayout_2"),
+        (0, 2, "coal_mine_spritelayout_1"),
+        (0, 3, "coal_mine_spritelayout_2"),
+        (0, 4, "coal_mine_spritelayout_6"),
+        (1, 0, "coal_mine_spritelayout_3"),
+        (1, 1, "coal_mine_spritelayout_4"),
+        (1, 2, "coal_mine_spritelayout_3"),
+        (1, 3, "coal_mine_spritelayout_4"),
+        (1, 4, "coal_mine_spritelayout_5"),
     ],
 )

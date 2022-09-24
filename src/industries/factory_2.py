@@ -10,7 +10,9 @@ industry = IndustrySecondary(
         ("PLAS", 2),
     ],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("POWR", 8)],
+    prod_cargo_types_with_output_ratios=[
+        ("POWR", 8),
+    ],
     prob_in_game="7",
     prob_map_gen="8",
     map_colour="166",
@@ -18,8 +20,6 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_INDUSTRY_ESTATE_1)",
     fund_cost_multiplier="95",
 )
-
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(
     id="factory_2_tile_1",

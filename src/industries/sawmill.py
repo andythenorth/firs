@@ -2,8 +2,12 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="sawmill",
-    accept_cargos_with_input_ratios=[("WOOD", 6)],
-    prod_cargo_types_with_output_ratios=[("WDPR", 8)],
+    accept_cargos_with_input_ratios=[
+        ("WOOD", 6),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("WDPR", 8),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="194",
@@ -17,8 +21,12 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=1,
 )
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
-industry.economy_variations["BASIC_ARCTIC"].enabled = True
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+)
+industry.enable_in_economy(
+    "BASIC_ARCTIC",
+)
 
 industry.add_tile(
     id="sawmill_tile_1",
@@ -38,6 +46,7 @@ sprite_logs_3 = industry.add_sprite(sprite_number="2071")
 
 industry.add_spritelayout(
     id="sawmill_spritelayout_1",
+    tile="sawmill_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_hut_1],
@@ -46,6 +55,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="sawmill_spritelayout_2",
+    tile="sawmill_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_hut_2],
@@ -54,6 +64,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="sawmill_spritelayout_3",
+    tile="sawmill_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_logs_1],
@@ -62,6 +73,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="sawmill_spritelayout_4",
+    tile="sawmill_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_logs_2],
@@ -70,6 +82,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="sawmill_spritelayout_5",
+    tile="sawmill_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_logs_3],
@@ -80,13 +93,13 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="sawmill_industry_layout_1",
     layout=[
-        (0, 0, "sawmill_tile_1", "sawmill_spritelayout_1"),
-        (0, 1, "sawmill_tile_1", "sawmill_spritelayout_2"),
-        (0, 2, "sawmill_tile_1", "sawmill_spritelayout_4"),
-        (1, 0, "sawmill_tile_1", "sawmill_spritelayout_1"),
-        (1, 1, "sawmill_tile_1", "sawmill_spritelayout_2"),
-        (1, 2, "sawmill_tile_1", "sawmill_spritelayout_3"),
-        (2, 0, "sawmill_tile_1", "sawmill_spritelayout_4"),
-        (2, 1, "sawmill_tile_1", "sawmill_spritelayout_5"),
+        (0, 0, "sawmill_spritelayout_1"),
+        (0, 1, "sawmill_spritelayout_2"),
+        (0, 2, "sawmill_spritelayout_4"),
+        (1, 0, "sawmill_spritelayout_1"),
+        (1, 1, "sawmill_spritelayout_2"),
+        (1, 2, "sawmill_spritelayout_3"),
+        (2, 0, "sawmill_spritelayout_4"),
+        (2, 1, "sawmill_spritelayout_5"),
     ],
 )

@@ -2,8 +2,12 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="solvay_plant",
-    accept_cargos_with_input_ratios=[("SALT", 8)],
-    prod_cargo_types_with_output_ratios=[("SASH", 6)],
+    accept_cargos_with_input_ratios=[
+        ("SALT", 8),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("SASH", 6),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     prod_multiplier="[0, 0]",
@@ -13,7 +17,6 @@ industry = IndustrySecondary(
     fund_cost_multiplier="170",
 )
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(
     id="solvay_plant_tile_1",
@@ -39,7 +42,7 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(
-    type="concrete",
+    type="dirty_concrete",
 )
 spriteset_ground_overlay = industry.add_spriteset(
     type="empty",

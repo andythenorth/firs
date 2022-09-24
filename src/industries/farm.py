@@ -4,7 +4,7 @@ industry = IndustryPrimaryOrganic(
     id="farm",
     prod_cargo_types_with_multipliers=[],
     prob_in_game="3",
-    prob_map_gen="15",  # intended to be relatively prevalent in Steeltown, split this per economy if needed
+    prob_map_gen="15",
     map_colour="85",
     special_flags=[
         "IND_FLAG_PLANT_FIELDS_PERIODICALLY",
@@ -20,21 +20,24 @@ industry = IndustryPrimaryOrganic(
 
 # definitely not in Arctic Basic, farm has been added and removed more than once from that economy :P
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
-industry.economy_variations["IN_A_HOT_COUNTRY"].prod_cargo_types_with_multipliers = [
-    ("MAIZ", 14),
-    ("LVST", 13),
-]
-# industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('MAIZ', 14), ('LVST', 13), ('NUTS', 14), ('WOOL', 10)]
-industry.economy_variations["IN_A_HOT_COUNTRY"].prob_map_gen = "14"
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+    prod_cargo_types_with_multipliers=[
+        ("MAIZ", 14),
+        ("LVST", 13),
+    ],
+    prob_map_gen="14",
+)
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_multipliers = [('GRAI', 14), ('LVST', 13)]
+# ['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('MAIZ', 14), ('LVST', 13), ('NUTS', 14), ('WOOL', 10),]
 
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations["STEELTOWN"].prod_cargo_types_with_multipliers = [
-    ("FOOD", 14)
-]
+industry.enable_in_economy(
+    "STEELTOWN",
+    prod_cargo_types_with_multipliers=[
+        ("FOOD", 14),
+    ],
+    prob_map_gen="15",  # intended to be relatively prevalent in Steeltown, split this per economy if needed
+)
 
 industry.add_tile(
     id="farm_tile_1",
@@ -89,6 +92,7 @@ spriteset_8 = industry.add_spriteset(
 
 industry.add_spritelayout(
     id="farm_spritelayout_1",
+    tile="farm_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_1_ground,
     building_sprites=[spriteset_1],
@@ -96,6 +100,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="farm_spritelayout_2",
+    tile="farm_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_2_ground,
     building_sprites=[spriteset_2],
@@ -103,12 +108,14 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="farm_spritelayout_3",
+    tile="farm_tile_1",
     ground_sprite=sprite_ground_mud,
     ground_overlay=spriteset_3_ground,
     building_sprites=[spriteset_3],
 )
 industry.add_spritelayout(
     id="farm_spritelayout_4",
+    tile="farm_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_4_ground,
     building_sprites=[spriteset_4],
@@ -116,6 +123,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="farm_spritelayout_5",
+    tile="farm_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -123,6 +131,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="farm_spritelayout_6",
+    tile="farm_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
@@ -130,6 +139,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="farm_spritelayout_7",
+    tile="farm_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
@@ -137,6 +147,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="farm_spritelayout_8",
+    tile="farm_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
@@ -146,39 +157,39 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="farm_industry_layout_1",
     layout=[
-        (0, 2, "farm_tile_1", "farm_spritelayout_8"),
-        (0, 3, "farm_tile_1", "farm_spritelayout_3"),
-        (1, 0, "farm_tile_1", "farm_spritelayout_2"),
-        (2, 0, "farm_tile_1", "farm_spritelayout_1"),
-        (2, 2, "farm_tile_1", "farm_spritelayout_5"),
-        (2, 3, "farm_tile_1", "farm_spritelayout_7"),
-        (3, 2, "farm_tile_1", "farm_spritelayout_6"),
-        (3, 3, "farm_tile_1", "farm_spritelayout_4"),
+        (0, 2, "farm_spritelayout_8"),
+        (0, 3, "farm_spritelayout_3"),
+        (1, 0, "farm_spritelayout_2"),
+        (2, 0, "farm_spritelayout_1"),
+        (2, 2, "farm_spritelayout_5"),
+        (2, 3, "farm_spritelayout_7"),
+        (3, 2, "farm_spritelayout_6"),
+        (3, 3, "farm_spritelayout_4"),
     ],
 )
 industry.add_industry_layout(
     id="farm_industry_layout_2",
     layout=[
-        (0, 0, "farm_tile_1", "farm_spritelayout_4"),
-        (0, 2, "farm_tile_1", "farm_spritelayout_7"),
-        (0, 3, "farm_tile_1", "farm_spritelayout_6"),
-        (1, 0, "farm_tile_1", "farm_spritelayout_5"),
-        (1, 3, "farm_tile_1", "farm_spritelayout_1"),
-        (2, 0, "farm_tile_1", "farm_spritelayout_8"),
-        (2, 1, "farm_tile_1", "farm_spritelayout_3"),
-        (2, 2, "farm_tile_1", "farm_spritelayout_2"),
+        (0, 0, "farm_spritelayout_4"),
+        (0, 2, "farm_spritelayout_7"),
+        (0, 3, "farm_spritelayout_6"),
+        (1, 0, "farm_spritelayout_5"),
+        (1, 3, "farm_spritelayout_1"),
+        (2, 0, "farm_spritelayout_8"),
+        (2, 1, "farm_spritelayout_3"),
+        (2, 2, "farm_spritelayout_2"),
     ],
 )
 industry.add_industry_layout(
     id="farm_industry_layout_3",
     layout=[
-        (0, 0, "farm_tile_1", "farm_spritelayout_8"),
-        (0, 1, "farm_tile_1", "farm_spritelayout_1"),
-        (0, 2, "farm_tile_1", "farm_spritelayout_5"),
-        (1, 0, "farm_tile_1", "farm_spritelayout_2"),
-        (1, 2, "farm_tile_1", "farm_spritelayout_3"),
-        (2, 0, "farm_tile_1", "farm_spritelayout_7"),
-        (3, 0, "farm_tile_1", "farm_spritelayout_4"),
-        (3, 2, "farm_tile_1", "farm_spritelayout_6"),
+        (0, 0, "farm_spritelayout_8"),
+        (0, 1, "farm_spritelayout_1"),
+        (0, 2, "farm_spritelayout_5"),
+        (1, 0, "farm_spritelayout_2"),
+        (1, 2, "farm_spritelayout_3"),
+        (2, 0, "farm_spritelayout_7"),
+        (3, 0, "farm_spritelayout_4"),
+        (3, 2, "farm_spritelayout_6"),
     ],
 )

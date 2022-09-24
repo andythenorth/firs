@@ -2,8 +2,14 @@ from industry import IndustryTertiary, TileLocationChecks
 
 industry = IndustryTertiary(
     id="hotel",
-    accept_cargo_types=["FOOD", "BEER", "PASS"],
-    prod_cargo_types_with_multipliers=[("PASS", 17)],
+    accept_cargo_types=[
+        "FOOD",
+        "BEER",
+        "PASS",
+    ],
+    prod_cargo_types_with_multipliers=[
+        ("PASS", 17),
+    ],
     prob_in_game="15",
     prob_map_gen="10",
     map_colour="189",
@@ -15,19 +21,26 @@ industry = IndustryTertiary(
     fund_cost_multiplier="101",
 )
 
-industry.economy_variations["BASIC_TEMPERATE"].enabled = True
+industry.enable_in_economy(
+    "BASIC_TEMPERATE",
+)
 
-industry.economy_variations["BASIC_TROPIC"].enabled = True
+industry.enable_in_economy(
+    "BASIC_TROPIC",
+)
 
-industry.economy_variations["BASIC_ARCTIC"].enabled = True
-industry.economy_variations["BASIC_ARCTIC"].accept_cargo_types = [
-    "FOOD",
-    "PASS",
-]
+industry.enable_in_economy(
+    "BASIC_ARCTIC",
+    accept_cargo_types=[
+        "FOOD",
+        "PASS",
+    ],
+)
 
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+)
 
 industry.add_tile(
     id="hotel_tile_1",
@@ -49,12 +62,14 @@ sprite_building_2 = industry.add_sprite(
 
 industry.add_spritelayout(
     id="hotel_spritelayout_1",
+    tile="hotel_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_building_1],
 )
 industry.add_spritelayout(
     id="hotel_spritelayout_2",
+    tile="hotel_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_building_2],
@@ -63,9 +78,9 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="hotel_industry_layout",
     layout=[
-        (0, 0, "hotel_tile_1", "hotel_spritelayout_1"),
-        (1, 0, "hotel_tile_1", "hotel_spritelayout_1"),
-        (0, 1, "hotel_tile_1", "hotel_spritelayout_2"),
-        (1, 1, "hotel_tile_1", "hotel_spritelayout_2"),
+        (0, 0, "hotel_spritelayout_1"),
+        (1, 0, "hotel_spritelayout_1"),
+        (0, 1, "hotel_spritelayout_2"),
+        (1, 1, "hotel_spritelayout_2"),
     ],
 )

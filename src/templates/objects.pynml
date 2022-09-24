@@ -1,97 +1,129 @@
 <tal:industries repeat="industry registered_industries">
+
+    <tal:include metal:use-macro="load: spritelayouts_object.pynml" />
+
+    <!--! the 'tiles' for all objects for the industry are resolved to a single set, and a shared set of animation switches provided -->
+    <tal:include define="animation_context 'object';
+                         animation_macros load: animation_macros.pynml"
+                 metal:use-macro="animation_macros.macros['tile_animation']" />
+
     <!--! grf_object not object in case it conflicts with python 'object' at any point (might not, but who wants to test that? -->
     <tal:objects repeat="grf_object industry.objects.values()">
-        // CABBAGE view ${grf_object.views}
+
+        <!--! multi-tile objects need dedicated purchase sprite;
+              - did consider automating purchase sprite generation for multi-tile objects, but not something that was pursued as of Sept 2022
+              - be better to avoid multi-tile objects where possible
+              - only one view supported for multi-tile objects
+        -->
+        <tal:buildings repeat="x_y_spritelayout grf_object.multi_tile_buildings">
+            <tal:spriteset repeat="sprite getattr(x_y_spritelayout[2], 'sprites', None)">
+                spriteset(${grf_object.id}_spriteset_purchase_${repeat.x_y_spritelayout.index}_${repeat.sprite.index}) {
+                    [${sprite[0]}, ${sprite[1]}, ${sprite[2]}, ${sprite[3]}, ${sprite[4]}, ${sprite[5]}, ANIM | NOCROP, ${industry.get_graphics_file_path()}]
+                }
+            </tal:spriteset>
+        </tal:buildings>
+        spritelayout ${grf_object.id}_spritelayout_purchase {
+            <tal:ground repeat="ground grf_object.multi_tile_ground">
+                building {
+                    sprite: ${industry.unpack_sprite_or_spriteset(ground[2])};
+                    <!--! this offset adjustment is a crude hack that appears to remarkably work
+                          if we want to tweak further, provide some constants that can also adjust the building sprites beyond the positions passed from the industry
+                          note that these are tile xy offsets (from NW/NE edge) not screen xy offsets, can be confusing -->
+                    xoffset: 16 * ${ground[0]};
+                    yoffset: 16 * ${ground[1]};
+                }
+            </tal:ground>
+            <tal:buildings repeat="x_y_spritelayout grf_object.multi_tile_buildings">
+                <tal:building_single_baseset_sprite condition="getattr(x_y_spritelayout[2], 'sprite_number', None) is not None">
+                    building {
+                        sprite: ${getattr(x_y_spritelayout[2], 'sprite_number', None)};
+                        recolour_mode: RECOLOUR_REMAP;
+                        palette:       PALETTE_USE_DEFAULT;
+                        <!--! note that these are tile xy offsets (from NW/NE edge) not screen xy offsets, can be confusing -->
+                        xoffset: 16 * ${x_y_spritelayout[0]};
+                        yoffset: 16 * ${x_y_spritelayout[1]};
+                    }
+                </tal:building_single_baseset_sprite>
+                <tal:building_multiple_realsprites repeat="sprites getattr(x_y_spritelayout[2], 'sprites', None)">
+                    building {
+                        sprite: ${grf_object.id}_spriteset_purchase_${repeat.x_y_spritelayout.index}_${repeat.sprites.index};
+                        recolour_mode: RECOLOUR_REMAP;
+                        palette:       PALETTE_USE_DEFAULT;
+                        <!--! note that these are tile xy offsets (from NW/NE edge) not screen xy offsets, can be confusing -->
+                        xoffset: 16 * ${x_y_spritelayout[0]};
+                        yoffset: 16 * ${x_y_spritelayout[1]};
+                    }
+                </tal:building_multiple_realsprites>
+            </tal:buildings>
+        }
+
         <tal:view repeat="view grf_object.views">
-            // CABBAGE views ${view}
-            <tal:spritelayouts repeat="x_y_spritelayout view">
-                // CABBAGE x_y_spritelayout ${x_y_spritelayout}
-                // for debug: object layout derived from industry layout name ${x_y_spritelayout[2].id}
-                spritelayout ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index} {
-                    childsprite {
-                        sprite: ${industry.unpack_sprite_or_spriteset(x_y_spritelayout[2].ground_sprite)};
-                        always_draw: 1;
-                    }
-                    /* snow nerfed
-                    childsprite {
-                        sprite: ${industry.unpack_sprite_or_spriteset(x_y_spritelayout[2].ground_sprite, snow_overlay=True)};
-                        //hide_sprite: (!LOAD_TEMP(13));
-                        always_draw: 1;
-                    }
-                     */
-                    <tal:build_building_sprites repeat="building_sprite x_y_spritelayout[2].building_sprites">
-                        building {
-                            sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3)};
-                            recolour_mode: RECOLOUR_REMAP;
-                            palette: PALETTE_USE_DEFAULT;
-                            xoffset: ${building_sprite.xoffset};
-                            yoffset: ${building_sprite.yoffset};
-                            zoffset: ${building_sprite.zoffset};
-                            xextent: ${building_sprite.xextent};
-                            yextent: ${building_sprite.yextent};
-                            zextent: ${building_sprite.zextent};
-                            always_draw: ${building_sprite.always_draw};
-                        }
-                        /* snow nerfed
-                        building {
-                            sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3, snow_overlay=True)};
-                            recolour_mode: RECOLOUR_REMAP;
-                            palette: PALETTE_USE_DEFAULT;
-                            xoffset: ${building_sprite.xoffset};
-                            yoffset: ${building_sprite.yoffset};
-                            zoffset: ${building_sprite.zoffset};
-                            xextent: ${building_sprite.xextent};
-                            yextent: ${building_sprite.yextent};
-                            zextent: ${building_sprite.zextent};
-                            always_draw: ${building_sprite.always_draw};
-                        }
-                        */
-                    </tal:build_building_sprites>
-                    }
+            switch(FEAT_OBJECTS, SELF, ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout, relative_pos) {
+                <tal:spritelayouts repeat="x_y_spritelayout view">
+                    relative_coord(${x_y_spritelayout[0]}, ${x_y_spritelayout[1]}): ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index};
                 </tal:spritelayouts>
-
-                switch(FEAT_OBJECTS, SELF, ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout, relative_pos) {
-                    <tal:spritelayouts repeat="x_y_spritelayout view">
-                        relative_coord(${x_y_spritelayout[0]}, ${x_y_spritelayout[1]}): ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index};
-                    </tal:spritelayouts>
-                }
-            </tal:view>
-
-            switch(FEAT_OBJECTS, SELF, ${grf_object.id}_switch_graphics, view) {
-                <tal:views repeat="view_num range(len(grf_object.views))">
-                    ${view_num}: ${grf_object.id}_view_${view_num}_switch_graphics_layout;
-                </tal:views>
             }
+        </tal:view>
 
-            <tal:economies repeat="economy industry.economies_enabled_for_industry">
-                if (economy==${economy.numeric_id} && objects) {
-                    item(FEAT_OBJECTS, ${grf_object.id}, ${object_ids[grf_object.id]}) {
-                        property {
-                            <!--! class is: industry ID, padded out with 0s and F pre-pended, e.g. F001 etc
-                                  it's accepted that this might collide with other sets but eh
-                            -->
-                            class                   :"${'F' + str(industry.numeric_id).zfill(3)}";
-                            classname:              ${industry.get_property('name', None)};
-                            climates_available:     ALL_CLIMATES;
-                            size:                   ${grf_object.size};
-                            build_cost_multiplier:  0;
-                            remove_cost_multiplier: 0;
-                            introduction_date:      date(1, 1, 1);
-                            end_of_life_date:       date(${global_constants.max_game_date}, 1, 1);
-                            /* Anything can overbuild the object, removing returns the money, we don't want foundations and we want to allow bridges */
-                            object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE);
-                            height:                 6;
-                            num_views:              ${len(grf_object.views)};
-                            // name derived from industry currently
-                            ${industry.get_property_declaration('name', None)}
-                        }
-                        graphics {
-                            colour:                 switch_colour_object(${industry.numeric_id});
-                            purchase:               ${grf_object.id}_switch_graphics;
-                            ${grf_object.id}_switch_graphics;
-                        }
+        switch(FEAT_OBJECTS, SELF, ${grf_object.id}_switch_graphics, [
+                                            switch_tile_fences_object(),
+                                            switch_terrain_object(),
+                                            view
+                                        ]) {
+            <tal:views repeat="view_num range(len(grf_object.views))">
+                ${view_num}: ${grf_object.id}_view_${view_num}_switch_graphics_layout;
+            </tal:views>
+        }
+
+        <tal:economies repeat="economy industry.economies_enabled_for_industry">
+            if (economy==${economy.numeric_id} && objects) {
+                item(FEAT_OBJECTS, ${grf_object.id}, ${object_ids[grf_object.id]}) {
+                    property {
+                        <!--! class is: industry ID, padded out with 0s and F pre-pended, e.g. F001 etc
+                              it's accepted that this might collide with other sets but eh
+                        -->
+                        class                   :"${'F' + str(industry.numeric_id).zfill(3)}";
+                        classname:              ${industry.get_property('name', None)};
+                        climates_available:     ALL_CLIMATES;
+                        size:                   ${grf_object.size};
+                        build_cost_multiplier:  0;
+                        remove_cost_multiplier: 0;
+                        introduction_date:      date(1, 1, 1);
+                        end_of_life_date:       date(${global_constants.max_game_date}, 1, 1);
+                        /* Anything can overbuild the object, removing returns the money, we don't want foundations and we want to allow bridges */
+                        object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_ANIMATED);
+                        height:                 6;
+                        num_views:              ${len(grf_object.views)};
+                        // name derived from industry currently
+                        ${industry.get_property_declaration('name', None)}
+                        <tal:animation_info condition="grf_object.tile.animation_length > 1">
+                            animation_info:     [${'ANIMATION_LOOPING' if grf_object.tile.animation_looping else 'ANIMATION_NON_LOOPING'}, ${grf_object.tile.animation_length}];
+                        </tal:animation_info>
+                        <tal:animation_speed condition="grf_object.tile.animation_speed > 0">
+                            animation_speed:    ${grf_object.tile.animation_speed};
+                        </tal:animation_speed>
+                        animation_triggers:     ${grf_object.animation_triggers};
+                    }
+                    graphics {
+                        colour:                 switch_colour_object(${industry.numeric_id});
+                        <tal:anim_next_frame condition="grf_object.tile.custom_animation_next_frame">
+                            anim_next_frame: return ${grf_object.tile.custom_animation_next_frame};
+                        </tal:anim_next_frame>
+                        <tal:anim_control condition="grf_object.tile.custom_animation_control is not None">
+                            <!--! tedious optimisation to avoid a switch that returns 0 for one macro -->
+                            <tal:block condition="grf_object.tile.custom_animation_control['macro'] == 'first_frame_is_0'">
+                                <!--! starts animation on first frame, intended to be called by periodic tile loop -->
+                                anim_control: 0;
+                            </tal:block>
+                            <tal:block condition="grf_object.tile.custom_animation_control['macro'] != 'first_frame_is_0'">
+                                anim_control: ${grf_object.tile.id}_object_anim_control;
+                            </tal:block>
+                        </tal:anim_control>
+                        purchase:               ${grf_object.id}_spritelayout_purchase;
+                        ${grf_object.id}_switch_graphics;
                     }
                 }
-            </tal:economies>
+            }
+        </tal:economies>
     </tal:objects>
 </tal:industries>

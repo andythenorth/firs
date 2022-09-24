@@ -2,7 +2,9 @@ from industry import IndustryTownProducerPopulationDependent, TileLocationChecks
 
 industry = IndustryTownProducerPopulationDependent(
     id="recycling_depot",
-    prod_cargo_types_with_multipliers=[("RCYC", 16)],  # prod dependent on town popn
+    prod_cargo_types_with_multipliers=[
+        ("RCYC", 16),
+    ],  # prod dependent on town popn
     prob_in_game="20",
     prob_map_gen="20",
     map_colour="191",
@@ -15,6 +17,7 @@ industry = IndustryTownProducerPopulationDependent(
     nearby_station_name="string(STR_STATION_TOWN_2)",
     fund_cost_multiplier="118",
     intro_year=1978,
+    provides_snow=True,
 )
 
 

@@ -4,7 +4,9 @@ industry = IndustrySecondary(
     id="copper_smelter",
     accept_cargos_with_input_ratios=[("CORE", 5), ("RFPR", 3)],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[("COPR", 8)],
+    prod_cargo_types_with_output_ratios=[
+        ("COPR", 8),
+    ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="64",
@@ -17,13 +19,17 @@ industry = IndustrySecondary(
     ),
     nearby_station_name="string(STR_STATION_SMELTER)",
     fund_cost_multiplier="200",
-    graphics_change_dates=[],
     pollution_and_squalor_factor=2,
 )
 
-industry.economy_variations["BASIC_TROPIC"].enabled = True
+industry.enable_in_economy(
+    "BASIC_TROPIC",
+    locate_in_specific_biomes=[
+        "more_west",
+    ],
+)
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
+industry.enable_in_economy("IN_A_HOT_COUNTRY")
 # industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('COCO', 8)]
 # industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('COPR', 4), ('SULP', 4)]
 
@@ -102,6 +108,7 @@ sprite_smoke_3 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_tanks",
+    tile="copper_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -110,6 +117,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_thickening_tank",
+    tile="copper_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -118,6 +126,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_big_shed",
+    tile="copper_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -126,6 +135,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_flue_stack",
+    tile="copper_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -135,6 +145,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_ore_handling_front",
+    tile="copper_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -143,6 +154,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_ore_handling_rear",
+    tile="copper_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
@@ -150,6 +162,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_copper_forklift",
+    tile="copper_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
@@ -158,6 +171,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_small_shed",
+    tile="copper_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
@@ -166,6 +180,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_stack_vent_thing",
+    tile="copper_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
@@ -174,6 +189,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_ground",
+    tile="copper_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
@@ -181,6 +197,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_smelter_spritelayout_transformer",
+    tile="copper_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_transformer],
@@ -192,63 +209,56 @@ industry.add_multi_tile_object(
     view_layout=[
         (0, 0, "copper_smelter_spritelayout_ore_handling_rear"),
         (1, 0, "copper_smelter_spritelayout_ore_handling_front"),
-    ]
+    ],
 )
 
 industry.add_industry_layout(
     id="copper_smelter_industry_layout_1",
     layout=[
-        (0, 0, "copper_smelter_tile_1", "copper_smelter_spritelayout_transformer"),
-        (0, 1, "copper_smelter_tile_1", "copper_smelter_spritelayout_big_shed"),
-        (0, 2, "copper_smelter_tile_1", "copper_smelter_spritelayout_big_shed"),
-        (0, 3, "copper_smelter_tile_1", "copper_smelter_spritelayout_small_shed"),
+        (0, 0, "copper_smelter_spritelayout_transformer"),
+        (0, 1, "copper_smelter_spritelayout_big_shed"),
+        (0, 2, "copper_smelter_spritelayout_big_shed"),
+        (0, 3, "copper_smelter_spritelayout_small_shed"),
         (
             1,
             0,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_ore_handling_rear",
         ),
-        (1, 1, "copper_smelter_tile_1", "copper_smelter_spritelayout_tanks"),
+        (1, 1, "copper_smelter_spritelayout_tanks"),
         (
             1,
             2,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_stack_vent_thing",
         ),
         (
             1,
             3,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_copper_forklift",
         ),
         (
             2,
             0,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_ore_handling_front",
         ),
-        (2, 1, "copper_smelter_tile_1", "copper_smelter_spritelayout_tanks"),
+        (2, 1, "copper_smelter_spritelayout_tanks"),
         (
             2,
             2,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_stack_vent_thing",
         ),
-        (2, 3, "copper_smelter_tile_1", "copper_smelter_spritelayout_ground"),
-        (3, 0, "copper_smelter_tile_1", "copper_smelter_spritelayout_flue_stack"),
+        (2, 3, "copper_smelter_spritelayout_ground"),
+        (3, 0, "copper_smelter_spritelayout_flue_stack"),
         (
             3,
             1,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_thickening_tank",
         ),
         (
             3,
             2,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_thickening_tank",
         ),
-        (3, 3, "copper_smelter_tile_1", "copper_smelter_spritelayout_ground"),
+        (3, 3, "copper_smelter_spritelayout_ground"),
     ],
 )
 
@@ -258,56 +268,49 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_ore_handling_rear",
         ),
         (
             0,
             1,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_stack_vent_thing",
         ),
-        (0, 2, "copper_smelter_tile_1", "copper_smelter_spritelayout_tanks"),
-        (0, 3, "copper_smelter_tile_1", "copper_smelter_spritelayout_flue_stack"),
-        (0, 4, "copper_smelter_tile_1", "copper_smelter_spritelayout_tanks"),
-        (0, 5, "copper_smelter_tile_1", "copper_smelter_spritelayout_small_shed"),
+        (0, 2, "copper_smelter_spritelayout_tanks"),
+        (0, 3, "copper_smelter_spritelayout_flue_stack"),
+        (0, 4, "copper_smelter_spritelayout_tanks"),
+        (0, 5, "copper_smelter_spritelayout_small_shed"),
         (
             1,
             0,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_ore_handling_front",
         ),
         (
             1,
             1,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_stack_vent_thing",
         ),
-        (1, 2, "copper_smelter_tile_1", "copper_smelter_spritelayout_big_shed"),
-        (1, 3, "copper_smelter_tile_1", "copper_smelter_spritelayout_big_shed"),
-        (1, 4, "copper_smelter_tile_1", "copper_smelter_spritelayout_big_shed"),
+        (1, 2, "copper_smelter_spritelayout_big_shed"),
+        (1, 3, "copper_smelter_spritelayout_big_shed"),
+        (1, 4, "copper_smelter_spritelayout_big_shed"),
         (
             1,
             5,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_copper_forklift",
         ),
-        (2, 0, "copper_smelter_tile_1", "copper_smelter_spritelayout_transformer"),
-        (2, 1, "copper_smelter_tile_1", "copper_smelter_spritelayout_small_shed"),
+        (2, 0, "copper_smelter_spritelayout_transformer"),
+        (2, 1, "copper_smelter_spritelayout_small_shed"),
         (
             2,
             2,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_thickening_tank",
         ),
         (
             2,
             3,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_thickening_tank",
         ),
-        (2, 4, "copper_smelter_tile_1", "copper_smelter_spritelayout_ground"),
-        (2, 5, "copper_smelter_tile_1", "copper_smelter_spritelayout_ground"),
+        (2, 4, "copper_smelter_spritelayout_ground"),
+        (2, 5, "copper_smelter_spritelayout_ground"),
     ],
 )
 
@@ -317,55 +320,48 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_thickening_tank",
         ),
-        (0, 1, "copper_smelter_tile_1", "copper_smelter_spritelayout_tanks"),
-        (0, 2, "copper_smelter_tile_1", "copper_smelter_spritelayout_flue_stack"),
-        (0, 3, "copper_smelter_tile_1", "copper_smelter_spritelayout_tanks"),
+        (0, 1, "copper_smelter_spritelayout_tanks"),
+        (0, 2, "copper_smelter_spritelayout_flue_stack"),
+        (0, 3, "copper_smelter_spritelayout_tanks"),
         (
             0,
             4,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_ore_handling_rear",
         ),
         (
             1,
             0,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_thickening_tank",
         ),
-        (1, 1, "copper_smelter_tile_1", "copper_smelter_spritelayout_big_shed"),
-        (1, 2, "copper_smelter_tile_1", "copper_smelter_spritelayout_big_shed"),
-        (1, 3, "copper_smelter_tile_1", "copper_smelter_spritelayout_big_shed"),
+        (1, 1, "copper_smelter_spritelayout_big_shed"),
+        (1, 2, "copper_smelter_spritelayout_big_shed"),
+        (1, 3, "copper_smelter_spritelayout_big_shed"),
         (
             1,
             4,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_ore_handling_front",
         ),
-        (2, 0, "copper_smelter_tile_1", "copper_smelter_spritelayout_transformer"),
-        (2, 1, "copper_smelter_tile_1", "copper_smelter_spritelayout_big_shed"),
-        (2, 2, "copper_smelter_tile_1", "copper_smelter_spritelayout_big_shed"),
-        (2, 3, "copper_smelter_tile_1", "copper_smelter_spritelayout_big_shed"),
+        (2, 0, "copper_smelter_spritelayout_transformer"),
+        (2, 1, "copper_smelter_spritelayout_big_shed"),
+        (2, 2, "copper_smelter_spritelayout_big_shed"),
+        (2, 3, "copper_smelter_spritelayout_big_shed"),
         (
             2,
             4,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_stack_vent_thing",
         ),
         (
             3,
             1,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_copper_forklift",
         ),
-        (3, 2, "copper_smelter_tile_1", "copper_smelter_spritelayout_small_shed"),
-        (3, 3, "copper_smelter_tile_1", "copper_smelter_spritelayout_ground"),
+        (3, 2, "copper_smelter_spritelayout_small_shed"),
+        (3, 3, "copper_smelter_spritelayout_ground"),
         (
             3,
             4,
-            "copper_smelter_tile_1",
             "copper_smelter_spritelayout_stack_vent_thing",
         ),
     ],

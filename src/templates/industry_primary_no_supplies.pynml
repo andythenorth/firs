@@ -4,15 +4,16 @@
 
 <tal:include metal:use-macro="load: spritesets.pynml" />
 
-<tal:include metal:use-macro="load: spritelayouts.pynml" />
+<tal:include metal:use-macro="load: spritelayouts_industry.pynml" />
 
 <tal:include metal:use-macro="load: graphics_switches.pynml" />
 
 <tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
              metal:use-macro="location_checks_tile.macros['render_tree']" />
 
-<tal:include define="animation_macros load: animation_macros.pynml"
-             metal:use-macro="animation_macros.macros['tile_animation']" />
+<tal:include define="animation_context 'industry';
+                     animation_macros load: animation_macros.pynml"
+                     metal:use-macro="animation_macros.macros['tile_animation']" />
 
 <tal:include metal:use-macro="load: properties_tile.pynml" />
 
@@ -27,7 +28,7 @@
 
 <tal:include metal:use-macro="load: availability.pynml" />
 
-<tal:include metal:use-macro="load: location_check_macros_industry.pynml" />
+<tal:include metal:use-macro="load: location_checks_industry.pynml" />
 
 <tal:include metal:use-macro="load: properties_industry.pynml" />
 

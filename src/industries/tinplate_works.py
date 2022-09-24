@@ -2,7 +2,11 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="tinplate_works",
-    accept_cargos_with_input_ratios=[("STEL", 4), ("TIN_", 2), ("HYAC", 2)],
+    accept_cargos_with_input_ratios=[
+        ("STSH", 4),
+        ("TIN_", 2),
+        ("SUAC", 2),
+    ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[("TINP", 8)],
     prob_in_game="3",
@@ -14,7 +18,6 @@ industry = IndustrySecondary(
 )
 
 # Tinplate is *not* in Steeltown because it fragments the consumers of Acid too much.  Maybe Better Living Through Chemistry?
-###industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.add_tile(
     id="tinplate_works_tile_1",
@@ -28,7 +31,7 @@ industry.add_tile(
 
 
 spriteset_ground = industry.add_spriteset(
-    type="concrete",
+    type="dirty_concrete",
 )
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(

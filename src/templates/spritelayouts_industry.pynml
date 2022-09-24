@@ -1,0 +1,244 @@
+<tal:spritelayouts repeat="spritelayout python:industry.spritelayouts">
+    spritelayout ${spritelayout.id} {
+        <tal:ground_sprite switch="spritelayout.terrain_aware_ground">
+            <tal:case_terrain case="True">
+                <!--! ground sprite from terrain -->
+                ground {
+                    sprite: (LOAD_TEMP(${graphics_temp_storage.var_terrain_sprite}));
+                }
+            </tal:case_terrain>
+            <tal:case_industry case="False">
+                <!--! explicit ground sprite from industry, if not empty -->
+                <tal:not_empty condition="getattr(spritelayout.ground_sprite, 'type', None) != 'empty'">
+                    childsprite {
+                        sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
+                        hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
+                        always_draw: 1;
+                    }
+                    <!--! ...explicit ground sprite from industry with snow -->
+                    childsprite {
+                        sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite, snow_overlay=True)};
+                        hide_sprite: (!LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
+                        always_draw: 1;
+                    }
+                </tal:not_empty>
+            </tal:case_industry>
+        </tal:ground_sprite>
+
+        <!--! industry ground overlay, if not empty -->
+        <tal:not_empty condition="getattr(spritelayout.ground_overlay, 'type', None) != 'empty'">
+            childsprite {
+                sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay)};
+                recolour_mode: RECOLOUR_REMAP;
+                palette: PALETTE_USE_DEFAULT;
+                hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
+                always_draw: 1;
+            }
+            <!--! ...industry ground overlay with snow -->
+            childsprite {
+                sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay, snow_overlay=True)};
+                recolour_mode: RECOLOUR_REMAP;
+                palette: PALETTE_USE_DEFAULT;
+                hide_sprite: (!LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
+                always_draw: 1;
+            }
+        </tal:not_empty>
+
+        <tal:optional_fence condition="'ne' in spritelayout.fences">
+            <!--! fences NE -->
+            building {
+                sprite: 1302 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_ne});
+                <tal:hide_sprite condition="'ne' not in spritelayout.perma_fences">
+                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_ne}) == 0);
+                </tal:hide_sprite>
+                xoffset:  0;
+                yoffset:  0;
+                zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_ne}) * 8;
+                xextent: 1;
+                yextent: 16;
+                zextent: 6;
+                recolour_mode: RECOLOUR_REMAP;
+                palette:       PALETTE_USE_DEFAULT;
+            }
+        </tal:optional_fence>
+        <tal:optional_fence condition="'nw' in spritelayout.fences">
+            <!--! fences NW -->
+            building {
+                sprite: 1301 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_nw});
+                <tal:hide_sprite condition="'nw' not in spritelayout.perma_fences">
+                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_nw}) == 0);
+                </tal:hide_sprite>
+                xoffset:  0;
+                yoffset:  0;
+                zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_nw}) * 8;
+                xextent: 16;
+                yextent: 1;
+                zextent: 6;
+                recolour_mode: RECOLOUR_REMAP;
+                palette:       PALETTE_USE_DEFAULT;
+            }
+        </tal:optional_fence>
+
+        <tal:optional_construction_sprites condition="industry.default_industry_properties.override_default_construction_states"
+                                           repeat="building_sprite spritelayout.building_sprites">
+            <!--! construction states - optional (no snow awareness) -->
+            building {
+                sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=0)};
+                recolour_mode: RECOLOUR_REMAP;
+                palette: PALETTE_USE_DEFAULT;
+                xoffset: ${building_sprite.xoffset};
+                yoffset: ${building_sprite.yoffset};
+                zoffset: ${building_sprite.zoffset};
+                xextent: ${building_sprite.xextent};
+                yextent: ${building_sprite.yextent};
+                zextent: ${building_sprite.zextent};
+                always_draw: ${building_sprite.always_draw};
+                <!--! tested, not worth delegating construction state check to register / procedure -->
+                hide_sprite: (construction_state != 0);
+            }
+            building {
+                sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=1)};
+                recolour_mode: RECOLOUR_REMAP;
+                palette: PALETTE_USE_DEFAULT;
+                xoffset: ${building_sprite.xoffset};
+                yoffset: ${building_sprite.yoffset};
+                zoffset: ${building_sprite.zoffset};
+                xextent: ${building_sprite.xextent};
+                yextent: ${building_sprite.yextent};
+                zextent: ${building_sprite.zextent};
+                always_draw: ${building_sprite.always_draw};
+                <!--! tested, not worth delegating construction state check to register / procedure -->
+                hide_sprite: (construction_state != 1);
+            }
+            building {
+                sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=2)};
+                recolour_mode: RECOLOUR_REMAP;
+                palette: PALETTE_USE_DEFAULT;
+                xoffset: ${building_sprite.xoffset};
+                yoffset: ${building_sprite.yoffset};
+                zoffset: ${building_sprite.zoffset};
+                xextent: ${building_sprite.xextent};
+                yextent: ${building_sprite.yextent};
+                zextent: ${building_sprite.zextent};
+                always_draw: ${building_sprite.always_draw};
+                <!--! tested, not worth delegating construction state check to register / procedure -->
+                hide_sprite: (construction_state != 2);
+            }
+        </tal:optional_construction_sprites>
+        <tal:building_sprites repeat="building_sprite spritelayout.building_sprites">
+            <!--! buildings (snow aware) -->
+            building {
+                sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3)};
+                recolour_mode: RECOLOUR_REMAP;
+                palette: PALETTE_USE_DEFAULT;
+                xoffset: ${building_sprite.xoffset};
+                yoffset: ${building_sprite.yoffset};
+                zoffset: ${building_sprite.zoffset};
+                xextent: ${building_sprite.xextent};
+                yextent: ${building_sprite.yextent};
+                zextent: ${building_sprite.zextent};
+                always_draw: ${building_sprite.always_draw};
+                hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_hide_building}));
+            }
+            building {
+                sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3, snow_overlay=True)};
+                recolour_mode: RECOLOUR_REMAP;
+                palette: PALETTE_USE_DEFAULT;
+                xoffset: ${building_sprite.xoffset};
+                yoffset: ${building_sprite.yoffset};
+                zoffset: ${building_sprite.zoffset};
+                xextent: ${building_sprite.xextent};
+                yextent: ${building_sprite.yextent};
+                zextent: ${building_sprite.zextent};
+                always_draw: ${building_sprite.always_draw};
+                hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_hide_building_snow}));
+            }
+        </tal:building_sprites>
+
+        <tal:magic_trees condition="len(spritelayout.magic_trees) > 0" repeat="magic_tree spritelayout.magic_trees">
+            <!--! magic trees, magically added by industry.add_magic_spritelayout() -->
+            building {
+                sprite: ${magic_tree.default};
+                hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_magic_trees_hide_default});
+                xoffset: ${magic_tree.xoffset};
+                yoffset: ${magic_tree.yoffset};
+                <!--! x and y extents need to be 4 or so for trees to prevent flickering -->
+                xextent: 4;
+                yextent: 4;
+                zextent: 32;
+            }
+            building {
+                sprite: ${magic_tree.snow};
+                hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_magic_trees_hide_snow});
+                xoffset: ${magic_tree.xoffset};
+                yoffset: ${magic_tree.yoffset};
+                <!--! x and y extents need to be 4 or so for trees to prevent flickering -->
+                xextent: 4;
+                yextent: 4;
+                zextent: 32;
+            }
+            building {
+                sprite: ${magic_tree.tropic};
+                hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_magic_trees_hide_tropic});
+                xoffset: ${magic_tree.xoffset};
+                yoffset: ${magic_tree.yoffset};
+                <!--! x and y extents need to be 4 or so for trees to prevent flickering -->
+                xextent: 4;
+                yextent: 4;
+                zextent: 32;
+            }
+        </tal:magic_trees>
+
+        <tal:optional_smoke repeat="smoke_sprite spritelayout.smoke_sprites">
+            <!--! smoke sprites -->
+            building {
+                sprite: ${smoke_sprite.sprite_number};
+                recolour_mode: RECOLOUR_REMAP;
+                palette: PALETTE_USE_DEFAULT;
+                xoffset: ${smoke_sprite.xoffset};
+                yoffset: ${smoke_sprite.yoffset};
+                zoffset: ${smoke_sprite.zoffset};
+                xextent: ${smoke_sprite.xextent};
+                yextent: ${smoke_sprite.yextent};
+                zextent: ${smoke_sprite.zextent};
+                hide_sprite: ${smoke_sprite.hide_sprite};
+            }
+        </tal:optional_smoke>
+
+        <tal:optional_fence condition="'se' in spritelayout.fences">
+            <!--! fences SE -->
+            building {
+                sprite: 1301 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_se});
+                <tal:hide_sprite condition="'se' not in spritelayout.perma_fences">
+                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_se}) == 0);
+                </tal:hide_sprite>
+                xoffset: 0;
+                yoffset:  16;
+                zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_se}) * 8;
+                xextent: 16;
+                yextent: 1;
+                zextent: 6;
+                recolour_mode: RECOLOUR_REMAP;
+                palette:       PALETTE_USE_DEFAULT;
+            }
+        </tal:optional_fence>
+        <tal:optional_fence condition="'sw' in spritelayout.fences">
+            <!--! fences SW -->
+            building {
+                sprite: 1302 + LOAD_TEMP(${graphics_temp_storage.var_fencesprite_sw});
+                <tal:hide_sprite condition="'sw' not in spritelayout.perma_fences">
+                    hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_sw}) == 0);
+                </tal:hide_sprite>
+                xoffset: 16;
+                yoffset:  0;
+                zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_sw}) * 8;
+                xextent: 1;
+                yextent: 16;
+                zextent: 6;
+                recolour_mode: RECOLOUR_REMAP;
+                palette:       PALETTE_USE_DEFAULT;
+            }
+        </tal:optional_fence>
+
+    }
+</tal:spritelayouts>

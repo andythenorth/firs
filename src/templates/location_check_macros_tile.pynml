@@ -1,6 +1,7 @@
 <!--!
     Location checks are defined as macros, to use these load the template as an object and call the macro from the macros dict
     e.g. foo.macros[macro_name] where foo has been loaded in a python script or in a chameleon template
+    !! probably a candidate for conversion to procedures??
 -->
 
 <!--! Loop to render the location checks tree -->

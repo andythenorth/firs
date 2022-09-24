@@ -2,7 +2,11 @@ from industry import IndustryTertiary, TileLocationChecks
 
 industry = IndustryTertiary(
     id="food_market",
-    accept_cargo_types=["FOOD", "FRUT", "BEER"],
+    accept_cargo_types=[
+        "FOOD",
+        "FRUT",
+        "BEER",
+    ],
     prod_cargo_types=[],
     prob_in_game="12",
     prob_map_gen="24",
@@ -15,6 +19,7 @@ industry = IndustryTertiary(
     name="string(STR_IND_FOOD_MARKET)",
     nearby_station_name="string(STR_STATION_TOWN_3)",
     fund_cost_multiplier="15",
+    provides_snow=True,
 )
 
 industry.add_tile(
@@ -46,11 +51,12 @@ sprite_tree_2 = industry.add_sprite(
 
 industry.add_spritelayout(
     id="food_market_spritelayout",
+    tile="food_market_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1, sprite_tree_1, sprite_tree_2],
 )
 industry.add_industry_layout(
     id="food_market_industry_layout",
-    layout=[(0, 0, "food_market_tile_1", "food_market_spritelayout")],
+    layout=[(0, 0, "food_market_spritelayout")],
 )

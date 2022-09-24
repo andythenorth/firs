@@ -2,8 +2,15 @@ from industry import IndustryPrimaryPort, TileLocationChecks
 
 industry = IndustryPrimaryPort(
     id="trading_post",
-    accept_cargo_types=["FOOD", "FRUT", "BEER"],
-    prod_cargo_types_with_multipliers=[],
+    accept_cargo_types=[
+        "DIAM",
+        "JAVA",
+        "RUBR",
+    ],
+    prod_cargo_types_with_multipliers=[
+        ("ENSP", 7),
+        ("FMSP", 6),
+    ],
     prob_in_game="2",
     prob_map_gen="6",
     map_colour="37",
@@ -16,16 +23,9 @@ industry = IndustryPrimaryPort(
     override_default_construction_states=True,
 )
 
-industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
-industry.economy_variations["IN_A_HOT_COUNTRY"].accept_cargo_types = [
-    "DIAM",
-    "JAVA",
-    "RUBR",
-]
-industry.economy_variations["IN_A_HOT_COUNTRY"].prod_cargo_types_with_multipliers = [
-    ("ENSP", 7),
-    ("FMSP", 6),
-]
+industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+)
 
 industry.add_tile(
     id="trading_post_tile_1",
@@ -102,6 +102,7 @@ spriteset_small_warehouse = industry.add_spriteset(
 
 industry.add_spritelayout(
     id="trading_post_spritelayout_11",
+    tile="trading_post_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_empty,
     building_sprites=[
@@ -112,6 +113,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_12",
+    tile="trading_post_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_empty,
     building_sprites=[
@@ -122,6 +124,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_13",
+    tile="trading_post_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_empty,
     building_sprites=[
@@ -133,42 +136,49 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_21",
+    tile="trading_post_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_empty,
     building_sprites=[spriteset_11],
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_22",
+    tile="trading_post_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_empty,
     building_sprites=[spriteset_12],
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_23",
+    tile="trading_post_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_empty,
     building_sprites=[spriteset_13],
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_24",
+    tile="trading_post_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_empty,
     building_sprites=[spriteset_14],
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_25",
+    tile="trading_post_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_empty,
     building_sprites=[spriteset_14],
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_26",
+    tile="trading_post_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_empty,
     building_sprites=[],
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_27",
+    tile="trading_post_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_empty,
     building_sprites=[],
@@ -176,6 +186,7 @@ industry.add_spritelayout(
 # trading_post_spritelayout_28 fell out of use and was removed
 industry.add_spritelayout(
     id="trading_post_spritelayout_29",
+    tile="trading_post_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_empty,
     building_sprites=[
@@ -187,6 +198,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_30",
+    tile="trading_post_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_empty,
     building_sprites=[
@@ -199,6 +211,7 @@ industry.add_spritelayout(
 industry.add_magic_spritelayout(
     type="harbour_coast_foundations",
     base_id="trading_post_spritelayout_coast_small_warehouse",
+    tile="trading_post_tile_2",
     config={
         "ground_sprite": spriteset_ground_empty,  # should alqways be empty for this magic spritelayout
         "building_sprites": [spriteset_concrete, spriteset_small_warehouse],
@@ -215,6 +228,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="harbour_coast_foundations",
     base_id="trading_post_spritelayout_coast_large_warehouse",
+    tile="trading_post_tile_2",
     config={
         "ground_sprite": spriteset_ground_empty,  # should alqways be empty for this magic spritelayout
         "building_sprites": [spriteset_concrete, spriteset_large_warehouse],
@@ -232,49 +246,45 @@ industry.add_magic_spritelayout(
 industry.add_industry_layout(
     id="trading_post_industry_layout_1",
     layout=[
-        (0, 2, "trading_post_tile_1", "trading_post_spritelayout_27"),
+        (0, 2, "trading_post_spritelayout_27"),
         (
             0,
             3,
-            "trading_post_tile_2",
             "trading_post_spritelayout_coast_small_warehouse",
         ),
-        (1, 0, "255", "spritelayout_null"),
-        (1, 1, "trading_post_tile_1", "trading_post_spritelayout_11"),
-        (1, 2, "trading_post_tile_1", "trading_post_spritelayout_29"),
+        (1, 0, "spritelayout_null_water"),
+        (1, 1, "trading_post_spritelayout_11"),
+        (1, 2, "trading_post_spritelayout_29"),
         (
             1,
             3,
-            "trading_post_tile_2",
             "trading_post_spritelayout_coast_large_warehouse",
         ),
-        (2, 1, "trading_post_tile_1", "trading_post_spritelayout_24"),
-        (2, 2, "trading_post_tile_1", "trading_post_spritelayout_24"),
+        (2, 1, "trading_post_spritelayout_24"),
+        (2, 2, "trading_post_spritelayout_24"),
     ],
 )
 industry.add_industry_layout(
     id="trading_post_industry_layout_2",
     layout=[
-        (0, 0, "255", "spritelayout_null"),
-        (0, 1, "255", "spritelayout_null"),
-        (0, 2, "255", "spritelayout_null"),
-        (1, 0, "trading_post_tile_1", "trading_post_spritelayout_23"),
-        (1, 1, "trading_post_tile_1", "trading_post_spritelayout_23"),
-        (1, 255, "255", "spritelayout_null"),
-        (2, 0, "trading_post_tile_1", "trading_post_spritelayout_30"),
-        (2, 1, "trading_post_tile_1", "trading_post_spritelayout_12"),
-        (2, 2, "trading_post_tile_1", "trading_post_spritelayout_21"),
-        (2, 255, "255", "spritelayout_null"),
+        (0, 0, "spritelayout_null_water"),
+        (0, 1, "spritelayout_null_water"),
+        (0, 2, "spritelayout_null_water"),
+        (1, 0, "trading_post_spritelayout_23"),
+        (1, 1, "trading_post_spritelayout_23"),
+        (1, 255, "spritelayout_null_water"),
+        (2, 0, "trading_post_spritelayout_30"),
+        (2, 1, "trading_post_spritelayout_12"),
+        (2, 2, "trading_post_spritelayout_21"),
+        (2, 255, "spritelayout_null_water"),
         (
             3,
             1,
-            "trading_post_tile_2",
             "trading_post_spritelayout_coast_large_warehouse",
         ),
         (
             3,
             2,
-            "trading_post_tile_2",
             "trading_post_spritelayout_coast_small_warehouse",
         ),
     ],
@@ -285,29 +295,26 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "trading_post_tile_2",
             "trading_post_spritelayout_coast_large_warehouse",
         ),
         (
             0,
             1,
-            "trading_post_tile_2",
             "trading_post_spritelayout_coast_large_warehouse",
         ),
         (
             0,
             2,
-            "trading_post_tile_2",
             "trading_post_spritelayout_coast_small_warehouse",
         ),
-        (1, 0, "trading_post_tile_1", "trading_post_spritelayout_24"),
-        (1, 2, "trading_post_tile_1", "trading_post_spritelayout_30"),
-        (2, 1, "trading_post_tile_1", "trading_post_spritelayout_26"),
-        (2, 2, "trading_post_tile_1", "trading_post_spritelayout_29"),
-        (2, 3, "trading_post_tile_1", "trading_post_spritelayout_22"),
-        (2, 4, "255", "spritelayout_null"),
-        (3, 2, "255", "spritelayout_null"),
-        (3, 3, "255", "spritelayout_null"),
+        (1, 0, "trading_post_spritelayout_24"),
+        (1, 2, "trading_post_spritelayout_30"),
+        (2, 1, "trading_post_spritelayout_26"),
+        (2, 2, "trading_post_spritelayout_29"),
+        (2, 3, "trading_post_spritelayout_22"),
+        (2, 4, "spritelayout_null_water"),
+        (3, 2, "spritelayout_null_water"),
+        (3, 3, "spritelayout_null_water"),
     ],
 )
 industry.add_industry_layout(
@@ -316,29 +323,26 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "trading_post_tile_2",
             "trading_post_spritelayout_coast_large_warehouse",
         ),
-        (0, 1, "255", "spritelayout_null"),
+        (0, 1, "spritelayout_null_water"),
         (
             1,
             0,
-            "trading_post_tile_2",
             "trading_post_spritelayout_coast_large_warehouse",
         ),
-        (1, 1, "trading_post_tile_1", "trading_post_spritelayout_29"),
-        (1, 2, "trading_post_tile_1", "trading_post_spritelayout_30"),
-        (1, 3, "255", "spritelayout_null"),
+        (1, 1, "trading_post_spritelayout_29"),
+        (1, 2, "trading_post_spritelayout_30"),
+        (1, 3, "spritelayout_null_water"),
         (
             2,
             0,
-            "trading_post_tile_2",
             "trading_post_spritelayout_coast_small_warehouse",
         ),
-        (2, 1, "trading_post_tile_1", "trading_post_spritelayout_25"),
-        (2, 2, "255", "spritelayout_null"),
-        (3, 2, "255", "spritelayout_null"),
-        (3, 3, "255", "spritelayout_null"),
+        (2, 1, "trading_post_spritelayout_25"),
+        (2, 2, "spritelayout_null_water"),
+        (3, 2, "spritelayout_null_water"),
+        (3, 3, "spritelayout_null_water"),
     ],
 )
 industry.add_industry_layout(
@@ -347,29 +351,27 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "trading_post_tile_2",
             "trading_post_spritelayout_coast_small_warehouse",
         ),
         (
             1,
             0,
-            "trading_post_tile_2",
             "trading_post_spritelayout_coast_large_warehouse",
         ),
-        (1, 2, "255", "spritelayout_null"),
-        (2, 0, "trading_post_tile_1", "trading_post_spritelayout_13"),
-        (2, 1, "trading_post_tile_1", "trading_post_spritelayout_29"),
-        (2, 2, "trading_post_tile_1", "trading_post_spritelayout_30"),
-        (2, 3, "255", "spritelayout_null"),
-        (3, 255, "255", "spritelayout_null"),
-        (3, 0, "trading_post_tile_1", "trading_post_spritelayout_24"),
-        (3, 1, "trading_post_tile_1", "trading_post_spritelayout_24"),
-        (3, 2, "trading_post_tile_1", "trading_post_spritelayout_24"),
-        (3, 3, "255", "spritelayout_null"),
-        (4, 255, "255", "spritelayout_null"),
-        (4, 0, "255", "spritelayout_null"),
-        (4, 1, "255", "spritelayout_null"),
-        (4, 2, "255", "spritelayout_null"),
-        (4, 3, "255", "spritelayout_null"),
+        (1, 2, "spritelayout_null_water"),
+        (2, 0, "trading_post_spritelayout_13"),
+        (2, 1, "trading_post_spritelayout_29"),
+        (2, 2, "trading_post_spritelayout_30"),
+        (2, 3, "spritelayout_null_water"),
+        (3, 255, "spritelayout_null_water"),
+        (3, 0, "trading_post_spritelayout_24"),
+        (3, 1, "trading_post_spritelayout_24"),
+        (3, 2, "trading_post_spritelayout_24"),
+        (3, 3, "spritelayout_null_water"),
+        (4, 255, "spritelayout_null_water"),
+        (4, 0, "spritelayout_null_water"),
+        (4, 1, "spritelayout_null_water"),
+        (4, 2, "spritelayout_null_water"),
+        (4, 3, "spritelayout_null_water"),
     ],
 )
