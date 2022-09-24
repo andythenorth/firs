@@ -6,7 +6,7 @@ industry = IndustrySecondary(
         ("RUBR", 2),
         ("CBLK", 2),
         ("SULP", 2),
-        ("STWR", 2),
+        ("TYCO", 2),
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[

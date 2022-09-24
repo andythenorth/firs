@@ -4,11 +4,11 @@ industry = IndustrySecondary(
     id="glass_works",
     accept_cargos_with_input_ratios=[
         ("SAND", 6),
-        ("SASH", 2),
+        ("RFPR", 2),
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
-        ("GLAS", 8),
+        ("GOOD", 8),
     ],
     prob_in_game="3",
     prob_map_gen="5",
@@ -22,22 +22,11 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
-    accept_cargos_with_input_ratios=[
-        ("SAND", 6),
-        ("RFPR", 2),
-    ],
-    prod_cargo_types_with_output_ratios=[
-        ("GOOD", 8),
-    ],
 )
 
 
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
-    accept_cargos_with_input_ratios=[
-        ("SAND", 6),
-        ("RFPR", 2),
-    ],
     prod_cargo_types_with_output_ratios=[
         ("BDMT", 4),
         ("GOOD", 4),
@@ -47,10 +36,18 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "STEELTOWN",
     accept_cargos_with_input_ratios=[
-        ("SAND", 6),
+        # float glass plant
+        ("SAND", 4),
         ("SASH", 2),
-    ],  # no limestone or dolomite, too much detail
-    prob_in_game="1",  # low probability of build during gameplay
+        ("LIME", 1),
+        ("N7__", 1),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        # high glass plant production is unwanted as there is only one output cargo
+        ("GLAS", 6),
+    ],
+    # low probability of build during gameplay
+    prob_in_game="1",
 )
 
 industry.add_tile(

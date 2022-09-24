@@ -24,13 +24,11 @@ industry.enable_in_economy(
     prob_in_game="6",
     prob_map_gen="9",
     accept_cargo_types=[
-        "CMNT",
-        "PIPE",
+        "PPWK",
         "STSE",
-        "STWR",
-        "SAND",
-        "LIME",
+        "CCPR",
         "GLAS",
+        "HWAR",
     ],
 )
 industry.enable_in_economy(

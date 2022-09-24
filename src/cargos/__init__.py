@@ -26,6 +26,7 @@ from cargos import coke
 from cargos import copper
 from cargos import copper_concentrate
 from cargos import copper_ore
+from cargos import cranes_and_hoists
 from cargos import diamonds
 from cargos import edible_oil
 from cargos import electrical_parts
@@ -37,18 +38,22 @@ from cargos import fertiliser
 from cargos import fish
 from cargos import food
 from cargos import food_additives
+from cargos import forgings_and_castings
 from cargos import formic_acid
 from cargos import fruits
 from cargos import glass
 from cargos import goods
 from cargos import grain
+from cargos import hardware
 from cargos import hydrochloric_acid
 from cargos import iron_ore
 from cargos import kaolin
+from cargos import lifting_equipment
 from cargos import livestock
 from cargos import limestone
 from cargos import logs
 from cargos import lye
+from cargos import machine_elements
 from cargos import mail
 from cargos import maize
 from cargos import manganese
@@ -57,6 +62,7 @@ from cargos import milk
 from cargos import naphtha
 from cargos import nickel
 from cargos import nitrates
+from cargos import nitrogen
 from cargos import nuts
 from cargos import oil
 from cargos import oxygen
@@ -70,11 +76,15 @@ from cargos import phosphate
 from cargos import phosphoric_acid
 from cargos import pig_iron
 from cargos import pipe
+from cargos import pipework
 from cargos import plastics
 from cargos import potash
+from cargos import concrete_products
+from cargos import pumps_and_valves
 from cargos import pyrite_ore
 from cargos import quicklime
 from cargos import raw_latex
+from cargos import rebar
 from cargos import recyclables
 from cargos import rubber
 from cargos import sand
@@ -84,20 +94,25 @@ from cargos import slag
 from cargos import soda_ash
 from cargos import stainless_steel
 from cargos import steel
+from cargos import steel_merchant_bar
 from cargos import steel_sections
 from cargos import steel_sheet
 from cargos import steel_wire_rod
+from cargos import steel_wire_rope
 from cargos import stone
 from cargos import sulphur
 from cargos import sulphuric_acid
 from cargos import timber
 from cargos import tin
 from cargos import tinplate
+from cargos import tube
+from cargos import tyre_cord
 from cargos import tyres
 from cargos import vehicle_bodies
 from cargos import vehicle_engines
 from cargos import vehicle_parts
 from cargos import vehicles
+from cargos import welding_supplies
 from cargos import wool
 from cargos import yarn
 from cargos import zinc
@@ -128,6 +143,7 @@ coke.cargo.register()
 copper.cargo.register()
 # IAHC copper_concentrate.cargo.register()
 copper_ore.cargo.register()
+cranes_and_hoists.cargo.register()
 diamonds.cargo.register()
 edible_oil.cargo.register()
 electrical_parts.cargo.register()
@@ -138,6 +154,7 @@ ferrochrome.cargo.register()
 fertiliser.cargo.register()
 fish.cargo.register()
 food.cargo.register()
+forgings_and_castings.cargo.register()
 # BLTC food_additives.cargo.register()
 # IAHC formic_acid.cargo.register()
 fruits.cargo.register()
@@ -145,12 +162,15 @@ glass.cargo.register()
 goods.cargo.register()
 grain.cargo.register()
 # BLTC hydrochloric_acid.cargo.register()
+hardware.cargo.register()
 iron_ore.cargo.register()
 kaolin.cargo.register()
+lifting_equipment.cargo.register()
 livestock.cargo.register()
 limestone.cargo.register()
 logs.cargo.register()
 lye.cargo.register()
+#machine_elements.cargo.register()
 mail.cargo.register()
 maize.cargo.register()
 manganese.cargo.register()
@@ -159,6 +179,7 @@ milk.cargo.register()
 # BLTC naphtha.cargo.register()
 # UNUSED nickel.cargo.register()
 nitrates.cargo.register()
+nitrogen.cargo.register()
 nuts.cargo.register()
 oil.cargo.register()
 oxygen.cargo.register()
@@ -172,11 +193,15 @@ phosphate.cargo.register()
 # BLTC phosphoric_acid.cargo.register()
 pig_iron.cargo.register()
 pipe.cargo.register()
+pipework.cargo.register()
 plastics.cargo.register()
 potash.cargo.register()
+concrete_products.cargo.register()
+pumps_and_valves.cargo.register()
 pyrite_ore.cargo.register()
 quicklime.cargo.register()
 # IAHC raw_latex.cargo.register()
+rebar.cargo.register()
 # UNUSED recyclables.cargo.register()
 rubber.cargo.register()
 sand.cargo.register()
@@ -186,20 +211,25 @@ slag.cargo.register()
 soda_ash.cargo.register()
 stainless_steel.cargo.register()
 steel.cargo.register()
+steel_merchant_bar.cargo.register()
 steel_sections.cargo.register()
 steel_sheet.cargo.register()
 steel_wire_rod.cargo.register()
+steel_wire_rope.cargo.register()
 stone.cargo.register()
 sulphur.cargo.register()
 # BLTC sulphuric_acid.cargo.register()
 timber.cargo.register()
 # BLTC tin.cargo.register()
 # BLTC tinplate.cargo.register()
+tube.cargo.register()
+tyre_cord.cargo.register()
 tyres.cargo.register()
 vehicle_bodies.cargo.register()
 vehicle_engines.cargo.register()
 vehicle_parts.cargo.register()
 vehicles.cargo.register()
+welding_supplies.cargo.register()
 wool.cargo.register()
 # IAHC yarn.cargo.register()
 zinc.cargo.register()

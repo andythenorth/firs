@@ -9,7 +9,7 @@ cargo = Cargo(
     weight="1.0",
     is_freight="1",
     cargo_classes="bitmask(CC_LIQUID, CC_HAZARDOUS)",
-    cargo_label="O2__",
+    cargo_label="N7__",
     # apart from TOWNGROWTH_PASSENGERS and TOWNGROWTH_MAIL, FIRS does not set any town growth effects; this has the intended effect of disabling food / water requirements for towns in desert and above snowline
     town_growth_effect="TOWNGROWTH_NONE",
     town_growth_multiplier="1.0",
@@ -17,7 +17,7 @@ cargo = Cargo(
     items_of_cargo="string(STR_CARGO_UNIT_NITROGEN)",
     penalty_lowerbound="22",
     single_penalty_length="44",
-    price_factor=152,
+    price_factor=136,
     capacity_multiplier="1",
     icon_indices=(1, 5),
 )

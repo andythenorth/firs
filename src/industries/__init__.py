@@ -1,5 +1,6 @@
 registered_industries = []
 # keep these alphabetised for ease of maintaining
+
 from industries import arable_farm
 from industries import assembly_plant
 from industries import basic_oxygen_furnace
@@ -34,6 +35,7 @@ from industries import fishing_grounds
 from industries import fishing_harbour
 from industries import food_processor
 from industries import forest
+from industries import foundry
 from industries import fruit_plantation
 from industries import general_store
 from industries import glass_works
@@ -42,9 +44,11 @@ from industries import hotel
 from industries import herding_coop
 from industries import integrated_steel_mill
 from industries import iron_ore_mine
+from industries import section_mill
 from industries import lime_kiln
 from industries import limestone_mine
 from industries import liquids_terminal
+from industries import machine_shop
 from industries import manganese_mine
 from industries import metal_workshop
 from industries import nitrate_mine
@@ -59,6 +63,7 @@ from industries import plaza
 from industries import port
 from industries import power_plant
 from industries import potash_mine
+from industries import concrete_plant
 from industries import pyrite_mine
 from industries import pyrite_smelter
 from industries import quarry
@@ -66,10 +71,12 @@ from industries import ranch
 from industries import rubber_plantation
 from industries import sawmill
 from industries import scrap_yard
-from industries import sheet_and_pipe_mill
+from industries import pipework_fabricator
+from industries import pipe_mill
 from industries import slag_grinding_plant
 from industries import soda_ash_mine
 from industries import stockyard
+from industries import strip_mill
 from industries import supply_yard
 from industries import timber_yard
 from industries import trading_post
@@ -77,7 +84,8 @@ from industries import tyre_plant
 from industries import vehicle_distributor
 from industries import vineyard
 from industries import wharf
-from industries import wire_and_section_mill
+from industries import wire_rope_factory
+from industries import wire_rod_mill
 
 arable_farm.industry.register()
 assembly_plant.industry.register()
@@ -113,17 +121,20 @@ fishing_grounds.industry.register()
 fishing_harbour.industry.register()
 food_processor.industry.register()
 forest.industry.register()
+foundry.industry.register()
 fruit_plantation.industry.register()
 general_store.industry.register()
 glass_works.industry.register()
 hardware_store.industry.register()
-hotel.industry.register()
 herding_coop.industry.register()
+hotel.industry.register()
 integrated_steel_mill.industry.register()
 iron_ore_mine.industry.register()
+section_mill.industry.register()
 lime_kiln.industry.register()
 limestone_mine.industry.register()
 liquids_terminal.industry.register()
+machine_shop.industry.register()
 manganese_mine.industry.register()
 metal_workshop.industry.register()
 nitrate_mine.industry.register()
@@ -134,10 +145,13 @@ paper_mill.industry.register()
 peatlands.industry.register()
 petrol_pump.industry.register()
 phosphate_mine.industry.register()
+pipework_fabricator.industry.register()
+pipe_mill.industry.register()
 plaza.industry.register()
 port.industry.register()
 power_plant.industry.register()
 potash_mine.industry.register()
+concrete_plant.industry.register()
 pyrite_mine.industry.register()
 pyrite_smelter.industry.register()
 quarry.industry.register()
@@ -145,10 +159,10 @@ ranch.industry.register()
 rubber_plantation.industry.register()
 sawmill.industry.register()
 scrap_yard.industry.register()
-sheet_and_pipe_mill.industry.register()
 slag_grinding_plant.industry.register()
 soda_ash_mine.industry.register()
 stockyard.industry.register()
+strip_mill.industry.register()
 supply_yard.industry.register()
 timber_yard.industry.register()
 trading_post.industry.register()
@@ -156,4 +170,5 @@ tyre_plant.industry.register()
 vehicle_distributor.industry.register()
 vineyard.industry.register()
 wharf.industry.register()
-wire_and_section_mill.industry.register()
+wire_rope_factory.industry.register()
+wire_rod_mill.industry.register()
