@@ -17,7 +17,7 @@ cargo = Cargo(
     items_of_cargo="TTD_STR_QUANTITY_DIAMONDS",
     penalty_lowerbound="30",
     single_penalty_length="255",
-    price_factor=162,
+    price_factor=179,
     capacity_multiplier="1",
     icon_indices=(3, 2),
 )

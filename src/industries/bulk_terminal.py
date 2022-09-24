@@ -33,7 +33,7 @@ industry.enable_in_economy(
 
 industry.enable_in_economy(
     "STEELTOWN",
-    accept_cargo_types=["FOOD", "POTA", "CHLO"],
+    accept_cargo_types=["POTA", "CHLO", "CMNT", "STSE", "STSH"],
     prod_cargo_types_with_multipliers=[
         ("MNO2", 19),
         ("RUBR", 16),
