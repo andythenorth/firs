@@ -3,7 +3,6 @@
 ##gender m f
 ##case fp fs mp ms
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Di andythenorth, FooBar, planetmaker, Terkhen e Yexo, e con il contributo di molti altri. {SILVER}Leggete il file readme per informazioni e per consigli su come usare FIRS. {BLACK}Licenza: GPL v2.
-
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distanza massima, in caselle, di zone di pesca, piattaforme petrolifere e siti di dragaggio dalla costa.
 STR_PARAM_DESC_ECONOMIES                                                        :Ogni economia dà una combinazione diversa di merci e industrie.{}{}Per uno schema di gioco semplificato, un'economia di {SILVER}base {BLACK} comprende meno industrie e merci rispetto ad altre economie di FIRS.{}{}Sul sito web di FIRS si trovano informazioni dettagliate su ogni economia.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Da predefinito, durante il gioco si apriranno nuove industrie.{}{}Se {SILVER}vieta apertura {BLACK}è attivata, non apriranno nuove industrie durante il gioco e i giocatori non potranno nemmeno finanziarne di nuove o effettuare prospezioni di nuove miniere.
@@ -41,10 +40,12 @@ STR_PRIMARY_PRODUCTION_4X                                                       
 STR_PORT_PRODUCTION_1X                                                          :{BLACK}Produzione attuale: {YELLOW}Normale {}{}{BLACK}Per la produzione {WHITE}Elevata {BLACK} consegnare {SIGNED_WORD} unità di merce almeno una volta ogni tre mesi.{}Per la produzione {WHITE}Abnorme {BLACK} consegnare {SIGNED_WORD} unità.
 STR_PORT_PRODUCTION_2X                                                          :{BLACK}Produzione attuale: {YELLOW}Elevata {}{}{BLACK}Per mantenere questo livello consegnare {SIGNED_WORD} unità di merce almeno una volta ogni tre mesi.{}Per la produzione {WHITE}Abnorme {BLACK}consegnare {SIGNED_WORD} unità.
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Produzione attuale: {YELLOW}Abnorme {}{}{BLACK}Per mantenere questo livello consegnare {SKIP}{SIGNED_WORD} unità di merce almeno una volta ogni tre mesi.
+
 STR_INFORMATIVE_EXTRA_TEXT_PLAZA                                                :{SKIP}{SKIP}Umore della popolazione:{} {STRING}{STRING}{}{}{BLACK}Punteggio ottimismo: {STRING}{SIGNED_WORD} punt{P 2 o i}{}{BLACK} Bisogni e lussi soddisfatti: {YELLOW}{SIGNED_WORD} punt{P 3 o i} {}{BLACK} Inquinamento e squallore: {YELLOW}{SIGNED_WORD} punto{P 4 o i} {}{}{BLACK}Inquinamento e squallore aumentano con la popolazione e determinati tipi di industrie.{}{}Bisogni e lussi vengono soddisfatti fornendo determinati tipi di industria.{}{}Se il punteggio di ottimismo è superiore a 10, l'umore della popolazione sarà {WHITE}ottimista{BLACK}. Se il punteggio di ottimismo è inferiore a -10, l'umore della popolazione sarà {WHITE}pessimista{BLACK}.
 STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC                                :Ottimista
 STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY                                    :Pessimista
 STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL                                   :Neutrale
+
 STR_CARGO_NAME_ACID                                                             :{G=m}Acidi
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alcolici
 STR_CARGO_NAME_ALLOY_STEEL                                                      :{G=m}Acciaio legato
@@ -244,7 +245,8 @@ STR_CARGO_UNIT_VEHICLES                                                         
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} ball{P 0 a e} di lana
 STR_CARGO_UNIT_YARN                                                             :{SIGNED_WORD} ball{P 0 a e} di filati
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} di zinco
-Sembra che l'uso di 2 caratteri per questi sia una convenzione e non un limite, ho testato 4 caratteri e OpenTTD li rende bene - Maggio 2020
+
+# sembra che l'uso di 2 caratteri per questi sia una convenzione e non un limite, ho testato 4 caratteri e OpenTTD li rende bene - Maggio 2020
 STR_CID_ACID                                                                    :{TINYFONT}AD
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AO
 STR_CID_ALLOY_STEEL                                                             :{TINYFONT}AL
@@ -343,6 +345,7 @@ STR_CID_VEHICLES                                                                
 STR_CID_WOOL                                                                    :{TINYFONT}LN
 STR_CID_YARN                                                                    :{TINYFONT}FI
 STR_CID_ZINC                                                                    :{TINYFONT}ZN
+
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS non è stato progettato per essere utilizzato con il clima Toyland.
 STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS richiede OpenTTD 1.7.0 (o per quelli che usano una trunk build, r27769)
@@ -577,4 +580,3 @@ STR_COLOUR_LTBLUE                                                               
 STR_COLOUR_RED                                                                  :{RED}
 STR_COLOUR_YELLOW                                                               :{YELLOW}
 STR_COLOUR_WHITE                                                                :{WHITE}
-
