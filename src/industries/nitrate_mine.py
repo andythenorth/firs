@@ -133,6 +133,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=7,
 )
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_hut",
@@ -150,6 +151,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=6,
 )
 
 industry.add_multi_tile_object(
