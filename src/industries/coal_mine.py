@@ -112,6 +112,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_4],
+    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="coal_mine_spritelayout_5",
@@ -126,6 +127,13 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_6],
+)
+industry.add_multi_tile_object(
+    add_to_object_num=5,
+    view_layout=[
+        (0, 0, "coal_mine_spritelayout_6"),
+        (1, 0, "coal_mine_spritelayout_5"),
+    ],
 )
 
 industry.add_industry_layout(

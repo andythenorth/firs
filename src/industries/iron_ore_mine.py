@@ -187,6 +187,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_ore_truck],
+    add_to_object_num=8,
 )
 industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_joined_ore_front",
@@ -241,6 +242,13 @@ industry.add_multi_tile_object(
     view_layout=[
         (0, 0, "iron_ore_mine_spritelayout_exit_shed_rear"),
         (1, 0, "iron_ore_mine_spritelayout_exit_trestle_animated"),
+    ],
+)
+industry.add_multi_tile_object(
+    add_to_object_num=7,
+    view_layout=[
+        (0, 0, "iron_ore_mine_spritelayout_joined_ore_rear"),
+        (1, 0, "iron_ore_mine_spritelayout_joined_ore_front"),
     ],
 )
 

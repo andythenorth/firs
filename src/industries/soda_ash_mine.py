@@ -205,6 +205,13 @@ industry.add_multi_tile_object(
         (2, 0, "soda_ash_mine_spritelayout_crusher_front_part"),
     ],
 )
+industry.add_multi_tile_object(
+    add_to_object_num=6,
+    view_layout=[
+        (0, 0, "soda_ash_mine_spritelayout_ore_2"),
+        (1, 0, "soda_ash_mine_spritelayout_ore_1"),
+    ],
+)
 
 industry.add_industry_layout(
     id="soda_ash_mine_industry_layout_1",

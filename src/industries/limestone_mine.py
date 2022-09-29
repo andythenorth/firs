@@ -185,6 +185,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_ore_1],
+    add_to_object_num=7,
 )
 industry.add_spritelayout(
     id="limestone_mine_spritelayout_ore_2",
@@ -192,6 +193,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_ore_2],
+    add_to_object_num=6,
 )
 industry.add_spritelayout(
     id="limestone_mine_spritelayout_winding_house",
