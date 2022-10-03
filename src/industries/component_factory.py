@@ -6,7 +6,7 @@ industry = IndustrySecondary(
         # 5 cargos eh? pretty rare
         # realism calls also for Steel Wire Rod, but it's a step too far eh
         ("STBR", 2),
-        ("TUBE", 1),
+        ("STTB", 1),
         ("FOCA", 2),
         ("POWR", 2),
         ("PLAS", 1),

@@ -97,6 +97,7 @@ from cargos import steel
 from cargos import steel_merchant_bar
 from cargos import steel_sections
 from cargos import steel_sheet
+from cargos import steel_tube
 from cargos import steel_wire_rod
 from cargos import steel_wire_rope
 from cargos import stone
@@ -105,7 +106,6 @@ from cargos import sulphuric_acid
 from cargos import timber
 from cargos import tin
 from cargos import tinplate
-from cargos import tube
 from cargos import tyre_cord
 from cargos import tyres
 from cargos import vehicle_bodies
@@ -214,6 +214,7 @@ steel.cargo.register()
 steel_merchant_bar.cargo.register()
 steel_sections.cargo.register()
 steel_sheet.cargo.register()
+steel_tube.cargo.register()
 steel_wire_rod.cargo.register()
 steel_wire_rope.cargo.register()
 stone.cargo.register()
@@ -222,7 +223,6 @@ sulphur.cargo.register()
 timber.cargo.register()
 # BLTC tin.cargo.register()
 # BLTC tinplate.cargo.register()
-tube.cargo.register()
 tyre_cord.cargo.register()
 tyres.cargo.register()
 vehicle_bodies.cargo.register()
