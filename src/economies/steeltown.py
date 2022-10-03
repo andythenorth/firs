@@ -71,7 +71,7 @@ economy = Economy(
         "cranes_and_hoists",
         "concrete_products",
         "tyre_cord",
-        "welding_supplies",
+        "welding_consumables",
     ],
     cargoflow_graph_tuning={
         # also any industries with  will be automatically added to wormhold_industries
