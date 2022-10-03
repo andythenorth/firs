@@ -36,7 +36,7 @@ economy = Economy(
         "oxygen",
         "paints_and_coatings",
         "pig_iron",
-        "pipe",
+        "steel_pipe",
         "plastics",
         "quicklime",
         "rubber",
