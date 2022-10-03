@@ -111,7 +111,7 @@ from cargos import vehicle_bodies
 from cargos import vehicle_engines
 from cargos import vehicle_parts
 from cargos import vehicles
-from cargos import welding_supplies
+from cargos import welding_consumables
 from cargos import wool
 from cargos import yarn
 from cargos import zinc
@@ -227,7 +227,7 @@ vehicle_bodies.cargo.register()
 vehicle_engines.cargo.register()
 vehicle_parts.cargo.register()
 vehicles.cargo.register()
-welding_supplies.cargo.register()
+welding_consumables.cargo.register()
 wool.cargo.register()
 # IAHC yarn.cargo.register()
 zinc.cargo.register()

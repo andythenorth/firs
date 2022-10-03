@@ -1,10 +1,10 @@
 from cargo import Cargo
 
 cargo = Cargo(
-    id="welding_supplies",
-    type_name="string(STR_CARGO_NAME_WELDING_SUPPLIES)",
-    unit_name="string(STR_CARGO_NAME_WELDING_SUPPLIES)",
-    type_abbreviation="string(STR_CID_WELDING_SUPPLIES)",
+    id="welding_consumables",
+    type_name="string(STR_CARGO_NAME_WELDING_CONSUMABLES)",
+    unit_name="string(STR_CARGO_NAME_WELDING_CONSUMABLES)",
+    type_abbreviation="string(STR_CID_WELDING_CONSUMABLES)",
     sprite="NEW_CARGO_SPRITE",
     weight="1.0",
     is_freight="1",
@@ -14,7 +14,7 @@ cargo = Cargo(
     town_growth_effect="TOWNGROWTH_NONE",
     town_growth_multiplier="1.0",
     units_of_cargo="TTD_STR_LITERS",
-    items_of_cargo="string(STR_CARGO_UNIT_WELDING_SUPPLIES)",
+    items_of_cargo="string(STR_CARGO_UNIT_WELDING_CONSUMABLES)",
     penalty_lowerbound="22",
     single_penalty_length="44",
     price_factor=171,
