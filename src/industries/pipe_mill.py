@@ -10,7 +10,7 @@ industry = IndustrySecondary(
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
-        ("PIPE", 4),
+        ("STPP", 4),
         ("STTB", 3),
         ("ENSP", 1),
     ],

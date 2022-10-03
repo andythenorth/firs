@@ -72,7 +72,7 @@ STR_CARGO_NAME_COKE                                                             
 STR_CARGO_NAME_CONCRETE_PRODUCTS                                                :Concrete Products
 STR_CARGO_NAME_COPPER                                                           :Copper
 STR_CARGO_NAME_COPPER_CONCENTRATE                                               :Copper Concentrate
-STR_CARGO_NAME_CRANES_AND_HOISTS                                                :Cranes and Hoists
+STR_CARGO_NAME_CRANES_AND_HOISTS                                                :Cranes & Hoists
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Edible Oil
 STR_CARGO_NAME_ELECTRICAL_PARTS                                                 :Electrical Parts
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Engineering Supplies
@@ -113,15 +113,14 @@ STR_CARGO_NAME_PACKAGING                                                        
 STR_CARGO_NAME_PAINTS_AND_COATINGS                                              :Paints & Coatings
 STR_CARGO_NAME_PEAT                                                             :Peat
 STR_CARGO_NAME_PETROL                                                           :Petroleum Fuels
+STR_CARGO_NAME_PIPEWORK                                                         :Pipework
 STR_CARGO_NAME_PHOSPHATE                                                        :Phosphate
 STR_CARGO_NAME_PHOSPHORIC_ACID                                                  :Phosphoric Acid
 STR_CARGO_NAME_PIG_IRON                                                         :Pig Iron
-STR_CARGO_NAME_PIPE                                                             :Pipe
-STR_CARGO_NAME_PIPEWORK                                                         :Pipework
 STR_CARGO_NAME_PLASTICS                                                         :Plastics
 STR_CARGO_NAME_POTASH                                                           :Potash
 STR_CARGO_NAME_PROPYLENE                                                        :Propylene
-STR_CARGO_NAME_PUMPS_AND_VALVES                                                 :Pumps and Valves
+STR_CARGO_NAME_PUMPS_AND_VALVES                                                 :Pumps & Valves
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrite Ore
 STR_CARGO_NAME_QUICKLIME                                                        :Quicklime
 STR_CARGO_NAME_RAW_LATEX                                                        :Raw Latex
@@ -135,6 +134,8 @@ STR_CARGO_NAME_SODA_ASH                                                         
 STR_CARGO_NAME_STAINLESS_STEEL                                                  :Stainless Steel
 STR_CARGO_NAME_STEEL                                                            :Steel
 STR_CARGO_NAME_STEEL_MERCHANT_BAR                                               :Steel Merchant Bar
+STR_CARGO_NAME_STEEL_PIPE                                                       :Steel Pipe
+# "Steel Plate & Sections" is too long
 STR_CARGO_NAME_STEEL_SECTIONS                                                   :Structural Steel
 STR_CARGO_NAME_STEEL_SHEET                                                      :Steel Sheet & Strip
 STR_CARGO_NAME_STEEL_TUBE                                                       :Steel Tube
@@ -230,7 +231,6 @@ STR_CARGO_UNIT_PETROL                                                           
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} of phosphate
 STR_CARGO_UNIT_PHOSPHORIC_ACID                                                  :{VOLUME} of phosphoric acid
 STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} of pig iron
-STR_CARGO_UNIT_PIPE                                                             :{WEIGHT} of pipe
 STR_CARGO_UNIT_PIPEWORK                                                         :{WEIGHT} of pipework
 STR_CARGO_UNIT_PLASTICS                                                         :{WEIGHT} of plastics
 STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} of potash
@@ -249,6 +249,7 @@ STR_CARGO_UNIT_SODA_ASH                                                         
 STR_CARGO_UNIT_STAINLESS_STEEL                                                  :{WEIGHT} of stainless steel
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} of steel
 STR_CARGO_UNIT_STEEL_MERCHANT_BAR                                               :{WEIGHT} of steel merchant bar
+STR_CARGO_UNIT_STEEL_PIPE                                                       :{WEIGHT} of steel pipe
 STR_CARGO_UNIT_STEEL_SECTIONS                                                   :{WEIGHT} of structural steel
 STR_CARGO_UNIT_STEEL_SHEET                                                      :{WEIGHT} of steel sheet & strip
 STR_CARGO_UNIT_STEEL_TUBE                                                       :{WEIGHT} of steel tube
@@ -342,7 +343,6 @@ STR_CID_PAINTS_AND_COATINGS                                                     
 STR_CID_PEAT                                                                    :{TINYFONT}PE
 STR_CID_PETROL                                                                  :{TINYFONT}PT
 STR_CID_PIG_IRON                                                                :{TINYFONT}PI
-STR_CID_PIPE                                                                    :{TINYFONT}PP
 STR_CID_PIPEWORK                                                                :{TINYFONT}PW
 STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
 STR_CID_PHOSPHORIC_ACID                                                         :{TINYFONT}PA
@@ -363,6 +363,7 @@ STR_CID_SODA_ASH                                                                
 STR_CID_STAINLESS_STEEL                                                         :{TINYFONT}SS
 STR_CID_STEEL                                                                   :{TINYFONT}SL
 STR_CID_STEEL_MERCHANT_BAR                                                      :{TINYFONT}SB
+STR_CID_STEEL_PIPE                                                              :{TINYFONT}SP
 STR_CID_STEEL_SECTIONS                                                          :{TINYFONT}SC
 STR_CID_STEEL_SHEET                                                             :{TINYFONT}SH
 STR_CID_STEEL_TUBE                                                              :{TINYFONT}ST

@@ -75,7 +75,6 @@ from cargos import petrol
 from cargos import phosphate
 from cargos import phosphoric_acid
 from cargos import pig_iron
-from cargos import pipe
 from cargos import pipework
 from cargos import plastics
 from cargos import potash
@@ -95,6 +94,7 @@ from cargos import soda_ash
 from cargos import stainless_steel
 from cargos import steel
 from cargos import steel_merchant_bar
+from cargos import steel_pipe
 from cargos import steel_sections
 from cargos import steel_sheet
 from cargos import steel_tube
@@ -192,7 +192,6 @@ petrol.cargo.register()
 phosphate.cargo.register()
 # BLTC phosphoric_acid.cargo.register()
 pig_iron.cargo.register()
-pipe.cargo.register()
 pipework.cargo.register()
 plastics.cargo.register()
 potash.cargo.register()
@@ -212,6 +211,7 @@ soda_ash.cargo.register()
 stainless_steel.cargo.register()
 steel.cargo.register()
 steel_merchant_bar.cargo.register()
+steel_pipe.cargo.register()
 steel_sections.cargo.register()
 steel_sheet.cargo.register()
 steel_tube.cargo.register()
