@@ -65,7 +65,7 @@ economy = Economy(
         "rebar",
         "lifting_equipment",
         "steel_tube",
-        "stone",
+        "aggregates",
         "steel_wire_rope",
         "pumps_and_valves",
         "cranes_and_hoists",
