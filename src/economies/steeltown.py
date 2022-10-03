@@ -74,7 +74,8 @@ economy = Economy(
         "welding_consumables",
     ],
     cargoflow_graph_tuning={
-        "wormhole_industries": ["wharf", "bulk_terminal", "builders_yard", "vehicle_distributor", "hardware_store", "general_store"],
+        # also any industries with  will be automatically added to wormhold_industries
+        "wormhole_industries": ["wharf", "bulk_terminal"],
         "cargos_with_individual_accept_nodes": [
             "sand",
             "acid",

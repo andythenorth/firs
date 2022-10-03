@@ -36,15 +36,6 @@ economy = Economy(
             ("same", ["nitrate_mine", "coffee_estate", "ranch", "arable_farm"]),
             ("same", ["food_processor", "stockyard", "flour_mill"]),
             ("same", ["port", "food", "fishing_harbour", "fish"]),
-            (
-                "sink",
-                [
-                    "T_town_industries",
-                    "T_towns_alcohol",
-                    "T_towns_food",
-                    "T_towns_goods",
-                ],
-            ),
         ],
         "clusters": [
             {"nodes": ["chemicals", "copper_ore"], "rank": "", "color": "white"},
