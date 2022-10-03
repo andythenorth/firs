@@ -1,6 +1,7 @@
 registered_cargos = []
 # keep these alphabetised for ease of maintaining
 from cargos import acid
+from cargos import aggregates
 from cargos import alcohol
 from cargos import alloy_steel
 from cargos import aluminia
@@ -98,7 +99,6 @@ from cargos import steel_sections
 from cargos import steel_sheet
 from cargos import steel_wire_rod
 from cargos import steel_wire_rope
-from cargos import stone
 from cargos import sulphur
 from cargos import sulphuric_acid
 from cargos import timber
@@ -117,6 +117,7 @@ from cargos import yarn
 from cargos import zinc
 
 acid.cargo.register()
+aggregates.cargo.register()
 alcohol.cargo.register()
 alloy_steel.cargo.register()
 # UNUSED aluminia.cargo.register()
@@ -214,7 +215,6 @@ steel_sections.cargo.register()
 steel_sheet.cargo.register()
 steel_wire_rod.cargo.register()
 steel_wire_rope.cargo.register()
-stone.cargo.register()
 sulphur.cargo.register()
 # BLTC sulphuric_acid.cargo.register()
 timber.cargo.register()

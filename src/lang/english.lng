@@ -47,6 +47,7 @@ STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY                                    
 STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL                                   :Neutral
 
 STR_CARGO_NAME_ACID                                                             :Acid
+STR_CARGO_NAME_AGGREGATES                                                       :Aggregates
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
 STR_CARGO_NAME_ALLOY_STEEL                                                      :Alloy Steel
 STR_CARGO_NAME_ALUMINIUM                                                        :Aluminium
@@ -138,7 +139,6 @@ STR_CARGO_NAME_STEEL_SECTIONS                                                   
 STR_CARGO_NAME_STEEL_SHEET                                                      :Steel Sheet & Strip
 STR_CARGO_NAME_STEEL_WIRE_ROD                                                   :Steel Wire Rod
 STR_CARGO_NAME_STEEL_WIRE_ROPE                                                  :Steel Wire Rope
-STR_CARGO_NAME_STONE                                                            :Aggregates
 STR_CARGO_NAME_SUGAR_BEET                                                       :Sugar Beet
 STR_CARGO_NAME_SULPHUR                                                          :Sulphur
 STR_CARGO_NAME_SULPHURIC_ACID                                                   :Sulphuric Acid
@@ -160,6 +160,7 @@ STR_CARGO_NAME_YARN                                                             
 STR_CARGO_NAME_ZINC                                                             :Zinc
 
 STR_CARGO_UNIT_ACID                                                             :{VOLUME} of acid
+STR_CARGO_UNIT_AGGREGATES                                                       :{WEIGHT} of aggregates
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} of alcohol
 STR_CARGO_UNIT_ALLOY_STEEL                                                      :{WEIGHT} of alloy steel
 STR_CARGO_UNIT_ALUMINIA                                                         :{WEIGHT} of aluminia
@@ -251,7 +252,6 @@ STR_CARGO_UNIT_STEEL_SECTIONS                                                   
 STR_CARGO_UNIT_STEEL_SHEET                                                      :{WEIGHT} of steel sheet & strip
 STR_CARGO_UNIT_STEEL_WIRE_ROD                                                   :{WEIGHT} of steel wire rod
 STR_CARGO_UNIT_STEEL_WIRE_ROPE                                                  :{WEIGHT} of steel wire rope
-STR_CARGO_UNIT_STONE                                                            :{WEIGHT} of aggregates
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} of sugar beet
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} of sulphur
 STR_CARGO_UNIT_SULPHURIC_ACID                                                   :{VOLUME} of sulphuric acid
@@ -274,6 +274,7 @@ STR_CARGO_UNIT_ZINC                                                             
 
 # it seems that using 2 chars for these is a convention not a limit, I tested 4 chars and OpenTTD renders it fine - May 2020
 STR_CID_ACID                                                                    :{TINYFONT}AC
+STR_CID_AGGREGATES                                                              :{TINYFONT}AG
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_ALLOY_STEEL                                                             :{TINYFONT}AS
 STR_CID_ALUMINIA                                                                :{TINYFONT}AA
@@ -364,7 +365,6 @@ STR_CID_STEEL_SECTIONS                                                          
 STR_CID_STEEL_SHEET                                                             :{TINYFONT}SH
 STR_CID_STEEL_WIRE_ROD                                                          :{TINYFONT}SW
 STR_CID_STEEL_WIRE_ROPE                                                         :{TINYFONT}SR
-STR_CID_STONE                                                                   :{TINYFONT}AG
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
 STR_CID_SULPHUR                                                                 :{TINYFONT}SU
 STR_CID_SULPHURIC_ACID                                                          :{TINYFONT}SD
