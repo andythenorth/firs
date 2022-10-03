@@ -53,7 +53,6 @@ from cargos import livestock
 from cargos import limestone
 from cargos import logs
 from cargos import lye
-from cargos import machine_elements
 from cargos import mail
 from cargos import maize
 from cargos import manganese
@@ -170,7 +169,6 @@ livestock.cargo.register()
 limestone.cargo.register()
 logs.cargo.register()
 lye.cargo.register()
-#machine_elements.cargo.register()
 mail.cargo.register()
 maize.cargo.register()
 manganese.cargo.register()
