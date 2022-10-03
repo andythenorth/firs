@@ -42,7 +42,6 @@ economy = Economy(
         "group_edges_subgraphs": [],
         "ranking_subgraphs": [
             ("same", ["port", "goods"]),
-            ("sink", ["T_town_industries", "N_force_rank"]),
         ],
         "clusters": [
             # {"nodes": [], "rank": "", "color": ""},

@@ -133,64 +133,11 @@
                                     arrowsize=2
                                     arrowhead=normal
                                     penwidth=5
-                                    <!--!
-                                    <tal:head_is_cluster condition="getattr(industry, 'town_industry_for_cargoflow', False)">
-                                        lhead="cluster_town_industries"
-                                        style="invis"
-                                    </tal:head_is_cluster>
-                                    -->
                                 ]
                             </tal:sand>
                         </tal:not_banned>
-                        <!--!
-                        <tal:wormhole condition="(cargo in wormhole_cargos['by_industry'].get(industry.id, []))">
-                            C_wormhole_${"I_" + industry.id}_${cargo.id} [
-                                shape="box"
-                                style="dashed"
-                                label="${doc_helper.get_industry_name(industry)}"
-                                href="industries.html#${industry.id}"
-                                target="_top"
-                                fontname="sans-serif"
-                                fontcolor="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
-                                fontsize=32
-                                color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
-                                id="${cargo.id}"
-                                penwidth=5
-                            ]
-                            C_${cargo.id} -> C_wormhole_${"I_" + industry.id}_${cargo.id} [
-                                style="dashed"
-                                color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
-                                penwidth=5
-                                arrowsize=2
-                            ]
-                            {
-                                rank=same
-                                C_${cargo.id}
-                                C_wormhole_${"I_" + industry.id}_${cargo.id}
-                            }
-                        </tal:wormhole>
-                        -->
                     </tal:accepted_cargos>
                     <tal:produced_cargos repeat="cargo doc_helper.cargos_produced_by_industry(industry, economy)">
-                        <!--!<tal:supply_output condition="cargo.id in doc_helper.get_cargoflow_supply_cargos()">
-                            I_${industry.id} -> C_${cargo.id}_${industry.id} [
-                                weight="${len(doc_helper.cargos_produced_by_industry(industry, economy))}"
-                                tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"
-                                color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
-                                dir=back
-                                arrowtail=nonenoneinv
-                                arrowsize=2
-                                penwidth=3
-                            ]
-                            C_${cargo.id}_${industry.id} [
-                                shape="ellipse"
-                                label="${doc_helper.get_cargo_name(cargo)}"
-                                href="cargos.html#${cargo.id}"
-                                target="_top"
-                                fontname="sans-serif"
-                                id="${cargo.id}"
-                            ]
-                        </tal:supply_output>-->
                         <tal:not_banned condition="(cargo.id not in banned_cargos) and (cargo.id not in doc_helper.get_cargoflow_supply_cargos())">
                             I_${industry.id} -> C_${cargo.id} [
                                 <!--! edge weight tuning by cargo density was tried (higher weight = straighter / more perpendicular)
@@ -208,102 +155,7 @@
                     </tal:produced_cargos>
                 </tal:not_town_industries>
             </tal:industries>
-
-            <!--! manual maintenance of town cargos, this could be automated by detecting industries that have town_industry_for_cargoflow set, and figuring out their cargos -->
-            <tal:town_cargos repeat="cargo economy_schemas[economy].enabled_cargos">
-                <tal:towns_alcohol condition="cargo.id == 'alcohol'">
-                    T_towns_alcohol [
-                        shape="box"
-                        style="dashed"
-                        label="Towns"
-                        fontname="sans-serif"
-                        fontcolor="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
-                        fontsize=32
-                        color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
-                        penwidth=5
-                        margin=0.33
-                    ]
-                    C_alcohol -> T_towns_alcohol [
-                        style="dashed"
-                        color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
-                        penwidth=5
-                        arrowsize=2
-                    ]
-                </tal:towns_alcohol>
-                <!--!
-                <tal:towns_food condition="cargo.id == 'food'">
-                    T_towns_food [
-                        shape="box"
-                        style="dashed"
-                        label="Towns"
-                        fontname="sans-serif"
-                        fontcolor="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
-                        fontsize=32
-                        color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
-                        penwidth=5
-                        margin=0.33
-                    ]
-                    C_food -> T_towns_food [
-                        style="dashed"
-                        color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
-                        penwidth=5
-                        arrowsize=2
-                    ]
-                </tal:towns_food>
-                -->
-                <tal:towns_goods condition="cargo.id == 'goods'">
-                    T_towns_goods [
-                        shape="box"
-                        style="dashed"
-                        label="Towns"
-                        fontname="sans-serif"
-                        fontcolor="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
-                        fontsize=32
-                        color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
-                        penwidth=5
-                        margin=0.33
-                    ]
-                    C_goods -> T_towns_goods [
-                        style="dashed"
-                        color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
-                        penwidth=5
-                        arrowsize=2
-                    ]
-                </tal:towns_goods>
-            </tal:town_cargos>
-            <!--!
-            subgraph cluster_town_industries {
-                shape="rounded"
-                color="azure2"
-                style="filled"
-                penwidth=5
-                fillcolor="azure2"
-                rank=same
-                position="0,0!"
-                T_town_industries [
-                    position="0,0!"
-                    shape="none"
-                    label="Town Industries"
-                    fontname="sans-serif"
-                    fontcolor=black
-                    fontsize=32
-                ]
-                <tal:industries repeat="industry sorted(economy_schemas[economy].enabled_industries, key=doc_helper.get_industry_name)">
-                    <tal:town_industries condition="getattr(industry, 'town_industry_for_cargoflow', False)">
-                        I_${industry.id}
-                    </tal:town_industries>
-                </tal:industries>
-            }-->
-            <tal:economy_tweaks switch="economy.id">
-                <tal:force_iahc case="'IN_A_HOT_COUNTRY'">
-                    <!--! temporary patch up, needs more work -->
-                    N_force_rank [shape=none, style="invis"]
-                    edge [style="invis"]
-                    I_supply_yard -> T_town_industries
-                    I_supply_yard -> N_force_rank
-                </tal:force_iahc>
-            </tal:economy_tweaks>
-            <!--! economy specific tuning - this supports
+             <!--! economy specific tuning - this supports
                   1. edge grouping subgraphs for specific nodes
                     - note this affects position and spline drawing of edges for node(s), does *not* group the actual nodes - use clusters for that
                     - edge grouping is typically brittle and can have surprising results, generally best avoided, but occasionally gets a wanted result
