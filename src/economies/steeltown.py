@@ -42,10 +42,8 @@ economy = Economy(
         "oxygen",
         "paints_and_coatings",
         "pig_iron",
-        "potash",
-        "pipework",
-        "plastics", # ! needs removed
-        "pumps_and_valves",
+        "steel_pipe",
+        "plastics",
         "quicklime",
         "rebar",
         "rubber",
