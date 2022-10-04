@@ -20,4 +20,5 @@ cargo = Cargo(
     price_factor=98,  # IRL coal tar is low value, but for gameplay it is transported in low amounts and needs a bonus
     capacity_multiplier="1",
     icon_indices=(14, 4),
+    sprites_complete=False,
 )

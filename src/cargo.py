@@ -45,12 +45,18 @@ class Cargo(object):
         self.price_factor = kwargs["price_factor"]
         self.capacity_multiplier = kwargs["capacity_multiplier"]
         # not nml properties
+        # suppress nml warnings about animated pixels
         self.allow_animated_pixels = kwargs.get(
             "allow_animated_pixels", False
-        )  # suppress nml warnings about animated pixels
+        )
+        # icon indices relate to position of icon in cargo icons spritesheet
         self.icon_indices = kwargs[
             "icon_indices"
-        ]  # icon indices relate to position of icon in cargo icons spritesheet
+        ]
+        # housekeeping
+        self.sprites_complete = kwargs.get(
+            "sprites_complete", False
+        )
         self.economy_variations = {}
         for economy in registered_economies:
             if self.id in economy.cargo_ids:
