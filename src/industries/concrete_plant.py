@@ -16,7 +16,6 @@ industry = IndustrySecondary(
     prod_multiplier="[0, 0]",
     map_colour="169",
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
-    prospect_chance="0.75",  # yeah delete this, it's not required for tertiary
     name="string(STR_IND_CONCRETE_PLANT)",
     nearby_station_name="string(STR_STATION_MERCHANTS_LANE)",
     fund_cost_multiplier="16",
