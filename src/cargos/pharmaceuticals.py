@@ -20,4 +20,5 @@ cargo = Cargo(
     price_factor=178,
     capacity_multiplier="1",
     icon_indices=(12, 0),
+    sprites_complete=False,
 )

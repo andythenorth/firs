@@ -21,4 +21,5 @@ cargo = Cargo(
     capacity_multiplier="1",
     allow_animated_pixels=True,  # explosives uses fire cycle pixels, by design, so suppress NML pixel warnings
     icon_indices=(2, 3),
+    sprites_complete=True,
 )
