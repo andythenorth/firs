@@ -19,4 +19,5 @@ cargo = Cargo(
     capacity_multiplier="4",
     price_factor=137,  # pax payment rate is much higher than default; this makes a much wider range of vehicle types and costs viable for pax; the downside is that vehicles balancing for FIRS won't work so well in default
     icon_indices=(0, 0),
+    sprites_complete=True,
 )
