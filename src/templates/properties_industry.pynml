@@ -5,7 +5,6 @@
                 <!--! following props are always same for all economies -->
                 ${industry.get_property_declaration('substitute')}
                 ${industry.get_property_declaration('override')}
-                ${industry.get_property_declaration('map_colour')}
                 ${industry.get_property_declaration('life_type')}
                 ${industry.get_property_declaration('closure_msg')}
                 ${industry.get_property_declaration('prod_increase_msg')}
@@ -17,6 +16,7 @@
                 conflicting_ind_types: []; // set this prop empty, FIRS has it's own better checks for this
                 random_sound_effects: []; // set this empty to avoid spurious default industry sounds (as of May 2017 FIRS does not yet use sound effects)
                 <!--! following props may optionally vary per economy, or use industry default -->
+                ${industry.get_property_declaration('map_colour', economy)}
                 ${industry.get_property_declaration('name', economy)}
                 ${industry.get_property_declaration('prob_map_gen', economy)}
                 ${industry.get_property_declaration('prob_in_game', economy)}
