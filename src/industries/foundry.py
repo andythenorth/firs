@@ -108,6 +108,7 @@ sprite_smoke = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="foundry_spritelayout_furnace_anim",
+    tile="foundry_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -116,6 +117,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_large_shed",
+    tile="foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -123,6 +125,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_large_shed_clerestory_roof",
+    tile="foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -130,6 +133,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_iron_pigs_anim",
+    tile="foundry_tile_3",
     ground_sprite=spriteset_ground_pigs,
     ground_overlay=spriteset_ground_overlay_pigs,
     building_sprites=[spriteset_iron_pigs_anim],
@@ -137,6 +141,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_staithes",
+    tile="foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -144,6 +149,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_logs",
+    tile="foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -151,6 +157,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_empty",
+    tile="foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
@@ -162,71 +169,65 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "foundry_tile_1",
             "foundry_spritelayout_large_shed_clerestory_roof",
         ),
-        (0, 1, "foundry_tile_2", "foundry_spritelayout_furnace_anim"),
-        (0, 2, "foundry_tile_3", "foundry_spritelayout_iron_pigs_anim"),
+        (0, 1, "foundry_spritelayout_furnace_anim"),
+        (0, 2, "foundry_spritelayout_iron_pigs_anim"),
         (
             1,
             0,
-            "foundry_tile_1",
             "foundry_spritelayout_large_shed_clerestory_roof",
         ),
-        (1, 1, "foundry_tile_2", "foundry_spritelayout_furnace_anim"),
-        (1, 2, "foundry_tile_3", "foundry_spritelayout_iron_pigs_anim"),
-        (2, 0, "foundry_tile_1", "foundry_spritelayout_large_shed"),
-        (2, 1, "foundry_tile_1", "foundry_spritelayout_staithes"),
-        (2, 2, "foundry_tile_1", "foundry_spritelayout_logs"),
+        (1, 1, "foundry_spritelayout_furnace_anim"),
+        (1, 2, "foundry_spritelayout_iron_pigs_anim"),
+        (2, 0, "foundry_spritelayout_large_shed"),
+        (2, 1, "foundry_spritelayout_staithes"),
+        (2, 2, "foundry_spritelayout_logs"),
     ],
 )
 industry.add_industry_layout(
     id="foundry_industry_layout_2",
     layout=[
-        (0, 0, "foundry_tile_1", "foundry_spritelayout_large_shed"),
+        (0, 0, "foundry_spritelayout_large_shed"),
         (
             0,
             1,
-            "foundry_tile_1",
             "foundry_spritelayout_large_shed_clerestory_roof",
         ),
         (
             0,
             2,
-            "foundry_tile_1",
             "foundry_spritelayout_large_shed_clerestory_roof",
         ),
-        (1, 0, "foundry_tile_2", "foundry_spritelayout_furnace_anim"),
-        (1, 1, "foundry_tile_3", "foundry_spritelayout_iron_pigs_anim"),
-        (1, 2, "foundry_tile_1", "foundry_spritelayout_logs"),
-        (2, 0, "foundry_tile_2", "foundry_spritelayout_furnace_anim"),
-        (2, 1, "foundry_tile_3", "foundry_spritelayout_iron_pigs_anim"),
-        (2, 2, "foundry_tile_1", "foundry_spritelayout_staithes"),
+        (1, 0, "foundry_spritelayout_furnace_anim"),
+        (1, 1, "foundry_spritelayout_iron_pigs_anim"),
+        (1, 2, "foundry_spritelayout_logs"),
+        (2, 0, "foundry_spritelayout_furnace_anim"),
+        (2, 1, "foundry_spritelayout_iron_pigs_anim"),
+        (2, 2, "foundry_spritelayout_staithes"),
     ],
 )
 industry.add_industry_layout(
     id="foundry_industry_layout_3",
     layout=[
-        (0, 0, "foundry_tile_2", "foundry_spritelayout_furnace_anim"),
-        (0, 1, "foundry_tile_3", "foundry_spritelayout_iron_pigs_anim"),
-        (0, 2, "foundry_tile_2", "foundry_spritelayout_furnace_anim"),
-        (0, 3, "foundry_tile_3", "foundry_spritelayout_iron_pigs_anim"),
-        (0, 4, "foundry_tile_1", "foundry_spritelayout_large_shed"),
+        (0, 0, "foundry_spritelayout_furnace_anim"),
+        (0, 1, "foundry_spritelayout_iron_pigs_anim"),
+        (0, 2, "foundry_spritelayout_furnace_anim"),
+        (0, 3, "foundry_spritelayout_iron_pigs_anim"),
+        (0, 4, "foundry_spritelayout_large_shed"),
         (
             1,
             0,
-            "foundry_tile_1",
             "foundry_spritelayout_large_shed_clerestory_roof",
         ),
-        (1, 1, "foundry_tile_1", "foundry_spritelayout_staithes"),
+        (1, 1, "foundry_spritelayout_staithes"),
         (
             1,
             2,
-            "foundry_tile_1",
             "foundry_spritelayout_large_shed_clerestory_roof",
         ),
-        (1, 3, "foundry_tile_1", "foundry_spritelayout_logs"),
-        (1, 4, "foundry_tile_1", "foundry_spritelayout_empty"),
+        (1, 3, "foundry_spritelayout_logs"),
+        (1, 4, "foundry_spritelayout_empty"),
     ],
 )
 industry.add_industry_layout(
@@ -235,58 +236,54 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "foundry_tile_1",
             "foundry_spritelayout_large_shed_clerestory_roof",
         ),
         (
             0,
             1,
-            "foundry_tile_1",
             "foundry_spritelayout_large_shed_clerestory_roof",
         ),
-        (1, 0, "foundry_tile_2", "foundry_spritelayout_furnace_anim"),
-        (1, 1, "foundry_tile_3", "foundry_spritelayout_iron_pigs_anim"),
-        (2, 0, "foundry_tile_1", "foundry_spritelayout_logs"),
-        (2, 1, "foundry_tile_1", "foundry_spritelayout_staithes"),
-        (3, 0, "foundry_tile_2", "foundry_spritelayout_furnace_anim"),
-        (3, 1, "foundry_tile_3", "foundry_spritelayout_iron_pigs_anim"),
-        (4, 0, "foundry_tile_1", "foundry_spritelayout_large_shed"),
-        (4, 1, "foundry_tile_1", "foundry_spritelayout_empty"),
+        (1, 0, "foundry_spritelayout_furnace_anim"),
+        (1, 1, "foundry_spritelayout_iron_pigs_anim"),
+        (2, 0, "foundry_spritelayout_logs"),
+        (2, 1, "foundry_spritelayout_staithes"),
+        (3, 0, "foundry_spritelayout_furnace_anim"),
+        (3, 1, "foundry_spritelayout_iron_pigs_anim"),
+        (4, 0, "foundry_spritelayout_large_shed"),
+        (4, 1, "foundry_spritelayout_empty"),
     ],
 )
 industry.add_industry_layout(
     id="foundry_industry_layout_5",
     layout=[
-        (0, 0, "foundry_tile_2", "foundry_spritelayout_furnace_anim"),
-        (0, 1, "foundry_tile_3", "foundry_spritelayout_iron_pigs_anim"),
-        (1, 0, "foundry_tile_2", "foundry_spritelayout_furnace_anim"),
-        (1, 1, "foundry_tile_3", "foundry_spritelayout_iron_pigs_anim"),
-        (2, 0, "foundry_tile_1", "foundry_spritelayout_logs"),
-        (2, 1, "foundry_tile_1", "foundry_spritelayout_staithes"),
+        (0, 0, "foundry_spritelayout_furnace_anim"),
+        (0, 1, "foundry_spritelayout_iron_pigs_anim"),
+        (1, 0, "foundry_spritelayout_furnace_anim"),
+        (1, 1, "foundry_spritelayout_iron_pigs_anim"),
+        (2, 0, "foundry_spritelayout_logs"),
+        (2, 1, "foundry_spritelayout_staithes"),
         (
             3,
             0,
-            "foundry_tile_1",
             "foundry_spritelayout_large_shed_clerestory_roof",
         ),
-        (3, 1, "foundry_tile_1", "foundry_spritelayout_large_shed"),
+        (3, 1, "foundry_spritelayout_large_shed"),
     ],
 )
 industry.add_industry_layout(
     id="foundry_industry_layout_6",
     layout=[
-        (0, 0, "foundry_tile_1", "foundry_spritelayout_large_shed"),
-        (0, 1, "foundry_tile_1", "foundry_spritelayout_staithes"),
-        (0, 2, "foundry_tile_1", "foundry_spritelayout_logs"),
+        (0, 0, "foundry_spritelayout_large_shed"),
+        (0, 1, "foundry_spritelayout_staithes"),
+        (0, 2, "foundry_spritelayout_logs"),
         (
             0,
             3,
-            "foundry_tile_1",
             "foundry_spritelayout_large_shed_clerestory_roof",
         ),
-        (1, 0, "foundry_tile_2", "foundry_spritelayout_furnace_anim"),
-        (1, 1, "foundry_tile_3", "foundry_spritelayout_iron_pigs_anim"),
-        (1, 2, "foundry_tile_2", "foundry_spritelayout_furnace_anim"),
-        (1, 3, "foundry_tile_3", "foundry_spritelayout_iron_pigs_anim"),
+        (1, 0, "foundry_spritelayout_furnace_anim"),
+        (1, 1, "foundry_spritelayout_iron_pigs_anim"),
+        (1, 2, "foundry_spritelayout_furnace_anim"),
+        (1, 3, "foundry_spritelayout_iron_pigs_anim"),
     ],
 )
