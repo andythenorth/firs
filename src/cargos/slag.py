@@ -21,5 +21,5 @@ cargo = Cargo(
     capacity_multiplier="1",
     allow_animated_pixels=True,  # slag uses fire cycle pixels, by design, so suppress NML pixel warnings
     icon_indices=(11, 3),
-    sprites_complete=False,
+    sprites_complete=True,
 )
