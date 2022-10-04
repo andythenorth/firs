@@ -10,7 +10,7 @@ sys.path.append(os.path.join('src')) # add to the module search path
 # this script removes dead strings - adjust the 'dead_strings' list to suit
 
 # never leave empty strings or strings with only spaces in this list, that will strip everything from a lang file
-dead_strings = ["STR_CARGO_NAME_PIPE", "STR_CID_PIPE", "STR_CARGO_UNIT_PIPE", "STR_IND_SHEET_AND_PIPE_MILL"]
+dead_strings = ["STR_CARGO_NAME_STONE"]
 
 def delete_string(dead_string):
     for filename in os.listdir(os.path.join('src','lang')):
@@ -21,6 +21,7 @@ def delete_string(dead_string):
             result = []
 
             for line in content:
+                # be aware this has no protection against unwanted substring matches, e.g. 'NAME_FOO' will cause 'NAME_FOOD' to also be removed
                 if dead_string not in line:
                     result.append(line)
 
