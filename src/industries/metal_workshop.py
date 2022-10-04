@@ -39,6 +39,8 @@ industry.enable_in_economy(
         # high output production is unwanted due to single cargo
         ("HWAR", 6),
     ],
+    # generally map colours aren't adjusted per economy but eh
+    map_colour="209",
 )
 
 industry.add_tile(
