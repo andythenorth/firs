@@ -39,6 +39,8 @@ industry.enable_in_economy(
         # high output production is unwanted due to single cargo
         ("HWAR", 6),
     ],
+    # temp
+    name="string(STR_IND_HARDWARE_FACTORY)",
     # generally map colours aren't adjusted per economy but eh
     map_colour="209",
 )
