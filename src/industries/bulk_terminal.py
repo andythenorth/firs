@@ -28,18 +28,15 @@ industry.enable_in_economy(
         ("FMSP", 12),
     ],
 )
-# industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['MNO2', 'FECR', 'RUBR']
-# industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('FORM', 12)]
-
 industry.enable_in_economy(
     "STEELTOWN",
-    accept_cargo_types=["POTA", "CHLO", "CMNT", "STSE", "STSH"],
+    # quite a lot of accepted types, this is intentional to provide flexibility in obtaining boost
+    accept_cargo_types=["FOOD", "POTA", "CHLO", "CMNT", "STIG", "STSE", "STSH"],
     prod_cargo_types_with_multipliers=[
-        ("MNO2", 19),
         ("RUBR", 16),
-        ("PLAS", 16),
-        ("FECR", 14),
+        ("FEAL", 20),
         ("ALUM", 11),
+        ("ZINC", 16),
     ],
 )
 

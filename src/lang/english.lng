@@ -31,7 +31,7 @@ STR_PARAM_NAME_OBJECTS                                                          
 STR_PARAM_DESC_OBJECTS                                                          :FIRS includes a set of landscaping objects, which players can place to make certain industries appear larger. Landscape object have no gameplay effect. Landscaping objects can be turned on or off.
 
 STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG                                   : {BLACK}(supplied)
-STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Produces at maximum rate if {WHITE}any {BLACK}required cargo is supplied.
+STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Supply {WHITE}at least one {BLACK} required cargo for maximum production.
 STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}For maximum production rate, supply {WHITE}all {BLACK}required cargos at least once every three months.
 STR_EXTRA_TEXT_TOWN_PRODUCER                                                    :{BLACK}Production is proportional to town population. At least {WHITE}{SIGNED_WORD} units{BLACK} and not more than {WHITE}{SIGNED_WORD} units{BLACK} of cargo will be produced every month.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} crates of supplies at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates.
@@ -452,6 +452,7 @@ STR_IND_FORGE_AND_FOUNDRY                                                       
 STR_IND_FURNITURE_FACTORY                                                       :Furniture Factory
 STR_IND_GENERAL_STORE                                                           :General Store
 STR_IND_GLASS_WORKS                                                             :Glass Works
+STR_IND_HARDWARE_FACTORY                                                        :Hardware Factory
 STR_IND_HARDWARE_STORE                                                          :Hardware Store
 STR_IND_HERDING_COOP                                                            :Herding Co-op
 STR_IND_HOTEL                                                                   :Hotel

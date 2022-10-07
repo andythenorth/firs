@@ -47,6 +47,7 @@ industry.enable_in_economy(
     "STEELTOWN",
     accept_cargo_types=[
         "FOOD",
+        "PLAS", # !! hax, should be goods, don't want to break my savegame
     ],
 )
 
