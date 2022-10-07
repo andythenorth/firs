@@ -13,7 +13,8 @@ industry = IndustryPrimaryNoSupplies(
     prob_map_gen="7",
     map_colour="189",
     location_checks=dict(same_type_distance=72),
-    prospect_chance="0.75",
+    # always build a cryo plant, because eh, not dependent on resources
+    prospect_chance="1",
     name="string(STR_IND_CRYO_PLANT)",
     nearby_station_name="string(STR_STATION_CRYO_PLANT)",
     # deliberately low fund cost; there is some remaining weirdness on cost because this is a non-growable primary, but eh, live with it
