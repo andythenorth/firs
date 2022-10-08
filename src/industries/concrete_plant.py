@@ -87,6 +87,10 @@ industry.add_industry_layout(
         (0, 1, "concrete_plant_spritelayout_4"),
         (1, 0, "concrete_plant_spritelayout_2"),
         (1, 1, "concrete_plant_spritelayout_1"),
+        (2, 0, "concrete_plant_spritelayout_3"),
+        (2, 1, "concrete_plant_spritelayout_4"),
+        (3, 0, "concrete_plant_spritelayout_2"),
+        (3, 1, "concrete_plant_spritelayout_1"),
     ],
 )
 industry.add_industry_layout(
@@ -94,25 +98,11 @@ industry.add_industry_layout(
     layout=[
         (0, 0, "concrete_plant_spritelayout_2"),
         (0, 1, "concrete_plant_spritelayout_3"),
+        (0, 2, "concrete_plant_spritelayout_2"),
+        (0, 3, "concrete_plant_spritelayout_3"),
         (1, 0, "concrete_plant_spritelayout_4"),
         (1, 1, "concrete_plant_spritelayout_1"),
-    ],
-)
-industry.add_industry_layout(
-    id="concrete_plant_industry_layout_3",
-    layout=[
-        (0, 0, "concrete_plant_spritelayout_3"),
-        (0, 1, "concrete_plant_spritelayout_2"),
-        (1, 0, "concrete_plant_spritelayout_1"),
-        (1, 1, "concrete_plant_spritelayout_4"),
-    ],
-)
-industry.add_industry_layout(
-    id="concrete_plant_industry_layout_4",
-    layout=[
-        (0, 0, "concrete_plant_spritelayout_2"),
-        (0, 1, "concrete_plant_spritelayout_1"),
-        (1, 0, "concrete_plant_spritelayout_3"),
-        (1, 1, "concrete_plant_spritelayout_4"),
+        (1, 2, "concrete_plant_spritelayout_4"),
+        (1, 3, "concrete_plant_spritelayout_1"),
     ],
 )
