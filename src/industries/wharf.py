@@ -32,12 +32,14 @@ industry.enable_in_economy(
 
 industry.enable_in_economy(
     "STEELTOWN",
+    # quite a lot of accepted types, this is intentional to provide flexibility in obtaining boost
     accept_cargo_types=[
         "LYE_",
-        "VEHI",
-        "PPWK",
-        "CRAN",
+        "CMNT",
         "HWAR",
+        "PPWK",
+        "VEHI",
+        "CRAN",
     ],
     prod_cargo_types_with_multipliers=[
         ("ENSP", 12),
