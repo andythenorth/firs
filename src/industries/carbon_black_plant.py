@@ -2,9 +2,8 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="carbon_black_plant",
-    # amount of output is unrealistic 8:8 but input is usually small, so give a decent amount out eh?
     accept_cargos_with_input_ratios=[("CTAR", 8)],
-    prod_cargo_types_with_output_ratios=[("CBLK", 8)],
+    prod_cargo_types_with_output_ratios=[("CBLK", 4), ("COKE", 4)],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="178",
@@ -91,7 +90,6 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_boiler],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_chimneys",
@@ -99,28 +97,24 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_chimneys],
     smoke_sprites=[sprite_smoke_1, sprite_smoke_2, sprite_smoke_3],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_tanks_group",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_tanks_group],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_silos",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_silos],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_silos_with_office",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_silos_with_office],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 industry.add_industry_layout(

@@ -4,7 +4,7 @@ industry = IndustrySecondary(
     id="electric_arc_furnace",
     accept_cargos_with_input_ratios=[
         ("SCMT", 4),
-        ("IRON", 2), #not required, maybe remove?
+        ("FECR", 2), 
         ("QLME", 1),
         ("O2__", 1),
     ],

@@ -3,7 +3,7 @@ from industry import IndustryPrimaryNoSupplies, TileLocationChecks
 industry = IndustryPrimaryNoSupplies(
     id="cryo_plant",
     accept_cargo_types=[],
-    prod_cargo_types_with_multipliers=[("O2__", 14)],
+    prod_cargo_types_with_multipliers=[("O2__", 25), ("N7__", 25)],
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="189",
@@ -56,42 +56,36 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="cryo_plant_spritelayout_large_shed",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="cryo_plant_spritelayout_purification_unit",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="cryo_plant_spritelayout_horizontal_tanks",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="cryo_plant_spritelayout_storage_tank_blue",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="cryo_plant_spritelayout_storage_tank_yellow",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="cryo_plant_spritelayout_empty",

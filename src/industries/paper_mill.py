@@ -31,17 +31,6 @@ industry.economy_variations["BASIC_ARCTIC"].prod_cargo_types_with_output_ratios 
 ]
 
 
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
-    ("CLAY", 2),
-    ("WOOD", 4),
-    ("SULP", 2),
-]
-industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
-    ("GOOD", 4),
-    ("MNSP", 4),
-]
-
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 

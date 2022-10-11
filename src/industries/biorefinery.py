@@ -18,7 +18,11 @@ industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
     ("GRAI", 4),
     ("FRUT", 4),  
 ]
-
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
+    ("RFPR", 2),
+    ("PETR", 3),
+    ("C2H4", 3),
+]
 
 industry.add_tile(
     id="biorefinery_tile_1",

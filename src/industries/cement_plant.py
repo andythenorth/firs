@@ -27,7 +27,7 @@ industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
-    ("COAL", 2),
+    ("PETR", 2),
     ("SAND", 2),
     ("LIME", 4),
 ]

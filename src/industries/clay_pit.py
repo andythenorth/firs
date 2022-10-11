@@ -20,10 +20,7 @@ industry.economy_variations["BASIC_TEMPERATE"].prod_cargo_types_with_multipliers
     ("KAOL", 16)
 ]
 
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations["STEELTOWN"].prod_cargo_types_with_multipliers = [
-    ("CLAY", 28),
-]
+
 
 
 # 2 tiles for this industry: pit outer tile cannot be on slopes; pit inner tiles and processor tiles can be

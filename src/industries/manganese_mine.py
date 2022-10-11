@@ -16,7 +16,7 @@ industry = IndustryPrimaryExtractive(
 
 industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
 
-industry.economy_variations["STEELTOWN"].enabled = True
+
 
 
 industry.add_tile(

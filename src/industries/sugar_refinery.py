@@ -27,6 +27,11 @@ industry.add_tile(
     ),
 )
 
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
+    ("GRAI", 8),
+]
+
 spriteset_ground = industry.add_spriteset(type="concrete")
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
@@ -72,28 +77,24 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="sugar_refinery_spritelayout_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="sugar_refinery_spritelayout_3",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="sugar_refinery_spritelayout_4",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="sugar_refinery_spritelayout_5",
@@ -108,7 +109,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
     smoke_sprites=[sprite_smoke_1, sprite_smoke_2],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="sugar_refinery_spritelayout_7",
@@ -122,14 +122,12 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="sugar_refinery_spritelayout_9",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 industry.add_industry_layout(

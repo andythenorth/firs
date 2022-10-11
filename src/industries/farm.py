@@ -33,7 +33,7 @@ industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_
 
 industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].prod_cargo_types_with_multipliers = [
-    ("FICR", 14),
+    ("GRAI", 14),
     ("LVST", 13),
 ]
 

@@ -22,8 +22,9 @@ industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
-    ("NH3_", 6),
-    ("RFPR", 2), #maybe re-add fertiliser if possible
+    ("NHNO", 6),
+    ("SLAG", 2),
+    ("ACID", 2),
 ]
 
 industry.add_tile(

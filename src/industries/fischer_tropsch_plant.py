@@ -2,7 +2,7 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="fischer_tropsch_plant",
-    accept_cargos_with_input_ratios=[("COAL", 6)],
+    accept_cargos_with_input_ratios=[("COAL", 8)],
     prod_cargo_types_with_output_ratios=[("NH3_", 2), ("PETR", 6)],
     prob_in_game="3",
     prob_map_gen="5",
@@ -16,6 +16,11 @@ industry = IndustrySecondary(
 industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
+    ("PETR", 4),
+    ("RFPR", 2),
+    ("H2__", 2),
+]
 
 # industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 
@@ -51,35 +56,30 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="fischer_tropsch_plant_spritelayout_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="fischer_tropsch_plant_spritelayout_3",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="fischer_tropsch_plant_spritelayout_4",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="fischer_tropsch_plant_spritelayout_5",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 industry.add_industry_layout(

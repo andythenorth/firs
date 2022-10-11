@@ -2,7 +2,7 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="engine_plant",
-    accept_cargos_with_input_ratios=[("IRON", 4), ("ALUM", 2), ("SAND", 2)],
+    accept_cargos_with_input_ratios=[("FOCA", 2), ("ALUM", 2), ("TYRE", 2), ("SAND", 2)],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
         ("VENG", 6)
@@ -69,49 +69,42 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
     smoke_sprites=[sprite_smoke],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="engine_plant_spritelayout_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="engine_plant_spritelayout_3",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    fences=["nw", "ne", "se"],
 )
 industry.add_spritelayout(
     id="engine_plant_spritelayout_4",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    fences=["nw", "ne", "se"],
 )
 industry.add_spritelayout(
     id="engine_plant_spritelayout_5",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
-    fences=["nw", "ne", "se"],
 )
 industry.add_spritelayout(
     id="engine_plant_spritelayout_6",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="engine_plant_spritelayout_7",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 industry.add_industry_layout(

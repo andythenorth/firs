@@ -9,12 +9,6 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="64",
     name="string(STR_IND_COPPER_REFINERY)",
-    # if copper concentrator is added in some economies, using copper mine as keystone will be a problem as the location checks are not economy-specific
-    # (and location checks probably shouldn't be economy-specific to avoid complexity)
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[["copper_mine"], 96],
-        same_type_distance=96,
-    ),
     nearby_station_name="string(STR_STATION_SMELTER)",
     fund_cost_multiplier="200",
     graphics_change_dates=[],
@@ -29,7 +23,7 @@ industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
 
 industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
-    ("CORE", 4),
+    ("COCO", 4),
     ("SCMT", 2),
     ("ACID", 2),
 ]
@@ -119,21 +113,18 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="copper_refinery_spritelayout_thickening_tank",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="copper_refinery_spritelayout_big_shed",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="copper_refinery_spritelayout_flue_stack",
@@ -141,7 +132,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     smoke_sprites=[sprite_smoke_1],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="copper_refinery_spritelayout_ore_handling_front",
@@ -149,49 +139,42 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
     smoke_sprites=[sprite_smoke_2, sprite_smoke_3],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="copper_refinery_spritelayout_ore_handling_rear",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="copper_refinery_spritelayout_copper_forklift",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="copper_refinery_spritelayout_small_shed",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="copper_refinery_spritelayout_stack_vent_thing",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="copper_refinery_spritelayout_ground",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="copper_refinery_spritelayout_transformer",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_transformer],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 industry.add_industry_layout(
