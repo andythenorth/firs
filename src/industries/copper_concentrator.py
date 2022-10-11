@@ -8,7 +8,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="64",
-    name="string(STR_IND_COPPER_CONCENTRATOR)",
+    name="string(STR_IND_ALUMINA_REFINERY)", #change back when you figure it out
     nearby_station_name="string(STR_STATION_SMELTER)",
     fund_cost_multiplier="200",
     graphics_change_dates=[],
@@ -19,6 +19,17 @@ industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].accept_cargos_with_input_ratios = [('CORE', 5), ('RFPR', 3)]
 
 # industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
+
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
+    ("AORE", 6),
+    ("LYE_", 2),
+]
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
+    ("ALO_", 8),
+]
+
+
 
 industry.add_tile(
     id="copper_concentrator_tile_1",

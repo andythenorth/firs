@@ -4,7 +4,7 @@ industry = IndustrySecondary(
     id="basic_oxygen_furnace",
     accept_cargos_with_input_ratios=[
         ("IRON", 4),
-        ("MNO2", 2),
+        ("FECR", 2),
         ("QLME", 1),
         ("O2__", 1),
     ],
@@ -98,21 +98,21 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
-    fences=["nw", "ne", "se", "sw"],
+
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_manganese_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_manganese_1],
-    fences=["nw", "ne", "se", "sw"],
+
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_tanks",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_tanks],
-    fences=["nw", "ne", "se", "sw"],
+
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_air_plant",
@@ -120,14 +120,14 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_air_plant],
     smoke_sprites=[sprite_smoke_2],
-    fences=["nw", "ne", "se", "sw"],
+
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_furnace",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_furnace],
-    fences=["nw", "ne", "se", "sw"],
+
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_caster",
@@ -135,42 +135,42 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_caster],
     smoke_sprites=[sprite_smoke_1],
-    fences=["nw", "ne", "se", "sw"],
+
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_metal_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_metal_1],
-    fences=["nw", "ne", "se", "sw"],
+
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_metal_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_metal_2],
-    fences=["nw", "ne", "se", "sw"],
+
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_metal_3",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_metal_3],
-    fences=["nw", "ne", "se", "sw"],
+
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_metal_4",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_metal_4],
-    fences=["nw", "ne", "se", "sw"],
+
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_shed",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_shed],
-    fences=["nw", "ne", "se", "sw"],
+
 )
 
 # min 6x4 or 5x5 as there are lots of output cargos

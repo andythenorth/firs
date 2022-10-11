@@ -114,6 +114,7 @@ industry_numeric_ids = dict(
     polyethylene_plant = 111,
     ethylene_cracker = 112,
     sugar_refinery = 113,
+    alumina_refinery = 114,
 )
 # 127 is last ID to be used (128 industry limit, zero-based)
 # see also why 128 is a hard limit as of 2020 http://webster.openttdcoop.org/?channel=openttd&date=1586563200#1586641232
@@ -149,7 +150,7 @@ tile_numeric_ids = dict(
     factory_3_tile_1=107,
     ethylene_cracker_tile_1=108,
     ethylene_cracker_tile_2=109,
-    # unused = 110,
+    alumina_refinery_tile_1 = 110,
     tinplate_works_tile_1=111,
     wire_and_section_mill_tile_1=112,
     slag_grinding_plant_tile_1=113,

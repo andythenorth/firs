@@ -4,7 +4,7 @@ industry = IndustrySecondary(
     id="component_factory",
     accept_cargos_with_input_ratios=[
         ("ALUM", 2),
-        ("PLAS", 2),
+        ("MNSP", 2),
         ("STAL", 2),
         ("POWR", 2),
     ],
@@ -68,28 +68,24 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="component_factory_spritelayout_large_building_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="component_factory_spritelayout_large_building_3",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="component_factory_spritelayout_4",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    fences=["nw", "ne", "se"],
 )
 industry.add_spritelayout(
     id="component_factory_spritelayout_5",
@@ -98,7 +94,6 @@ industry.add_spritelayout(
     building_sprites=[
         spriteset_6
     ],  # out of order spriteset number, due to historical crap, can fix by tidying spritesheet
-    fences=["nw", "ne", "se", "sw"],
 )
 
 industry.add_industry_layout(

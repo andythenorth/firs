@@ -21,11 +21,11 @@ STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              
 STR_PARAM_NAME_EXPERIMENTAL_FEATURES                                            :Enable experimental features
 STR_PARAM_DESC_EXPERIMENTAL_FEATURES                                            :Turns experimental features on or off.
 
-STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Temperate Basic
-STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Arctic Basic
-STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tropic Basic
-STR_PARAM_VALUE_ECONOMIES_BETTER_LIVING_THROUGH_CHEMISTRY                       :Better Living Through Chemistry
-STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                      :In A Hot Country
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :INCOMPLETE
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :INCOMPLETE
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :INCOMPLETE
+STR_PARAM_VALUE_ECONOMIES_BETTER_LIVING_THROUGH_CHEMISTRY                       :INCOMPLETE
+STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                      :INCOMPLETE
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Steeltown +
 
 STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG                                   : {BLACK}(supplied)
@@ -48,7 +48,7 @@ STR_CARGO_NAME_ACID                                                             
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
 STR_CARGO_NAME_ALLOY_STEEL                                                      :Alloy Steel
 STR_CARGO_NAME_ALUMINIUM                                                        :Aluminium
-STR_CARGO_NAME_ALUMINIA                                                         :Aluminia
+STR_CARGO_NAME_ALUMINIA                                                         :Alumina
 STR_CARGO_NAME_AMMONIA                                                          :Ammonia
 STR_CARGO_NAME_AMMONIUM_NITRATE                                                 :Ammonium Nitrate
 STR_CARGO_NAME_BAUXITE                                                          :Bauxite
@@ -80,6 +80,7 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Farm Supplies
 STR_CARGO_NAME_FERTILISER                                                       :Fertiliser
 STR_CARGO_NAME_FOOD_ADDITIVES                                                   :Food Additives
+STR_CARGO_NAME_FORGINGS_AND_CASTINGS                                            :Forgings & Castings
 STR_CARGO_NAME_FORMIC_ACID                                                      :Formic Acid
 STR_CARGO_NAME_FRUITS                                                           :Fruit
 STR_CARGO_NAME_FURNITURE                                                        :Furniture
@@ -149,7 +150,7 @@ STR_CARGO_NAME_ZINC                                                             
 STR_CARGO_UNIT_ACID                                                             :{VOLUME} of acid
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} of alcohol
 STR_CARGO_UNIT_ALLOY_STEEL                                                      :{WEIGHT} of alloy steel
-STR_CARGO_UNIT_ALUMINIA                                                         :{WEIGHT} of aluminia
+STR_CARGO_UNIT_ALUMINIA                                                         :{WEIGHT} of alumina
 STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} of aluminium
 STR_CARGO_UNIT_AMMONIA                                                          :{VOLUME} of ammonia
 STR_CARGO_UNIT_AMMONIUM_NITRATE                                                 :{VOLUME} of ammonium nitrate
@@ -179,6 +180,7 @@ STR_CARGO_UNIT_EXPLOSIVES                                                       
 STR_CARGO_UNIT_FERROCHROME                                                      :{WEIGHT} of ferrochrome
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} of fertiliser
 STR_CARGO_UNIT_FOOD_ADDITIVES                                                   :{WEIGHT} of food additives
+STR_CARGO_UNIT_FORGINGS_AND_CASTINGS                                            :{WEIGHT} of forgings and castings
 STR_CARGO_UNIT_FORMIC_ACID                                                      :{VOLUME} of formic acid
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bale{P 0 "" s} of plant fibres
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} of fish
@@ -286,6 +288,7 @@ STR_CID_FIBRES                                                                  
 STR_CID_FISH                                                                    :{TINYFONT}FI
 STR_CID_FOOD_ADDITIVES                                                          :{TINYFONT}FV
 STR_CID_FORMIC_ACID                                                             :{TINYFONT}FA
+STR_CID_FORGINGS_AND_CASTINGS                                                   :{TINYFONT}FO
 STR_CID_FURNITURE                                                               :{TINYFONT}FU
 STR_CID_GLASS                                                                   :{TINYFONT}GL
 STR_CID_HYDROCHLORIC_ACID                                                       :{TINYFONT}HA
@@ -368,6 +371,7 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 STR_PROD_CHANGE_TEST                                                            :{BIGFONT}{BLACK}The rat jumped over the cat
 
 STR_IND_ALUMINIUM_PLANT                                                         :Aluminium Plant
+STR_IND_ALUMINA_REFINERY                                                        :Alumina Refinery
 STR_IND_AMMONIA_PLANT                                                           :Ammonia Plant
 STR_IND_ARABLE_FARM                                                             :Arable Farm
 STR_IND_ASSEMBLY_PLANT                                                          :Assembly Plant

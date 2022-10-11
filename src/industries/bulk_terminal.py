@@ -34,10 +34,11 @@ industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].accept_cargo_type
 industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_with_multipliers = [('OIL_', 20), ('POTA', 12), ('PHOS', 12), ('MEOH', 12)]
 
 industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations["STEELTOWN"].accept_cargo_types = ["FOOD", "BDMT", "VEHI"]
+industry.economy_variations["STEELTOWN"].accept_cargo_types = ["FOOD", "CMNT", "STSH", "VEHI"]
 industry.economy_variations["STEELTOWN"].prod_cargo_types_with_multipliers = [
-    ("MNO2", 19),
-    ("RUBR", 16),
+    ("IORE", 19),
+    ("ALO_", 19),
+    ("FECR", 16),
     ("COAL", 16),
 ]
 

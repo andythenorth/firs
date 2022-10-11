@@ -18,9 +18,10 @@ industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
-    ("AORE", 4),
+    ("ALO_", 4),
     ("SCMT", 2),
-    ("LYE_", 2),
+    ("SALT", 1),
+    ("COKE", 1),
 ]
 industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
     ("ALUM", 7),
@@ -92,21 +93,19 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
-    fences=["nw", "ne", "se", "sw"],
+
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_3",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_4",
@@ -114,70 +113,60 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     smoke_sprites=[sprite_smoke],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_5",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_6",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_7",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_8",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_9",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_10",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_11",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_11],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_concrete",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_transformer",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_transformer],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 industry.add_industry_layout(

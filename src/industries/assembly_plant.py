@@ -3,9 +3,10 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="assembly_plant",
     accept_cargos_with_input_ratios=[
-        ("VPTS", 4),
+        ("VPTS", 2),
         ("VBOD", 2),
         ("VENG", 2),
+        ("TYRE", 4),
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[("VEHI", 6), ("ENSP", 1), ("FMSP", 1)],
@@ -82,70 +83,60 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_central_assembly_hall",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_front_assembly_hall_windows",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_front_assembly_hall_doors",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_goods_in_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_offices",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_tyres",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_vehicles_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_vehicles_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_11],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="assembly_plant_spritelayout_vehicles_3",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_12],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 # min 6x4 or 5x5 as there are lots of output cargos

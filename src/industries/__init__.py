@@ -6,7 +6,8 @@ registered_industries = []
 from industries import aluminium_plant
 aluminium_plant.industry.register()
 
-
+from industries import alumina_refinery
+alumina_refinery.industry.register()
  
 from industries import ammonia_plant
 ammonia_plant.industry.register()
@@ -208,6 +209,7 @@ fishing_harbour.industry.register()
 from industries import forest
 
 forest.industry.register()
+
 
 from industries import fruit_plantation
 
