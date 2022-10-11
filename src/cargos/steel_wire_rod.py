@@ -17,7 +17,8 @@ cargo = Cargo(
     items_of_cargo="string(STR_CARGO_UNIT_STEEL_WIRE_ROD)",
     penalty_lowerbound="30",
     single_penalty_length="42",
-    price_factor=138,
+    price_factor=139,
     capacity_multiplier="1",
     icon_indices=(8, 5),
+    sprites_complete=True,
 )
