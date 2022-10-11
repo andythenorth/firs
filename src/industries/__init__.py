@@ -25,6 +25,9 @@ from industries import basic_oxygen_furnace
 
 basic_oxygen_furnace.industry.register()
 
+from industries import bauxite_mine
+
+bauxite_mine.industry.register()
 
 from industries import biorefinery
 biorefinery.industry.register()
