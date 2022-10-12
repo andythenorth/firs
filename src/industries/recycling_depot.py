@@ -7,10 +7,7 @@ industry = IndustryTownProducerPopulationDependent(
     prob_map_gen="20",
     map_colour="191",
     life_type="IND_LIFE_TYPE_EXTRACTIVE",
-    location_checks=dict(
-        same_type_distance=16,
-        require_town_industry_count=["recycling_depot", 0, 0],
-    ),
+    location_checks=dict(require_town_min_population=800),
     name="string(STR_IND_RECYCLING_DEPOT)",
     nearby_station_name="string(STR_STATION_TOWN_2)",
     fund_cost_multiplier="118",
@@ -23,7 +20,7 @@ industry.add_tile(
     id="recycling_depot_tile_1",
     location_checks=TileLocationChecks(
         always_allow_founder=False,
-        require_houses_nearby=True,
+        require_houses_nearby=False,
         disallow_industry_adjacent=True,
     ),
 )

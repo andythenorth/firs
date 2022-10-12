@@ -374,6 +374,7 @@ STR_IND_ALUMINIUM_PLANT                                                         
 STR_IND_ALUMINA_REFINERY                                                        :Alumina Refinery
 STR_IND_AMMONIA_PLANT                                                           :Ammonia Plant
 STR_IND_ARABLE_FARM                                                             :Arable Farm
+STR_IND_APPLIANCE_FACTORY                                                       :Appliance Factory
 STR_IND_ASSEMBLY_PLANT                                                          :Assembly Plant
 STR_IND_BASIC_OXYGEN_FURNACE                                                    :Basic Oxygen Furnace
 STR_IND_BAUXITE_MINE                                                            :Bauxite Mine
@@ -385,6 +386,7 @@ STR_IND_CIDER_MILL                                                              
 STR_IND_BRICK_WORKS                                                             :Brick Works
 STR_IND_BUILDERS_YARD                                                           :Builders Yard
 STR_IND_BULK_TERMINAL                                                           :Bulk Terminal
+STR_IND_CANNERY                                                                 :Cannery
 STR_IND_CARBON_BLACK_PLANT                                                      :Carbon Black Plant
 STR_IND_CEMENT_PLANT                                                            :Cement Plant
 STR_IND_CHEMICAL_PLANT                                                          :Chemical Plant
@@ -402,10 +404,11 @@ STR_IND_DAIRY                                                                   
 STR_IND_DAIRY_FARM                                                              :Dairy Farm
 STR_IND_DREDGING_SITE                                                           :Dredging Site
 STR_IND_ELECTRIC_ARC_FURNACE                                                    :Electric Arc Furnace
+STR_IND_ELECTRICAL_WORKS                                                        :Electrical Works
 STR_IND_ENGINE_PLANT                                                            :Engine Plant
 STR_IND_ETHYLENE_CRACKER                                                        :Naphtha Cracker
 STR_IND_FARM                                                                    :Farm
-STR_IND_FERROCHROME_SMELTER                                                     :Ferrochrome Smelter
+STR_IND_FERROCHROME_SMELTER                                                     :Ferroalloy Smelter
 STR_IND_FERTILISER_PLANT                                                        :Fertiliser Plant
 STR_IND_FACTORY_1                                                               :Factory 1
 STR_IND_FACTORY_2                                                               :Factory 2
@@ -419,6 +422,7 @@ STR_IND_FLOUR_MILL                                                              
 STR_IND_FOOD_MARKET                                                             :Grocer's Shop
 STR_IND_FOOD_PROCESSOR                                                          :Food Processing Plant
 STR_IND_FURNITURE_FACTORY                                                       :Furniture Factory
+STR_IND_FORGE_AND_FOUNDRY                                                       :Forge and Foundry
 STR_IND_GENERAL_STORE                                                           :General Store
 STR_IND_GLASS_WORKS                                                             :Glass Works
 STR_IND_HARDWARE_STORE                                                          :Hardware Store
@@ -431,21 +435,23 @@ STR_IND_LIME_KILN                                                               
 STR_IND_LIMESTONE_MINE                                                          :Limestone Mine
 STR_IND_LIQUIDS_TERMINAL                                                        :Liquids Terminal
 STR_IND_LUMBER_YARD                                                             :Timber Yard
-STR_IND_MACHINE_SHOP                                                            :Machine Shop
+STR_IND_MACHINE_SHOP                                                            :Machinery Factory
 STR_IND_MACHINE_WORKS                                                           :Machine Works
 STR_IND_MANGANESE_MINE                                                          :Manganese Mine
 STR_IND_METAL_WORKSHOP                                                          :Metal Workshop
 STR_IND_MIXEDFARM                                                               :Mixed Farm
 STR_IND_NITRATE_MINE                                                            :Nitrate Mine
 STR_IND_ORCHARD_PIGGERY                                                         :Orchard and Piggery
+STR_IND_PAINT_FACTORY                                                           :Paint Factory
 STR_IND_PEATLANDS                                                               :Peatlands
 STR_IND_PETROLPUMP                                                              :Petrol Station
 STR_IND_PHOSPHATE_MINE                                                          :Phosphate Mine
 STR_IND_PHOSPHORIC_ACID_PLANT                                                   :Phosphoric Acid Plant
-STR_IND_PLASTICS_PLANT                                                          :PVC Plant
+STR_IND_PLASTICS_PLANT                                                          :Plastic Moulding Plant
 STR_IND_PLAZA                                                                   :Plaza
 STR_IND_POLYETHYLENE_PLANT                                                      :Polyethylene Plant
 STR_IND_POLYPROPYLENE_PLANT                                                     :Polypropylene Plant
+STR_IND_POLYMER_PLANT                                                           :Polymerisation Plant
 STR_IND_PORT                                                                    :Port
 STR_IND_POTASH_MINE                                                             :Potash Mine
 STR_IND_PYRITE_MINE                                                             :Pyrite Mine
@@ -460,6 +466,7 @@ STR_IND_SALT_MINE                                                               
 STR_IND_SHEEPFARM                                                               :Sheep Farm
 STR_IND_SLAG_GRINDING_PLANT                                                     :Slag Grinding Plant
 STR_IND_SMITHY_FORGE                                                            :Smithy Forge
+STR_IND_SOAP_FACTORY                                                            :Cleaning Products Factory
 STR_IND_SODA_ASH_MINE                                                           :Soda Ash Mine
 STR_IND_SOLVAY_PLANT                                                            :Solvay Plant
 # we use 'integrated_steel_mill' in code to avoid confusion with Steeltown mills, but it's easier to just use 'Steel Mill' for name that players see
@@ -469,10 +476,11 @@ STR_IND_STOCKYARD                                                               
 STR_IND_SUGAR_REFINERY                                                          :Sugar Refinery
 STR_IND_SULPHURIC_ACID_PLANT                                                    :Sulphuric Acid Plant
 STR_IND_SUPPLY_YARD                                                             :Supply Yard
+STR_IND_SYNTHETIC_RUBBER_PLANT                                                  :Synthetic Rubber Plant
 STR_IND_TEXTILE_MILL                                                            :Textile Mill
 STR_IND_TINPLATE_WORKS                                                          :Tinplate Works
 STR_IND_TRADING_POST                                                            :Trading Post
-STR_IND_TYRE_PLANT                                                              :Tyre Plant
+STR_IND_TYRE_PLANT                                                              :Tyre and Rubber Plant
 STR_IND_VINEYARD                                                                :Vineyard
 STR_IND_VEHICLE_DISTRIBUTOR                                                     :Vehicle Distributor
 STR_IND_WHARF                                                                   :Wharf
@@ -505,6 +513,7 @@ STR_STATION_BAUXITE                                                             
 STR_STATION_BONEYARD                                                            :Boneyard
 STR_STATION_BANK_TOP                                                            :Bank Top
 STR_STATION_BRINE_WORKS                                                         :Brine Works
+STR_STATION_CANNERY                                                             :Cannery
 STR_STATION_CASTINGS                                                            :Castings
 STR_STATION_COLLIERY                                                            :Colliery
 STR_STATION_COMPONENTS                                                          :Components

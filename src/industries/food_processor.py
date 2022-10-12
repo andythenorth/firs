@@ -13,8 +13,8 @@ industry = IndustrySecondary(
             72,
         ]
     ),
-    name="TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT",
-    nearby_station_name="string(STR_STATION_FOOD_CORPORATION)",
+    name="string(STR_IND_CANNERY)",
+    nearby_station_name="string(STR_STATION_CANNERY)",
     fund_cost_multiplier="65",
 )
 
@@ -31,9 +31,11 @@ industry.economy_variations["IN_A_HOT_COUNTRY"].prod_cargo_types_with_output_rat
 ]
 
 industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations["IN_A_HOT_COUNTRY"].accept_cargos_with_input_ratios = [
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
+    ("STSE", 2),
+    ("FISH", 2),
     ("MNSP", 2),
-    ("FRUT", 6),
+    ("GRAI", 2),
 ]
 
 industry.add_tile(
@@ -69,21 +71,18 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="food_processor_spritelayout_3",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="food_processor_spritelayout_4",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 industry.add_industry_layout(

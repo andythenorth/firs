@@ -8,11 +8,21 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="194",
-    name="string(STR_IND_IRON_WORKS)",
+    name="string(STR_IND_FORGE_AND_FOUNDRY)",
     nearby_station_name="string(STR_STATION_FURNACE)",
     fund_cost_multiplier="69",
-    expiry_year=1901,
 )
+
+
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
+    ("IRON", 3),
+    ("ALUM", 3),
+    ("SAND", 2),
+]
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
+    ("FOCA", 8),
+]
 
 
 # not animated tiles
@@ -79,7 +89,7 @@ spriteset_iron_pigs_anim = industry.add_spriteset(
     animation_rate=1,
 )
 spriteset_ground_pigs = industry.add_spriteset(
-    type="cobble",
+    type="empty",
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_iron_pigs_anim.sprites),
 )
@@ -101,49 +111,42 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
     smoke_sprites=[sprite_smoke],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="iron_works_spritelayout_large_shed",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    fences=[],
 )
 industry.add_spritelayout(
     id="iron_works_spritelayout_large_shed_clerestory_roof",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    fences=[],
 )
 industry.add_spritelayout(
     id="iron_works_spritelayout_iron_pigs_anim",
     ground_sprite=spriteset_ground_pigs,
     ground_overlay=spriteset_ground_overlay_pigs,
     building_sprites=[spriteset_iron_pigs_anim],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="iron_works_spritelayout_staithes",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    fences=["nw", "ne"],
 )
 industry.add_spritelayout(
     id="iron_works_spritelayout_logs",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
-    fences=["nw", "ne", "se"],
 )
 industry.add_spritelayout(
     id="iron_works_spritelayout_empty",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
-    fences=["nw", "ne", "se"],
 )
 industry.add_industry_layout(
     id="iron_works_industry_layout_1",

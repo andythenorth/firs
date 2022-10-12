@@ -6,16 +6,28 @@ industry = IndustrySecondary(
     id="factory_1",
     accept_cargos_with_input_ratios=[("GLAS", 2), ("STEL", 2), ("PLAS", 2)],
     combined_cargos_boost_prod=True,
-    prod_cargo_types_with_output_ratios=[],
+    prod_cargo_types_with_output_ratios=[("GOOD", 8)],
     prob_in_game="7",
     prob_map_gen="8",
     map_colour="166",
-    name="string(STR_IND_FACTORY_1)",
+    name="string(STR_IND_APPLIANCE_FACTORY)",
     nearby_station_name="string(STR_STATION_INDUSTRY_ESTATE_1)",
     fund_cost_multiplier="95",
 )
 
 industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+
+industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
+    ("STAL", 2),
+    ("STSH", 2),  
+    ("GLAS", 1),
+    ("MNSP", 1),
+    ("POWR", 1),
+    ("TYRE", 1),
+]
+
+
 
 industry.add_tile(
     id="factory_1_tile_1",

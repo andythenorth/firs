@@ -84,5 +84,5 @@ economy = Economy(
         "vehicles", 
         "zinc",
     ],
-
+cargoflow_graph_tuning={}
 )

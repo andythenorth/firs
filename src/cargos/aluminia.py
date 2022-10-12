@@ -22,3 +22,4 @@ cargo = Cargo(
     icon_indices=(8, 4),
     sprites_complete=False,
 )
+

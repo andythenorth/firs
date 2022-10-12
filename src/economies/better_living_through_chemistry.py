@@ -58,4 +58,5 @@ economy = Economy(
         "urea",
         "vehicles",
     ],
+    cargoflow_graph_tuning={}
 )

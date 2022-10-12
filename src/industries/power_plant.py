@@ -2,7 +2,7 @@ from industry import IndustryTertiary, TileLocationChecks
 
 industry = IndustryTertiary(
     id="power_plant",
-    accept_cargo_types=["COAL"],
+    accept_cargo_types=["COAL", "PETR"],
     prod_cargo_types=[],
     prob_in_game="3",
     prob_map_gen="5",
@@ -19,6 +19,8 @@ industry = IndustryTertiary(
 
 industry.economy_variations["BASIC_ARCTIC"].enabled = True
 industry.economy_variations["BASIC_ARCTIC"].accept_cargo_types = ["PEAT"]
+
+industry.economy_variations["STEELTOWN"].enabled = True
 
 industry.add_tile(
     id="power_plant_tile_1",
@@ -48,7 +50,6 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_1],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="power_plant_spritelayout_large_building",
@@ -56,21 +57,18 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_2],
     smoke_sprites=[sprite_smoke_1],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="power_plant_spritelayout_small_building",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_3],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="power_plant_spritelayout_substation",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_4],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 industry.add_industry_layout(

@@ -71,7 +71,7 @@ industry.economy_variations["IN_A_HOT_COUNTRY"].prod_cargo_types_with_multiplier
 # industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('GOOD', 14), ('SASH', 12)]
 
 industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations["STEELTOWN"].accept_cargo_types = ["BDMT", "GOOD"]
+industry.economy_variations["STEELTOWN"].accept_cargo_types = ["FOOD", "GOOD"]
 industry.economy_variations['STEELTOWN'].prod_cargo_types_with_multipliers = [('ENSP', 20), ('FMSP', 20)]
 
 

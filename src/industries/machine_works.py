@@ -5,13 +5,13 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="machine_works",
-    accept_cargos_with_input_ratios=[("STAL", 4), ("COPR", 3), ("RFPR", 1)],
+    accept_cargos_with_input_ratios=[("STAL", 3), ("COPR", 2), ("RFPR", 1), ("STWR", 1), ("MNSP", 1)],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[("POWR", 8)],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="166",
-    name="string(STR_IND_MACHINE_WORKS)",
+    name="string(STR_IND_ELECTRICAL_WORKS)",
     nearby_station_name="string(STR_STATION_DYNAMO)",
     fund_cost_multiplier="120",
 )
@@ -66,49 +66,42 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
     smoke_sprites=[sprite_smoke],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="machine_works_spritelayout_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="machine_works_spritelayout_3",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    fences=["nw", "ne", "se"],
 )
 industry.add_spritelayout(
     id="machine_works_spritelayout_4",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    fences=["nw", "ne", "se"],
 )
 industry.add_spritelayout(
     id="machine_works_spritelayout_5",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
-    fences=["nw", "ne", "se"],
 )
 industry.add_spritelayout(
     id="machine_works_spritelayout_6",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="machine_works_spritelayout_7",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 industry.add_industry_layout(

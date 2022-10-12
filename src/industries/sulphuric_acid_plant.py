@@ -17,6 +17,10 @@ industry = IndustrySecondary(
 industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
+    ("SULP", 5),
+    ("NITR", 3),  
+]
 industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
     ("ACID", 8),
 ]
@@ -134,14 +138,12 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_horizontal_tanks],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="sulphuric_acid_plant_spritelayout_frac_columns",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_frac_columns],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="sulphuric_acid_plant_spritelayout_drop_tower_and_thin_chimney",
@@ -149,7 +151,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_drop_tower_and_thin_chimney],
     smoke_sprites=[sprite_smoke_1],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="sulphuric_acid_plant_spritelayout_large_building",
@@ -157,7 +158,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_large_building],
     smoke_sprites=[sprite_smoke_2, sprite_smoke_3, sprite_smoke_4, sprite_smoke_5],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="sulphuric_acid_plant_spritelayout_fat_chimney",
@@ -165,28 +165,24 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_fat_chimney],
     smoke_sprites=[sprite_smoke_6, sprite_smoke_7, sprite_smoke_8, sprite_smoke_9],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="sulphuric_acid_plant_spritelayout_spherical_tanks",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_spherical_tanks],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="sulphuric_acid_plant_spritelayout_vertical_tanks",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_vertical_tanks],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="sulphuric_acid_plant_spritelayout_barrels",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_barrels],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 

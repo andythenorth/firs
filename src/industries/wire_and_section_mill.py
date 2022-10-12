@@ -2,12 +2,11 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="wire_and_section_mill",
-    accept_cargos_with_input_ratios=[("STCB", 4), ("ACID", 2), ("SOAP", 2)],
+    accept_cargos_with_input_ratios=[("STCB", 3), ("SOAP", 1), ("ALUM", 2), ("COPR", 2)],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
         ("STSE", 4),
-        ("STWR", 3),
-        ("ENSP", 1),
+        ("STWR", 4),
     ],  # balance is deliberate, steel sections need to feed wharf, vehicle chain is already well supplied
     prob_in_game="3",
     prob_map_gen="5",
@@ -81,35 +80,30 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_shed_sw_ne_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_shed_se_nw_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_shed_se_nw_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_small_shed_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_small_shed_2",
@@ -117,35 +111,30 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
     smoke_sprites=[sprite_smoke],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_tanks",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_6",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_7",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="wire_and_section_mill_spritelayout_gantry",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 # long products mill uses non-standard layouts where some sprites only used for some orientiations (sw_ne or se_nw)

@@ -14,12 +14,25 @@ industry = IndustrySecondary(
     prob_in_game="7",
     prob_map_gen="8",
     map_colour="166",
-    name="string(STR_IND_FACTORY_3)",
+    name="string(STR_IND_PAINT_FACTORY)",
     nearby_station_name="string(STR_STATION_INDUSTRY_ESTATE_1)",
     fund_cost_multiplier="95",
 )
 
 industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
+
+industry.economy_variations["STEELTOWN"].enabled = True
+industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
+    ("RFPR", 3),
+    ("C2H4", 3),
+    ("CBLK", 2),
+]
+industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
+    ("COAT", 8),
+]
+
+
+
 
 industry.add_tile(
     id="factory_3_tile_1",

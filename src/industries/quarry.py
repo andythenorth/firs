@@ -231,7 +231,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_1,
     building_sprites=[],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_2",
@@ -239,7 +238,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_2,
     building_sprites=[spriteset_pit_conveyor_0],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_4",
@@ -247,7 +245,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_4,
     building_sprites=[],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_5",
@@ -255,7 +252,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_5,
     building_sprites=[spriteset_crane_1, spriteset_pile],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_6",
@@ -263,7 +259,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_6,
     building_sprites=[],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_7",
@@ -271,7 +266,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_7,
     building_sprites=[],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_8",
@@ -279,7 +273,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_8,
     building_sprites=[spriteset_animated_dozer],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_10",
@@ -287,7 +280,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_10,
     building_sprites=[],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_11",
@@ -295,7 +287,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_11,
     building_sprites=[],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_12",
@@ -303,7 +294,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_12,
     building_sprites=[],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_19",
@@ -311,7 +301,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_19,
     building_sprites=[],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_20",
@@ -319,7 +308,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_20,
     building_sprites=[spriteset_pit_conveyor_1],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_22",
@@ -327,7 +315,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_22,
     building_sprites=[spriteset_pit_conveyor_2],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_23",
@@ -335,7 +322,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_23,
     building_sprites=[spriteset_pit_conveyor_3],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_24",
@@ -343,7 +329,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_24,
     building_sprites=[spriteset_pit_conveyor_4],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_39",
@@ -351,7 +336,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_39,
     building_sprites=[spriteset_silo],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_40",
@@ -359,7 +343,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_40,
     building_sprites=[spriteset_conveyor_2],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="quarry_spritelayout_41",
@@ -367,7 +350,6 @@ industry.add_spritelayout(
     ground_overlay=spriteset_41,
     building_sprites=[spriteset_crusher],
     terrain_aware_ground=True,
-    fences=["nw", "ne", "se", "sw"],
 )
 
 

@@ -251,10 +251,10 @@ from industries import iron_ore_mine
 
 iron_ore_mine.industry.register()
 
-"""
+
 from industries import iron_works
 iron_works.industry.register()
-"""
+
 
 from industries import junk_yard
 

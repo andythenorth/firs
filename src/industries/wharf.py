@@ -36,17 +36,16 @@ industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].prod_cargo_types_
 # this is to allow an easy kickstart of ENSP at the wharf, when all other chains are so tightly connected
 industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].accept_cargo_types = [
-    "STSE",
-    "PIPE",
     "CMNT",
-    "LYE_",
+    "GOOD",
+    "SOAP",
+    "POWR",
 ]  # FOOD was tried, but results in more complex cargo flow diagram
 industry.economy_variations["STEELTOWN"].prod_cargo_types_with_multipliers = [
     ("ENSP", 12),
-    ("ZINC", 16),
-    ("POWR", 14),
-    ("COAT", 10),
-    ("SOAP", 10),
+    ("SCMT", 16),
+    ("COCO", 14),
+    ("PLAS", 10),
 ]
 
 industry.add_tile(

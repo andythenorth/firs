@@ -66,7 +66,6 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground_pump,
     ground_overlay=sprite_ground_overlay_pump,
     building_sprites=[sprite_pump],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 spriteset_ground_building = industry.add_spriteset(
@@ -83,7 +82,6 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground_building,
     ground_overlay=sprite_ground_overlay_building,
     building_sprites=[spriteset_building],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 

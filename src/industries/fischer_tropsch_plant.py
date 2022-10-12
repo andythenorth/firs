@@ -17,8 +17,7 @@ industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 
 industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
-    ("PETR", 4),
-    ("RFPR", 2),
+    ("RFPR", 6),
     ("H2__", 2),
 ]
 
