@@ -20,8 +20,7 @@ industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
     ("ALO_", 4),
     ("SCMT", 2),
-    ("SALT", 1),
-    ("COKE", 1),
+    ("COKE", 2),
 ]
 industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
     ("ALUM", 7),

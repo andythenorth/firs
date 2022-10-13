@@ -19,7 +19,8 @@ industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
     ("SULP", 5),
-    ("NITR", 3),  
+    ("N7__", 1),  
+    ("H2__", 2),  
 ]
 industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
     ("ACID", 8),

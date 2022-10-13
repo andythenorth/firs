@@ -16,11 +16,7 @@ industry = IndustryPrimaryExtractive(
 
 # industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
-# exists in Steeltown primarily to give a direct cargo to Bulk Terminal
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations["STEELTOWN"].prod_cargo_types_with_multipliers = [
-    ("SALT", 20),
-]
+
 
 industry.add_tile(
     id="potash_mine_tile_1",

@@ -8,6 +8,7 @@ industry = IndustrySecondary(
         ("PHAC", 2),
         ("NHNO", 2),
     ],
+    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[("FMSP", 8)],
     prob_in_game="3",
     prob_map_gen="5",

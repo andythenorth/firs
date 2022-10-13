@@ -24,9 +24,9 @@ STR_PARAM_DESC_EXPERIMENTAL_FEATURES                                            
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :INCOMPLETE
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :INCOMPLETE
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :INCOMPLETE
-STR_PARAM_VALUE_ECONOMIES_BETTER_LIVING_THROUGH_CHEMISTRY                       :INCOMPLETE
-STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                      :INCOMPLETE
-STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Steeltown +
+STR_PARAM_VALUE_ECONOMIES_BETTER_LIVING_THROUGH_CHEMISTRY                       :INCOMPLETE Chemistry
+STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                      :INCOMPLETE Tropical
+STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Not Just Steeltown
 
 STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG                                   : {BLACK}(supplied)
 STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Produces at maximum rate if {WHITE}any {BLACK}required cargo is supplied.
@@ -59,30 +59,35 @@ STR_CARGO_NAME_CARBON_STEEL                                                     
 STR_CARGO_NAME_CASSAVA                                                          :Cassava
 STR_CARGO_NAME_CAST_IRON                                                        :Cast Iron
 STR_CARGO_NAME_CEMENT                                                           :Cement
-STR_CARGO_NAME_CHEMICALS                                                        :Chemicals
+# more specific petrochemicals
+STR_CARGO_NAME_CHEMICALS                                                        :Refined Oil
 STR_CARGO_NAME_CHLORINE                                                         :Chlorine
 STR_CARGO_NAME_CHROMITE_ORE                                                     :Chromite Ore
 STR_CARGO_NAME_CLAY                                                             :Clay
 STR_CARGO_NAME_CLEANING_AGENTS                                                  :Cleaning Agents
 STR_CARGO_NAME_COFFEE                                                           :Coffee
-STR_CARGO_NAME_COAL_TAR                                                         :Coal Tar
+# no longer just coal
+STR_CARGO_NAME_COAL_TAR                                                         :Tar 
 STR_CARGO_NAME_COKE                                                             :Coke
 STR_CARGO_NAME_COPPER                                                           :Copper
 STR_CARGO_NAME_COPPER_CONCENTRATE                                               :Copper Concentrate
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Edible Oil
 STR_CARGO_NAME_ELECTRICAL_PARTS                                                 :Electrical Parts
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Engineering Supplies
-STR_CARGO_NAME_ETHYLENE                                                         :Ethylene
+# more generic monomer
+STR_CARGO_NAME_ETHYLENE                                                         :Monomer
 STR_CARGO_NAME_EXPLOSIVES                                                       :Explosives
-STR_CARGO_NAME_FERROCHROME                                                      :Ferrochrome
-STR_CARGO_NAME_FIBRES                                                           :Plant Fibres
-STR_CARGO_NAME_FISH                                                             :Fish
+# represents ferrochrome and ferromanganese
+STR_CARGO_NAME_FERROCHROME                                                      :Ferroalloy
+STR_CARGO_NAME_FIBRES                                                           :Fibres
+# Fish is also meat
+STR_CARGO_NAME_FISH                                                             :Fish & Meat
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Farm Supplies
 STR_CARGO_NAME_FERTILISER                                                       :Fertiliser
 STR_CARGO_NAME_FOOD_ADDITIVES                                                   :Food Additives
 STR_CARGO_NAME_FORGINGS_AND_CASTINGS                                            :Forgings & Castings
 STR_CARGO_NAME_FORMIC_ACID                                                      :Formic Acid
-STR_CARGO_NAME_FRUITS                                                           :Fruit
+STR_CARGO_NAME_FRUITS                                                           :Produce
 STR_CARGO_NAME_FURNITURE                                                        :Furniture
 STR_CARGO_NAME_GLASS                                                            :Glass
 STR_CARGO_NAME_HYDROCHLORIC_ACID                                                :Hydrochloric Acid
@@ -104,13 +109,15 @@ STR_CARGO_NAME_NITRATES                                                         
 STR_CARGO_NAME_NITROGEN                                                         :Nitrogen
 STR_CARGO_NAME_NUTS                                                             :Nuts
 STR_CARGO_NAME_OXYGEN                                                           :Oxygen
-STR_CARGO_NAME_PACKAGING                                                        :Packaging
+# more specific packaging
+STR_CARGO_NAME_PACKAGING                                                        :Plastic Parts
 STR_CARGO_NAME_PAINTS_AND_COATINGS                                              :Paints & Coatings
 STR_CARGO_NAME_PEAT                                                             :Peat
 STR_CARGO_NAME_PETROL                                                           :Petroleum Fuels
 STR_CARGO_NAME_PHOSPHATE                                                        :Phosphate
 STR_CARGO_NAME_PHOSPHORIC_ACID                                                  :Phosphoric Acid
-STR_CARGO_NAME_PIG_IRON                                                         :Pig Iron
+# now represents both pig and cast iron
+STR_CARGO_NAME_PIG_IRON                                                         :Iron
 STR_CARGO_NAME_PIPE                                                             :Pipe
 STR_CARGO_NAME_PLASTICS                                                         :Plastics
 STR_CARGO_NAME_POTASH                                                           :Potash
@@ -127,9 +134,11 @@ STR_CARGO_NAME_SLAG                                                             
 STR_CARGO_NAME_SODA_ASH                                                         :Soda Ash
 STR_CARGO_NAME_STAINLESS_STEEL                                                  :Stainless Steel
 STR_CARGO_NAME_STEEL                                                            :Steel
-STR_CARGO_NAME_STEEL_SECTIONS                                                   :Steel Sections
+# Not just steel
+STR_CARGO_NAME_STEEL_SECTIONS                                                   :Metal Fabrications
 STR_CARGO_NAME_STEEL_SHEET                                                      :Steel Sheet
-STR_CARGO_NAME_STEEL_WIRE_ROD                                                   :Steel Wire Rod
+# not just steel
+STR_CARGO_NAME_STEEL_WIRE_ROD                                                   :Metal Wire
 STR_CARGO_NAME_STONE                                                            :Stone
 STR_CARGO_NAME_SUGAR_BEET                                                       :Sugar Beet
 STR_CARGO_NAME_SULPHUR                                                          :Sulphur
@@ -137,7 +146,8 @@ STR_CARGO_NAME_SULPHURIC_ACID                                                   
 STR_CARGO_NAME_TEXTILES                                                         :Textiles
 STR_CARGO_NAME_TIN                                                              :Tin
 STR_CARGO_NAME_TINPLATE                                                         :Tinplate
-STR_CARGO_NAME_TYRES                                                            :Tyres
+# not just tyres, also belts, gaskets etc
+STR_CARGO_NAME_TYRES                                                            :Rubber Parts
 STR_CARGO_NAME_UREA                                                             :Urea
 STR_CARGO_NAME_VEHICLE_BODIES                                                   :Vehicle Bodies
 STR_CARGO_NAME_VEHICLE_ENGINES                                                  :Vehicle Engines
@@ -162,12 +172,12 @@ STR_CARGO_UNIT_CARBON_STEEL                                                     
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} of cassava
 STR_CARGO_UNIT_CAST_IRON                                                        :{WEIGHT} of cast iron
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} of cement
-STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} of chemicals
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} of refined oils
 STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} of chlorine
 STR_CARGO_UNIT_CHROMITE_ORE                                                     :{WEIGHT} of chromite ore
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} of clay
 STR_CARGO_UNIT_CLEANING_AGENTS                                                  :{WEIGHT} of cleaning agents
-STR_CARGO_UNIT_COAL_TAR                                                         :{VOLUME} of coal tar
+STR_CARGO_UNIT_COAL_TAR                                                         :{VOLUME} of tar
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sack{P 0 "" s} of coffee
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} of coke
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} of copper
@@ -175,17 +185,17 @@ STR_CARGO_UNIT_COPPER_CONCENTRATE                                               
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} of edible oil
 STR_CARGO_UNIT_ELECTRICAL_PARTS                                                 :{WEIGHT} of electrical parts
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crate{P 0 "" s} of engineering supplies
-STR_CARGO_UNIT_ETHYLENE                                                         :{VOLUME} of ethylene
+STR_CARGO_UNIT_ETHYLENE                                                         :{VOLUME} of monomer
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} crate{P 0 "" s} of explosives
-STR_CARGO_UNIT_FERROCHROME                                                      :{WEIGHT} of ferrochrome
+STR_CARGO_UNIT_FERROCHROME                                                      :{WEIGHT} of ferroalloys
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} of fertiliser
 STR_CARGO_UNIT_FOOD_ADDITIVES                                                   :{WEIGHT} of food additives
 STR_CARGO_UNIT_FORGINGS_AND_CASTINGS                                            :{WEIGHT} of forgings and castings
 STR_CARGO_UNIT_FORMIC_ACID                                                      :{VOLUME} of formic acid
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bale{P 0 "" s} of plant fibres
-STR_CARGO_UNIT_FISH                                                             :{WEIGHT} of fish
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} of fish & meat
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of farm supplies
-STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} of fruit
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} of produce
 STR_CARGO_UNIT_FURNITURE                                                        :{WEIGHT} of furniture
 STR_CARGO_UNIT_GLASS                                                            :{WEIGHT} of glass
 STR_CARGO_UNIT_HYDROCHLORIC_ACID                                                :{VOLUME} of hydrochloric acid
@@ -207,13 +217,13 @@ STR_CARGO_UNIT_NITRATES                                                         
 STR_CARGO_UNIT_NITROGEN                                                         :{VOLUME} of nitrogen
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} sack{P 0 "" s}  of nuts
 STR_CARGO_UNIT_OXYGEN                                                           :{VOLUME} of oxygen
-STR_CARGO_UNIT_PACKAGING                                                        :{WEIGHT} of packaging
+STR_CARGO_UNIT_PACKAGING                                                        :{WEIGHT} of plastic parts
 STR_CARGO_UNIT_PAINTS_AND_COATINGS                                              :{VOLUME} of paints & coatings
 STR_CARGO_UNIT_PEAT                                                             :{WEIGHT} of peat
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of petroleum fuels
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} of phosphate
 STR_CARGO_UNIT_PHOSPHORIC_ACID                                                  :{VOLUME} of phosphoric acid
-STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} of pig iron
+STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} of iron
 STR_CARGO_UNIT_PIPE                                                             :{WEIGHT} of pipe
 STR_CARGO_UNIT_PLASTICS                                                         :{WEIGHT} of plastics
 STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} of potash
@@ -230,9 +240,9 @@ STR_CARGO_UNIT_SLAG                                                             
 STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} of soda ash
 STR_CARGO_UNIT_STAINLESS_STEEL                                                  :{WEIGHT} of stainless steel
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} of steel
-STR_CARGO_UNIT_STEEL_SECTIONS                                                   :{WEIGHT} of steel sections
+STR_CARGO_UNIT_STEEL_SECTIONS                                                   :{WEIGHT} of metal fabrications
 STR_CARGO_UNIT_STEEL_SHEET                                                      :{WEIGHT} of steel sheet
-STR_CARGO_UNIT_STEEL_WIRE_ROD                                                   :{WEIGHT} of steel wire rod
+STR_CARGO_UNIT_STEEL_WIRE_ROD                                                   :{WEIGHT} of metal wire
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} of stone
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} of sugar beet
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} of sulphur
@@ -240,7 +250,7 @@ STR_CARGO_UNIT_SULPHURIC_ACID                                                   
 STR_CARGO_UNIT_TEXTILES                                                         :{WEIGHT} of textiles
 STR_CARGO_UNIT_TIN                                                              :{WEIGHT} of tin
 STR_CARGO_UNIT_TINPLATE                                                         :{WEIGHT} of tinplate
-STR_CARGO_UNIT_TYRES                                                            :{WEIGHT} of tyres
+STR_CARGO_UNIT_TYRES                                                            :{WEIGHT} of rubber parts
 STR_CARGO_UNIT_UREA                                                             :{WEIGHT} of urea
 STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} of vehicle bodies
 STR_CARGO_UNIT_VEHICLE_ENGINES                                                  :{WEIGHT} of vehicle engines
@@ -266,26 +276,26 @@ STR_CID_CARBON_STEEL                                                            
 STR_CID_CASSAVA                                                                 :{TINYFONT}CA
 STR_CID_CAST_IRON                                                               :{TINYFONT}CI
 STR_CID_CEMENT                                                                  :{TINYFONT}CE
-STR_CID_CHEMICALS                                                               :{TINYFONT}CH
+STR_CID_CHEMICALS                                                               :{TINYFONT}RO
 STR_CID_CHROMITE_ORE                                                            :{TINYFONT}CO
 STR_CID_CHLORINE                                                                :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}CY
 STR_CID_CLEANING_AGENTS                                                         :{TINYFONT}CN
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
-STR_CID_COAL_TAR                                                                :{TINYFONT}CT
+STR_CID_COAL_TAR                                                                :{TINYFONT}TR
 STR_CID_COKE                                                                    :{TINYFONT}CK
 STR_CID_COPPER                                                                  :{TINYFONT}CR
 STR_CID_COPPER_CONCENTRATE                                                      :{TINYFONT}CC
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
 STR_CID_ELECTRICAL_PARTS                                                        :{TINYFONT}EP
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
-STR_CID_ETHYLENE                                                                :{TINYFONT}EY
+STR_CID_ETHYLENE                                                                :{TINYFONT}MM
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}EX
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
-STR_CID_FERROCHROME                                                             :{TINYFONT}FC
+STR_CID_FERROCHROME                                                             :{TINYFONT}FA
 STR_CID_FERTILISER                                                              :{TINYFONT}FL
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
-STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_FISH                                                                    :{TINYFONT}FM
 STR_CID_FOOD_ADDITIVES                                                          :{TINYFONT}FV
 STR_CID_FORMIC_ACID                                                             :{TINYFONT}FA
 STR_CID_FORGINGS_AND_CASTINGS                                                   :{TINYFONT}FO
@@ -314,7 +324,7 @@ STR_CID_PACKAGING                                                               
 STR_CID_PAINTS_AND_COATINGS                                                     :{TINYFONT}PC
 STR_CID_PEAT                                                                    :{TINYFONT}PE
 STR_CID_PETROL                                                                  :{TINYFONT}PT
-STR_CID_PIG_IRON                                                                :{TINYFONT}PI
+STR_CID_PIG_IRON                                                                :{TINYFONT}FE
 STR_CID_PIPE                                                                    :{TINYFONT}PP
 STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
 STR_CID_PHOSPHORIC_ACID                                                         :{TINYFONT}PA
@@ -337,13 +347,13 @@ STR_CID_STONE                                                                   
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
 STR_CID_SULPHUR                                                                 :{TINYFONT}SU
 STR_CID_SULPHURIC_ACID                                                          :{TINYFONT}SD
-STR_CID_STEEL_SECTIONS                                                          :{TINYFONT}SE
+STR_CID_STEEL_SECTIONS                                                          :{TINYFONT}MF
 STR_CID_STEEL_SHEET                                                             :{TINYFONT}SH
-STR_CID_STEEL_WIRE_ROD                                                          :{TINYFONT}SW
+STR_CID_STEEL_WIRE_ROD                                                          :{TINYFONT}MW
 STR_CID_TEXTILES                                                                :{TINYFONT}TX
 STR_CID_TIN                                                                     :{TINYFONT}TI
 STR_CID_TINPLATE                                                                :{TINYFONT}TP
-STR_CID_TYRES                                                                   :{TINYFONT}TY
+STR_CID_TYRES                                                                   :{TINYFONT}RP
 STR_CID_UREA                                                                    :{TINYFONT}UR
 STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}VB
 STR_CID_VEHICLE_ENGINES                                                         :{TINYFONT}VE
@@ -384,7 +394,7 @@ STR_IND_BODY_PLANT                                                              
 STR_IND_BREWERY                                                                 :Brewery
 STR_IND_CIDER_MILL                                                              :Cider Mill
 STR_IND_BRICK_WORKS                                                             :Brick Works
-STR_IND_BUILDERS_YARD                                                           :Builders Yard
+STR_IND_BUILDERS_YARD                                                           :Construction Plant
 STR_IND_BULK_TERMINAL                                                           :Bulk Terminal
 STR_IND_CANNERY                                                                 :Cannery
 STR_IND_CARBON_BLACK_PLANT                                                      :Carbon Black Plant
@@ -413,7 +423,7 @@ STR_IND_FERTILISER_PLANT                                                        
 STR_IND_FACTORY_1                                                               :Factory 1
 STR_IND_FACTORY_2                                                               :Factory 2
 STR_IND_FACTORY_3                                                               :Factory 3
-STR_IND_FISCHER_TROPSCH_PLANT                                                   :Fischer-Tropsch Plant
+STR_IND_FISCHER_TROPSCH_PLANT                                                   :Coal Liquefaction Plant
 STR_IND_FISH_FARM                                                               :Fish Farm
 STR_IND_FISHING_GROUND                                                          :Fishing Grounds
 STR_IND_FISHING_HARBOUR                                                         :Fishing Harbour
@@ -472,9 +482,9 @@ STR_IND_SOLVAY_PLANT                                                            
 # we use 'integrated_steel_mill' in code to avoid confusion with Steeltown mills, but it's easier to just use 'Steel Mill' for name that players see
 STR_IND_INTEGRATED_STEEL_MILL                                                   :Steel Mill
 STR_IND_SHEET_AND_PIPE_MILL                                                     :Sheet and Pipe Mill
-STR_IND_STOCKYARD                                                               :Stockyard
+STR_IND_STOCKYARD                                                               :Abattoir
 STR_IND_SUGAR_REFINERY                                                          :Sugar Refinery
-STR_IND_SULPHURIC_ACID_PLANT                                                    :Sulphuric Acid Plant
+STR_IND_SULPHURIC_ACID_PLANT                                                    :Acid Plant
 STR_IND_SUPPLY_YARD                                                             :Supply Yard
 STR_IND_SYNTHETIC_RUBBER_PLANT                                                  :Synthetic Rubber Plant
 STR_IND_TEXTILE_MILL                                                            :Textile Mill

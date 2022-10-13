@@ -136,7 +136,6 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_silos],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_large_shed",
@@ -144,56 +143,48 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_large_shed],
     smoke_sprites=[sprite_smoke_1],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_grinding_tower",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_grinding_tower],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_conveyors_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_conveyors_1],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_conveyors_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_conveyors_2, spriteset_crane],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_slag_dump_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_slag_dump_1],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_slag_dump_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_slag_dump_2],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_slag_dump_dozer",
     ground_sprite=spriteset_animated_ground,
     ground_overlay=spriteset_animated_ground_overlay,
     building_sprites=[spriteset_animated_slag_dump_1, spriteset_animated_dozer],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_office",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_office],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 industry.add_industry_layout(

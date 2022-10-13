@@ -1,14 +1,18 @@
-from industry import IndustryTertiary, TileLocationChecks
+from industry import IndustrySecondary, TileLocationChecks
 
-industry = IndustryTertiary(
+industry = IndustrySecondary(
     id="builders_yard",
-    accept_cargo_types=["BDMT"],
-    prod_cargo_types=[],
+    accept_cargos_with_input_ratios=[
+        ("CMNT", 2),
+        ("STSE", 2),
+        ("STWR", 2),
+        ("GLAS", 2),
+    ],
+    prod_cargo_types_with_output_ratios=[("GOOD", 8)],
     prob_in_game="12",
     prob_map_gen="18",
     prod_multiplier="[0, 0]",
     map_colour="169",
-    life_type="IND_LIFE_TYPE_BLACK_HOLE",
     prospect_chance="0.75",
     name="string(STR_IND_BUILDERS_YARD)",
     nearby_station_name="string(STR_STATION_MERCHANTS_LANE)",
@@ -20,7 +24,6 @@ industry.economy_variations['BETTER_LIVING_THROUGH_CHEMISTRY'].enabled = True
 industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].prob_in_game = "6"
 industry.economy_variations["STEELTOWN"].prob_map_gen = "9"
-industry.economy_variations["STEELTOWN"].accept_cargo_types = ["CMNT", "STSE", "STWR", "SAND", "LIME", "GLAS"]
 
 industry.economy_variations["IN_A_HOT_COUNTRY"].enabled = True
 industry.economy_variations["IN_A_HOT_COUNTRY"].prob_map_gen = "14"
@@ -56,7 +59,6 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[stacks_1],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="builders_yard_spritelayout_2",
@@ -80,10 +82,15 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="builders_yard_industry_layout_1",
     layout=[
-        (0, 0, "builders_yard_tile_1", "builders_yard_spritelayout_3"),
-        (0, 1, "builders_yard_tile_1", "builders_yard_spritelayout_4"),
-        (1, 0, "builders_yard_tile_1", "builders_yard_spritelayout_2"),
+        (0, 0, "builders_yard_tile_1", "builders_yard_spritelayout_2"),
+        (0, 1, "builders_yard_tile_1", "builders_yard_spritelayout_2"),
+        (0, 2, "builders_yard_tile_1", "builders_yard_spritelayout_1"),
+        (1, 0, "builders_yard_tile_1", "builders_yard_spritelayout_3"),
         (1, 1, "builders_yard_tile_1", "builders_yard_spritelayout_1"),
+        (1, 2, "builders_yard_tile_1", "builders_yard_spritelayout_4"),
+        (2, 0, "builders_yard_tile_1", "builders_yard_spritelayout_3"),
+        (2, 1, "builders_yard_tile_1", "builders_yard_spritelayout_4"),
+        (2, 2, "builders_yard_tile_1", "builders_yard_spritelayout_1"),
     ],
 )
 industry.add_industry_layout(
@@ -91,8 +98,13 @@ industry.add_industry_layout(
     layout=[
         (0, 0, "builders_yard_tile_1", "builders_yard_spritelayout_2"),
         (0, 1, "builders_yard_tile_1", "builders_yard_spritelayout_3"),
-        (1, 0, "builders_yard_tile_1", "builders_yard_spritelayout_4"),
+        (0, 2, "builders_yard_tile_1", "builders_yard_spritelayout_1"),
+        (1, 0, "builders_yard_tile_1", "builders_yard_spritelayout_2"),
         (1, 1, "builders_yard_tile_1", "builders_yard_spritelayout_1"),
+        (1, 2, "builders_yard_tile_1", "builders_yard_spritelayout_4"),
+        (2, 0, "builders_yard_tile_1", "builders_yard_spritelayout_4"),
+        (2, 1, "builders_yard_tile_1", "builders_yard_spritelayout_3"),
+        (2, 2, "builders_yard_tile_1", "builders_yard_spritelayout_1"),
     ],
 )
 industry.add_industry_layout(

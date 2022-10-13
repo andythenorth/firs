@@ -20,7 +20,7 @@ industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
     ("NH3_", 4),
     ("ACID", 2),
-    ("MNSP", 1),
+    ("PLAS", 1),
     ("PETR", 1),
 ]
 industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [

@@ -39,7 +39,8 @@ industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
     ("SAND", 4),
     ("SASH", 2),
-    ("LIME", 2),
+    ("QLME", 1),
+    ("PLAS", 1),
 ]
 industry.economy_variations[
     "STEELTOWN"
@@ -99,14 +100,12 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay_1,
     building_sprites=[spriteset_1],
-    fences=["nw", "ne", "se"],
 )
 industry.add_spritelayout(
     id="glass_works_spritelayout_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay_2,
     building_sprites=[spriteset_2, spriteset_4],
-    fences=["nw", "ne", "se"],
 )
 industry.add_spritelayout(
     id="glass_works_spritelayout_3",
@@ -114,14 +113,12 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay_3,
     building_sprites=[spriteset_3],
     smoke_sprites=[sprite_smoke],
-    fences=["nw", "ne", "sw"],
 )
 industry.add_spritelayout(
     id="glass_works_spritelayout_4",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay_4,
     building_sprites=[],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 industry.add_industry_layout(

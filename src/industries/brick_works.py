@@ -14,10 +14,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="120",
 )
 
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations[
-    "STEELTOWN"
-].prob_in_game = "1"  # low chance of build during gameplay
+
 
 industry.add_tile(
     id="brick_works_tile_1",

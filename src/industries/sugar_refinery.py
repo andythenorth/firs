@@ -29,7 +29,9 @@ industry.add_tile(
 
 industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
-    ("GRAI", 8),
+    ("GRAI", 4),
+    ("FRUT", 2),
+    ("SALT", 2),
 ]
 
 spriteset_ground = industry.add_spriteset(type="concrete")

@@ -34,8 +34,8 @@ industry.economy_variations["STEELTOWN"].enabled = True
 industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
     ("STSE", 2),
     ("FISH", 2),
-    ("MNSP", 2),
-    ("GRAI", 2),
+    ("SALT", 2),
+    ("FRUT", 2),
 ]
 
 industry.add_tile(
