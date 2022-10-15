@@ -155,7 +155,6 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_large_building],
-    smoke_sprites=[sprite_smoke_2, sprite_smoke_3, sprite_smoke_4, sprite_smoke_5],
 )
 industry.add_spritelayout(
     id="chlor_alkali_plant_spritelayout_fat_chimney",
