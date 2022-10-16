@@ -47,19 +47,19 @@ spriteset_ground = industry.add_spriteset(
 )
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
-    sprites=[(10, 10, 64, 64, -31, -34)],
+    sprites=[(10, 10, 64, 101, -31, -71)],
 )
 spriteset_2 = industry.add_spriteset(
-    sprites=[(80, 10, 64, 64, -31, -33)],
+    sprites=[(80, 10, 64, 101, -31, -70)],
 )
 spriteset_3 = industry.add_spriteset(
-    sprites=[(150, 10, 64, 64, -31, -33)],
+    sprites=[(150, 10, 64, 101, -31, -70)],
 )
 spriteset_4 = industry.add_spriteset(
-    sprites=[(220, 10, 64, 64, -31, -33)],
+    sprites=[(220, 10, 64, 101, -31, -70)],
 )
 spriteset_5 = industry.add_spriteset(
-    sprites=[(290, 10, 64, 64, -31, -33)],
+    sprites=[(290, 10, 64, 101, -31, -70)],
 )
 spriteset_6 = industry.add_spriteset(
     sprites=[(360, 10, 64, 64, -31, -33)],
@@ -81,12 +81,6 @@ spriteset_11 = industry.add_spriteset(
 )
 spriteset_12 = industry.add_spriteset(
     sprites=[(500, 80, 64, 31, -31, -10)],
-)
-spriteset_13 = industry.add_spriteset(
-    sprites=[(570, 80, 64, 31, -31, 0)],
-)
-spriteset_14 = industry.add_spriteset(
-    sprites=[(640, 80, 64, 31, -31, 0)],
 )
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type="white_smoke_small",
@@ -142,11 +136,11 @@ industry.add_spritelayout(
     add_to_object_num=2,
 )
 industry.add_spritelayout(
-    id="strip_mill_spritelayout_open_shed_pipes",
+    id="strip_mill_spritelayout_open_shed_coils",
     tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_7],
+    building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=5,
 )
@@ -185,20 +179,20 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="strip_mill_spritelayout_pipe_stack_sw_ne",
+    id="strip_mill_spritelayout_coils_sw_ne",
     tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_13],
+    building_sprites=[spriteset_10],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=7,
 )
 industry.add_spritelayout(
-    id="strip_mill_spritelayout_pipe_stack_se_nw",
+    id="strip_mill_spritelayout_coils_se_nw",
     tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_14],
+    building_sprites=[spriteset_11],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=8,
 )
@@ -245,7 +239,7 @@ industry.add_industry_layout(
         (
             1,
             2,
-            "strip_mill_spritelayout_pipe_stack_sw_ne",
+            "strip_mill_spritelayout_coils_sw_ne",
         ),
         (
             2,
@@ -285,7 +279,7 @@ industry.add_industry_layout(
         (
             4,
             1,
-            "strip_mill_spritelayout_open_shed_pipes",
+            "strip_mill_spritelayout_open_shed_coils",
         ),
         (
             4,
@@ -296,12 +290,12 @@ industry.add_industry_layout(
         (
             5,
             1,
-            "strip_mill_spritelayout_open_shed_pipes",
+            "strip_mill_spritelayout_open_shed_coils",
         ),
         (
             5,
             2,
-            "strip_mill_spritelayout_pipe_stack_sw_ne",
+            "strip_mill_spritelayout_coils_sw_ne",
         ),
     ],
 )
@@ -357,12 +351,12 @@ industry.add_industry_layout(
         (
             1,
             4,
-            "strip_mill_spritelayout_open_shed_pipes",
+            "strip_mill_spritelayout_open_shed_coils",
         ),
         (
             1,
             5,
-            "strip_mill_spritelayout_open_shed_pipes",
+            "strip_mill_spritelayout_open_shed_coils",
         ),
         (
             2,
@@ -372,7 +366,7 @@ industry.add_industry_layout(
         (
             2,
             1,
-            "strip_mill_spritelayout_pipe_stack_se_nw",
+            "strip_mill_spritelayout_coils_se_nw",
         ),
         (
             2,
@@ -392,7 +386,7 @@ industry.add_industry_layout(
         (
             2,
             5,
-            "strip_mill_spritelayout_pipe_stack_se_nw",
+            "strip_mill_spritelayout_coils_se_nw",
         ),
     ],
 )
