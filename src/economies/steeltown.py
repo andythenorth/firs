@@ -71,8 +71,6 @@ economy = Economy(
         "vehicle_parts",
         "welding_consumables",
         "zinc",
-        # these were added to test, and need alphabetised, but that breaks my savegame
-        # cabbage
     ],
     cargoflow_graph_tuning={
         # also any industries with  will be automatically added to wormhold_industries
