@@ -46,7 +46,7 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(
-    type="cobble",
+    type="concrete",
 )
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
@@ -56,16 +56,16 @@ spriteset_2 = industry.add_spriteset(
     sprites=[(80, 60, 64, 70, -31, -39)],
 )
 spriteset_3 = industry.add_spriteset(
-    sprites=[(150, 60, 64, 51, -31, -20)],
+    sprites=[(150, 60, 64, 55, -31, -24)],
 )
 spriteset_4 = industry.add_spriteset(
-    sprites=[(220, 60, 64, 51, -31, -20)],
+    sprites=[(220, 60, 64, 55, -31, -24)],
 )
 spriteset_5 = industry.add_spriteset(
-    sprites=[(290, 60, 64, 51, -31, -20)],
+    sprites=[(290, 60, 64, 55, -31, -24)],
 )
 spriteset_6 = industry.add_spriteset(
-    sprites=[(360, 60, 64, 31, -31, 0)],
+    sprites=[(360, 60, 64, 55, -31, -24)],
 )
 spriteset_7 = industry.add_spriteset(
     sprites=[(430, 60, 64, 31, -31, 0)],
@@ -83,49 +83,42 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
     smoke_sprites=[sprite_smoke],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="factory_3_spritelayout_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="factory_3_spritelayout_3",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
-    fences=["nw", "ne", "se"],
 )
 industry.add_spritelayout(
     id="factory_3_spritelayout_4",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    fences=["nw", "ne", "se"],
 )
 industry.add_spritelayout(
     id="factory_3_spritelayout_5",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
-    fences=["nw", "ne", "se"],
 )
 industry.add_spritelayout(
     id="factory_3_spritelayout_6",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="factory_3_spritelayout_7",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
-    fences=["nw", "ne", "se", "sw"],
 )
 
 industry.add_industry_layout(

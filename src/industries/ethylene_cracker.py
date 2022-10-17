@@ -85,54 +85,7 @@ sprite_smoke_1 = industry.add_smoke_sprite(
     yoffset=0,
     zoffset=81,
 )
-sprite_smoke_2 = industry.add_smoke_sprite(
-    smoke_type="white_smoke_small",
-    xoffset=6,
-    yoffset=-1,
-    zoffset=45,
-)
-sprite_smoke_3 = industry.add_smoke_sprite(
-    smoke_type="white_smoke_small",
-    xoffset=6,
-    yoffset=3,
-    zoffset=45,
-)
-sprite_smoke_4 = industry.add_smoke_sprite(
-    smoke_type="white_smoke_small",
-    xoffset=2,
-    yoffset=-1,
-    zoffset=45,
-)
-sprite_smoke_5 = industry.add_smoke_sprite(
-    smoke_type="white_smoke_small",
-    xoffset=2,
-    yoffset=3,
-    zoffset=45,
-)
-sprite_smoke_6 = industry.add_smoke_sprite(
-    smoke_type="white_smoke_small",
-    xoffset=6,
-    yoffset=0,
-    zoffset=60,
-)
-sprite_smoke_7 = industry.add_smoke_sprite(
-    smoke_type="white_smoke_small",
-    xoffset=6,
-    yoffset=3,
-    zoffset=60,
-)
-sprite_smoke_8 = industry.add_smoke_sprite(
-    smoke_type="white_smoke_small",
-    xoffset=3,
-    yoffset=0,
-    zoffset=60,
-)
-sprite_smoke_9 = industry.add_smoke_sprite(
-    smoke_type="white_smoke_small",
-    xoffset=3,
-    yoffset=3,
-    zoffset=60,
-)
+
 industry.add_spritelayout(
     id="ethylene_cracker_spritelayout_horizontal_tanks",
     ground_sprite=spriteset_ground,
@@ -157,14 +110,12 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_large_building],
-    smoke_sprites=[sprite_smoke_2, sprite_smoke_3, sprite_smoke_4, sprite_smoke_5],
 )
 industry.add_spritelayout(
     id="ethylene_cracker_spritelayout_fat_chimney",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_fat_chimney],
-    smoke_sprites=[sprite_smoke_6, sprite_smoke_7, sprite_smoke_8, sprite_smoke_9],
 )
 industry.add_spritelayout(
     id="ethylene_cracker_spritelayout_spherical_tanks",

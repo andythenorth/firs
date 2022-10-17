@@ -28,40 +28,52 @@ industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
 
 industry.add_tile(
     id="polyethylene_plant_tile_1",
+    animation_length=7,
+    animation_looping=True,
+    animation_speed=3,
     location_checks=TileLocationChecks(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
 )
 
-spriteset_ground = industry.add_spriteset(type="concrete")
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
+spriteset_ground = industry.add_spriteset(
+    type="concrete",
+)
+spriteset_ground_overlay = industry.add_spriteset(
+    type="empty",
+)
+
 spriteset_1 = industry.add_spriteset(
-    sprites=[(10, 10, 64, 62, -31, -31)],
+    sprites=[(80, 10, 64, 114, -31, -88)],
 )
 spriteset_2 = industry.add_spriteset(
-    sprites=[(80, 10, 64, 62, -31, -31)],
+    sprites=[(150, 10, 64, 114, -31, -83)],
 )
 spriteset_3 = industry.add_spriteset(
-    sprites=[(150, 10, 64, 55, -31, -24)],
+    sprites=[(220, 10, 64, 114, -31, -83)],
 )
 spriteset_4 = industry.add_spriteset(
-    sprites=[(220, 10, 64, 55, -31, -24)],
+    sprites=[(290, 10, 64, 114, -31, -83)],
 )
 spriteset_5 = industry.add_spriteset(
-    sprites=[(290, 10, 64, 55, -31, -24)],
+    sprites=[(360, 10, 64, 66, -31, -35)],
 )
 spriteset_6 = industry.add_spriteset(
-    sprites=[(360, 10, 64, 87, -31, -56)],
+    sprites=[(430, 10, 64, 66, -31, -35)],
 )
 spriteset_7 = industry.add_spriteset(
-    sprites=[(430, 10, 64, 87, -31, -56)],
+    sprites=[(500, 10, 64, 66, -31, -35)],
 )
 spriteset_8 = industry.add_spriteset(
-    sprites=[(500, 10, 64, 87, -31, -56)],
+    sprites=[(570, 10, 64, 66, -31, -35)],
 )
 spriteset_9 = industry.add_spriteset(
-    sprites=[(570, 10, 64, 55, -31, -24)],
+    sprites=[(640, 10, 64, 66, -31, -35)],
 )
+spriteset_10 = industry.add_spriteset(
+    sprites=[(710, 10, 64, 66, -31, -35)],
+)
+
 
 industry.add_spritelayout(
     id="polyethylene_plant_spritelayout_1",
@@ -92,12 +104,14 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
+
 )
 industry.add_spritelayout(
     id="polyethylene_plant_spritelayout_6",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
+
 )
 industry.add_spritelayout(
     id="polyethylene_plant_spritelayout_7",
@@ -121,63 +135,132 @@ industry.add_spritelayout(
     id="polyethylene_plant_spritelayout_10",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_10],
+)
+industry.add_spritelayout(
+    id="polyethylene_plant_spritelayout_concrete",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
 )
 
 industry.add_industry_layout(
     id="polyethylene_plant_industry_layout_1",
     layout=[
-        (0, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_2"),
-        (0, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_1"),
-        (0, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_10"),
-        (1, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_2"),
-        (1, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_1"),
-        (1, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_10"),
-        (2, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_10"),
-        (2, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_7"),
-        (2, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_9"),
-        (3, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_8"),
-        (3, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_6"),
-        (3, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_10"),
-        (4, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_5"),
-        (4, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_4"),
-        (4, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_3"),
+        (0, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_1"),
+        (0, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_4"),
+        (0, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_8"),
+        (1, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_6"),
+        (1, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_3"),
+        (1, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_9"),
+        (2, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_5"),
+        (2, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_2"),
+        (2, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_7"),
+        (3, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_10"),
+        (3, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_concrete"),
+        (3, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_7"),
     ],
 )
 industry.add_industry_layout(
     id="polyethylene_plant_industry_layout_2",
     layout=[
-        (0, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_8"),
-        (0, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_7"),
-        (0, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_9"),
-        (1, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_8"),
-        (1, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_6"),
-        (1, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_10"),
-        (2, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_5"),
-        (2, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_4"),
-        (2, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_3"),
+        (0, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_1"),
+        (0, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_6"),
+        (1, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_4"),
+        (1, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_5"),
+        (2, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_3"),
+        (2, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_10"),
         (3, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_2"),
-        (3, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_1"),
-        (3, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_10"),
+        (3, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_7"),
+        (4, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_8"),
+        (4, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_9"),
     ],
 )
 industry.add_industry_layout(
     id="polyethylene_plant_industry_layout_3",
     layout=[
-        (0, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_2"),
+        (0, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_4"),
+        (1, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_8"),
+        (1, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_3"),
+        (1, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_7"),
+        (1, 3, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_6"),
+        (2, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_9"),
+        (2, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_2"),
+        (2, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_1"),
+        (2, 3, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_5"),
+    ],
+)
+industry.add_industry_layout(
+    id="polyethylene_plant_industry_layout_4",
+    layout=[
+        (0, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_4"),
+        (1, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_1"),
+        (1, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_3"),
+        (1, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_6"),
+        (1, 3, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_8"),
+        (2, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_7"),
+        (2, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_2"),
+        (2, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_5"),
+        (2, 3, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_9"),
+    ],
+)
+industry.add_industry_layout(
+    id="polyethylene_plant_industry_layout_5",
+    layout=[
+        (0, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_4"),
+        (0, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_7"),
+        (1, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_3"),
+        (1, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_7"),
+        (2, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_2"),
+        (2, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_6"),
+        (3, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_1"),
+        (3, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_5"),
+        (4, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_8"),
+        (4, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_6"),
+        (5, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_8"),
+        (5, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_5"),
+        (6, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_9"),
+        (6, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_10"),
+    ],
+)
+industry.add_industry_layout(
+    id="polyethylene_plant_industry_layout_6",
+    layout=[
+        (0, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_4"),
+        (0, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_8"),
+        (0, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_8"),
+        (1, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_3"),
+        (1, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_6"),
+        (1, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_6"),
+        (2, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_2"),
+        (2, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_5"),
+        (2, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_5"),
+        (3, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_1"),
+        (3, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_10"),
+        (3, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_concrete"),
+        (4, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_7"),
+        (4, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_7"),
+        (4, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_9"),
+    ],
+)
+industry.add_industry_layout(
+    id="polyethylene_plant_industry_layout_7",
+    layout=[
+        (0, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_4"),
         (0, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_1"),
-        (0, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_10"),
-        (0, 3, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_7"),
-        (0, 4, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_9"),
-        (1, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_2"),
-        (1, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_1"),
+        (0, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_8"),
+        (0, 3, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_10"),
+        (1, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_3"),
+        (1, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_6"),
         (1, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_8"),
         (1, 3, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_6"),
-        (1, 4, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_10"),
         (2, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_2"),
-        (2, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_1"),
-        (2, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_5"),
-        (2, 3, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_4"),
-        (2, 4, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_3"),
+        (2, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_5"),
+        (2, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_9"),
+        (2, 3, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_5"),
+        (3, 0, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_7"),
+        (3, 1, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_7"),
+        (3, 2, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_9"),
+        (3, 3, "polyethylene_plant_tile_1", "polyethylene_plant_spritelayout_10"),
     ],
 )

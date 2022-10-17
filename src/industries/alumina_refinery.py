@@ -33,7 +33,7 @@ industry.add_tile(
 # spriteset_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
 
 spriteset_ground = industry.add_spriteset(
-    type='concrete',
+    type='dirty_concrete',
 )
 
 spriteset_ground_overlay = industry.add_spriteset(

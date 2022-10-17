@@ -29,7 +29,7 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(
-    type="cobble",
+    type="dirty_concrete",
 )
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
@@ -39,13 +39,13 @@ spriteset_2 = industry.add_spriteset(
     sprites=[(80, 60, 64, 70, -31, -39)],
 )
 spriteset_3 = industry.add_spriteset(
-    sprites=[(150, 60, 64, 51, -31, -20)],
+    sprites=[(150, 60, 64, 70, -31, -39)],
 )
 spriteset_4 = industry.add_spriteset(
-    sprites=[(220, 60, 64, 51, -31, -20)],
+    sprites=[(220, 60, 64, 70, -31, -39)],
 )
 spriteset_5 = industry.add_spriteset(
-    sprites=[(290, 60, 64, 51, -31, -20)],
+    sprites=[(290, 60, 64, 70, -31, -39)],
 )
 spriteset_6 = industry.add_spriteset(
     sprites=[(360, 60, 64, 31, -31, 0)],
@@ -133,13 +133,13 @@ industry.add_industry_layout(
         (1, 1, "machine_works_tile_1", "machine_works_spritelayout_2"),
         (1, 2, "machine_works_tile_1", "machine_works_spritelayout_3"),
         (1, 3, "machine_works_tile_1", "machine_works_spritelayout_3"),
-        (2, 0, "machine_works_tile_1", "machine_works_spritelayout_4"),
-        (2, 1, "machine_works_tile_1", "machine_works_spritelayout_7"),
-        (2, 2, "machine_works_tile_1", "machine_works_spritelayout_6"),
-        (2, 3, "machine_works_tile_1", "machine_works_spritelayout_6"),
-        (3, 0, "machine_works_tile_1", "machine_works_spritelayout_4"),
+        (2, 0, "machine_works_tile_1", "machine_works_spritelayout_7"),
+        (2, 1, "machine_works_tile_1", "machine_works_spritelayout_4"),
+        (2, 2, "machine_works_tile_1", "machine_works_spritelayout_4"),
+        (2, 3, "machine_works_tile_1", "machine_works_spritelayout_5"),
+        (3, 0, "machine_works_tile_1", "machine_works_spritelayout_7"),
         (3, 1, "machine_works_tile_1", "machine_works_spritelayout_5"),
-        (3, 2, "machine_works_tile_1", "machine_works_spritelayout_4"),
-        (3, 3, "machine_works_tile_1", "machine_works_spritelayout_3"),
+        (3, 2, "machine_works_tile_1", "machine_works_spritelayout_7"),
+        (3, 3, "machine_works_tile_1", "machine_works_spritelayout_6"),
     ],
 )
