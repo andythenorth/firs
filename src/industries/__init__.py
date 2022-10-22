@@ -190,6 +190,10 @@ from industries import glass_works
 
 glass_works.industry.register()
 
+from industries import grain_elevator
+
+grain_elevator.industry.register()
+
 from industries import hardware_store
 
 hardware_store.industry.register()
@@ -332,9 +336,11 @@ from industries import recycling_plant
 recycling_plant.industry.register()
 """
 
+"""
 from industries import rubber_plantation
 
 rubber_plantation.industry.register()
+"""
 
 from industries import sawmill
 

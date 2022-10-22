@@ -22,7 +22,7 @@ def exe_cmd(cmd):
         lines = output.splitlines()
         return lines
     except:
-        return ["- Andybiotic Mod."]
+        return ["- 0.1"]
 
 
 def get_revision():

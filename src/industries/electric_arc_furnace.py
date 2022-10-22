@@ -25,6 +25,15 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
+    accept_cargos_with_input_ratios=[
+        ("IRON", 4),
+        ("QLME", 2),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("STCB", 4),
+        ("SLAG", 2),
+    ],
+
 )
 
 industry.add_tile(

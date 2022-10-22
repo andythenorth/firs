@@ -24,6 +24,8 @@ economy = Economy(
         "petrol",
         "pig_iron",
         "plastics",
+        "potash",
+        "phosphate",
         "quicklime",
         "scrap_metal",
         "slag",
@@ -38,7 +40,8 @@ economy = Economy(
         "coke",
         "grain",
         "fertiliser",
-        "steel_sheet"
+        "steel_sheet",
+        "carbon_steel",  
     ],
     # as of March 2021 this cargoflow tuning is a temporary patch up, might need more work
     cargoflow_graph_tuning={
