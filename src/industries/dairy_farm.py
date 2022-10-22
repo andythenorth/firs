@@ -23,10 +23,6 @@ industry = IndustryPrimaryOrganic(
     pollution_and_squalor_factor=1,
 )
 
-industry.enable_in_economy(
-    "BASIC_TEMPERATE",
-)
-
 industry.add_tile(
     id="dairy_farm_tile_1",
     location_checks=TileLocationChecks(

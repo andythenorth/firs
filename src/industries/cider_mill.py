@@ -21,13 +21,6 @@ industry = IndustrySecondary(
     provides_snow=True,
 )
 
-industry.enable_in_economy(
-    "BASIC_TEMPERATE",
-    accept_cargos_with_input_ratios=[
-        ("FRUT", 6),
-    ],
-)
-
 industry.add_tile(
     id="cider_mill_tile_1",
     animation_length=6,

@@ -4,26 +4,6 @@ registered_economies = []
 # economies have a numeric ID which maps parameter values and avoids breaking savegames when this list changes
 # !! ^ that doesn't appear to work, action 14 param doesn't seem to be able to abstract name value from name orde??
 
-from economies import basic_temperate
+from economies import plains_trains_and_steel
 
-basic_temperate.economy.register()
-
-from economies import basic_arctic
-
-basic_arctic.economy.register()
-
-from economies import basic_tropic
-
-basic_tropic.economy.register()
-
-from economies import steeltown
-
-steeltown.economy.register()
-
-from economies import in_a_hot_country
-
-in_a_hot_country.economy.register()
-
-from economies import andybiotic_temperate
-
-andybiotic_temperate.economy.register()
+plains_trains_and_steel.economy.register()

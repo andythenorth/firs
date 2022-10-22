@@ -24,16 +24,7 @@ industry = IndustrySecondary(
 )
 
 industry.enable_in_economy(
-    "IN_A_HOT_COUNTRY",
-    accept_cargos_with_input_ratios=[
-        ("PETR", 2),
-        ("CLAY", 2),
-        ("GRVL", 4),
-    ],
-    prod_cargo_types_with_output_ratios=[("BDMT", 8)],
-)
-industry.enable_in_economy(
-    "ANDYBIOTIC_TEMPERATE",
+    "PLAINS_TRAINS_AND_STEEL",
     accept_cargos_with_input_ratios=[
         ("SLAG", 2),
         ("CLAY", 2),

@@ -15,23 +15,8 @@ industry = IndustryPrimaryExtractive(
     pollution_and_squalor_factor=1,
 )
 
-
 industry.enable_in_economy(
-    "STEELTOWN",
-    prod_cargo_types_with_multipliers=[
-        ("SAND", 14),
-        ("LIME", 14),
-    ],
-)
-industry.enable_in_economy(
-    "IN_A_HOT_COUNTRY",
-    prod_cargo_types_with_multipliers=[
-        ("SAND", 14),
-        ("GRVL", 14),
-    ],
-)
-industry.enable_in_economy(
-    "ANDYBIOTIC_TEMPERATE",
+    "PLAINS_TRAINS_AND_STEEL",
     prod_cargo_types_with_multipliers=[
         ("GRVL", 14),
         ("LIME", 14),

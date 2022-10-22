@@ -22,31 +22,6 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=2,
 )
 
-industry.enable_in_economy(
-    "BASIC_TROPIC",
-    accept_cargos_with_input_ratios=[
-        ("OIL_", 4),
-        ("NITR", 4),
-    ],
-    prod_cargo_types_with_output_ratios=[
-        ("RFPR", 8),
-    ],
-)
-
-industry.enable_in_economy(
-    "BASIC_ARCTIC",
-    accept_cargos_with_input_ratios=[
-        ("SULP", 2),
-        ("PHOS", 2),
-        ("NH3_", 2),
-        ("POTA", 2),
-    ],
-    prod_cargo_types_with_output_ratios=[
-        ("FERT", 4),
-        ("BOOM", 4),
-    ],
-)
-
 industry.add_tile(
     id="chemical_plant_tile_1",
     animation_length=7,

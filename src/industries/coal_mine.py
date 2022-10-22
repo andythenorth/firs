@@ -15,16 +15,8 @@ industry = IndustryPrimaryExtractive(
     provides_snow=True,
 )
 
-
 industry.enable_in_economy(
-    "BASIC_TEMPERATE",
-)
-industry.enable_in_economy(
-    "STEELTOWN",
-    prob_map_gen="10",
-)
-industry.enable_in_economy(
-    "ANDYBIOTIC_TEMPERATE",
+    "PLAINS_TRAINS_AND_STEEL",
     prob_map_gen="10",
 )
 

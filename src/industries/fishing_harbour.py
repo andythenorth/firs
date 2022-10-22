@@ -26,18 +26,6 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=1,
 )
 
-industry.enable_in_economy(
-    "BASIC_TEMPERATE",
-)
-industry.enable_in_economy(
-    "BASIC_TROPIC",
-)
-industry.enable_in_economy(
-    "BASIC_ARCTIC",
-)
-
-# ['IN_A_HOT_COUNTRY'].enabled = True
-
 industry.add_tile(
     id="fishing_harbour_tile_1",
     land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",

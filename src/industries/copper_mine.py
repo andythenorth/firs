@@ -16,13 +16,6 @@ industry = IndustryPrimaryExtractive(
     pollution_and_squalor_factor=1,
 )
 
-industry.enable_in_economy(
-    "IN_A_HOT_COUNTRY",
-)
-industry.enable_in_economy(
-    "BASIC_TROPIC",
-)
-
 industry.add_tile(
     id="copper_mine_tile_1",
     animation_length=71,

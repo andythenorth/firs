@@ -16,14 +16,8 @@ industry = IndustryTertiary(
     fund_cost_multiplier="15",
 )
 
-
 industry.enable_in_economy(
-    "BASIC_ARCTIC",
-    accept_cargo_types=["PEAT"],
-)
-
-industry.enable_in_economy(
-    "ANDYBIOTIC_TEMPERATE",
+    "PLAINS_TRAINS_AND_STEEL",
     accept_cargo_types=["COAL", "OIL_",],
 )
 

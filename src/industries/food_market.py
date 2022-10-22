@@ -22,6 +22,13 @@ industry = IndustryTertiary(
     provides_snow=True,
 )
 
+industry.enable_in_economy(
+    "PLAINS_TRAINS_AND_STEEL",
+    accept_cargo_types=[
+        "FOOD"
+    ],
+)
+
 industry.add_tile(
     id="food_market_tile_1",
     location_checks=TileLocationChecks(require_road_adjacent=True),

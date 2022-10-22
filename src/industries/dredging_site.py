@@ -17,10 +17,6 @@ industry = IndustryPrimaryExtractive(
     graphics_change_dates=[1906, 1945],
 )
 
-industry.enable_in_economy(
-    "BASIC_TEMPERATE",
-)
-
 industry.add_tile(
     id="dredging_site_tile_1",
     location_checks=TileLocationChecks(

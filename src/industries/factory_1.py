@@ -1,18 +1,17 @@
 from industry import IndustrySecondary, TileLocationChecks
 
-# !! Window / glazing factory?
+# !! Specialist Component Factory
 # !! layout names will need set correctly
 industry = IndustrySecondary(
     id="factory_1",
     accept_cargos_with_input_ratios=[
-        ("PAPR", 2),
-        ("TINP", 2),
+        ("VPTS", 2),
+        ("STEL", 2),
         ("PLAS", 2),
-        ("GLAS", 2),
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
-        ("PACK", 8),
+        ("GOOD", 6),
     ],
     prob_in_game="7",
     prob_map_gen="8",
@@ -20,6 +19,10 @@ industry = IndustrySecondary(
     name="string(STR_IND_FACTORY_1)",
     nearby_station_name="string(STR_STATION_INDUSTRY_ESTATE_1)",
     fund_cost_multiplier="95",
+)
+
+industry.enable_in_economy(
+    "PLAINS_TRAINS_AND_STEEL"
 )
 
 industry.add_tile(

@@ -21,17 +21,13 @@ industry = IndustrySecondary(
 )
 
 industry.enable_in_economy(
-    "BASIC_TEMPERATE",
-)
-
-industry.enable_in_economy(
-    "ANDYBIOTIC_TEMPERATE",
+    "PLAINS_TRAINS_AND_STEEL",
     accept_cargos_with_input_ratios=[
         ("STEL", 6),
         ("RFPR", 2),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("VPTS", 8),
+        ("STSH", 6),
     ],
 )
 

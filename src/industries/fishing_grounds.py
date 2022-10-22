@@ -25,18 +25,6 @@ industry = IndustryPrimaryNoSupplies(
     fund_cost_multiplier="88",
 )
 
-industry.enable_in_economy(
-    "BASIC_TEMPERATE",
-)
-industry.enable_in_economy(
-    "BASIC_TROPIC",
-)
-industry.enable_in_economy(
-    "BASIC_ARCTIC",
-)
-
-# ['IN_A_HOT_COUNTRY'].enabled = True
-
 industry.add_tile(
     id="fishing_grounds_tile_1",
     location_checks=TileLocationChecks(

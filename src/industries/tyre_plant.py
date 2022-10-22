@@ -21,10 +21,6 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=1,
 )
 
-industry.enable_in_economy(
-    "STEELTOWN",
-)
-
 industry.add_tile(
     id="tyre_plant_tile_1",
     animation_length=71,

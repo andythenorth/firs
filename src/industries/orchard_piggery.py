@@ -19,10 +19,6 @@ industry = IndustryPrimaryOrganic(
     pollution_and_squalor_factor=1,
 )
 
-industry.enable_in_economy(
-    "BASIC_TEMPERATE",
-)
-
 industry.add_tile(
     id="orchard_piggery_tile_1",
     foundations="return CB_RESULT_NO_FOUNDATIONS",

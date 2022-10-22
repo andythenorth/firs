@@ -21,11 +21,6 @@ industry = IndustrySecondary(
     provides_snow=True,
 )
 
-
-industry.enable_in_economy(
-    "STEELTOWN",
-)
-
 industry.add_tile(
     id="body_plant_tile_1",
     animation_length=71,

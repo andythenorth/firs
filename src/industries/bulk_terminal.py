@@ -17,33 +17,7 @@ industry = IndustryPrimaryPort(
 )
 
 industry.enable_in_economy(
-    "IN_A_HOT_COUNTRY",
-    accept_cargo_types=[
-        "MNO2",
-        "PHOS",
-        "BDMT",
-    ],
-    prod_cargo_types_with_multipliers=[
-        ("RFPR", 12),
-        ("FMSP", 12),
-    ],
-)
-# industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['MNO2', 'FECR', 'RUBR']
-# industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('FORM', 12)]
-
-industry.enable_in_economy(
-    "STEELTOWN",
-    accept_cargo_types=["FOOD", "POTA", "CHLO"],
-    prod_cargo_types_with_multipliers=[
-        ("MNO2", 19),
-        ("RUBR", 16),
-        ("PLAS", 16),
-        ("FECR", 14),
-        ("ALUM", 11),
-    ],
-)
-industry.enable_in_economy(
-    "ANDYBIOTIC_TEMPERATE",
+    "PLAINS_TRAINS_AND_STEEL",
     accept_cargo_types=["COAL"],
     prod_cargo_types_with_multipliers=[
         ("AORE", 8),

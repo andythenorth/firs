@@ -23,38 +23,7 @@ industry = IndustryTertiary(
 )
 
 industry.enable_in_economy(
-    "BASIC_TEMPERATE",
-)
-
-industry.enable_in_economy(
-    "BASIC_ARCTIC",
-    accept_cargo_types=[
-        "FOOD",
-    ],
-)
-
-industry.enable_in_economy(
-    "BASIC_TROPIC",
-)
-
-industry.enable_in_economy(
-    "IN_A_HOT_COUNTRY",
-    prob_map_gen="14",
-)
-# industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['FOOD', 'GOOD', 'BEER', 'TEXT']
-
-industry.enable_in_economy(
-    "STEELTOWN",
-    accept_cargo_types=[
-        "FOOD",
-    ],
-)
-industry.enable_in_economy(
-    "ANDYBIOTIC_TEMPERATE",
-    accept_cargo_types=[
-        "FOOD",
-        "GOOD",
-    ],
+    "PLAINS_TRAINS_AND_STEEL"
 )
 
 industry.add_tile(

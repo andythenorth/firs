@@ -20,12 +20,12 @@ industry = IndustrySecondary(
 )
 
 industry.enable_in_economy(
-    "ANDYBIOTIC_TEMPERATE",
+    "PLAINS_TRAINS_AND_STEEL",
     prod_cargo_types_with_output_ratios=[
         ("PETR", 4),
         ("RFPR", 4),
     ],
-    intro_year=1920,
+    intro_year=1930,
 )
 
 industry.add_tile(

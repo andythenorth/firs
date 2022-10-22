@@ -15,21 +15,6 @@ industry = IndustryPrimaryOrganic(
     override_default_construction_states=True,
 )
 
-industry.enable_in_economy(
-    "IN_A_HOT_COUNTRY",
-    prod_cargo_types_with_multipliers=[
-        ("JAVA", 11),
-        ("FRUT", 8),
-    ],
-)
-industry.enable_in_economy(
-    "BASIC_TROPIC",
-    prod_cargo_types_with_multipliers=[
-        ("JAVA", 9),
-        ("FRUT", 9),
-    ],
-)
-
 industry.add_tile(
     id="coffee_estate_tile_1",
     foundations="return CB_RESULT_NO_FOUNDATIONS",

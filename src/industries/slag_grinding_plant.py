@@ -27,12 +27,7 @@ industry = IndustrySecondary(
 )
 
 industry.enable_in_economy(
-    "STEELTOWN",
-    prob_in_game="0",  # do not build during gameplay
-)
-
-industry.enable_in_economy(
-    "ANDYBIOTIC_TEMPERATE",
+    "PLAINS_TRAINS_AND_STEEL",
     prob_in_game="0",  # do not build during gameplay
 )
 

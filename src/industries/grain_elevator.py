@@ -1,15 +1,12 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(
-    id="farm",
+    id="grain_elevator",
     prod_cargo_types_with_multipliers=[],
     prob_in_game="3",
     prob_map_gen="15",
     map_colour="85",
-    special_flags=[
-        "IND_FLAG_PLANT_FIELDS_PERIODICALLY",
-        "IND_FLAG_PLANT_FIELDS_WHEN_BUILT",
-    ],
+    
     # basic farm doesn't cluster, by design - no industry location checks needed
     prospect_chance="0.75",
     name="string(STR_IND_FARM)",
@@ -22,7 +19,7 @@ industry = IndustryPrimaryOrganic(
 
 industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
-    prod_cargo_types_with_multipliers=[],
+
 )
 
 industry.add_tile(

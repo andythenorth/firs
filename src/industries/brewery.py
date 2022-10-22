@@ -21,10 +21,6 @@ industry = IndustrySecondary(
     provides_snow=True,
 )
 
-industry.enable_in_economy(
-    "IN_A_HOT_COUNTRY",
-)
-
 industry.add_tile(
     id="brewery_tile_1",
     animation_length=6,

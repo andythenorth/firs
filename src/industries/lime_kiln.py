@@ -27,23 +27,13 @@ industry = IndustrySecondary(
 )
 
 industry.enable_in_economy(
-    "STEELTOWN",
+    "PLAINS_TRAINS_AND_STEEL",
     accept_cargos_with_input_ratios=[
-        ("LIME", 8)
-    ],  # no fuel source, at least in Steeltown, it's better for gameplay - assume natural gas fuel
-    prob_in_game="1",  # low probability of build during gameplay
-)
-
-industry.enable_in_economy(
-    "ANDYBIOTIC_TEMPERATE",
-    accept_cargos_with_input_ratios=[
-        ("LIME", 8),
-        ("COAL", 4),
+        ("LIME", 1)
     ],
     prod_cargo_types_with_output_ratios=[
-        ("QLME", 6),
-    ],
-    prob_in_game="1",  # low probability of build during gameplay
+        ("QLME", 1),
+    ]
 )
 
 industry.add_tile(

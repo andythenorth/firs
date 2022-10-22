@@ -18,28 +18,6 @@ industry = IndustrySecondary(
     provides_snow=True,
 )
 
-
-industry.enable_in_economy(
-    "BASIC_TEMPERATE",
-    accept_cargos_with_input_ratios=[
-        ("LVST", 6),
-    ],
-)
-
-industry.enable_in_economy(
-    "BASIC_TROPIC",
-    accept_cargos_with_input_ratios=[
-        ("LVST", 6),
-    ],
-)
-
-industry.enable_in_economy(
-    "IN_A_HOT_COUNTRY",
-    accept_cargos_with_input_ratios=[
-        ("LVST", 6),
-    ],
-)
-
 industry.add_tile(
     id="stockyard_tile_1",
     animation_length=7,

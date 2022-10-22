@@ -23,10 +23,6 @@ industry = IndustryPrimaryPort(
     override_default_construction_states=True,
 )
 
-industry.enable_in_economy(
-    "IN_A_HOT_COUNTRY",
-)
-
 industry.add_tile(
     id="trading_post_tile_1",
     land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",

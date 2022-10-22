@@ -20,13 +20,6 @@ industry = IndustrySecondary(
     fund_cost_multiplier="45",
 )
 
-industry.enable_in_economy(
-    "BASIC_TEMPERATE",
-    accept_cargos_with_input_ratios=[
-        ("MILK", 6),
-    ],
-)
-
 # tile with animation for flag
 industry.add_tile(
     id="dairy_tile_1",

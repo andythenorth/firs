@@ -16,39 +16,6 @@ industry = IndustryPrimaryPort(
     override_default_construction_states=True,
 )
 
-industry.enable_in_economy(
-    "BASIC_ARCTIC",
-    accept_cargo_types=[
-        "BOOM",
-        "PEAT",
-        "WDPR",
-    ],
-    prod_cargo_types_with_multipliers=[
-        ("POTA", 19),
-        ("ENSP", 9),
-        ("FMSP", 9),
-    ],
-)
-
-# in Steeltown, there is a deliberate feedback loop with ZINC -> PIPE -> wharf, same for SOAP
-# this is to allow an easy kickstart of ENSP at the wharf, when all other chains are so tightly connected
-industry.enable_in_economy(
-    "STEELTOWN",
-    accept_cargo_types=[
-        "STSE",
-        "PIPE",
-        "CMNT",
-        "LYE_",
-    ],  # FOOD was tried, but results in more complex cargo flow diagram
-    prod_cargo_types_with_multipliers=[
-        ("ENSP", 12),
-        ("ZINC", 16),
-        ("POWR", 14),
-        ("COAT", 10),
-        ("SOAP", 10),
-    ],
-)
-
 industry.add_tile(
     id="wharf_tile_1",
     land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",

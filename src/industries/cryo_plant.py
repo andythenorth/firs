@@ -17,10 +17,6 @@ industry = IndustryPrimaryNoSupplies(
     fund_cost_multiplier="45",
 )
 
-industry.enable_in_economy(
-    "STEELTOWN",
-)
-
 industry.add_tile(
     id="cryo_plant_tile_1",
     location_checks=TileLocationChecks(

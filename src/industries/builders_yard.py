@@ -18,27 +18,8 @@ industry = IndustryTertiary(
     provides_snow=True,
 )
 
-
 industry.enable_in_economy(
-    "STEELTOWN",
-    prob_in_game="6",
-    prob_map_gen="9",
-    accept_cargo_types=[
-        "CMNT",
-        "PIPE",
-        "STSE",
-        "STWR",
-        "SAND",
-        "LIME",
-        "GLAS",
-    ],
-)
-industry.enable_in_economy(
-    "IN_A_HOT_COUNTRY",
-    prob_map_gen="14",
-)
-industry.enable_in_economy(
-    "ANDYBIOTIC_TEMPERATE",
+    "PLAINS_TRAINS_AND_STEEL",
     accept_cargo_types=[
         "CMNT",
         "STEL",

@@ -21,15 +21,7 @@ industry = IndustrySecondary(
 )
 
 industry.enable_in_economy(
-    "STEELTOWN",
-    prod_cargo_types_with_output_ratios=[
-        ("COKE", 6),
-        ("CTAR", 1),
-        ("SULP", 1),
-    ],
-)
-industry.enable_in_economy(
-    "ANDYBIOTIC_TEMPERATE",
+    "PLAINS_TRAINS_AND_STEEL",
     prod_cargo_types_with_output_ratios=[
         ("COKE", 6),
     ],

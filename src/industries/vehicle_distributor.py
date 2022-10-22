@@ -21,7 +21,7 @@ industry = IndustryTertiary(
 )
 
 industry.enable_in_economy(
-    "STEELTOWN",
+    "PLAINS_TRAINS_AND_STEEL",
 )
 
 industry.add_tile(

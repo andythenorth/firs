@@ -21,27 +21,6 @@ industry = IndustryTertiary(
     fund_cost_multiplier="101",
 )
 
-industry.enable_in_economy(
-    "BASIC_TEMPERATE",
-)
-
-industry.enable_in_economy(
-    "BASIC_TROPIC",
-)
-
-industry.enable_in_economy(
-    "BASIC_ARCTIC",
-    accept_cargo_types=[
-        "FOOD",
-        "PASS",
-    ],
-)
-
-
-industry.enable_in_economy(
-    "IN_A_HOT_COUNTRY",
-)
-
 industry.add_tile(
     id="hotel_tile_1",
     location_checks=TileLocationChecks(

@@ -1,17 +1,17 @@
 from industry import IndustrySecondary, TileLocationChecks
 
+# !! Specialist Goods Factory
 # !! layout names will need set correctly
 industry = IndustrySecondary(
     id="factory_2",
     accept_cargos_with_input_ratios=[
-        ("COPR", 2),
+        ("VPTS", 2),
         ("STEL", 2),
-        ("STWR", 2),
         ("PLAS", 2),
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
-        ("POWR", 8),
+        ("GOOD", 6),
     ],
     prob_in_game="7",
     prob_map_gen="8",

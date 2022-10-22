@@ -23,12 +23,6 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=2,
 )
 
-industry.enable_in_economy("BASIC_TROPIC")
-
-industry.enable_in_economy("IN_A_HOT_COUNTRY")
-# industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('COCO', 8)]
-# industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('COPR', 4), ('SULP', 4)]
-
 industry.add_tile(
     id="copper_smelter_tile_1",
     animation_length=47,

@@ -17,12 +17,6 @@ industry = IndustryPrimaryOrganic(
     override_default_construction_states=True,
 )
 
-industry.enable_in_economy("IN_A_HOT_COUNTRY")
-industry.economy_variations["IN_A_HOT_COUNTRY"].prod_cargo_types_with_multipliers = [
-    ("RUBR", 16)
-]
-# industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('LATX', 16)]
-
 industry.add_tile(
     id="rubber_plantation_tile_1",
     foundations="return CB_RESULT_NO_FOUNDATIONS",

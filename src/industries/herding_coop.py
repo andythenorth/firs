@@ -17,10 +17,6 @@ industry = IndustryPrimaryOrganic(
     fund_cost_multiplier="88",
 )
 
-industry.enable_in_economy(
-    "BASIC_ARCTIC",
-)
-
 industry.add_tile(
     id="herding_coop_tile_1",
     animation_length=71,

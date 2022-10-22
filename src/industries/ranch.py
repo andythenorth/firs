@@ -17,10 +17,6 @@ industry = IndustryPrimaryOrganic(
     provides_snow=True,
 )
 
-industry.enable_in_economy(
-    "BASIC_TROPIC",
-)
-
 industry.add_tile(
     id="ranch_tile_1",
     location_checks=TileLocationChecks(

@@ -17,10 +17,6 @@ industry = IndustryPrimaryOrganic(
     override_default_construction_states=True,
 )
 
-industry.enable_in_economy(
-    "IN_A_HOT_COUNTRY",
-)
-
 industry.add_tile(
     id="fruit_plantation_tile_1",
     foundations="return CB_RESULT_NO_FOUNDATIONS",

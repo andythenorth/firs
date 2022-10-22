@@ -15,19 +15,7 @@ industry = IndustryInformative(
 )
 
 industry.enable_in_economy(
-    "BASIC_TEMPERATE",
-)
-industry.enable_in_economy(
-    "BASIC_ARCTIC",
-)
-industry.enable_in_economy(
-    "BASIC_TROPIC",
-)
-industry.enable_in_economy(
-    "IN_A_HOT_COUNTRY",
-)
-industry.enable_in_economy(
-    "STEELTOWN",
+    "PLAINS_TRAINS_AND_STEEL"
 )
 
 industry.add_tile(

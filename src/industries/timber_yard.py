@@ -17,7 +17,7 @@ industry = IndustrySecondary(
 
 
 industry.enable_in_economy(
-    "IN_A_HOT_COUNTRY",
+    "PLAINS_TRAINS_AND_STEEL",
     prod_cargo_types_with_output_ratios=[("BDMT", 8)],
     accept_cargos_with_input_ratios=[
         ("WDPR", 6),

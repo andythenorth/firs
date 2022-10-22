@@ -22,15 +22,6 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=2,
 )
 
-industry.enable_in_economy(
-    "BASIC_ARCTIC",
-    accept_cargos_with_input_ratios=[
-        ("KAOL", 2),
-        ("WOOD", 4),
-        ("SULP", 2),
-    ],
-)
-
 industry.add_tile(
     id="paper_mill_tile_1",
     animation_length=7,
