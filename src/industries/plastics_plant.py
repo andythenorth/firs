@@ -22,7 +22,7 @@ industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
     ("FOCA", 3),
 ]
 industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
-    ("MNSP", 8),
+    ("PPAR", 8),
 ]
 
 industry.add_tile(

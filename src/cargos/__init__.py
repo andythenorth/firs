@@ -83,6 +83,7 @@ from cargos import pig_iron
 from cargos import pipe
 from cargos import pipework
 from cargos import plastics
+from cargos import plastic_parts
 from cargos import plant_fibres
 from cargos import potash
 from cargos import propylene
@@ -211,6 +212,7 @@ pig_iron.cargo.register()
 pipe.cargo.register()
 pipework.cargo.register()
 plastics.cargo.register()
+plastic_parts.cargo.register()
 plant_fibres.cargo.register()
 potash.cargo.register()
 propylene.cargo.register()

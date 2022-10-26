@@ -36,7 +36,6 @@ industry.add_tile(
     id="quarry_tile_1",
     location_checks=TileLocationChecks(
         require_effectively_flat=True,
-        disallow_desert=True,
         disallow_industry_adjacent=True,
     ),
 )
@@ -53,7 +52,6 @@ industry.add_tile(
     autoslope="return CB_RESULT_NO_AUTOSLOPE",
     location_checks=TileLocationChecks(
         disallow_slopes=True,
-        disallow_desert=True,
         disallow_coast=True,
         disallow_industry_adjacent=True,
     ),

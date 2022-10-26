@@ -28,8 +28,9 @@ industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
     ("ACID", 2),
 ]
 industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
-    ("COPR", 7),
+    ("COPR", 6),
     ("SLAG", 1),
+    ("SULP", 1),
 ]
 
 

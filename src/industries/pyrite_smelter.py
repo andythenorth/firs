@@ -26,10 +26,10 @@ industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
     ("COKE", 2),
 ]
 industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
-    ("ZINC", 3),
+    ("ZINC", 2),
     ("COCO", 3),
     ("SLAG", 1),
-    ("SULP", 1),
+    ("FECR", 2),
 ]
 
 

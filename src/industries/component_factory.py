@@ -4,7 +4,7 @@ industry = IndustrySecondary(
     id="component_factory",
     accept_cargos_with_input_ratios=[
         ("STSE", 2),
-        ("MNSP", 2),
+        ("PPAR", 2),
         ("STAL", 2),
         ("POWR", 2),
     ],

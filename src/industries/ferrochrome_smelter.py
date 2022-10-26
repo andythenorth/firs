@@ -15,16 +15,6 @@ industry = IndustrySecondary(
 
 # industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True
 
-industry.economy_variations["STEELTOWN"].enabled = True
-industry.economy_variations["STEELTOWN"].accept_cargos_with_input_ratios = [
-    ("IORE", 3),
-    ("COAL", 3),
-    ("PORE", 2),
-]
-industry.economy_variations["STEELTOWN"].prod_cargo_types_with_output_ratios = [
-    ("FECR", 6),
-    ("SLAG", 2),
-]
 
 industry.add_tile(
     id="ferrochrome_smelter_tile_1",
