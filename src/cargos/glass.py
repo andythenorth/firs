@@ -6,7 +6,7 @@ cargo = Cargo(
     unit_name="string(STR_CARGO_NAME_GLASS)",
     type_abbreviation="string(STR_CID_GLASS)",
     sprite="NEW_CARGO_SPRITE",
-    weight="0.65",
+    weight="1.0",
     is_freight="1",
     cargo_classes="bitmask(CC_PIECE_GOODS)",
     cargo_label="GLAS",
@@ -19,5 +19,6 @@ cargo = Cargo(
     single_penalty_length="180",
     price_factor=132,
     capacity_multiplier="1",
-    icon_indices=(7, 1),
+    icon_indices=(10, 5),
+    sprites_complete=True,
 )

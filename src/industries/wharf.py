@@ -30,16 +30,17 @@ industry.enable_in_economy(
     ],
 )
 
-# in Steeltown, there is a deliberate feedback loop with ZINC -> PIPE -> wharf, same for SOAP
-# this is to allow an easy kickstart of ENSP at the wharf, when all other chains are so tightly connected
 industry.enable_in_economy(
     "STEELTOWN",
+    # quite a lot of accepted types, this is intentional to provide flexibility in obtaining boost
     accept_cargo_types=[
-        "STSE",
-        "PIPE",
-        "CMNT",
         "LYE_",
-    ],  # FOOD was tried, but results in more complex cargo flow diagram
+        "CMNT",
+        "HWAR",
+        "PPWK",
+        "VEHI",
+        "CRAN",
+    ],
     prod_cargo_types_with_multipliers=[
         ("ENSP", 12),
         ("ZINC", 16),

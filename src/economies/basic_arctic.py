@@ -32,7 +32,7 @@ economy = Economy(
     cargoflow_graph_tuning={
         "group_edges_subgraphs": [],
         "ranking_subgraphs": [
-            ("sink", ["T_town_industries", "T_towns_food"]),
+            # ("sink", ["industry_foo"]),
         ],
         "clusters": [
             # {"nodes": [], "rank": "", "color": ""},

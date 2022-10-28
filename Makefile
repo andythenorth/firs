@@ -83,6 +83,8 @@ endif
 
 $(NML_FILE): $(shell $(FIND_FILES) --ext=.py --ext=.pynml src)
 	$(_V) $(PYTHON3) src/render_nml.py $(ARGS)
+	# this is a temporary hack to call render_graphics which is only used for book-keeping as of Oct 2022
+	$(_V) $(PYTHON3) src/render_graphics.py $(ARGS)
 
 $(GRF_FILE): $(shell $(FIND_FILES) --ext=.py --ext=.png src) $(LANG_DIR) $(NML_FILE) $(HTML_DOCS)
 	$(NMLC) $(NML_FLAGS) --grf=$(GRF_FILE) $(NML_FILE)

@@ -4,14 +4,16 @@ industry = IndustrySecondary(
     id="engine_plant",
     accept_cargos_with_input_ratios=[
         ("CSTI", 4),
-        ("ALUM", 2),
-        ("SAND", 2),
+        ("ALUM", 3),
+        ("SAND", 1),
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
+        # high engine plant production is unwanted as there is only one output cargo
         ("VENG", 6),
-    ],  # high engine plant production is unwanted as there is only one output cargo
-    prob_in_game="0",  # do not build during gameplay
+    ],
+    # do not build during gameplay
+    prob_in_game="0",
     prob_map_gen="5",
     map_colour="45",
     name="string(STR_IND_ENGINE_PLANT)",

@@ -1,22 +1,22 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
-    id="sheet_and_pipe_mill",
+    id="strip_mill",
     accept_cargos_with_input_ratios=[
-        ("STCB", 4),
+        ("STCB", 5),
+        ("ACID", 1),
         ("ZINC", 2),
-        ("ACID", 2),
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
-        ("STSH", 4),
-        ("PIPE", 3),
-        ("ENSP", 1),
+        # high strip mill production is unwanted as there is only one output cargo
+        ("STSH", 6),
     ],
-    prob_in_game="0",  # do not build during gameplay
+    # do not build during gameplay
+    prob_in_game="0",
     prob_map_gen="5",
     map_colour="160",
-    name="string(STR_IND_SHEET_AND_PIPE_MILL)",
+    name="string(STR_IND_STRIP_MILL)",
     nearby_station_name="string(STR_STATION_PIPE_MILL)",
     fund_cost_multiplier="120",
     pollution_and_squalor_factor=1,
@@ -28,7 +28,7 @@ industry.enable_in_economy(
 )
 
 industry.add_tile(
-    id="sheet_and_pipe_mill_tile_1",
+    id="strip_mill_tile_1",
     animation_length=71,
     animation_looping=True,
     animation_speed=2,
@@ -47,19 +47,19 @@ spriteset_ground = industry.add_spriteset(
 )
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
-    sprites=[(10, 10, 64, 64, -31, -34)],
+    sprites=[(10, 10, 64, 101, -31, -71)],
 )
 spriteset_2 = industry.add_spriteset(
-    sprites=[(80, 10, 64, 64, -31, -33)],
+    sprites=[(80, 10, 64, 101, -31, -70)],
 )
 spriteset_3 = industry.add_spriteset(
-    sprites=[(150, 10, 64, 64, -31, -33)],
+    sprites=[(150, 10, 64, 101, -31, -70)],
 )
 spriteset_4 = industry.add_spriteset(
-    sprites=[(220, 10, 64, 64, -31, -33)],
+    sprites=[(220, 10, 64, 101, -31, -70)],
 )
 spriteset_5 = industry.add_spriteset(
-    sprites=[(290, 10, 64, 64, -31, -33)],
+    sprites=[(290, 10, 64, 101, -31, -70)],
 )
 spriteset_6 = industry.add_spriteset(
     sprites=[(360, 10, 64, 64, -31, -33)],
@@ -82,12 +82,6 @@ spriteset_11 = industry.add_spriteset(
 spriteset_12 = industry.add_spriteset(
     sprites=[(500, 80, 64, 31, -31, -10)],
 )
-spriteset_13 = industry.add_spriteset(
-    sprites=[(570, 80, 64, 31, -31, 0)],
-)
-spriteset_14 = industry.add_spriteset(
-    sprites=[(640, 80, 64, 31, -31, 0)],
-)
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type="white_smoke_small",
     xoffset=-5,
@@ -96,8 +90,8 @@ sprite_smoke = industry.add_smoke_sprite(
 )
 
 industry.add_spritelayout(
-    id="sheet_and_pipe_mill_spritelayout_boilerhouse",
-    tile="sheet_and_pipe_mill_tile_1",
+    id="strip_mill_spritelayout_boilerhouse",
+    tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -106,8 +100,8 @@ industry.add_spritelayout(
     add_to_object_num=3,
 )
 industry.add_spritelayout(
-    id="sheet_and_pipe_mill_spritelayout_shed_sw_ne_1",
-    tile="sheet_and_pipe_mill_tile_1",
+    id="strip_mill_spritelayout_shed_sw_ne_1",
+    tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -115,8 +109,8 @@ industry.add_spritelayout(
     add_to_object_num=1,
 )
 industry.add_spritelayout(
-    id="sheet_and_pipe_mill_spritelayout_shed_sw_ne_2",
-    tile="sheet_and_pipe_mill_tile_1",
+    id="strip_mill_spritelayout_shed_sw_ne_2",
+    tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -124,8 +118,8 @@ industry.add_spritelayout(
     add_to_object_num=1,
 )
 industry.add_spritelayout(
-    id="sheet_and_pipe_mill_spritelayout_shed_se_nw_1",
-    tile="sheet_and_pipe_mill_tile_1",
+    id="strip_mill_spritelayout_shed_se_nw_1",
+    tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -133,8 +127,8 @@ industry.add_spritelayout(
     add_to_object_num=2,
 )
 industry.add_spritelayout(
-    id="sheet_and_pipe_mill_spritelayout_shed_se_nw_2",
-    tile="sheet_and_pipe_mill_tile_1",
+    id="strip_mill_spritelayout_shed_se_nw_2",
+    tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -142,17 +136,17 @@ industry.add_spritelayout(
     add_to_object_num=2,
 )
 industry.add_spritelayout(
-    id="sheet_and_pipe_mill_spritelayout_open_shed_pipes",
-    tile="sheet_and_pipe_mill_tile_1",
+    id="strip_mill_spritelayout_open_shed_coils",
+    tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_7],
+    building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=5,
 )
 industry.add_spritelayout(
-    id="sheet_and_pipe_mill_spritelayout_tanks",
-    tile="sheet_and_pipe_mill_tile_1",
+    id="strip_mill_spritelayout_tanks",
+    tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
@@ -160,8 +154,8 @@ industry.add_spritelayout(
     add_to_object_num=4,
 )
 industry.add_spritelayout(
-    id="sheet_and_pipe_mill_spritelayout_office",
-    tile="sheet_and_pipe_mill_tile_1",
+    id="strip_mill_spritelayout_office",
+    tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
@@ -169,304 +163,230 @@ industry.add_spritelayout(
     add_to_object_num=6,
 )
 industry.add_spritelayout(
-    id="sheet_and_pipe_mill_spritelayout_steel_pile_sw_ne",
-    tile="sheet_and_pipe_mill_tile_1",
+    id="strip_mill_spritelayout_steel_pile_sw_ne",
+    tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="sheet_and_pipe_mill_spritelayout_steel_pile_se_nw",
-    tile="sheet_and_pipe_mill_tile_1",
+    id="strip_mill_spritelayout_steel_pile_se_nw",
+    tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_11],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="sheet_and_pipe_mill_spritelayout_pipe_stack_sw_ne",
-    tile="sheet_and_pipe_mill_tile_1",
+    id="strip_mill_spritelayout_coils_sw_ne",
+    tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_13],
+    building_sprites=[spriteset_10],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=7,
 )
 industry.add_spritelayout(
-    id="sheet_and_pipe_mill_spritelayout_pipe_stack_se_nw",
-    tile="sheet_and_pipe_mill_tile_1",
+    id="strip_mill_spritelayout_coils_se_nw",
+    tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_14],
+    building_sprites=[spriteset_11],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=8,
 )
 industry.add_spritelayout(
-    id="sheet_and_pipe_mill_spritelayout_empty",
-    tile="sheet_and_pipe_mill_tile_1",
+    id="strip_mill_spritelayout_empty",
+    tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
     fences=[],
 )
 
-# this industry needs outpost layout as there are lots of cargos
-# note there are two outposts, as this industry has sprites oriented sw_ne or se_nw, will select outpost to match main layout orientation
-industry.add_industry_outpost_layout(
-    id="sheet_and_pipe_mill_industry_outpost_layout_sw_ne",
-    layout=[
-        (
-            0,
-            0,
-            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_1",
-        ),
-        (
-            0,
-            1,
-            "sheet_and_pipe_mill_spritelayout_boilerhouse",
-        ),
-        (
-            1,
-            1,
-            "sheet_and_pipe_mill_spritelayout_pipe_stack_sw_ne",
-        ),
-        (
-            1,
-            0,
-            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_2",
-        ),
-        (
-            2,
-            0,
-            "sheet_and_pipe_mill_spritelayout_open_shed_pipes",
-        ),
-        (
-            2,
-            1,
-            "sheet_and_pipe_mill_spritelayout_tanks",
-        ),
-    ],
-)
-industry.add_industry_outpost_layout(
-    id="sheet_and_pipe_mill_industry_outpost_layout_se_nw",
-    layout=[
-        (
-            0,
-            0,
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_1",
-        ),
-        (
-            0,
-            1,
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_2",
-        ),
-        (
-            0,
-            2,
-            "sheet_and_pipe_mill_spritelayout_open_shed_pipes",
-        ),
-        (
-            1,
-            0,
-            "sheet_and_pipe_mill_spritelayout_boilerhouse",
-        ),
-        (
-            1,
-            1,
-            "sheet_and_pipe_mill_spritelayout_pipe_stack_se_nw",
-        ),
-        (
-            1,
-            2,
-            "sheet_and_pipe_mill_spritelayout_tanks",
-        ),
-    ],
-)
 # core layouts are roughly 6x4 or 5x5
 # long products mill uses non-standard layouts where some sprites only used for some orientiations (sw_ne or se_nw)
 # this is to achieve the appearance of 'long'
 industry.add_industry_layout(
-    id="sheet_and_pipe_mill_industry_layout_1",
-    excluded_outpost_layouts=["sheet_and_pipe_mill_industry_outpost_layout_se_nw"],
+    id="strip_mill_industry_layout_1",
     layout=[
         (
             0,
             0,
-            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_1",
+            "strip_mill_spritelayout_shed_sw_ne_1",
         ),
         (
             0,
             1,
-            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_1",
+            "strip_mill_spritelayout_shed_sw_ne_1",
         ),
         (
             0,
             2,
-            "sheet_and_pipe_mill_spritelayout_boilerhouse",
+            "strip_mill_spritelayout_boilerhouse",
         ),
         (
             1,
             0,
-            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_2",
+            "strip_mill_spritelayout_shed_sw_ne_2",
         ),
         (
             1,
             1,
-            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_2",
+            "strip_mill_spritelayout_shed_sw_ne_2",
         ),
         (
             1,
             2,
-            "sheet_and_pipe_mill_spritelayout_pipe_stack_sw_ne",
+            "strip_mill_spritelayout_coils_sw_ne",
         ),
         (
             2,
             0,
-            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_2",
+            "strip_mill_spritelayout_shed_sw_ne_2",
         ),
         (
             2,
             1,
-            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_2",
+            "strip_mill_spritelayout_shed_sw_ne_2",
         ),
         (
             2,
             2,
-            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_2",
+            "strip_mill_spritelayout_shed_sw_ne_2",
         ),
         (
             3,
             0,
-            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_1",
+            "strip_mill_spritelayout_shed_sw_ne_1",
         ),
         (
             3,
             1,
-            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_1",
+            "strip_mill_spritelayout_shed_sw_ne_1",
         ),
         (
             3,
             2,
-            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_1",
+            "strip_mill_spritelayout_shed_sw_ne_1",
         ),
         (
             4,
             0,
-            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_2",
+            "strip_mill_spritelayout_shed_sw_ne_2",
         ),
         (
             4,
             1,
-            "sheet_and_pipe_mill_spritelayout_open_shed_pipes",
+            "strip_mill_spritelayout_open_shed_coils",
         ),
         (
             4,
             2,
-            "sheet_and_pipe_mill_spritelayout_shed_sw_ne_2",
+            "strip_mill_spritelayout_shed_sw_ne_2",
         ),
-        (5, 0, "sheet_and_pipe_mill_spritelayout_tanks"),
+        (5, 0, "strip_mill_spritelayout_tanks"),
         (
             5,
             1,
-            "sheet_and_pipe_mill_spritelayout_open_shed_pipes",
+            "strip_mill_spritelayout_open_shed_coils",
         ),
         (
             5,
             2,
-            "sheet_and_pipe_mill_spritelayout_pipe_stack_sw_ne",
+            "strip_mill_spritelayout_coils_sw_ne",
         ),
     ],
 )
 industry.add_industry_layout(
-    id="sheet_and_pipe_mill_industry_layout_2",
-    excluded_outpost_layouts=["sheet_and_pipe_mill_industry_outpost_layout_sw_ne"],
+    id="strip_mill_industry_layout_2",
     layout=[
         (
             0,
             0,
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_1",
+            "strip_mill_spritelayout_shed_se_nw_1",
         ),
         (
             0,
             1,
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_2",
+            "strip_mill_spritelayout_shed_se_nw_2",
         ),
         (
             0,
             2,
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_2",
+            "strip_mill_spritelayout_shed_se_nw_2",
         ),
         (
             0,
             3,
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_1",
+            "strip_mill_spritelayout_shed_se_nw_1",
         ),
         (
             0,
             4,
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_1",
+            "strip_mill_spritelayout_shed_se_nw_1",
         ),
-        (0, 5, "sheet_and_pipe_mill_spritelayout_tanks"),
+        (0, 5, "strip_mill_spritelayout_tanks"),
         (
             1,
             0,
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_1",
+            "strip_mill_spritelayout_shed_se_nw_1",
         ),
         (
             1,
             1,
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_2",
+            "strip_mill_spritelayout_shed_se_nw_2",
         ),
         (
             1,
             2,
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_2",
+            "strip_mill_spritelayout_shed_se_nw_2",
         ),
         (
             1,
             3,
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_1",
+            "strip_mill_spritelayout_shed_se_nw_1",
         ),
         (
             1,
             4,
-            "sheet_and_pipe_mill_spritelayout_open_shed_pipes",
+            "strip_mill_spritelayout_open_shed_coils",
         ),
         (
             1,
             5,
-            "sheet_and_pipe_mill_spritelayout_open_shed_pipes",
+            "strip_mill_spritelayout_open_shed_coils",
         ),
         (
             2,
             0,
-            "sheet_and_pipe_mill_spritelayout_boilerhouse",
+            "strip_mill_spritelayout_boilerhouse",
         ),
         (
             2,
             1,
-            "sheet_and_pipe_mill_spritelayout_pipe_stack_se_nw",
+            "strip_mill_spritelayout_coils_se_nw",
         ),
         (
             2,
             2,
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_2",
+            "strip_mill_spritelayout_shed_se_nw_2",
         ),
         (
             2,
             3,
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_1",
+            "strip_mill_spritelayout_shed_se_nw_1",
         ),
         (
             2,
             4,
-            "sheet_and_pipe_mill_spritelayout_shed_se_nw_2",
+            "strip_mill_spritelayout_shed_se_nw_2",
         ),
         (
             2,
             5,
-            "sheet_and_pipe_mill_spritelayout_pipe_stack_se_nw",
+            "strip_mill_spritelayout_coils_se_nw",
         ),
     ],
 )

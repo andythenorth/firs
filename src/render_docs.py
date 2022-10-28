@@ -271,17 +271,6 @@ class DocHelper(object):
         return result
 
     def unpack_cargoflow_node_name(self, node):
-        # there are some known exceptions for special nodes which are maintained as a manual list
-        if node in [
-            "T_town_industries",
-            "T_towns_alcohol",
-            "T_towns_food",
-            "T_towns_goods",
-            "T_towns_vehicles",
-            "N_force_rank",
-        ]:
-            return node
-        # then check cargos and industries
         for cargo in registered_cargos:
             if cargo.id == node:
                 return "C_" + node
@@ -294,11 +283,36 @@ class DocHelper(object):
             + node
         )
 
+    def get_cargoflow_graph_tuning(self, economy):
+        return economy.cargoflow_graph_tuning
+
     def get_cargoflow_banned_cargos(self):
         return ["mail", "passengers"]
 
     def get_cargoflow_supply_cargos(self):
-        return ["farm_supplies", "engineering_supplies"]
+        return ["farm_supplies", "engineering_supplies", "welding_consumables"]
+
+    def get_cargoflow_wormhole_cargos(self, economy):
+        result = {"by_industry": {}, "by_cargo": {}}
+
+        # first find the industries from (1) cargoflow_graph_tuning (2) town industries
+        # we want the actual industry, not the id
+        all_wormhole_industries = []
+        for industry in registered_industries:
+            if industry.id in (economy.cargoflow_graph_tuning.get("wormhole_industries", [])):
+                all_wormhole_industries.append(industry)
+            elif getattr(industry, "town_industry_for_cargoflow", False) and industry.economy_variations[economy.id].enabled:
+                all_wormhole_industries.append(industry)
+
+        # then structure the result by industry, for both wormhole industries and wormhole cargos
+        for industry in all_wormhole_industries:
+            result["by_industry"][industry.id] = []
+            for cargo in self.cargos_accepted_by_industry(industry, economy):
+                result["by_industry"][industry.id].append(cargo)
+                if cargo.id not in result["by_cargo"].keys():
+                    result["by_cargo"][cargo.id] = []
+                result["by_cargo"][cargo.id].append(industry)
+        return result
 
     def get_active_nav(self, doc_name, nav_link):
         return ("", "active")[doc_name == nav_link]

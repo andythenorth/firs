@@ -19,8 +19,9 @@ industry = IndustryPrimaryExtractive(
 industry.enable_in_economy(
     "STEELTOWN",
     prod_cargo_types_with_multipliers=[
-        ("SAND", 14),
-        ("LIME", 14),
+        ("SAND", 16),
+        ("LIME", 18),
+        ("GRVL", 9),
     ],
 )
 

@@ -5,12 +5,16 @@ industry = IndustryPrimaryNoSupplies(
     accept_cargo_types=[],
     prod_cargo_types_with_multipliers=[
         ("O2__", 14),
+        # realism suggests that oxygen and nitrogen might be roughly equal in output, but gameplay eh
+        ("N7__", 9),
+        ("WELD", 4),
     ],
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="189",
     location_checks=dict(same_type_distance=72),
-    prospect_chance="0.75",
+    # always build a cryo plant, because eh, not dependent on resources
+    prospect_chance="1",
     name="string(STR_IND_CRYO_PLANT)",
     nearby_station_name="string(STR_STATION_CRYO_PLANT)",
     # deliberately low fund cost; there is some remaining weirdness on cost because this is a non-growable primary, but eh, live with it

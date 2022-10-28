@@ -24,6 +24,27 @@ industry.enable_in_economy(
     "BASIC_TEMPERATE",
 )
 
+industry.enable_in_economy(
+    "STEELTOWN",
+    accept_cargos_with_input_ratios=[
+        # 5 cargos eh? pretty rare
+        # realism calls also for Steel Tube, but it's a step too far eh
+        ("STBR", 2),
+        ("STSH", 2),
+        ("STWR", 2),
+        ("COAT", 1),
+        ("WELD", 1)
+    ],
+    prod_cargo_types_with_output_ratios=[
+        # high output production is unwanted due to single cargo
+        ("HWAR", 6),
+    ],
+    # temp
+    name="string(STR_IND_HARDWARE_FACTORY)",
+    # generally map colours aren't adjusted per economy but eh
+    map_colour="209",
+)
+
 industry.add_tile(
     id="metal_workshop_tile_1",
     animation_length=47,

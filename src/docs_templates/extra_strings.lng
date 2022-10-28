@@ -44,8 +44,9 @@ ECONOMY_INFO_STEELTOWN                              :Complex economy featuring i
 CARGO_INFO_PASSENGERS                               :Available in all economies.  Produced and accepted by town buildings, and also a few industries.
 CARGO_INFO_MAIL                                     :Available in all economies.  Produced and accepted by town buildings.
 CARGO_INFO_ACID                                     :Industrial acids, such as hydrochloric, nitric and sulphuric acid.
+CARGO_INFO_AGGREGATES                               :Gravel, sand, crushed stone and similar materials used in construction.
 CARGO_INFO_ALCOHOL                                  :Wine, beer, cider, spirits.
-CARGO_INFO_ALLOY_STEEL                              :Billets, blooms, ingots and slabs.
+CARGO_INFO_ALLOY_STEEL                              :Billets, blooms, ingots, slabs.
 CARGO_INFO_ALUMINIUM                                :Refined Aluminium metal, in coils, ingots, slabs etc.
 CARGO_INFO_AMMONIA                                  :Widely used industrial chemical. Transported as liquid or cryogenically as liquified compressed gas.
 CARGO_INFO_BASE_METALS                              :Non-ferrous metals, such as copper, nickel, zinc and lead.
@@ -60,47 +61,64 @@ CARGO_INFO_CEMENT                                   :Dry cement in powder or cli
 CARGO_INFO_CHEMICALS                                :Generic chemicals, usually in liquid form.
 CARGO_INFO_CHLORINE                                 :Industrial chemical, usually transported cryogenically as liquified compressed gas.
 CARGO_INFO_CLAY                                     :Generic clays, for producing building materials and other industrial uses.
+CARGO_INFO_CLEANING_AGENTS                          :Chemicals, soaps, scouring agents etc for industrial and domestic use. Primarily liquid, can also be solid or powder.
 CARGO_INFO_COAL_TAR                                 :By-product from coke production, a thick slow-flowing liquid.
 CARGO_INFO_COFFEE                                   :Raw or roasted coffee beans.
 CARGO_INFO_COKE                                     :Coal that has been heated in a coke oven, producing a fuel that is nearly pure carbon.
+CARGO_INFO_CONCRETE_PRODUCTS                        :Cast products such as blocks, beams and panels. Can also be handled as ready-mix concrete in mixer trucks.
 CARGO_INFO_COPPER                                   :Refined Copper metal, in coils, ingots etc.
+CARGO_INFO_CRANES_AND_HOISTS                        :Cranes, hoists, elevators and similar vertical lifting machines for use in industry, buildings, workshops etc.
 CARGO_INFO_DIAMONDS                                 :Are forever, etc.
 CARGO_INFO_EDIBLE_OIL                               :Oil for cooking and consumption.
 CARGO_INFO_ELECTRICAL_PARTS                         :Electrical and electronic components, motors, controllers, switchgear, lights etc.
 CARGO_INFO_ENGINEERING_SUPPLIES                     :Machinery, fuel, parts, wood products, pipes, explosives and other supplies for mines and similar industries.
+CARGO_INFO_EXPLOSIVES                               :Civil explosives for mining, construction etc.
 CARGO_INFO_FARM_SUPPLIES                            :Machinery, fuel, parts, fertiliser and other supplies for farms, forests and similar industries.
 CARGO_INFO_FERROCHROME                              :Used in stainless steel production, an alloy of chromium and iron.  Grey lumps, similar in size and shape to coal lumps.
+CARGO_INFO_FORGINGS_AND_CASTINGS                    :Metal parts for assembly into larger items.
 CARGO_INFO_GRAIN                                    :Wheat, barley etc.
-CARGO_INFO_EXPLOSIVES                               :Civil explosives for mining, construction etc.
+CARGO_INFO_HARDWARE                                 :For household and construction use. Tools, utensils, fixtures, fittings, in metal and other materials.
+CARGO_INFO_LIFTING_EQUIPMENT                        :Drums, winches, shackles, hooks, pulleys, hydraulic rams and other parts for cranes, hoists, elevators etc.
 CARGO_INFO_LIVESTOCK                                :Mostly cows, pigs and sheep for meat production.  Other animals may also be eaten.
+CARGO_INFO_LYE                                      :Industrial chemical. Also known as Lye or Caustic Soda. Usually transported as liquid.
 CARGO_INFO_TIMBER                                   :Processed wood products from a sawmill.
-CARGO_INFO_KAOLIN                                   :Industrial mineral, also known as China Clay, used primarily in paper and plastics production.
+CARGO_INFO_KAOLIN                                   :Industrial mineral, also known as Kaolin, used primarily in paper and plastics production.
 CARGO_INFO_MANGANESE                                :Manganese ore, used primarily in steel production.
 CARGO_INFO_PACKAGING                                :Boxes, bottles, jars, cans, etc.
 CARGO_INFO_MARINE_SUPPLIES                          :Machinery, parts, fuel, construction materials and other supplies for harbours, docks and similar industries.
 CARGO_INFO_METAL                                    :Generic metal, such as steel, aluminium or other common metals.
+CARGO_INFO_NITROGEN                                 :Industrial gas. Transported cryogenically as liquified compressed gas.
 CARGO_INFO_OXYGEN                                   :Industrial gas. Transported cryogenically as liquified compressed gas.
 CARGO_INFO_PEAT                                     :Biomass from peat bogs, extracted for fuel and horticulture.
 CARGO_INFO_PIG_IRON                                 :Basic iron from a blast furnace, as molten liquid or solid ingots.
-CARGO_INFO_PIPE                                     :Pipes (and tubes) for industrial use, buildings, pipelines etc.
 CARGO_INFO_PLANT_FIBRES                             :Cotton, flax, jute and similar materials, for producing textiles and composite materials.
 CARGO_INFO_PETROL                                   :Petrol, diesel and similar fuels.
+CARGO_INFO_PLASTICS                                 :Raw plastic for futher processing. Usually transported as resin beads.
+CARGO_INFO_PIPEWORK                                 :Pipe assemblies with valves, pumps etc attached, for construction and industrial use.
 CARGO_INFO_PYRITE_ORE                               :Sulfide minerals, smelted to produce a variety of industrial products.
-CARGO_INFO_REBAR                                    :Thin rough steel bars widely used to reinforce concrete structures. Transported straight or coils.
+CARGO_INFO_QUICKLIME                                :Calcium Oxide, also known as burnt lime. Transported as fine powder that must be kept dry.
+CARGO_INFO_REBAR                                    :Thin rough steel bars widely used to reinforce concrete structures. Transported as coils or bundles of straight bars.
 CARGO_INFO_RUBBER                                   :Mostly natural latex.
+CARGO_INFO_SALT                                     :Widely used industrial chemical. Usually transported as bulk cargo that must be kept dry.
+CARGO_INFO_SAND                                     :Coarse sand for construction, or fine silica sand for glass-making and metal casting. Transported as bulk or powder.
 CARGO_INFO_SLAG                                     :Waste product from iron and steel production.
 CARGO_INFO_SODA_ASH                                 :Industrial chemical. White powder form.
 CARGO_INFO_STAINLESS_STEEL                          :Billets, blooms, ingots and slabs.
-CARGO_INFO_STEEL_SECTIONS                           :Rolled steel I beams, H beams, channels, profiles and bars. Transported as long straight products.
-CARGO_INFO_STEEL_SHEET                              :Rolled steel sheets, plates and foils, widely used to fabricate other products. Transported as flat sheets or as coils.
-CARGO_INFO_STEEL_WIRE_ROD                           :Thin fine steel wires and rods, widely used in other products. Transported straight or as coils.
-CARGO_INFO_STONE                                    :Crushed stone / gravel.
+CARGO_INFO_STEEL_MERCHANT_BAR                       :Steel bars, as rounds, squares, flats and other profiles. Transported as long straight products.
+CARGO_INFO_STEEL_PIPE                               :Long round steel pipes for transporting liquids in pipelines, buildings, industries etc.
+CARGO_INFO_STEEL_SECTIONS                           :Rolled steel plates and sections - I beams, H beams, channels etc. Transported as flat plates or long straight products.
+CARGO_INFO_STEEL_SHEET                              :Thin rolled steel sheet and strip, widely used to fabricate other products. Transported as flat sheets or as coils.
+CARGO_INFO_STEEL_TUBE                               :Long hollow tube in round, rectangular and other cross-sections. Used for fabricating structures and machinery.
+CARGO_INFO_STEEL_WIRE_ROD                           :Steel wire and thin rods. Primarily transported as coils.
+CARGO_INFO_STEEL_WIRE_ROPE                          :Ropes and cables produced by drawing steel wire rod to a smaller diameter, then twisting into bundled ropes.
 CARGO_INFO_SULPHUR                                  :Widely used industrial chemical. Bright yellow, in powder or liquid form.
 CARGO_INFO_TIN                                      :Ingots.
+CARGO_INFO_TYRE_CORD                                :Fine wire used to reinforce tyres. Transported as coil.
 CARGO_INFO_VEHICLE_BODIES                           :Cabs, bonnets, doors and similar body structures for vehicle production.
 CARGO_INFO_VEHICLE_ENGINES                          :Internal combustion engines and related powertrain parts such as gearboxes.
 CARGO_INFO_VEHICLE_PARTS                            :Components for vehicle production such as windscreens, powertrain components, lights, external trim and interior parts.
-CARGO_INFO_VEHICLES                                 :Mostly trucks.
+CARGO_INFO_VEHICLES                                 :Mostly trucks. Or cars. Or light trucks.
+CARGO_INFO_WELDING_CONSUMABLES                      :Welding rods and gases.
 CARGO_INFO_WOOD                                     :Logs from a forest.
 CARGO_INFO_WOOL                                     :Bales.
 CARGO_INFO_ZINC                                     :Ingots.

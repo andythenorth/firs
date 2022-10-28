@@ -17,7 +17,8 @@ cargo = Cargo(
     items_of_cargo="TTD_STR_QUANTITY_GOODS",
     penalty_lowerbound="10",
     single_penalty_length="56",
-    price_factor=163,
+    price_factor=169,
     capacity_multiplier="2",
     icon_indices=(5, 0),
+    sprites_complete=True,
 )
