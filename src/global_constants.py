@@ -95,7 +95,7 @@ industry_numeric_ids = dict(
     ##IAHC##fischer_tropsch_plant = 92,
     ##IAHC##latex_processor = 93,
     integrated_steel_mill=94,
-    section_mill=95,
+    bar_and_section_mill=95,
     body_plant=96,
     ###BLTC###tinplate_works = 97,
     cider_mill=98,
@@ -130,6 +130,7 @@ industry_numeric_ids = dict(
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
 tile_numeric_ids = dict(
+    bar_and_section_mill_tile_2=75,
     concrete_plant_tile_1=76,
     wire_rope_factory_tile_1=77,
     pipework_fabricator_tile_1=78,
@@ -166,7 +167,7 @@ tile_numeric_ids = dict(
     ethylene_cracker_tile_2=109,
     basic_oxygen_furnace_tile_2=110,
     tinplate_works_tile_1=111,
-    section_mill_tile_1=112,
+    bar_and_section_mill_tile_1=112,
     slag_grinding_plant_tile_1=113,
     slag_grinding_plant_tile_2=114,
     wharf_tile_3=115,
