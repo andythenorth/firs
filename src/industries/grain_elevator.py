@@ -24,7 +24,7 @@ industry.enable_in_economy(
 industry.add_tile(
     id="grain_elevator_tile_1",
     location_checks=TileLocationChecks(
-        disallow_steep_slopes=True,
+        require_effectively_flat=True,
         disallow_above_snowline=True,
         disallow_desert=True,
         disallow_coast=True,
@@ -32,146 +32,98 @@ industry.add_tile(
     ),
 )
 
-spriteset_ground = industry.add_spriteset(type="empty")
-sprite_ground_mud = industry.add_sprite(sprite_number="GROUNDSPRITE_CLEARED")
+spriteset_ground = industry.add_spriteset(type="concrete")
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
-spriteset_1 = industry.add_spriteset(
-    sprites=[(10, 10, 64, 52, -31, -21)],
-)
-spriteset_1_ground = industry.add_spriteset(
-    sprites=[(10, 70, 64, 52, -31, -21)],
-)
-spriteset_2 = industry.add_spriteset(
-    sprites=[(80, 10, 64, 52, -31, -21)],
-)
-spriteset_2_ground = industry.add_spriteset(
-    sprites=[(80, 70, 64, 52, -31, -21)],
-)
-spriteset_3 = industry.add_spriteset(
-    sprites=[(150, 10, 64, 52, -31, -21)],
-)
-spriteset_3_ground = industry.add_spriteset(
-    sprites=[(150, 70, 64, 52, -31, -21)],
-)
-spriteset_4 = industry.add_spriteset(
-    sprites=[(220, 10, 64, 52, -31, -21)],
-)
-spriteset_4_ground = industry.add_spriteset(
-    sprites=[(220, 70, 64, 52, -31, -21)],
-)
-spriteset_5 = industry.add_spriteset(
-    sprites=[(290, 10, 64, 52, -31, -21)],
-)
-spriteset_6 = industry.add_spriteset(
-    sprites=[(360, 10, 64, 52, -31, -21)],
-)
-spriteset_7 = industry.add_spriteset(
-    sprites=[(430, 10, 64, 52, -31, -21)],
-)
-spriteset_8 = industry.add_spriteset(
-    sprites=[(500, 10, 64, 52, -31, -21)],
-)
+
+spriteset_1 = industry.add_spriteset(sprites=[(10, 10, 64, 114, -31, -83)])
+spriteset_2 = industry.add_spriteset(sprites=[(80, 10, 64, 114, -31, -83)])
+
+spriteset_3 = industry.add_spriteset(sprites=[(150, 10, 64, 114, -31, -83)])
+spriteset_4 = industry.add_spriteset(sprites=[(220, 10, 64, 114, -31, -83)])
+spriteset_5 = industry.add_spriteset(sprites=[(290, 10, 64, 114, -31, -83)])
+
+spriteset_6 = industry.add_spriteset(sprites=[(360, 10, 64, 114, -31, -83)])
+spriteset_7 = industry.add_spriteset(sprites=[(430, 10, 64, 114, -31, -83)])
+
 
 industry.add_spritelayout(
     id="grain_elevator_spritelayout_1",
     tile="grain_elevator_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_1_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
-    terrain_aware_ground=True,
 )
+
 industry.add_spritelayout(
     id="grain_elevator_spritelayout_2",
     tile="grain_elevator_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_2_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    terrain_aware_ground=True,
 )
+
 industry.add_spritelayout(
     id="grain_elevator_spritelayout_3",
     tile="grain_elevator_tile_1",
-    ground_sprite=sprite_ground_mud,
-    ground_overlay=spriteset_3_ground,
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
 )
+
 industry.add_spritelayout(
     id="grain_elevator_spritelayout_4",
     tile="grain_elevator_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_4_ground,
+    ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    terrain_aware_ground=True,
 )
+
 industry.add_spritelayout(
     id="grain_elevator_spritelayout_5",
     tile="grain_elevator_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
-    terrain_aware_ground=True,
 )
+
 industry.add_spritelayout(
     id="grain_elevator_spritelayout_6",
     tile="grain_elevator_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
-    terrain_aware_ground=True,
 )
+
 industry.add_spritelayout(
     id="grain_elevator_spritelayout_7",
     tile="grain_elevator_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
-    terrain_aware_ground=True,
-)
-industry.add_spritelayout(
-    id="grain_elevator_spritelayout_8",
-    tile="grain_elevator_tile_1",
-    ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_8],
-    terrain_aware_ground=True,
 )
 
 industry.add_industry_layout(
     id="grain_elevator_industry_layout_1",
     layout=[
-        (0, 2, "grain_elevator_spritelayout_8"),
-        (0, 3, "grain_elevator_spritelayout_3"),
-        (1, 0, "grain_elevator_spritelayout_2"),
-        (2, 0, "grain_elevator_spritelayout_1"),
-        (2, 2, "grain_elevator_spritelayout_5"),
-        (2, 3, "grain_elevator_spritelayout_7"),
-        (3, 2, "grain_elevator_spritelayout_6"),
-        (3, 3, "grain_elevator_spritelayout_4"),
+        (1, 0, "grain_elevator_spritelayout_1"),
+        (0, 0, "grain_elevator_spritelayout_2"),
     ],
 )
+
 industry.add_industry_layout(
     id="grain_elevator_industry_layout_2",
     layout=[
-        (0, 0, "grain_elevator_spritelayout_4"),
-        (0, 2, "grain_elevator_spritelayout_7"),
-        (0, 3, "grain_elevator_spritelayout_6"),
-        (1, 0, "grain_elevator_spritelayout_5"),
-        (1, 3, "grain_elevator_spritelayout_1"),
-        (2, 0, "grain_elevator_spritelayout_8"),
-        (2, 1, "grain_elevator_spritelayout_3"),
-        (2, 2, "grain_elevator_spritelayout_2"),
+        (1, 1, "grain_elevator_spritelayout_3"),
+        (0, 1, "grain_elevator_spritelayout_4"),
+        (0, 0, "grain_elevator_spritelayout_5"),
     ],
 )
+
 industry.add_industry_layout(
     id="grain_elevator_industry_layout_3",
     layout=[
-        (0, 0, "grain_elevator_spritelayout_8"),
-        (0, 1, "grain_elevator_spritelayout_1"),
-        (0, 2, "grain_elevator_spritelayout_5"),
-        (1, 0, "grain_elevator_spritelayout_2"),
-        (1, 2, "grain_elevator_spritelayout_3"),
-        (2, 0, "grain_elevator_spritelayout_7"),
-        (3, 0, "grain_elevator_spritelayout_4"),
-        (3, 2, "grain_elevator_spritelayout_6"),
+        (0, 1, "grain_elevator_spritelayout_6"),
+        (0, 0, "grain_elevator_spritelayout_7"),
     ],
 )
+
