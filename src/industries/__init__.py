@@ -206,6 +206,10 @@ from industries import herding_coop
 
 herding_coop.industry.register()
 
+from industries import inland_grain_terminal
+
+inland_grain_terminal.industry.register()
+
 from industries import integrated_steel_mill
 
 integrated_steel_mill.industry.register()

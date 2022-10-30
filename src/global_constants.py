@@ -1,4 +1,6 @@
 # Definition of numeric IDs for industries
+
+
 industry_numeric_ids = dict(
     coal_mine=0,
     plaza = 1,
@@ -77,7 +79,7 @@ industry_numeric_ids = dict(
     liquids_terminal=74,
     manganese_mine=75,
     potash_mine=76,
-    #unused=77,
+    inland_grain_terminal=77,
     coke_oven=78,
     electric_arc_furnace=79,
     slag_grinding_plant=80,
@@ -134,8 +136,8 @@ tile_numeric_ids = dict(
     polypropylene_plant_tile_1=91,
     sulphuric_acid_plant_tile_1=92,
     sulphuric_acid_plant_tile_2=93,
-    phosphoric_acid_plant_tile_1=94,
-    phosphoric_acid_plant_tile_2=95,
+    inland_grain_terminal_tile_1=94,
+    inland_grain_terminal_tile_2=95,
     civil_explosives_facility_tile_1=96,
     civil_explosives_facility_tile_2=97,
     fertiliser_plant_tile_2=98,
