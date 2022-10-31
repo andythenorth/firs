@@ -163,7 +163,7 @@ industry.add_industry_layout(
     id="fertiliser_plant_industry_layout_1",
     layout=[
         (0, 0, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_1"),
-        (0, 1, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_1"),
+        (0, 1, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_4"),
         (0, 2, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_8"),
         (1, 0, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_6"),
         (1, 1, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_3"),

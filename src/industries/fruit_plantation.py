@@ -66,8 +66,8 @@ industry.add_magic_spritelayout(
     type="slope_aware_trees",
     base_id="fruit_plantation_slope_aware_ground_with_trees_1",
     config={
-        "ground_sprite": 4145,
-        "trees_default": [1620, 1620, 1620, 1620],
+        "ground_sprite": 3962,
+        "trees_default": [1608, 1608, 1608, 1608],
         "trees_tropic": [1832, 1830, 1831, 1832],
     },
 )
@@ -75,8 +75,8 @@ industry.add_magic_spritelayout(
     type="slope_aware_trees",
     base_id="fruit_plantation_slope_aware_ground_with_trees_2",
     config={
-        "ground_sprite": 4145,
-        "trees_default": [1621, 1622, 1623, 1620],
+        "ground_sprite": 3962,
+        "trees_default": [1608, 1608, 1608, 1608],
         "trees_tropic": [1832, 1830, 1831, 1832],
     },
 )

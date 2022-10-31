@@ -8,8 +8,8 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="160",
-    name="string(STR_IND_SHEET_AND_PIPE_MILL)",
-    nearby_station_name="string(STR_STATION_PIPE_MILL)",
+    name="string(STR_IND_SHEET_MILL)",
+    nearby_station_name="string(STR_STATION_GALVANISING)",
     fund_cost_multiplier="120",
     pollution_and_squalor_factor=1,
 )

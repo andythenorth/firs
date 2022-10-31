@@ -56,12 +56,12 @@ industry.add_spritelayout(
 industry.add_magic_spritelayout(
     type="slope_aware_trees",
     base_id="orchard_piggery_slope_aware_ground_with_trees_1",
-    config={"ground_sprite": 4164, "trees_default": [1620, 1619, 1689, 1620]},
+    config={"ground_sprite": 3962, "trees_default": [1620, 1619, 1689, 1620]},
 )
 industry.add_magic_spritelayout(
     type="slope_aware_trees",
     base_id="orchard_piggery_slope_aware_ground_with_trees_2",
-    config={"ground_sprite": 4164, "trees_default": [1647, 1668, 1621, 1619]},
+    config={"ground_sprite": 3962, "trees_default": [1647, 1668, 1621, 1619]},
 )
 
 industry.add_industry_layout(
