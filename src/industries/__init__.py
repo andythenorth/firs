@@ -107,9 +107,11 @@ from industries import copper_smelter
 
 copper_smelter.industry.register()
 
+"""
 from industries import cryo_plant
 
 cryo_plant.industry.register()
+"""
 
 from industries import dairy
 
@@ -205,6 +207,10 @@ hotel.industry.register()
 from industries import herding_coop
 
 herding_coop.industry.register()
+
+from industries import inland_container_terminal
+
+inland_container_terminal.industry.register()
 
 from industries import inland_grain_terminal
 

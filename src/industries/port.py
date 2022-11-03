@@ -16,6 +16,14 @@ industry = IndustryPrimaryPort(
     override_default_construction_states=True,
 )
 
+industry.enable_in_economy(
+    "PLAINS_TRAINS_AND_STEEL",
+    prod_cargo_types_with_multipliers=[
+        ("GOOD", 20)
+    ],
+    accept_cargo_types=["GOOD",],
+)
+
 industry.add_tile(
     id="port_tile_1",
     land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",
