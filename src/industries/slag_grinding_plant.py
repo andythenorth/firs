@@ -15,7 +15,7 @@ industry = IndustrySecondary(
     special_flags=["IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE"],
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[
-            ["blast_furnace", "basic_oxygen_furnace", "electric_arc_furnace"],
+            ["blast_furnace", "basic_oxygen_furnace"],
             56,
         ],
         same_type_distance=72,
@@ -27,8 +27,7 @@ industry = IndustrySecondary(
 )
 
 industry.enable_in_economy(
-    "PLAINS_TRAINS_AND_STEEL",
-    prob_in_game="0",  # do not build during gameplay
+    "PLAINS_TRAINS_AND_STEEL"
 )
 
 industry.add_tile(

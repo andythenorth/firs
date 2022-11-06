@@ -12,6 +12,19 @@ industry = IndustrySecondary(
     fund_cost_multiplier="110",
 )
 
+industry.enable_in_economy(
+    "PLAINS_TRAINS_AND_STEEL",
+    prod_cargo_types_with_output_ratios=[
+        ("FMSP", 2),
+        ("ENSP", 2),
+    ],
+    accept_cargos_with_input_ratios=[
+        ("RFPR", 2),
+        ("PETR", 2),
+        ("FERT", 2),
+    ],
+)
+
 industry.add_tile(
     id="supply_yard_tile_1",
     animation_length=71,

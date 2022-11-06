@@ -3,7 +3,7 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="aluminium_plant",
     accept_cargos_with_input_ratios=[
-        ("ALO_", 8),
+        ("AORE", 8),
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
@@ -20,7 +20,7 @@ industry = IndustrySecondary(
 )
 
 industry.enable_in_economy(
-    "ANDYBIOTIC_TEMPERATE",
+    "PLAINS_TRAINS_AND_STEEL",
     accept_cargos_with_input_ratios=[
         ("AORE", 10),
     ],

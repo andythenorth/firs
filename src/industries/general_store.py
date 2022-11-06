@@ -23,7 +23,11 @@ industry = IndustryTertiary(
 )
 
 industry.enable_in_economy(
-    "PLAINS_TRAINS_AND_STEEL"
+    "PLAINS_TRAINS_AND_STEEL",
+    accept_cargo_types=[
+        "FOOD",
+        "GOOD",
+    ],
 )
 
 industry.add_tile(
