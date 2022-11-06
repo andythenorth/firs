@@ -14,6 +14,16 @@ industry = IndustrySecondary(
     fund_cost_multiplier="65",
 )
 
+industry.enable_in_economy(
+    "PLAINS_TRAINS_AND_STEEL",
+        accept_cargos_with_input_ratios=[
+        ("GRAI", 6),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("FOOD", 6),
+    ],
+)
+
 industry.add_tile(
     id="food_processor_tile_1",
     location_checks=TileLocationChecks(

@@ -204,30 +204,3 @@ industry.add_industry_layout(
         (1, 3, "flour_mill_spritelayout_brickbakery_2"),
     ],
 )
-industry.add_industry_layout(
-    id="flour_mill_industry_layout_4",
-    layout=[
-        (0, 0, "flour_mill_spritelayout_windmill_shed"),
-        (0, 1, "flour_mill_spritelayout_windmill_granary"),
-        (1, 0, "flour_mill_spritelayout_windmill_anim"),
-        (1, 1, "flour_mill_spritelayout_windmill_greeble"),
-    ],
-)
-industry.add_industry_layout(
-    id="flour_mill_industry_layout_5",
-    layout=[
-        (0, 0, "flour_mill_spritelayout_windmill_shed"),
-        (0, 1, "flour_mill_spritelayout_windmill_anim"),
-        (1, 0, "flour_mill_spritelayout_windmill_granary"),
-        (1, 1, "flour_mill_spritelayout_windmill_greeble"),
-    ],
-)
-industry.add_industry_layout(
-    id="flour_mill_industry_layout_6",
-    layout=[
-        (0, 0, "flour_mill_spritelayout_windmill_granary"),
-        (0, 1, "flour_mill_spritelayout_windmill_greeble"),
-        (1, 0, "flour_mill_spritelayout_windmill_anim"),
-        (1, 1, "flour_mill_spritelayout_windmill_shed"),
-    ],
-)
