@@ -293,11 +293,11 @@ from industries import oil_wells
 
 oil_wells.industry.register()
 
+"""
 from industries import oil_rig
 
 oil_rig.industry.register()
 
-"""
 from industries import orchard_piggery
 
 orchard_piggery.industry.register()

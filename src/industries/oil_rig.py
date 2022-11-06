@@ -24,11 +24,6 @@ industry = IndustryPrimaryExtractive(
     pollution_and_squalor_factor=1,
 )
 
-industry.enable_in_economy(
-    "PLAINS_TRAINS_AND_STEEL",
-    intro_year=1965,
-),
-
 industry.add_tile(
     id="oil_rig_tile_1",
     location_checks=TileLocationChecks(
