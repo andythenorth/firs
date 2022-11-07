@@ -5,7 +5,7 @@ industry = IndustryPrimaryOrganic(
     prod_cargo_types_with_multipliers=[("GRAI", 16)],
     prob_in_game="3",
     prob_map_gen="6",
-    map_colour="187",
+    map_colour="69",
     
     # basic inland_grain_terminal doesn't cluster, by design - no industry location checks needed
     prospect_chance="0.75",
