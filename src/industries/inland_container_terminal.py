@@ -19,7 +19,10 @@ industry.enable_in_economy(
     prod_cargo_types_with_multipliers=[
         ("GOOD", 20)
     ],
-    accept_cargo_types=["GOOD"],
+    accept_cargo_types=["GOOD"],    
+    fund_cost_multiplier="18",
+    intro_year=1965,
+    
 )
 
 industry.add_tile(

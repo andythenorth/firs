@@ -5,7 +5,7 @@ industry = IndustrySecondary(
     accept_cargos_with_input_ratios=[("COAL", 8)],
     prod_cargo_types_with_output_ratios=[],
     prob_in_game="0",  # do not build during gameplay
-    prob_map_gen="5",
+    prob_map_gen="3",
     map_colour="183",
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[
@@ -25,6 +25,7 @@ industry.enable_in_economy(
     prod_cargo_types_with_output_ratios=[
         ("COKE", 6),
     ],
+    fund_cost_multiplier="18",
 )
 
 

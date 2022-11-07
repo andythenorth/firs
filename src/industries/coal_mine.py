@@ -4,13 +4,13 @@ industry = IndustryPrimaryExtractive(
     id="coal_mine",
     prod_cargo_types_with_multipliers=[("COAL", 20)],
     prob_in_game="4",
-    prob_map_gen="7",
+    prob_map_gen="8",
     map_colour="1",
     location_checks=dict(require_cluster=[70, 3]),
     prospect_chance="0.75",
     name="TTD_STR_INDUSTRY_NAME_COAL_MINE",
     nearby_station_name="string(STR_STATION_COLLIERY)",
-    fund_cost_multiplier="252",
+    fund_cost_multiplier="200",
     pollution_and_squalor_factor=1,
     provides_snow=True,
 )
@@ -18,6 +18,7 @@ industry = IndustryPrimaryExtractive(
 industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
     prob_map_gen="10",
+    fund_cost_multiplier="80",
 )
 
 # industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

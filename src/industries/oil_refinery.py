@@ -26,6 +26,7 @@ industry.enable_in_economy(
         ("RFPR", 4),
     ],
     intro_year=1930,
+    fund_cost_multiplier="34",
 )
 
 industry.add_tile(

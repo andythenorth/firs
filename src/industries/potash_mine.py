@@ -22,6 +22,7 @@ industry.enable_in_economy(
     prod_cargo_types_with_multipliers=[
         ("POTA", 20)
     ],
+    fund_cost_multiplier="72",
 )
 
 industry.add_tile(

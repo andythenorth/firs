@@ -18,7 +18,7 @@ industry = IndustryTertiary(
     prospect_chance="0.75",
     name="string(STR_IND_GENERAL_STORE)",
     nearby_station_name="string(STR_STATION_TOWN_3)",
-    fund_cost_multiplier="15",
+    fund_cost_multiplier="4",
     provides_snow=True,
 )
 

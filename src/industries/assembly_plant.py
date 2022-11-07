@@ -15,7 +15,7 @@ industry = IndustrySecondary(
         ("FMSP", 1),
     ],
     prob_in_game="1",  # low chance of build during gameplay
-    prob_map_gen="5",
+    prob_map_gen="4",
     map_colour="141",
     name="string(STR_IND_ASSEMBLY_PLANT)",
     nearby_station_name="string(STR_STATION_AUTOMOTIVE)",
@@ -26,11 +26,11 @@ industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
     accept_cargos_with_input_ratios=[
         ("VPTS", 2),
-        ("ALUM", 1),
-        ("STEL", 2),
+        ("ALUM", 2),
+        ("STEL", 4),
     ],
-    intro_year=1890,
-    fund_cost_multiplier="30",
+    intro_year=1895,
+    fund_cost_multiplier="22",
 )
 
 industry.add_tile(

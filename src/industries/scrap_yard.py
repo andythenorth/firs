@@ -15,11 +15,6 @@ industry = IndustryTownProducerPopulationDependent(
     provides_snow=True,
 )
 
-industry.enable_in_economy(
-    "PLAINS_TRAINS_AND_STEEL",
-    prob_map_gen="10",
-)
-
 industry.add_tile(
     id="scrap_yard_tile_1",
     location_checks=TileLocationChecks(

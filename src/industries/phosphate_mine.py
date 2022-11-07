@@ -20,6 +20,7 @@ industry.enable_in_economy(
     prod_cargo_types_with_multipliers=[
         ("PHOS", 16)
     ],
+    fund_cost_multiplier="68",
 )
 
 # 2 tiles for this industry: pit outer tile cannot be on slopes; pit inner tiles and processor tiles can be

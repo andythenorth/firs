@@ -22,9 +22,9 @@ industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
     accept_cargo_types=[
         "CMNT",
-        "STEL",
-        "WDPR",
+        "BDMT",
     ],
+    fund_cost_multiplier="4",
 )
 
 industry.add_tile(

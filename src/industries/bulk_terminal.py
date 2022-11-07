@@ -20,11 +20,10 @@ industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
     accept_cargo_types=["COAL", "GRAI",],
     prod_cargo_types_with_multipliers=[
-        ("AORE", 8),
-        ("IORE", 10),
+        ("AORE", 22),
     ],
-    intro_year=1890,
-    fund_cost_multiplier="90",
+    intro_year=1895,
+    fund_cost_multiplier="16",
 )
 
 industry.add_tile(

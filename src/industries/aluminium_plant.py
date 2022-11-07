@@ -10,7 +10,7 @@ industry = IndustrySecondary(
         ("ALUM", 8),
     ],
     prob_in_game="3",
-    prob_map_gen="5",
+    prob_map_gen="3",
     map_colour="19",
     name="string(STR_IND_ALUMINIUM_PLANT)",
     nearby_station_name="string(STR_STATION_SMELTER)",
@@ -24,8 +24,8 @@ industry.enable_in_economy(
     accept_cargos_with_input_ratios=[
         ("AORE", 10),
     ],
-    intro_year=1890,
-    fund_cost_multiplier="110",
+    intro_year=1895,
+    fund_cost_multiplier="30",
 )
 
 # industry.enable_in_economy("MILD_MILD_WEST",)

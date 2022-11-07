@@ -4,7 +4,7 @@ industry = IndustryPrimaryOrganic(
     id="inland_grain_terminal",
     prod_cargo_types_with_multipliers=[("GRAI", 16)],
     prob_in_game="3",
-    prob_map_gen="15",
+    prob_map_gen="6",
     map_colour="187",
     
     # basic inland_grain_terminal doesn't cluster, by design - no industry location checks needed
@@ -15,10 +15,10 @@ industry = IndustryPrimaryOrganic(
     fund_cost_multiplier="40",
 )
 
-# definitely not in Arctic Basic, inland_grain_terminal has been added and removed more than once from that economy :P
-
 industry.enable_in_economy(
-    "PLAINS_TRAINS_AND_STEEL"
+    "PLAINS_TRAINS_AND_STEEL",
+    intro_year=1930,
+    fund_cost_multiplier="12",
 )
 
 industry.add_tile(

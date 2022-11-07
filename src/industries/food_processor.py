@@ -22,6 +22,8 @@ industry.enable_in_economy(
     prod_cargo_types_with_output_ratios=[
         ("FOOD", 6),
     ],
+    intro_year=1930,
+    fund_cost_multiplier="9",
 )
 
 industry.add_tile(

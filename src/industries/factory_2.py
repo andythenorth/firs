@@ -31,6 +31,18 @@ industry.add_tile(
     ),
 )
 
+industry.enable_in_economy(
+    "PLAINS_TRAINS_AND_STEEL",
+    accept_cargos_with_input_ratios=[
+        ("RFPR", 4),
+        ("ALUM", 2),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("GOOD", 4),
+    ],
+    fund_cost_multiplier="11",
+)
+
 spriteset_ground = industry.add_spriteset(
     type="cobble",
 )

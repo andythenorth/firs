@@ -19,6 +19,7 @@ industry = IndustryTertiary(
 industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
     accept_cargo_types=["COAL", "OIL_",],
+    fund_cost_multiplier="16",
 )
 
 industry.add_tile(

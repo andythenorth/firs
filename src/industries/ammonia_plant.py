@@ -12,7 +12,7 @@ industry = IndustrySecondary(
         ("NH3_", 4),
     ],
     prob_in_game="3",
-    prob_map_gen="5",
+    prob_map_gen="4",
     map_colour="173",
     name="string(STR_IND_AMMONIA_PLANT)",
     nearby_station_name="string(STR_STATION_HEAVY_INDUSTRY_2)",
@@ -24,7 +24,8 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
-    intro_year=1890,
+    intro_year=1895,
+    fund_cost_multiplier="21",
 )
 
 industry.add_tile(

@@ -13,7 +13,7 @@ industry = IndustrySecondary(
     map_colour="119",
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[
-            ["quarry", "limestone_mine"],
+            ["quarry"],
             72,
         ],
         same_type_distance=72,
@@ -33,7 +33,9 @@ industry.enable_in_economy(
     ],
     prod_cargo_types_with_output_ratios=[
         ("QLME", 1),
-    ]
+    ],
+    intro_year=1895,
+    fund_cost_multiplier="13",
 )
 
 industry.add_tile(

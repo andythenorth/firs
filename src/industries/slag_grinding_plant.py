@@ -6,8 +6,8 @@ industry = IndustrySecondary(
         ("SLAG", 8),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("CMNT", 5),
-        ("FMSP", 3),
+        ("GRVL", 6),
+        ("FMSP", 2),
     ],
     prob_in_game="3",
     prob_map_gen="5",
@@ -27,7 +27,8 @@ industry = IndustrySecondary(
 )
 
 industry.enable_in_economy(
-    "PLAINS_TRAINS_AND_STEEL"
+    "PLAINS_TRAINS_AND_STEEL",
+    fund_cost_multiplier="34",
 )
 
 industry.add_tile(

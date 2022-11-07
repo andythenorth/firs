@@ -23,6 +23,8 @@ industry.enable_in_economy(
         ("PETR", 2),
         ("FERT", 2),
     ],
+    intro_year=1930,
+    fund_cost_multiplier="14",
 )
 
 industry.add_tile(

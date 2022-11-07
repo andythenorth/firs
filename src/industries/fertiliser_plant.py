@@ -29,6 +29,8 @@ industry.enable_in_economy(
     prod_cargo_types_with_output_ratios=[
         ("FERT", 8),
     ],
+    fund_cost_multiplier="25",
+    intro_year="1895",
 )
 
 industry.add_tile(

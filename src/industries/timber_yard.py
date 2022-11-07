@@ -23,6 +23,7 @@ industry.enable_in_economy(
         ("WDPR", 6),
         ("RFPR", 2),
     ],
+    fund_cost_multiplier="18",
 )
 
 # non-animated tile, allowed on slopes

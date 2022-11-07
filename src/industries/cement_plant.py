@@ -30,7 +30,8 @@ industry.enable_in_economy(
         ("GRVL", 4),
     ],
     prod_cargo_types_with_output_ratios=[("CMNT", 8)],
-    intro_year=1930,
+    intro_year=1965,
+    fund_cost_multiplier="24",
 ),
 
 # ['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('COAL', 2), ('CLAY', 2), ('GRVL', 4)]

@@ -18,7 +18,8 @@ industry = IndustryPrimaryAgricultural(
 # definitely not in Arctic Basic, grain_elevator has been added and removed more than once from that economy :P
 
 industry.enable_in_economy(
-    "PLAINS_TRAINS_AND_STEEL"
+    "PLAINS_TRAINS_AND_STEEL",
+    fund_cost_multiplier="9",
 )
 
 industry.add_tile(

@@ -18,9 +18,10 @@ industry = IndustryPrimaryExtractive(
 industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
     prod_cargo_types_with_multipliers=[
-        ("GRVL", 14),
-        ("LIME", 14),
+        ("GRVL", 15),
+        ("LIME", 15),
     ],
+    fund_cost_multiplier="58",
 )
 
 # 2 tiles for this industry: pit outer tile cannot be on slopes; pit inner tiles and processor tiles can be

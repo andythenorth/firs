@@ -15,7 +15,7 @@ industry = IndustrySecondary(
         ("SLAG", 2),
     ],
     prob_in_game="0",  # do not build during gameplay
-    prob_map_gen="5",
+    prob_map_gen="3",
     map_colour="49",
     special_flags=["IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE"],
     location_checks=dict(
@@ -31,13 +31,16 @@ industry = IndustrySecondary(
 industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
     accept_cargos_with_input_ratios=[
-        ("IRON", 4),
+        ("IRON", 3),
+        ("COKE", 5),
         ("QLME", 1),
     ],
     prod_cargo_types_with_output_ratios=[
         ("STEL", 3),
         ("SLAG", 2),
-    ]
+    ],
+    intro_year=1895,
+    fund_cost_multiplier="32",
 )
 
 industry.add_tile(

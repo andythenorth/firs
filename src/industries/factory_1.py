@@ -14,15 +14,23 @@ industry = IndustrySecondary(
         ("GOOD", 6),
     ],
     prob_in_game="7",
-    prob_map_gen="8",
+    prob_map_gen="6",
     map_colour="166",
     name="string(STR_IND_FACTORY_1)",
-    nearby_station_name="string(STR_STATION_INDUSTRY_ESTATE_1)",
+    nearby_station_name="string(STR_STATION_FACTORY_1)",
     fund_cost_multiplier="95",
 )
 
 industry.enable_in_economy(
-    "PLAINS_TRAINS_AND_STEEL"
+    "PLAINS_TRAINS_AND_STEEL",
+    accept_cargos_with_input_ratios=[
+        ("IRON", 4),
+        ("COAL", 2),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("GOOD", 4),
+    ],
+    fund_cost_multiplier="11",
 )
 
 industry.add_tile(
