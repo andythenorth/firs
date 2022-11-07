@@ -1,8 +1,8 @@
-from industry import IndustryPrimaryOrganic, TileLocationChecks
+from industry import IndustryPrimaryAgricultural, TileLocationChecks
 
-industry = IndustryPrimaryOrganic(
+industry = IndustryPrimaryAgricultural(
     id="grain_elevator",
-    prod_cargo_types_with_multipliers=[("GRAI", 1)],
+    prod_cargo_types_with_multipliers=[("GRAI", 10)],
     prob_in_game="3",
     prob_map_gen="15",
     map_colour="50",

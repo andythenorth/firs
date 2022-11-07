@@ -2179,6 +2179,23 @@ class IndustryPrimaryOrganic(IndustryPrimary):
         ]  # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
 
 
+class IndustryPrimaryAgricultural(IndustryPrimary):
+    """
+    Industry that is organic AND has production boosted by delivery of FERT (farms and similar)
+    Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
+    """
+
+    def __init__(self, **kwargs):
+        kwargs["accept_cargo_types"] = ["FERT"]
+        kwargs["life_type"] = "IND_LIFE_TYPE_ORGANIC"
+        super().__init__(**kwargs)
+        self.supply_requirements = [
+            0,
+            "PRIMARY",
+            2,
+        ]  # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
+
+
 class IndustryPrimaryPort(IndustryPrimary):
     """
     Industry that is import-export AND has production boosted by delivery of arbitrary cargos (ports and similar)

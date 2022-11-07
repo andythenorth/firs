@@ -5,20 +5,26 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="ammonia_plant",
     accept_cargos_with_input_ratios=[
-        ("NAPH", 8),
+        ("COAL", 8),
+        ("OIL_", 8),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("NH3_", 6),
-        ("NIAC", 2),
+        ("NH3_", 4),
     ],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="173",
     name="string(STR_IND_AMMONIA_PLANT)",
     nearby_station_name="string(STR_STATION_HEAVY_INDUSTRY_2)",
-    fund_cost_multiplier="170",
+    fund_cost_multiplier="50",
     graphics_change_dates=[1952],
     provides_snow=True,
+    combined_cargos_boost_prod=False,
+)
+
+industry.enable_in_economy(
+    "PLAINS_TRAINS_AND_STEEL",
+    intro_year=1890,
 )
 
 industry.add_tile(

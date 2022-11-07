@@ -7,6 +7,10 @@ from industries import aluminium_plant
 
 aluminium_plant.industry.register()
 
+from industries import ammonia_plant
+
+ammonia_plant.industry.register()
+
 """
 from industries import arable_farm
 
@@ -147,6 +151,10 @@ engine_plant.industry.register()
 from industries import farm
 
 farm.industry.register()
+
+from industries import fertiliser_plant
+
+fertiliser_plant.industry.register()
 
 """
 from industries import ferrochrome_smelter
