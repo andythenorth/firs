@@ -4,7 +4,7 @@ industry = IndustryPrimaryAgricultural(
     id="grain_elevator",
     prod_cargo_types_with_multipliers=[("GRAI", 10)],
     prob_in_game="3",
-    prob_map_gen="15",
+    prob_map_gen="8",
     map_colour="191",
     
     # basic grain_elevator doesn't cluster, by design - no industry location checks needed
@@ -19,7 +19,7 @@ industry = IndustryPrimaryAgricultural(
 
 industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
-    fund_cost_multiplier="9",
+    fund_cost_multiplier="6",
 )
 
 industry.add_tile(

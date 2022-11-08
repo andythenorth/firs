@@ -18,7 +18,7 @@ industry = IndustryPrimaryOrganic(
 industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
     intro_year=1930,
-    fund_cost_multiplier="12",
+    fund_cost_multiplier="3",
 )
 
 industry.add_tile(
