@@ -1,6 +1,6 @@
 from industry import IndustrySecondary, TileLocationChecks
 
-# !! Specialist Goods Factory
+# !! Modern Goods Factory
 # !! layout names will need set correctly
 industry = IndustrySecondary(
     id="factory_2",

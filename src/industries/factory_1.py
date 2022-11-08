@@ -1,6 +1,6 @@
 from industry import IndustrySecondary, TileLocationChecks
 
-# !! Specialist Component Factory
+# !! Basic Goods Factory
 # !! layout names will need set correctly
 industry = IndustrySecondary(
     id="factory_1",
@@ -54,13 +54,13 @@ spriteset_2 = industry.add_spriteset(
     sprites=[(80, 60, 64, 70, -31, -39)],
 )
 spriteset_3 = industry.add_spriteset(
-    sprites=[(150, 60, 64, 51, -31, -20)],
+    sprites=[(150, 60, 64, 70, -31, -39)],
 )
 spriteset_4 = industry.add_spriteset(
     sprites=[(220, 60, 64, 51, -31, -20)],
 )
 spriteset_5 = industry.add_spriteset(
-    sprites=[(290, 60, 64, 51, -31, -20)],
+    sprites=[(290, 60, 64, 70, -31, -39)],
 )
 spriteset_6 = industry.add_spriteset(
     sprites=[(360, 60, 64, 31, -31, 0)],
@@ -136,7 +136,7 @@ industry.add_industry_layout(
         (0, 4, "factory_1_tile_1", "factory_1_spritelayout_5"),
         (1, 0, "factory_1_tile_1", "factory_1_spritelayout_3"),
         (1, 1, "factory_1_tile_1", "factory_1_spritelayout_3"),
-        (1, 2, "factory_1_tile_1", "factory_1_spritelayout_5"),
+        (1, 2, "factory_1_tile_1", "factory_1_spritelayout_7"),
         (1, 3, "factory_1_tile_1", "factory_1_spritelayout_4"),
         (1, 4, "factory_1_tile_1", "factory_1_spritelayout_6"),
         (2, 0, "factory_1_tile_1", "factory_1_spritelayout_3"),
@@ -162,6 +162,6 @@ industry.add_industry_layout(
         (3, 0, "factory_1_tile_1", "factory_1_spritelayout_4"),
         (3, 1, "factory_1_tile_1", "factory_1_spritelayout_5"),
         (3, 2, "factory_1_tile_1", "factory_1_spritelayout_4"),
-        (3, 3, "factory_1_tile_1", "factory_1_spritelayout_3"),
+        (3, 3, "factory_1_tile_1", "factory_1_spritelayout_7"),
     ],
 )
