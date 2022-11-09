@@ -31,7 +31,6 @@ industry.enable_in_economy(
     ],
     prod_cargo_types_with_output_ratios=[
         ("STCB", 3),
-        ("SLAG", 1),
     ],
     fund_cost_multiplier="21",
     intro_year="1895",
