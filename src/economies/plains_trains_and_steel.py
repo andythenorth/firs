@@ -36,6 +36,7 @@ economy = Economy(
         "quicklime",
         "slag",
         "steel",
+        "steel_sections",
         "stone",
         "timber",
         "vehicle_parts",

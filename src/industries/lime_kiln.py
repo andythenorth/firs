@@ -35,7 +35,7 @@ industry.enable_in_economy(
         ("QLME", 1),
     ],
     intro_year=1895,
-    fund_cost_multiplier="13",
+    fund_cost_multiplier="11",
 )
 
 industry.add_tile(

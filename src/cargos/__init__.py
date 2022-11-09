@@ -319,9 +319,11 @@ from cargos import pipe
 pipe.cargo.register()
 """
 
+"""
 from cargos import plastics
 
 plastics.cargo.register()
+"""
 
 from cargos import potash
 
@@ -383,17 +385,16 @@ from cargos import steel
 
 steel.cargo.register()
 
-"""
+
 from cargos import steel_sections
 
 steel_sections.cargo.register()
-"""
 
+"""
 from cargos import steel_sheet
 
 steel_sheet.cargo.register()
 
-"""
 from cargos import steel_wire_rod
 
 steel_wire_rod.cargo.register()

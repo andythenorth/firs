@@ -22,7 +22,7 @@ industry = IndustryTertiary(
 
 industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
-    fund_cost_multiplier="6",
+    fund_cost_multiplier="7",
     intro_year=1895,
 )
 

@@ -18,7 +18,7 @@ industry = IndustryPrimaryExtractive(
 industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
     prob_map_gen="10",
-    fund_cost_multiplier="80",
+    fund_cost_multiplier="50",
 )
 
 # industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

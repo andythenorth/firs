@@ -24,7 +24,7 @@ industry = IndustrySecondary(
 industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
     accept_cargos_with_input_ratios=[
-        ("STEL", 8),
+        ("STCB", 8),
         ("ALUM", 2),
     ],
     prod_cargo_types_with_output_ratios=[

@@ -25,7 +25,7 @@ industry.enable_in_economy(
         ("AORE", 10),
     ],
     intro_year=1895,
-    fund_cost_multiplier="30",
+    fund_cost_multiplier="23",
 )
 
 # industry.enable_in_economy("MILD_MILD_WEST",)

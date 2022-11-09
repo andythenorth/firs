@@ -23,6 +23,20 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=2,
 )
 
+industry.enable_in_economy(
+    "PLAINS_TRAINS_AND_STEEL",
+    accept_cargos_with_input_ratios=[
+        ("IRON", 3),
+        ("QLME", 1),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("STCB", 3),
+        ("SLAG", 1),
+    ],
+    fund_cost_multiplier="21",
+    intro_year="1895",
+)
+
 industry.add_tile(
     id="electric_arc_furnace_tile_1",
     animation_length=47,

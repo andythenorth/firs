@@ -28,7 +28,7 @@ industry.enable_in_economy(
         ("IRON", 4),
         ("SLAG", 2),
     ],
-    fund_cost_multiplier="100",
+    fund_cost_multiplier="31",
 )
 
 

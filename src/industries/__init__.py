@@ -139,9 +139,11 @@ from industries import dredging_site
 
 dredging_site.industry.register()
 
+"""
 from industries import electric_arc_furnace
 
 electric_arc_furnace.industry.register()
+"""
 
 from industries import engine_plant
 

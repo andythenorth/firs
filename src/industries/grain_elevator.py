@@ -19,7 +19,7 @@ industry = IndustryPrimaryAgricultural(
 
 industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
-    fund_cost_multiplier="6",
+    fund_cost_multiplier="4",
 )
 
 industry.add_tile(
