@@ -40,9 +40,10 @@ industry.enable_in_economy(
 
     ],
     prod_cargo_types_with_output_ratios=[
-        ("GOOD", 4),
+        ("GOOD", 5),
     ],
-    fund_cost_multiplier="11",
+    fund_cost_multiplier="8",
+    intro_year="1965",
 )
 
 spriteset_ground = industry.add_spriteset(
@@ -70,11 +71,11 @@ spriteset_6 = industry.add_spriteset(
 spriteset_7 = industry.add_spriteset(
     sprites=[(430, 60, 64, 31, -31, 0)],
 )
-sprite_smoke = industry.add_smoke_sprite(
-    smoke_type="dark_smoke_small",
-    xoffset=0,
-    yoffset=8,
-    zoffset=53,
+spriteset_8 = industry.add_spriteset(
+    sprites=[(290, 121, 64, 51, -31, -20)],
+)
+spriteset_9 = industry.add_spriteset(
+    sprites=[(10, 10, 64, 31, -31, 0)],
 )
 
 industry.add_spritelayout(
@@ -82,8 +83,6 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
-    smoke_sprites=[sprite_smoke],
-    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="factory_2_spritelayout_2",
@@ -104,7 +103,7 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    fences=["nw", "ne", "se"],
+    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="factory_2_spritelayout_5",
@@ -127,43 +126,53 @@ industry.add_spritelayout(
     building_sprites=[spriteset_7],
     fences=["nw", "ne", "se", "sw"],
 )
+industry.add_spritelayout(
+    id="factory_2_spritelayout_8",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_8],
+    fences=["nw", "ne", "se", "sw"],
+)
+industry.add_spritelayout(
+    id="factory_2_spritelayout_9",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_9],
+)
 
 industry.add_industry_layout(
     id="factory_2_industry_layout_1",
     layout=[
-        (0, 0, "factory_2_tile_1", "factory_2_spritelayout_3"),
-        (0, 1, "factory_2_tile_1", "factory_2_spritelayout_3"),
-        (0, 2, "factory_2_tile_1", "factory_2_spritelayout_5"),
-        (0, 3, "factory_2_tile_1", "factory_2_spritelayout_4"),
-        (0, 4, "factory_2_tile_1", "factory_2_spritelayout_5"),
-        (1, 0, "factory_2_tile_1", "factory_2_spritelayout_3"),
-        (1, 1, "factory_2_tile_1", "factory_2_spritelayout_3"),
-        (1, 2, "factory_2_tile_1", "factory_2_spritelayout_5"),
-        (1, 3, "factory_2_tile_1", "factory_2_spritelayout_4"),
-        (1, 4, "factory_2_tile_1", "factory_2_spritelayout_6"),
-        (2, 0, "factory_2_tile_1", "factory_2_spritelayout_3"),
-        (2, 1, "factory_2_tile_1", "factory_2_spritelayout_1"),
-        (2, 2, "factory_2_tile_1", "factory_2_spritelayout_2"),
-        (2, 3, "factory_2_tile_1", "factory_2_spritelayout_7"),
-        (2, 4, "factory_2_tile_1", "factory_2_spritelayout_7"),
+        (0, 0, "factory_2_tile_1", "factory_2_spritelayout_5"),
+        (0, 1, "factory_2_tile_1", "factory_2_spritelayout_5"),
+        (0, 2, "factory_2_tile_1", "factory_2_spritelayout_3"),
+        (0, 3, "factory_2_tile_1", "factory_2_spritelayout_1"),
+        (1, 0, "factory_2_tile_1", "factory_2_spritelayout_5"),
+        (1, 1, "factory_2_tile_1", "factory_2_spritelayout_5"),
+        (1, 2, "factory_2_tile_1", "factory_2_spritelayout_6"),
+        (1, 3, "factory_2_tile_1", "factory_2_spritelayout_9"),
+        (2, 0, "factory_2_tile_1", "factory_2_spritelayout_2"),
+        (2, 1, "factory_2_tile_1", "factory_2_spritelayout_6"),
+        (2, 2, "factory_2_tile_1", "factory_2_spritelayout_8"),
+        (2, 3, "factory_2_tile_1", "factory_2_spritelayout_4"),
     ],
 )
 industry.add_industry_layout(
     id="factory_2_industry_layout_2",
     layout=[
-        (0, 2, "factory_2_tile_1", "factory_2_spritelayout_3"),
-        (0, 3, "factory_2_tile_1", "factory_2_spritelayout_3"),
-        (1, 0, "factory_2_tile_1", "factory_2_spritelayout_1"),
-        (1, 1, "factory_2_tile_1", "factory_2_spritelayout_2"),
-        (1, 2, "factory_2_tile_1", "factory_2_spritelayout_3"),
-        (1, 3, "factory_2_tile_1", "factory_2_spritelayout_3"),
-        (2, 0, "factory_2_tile_1", "factory_2_spritelayout_4"),
-        (2, 1, "factory_2_tile_1", "factory_2_spritelayout_7"),
-        (2, 2, "factory_2_tile_1", "factory_2_spritelayout_6"),
-        (2, 3, "factory_2_tile_1", "factory_2_spritelayout_6"),
-        (3, 0, "factory_2_tile_1", "factory_2_spritelayout_4"),
+        (0, 2, "factory_2_tile_1", "factory_2_spritelayout_8"),
+        (0, 3, "factory_2_tile_1", "factory_2_spritelayout_4"),
+        (1, 0, "factory_2_tile_1", "factory_2_spritelayout_5"),
+        (1, 1, "factory_2_tile_1", "factory_2_spritelayout_5"),
+        (1, 2, "factory_2_tile_1", "factory_2_spritelayout_2"),
+        (1, 3, "factory_2_tile_1", "factory_2_spritelayout_9"),
+        (2, 0, "factory_2_tile_1", "factory_2_spritelayout_5"),
+        (2, 1, "factory_2_tile_1", "factory_2_spritelayout_5"),
+        (2, 2, "factory_2_tile_1", "factory_2_spritelayout_3"),
+        (2, 3, "factory_2_tile_1", "factory_2_spritelayout_7"),
+        (3, 0, "factory_2_tile_1", "factory_2_spritelayout_5"),
         (3, 1, "factory_2_tile_1", "factory_2_spritelayout_5"),
-        (3, 2, "factory_2_tile_1", "factory_2_spritelayout_4"),
-        (3, 3, "factory_2_tile_1", "factory_2_spritelayout_3"),
+        (3, 2, "factory_2_tile_1", "factory_2_spritelayout_6"),
+        (3, 3, "factory_2_tile_1", "factory_2_spritelayout_1"),
     ],
 )
