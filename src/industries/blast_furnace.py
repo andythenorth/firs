@@ -29,7 +29,7 @@ industry.enable_in_economy(
         ("COKE", 3),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("IRON", 4),
+        ("IRON", 3),
         ("SLAG", 2),
     ],
     fund_cost_multiplier="29",

@@ -32,11 +32,11 @@ industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
     accept_cargos_with_input_ratios=[
         ("IRON", 3),
-        ("COKE", 2),
+        ("COKE", 1),
     ],
     prod_cargo_types_with_output_ratios=[
         ("STEL", 3),
-        ("SLAG", 2),
+        ("SLAG", 1),
     ],
     fund_cost_multiplier="25",
 )
