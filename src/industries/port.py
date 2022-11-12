@@ -62,27 +62,62 @@ spriteset_jetty_slope_se_nw = industry.add_spriteset(
 spriteset_jetty_slope_sw_ne = industry.add_spriteset(
     sprites=[(360, 60, 64, 39, -31, -7)],
 )
-spriteset_warehouse = industry.add_spriteset(
-    sprites=[(440, 10, 64, 74, -31, -34)], zoffset=18
+spriteset_office = industry.add_spriteset(
+    sprites=[(440, 10, 64, 74, -31, -34)], 
+    zoffset=18
 )
-spriteset_9 = industry.add_spriteset(
+spriteset_containers_1 = industry.add_spriteset(
+    sprites=[(510, 10, 64, 74, -31, -34)], 
+    zoffset=16
+)
+spriteset_containers_2 = industry.add_spriteset(
+    sprites=[(440, 110, 64, 74, -31, -34)], 
+    zoffset=16
+)
+spriteset_containers_3 = industry.add_spriteset(
+    sprites=[(510, 110, 64, 74, -31, -34)], 
+    zoffset=16
+)
+
+# New crane sprites SW
+spriteset_crane_sw_1 = industry.add_spriteset(
+    sprites=[(10, 160, 64, 122, -31, -34)], zoffset=40
+)
+spriteset_crane_sw_2 = industry.add_spriteset(
+    sprites=[(80, 160, 64, 122, -31, -34)], zoffset=24
+)
+
+# New crane sprites SE
+spriteset_crane_se_1 = industry.add_spriteset(
+    sprites=[(150, 160, 64, 122, -31, -34)], zoffset=40
+)
+spriteset_crane_se_2 = industry.add_spriteset(
+    sprites=[(220, 160, 64, 122, -31, -34)], zoffset=24
+)
+
+# New crane sprites NW
+spriteset_crane_nw_1 = industry.add_spriteset(
+    sprites=[(290, 160, 64, 122, -31, -34)], zoffset=40
+)
+spriteset_crane_nw_2 = industry.add_spriteset(
+    sprites=[(360, 160, 64, 122, -31, -34)], zoffset=24
+)
+
+
+
+
+
+spriteset_containers_small_a = industry.add_spriteset(
     sprites=[(150, 10, 64, 39, -31, 0)],
-    yoffset=4,
-    zoffset=27,
-    yextent=12,
+    zoffset=16,
 )
-spriteset_9b = industry.add_spriteset(
-    sprites=[(150, 10, 64, 39, -31, 0)],
-    xoffset=5,
-    zoffset=40,
-    xextent=11,
+spriteset_containers_small_b = industry.add_spriteset(
+    sprites=[(220, 10, 64, 39, -31, 0)],
+    zoffset=16,
 )
-spriteset_10 = industry.add_spriteset(
-    sprites=[(220, 10, 64, 39, -31, -7)],
-    yoffset=4,
-    zoffset=27,
-    yextent=12,
-)
+
+
+
 spriteset_11 = industry.add_spriteset(
     sprites=[(10, 110, 64, 39, -35, -15)],
 )
@@ -105,9 +140,13 @@ spriteset_truck = industry.add_spriteset(
     sprites=[(360, 10, 64, 39, -31, 0)],
     zoffset=18,
 )
+spriteset_checkpoint = industry.add_spriteset(
+    sprites=[(290, 10, 64, 39, -31, 0)],
+    zoffset=18,
+)
 # spritelayout numbers have gaps for historical reasons
 industry.add_spritelayout(
-    id="port_spritelayout_2",
+    id="port_spritelayout_truck",
     tile="port_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_empty,
@@ -119,18 +158,30 @@ industry.add_spritelayout(
     ],
 )
 industry.add_spritelayout(
-    id="port_spritelayout_11",
+    id="port_spritelayout_checkpoint",
     tile="port_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_empty,
-    building_sprites=[spriteset_jetty_se_nw, spriteset_concrete, spriteset_warehouse],
+    building_sprites=[
+        spriteset_jetty_se_nw,
+        spriteset_jetty_ne_sw,
+        spriteset_concrete,
+        spriteset_checkpoint,
+    ],
 )
 industry.add_spritelayout(
-    id="port_spritelayout_12",
+    id="port_spritelayout_containers_jetty_1",
     tile="port_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_empty,
-    building_sprites=[spriteset_jetty_ne_sw, spriteset_concrete, spriteset_warehouse],
+    building_sprites=[spriteset_jetty_se_nw, spriteset_concrete, spriteset_containers_1],
+)
+industry.add_spritelayout(
+    id="port_spritelayout_containers_jetty_2",
+    tile="port_tile_1",
+    ground_sprite=spriteset_ground_empty,
+    ground_overlay=spriteset_ground_empty,
+    building_sprites=[spriteset_jetty_ne_sw, spriteset_concrete, spriteset_containers_2],
 )
 industry.add_spritelayout(
     id="port_spritelayout_13",
@@ -141,7 +192,7 @@ industry.add_spritelayout(
         spriteset_jetty_se_nw,
         spriteset_jetty_ne_sw,
         spriteset_concrete,
-        spriteset_warehouse,
+        spriteset_office,
     ],
 )
 industry.add_spritelayout(
@@ -194,7 +245,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_16],
 )
 industry.add_spritelayout(
-    id="port_spritelayout_28",
+    id="port_spritelayout_small_hut",
     tile="port_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_empty,
@@ -202,11 +253,24 @@ industry.add_spritelayout(
         spriteset_jetty_se_nw,
         spriteset_jetty_ne_sw,
         spriteset_concrete,
-        spriteset_9,
+        spriteset_containers_small_a,
+    ],
+)
+#New crane SW
+industry.add_spritelayout(
+    id="port_spritelayout_crane_sw_1",
+    tile="port_tile_1",
+    ground_sprite=spriteset_ground_empty,
+    ground_overlay=spriteset_ground_empty,
+    building_sprites=[
+        spriteset_jetty_se_nw,
+        spriteset_jetty_ne_sw,
+        spriteset_concrete,
+        spriteset_crane_sw_1,
     ],
 )
 industry.add_spritelayout(
-    id="port_spritelayout_29",
+    id="port_spritelayout_crane_sw_2",
     tile="port_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_empty,
@@ -214,7 +278,71 @@ industry.add_spritelayout(
         spriteset_jetty_se_nw,
         spriteset_jetty_ne_sw,
         spriteset_concrete,
-        spriteset_10,
+        spriteset_crane_sw_2,
+    ],
+)
+
+#New crane SW
+industry.add_spritelayout(
+    id="port_spritelayout_crane_se_1",
+    tile="port_tile_1",
+    ground_sprite=spriteset_ground_empty,
+    ground_overlay=spriteset_ground_empty,
+    building_sprites=[
+        spriteset_jetty_se_nw,
+        spriteset_jetty_ne_sw,
+        spriteset_concrete,
+        spriteset_crane_se_1,
+    ],
+)
+industry.add_spritelayout(
+    id="port_spritelayout_crane_se_2",
+    tile="port_tile_1",
+    ground_sprite=spriteset_ground_empty,
+    ground_overlay=spriteset_ground_empty,
+    building_sprites=[
+        spriteset_jetty_se_nw,
+        spriteset_jetty_ne_sw,
+        spriteset_concrete,
+        spriteset_crane_se_2,
+    ],
+)
+
+#New crane NW
+industry.add_spritelayout(
+    id="port_spritelayout_crane_nw_1",
+    tile="port_tile_1",
+    ground_sprite=spriteset_ground_empty,
+    ground_overlay=spriteset_ground_empty,
+    building_sprites=[
+        spriteset_jetty_se_nw,
+        spriteset_jetty_ne_sw,
+        spriteset_concrete,
+        spriteset_crane_nw_1,
+    ],
+)
+industry.add_spritelayout(
+    id="port_spritelayout_crane_nw_2",
+    tile="port_tile_1",
+    ground_sprite=sprite_ground,
+    ground_overlay=spriteset_ground_empty,
+    building_sprites=[
+        spriteset_crane_nw_2,
+    ],
+)
+
+
+
+industry.add_spritelayout(
+    id="port_spritelayout_small_stack",
+    tile="port_tile_1",
+    ground_sprite=spriteset_ground_empty,
+    ground_overlay=spriteset_ground_empty,
+    building_sprites=[
+        spriteset_jetty_se_nw,
+        spriteset_jetty_ne_sw,
+        spriteset_concrete,
+        spriteset_containers_small_b,
     ],
 )
 industry.add_spritelayout(
@@ -226,16 +354,86 @@ industry.add_spritelayout(
         spriteset_jetty_se_nw,
         spriteset_jetty_ne_sw,
         spriteset_concrete,
-        spriteset_9b,
+        spriteset_containers_small_a,
     ],
 )
 industry.add_magic_spritelayout(
     type="harbour_coast_foundations",
-    base_id="port_spritelayout_coast_warehouse",
+    base_id="port_spritelayout_coast_checkpoint",
     tile="port_tile_2",
     config={
         "ground_sprite": spriteset_ground_empty,  # should alqways be empty for this magic spritelayout
-        "building_sprites": [spriteset_concrete, spriteset_warehouse],
+        "building_sprites": [spriteset_concrete, spriteset_checkpoint],
+        "foundation_sprites": {
+            "ne_sw": spriteset_jetty_ne_sw,
+            "se_nw": spriteset_jetty_se_nw,
+            "slope_nw_se": spriteset_jetty_slope_nw_se,
+            "slope_ne_sw": spriteset_jetty_slope_ne_sw,
+            "slope_se_nw": spriteset_jetty_slope_se_nw,
+            "slope_sw_ne": spriteset_jetty_slope_sw_ne,
+        },
+    },
+)
+industry.add_magic_spritelayout(
+    type="harbour_coast_foundations",
+    base_id="port_spritelayout_coast_office",
+    tile="port_tile_2",
+    config={
+        "ground_sprite": spriteset_ground_empty,  # should alqways be empty for this magic spritelayout
+        "building_sprites": [spriteset_concrete, spriteset_office],
+        "foundation_sprites": {
+            "ne_sw": spriteset_jetty_ne_sw,
+            "se_nw": spriteset_jetty_se_nw,
+            "slope_nw_se": spriteset_jetty_slope_nw_se,
+            "slope_ne_sw": spriteset_jetty_slope_ne_sw,
+            "slope_se_nw": spriteset_jetty_slope_se_nw,
+            "slope_sw_ne": spriteset_jetty_slope_sw_ne,
+        },
+    },
+)
+industry.add_magic_spritelayout(
+    type="harbour_coast_foundations",
+    base_id="port_spritelayout_coast_containers_1",
+    tile="port_tile_2",
+    config={
+        "ground_sprite": spriteset_ground_empty,  # should alqways be empty for this magic spritelayout
+        "building_sprites": [spriteset_concrete, spriteset_containers_1],
+        "foundation_sprites": {
+            "ne_sw": spriteset_jetty_ne_sw,
+            "se_nw": spriteset_jetty_se_nw,
+            "slope_nw_se": spriteset_jetty_slope_nw_se,
+            "slope_ne_sw": spriteset_jetty_slope_ne_sw,
+            "slope_se_nw": spriteset_jetty_slope_se_nw,
+            "slope_sw_ne": spriteset_jetty_slope_sw_ne,
+        },
+    },
+)
+
+industry.add_magic_spritelayout(
+    type="harbour_coast_foundations",
+    base_id="port_spritelayout_coast_containers_2",
+    tile="port_tile_2",
+    config={
+        "ground_sprite": spriteset_ground_empty,  # should alqways be empty for this magic spritelayout
+        "building_sprites": [spriteset_concrete, spriteset_containers_2],
+        "foundation_sprites": {
+            "ne_sw": spriteset_jetty_ne_sw,
+            "se_nw": spriteset_jetty_se_nw,
+            "slope_nw_se": spriteset_jetty_slope_nw_se,
+            "slope_ne_sw": spriteset_jetty_slope_ne_sw,
+            "slope_se_nw": spriteset_jetty_slope_se_nw,
+            "slope_sw_ne": spriteset_jetty_slope_sw_ne,
+        },
+    },
+)
+
+industry.add_magic_spritelayout(
+    type="harbour_coast_foundations",
+    base_id="port_spritelayout_coast_containers_3",
+    tile="port_tile_2",
+    config={
+        "ground_sprite": spriteset_ground_empty,  # should alqways be empty for this magic spritelayout
+        "building_sprites": [spriteset_concrete, spriteset_containers_3],
         "foundation_sprites": {
             "ne_sw": spriteset_jetty_ne_sw,
             "se_nw": spriteset_jetty_se_nw,
@@ -267,92 +465,54 @@ industry.add_magic_spritelayout(
 industry.add_industry_layout(
     id="port_industry_layout_1",
     layout=[
-        (0, 3, "port_spritelayout_27"),
-        (0, 4, "port_spritelayout_coast_truck"),
+        (0, 1, "port_spritelayout_containers_jetty_1"),  
+        (0, 2, "port_spritelayout_small_hut"),  
+        (0, 3, "port_spritelayout_coast_containers_1"),
+        (0, 4, "port_spritelayout_coast_containers_3"),
         (1, 0, "spritelayout_null_water"),
-        (1, 1, "port_spritelayout_11"),
-        (1, 2, "port_spritelayout_29"),
-        (1, 3, "port_spritelayout_11"),
-        (1, 4, "port_spritelayout_coast_warehouse"),
-        (2, 1, "port_spritelayout_24"),
-        (2, 2, "port_spritelayout_24"),
+        (1, 1, "port_spritelayout_crane_sw_2"),
+        (1, 2, "port_spritelayout_crane_sw_1"),
+        (1, 3, "port_spritelayout_truck"),
+        (1, 4, "port_spritelayout_coast_containers_2"),
     ],
 )
 industry.add_industry_layout(
     id="port_industry_layout_2",
     layout=[
-        (0, 0, "spritelayout_null_water"),
-        (0, 1, "spritelayout_null_water"),
-        (0, 2, "spritelayout_null_water"),
-        (1, 0, "port_spritelayout_23"),
-        (1, 1, "port_spritelayout_23"),
-        (1, 255, "spritelayout_null_water"),
-        (2, 0, "port_spritelayout_30"),
-        (2, 1, "port_spritelayout_12"),
-        (2, 2, "port_spritelayout_21"),
-        (2, 255, "spritelayout_null_water"),
-        (3, 1, "port_spritelayout_coast_warehouse"),
-        (3, 2, "port_spritelayout_coast_truck"),
+        (0, 0, "port_spritelayout_coast_containers_2"),
+        (0, 1, "port_spritelayout_coast_office"),
+        (0, 2, "port_spritelayout_coast_checkpoint"),
+        (0, 3, "port_spritelayout_coast_containers_3"),
+        (1, 0, "port_spritelayout_24"),
+        (1, 1, "spritelayout_null_water"),
+        (1, 2, "port_spritelayout_truck"),
+        (2, 1, "port_spritelayout_crane_nw_2"),
+        (2, 2, "port_spritelayout_crane_nw_1"),
+        (3, 1, "port_spritelayout_26"),
+        (3, 2, "port_spritelayout_small_hut"),
+        (2, 3, "port_spritelayout_22"),
+        (2, 4, "spritelayout_null_water"),
+        (3, 3, "spritelayout_null_water"),
     ],
 )
 industry.add_industry_layout(
     id="port_industry_layout_3",
     layout=[
-        (0, 0, "port_spritelayout_coast_warehouse"),
-        (0, 1, "port_spritelayout_coast_warehouse"),
-        (0, 2, "port_spritelayout_coast_warehouse"),
-        (1, 0, "port_spritelayout_24"),
-        (1, 2, "port_spritelayout_2"),
-        (2, 1, "port_spritelayout_26"),
-        (2, 2, "port_spritelayout_28"),
-        (2, 3, "port_spritelayout_22"),
-        (2, 4, "spritelayout_null_water"),
-        (3, 2, "spritelayout_null_water"),
-        (3, 3, "spritelayout_null_water"),
-    ],
-)
-industry.add_industry_layout(
-    id="port_industry_layout_4",
-    layout=[
-        (0, 0, "port_spritelayout_coast_warehouse"),
-        (0, 1, "port_spritelayout_2"),
-        (0, 2, "port_spritelayout_29"),
-        (0, 3, "port_spritelayout_11"),
-        (0, 4, "port_spritelayout_28"),
+        (0, 0, "port_spritelayout_coast_office"),
+        (0, 1, "port_spritelayout_truck"),
+        (0, 2, "port_spritelayout_crane_sw_2"),
+        (0, 3, "port_spritelayout_crane_sw_1"),
+        (0, 4, "port_spritelayout_small_stack"),
         (0, 5, "spritelayout_null_water"),
-        (1, 0, "port_spritelayout_coast_warehouse"),
-        (1, 1, "port_spritelayout_28"),
+        (1, 0, "port_spritelayout_coast_containers_1"),
+        (1, 1, "port_spritelayout_small_hut"),
         (1, 2, "port_spritelayout_25"),
         (1, 4, "port_spritelayout_25"),
         (1, 5, "spritelayout_null_water"),
-        (2, 3, "spritelayout_null_water"),
-        (2, 4, "spritelayout_null_water"),
-        (2, 5, "spritelayout_null_water"),
-    ],
-)
-industry.add_industry_layout(
-    id="port_industry_layout_5",
-    layout=[
-        (0, 0, "port_spritelayout_coast_warehouse"),
-        (1, 0, "port_spritelayout_12"),
-        (1, 2, "spritelayout_null_water"),
-        (2, 0, "port_spritelayout_12"),
-        (2, 1, "port_spritelayout_29"),
-        (2, 2, "port_spritelayout_28"),
-        (2, 3, "spritelayout_null_water"),
-        (3, 0, "port_spritelayout_12"),
-        (3, 1, "port_spritelayout_2"),
-        (3, 2, "port_spritelayout_28"),
-        (3, 3, "spritelayout_null_water"),
-        (4, 255, "spritelayout_null_water"),
-        (4, 0, "port_spritelayout_13"),
-        (4, 1, "port_spritelayout_24"),
-        (4, 2, "port_spritelayout_24"),
-        (4, 3, "spritelayout_null_water"),
-        (5, 255, "spritelayout_null_water"),
-        (5, 0, "spritelayout_null_water"),
-        (5, 1, "spritelayout_null_water"),
-        (5, 2, "spritelayout_null_water"),
-        (5, 3, "spritelayout_null_water"),
+        (2, 0, "port_spritelayout_coast_containers_2"),
+        (2, 1, "port_spritelayout_small_stack"),
+        (2, 2, "spritelayout_null_water"),
+        (3, 1, "spritelayout_null_water"),
+        (3, 2, "spritelayout_null_water"),
     ],
 )
