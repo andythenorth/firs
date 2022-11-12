@@ -47,7 +47,7 @@ industry.enable_in_economy(
 )
 
 spriteset_ground = industry.add_spriteset(
-    type="cobble",
+    type="concrete",
 )
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
