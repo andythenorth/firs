@@ -38,7 +38,7 @@ industry.enable_in_economy(
         ("STEL", 3),
         ("SLAG", 2),
     ],
-    fund_cost_multiplier="21",
+    fund_cost_multiplier="25",
 )
 
 industry.add_tile(

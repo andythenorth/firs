@@ -23,7 +23,7 @@ industry.enable_in_economy(
         ("AORE", 22),
     ],
     intro_year=1895,
-    fund_cost_multiplier="16",
+    fund_cost_multiplier="12",
 )
 
 industry.add_tile(

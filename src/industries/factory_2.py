@@ -42,7 +42,7 @@ industry.enable_in_economy(
     prod_cargo_types_with_output_ratios=[
         ("GOOD", 5),
     ],
-    fund_cost_multiplier="8",
+    fund_cost_multiplier="11",
     intro_year="1965",
 )
 

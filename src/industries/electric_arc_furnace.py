@@ -32,7 +32,7 @@ industry.enable_in_economy(
     prod_cargo_types_with_output_ratios=[
         ("STCB", 3),
     ],
-    fund_cost_multiplier="21",
+    fund_cost_multiplier="16",
     intro_year="1895",
 )
 

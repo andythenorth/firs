@@ -33,7 +33,7 @@ industry.enable_in_economy(
         ("VEHI", 8),
     ],
     intro_year=1895,
-    fund_cost_multiplier="17",
+    fund_cost_multiplier="13",
 )
 
 industry.add_tile(

@@ -24,7 +24,7 @@ industry.enable_in_economy(
         ("FERT", 2),
     ],
     intro_year=1930,
-    fund_cost_multiplier="14",
+    fund_cost_multiplier="9",
 )
 
 industry.add_tile(

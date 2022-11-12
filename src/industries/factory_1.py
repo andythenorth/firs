@@ -29,7 +29,7 @@ industry.enable_in_economy(
     prod_cargo_types_with_output_ratios=[
         ("GOOD", 4),
     ],
-    fund_cost_multiplier="11",
+    fund_cost_multiplier="15",
 )
 
 industry.add_tile(

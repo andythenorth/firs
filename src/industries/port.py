@@ -23,7 +23,7 @@ industry.enable_in_economy(
     ],
     accept_cargo_types=["GOOD",],
     intro_year=1965,
-    fund_cost_multiplier="29",
+    fund_cost_multiplier="15",
     
 )
 

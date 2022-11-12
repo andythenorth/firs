@@ -23,7 +23,7 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
-    fund_cost_multiplier="18",
+    fund_cost_multiplier="21",
 )
 
 industry.add_tile(

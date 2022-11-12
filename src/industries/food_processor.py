@@ -23,7 +23,7 @@ industry.enable_in_economy(
         ("FOOD", 6),
     ],
     intro_year=1930,
-    fund_cost_multiplier="9",
+    fund_cost_multiplier="8",
 )
 
 industry.add_tile(

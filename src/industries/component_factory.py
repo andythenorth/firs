@@ -32,7 +32,7 @@ industry.enable_in_economy(
         ("GOOD", 4),
     ],
     intro_year=1895,
-    fund_cost_multiplier="16",
+    fund_cost_multiplier="14",
 )
 
 industry.add_tile(
