@@ -7,7 +7,7 @@ industry = IndustryPrimaryExtractive(
     ],
     prob_in_game="4",
     prob_map_gen="7",
-    map_colour="125",
+    map_colour="196",
     location_checks=dict(require_cluster=[70, 3]),
     prospect_chance="0.75",
     name="string(STR_IND_POTASH_MINE)",
@@ -79,20 +79,23 @@ spriteset_headgear_animated = industry.add_spriteset(
     animation_rate=1,
     custom_sprite_selector="(animation_frame % 3)",
 )
-spriteset_hut_vents = industry.add_spriteset(
-    sprites=[(430, 10, 64, 122, -31, -90)],
+spriteset_small_mineral_pile = industry.add_spriteset(
+    sprites=[(220, 10, 64, 122, -31, -90)],
+)
+spriteset_containers = industry.add_spriteset(
+    sprites=[(290, 10, 64, 122, -31, -90)],
 )
 spriteset_mineral_pile = industry.add_spriteset(
     sprites=[(360, 10, 64, 122, -31, -90)],
+)
+spriteset_hut_vents = industry.add_spriteset(
+    sprites=[(430, 10, 64, 122, -31, -90)],
 )
 spriteset_winding_house = industry.add_spriteset(
     sprites=[(500, 10, 64, 122, -31, -90)],
 )
 spriteset_shed = industry.add_spriteset(
     sprites=[(570, 10, 64, 122, -31, -90)],
-)
-spriteset_containers = industry.add_spriteset(
-    sprites=[(290, 10, 64, 122, -31, -90)],
 )
 spriteset_pool_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 122, -31, -90)],
@@ -157,6 +160,13 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_headgear_animated],
     add_to_object_num=1,
+)
+industry.add_spritelayout(
+    id="potash_mine_spritelayout_small_mineral_pile",
+    tile="potash_mine_tile_2",
+    ground_sprite=sprite_ground,
+    ground_overlay=sprite_ground_overlay,
+    building_sprites=[spriteset_small_mineral_pile],
 )
 industry.add_spritelayout(
     id="potash_mine_spritelayout_mineral_pile",
@@ -303,5 +313,50 @@ industry.add_industry_layout(
         (5, 1, "potash_mine_spritelayout_pool_10"),
         (5, 2, "potash_mine_spritelayout_pool_11"),
         (5, 3, "potash_mine_spritelayout_pool_12"),
+    ],
+)
+industry.add_industry_layout(
+    id="potash_mine_industry_layout_2",
+    layout=[
+        (0, 0, "potash_mine_spritelayout_tile_empty"),
+        (0, 1, "potash_mine_spritelayout_tile_empty"),
+        (0, 2, "potash_mine_spritelayout_tile_empty"),
+        (0, 3, "potash_mine_spritelayout_shed_1"),
+        (1, 0, "potash_mine_spritelayout_mineral_pile"),
+        (1, 1, "potash_mine_spritelayout_tile_empty"),
+        (1, 2, "potash_mine_spritelayout_headgear_animated"),
+        (1, 3, "potash_mine_spritelayout_winding_house"),
+        (1, 4, "potash_mine_spritelayout_tile_empty"),
+        (1, 5, "potash_mine_spritelayout_small_mineral_pile"),
+        (1, 6, "potash_mine_spritelayout_tile_empty"),
+        (2, 0, "potash_mine_spritelayout_pool_1"),
+        (2, 1, "potash_mine_spritelayout_pool_2"),
+        (2, 2, "potash_mine_spritelayout_pool_3"),
+        (2, 3, "potash_mine_spritelayout_tile_empty"),
+        (2, 4, "potash_mine_spritelayout_mineral_pile"),
+        (2, 5, "potash_mine_spritelayout_shed_1"),
+        (2, 6, "potash_mine_spritelayout_tile_empty"),
+        (3, 0, "potash_mine_spritelayout_pool_4"),
+        (3, 1, "potash_mine_spritelayout_pool_5"),
+        (3, 2, "potash_mine_spritelayout_pool_6"),
+        (3, 3, "potash_mine_spritelayout_hut_vents"),
+        (4, 0, "potash_mine_spritelayout_pool_7"),
+        (4, 1, "potash_mine_spritelayout_pool_8"),
+        (4, 2, "potash_mine_spritelayout_pool_9"),
+        (5, 0, "potash_mine_spritelayout_pool_10"),
+        (5, 1, "potash_mine_spritelayout_pool_11"),
+        (5, 2, "potash_mine_spritelayout_pool_12"),
+        (3, 4, "potash_mine_spritelayout_pool_1"),
+        (3, 5, "potash_mine_spritelayout_pool_2"),
+        (3, 6, "potash_mine_spritelayout_pool_3"),
+        (4, 4, "potash_mine_spritelayout_pool_4"),
+        (4, 5, "potash_mine_spritelayout_pool_5"),
+        (4, 6, "potash_mine_spritelayout_pool_6"),
+        (5, 4, "potash_mine_spritelayout_pool_7"),
+        (5, 5, "potash_mine_spritelayout_pool_8"),
+        (5, 6, "potash_mine_spritelayout_pool_9"),
+        (6, 4, "potash_mine_spritelayout_pool_10"),
+        (6, 5, "potash_mine_spritelayout_pool_11"),
+        (6, 6, "potash_mine_spritelayout_pool_12"),
     ],
 )
