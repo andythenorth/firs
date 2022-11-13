@@ -15,7 +15,7 @@ industry = IndustrySecondary(
     ],
     prob_in_game="0",  # do not build during gameplay
     prob_map_gen="3",
-    map_colour="10",
+    map_colour="5",
     name="string(STR_IND_BLAST_FURNACE)",
     nearby_station_name="string(STR_STATION_FURNACE)",
     fund_cost_multiplier="190",

@@ -7,7 +7,7 @@ industry = IndustryPrimaryExtractive(
     ],
     prob_in_game="6",
     prob_map_gen="8",
-    map_colour="151",
+    map_colour="72",
     prospect_chance="0.75",
     name="TTD_STR_INDUSTRY_NAME_OIL_WELLS",
     fund_cost_multiplier="230",

@@ -5,7 +5,7 @@ industry = IndustryPrimaryAgricultural(
     prod_cargo_types_with_multipliers=[("GRAI", 10)],
     prob_in_game="3",
     prob_map_gen="8",
-    map_colour="191",
+    map_colour="189",
     
     # basic grain_elevator doesn't cluster, by design - no industry location checks needed
     prospect_chance="0.75",

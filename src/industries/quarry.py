@@ -11,7 +11,7 @@ industry = IndustryPrimaryExtractive(
     prospect_chance="0.75",
     name="string(STR_IND_QUARRY)",
     nearby_station_name="string(STR_IND_QUARRY)",
-    fund_cost_multiplier="210",
+    fund_cost_multiplier="116",
     pollution_and_squalor_factor=1,
 )
 

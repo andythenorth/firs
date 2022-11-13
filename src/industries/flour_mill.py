@@ -10,7 +10,7 @@ industry = IndustrySecondary(
     ],
     prob_map_gen="10",
     prob_in_game="10",
-    map_colour="49",
+    map_colour="64",
     name="string(STR_IND_FLOUR_MILL)",
     nearby_station_name="string(STR_STATION_MILL)",
     fund_cost_multiplier="50",

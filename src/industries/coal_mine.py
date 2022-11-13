@@ -17,7 +17,7 @@ industry = IndustryPrimaryExtractive(
 
 industry.enable_in_economy(
     "PLAINS_TRAINS_AND_STEEL",
-    prob_map_gen="10",
+    prob_map_gen="12",
     fund_cost_multiplier="40",
 )
 

@@ -6,7 +6,7 @@ industry = IndustryPrimaryPort(
     prod_cargo_types_with_multipliers=[],
     prob_in_game="2",
     prob_map_gen="8",
-    map_colour="186",
+    map_colour="47",
     special_flags=["IND_FLAG_BUILT_ON_WATER"],
     location_checks=dict(same_type_distance=16),
     prospect_chance="0.75",

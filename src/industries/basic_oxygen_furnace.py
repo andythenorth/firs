@@ -16,7 +16,7 @@ industry = IndustrySecondary(
     ],
     prob_in_game="0",  # do not build during gameplay
     prob_map_gen="3",
-    map_colour="49",
+    map_colour="8",
     special_flags=["IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE"],
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[["blast_furnace"], 72],
