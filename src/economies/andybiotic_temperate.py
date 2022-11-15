@@ -1,7 +1,7 @@
 from economy import Economy
 
 economy = Economy(
-    id="ANDYBIOTIC_TEMPERATE",
+    id="ANDYSINE_TEMPERATE",
     numeric_id=7,
     # as of May 2015 the following cargos must have fixed positions if used by an economy:
     # passengers: 0, mail: 2, goods 5, food 11
