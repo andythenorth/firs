@@ -213,6 +213,10 @@ from industries import fruit_plantation
 fruit_plantation.industry.register()
 """
 
+from industries import fuel_depot
+
+fuel_depot.industry.register()
+
 from industries import general_store
 
 general_store.industry.register()
