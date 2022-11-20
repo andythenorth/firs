@@ -22,7 +22,7 @@ def exe_cmd(cmd):
         lines = output.splitlines()
         return lines
     except:
-        return ["- 0.1.0"]
+        return ["v1.0.1"]
 
 
 def get_revision():
