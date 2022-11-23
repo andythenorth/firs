@@ -222,7 +222,7 @@ industry.add_spritelayout(
 
 # this industry needs outpost layout as there are lots of cargos
 industry.add_industry_outpost_layout(
-    id="bar_and_section_mill_industry_outpost_layout_sw_ne",
+    id="bar_and_section_mill_industry_outpost_layout_1",
     layout=[
         (
             0,
@@ -350,6 +350,111 @@ industry.add_industry_layout(
             5,
             2,
             "bar_and_section_mill_spritelayout_offices",
+        ),
+    ],
+)
+industry.add_industry_layout(
+    id="bar_and_section_mill_industry_layout_2",
+    layout=[
+        (
+            0,
+            0,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+        ),
+        (
+            0,
+            1,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_2",
+        ),
+        (
+            0,
+            2,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_2",
+        ),
+        (
+            0,
+            3,
+            "bar_and_section_mill_spritelayout_offices",
+        ),
+        (
+            1,
+            0,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+        ),
+        (
+            1,
+            1,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+        ),
+        (
+            1,
+            2,
+            "bar_and_section_mill_spritelayout_sw_ne_rolling_line",
+        ),
+        (
+            1,
+            3,
+            "bar_and_section_mill_spritelayout_steel_2",
+        ),
+        (
+            2,
+            0,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+        ),
+        (
+            2,
+            1,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+        ),
+        (
+            2,
+            2,
+            "bar_and_section_mill_spritelayout_sw_ne_rolling_line",
+        ),
+        (
+            2,
+            3,
+            "bar_and_section_mill_spritelayout_steel_2",
+        ),
+        (
+            3,
+            0,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_2",
+        ),
+        (
+            3,
+            1,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+        ),
+        (
+            3,
+            2,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
+        ),
+        (
+            3,
+            3,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
+        ),
+        (
+            4,
+            0,
+            "bar_and_section_mill_spritelayout_steel_1",
+        ),
+        (
+            4,
+            1,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_3",
+        ),
+        (
+            4,
+            2,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_small_doors",
+        ),
+        (
+            4,
+            3,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_small_doors",
         ),
     ],
 )
