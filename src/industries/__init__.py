@@ -3,6 +3,7 @@ registered_industries = []
 
 from industries import arable_farm
 from industries import assembly_plant
+from industries import bar_and_section_mill
 from industries import basic_oxygen_furnace
 from industries import blast_furnace
 from industries import body_plant
@@ -44,7 +45,6 @@ from industries import hotel
 from industries import herding_coop
 from industries import integrated_steel_mill
 from industries import iron_ore_mine
-from industries import section_mill
 from industries import lime_kiln
 from industries import limestone_mine
 from industries import liquids_terminal
@@ -89,6 +89,7 @@ from industries import wire_rod_mill
 
 arable_farm.industry.register()
 assembly_plant.industry.register()
+bar_and_section_mill.industry.register()
 basic_oxygen_furnace.industry.register()
 blast_furnace.industry.register()
 body_plant.industry.register()
@@ -130,7 +131,6 @@ herding_coop.industry.register()
 hotel.industry.register()
 integrated_steel_mill.industry.register()
 iron_ore_mine.industry.register()
-section_mill.industry.register()
 lime_kiln.industry.register()
 limestone_mine.industry.register()
 liquids_terminal.industry.register()
