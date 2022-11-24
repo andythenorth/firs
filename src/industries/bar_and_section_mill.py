@@ -256,6 +256,41 @@ industry.add_industry_outpost_layout(
         ),
     ],
 )
+industry.add_industry_outpost_layout(
+    id="bar_and_section_mill_industry_outpost_layout_2",
+    layout=[
+        (
+            0,
+            0,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
+        ),
+        (
+            0,
+            1,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
+        ),
+        (
+            0,
+            2,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
+        ),
+        (
+            1,
+            0,
+            "bar_and_section_mill_spritelayout_steel_1",
+        ),  # shed 2 used as it has smoke
+        (
+            1,
+            1,
+            "bar_and_section_mill_spritelayout_shed_sw_ne_small_doors",
+        ),
+        (
+            1,
+            2,
+            "bar_and_section_mill_spritelayout_offices",
+        ),
+    ],
+)
 # core layouts are roughly 6x4 or 5x5
 # only one orientation sw_ne, couldn't be faffed changing angles for all sprites to do a se_nw
 industry.add_industry_layout(
