@@ -4,7 +4,7 @@ industry = IndustryPrimaryExtractive(
     id="coal_mine",
     prod_cargo_types_with_multipliers=[("COAL", 20)],
     prob_in_game="4",
-    prob_map_gen="7",
+    prob_map_gen="10",
     map_colour="1",
     location_checks=dict(require_cluster=[70, 3]),
     prospect_chance="0.75",

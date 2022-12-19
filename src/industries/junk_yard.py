@@ -4,7 +4,7 @@ industry = IndustryTownProducerPopulationDependent(
     id="junk_yard",
     prod_cargo_types_with_multipliers=[("SCMT", 32)],  # prod dependent on town popn
     prob_in_game="3",
-    prob_map_gen="7",
+    prob_map_gen="10",
     map_colour="64",
     location_checks=dict(require_town_min_population=400),
     prospect_chance="0.75",

@@ -5,7 +5,7 @@ industry = IndustryPrimaryExtractive(
     prod_cargo_types_with_multipliers=[("IORE", 20)],
     map_colour="55",
     prob_in_game="4",
-    prob_map_gen="7",
+    prob_map_gen="10",
     prospect_chance="0.75",
     name="TTD_STR_INDUSTRY_NAME_IRON_ORE_MINE",
     location_checks=dict(require_cluster=[70, 3]),
