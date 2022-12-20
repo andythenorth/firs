@@ -52,6 +52,7 @@ class IncompatibleGRF(object):
 IncompatibleGRF(DwordGrfID("F1250005"), "FIRS v1")
 IncompatibleGRF(DwordGrfID("F1250006"), "FIRS v2")
 IncompatibleGRF(DwordGrfID("F1250007"), "FIRS v3")
+IncompatibleGRF(DwordGrfID("F1250008"), "FIRS v4")
 IncompatibleGRF(LiteralGrfID(r"mb\07\00"), "Alpine Climate")
 IncompatibleGRF(DwordGrfID("454E1501"), "Apollo Rocket Industry Set")
 IncompatibleGRF(DwordGrfID("47470104"), "Australian Industries")
