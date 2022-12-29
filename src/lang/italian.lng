@@ -2,6 +2,7 @@
 ##plural 0
 ##gender m f
 ##case fp fs mp ms
+
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Di andythenorth, FooBar, planetmaker, Terkhen e Yexo, e con il contributo di molti altri. {SILVER}Leggete il file readme per informazioni e per consigli su come usare FIRS. {BLACK}Licenza: GPL v2.
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distanza massima, in caselle, di zone di pesca, piattaforme petrolifere e siti di dragaggio dalla costa.
 STR_PARAM_DESC_ECONOMIES                                                        :Ogni economia dà una combinazione diversa di merci e industrie.{}{}Per uno schema di gioco semplificato, un'economia di {SILVER}base {BLACK} comprende meno industrie e merci rispetto ad altre economie di FIRS.{}{}Sul sito web di FIRS si trovano informazioni dettagliate su ogni economia.
@@ -10,12 +11,14 @@ STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   
 STR_PARAM_NAME_ECONOMIES                                                        :Economia
 STR_PARAM_NAME_NO_OPENINGS                                                      :Impedisci la costruzione di industrie durante il gioco
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Illimitata
+
 STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Casse di forniture necessarie per il livello di produzione Elevato (valore predefinito: 16)
 STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Casse di forniture necessarie per il livello di produzione Gung ho (valore predefinito: 80)
 STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :La produzione delle fattorie, miniere e industrie simili raggiungerà il livello {SILVER}Elevato{BLACK}, e poi il livello {SILVER}Gung ho{BLACK}, se viene consegnato un numero sufficiente di casse.{}{}I valori di default sono già ottimizzati, ma possono essere modificati qui.{}{}Le richieste dei porti e delle industrie simili saranno 8x i valori impostati qui.
 STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Livello di produzione Elevato per industrie primarie (%)
 STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Livello di produzione Gung ho per industrie primarie (%)
 STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Produzione delle fattorie, miniere e industrie simili, quando le merci richieste vengono consegnate (espresso in percentuale del valore {SILVER}Normale{BLACK} di produzione).
+
 STR_PARAM_NAME_EXPERIMENTAL_FEATURES                                            :Abilita funzionalità sperimentali
 STR_PARAM_DESC_EXPERIMENTAL_FEATURES                                            :Attiva o disattiva le funzionalità sperimentali.
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Di base (clima temperato)
@@ -23,21 +26,26 @@ STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Di base (clima tropicale)
 STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                      :In un Paese caldo
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Città d'acciaio
+
+STR_PARAM_NAME_OBJECTS                                                          :Oggetti decorativi di FIRS
+STR_PARAM_DESC_OBJECTS                                                          :FIRS include una serie di oggetti decorativi, che i giocatori possono posizionare per far apparire più grandi alcune industrie. Questi oggetti decorativi non hanno alcun effetto sul gioco e possono essere attivati o disattivati.
+
 STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG                                   : {BLACK}(consegnato)
 STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Raggiunge il massimo livello di produzione se {WHITE}una qualsiasi {BLACK}delle merci richieste viene consegnata.
 STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}Il massimo livello di produzione si raggiunge consegnando {WHITE}tutti {BLACK}i tipi di merce richiesti almeno una volta ogni tre mesi.
 STR_EXTRA_TEXT_TOWN_PRODUCER                                                    :{BLACK}La produzione è proporzionale alla popolazione cittadina. Ogni mese la produzione sarà compresa tra un minimo di {WHITE}{SIGNED_WORD} unità{BLACK} e non più di {WHITE}{SIGNED_WORD} unità{BLACK} di carico.
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produzione attuale: {YELLOW}Normale{}{}{BLACK}Il livello di produzione {WHITE}Elevato {BLACK} si raggiunge consegnando {SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al livello {WHITE}Gung ho {BLACK} si devono consegnare {SIGNED_WORD} casse.
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produzione attuale: {YELLOW}Elevata{}{}{BLACK}Per mantenere questo livello di produzione, si devono consegnare {SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al livello {WHITE}Gung ho{BLACK} si devono consegnare {SIGNED_WORD} casse.
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produzione attuale: {YELLOW}Normale{}{}{BLACK}Il livello di produzione {WHITE}Elevato {BLACK} si raggiunge consegnando {SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al livello {WHITE}Gung ho {BLACK}si devono consegnare {SIGNED_WORD} casse.
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produzione attuale: {YELLOW}Elevata{}{}{BLACK}Per mantenere questo livello di produzione, si devono consegnare {SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al livello {WHITE}Gung ho {BLACK}si devono consegnare {SIGNED_WORD} casse.
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Produzione attuale: {YELLOW}Gung-ho{}{}{BLACK}Per mantenere questo livello di produzione, consegnare {SKIP}{SIGNED_WORD} casse di forniture entro 3 mesi.
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Produzione attuale: {YELLOW}Normale{}{}{BLACK}Il livello di produzione {WHITE}Elevato {BLACK} si raggiunge consegnando {SIGNED_WORD} unità di forniture entro 3 mesi{}Per salire al livello {WHITE}Gung ho {BLACK} si devono consegnare {SIGNED_WORD} unità.
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Produzione attuale: {YELLOW}Elevata{}{}{BLACK}Per mantenere questo livello di produzione, si devono consegnare {SIGNED_WORD} unità di merci entro 3 mesi{}Per salire al livello {WHITE}Gung ho {BLACK}, si devono consegnare {SIGNED_WORD} unità.
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Produzione attuale: {YELLOW}Normale{}{}{BLACK}Il livello di produzione {WHITE}Elevato {BLACK}si raggiunge consegnando {SIGNED_WORD} unità di forniture entro 3 mesi{}Per salire al livello {WHITE}Gung ho {BLACK}si devono consegnare {SIGNED_WORD} unità.
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Produzione attuale: {YELLOW}Elevata{}{}{BLACK}Per mantenere questo livello di produzione, si devono consegnare {SIGNED_WORD} unità di merci entro 3 mesi{}Per salire al livello {WHITE}Gung ho {BLACK}si devono consegnare {SIGNED_WORD} unità.
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Produzione attuale: {YELLOW}Gung-ho{}{}{BLACK}Per mantenere questo livello di produzione, si devono consegnare {SKIP}{SIGNED_WORD} unità di merci entro 3 mesi.
 
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA                                                :{SKIP}{SKIP}Umore della popolazione:{} {STRING}{STRING}{}{}{BLACK}Punteggio di ottimismo: {STRING}{SIGNED_WORD} punt{P 2 o i}{}{BLACK} Esigenze e lussi incontrato: {YELLOW}{SIGNED_WORD} punt{P 3 o i} {}{BLACK} Inquinamento e squallore: {YELLOW}{SIGNED_WORD} punto{P 4 o i} {}{}{BLACK}Inquinamento e squallore aumentano con la popolazione e determinati tipi di settore.{}{}Esigenze e lussi vengono soddisfatti fornendo a determinati tipi di settore.{}{}Se il punteggio di ottimismo è superiore a 10, l'umore della popolazione sarà {WHITE}ottimista{BLACK}. Se il punteggio di ottimismo è inferiore a -10, l'umore della popolazione sarà {WHITE}cupo{BLACK}.
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA                                                :{SKIP}{SKIP}Umore della popolazione:{} {STRING}{STRING}{}{}{BLACK}Punteggio di ottimismo: {STRING}{SIGNED_WORD} punt{P 2 o i}{}{BLACK} Bisogni e lussi soddisfatti: {YELLOW}{SIGNED_WORD} punt{P 3 o i} {}{BLACK} Inquinamento e squallore: {YELLOW}{SIGNED_WORD} punto{P 4 o i} {}{}{BLACK}Inquinamento e squallore aumentano con la popolazione e determinati tipi di industrie.{}{}Bisogni e lussi vengono soddisfatti rifornendo determinati tipi di industrie.{}{}Se il punteggio di ottimismo è superiore a 10, l'umore della popolazione sarà {WHITE}ottimista{BLACK}. Se il punteggio di ottimismo è inferiore a -10, l'umore della popolazione sarà {WHITE}pessimista{BLACK}.
 STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC                                :Ottimista
 STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY                                    :Pessimista
 STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL                                   :Neutrale
+
 STR_CARGO_NAME_ACID                                                             :{G=m}Acidi
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alcolici
 STR_CARGO_NAME_ALLOY_STEEL                                                      :{G=m}Acciaio legato
@@ -83,7 +91,7 @@ STR_CARGO_NAME_KAOLIN                                                           
 STR_CARGO_NAME_LIMESTONE                                                        :{G=m}Calcare
 STR_CARGO_NAME_LOGS                                                             :{G=m}Tronchi
 STR_CARGO_NAME_TIMBER                                                           :{G=m}Legname
-# cargo uses Sodium Hydroxide as string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
+# Per il nome del carico si usa "Idrossido di sodio" che è alternativo a "Soda" che è invece più comodo da usare per la label o il nome del file
 STR_CARGO_NAME_LYE                                                              :{G=m}Idrossido di sodio
 STR_CARGO_NAME_METAL                                                            :{G=m}Metalli
 STR_CARGO_NAME_METHANE                                                          :{G=m}Metano
@@ -140,7 +148,7 @@ STR_CARGO_NAME_ZINC                                                             
 
 STR_CARGO_UNIT_ACID                                                             :{VOLUME} di acidi
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} di alcolici
-STR_CARGO_UNIT_ALLOY_STEEL                                                      :{WEIGHT} di acciai legati
+STR_CARGO_UNIT_ALLOY_STEEL                                                      :{WEIGHT} di acciaio legato
 STR_CARGO_UNIT_ALUMINIA                                                         :{WEIGHT} di allumina
 STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} di alluminio
 STR_CARGO_UNIT_AMMONIA                                                          :{VOLUME} di ammoniaca
@@ -183,7 +191,7 @@ STR_CARGO_UNIT_KAOLIN                                                           
 STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} di calcare
 STR_CARGO_UNIT_LOGS                                                             :{WEIGHT} di tronchi
 STR_CARGO_UNIT_TIMBER                                                           :{WEIGHT} di legname
-# cargo uses Sodium Hydroxide as string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
+# Per il nome del carico si usa "Idrossido di sodio" che è alternativo a "Soda" che è invece più comodo da usare per la label o il nome del file
 STR_CARGO_UNIT_LYE                                                              :{VOLUME} di idrossido di sodio
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} di manganese
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} di metalli
@@ -237,7 +245,8 @@ STR_CARGO_UNIT_VEHICLES                                                         
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} ball{P 0 a e} di lana
 STR_CARGO_UNIT_YARN                                                             :{SIGNED_WORD} ball{P 0 a e} di filati
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} di zinco
-# it seems that using 2 chars for these is a convention not a limit, I tested 4 chars and OpenTTD renders it fine - May 2020
+
+# Sembra che l'uso di 2 caratteri per questi sotto sia una convenzione e non un limite, ho testato 4 caratteri e OpenTTD li rende bene - Maggio 2020
 STR_CID_ACID                                                                    :{TINYFONT}AD
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AO
 STR_CID_ALLOY_STEEL                                                             :{TINYFONT}AL
@@ -264,7 +273,7 @@ STR_CID_COKE                                                                    
 STR_CID_COPPER                                                                  :{TINYFONT}RA
 STR_CID_COPPER_CONCENTRATE                                                      :{TINYFONT}RC
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}OL
-STR_CID_ELECTRICAL_PARTS                            				                    :{TINYFONT}CE
+STR_CID_ELECTRICAL_PARTS														:{TINYFONT}CE
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}FM
 STR_CID_ETHYLENE                                                                :{TINYFONT}ET
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}ES
@@ -338,7 +347,7 @@ STR_CID_YARN                                                                    
 STR_CID_ZINC                                                                    :{TINYFONT}ZN
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS non funziona con Toyland
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS richiede OpenTTD 1.7.0 (o per quelli che usano una trunk build, r27769)
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS richiede OpenTTD 1.7.0 (o per quelli che usano una trunk build r27769)
 STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Set incompatibile: {ORANGE}{STRING}
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Parametro incompatibile: {ORANGE}CanSet parameter 2 deve essere 0 per funzionare con FIRS.
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Parametro incompatibile: {ORANGE}NA City Set parameter 2 deve essere 0 per funzionare con FIRS.
@@ -377,7 +386,7 @@ STR_IND_COFFEE_ESTATE                                                           
 STR_IND_COKE_OVEN                                                               :{G=m}Forno per coke
 STR_IND_COMPONENT_FACTORY                                                       :{G=f}Fabbrica di componenti
 STR_IND_COPPER_CONCENTRATOR                                                     :{G=m}Concentratore di rame
-STR_IND_COPPER_SMELTER                                                         :{G=f}Raffineria di rame
+STR_IND_COPPER_SMELTER                                                          :{G=f}Raffineria di rame
 STR_IND_CRYO_PLANT                                                              :{G=m}Impianto criogenico
 STR_IND_DAIRY                                                                   :{G=f}Azienda casearia
 STR_IND_DAIRY_FARM                                                              :{G=m}Cascina
@@ -406,7 +415,7 @@ STR_IND_HARDWARE_STORE                                                          
 STR_IND_HOTEL                                                                   :{G=m}Hotel
 STR_IND_HERDING_COOP                                                            :{G=f}Cooperativa di pastori
 STR_IND_IRON_WORKS                                                              :{G=f}Fucina
-STR_IND_SCRAP_YARD                                                                :{G=m}Deposito di rottami
+STR_IND_SCRAP_YARD                                                              :{G=m}Deposito di rottami
 STR_IND_LATEX_PROCESSOR                                                         :{G=f}Lavorazione del lattice
 STR_IND_LIME_KILN                                                               :{G=m}Forno per calce
 STR_IND_LIMESTONE_MINE                                                          :{G=f}Miniere di calcare
@@ -443,7 +452,7 @@ STR_IND_SLAG_GRINDING_PLANT                                                     
 STR_IND_SMITHY_FORGE                                                            :{G=f}Piccola fucina
 STR_IND_SODA_ASH_MINE                                                           :{G=f}Miniera di carbonato di sodio
 STR_IND_SOLVAY_PLANT                                                            :{G=m}Stabilimento Solvay
-# we use 'integrated_steel_mill' in code to avoid confusion with Steeltown mills, but it's easier to just use 'Steel Mill' for name that players see
+# Nel codice usiamo 'integrated_steel_mill' per evitare fuorvianti confusioni con le fabbriche di Steeltown, ma per il nome che vedono i giocatori è preferibile usare 'Acciaieria'.
 STR_IND_INTEGRATED_STEEL_MILL                                                   :{G=m}Acciaieria
 STR_IND_SHEET_AND_PIPE_MILL                                                     :{G=f}Fabbrica di tubi e laminati
 STR_IND_STOCKYARD                                                               :{G=m}Mattatoio
