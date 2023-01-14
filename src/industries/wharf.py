@@ -34,6 +34,7 @@ industry.enable_in_economy(
     "STEELTOWN",
     # quite a lot of accepted types, this is intentional to provide flexibility in obtaining boost
     accept_cargo_types=[
+        "FOOD",
         "LYE_",
         "CMNT",
         "HWAR",
