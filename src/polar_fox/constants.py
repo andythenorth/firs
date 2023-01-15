@@ -225,6 +225,7 @@ allowed_refits_by_label = {
         "CERE",
         "FERT",
         "FMSP",
+        "FOOD",
         "FRUT",
         "GRAI",
         "JAVA",
@@ -352,7 +353,7 @@ default_cargos = {
         "GOOD",
         "FOOD",
     ],
-    "farm_products_box": ["FRUT", "BEAN", "CASS", "JAVA", "NUTS"],
+    "farm_products_box": ["FRUT", "BEAN", "CASS", "JAVA", "NUTS", "FOOD"],
     "farm_products_hopper": [
         "MAIZ",
         "GRAI",
@@ -362,6 +363,7 @@ default_cargos = {
         "OLSD",
         "CASS",
         "NUTS",
+        "FOOD",
     ],
     "flat": ["ALUM", "WDPR", "STEL", "COPR", "METL"],
     # possibly sliding roof shouldn't be flat at all?
