@@ -50,14 +50,14 @@ Story <- SuperLib.Story;
 require("version.nut"); // get SELF_VERSION
 require("constants.nut");
 require("firs.nut");
-require("pylons.nut");
+// require("pylons.nut");
 // require("power_grid.nut");
 require("temp_prototyping.nut");
 
 //require("some_file.nut");
 //..
 
-PowerGrid <- PowerGrid();
+// PowerGrid <- PowerGrid();
 
 class MainClass extends GSController
 {
@@ -131,6 +131,8 @@ function MainClass::Start()
 		// Handle incoming messages from OpenTTD
 		this.HandleEvents();
 
+        //set_town_text_test();
+
 		// Reached new year/month?
 		local current_date = GSDate.GetCurrentDate();
 		if (last_loop_date != null) {
@@ -147,7 +149,8 @@ function MainClass::Start()
 
 		// Loop with a frequency of five days
 		local ticks_used = GSController.GetTick() - loop_start_tick;
-		GSController.Sleep(max(1, 5 * 74 - ticks_used));
+		//GSController.Sleep(max(1, 5 * 74 - ticks_used));
+		GSController.Sleep(1);
 	}
 }
 
@@ -168,19 +171,27 @@ function MainClass::Init()
 		// construct goals etc.
 	}
 
-    Log.Info(GIT_VERSION, Log.LVL_INFO);
+    //Log.Info(GIT_VERSION, Log.LVL_INFO);
 
-    local economy_id = firs.get_economy_id();
-
+    //local economy_id = firs.get_economy_id();
+    /*
     PowerGrid.build_
     (
         GSObjectType.ResolveNewGRFID(0x47477015, 0x51),
         GSIndustryType.ResolveNewGRFID(firs.grfid, 0x42) // to-do: convert to list of industries
     );
+    */
 
     // set_var_47_bits_test();
 
-    set_town_text_test();
+    // set_town_text_test();
+
+    //story_lolz();
+
+    //tile_walker();
+
+    // count_farms();
+    //count_scrap_yards();
 
     //find_power_sources();
 
@@ -211,6 +222,64 @@ function MainClass::HandleEvents()
 			}
             */
 			// other events ...
+			case GSEvent.ET_STORYPAGE_BUTTON_CLICK: {
+				local button_event = GSEventStoryPageButtonClick.Convert(ev);
+				local company_id = button_event.GetCompanyID();
+                Log.Info("Button clicked! " + button_event.GetStoryPageID() + " " + button_event.GetElementID())
+                if (button_event.GetElementID() == 0) {
+                    local town_list = GSTownList();
+                    town_list.Valuate(GSBase.RandItem);
+                    local town = town_list.Begin();
+                    Log.Info("It's a bad time to be in " + GSTown.GetName(town));
+                    local pre_strike_population = GSTown.GetPopulation(town);
+                    local ground_zero = GSTown.GetLocation(town);
+                    Log.Info("Strike! Ground zero: " + GSMap.GetTileX(ground_zero) + ", " + GSMap.GetTileY(ground_zero));
+                    local blast_area_vertex_1 = GSMap.GetTileIndex(GSMap.GetTileX(ground_zero) + 10, GSMap.GetTileY(ground_zero) + 10);
+                    local blast_area_vertex_2 = GSMap.GetTileIndex(GSMap.GetTileX(ground_zero) - 10, GSMap.GetTileY(ground_zero) - 10);
+                    local tile_list = GSTileList();
+                    tile_list.AddRectangle(blast_area_vertex_1, blast_area_vertex_2);
+                    foreach (tile, _ in tile_list) {
+                        GSTile.DemolishTile(tile);
+                    }
+                    Log.Info(pre_strike_population - GSTown.GetPopulation(town) + " non-playing characters have been decommissioned.")
+
+                }
+                /*
+                local foo = GSCompanyMode(0);
+                local vehicles = GSVehicleList();
+                foreach (vehicle, _ in vehicles) {
+                    if (button_event.GetElementID() == 3) {
+                        Log.Info("Bombs Away!");
+                        Log.Info("Vehicle location: " + GSVehicle.GetLocation(vehicle));
+                        GSTile.DemolishTile(GSVehicle.GetLocation(vehicle));
+                        //GSTile.PlantTree(GSVehicle.GetLocation(vehicle));
+                        //GSTile.PlantTree(GSVehicle.GetLocation(vehicle));
+                        //GSTile.PlantTree(GSVehicle.GetLocation(vehicle));
+                    }
+                    else {
+                        do {
+                            GSOrder.RemoveOrder(vehicle, 0);
+                        }
+                        while (GSOrder.GetOrderCount(vehicle) > 0);
+                        local destination = null;
+                        if (button_event.GetElementID() == 0) {
+                            destination = GSStation.GetLocation(0);
+                        }
+                        if (button_event.GetElementID() == 1) {
+                            destination = GSStation.GetLocation(3);
+                        }
+                        if (button_event.GetElementID() == 2) {
+                            destination = GSStation.GetLocation(2);
+                        }
+                        if (button_event.GetElementID() == 4) {
+                            destination = GSStation.GetLocation(1);
+                        }
+                        GSOrder.InsertOrder(vehicle, 0, destination, 0);
+                    }
+                }
+                */
+				break;
+			}
 		}
 	}
 }
@@ -220,6 +289,8 @@ function MainClass::HandleEvents()
  */
 function MainClass::EndOfMonth()
 {
+    //count_farms();
+    story_lolz();
 }
 
 /*
