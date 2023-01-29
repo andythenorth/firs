@@ -1,0 +1,18 @@
+// this is all prototype stuff as of Jan 2023, nothing here is complete
+
+function story_lolz()
+{
+    for (local i = 0; i < 16; i++) {
+        local story_pages = GSStoryPageList(i);
+        foreach (story_page, _ in story_pages) {
+            GSStoryPage.Remove(story_page);
+        }
+        local foo = GSStoryPage.New(i, "Global Thermonuclear War");
+        local go_north = GSStoryPage.NewElement(foo, GSStoryPage.SPET_BUTTON_PUSH, 1, "Nuke a random city");
+        local go_south = GSStoryPage.NewElement(foo, GSStoryPage.SPET_BUTTON_VEHICLE, 1, "Choose a vehicle");
+        local br = GSStoryPage.NewElement(foo, GSStoryPage.SPET_TEXT, 1, "--------------");
+        local go_west = GSStoryPage.NewElement(foo, GSStoryPage.SPET_BUTTON_TILE, 1, "Choose a tile");
+        local tile_displayer = GSStoryPage.NewElement(foo, GSStoryPage.SPET_TEXT, 1, "Tile selected:");
+        local tile_displayer = GSStoryPage.NewElement(foo, GSStoryPage.SPET_TEXT, 1, "(choose a tile)");
+    }
+}

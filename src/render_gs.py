@@ -17,9 +17,6 @@ registered_economies = firs.registered_economies
 
 from chameleon import PageTemplateLoader  # chameleon used in most template cases
 
-# setup the places we look for templates
-nut_templates = PageTemplateLoader(os.path.join(currentdir, "src", "gs"), format="text")
-
 # get args passed by makefile
 makefile_args = utils.get_makefile_args(sys)
 
@@ -56,6 +53,32 @@ class GSHelper(object):
         utils.echo_message("GSHelper.get_grf_id incomplete, returning hard-coded value")
         return "0xF1250008";
 
+def render_nuts(nuts_by_subdir):
+    # setup the places we look for templates
+    nut_templates = PageTemplateLoader(os.path.join(currentdir, "src", "gs", "gs_templates"), format="text")
+    for subdir_name, nuts in nuts_by_subdir.items():
+        if subdir_name == "root":
+            dst_dir = gs_dst
+        else:
+            dst_dir = os.path.join(gs_dst, subdir_name)
+            if os.path.exists(dst_dir):
+                shutil.rmtree(dst_dir)
+            if not os.path.exists(dst_dir):
+                os.mkdir(dst_dir)
+        for nut_name in nuts:
+            nut_template = nut_templates[nut_name + ".pynut"]
+            dst_file = codecs.open(os.path.join(dst_dir, nut_name + ".nut"), "w", "utf8")
+            result = nut_template(
+                gs_helper=GSHelper(),
+                makefile_args=makefile_args,
+                git_info=git_info,
+                registered_industries=registered_industries,
+                registered_cargos=registered_cargos,
+                registered_economies=registered_economies,
+            )
+            dst_file.write(result)
+            dst_file.close()
+
 def main():
     start = time()
     print("[RENDER GS] render_gs.py")
@@ -72,29 +95,20 @@ def main():
     )
     hint_file.close()
 
-    nuts = [
-        # alphabetise for simplicity
-        "constants",
-        "firs",
-        "info",
-        "main",
-        "pylons",
-        "temp_prototyping",
-        "version",
-    ]
-    for nut_name in nuts:
-        nut_template = nut_templates[nut_name + ".pynut"]
-        dst_file = codecs.open(os.path.join(gs_dst, nut_name + ".nut"), "w", "utf8")
-        result = nut_template(
-            gs_helper=GSHelper(),
-            makefile_args=makefile_args,
-            git_info=git_info,
-            registered_industries=registered_industries,
-            registered_cargos=registered_cargos,
-            registered_economies=registered_economies,
-        )
-        dst_file.write(result)
-        dst_file.close()
+    nuts_by_subdir = {
+        # alphabetise nuts in each list for simplicity
+        "root": [
+            "constants",
+            "firs",
+            "info",
+            "main",
+            "temp_prototyping",
+            "version",
+        ],
+        "lib": ["industry_helper", "map_but_in_gs_lol", "pylons"],
+        "minigames": ["winning_move", "zellepins"],
+    }
+    render_nuts(nuts_by_subdir)
 
     # copy lang dir also
     shutil.copytree(os.path.join(gs_src, "lang"), os.path.join(gs_dst, "lang"))

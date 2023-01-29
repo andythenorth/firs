@@ -1,0 +1,75 @@
+// this is all prototype stuff as of Jan 2023, nothing here is proper lib
+
+function LocalGetIndustryTypeCount(industry_type)
+{
+    local industry_list = GSIndustryList();
+    local count = 0;
+    foreach (industry, _ in industry_list) {
+        if (GSIndustry.GetIndustryType(industry) == industry_type) {
+            count++;
+        }
+    }
+    return count;
+}
+
+function LocalBuildAnIndustryTypeIfTargetCountNotMet(industry_type, target_count)
+{
+    local num_industries_to_build = target_count - LocalGetIndustryTypeCount(industry_type);
+    if (num_industries_to_build > 0) {
+        for (local i = 0; i < num_industries_to_build; i++) {
+            Log.Info("need to build some " + GSIndustryType.GetName(industry_type) + "industries...");
+            GSIndustryType.ProspectIndustry(industry_type, false);
+        }
+    }
+}
+
+function count_farms()
+{
+    local time_start = GSDate.GetSystemTime();
+    // really we're going to need to check the economy more like the entire context for the script, eh?
+    if (firs.get_economy_id() == 5) {
+        Log.Info("It's Steeltown");
+    }
+    // but eh, let's press on
+    local farm_id = GSIndustryType.ResolveNewGRFID(firs.grfid, firs.industries.farm.numeric_id);
+    local farm_count = LocalGetIndustryTypeCount(farm_id);
+    Log.Info("farm count: " + farm_count);
+    Log.Info("town count: " + GSTown.GetTownCount());
+    LocalBuildAnIndustryTypeIfTargetCountNotMet(farm_id, (GSTown.GetTownCount() / 2));
+    local builders_yard_id = GSIndustryType.ResolveNewGRFID(firs.grfid, firs.industries.builders_yard.numeric_id);
+    LocalBuildAnIndustryTypeIfTargetCountNotMet(builders_yard_id, (GSTown.GetTownCount() / 3));
+    Log.Info("elapsed time: " + (GSDate.GetSystemTime() - time_start));
+}
+
+function count_scrap_yards()
+{
+    local time_start = GSDate.GetSystemTime();
+    local scrap_yard = GSIndustryType.ResolveNewGRFID(firs.grfid, firs.industries.scrap_yard.numeric_id);
+    local towns_with_scrap_yards = {};
+    local industry_list = GSIndustryList();
+    foreach (industry, _ in industry_list) {
+        if (GSIndustry.GetIndustryType(industry) == scrap_yard) {
+            local industry_town = GSTile.GetClosestTown(GSIndustry.GetLocation(industry));
+            towns_with_scrap_yards[industry_town] <- true;
+        }
+    }
+    local town_list = GSTownList();
+    foreach (town, _ in town_list) {
+        if (town in towns_with_scrap_yards) {
+            Log.Info(GSTown.GetName(town) + " has a scrap yard");
+        } else if (GSTown.GetPopulation(town) < 400) {
+            // ^^ this 400 would be fetched from the python industry definition ideally (totally possible via templating or FIRS -> GS industry structure)
+            continue;
+        } else {
+            Log.Info(GSTown.GetName(town) + " needs a scrap yard");
+            foreach (tile, _ in areas.towns[town]) {
+                if (GSIndustryType.BuildIndustry(scrap_yard, tile)) {
+                    break;
+                }
+            }
+        }
+
+    }
+    //LocalBuildAnIndustryTypeIfTargetCountNotMet(scrap_yard_id, (GSTown.GetTownCount() / 3));
+    Log.Info("elapsed time: " + (GSDate.GetSystemTime() - time_start));
+}
