@@ -1,5 +1,5 @@
-areas <- {};
-areas.towns <- {};
+areas <- {}; // deprecate?
+areas.towns <- {}; // deprecate?
 
 function tile_walker()
 {
@@ -41,4 +41,46 @@ function tile_walker()
     */
     Log.Info("Tile walk done. Elapsed time: " + (GSDate.GetSystemTime() - time_start));
     GSGame.Unpause();
+}
+
+
+class Area {
+    /*
+        Returns a list of tiles in a circular area around an origin tile
+    */
+    static function Circle(origin_tile, tangent_radius);
+}
+
+function Area::Circle(origin_tile, tangent_radius)
+{
+    /*
+    local origin_x = GSMap.GetTileX(origin_tile);
+    local origin_y = GSMap.GetTileY(origin_tile);
+    local tile_list = GSTileList();
+    tile_list.AddRectangle(GSMap.GetTileIndex(origin_x - tangent_radius, origin_y - tangent_radius), GSMap.GetTileIndex(origin_x + tangent_radius, origin_y + tangent_radius));
+    local result = GSTileList();
+    foreach (tile, cabbage in tile_list) {
+        // note that we work with square distance, so we square radius also
+        if (GSMap.DistanceSquare(tile, origin_tile) <= (tangent_radius * tangent_radius)) {
+            result.AddItem(tile, 0);
+        }
+    }
+    return result
+    */
+    local origin_x = GSMap.GetTileX(origin_tile);
+    local origin_y = GSMap.GetTileY(origin_tile);
+    local result = array(0);
+    for(local x = origin_x - tangent_radius; x <= origin_x + tangent_radius; x++) {
+        for(local y = origin_y - tangent_radius; y <= origin_y + tangent_radius; y++) {
+            // note that we work with square distance, so we square radius also
+            local tile = GSMap.GetTileIndex(x, y);
+            if (GSMap.DistanceSquare(tile, origin_tile) <= (tangent_radius * tangent_radius)) {
+                local xy_pair = array(0);
+                xy_pair.push(x);
+                xy_pair.push(y);
+                result.push(xy_pair);
+            }
+        }
+    }
+    return result
 }

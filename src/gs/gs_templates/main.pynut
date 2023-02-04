@@ -51,6 +51,7 @@ require("version.nut"); // get SELF_VERSION
 require("constants.nut");
 require("firs.nut");
 require("lib/map_but_in_gs_lol.nut");
+require("lib/industry_helper.nut");
 // require("pylons.nut");
 // require("power_grid.nut");
 require("temp_prototyping.nut");
@@ -59,6 +60,8 @@ require("temp_prototyping.nut");
 //..
 
 // PowerGrid <- PowerGrid();
+
+Area <- Area();
 
 class MainClass extends GSController
 {
@@ -103,7 +106,6 @@ function MainClass::Start()
 	// Wait for the game to start (or more correctly, tell OpenTTD to not
 	// execute our GS further in world generation)
 	GSController.Sleep(1);
-
 
     /*
     foreach(industry_id, industry_properties in firs.industries) {
@@ -163,6 +165,12 @@ function MainClass::Start()
  * exist. The benefit of doing initialization in world gen is that commands
  * that alter the game world are much cheaper before the game starts.
  */
+function GSTown::Cabbage()
+{
+    Log.Info("Cabbage");
+}
+
+
 function MainClass::Init()
 {
 	if (this._loaded_data != null) {
@@ -174,7 +182,16 @@ function MainClass::Init()
 
     Log.Info(GIT_VERSION, Log.LVL_INFO);
 
+    GSTown.Cabbage();
+
     local economy_id = firs.get_economy_id();
+
+    // really we're going to need to check the economy more like the entire context for the script, eh?
+    if (firs.get_economy_id() == 5) {
+        Log.Info("It's Steeltown");
+    }
+    // but eh, let's press on
+
     /*
     PowerGrid.build_
     (
@@ -189,9 +206,16 @@ function MainClass::Init()
 
     //story_lolz();
 
-    tile_walker();
 
-    //count_farms();
+    //tile_walker();
+    set_town_growth_rate();
+
+    foreach (xy_pair in Area.Circle(GSMap.GetTileIndex(100, 100), 70)) {
+        GSTile.DemolishTile(GSMap.GetTileIndex(xy_pair[0], xy_pair[1]));
+    }
+
+     // Maybe only at init?  Do we need to be re-adding farms if they get removed?
+    // count_farms();
     //count_scrap_yards();
 
     //find_power_sources();
@@ -300,6 +324,7 @@ function MainClass::HandleEvents()
  */
 function MainClass::EndOfMonth()
 {
+    set_town_growth_rate();
     //count_farms();
     //story_lolz();
 }
