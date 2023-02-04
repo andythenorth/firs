@@ -50,6 +50,7 @@ Story <- SuperLib.Story;
 require("version.nut"); // get SELF_VERSION
 require("constants.nut");
 require("firs.nut");
+require("lib/map_but_in_gs_lol.nut");
 // require("pylons.nut");
 // require("power_grid.nut");
 require("temp_prototyping.nut");
@@ -188,7 +189,7 @@ function MainClass::Init()
 
     //story_lolz();
 
-    //tile_walker();
+    tile_walker();
 
     //count_farms();
     //count_scrap_yards();

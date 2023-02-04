@@ -4,6 +4,7 @@ areas.towns <- {};
 function tile_walker()
 {
     local time_start = GSDate.GetSystemTime();
+    GSGame.Pause();
     Log.Error("Starting tile walk");
     local town_list = GSTownList();
     foreach (town, _ in town_list) {
@@ -14,8 +15,9 @@ function tile_walker()
     tile_list.AddRectangle(GSMap.GetTileIndex(1, 1), GSMap.GetTileIndex(GSMap.GetMapSizeX() - 2, GSMap.GetMapSizeY() - 2));
     foreach (tile, _ in tile_list) {
         areas.towns[GSTile.GetClosestTown(tile)].AddTile(tile);
-        GSTile.DemolishTile(tile);
     }
+    /*
+    // stupid thing to draw a smiley face on the map
     Log.Info(GSTile.RaiseTile(GSMap.GetTileIndex(1, 1), GSTile.SLOPE_N | GSTile.SLOPE_W | GSTile.SLOPE_S));
     GSTile.LevelTiles(GSMap.GetTileIndex(1, 1), GSMap.GetTileIndex(GSMap.GetMapSizeX() - 2, GSMap.GetMapSizeY() - 2));
     for (local i = 0; i < 4; i++) {
@@ -36,5 +38,7 @@ function tile_walker()
         GSTile.RaiseTile(GSMap.GetTileIndex(20, 21), GSTile.SLOPE_N);
         GSTile.RaiseTile(GSMap.GetTileIndex(21, 20), GSTile.SLOPE_N);
     }
+    */
     Log.Info("Tile walk done. Elapsed time: " + (GSDate.GetSystemTime() - time_start));
+    GSGame.Unpause();
 }
