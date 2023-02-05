@@ -8,6 +8,8 @@ class Region {
 
 function Region::AddArea(area)
 {
+    // !! there appears to be a max length for squirrel array, which I don't know how to determine yet
+    // !! this will result in 'Maximum memory allocation exceeded' errors if attempting to add too many areas
     this.areas.append(area);
 }
 
@@ -18,6 +20,8 @@ function Region::AddNegativeArea(area)
 
 function Region::GetUnifiedAreas()
 {
+    Log.Info("unifying areas...");
+    local time_start = GSDate.GetSystemTime();
     local result = array(0);
     ::index <- {}
     ::excluded_index <- {}
@@ -60,9 +64,7 @@ function Region::GetUnifiedAreas()
             result.append(xy_pair);
         }
     }
-    /*
-    */
-    Log.Info(result.len());
+    Log.Info("...areas unified. Elapsed time: " + (GSDate.GetSystemTime() - time_start) + " seconds");
     return result
 }
 
