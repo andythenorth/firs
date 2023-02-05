@@ -1,48 +1,25 @@
-areas <- {}; // deprecate?
-areas.towns <- {}; // deprecate?
-
-function tile_walker()
-{
-    local time_start = GSDate.GetSystemTime();
-    GSGame.Pause();
-    Log.Error("Starting tile walk");
-    local town_list = GSTownList();
-    foreach (town, _ in town_list) {
-        areas.towns[town] <- GSTileList();
-    }
-    local tile_list = GSTileList();
-    // the map contains a row of void or water tiles around it (depending on freeform map edge settings), so our rect is pushed in by 1 tile row/col  on all sides
-    tile_list.AddRectangle(GSMap.GetTileIndex(1, 1), GSMap.GetTileIndex(GSMap.GetMapSizeX() - 2, GSMap.GetMapSizeY() - 2));
-    foreach (tile, _ in tile_list) {
-        areas.towns[GSTile.GetClosestTown(tile)].AddTile(tile);
-    }
-    /*
-    // stupid thing to draw a smiley face on the map
-    Log.Info(GSTile.RaiseTile(GSMap.GetTileIndex(1, 1), GSTile.SLOPE_N | GSTile.SLOPE_W | GSTile.SLOPE_S));
-    GSTile.LevelTiles(GSMap.GetTileIndex(1, 1), GSMap.GetTileIndex(GSMap.GetMapSizeX() - 2, GSMap.GetMapSizeY() - 2));
-    for (local i = 0; i < 4; i++) {
-        // eyes
-        Log.Info(GSTile.RaiseTile(GSMap.GetTileIndex(10, 10), GSTile.SLOPE_N | GSTile.SLOPE_W | GSTile.SLOPE_S | GSTile.SLOPE_E));
-        Log.Info(GSTile.RaiseTile(GSMap.GetTileIndex(20, 10), GSTile.SLOPE_N | GSTile.SLOPE_W | GSTile.SLOPE_S | GSTile.SLOPE_E));
-        // smile
-        GSTile.RaiseTile(GSMap.GetTileIndex(10, 20), GSTile.SLOPE_N);
-        GSTile.RaiseTile(GSMap.GetTileIndex(11, 21), GSTile.SLOPE_N);
-        GSTile.RaiseTile(GSMap.GetTileIndex(12, 22), GSTile.SLOPE_N);
-        GSTile.RaiseTile(GSMap.GetTileIndex(13, 23), GSTile.SLOPE_N);
-        GSTile.RaiseTile(GSMap.GetTileIndex(14, 24), GSTile.SLOPE_N);
-        GSTile.RaiseTile(GSMap.GetTileIndex(15, 24), GSTile.SLOPE_N);
-        GSTile.RaiseTile(GSMap.GetTileIndex(16, 24), GSTile.SLOPE_N);
-        GSTile.RaiseTile(GSMap.GetTileIndex(17, 24), GSTile.SLOPE_N);
-        GSTile.RaiseTile(GSMap.GetTileIndex(18, 23), GSTile.SLOPE_N);
-        GSTile.RaiseTile(GSMap.GetTileIndex(19, 22), GSTile.SLOPE_N);
-        GSTile.RaiseTile(GSMap.GetTileIndex(20, 21), GSTile.SLOPE_N);
-        GSTile.RaiseTile(GSMap.GetTileIndex(21, 20), GSTile.SLOPE_N);
-    }
+class Region {
+   /*
+        Manages a list of areas
     */
-    Log.Info("Tile walk done. Elapsed time: " + (GSDate.GetSystemTime() - time_start));
-    GSGame.Unpause();
+    static areas = array(0);
 }
 
+function Region::AddArea(area)
+{
+    this.areas.append(area);
+}
+
+function Region::GetUnifiedAreas()
+{
+    local result = array(0);
+    foreach (area in this.areas) {
+        foreach (xy_pair in area) {
+            result.append(xy_pair);
+        }
+    }
+    return result
+}
 
 class Area {
     /*

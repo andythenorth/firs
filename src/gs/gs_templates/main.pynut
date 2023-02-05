@@ -216,7 +216,10 @@ function MainClass::Init()
 
     //find_power_sources();
 
-    foreach (xy_pair in Area.Circle(GSMap.GetTileIndex(100, 100), 32)) {
+    local test_region = Region();
+    test_region.AddArea(Area.Circle(GSMap.GetTileIndex(100, 100), 32));
+    test_region.AddArea(Area.Circle(GSMap.GetTileIndex(300, 300), 32));
+    foreach (xy_pair in test_region.GetUnifiedAreas()) {
         GSTile.DemolishTile(GSMap.GetTileIndex(xy_pair[0], xy_pair[1]));
     }
 
