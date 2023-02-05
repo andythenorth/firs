@@ -218,16 +218,23 @@ function MainClass::Init()
 
     local test_region = Region();
     local counter = 0;
+    // don't create the areas inside the loop, it bloats RAM use horrifically and won't be garbage collected
+    local circle_1 = Area.Circle(GSMap.GetTileIndex(100, 100), 32);
+    local circle_2 = Area.Circle(GSMap.GetTileIndex(500, 100), 32);
+    local circle_3 = Area.Circle(GSMap.GetTileIndex(500, 500), 32);
+    local circle_4 = Area.Circle(GSMap.GetTileIndex(100, 500), 32);
+    local rect_1 = Area.Circle(GSMap.GetTileIndex(100, 500), 32);
+    local exclusion_circle_1 = Area.Circle(GSMap.GetTileIndex(300, 300), 32);
     do {
-        test_region.AddArea(Area.Circle(GSMap.GetTileIndex(100, 100), 32));
-        test_region.AddArea(Area.Circle(GSMap.GetTileIndex(100, 500), 32));
-        test_region.AddArea(Area.Circle(GSMap.GetTileIndex(500, 500), 32));
-        test_region.AddArea(Area.Circle(GSMap.GetTileIndex(500, 100), 32));
-        test_region.AddArea(Area.Rect(GSMap.GetTileIndex(200, 200), GSMap.GetTileIndex(400, 400)));
-        test_region.AddNegativeArea(Area.Circle(GSMap.GetTileIndex(300, 300), 32));
+        test_region.AddArea(circle_1);
+        test_region.AddArea(circle_2);
+        test_region.AddArea(circle_3);
+        test_region.AddArea(circle_4);
+        test_region.AddArea(rect_1);
+        test_region.AddNegativeArea(exclusion_circle_1);
         counter++;
     }
-    while (counter < 100);
+    while (counter < 100000);
     foreach (xy_pair in test_region.GetUnifiedAreas()) {
         GSTile.DemolishTile(GSMap.GetTileIndex(xy_pair[0], xy_pair[1]));
     }

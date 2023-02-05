@@ -65,20 +65,9 @@ function Region::GetUnifiedAreas()
         }
     }
     Log.Info("...areas unified. Elapsed time: " + (GSDate.GetSystemTime() - time_start) + " seconds");
+    delete ::index
+    delete ::excluded_index
     return result
-}
-
-function Region::FML(new_xy_pair, target_array)
-{
-    // squirrel 2 apparently has no array.find() - not in docs, and attempting to use it is 'index not found'
-    local counter = 0;
-    foreach (xy_pair in target_array) {
-        if ((xy_pair[0] == new_xy_pair[0]) && (xy_pair[1] == new_xy_pair[1])) {
-            return counter
-        }
-        counter++;
-    }
-    return -1
 }
 
 class Area {
