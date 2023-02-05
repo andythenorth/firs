@@ -67,16 +67,18 @@ function DeltaYFromDeltaXPythagoras(delta_x, radius)
 
 class Circle2 {
     origin_tile = null;
+    origin_x = null;
+    origin_y = null;
     radius = null;
 
     constructor(origin_tile, radius) {
         this.origin_tile = origin_tile;
+        this.origin_x = GSMap.GetTileX(origin_tile);
+        this.origin_y = GSMap.GetTileY(origin_tile);
         this.radius = radius;
     }
 
     function GetTiles() {
-        local origin_x = GSMap.GetTileX(origin_tile);
-        local origin_y = GSMap.GetTileY(origin_tile);
         local result = array(0);
         // method using pythagoras to find y from each x using radius, then use y as the constraint for a tile file
         // this walks only the tiles that are explicitly needed and _may_ scale slightly better with larger radii, but eh, I have no fine-grained timing info
@@ -84,6 +86,7 @@ class Circle2 {
             local delta_y = DeltaYFromDeltaXPythagoras(origin_x - x, radius);
             for (local y = origin_y - delta_y; y <= origin_y + delta_y; y++) {
                 result.push(GSMap.GetTileIndex(x, y));
+
             }
         }
         return result
@@ -93,10 +96,18 @@ class Circle2 {
 class Rect2 {
     tile_from = null;
     tile_to = null;
+    x_1 = null;
+    y_1 = null;
+    x_2 = null;
+    y_2 = null;
 
     constructor(tile_from, tile_to) {
         this.tile_from = tile_from;
         this.tile_to = tile_to;
+        this.x_1 = GSMap.GetTileX(tile_from);
+        this.y_1 = GSMap.GetTileY(tile_from);
+        this.x_2 = GSMap.GetTileX(tile_to);
+        this.y_2 = GSMap.GetTileY(tile_to);
     }
 
     function GetTiles() {
@@ -105,10 +116,6 @@ class Rect2 {
         // whether that's necessary or not I don't know, but there seems to be unresolved uncertainty around the performance of GS abstractions
         // also primitive code is long, but is easy to reason about, and also possibly port out of GS to base game
         //
-        local x_1 = GSMap.GetTileX(tile_from);
-        local y_1 = GSMap.GetTileY(tile_from);
-        local x_2 = GSMap.GetTileX(tile_to);
-        local y_2 = GSMap.GetTileY(tile_to);
         local result = array(0);
         // !! doesn't check for negative offsets between tile_from and tile_to
         for (local x = x_1; x <= x_2; x++) {

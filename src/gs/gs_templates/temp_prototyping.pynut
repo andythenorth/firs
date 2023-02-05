@@ -53,3 +53,47 @@ function set_town_growth_rate()
     Log.Info("Town growth rates set. Elapsed time: " + (GSDate.GetSystemTime() - time_start));
 }
 
+function regions_test()
+{
+    ::test_regions <- {}
+    local counter = 0;
+    // don't create the areas inside the loop, it bloats RAM use horrifically and won't be garbage collected
+    local circle_1 = Circle2(GSMap.GetTileIndex(100, 100), 32);
+    local circle_2 = Circle2(GSMap.GetTileIndex(500, 100), 32);
+    local circle_3 = Circle2(GSMap.GetTileIndex(500, 500), 32);
+    local circle_4 = Circle2(GSMap.GetTileIndex(100, 500), 32);
+    local circle_5 = Circle2(GSMap.GetTileIndex(200, 500), 32);
+    local circle_6 = Circle2(GSMap.GetTileIndex(200, 500), 32);
+    local circle_7 = Circle2(GSMap.GetTileIndex(200, 500), 32);
+    local rect_1 = Rect2(GSMap.GetTileIndex(0, 0), GSMap.GetTileIndex(300, 300));
+    local exclusion_circle_1 = Circle2(GSMap.GetTileIndex(300, 300), 32);
+    local exclusion_circle_2 = Circle2(GSMap.GetTileIndex(100, 100), 32);
+    local exclusion_circle_3 = Circle2(GSMap.GetTileIndex(300, 300), 32);
+    local exclusion_circle_4 = Circle2(GSMap.GetTileIndex(400, 400), 32);
+    do {
+        ::test_regions[counter] <- Region();
+        ::test_regions[counter].AddArea(rect_1);
+        ::test_regions[counter].AddArea(circle_1);
+        ::test_regions[counter].AddArea(circle_2);
+        ::test_regions[counter].AddArea(circle_3);
+        ::test_regions[counter].AddArea(circle_4);
+        ::test_regions[counter].AddArea(circle_5);
+        ::test_regions[counter].AddArea(circle_6);
+        ::test_regions[counter].AddArea(circle_7);
+        ::test_regions[counter].AddNegativeArea(exclusion_circle_1);
+        ::test_regions[counter].AddNegativeArea(exclusion_circle_2);
+        ::test_regions[counter].AddNegativeArea(exclusion_circle_3);
+        ::test_regions[counter].AddNegativeArea(exclusion_circle_4);
+        counter++;
+    }
+    while (counter < 5);
+
+    local foo = test_regions[0].GetUnifiedAreas();
+    /*
+    foreach (tile in test_regions[0].GetUnifiedAreas()) {
+        GSTile.DemolishTile(tile);
+    }
+    */
+
+    delete ::test_regions
+}
