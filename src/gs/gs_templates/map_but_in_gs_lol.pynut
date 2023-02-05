@@ -25,41 +25,28 @@ function Region::GetUnifiedAreas()
     ::excluded_index <- {}
 
     foreach (negative_area in this.negative_areas) {
-        foreach (xy_pair in negative_area.GetTiles()) {
-            local x = xy_pair[0];
-            local y = xy_pair[1];
-            if ((x in ::excluded_index) == false) {
-                ::excluded_index[x] <- {};
-            }
-            if ((y in ::excluded_index[x]) == false) {
-                ::excluded_index[x][y] <- null;
+        foreach (tile in negative_area.GetTiles()) {
+            if ((tile in ::excluded_index) == false) {
+                ::excluded_index[tile] <- null;
             }
         }
     }
 
     foreach (area in this.areas) {
-        foreach (xy_pair in area.GetTiles()) {
-            local x = xy_pair[0];
-            local y = xy_pair[1];
-            // don't add excluded points
-            if (x in ::excluded_index) {
-                if (y in ::excluded_index[x]) {
-                    // already exists, don't add it
-                    continue;
-                }
+        foreach (tile in area.GetTiles()) {
+            // don't add excluded tiles
+            if (tile in ::excluded_index) {
+                // excluded, don't add it
+                continue;
             }
             // don't add duplicates
-            if ((x in ::index) == false) {
-                ::index[x] <- {};
-            }
-            if (y in ::index[x]) {
-                // xy_pair already exists, don't add it
-                break;
+            if ((tile in ::index) == false) {
+                ::index[tile] <- {};
             }
             else {
-                ::index[x][y] <- null;
+                break;
             }
-            result.append(xy_pair);
+            result.push(tile);
         }
     }
     Log.Info("...areas unified. Elapsed time: " + (GSDate.GetSystemTime() - time_start) + " seconds");
@@ -96,10 +83,7 @@ class Circle2 {
         for (local x = origin_x - radius; x <= origin_x + radius; x++) {
             local delta_y = DeltaYFromDeltaXPythagoras(origin_x - x, radius);
             for (local y = origin_y - delta_y; y <= origin_y + delta_y; y++) {
-                local xy_pair = array(0);
-                xy_pair.push(x);
-                xy_pair.push(y);
-                result.push(xy_pair);
+                result.push(GSMap.GetTileIndex(x, y));
             }
         }
         return result
@@ -117,7 +101,7 @@ class Rect2 {
 
     function GetTiles() {
         // we already have GSTileList.AddRectangle()
-        // but this deliberately uses primitives, avoiding GSTileList etc and returning a simple array of (x, y) pairs
+        // but this deliberately uses primitives, avoiding GSTileList etc and returning a simple array of tiles
         // whether that's necessary or not I don't know, but there seems to be unresolved uncertainty around the performance of GS abstractions
         // also primitive code is long, but is easy to reason about, and also possibly port out of GS to base game
         //
@@ -129,10 +113,7 @@ class Rect2 {
         // !! doesn't check for negative offsets between tile_from and tile_to
         for (local x = x_1; x <= x_2; x++) {
             for (local y = y_1; y <= y_2; y++) {
-                local xy_pair = array(0);
-                xy_pair.push(x);
-                xy_pair.push(y);
-                result.push(xy_pair);
+                result.push(GSMap.GetTileIndex(x, y));
             }
         }
         return result

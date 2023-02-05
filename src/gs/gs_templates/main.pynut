@@ -243,12 +243,13 @@ function MainClass::Init()
         ::test_regions[counter].AddNegativeArea(exclusion_circle_2);
         ::test_regions[counter].AddNegativeArea(exclusion_circle_3);
         ::test_regions[counter].AddNegativeArea(exclusion_circle_4);
-        foreach (xy_pair in test_regions[0].GetUnifiedAreas()) {
-            GSTile.DemolishTile(GSMap.GetTileIndex(xy_pair[0], xy_pair[1]));
-        }
         counter++;
     }
-    while (counter < 50);
+    while (counter < 100);
+
+    foreach (tile in test_regions[0].GetUnifiedAreas()) {
+        GSTile.DemolishTile(tile);
+    }
 
     delete ::test_regions
 
