@@ -210,12 +210,8 @@ function MainClass::Init()
     //tile_walker();
     set_town_growth_rate();
 
-    foreach (xy_pair in Area.Circle(GSMap.GetTileIndex(100, 100), 70)) {
-        GSTile.DemolishTile(GSMap.GetTileIndex(xy_pair[0], xy_pair[1]));
-    }
-
      // Maybe only at init?  Do we need to be re-adding farms if they get removed?
-    // count_farms();
+    count_farms();
     //count_scrap_yards();
 
     //find_power_sources();

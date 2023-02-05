@@ -16,27 +16,18 @@ function firs::BuildIndustryTypeInTown(industry_type, town)
 {
     // write our own version of prospecting, scoped to a town
 
-	// get a tile list, filter it, then randomise it
-	local tile_list = GSTileList();
-    // the map contains a row of void or water tiles around it (depending on freeform map edge settings), so our rect is pushed in by 1 tile row/col  on all sides
-    tile_list.AddRectangle(GSMap.GetTileIndex(1, 1), GSMap.GetTileIndex(GSMap.GetMapSizeX() - 2, GSMap.GetMapSizeY() - 2));
-
-    // remove water tiles, if we want water industries, we'll need to deal with that later
-	tile_list.Valuate(GSTile.IsWaterTile);
-	tile_list.KeepValue(0);
-
-	tile_list.Valuate(GSTile.IsBuildable);
-	tile_list.KeepValue(1);
-
-    tile_list.Valuate(GSBase.RandItem);
-	tile_list.Sort(GSList.SORT_BY_VALUE, GSList.SORT_DESCENDING);
+    // this isn't actually scoped to the town, it's just a circle around it, we'll need to filter by GetClosestTown later
+    local town_circular_area = Area.Circle(GSTown.GetLocation(town), 32);
 
     local result = false;
-    foreach (tile, _ in tile_list) {
+    do {
+        local rand_index = GSBase.RandRange(town_circular_area.len());
+        local xy_pair = town_circular_area[rand_index];
+        town_circular_area.remove(rand_index);
+        local tile = GSMap.GetTileIndex(xy_pair[0], xy_pair[1]);
         if (GSTile.GetClosestTown(tile) == town) {
             local tm = GSTestMode();
             if (GSIndustryType.BuildIndustry(industry_type, tile) == true) {
-                Log.Info("cabbage");
                 local foo = GSExecMode();
                 GSIndustryType.BuildIndustry(industry_type, tile);
                 result = true;
@@ -44,6 +35,7 @@ function firs::BuildIndustryTypeInTown(industry_type, town)
             }
         }
     }
+    while (town_circular_area.len() > 0);
     return result
 }
 
@@ -67,7 +59,10 @@ function count_farms()
     local farm_count = firs.GetIndustryTypeCount(farm_id);
     local town_list = GSTownList();
     foreach (town, _ in town_list) {
-        Log.Info(firs.BuildIndustryTypeInTown(farm_id, town));
+        local farm_built = firs.BuildIndustryTypeInTown(farm_id, town);
+        if (farm_built == false) {
+            Log.Info("Couldn't build farm in " + GSTown.GetName(town));
+        }
     }
     Log.Info("elapsed time: " + (GSDate.GetSystemTime() - time_start));
 }
