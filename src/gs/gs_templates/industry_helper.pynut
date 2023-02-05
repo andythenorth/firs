@@ -17,14 +17,13 @@ function firs::BuildIndustryTypeInTown(industry_type, town)
     // write our own version of prospecting, scoped to a town
 
     // this isn't actually scoped to the town, it's just a circle around it, we'll need to filter by GetClosestTown later
-    local town_circular_area = Area.Circle(GSTown.GetLocation(town), 32);
+    local town_circular_area = Circle2(GSTown.GetLocation(town), 32).GetTiles();
 
     local result = false;
     do {
         local rand_index = GSBase.RandRange(town_circular_area.len());
-        local xy_pair = town_circular_area[rand_index];
+        local tile = town_circular_area[rand_index];
         town_circular_area.remove(rand_index);
-        local tile = GSMap.GetTileIndex(xy_pair[0], xy_pair[1]);
         if (GSTile.GetClosestTown(tile) == town) {
             local tm = GSTestMode();
             if (GSIndustryType.BuildIndustry(industry_type, tile) == true) {

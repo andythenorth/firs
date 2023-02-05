@@ -150,8 +150,8 @@ function MainClass::Start()
 
 		// Loop with a frequency of five days
 		local ticks_used = GSController.GetTick() - loop_start_tick;
-		GSController.Sleep(max(1, 5 * 74 - ticks_used));
-		//GSController.Sleep(1);
+		//GSController.Sleep(max(1, 5 * 74 - ticks_used));
+		GSController.Sleep(1);
 	}
 }
 
@@ -209,12 +209,12 @@ function MainClass::Init()
     set_town_growth_rate();
 
      // Maybe only at init?  Do we need to be re-adding farms if they get removed?
-    // count_farms();
+    count_farms();
     //count_scrap_yards();
 
     //find_power_sources();
 
-    regions_test();
+    //regions_test();
 
 	// Indicate that all data structures has been initialized/restored.
 	this._init_done = true;
@@ -320,7 +320,7 @@ function MainClass::HandleEvents()
  */
 function MainClass::EndOfMonth()
 {
-    regions_test();
+    //regions_test();
     set_town_growth_rate();
     //count_farms();
     //story_lolz();
