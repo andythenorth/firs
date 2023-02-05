@@ -61,8 +61,6 @@ require("temp_prototyping.nut");
 
 // PowerGrid <- PowerGrid();
 
-Area <- Area();
-
 class MainClass extends GSController
 {
 	_loaded_data = null;
@@ -216,28 +214,43 @@ function MainClass::Init()
 
     //find_power_sources();
 
-    local test_region = Region();
+    ::test_regions <- {}
     local counter = 0;
     // don't create the areas inside the loop, it bloats RAM use horrifically and won't be garbage collected
-    local circle_1 = Area.Circle(GSMap.GetTileIndex(100, 100), 32);
-    local circle_2 = Area.Circle(GSMap.GetTileIndex(500, 100), 32);
-    local circle_3 = Area.Circle(GSMap.GetTileIndex(500, 500), 32);
-    local circle_4 = Area.Circle(GSMap.GetTileIndex(100, 500), 32);
-    local rect_1 = Area.Circle(GSMap.GetTileIndex(100, 500), 32);
-    local exclusion_circle_1 = Area.Circle(GSMap.GetTileIndex(300, 300), 32);
+    local circle_1 = Circle2(GSMap.GetTileIndex(100, 100), 32);
+    local circle_2 = Circle2(GSMap.GetTileIndex(500, 100), 32);
+    local circle_3 = Circle2(GSMap.GetTileIndex(500, 500), 32);
+    local circle_4 = Circle2(GSMap.GetTileIndex(100, 500), 32);
+    local circle_5 = Circle2(GSMap.GetTileIndex(200, 500), 32);
+    local circle_6 = Circle2(GSMap.GetTileIndex(200, 500), 32);
+    local circle_7 = Circle2(GSMap.GetTileIndex(200, 500), 32);
+    local rect_1 = Rect2(GSMap.GetTileIndex(0, 0), GSMap.GetTileIndex(300, 300));
+    local exclusion_circle_1 = Circle2(GSMap.GetTileIndex(300, 300), 32);
+    local exclusion_circle_2 = Circle2(GSMap.GetTileIndex(100, 100), 32);
+    local exclusion_circle_3 = Circle2(GSMap.GetTileIndex(300, 300), 32);
+    local exclusion_circle_4 = Circle2(GSMap.GetTileIndex(400, 400), 32);
     do {
-        test_region.AddArea(circle_1);
-        test_region.AddArea(circle_2);
-        test_region.AddArea(circle_3);
-        test_region.AddArea(circle_4);
-        test_region.AddArea(rect_1);
-        test_region.AddNegativeArea(exclusion_circle_1);
+        ::test_regions[counter] <- Region();
+        ::test_regions[counter].AddArea(rect_1);
+        ::test_regions[counter].AddArea(circle_1);
+        ::test_regions[counter].AddArea(circle_2);
+        ::test_regions[counter].AddArea(circle_3);
+        ::test_regions[counter].AddArea(circle_4);
+        ::test_regions[counter].AddArea(circle_5);
+        ::test_regions[counter].AddArea(circle_6);
+        ::test_regions[counter].AddArea(circle_7);
+        ::test_regions[counter].AddNegativeArea(exclusion_circle_1);
+        ::test_regions[counter].AddNegativeArea(exclusion_circle_2);
+        ::test_regions[counter].AddNegativeArea(exclusion_circle_3);
+        ::test_regions[counter].AddNegativeArea(exclusion_circle_4);
+        foreach (xy_pair in test_regions[0].GetUnifiedAreas()) {
+            GSTile.DemolishTile(GSMap.GetTileIndex(xy_pair[0], xy_pair[1]));
+        }
         counter++;
     }
-    while (counter < 100000);
-    foreach (xy_pair in test_region.GetUnifiedAreas()) {
-        GSTile.DemolishTile(GSMap.GetTileIndex(xy_pair[0], xy_pair[1]));
-    }
+    while (counter < 50);
+
+    delete ::test_regions
 
 	// Indicate that all data structures has been initialized/restored.
 	this._init_done = true;
