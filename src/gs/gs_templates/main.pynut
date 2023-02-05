@@ -211,15 +211,15 @@ function MainClass::Init()
     set_town_growth_rate();
 
      // Maybe only at init?  Do we need to be re-adding farms if they get removed?
-    count_farms();
+    //count_farms();
     //count_scrap_yards();
 
     //find_power_sources();
 
     local test_region = Region();
     test_region.AddArea(Area.Circle(GSMap.GetTileIndex(100, 100), 32));
-    test_region.AddArea(Area.Circle(GSMap.GetTileIndex(300, 300), 32));
-    test_region.AddNegativeArea(Area.Circle(GSMap.GetTileIndex(300, 300), 16));
+    test_region.AddArea(Area.Rect(GSMap.GetTileIndex(250, 250), GSMap.GetTileIndex(350, 350)));
+    test_region.AddNegativeArea(Area.Circle(GSMap.GetTileIndex(300, 300), 32));
     foreach (xy_pair in test_region.GetUnifiedAreas()) {
         GSTile.DemolishTile(GSMap.GetTileIndex(xy_pair[0], xy_pair[1]));
     }

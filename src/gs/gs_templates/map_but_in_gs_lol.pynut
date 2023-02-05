@@ -19,22 +19,50 @@ function Region::AddNegativeArea(area)
 function Region::GetUnifiedAreas()
 {
     local result = array(0);
+    ::index <- {}
+    ::excluded_index <- {}
+
+    foreach (negative_area in this.negative_areas) {
+        foreach (xy_pair in negative_area) {
+            local x = xy_pair[0];
+            local y = xy_pair[1];
+            if ((x in ::excluded_index) == false) {
+                ::excluded_index[x] <- {};
+            }
+            if ((y in ::excluded_index[x]) == false) {
+                ::excluded_index[x][y] <- null;
+            }
+        }
+    }
+
     foreach (area in this.areas) {
         foreach (xy_pair in area) {
-            // prevent duplicates being added
-            if (Region.FML(xy_pair, result) == -1) {
-                result.append(xy_pair);
+            local x = xy_pair[0];
+            local y = xy_pair[1];
+            // don't add excluded points
+            if (x in ::excluded_index) {
+                if (y in ::excluded_index[x]) {
+                    // already exists, don't add it
+                    continue;
+                }
             }
+            // don't add duplicates
+            if ((x in ::index) == false) {
+                ::index[x] <- {};
+            }
+            if (y in ::index[x]) {
+                // xy_pair already exists, don't add it
+                break;
+            }
+            else {
+                ::index[x][y] <- null;
+            }
+            result.append(xy_pair);
         }
     }
-    foreach (area in this.negative_areas) {
-        foreach (xy_pair in area) {
-            local index = Region.FML(xy_pair, result);
-            if (index != -1) {
-                result.remove(index);
-            }
-        }
-    }
+    /*
+    */
+    Log.Info(result.len());
     return result
 }
 
@@ -56,6 +84,11 @@ class Area {
         Returns a list of tiles in a circular area around an origin tile
     */
     static function Circle(origin_tile, radius);
+
+    /*
+        Returns a list of tiles in a rect from two corner tiles
+    */
+    static function Rect(tile_from, tile_to);
 }
 
 function Area::DeltaYFromDeltaXPythagoras(delta_x, radius)
@@ -79,9 +112,9 @@ function Area::Circle(origin_tile, radius)
     local result = array(0);
     // method using pythagoras to find y from each x using radius, then use y as the constraint for a tile file
     // this walks only the tiles that are explicitly needed and _may_ scale slightly better with larger radii, but eh, I have no fine-grained timing info
-    for(local x = origin_x - radius; x <= origin_x + radius; x++) {
+    for (local x = origin_x - radius; x <= origin_x + radius; x++) {
         local delta_y = Area.DeltaYFromDeltaXPythagoras(origin_x - x, radius);
-        for(local y = origin_y - delta_y; y <= origin_y + delta_y; y++) {
+        for (local y = origin_y - delta_y; y <= origin_y + delta_y; y++) {
             local xy_pair = array(0);
             xy_pair.push(x);
             xy_pair.push(y);
@@ -104,5 +137,29 @@ function Area::Circle(origin_tile, radius)
         }
     }
     */
+    return result
+}
+
+function Area::Rect(tile_from, tile_to)
+{
+    // we already have GSTileList.AddRectangle()
+    // but this deliberately uses primitives, avoiding GSTileList etc and returning a simple array of (x, y) pairs
+    // whether that's necessary or not I don't know, but there seems to be unresolved uncertainty around the performance of GS abstractions
+    // also primitive code is long, but is easy to reason about, and also possibly port out of GS to base game
+    //
+    local x_1 = GSMap.GetTileX(tile_from);
+    local y_1 = GSMap.GetTileY(tile_from);
+    local x_2 = GSMap.GetTileX(tile_to);
+    local y_2 = GSMap.GetTileY(tile_to);
+    local result = array(0);
+    // !! doesn't check for negative offsets between tile_from and tile_to
+    for (local x = x_1; x <= x_2; x++) {
+        for (local y = y_1; y <= y_2; y++) {
+            local xy_pair = array(0);
+            xy_pair.push(x);
+            xy_pair.push(y);
+            result.push(xy_pair);
+        }
+    }
     return result
 }
