@@ -152,8 +152,8 @@ function MainClass::Start()
 
 		// Loop with a frequency of five days
 		local ticks_used = GSController.GetTick() - loop_start_tick;
-		//GSController.Sleep(max(1, 5 * 74 - ticks_used));
-		GSController.Sleep(1);
+		GSController.Sleep(max(1, 5 * 74 - ticks_used));
+		//GSController.Sleep(1);
 	}
 }
 
@@ -215,6 +215,10 @@ function MainClass::Init()
     //count_scrap_yards();
 
     //find_power_sources();
+
+    foreach (xy_pair in Area.Circle(GSMap.GetTileIndex(100, 100), 32)) {
+        GSTile.DemolishTile(GSMap.GetTileIndex(xy_pair[0], xy_pair[1]));
+    }
 
 	// Indicate that all data structures has been initialized/restored.
 	this._init_done = true;
