@@ -219,6 +219,7 @@ function MainClass::Init()
     local test_region = Region();
     test_region.AddArea(Area.Circle(GSMap.GetTileIndex(100, 100), 32));
     test_region.AddArea(Area.Circle(GSMap.GetTileIndex(300, 300), 32));
+    test_region.AddNegativeArea(Area.Circle(GSMap.GetTileIndex(300, 300), 16));
     foreach (xy_pair in test_region.GetUnifiedAreas()) {
         GSTile.DemolishTile(GSMap.GetTileIndex(xy_pair[0], xy_pair[1]));
     }
