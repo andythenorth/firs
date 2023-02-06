@@ -1,0 +1,10 @@
+function set_town_growth_rate()
+{
+    local time_start = GSDate.GetSystemTime();
+    Log.Error("Setting town growth rates");
+    local town_list = GSTownList();
+    foreach (town, _ in town_list) {
+        GSTown.SetGrowthRate(town, GSTown.TOWN_GROWTH_NORMAL);
+    }
+    Log.Info("Town growth rates set. Elapsed time: " + (GSDate.GetSystemTime() - time_start));
+}

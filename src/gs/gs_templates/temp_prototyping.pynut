@@ -14,45 +14,6 @@ function set_var_47_bits_test()
     }
 }
 
-function set_town_text_test()
-{
-    return true;
-    /* proof of concept for setting town window text */
-
-
-    local town_list = GSTownList();
-    foreach (town, _ in town_list) {
-        local cabbage = GSText(GSText.STR_CABBAGE, GSBase.Rand());
-        GSTown.SetText(town, cabbage);
-        /*
-        local town_location = GSTown.GetLocation(town);
-        local industry_list = GSIndustryList();
-        industry_list.Valuate(GSIndustry.GetIndustryType);
-        industry_list.KeepValue(1); // temp hax to find coal mine
-        industry_list.Valuate(GSIndustry.GetDistanceManhattanToTile, town_location);
-        industry_list.Sort(GSList.SORT_BY_VALUE, GSList.SORT_ASCENDING);
-        industry_list.KeepTop(1);
-        local cabbage = GSText(GSText.STR_CABBAGE, industry_list.Begin());
-        */
-        /*
-        foreach (industry, distance_from_town in industry_list) {
-            Log.Info(GSTown.GetName(town) + " " + GSIndustry.GetName(industry) + " " + distance_from_town, Log.LVL_INFO);
-        }
-        */
-    }
-}
-
-function set_town_growth_rate()
-{
-    local time_start = GSDate.GetSystemTime();
-    Log.Error("Setting town growth rates");
-    local town_list = GSTownList();
-    foreach (town, _ in town_list) {
-        GSTown.SetGrowthRate(town, 1);
-    }
-    Log.Info("Town growth rates set. Elapsed time: " + (GSDate.GetSystemTime() - time_start));
-}
-
 function regions_test()
 {
     ::test_regions <- {}

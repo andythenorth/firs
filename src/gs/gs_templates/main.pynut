@@ -52,9 +52,11 @@ require("constants.nut");
 require("firs.nut");
 require("lib/map_but_in_gs_lol.nut");
 require("lib/industry_helper.nut");
+require("lib/town_helper.nut");
 // require("pylons.nut");
 // require("power_grid.nut");
 require("temp_prototyping.nut");
+require("utils.nut");
 
 //require("some_file.nut");
 //..
@@ -132,7 +134,8 @@ function MainClass::Start()
 		// Handle incoming messages from OpenTTD
 		this.HandleEvents();
 
-        //set_town_text_test();
+        // only needed to remove legacy data from a test savegame
+        reset_town_text_test();
 
 		// Reached new year/month?
 		local current_date = GSDate.GetCurrentDate();
@@ -210,7 +213,8 @@ function MainClass::Init()
 
      // Maybe only at init?  Do we need to be re-adding farms if they get removed?
     count_farms();
-    //count_scrap_yards();
+     // Maybe only at init?  Do we need to be managing scrap yards during gameplay? - maybe, but it would be a slightly different approach (build one occasionally, not many at once)
+    count_scrap_yards();
 
     //find_power_sources();
 
@@ -320,10 +324,9 @@ function MainClass::HandleEvents()
  */
 function MainClass::EndOfMonth()
 {
-    //regions_test();
     set_town_growth_rate();
-    //count_farms();
-    //story_lolz();
+    // this would only need to run every 3 months or so
+    count_scrap_yards();
 }
 
 /*

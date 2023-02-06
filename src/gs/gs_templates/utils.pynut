@@ -1,0 +1,11 @@
+// the iron law that every project must have grow utils
+
+function reset_town_text_test()
+{
+    /*  reset town window text - this is for clearing out all town text during dev */
+    local town_list = GSTownList();
+    foreach (town, _ in town_list) {
+        GSTown.SetText(town, null);
+    }
+}
+

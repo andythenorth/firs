@@ -38,24 +38,33 @@ class GSHelper(object):
         # as of August 2021, port and wharf were sufficiently unique, and at least one of them is in every economy
         # !! this could use a guard to enforce uniqueness
         for industry in registered_industries:
-            if industry.id in ['port', 'wharf']:
+            if industry.id in ["port", "wharf"]:
                 if industry.economy_variations[economy.id].enabled:
                     fingerprint_industry = industry
-                    break;
-        result = result + "Accepts: " + " ".join(sorted(fingerprint_industry.get_accept_cargo_types(economy)))
+                    break
+        result = (
+            result
+            + "Accepts: "
+            + " ".join(sorted(fingerprint_industry.get_accept_cargo_types(economy)))
+        )
         result = result + " Produces:"
-        for cargo_label, prod_multiplier in sorted(fingerprint_industry.get_prod_cargo_types(economy)):
+        for cargo_label, prod_multiplier in sorted(
+            fingerprint_industry.get_prod_cargo_types(economy)
+        ):
             result = result + " " + cargo_label
         return result
 
     def get_grfid(self):
         # !! grfid needs moved out of header.pynml to global constants (may have done this for other grfs already?)
         utils.echo_message("GSHelper.get_grf_id incomplete, returning hard-coded value")
-        return "0xF1250008";
+        return "0xF1250008"
+
 
 def render_nuts(nuts_by_subdir):
     # setup the places we look for templates
-    nut_templates = PageTemplateLoader(os.path.join(currentdir, "src", "gs", "gs_templates"), format="text")
+    nut_templates = PageTemplateLoader(
+        os.path.join(currentdir, "src", "gs", "gs_templates"), format="text"
+    )
     for subdir_name, nuts in nuts_by_subdir.items():
         if subdir_name == "root":
             dst_dir = gs_dst
@@ -67,7 +76,9 @@ def render_nuts(nuts_by_subdir):
                 os.mkdir(dst_dir)
         for nut_name in nuts:
             nut_template = nut_templates[nut_name + ".pynut"]
-            dst_file = codecs.open(os.path.join(dst_dir, nut_name + ".nut"), "w", "utf8")
+            dst_file = codecs.open(
+                os.path.join(dst_dir, nut_name + ".nut"), "w", "utf8"
+            )
             result = nut_template(
                 gs_helper=GSHelper(),
                 makefile_args=makefile_args,
@@ -78,6 +89,7 @@ def render_nuts(nuts_by_subdir):
             )
             dst_file.write(result)
             dst_file.close()
+
 
 def main():
     start = time()
@@ -103,9 +115,10 @@ def main():
             "info",
             "main",
             "temp_prototyping",
+            "utils",
             "version",
         ],
-        "lib": ["industry_helper", "map_but_in_gs_lol", "pylons"],
+        "lib": ["industry_helper", "map_but_in_gs_lol", "pylons", "town_helper"],
         "minigames": ["winning_move", "zellepins"],
     }
     render_nuts(nuts_by_subdir)
