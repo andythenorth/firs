@@ -25,13 +25,7 @@ gs_dst = os.path.join(firs.generated_files_path, "gs")
 
 
 class GSHelper(object):
-    # helps keep templating a bit less mad, and avoids add squirrel specific things to industry.py where I don't want them (as of August 2021 - might change later)
-    def get_accept_cargos_as_array_contents(self, industry, economy):
-        result = []
-        if industry.get_property("accept_cargo_types", economy) is not None:
-            for cargo in industry.get_accept_cargo_types(economy):
-                result.append('"' + cargo + '"')
-        return ",".join(result)
+    # GS-specific methods for formatting etc in chameleon templates, this is only for things not handled in industry.py or utils.py
 
     def get_economy_fingerprint(self, registered_industries, economy):
         result = ""
@@ -59,7 +53,6 @@ class GSHelper(object):
         utils.echo_message("GSHelper.get_grf_id incomplete, returning hard-coded value")
         return "0xF1250008"
 
-
 def render_nuts(nuts_by_subdir):
     # setup the places we look for templates
     nut_templates = PageTemplateLoader(
@@ -79,13 +72,16 @@ def render_nuts(nuts_by_subdir):
             dst_file = codecs.open(
                 os.path.join(dst_dir, nut_name + ".nut"), "w", "utf8"
             )
-            result = nut_template(
-                gs_helper=GSHelper(),
-                makefile_args=makefile_args,
-                git_info=git_info,
-                registered_industries=registered_industries,
-                registered_cargos=registered_cargos,
-                registered_economies=registered_economies,
+            result = utils.unescape_chameleon_output(
+                    nut_template(
+                    gs_helper=GSHelper(),
+                    makefile_args=makefile_args,
+                    git_info=git_info,
+                    registered_industries=registered_industries,
+                    registered_cargos=registered_cargos,
+                    registered_economies=registered_economies,
+                    utils=utils,
+                )
             )
             dst_file.write(result)
             dst_file.close()
@@ -110,16 +106,16 @@ def main():
     nuts_by_subdir = {
         # alphabetise nuts in each list for simplicity
         "root": [
-            "constants",
             "firs",
             "info",
             "main",
             "temp_prototyping",
-            "utils",
             "version",
         ],
-        "lib": ["industry_helper", "map_but_in_gs_lol", "pylons", "town_helper"],
-        "minigames": ["winning_move", "zellepins"],
+        "grind": ["grind"],
+        "atlas": ["atlas"],
+        "vulcan": ["vulcan_industry_spec", "vulcan_map_curator", "vulcan_town_control"],
+        #"minigames": ["winning_move", "zellepins"],
     }
     render_nuts(nuts_by_subdir)
 

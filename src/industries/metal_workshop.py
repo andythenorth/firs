@@ -33,7 +33,7 @@ industry.enable_in_economy(
         ("STSH", 2),
         ("STWR", 2),
         ("COAT", 1),
-        ("WELD", 1)
+        ("WELD", 1),
     ],
     prod_cargo_types_with_output_ratios=[
         # high output production is unwanted due to single cargo

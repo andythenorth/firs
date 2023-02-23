@@ -4,4 +4,7 @@
  * to be available when OpenTTD scans the info.nut file.
  */
 
+// !!! WIP - not clear what version strategy is needed yet
+
 SELF_VERSION <- 1;
+GIT_VERSION <- "${git_info.get_version()}";

@@ -1,3 +1,10 @@
+/* Atlas handles map geometry, for example:
+  - finding tiles in lists by shape
+  - managing regions
+*/
+
+// !! lib structure of Atlas is WIP
+
 class Region {
    /*
         Manages a list of areas
@@ -65,7 +72,7 @@ function DeltaYFromDeltaXPythagoras(delta_x, radius)
     return sqrt((radius * radius) - (delta_x * delta_x)).tointeger();
 }
 
-class Circle2 {
+class AtlasCircle {
     origin_tile = null;
     origin_x = null;
     origin_y = null;
@@ -93,7 +100,7 @@ class Circle2 {
     }
 }
 
-class Rect2 {
+class AtlasRect {
     tile_from = null;
     tile_to = null;
     x_1 = null;

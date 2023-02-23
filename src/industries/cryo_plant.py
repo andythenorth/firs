@@ -23,6 +23,13 @@ industry = IndustryPrimaryNoSupplies(
 
 industry.enable_in_economy(
     "STEELTOWN",
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["basic_oxygen_furnace", "electric_arc_furnace"],
+            "companion_industries_ratio": 1,
+        }
+    },
 )
 
 industry.add_tile(

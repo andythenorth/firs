@@ -8,6 +8,7 @@
 from collections import deque
 import copy
 import os.path
+import json
 
 currentdir = os.curdir
 
@@ -858,9 +859,11 @@ class GRFObject(object):
             "ANIM_TRIGGER_INDTILE_TILE_LOOP": "ANIM_TRIGGER_OBJ_TILELOOP",
         }
         # split off some nml formatting to get the raw list
-        triggers = self.tile.animation_triggers.split("bitmask(")[1].split(")")[0].split(",")
+        triggers = (
+            self.tile.animation_triggers.split("bitmask(")[1].split(")")[0].split(",")
+        )
         # triggers from tile might be empty, strip those
-        triggers = [i for i in triggers if i != '']
+        triggers = [i for i in triggers if i != ""]
         # this is expected to error if the trigger isn't found, it only mapped the triggers in use as of September 2022, not all possible triggers
         for trigger in triggers:
             result.append(trigger_remap[trigger])
@@ -1124,7 +1127,7 @@ class IndustryLocationChecks(object):
                 industry.id,
                 "- should be in economy location checks only",
                 "(is this supported yet?)",
-                message_type="info"
+                message_type="info",
             )
         self.require_cluster = location_args.get("require_cluster", None)
         self.require_town_industry_count = location_args.get(
@@ -1417,6 +1420,8 @@ class IndustryProperties(object):
             "override_default_construction_states", False
         )
         self.extra_text_fund = kwargs.get("extra_text_fund", None)
+        # economy-specific configuration for FIRS GS at compile time
+        self.vulcan_config = kwargs.get("vulcan_config", None)
         # nml properties we want to prevent being set for one reason or another
         if "conflicting_ind_types" in kwargs:
             raise Exception(
@@ -1453,10 +1458,10 @@ class Industry(object):
         self.economy_variations = {}
         for economy in registered_economies:
             self.add_economy_variation(economy)
+        # Vulcan is used to configure FIRS GS compile-time properties, and holds Vulcan-specific properties and methods
+        self.vulcan = Vulcan(self)
         # template will be set by subcass, and/or by individual industry instances
-        self.template = kwargs.get(
-            "template", None
-        )
+        self.template = kwargs.get("template", None)
         self.location_checks = IndustryLocationChecks(
             self, kwargs.get("location_checks", {})
         )
@@ -1592,9 +1597,7 @@ class Industry(object):
                 result.append(economy)
         return result
 
-    def get_graphics_file_path(
-        self, terrain=None, construction_state_num=None
-    ):
+    def get_graphics_file_path(self, terrain=None, construction_state_num=None):
         if terrain == "snow" and self.provides_snow:
             terrain_suffix = "_snow"
         else:
@@ -1609,12 +1612,7 @@ class Industry(object):
                 + '.png"'
             )
         else:
-            return (
-                '"src/graphics/industries/'
-                + self.id
-                + terrain_suffix
-                + '.png"'
-            )
+            return '"src/graphics/industries/' + self.id + terrain_suffix + '.png"'
 
     @property
     def switch_name_for_construction_states(self):
@@ -1914,10 +1912,10 @@ class Industry(object):
         return []
 
     def get_animation_macro_config(self, animation_context):
-        if animation_context == 'industry':
+        if animation_context == "industry":
             tiles = self.tiles
             feature = "FEAT_INDUSTRYTILES"
-        elif animation_context == 'object':
+        elif animation_context == "object":
             all_tiles = []
             for grf_object in self.objects.values():
                 all_tiles.append(grf_object.tile)
@@ -2007,8 +2005,15 @@ class Industry(object):
                 # ground tile assumes sprite_or_spriteset.type will always map to a ground_tile type
                 # have to accomodate number of frames needed (num_sprites_to_autofill) for animated spritelayouts
                 # !! if this is failing, look if the required number of frames is provided in ground_tiles.pynml
-                if sprite_or_spriteset.num_sprites_to_autofill not in global_constants.animated_ground_tile_frame_counts:
-                    raise BaseException(self.id + " needs global_constants.animated_ground_tile_frame_counts extended to add a frame count of " + str(sprite_or_spriteset.num_sprites_to_autofill))
+                if (
+                    sprite_or_spriteset.num_sprites_to_autofill
+                    not in global_constants.animated_ground_tile_frame_counts
+                ):
+                    raise BaseException(
+                        self.id
+                        + " needs global_constants.animated_ground_tile_frame_counts extended to add a frame count of "
+                        + str(sprite_or_spriteset.num_sprites_to_autofill)
+                    )
                 return (
                     "spriteset_ground_tile_"
                     + sprite_or_spriteset.type
@@ -2031,13 +2036,7 @@ class Industry(object):
                 )
             else:
                 # default result is a spriteset name and optional frame number
-                return (
-                    sprite_or_spriteset.id
-                    + suffix
-                    + "("
-                    + sprite_selector
-                    + ")"
-                )
+                return sprite_or_spriteset.id + suffix + "(" + sprite_selector + ")"
         if isinstance(sprite_or_spriteset, Sprite):
             return getattr(sprite_or_spriteset, "sprite_number" + suffix)
 
@@ -2474,3 +2473,19 @@ class IndustryTertiary(Industry):
                 economy.id,
             )
         return prod_cargo_types
+
+
+class Vulcan(object):
+    """Used for GS configuration at compile time, which influences GS at run time"""
+
+    def __init__(self, industry):
+        self.industry = industry
+
+    def get_economy_variations_as_gs_table(self):
+        result = {}
+        for economy in self.industry.economies_enabled_for_industry:
+            economy_config = {}
+            economy_config["accept_cargo_types"] = self.industry.get_accept_cargo_types(economy)
+            economy_config["vulcan_config"] = self.industry.get_property("vulcan_config", economy)
+            result[economy.id] = economy_config
+        return utils.gs_table_repr(result)

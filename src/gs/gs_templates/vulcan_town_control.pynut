@@ -1,0 +1,111 @@
+class VulcanTownControl {
+    /* structure for town control */
+
+    function Init() {
+        // note that this creates a table in root
+        // not designed to return a class instance
+        // vulcan_town_control is a singleton, and allegedly a table with slots is more efficient for that case than a singleton class instance
+        ::vulcan_town_control <- {};
+        vulcan_town_control.towns <- {};
+        local town_list = GSTownList();
+        foreach (town, _ in town_list) {
+            vulcan_town_control.towns[town] <- VulcanTown(town);
+        }
+    }
+
+    function RunPeriodicProcessing() {
+        local time_start = GSDate.GetSystemTime();
+        Log.Info("--");
+        Log.Info("Town periodic processing...");
+        VulcanTownControl.SetGrowthRates();
+        VulcanTownControl.SetTownWindowTexts();
+        Log.Info("Town periodic processing done. Elapsed time: " + (GSDate.GetSystemTime() - time_start));
+    }
+
+    function SetGrowthRates() {
+        // !! there might be too much abstraction here, possibly we could fold this into RunPeriodicProcessing()
+        Log.Info("...setting town growth rates");
+        foreach (vulcan_town in vulcan_town_control.towns) {
+            vulcan_town.SetGrowthRate();
+        }
+    }
+
+    function SetTownWindowTexts() {
+        // !! there might be too much abstraction here, possibly we could fold this into RunPeriodicProcessing()
+        Log.Info("...setting town window texts");
+        foreach (vulcan_town in vulcan_town_control.towns) {
+            vulcan_town.SetTownWindowText();
+        }
+    }
+}
+
+class VulcanTown {
+    /* stores extended info / metadata about a town instance */
+
+    // store the numeric town id as we may need it for looking up other things
+    // town id is also available as the key in vulcan_town_control.towns
+    town = null;
+
+    constructor(town) {
+        this.town = town;
+    }
+
+    function SetGrowthRate() {
+        GSTown.SetGrowthRate(this.town, GSTown.TOWN_GROWTH_NORMAL);
+    }
+
+    function SetTownWindowText() {
+        local text = GSText(GSText.STR_CABBAGE_TOWN, this.town);
+        GSTown.SetText(this.town, text);
+    }
+
+}
+
+class VulcanTownStoryBook {
+
+    function Init() {
+        // note that this creates a table in root
+        // not designed to return a class instance
+        // vulcan_town_story_book is a singleton, and allegedly a table with slots is more efficient for that case than a singleton class instance
+        vulcan_town_control.story_pages <- {};
+    }
+
+    function AddTownStoryPages() {
+        vulcan_town_control.story_pages <- {};
+        local town_list = GSTownList();
+        foreach (town, _ in town_list) {
+            vulcan_town_control.story_pages[town] <- VulcanTownStoryPage(town);
+        }
+    }
+}
+
+class VulcanTownStoryPage {
+    constructor(town) {
+        local town_name = GSTown.GetName(town);
+        // !! this might need to store the story page id for re-use later?
+        local town_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Town: " + town_name);
+        /*
+        // needs a dump info function that walks all the known properties ??
+        // could foreach the industry_spec, but eh, doesn't seem needed right now
+        local element_text = GSText(GSText.STR_GRIND_TEST, "industry_id: ", industry_id.tostring());
+        local display_industry_id = GSStoryPage.NewElement(grind_page, GSStoryPage.SPET_TEXT, 1, element_text);
+
+        local props_to_display = ["grf_local_id", "global_id"];
+        foreach (prop_name in props_to_display) {
+            local element_text = GSText(GSText.STR_GRIND_TEST, prop_name, industry_spec[prop_name].tostring());
+            local prop_name = GSStoryPage.NewElement(grind_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        }
+        // !! not sure we actually need the curation function, it's trivially inspectable in src
+        local foo = "null";
+        if (industry_spec.economy_variations[firs.active_economy.id].map_curator != null) {
+            foo = industry_spec.economy_variations[firs.active_economy.id].map_curator.curation_function.tostring();
+        }
+        local element_text = GSText(GSText.STR_GRIND_TEST, "map_curator", foo);
+        local display_map_curator = GSStoryPage.NewElement(grind_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        */
+    }
+
+    // !! might need some GetPage method?
+    // !! store the page ID first, and then look it up here, so we can get the page as town_story_book[town].page or similar ??
+
+}

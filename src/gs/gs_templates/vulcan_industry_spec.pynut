@@ -1,0 +1,65 @@
+class VulcanIndustrySpec {
+    // equivalent to industry spec in OpenTTD, and GSIndustryType
+    // i.e. spec for industry, not industry instance
+    grf_local_id = null;
+    global_id = null;
+    economy_variations = null;
+
+    constructor(grf_local_id, global_id, economy_variations) {
+        this.grf_local_id = grf_local_id;
+        this.global_id = global_id;
+        this.economy_variations = economy_variations;
+    }
+
+    function _tostring() {
+        // arbitrary string representation of the class, called by Log etc
+        return GSIndustryType.GetName(this.global_id) + " grf_local_id: " + this.grf_local_id + " global_id: " + this.global_id
+    }
+
+    function GetMapCurator() {
+        local result = null;
+        if (this.economy_variations[firs.active_economy.id]["vulcan_config"] != null) {
+             if ("map_curator" in this.economy_variations[firs.active_economy.id]["vulcan_config"]) {
+                // note the rename to "map_curator_config" for clarity, as we will init a map_curator instance - whereas it's just "map_curator" in the python properties
+                local map_curator_config = this.economy_variations[firs.active_economy.id]["vulcan_config"]["map_curator"];
+                result = VulcanMapCuratorIndustryType(this, map_curator_config);
+             }
+        }
+        return result;
+    }
+
+    function GetCount()
+    {
+        local industry_list = GSIndustryList();
+        industry_list.Valuate(GSIndustry.GetIndustryType);
+        industry_list.KeepValue(this.global_id);
+        return industry_list.Count();
+    }
+
+    function BuildInTown(town)
+    {
+        // write our own version of prospecting, scoped to a town
+
+        // this area isn't actually scoped to the town, it's just a circle around it in which to check tiles, we'll filter by GetClosestTown later
+        local town_circular_area = AtlasCircle(GSTown.GetLocation(town), 32).GetTiles();
+
+        local result = false;
+        do {
+            local rand_index = GSBase.RandRange(town_circular_area.len());
+            local tile = town_circular_area[rand_index];
+            town_circular_area.remove(rand_index);
+            if (GSTile.GetClosestTown(tile) == town) {
+                local tm = GSTestMode();
+                if (GSIndustryType.BuildIndustry(this.global_id, tile) == true) {
+                    local foo = GSExecMode();
+                    GSIndustryType.BuildIndustry(this.global_id, tile);
+                    result = true;
+                    break;
+                }
+            }
+        }
+        while (town_circular_area.len() > 0);
+        return result
+    }
+}
+

@@ -6,7 +6,7 @@ industry = IndustrySecondary(
         ("STSE", 3),
         ("LFEQ", 2),
         ("SWRP", 2),
-        ("WELD", 1)
+        ("WELD", 1),
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[

@@ -22,6 +22,13 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "STEELTOWN",
     prob_map_gen="14",
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToTowns",
+            "min_population": 400,
+            "industry_town_ratio": 0.66,
+        }
+    },
 )
 
 industry.add_tile(

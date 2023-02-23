@@ -1,0 +1,82 @@
+/* Grind handles basic debugging and development tasks, for example
+  - adding story pages for debugging information
+  - using story buttons to invalidate or refresh state
+*/
+
+// !! lib structure of Grind is WIP
+
+function reset_town_text_test()
+{
+    /*  reset town window text - this is for clearing out all town text during dev */
+    local town_list = GSTownList();
+    foreach (town, _ in town_list) {
+        GSTown.SetText(town, null);
+    }
+}
+
+class GrindStoryBook {
+
+    function Init() {
+        // note that this creates a table in root
+        // not designed to return a class instance
+        // grind_story_book is a singleton, and allegedly a table with slots is more efficient for that case than a singleton class instance
+        ::grind_story_book <- {};
+    }
+
+    function AddUtilityPages() {
+        // note that this also automatically clears all current pages, that can be changed if needed, but trivially prevents duplication currently
+        grind_story_book.utility_pages <- {};
+        // note that currently there is just a single page provisioned
+        grind_story_book.utility_pages.debug_page_1 <- GrindStoryPageUtility();
+    }
+
+    function AddIndustrySpecStoryPages() {
+        // note that this also automatically clears all current pages, that can be changed if needed, but trivially prevents duplication currently
+        grind_story_book.industry_spec_pages <- {};
+        foreach (industry_id in firs.active_economy.get_industry_ids_sorted_by_name()) {
+            grind_story_book.industry_spec_pages[industry_id] <- GrindStoryPageIndustrySpec(industry_id);
+        }
+    }
+}
+
+class GrindStoryPage {
+    // empty (for now) class to act as a namespace
+}
+
+class GrindStoryPageUtility extends GrindStoryPage {
+    // provide a class in case we want to add more utility pages in future
+    // but note that currently there is just a single page provisioned
+    constructor() {
+        // !! this might need to store the story page id for re-use later?
+        local debug_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Grind: LOLZ Dev Utils / Debugger");
+        local run_init = GSStoryPage.NewElement(debug_page, GSStoryPage.SPET_BUTTON_PUSH, 1, "Re-run Init()");
+    }
+}
+
+class GrindStoryPageIndustrySpec extends GrindStoryPage {
+
+    constructor(industry_id) {
+        local industry_spec = firs.industries[industry_id];
+        local industry_name = GSIndustryType.GetName(industry_spec.global_id);
+        // !! this might need to store the story page id for re-use later?
+        local grind_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Grind: " + industry_name);
+        // needs a dump info function that walks all the known properties ??
+        // could foreach the industry_spec, but eh, doesn't seem needed right now
+        local element_text = GSText(GSText.STR_GRIND_TEST, "industry_id: ", industry_id.tostring());
+        local display_industry_id = GSStoryPage.NewElement(grind_page, GSStoryPage.SPET_TEXT, 1, element_text);
+
+        local props_to_display = ["grf_local_id", "global_id"];
+        foreach (prop_name in props_to_display) {
+            local element_text = GSText(GSText.STR_GRIND_TEST, prop_name, industry_spec[prop_name].tostring());
+            local prop_name = GSStoryPage.NewElement(grind_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        }
+        // not sure we actually need map curation infor, it's trivially inspectable in src, but eh
+        local map_curator = industry_spec.GetMapCurator();
+        local map_curator_info = "null";
+        if (map_curator != null) {
+            map_curator_info = map_curator.tostring();
+        }
+        local element_text = GSText(GSText.STR_GRIND_TEST, "map_curator", map_curator_info);
+        local display_map_curator_info = GSStoryPage.NewElement(grind_page, GSStoryPage.SPET_TEXT, 1, element_text);
+    }
+}
