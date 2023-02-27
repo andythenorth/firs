@@ -3,12 +3,13 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="bar_and_section_mill",
     # doesn't need ACID, sections can be mechanically de-scaled
+    # don't require all inputs here, Steeltown 5 is getting a bit intense on combinatorial, this needs to be an easier one
+    # this requires overlooking that the output mix should be a balance of all 3 of the inputs, but eh, gameplay
     accept_cargos_with_input_ratios=[
-        ("STCB", 4),
-        ("STAL", 2),
-        ("STST", 2),
+        ("STCB", 8),
+        ("STAL", 8),
+        ("STST", 8),
     ],
-    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
         ("STBR", 3),
         ("STSE", 2),
