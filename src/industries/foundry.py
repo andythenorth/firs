@@ -2,17 +2,17 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="foundry",
+    # runs both casting line (sand) and forging line (soap)
+    # cleaning agents also stand in for shot-blasting etc
     accept_cargos_with_input_ratios=[
-        ("STCB", 3),
-        ("STAL", 2),
-        ("STST", 2),
+        ("STIG", 6),
         ("SAND", 1),
+        ("SOAP", 1),
     ],
-    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
         # high foundry output production is unwanted
         ("FOCA", 5),
-        ("ENSP", 1),
+        ("ENSP", 2),
     ],
     prob_in_game="2",
     prob_map_gen="5",
@@ -183,107 +183,22 @@ industry.add_industry_layout(
         (2, 0, "foundry_spritelayout_large_shed"),
         (2, 1, "foundry_spritelayout_staithes"),
         (2, 2, "foundry_spritelayout_logs"),
-    ],
-)
-industry.add_industry_layout(
-    id="foundry_industry_layout_2",
-    layout=[
-        (0, 0, "foundry_spritelayout_large_shed"),
-        (
-            0,
-            1,
-            "foundry_spritelayout_large_shed_clerestory_roof",
-        ),
-        (
-            0,
-            2,
-            "foundry_spritelayout_large_shed_clerestory_roof",
-        ),
-        (1, 0, "foundry_spritelayout_furnace_anim"),
-        (1, 1, "foundry_spritelayout_iron_pigs_anim"),
-        (1, 2, "foundry_spritelayout_logs"),
-        (2, 0, "foundry_spritelayout_furnace_anim"),
-        (2, 1, "foundry_spritelayout_iron_pigs_anim"),
-        (2, 2, "foundry_spritelayout_staithes"),
-    ],
-)
-industry.add_industry_layout(
-    id="foundry_industry_layout_3",
-    layout=[
-        (0, 0, "foundry_spritelayout_furnace_anim"),
-        (0, 1, "foundry_spritelayout_iron_pigs_anim"),
-        (0, 2, "foundry_spritelayout_furnace_anim"),
-        (0, 3, "foundry_spritelayout_iron_pigs_anim"),
-        (0, 4, "foundry_spritelayout_large_shed"),
-        (
-            1,
-            0,
-            "foundry_spritelayout_large_shed_clerestory_roof",
-        ),
-        (1, 1, "foundry_spritelayout_staithes"),
-        (
-            1,
-            2,
-            "foundry_spritelayout_large_shed_clerestory_roof",
-        ),
-        (1, 3, "foundry_spritelayout_logs"),
-        (1, 4, "foundry_spritelayout_empty"),
-    ],
-)
-industry.add_industry_layout(
-    id="foundry_industry_layout_4",
-    layout=[
-        (
-            0,
-            0,
-            "foundry_spritelayout_large_shed_clerestory_roof",
-        ),
-        (
-            0,
-            1,
-            "foundry_spritelayout_large_shed_clerestory_roof",
-        ),
-        (1, 0, "foundry_spritelayout_furnace_anim"),
-        (1, 1, "foundry_spritelayout_iron_pigs_anim"),
-        (2, 0, "foundry_spritelayout_logs"),
-        (2, 1, "foundry_spritelayout_staithes"),
-        (3, 0, "foundry_spritelayout_furnace_anim"),
-        (3, 1, "foundry_spritelayout_iron_pigs_anim"),
-        (4, 0, "foundry_spritelayout_large_shed"),
-        (4, 1, "foundry_spritelayout_empty"),
-    ],
-)
-industry.add_industry_layout(
-    id="foundry_industry_layout_5",
-    layout=[
-        (0, 0, "foundry_spritelayout_furnace_anim"),
-        (0, 1, "foundry_spritelayout_iron_pigs_anim"),
-        (1, 0, "foundry_spritelayout_furnace_anim"),
-        (1, 1, "foundry_spritelayout_iron_pigs_anim"),
-        (2, 0, "foundry_spritelayout_logs"),
-        (2, 1, "foundry_spritelayout_staithes"),
         (
             3,
             0,
             "foundry_spritelayout_large_shed_clerestory_roof",
         ),
-        (3, 1, "foundry_spritelayout_large_shed"),
-    ],
-)
-industry.add_industry_layout(
-    id="foundry_industry_layout_6",
-    layout=[
-        (0, 0, "foundry_spritelayout_large_shed"),
-        (0, 1, "foundry_spritelayout_staithes"),
-        (0, 2, "foundry_spritelayout_logs"),
+        (3, 1, "foundry_spritelayout_furnace_anim"),
+        (3, 2, "foundry_spritelayout_iron_pigs_anim"),
         (
+            4,
             0,
-            3,
             "foundry_spritelayout_large_shed_clerestory_roof",
         ),
-        (1, 0, "foundry_spritelayout_furnace_anim"),
-        (1, 1, "foundry_spritelayout_iron_pigs_anim"),
-        (1, 2, "foundry_spritelayout_furnace_anim"),
-        (1, 3, "foundry_spritelayout_iron_pigs_anim"),
+        (4, 1, "foundry_spritelayout_furnace_anim"),
+        (4, 2, "foundry_spritelayout_iron_pigs_anim"),
+        (5, 0, "foundry_spritelayout_large_shed"),
+        (5, 1, "foundry_spritelayout_staithes"),
+        (5, 2, "foundry_spritelayout_logs"),
     ],
 )

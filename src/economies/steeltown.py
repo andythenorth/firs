@@ -82,6 +82,8 @@ economy = Economy(
             "stainless_steel",
             "alloy_steel",
             "limestone",
+            "paints_and_coatings",
+            "cleaning_agents",
         ],
         "group_edges_subgraphs": [
             ["basic_oxygen_furnace", "electric_arc_furnace"],
