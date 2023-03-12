@@ -78,8 +78,6 @@ function MainClass::Start()
     VulcanTownStoryBook.Init();
     VulcanTownStoryBook.AddTownStoryPages();
     GrindStoryBook.Init();
-    GrindStoryBook.AddUtilityPages();
-    GrindStoryBook.AddIndustrySpecStoryPages();
 
 	// Game has now started and if it is a single player game,
 	// company 0 exist and is the human company.
@@ -89,11 +87,10 @@ function MainClass::Start()
 	while (true) {
 		local loop_start_tick = GSController.GetTick();
 
+        GrindStoryBook.CheckShowHide();
+
 		// Handle incoming messages from OpenTTD
 		this.HandleEvents();
-
-        // only needed to remove legacy data from a test savegame
-        // reset_town_text_test();
 
 		// Reached new year/month?
 		local current_date = GSDate.GetCurrentDate();

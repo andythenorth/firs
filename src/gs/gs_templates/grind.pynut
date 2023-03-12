@@ -3,17 +3,6 @@
   - using story buttons to invalidate or refresh state
 */
 
-// !! lib structure of Grind is WIP
-
-function reset_town_text_test()
-{
-    /*  reset town window text - this is for clearing out all town text during dev */
-    local town_list = GSTownList();
-    foreach (town, _ in town_list) {
-        GSTown.SetText(town, null);
-    }
-}
-
 class GrindStoryBook {
 
     function Init() {
@@ -21,6 +10,32 @@ class GrindStoryBook {
         // not designed to return a class instance
         // grind_story_book is a singleton, and allegedly a table with slots is more efficient for that case than a singleton class instance
         ::grind_story_book <- {};
+        grind_story_book.show <- null;
+        GrindStoryBook.CheckShowHide();
+    }
+
+    function CheckShowHide() {
+        if (GSController.GetSetting("grind_show") != grind_story_book.show) {
+            grind_story_book.show <- GSController.GetSetting("grind_show");
+            if (grind_story_book.show) {
+                GrindStoryBook.Show();
+            } else {
+                GrindStoryBook.Hide();
+            }
+        }
+    }
+
+    function Hide() {
+        foreach (page_type in ["utility_pages", "industry_spec_pages"]) {
+            foreach (grind_page in grind_story_book[page_type]) {
+                GSStoryPage.Remove(grind_page.story_page);
+            }
+        }
+    }
+
+    function Show() {
+        GrindStoryBook.AddUtilityPages();
+        GrindStoryBook.AddIndustrySpecStoryPages();
     }
 
     function AddUtilityPages() {
@@ -41,6 +56,7 @@ class GrindStoryBook {
 
 class GrindStoryPage {
     // empty (for now) class to act as a namespace
+    story_page = null;
 }
 
 class GrindStoryPageUtility extends GrindStoryPage {
@@ -48,8 +64,8 @@ class GrindStoryPageUtility extends GrindStoryPage {
     // but note that currently there is just a single page provisioned
     constructor() {
         // !! this might need to store the story page id for re-use later?
-        local debug_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Grind: LOLZ Dev Utils / Debugger");
-        local run_init = GSStoryPage.NewElement(debug_page, GSStoryPage.SPET_BUTTON_PUSH, 1, "Re-run Init()");
+        this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Grind: LOLZ Dev Utils / Debugger");
+        local run_init = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_BUTTON_PUSH, 1, "Re-run Init()");
     }
 }
 
@@ -59,16 +75,16 @@ class GrindStoryPageIndustrySpec extends GrindStoryPage {
         local industry_spec = firs.industries[industry_id];
         local industry_name = GSIndustryType.GetName(industry_spec.global_id);
         // !! this might need to store the story page id for re-use later?
-        local grind_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Grind: " + industry_name);
+        this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Grind: " + industry_name);
         // needs a dump info function that walks all the known properties ??
         // could foreach the industry_spec, but eh, doesn't seem needed right now
         local element_text = GSText(GSText.STR_GRIND_TEST, "industry_id: ", industry_id.tostring());
-        local display_industry_id = GSStoryPage.NewElement(grind_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        local display_industry_id = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
 
         local props_to_display = ["grf_local_id", "global_id"];
         foreach (prop_name in props_to_display) {
             local element_text = GSText(GSText.STR_GRIND_TEST, prop_name, industry_spec[prop_name].tostring());
-            local prop_name = GSStoryPage.NewElement(grind_page, GSStoryPage.SPET_TEXT, 1, element_text);
+            local prop_name = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
         }
         // not sure we actually need map curation infor, it's trivially inspectable in src, but eh
         local map_curator = industry_spec.GetMapCurator();
@@ -77,6 +93,6 @@ class GrindStoryPageIndustrySpec extends GrindStoryPage {
             map_curator_info = map_curator.tostring();
         }
         local element_text = GSText(GSText.STR_GRIND_TEST, "map_curator", map_curator_info);
-        local display_map_curator_info = GSStoryPage.NewElement(grind_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        local display_map_curator_info = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
     }
 }

@@ -32,8 +32,33 @@ class FMainClass extends GSInfo {
 	function GetURL()			{ return ""; }
 
 	function GetSettings() {
-		AddSetting({name = "log_level", description = "Debug: Log level (higher = print more)", easy_value = 3, medium_value = 3, hard_value = 3, custom_value = 3, flags = CONFIG_INGAME, min_value = 1, max_value = 3});
-		AddLabels("log_level", {_1 = "1: Info", _2 = "2: Verbose", _3 = "3: Debug" } );
+		AddSetting({
+		    name = "log_level",
+		    description = "Debug: Log level (higher = print more)",
+		    easy_value = 3,
+		    medium_value = 3,
+		    hard_value = 3,
+		    custom_value = 3,
+		    flags = CONFIG_INGAME,
+		    min_value = 1,
+		    max_value = 3
+		});
+		AddLabels(
+		    "log_level",
+		    {
+		        _1 = "1: Info",
+		        _2 = "2: Verbose",
+		        _3 = "3: Debug"
+		});
+		AddSetting({
+		    name = "grind_show",
+		    description = "Show Grind developer tools",
+		    easy_value = 1,
+		    medium_value = 1,
+		    hard_value = 1,
+		    custom_value = 1,
+			flags = CONFIG_BOOLEAN | CONFIG_INGAME
+		});
 	}
 }
 
