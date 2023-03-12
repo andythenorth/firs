@@ -1,13 +1,20 @@
+class VulcanIndustryControl {
+    /* structure for industry control */
+
+}
+
 class VulcanIndustrySpec {
     // equivalent to industry spec in OpenTTD, and GSIndustryType
-    // i.e. spec for industry, not industry instance
+    // i.e. spec for industry type, not industry instance
     grf_local_id = null;
     global_id = null;
+    default_vulcan_config = null;
     economy_variations = null;
 
-    constructor(grf_local_id, global_id, economy_variations) {
+    constructor(grf_local_id, global_id, default_vulcan_config, economy_variations) {
         this.grf_local_id = grf_local_id;
         this.global_id = global_id;
+        this.default_vulcan_config = default_vulcan_config;
         this.economy_variations = economy_variations;
     }
 
@@ -62,4 +69,3 @@ class VulcanIndustrySpec {
         return result
     }
 }
-

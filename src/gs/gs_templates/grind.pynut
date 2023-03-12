@@ -67,6 +67,7 @@ class GrindStoryPageUtility extends GrindStoryPage {
     constructor() {
         this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Grind: LOLZ Dev Utils / Debugger");
         local run_init = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_BUTTON_PUSH, 1, "Re-run Init()");
+        local clean_story_book = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_BUTTON_PUSH, 1, "Clean story book and re-run Init()");
     }
 }
 
@@ -85,8 +86,16 @@ class GrindStoryPageIndustrySpec extends GrindStoryPage {
         local props_to_display = ["grf_local_id", "global_id"];
         foreach (prop_name in props_to_display) {
             local element_text = GSText(GSText.STR_GRIND_TEST, prop_name, industry_spec[prop_name].tostring());
-            local prop_name = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
+            local prop_display = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
         }
+        local element_text = GSText(GSText.STR_GRIND_SUB_HEADING, "default_vulcan_config");
+        local prop_display = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        foreach (prop_name, prop_value in industry_spec.default_vulcan_config) {
+            local element_text = GSText(GSText.STR_GRIND_TEST, prop_name, prop_value.tostring());
+            local prop_display = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        }
+        local element_text = GSText(GSText.STR_GRIND_SUB_HEADING, "economy_variations");
+        local prop_display = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
         // not sure we actually need map curation infor, it's trivially inspectable in src, but eh
         local map_curator = industry_spec.GetMapCurator();
         local map_curator_info = "null";

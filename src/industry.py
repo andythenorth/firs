@@ -1420,8 +1420,8 @@ class IndustryProperties(object):
             "override_default_construction_states", False
         )
         self.extra_text_fund = kwargs.get("extra_text_fund", None)
-        # economy-specific configuration for FIRS GS at compile time
-        self.vulcan_config = kwargs.get("vulcan_config", None)
+        # default and/or economy-specific configuration for FIRS GS at compile time
+        self.vulcan_config = kwargs.get("vulcan_config", {})
         # nml properties we want to prevent being set for one reason or another
         if "conflicting_ind_types" in kwargs:
             raise Exception(
@@ -2480,6 +2480,12 @@ class Vulcan(object):
 
     def __init__(self, industry):
         self.industry = industry
+
+    def get_default_vulcan_config_as_gs_table(self):
+        vulcan_config = self.industry.get_property("vulcan_config", None)
+        result = {}
+        result["allow_production_change"] = vulcan_config.get("allow_production_change", False)
+        return utils.gs_table_repr(result)
 
     def get_economy_variations_as_gs_table(self):
         result = {}

@@ -18,13 +18,20 @@ class VulcanTownControl {
         local time_start = GSDate.GetSystemTime();
         Log.Info("--");
         Log.Info("Town periodic processing...");
-
+        VulcanTownControl.UpdateCargoMonitors();
         VulcanTownControl.SetGrowthRates();
         VulcanTownControl.SetTownWindowTexts();
         if (caller_type != "Init") {
             VulcanTownControl.UpdateTownStoryPages();
         }
         Log.Info("Town periodic processing done. Elapsed time: " + (GSDate.GetSystemTime() - time_start));
+    }
+
+    function UpdateCargoMonitors() {
+        // !! there might be too much abstraction here, possibly we could fold this into RunPeriodicProcessing()
+        foreach (vulcan_town in vulcan_town_control.towns) {
+            vulcan_town.UpdateCargoMonitors();
+        }
     }
 
     function SetGrowthRates() {
@@ -58,13 +65,24 @@ class VulcanTown {
     // store the numeric town id as we may need it for looking up other things
     // town id is also available as the key in vulcan_town_control.towns
     town = null;
+    required_cargos = null;
 
     constructor(town) {
         this.town = town;
-        // cargo monitor setup needs to be made multiple monitors, and wrapped in a function
+        // !! temp cargos
+        this.required_cargos = ["PASS", "CMNT", "VEHI", "FOOD"];
+    }
+
+    function UpdateCargoMonitors() {
+        // !! cargo monitor setup needs to be made multiple monitors, and wrapped in a function
         // vulcan_town_control.cargo_monitor <- GSCargoMonitor.GetTownDeliveryAmount(0, 0, this.town, true);
-        // will need to monitor all companies
-        Log.Info("Cargo monitor: " + GSCargoMonitor.GetTownDeliveryAmount(0, 0, this.town, true));
+        // !! will need to monitor all companies
+        Log.Info("Cargo monitor for " + GSTown.GetName(this.town));
+        foreach (cargo_label in required_cargos) {
+            local cargo = firs.active_economy.cargo_ids_by_label[cargo_label];
+            local company = 0;
+            Log.Info("..." + cargo_label + ": " + GSCargoMonitor.GetTownDeliveryAmount(company, cargo, this.town, true));
+        }
     }
 
     function SetGrowthRate() {
@@ -78,8 +96,6 @@ class VulcanTown {
 
     function UpdateTownStoryPage() {
         vulcan_town_control.story_pages[this.town].Update(this);
-        // !! temp
-        Log.Info("Cargo monitor: " + GSCargoMonitor.GetTownDeliveryAmount(0, 0, this.town, true));
     }
 
     function TestCabbage() {
@@ -95,10 +111,10 @@ class VulcanTownStoryBook {
         // not designed to return a class instance
         // vulcan_town_story_book is a singleton, and allegedly a table with slots is more efficient for that case than a singleton class instance
         vulcan_town_control.story_pages <- {};
+        VulcanTownStoryBook.AddTownStoryPages();
     }
 
     function AddTownStoryPages() {
-        vulcan_town_control.story_pages <- {};
         local town_list = GSTownList();
         foreach (town, _ in town_list) {
             vulcan_town_control.story_pages[town] <- VulcanTownStoryPage(town);

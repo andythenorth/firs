@@ -25,6 +25,7 @@ class FIRS {
             firs.industries["${industry.id}"] <- VulcanIndustrySpec(
                 ${industry.numeric_id},
                 GSIndustryType.ResolveNewGRFID(firs.grfid, ${industry.numeric_id}),
+                ${industry.vulcan.get_default_vulcan_config_as_gs_table()},
                 ${industry.vulcan.get_economy_variations_as_gs_table()}
             );
         </tal:industries>

@@ -80,6 +80,10 @@ def gs_table_repr(_dict):
         elif isinstance(value, dict):
             # this attempts to handle recursive items
             kv_result = kv_result + gs_table_repr(value)
+        elif isinstance(value, bool):
+            # python uses 'True' and 'False', squirrel uses 'true' and 'false'
+            # note that bool must be checked before int/float, as True and False are also instances of int/float
+            kv_result = kv_result + str(value).lower()
         elif isinstance(value, (int, float)):
             kv_result = kv_result + str(value)
         elif isinstance(value, str):

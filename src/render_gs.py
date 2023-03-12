@@ -114,7 +114,7 @@ def main():
         ],
         "grind": ["grind"],
         "atlas": ["atlas"],
-        "vulcan": ["vulcan_industry_spec", "vulcan_map_curator", "vulcan_town_control"],
+        "vulcan": ["vulcan_industry_control", "vulcan_map_curator", "vulcan_town_control"],
         #"minigames": ["winning_move", "zellepins"],
     }
     render_nuts(nuts_by_subdir)

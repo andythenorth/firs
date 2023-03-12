@@ -13,6 +13,9 @@ industry = IndustryPrimaryExtractive(
     fund_cost_multiplier="252",
     pollution_and_squalor_factor=1,
     provides_snow=True,
+    vulcan_config={
+        "allow_production_change": True
+    }
 )
 
 
