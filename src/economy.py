@@ -27,6 +27,13 @@ class Economy(object):
     def add_biome(self, biome_id, **kwargs):
         self.biomes.append(Biome(biome_id, **kwargs))
 
+    def get_cargos(self, registered_cargos):
+        result = []
+        for cargo in registered_cargos:
+            if cargo.id in self.cargo_ids:
+                result.append(cargo)
+        return result
+
     def forcibly_space_cargo_price_factors(self, registered_cargos):
         # check for overlapping price factors (and adjust if necessary) to ensure they're all unique per economy
         # prevents cargos overlapping on the payment curves chart in-game

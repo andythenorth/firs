@@ -48,7 +48,7 @@ class GrindStoryBook {
     function AddIndustrySpecStoryPages() {
         // note that this also automatically clears all current pages, that can be changed if needed, but trivially prevents duplication currently
         grind_story_book.industry_spec_pages <- {};
-        foreach (industry_id in firs.active_economy.get_industry_ids_sorted_by_name()) {
+        foreach (industry_id in firs.active_economy.GetIndustryIDsSortedByName()) {
             grind_story_book.industry_spec_pages[industry_id] <- GrindStoryPageIndustrySpec(industry_id);
         }
     }

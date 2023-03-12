@@ -24,8 +24,7 @@ class FIRS {
         <tal:industries repeat="industry registered_industries">
             firs.industries["${industry.id}"] <- VulcanIndustrySpec(
                 ${industry.numeric_id},
-                GSIndustryType.ResolveNewGRFID(firs.grfid,
-                ${industry.numeric_id}),
+                GSIndustryType.ResolveNewGRFID(firs.grfid, ${industry.numeric_id}),
                 ${industry.vulcan.get_economy_variations_as_gs_table()}
             );
         </tal:industries>
@@ -35,52 +34,13 @@ class FIRS {
             local economy = {};
             economy.id <- "${economy.id}";
             economy.numeric_id <- ${economy.numeric_id};
+            economy.cargo_labels <- ${utils.gs_list_repr([cargo.cargo_label for cargo in economy.get_cargos(registered_cargos)])};
+            // fingerprint relies on wharf or port industry types as of March 2023; this was sufficiently unique, but may be fragile if economies are changed
             economy.fingerprint <- "${gs_helper.get_economy_fingerprint(registered_industries, economy)}";
             firs.economies["${economy.id}"] <- economy;
         </tal:economies>
 
-
-        // !! this function doesn't need to be in the firs structure, it's to be used once at game start?
-        firs.detect_the_active_economy <- function()
-        /* uses fingerprinting to detect and return the economy id */
-        {
-            Log.Info("detect_the_active_economy called; this is expensive, should only be done at game start");
-            local industry_types_list = GSIndustryTypeList();
-            local industry_type_ids = [];
-            local economy_matched = false;
-            foreach (industry_type, _ in industry_types_list) {
-                if (economy_matched == true) {
-                    break;
-                }
-                local industry_fingerprint = "Accepts:"
-                local accepted_cargo_as_labels = [];
-                foreach (cargo, _ in GSIndustryType.GetAcceptedCargo(industry_type)) {
-                    accepted_cargo_as_labels.push(GSCargo.GetCargoLabel(cargo));
-                }
-                accepted_cargo_as_labels.sort();
-                foreach (cargo in accepted_cargo_as_labels) {
-                    industry_fingerprint = industry_fingerprint + " " + cargo;
-                }
-                industry_fingerprint = industry_fingerprint + " Produces:";
-                local produced_cargo_as_labels = [];
-                foreach (cargo, _ in GSIndustryType.GetProducedCargo(industry_type)) {
-                    produced_cargo_as_labels.push(GSCargo.GetCargoLabel(cargo));
-                }
-                produced_cargo_as_labels.sort();
-                foreach (cargo in produced_cargo_as_labels) {
-                    industry_fingerprint = industry_fingerprint  + " " + cargo;
-                }
-                foreach (economy_id, economy  in firs.economies) {
-                    if (economy.fingerprint == industry_fingerprint) {
-                        Log.Info("Fingerprinting: FIRS economy ID is " + economy_id, Log.LVL_INFO);
-                        economy_matched = true;
-                        return economy;
-                    }
-                }
-            }
-        }
-
-        firs.active_economy <- firs.detect_the_active_economy();
+        firs.active_economy <- FIRS.DetectTheActiveEconomy();
 
         // !! might there be a more efficient way to do this than copying the industries around?
         firs.active_economy.industries <- {}
@@ -90,7 +50,7 @@ class FIRS {
             }
         }
 
-        firs.active_economy.get_industry_ids_sorted_by_name <- function() {
+        firs.active_economy.GetIndustryIDsSortedByName <- function() {
             local cmp_name = function(a, b) {
                 local name_a = GSIndustryType.GetName(firs.industries[a].global_id);
                 local name_b = GSIndustryType.GetName(firs.industries[b].global_id);
@@ -107,10 +67,84 @@ class FIRS {
             return result;
         }
 
+        // labels can only be mapped for active economy as cargo IDs can't be looked up outside of the current running game
+        firs.active_economy.cargo_labels_by_id <- FIRS.GetCargoLabelsByID(firs.active_economy.cargo_labels);
+        firs.active_economy.cargo_ids_by_label <- FIRS.GetCargoIDsByLabel(firs.active_economy.cargo_labels);
+
+
         // really we should have a way to get the name string from the economy (via lang and maybe a specific method)
+        // but eh, let's press on
         if (firs.active_economy.id == "STEELTOWN") {
             Log.Info("It's Steeltown");
         }
-        // but eh, let's press on
     }
+
+    function GetCargoLabelsByID(cargo_labels) {
+        local temp_result = {}
+        local result = {}
+        local cargo_list = GSCargoList();
+        foreach (cargo, _ in cargo_list) {
+            temp_result[GSCargo.GetCargoLabel(cargo)] <- cargo;
+        }
+        // we only want FIRS cargos, not any additional cargos defined by other grfs
+        // can't array.find in squirrel 2, so use this stupid loop instead
+        foreach (cargo_label in cargo_labels) {
+            result[temp_result[cargo_label]] <- cargo_label;
+        }
+        return result;
+    }
+
+    function GetCargoIDsByLabel(cargo_labels) {
+        local temp_result = {}
+        local result = {}
+        local cargo_list = GSCargoList();
+        foreach (cargo, _ in cargo_list) {
+            temp_result[GSCargo.GetCargoLabel(cargo)] <- cargo;
+        }
+        // we only want FIRS cargos, not any additional cargos defined by other grfs
+        // can't array.find in squirrel 2, so use this stupid loop instead
+        foreach (cargo_label in cargo_labels) {
+            result[cargo_label] <- temp_result[cargo_label];
+        }
+        return result;
+    }
+
+    function DetectTheActiveEconomy() {
+        /* uses fingerprinting to detect and return the economy id */
+        Log.Info("DetectTheActiveEconomy called; this is expensive, should only be done at game start");
+        local industry_types_list = GSIndustryTypeList();
+        local industry_type_ids = [];
+        local economy_matched = false;
+        foreach (industry_type, _ in industry_types_list) {
+            if (economy_matched == true) {
+                break;
+            }
+            local industry_fingerprint = "Accepts:"
+            local accepted_cargo_as_labels = [];
+            foreach (cargo, _ in GSIndustryType.GetAcceptedCargo(industry_type)) {
+                accepted_cargo_as_labels.push(GSCargo.GetCargoLabel(cargo));
+            }
+            accepted_cargo_as_labels.sort();
+            foreach (cargo in accepted_cargo_as_labels) {
+                industry_fingerprint = industry_fingerprint + " " + cargo;
+            }
+            industry_fingerprint = industry_fingerprint + " Produces:";
+            local produced_cargo_as_labels = [];
+            foreach (cargo, _ in GSIndustryType.GetProducedCargo(industry_type)) {
+                produced_cargo_as_labels.push(GSCargo.GetCargoLabel(cargo));
+            }
+            produced_cargo_as_labels.sort();
+            foreach (cargo in produced_cargo_as_labels) {
+                industry_fingerprint = industry_fingerprint  + " " + cargo;
+            }
+            foreach (economy_id, economy  in firs.economies) {
+                if (economy.fingerprint == industry_fingerprint) {
+                    Log.Info("Fingerprinting: FIRS economy ID is " + economy_id, Log.LVL_INFO);
+                    economy_matched = true;
+                    return economy;
+                }
+            }
+        }
+    }
+
 }
