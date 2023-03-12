@@ -136,7 +136,6 @@ function MainClass::Init()
     FIRS.Init();
     VulcanMapCurator.Init();
     VulcanTownControl.Init();
-    VulcanTownControl.RunPeriodicProcessing();
 
     /*
     PowerGrid.build_
@@ -268,7 +267,7 @@ function MainClass::HandleEvents()
 function MainClass::OnNewMonth()
 {
     // !! this might need to explicitly be per month, or more or less frequently?
-    VulcanTownControl.RunPeriodicProcessing();
+    VulcanTownControl.RunPeriodicProcessing("OnNewMonth");
     // this would only need to run every 3 months or so
     VulcanMapCurator.OnNewMonth();
 }
