@@ -27,12 +27,10 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "STEELTOWN",
     accept_cargos_with_input_ratios=[
-        # 5 cargos eh? pretty rare
-        # realism calls also for Steel Tube, but it's a step too far eh
-        ("STBR", 2),
-        ("STSH", 2),
+        # realism calls also for Steel Tube and Merchant Bar, but they're a step too far eh
+        ("STSH", 3),
         ("STWR", 2),
-        ("COAT", 1),
+        ("COAT", 2),
         ("WELD", 1),
     ],
     prod_cargo_types_with_output_ratios=[
