@@ -44,7 +44,7 @@ economy = Economy(
         "pig_iron",
         "potash",
         "pipework",
-        "plastics",
+        "plastics", # ! needs removed
         "pumps_and_valves",
         "quicklime",
         "rebar",

@@ -6,10 +6,9 @@ industry = IndustrySecondary(
         # 5 cargos eh? pretty rare
         # realism calls also for Steel Wire Rod, but it's a step too far eh
         ("STBR", 2),
-        ("TUBE", 1),
+        ("STTB", 2),
         ("FOCA", 2),
         ("POWR", 2),
-        ("PLAS", 1),
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
