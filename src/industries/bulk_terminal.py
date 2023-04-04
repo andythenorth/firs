@@ -35,7 +35,6 @@ industry.enable_in_economy(
     prod_cargo_types_with_multipliers=[
         ("MNO2", 19),
         ("RUBR", 16),
-        ("PLAS", 16),
         ("FECR", 14),
         ("ALUM", 11),
     ],
