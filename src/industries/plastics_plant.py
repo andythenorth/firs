@@ -10,7 +10,6 @@ industry = IndustrySecondary(
         ("PLAS", 3),
         ("COAT", 3),
     ],
-    combined_cargos_boost_prod=True,
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="209",

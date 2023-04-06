@@ -3,7 +3,6 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="cement_plant",
     accept_cargos_with_input_ratios=[],
-    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[],
     prob_in_game="3",
     prob_map_gen="5",

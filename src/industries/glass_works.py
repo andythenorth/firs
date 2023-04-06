@@ -6,7 +6,6 @@ industry = IndustrySecondary(
         ("SAND", 6),
         ("RFPR", 2),
     ],
-    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
         ("GOOD", 8),
     ],

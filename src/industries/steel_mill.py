@@ -9,7 +9,6 @@ industry = IndustrySecondary(
         ("HYAC", 1),
         ("O2__", 1),
     ],
-    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[("STEL", 8)],
     prob_in_game="3",
     prob_map_gen="5",

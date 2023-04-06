@@ -7,7 +7,6 @@ industry = IndustrySecondary(
         ("TIN_", 2),
         ("SUAC", 2),
     ],
-    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[("TINP", 8)],
     prob_in_game="3",
     prob_map_gen="5",
