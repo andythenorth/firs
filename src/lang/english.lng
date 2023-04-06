@@ -32,7 +32,9 @@ STR_PARAM_DESC_OBJECTS                                                          
 
 STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG                                   : {BLACK}(supplied)
 STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Supply {WHITE}at least one {BLACK} required cargo for maximum production.
-STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}For maximum production rate, supply {WHITE}all {BLACK}required cargos at least once every three months.
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY_BOTH                                       :{BLACK}For maximum production rate, supply {WHITE}both {BLACK}required cargos at least once every three months.
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ALL                                        :{BLACK}For maximum production rate, supply {WHITE}all {BLACK}required cargos at least once every three months.
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_TWO                                    :{BLACK}For maximum production rate, supply {WHITE}at least two {BLACK}required cargos at least once every three months.
 STR_EXTRA_TEXT_TOWN_PRODUCER                                                    :{BLACK}Production is proportional to town population. At least {WHITE}{SIGNED_WORD} units{BLACK} and not more than {WHITE}{SIGNED_WORD} units{BLACK} of cargo will be produced every month.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} crates of supplies at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates.
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this level, deliver {SIGNED_WORD} crates of supplies at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates.

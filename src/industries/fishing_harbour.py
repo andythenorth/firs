@@ -5,7 +5,6 @@ industry = IndustrySecondary(
     accept_cargos_with_input_ratios=[
         ("FISH", 6),
     ],
-    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
         ("FOOD", 8),
     ],

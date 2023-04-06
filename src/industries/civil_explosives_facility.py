@@ -9,7 +9,6 @@ industry = IndustrySecondary(
     prod_cargo_types_with_output_ratios=[
         ("BOOM", 8),
     ],
-    combined_cargos_boost_prod=True,
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="191",
