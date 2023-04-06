@@ -2,7 +2,7 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="bar_and_section_mill",
-    # doesn't need ACID, sections can be mechanically de-scaled
+    # this one is supposed to be an easy dump, so doesn't require ACID or SOAP: products can be mechanically de-scaled and / or assume recycled pickling acid etc
     accept_cargos_with_input_ratios=[
         ("STBL", 8),
     ],
