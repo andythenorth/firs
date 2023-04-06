@@ -73,14 +73,17 @@ economy = Economy(
         "zinc",
     ],
     cargoflow_graph_tuning={
-        # also any industries with  will be automatically added to wormhold_industries
+        # also any industries with !!!!??????? will be automatically added to wormhole_industries
         "wormhole_industries": ["wharf", "bulk_terminal"],
+        "cargos_with_individual_produce_nodes": [
+            "steel_ingots",
+            "steel_slab",
+            "steel_billets_and_blooms",
+            "slag",
+        ],
         "cargos_with_individual_accept_nodes": [
             "sand",
             "acid",
-            "steel_billets_and_blooms",
-            "steel_ingots",
-            "steel_slab",
             "limestone",
             "paints_and_coatings",
         ],
