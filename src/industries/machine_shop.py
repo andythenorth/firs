@@ -3,15 +3,17 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="machine_shop",
     accept_cargos_with_input_ratios=[
+        ("VPTS", 2),
+        ("VENG", 1),
         ("STSE", 3),
-        ("LFEQ", 2),
-        ("SWRP", 2),
-        ("WELD", 1)
+        ("LFEQ", 1), # possibly redundant but eh, makes cargoflow look better
+        ("WELD", 1),
     ],
     prod_cargo_types_with_output_ratios=[
         # high output production is unwanted
-        ("CRAN", 5),
-        ("ENSP", 1),
+        ("VEHI", 2),
+        ("FMSP", 2),
+        ("ENSP", 2),
     ],
     prob_in_game="3",
     prob_map_gen="5",

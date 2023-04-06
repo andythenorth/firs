@@ -22,11 +22,13 @@ from industries import coke_oven
 from industries import component_factory
 from industries import copper_mine
 from industries import copper_smelter
+from industries import crane_and_hoist_factory
 from industries import cryo_plant
 from industries import dairy
 from industries import dairy_farm
 from industries import diamond_mine
 from industries import dredging_site
+from industries import elastomer_products_plant
 from industries import electric_arc_furnace
 from industries import engine_plant
 from industries import farm
@@ -62,6 +64,7 @@ from industries import petrol_pump
 from industries import phosphate_mine
 from industries import pipework_fabricator
 from industries import plaza
+from industries import plate_mill
 from industries import port
 from industries import power_plant
 from industries import potash_mine
@@ -109,11 +112,13 @@ coke_oven.industry.register()
 component_factory.industry.register()
 copper_mine.industry.register()
 copper_smelter.industry.register()
+crane_and_hoist_factory.industry.register()
 cryo_plant.industry.register()
 dairy.industry.register()
 dairy_farm.industry.register()
 diamond_mine.industry.register()
 dredging_site.industry.register()
+elastomer_products_plant.industry.register()
 electric_arc_furnace.industry.register()
 engine_plant.industry.register()
 farm.industry.register()
@@ -148,6 +153,7 @@ peatlands.industry.register()
 petrol_pump.industry.register()
 phosphate_mine.industry.register()
 pipework_fabricator.industry.register()
+plate_mill.industry.register()
 plaza.industry.register()
 port.industry.register()
 power_plant.industry.register()

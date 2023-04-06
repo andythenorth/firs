@@ -43,7 +43,7 @@ industry.enable_in_economy(
     ],
     prod_cargo_types_with_output_ratios=[
         # high glass plant production is unwanted as there is only one output cargo
-        ("GLAS", 6),
+        ("GLAS", 5),
     ],
     # low probability of build during gameplay
     prob_in_game="1",

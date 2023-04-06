@@ -28,6 +28,7 @@ from cargos import copper_ore
 from cargos import cranes_and_hoists
 from cargos import diamonds
 from cargos import edible_oil
+from cargos import elastomer_products
 from cargos import electrical_parts
 from cargos import engineering_supplies
 from cargos import explosives
@@ -144,6 +145,7 @@ copper_ore.cargo.register()
 cranes_and_hoists.cargo.register()
 diamonds.cargo.register()
 edible_oil.cargo.register()
+elastomer_products.cargo.register()
 electrical_parts.cargo.register()
 engineering_supplies.cargo.register()
 explosives.cargo.register()

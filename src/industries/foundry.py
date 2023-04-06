@@ -12,7 +12,7 @@ industry = IndustrySecondary(
     prod_cargo_types_with_output_ratios=[
         # high foundry output production is unwanted
         ("FOCA", 5),
-        ("ENSP", 2),
+        ("ENSP", 1),
     ],
     prob_in_game="2",
     prob_map_gen="5",

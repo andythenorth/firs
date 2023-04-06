@@ -35,6 +35,7 @@ STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        
 STR_EXTRA_TEXT_SECONDARY_COMBINATORY_BOTH                                       :{BLACK}For maximum production rate, supply {WHITE}both {BLACK}required cargos at least once every three months.
 STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ALL                                        :{BLACK}For maximum production rate, supply {WHITE}all {BLACK}required cargos at least once every three months.
 STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_TWO                                    :{BLACK}For maximum production rate, supply {WHITE}at least two {BLACK}required cargos at least once every three months.
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_THREE                                  :{BLACK}For maximum production rate, supply {WHITE}at least three {BLACK}required cargos at least once every three months.
 STR_EXTRA_TEXT_TOWN_PRODUCER                                                    :{BLACK}Production is proportional to town population. At least {WHITE}{SIGNED_WORD} units{BLACK} and not more than {WHITE}{SIGNED_WORD} units{BLACK} of cargo will be produced every month.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} crates of supplies at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates.
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this level, deliver {SIGNED_WORD} crates of supplies at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates.
@@ -75,6 +76,7 @@ STR_CARGO_NAME_COPPER                                                           
 STR_CARGO_NAME_COPPER_CONCENTRATE                                               :Copper Concentrate
 STR_CARGO_NAME_CRANES_AND_HOISTS                                                :Cranes & Hoists
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Edible Oil
+STR_CARGO_NAME_ELASTOMER_PRODUCTS                                               :Seals, Hoses & Belts
 STR_CARGO_NAME_ELECTRICAL_PARTS                                                 :Electrical Parts
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Engineering Supplies
 STR_CARGO_NAME_ETHYLENE                                                         :Ethylene
@@ -190,6 +192,7 @@ STR_CARGO_UNIT_COPPER                                                           
 STR_CARGO_UNIT_COPPER_CONCENTRATE                                               :{WEIGHT} of copper concentrate
 STR_CARGO_UNIT_CRANES_AND_HOISTS                                                :{WEIGHT} of cranes & hoists
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} of edible oil
+STR_CARGO_UNIT_ELASTOMER_PRODUCTS                                               :{WEIGHT} of seals, hoses & belts
 STR_CARGO_UNIT_ELECTRICAL_PARTS                                                 :{WEIGHT} of electrical parts
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crate{P 0 "" s} of engineering supplies
 STR_CARGO_UNIT_ETHYLENE                                                         :{VOLUME} of ethylene
@@ -272,7 +275,7 @@ STR_CARGO_UNIT_VEHICLE_BODIES                                                   
 STR_CARGO_UNIT_VEHICLE_ENGINES                                                  :{WEIGHT} of vehicle engines
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{WEIGHT} of vehicle parts
 STR_CARGO_UNIT_VEHICLES                                                         :{WEIGHT} of vehicles
-STR_CARGO_UNIT_WELDING_CONSUMABLES                                                 :{WEIGHT} of welding consumables
+STR_CARGO_UNIT_WELDING_CONSUMABLES                                              :{WEIGHT} of welding consumables
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bale{P 0 "" s} of wool
 STR_CARGO_UNIT_YARN                                                             :{SIGNED_WORD} bale{P 0 "" s} of yarn
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} of zinc
@@ -305,6 +308,7 @@ STR_CID_COPPER                                                                  
 STR_CID_COPPER_CONCENTRATE                                                      :{TINYFONT}CC
 STR_CID_CRANES_AND_HOISTS                                                       :{TINYFONT}CR
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
+STR_CID_ELASTOMER_PRODUCTS                                                      :{TINYFONT}EL
 STR_CID_ELECTRICAL_PARTS                                                        :{TINYFONT}EP
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
 STR_CID_ETHYLENE                                                                :{TINYFONT}EY
@@ -431,13 +435,15 @@ STR_IND_CIVIL_EXPLOSIVES_FACILITY                                               
 STR_IND_CLAY_PIT                                                                :Clay Pit
 STR_IND_COFFEE_ESTATE                                                           :Coffee Estate
 STR_IND_COKE_OVEN                                                               :Coke Oven
-STR_IND_COMPONENT_FACTORY                                                       :Component Factory
+STR_IND_COMPONENT_FACTORY                                                       :Components Plant
 STR_IND_COPPER_CONCENTRATOR                                                     :Copper Concentrator
 STR_IND_COPPER_SMELTER                                                          :Copper Smelter
+STR_IND_CRANE_AND_HOIST_FACTORY                                                 :Crane & Hoist Factory
 STR_IND_CRYO_PLANT                                                              :Cryo Plant
 STR_IND_DAIRY                                                                   :Dairy
 STR_IND_DAIRY_FARM                                                              :Dairy Farm
 STR_IND_DREDGING_SITE                                                           :Dredging Site
+STR_IND_ELASTOMER_PRODUCTS_PLANT                                                :Elastomer Products Plant
 STR_IND_ELECTRIC_ARC_FURNACE                                                    :Electric Arc Furnace
 STR_IND_ENGINE_PLANT                                                            :Engine Plant
 STR_IND_ETHYLENE_CRACKER                                                        :Naphtha Cracker
@@ -472,7 +478,7 @@ STR_IND_LIME_KILN                                                               
 STR_IND_LIMESTONE_MINE                                                          :Limestone Mine
 STR_IND_LIQUIDS_TERMINAL                                                        :Liquids Terminal
 STR_IND_TIMBER_YARD                                                             :Timber Yard
-STR_IND_MACHINE_SHOP                                                            :Machine Shop
+STR_IND_MACHINE_SHOP                                                            :Tracked Machine Factory
 STR_IND_MACHINE_WORKS                                                           :Machine Works
 STR_IND_MANGANESE_MINE                                                          :Manganese Mine
 STR_IND_METAL_WORKSHOP                                                          :Metal Workshop
@@ -484,6 +490,7 @@ STR_IND_PETROLPUMP                                                              
 STR_IND_PHOSPHATE_MINE                                                          :Phosphate Mine
 STR_IND_PHOSPHORIC_ACID_PLANT                                                   :Phosphoric Acid Plant
 STR_IND_PIPEWORK_FABRICATOR                                                     :Pipework Fabricator
+STR_IND_PLATE_MILL                                                              :Plate Mill
 STR_IND_PLASTICS_PLANT                                                          :PVC Plant
 STR_IND_PLAZA                                                                   :Plaza
 STR_IND_POLYETHYLENE_PLANT                                                      :Polyethylene Plant
@@ -502,6 +509,7 @@ STR_IND_REINDEER_FARM                                                           
 STR_IND_SALT_MINE                                                               :Salt Mine
 STR_IND_SECTION_MILL                                                            :Section Mill
 STR_IND_SHEEPFARM                                                               :Sheep Farm
+STR_IND_SLAB_CUTTER                                                             :Plate Mill
 STR_IND_SLAG_GRINDING_PLANT                                                     :Slag Grinding Plant
 STR_IND_SMITHY_FORGE                                                            :Smithy Forge
 STR_IND_SODA_ASH_MINE                                                           :Soda Ash Mine
@@ -552,10 +560,12 @@ STR_STATION_CASTINGS                                                            
 STR_STATION_COLLIERY                                                            :Colliery
 STR_STATION_COMPONENTS                                                          :Components
 STR_STATION_COPPER_LODE                                                         :Copper Lode
+STR_STATION_CRANE_AND_HOIST                                                     :Crane and Hoist
 STR_STATION_CREOSOTING                                                          :Creosoting
 STR_STATION_CRYO_PLANT                                                          :Cryo Plant
 STR_STATION_DAIRY_LANE                                                          :Dairy Lane
 STR_STATION_DYNAMO                                                              :Dynamo
+STR_STATION_ELASTOMER_PLANT                                                     :Seal and Hose
 STR_STATION_ESTATE                                                              :Estate
 STR_STATION_EXCHANGE                                                            :Exchange
 STR_STATION_FARM_1                                                              :Manor

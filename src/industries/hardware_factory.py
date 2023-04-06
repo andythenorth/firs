@@ -22,20 +22,20 @@ industry.enable_in_economy(
     "BASIC_TEMPERATE",
 )
 
-# !! also non-combinatorial production is not currently supported
 industry.enable_in_economy(
     "STEELTOWN",
-    # non combinatorial production is currently a hack that relies on using 8/8, and capping boost to 8
+    # two-cargo production boost - combined ratios of any two cargos must always be at least 8
     accept_cargos_with_input_ratios=[
         ("STSH", 6),
         ("STWR", 6),
         ("STBR", 6),
         ("FOCA", 6),
         ("CSTI", 6),
+        ("ALUM", 6),
     ],
     prod_cargo_types_with_output_ratios=[
         ("HWAR", 4),
-        ("PLAS", 4), # !! should be goods but eh, breaks current savegame
+        ("GOOD", 4),
     ],
 )
 

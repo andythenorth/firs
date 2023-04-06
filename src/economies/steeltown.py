@@ -12,11 +12,11 @@ economy = Economy(
         "acid",
         "mail",
         "aggregates",
-        "steel_slab",
-        "aluminium",
-        "hardware", # no goods?
+        "steel_slab", # !! out of order to preserve testing savegame, needs moved
+        "goods",
+        "hardware", # !! out of order to preserve testing savegame, needs moved
         "carbon_black",
-        "steel_billets_and_blooms",
+        "steel_billets_and_blooms", # !! out of order to preserve testing savegame, needs moved
         "cast_iron",
         "cement",
         "food",
@@ -37,13 +37,15 @@ economy = Economy(
         "lifting_equipment",
         "limestone",
         "lye",
-        "manganese", # ! needs removed
+        "elastomer_products", # !! out of order to preserve testing savegame, needs moved
         "nitrogen",
         "oxygen",
         "paints_and_coatings",
         "pig_iron",
-        "steel_pipe",
-        "plastics",
+        "potash",
+        "pipework",
+        "aluminium", # !! out of order to preserve testing savegame, needs moved
+        "pumps_and_valves",
         "quicklime",
         "rebar",
         "rubber",
@@ -95,7 +97,7 @@ economy = Economy(
             ("same", ["lime_kiln", "glass_works"]),
             ("same", ["engine_plant", "tyre_plant", "body_plant"]),
             ("same", ["oxygen", "coke", "iron_ore"]),
-            ("sink", ["farm", "food", "cranes_and_hoists", "hardware", "vehicles", "pipework", "assembly_plant", "pipework_fabricator", "machine_shop"]),
+            ("sink", ["cranes_and_hoists", "hardware", "goods", "vehicles", "pipework", "assembly_plant", "machine_shop", "pipework_fabricator", "crane_and_hoist_factory"]),
         ],
         "clusters": [
             {
