@@ -44,7 +44,6 @@ industry.enable_in_economy(
     ],
     prod_cargo_types_with_multipliers=[
         ("ENSP", 12),
-        ("ZINC", 16),
         ("POWR", 14),
         ("COAT", 10),
         ("SOAP", 10),
