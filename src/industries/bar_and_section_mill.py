@@ -4,8 +4,7 @@ industry = IndustrySecondary(
     id="bar_and_section_mill",
     # doesn't need ACID, sections can be mechanically de-scaled
     accept_cargos_with_input_ratios=[
-        ("STCB", 6),
-        ("STAL", 2),
+        ("STBL", 8),
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[

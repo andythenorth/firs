@@ -4,15 +4,16 @@ industry = IndustrySecondary(
     id="electric_arc_furnace",
     accept_cargos_with_input_ratios=[
         ("SCMT", 4),
-        ("FECR", 2),
+        ("FEAL", 2),
         ("QLME", 1),
         ("O2__", 1),
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
-        ("STCB", 4),
-        ("STST", 2),
-        ("SLAG", 2),
+        ("STBL", 3),
+        ("STIG", 2),
+        ("STSL", 2),
+        ("SLAG", 1),
     ],
     prob_in_game="1",  # low chance of build during gameplay
     prob_map_gen="5",

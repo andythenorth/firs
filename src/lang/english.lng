@@ -49,7 +49,6 @@ STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL                                   
 STR_CARGO_NAME_ACID                                                             :Acid
 STR_CARGO_NAME_AGGREGATES                                                       :Aggregates
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
-STR_CARGO_NAME_ALLOY_STEEL                                                      :Alloy Steel
 STR_CARGO_NAME_ALUMINIUM                                                        :Aluminium
 STR_CARGO_NAME_ALUMINIA                                                         :Aluminia
 STR_CARGO_NAME_AMMONIA                                                          :Ammonia
@@ -58,7 +57,6 @@ STR_CARGO_NAME_BAUXITE                                                          
 STR_CARGO_NAME_BEANS                                                            :Beans
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Building Materials
 STR_CARGO_NAME_CARBON_BLACK                                                     :Carbon Black
-STR_CARGO_NAME_CARBON_STEEL                                                     :Carbon Steel
 STR_CARGO_NAME_CASSAVA                                                          :Cassava
 STR_CARGO_NAME_CAST_IRON                                                        :Cast Iron
 STR_CARGO_NAME_CEMENT                                                           :Cement
@@ -79,6 +77,7 @@ STR_CARGO_NAME_ELECTRICAL_PARTS                                                 
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Engineering Supplies
 STR_CARGO_NAME_ETHYLENE                                                         :Ethylene
 STR_CARGO_NAME_EXPLOSIVES                                                       :Explosives
+STR_CARGO_NAME_FERROALLOYS                                                      :Ferroalloys
 STR_CARGO_NAME_FERROCHROME                                                      :Ferrochrome
 STR_CARGO_NAME_FIBRES                                                           :Plant Fibres
 STR_CARGO_NAME_FISH                                                             :Fish
@@ -131,13 +130,15 @@ STR_CARGO_NAME_SAND                                                             
 STR_CARGO_NAME_SCRAP_METAL                                                      :Scrap Metal
 STR_CARGO_NAME_SLAG                                                             :Slag
 STR_CARGO_NAME_SODA_ASH                                                         :Soda Ash
-STR_CARGO_NAME_STAINLESS_STEEL                                                  :Stainless Steel
 STR_CARGO_NAME_STEEL                                                            :Steel
+STR_CARGO_NAME_STEEL_BILLETS_AND_BLOOMS                                         :Steel Billets & Blooms
+STR_CARGO_NAME_STEEL_INGOTS                                                     :Steel Ingots
 STR_CARGO_NAME_STEEL_MERCHANT_BAR                                               :Steel Merchant Bar
 STR_CARGO_NAME_STEEL_PIPE                                                       :Steel Pipe
 # "Steel Plate & Sections" is too long
 STR_CARGO_NAME_STEEL_SECTIONS                                                   :Structural Steel
 STR_CARGO_NAME_STEEL_SHEET                                                      :Steel Sheet & Strip
+STR_CARGO_NAME_STEEL_SLAB                                                       :Steel Slab
 STR_CARGO_NAME_STEEL_TUBE                                                       :Steel Tube
 STR_CARGO_NAME_STEEL_WIRE_ROD                                                   :Steel Wire Rod
 STR_CARGO_NAME_STEEL_WIRE_ROPE                                                  :Steel Wire Rope
@@ -163,7 +164,6 @@ STR_CARGO_NAME_ZINC                                                             
 STR_CARGO_UNIT_ACID                                                             :{VOLUME} of acid
 STR_CARGO_UNIT_AGGREGATES                                                       :{WEIGHT} of aggregates
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} of alcohol
-STR_CARGO_UNIT_ALLOY_STEEL                                                      :{WEIGHT} of alloy steel
 STR_CARGO_UNIT_ALUMINIA                                                         :{WEIGHT} of aluminia
 STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} of aluminium
 STR_CARGO_UNIT_AMMONIA                                                          :{VOLUME} of ammonia
@@ -172,7 +172,6 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} of beans
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} of building materials
 STR_CARGO_UNIT_CARBON_BLACK                                                     :{WEIGHT} of carbon black
-STR_CARGO_UNIT_CARBON_STEEL                                                     :{WEIGHT} of carbon steel
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} of cassava
 STR_CARGO_UNIT_CAST_IRON                                                        :{WEIGHT} of cast iron
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} of cement
@@ -193,6 +192,7 @@ STR_CARGO_UNIT_ELECTRICAL_PARTS                                                 
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crate{P 0 "" s} of engineering supplies
 STR_CARGO_UNIT_ETHYLENE                                                         :{VOLUME} of ethylene
 STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} crate{P 0 "" s} of explosives
+STR_CARGO_UNIT_FERROALLOYS                                                      :{WEIGHT} of ferroalloys
 STR_CARGO_UNIT_FERROCHROME                                                      :{WEIGHT} of ferrochrome
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} of fertiliser
 STR_CARGO_UNIT_FOOD_ADDITIVES                                                   :{WEIGHT} of food additives
@@ -245,12 +245,14 @@ STR_CARGO_UNIT_SAND                                                             
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} of scrap metal
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} of slag
 STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} of soda ash
-STR_CARGO_UNIT_STAINLESS_STEEL                                                  :{WEIGHT} of stainless steel
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} of steel
+STR_CARGO_UNIT_STEEL_BILLETS_AND_BLOOMS                                         :{WEIGHT} of steel billets & blooms
+STR_CARGO_UNIT_STEEL_INGOTS                                                     :{WEIGHT} of steel ingots
 STR_CARGO_UNIT_STEEL_MERCHANT_BAR                                               :{WEIGHT} of steel merchant bar
 STR_CARGO_UNIT_STEEL_PIPE                                                       :{WEIGHT} of steel pipe
 STR_CARGO_UNIT_STEEL_SECTIONS                                                   :{WEIGHT} of structural steel
 STR_CARGO_UNIT_STEEL_SHEET                                                      :{WEIGHT} of steel sheet & strip
+STR_CARGO_UNIT_STEEL_SLAB                                                       :{WEIGHT} of steel slab
 STR_CARGO_UNIT_STEEL_TUBE                                                       :{WEIGHT} of steel tube
 STR_CARGO_UNIT_STEEL_WIRE_ROD                                                   :{WEIGHT} of steel wire rod
 STR_CARGO_UNIT_STEEL_WIRE_ROPE                                                  :{WEIGHT} of steel wire rope
@@ -277,7 +279,6 @@ STR_CARGO_UNIT_ZINC                                                             
 STR_CID_ACID                                                                    :{TINYFONT}AC
 STR_CID_AGGREGATES                                                              :{TINYFONT}AG
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
-STR_CID_ALLOY_STEEL                                                             :{TINYFONT}AS
 STR_CID_ALUMINIA                                                                :{TINYFONT}AA
 STR_CID_ALUMINIUM                                                               :{TINYFONT}AM
 STR_CID_AMMONIA                                                                 :{TINYFONT}AO
@@ -286,7 +287,6 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BEANS                                                                   :{TINYFONT}BN
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
 STR_CID_CARBON_BLACK                                                            :{TINYFONT}CB
-STR_CID_CARBON_STEEL                                                            :{TINYFONT}CS
 STR_CID_CASSAVA                                                                 :{TINYFONT}CA
 STR_CID_CAST_IRON                                                               :{TINYFONT}CI
 STR_CID_CEMENT                                                                  :{TINYFONT}CE
@@ -308,6 +308,7 @@ STR_CID_ENGINEERING_SUPPLIES                                                    
 STR_CID_ETHYLENE                                                                :{TINYFONT}EY
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}EX
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
+STR_CID_FERROALLOYS                                                             :{TINYFONT}FA
 STR_CID_FERROCHROME                                                             :{TINYFONT}FC
 STR_CID_FERTILISER                                                              :{TINYFONT}FL
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
@@ -358,12 +359,14 @@ STR_CID_SAND                                                                    
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
 STR_CID_SLAG                                                                    :{TINYFONT}SG
 STR_CID_SODA_ASH                                                                :{TINYFONT}SO
-STR_CID_STAINLESS_STEEL                                                         :{TINYFONT}SS
 STR_CID_STEEL                                                                   :{TINYFONT}SL
+STR_CID_STEEL_BILLETS_AND_BLOOMS                                                :{TINYFONT}BB
+STR_CID_STEEL_INGOTS                                                            :{TINYFONT}SI
 STR_CID_STEEL_MERCHANT_BAR                                                      :{TINYFONT}SB
 STR_CID_STEEL_PIPE                                                              :{TINYFONT}SP
 STR_CID_STEEL_SECTIONS                                                          :{TINYFONT}SC
 STR_CID_STEEL_SHEET                                                             :{TINYFONT}SH
+STR_CID_STEEL_SLAB                                                              :{TINYFONT}SL
 STR_CID_STEEL_TUBE                                                              :{TINYFONT}ST
 STR_CID_STEEL_WIRE_ROD                                                          :{TINYFONT}SW
 STR_CID_STEEL_WIRE_ROPE                                                         :{TINYFONT}SR

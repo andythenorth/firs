@@ -4,8 +4,7 @@ industry = IndustrySecondary(
     id="wire_rod_mill",
     accept_cargos_with_input_ratios=[
         # ACID was dropped (IRL mechanical descaling, but also eases cargoflow and avoids over-demand of ACID)
-        ("STCB", 4),
-        ("STST", 2),
+        ("STBL", 6),
         ("SOAP", 2),
     ],
     combined_cargos_boost_prod=True,
