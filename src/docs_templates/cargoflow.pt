@@ -96,7 +96,7 @@
                                     </tal:head_is_cluster>
                                 ]
                             </tal:test>
-                            <tal:sand condition="cargo.id in  doc_helper.get_cargoflow_graph_tuning(economy).get('cargos_with_individual_accept_nodes',[])">
+                            <tal:test condition="cargo.id in doc_helper.get_cargoflow_graph_tuning(economy).get('cargos_with_individual_accept_nodes',[])">
                                 C_${cargo.id}_${industry.id}_2 [
                                     shape="box"
                                     label="${doc_helper.get_cargo_name(cargo)}"
@@ -134,23 +134,64 @@
                                     arrowhead=normal
                                     penwidth=5
                                 ]
-                            </tal:sand>
+                            </tal:test>
                         </tal:not_banned>
                     </tal:accepted_cargos>
                     <tal:produced_cargos repeat="cargo doc_helper.cargos_produced_by_industry(industry, economy)">
                         <tal:not_banned condition="(cargo.id not in banned_cargos) and (cargo.id not in doc_helper.get_cargoflow_supply_cargos())">
-                            I_${industry.id} -> C_${cargo.id} [
-                                <!--! edge weight tuning by cargo density was tried (higher weight = straighter / more perpendicular)
-                                      it has some benefits, but also has unwanted side effects - increases overlap of vertical edges -->
-                                <!--!weight="${len(doc_helper.cargos_produced_by_industry(industry, economy))}"-->
-                                tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"
-                                color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
-                                dir=back
-                                arrowtail=none
-                                #arrowtail=nonenoneinv
-                                arrowsize=2
-                                penwidth=5
-                            ]
+                            <tal:test condition="cargo.id not in doc_helper.get_cargoflow_graph_tuning(economy).get('cargos_with_individual_produce_nodes',[])">
+                                I_${industry.id} -> C_${cargo.id} [
+                                    <!--! edge weight tuning by cargo density was tried (higher weight = straighter / more perpendicular)
+                                          it has some benefits, but also has unwanted side effects - increases overlap of vertical edges -->
+                                    <!--!weight="${len(doc_helper.cargos_produced_by_industry(industry, economy))}"-->
+                                    tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"
+                                    color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                                    dir=back
+                                    arrowtail=none
+                                    #arrowtail=nonenoneinv
+                                    arrowsize=2
+                                    penwidth=5
+                                ]
+                            </tal:test>
+                            <tal:test condition="cargo.id in doc_helper.get_cargoflow_graph_tuning(economy).get('cargos_with_individual_produce_nodes',[])">
+                                I_${industry.id} -> I_${industry.id}_${cargo.id}_2 [
+                                    <!--! edge weight tuning by cargo density was tried (higher weight = straighter / more perpendicular)
+                                          it has some benefits, but also has unwanted side effects - increases overlap of vertical edges -->
+                                    <!--!weight="${len(doc_helper.cargos_produced_by_industry(industry, economy))}"-->
+                                    tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"
+                                    color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                                    dir=back
+                                    arrowtail=none
+                                    #arrowtail=nonenoneinv
+                                    arrowsize=2
+                                    penwidth=5
+                                ]
+                                I_${industry.id}_${cargo.id}_2 [
+                                    shape="box"
+                                    label="${doc_helper.get_cargo_name(cargo)}"
+                                    href="cargos.html#${cargo.id}"
+                                    target="_top"
+                                    fontname="sans-serif"
+                                    fontcolor=white
+                                    fontsize=32
+                                    style="filled"
+                                    labelloc=c
+                                    color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                                    id="${cargo.id}_${industry.id}_2"
+                                ]
+                                I_${industry.id}_${cargo.id}_2 -> C_${cargo.id} [
+                                    <!--! edge weight tuning by cargo density was tried (higher weight = straighter / more perpendicular)
+                                          it has some benefits, but also has unwanted side effects - increases overlap of vertical edges -->
+                                    <!--!weight="${len(doc_helper.cargos_produced_by_industry(industry, economy))}"-->
+                                    tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"
+                                    color="${doc_helper.get_cargo_colour_as_hex_triple_with_hash(cargo, economy)}"
+                                    dir=back
+                                    arrowtail=none
+                                    #arrowtail=nonenoneinv
+                                    arrowsize=2
+                                    penwidth=5
+                                ]
+                            </tal:test>
                         </tal:not_banned>
                     </tal:produced_cargos>
                 </tal:not_town_industries>
