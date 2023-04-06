@@ -38,9 +38,6 @@ STR_CARGO_NAME_ALCOHOL.b                                                        
 STR_CARGO_NAME_ALCOHOL.c                                                        :alkoholowi
 STR_CARGO_NAME_ALCOHOL.d                                                        :alkoholu
 STR_CARGO_NAME_ALCOHOL.n                                                        :alkoholem
-STR_CARGO_NAME_ALLOY_STEEL                                                      :{G=f}Stal stopowa
-STR_CARGO_NAME_ALLOY_STEEL.b                                                    :stal stopową
-STR_CARGO_NAME_ALLOY_STEEL.d                                                    :stali stopowej
 STR_CARGO_NAME_ALUMINIA                                                         :{G=m}Tlenek glinu
 STR_CARGO_NAME_ALUMINIA.b                                                       :tlenek glinu
 STR_CARGO_NAME_ALUMINIA.d                                                       :tlenku glinu
@@ -68,9 +65,6 @@ STR_CARGO_NAME_BUILDING_MATERIALS.d                                             
 STR_CARGO_NAME_CARBON_BLACK                                                     :{G=f}Sadza
 STR_CARGO_NAME_CARBON_BLACK.b                                                   :sadzę
 STR_CARGO_NAME_CARBON_BLACK.d                                                   :sadzy
-STR_CARGO_NAME_CARBON_STEEL                                                     :{G=f}Stal niestopowa
-STR_CARGO_NAME_CARBON_STEEL.b                                                   :stal niestopową
-STR_CARGO_NAME_CARBON_STEEL.d                                                   :stali niestopowej
 STR_CARGO_NAME_CASSAVA                                                          :{G=m}Maniok
 STR_CARGO_NAME_CASSAVA.b                                                        :maniok
 STR_CARGO_NAME_CASSAVA.c                                                        :maniokowi
@@ -331,9 +325,6 @@ STR_CARGO_NAME_SODA_ASH.d                                                       
 STR_CARGO_NAME_SODA_ASH.m                                                       :węglanie sodu
 STR_CARGO_NAME_SODA_ASH.n                                                       :węglanem sodu
 STR_CARGO_NAME_SODA_ASH.w                                                       :węglanie sodu
-STR_CARGO_NAME_STAINLESS_STEEL                                                  :{G=f}Stal nierdzewna
-STR_CARGO_NAME_STAINLESS_STEEL.b                                                :stal nierdzewną
-STR_CARGO_NAME_STAINLESS_STEEL.d                                                :stali nierdzewnej
 STR_CARGO_NAME_STEEL                                                            :{G=f}Stal
 STR_CARGO_NAME_STEEL.b                                                          :stal
 STR_CARGO_NAME_STEEL.c                                                          :stali
@@ -414,7 +405,6 @@ STR_CARGO_NAME_ZINC.w                                                           
 
 STR_CARGO_UNIT_ACID                                                             :{VOLUME} kwasu
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkoholu
-STR_CARGO_UNIT_ALLOY_STEEL                                                      :{WEIGHT} stali stopowej
 STR_CARGO_UNIT_ALUMINIA                                                         :{WEIGHT} tlenku glinu
 STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} glinu
 STR_CARGO_UNIT_AMMONIA                                                          :{VOLUME} amoniaku
@@ -423,7 +413,6 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} soi
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} materiałów budowlanych
 STR_CARGO_UNIT_CARBON_BLACK                                                     :{WEIGHT} sadzy
-STR_CARGO_UNIT_CARBON_STEEL                                                     :{WEIGHT} stali niestopowej
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} manioku
 STR_CARGO_UNIT_CAST_IRON                                                        :{WEIGHT} żeliwa
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} cementu
@@ -489,7 +478,6 @@ STR_CARGO_UNIT_SAND                                                             
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} złomu
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} żużlu
 STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} węglanu sodu
-STR_CARGO_UNIT_STAINLESS_STEEL                                                  :{WEIGHT} stali nierdzewnej
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} stali
 STR_CARGO_UNIT_STEEL_SECTIONS                                                   :{WEIGHT} profili stalowych
 STR_CARGO_UNIT_STEEL_SHEET                                                      :{WEIGHT} blachy stalowej
@@ -514,7 +502,6 @@ STR_CARGO_UNIT_ZINC                                                             
 # it seems that using 2 chars for these is a convention not a limit, I tested 4 chars and OpenTTD renders it fine - May 2020
 STR_CID_ACID                                                                    :{TINYFONT}KWAS
 STR_CID_ALCOHOL                                                                 :{TINYFONT}ALKO
-STR_CID_ALLOY_STEEL                                                             :{TINYFONT}STST
 STR_CID_ALUMINIA                                                                :{TINYFONT}TG
 STR_CID_ALUMINIUM                                                               :{TINYFONT}AL
 STR_CID_AMMONIA                                                                 :{TINYFONT}AM
@@ -523,7 +510,6 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BEANS                                                                   :{TINYFONT}SOJA
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MB
 STR_CID_CARBON_BLACK                                                            :{TINYFONT}SADZ
-STR_CID_CARBON_STEEL                                                            :{TINYFONT}STNS
 STR_CID_CASSAVA                                                                 :{TINYFONT}MK
 STR_CID_CAST_IRON                                                               :{TINYFONT}ŻELI
 STR_CID_CEMENT                                                                  :{TINYFONT}CEM
@@ -588,7 +574,6 @@ STR_CID_SAND                                                                    
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}ZŁOM
 STR_CID_SLAG                                                                    :{TINYFONT}ŻŻL
 STR_CID_SODA_ASH                                                                :{TINYFONT}WS
-STR_CID_STAINLESS_STEEL                                                         :{TINYFONT}STNR
 STR_CID_STEEL                                                                   :{TINYFONT}ST
 STR_CID_AGGREGATES                                                              :{TINYFONT}KM
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}BC

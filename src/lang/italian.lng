@@ -39,7 +39,6 @@ STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY                                    
 STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL                                   :Neutrale
 STR_CARGO_NAME_ACID                                                             :{G=m}Acidi
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alcolici
-STR_CARGO_NAME_ALLOY_STEEL                                                      :{G=m}Acciaio legato
 STR_CARGO_NAME_ALUMINIUM                                                        :{G=m}Alluminio
 STR_CARGO_NAME_ALUMINIA                                                         :{G=f}Allumina
 STR_CARGO_NAME_AMMONIA                                                          :{G=f}Ammoniaca
@@ -48,7 +47,6 @@ STR_CARGO_NAME_BAUXITE                                                          
 STR_CARGO_NAME_BEANS                                                            :{G=m}Fagioli
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=m}Materiali edili
 STR_CARGO_NAME_CARBON_BLACK                                                     :{G=m}Nerofumo
-STR_CARGO_NAME_CARBON_STEEL                                                     :{G=m}Acciaio al carbonio
 STR_CARGO_NAME_CASSAVA                                                          :{G=f}Manioca
 STR_CARGO_NAME_CAST_IRON                                                        :{G=m}Ferro spugnoso
 STR_CARGO_NAME_CEMENT                                                           :{G=m}Cemento
@@ -114,7 +112,6 @@ STR_CARGO_NAME_SAND                                                             
 STR_CARGO_NAME_SCRAP_METAL                                                      :{G=m}Rottami metallici
 STR_CARGO_NAME_SLAG                                                             :{G=f}Scorie
 STR_CARGO_NAME_SODA_ASH                                                         :{G=m}Carbonato di sodio
-STR_CARGO_NAME_STAINLESS_STEEL                                                  :{G=m}Acciaio inossidabile
 STR_CARGO_NAME_STEEL                                                            :{G=m}Acciaio
 STR_CARGO_NAME_STEEL_SECTIONS                                                   :{G=m}Profilati in acciaio
 STR_CARGO_NAME_STEEL_SHEET                                                      :{G=m}Acciaio laminato
@@ -138,7 +135,6 @@ STR_CARGO_NAME_ZINC                                                             
 
 STR_CARGO_UNIT_ACID                                                             :{VOLUME} di acidi
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} di alcolici
-STR_CARGO_UNIT_ALLOY_STEEL                                                      :{WEIGHT} di acciai legati
 STR_CARGO_UNIT_ALUMINIA                                                         :{WEIGHT} di allumina
 STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} di alluminio
 STR_CARGO_UNIT_AMMONIA                                                          :{VOLUME} di ammoniaca
@@ -147,7 +143,6 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} di fagioli
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} di materiali edili
 STR_CARGO_UNIT_CARBON_BLACK                                                     :{WEIGHT} di nerofumo
-STR_CARGO_UNIT_CARBON_STEEL                                                     :{WEIGHT} di acciaio al carbonio
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} di manioca
 STR_CARGO_UNIT_CAST_IRON                                                        :{WEIGHT} di ferro spugnoso
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} di cemento
@@ -213,7 +208,6 @@ STR_CARGO_UNIT_SAND                                                             
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} di rottami metallici
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} di scorie
 STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} di carbonato di sodio
-STR_CARGO_UNIT_STAINLESS_STEEL                                                  :{WEIGHT} di acciaio inossidabile
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} di acciaio
 STR_CARGO_UNIT_STEEL_SECTIONS                                                   :{WEIGHT} di profilati di acciaio
 STR_CARGO_UNIT_STEEL_SHEET                                                      :{WEIGHT} di acciaio laminato
@@ -237,7 +231,6 @@ STR_CARGO_UNIT_ZINC                                                             
 # it seems that using 2 chars for these is a convention not a limit, I tested 4 chars and OpenTTD renders it fine - May 2020
 STR_CID_ACID                                                                    :{TINYFONT}AD
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AO
-STR_CID_ALLOY_STEEL                                                             :{TINYFONT}AL
 STR_CID_ALUMINIA                                                                :{TINYFONT}AI
 STR_CID_ALUMINIUM                                                               :{TINYFONT}AM
 STR_CID_AMMONIA                                                                 :{TINYFONT}AN
@@ -246,7 +239,6 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BEANS                                                                   :{TINYFONT}FG
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}ME
 STR_CID_CARBON_BLACK                                                            :{TINYFONT}NF
-STR_CID_CARBON_STEEL                                                            :{TINYFONT}CO
 STR_CID_CASSAVA                                                                 :{TINYFONT}MC
 STR_CID_CAST_IRON                                                               :{TINYFONT}FS
 STR_CID_CEMENT                                                                  :{TINYFONT}CT
@@ -311,7 +303,6 @@ STR_CID_SAND                                                                    
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}RM
 STR_CID_SLAG                                                                    :{TINYFONT}SC
 STR_CID_SODA_ASH                                                                :{TINYFONT}CS
-STR_CID_STAINLESS_STEEL                                                         :{TINYFONT}AX
 STR_CID_STEEL                                                                   :{TINYFONT}AC
 STR_CID_AGGREGATES                                                              :{TINYFONT}GA
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}BZ

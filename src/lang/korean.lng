@@ -27,7 +27,6 @@ STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             
 
 STR_CARGO_NAME_ACID                                                             :{G=m}산
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}술
-STR_CARGO_NAME_ALLOY_STEEL                                                      :{G=m}합금강
 STR_CARGO_NAME_ALUMINIUM                                                        :{G=m}알루미늄
 STR_CARGO_NAME_ALUMINIA                                                         :{G=f}알루미나
 STR_CARGO_NAME_AMMONIA                                                          :{G=f}암모니아
@@ -36,7 +35,6 @@ STR_CARGO_NAME_BAUXITE                                                          
 STR_CARGO_NAME_BEANS                                                            :{G=m}콩
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=f}건축 자재
 STR_CARGO_NAME_CARBON_BLACK                                                     :{G=m}탄소 검댕
-STR_CARGO_NAME_CARBON_STEEL                                                     :{G=m}탄소강
 STR_CARGO_NAME_CASSAVA                                                          :{G=f}카사바
 STR_CARGO_NAME_CAST_IRON                                                        :{G=m}주철
 STR_CARGO_NAME_CEMENT                                                           :{G=f}시멘트
@@ -102,7 +100,6 @@ STR_CARGO_NAME_SAND                                                             
 STR_CARGO_NAME_SCRAP_METAL                                                      :{G=m}고철
 STR_CARGO_NAME_SLAG                                                             :{G=f}광재
 STR_CARGO_NAME_SODA_ASH                                                         :{G=f}소다회
-STR_CARGO_NAME_STAINLESS_STEEL                                                  :{G=m}스테인리스강
 STR_CARGO_NAME_STEEL                                                            :{G=m}강철
 STR_CARGO_NAME_STEEL_SECTIONS                                                   :{G=m}형강
 STR_CARGO_NAME_STEEL_SHEET                                                      :{G=m}강판
@@ -126,7 +123,6 @@ STR_CARGO_NAME_ZINC                                                             
 
 STR_CARGO_UNIT_ACID                                                             :산 {VOLUME}
 STR_CARGO_UNIT_ALCOHOL                                                          :술 {VOLUME}
-STR_CARGO_UNIT_ALLOY_STEEL                                                      :합금강 {WEIGHT}
 STR_CARGO_UNIT_ALUMINIA                                                         :알루미나 {WEIGHT}
 STR_CARGO_UNIT_ALUMINIUM                                                        :알루미늄 {WEIGHT}
 STR_CARGO_UNIT_AMMONIA                                                          :암모니아 {VOLUME}
@@ -135,7 +131,6 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BEANS                                                            :콩 {WEIGHT}
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :건축 자재 {WEIGHT}
 STR_CARGO_UNIT_CARBON_BLACK                                                     :탄소 검댕 {WEIGHT}
-STR_CARGO_UNIT_CARBON_STEEL                                                     :탄소강 {WEIGHT}
 STR_CARGO_UNIT_CASSAVA                                                          :카사바 {WEIGHT}
 STR_CARGO_UNIT_CAST_IRON                                                        :주철 {WEIGHT}
 STR_CARGO_UNIT_CEMENT                                                           :시멘트 {WEIGHT}
@@ -201,7 +196,6 @@ STR_CARGO_UNIT_SAND                                                             
 STR_CARGO_UNIT_SCRAP_METAL                                                      :고철 {WEIGHT}
 STR_CARGO_UNIT_SLAG                                                             :광재 {WEIGHT}
 STR_CARGO_UNIT_SODA_ASH                                                         :소다회 {WEIGHT}
-STR_CARGO_UNIT_STAINLESS_STEEL                                                  :스테인리스강 {WEIGHT}
 STR_CARGO_UNIT_STEEL                                                            :강철 {WEIGHT}
 STR_CARGO_UNIT_STEEL_SECTIONS                                                   :형강 {WEIGHT}
 STR_CARGO_UNIT_STEEL_SHEET                                                      :강판 {WEIGHT}
@@ -226,7 +220,6 @@ STR_CARGO_UNIT_ZINC                                                             
 # it seems that using 2 chars for these is a convention not a limit, I tested 4 chars and OpenTTD renders it fine - May 2020
 STR_CID_ACID                                                                    :{TINYFONT}산
 STR_CID_ALCOHOL                                                                 :{TINYFONT}술
-STR_CID_ALLOY_STEEL                                                             :{TINYFONT}합
 STR_CID_ALUMINIA                                                                :{TINYFONT}알
 STR_CID_ALUMINIUM                                                               :{TINYFONT}루
 STR_CID_AMMONIA                                                                 :{TINYFONT}암
@@ -235,7 +228,6 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BEANS                                                                   :{TINYFONT}콩
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}건
 STR_CID_CARBON_BLACK                                                            :{TINYFONT}댕
-STR_CID_CARBON_STEEL                                                            :{TINYFONT}강
 STR_CID_CASSAVA                                                                 :{TINYFONT}카
 STR_CID_CAST_IRON                                                               :{TINYFONT}주
 STR_CID_CEMENT                                                                  :{TINYFONT}시
@@ -300,7 +292,6 @@ STR_CID_SAND                                                                    
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}고
 STR_CID_SLAG                                                                    :{TINYFONT}재
 STR_CID_SODA_ASH                                                                :{TINYFONT}소
-STR_CID_STAINLESS_STEEL                                                         :{TINYFONT}텐
 STR_CID_STEEL                                                                   :{TINYFONT}철
 STR_CID_AGGREGATES                                                              :{TINYFONT}석
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}무
