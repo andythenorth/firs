@@ -33,7 +33,6 @@ from cargos import engineering_supplies
 from cargos import explosives
 from cargos import farm_supplies
 from cargos import ferroalloys
-from cargos import ferrochrome
 from cargos import fertiliser
 from cargos import fish
 from cargos import food
@@ -150,7 +149,6 @@ engineering_supplies.cargo.register()
 explosives.cargo.register()
 farm_supplies.cargo.register()
 ferroalloys.cargo.register()
-ferrochrome.cargo.register()
 fertiliser.cargo.register()
 fish.cargo.register()
 food.cargo.register()
