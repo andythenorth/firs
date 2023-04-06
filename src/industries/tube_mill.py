@@ -4,14 +4,14 @@ industry = IndustrySecondary(
     id="tube_mill",
     accept_cargos_with_input_ratios=[
         ("STBL", 5),
-        ("COAT", 1),
-        ("SOAP", 1),
         ("ACID", 1),
+        ("SOAP", 1),
+        ("COAT", 1),
     ],
     combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
-        ("STPP", 4),
         ("STTB", 3),
+        ("STPP", 3),
         ("ENSP", 1),
     ],
     # do not build during gameplay
