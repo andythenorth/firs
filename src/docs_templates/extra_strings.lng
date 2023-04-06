@@ -46,7 +46,6 @@ CARGO_INFO_MAIL                                     :Available in all economies.
 CARGO_INFO_ACID                                     :Industrial acids, such as hydrochloric, nitric and sulphuric acid.
 CARGO_INFO_AGGREGATES                               :Gravel, sand, crushed stone and similar materials used in construction.
 CARGO_INFO_ALCOHOL                                  :Wine, beer, cider, spirits.
-CARGO_INFO_ALLOY_STEEL                              :Billets, blooms, ingots, slabs.
 CARGO_INFO_ALUMINIUM                                :Refined Aluminium metal, in coils, ingots, slabs etc.
 CARGO_INFO_AMMONIA                                  :Widely used industrial chemical. Transported as liquid or cryogenically as liquified compressed gas.
 CARGO_INFO_BASE_METALS                              :Non-ferrous metals, such as copper, nickel, zinc and lead.
@@ -61,7 +60,7 @@ CARGO_INFO_CEMENT                                   :Dry cement in powder or cli
 CARGO_INFO_CHEMICALS                                :Generic chemicals, usually in liquid form.
 CARGO_INFO_CHLORINE                                 :Industrial chemical, usually transported cryogenically as liquified compressed gas.
 CARGO_INFO_CLAY                                     :Generic clays, for producing building materials and other industrial uses.
-CARGO_INFO_CLEANING_AGENTS                          :Chemicals, soaps, scouring agents etc for industrial and domestic use. Primarily liquid, can also be solid or powder.
+CARGO_INFO_CLEANING_AGENTS                          :Chemicals, soaps, scouring agents etc for industrial and domestic use. Primarily liquid, can also be powder or solid (such as shot blasting sand).
 CARGO_INFO_COAL_TAR                                 :By-product from coke production, a thick slow-flowing liquid.
 CARGO_INFO_COFFEE                                   :Raw or roasted coffee beans.
 CARGO_INFO_COKE                                     :Coal that has been heated in a coke oven, producing a fuel that is nearly pure carbon.
@@ -74,7 +73,8 @@ CARGO_INFO_ELECTRICAL_PARTS                         :Electrical and electronic c
 CARGO_INFO_ENGINEERING_SUPPLIES                     :Machinery, fuel, parts, wood products, pipes, explosives and other supplies for mines and similar industries.
 CARGO_INFO_EXPLOSIVES                               :Civil explosives for mining, construction etc.
 CARGO_INFO_FARM_SUPPLIES                            :Machinery, fuel, parts, fertiliser and other supplies for farms, forests and similar industries.
-CARGO_INFO_FERROCHROME                              :Used in stainless steel production, an alloy of chromium and iron.  Grey lumps, similar in size and shape to coal lumps.
+CARGO_INFO_FERROALLOYS                              :Used in steel production. Alloys of iron and other elements including manganese, nickel, chromium, aluminium, silicon and tungsten.  Grey lumps, similar in size and shape to coal lumps.
+CARGO_INFO_FERROCHROME                              :Used in alloy and stainless steel production, an alloy of chromium and iron.  Grey lumps, similar in size and shape to coal lumps.
 CARGO_INFO_FORGINGS_AND_CASTINGS                    :Metal parts for assembly into larger items.
 CARGO_INFO_GRAIN                                    :Wheat, barley etc.
 CARGO_INFO_HARDWARE                                 :For household and construction use. Tools, utensils, fixtures, fittings, in metal and other materials.
@@ -103,11 +103,13 @@ CARGO_INFO_SALT                                     :Widely used industrial chem
 CARGO_INFO_SAND                                     :Coarse sand for construction, or fine silica sand for glass-making and metal casting. Transported as bulk or powder.
 CARGO_INFO_SLAG                                     :Waste product from iron and steel production.
 CARGO_INFO_SODA_ASH                                 :Industrial chemical. White powder form.
-CARGO_INFO_STAINLESS_STEEL                          :Billets, blooms, ingots and slabs.
+CARGO_INFO_STEEL_BILLETS_AND_BLOOMS                 :Semi-finished steel castings. Rectangular, square or round in cross-section.
+CARGO_INFO_STEEL_INGOTS                             :Rough steel castings, requiring further processing. Ingots may be small or very large. Typical ingot profiles are rectangular or round.
 CARGO_INFO_STEEL_MERCHANT_BAR                       :Steel bars, as rounds, squares, flats and other profiles. Transported as long straight products.
 CARGO_INFO_STEEL_PIPE                               :Long round steel pipes for transporting liquids in pipelines, buildings, industries etc.
 CARGO_INFO_STEEL_SECTIONS                           :Rolled steel plates and sections - I beams, H beams, channels etc. Transported as flat plates or long straight products.
 CARGO_INFO_STEEL_SHEET                              :Thin rolled steel sheet and strip, widely used to fabricate other products. Transported as flat sheets or as coils.
+CARGO_INFO_STEEL_SLAB                               :Semi-finished steel castings. Always flat and rectangular in cross-section.
 CARGO_INFO_STEEL_TUBE                               :Long hollow tube in round, rectangular and other cross-sections. Used for fabricating structures and machinery.
 CARGO_INFO_STEEL_WIRE_ROD                           :Steel wire and thin rods. Primarily transported as coils.
 CARGO_INFO_STEEL_WIRE_ROPE                          :Ropes and cables produced by drawing steel wire rod to a smaller diameter, then twisting into bundled ropes.
