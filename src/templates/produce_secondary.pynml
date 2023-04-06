@@ -50,11 +50,15 @@
                 <!--! if this cargo was delivered, increase the total production ratio appropriately -->
                 STORE_PERM_ALT(
                     ${get_perm_num("current_production_ratio")},
-                    LOAD_PERM(${get_perm_num("current_production_ratio")})
-                    +
-                    (
-                        LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.input_cargo.number))})
-                        > 0 ? ${input_cargo[1]} : 0
+                    <!--! production ratio may not exceed 8 -->
+                    min(
+                        8,
+                        LOAD_PERM(${get_perm_num("current_production_ratio")})
+                        +
+                        (
+                            LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.input_cargo.number))})
+                            > 0 ? ${input_cargo[1]} : 0
+                        )
                     )
                 ),
             </tal:input_cargos>
@@ -70,7 +74,7 @@
                 <!--! zero the total production from this cycle, as a starting value-->
                 STORE_PERM_ALT(${get_perm_num("total_cargo_produced_this_cycle")}, 0),
                 ${industry.id}_produce_update_supplied_cycles_remaining_per_cargo_${economy.numeric_id}(),
-                ${industry.id}_produce_calculate_current_production_level_${economy.numeric_id}(),
+                    ${industry.id}_produce_calculate_current_production_level_${economy.numeric_id}(),
                 <!--! add to total amount produced;
                       note that production_ratio is a value 0..8, and is divided by 8 in the calculation here - this is to account for integer maths
                       note also that this has to be in a separate loop to the ratio calculation, have sum ratio over all input cargos before calculating production from each input cargo
