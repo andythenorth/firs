@@ -16,7 +16,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="49",
-    name="string(STR_IND_MACHINE_SHOP)",
+    name="string(STR_IND_CRANE_FACTORY)",
     nearby_station_name="string(STR_STATION_HEAVY_EQUIPMENT_YARD)",
     fund_cost_multiplier="145",
 )
