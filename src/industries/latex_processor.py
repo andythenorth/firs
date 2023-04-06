@@ -6,7 +6,6 @@ industry = IndustrySecondary(
         ("LATX", 6),
         ("FORM", 2),
     ],
-    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
         ("RUBR", 8),
     ],

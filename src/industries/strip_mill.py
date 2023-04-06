@@ -7,7 +7,6 @@ industry = IndustrySecondary(
         ("ACID", 1),
         ("ZINC", 2),
     ],
-    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
         # high strip mill production is unwanted as there is only one output cargo
         ("STSH", 6),

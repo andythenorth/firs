@@ -8,7 +8,6 @@ industry = IndustrySecondary(
         ("COAT", 1),
         ("WELD", 1),
     ],
-    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
         # high body plant production is unwanted as there is only one output cargo
         ("VBOD", 6),

@@ -1803,11 +1803,26 @@ class Industry(object):
         )
         if len(accept_cargos_with_ratios) == 1:
             extra_text_string = "STR_EMPTY"  # nothing useful to show where just one cargo is accepted eh
+        elif len(accept_cargos_with_ratios) == 2:
+            extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_BOTH"
         else:
-            if self.combined_cargos_boost_prod:
-                extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY"
-            else:
+            # below here is increasingly JFDI and may well go wrong if industries are inappropriately configured
+            max_ratio = (sum([cargo_with_ratio[1] for cargo_with_ratio in accept_cargos_with_ratios]))
+            if max_ratio == 8:
+                # common case, industry is configured so that ratios sum to 8
+                extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ALL"
+            elif int(max_ratio / len(accept_cargos_with_ratios)) == 8:
+                # less common case: all ratios are 8, so there is no combination
+                # to prevent surprises we guard on known industry ids
+                if self.id not in ["supply_yard", "food_processor"]:
+                    raise Exception("get_extra_text_string: " + self.id + " needs combinatorial production values checked, they may be incorrect?")
                 extra_text_string = "STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY"
+            else:
+                # as of April 2023, we just assume that any 2 will give a max ratio
+                # to prevent surprises we guard on known industry ids
+                if self.id not in ["hardware_factory"]:
+                    raise Exception("get_extra_text_string: " + self.id + " needs combinatorial production values checked, they may be incorrect?")
+                extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_TWO"
         return "string(" + extra_text_string + ")"
 
     def get_intro_year(self, economy):
@@ -2281,9 +2296,6 @@ class IndustrySecondary(Industry):
         kwargs["life_type"] = "IND_LIFE_TYPE_PROCESSING"
         super().__init__(**kwargs)
         self.template = kwargs.get("template", "industry_secondary.pynml")
-        self.combined_cargos_boost_prod = kwargs.get(
-            "combined_cargos_boost_prod", False
-        )
         register_perm_storage_mapping(
             self.__class__.__name__,
             [
@@ -2339,16 +2351,6 @@ class IndustrySecondary(Industry):
                 + " (max 8)"
             )
         return accept_cargo_types
-
-    def get_boost(self, supplied_cargo_num, boosted_cargo_num, economy):
-        if self.combined_cargos_boost_prod:
-            if boosted_cargo_num > len(
-                self.get_property("accept_cargos_with_input_ratios", economy)
-            ):
-                return 0
-            else:
-                return self.get_prod_ratio(supplied_cargo_num, economy)
-        return 0
 
     def get_prod_cargo_types(self, economy):
         # secondary industry prod cargo uses output ratios of n/8 per cargo, which must sum to 8 for all cargos

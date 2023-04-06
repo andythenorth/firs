@@ -4,7 +4,6 @@ industry = IndustrySecondary(
     id="chemical_plant",
     accept_cargos_with_input_ratios=[],
     prod_cargo_types_with_output_ratios=[],
-    combined_cargos_boost_prod=True,
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="191",

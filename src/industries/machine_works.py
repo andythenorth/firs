@@ -9,7 +9,6 @@ industry = IndustrySecondary(
         ("STEL", 4),
         ("COPR", 4),
     ],
-    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
         ("POWR", 8),
     ],

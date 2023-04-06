@@ -7,7 +7,6 @@ industry = IndustrySecondary(
         ("ALUM", 3),
         ("SAND", 1),
     ],
-    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
         # high engine plant production is unwanted as there is only one output cargo
         ("VENG", 6),

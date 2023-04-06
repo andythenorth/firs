@@ -7,7 +7,6 @@ industry = IndustrySecondary(
         ("STBL", 6),
         ("SOAP", 2),
     ],
-    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
         ("STWR", 4),
         ("RBAR", 2),

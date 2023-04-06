@@ -8,7 +8,6 @@ industry = IndustrySecondary(
         ("PHAC", 2),
         ("NH3_", 2),
     ],
-    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
         ("PACH", 4),
         ("ENUM", 4),
