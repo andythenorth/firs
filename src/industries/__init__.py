@@ -40,6 +40,7 @@ from industries import foundry
 from industries import fruit_plantation
 from industries import general_store
 from industries import glass_works
+from industries import hardware_factory
 from industries import hardware_store
 from industries import hotel
 from industries import herding_coop
@@ -126,6 +127,7 @@ foundry.industry.register()
 fruit_plantation.industry.register()
 general_store.industry.register()
 glass_works.industry.register()
+hardware_factory.industry.register()
 hardware_store.industry.register()
 herding_coop.industry.register()
 hotel.industry.register()

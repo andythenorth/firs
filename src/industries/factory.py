@@ -1,12 +1,10 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
-    id="metal_workshop",
+    id="factory",
     accept_cargos_with_input_ratios=[
         ("STEL", 6),
-        ("RFPR", 2),
     ],
-    combined_cargos_boost_prod=True,
     prod_cargo_types_with_output_ratios=[
         ("GOOD", 8),
     ],
@@ -17,15 +15,32 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_STAMP_AND_PLATE)",
     fund_cost_multiplier="120",
     pollution_and_squalor_factor=1,
-    provides_snow=True,
 )
 
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
 )
-
+"""
+industry.enable_in_economy(
+    "STEELTOWN",
+    accept_cargos_with_input_ratios=[
+        ("STSH", 6),
+        ("CSTI", 6),
+        ("STWR", 6),
+        ("STBR", 6),
+        ("POWR", 6),
+        ("FOCA", 6),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        # high output production is unwanted due to single cargo
+        ("HWAR", 6),
+    ],
+    # temp
+    name="string(STR_IND_HARDWARE_FACTORY)",
+)
+"""
 industry.add_tile(
-    id="metal_workshop_tile_1",
+    id="factory_tile_1",
     animation_length=47,
     animation_looping=True,
     animation_speed=2,
@@ -67,8 +82,8 @@ sprite_smoke = industry.add_smoke_sprite(
 )
 
 industry.add_spritelayout(
-    id="metal_workshop_spritelayout_1",
-    tile="metal_workshop_tile_1",
+    id="factory_spritelayout_1",
+    tile="factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -76,16 +91,16 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="metal_workshop_spritelayout_2",
-    tile="metal_workshop_tile_1",
+    id="factory_spritelayout_2",
+    tile="factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="metal_workshop_spritelayout_3",
-    tile="metal_workshop_tile_1",
+    id="factory_spritelayout_3",
+    tile="factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -93,8 +108,8 @@ industry.add_spritelayout(
     add_to_object_num=1,
 )
 industry.add_spritelayout(
-    id="metal_workshop_spritelayout_4",
-    tile="metal_workshop_tile_1",
+    id="factory_spritelayout_4",
+    tile="factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -102,8 +117,8 @@ industry.add_spritelayout(
     add_to_object_num=2,
 )
 industry.add_spritelayout(
-    id="metal_workshop_spritelayout_5",
-    tile="metal_workshop_tile_1",
+    id="factory_spritelayout_5",
+    tile="factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -111,16 +126,16 @@ industry.add_spritelayout(
     add_to_object_num=3,
 )
 industry.add_spritelayout(
-    id="metal_workshop_spritelayout_6",
-    tile="metal_workshop_tile_1",
+    id="factory_spritelayout_6",
+    tile="factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="metal_workshop_spritelayout_7",
-    tile="metal_workshop_tile_1",
+    id="factory_spritelayout_7",
+    tile="factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
@@ -131,47 +146,47 @@ industry.add_spritelayout(
 industry.add_multi_tile_object(
     add_to_object_num=4,
     view_layout=[
-        (0, 0, "metal_workshop_spritelayout_1"),
-        (0, 1, "metal_workshop_spritelayout_2"),
+        (0, 0, "factory_spritelayout_1"),
+        (0, 1, "factory_spritelayout_2"),
     ],
 )
 
 industry.add_industry_layout(
-    id="metal_workshop_industry_layout_1",
+    id="factory_industry_layout_1",
     layout=[
-        (0, 0, "metal_workshop_spritelayout_3"),
-        (0, 1, "metal_workshop_spritelayout_3"),
-        (0, 2, "metal_workshop_spritelayout_5"),
-        (0, 3, "metal_workshop_spritelayout_4"),
-        (0, 4, "metal_workshop_spritelayout_5"),
-        (1, 0, "metal_workshop_spritelayout_3"),
-        (1, 1, "metal_workshop_spritelayout_3"),
-        (1, 2, "metal_workshop_spritelayout_5"),
-        (1, 3, "metal_workshop_spritelayout_4"),
-        (1, 4, "metal_workshop_spritelayout_6"),
-        (2, 0, "metal_workshop_spritelayout_3"),
-        (2, 1, "metal_workshop_spritelayout_1"),
-        (2, 2, "metal_workshop_spritelayout_2"),
-        (2, 3, "metal_workshop_spritelayout_7"),
-        (2, 4, "metal_workshop_spritelayout_7"),
+        (0, 0, "factory_spritelayout_3"),
+        (0, 1, "factory_spritelayout_3"),
+        (0, 2, "factory_spritelayout_5"),
+        (0, 3, "factory_spritelayout_4"),
+        (0, 4, "factory_spritelayout_5"),
+        (1, 0, "factory_spritelayout_3"),
+        (1, 1, "factory_spritelayout_3"),
+        (1, 2, "factory_spritelayout_5"),
+        (1, 3, "factory_spritelayout_4"),
+        (1, 4, "factory_spritelayout_6"),
+        (2, 0, "factory_spritelayout_3"),
+        (2, 1, "factory_spritelayout_1"),
+        (2, 2, "factory_spritelayout_2"),
+        (2, 3, "factory_spritelayout_7"),
+        (2, 4, "factory_spritelayout_7"),
     ],
 )
 industry.add_industry_layout(
-    id="metal_workshop_industry_layout_2",
+    id="factory_industry_layout_2",
     layout=[
-        (0, 2, "metal_workshop_spritelayout_3"),
-        (0, 3, "metal_workshop_spritelayout_3"),
-        (1, 0, "metal_workshop_spritelayout_1"),
-        (1, 1, "metal_workshop_spritelayout_2"),
-        (1, 2, "metal_workshop_spritelayout_3"),
-        (1, 3, "metal_workshop_spritelayout_3"),
-        (2, 0, "metal_workshop_spritelayout_4"),
-        (2, 1, "metal_workshop_spritelayout_7"),
-        (2, 2, "metal_workshop_spritelayout_6"),
-        (2, 3, "metal_workshop_spritelayout_6"),
-        (3, 0, "metal_workshop_spritelayout_4"),
-        (3, 1, "metal_workshop_spritelayout_5"),
-        (3, 2, "metal_workshop_spritelayout_4"),
-        (3, 3, "metal_workshop_spritelayout_3"),
+        (0, 2, "factory_spritelayout_3"),
+        (0, 3, "factory_spritelayout_3"),
+        (1, 0, "factory_spritelayout_1"),
+        (1, 1, "factory_spritelayout_2"),
+        (1, 2, "factory_spritelayout_3"),
+        (1, 3, "factory_spritelayout_3"),
+        (2, 0, "factory_spritelayout_4"),
+        (2, 1, "factory_spritelayout_7"),
+        (2, 2, "factory_spritelayout_6"),
+        (2, 3, "factory_spritelayout_6"),
+        (3, 0, "factory_spritelayout_4"),
+        (3, 1, "factory_spritelayout_5"),
+        (3, 2, "factory_spritelayout_4"),
+        (3, 3, "factory_spritelayout_3"),
     ],
 )
