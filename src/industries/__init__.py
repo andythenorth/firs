@@ -59,6 +59,7 @@ from industries import paper_mill
 from industries import peatlands
 from industries import petrol_pump
 from industries import phosphate_mine
+from industries import pipework_fabricator
 from industries import plaza
 from industries import port
 from industries import power_plant
@@ -71,8 +72,6 @@ from industries import ranch
 from industries import rubber_plantation
 from industries import sawmill
 from industries import scrap_yard
-from industries import pipework_fabricator
-from industries import pipe_mill
 from industries import slag_grinding_plant
 from industries import soda_ash_mine
 from industries import stockyard
@@ -80,6 +79,7 @@ from industries import strip_mill
 from industries import supply_yard
 from industries import timber_yard
 from industries import trading_post
+from industries import tube_mill
 from industries import tyre_plant
 from industries import vehicle_distributor
 from industries import vineyard
@@ -146,7 +146,6 @@ peatlands.industry.register()
 petrol_pump.industry.register()
 phosphate_mine.industry.register()
 pipework_fabricator.industry.register()
-pipe_mill.industry.register()
 plaza.industry.register()
 port.industry.register()
 power_plant.industry.register()
@@ -166,6 +165,7 @@ strip_mill.industry.register()
 supply_yard.industry.register()
 timber_yard.industry.register()
 trading_post.industry.register()
+tube_mill.industry.register()
 tyre_plant.industry.register()
 vehicle_distributor.industry.register()
 vineyard.industry.register()

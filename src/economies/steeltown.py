@@ -82,6 +82,7 @@ economy = Economy(
             "steel_ingots",
             "steel_slab",
             "limestone",
+            "paints_and_coatings",
         ],
         "group_edges_subgraphs": [
             ["basic_oxygen_furnace", "electric_arc_furnace"],
@@ -111,11 +112,6 @@ economy = Economy(
             {"nodes": ["coal", "coal_mine", "coke_oven"], "rank": "same"},
             {
                 "nodes": ["sulphur", "rubber", "carbon_black"],
-                "rank": "same",
-                "color": "white",
-            },
-            {
-                "nodes": ["glass", "paints_and_coatings"],
                 "rank": "same",
                 "color": "white",
             },
