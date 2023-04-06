@@ -36,6 +36,7 @@ industry.enable_in_economy(
         ("RUBR", 16),
         ("FEAL", 20),
         ("ALUM", 11),
+        ("ZINC", 16),
     ],
 )
 

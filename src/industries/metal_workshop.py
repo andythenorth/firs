@@ -30,7 +30,7 @@ industry.enable_in_economy(
         # realism calls also for Steel Tube and Merchant Bar, but they're a step too far eh
         ("STSH", 3),
         ("STWR", 2),
-        ("COAT", 2),
+        ("COAT", 1),
         ("WELD", 1),
     ],
     prod_cargo_types_with_output_ratios=[

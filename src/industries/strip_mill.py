@@ -17,7 +17,7 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="160",
     name="string(STR_IND_STRIP_MILL)",
-    nearby_station_name="string(STR_STATION_PIPE_MILL)",
+    nearby_station_name="string(STR_STATION_STRIP_MILL)",
     fund_cost_multiplier="120",
     pollution_and_squalor_factor=1,
 )
