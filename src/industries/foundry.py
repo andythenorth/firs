@@ -2,9 +2,12 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="foundry",
+    # runs both casting line (sand) and forging line (soap)
+    # cleaning agents also stand in for shot-blasting etc
     accept_cargos_with_input_ratios=[
         ("STIG", 6),
-        ("SAND", 2),
+        ("SAND", 1),
+        ("SOAP", 1),
     ],
     prod_cargo_types_with_output_ratios=[
         # high foundry output production is unwanted

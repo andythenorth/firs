@@ -86,6 +86,7 @@ economy = Economy(
             "acid",
             "limestone",
             "paints_and_coatings",
+            "cleaning_agents",
         ],
         "group_edges_subgraphs": [
             ["basic_oxygen_furnace", "electric_arc_furnace"],
@@ -96,7 +97,7 @@ economy = Economy(
             ("same", ["lime_kiln", "glass_works"]),
             ("same", ["engine_plant", "tyre_plant", "body_plant"]),
             ("same", ["oxygen", "coke", "iron_ore"]),
-            ("sink", ["farm", "food", "cranes_and_hoists", "hardware", "vehicles", "pipework", "assembly_plant", "pipework_fabricator", "machine_shop"]),
+            ("sink", ["farm", "food", "cranes_and_hoists", "hardware", "plastics", "vehicles", "pipework", "assembly_plant", "pipework_fabricator", "machine_shop"]),
         ],
         "clusters": [
             {
