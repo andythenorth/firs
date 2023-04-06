@@ -3,7 +3,7 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="wire_rod_mill",
     accept_cargos_with_input_ratios=[
-        # ACID was dropped (IRL mechanical descaling, but also eases cargoflow and avoids over-demand of ACID)
+        # ACID was dropped (IRL mechanical descaling and / or recycled pickling acid, but also eases cargoflow and avoids over-demand of ACID)
         ("STBL", 6),
         ("SOAP", 2),
     ],
