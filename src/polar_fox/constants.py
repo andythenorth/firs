@@ -130,6 +130,10 @@ cargo_labels = [
     "H2__",
     "ALO_",
     "NHNO",
+    "STIG",
+    "STBL",
+    "STSL",
+    "FEAL",
     #
     "NULL",
 ]
