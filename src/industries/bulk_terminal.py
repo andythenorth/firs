@@ -33,9 +33,8 @@ industry.enable_in_economy(
     # quite a lot of accepted types, this is intentional to provide flexibility in obtaining boost
     accept_cargo_types=["FOOD", "POTA", "CHLO", "CMNT", "STSE", "STSH"],
     prod_cargo_types_with_multipliers=[
-        ("MNO2", 19),
         ("RUBR", 16),
-        ("FECR", 14),
+        ("FEAL", 20),
         ("ALUM", 11),
     ],
 )

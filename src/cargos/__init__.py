@@ -3,7 +3,6 @@ registered_cargos = []
 from cargos import acid
 from cargos import aggregates
 from cargos import alcohol
-from cargos import alloy_steel
 from cargos import aluminia
 from cargos import aluminium
 from cargos import ammonia
@@ -11,7 +10,6 @@ from cargos import bauxite
 from cargos import beans
 from cargos import building_materials
 from cargos import carbon_black
-from cargos import carbon_steel
 from cargos import cassava
 from cargos import cast_iron
 from cargos import cement
@@ -34,6 +32,7 @@ from cargos import electrical_parts
 from cargos import engineering_supplies
 from cargos import explosives
 from cargos import farm_supplies
+from cargos import ferroalloys
 from cargos import ferrochrome
 from cargos import fertiliser
 from cargos import fish
@@ -91,12 +90,14 @@ from cargos import salt
 from cargos import scrap_metal
 from cargos import slag
 from cargos import soda_ash
-from cargos import stainless_steel
 from cargos import steel
+from cargos import steel_billets_and_blooms
+from cargos import steel_ingots
 from cargos import steel_merchant_bar
 from cargos import steel_pipe
 from cargos import steel_sections
 from cargos import steel_sheet
+from cargos import steel_slab
 from cargos import steel_tube
 from cargos import steel_wire_rod
 from cargos import steel_wire_rope
@@ -119,7 +120,6 @@ from cargos import zinc
 acid.cargo.register()
 aggregates.cargo.register()
 alcohol.cargo.register()
-alloy_steel.cargo.register()
 # UNUSED aluminia.cargo.register()
 aluminium.cargo.register()
 ammonia.cargo.register()
@@ -127,7 +127,6 @@ ammonia.cargo.register()
 beans.cargo.register()
 building_materials.cargo.register()
 carbon_black.cargo.register()
-carbon_steel.cargo.register()
 cassava.cargo.register()
 cast_iron.cargo.register()
 cement.cargo.register()
@@ -150,6 +149,7 @@ electrical_parts.cargo.register()
 engineering_supplies.cargo.register()
 explosives.cargo.register()
 farm_supplies.cargo.register()
+ferroalloys.cargo.register()
 ferrochrome.cargo.register()
 fertiliser.cargo.register()
 fish.cargo.register()
@@ -207,12 +207,14 @@ salt.cargo.register()
 scrap_metal.cargo.register()
 slag.cargo.register()
 soda_ash.cargo.register()
-stainless_steel.cargo.register()
 steel.cargo.register()
+steel_billets_and_blooms.cargo.register()
+steel_ingots.cargo.register()
 steel_merchant_bar.cargo.register()
 steel_pipe.cargo.register()
 steel_sections.cargo.register()
 steel_sheet.cargo.register()
+steel_slab.cargo.register()
 steel_tube.cargo.register()
 steel_wire_rod.cargo.register()
 steel_wire_rope.cargo.register()
