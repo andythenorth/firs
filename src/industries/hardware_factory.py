@@ -35,7 +35,7 @@ industry.enable_in_economy(
     ],
     prod_cargo_types_with_output_ratios=[
         ("HWAR", 4),
-        ("PLAS", 4), # !! should be goods but eh, breaks current savegame
+        ("GOOD", 4),
     ],
 )
 
