@@ -16,15 +16,15 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="49",
-    name="string(STR_IND_CRANE_FACTORY)",
+    name="string(STR_IND_MACHINE_SHOP)",
     nearby_station_name="string(STR_STATION_HEAVY_EQUIPMENT_YARD)",
     fund_cost_multiplier="145",
 )
-
+"""
 industry.enable_in_economy(
     "STEELTOWN",
 )
-
+"""
 industry.add_tile(
     id="machine_shop_tile_1",
     animation_length=71,
