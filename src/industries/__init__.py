@@ -62,6 +62,7 @@ from industries import petrol_pump
 from industries import phosphate_mine
 from industries import pipework_fabricator
 from industries import plaza
+from industries import plate_mill
 from industries import port
 from industries import power_plant
 from industries import potash_mine
@@ -148,6 +149,7 @@ peatlands.industry.register()
 petrol_pump.industry.register()
 phosphate_mine.industry.register()
 pipework_fabricator.industry.register()
+plate_mill.industry.register()
 plaza.industry.register()
 port.industry.register()
 power_plant.industry.register()

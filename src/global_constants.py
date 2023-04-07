@@ -77,7 +77,7 @@ industry_numeric_ids = dict(
     liquids_terminal=74,
     manganese_mine=75,
     potash_mine=76,
-    # unused=77,
+    plate_mill=77,
     coke_oven=78,
     electric_arc_furnace=79,
     slag_grinding_plant=80,
@@ -130,6 +130,7 @@ industry_numeric_ids = dict(
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
 tile_numeric_ids = dict(
+    plate_mill_tile_1=74,
     bar_and_section_mill_tile_2=75,
     concrete_plant_tile_1=76,
     wire_rope_factory_tile_1=77,
