@@ -28,6 +28,18 @@ industry.enable_in_economy(
     ],
 )
 
+industry.enable_in_economy(
+    "STEELTOWN",
+    name="string(STR_IND_SLAB_CUTTER)",
+    accept_cargos_with_input_ratios=[
+        ("STSL", 6),
+        ("WELD", 2), # represents gas for cutting, might be weird, but eh we'll see
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("STSE", 8),
+    ],
+)
+
 industry.enable_in_economy("IN_A_HOT_COUNTRY")
 # industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('COCO', 8)]
 # industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_output_ratios = [('COPR', 4), ('SULP', 4)]
