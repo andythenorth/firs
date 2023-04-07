@@ -3,15 +3,17 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="machine_shop",
     accept_cargos_with_input_ratios=[
-        ("STSE", 3),
-        ("LFEQ", 2),
-        ("SWRP", 2),
-        ("WELD", 1),
+        ("VPTS", 3),
+        ("STSE", 1),
+        ("LFEQ", 1), # possibly redundant but eh, makes cargoflow look better
+        ("VENG", 1),
+        ("WELD", 2),
     ],
     prod_cargo_types_with_output_ratios=[
         # high output production is unwanted
-        ("CRAN", 5),
-        ("ENSP", 1),
+        ("VEHI", 2),
+        ("FMSP", 2),
+        ("ENSP", 2),
     ],
     prob_in_game="3",
     prob_map_gen="5",
@@ -20,11 +22,11 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_HEAVY_EQUIPMENT_YARD)",
     fund_cost_multiplier="145",
 )
-"""
+
 industry.enable_in_economy(
     "STEELTOWN",
 )
-"""
+
 industry.add_tile(
     id="machine_shop_tile_1",
     animation_length=71,

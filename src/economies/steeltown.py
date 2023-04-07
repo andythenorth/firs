@@ -97,7 +97,7 @@ economy = Economy(
             ("same", ["lime_kiln", "glass_works"]),
             ("same", ["engine_plant", "tyre_plant", "body_plant"]),
             ("same", ["oxygen", "coke", "iron_ore"]),
-            ("sink", ["cranes_and_hoists", "hardware", "goods", "vehicles", "pipework", "assembly_plant", "pipework_fabricator", "crane_and_hoist_factory"]),
+            ("sink", ["cranes_and_hoists", "hardware", "goods", "vehicles", "pipework", "assembly_plant", "machine_shop", "pipework_fabricator", "crane_and_hoist_factory"]),
         ],
         "clusters": [
             {
