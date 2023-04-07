@@ -22,6 +22,7 @@ from industries import coke_oven
 from industries import component_factory
 from industries import copper_mine
 from industries import copper_smelter
+from industries import crane_and_hoist_factory
 from industries import cryo_plant
 from industries import dairy
 from industries import dairy_farm
@@ -111,6 +112,7 @@ coke_oven.industry.register()
 component_factory.industry.register()
 copper_mine.industry.register()
 copper_smelter.industry.register()
+crane_and_hoist_factory.industry.register()
 cryo_plant.industry.register()
 dairy.industry.register()
 dairy_farm.industry.register()
