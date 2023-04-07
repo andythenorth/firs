@@ -120,6 +120,7 @@ industry_numeric_ids = dict(
     pipework_fabricator=117,
     wire_rope_factory=118,
     concrete_plant=119,
+    elastomer_products_plant=120,
 )
 # 127 is last ID to be used (128 industry limit, zero-based)
 # see also why 128 is a hard limit as of 2020 http://webster.openttdcoop.org/?channel=openttd&date=1586563200#1586641232
@@ -130,6 +131,8 @@ industry_numeric_ids = dict(
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
 tile_numeric_ids = dict(
+    elastomer_products_plant_tile_1=72,
+    elastomer_products_plant_tile_2=73,
     plate_mill_tile_1=74,
     bar_and_section_mill_tile_2=75,
     concrete_plant_tile_1=76,

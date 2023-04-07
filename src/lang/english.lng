@@ -35,6 +35,7 @@ STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        
 STR_EXTRA_TEXT_SECONDARY_COMBINATORY_BOTH                                       :{BLACK}For maximum production rate, supply {WHITE}both {BLACK}required cargos at least once every three months.
 STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ALL                                        :{BLACK}For maximum production rate, supply {WHITE}all {BLACK}required cargos at least once every three months.
 STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_TWO                                    :{BLACK}For maximum production rate, supply {WHITE}at least two {BLACK}required cargos at least once every three months.
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_THREE                                  :{BLACK}For maximum production rate, supply {WHITE}at least three {BLACK}required cargos at least once every three months.
 STR_EXTRA_TEXT_TOWN_PRODUCER                                                    :{BLACK}Production is proportional to town population. At least {WHITE}{SIGNED_WORD} units{BLACK} and not more than {WHITE}{SIGNED_WORD} units{BLACK} of cargo will be produced every month.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} crates of supplies at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates.
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this level, deliver {SIGNED_WORD} crates of supplies at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates.
@@ -75,6 +76,7 @@ STR_CARGO_NAME_COPPER                                                           
 STR_CARGO_NAME_COPPER_CONCENTRATE                                               :Copper Concentrate
 STR_CARGO_NAME_CRANES_AND_HOISTS                                                :Cranes & Hoists
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Edible Oil
+STR_CARGO_NAME_ELASTOMER_PRODUCTS                                               :Elastomer Products
 STR_CARGO_NAME_ELECTRICAL_PARTS                                                 :Electrical Parts
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Engineering Supplies
 STR_CARGO_NAME_ETHYLENE                                                         :Ethylene
@@ -190,6 +192,7 @@ STR_CARGO_UNIT_COPPER                                                           
 STR_CARGO_UNIT_COPPER_CONCENTRATE                                               :{WEIGHT} of copper concentrate
 STR_CARGO_UNIT_CRANES_AND_HOISTS                                                :{WEIGHT} of cranes & hoists
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} of edible oil
+STR_CARGO_UNIT_ELASTOMER_PRODUCTS                                               :{WEIGHT} of elastomer products
 STR_CARGO_UNIT_ELECTRICAL_PARTS                                                 :{WEIGHT} of electrical parts
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crate{P 0 "" s} of engineering supplies
 STR_CARGO_UNIT_ETHYLENE                                                         :{VOLUME} of ethylene
@@ -305,6 +308,7 @@ STR_CID_COPPER                                                                  
 STR_CID_COPPER_CONCENTRATE                                                      :{TINYFONT}CC
 STR_CID_CRANES_AND_HOISTS                                                       :{TINYFONT}CR
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
+STR_CID_ELASTOMER_PRODUCTS                                                      :{TINYFONT}EL
 STR_CID_ELECTRICAL_PARTS                                                        :{TINYFONT}EP
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
 STR_CID_ETHYLENE                                                                :{TINYFONT}EY
@@ -439,6 +443,7 @@ STR_IND_CRYO_PLANT                                                              
 STR_IND_DAIRY                                                                   :Dairy
 STR_IND_DAIRY_FARM                                                              :Dairy Farm
 STR_IND_DREDGING_SITE                                                           :Dredging Site
+STR_IND_ELASTOMER_PRODUCTS_PLANT                                                :Elastomer Products Plant
 STR_IND_ELECTRIC_ARC_FURNACE                                                    :Electric Arc Furnace
 STR_IND_ENGINE_PLANT                                                            :Engine Plant
 STR_IND_ETHYLENE_CRACKER                                                        :Naphtha Cracker
@@ -559,6 +564,7 @@ STR_STATION_CREOSOTING                                                          
 STR_STATION_CRYO_PLANT                                                          :Cryo Plant
 STR_STATION_DAIRY_LANE                                                          :Dairy Lane
 STR_STATION_DYNAMO                                                              :Dynamo
+STR_STATION_ELASTOMER_PLANT                                                     :Seal and Hose
 STR_STATION_ESTATE                                                              :Estate
 STR_STATION_EXCHANGE                                                            :Exchange
 STR_STATION_FARM_1                                                              :Manor
