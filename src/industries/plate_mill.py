@@ -10,7 +10,8 @@ industry = IndustrySecondary(
         ("WELD", 2),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("STSE", 8),
+        # high plate mill output production is unwanted
+        ("STSE", 6),
     ],
     # do not build during gameplay
     prob_in_game="0",

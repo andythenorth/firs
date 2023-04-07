@@ -13,8 +13,8 @@ industry = IndustrySecondary(
         ("ELAS", 3),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("VPTS", 3),
-        ("PUMP", 3),
+        ("VPTS", 4),
+        ("PUMP", 2),
         ("LFEQ", 2),
     ],
     prob_in_game="1",  # low chance of build during gameplay
