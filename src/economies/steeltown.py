@@ -13,8 +13,8 @@ economy = Economy(
         "mail",
         "aggregates",
         "steel_slab",
-        "aluminium",
-        "hardware", # no goods?
+        "aluminium", # should be goods here
+        "hardware",
         "carbon_black",
         "steel_billets_and_blooms",
         "cast_iron",
@@ -37,7 +37,7 @@ economy = Economy(
         "lifting_equipment",
         "limestone",
         "lye",
-        "manganese", # ! needs removed
+        "elastomer_products", # !! out of order to preserve testing savegame, needs moved
         "nitrogen",
         "oxygen",
         "paints_and_coatings",

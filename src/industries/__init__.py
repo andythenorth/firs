@@ -27,6 +27,7 @@ from industries import dairy
 from industries import dairy_farm
 from industries import diamond_mine
 from industries import dredging_site
+from industries import elastomer_products_plant
 from industries import electric_arc_furnace
 from industries import engine_plant
 from industries import farm
@@ -115,6 +116,7 @@ dairy.industry.register()
 dairy_farm.industry.register()
 diamond_mine.industry.register()
 dredging_site.industry.register()
+elastomer_products_plant.industry.register()
 electric_arc_furnace.industry.register()
 engine_plant.industry.register()
 farm.industry.register()

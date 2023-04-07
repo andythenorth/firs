@@ -1817,6 +1817,12 @@ class Industry(object):
                 if self.id not in ["supply_yard", "food_processor"]:
                     raise Exception("get_extra_text_string: " + self.id + " needs combinatorial production values checked, they may be incorrect?")
                 extra_text_string = "STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY"
+            elif int(max_ratio / len(accept_cargos_with_ratios)) == 3:
+                # rare case of 3 out of n cargos being required
+                # to prevent surprises we guard on known industry ids
+                if self.id not in ["component_factory"]:
+                    raise Exception("get_extra_text_string: " + self.id + " needs combinatorial production values checked, they may be incorrect?")
+                extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_THREE"
             else:
                 # as of April 2023, we just assume that any 2 will give a max ratio
                 # to prevent surprises we guard on known industry ids

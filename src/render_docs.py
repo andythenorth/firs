@@ -290,7 +290,7 @@ class DocHelper(object):
         return ["mail", "passengers"]
 
     def get_cargoflow_supply_cargos(self):
-        return ["farm_supplies", "engineering_supplies", "welding_consumables"]
+        return ["farm_supplies", "engineering_supplies", "welding_consumables", "manganese"]
 
     def get_cargoflow_wormhole_cargos(self, economy):
         result = {"by_industry": {}, "by_cargo": {}}

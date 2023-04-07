@@ -17,7 +17,6 @@ industry = IndustrySecondary(
     provides_snow=True,
 )
 
-
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
     accept_cargos_with_input_ratios=[

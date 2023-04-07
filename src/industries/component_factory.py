@@ -5,10 +5,12 @@ industry = IndustrySecondary(
     accept_cargos_with_input_ratios=[
         # 5 cargos eh? pretty rare
         # realism calls also for Steel Wire Rod, but it's a step too far eh
-        ("STBR", 2),
-        ("STTB", 2),
-        ("FOCA", 2),
-        ("POWR", 2),
+        ("STBR", 3),
+        ("STTB", 3),
+        ("FOCA", 3),
+        ("POWR", 3),
+        ("WELD", 3),
+        ("ELAS", 3),
     ],
     prod_cargo_types_with_output_ratios=[
         ("VPTS", 3),

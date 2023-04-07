@@ -4,7 +4,8 @@ industry = IndustrySecondary(
     id="engine_plant",
     accept_cargos_with_input_ratios=[
         ("CSTI", 4),
-        ("ALUM", 3),
+        ("ALUM", 2),
+        ("ELAS", 1),
         ("SAND", 1),
     ],
     prod_cargo_types_with_output_ratios=[
