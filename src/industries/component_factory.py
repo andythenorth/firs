@@ -3,10 +3,11 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="component_factory",
     accept_cargos_with_input_ratios=[
-        # 5 cargos eh? pretty rare
-        # realism calls also for Steel Wire Rod, but it's a step too far eh
+        # lots of inputs, but only 3 are required (see industry.py for the kludge to make that work)
+        # all input ratios *must* be 3
         ("STBR", 3),
         ("STTB", 3),
+        ("STWR", 3),
         ("FOCA", 3),
         ("POWR", 3),
         ("WELD", 3),
