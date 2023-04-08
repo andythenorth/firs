@@ -58,6 +58,7 @@ default: html_docs grf
 bundle_tar: clean tar
 bundle_zip: $(ZIP_FILE)
 release: bundle_tar copy_docs_to_grf_farm
+install: install_grf install_gs
 lang: $(LANG_DIR)
 nml: $(NML_FILE)
 grf: $(GRF_FILE)
@@ -128,7 +129,7 @@ copy_docs_to_grf_farm:
 	$(_V) $(PYTHON3) src/polar_fox/grf_farm.py $(PROJECT_NAME)
 
 # this is a macOS-specific install location; the pre-2017 Makefile handled multiple platforms, that could be restored if needed
-install: $(GRF_FILE)
+install_grf: $(GRF_FILE)
     # remove first, OpenTTD does not like having the _contents_ of the current file change under it, but will handle a removed-and-replaced file correctly
 	rm ~/Documents/OpenTTD/newgrf/$(PROJECT_NAME).grf
 	cp $(GRF_FILE) ~/Documents/OpenTTD/newgrf/
