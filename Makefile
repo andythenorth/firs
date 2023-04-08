@@ -15,10 +15,10 @@ MK_ARCHIVE = bin/mk-archive
 # Project details
 PROJECT_NAME = firs
 
-# lang is not copied to generated currently in FIRS, unlike RH, IH etc - could be changed
 LANG_DIR = generated/lang
 NML_FILE = generated/firs.nml
 NML_FLAGS =-c -l $(LANG_DIR) --verbosity=4 --no-optimisation-warning
+GS_DIR = generated/gs
 
 -include Makefile.local
 
@@ -58,11 +58,13 @@ default: html_docs grf
 bundle_tar: clean tar
 bundle_zip: $(ZIP_FILE)
 release: bundle_tar copy_docs_to_grf_farm
+install: install_grf install_gs
 lang: $(LANG_DIR)
 nml: $(NML_FILE)
 grf: $(GRF_FILE)
 tar: $(TAR_FILE)
 html_docs: $(HTML_DOCS)
+gs: $(GS_DIR)
 
 # remove the @ for more verbose output (@ suppresses command output)
 _V ?= @
@@ -119,16 +121,24 @@ bundle_src: $(MD5_FILE)
 	$(MK_ARCHIVE) --tar --output=$(SOURCE_NAME).tar --base=$(SOURCE_NAME) \
 		`$(FIND_FILES) $(BUNDLE_DIR)/src` $(MD5_FILE)
 
+$(GS_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.pynut --ext=.txt src)
+	$(_V) $(PYTHON3) src/render_gs.py $(ARGS)
 
 # this expects to find a '../../grf.farm' path relative to the project, and will fail otherwise
 copy_docs_to_grf_farm:
 	$(_V) $(PYTHON3) src/polar_fox/grf_farm.py $(PROJECT_NAME)
 
-# this is a macOS-specifc install location; the pre-2017 Makefile handled multiple platforms, that could be restored if needed
-install: $(GRF_FILE)
+# this is a macOS-specific install location; the pre-2017 Makefile handled multiple platforms, that could be restored if needed
+install_grf: $(GRF_FILE)
     # remove first, OpenTTD does not like having the _contents_ of the current file change under it, but will handle a removed-and-replaced file correctly
 	rm ~/Documents/OpenTTD/newgrf/$(PROJECT_NAME).grf
 	cp $(GRF_FILE) ~/Documents/OpenTTD/newgrf/
+
+# this is a macOS-specific install location; the pre-2017 Makefile handled multiple platforms, that could be restored if needed
+install_gs: $(GS_DIR)
+    # remove first, OpenTTD does not like having the _contents_ of the current file change under it, but will handle a removed-and-replaced file correctly
+	rm -r ~/Documents/OpenTTD/game/$(PROJECT_NAME)-gs
+	cp -r $(GS_DIR) ~/Documents/OpenTTD/game/$(PROJECT_NAME)-gs
 
 clean:
 	$(_V) echo "[CLEANING]"
