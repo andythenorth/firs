@@ -112,9 +112,8 @@ class VulcanTownStoryBook {
     }
 
     function AddTownStoryPages() {
-        local town_list = GSTownList();
-        foreach (town, _ in town_list) {
-            vulcan_town_control.story_pages[town] <- VulcanTownStoryPage(town);
+        foreach (town, vulcan_town in vulcan_town_control.towns) {
+            vulcan_town_control.story_pages[town] <- VulcanTownStoryPage(vulcan_town);
         }
     }
 }
@@ -124,10 +123,9 @@ class VulcanTownStoryPage {
     // keep a copy of the story page (for convenience)
     story_page = null
     page_elements = null
-    town_name = null
 
-    constructor(town) {
-        local town_name = GSTown.GetName(town);
+    constructor(vulcan_town) {
+        local town_name = GSTown.GetName(vulcan_town.town);
         this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Town: " + town_name);
         // define the elements
         this.page_elements = {};
@@ -141,22 +139,26 @@ class VulcanTownStoryPage {
         };
         // add the elements
         foreach (page_element_name, page_element in this.page_elements) {
-            this.page_elements[page_element_name].reference = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, page_element.text_method(town));
+            this.page_elements[page_element_name].reference = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, page_element.text_method(vulcan_town));
         }
     }
 
-    function TestCabbage(town) {
+    function TestCabbage(vulcan_town) {
         local cabbage = ["Ham", "Eggs", "Popeye", "Alligator", "Zebedee", "The KLF"][GSBase.RandRange(5)];
         return GSText(GSText.STR_TOWN_STORY_PAGE_TEST, cabbage);
     }
 
-    function DisplayGrowthRate(town) {
-        return GSText(GSText.STR_TOWN_STORY_PAGE_GROWTH_RATE, GSTown.GetGrowthRate(town).tostring());
+    function DisplayGrowthRate(vulcan_town) {
+        if (GSTown.GetGrowthRate(vulcan_town.town) == GSTown.TOWN_GROWTH_NONE) {
+            local town_name = GSTown.GetName(vulcan_town.town);
+            Log.Info(town_name + " is not growing");
+        }
+        return GSText(GSText.STR_TOWN_STORY_PAGE_GROWTH_RATE, GSTown.GetGrowthRate(vulcan_town.town).tostring());
     }
 
     function UpdatePage(vulcan_town) {
         foreach (page_element_name, page_element in this.page_elements) {
-            GSStoryPage.UpdateElement(page_element.reference, 1, page_element.text_method(vulcan_town.town));
+            GSStoryPage.UpdateElement(page_element.reference, 1, page_element.text_method(vulcan_town));
         }
         GSStoryPage.SetDate(this.story_page, GSDate.GetCurrentDate());
     }
