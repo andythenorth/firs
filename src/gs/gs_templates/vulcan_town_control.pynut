@@ -149,11 +149,11 @@ class VulcanTownStoryPage {
     }
 
     function DisplayGrowthRate(vulcan_town) {
+        local growth_rate_value_text = GSTown.GetGrowthRate(vulcan_town.town).tostring();
         if (GSTown.GetGrowthRate(vulcan_town.town) == GSTown.TOWN_GROWTH_NONE) {
-            local town_name = GSTown.GetName(vulcan_town.town);
-            Log.Info(town_name + " is not growing");
+            growth_rate_value_text = "not growing";
         }
-        return GSText(GSText.STR_TOWN_STORY_PAGE_GROWTH_RATE, GSTown.GetGrowthRate(vulcan_town.town).tostring());
+        return GSText(GSText.STR_TOWN_STORY_PAGE_GROWTH_RATE, growth_rate_value_text);
     }
 
     function UpdatePage(vulcan_town) {
