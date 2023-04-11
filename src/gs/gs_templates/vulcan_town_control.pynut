@@ -18,45 +18,22 @@ class VulcanTownControl {
         local time_start = GSDate.GetSystemTime();
         Log.Info("--");
         Log.Info("Town periodic processing...");
-        VulcanTownControl.UpdateCargoMonitors();
-        VulcanTownControl.SetGrowthRates();
-        VulcanTownControl.SetTownWindowTexts();
-        if (caller_type != "Init") {
-            VulcanTownControl.UpdateTownStoryPages();
+        foreach (vulcan_town in vulcan_town_control.towns) {
+            Log.Info(GSTown.GetName(vulcan_town.town) + "...");
+            Log.Info("...updating cargo monitors");
+            vulcan_town.UpdateCargoMonitors();
+            Log.Info("...setting town growth rates");
+            vulcan_town.SetGrowthRate();
+            Log.Info("...setting town window texts");
+            vulcan_town.SetTownWindowText();
+            if (caller_type != "Init") {
+                Log.Info("...updating town story pages");
+                vulcan_town.UpdateTownStoryPage();
+            }
         }
         Log.Info("Town periodic processing done. Elapsed time: " + (GSDate.GetSystemTime() - time_start));
     }
 
-    function UpdateCargoMonitors() {
-        // !! there might be too much abstraction here, possibly we could fold this into RunPeriodicProcessing()
-        foreach (vulcan_town in vulcan_town_control.towns) {
-            vulcan_town.UpdateCargoMonitors();
-        }
-    }
-
-    function SetGrowthRates() {
-        // !! there might be too much abstraction here, possibly we could fold this into RunPeriodicProcessing()
-        Log.Info("...setting town growth rates");
-        foreach (vulcan_town in vulcan_town_control.towns) {
-            vulcan_town.SetGrowthRate();
-        }
-    }
-
-    function SetTownWindowTexts() {
-        // !! there might be too much abstraction here, possibly we could fold this into RunPeriodicProcessing()
-        Log.Info("...setting town window texts");
-        foreach (vulcan_town in vulcan_town_control.towns) {
-            vulcan_town.SetTownWindowText();
-        }
-    }
-
-    function UpdateTownStoryPages() {
-        // !! there might be too much abstraction here, possibly we could fold this into RunPeriodicProcessing()
-        Log.Info("...updating town story pages");
-        foreach (vulcan_town in vulcan_town_control.towns) {
-            vulcan_town.UpdateTownStoryPage();
-        }
-    }
 }
 
 class VulcanTown {
@@ -70,18 +47,35 @@ class VulcanTown {
     constructor(town) {
         this.town = town;
         // !! temp cargos
-        this.required_cargos = ["PASS", "CMNT", "VEHI", "FOOD"];
+        // !! these may be 'required' for different things, e.g. happiness, town growth etc
+        // !! needs delegated to the python economy definition
+        // !! we really need some cargos to be at specific industry instances
+        // !! e.g. structural steel, glass are town growth cargos and also used at secondary industry
+        this.required_cargos = {}
+        foreach (cargo_label in ["PASS", "FOOD", "VEHI", "GOOD", "HWAR", "CCPR"]) {
+            this.required_cargos[cargo_label] <- {
+                monthly_delivered_amounts = []
+            };
+        }
     }
 
     function UpdateCargoMonitors() {
-        // !! cargo monitor setup needs to be made multiple monitors, and wrapped in a function
-        // vulcan_town_control.cargo_monitor <- GSCargoMonitor.GetTownDeliveryAmount(0, 0, this.town, true);
-        // !! will need to monitor all companies
-        Log.Info("Cargo monitor for " + GSTown.GetName(this.town));
-        foreach (cargo_label in required_cargos) {
+        // cargo monitors are both created by and monitored by a call to GSCargoMonitor.GetTownDeliveryAmount
+        // so we don't need a separate creation method
+        foreach (cargo_label, delivery_stats in required_cargos) {
             local cargo = firs.active_economy.cargo_ids_by_label[cargo_label];
-            local company = 0;
-            Log.Info("..." + cargo_label + ": " + GSCargoMonitor.GetTownDeliveryAmount(company, cargo, this.town, true));
+            local total_cargo_delivered_all_companies = 0;
+            // need to monitor all companies
+            foreach (company in TempGetCompanies()) {
+                // !!! will need to net off any cargos delivered to secondary industry types?
+                total_cargo_delivered_all_companies += GSCargoMonitor.GetTownDeliveryAmount(company, cargo, this.town, true);
+            }
+            delivery_stats.monthly_delivered_amounts.append(total_cargo_delivered_all_companies);
+            local delivery_stats_repr = "";
+            foreach (delivered_amount in delivery_stats.monthly_delivered_amounts) {
+                delivery_stats_repr = delivery_stats_repr + delivered_amount + ", "
+            }
+            Log.Info("..." + cargo_label + ": " + delivery_stats_repr);
         }
     }
 
@@ -151,7 +145,7 @@ class VulcanTownStoryPage {
     function DisplayGrowthRate(vulcan_town) {
         local growth_rate_value_text = GSTown.GetGrowthRate(vulcan_town.town).tostring();
         if (GSTown.GetGrowthRate(vulcan_town.town) == GSTown.TOWN_GROWTH_NONE) {
-            growth_rate_value_text = "not growing";
+            growth_rate_value_text = " not growing";
         }
         return GSText(GSText.STR_TOWN_STORY_PAGE_GROWTH_RATE, growth_rate_value_text);
     }
