@@ -20,8 +20,10 @@ class VulcanTownControl {
         Log.Info("Town periodic processing...");
         foreach (vulcan_town in vulcan_town_control.towns) {
             Log.Info(GSTown.GetName(vulcan_town.town) + "...");
-            Log.Info("...updating cargo monitors");
-            vulcan_town.UpdateCargoMonitors();
+            Log.Info("...update required cargos delivery stats");
+            foreach (cargo_label, required_cargo in vulcan_town.required_cargos) {
+                required_cargo.UpdateDeliveryStats(vulcan_town);
+            }
             Log.Info("...setting town growth rates");
             vulcan_town.SetGrowthRate();
             Log.Info("...setting town window texts");
@@ -53,29 +55,8 @@ class VulcanTown {
         // !! e.g. structural steel, glass are town growth cargos and also used at secondary industry
         this.required_cargos = {}
         foreach (cargo_label in ["PASS", "FOOD", "VEHI", "GOOD", "HWAR", "CCPR"]) {
-            this.required_cargos[cargo_label] <- {
-                monthly_delivered_amounts = []
-            };
-        }
-    }
-
-    function UpdateCargoMonitors() {
-        // cargo monitors are both created by and monitored by a call to GSCargoMonitor.GetTownDeliveryAmount
-        // so we don't need a separate creation method
-        foreach (cargo_label, delivery_stats in required_cargos) {
             local cargo = firs.active_economy.cargo_ids_by_label[cargo_label];
-            local total_cargo_delivered_all_companies = 0;
-            // need to monitor all companies
-            foreach (company in TempGetCompanies()) {
-                // !!! will need to net off any cargos delivered to secondary industry types?
-                total_cargo_delivered_all_companies += GSCargoMonitor.GetTownDeliveryAmount(company, cargo, this.town, true);
-            }
-            delivery_stats.monthly_delivered_amounts.append(total_cargo_delivered_all_companies);
-            local delivery_stats_repr = "";
-            foreach (delivered_amount in delivery_stats.monthly_delivered_amounts) {
-                delivery_stats_repr = delivery_stats_repr + delivered_amount + ", "
-            }
-            Log.Info("..." + cargo_label + ": " + delivery_stats_repr);
+            this.required_cargos[cargo_label] <- VulcanTownRequiredCargo(this, cargo);
         }
     }
 
@@ -94,6 +75,60 @@ class VulcanTown {
     }
 
 }
+
+class VulcanTownRequiredCargo {
+
+    cargo = null;
+    delivery_stats = null;
+
+    constructor(vulcan_town, cargo) {
+        this.cargo = cargo;
+        this.delivery_stats = {
+            monthly_delivered_amounts = [],
+        }
+    }
+
+    function _tostring() {
+        // intended for easy logging output
+        local result = "";
+        result += GSCargo.GetName(this.cargo) + " (" + GSCargo.GetCargoLabel(this.cargo) + "). Monthly deliveries (oldest..newest): ";
+        result += "["
+        foreach (delivered_amount in this.delivery_stats.monthly_delivered_amounts) {
+            result = result + delivered_amount + ", "
+        }
+        result = result.slice(0, -2); // knock off the last "," (couldn't find any convenient array.join)
+        result += "]. "
+        result += "Total recently delivered: " + this.TotalRecentlyDelivered() + ".";
+        return result
+    }
+
+    function UpdateDeliveryStats(vulcan_town) {
+        local total_cargo_delivered_all_companies = 0;
+        // need to monitor all companies
+        foreach (company in TempGetCompanies()) {
+            // cargo monitors are both created by and monitored by a call to GSCargoMonitor.GetTownDeliveryAmount
+            // so we don't need a separate creation method
+            // !!! will need to net off any cargos delivered to secondary industry types?
+            total_cargo_delivered_all_companies += GSCargoMonitor.GetTownDeliveryAmount(company, this.cargo, vulcan_town.town, true);
+        }
+        this.delivery_stats.monthly_delivered_amounts.append(total_cargo_delivered_all_companies);
+        // only need to keep 3 months of deliveries
+        if (this.delivery_stats.monthly_delivered_amounts.len() > 3) {
+            this.delivery_stats.monthly_delivered_amounts.remove(0);
+        }
+        Log.Info("..." + this.tostring());
+    }
+
+    function TotalRecentlyDelivered() {
+        // sums across monthly deliveries
+        local result = 0;
+        foreach (delivered_amount in this.delivery_stats.monthly_delivered_amounts) {
+            result += delivered_amount;
+        }
+        return result
+    }
+}
+
 
 class VulcanTownStoryBook {
 
