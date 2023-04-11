@@ -18,7 +18,10 @@ class VulcanTownControl {
         local time_start = GSDate.GetSystemTime();
         Log.Info("--");
         Log.Info("Town periodic processing...");
-        foreach (vulcan_town in vulcan_town_control.towns) {
+        // book-keep town industries, we do this once for all towns as it walks all industries, and shouldn't be called recursively for every town
+        VulcanTownControl.BookKeepVulcanTownIndustries();
+        // we use towns sorted by name as it will result in logging ordered by town name, which is convenient
+        foreach (vulcan_town in VulcanTownControl.GetVulcanTownsSortedByName()) {
             Log.Info(GSTown.GetName(vulcan_town.town) + "...");
             Log.Info("...update required cargos delivery stats");
             foreach (cargo_label, required_cargo in vulcan_town.required_cargos) {
@@ -36,6 +39,40 @@ class VulcanTownControl {
         Log.Info("Town periodic processing done. Elapsed time: " + (GSDate.GetSystemTime() - time_start));
     }
 
+
+    function BookKeepVulcanTownIndustries() {
+        Log.Info("...book-keeping town industries");
+        // we call this in the periodic processing to account for any industries that opened / closed
+        // doing this in periodic processing is preferable to trying to book-keep by handling industry open / close events
+        // clean the existing list of industries for each town
+        foreach (town, vulcan_town in vulcan_town_control.towns) {
+            vulcan_town.town_industries = [];
+        }
+        local industry_list = GSIndustryList();
+        foreach (industry, _ in industry_list) {
+            local industry_town = GSTile.GetClosestTown(GSIndustry.GetLocation(industry));
+            vulcan_town_control.towns[industry_town].town_industries.append(industry);
+        }
+    }
+
+    function GetVulcanTownsSortedByName() {
+        // vulcan_town_control.towns is a table, so we can't rely on the order, provide this sort function as a convenience
+        local cmp_name = function(a, b) {
+            local name_a = GSTown.GetName(a.town);
+            local name_b = GSTown.GetName(b.town);
+            if (name_a > name_b) return 1
+            else if (name_a < name_b) return -1
+            return 0;
+        }
+        local result = [];
+        local town_list = vulcan_town_control.towns;
+        foreach (town, vulcan_town in town_list) {
+            result.append(vulcan_town);
+        }
+        result.sort(cmp_name);
+        return result;
+    }
+
 }
 
 class VulcanTown {
@@ -45,6 +82,7 @@ class VulcanTown {
     // town id is also available as the key in vulcan_town_control.towns
     town = null;
     required_cargos = null;
+    town_industries = null;
 
     constructor(town) {
         this.town = town;
@@ -58,6 +96,7 @@ class VulcanTown {
             local cargo = firs.active_economy.cargo_ids_by_label[cargo_label];
             this.required_cargos[cargo_label] <- VulcanTownRequiredCargo(this, cargo);
         }
+        town_industries = [];
     }
 
     function SetGrowthRate() {
@@ -113,20 +152,41 @@ class VulcanTownRequiredCargo {
     }
 
     function UpdateDeliveryStats(vulcan_town) {
-        local total_cargo_delivered_all_companies = 0;
+        // we will need to net off any cargo delivered to industries that aren't town sinks, so find those
+        local industries_with_delivery_excluded = [];
+        foreach (industry in vulcan_town.town_industries) {
+            Log.Info(GSIndustry.GetName(industry) + " " + GSIndustry.GetIndustryType(industry) + " " + firs.industries["builders_yard"].global_id);
+            if (GSIndustry.GetIndustryType(industry) == firs.industries["builders_yard"].global_id) {
+                Log.Info("found a builders yard, it's allowed, skip");
+                continue;
+            }
+            foreach (cargo, _ in GSIndustryType.GetAcceptedCargo(GSIndustry.GetIndustryType(industry))) {
+                if (cargo == this.cargo) {
+                    industries_with_delivery_excluded.append(industry);
+                }
+            }
+        }
+        local total_town_cargo_delivered_all_companies = 0;
+        local total_excluded_industry_cargo_delivered_all_companies = 0;
         // need to monitor all companies
         foreach (company in TempGetCompanies()) {
             // cargo monitors are both created by and monitored by a call to GSCargoMonitor.GetTownDeliveryAmount
             // so we don't need a separate creation method
             // !!! will need to net off any cargos delivered to secondary industry types?
-            total_cargo_delivered_all_companies += GSCargoMonitor.GetTownDeliveryAmount(company, this.cargo, vulcan_town.town, true);
+            total_town_cargo_delivered_all_companies += GSCargoMonitor.GetTownDeliveryAmount(company, this.cargo, vulcan_town.town, true);
+            foreach (industry in industries_with_delivery_excluded) {
+                // we assign the delivered amount to a local in case we want to log it, as calling the CargoMonitor repeatedly resets the delivered counts each time
+                local excluded_industry_cargo_delivered = GSCargoMonitor.GetIndustryDeliveryAmount(company, this.cargo, industry, true);
+                total_excluded_industry_cargo_delivered_all_companies += excluded_industry_cargo_delivered;
+            }
         }
-        this.delivery_stats.monthly_delivered_amounts.append(total_cargo_delivered_all_companies);
+        this.delivery_stats.monthly_delivered_amounts.append(total_town_cargo_delivered_all_companies - total_excluded_industry_cargo_delivered_all_companies);
         // only need to keep 3 months of deliveries
         if (this.delivery_stats.monthly_delivered_amounts.len() > 3) {
             this.delivery_stats.monthly_delivered_amounts.remove(0);
         }
         Log.Info("..." + this.tostring());
+        Log.Info("...total_excluded_industry_cargo_delivered_all_companies: " + total_excluded_industry_cargo_delivered_all_companies);
     }
 
     function TotalRecentlyDelivered() {
@@ -151,8 +211,8 @@ class VulcanTownStoryBook {
     }
 
     function AddTownStoryPages() {
-        foreach (town, vulcan_town in vulcan_town_control.towns) {
-            vulcan_town_control.story_pages[town] <- VulcanTownStoryPage(vulcan_town);
+        foreach (vulcan_town in VulcanTownControl.GetVulcanTownsSortedByName()) {
+            vulcan_town_control.story_pages[vulcan_town.town] <- VulcanTownStoryPage(vulcan_town);
         }
     }
 }
