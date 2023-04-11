@@ -92,22 +92,24 @@ class VulcanTown {
         // !! we really need some cargos to be at specific industry instances
         // !! e.g. structural steel, glass are town growth cargos and also used at secondary industry
         this.required_cargos = {}
-        foreach (cargo_label in ["PASS", "FOOD", "VEHI", "GOOD", "HWAR", "CCPR"]) {
-            local cargo = firs.active_economy.cargo_ids_by_label[cargo_label];
-            this.required_cargos[cargo_label] <- VulcanTownRequiredCargo(this, cargo);
+        foreach (firs_cargo in firs.active_economy.vulcan_town_effect_cargos) {
+            this.required_cargos[firs_cargo.cargo_label] <- VulcanTownRequiredCargo(this, firs_cargo);
         }
         town_industries = [];
     }
 
     function SetGrowthRate() {
-        local town_satisfied = false;
+        local town_satisfied_growth = false;
+        // local town_satisfied_happiness = false;
         foreach (cargo_label, required_cargo in this.required_cargos) {
-            if (required_cargo.TotalRecentlyDelivered() > 100) {
-                town_satisfied = true;
-                break;
+            if (required_cargo.vulcan_town_effect == "VTE_GROWTH") {
+                if (required_cargo.TotalRecentlyDelivered() > 100) {
+                    town_satisfied_growth = true;
+                    break;
+                }
             }
         }
-        if (town_satisfied == true) {
+        if (town_satisfied_growth == true) {
             GSTown.SetGrowthRate(this.town, GSTown.TOWN_GROWTH_NORMAL);
         } else {
             GSTown.SetGrowthRate(this.town, GSTown.TOWN_GROWTH_NONE);
@@ -129,12 +131,14 @@ class VulcanTownRequiredCargo {
 
     cargo = null;
     delivery_stats = null;
+    vulcan_town_effect = null;
 
-    constructor(vulcan_town, cargo) {
-        this.cargo = cargo;
+    constructor(vulcan_town, firs_cargo) {
+        this.cargo = firs.active_economy.cargo_ids_by_label[firs_cargo.cargo_label]; // map-global numeric ID
         this.delivery_stats = {
             monthly_delivered_amounts = [],
         }
+        this.vulcan_town_effect = firs_cargo.vulcan_town_effect;
     }
 
     function _tostring() {
@@ -185,7 +189,6 @@ class VulcanTownRequiredCargo {
             this.delivery_stats.monthly_delivered_amounts.remove(0);
         }
         Log.Info("..." + this.tostring());
-        Log.Info("...total_excluded_industry_cargo_delivered_all_companies: " + total_excluded_industry_cargo_delivered_all_companies);
     }
 
     function TotalRecentlyDelivered() {
@@ -239,15 +242,33 @@ class VulcanTownStoryPage {
             reference = null,
             // when only a GSText is needed, just wrap it in an anonymous function
             text_method = function(vulcan_town, extra_params) {
-                return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGOS_TITLE)
+                return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGOS_GROWTH)
             },
         });
         foreach (cargo_label, required_cargo in vulcan_town.required_cargos) {
-            this.page_elements.append({
-                reference = null,
-                text_method = RequiredCargoDeliveryStats,
-                extra_params = [required_cargo]
-            });
+            if (required_cargo.vulcan_town_effect == "VTE_GROWTH") {
+                this.page_elements.append({
+                    reference = null,
+                    text_method = RequiredCargoDeliveryStats,
+                    extra_params = [required_cargo]
+                });
+            }
+        }
+        this.page_elements.append({
+            reference = null,
+            // when only a GSText is needed, just wrap it in an anonymous function
+            text_method = function(vulcan_town, extra_params) {
+                return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGOS_HAPPINESS)
+            },
+        });
+        foreach (cargo_label, required_cargo in vulcan_town.required_cargos) {
+            if (required_cargo.vulcan_town_effect == "VTE_HAPPINESS") {
+                this.page_elements.append({
+                    reference = null,
+                    text_method = RequiredCargoDeliveryStats,
+                    extra_params = [required_cargo]
+                });
+            }
         }
 
 
@@ -276,9 +297,6 @@ class VulcanTownStoryPage {
 
     function RequiredCargoDeliveryStats(vulcan_town, extra_params) {
         local required_cargo = extra_params[0];
-        Log.Info("extra_params");
-        Log.Info(GSCargo.GetName(required_cargo.cargo));
-        Log.Info(required_cargo.TotalRecentlyDelivered());
         return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGO_STATS, required_cargo.cargo, required_cargo.TotalRecentlyDelivered());
     }
 

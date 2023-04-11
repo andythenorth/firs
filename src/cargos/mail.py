@@ -11,7 +11,6 @@ cargo = Cargo(
     cargo_classes="bitmask(CC_MAIL)",
     cargo_label="MAIL",
     town_growth_effect="TOWNGROWTH_MAIL",
-    town_growth_multiplier="1.0",
     units_of_cargo="TTD_STR_BAGS",
     items_of_cargo="TTD_STR_QUANTITY_MAIL",
     penalty_lowerbound="6",

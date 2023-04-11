@@ -10,9 +10,6 @@ cargo = Cargo(
     is_freight="1",
     cargo_classes="bitmask(CC_PIECE_GOODS, CC_OVERSIZED)",
     cargo_label="PPWK",
-    # apart from TOWNGROWTH_PASSENGERS and TOWNGROWTH_MAIL, FIRS does not set any town growth effects; this has the intended effect of disabling food / water requirements for towns in desert and above snowline
-    town_growth_effect="TOWNGROWTH_NONE",
-    town_growth_multiplier="1.0",
     units_of_cargo="TTD_STR_TONS",
     items_of_cargo="string(STR_CARGO_UNIT_PIPEWORK)",
     penalty_lowerbound="30",
@@ -20,5 +17,7 @@ cargo = Cargo(
     price_factor=170,
     capacity_multiplier="1",
     icon_indices=(2, 6),
+    # used by FIRS GS
+    vulcan_town_effect="VTE_GROWTH",
     sprites_complete=True,
 )
