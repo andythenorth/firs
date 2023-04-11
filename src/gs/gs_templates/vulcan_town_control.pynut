@@ -61,8 +61,18 @@ class VulcanTown {
     }
 
     function SetGrowthRate() {
-        // !! GSTown.SetGrowthRate(this.town, GSTown.TOWN_GROWTH_NORMAL);
-        GSTown.SetGrowthRate(this.town, GSTown.TOWN_GROWTH_NONE);
+        local town_satisfied = false;
+        foreach (cargo_label, required_cargo in this.required_cargos) {
+            if (required_cargo.TotalRecentlyDelivered() > 100) {
+                town_satisfied = true;
+                break;
+            }
+        }
+        if (town_satisfied == true) {
+            GSTown.SetGrowthRate(this.town, GSTown.TOWN_GROWTH_NORMAL);
+        } else {
+            GSTown.SetGrowthRate(this.town, GSTown.TOWN_GROWTH_NONE);
+        }
     }
 
     function SetTownWindowText() {
