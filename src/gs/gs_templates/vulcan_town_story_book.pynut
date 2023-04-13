@@ -1,0 +1,109 @@
+class VulcanTownStoryBook {
+
+    function Init() {
+        // note that this creates a table in root
+        // not designed to return a class instance
+        // vulcan_town_story_book is a singleton, and allegedly a table with slots is more efficient for that case than a singleton class instance
+        vulcan_town_control.story_pages <- {};
+        VulcanTownStoryBook.AddTownStoryPages();
+    }
+
+    function AddTownStoryPages() {
+        foreach (vulcan_town in VulcanTownControl.GetVulcanTownsSortedByName()) {
+            vulcan_town_control.story_pages[vulcan_town.town] <- VulcanTownStoryPage(vulcan_town);
+        }
+    }
+}
+
+class VulcanTownStoryPage {
+
+    // keep a copy of the story page (for convenience)
+    story_page = null
+    page_elements = null
+
+    constructor(vulcan_town) {
+        local town_name = GSTown.GetName(vulcan_town.town);
+        this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Town: " + town_name);
+        // define the elements
+        this.page_elements = [];
+        this.page_elements.append({
+            reference = null,
+            text_method = this.TestCabbage
+        });
+        this.page_elements.append({
+            reference = null,
+            text_method = this.DisplayGrowthRate
+        });
+        this.page_elements.append({
+            reference = null,
+            // when only a GSText is needed, just wrap it in an anonymous function
+            text_method = function(vulcan_town, extra_params) {
+                return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGOS_GROWTH)
+            },
+        });
+        foreach (cargo_label, required_cargo in vulcan_town.required_cargos) {
+            if (required_cargo.vulcan_town_effect == "VTE_GROWTH") {
+                this.page_elements.append({
+                    reference = null,
+                    text_method = RequiredCargoDeliveryStats,
+                    extra_params = [required_cargo]
+                });
+            }
+        }
+        this.page_elements.append({
+            reference = null,
+            // when only a GSText is needed, just wrap it in an anonymous function
+            text_method = function(vulcan_town, extra_params) {
+                return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGOS_HAPPINESS)
+            },
+        });
+        foreach (cargo_label, required_cargo in vulcan_town.required_cargos) {
+            if (required_cargo.vulcan_town_effect == "VTE_HAPPINESS") {
+                this.page_elements.append({
+                    reference = null,
+                    text_method = RequiredCargoDeliveryStats,
+                    extra_params = [required_cargo]
+                });
+            }
+        }
+
+
+        // add the elements
+        foreach (page_element in this.page_elements) {
+            local extra_params = null;
+            if ("extra_params" in page_element) {
+                extra_params = page_element.extra_params;
+            }
+            page_element.reference = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, page_element.text_method(vulcan_town, extra_params));
+        }
+    }
+
+    function TestCabbage(vulcan_town, extra_params) {
+        local cabbage = ["Ham", "Eggs", "Popeye", "Alligator", "Zebedee", "The KLF"][GSBase.RandRange(5)];
+        return GSText(GSText.STR_TOWN_STORY_PAGE_TEST, cabbage);
+    }
+
+    function DisplayGrowthRate(vulcan_town, extra_params) {
+        local growth_rate_value_text = GSTown.GetGrowthRate(vulcan_town.town).tostring();
+        if (GSTown.GetGrowthRate(vulcan_town.town) == GSTown.TOWN_GROWTH_NONE) {
+            growth_rate_value_text = " not growing";
+        }
+        return GSText(GSText.STR_TOWN_STORY_PAGE_GROWTH_RATE, growth_rate_value_text);
+    }
+
+    function RequiredCargoDeliveryStats(vulcan_town, extra_params) {
+        local required_cargo = extra_params[0];
+        return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGO_STATS, required_cargo.cargo, required_cargo.TotalRecentlyDelivered());
+    }
+
+    function UpdatePage(vulcan_town) {
+        foreach (page_element in this.page_elements) {
+            local extra_params = null;
+            if ("extra_params" in page_element) {
+                extra_params = page_element.extra_params;
+            }
+            GSStoryPage.UpdateElement(page_element.reference, 1, page_element.text_method(vulcan_town, extra_params));
+        }
+        GSStoryPage.SetDate(this.story_page, GSDate.GetCurrentDate());
+    }
+}

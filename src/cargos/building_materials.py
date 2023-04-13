@@ -17,5 +17,7 @@ cargo = Cargo(
     price_factor=133,
     capacity_multiplier="1",
     icon_indices=(1, 1),
+    # used by FIRS GS
+    vulcan_town_effect="VTE_GROWTH",
     sprites_complete=True,
 )

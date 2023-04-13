@@ -22,6 +22,7 @@ class FIRS {
         /* initial configuration of cargo properties */
         firs.cargos <- {};
         <tal:cargos repeat="cargo registered_cargos">
+            // cargo props are simple as of April 2023, provide a Vulcan spec later if needed
             // note that cargo.numeric ID is not provided by FIRS as the grflocal numeric ID is economy-specific
             local cargo = ${cargo.get_selected_properties_as_gs_table()};
             // we store cargos indexed on the label, as that's the most convenient way to look them up in GS
@@ -78,6 +79,15 @@ class FIRS {
             return result;
         }
 
+        firs.active_economy.GetIndustrySpecByGlobalID <- function(industry_global_id) {
+            foreach (industry_id, industry_spec in firs.active_economy.industries) {
+                if (industry_spec.global_id == industry_global_id) {
+                    return industry_spec;
+                }
+            }
+            return "Not found"
+        }
+
         firs.active_economy.vulcan_town_effect_cargos <- [];
         foreach (cargo_label in firs.active_economy.cargo_labels) {
             local firs_cargo = firs.cargos[cargo_label];
@@ -89,8 +99,8 @@ class FIRS {
         }
 
         // labels can only be mapped for active economy as cargo IDs can't be looked up outside of the current running game
-        firs.active_economy.cargo_labels_by_id <- FIRS.GetCargoLabelsByID(firs.active_economy.cargo_labels);
-        firs.active_economy.cargo_ids_by_label <- FIRS.GetCargoIDsByLabel(firs.active_economy.cargo_labels);
+        firs.active_economy.cargo_labels_by_id <- FIRS.GetCargoLabelsByGlobalID(firs.active_economy.cargo_labels);
+        firs.active_economy.cargo_ids_by_label <- FIRS.GetCargoGlobalIDsByLabel(firs.active_economy.cargo_labels);
 
         // really we should have a way to get the name string from the economy (via lang and maybe a specific method)
         // but eh, let's press on
@@ -99,7 +109,7 @@ class FIRS {
         }
     }
 
-    function GetCargoLabelsByID(cargo_labels) {
+    function GetCargoLabelsByGlobalID(cargo_labels) {
         // returns a table in format:
         //      {map-global cargo numeric ID for GS: cargo label}
         // and excluding non-FIRS cargos
@@ -117,7 +127,7 @@ class FIRS {
         return result;
     }
 
-    function GetCargoIDsByLabel(cargo_labels) {
+    function GetCargoGlobalIDsByLabel(cargo_labels) {
         // returns a table in format:
         //      {cargo label: map-global cargo numeric ID for GS}
         // and excluding non-FIRS cargos

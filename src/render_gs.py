@@ -53,6 +53,7 @@ class GSHelper(object):
         utils.echo_message("GSHelper.get_grf_id incomplete, returning hard-coded value")
         return "0xF1250008"
 
+
 def render_nuts(nuts_by_subdir):
     # setup the places we look for templates
     nut_templates = PageTemplateLoader(
@@ -73,7 +74,7 @@ def render_nuts(nuts_by_subdir):
                 os.path.join(dst_dir, nut_name + ".nut"), "w", "utf8"
             )
             result = utils.unescape_chameleon_output(
-                    nut_template(
+                nut_template(
                     gs_helper=GSHelper(),
                     makefile_args=makefile_args,
                     git_info=git_info,
@@ -114,8 +115,13 @@ def main():
         ],
         "grind": ["grind"],
         "atlas": ["atlas"],
-        "vulcan": ["vulcan_industry_control", "vulcan_map_curator", "vulcan_town_control"],
-        #"minigames": ["winning_move", "zellepins"],
+        "vulcan": [
+            "vulcan_industry_control",
+            "vulcan_map_curator",
+            "vulcan_town_control",
+            "vulcan_town_story_book",
+        ],
+        # "minigames": ["winning_move", "zellepins"],
     }
     render_nuts(nuts_by_subdir)
 

@@ -22,6 +22,7 @@ require("grind/grind.nut");
 require("vulcan/vulcan_industry_control.nut");
 require("vulcan/vulcan_map_curator.nut");
 require("vulcan/vulcan_town_control.nut");
+require("vulcan/vulcan_town_story_book.nut");
 
 /* GS files */
 // FIRS industry structure
@@ -206,15 +207,21 @@ function MainClass::HandleEvents()
 				local button_event = GSEventStoryPageButtonClick.Convert(ev);
 				local company_id = button_event.GetCompanyID();
                 Log.Info("Button clicked! " + button_event.GetStoryPageID() + " " + button_event.GetElementID())
-                if (button_event.GetElementID() == 0) {
+
+                if (grind_story_book.button_element_ids[button_event.GetElementID()] == "run_init") {
                 	this.Init();
                 }
-                // !! this is very temporary, the ID will be wrong etc
-                if (button_event.GetElementID() == 192) {
+                if (grind_story_book.button_element_ids[button_event.GetElementID()] == "clean_story_book") {
                     local story_page_list = GSStoryPageList(company_id);
                 	foreach (story_page, _ in story_page_list) {
                 	    GSStoryPage.Remove(story_page);
                 	    this.Init();
+                	}
+                }
+                if (grind_story_book.button_element_ids[button_event.GetElementID()] == "clean_industry_texts") {
+                    local industry_list = GSIndustryList();
+                	foreach (industry, _ in industry_list) {
+                	    GSIndustry.SetText(industry, null);
                 	}
                 }
                 /*

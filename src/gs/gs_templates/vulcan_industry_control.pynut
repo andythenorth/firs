@@ -24,7 +24,7 @@ class VulcanIndustrySpec {
 
     function _tostring() {
         // arbitrary string representation of the class, called by Log etc
-        return GSIndustryType.GetName(this.global_id) + " grf_local_id: " + this.grf_local_id + " global_id: " + this.global_id
+        return GSIndustryType.GetName(this.global_id) + " grf_local_id: " + this.grf_local_id + " global_id: " + this.global_id + " vulcan config items: " + default_vulcan_config.len()
     }
 
     function GetMapCurator() {

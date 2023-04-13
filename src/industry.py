@@ -2493,6 +2493,8 @@ class Vulcan(object):
         vulcan_config = self.industry.get_property("vulcan_config", None)
         result = {}
         result["allow_production_change"] = vulcan_config.get("allow_production_change", False)
+        # append some additional derived properties to Vulcan config
+        result["town_cargo_sink_industry"] = True if self.industry.id in ["builders_yard", "hardware_store"] else False
         return utils.gs_table_repr(result)
 
     def get_economy_variations_as_gs_table(self):
