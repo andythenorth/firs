@@ -535,7 +535,7 @@ piece_sprites_to_cargo_labels_maps = {
     "sugarcane_1": ["SGCN"],
     "steel_coils_eye_longitudinal_1": ["METL", "STAL", "STCB", "STEL", "STST", "STSH"],
     "steel_coils_eye_to_sky_1": ["STEL", "STSH", "METL"],
-    "steel_slab_1": [ "STAL", "STBL", "STCB", "STIG", "STSL", "STSE", "STST"],
+    "steel_slab_1": [ "STAL", "STBL", "STCB", "STSL", "STSE", "STST"],
     "steel_wire_rod_1": ["RBAR", "STWR", "TYCO"],
     "tarps_blue_1": ["FMSP"],
     "tarps_gold_1": ["ENSP"],
