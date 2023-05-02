@@ -223,7 +223,7 @@ allowed_refits_by_label = {
         "NHNO",
         # not CBLK, gets dedicated vehicles or box
     ],
-    "cryo_gases": ["CHLO", "O2__", "NH3_", "N7__", "WELD", "H2__"],
+    "cryo_gases": ["CHLO", "O2__", "NH3_", "N7__", "WELD", "H2__", "N7__"],
     "edible_liquids": ["MILK", "WATR", "BEER", "FOOD", "EOIL"],
     "farm_products": [
         "BEAN",
@@ -307,6 +307,7 @@ disallowed_refits_by_label = {
         "EOIL",
         "O2__",
         "CHLO",
+        "N7__",
     ],
     "non_flatbed_freight": [
         "FOOD",
