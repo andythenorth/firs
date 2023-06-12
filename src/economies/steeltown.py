@@ -125,11 +125,6 @@ economy = Economy(
                 "color": "white",
             },
             {
-                "nodes": ["glass", "paints_and_coatings"],
-                "rank": "same",
-                "color": "white",
-            },
-            {
                 "nodes": ["concrete_plant", "concrete_products"],
                 "rank": "same",
                 "color": "white",
