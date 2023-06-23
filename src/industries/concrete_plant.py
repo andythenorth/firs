@@ -8,7 +8,8 @@ industry = IndustrySecondary(
         ("RBAR", 2),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("CCPR", 8),
+        ("CCPR", 7),
+        ("ENSP", 1), # small ENSP output
     ],
     prob_in_game="6",
     prob_map_gen="9",
