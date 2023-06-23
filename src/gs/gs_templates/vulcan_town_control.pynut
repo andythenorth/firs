@@ -20,6 +20,8 @@ class VulcanTownControl {
         Log.Info("Town periodic processing...");
         // book-keep town industries, we do this once for all towns as it walks all industries, and shouldn't be called recursively for every town
         VulcanTownControl.BookKeepVulcanTownIndustries();
+        // asyncmode for speed here as we execute a lot of commands over a potentially large number of towns
+        local asyncmode = GSAsyncMode(true);
         // we use towns sorted by name as it will result in logging ordered by town name, which is convenient
         foreach (vulcan_town in VulcanTownControl.GetVulcanTownsSortedByName()) {
             Log.Info(GSTown.GetName(vulcan_town.town) + "...");
