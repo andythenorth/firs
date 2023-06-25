@@ -103,7 +103,6 @@ def main():
         "ground_tiles",
         "location_check_procedures_industry",
         "magic_trees",
-        "monthly_town_loop",
         "perm_storage_mappings",
         "randomise_primary_production_on_build",
         "terrain",

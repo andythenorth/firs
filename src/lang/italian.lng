@@ -16,8 +16,6 @@ STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        
 STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Livello di produzione Elevato per industrie primarie (%)
 STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Livello di produzione Gung ho per industrie primarie (%)
 STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Produzione delle fattorie, miniere e industrie simili, quando le merci richieste vengono consegnate (espresso in percentuale del valore {SILVER}Normale{BLACK} di produzione).
-STR_PARAM_NAME_EXPERIMENTAL_FEATURES                                            :Abilita funzionalità sperimentali
-STR_PARAM_DESC_EXPERIMENTAL_FEATURES                                            :Attiva o disattiva le funzionalità sperimentali.
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Di base (clima temperato)
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Di base (clima artico)
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Di base (clima tropicale)
@@ -33,10 +31,6 @@ STR_PORT_PRODUCTION_1X                                                          
 STR_PORT_PRODUCTION_2X                                                          :{BLACK}Produzione attuale: {YELLOW}Elevata{}{}{BLACK}Per mantenere questo livello di produzione, si devono consegnare {SIGNED_WORD} unità di merci entro 3 mesi{}Per salire al livello {WHITE}Gung ho {BLACK}, si devono consegnare {SIGNED_WORD} unità.
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Produzione attuale: {YELLOW}Gung-ho{}{}{BLACK}Per mantenere questo livello di produzione, si devono consegnare {SKIP}{SIGNED_WORD} unità di merci entro 3 mesi.
 
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA                                                :{SKIP}{SKIP}Umore della popolazione:{} {STRING}{STRING}{}{}{BLACK}Punteggio di ottimismo: {STRING}{SIGNED_WORD} punt{P 2 o i}{}{BLACK} Esigenze e lussi incontrato: {YELLOW}{SIGNED_WORD} punt{P 3 o i} {}{BLACK} Inquinamento e squallore: {YELLOW}{SIGNED_WORD} punto{P 4 o i} {}{}{BLACK}Inquinamento e squallore aumentano con la popolazione e determinati tipi di settore.{}{}Esigenze e lussi vengono soddisfatti fornendo a determinati tipi di settore.{}{}Se il punteggio di ottimismo è superiore a 10, l'umore della popolazione sarà {WHITE}ottimista{BLACK}. Se il punteggio di ottimismo è inferiore a -10, l'umore della popolazione sarà {WHITE}cupo{BLACK}.
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC                                :Ottimista
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY                                    :Pessimista
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL                                   :Neutrale
 STR_CARGO_NAME_ACID                                                             :{G=m}Acidi
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alcolici
 STR_CARGO_NAME_ALUMINIUM                                                        :{G=m}Alluminio

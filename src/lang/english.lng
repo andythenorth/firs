@@ -18,9 +18,6 @@ STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             
 STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Gung-ho primary production level (%)
 STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Production at farms, mines and similar industries when supply requirements are met (as percentage of {SILVER}Normal {BLACK}production level).
 
-STR_PARAM_NAME_EXPERIMENTAL_FEATURES                                            :Enable experimental features
-STR_PARAM_DESC_EXPERIMENTAL_FEATURES                                            :Turns experimental features on or off.
-
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Temperate Basic
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Arctic Basic
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tropic Basic
@@ -43,11 +40,6 @@ STR_PRIMARY_PRODUCTION_4X                                                       
 STR_PORT_PRODUCTION_1X                                                          :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} units of cargo at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} units.
 STR_PORT_PRODUCTION_2X                                                          :{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this level, deliver {SIGNED_WORD} units of cargo at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} units.
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} units of cargo at least once every three months.
-
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA                                                :{SKIP}{SKIP}Population mood:{} {STRING}{STRING}{}{}{BLACK}Optimism score: {STRING}{SIGNED_WORD} point{P 2 "" s}{}{BLACK} Needs and luxuries met: {YELLOW}{SIGNED_WORD} point{P 3 "" s} {}{BLACK} Pollution and squalor: {YELLOW}{SIGNED_WORD} point{P 4 "" s} {}{}{BLACK}Pollution and squalor increases with population and certain industry types.{}{}Needs and luxuries are met by delivering to certain industry types.{}{}If optimism score is more than 10, population mood will be {WHITE}optimistic{BLACK}. If optimism score is less than -10, population mood will be {WHITE}gloomy{BLACK}.
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC                                :Optimistic
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY                                    :Gloomy
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL                                   :Neutral
 
 STR_CARGO_NAME_ACID                                                             :Acid
 STR_CARGO_NAME_AGGREGATES                                                       :Aggregates
