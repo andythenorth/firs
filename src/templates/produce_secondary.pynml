@@ -172,17 +172,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
     ${industry.id}_produce_256_ticks_produce;
 }
 
-<!--! called from monthly 'town' loop (actually monthly industry loop)
-      *all* industries must handle monthly_town_loop, or town behaviour will fail on wrong industry counts -->
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change,
-    [
-        monthly_town_loop(
-            ${industry.basic_needs_and_luxuries_score},
-            ${industry.pollution_and_squalor_score}
-        )
-    ]) {
+<!--! handle monthly production change -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change, 1) {
     return CB_RESULT_IND_PROD_NO_CHANGE;
 }
-<!--! end from monthly 'town' loop (actually monthly industry loop) -->
-
-

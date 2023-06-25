@@ -85,16 +85,6 @@ grf {
 			def_value: 1;
 		}
 	}
-	<!--!
-	param 5 {
-		experimental_features {
-			name: string(STR_PARAM_NAME_EXPERIMENTAL_FEATURES);
-			desc: string(STR_PARAM_DESC_EXPERIMENTAL_FEATURES);
-			type: bool;
-			bit: 5;
-		}
-	}
-	-->
 }
 
 basecost {

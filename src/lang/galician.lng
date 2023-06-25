@@ -20,9 +20,6 @@ STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             
 STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Nivel de produción primaria ao límite(%)
 STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Produción nas granxas, minas e industrias similares cando se cumpren os requirimentos de abastecemento (amosado como porcentaxe do nivel de produción {SILVER}normal{BLACK}).
 
-STR_PARAM_NAME_EXPERIMENTAL_FEATURES                                            :Habilitar características experimentais
-STR_PARAM_DESC_EXPERIMENTAL_FEATURES                                            :Activa ou desactiva as características experimentais
-
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Temperada básica
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Ártica básica
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tropical básica
@@ -36,11 +33,6 @@ STR_PRIMARY_PRODUCTION_4X                                                       
 STR_PORT_PRODUCTION_1X                                                          :{BLACK}Produción actual: {YELLOW}normal {}{}{BLACK}Para produción {WHITE}mellorada {BLACK} entrega {SIGNED_WORD} unidades de cargas requiridas nun trimestre.{}Para produción {WHITE}ao límite {BLACK} entrega {SIGNED_WORD} unidades.
 STR_PORT_PRODUCTION_2X                                                          :{BLACK}Produción actual: {YELLOW}mellorada {}{}{BLACK}Para manter este nivel, entrega {SIGNED_WORD} unidades de cargas requeridas nun trimestre.{}Para produción {WHITE}ao límite {BLACK} entrega {SIGNED_WORD} unidades.
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Produción actual: {YELLOW}ao límite {}{}{BLACK}Para manter este nivel, entrega {SKIP}{SIGNED_WORD} unidades de cargas requeridas nun trimestre.
-
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA                                                :{SKIP}{SKIP}Ánimo da poboación:{} {STRING}{STRING}{}{}{BLACK}Puntuación optimista: {STRING}{SIGNED_WORD} punto{P 2 "" s}{}{BLACK} Necesidades e luxos se cumpren : {YELLOW}{SIGNED_WORD} punto{P 3 "" s} {}{BLACK} Polución e miseria: {YELLOW}{SIGNED_WORD} punto{P 4 "" s} {}{}{BLACK}A polución e a miseria medran con poboación e certos tipos de industria.{}{}As necesidades e luxos cúmprense entregando cargas a certas industrias.{}{}Se a puntuación optimista é maior de 10, o ánimo da poboación será {WHITE}optimista{BLACK}. Se a puntuación optmista é menos de -10, o ánimo da poboación será {WHITE}sombrío{BLACK}.
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC                                :Optimista
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY                                    :Sombrío
-STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL                                   :Neutral
 
 STR_CARGO_NAME_ACID                                                             :Ácido
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alcohol
