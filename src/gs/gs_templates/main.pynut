@@ -111,8 +111,8 @@ function MainClass::Start()
 		local ticks_used = GSController.GetTick() - loop_start_tick;
 		GSController.Sleep(max(1, 5 * 74 - ticks_used));
 		*/
-		// Try looping aggressively fast, this may nerf game FPS / FFWD speed?
-		GSController.Sleep(1);
+		// Try looping aggressively fast, this may nerf game FPS / FFWD speed? 5 is an arbitrary value for testing with
+		GSController.Sleep(5);
 	}
 }
 
@@ -141,10 +141,13 @@ function MainClass::Init()
     VulcanTownControl.Init();
 
     // for the game load case, clean out the story book, and refresh it on Start()
+    // asyncmode for speed here as we want this to be quick across multiple commands, and don't care about command results
+    local asyncmode = GSAsyncMode(true);
     local story_page_list = GSStoryPageList(GSCompany.COMPANY_INVALID);
     foreach (story_page, _ in story_page_list) {
         GSStoryPage.Remove(story_page);
     }
+    local asyncmode = null;
 
     /*
     PowerGrid.build_
@@ -320,7 +323,7 @@ function MainClass::Save()
 	}
 
 	return {
-		some_data = null,
+		// some_data = null,
 		//some_other_data = this._some_variable,
 	};
 }
