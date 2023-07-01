@@ -156,9 +156,9 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
 
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_new_production_level,
     [
-        <!--! 1. cap to 48, (should be 3x original base production)
+        <!--! 1. cap to 40, (should be 2.5x original base production)
               2. add 8 to current production level (multiplying current prod by 1.33 was tried, but too aggressive with higher values) -->
-        min(production_level + 8, 48)
+        min(production_level + 8, 40)
     ]) {
     return;
 }
@@ -166,10 +166,10 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_new_production_level,
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_increase,
     [
         <!--! push result to register 0x100 (256d)
-              1. news string in bits 0..15
+              1. news string in bits 0..15 - uses 0x4835 which gives 'town X industry Y increases production'
               2. new value for production_level, shifted into bits 16..23; max value 128 (800%), default 16 (100%) -->
         STORE_TEMP(
-            string(STR_PROD_CHANGE_TEST) | (${industry.id}_new_production_level() << 16),
+            0x4835 | (${industry.id}_new_production_level() << 16),
             256
         )
     ]) {
