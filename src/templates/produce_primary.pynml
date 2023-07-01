@@ -156,20 +156,15 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
 
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_new_production_level,
     [
-        <!--! 1. cap to 105 (656%)
-              2. add 16 to current production level (multiplying current prod by 1.33 was tried, but too aggressive with higher values) -->
-        min(production_level + 16, 105)
+        <!--! 1. cap to 48, (should be 3x original base production)
+              2. add 8 to current production level (multiplying current prod by 1.33 was tried, but too aggressive with higher values) -->
+        min(production_level + 8, 48)
     ]) {
     return;
 }
 
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_increase,
     [
-        <!--! set the counter to 60 so we don't get another increase for at least 60 months -->
-        STORE_PERM_ALT(
-            ${get_perm_num("permanent_prod_change_cycle_counter")},
-            60
-        ),
         <!--! push result to register 0x100 (256d)
               1. news string in bits 0..15
               2. new value for production_level, shifted into bits 16..23; max value 128 (800%), default 16 (100%) -->
@@ -181,56 +176,8 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_increase,
     return CB_RESULT_IND_PROD_SET_BY_0x100 | (1 << 8);  <!--! set bit 8 to show custom text result -->
 }
 
-<!--!
-    !! 4 bits = 20% chance of increase !! test value
-    !! the order of industries in the monthly loop is sequential by ID
-    !! this means lower ID industries will have a higher chance of increase over sufficient dice rolls relative to higher ID industries
-    !! not sure what to do about that
-    - lock town for a limited period (12 months?) or scale town lock by number of industries?
-    - lock same industry for a longer period (3-5 years)?
-    - this should scale ok, and distribute increases around the town's industry types sufficiently
--->
-switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_monthly_prod_change_dice_roll,
-    [
-        getbits(extra_callback_info2, 0, 5) * (LOAD_PERM(${get_perm_num("current_optimism_score")}) >= 4)
-    ]) {
-    1: ${industry.id}_monthly_prod_change_increase;
-    return CB_RESULT_IND_PROD_NO_CHANGE;
-}
-
-<!--! provide some variation using mod(town_index) so that not all industries update in same month -->
-switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_initialise_permanent_prod_change, [(town_index % 3) + 1]) {
-    return;
-}
-
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_update_cycle_counter_decrement_or_reset,
-    [
-        LOAD_PERM(${get_perm_num("permanent_prod_change_cycle_counter")}) == 1
-        ?
-        3
-        :
-        LOAD_PERM(${get_perm_num("permanent_prod_change_cycle_counter")}) - 1
-    ]) {
-    return;
-}
-<!--! if the register has 0, this is the first time the monthly cb has run, so initialise some things, otherwise run the counter and check if trigger is hit
-      this could have used the build_prod_change cb, but I wanted to handle it all in one cb to reduce complexity of the codebase -->
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_update_cycle_counter,
-    [
-        STORE_PERM_ALT(
-            ${get_perm_num("permanent_prod_change_cycle_counter")},
-            LOAD_PERM(${get_perm_num("permanent_prod_change_cycle_counter")}) == 0
-            ?
-            ${industry.id}_initialise_permanent_prod_change()
-            :
-            ${industry.id}_monthly_prod_change_update_cycle_counter_decrement_or_reset()
-        )
-    ]) {
-    return;
-}
-
 <!--! handle monthly production change -->
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change, 1) {
-    1: ${industry.id}_monthly_prod_change_dice_roll;
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change, gs_disallows_prod_increase) {
+    0: ${industry.id}_monthly_prod_change_increase;
     return CB_RESULT_IND_PROD_NO_CHANGE;
 }

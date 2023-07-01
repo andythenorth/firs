@@ -25,18 +25,20 @@ class VulcanTownControl {
         // we use towns sorted by name as it will result in logging ordered by town name, which is convenient
         foreach (vulcan_town in VulcanTownControl.GetVulcanTownsSortedByName()) {
             Log.Info(GSTown.GetName(vulcan_town.town) + "...");
-            Log.Info("...update required cargos delivery stats");
+            //Log.Info("...update required cargos delivery stats");
             foreach (cargo_label, required_cargo in vulcan_town.required_cargos) {
                 required_cargo.UpdateDeliveryStats(vulcan_town);
             }
-            Log.Info("...setting town growth rates");
+            //Log.Info("...setting town growth rates");
             vulcan_town.SetGrowthRate();
-            Log.Info("...setting town window texts");
+            //Log.Info("...setting town window texts");
             vulcan_town.SetTownWindowText();
             if (caller_type != "Init") {
-                Log.Info("...updating town story pages");
+                //Log.Info("...updating town story pages");
                 vulcan_town.UpdateTownStoryPage();
             }
+            // increase primary production in town? - we delegate this must be called every month as it also does some housekeeping
+            VulcanIndustryControl.RollDiceForTownPrimaryIndustryProductionIncrease(vulcan_town);
         }
         Log.Info("Town periodic processing done. Elapsed time: " + (GSDate.GetSystemTime() - time_start));
     }
@@ -103,7 +105,6 @@ class VulcanTown {
 
     function SetGrowthRate() {
         local town_satisfied_growth = false;
-        // local town_satisfied_happiness = false;
         foreach (cargo_label, required_cargo in this.required_cargos) {
             if (required_cargo.vulcan_town_effect == "VTE_GROWTH") {
                 if (required_cargo.TotalRecentlyDelivered() > 100) {
@@ -119,6 +120,21 @@ class VulcanTown {
         }
         Log.Info("...growth rate: " + GSTown.GetGrowthRate(this.town));
     }
+
+    function GetHappiness() {
+        // !! currently not called - should it be a monthly town loop thing, or called per growable industry?
+        local town_satisfied_happiness = false;
+        foreach (cargo_label, required_cargo in this.required_cargos) {
+            if (required_cargo.vulcan_town_effect == "VTE_HAPPINESS") {
+                if (required_cargo.TotalRecentlyDelivered() > 100) {
+                    town_satisfied_happiness = true;
+                    break;
+                }
+            }
+        }
+        return town_satisfied_happiness;
+    }
+
 
     function SetTownWindowText() {
         local text = GSText(GSText.STR_CABBAGE_TOWN, this.town);
@@ -164,9 +180,10 @@ class VulcanTownRequiredCargo {
         local industries_with_delivery_excluded = [];
         foreach (industry, industry_spec in vulcan_town.town_industries) {
             if (industry_spec.default_vulcan_config["town_cargo_sink_industry"] == true) {
-                Log.Info("found a " + GSIndustryType.GetName(GSIndustry.GetIndustryType(industry)) + ", it's allowed, skip");
+                // Log.Info("found a " + GSIndustryType.GetName(GSIndustry.GetIndustryType(industry)) + ", it's allowed, skip");
                 // !! set industry window text - bit of an unrelated concern, but this loop is convenient right now
                 // !! this will be a pointless performance hog, consuming many opcodes, needs to be done once when industry is constructed
+                // !! but the caller of this function should already be in async mode...so probably ok?
                 GSIndustry.SetText(industry, GSText(GSText.STR_INDUSTRY_TOWN_BLACK_HOLE_EXTRA_TEXT_GROWTH));
                 continue;
             }
@@ -206,4 +223,5 @@ class VulcanTownRequiredCargo {
         }
         return result
     }
+
 }

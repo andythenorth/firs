@@ -19,6 +19,7 @@ industry = IndustryPrimaryNoSupplies(
     nearby_station_name="string(STR_STATION_CRYO_PLANT)",
     # deliberately low fund cost; there is some remaining weirdness on cost because this is a non-growable primary, but eh, live with it
     fund_cost_multiplier="45",
+    allow_production_change_from_gs=True,
 )
 
 industry.enable_in_economy(

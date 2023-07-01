@@ -18,6 +18,8 @@ Story <- SuperLib.Story;
 require("atlas/atlas.nut");
 // Grind handles basic debugging and development tasks
 require("grind/grind.nut");
+// Persistent storage manager for save/load of state in savegame
+require("persistent_storage.nut");
 // Vulcan handles the economy / gameplay
 require("vulcan/vulcan_industry_control.nut");
 require("vulcan/vulcan_map_curator.nut");
@@ -128,15 +130,16 @@ function MainClass::Start()
 function MainClass::Init()
 {
 	if (this._loaded_data != null) {
-		// Copy loaded data from this._loaded_data to this.*
-		// or do whatever you like with the loaded data
-	} else {
-		// construct goals etc.
+		PersistentStorageManager.Init(this._loaded_data);
+	}
+	else {
+	    PersistentStorageManager.Init();
 	}
 
     Log.Info(GIT_VERSION, Log.LVL_INFO);
 
     FIRS.Init();
+    VulcanIndustryControl.Init();
     VulcanMapCurator.Init();
     VulcanTownControl.Init();
 
@@ -156,8 +159,6 @@ function MainClass::Init()
         GSIndustryType.ResolveNewGRFID(firs.grfid, 0x42) // to-do: convert to list of industries
     );
     */
-
-    // set_var_47_bits_test();
 
     // set_town_text_test();
 
@@ -322,10 +323,7 @@ function MainClass::Save()
 		return this._loaded_data != null ? this._loaded_data : {};
 	}
 
-	return {
-		// some_data = null,
-		//some_other_data = this._some_variable,
-	};
+	return ::persistent_storage
 }
 
 /*

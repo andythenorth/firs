@@ -9,9 +9,11 @@ class VulcanTownStoryBook {
     }
 
     function AddTownStoryPages() {
+        local asyncmode = GSAsyncMode(true);
         foreach (vulcan_town in VulcanTownControl.GetVulcanTownsSortedByName()) {
             vulcan_town_control.story_pages[vulcan_town.town] <- VulcanTownStoryPage(vulcan_town);
         }
+        local asyncmode = null;
     }
 }
 
@@ -66,7 +68,6 @@ class VulcanTownStoryPage {
                 });
             }
         }
-
 
         // add the elements
         foreach (page_element in this.page_elements) {

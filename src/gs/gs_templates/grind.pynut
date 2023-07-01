@@ -27,30 +27,50 @@ class GrindStoryBook {
     }
 
     function Hide() {
-        foreach (page_type in ["utility_pages", "industry_spec_pages"]) {
+        local asyncmode = GSAsyncMode(true);
+        foreach (page_type in ["utility_pages", "persistent_storage_pages", "industry_spec_pages"]) {
             foreach (grind_page in grind_story_book[page_type]) {
                 GSStoryPage.Remove(grind_page.story_page);
             }
         }
+        local asyncmode = null;
     }
 
     function Show() {
+        local asyncmode = GSAsyncMode(true);
         GrindStoryBook.AddUtilityPages();
+        GrindStoryBook.AddPersistentStoragePages();
         GrindStoryBook.AddIndustrySpecStoryPages();
+        local asyncmode = null;
     }
 
     function AddUtilityPages() {
-        // note that this also automatically clears all current pages, that can be changed if needed, but trivially prevents duplication currently
-        grind_story_book.utility_pages <- {};
-        // note that currently there is just a single page provisioned
-        grind_story_book.utility_pages.debug_page_1 <- GrindStoryPageUtility();
+        if (grind_story_book.show) {
+            // note that this also automatically clears all current pages, that can be changed if needed, but trivially prevents duplication currently
+            grind_story_book.utility_pages <- {};
+            // note that currently there is just a single page provisioned
+            grind_story_book.utility_pages.debug_page_1 <- GrindStoryPageUtility();
+        }
+    }
+
+    function AddPersistentStoragePages() {
+        if (grind_story_book.show) {
+            // note that this also automatically clears all current pages, that can be changed if needed, but trivially prevents duplication currently
+            grind_story_book.persistent_storage_pages <- {};
+            // note that currently there is just a single page provisioned
+            foreach (slot_name, slot_value in ::persistent_storage) {
+                grind_story_book.persistent_storage_pages[slot_name] <- GrindStoryPagePersistentStorage(slot_name, slot_value);
+            }
+        }
     }
 
     function AddIndustrySpecStoryPages() {
-        // note that this also automatically clears all current pages, that can be changed if needed, but trivially prevents duplication currently
-        grind_story_book.industry_spec_pages <- {};
-        foreach (industry_id in firs.active_economy.GetIndustryIDsSortedByName()) {
-            grind_story_book.industry_spec_pages[industry_id] <- GrindStoryPageIndustrySpec(industry_id);
+        if (grind_story_book.show) {
+            // note that this also automatically clears all current pages, that can be changed if needed, but trivially prevents duplication currently
+            grind_story_book.industry_spec_pages <- {};
+            foreach (industry_id in firs.active_economy.GetIndustryIDsSortedByName()) {
+                grind_story_book.industry_spec_pages[industry_id] <- GrindStoryPageIndustrySpec(industry_id);
+            }
         }
     }
 }
@@ -74,6 +94,21 @@ class GrindStoryPageUtility extends GrindStoryPage {
         grind_story_book.button_element_ids[run_init] <- "run_init";
         grind_story_book.button_element_ids[clean_story_book] <- "clean_story_book";
         grind_story_book.button_element_ids[clean_industry_texts] <- "clean_industry_texts";
+    }
+}
+
+class GrindStoryPagePersistentStorage extends GrindStoryPage {
+    // provide a class in case we want to add more persistent storage pages in future
+    // but note that currently there is just a single page provisioned
+    constructor(slot_name, slot_value) {
+        this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Grind: Persistent Storage - " + slot_name);
+        // !! there's no update method for these pages, probably TMWFTLB as of July 2023
+        local element_text = GSText(GSText.STR_GRIND_DELAYED_UPDATE);
+        local note_delayed_update = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        foreach (prop_name, prop_value in slot_value) {
+            local element_text = GSText(GSText.STR_GRIND_TEST, prop_name.tostring(), prop_value.tostring());
+            local prop_display = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        }
     }
 }
 

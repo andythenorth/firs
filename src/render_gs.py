@@ -110,6 +110,7 @@ def main():
             "firs",
             "info",
             "main",
+            "persistent_storage",
             "temp_prototyping",
             "version",
         ],

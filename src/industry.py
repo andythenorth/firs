@@ -1805,7 +1805,9 @@ class Industry(object):
             extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_BOTH"
         else:
             # below here is increasingly JFDI and may well go wrong if industries are inappropriately configured
-            max_ratio = (sum([cargo_with_ratio[1] for cargo_with_ratio in accept_cargos_with_ratios]))
+            max_ratio = sum(
+                [cargo_with_ratio[1] for cargo_with_ratio in accept_cargos_with_ratios]
+            )
             if max_ratio == 8:
                 # common case, industry is configured so that ratios sum to 8
                 extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ALL"
@@ -1813,19 +1815,31 @@ class Industry(object):
                 # less common case: all ratios are 8, so there is no combination
                 # to prevent surprises we guard on known industry ids
                 if self.id not in ["supply_yard", "food_processor"]:
-                    raise Exception("get_extra_text_string: " + self.id + " needs combinatorial production values checked, they may be incorrect?")
+                    raise Exception(
+                        "get_extra_text_string: "
+                        + self.id
+                        + " needs combinatorial production values checked, they may be incorrect?"
+                    )
                 extra_text_string = "STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY"
             elif int(max_ratio / len(accept_cargos_with_ratios)) == 3:
                 # rare case of 3 out of n cargos being required
                 # to prevent surprises we guard on known industry ids
                 if self.id not in ["component_factory"]:
-                    raise Exception("get_extra_text_string: " + self.id + " needs combinatorial production values checked, they may be incorrect?")
+                    raise Exception(
+                        "get_extra_text_string: "
+                        + self.id
+                        + " needs combinatorial production values checked, they may be incorrect?"
+                    )
                 extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_THREE"
             else:
                 # as of April 2023, we just assume that any 2 will give a max ratio
                 # to prevent surprises we guard on known industry ids
                 if self.id not in ["hardware_factory"]:
-                    raise Exception("get_extra_text_string: " + self.id + " needs combinatorial production values checked, they may be incorrect?")
+                    raise Exception(
+                        "get_extra_text_string: "
+                        + self.id
+                        + " needs combinatorial production values checked, they may be incorrect?"
+                    )
                 extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_TWO"
         return "string(" + extra_text_string + ")"
 
@@ -2093,7 +2107,7 @@ class IndustryPrimary(Industry):
         register_perm_storage_mapping(
             self.__class__.__name__,
             [
-                "permanent_prod_change_cycle_counter",
+                "unused",
                 "unused",
                 # base prod factor is randomised when industry is constructed, to give production variation between instances of this type
                 # used in the production calculation as n/16
@@ -2183,11 +2197,13 @@ class IndustryPrimaryExtractive(IndustryPrimary):
         kwargs["accept_cargo_types"] = ["ENSP"]
         kwargs["life_type"] = "IND_LIFE_TYPE_EXTRACTIVE"
         super().__init__(**kwargs)
+        # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
         self.supply_requirements = [
             0,
             "PRIMARY",
             1,
-        ]  # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
+        ]
+        self.allow_production_change_from_gs = True
 
 
 class IndustryPrimaryOrganic(IndustryPrimary):
@@ -2200,11 +2216,13 @@ class IndustryPrimaryOrganic(IndustryPrimary):
         kwargs["accept_cargo_types"] = ["FMSP"]
         kwargs["life_type"] = "IND_LIFE_TYPE_ORGANIC"
         super().__init__(**kwargs)
+        # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
         self.supply_requirements = [
             0,
             "PRIMARY",
             1,
-        ]  # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
+        ]
+        self.allow_production_change_from_gs = True
 
 
 class IndustryPrimaryPort(IndustryPrimary):
@@ -2216,20 +2234,25 @@ class IndustryPrimaryPort(IndustryPrimary):
     def __init__(self, **kwargs):
         kwargs["life_type"] = "IND_LIFE_TYPE_BLACK_HOLE"
         super().__init__(**kwargs)
+        # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
         self.supply_requirements = [
             0,
             "PORT",
             8,
-        ]  # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
+        ]
+        self.allow_production_change_from_gs = True
 
 
 class IndustryPrimaryNoSupplies(IndustryPrimary):
-    """Industry that does not accept supplies and does not change production amounts during game"""
+    """Industry that does not accept supplies"""
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.template = kwargs.get("template", "industry_primary_no_supplies.pynml")
         self.supply_requirements = None  # supplies do not boost this type of primary
+        self.allow_production_change_from_gs = kwargs.get(
+            "allow_production_change_from_gs", False
+        )
 
 
 class IndustryTownProducerPopulationDependent(IndustryPrimary):
@@ -2473,16 +2496,26 @@ class Vulcan(object):
     def get_default_vulcan_config_as_gs_table(self):
         vulcan_config = self.industry.get_property("vulcan_config", None)
         result = {}
-        result["allow_production_change"] = vulcan_config.get("allow_production_change", False)
+        result["allow_production_change_from_gs"] = getattr(
+            self.industry, "allow_production_change_from_gs", False
+        )
         # append some additional derived properties to Vulcan config
-        result["town_cargo_sink_industry"] = True if self.industry.id in ["builders_yard", "hardware_store"] else False
+        result["town_cargo_sink_industry"] = (
+            True
+            if self.industry.id in ["builders_yard", "hardware_store", "general_store"]
+            else False
+        )
         return utils.gs_table_repr(result)
 
     def get_economy_variations_as_gs_table(self):
         result = {}
         for economy in self.industry.economies_enabled_for_industry:
             economy_config = {}
-            economy_config["accept_cargo_types"] = self.industry.get_accept_cargo_types(economy)
-            economy_config["vulcan_config"] = self.industry.get_property("vulcan_config", economy)
+            economy_config["accept_cargo_types"] = self.industry.get_accept_cargo_types(
+                economy
+            )
+            economy_config["vulcan_config"] = self.industry.get_property(
+                "vulcan_config", economy
+            )
             result[economy.id] = economy_config
         return utils.gs_table_repr(result)

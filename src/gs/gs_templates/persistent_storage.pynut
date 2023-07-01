@@ -1,0 +1,45 @@
+/*
+    Generally FIRS GS tries to be stateless, as that makes developing simpler (state doesn't break when the GS or grf change).
+    However we do need to persist some data, typically historical / timeseries type information.
+    Store that here in the simplest possible format (such as lists of key/value pairs).
+    Defend testing savegames by making it trivial to clear out any of the lists in persistent storage - don't create intricate nested data structures.
+    Not namespaced to Vulcan as it is generically available to anything in the GS.
+*/
+
+// all needed slots are defined / initialised here, don't define them from other modules
+// this makes it explicit to know what we have and at what point in run-time the slot is created,
+
+class PersistentStorageManager {
+    /*
+        structure for managing persistent storage
+        this is just a convenient way to namespace functions
+        try to keep it simple eh?
+    */
+
+    // note that this has no constructor as not designed to return a class instance, just a class to hold methods
+
+    function Init(loaded_data={}) {
+        // loaded data is optional, so one function can handle both newgame and savegame cases
+        ::persistent_storage <- {};
+        foreach (slot_name, slot_type in PersistentStorageManager.GetSlotNamesAndTypes()) {
+            if (slot_name in loaded_data){
+                Log.Info("Found slot " + slot_name);
+                ::persistent_storage[slot_name] <- loaded_data[slot_name];
+            }
+            else {
+                // slot isn't in savegame data, create it as empty
+                ::persistent_storage[slot_name] <- slot_type;
+            }
+        }
+    }
+
+    function GetSlotNamesAndTypes() {
+        // this is where we define all the required slots and their type (table or list)
+        // can't use class property for these as there's no class instance constructed, so use cheeky function instead
+        local slot_names_and_types = {
+            town_primary_industry_production_increase_timeseries = {},
+            industry_production_increase_timeseries = {},
+        };
+        return slot_names_and_types;
+    }
+}
