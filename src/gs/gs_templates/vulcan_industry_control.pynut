@@ -98,9 +98,8 @@ class VulcanIndustryControl {
                 */
                 // add linear 8 to current production level for increase of 50% on original value of 16
                 // multiplying current prod by 1.33 was tried here, but later increases are too aggressive with a multiplier, linear steps are better
-                GSIndustry.SetProductionLevel(industry, GSIndustry.GetProductionLevel(industry) + 8, false);
-                // we issue the news message ourselves as of Jul 2023, this may or may not be needed depending on https://github.com/OpenTTD/OpenTTD/pull/11141
-                GSNews.Create(GSNews.NT_GENERAL, "Cabbage", GSCompany.COMPANY_INVALID, GSNews.NR_INDUSTRY, industry);
+                local news_message = GSText(GSText.STR_NEWS_INDUSTRY_INCREASES_PRODUCTION, industry);
+                GSIndustry.SetProductionLevel(industry, GSIndustry.GetProductionLevel(industry) + 8, true, news_message);
                 // store the date we last increased production at this industry, so we can wait an appropriate period until the next increase
                 ::persistent_storage.industry_production_increase_timeseries[industry] <- GSDate.GetCurrentDate();
                 // we update the town attempt here as we need to be sure we actually tried to increase an industry (candidates could be 0)
