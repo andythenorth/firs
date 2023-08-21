@@ -25,6 +25,13 @@ industry.enable_in_economy(
         ("SALT", 15),
         ("FMSP", 5),
     ],
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["chlor_alkali_plant"],
+            "companion_industries_ratio": 1,
+        }
+    },
 )
 
 industry.add_tile(

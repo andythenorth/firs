@@ -23,6 +23,13 @@ industry.enable_in_economy(
         ("LIME", 18),
         ("GRVL", 9),
     ],
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["glass_works", "foundry"],
+            "companion_industries_ratio": 0.5,
+        }
+    },
 )
 
 industry.enable_in_economy(

@@ -19,6 +19,13 @@ industry = IndustryPrimaryExtractive(
 
 industry.enable_in_economy(
     "STEELTOWN",
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["glass_works"],
+            "companion_industries_ratio": 1,
+        }
+    },
 )
 
 industry.add_tile(

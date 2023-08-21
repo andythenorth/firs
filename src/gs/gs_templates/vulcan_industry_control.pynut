@@ -3,16 +3,16 @@ class VulcanIndustryControl {
 
     // note that this has no constructor as not designed to return a class instance, just a class to hold methods
     function Init() {
-        VulcanIndustryControl.SetIndustryFlagsToSpec();
+        VulcanIndustryControl.SetAllIndustryFlagsToSpec();
     }
 
     function GetDefaultControlFlags() {
         // can't use class property for these as there's no class instance constructed, so use cheeky function instead
-        return GSIndustry.INDCTL_NO_CLOSURE | GSIndustry.INDCTL_NO_PRODUCTION_INCREASE | GSIndustry.INDCTL_NO_PRODUCTION_DECREASE;
+        return GSIndustry.INDCTL_NO_CLOSURE | GSIndustry.INDCTL_NO_PRODUCTION_INCREASE | GSIndustry.INDCTL_NO_PRODUCTION_DECREASE | GSIndustry.INDCTL_EXTERNAL_PROD_LEVEL;
     }
 
-    function SetIndustryFlagsToSpec() {
-        Log.Info("SetIndustryFlagsToSpec called");
+    function SetAllIndustryFlagsToSpec() {
+        Log.Info("SetAllIndustryFlagsToSpec called");
         local industry_list = GSIndustryList();
         // asyncmode for speed here as we execute commands over a potentially large number of industries
         local asyncmode = GSAsyncMode(true);
@@ -20,7 +20,7 @@ class VulcanIndustryControl {
             // set all flags as of June 2023, unset them later per-industry for specific behaviour
             GSIndustry.SetControlFlags(industry, VulcanIndustryControl.GetDefaultControlFlags());
         }
-        Log.Info("SetIndustryFlagsToSpec done");
+        Log.Info("SetAllIndustryFlagsToSpec done");
     }
 
     function RollDiceForTownPrimaryIndustryProductionIncrease(vulcan_town) {
@@ -39,6 +39,7 @@ class VulcanIndustryControl {
             // odd but cheap way to add some random jitter
             // this is expressed in days, min 180 (6 months), max 540 (18 months)
             // note this will be a new random amount *every* month, this doesn't extend the delay until the _next_ check
+            // the advantage of this over monthly random chance is that this will *always* attempt to increase after a maximum of 19 months
             local delay_period = 30 * (6 + GSBase.RandRange(19));
             if ((GSDate.GetCurrentDate() - last_increase_date) < delay_period) {
                 town_can_increase_primary_production = false;
@@ -55,11 +56,23 @@ class VulcanIndustryControl {
                 if (industry_spec.default_vulcan_config["allow_production_change_from_gs"] == true) {
                     // filter out candidates against various criteria
                     local is_valid_candidate = true;
+                    // don't increase in first 3 years after construction
+                    if ((GSDate.GetCurrentDate() - GSIndustry.GetConstructionDate(industry)) < (3 * 365)) {
+                        is_valid_candidate = false;
+                        // continue / break here for speed?
+                    }
+                    // cap max production to 32, - this is 2x original base production of 16
+                    // more than double isn't actually fun in FIRS (this might need tuned further by industry type)
+                    if (GSIndustry.GetProductionLevel(industry) >= 32) {
+                        is_valid_candidate = false;
+                        // continue / break here for speed?
+                    }
                     if (industry in ::persistent_storage.industry_production_increase_timeseries) {
                         local last_increase_date = ::persistent_storage.industry_production_increase_timeseries[industry];
-                        // don't increase more than once every 2 years - let's not worry about leap years here eh
-                        if (GSDate.GetCurrentDate() - last_increase_date < 730) {
+                        // don't increase more than once every 10 years per industry - let's not worry about leap years here eh
+                        if (GSDate.GetCurrentDate() - last_increase_date < (10 * 365)) {
                             is_valid_candidate = false;
+                            // continue / break here for speed?
                         }
                     }
                     if (is_valid_candidate) {
@@ -69,11 +82,27 @@ class VulcanIndustryControl {
             }
             // random selection from available candidates
             if (candidate_industries.len() > 0) {
-                local candidate_industry = candidate_industries[GSBase.RandRange(candidate_industries.len())];
-                local control_flags = GSIndustry.INDCTL_NO_CLOSURE | GSIndustry.INDCTL_NO_PRODUCTION_DECREASE;
-                GSIndustry.SetControlFlags(candidate_industry, control_flags);
-                // note that the actual industry increase is implemented in the grf and might already be maxed out, so this is date of last attempt, not last actual increase
-                ::persistent_storage.industry_production_increase_timeseries[candidate_industry] <- GSDate.GetCurrentDate();
+                local industry = candidate_industries[GSBase.RandRange(candidate_industries.len())];
+                /*
+                // string 0x4835 is the one we want, can GS get it?
+                <!--!
+                switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_increase,
+                    [
+                        STORE_TEMP(
+                            0x4835 | (${industry.id}_new_production_level() << 16),
+                            256
+                        )
+                    ]) {
+                    -->
+                }
+                */
+                // add linear 8 to current production level for increase of 50% on original value of 16
+                // multiplying current prod by 1.33 was tried here, but later increases are too aggressive with a multiplier, linear steps are better
+                GSIndustry.SetProductionLevel(industry, GSIndustry.GetProductionLevel(industry) + 8, false);
+                // we issue the news message ourselves as of Jul 2023, this may or may not be needed depending on https://github.com/OpenTTD/OpenTTD/pull/11141
+                GSNews.Create(GSNews.NT_GENERAL, "Cabbage", GSCompany.COMPANY_INVALID, GSNews.NR_INDUSTRY, industry);
+                // store the date we last increased production at this industry, so we can wait an appropriate period until the next increase
+                ::persistent_storage.industry_production_increase_timeseries[industry] <- GSDate.GetCurrentDate();
                 // we update the town attempt here as we need to be sure we actually tried to increase an industry (candidates could be 0)
                 ::persistent_storage.town_primary_industry_production_increase_timeseries[vulcan_town.town] <- GSDate.GetCurrentDate();
             }

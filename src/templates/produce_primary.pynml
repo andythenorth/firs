@@ -150,34 +150,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
     ${industry.id}_produce_256_ticks_switch_economy;
 }
 
-
-<!--! permanent production change
-      handled via monthly callback -->
-
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_new_production_level,
-    [
-        <!--! 1. cap to 40, (should be 2.5x original base production)
-              2. add 8 to current production level (multiplying current prod by 1.33 was tried, but too aggressive with higher values) -->
-        min(production_level + 8, 40)
-    ]) {
-    return;
-}
-
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_increase,
-    [
-        <!--! push result to register 0x100 (256d)
-              1. news string in bits 0..15 - uses 0x4835 which gives 'town X industry Y increases production'
-              2. new value for production_level, shifted into bits 16..23; max value 128 (800%), default 16 (100%) -->
-        STORE_TEMP(
-            0x4835 | (${industry.id}_new_production_level() << 16),
-            256
-        )
-    ]) {
-    return CB_RESULT_IND_PROD_SET_BY_0x100 | (1 << 8);  <!--! set bit 8 to show custom text result -->
-}
-
 <!--! handle monthly production change -->
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change, gs_disallows_prod_increase) {
-    0: ${industry.id}_monthly_prod_change_increase;
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change, 1) {
     return CB_RESULT_IND_PROD_NO_CHANGE;
 }
