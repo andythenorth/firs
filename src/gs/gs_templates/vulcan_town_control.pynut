@@ -137,7 +137,14 @@ class VulcanTown {
 
 
     function SetTownWindowText() {
-        local text = GSText(GSText.STR_CABBAGE_TOWN, this.town);
+        local happiness_substr = null;
+        if (this.GetHappiness() == true) {
+            happiness_substr = GSText(GSText.STR_CABBAGE_TOWN_HAPPY);
+        }
+        else {
+            happiness_substr = GSText(GSText.STR_CABBAGE_TOWN_UNHAPPY);
+        }
+        local text = GSText(GSText.STR_CABBAGE_TOWN, happiness_substr, this.town);
         GSTown.SetText(this.town, text);
     }
 
