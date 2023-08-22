@@ -157,10 +157,12 @@ class VulcanTownStoryPage {
         }
         return GSText(GSText.STR_TOWN_STORY_PAGE_GROWTH_RATE, growth_rate_value_text);
     }
+
     function RequiredCargoDeliveryStats(vulcan_town, extra_params) {
         local required_cargo = extra_params[0];
         return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGO_STATS, required_cargo.cargo, required_cargo.TotalRecentlyDelivered());
     }
+
     function IndustryProductionIncreaseHistory(vulcan_town, extra_params) {
         local industry = extra_params[0];
         local string_containers = [

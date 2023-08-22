@@ -137,16 +137,14 @@ class VulcanIndustrySpec {
         return result;
     }
 
-    function GetCount()
-    {
+    function GetCount() {
         local industry_list = GSIndustryList();
         industry_list.Valuate(GSIndustry.GetIndustryType);
         industry_list.KeepValue(this.global_id);
         return industry_list.Count();
     }
 
-    function BuildInTown(town)
-    {
+    function BuildInTown(town) {
         // write our own version of prospecting, scoped to a town
 
         // this area isn't actually scoped to the town, it's just a circle around it in which to check tiles, we'll filter by GetClosestTown later

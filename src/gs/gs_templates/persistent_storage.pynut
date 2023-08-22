@@ -80,6 +80,7 @@ class PersistentStorageManager {
         }
         return result;
     }
+
     function MigrateTownPrimaryIndustryProductionIncreaseTimeseries(slot_data) {
         // convert from a date to a list of dates
         local result = {};
