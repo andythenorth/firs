@@ -197,16 +197,6 @@ function MainClass::HandleEvents() {
 				local company_id = button_event.GetCompanyID();
                 Log.Info("Button clicked! " + button_event.GetStoryPageID() + " " + button_event.GetElementID())
 
-                if (grind_story_book.button_element_ids[button_event.GetElementID()] == "run_init") {
-                	this.Init();
-                }
-                if (grind_story_book.button_element_ids[button_event.GetElementID()] == "clean_story_book") {
-                    local story_page_list = GSStoryPageList(company_id);
-                	foreach (story_page, _ in story_page_list) {
-                	    GSStoryPage.Remove(story_page);
-                	    this.Init();
-                	}
-                }
                 if (grind_story_book.button_element_ids[button_event.GetElementID()] == "clean_industry_texts") {
                     local industry_list = GSIndustryList();
                 	foreach (industry, _ in industry_list) {
