@@ -109,6 +109,7 @@ def main():
         "root": [
             "firs",
             "info",
+            "log",
             "main",
             "persistent_storage",
             "version",

@@ -1,0 +1,60 @@
+// Wrapper around log so we can better control what's displayed
+// inspired by Superlib.Log
+// optional filtering by log types, rather than log levels, this is probably unwise, but eh
+
+class _FIRSLog {
+    // no constructor, no Init
+
+    // extend ReportLogStatus if classes are changed / added
+	static CLASS_VULCAN_INDUSTRY_CONTROL = "log_class_vulcan_industry_control";
+	static CLASS_VULCAN_MAP_CURATOR = "log_class_vulcan_map_curator";
+	static CLASS_VULCAN_TOWN_CONTROL = "log_class_vulcan_town_control";
+
+    function Info(text, log_class=null) {
+        if (_FIRSLog.IsClassAccepted(log_class)) {
+            GSLog.Info("[" + _SuperLib_Helper.GetCurrentDateString() + "]  " + text);
+        }
+    }
+
+    function Warning(text, log_class=null) {
+        if (_FIRSLog.IsClassAccepted(log_class)) {
+            GSLog.Warning("[" + _SuperLib_Helper.GetCurrentDateString() + "]  " + text)
+        }
+    }
+
+    function Error(text, log_class=null) {
+        if (_FIRSLog.IsClassAccepted(log_class)) {
+            GSLog.Error("[" + _SuperLib_Helper.GetCurrentDateString() + "]  " + text);
+        }
+    }
+
+    function IsClassAccepted(log_class) {
+        if (log_class == null) {
+            return true;
+        }
+        else {
+            return GSController.GetSetting(log_class);
+        }
+    }
+
+    function ReportLogStatus() {
+        // just a housekeeping function to cover "is this thing on?" for logging when settings are turned off
+        local log_classes = [
+            "CLASS_VULCAN_INDUSTRY_CONTROL",
+            "CLASS_VULCAN_MAP_CURATOR",
+            "CLASS_VULCAN_TOWN_CONTROL",
+        ];
+
+        if (GSGameSettings.GetValue("gui.ai_developer_tools")) {
+            foreach (log_class in log_classes) {
+                if (!GSController.GetSetting(_FIRSLog[log_class])) {
+                    Log.Info("Logging is currently off in settings for " + log_class);
+                }
+            }
+        }
+        else {
+            Log.Info("Openttd setting gui.ai_developer_tools is currently 0 (off), logging will be minimal");
+        }
+    }
+};
+

@@ -16,36 +16,36 @@ class VulcanTownControl {
 
     function RunPeriodicProcessing(caller_type) {
         local time_start = GSDate.GetSystemTime();
-        Log.Info("--");
-        Log.Info("Town periodic processing...");
+        Log.Info("--", Log.CLASS_VULCAN_TOWN_CONTROL);
+        Log.Info("Town periodic processing...", Log.CLASS_VULCAN_TOWN_CONTROL);
         // book-keep town industries, we do this once for all towns as it walks all industries, and shouldn't be called recursively for every town
         VulcanTownControl.BookKeepVulcanTownIndustries();
         // asyncmode for speed here as we execute a lot of commands over a potentially large number of towns
         local asyncmode = GSAsyncMode(true);
         // we use towns sorted by name as it will result in logging ordered by town name, which is convenient
         foreach (vulcan_town in VulcanTownControl.GetVulcanTownsSortedByName()) {
-            Log.Info(GSTown.GetName(vulcan_town.town) + "...");
-            //Log.Info("...update required cargos delivery stats");
+            Log.Info(GSTown.GetName(vulcan_town.town) + "...", Log.CLASS_VULCAN_TOWN_CONTROL);
+            Log.Info("...update required cargos delivery stats", Log.CLASS_VULCAN_TOWN_CONTROL);
             foreach (cargo_label, required_cargo in vulcan_town.required_cargos) {
                 required_cargo.UpdateDeliveryStats(vulcan_town);
             }
-            //Log.Info("...setting town growth rates");
+            Log.Info("...setting town growth rates", Log.CLASS_VULCAN_TOWN_CONTROL);
             vulcan_town.SetGrowthRate();
-            //Log.Info("...setting town window texts");
+            Log.Info("...setting town window texts", Log.CLASS_VULCAN_TOWN_CONTROL);
             vulcan_town.SetTownWindowText();
             if (caller_type != "Init") {
-                //Log.Info("...updating town story pages");
+                Log.Info("...updating town story pages", Log.CLASS_VULCAN_TOWN_CONTROL);
                 vulcan_town.UpdateTownStoryPage();
             }
             // increase primary production in town? - we delegate this must be called every month as it also does some housekeeping
             VulcanIndustryControl.RollDiceForTownPrimaryIndustryProductionIncrease(vulcan_town);
         }
-        Log.Info("Town periodic processing done. Elapsed time: " + (GSDate.GetSystemTime() - time_start));
+        Log.Info("Town periodic processing done. Elapsed time: " + (GSDate.GetSystemTime() - time_start), Log.CLASS_VULCAN_TOWN_CONTROL);
     }
 
 
     function BookKeepVulcanTownIndustries() {
-        Log.Info("...book-keeping town industries");
+        Log.Info("...book-keeping town industries", Log.CLASS_VULCAN_TOWN_CONTROL);
         // we call this in the periodic processing to account for any industries that opened / closed
         // doing this in periodic processing is preferable to trying to book-keep by handling industry open / close events
         // clean the existing list of industries for each town
@@ -118,7 +118,7 @@ class VulcanTown {
         } else {
             GSTown.SetGrowthRate(this.town, GSTown.TOWN_GROWTH_NONE);
         }
-        Log.Info("...growth rate: " + GSTown.GetGrowthRate(this.town));
+        Log.Info("...growth rate: " + GSTown.GetGrowthRate(this.town), Log.CLASS_VULCAN_TOWN_CONTROL);
     }
 
     function GetHappiness() {
@@ -219,7 +219,7 @@ class VulcanTownRequiredCargo {
         if (this.delivery_stats.monthly_delivered_amounts.len() > 3) {
             this.delivery_stats.monthly_delivered_amounts.remove(0);
         }
-        //Log.Info("..." + this.tostring());
+        Log.Info("..." + this.tostring(), Log.CLASS_VULCAN_TOWN_CONTROL);
     }
 
     function TotalRecentlyDelivered() {

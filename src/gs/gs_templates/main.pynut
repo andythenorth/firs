@@ -5,8 +5,6 @@
 /* Import SuperLib for GameScript */
 import("util.superlib", "SuperLib", 36);
 Helper <- SuperLib.Helper;
-Log <- SuperLib.Log;
-
 /* Import other libs */
 // none
 
@@ -15,6 +13,9 @@ Log <- SuperLib.Log;
 require("atlas/atlas.nut");
 // Grind handles basic debugging and development tasks
 require("grind/grind.nut");
+// our own wrapper around default logging
+require("log.nut");
+Log <- _FIRSLog();
 // Persistent storage manager for save/load of state in savegame
 require("persistent_storage.nut");
 // Vulcan handles the economy / gameplay
@@ -125,7 +126,7 @@ function MainClass::Start() {
 function MainClass::Init() {
     PersistentStorageManager.Init(this._loaded_data, this._loaded_from_version);
 
-    Log.Info(GIT_VERSION, Log.LVL_INFO);
+    Log.Info(GIT_VERSION);
 
     FIRS.Init();
     VulcanCompanies.Init();
@@ -196,6 +197,8 @@ function MainClass::OnNewMonth() {
     VulcanTownControl.RunPeriodicProcessing("OnNewMonth");
     // this would only need to run every 3 months or so
     VulcanMapCurator.OnNewMonth();
+    // do log report last as a reminder about why log messages _might_ be missing if not seen
+    Log.ReportLogStatus();
 }
 
 /*
@@ -212,7 +215,7 @@ function MainClass::OnNewYear() {
  * floating point values cannot be stored by OpenTTD.
  */
 function MainClass::Save() {
-	Log.Info("Saving data to savegame", Log.LVL_INFO);
+	Log.Info("Saving data to savegame");
 
 	// In case (auto-)save happens before we have initialized all data,
 	// save the raw _loaded_data if available or an empty table.
@@ -228,7 +231,7 @@ function MainClass::Save() {
  * table that you sent to OpenTTD in Save().
  */
 function MainClass::Load(version, tbl) {
-	Log.Info("Loading data from savegame made with version " + version + " of the game script", Log.LVL_INFO);
+	Log.Info("Loading data from savegame made with version " + version + " of the game script");
 
 	// Store a copy of the table from the save game
 	// but do not process the loaded data yet. Wait with that to Init

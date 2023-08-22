@@ -56,10 +56,10 @@ class VulcanMapCuratorIndustryType {
 
     function Curate(caller_name) {
         local time_start = GSDate.GetSystemTime();
-        Log.Info("--")
-        Log.Info("VulcanMapIndustryTypeCountMonitor " + caller_name + " called for " + GSIndustryType.GetName(this.industry_spec.global_id) + "...")
+        Log.Info("--", Log.CLASS_VULCAN_MAP_CURATOR)
+        Log.Info("VulcanMapIndustryTypeCountMonitor " + caller_name + " called for " + GSIndustryType.GetName(this.industry_spec.global_id) + "...", Log.CLASS_VULCAN_MAP_CURATOR)
         this.curation_function();
-        Log.Info("...done: " + (GSDate.GetSystemTime() - time_start) + " seconds(s)");
+        Log.Info("...done: " + (GSDate.GetSystemTime() - time_start) + " seconds(s)", Log.CLASS_VULCAN_MAP_CURATOR);
     }
 
     function OnNewMonth() {
@@ -85,7 +85,7 @@ class VulcanMapCuratorIndustryType {
         // - need to not flood on month end
         // - generally, player-visible flooding of new instances is worse than being short of industries on the map
         if (num_industries_to_build > 0) {
-            Log.Info("...trying to build " + (num_industries_to_build) + " " + GSIndustryType.GetName(this.industry_spec.global_id) + "(s)...");
+            Log.Info("...trying to build " + (num_industries_to_build) + " " + GSIndustryType.GetName(this.industry_spec.global_id) + "(s)...", Log.CLASS_VULCAN_MAP_CURATOR);
             GSIndustryType.ProspectIndustry(this.industry_spec.global_id);
         }
     }
@@ -125,11 +125,11 @@ class VulcanMapCuratorIndustryType {
             town_list.KeepTop(num_industries_to_build);
 
             local industry_name = GSIndustryType.GetName(this.industry_spec.global_id);
-            Log.Info("Trying to build " + num_industries_to_build + " " + industry_name + "(s)...");
+            Log.Info("Trying to build " + num_industries_to_build + " " + industry_name + "(s)...", Log.CLASS_VULCAN_MAP_CURATOR);
             foreach (town, _ in town_list) {
                 local success = this.industry_spec.BuildInTown(town);
                 if (success == false) {
-                    Log.Info("Couldn't build " + industry_name + " in " + GSTown.GetName(town));
+                    Log.Info("Couldn't build " + industry_name + " in " + GSTown.GetName(town), Log.CLASS_VULCAN_MAP_CURATOR);
                 }
             }
         }

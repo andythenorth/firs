@@ -175,7 +175,7 @@ class FIRS {
             }
             foreach (economy_id, economy  in firs.economies) {
                 if (economy.fingerprint == industry_fingerprint) {
-                    Log.Info("Fingerprinting: FIRS economy ID is " + economy_id, Log.LVL_INFO);
+                    Log.Info("Fingerprinting: FIRS economy ID is " + economy_id);
                     economy_matched = true;
                     return economy;
                 }

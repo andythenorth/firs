@@ -15,22 +15,31 @@ class FMainClass extends GSInfo {
 
 	function GetSettings() {
 		AddSetting({
-		    name = "log_level",
-		    description = "Debug: Log level (higher = print more)",
-		    easy_value = 3,
-		    medium_value = 3,
-		    hard_value = 3,
-		    custom_value = 3,
-		    flags = CONFIG_INGAME,
-		    min_value = 1,
-		    max_value = 3
+		    name = "log_class_vulcan_map_curator",
+		    description = "Log Vulcan map curator messages",
+		    easy_value = 1,
+		    medium_value = 1,
+		    hard_value = 1,
+		    custom_value = 1,
+			flags = CONFIG_BOOLEAN | CONFIG_INGAME | CONFIG_DEVELOPER
 		});
-		AddLabels(
-		    "log_level",
-		    {
-		        _1 = "1: Info",
-		        _2 = "2: Verbose",
-		        _3 = "3: Debug"
+		AddSetting({
+		    name = "log_class_vulcan_industry_control",
+		    description = "Log Vulcan industry control messages",
+		    easy_value = 1,
+		    medium_value = 1,
+		    hard_value = 1,
+		    custom_value = 1,
+			flags = CONFIG_BOOLEAN | CONFIG_INGAME | CONFIG_DEVELOPER
+		});
+		AddSetting({
+		    name = "log_class_vulcan_town_control",
+		    description = "Log Vulcan town control messages",
+		    easy_value = 1,
+		    medium_value = 1,
+		    hard_value = 1,
+		    custom_value = 1,
+			flags = CONFIG_BOOLEAN | CONFIG_INGAME | CONFIG_DEVELOPER
 		});
 		AddSetting({
 		    name = "grind_show",
@@ -39,7 +48,7 @@ class FMainClass extends GSInfo {
 		    medium_value = 1,
 		    hard_value = 1,
 		    custom_value = 1,
-			flags = CONFIG_BOOLEAN | CONFIG_INGAME
+			flags = CONFIG_BOOLEAN | CONFIG_INGAME | CONFIG_DEVELOPER
 		});
 	}
 }
