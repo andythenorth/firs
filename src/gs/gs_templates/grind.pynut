@@ -29,8 +29,11 @@ class GrindStoryBook {
     function Hide() {
         local asyncmode = GSAsyncMode(true);
         foreach (page_type in ["utility_pages", "persistent_storage_pages", "industry_spec_pages"]) {
-            foreach (grind_page in grind_story_book[page_type]) {
-                GSStoryPage.Remove(grind_page.story_page);
+            // check for page_type to avoid crashing if not found, because a crashing debug utility is lolz
+            if (page_type in grind_story_book) {
+                foreach (grind_page in grind_story_book[page_type]) {
+                    GSStoryPage.Remove(grind_page.story_page);
+                }
             }
         }
         local asyncmode = null;
