@@ -171,27 +171,6 @@ function MainClass::HandleEvents() {
 
 		local ev_type = ev.GetEventType();
 		switch (ev_type) {
-		    /*
-			case GSEvent.ET_COMPANY_NEW: {
-				local company_event = GSEventCompanyNew.Convert(ev);
-				local company_id = company_event.GetCompanyID();
-
-				// Here you can welcome the new company
-				Story.ShowMessage(company_id, GSText(GSText.STR_WELCOME, company_id, GIT_VERSION));
-				break;
-			}
-            */
-			// other events ...
-			/*
-			case GSEvent.ET_STORYPAGE_TILE_SELECT: {
-				local tile_select_event = GSEventStoryPageTileSelect.Convert(ev);
-				local company_id = tile_select_event.GetCompanyID();
-                Log.Info("Tile selected! " + tile_select_event.GetStoryPageID() + " " + tile_select_event.GetElementID() + " " + tile_select_event.GetTile());
-                if (tile_select_event.GetElementID() == 3) {
-                    GSStoryPage.UpdateElement(5, 1, "CABBAGE")
-                }
-            }
-            */
 			case GSEvent.ET_STORYPAGE_BUTTON_CLICK: {
 				local button_event = GSEventStoryPageButtonClick.Convert(ev);
 				local company_id = button_event.GetCompanyID();
