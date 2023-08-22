@@ -18,6 +18,7 @@ require("grind/grind.nut");
 // Persistent storage manager for save/load of state in savegame
 require("persistent_storage.nut");
 // Vulcan handles the economy / gameplay
+require("vulcan/vulcan_companies.nut");
 require("vulcan/vulcan_industry_control.nut");
 require("vulcan/vulcan_map_curator.nut");
 require("vulcan/vulcan_town_control.nut");
@@ -27,7 +28,6 @@ require("vulcan/vulcan_town_story_book.nut");
 // FIRS industry structure
 require("firs.nut");
 // other GS files
-require("temp_prototyping.nut");
 require("version.nut");
 
 class MainClass extends GSController
@@ -131,6 +131,7 @@ function MainClass::Init()
     Log.Info(GIT_VERSION, Log.LVL_INFO);
 
     FIRS.Init();
+    VulcanCompanies.Init();
     VulcanIndustryControl.Init();
     VulcanMapCurator.Init();
     VulcanTownControl.Init();

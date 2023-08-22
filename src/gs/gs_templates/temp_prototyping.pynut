@@ -1,9 +1,0 @@
-function TempGetCompanies() {
-    local result = []
-    for (local i = 0; i <= GSCompany.COMPANY_LAST; i += 1) {
-        if (GSCompany.ResolveCompanyID(i) != GSCompany.COMPANY_INVALID) {
-            result.append(GSCompany.ResolveCompanyID(i));
-        }
-    }
-    return result
-}

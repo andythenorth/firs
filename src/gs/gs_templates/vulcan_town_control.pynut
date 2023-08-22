@@ -203,7 +203,7 @@ class VulcanTownRequiredCargo {
         local total_town_cargo_delivered_all_companies = 0;
         local total_excluded_industry_cargo_delivered_all_companies = 0;
         // need to monitor all companies
-        foreach (company in TempGetCompanies()) {
+        foreach (company in VulcanCompanies.GetCompanies()) {
             // cargo monitors are both created by and monitored by a call to GSCargoMonitor.GetTownDeliveryAmount
             // so we don't need a separate creation method
             // !!! will need to net off any cargos delivered to secondary industry types?

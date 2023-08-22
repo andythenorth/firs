@@ -111,12 +111,12 @@ def main():
             "info",
             "main",
             "persistent_storage",
-            "temp_prototyping",
             "version",
         ],
         "grind": ["grind"],
         "atlas": ["atlas"],
         "vulcan": [
+            "vulcan_companies",
             "vulcan_industry_control",
             "vulcan_map_curator",
             "vulcan_town_control",
