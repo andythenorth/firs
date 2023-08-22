@@ -28,10 +28,6 @@ class VulcanTownStoryPage {
         this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Town: " + town_name);
         // define the elements
         this.page_elements = [];
-        this.page_elements.append({
-            reference = null,
-            text_method = this.TestCabbage
-        });
         // growth report
         this.page_elements.append({
             reference = null,
