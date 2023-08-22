@@ -129,12 +129,7 @@ function MainClass::Start()
 
 function MainClass::Init()
 {
-	if (this._loaded_data != null) {
-		PersistentStorageManager.Init(this._loaded_data);
-	}
-	else {
-	    PersistentStorageManager.Init();
-	}
+    PersistentStorageManager.Init(this._loaded_data, this._loaded_from_version);
 
     Log.Info(GIT_VERSION, Log.LVL_INFO);
 

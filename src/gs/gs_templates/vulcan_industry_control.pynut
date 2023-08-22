@@ -35,7 +35,7 @@ class VulcanIndustryControl {
         local town_can_increase_primary_production = vulcan_town.GetHappiness();
         // limit how often we try to update
         if (vulcan_town.town in ::persistent_storage.town_primary_industry_production_increase_timeseries) {
-            local last_increase_date = ::persistent_storage.town_primary_industry_production_increase_timeseries[vulcan_town.town];
+            local last_increase_date = ::persistent_storage.town_primary_industry_production_increase_timeseries[vulcan_town.town][0];
             // odd but cheap way to add some random jitter
             // this is expressed in days, min 180 (6 months), max 540 (18 months)
             // note this will be a new random amount *every* month, this doesn't extend the delay until the _next_ check
@@ -68,7 +68,7 @@ class VulcanIndustryControl {
                         // continue / break here for speed?
                     }
                     if (industry in ::persistent_storage.industry_production_increase_timeseries) {
-                        local last_increase_date = ::persistent_storage.industry_production_increase_timeseries[industry];
+                        local last_increase_date = ::persistent_storage.industry_production_increase_timeseries[industry][0];
                         // don't increase more than once every 10 years per industry - let's not worry about leap years here eh
                         if (GSDate.GetCurrentDate() - last_increase_date < (10 * 365)) {
                             is_valid_candidate = false;
@@ -83,27 +83,22 @@ class VulcanIndustryControl {
             // random selection from available candidates
             if (candidate_industries.len() > 0) {
                 local industry = candidate_industries[GSBase.RandRange(candidate_industries.len())];
-                /*
-                // string 0x4835 is the one we want, can GS get it?
-                <!--!
-                switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change_increase,
-                    [
-                        STORE_TEMP(
-                            0x4835 | (${industry.id}_new_production_level() << 16),
-                            256
-                        )
-                    ]) {
-                    -->
-                }
-                */
                 // add linear 8 to current production level for increase of 50% on original value of 16
                 // multiplying current prod by 1.33 was tried here, but later increases are too aggressive with a multiplier, linear steps are better
                 local news_message = GSText(GSText.STR_NEWS_INDUSTRY_INCREASES_PRODUCTION, industry);
                 GSIndustry.SetProductionLevel(industry, GSIndustry.GetProductionLevel(industry) + 8, true, news_message);
                 // store the date we last increased production at this industry, so we can wait an appropriate period until the next increase
-                ::persistent_storage.industry_production_increase_timeseries[industry] <- GSDate.GetCurrentDate();
+                // latest added date will be first in the list - note that using date cheat can cause unexpected results here
+                if (industry in ::persistent_storage.industry_production_increase_timeseries == false) {
+                    ::persistent_storage.industry_production_increase_timeseries[industry] <- [];
+                }
+                ::persistent_storage.industry_production_increase_timeseries[industry].insert(0, GSDate.GetCurrentDate());
                 // we update the town attempt here as we need to be sure we actually tried to increase an industry (candidates could be 0)
-                ::persistent_storage.town_primary_industry_production_increase_timeseries[vulcan_town.town] <- GSDate.GetCurrentDate();
+                // latest added date will be first in the list - note that using date cheat can cause unexpected results here
+                if (vulcan_town.town in ::persistent_storage.town_primary_industry_production_increase_timeseries == false) {
+                    ::persistent_storage.town_primary_industry_production_increase_timeseries[vulcan_town.town] <- [];
+                }
+                ::persistent_storage.town_primary_industry_production_increase_timeseries[vulcan_town.town].insert(0, GSDate.GetCurrentDate());
             }
         }
     }

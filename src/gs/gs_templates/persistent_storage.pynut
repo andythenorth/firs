@@ -16,15 +16,18 @@ class PersistentStorageManager {
         try to keep it simple eh?
     */
 
-    // note that this has no constructor as not designed to return a class instance, just a class to hold methods
-
-    function Init(loaded_data={}) {
-        // loaded data is optional, so one function can handle both newgame and savegame cases
+    // no constructor, no instance attributes, keep it simple
+    function Init(loaded_data, loaded_from_version) {
+        // handle the default case, this means we don't fail on development savegames where the GS has no data stored
+        if (loaded_data == null) {
+            loaded_data = {};
+        }
+        Log.Info("GS version in loaded data " + loaded_from_version);
         ::persistent_storage <- {};
         foreach (slot_name, slot_type in PersistentStorageManager.GetSlotNamesAndTypes()) {
             if (slot_name in loaded_data){
                 Log.Info("Found slot " + slot_name);
-                ::persistent_storage[slot_name] <- loaded_data[slot_name];
+                ::persistent_storage[slot_name] <- PersistentStorageManager.ValidateSlotDataAndMigrateIfRequired(slot_name, loaded_data, loaded_from_version);
             }
             else {
                 // slot isn't in savegame data, create it as empty
@@ -34,12 +37,56 @@ class PersistentStorageManager {
     }
 
     function GetSlotNamesAndTypes() {
-        // this is where we define all the required slots and their type (table or list)
+        // this is where we define all the required slots and their type (table or list or similar)
         // can't use class property for these as there's no class instance constructed, so use cheeky function instead
         local slot_names_and_types = {
             town_primary_industry_production_increase_timeseries = {},
             industry_production_increase_timeseries = {},
         };
         return slot_names_and_types;
+    }
+
+    function ValidateSlotDataAndMigrateIfRequired(slot_name, loaded_data, loaded_from_version) {
+        // the value we'll set in the loaded data after migrations, and store back on next save
+        local migrations = {
+            industry_production_increase_timeseries = {
+                // when a migration is needed, bump SELF_VERSION in version.pynut and match min_gs_data_version to the bumped value at the time
+                min_firs_gs_data_version = 2,
+                migration_method = PersistentStorageManager.MigrateIndustryProductionTimeseries,
+            },
+            town_primary_industry_production_increase_timeseries = {
+                // when a migration is needed, bump SELF_VERSION in version.pynut and match min_gs_data_version to the bumped value at the time
+                min_firs_gs_data_version = 2,
+                migration_method = PersistentStorageManager.MigrateTownPrimaryIndustryProductionIncreaseTimeseries,
+            }
+        };
+        local slot_data = loaded_data[slot_name]
+        if (slot_name in migrations) {
+            if (loaded_from_version < migrations[slot_name]["min_firs_gs_data_version"]) {
+                Log.Info("Slot requires migration: " + slot_name);
+                slot_data = migrations[slot_name]["migration_method"](slot_data);
+                Log.Info("...migration successful");
+            }
+        }
+        return slot_data;
+    }
+
+    function MigrateIndustryProductionTimeseries(slot_data) {
+        // convert from a date to a list of dates
+        local result = {};
+        foreach (industry, date in slot_data) {
+            result[industry] <- [date];
+            //Log.Info(result[industry]);
+        }
+        return result;
+    }
+    function MigrateTownPrimaryIndustryProductionIncreaseTimeseries(slot_data) {
+        // convert from a date to a list of dates
+        local result = {};
+        foreach (town, date in slot_data) {
+            result[town] <- [date];
+            //Log.Info(result[town]);
+        }
+        return result;
     }
 }

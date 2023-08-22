@@ -219,7 +219,7 @@ class VulcanTownRequiredCargo {
         if (this.delivery_stats.monthly_delivered_amounts.len() > 3) {
             this.delivery_stats.monthly_delivered_amounts.remove(0);
         }
-        Log.Info("..." + this.tostring());
+        //Log.Info("..." + this.tostring());
     }
 
     function TotalRecentlyDelivered() {

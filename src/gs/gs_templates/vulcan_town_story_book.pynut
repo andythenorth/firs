@@ -32,6 +32,7 @@ class VulcanTownStoryPage {
             reference = null,
             text_method = this.TestCabbage
         });
+        // growth report
         this.page_elements.append({
             reference = null,
             text_method = this.DisplayGrowthRate
@@ -40,7 +41,7 @@ class VulcanTownStoryPage {
             reference = null,
             // when only a GSText is needed, just wrap it in an anonymous function
             text_method = function(vulcan_town, extra_params) {
-                return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGOS_GROWTH)
+                return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGOS_GROWTH_TITLE)
             },
         });
         foreach (cargo_label, required_cargo in vulcan_town.required_cargos) {
@@ -52,11 +53,12 @@ class VulcanTownStoryPage {
                 });
             }
         }
+        // happiness report
         this.page_elements.append({
             reference = null,
             // when only a GSText is needed, just wrap it in an anonymous function
             text_method = function(vulcan_town, extra_params) {
-                return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGOS_HAPPINESS)
+                return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGOS_HAPPINESS_TITLE)
             },
         });
         foreach (cargo_label, required_cargo in vulcan_town.required_cargos) {
@@ -68,7 +70,62 @@ class VulcanTownStoryPage {
                 });
             }
         }
-
+        // industry report
+        this.page_elements.append({
+            reference = null,
+                // when only a GSText is needed, just wrap it in an anonymous function
+            text_method = function(vulcan_town, extra_params) {
+                return GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_TITLE)
+            },
+        });
+        foreach (industry, industry_spec in vulcan_town.town_industries) {
+            local industry_type = GSIndustry.GetIndustryType(industry);
+            this.page_elements.append({
+                reference = null,
+                // when only a GSText is needed, just wrap it in an anonymous function
+                text_method = function(vulcan_town, extra_params) {
+                    return GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_INDUSTRY_NAME, extra_params[0])
+                },
+                extra_params = [industry]
+            });
+            this.page_elements.append({
+                reference = null,
+                text_method = IndustryLastIncreaseDate,
+                extra_params = [industry]
+            });
+            this.page_elements.append({
+                reference = null,
+                // when only a GSText is needed, just wrap it in an anonymous function
+                text_method = function(vulcan_town, extra_params) {
+                    return GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_ACCEPTED_TITLE)
+                },
+            });
+            // unfinished, needs to use cargo monitor
+            this.page_elements.append({
+                reference = null,
+                // when only a GSText is needed, just wrap it in an anonymous function
+                text_method = function(vulcan_town, extra_params) {
+                    return "CABBAGE 99"
+                },
+            });
+            this.page_elements.append({
+                reference = null,
+                text_method = function(vulcan_town, extra_params) {
+                    return GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_PRODUCED_TITLE)
+                },
+            });
+            foreach (cargo, _ in GSIndustryType.GetProducedCargo(industry_type)) {
+                local cargo_amount = GSIndustry.GetLastMonthProduction(industry, cargo);
+                this.page_elements.append({
+                    reference = null,
+                    // when only a GSText is needed, just wrap it in an anonymous function
+                    text_method = function(vulcan_town, extra_params) {
+                        return GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_CARGO_STATS, extra_params[0], extra_params[1])
+                    },
+                    extra_params = [cargo, cargo_amount]
+                });
+            }
+        }
         // add the elements
         foreach (page_element in this.page_elements) {
             local extra_params = null;
@@ -91,11 +148,24 @@ class VulcanTownStoryPage {
         }
         return GSText(GSText.STR_TOWN_STORY_PAGE_GROWTH_RATE, growth_rate_value_text);
     }
-
     function RequiredCargoDeliveryStats(vulcan_town, extra_params) {
         local required_cargo = extra_params[0];
         return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGO_STATS, required_cargo.cargo, required_cargo.TotalRecentlyDelivered());
     }
+    function IndustryLastIncreaseDate(vulcan_town, extra_params) {
+        local industry = extra_params[0];
+        local last_increase_date = null;
+        if (industry in ::persistent_storage.industry_production_increase_timeseries) {
+            last_increase_date = ::persistent_storage.industry_production_increase_timeseries[industry][0];
+            return GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_LAST_INCREASE_DATE, last_increase_date);
+        }
+        else {
+            return "NEVER INCREASED"
+        }
+    }
+
+
+
 
     function UpdatePage(vulcan_town) {
         foreach (page_element in this.page_elements) {

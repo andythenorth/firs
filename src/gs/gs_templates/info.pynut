@@ -27,9 +27,11 @@ class FMainClass extends GSInfo {
 	function GetVersion()		{ return SELF_VERSION; }
 	function GetDate()			{ return "2023-15-01"; }
 	function CreateInstance()	{ return "MainClass"; }
-	function GetShortName()		{ return "FIRS"; } // Replace this with your own unique 4 letter string
+	function GetShortName()		{ return "FIRS"; }
 	function GetAPIVersion()	{ return "13"; }
 	function GetURL()			{ return ""; }
+    // we assume that we'll always try and load a savegame and migrate FIRS GS savegame data accordingly
+	function MinVersionToLoad() { return 1; }
 
 	function GetSettings() {
 		AddSetting({
