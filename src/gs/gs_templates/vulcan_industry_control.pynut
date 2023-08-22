@@ -89,13 +89,13 @@ class VulcanIndustryControl {
                 GSIndustry.SetProductionLevel(industry, GSIndustry.GetProductionLevel(industry) + 8, true, news_message);
                 // store the date we last increased production at this industry, so we can wait an appropriate period until the next increase
                 // latest added date will be first in the list - note that using date cheat can cause unexpected results here
-                if (industry in ::persistent_storage.industry_production_increase_timeseries == false) {
+                if ((industry in ::persistent_storage.industry_production_increase_timeseries) == false) {
                     ::persistent_storage.industry_production_increase_timeseries[industry] <- [];
                 }
                 ::persistent_storage.industry_production_increase_timeseries[industry].insert(0, GSDate.GetCurrentDate());
                 // we update the town attempt here as we need to be sure we actually tried to increase an industry (candidates could be 0)
                 // latest added date will be first in the list - note that using date cheat can cause unexpected results here
-                if (vulcan_town.town in ::persistent_storage.town_primary_industry_production_increase_timeseries == false) {
+                if ((vulcan_town.town in ::persistent_storage.town_primary_industry_production_increase_timeseries) == false) {
                     ::persistent_storage.town_primary_industry_production_increase_timeseries[vulcan_town.town] <- [];
                 }
                 ::persistent_storage.town_primary_industry_production_increase_timeseries[vulcan_town.town].insert(0, GSDate.GetCurrentDate());
