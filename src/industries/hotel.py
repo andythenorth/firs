@@ -19,6 +19,8 @@ industry = IndustryTertiary(
     name="string(STR_IND_HOTEL)",
     nearby_station_name="string(STR_STATION_BAR_GRILL_AND_ROOMS)",
     fund_cost_multiplier="101",
+    # for IndustryTertiary, this property doesn't have to be set unless there's production
+    primary_production_random_factor_set="wide_range",
 )
 
 industry.enable_in_economy(

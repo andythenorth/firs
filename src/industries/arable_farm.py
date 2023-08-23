@@ -16,6 +16,7 @@ industry = IndustryPrimaryOrganic(
     extra_text_fund="string(STR_FUND_ARABLE_FARM)",
     nearby_station_name="string(STR_STATION_FARM_1)",
     fund_cost_multiplier="55",
+    primary_production_random_factor_set="wide_range",
 )
 
 industry.enable_in_economy(

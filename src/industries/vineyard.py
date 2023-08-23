@@ -17,6 +17,7 @@ industry = IndustryPrimaryOrganic(
     fund_cost_multiplier="54",
     prod_multiplier="[11, 8]",
     override_default_construction_states=True,
+    primary_production_random_factor_set="wide_range",
 )
 
 industry.enable_in_economy(

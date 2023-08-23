@@ -14,6 +14,7 @@ industry = IndustryPrimaryExtractive(
     name="string(STR_IND_DREDGING_SITE)",
     nearby_station_name="string(STR_STATION_WATER)",
     fund_cost_multiplier="180",
+    primary_production_random_factor_set="wide_range",
 )
 
 industry.enable_in_economy(

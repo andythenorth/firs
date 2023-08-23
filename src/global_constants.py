@@ -339,6 +339,14 @@ max_game_date = 5000000
 # amount of cargo required to trigger 'enhanced' production at primary industries
 FARM_MINE_SUPPLY_REQUIREMENT = 16
 
+# identifiers for different sets of random factors
+# used to control how widely primary production is randomised when industry is constructed
+# keep alphabetised, the implementation handles mapping this to the correct switches etc
+primary_production_random_factor_sets = [
+    "narrow_range",
+    "wide_range",
+]
+
 graphics_temp_storage = dict(
     var_terrain_sprite=0,  # ID of terrain sprite (from baseset) for the tile
     var_fencesprite_ne=1,  # fence sprite to use on the NE border

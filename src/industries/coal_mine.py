@@ -13,6 +13,7 @@ industry = IndustryPrimaryExtractive(
     fund_cost_multiplier="252",
     pollution_and_squalor_factor=1,
     provides_snow=True,
+    primary_production_random_factor_set="wide_range",
 )
 
 
