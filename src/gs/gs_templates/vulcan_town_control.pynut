@@ -25,19 +25,23 @@ class VulcanTownControl {
         // we use towns sorted by name as it will result in logging ordered by town name, which is convenient
         foreach (vulcan_town in VulcanTownControl.GetVulcanTownsSortedByName()) {
             Log.Info(GSTown.GetName(vulcan_town.town) + "...", Log.CLASS_VULCAN_TOWN_CONTROL);
+
             Log.Info("...update required cargos delivery stats", Log.CLASS_VULCAN_TOWN_CONTROL);
             foreach (cargo_label, required_cargo in vulcan_town.required_cargos) {
                 required_cargo.UpdateDeliveryStats(vulcan_town);
             }
+
             Log.Info("...setting town growth rates", Log.CLASS_VULCAN_TOWN_CONTROL);
             vulcan_town.SetGrowthRate();
+
             Log.Info("...setting town window texts", Log.CLASS_VULCAN_TOWN_CONTROL);
             vulcan_town.SetTownWindowText();
+
             if (caller_type != "Init") {
                 Log.Info("...updating town story pages", Log.CLASS_VULCAN_TOWN_CONTROL);
                 vulcan_town.UpdateTownStoryPage();
             }
-            // increase primary production in town? - we delegate this must be called every month as it also does some housekeeping
+            // increase primary production in town? - this must be called every month as it also does some housekeeping
             VulcanIndustryControl.RollDiceForTownPrimaryIndustryProductionIncrease(vulcan_town);
         }
         Log.Info("Town periodic processing done. Elapsed time: " + (GSDate.GetSystemTime() - time_start), Log.CLASS_VULCAN_TOWN_CONTROL);
@@ -47,7 +51,8 @@ class VulcanTownControl {
     function BookKeepVulcanTownIndustries() {
         Log.Info("...book-keeping town industries", Log.CLASS_VULCAN_TOWN_CONTROL);
         // we call this in the periodic processing to account for any industries that opened / closed
-        // doing this in periodic processing is preferable to trying to book-keep by handling industry open / close events
+        // doing this in periodic processing is preferable to trying to book-keep by handling industry open / close events in detail
+        // !! however we might still need to book-keep when an industry closes, and then update the story book, as it tends to lag
         // clean the existing list of industries for each town
         foreach (town, vulcan_town in vulcan_town_control.towns) {
             vulcan_town.town_industries = {};

@@ -12,6 +12,7 @@ class VulcanIndustryCargoStatsManager {
         produced = {},
         transported = {},
     }
+    static NUM_MONTHS_STORED = 3;
 
     function Init() {
         // nothing as of August 2023
@@ -106,9 +107,32 @@ class VulcanIndustryCargoStatsManager {
         }
         storage[cargo_label].append(cargo_amount);
         // only need to keep 3 months of stats as of August 2023
-        if (storage[cargo_label].len() > 3) {
+        if (storage[cargo_label].len() > VulcanIndustryCargoStatsManager.NUM_MONTHS_STORED) {
             storage[cargo_label].remove(0);
         }
         Log.Info("    " + GSCargo.GetName(cargo) + " (" + cargo_label + "): " + Repr(storage[cargo_label]), Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+    }
+
+    function GetLastMonthAccepted(industry, cargo) {
+        return VulcanIndustryCargoStatsManager._GetLastMonth(industry, cargo, "accepted");
+    }
+
+    function GetLastMonthProduced(industry, cargo) {
+        return VulcanIndustryCargoStatsManager._GetLastMonth(industry, cargo, "produced");
+    }
+
+    function GetLastMonthTransported(industry, cargo) {
+        return VulcanIndustryCargoStatsManager._GetLastMonth(industry, cargo, "transported");
+    }
+
+    function _GetLastMonth(industry, cargo, cargo_stat_type) {
+        local storage = ::persistent_storage["industry_cargo_stats"][industry][cargo_stat_type][GSCargo.GetCargoLabel(cargo)];
+        local last_index = storage.len() - 1;
+        if (last_index in storage) {
+            return storage[last_index];
+        }
+        else {
+            return -1 // not found
+        }
     }
 }
