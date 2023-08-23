@@ -16,6 +16,9 @@ require("grind/grind.nut");
 // our own wrapper around default logging
 require("log.nut");
 Log <- _FIRSLog();
+// our own implementation of pretty printing as I can't figure out how to use the one in Squirrel 2, if it exists
+require("repr.nut");
+Repr <- _Repr.Repr;
 // Persistent storage manager for save/load of state in savegame
 require("persistent_storage.nut");
 // Vulcan handles the economy / gameplay
