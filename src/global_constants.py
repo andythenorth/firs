@@ -344,6 +344,7 @@ FARM_MINE_SUPPLY_REQUIREMENT = 16
 # keep alphabetised, the implementation handles mapping this to the correct switches etc
 primary_production_random_factor_sets = [
     "narrow_range",
+    "medium_range",
     "wide_range",
 ]
 

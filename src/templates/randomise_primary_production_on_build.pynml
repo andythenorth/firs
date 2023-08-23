@@ -6,17 +6,23 @@
 random_switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build_factor_set_wide_range) {
 	1: return 8;
 	1: return 12;
-	4: return 16;
+	4: return 16; <!--! note heavy weighting to 16 here -->
 	3: return 20;
 	2: return 24;
 	1: return 28;
 	1: return 32;
 	1: return 36;
 }
+random_switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build_factor_set_medium_range) {
+	1: return 12;
+	1: return 16;
+	1: return 20;
+	1: return 24;
+}
 random_switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build_factor_set_narrow_range) {
 	1: return 12;
-	4: return 16;
-	3: return 20;
+	1: return 16;
+	1: return 20;
 }
 
 switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build_get_factor, factor_set, factor_set) {

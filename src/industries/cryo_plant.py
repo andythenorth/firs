@@ -4,10 +4,10 @@ industry = IndustryPrimaryNoSupplies(
     id="cryo_plant",
     accept_cargo_types=[],
     prod_cargo_types_with_multipliers=[
-        ("O2__", 14),
+        ("O2__", 15),
         # realism suggests that oxygen and nitrogen might be roughly equal in output, but gameplay eh
-        ("N7__", 9),
-        ("WELD", 4),
+        ("N7__", 10),
+        ("WELD", 5),
     ],
     prob_in_game="4",
     prob_map_gen="7",
@@ -20,7 +20,8 @@ industry = IndustryPrimaryNoSupplies(
     # deliberately low fund cost; there is some remaining weirdness on cost because this is a non-growable primary, but eh, live with it
     fund_cost_multiplier="45",
     allow_production_change_from_gs=True,
-    primary_production_random_factor_set="wide_range",
+    # cryo plant is more satisfying with medium range randomisation
+    primary_production_random_factor_set="medium_range",
 )
 
 industry.enable_in_economy(
