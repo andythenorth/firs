@@ -208,11 +208,13 @@ class VulcanTownRequiredCargo {
             // so we don't need a separate creation method
             // !!! will need to net off any cargos delivered to secondary industry types?
             total_town_cargo_delivered_all_companies += GSCargoMonitor.GetTownDeliveryAmount(company, this.cargo, vulcan_town.town, true);
-            foreach (industry in industries_with_delivery_excluded) {
-                // we assign the delivered amount to a local in case we want to log it, as calling the CargoMonitor repeatedly resets the delivered counts each time
-                local excluded_industry_cargo_delivered = GSCargoMonitor.GetIndustryDeliveryAmount(company, this.cargo, industry, true);
-                total_excluded_industry_cargo_delivered_all_companies += excluded_industry_cargo_delivered;
-            }
+        }
+        foreach (industry in industries_with_delivery_excluded) {
+            // we assign the delivered amount to a local in case we want to log it, as calling the CargoMonitor repeatedly resets the delivered counts each time
+            local industry_cargo_timeseries = ::persistent_storage["industry_cargo_stats"][industry]["accepted"][GSCargo.GetCargoLabel(cargo)];
+            // there probably *is* a way to non-destructively fetch the last item in an array from squirrel, but eh, this will do
+            local excluded_industry_cargo_delivered = industry_cargo_timeseries[industry_cargo_timeseries.len() - 1];
+            total_excluded_industry_cargo_delivered_all_companies += excluded_industry_cargo_delivered;
         }
         this.delivery_stats.monthly_delivered_amounts.append(total_town_cargo_delivered_all_companies - total_excluded_industry_cargo_delivered_all_companies);
         // only need to keep 3 months of deliveries
