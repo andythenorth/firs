@@ -1,37 +1,27 @@
 class VulcanIndustryControl {
     /* structure for industry control */
 
+    static DEFAULT_CONTROL_FLAGS = GSIndustry.INDCTL_NO_CLOSURE | GSIndustry.INDCTL_NO_PRODUCTION_INCREASE | GSIndustry.INDCTL_NO_PRODUCTION_DECREASE | GSIndustry.INDCTL_EXTERNAL_PROD_LEVEL;
+
     // note that this has no constructor as not designed to return a class instance, just a class to hold methods
     function Init() {
         VulcanIndustryControl.SetAllIndustryFlagsToSpec();
     }
 
-    function GetDefaultControlFlags() {
-        // can't use class property for these as there's no class instance constructed, so use cheeky function instead
-        return GSIndustry.INDCTL_NO_CLOSURE | GSIndustry.INDCTL_NO_PRODUCTION_INCREASE | GSIndustry.INDCTL_NO_PRODUCTION_DECREASE | GSIndustry.INDCTL_EXTERNAL_PROD_LEVEL;
-    }
-
     function SetAllIndustryFlagsToSpec() {
+        // this is just for housekeeping as of Aug 2023
         Log.Info("SetAllIndustryFlagsToSpec called", Log.CLASS_VULCAN_INDUSTRY_CONTROL);
         local industry_list = GSIndustryList();
         // asyncmode for speed here as we execute commands over a potentially large number of industries
         local asyncmode = GSAsyncMode(true);
         foreach (industry, _ in industry_list) {
             // set all flags as of June 2023, unset them later per-industry for specific behaviour
-            GSIndustry.SetControlFlags(industry, VulcanIndustryControl.GetDefaultControlFlags());
+            GSIndustry.SetControlFlags(industry, VulcanIndustryControl.DEFAULT_CONTROL_FLAGS);
         }
         Log.Info("SetAllIndustryFlagsToSpec done", Log.CLASS_VULCAN_INDUSTRY_CONTROL);
     }
 
     function RollDiceForTownPrimaryIndustryProductionIncrease(vulcan_town) {
-        // house keeping
-        foreach (industry, industry_spec in vulcan_town.town_industries) {
-            if (industry_spec.default_vulcan_config["allow_production_change_from_gs"] == true) {
-                // reset any flags to defaults, we have to assume that the grf has meanwhile used the flag to change production
-                GSIndustry.SetControlFlags(industry, VulcanIndustryControl.GetDefaultControlFlags());
-            }
-        }
-
         local town_can_increase_primary_production = vulcan_town.GetHappiness();
         // limit how often we try to update
         if (vulcan_town.town in ::persistent_storage.town_primary_industry_production_increase_timeseries) {
