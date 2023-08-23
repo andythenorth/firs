@@ -112,6 +112,7 @@ def main():
             "log",
             "main",
             "persistent_storage",
+            "repr",
             "version",
         ],
         "grind": ["grind"],
