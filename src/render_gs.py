@@ -119,6 +119,7 @@ def main():
         "vulcan": [
             "vulcan_companies",
             "vulcan_industry_control",
+            "vulcan_industry_spec",
             "vulcan_map_curator",
             "vulcan_town_control",
             "vulcan_town_story_book",
