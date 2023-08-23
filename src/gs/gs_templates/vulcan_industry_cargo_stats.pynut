@@ -68,6 +68,11 @@ class VulcanIndustryCargoStatsManager {
             local cargo_stat_type = "accepted";
             foreach (cargo, _ in GSIndustryType.GetAcceptedCargo(industry_type)) {
                 local cargo_amount = 0;
+                foreach (company in VulcanCompanies.GetCompanies()) {
+                    // I'm just trusting that this call to GSCargoMonitor gets accurate results, I've never verified them
+                    // note that ANY other calls to GetIndustryDeliveryAmount with these parameters will reset the value, this should be avoided
+                    cargo_amount += GSCargoMonitor.GetIndustryDeliveryAmount(company, cargo, industry, true);
+                }
                 VulcanIndustryCargoStatsManager.StoreCargoAmount(industry, cargo_stat_type, cargo, cargo_amount);
             }
 
@@ -83,6 +88,8 @@ class VulcanIndustryCargoStatsManager {
             foreach (cargo, _ in GSIndustryType.GetProducedCargo(industry_type)) {
                 local cargo_amount = 0;
                 foreach (company in VulcanCompanies.GetCompanies()) {
+                    // I'm just trusting that this call to GSCargoMonitor gets accurate results, I've never verified them
+                    // note that ANY other calls to GetIndustryPickupAmount with these parameters will reset the value, this should be avoided
                     cargo_amount += GSCargoMonitor.GetIndustryPickupAmount(company, cargo, industry, true);
                 }
                 VulcanIndustryCargoStatsManager.StoreCargoAmount(industry, cargo_stat_type, cargo, cargo_amount);
