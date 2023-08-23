@@ -104,8 +104,9 @@ class GrindStoryPagePersistentStorage extends GrindStoryPage {
         // !! there's no update method for these pages, probably TMWFTLB as of July 2023
         local element_text = GSText(GSText.STR_GRIND_DELAYED_UPDATE);
         local note_delayed_update = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
+        // assume we want to show all the keys for the slot, then just repr the values, even if they're nested tables
         foreach (prop_name, prop_value in slot_value) {
-            local element_text = GSText(GSText.STR_GRIND_TEST, prop_name.tostring(), prop_value.tostring());
+            local element_text = GSText(GSText.STR_GRIND_TEST, prop_name.tostring(), Repr(prop_value));
             local prop_display = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, element_text);
         }
     }
