@@ -16,15 +16,20 @@ class PersistentStorageManager {
         try to keep it simple eh?
     */
 
+    // this is where we define all the required slots and their type (table or list or similar)
+    static slot_names_and_types = {
+        town_primary_industry_production_increase_timeseries = {},
+        industry_production_increase_timeseries = {},
+    };
+
     // no constructor, no instance attributes, keep it simple
     function Init(loaded_data, loaded_from_version) {
         // handle the default case, this means we don't fail on development savegames where the GS has no data stored
         if (loaded_data == null) {
             loaded_data = {};
         }
-        Log.Info("GS version in loaded data " + loaded_from_version);
         ::persistent_storage <- {};
-        foreach (slot_name, slot_type in PersistentStorageManager.GetSlotNamesAndTypes()) {
+        foreach (slot_name, slot_type in PersistentStorageManager.slot_names_and_types) {
             if (slot_name in loaded_data){
                 Log.Info("Found slot " + slot_name);
                 ::persistent_storage[slot_name] <- PersistentStorageManager.ValidateSlotDataAndMigrateIfRequired(slot_name, loaded_data, loaded_from_version);
@@ -34,16 +39,6 @@ class PersistentStorageManager {
                 ::persistent_storage[slot_name] <- slot_type;
             }
         }
-    }
-
-    function GetSlotNamesAndTypes() {
-        // this is where we define all the required slots and their type (table or list or similar)
-        // can't use class property for these as there's no class instance constructed, so use cheeky function instead
-        local slot_names_and_types = {
-            town_primary_industry_production_increase_timeseries = {},
-            industry_production_increase_timeseries = {},
-        };
-        return slot_names_and_types;
     }
 
     function ValidateSlotDataAndMigrateIfRequired(slot_name, loaded_data, loaded_from_version) {
