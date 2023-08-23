@@ -47,11 +47,7 @@ class VulcanMapCuratorIndustryType {
     }
 
     function _tostring() {
-        local result = "";
-        foreach (key, value in this.map_curator_config) {
-            result = result + " " + key + ": " + value;
-        }
-        return result
+        return Repr(this.map_curator_config);
     }
 
     function Curate(caller_name) {
