@@ -118,6 +118,7 @@ def main():
         "atlas": ["atlas"],
         "vulcan": [
             "vulcan_companies",
+            "vulcan_industry_cargo_stats",
             "vulcan_industry_control",
             "vulcan_industry_spec",
             "vulcan_map_curator",

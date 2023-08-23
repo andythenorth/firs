@@ -6,6 +6,7 @@ class _FIRSLog {
     // no constructor, no Init
 
     // extend ReportLogStatus if classes are changed / added
+	static CLASS_VULCAN_INDUSTRY_CARGO_STATS = "log_class_vulcan_industry_cargo_stats";
 	static CLASS_VULCAN_INDUSTRY_CONTROL = "log_class_vulcan_industry_control";
 	static CLASS_VULCAN_MAP_CURATOR = "log_class_vulcan_map_curator";
 	static CLASS_VULCAN_TOWN_CONTROL = "log_class_vulcan_town_control";
@@ -40,6 +41,7 @@ class _FIRSLog {
     function ReportLogStatus() {
         // just a housekeeping function to cover "is this thing on?" for logging when settings are turned off
         local log_classes = [
+            "CLASS_VULCAN_INDUSTRY_CARGO_STATS",
             "CLASS_VULCAN_INDUSTRY_CONTROL",
             "CLASS_VULCAN_MAP_CURATOR",
             "CLASS_VULCAN_TOWN_CONTROL",

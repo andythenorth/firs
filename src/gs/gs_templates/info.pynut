@@ -24,6 +24,15 @@ class FMainClass extends GSInfo {
 			flags = CONFIG_BOOLEAN | CONFIG_INGAME | CONFIG_DEVELOPER
 		});
 		AddSetting({
+		    name = "log_class_vulcan_industry_cargo_stats",
+		    description = "Log Vulcan industry cargo stats",
+		    easy_value = 1,
+		    medium_value = 1,
+		    hard_value = 1,
+		    custom_value = 1,
+			flags = CONFIG_BOOLEAN | CONFIG_INGAME | CONFIG_DEVELOPER
+		});
+		AddSetting({
 		    name = "log_class_vulcan_industry_control",
 		    description = "Log Vulcan industry control messages",
 		    easy_value = 1,
@@ -41,6 +50,7 @@ class FMainClass extends GSInfo {
 		    custom_value = 1,
 			flags = CONFIG_BOOLEAN | CONFIG_INGAME | CONFIG_DEVELOPER
 		});
+
 		AddSetting({
 		    name = "grind_show",
 		    description = "Show Grind pages in story book",

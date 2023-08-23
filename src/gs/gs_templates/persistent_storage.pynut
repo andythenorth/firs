@@ -20,6 +20,7 @@ class PersistentStorageManager {
     static slot_names_and_types = {
         town_primary_industry_production_increase_timeseries = {},
         industry_production_increase_timeseries = {},
+        industry_cargo_stats = {},
     };
 
     // no constructor, no instance attributes, keep it simple
@@ -36,6 +37,7 @@ class PersistentStorageManager {
             }
             else {
                 // slot isn't in savegame data, create it as empty
+                Log.Info("Adding missing slot " + slot_name);
                 ::persistent_storage[slot_name] <- slot_type;
             }
         }

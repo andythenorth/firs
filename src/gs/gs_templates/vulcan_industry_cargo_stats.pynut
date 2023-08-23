@@ -1,0 +1,90 @@
+class VulcanIndustryCargoStatsManager {
+    /* just to namespace some functions */
+
+    // note that we can't simply make this a class with instances stored in savegame, as we can't save custom classes in savegame
+
+    // note that this creates a table in root
+    // not designed to return a class instance
+    // vulcan_industry_cargo_stats is a singleton, and allegedly a table with slots is more efficient for that case than a singleton class instance
+
+    static CARGO_STATS_TABLE_FORMAT = {
+        accepted = {},
+        produced = {},
+        transported = {},
+    }
+
+    function Init() {
+        // nothing as of August 2023
+        VulcanIndustryCargoStatsManager.RunPeriodicProcessing("Init");
+    }
+
+    function RunPeriodicProcessing(caller_type) {
+        local time_start = GSDate.GetSystemTime();
+        Log.Info("--", Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+        Log.Info("Industry cargo stats periodic processing...", Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+
+        // this can filter on caller_type if needed, see VulcanTownControl for examples
+        local industry_list = GSIndustryList();
+        VulcanIndustryCargoStatsManager.CheckForUntrackedIndustries(industry_list);
+        VulcanIndustryCargoStatsManager.UpdatedIndustryStats(industry_list);
+        VulcanIndustryCargoStatsManager.CheckForDeletedIndustries(industry_list);
+        Log.Info("Industry cargo stats periodic processing done. Elapsed time: " + (GSDate.GetSystemTime() - time_start), Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+    }
+
+    function CheckForUntrackedIndustries(industry_list) {
+        // don't bother loggging that this is being called, it's minor housekeeping
+        foreach (industry, _ in industry_list) {
+            if (!(industry in ::persistent_storage["industry_cargo_stats"])) {
+                Log.Info(GSIndustry.GetName(industry) + " missing from ::persistent_storage.industry_cargo_stats, adding", Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+                ::persistent_storage["industry_cargo_stats"][industry] <- VulcanIndustryCargoStatsManager.CARGO_STATS_TABLE_FORMAT
+            }
+        }
+    }
+
+    function CheckForDeletedIndustries(industry_list) {
+        // remove any industries that don't exist, this (might) save memory, and avoids risk of collision if ID is reused for new industry
+        // don't remove slots from a table whilst iterating it, do it afterwards
+        // https://developer.electricimp.com/squirrel/squirrel-guide/variables-collections#checking-whether-a-table-has-a-certain-key
+        local slots_to_delete = [];
+        foreach (industry, _ in ::persistent_storage["industry_cargo_stats"]) {
+            if (!industry_list.HasItem(industry)) {
+                Log.Info("industry " + industry + " no longer exists, removing from ::persistent_storage.industry_cargo_stats", Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+                slots_to_delete.append(industry);
+            }
+        }
+        foreach (slot in slots_to_delete) {
+            delete ::persistent_storage["industry_cargo_stats"][slot];
+        }
+    }
+
+    function UpdatedIndustryStats(industry_list) {
+        industry_list.Valuate(GSIndustry.GetIndustryType);
+
+        foreach (industry, industry_type in industry_list) {
+            Log.Info(GSIndustry.GetName(industry), Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+
+            Log.Info("...accepted cargos...", Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+            /*
+            foreach (cargo, _ in GSIndustryType.GetProducedCargo(industry_type)) {
+                local cargo_amount = GSIndustry.GetLastMonthProduction(industry, cargo);
+            }*/
+
+            Log.Info("...produced cargos...", Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+            foreach (cargo, _ in GSIndustryType.GetProducedCargo(industry_type)) {
+                local cargo_amount = GSIndustry.GetLastMonthProduction(industry, cargo);
+                Log.Info("    " + GSCargo.GetName(cargo) + "(" + GSCargo.GetCargoLabel(cargo) + ")" + ": " + cargo_amount, Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+            }
+
+            Log.Info("...transported cargos (all companies)...", Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+            foreach (cargo, _ in GSIndustryType.GetProducedCargo(industry_type)) {
+                local cargo_amount = 0;
+                foreach (company in VulcanCompanies.GetCompanies()) {
+                    cargo_amount += GSCargoMonitor.GetIndustryPickupAmount(company, cargo, industry, true);
+                }
+                Log.Info("    " + GSCargo.GetName(cargo) + " (" + GSCargo.GetCargoLabel(cargo) + "): " + cargo_amount, Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);
+            }
+
+            ::persistent_storage["industry_cargo_stats"][industry] = VulcanIndustryCargoStatsManager.CARGO_STATS_TABLE_FORMAT;
+        }
+    }
+}

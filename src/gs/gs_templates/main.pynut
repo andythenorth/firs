@@ -20,6 +20,7 @@ Log <- _FIRSLog();
 require("persistent_storage.nut");
 // Vulcan handles the economy / gameplay
 require("vulcan/vulcan_companies.nut");
+require("vulcan/vulcan_industry_cargo_stats.nut");
 require("vulcan/vulcan_industry_control.nut");
 require("vulcan/vulcan_industry_spec.nut");
 require("vulcan/vulcan_map_curator.nut");
@@ -131,6 +132,7 @@ function MainClass::Init() {
 
     FIRS.Init();
     VulcanCompanies.Init();
+    VulcanIndustryCargoStatsManager.Init();
     VulcanIndustryControl.Init();
     VulcanMapCurator.Init();
     VulcanTownControl.Init();
@@ -194,6 +196,8 @@ function MainClass::HandleEvents() {
  * Named consistent with OpenTTD OnNewMonth
  */
 function MainClass::OnNewMonth() {
+    // note that cargo stats should be run before town to ensure town access to latest industry stats
+    VulcanIndustryCargoStatsManager.RunPeriodicProcessing("OnNewMonth");
     // !! this might need to explicitly be per month, or more or less frequently?
     VulcanTownControl.RunPeriodicProcessing("OnNewMonth");
     // this would only need to run every 3 months or so
