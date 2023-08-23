@@ -14,6 +14,7 @@ industry = IndustryPrimaryPort(
     nearby_station_name="string(STR_STATION_INDUSTRY_HARBOUR_2)",
     fund_cost_multiplier="152",
     override_default_construction_states=True,
+    primary_production_random_factor_set="wide_range",
 )
 
 industry.enable_in_economy(

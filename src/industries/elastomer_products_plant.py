@@ -2,7 +2,7 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="elastomer_products_plant",
-    accept_cargos_with_input_ratios=[("RUBR", 6),("CBLK", 1),("SULP", 1)],
+    accept_cargos_with_input_ratios=[("RUBR", 6), ("CBLK", 1), ("SULP", 1)],
     prod_cargo_types_with_output_ratios=[
         ("ELAS", 8),
     ],

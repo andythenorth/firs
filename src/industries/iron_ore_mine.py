@@ -13,6 +13,7 @@ industry = IndustryPrimaryExtractive(
     location_checks=dict(require_cluster=[70, 3]),
     nearby_station_name="string(STR_STATION_IRONSTONE)",
     fund_cost_multiplier="232",
+    primary_production_random_factor_set="wide_range",
 )
 
 

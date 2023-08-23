@@ -17,6 +17,7 @@ industry = IndustryPrimaryExtractive(
     nearby_station_name="string(STR_STATION_KIMBERLITE_DEPOSITS)",
     fund_cost_multiplier="232",
     pollution_and_squalor_factor=1,
+    primary_production_random_factor_set="wide_range",
 )
 
 industry.enable_in_economy(

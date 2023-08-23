@@ -3,22 +3,39 @@
     this means that randomisation of production across instances of the same type is decoupled from cheats and monthly/random production cb changes
     default value is 16, same as production_level, and the produce method divides the end result by 16, so these values give actual factors of n/16
 -->
-random_switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build_get_factor) {
+random_switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build_factor_set_wide_range) {
 	1: return 8;
 	1: return 12;
-	4: return 16;
+	4: return 16; <!--! note heavy weighting to 16 here -->
 	3: return 20;
 	2: return 24;
 	1: return 28;
 	1: return 32;
 	1: return 36;
 }
+random_switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build_factor_set_medium_range) {
+	1: return 12;
+	1: return 16;
+	1: return 20;
+	1: return 24;
+}
+random_switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build_factor_set_narrow_range) {
+	1: return 12;
+	1: return 16;
+	1: return 20;
+}
 
-switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build, base_prod_factor_perm_storage_num,
+switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build_get_factor, factor_set, factor_set) {
+    <tal:factor_sets repeat="factor_set global_constants.primary_production_random_factor_sets">
+    	${repeat.factor_set.index}: return randomise_primary_production_on_build_factor_set_${factor_set};
+    </tal:factor_sets>
+}
+
+switch(FEAT_INDUSTRIES, SELF, randomise_primary_production_on_build, base_prod_factor_perm_storage_num, factor_set,
     [
         STORE_PERM_ALT(
             base_prod_factor_perm_storage_num,
-            randomise_primary_production_on_build_get_factor()
+            randomise_primary_production_on_build_get_factor(factor_set)
         )
     ]) {
 	return 16;

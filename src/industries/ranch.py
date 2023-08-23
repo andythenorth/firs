@@ -15,6 +15,7 @@ industry = IndustryPrimaryOrganic(
     nearby_station_name="string(STR_STATION_FARM_3)",
     fund_cost_multiplier="45",
     provides_snow=True,
+    primary_production_random_factor_set="wide_range",
 )
 
 industry.enable_in_economy(

@@ -23,6 +23,7 @@ industry = IndustryPrimaryNoSupplies(
     name="string(STR_IND_FISHING_GROUND)",
     nearby_station_name="string(STR_STATION_SHOALS)",
     fund_cost_multiplier="88",
+    primary_production_random_factor_set="wide_range",
 )
 
 industry.enable_in_economy(

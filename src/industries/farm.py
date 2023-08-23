@@ -16,6 +16,7 @@ industry = IndustryPrimaryOrganic(
     extra_text_fund="string(STR_FUND_FARM)",
     nearby_station_name="string(STR_STATION_BARNS)",
     fund_cost_multiplier="49",
+    primary_production_random_factor_set="wide_range",
 )
 
 # definitely not in Arctic Basic, farm has been added and removed more than once from that economy :P
@@ -34,8 +35,9 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "STEELTOWN",
     prod_cargo_types_with_multipliers=[
-        ("FOOD", 14),
+        ("FOOD", 11),
     ],
+    primary_production_random_factor_set="narrow_range",
     prob_map_gen="15",  # intended to be relatively prevalent in Steeltown, split this per economy if needed
     vulcan_config={
         "map_curator": {

@@ -15,6 +15,7 @@ industry = IndustryPrimaryOrganic(
     location_checks=dict(require_cluster=[72, 4]),
     fund_cost_multiplier="54",
     override_default_construction_states=True,
+    primary_production_random_factor_set="wide_range",
 )
 
 industry.enable_in_economy("IN_A_HOT_COUNTRY")

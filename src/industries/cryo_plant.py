@@ -20,6 +20,8 @@ industry = IndustryPrimaryNoSupplies(
     # deliberately low fund cost; there is some remaining weirdness on cost because this is a non-growable primary, but eh, live with it
     fund_cost_multiplier="45",
     allow_production_change_from_gs=True,
+    # cryo plant is more satisfying with medium range randomisation
+    primary_production_random_factor_set="medium_range",
 )
 
 industry.enable_in_economy(

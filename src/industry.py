@@ -1424,6 +1424,8 @@ class IndustryProperties(object):
             "override_default_construction_states", False
         )
         self.extra_text_fund = kwargs.get("extra_text_fund", None)
+        # used by primaries only as of August 2023
+        self.primary_production_random_factor_set = kwargs.get("primary_production_random_factor_set", None)
         # default and/or economy-specific configuration for FIRS GS at compile time
         self.vulcan_config = kwargs.get("vulcan_config", {})
         # nml properties we want to prevent being set for one reason or another
@@ -1757,6 +1759,20 @@ class Industry(object):
             for industry_layout in self.industry_layouts
         ]
         return "layouts: [" + ",".join(result) + "];"
+
+    def randomise_primary_production_on_build_as_nml_property(self, economy):
+        if self.get_property("prod_cargo_types_with_multipliers", economy) in [None, []]:
+            # if there's no production, there's no point setting this prop (this mostly handles case of IndustryTertiary where hotel produces and others do not)
+            return ""
+        else:
+            # don't otherwise bother handling errors, just fail if this is missing
+            primary_production_random_factor_set = self.get_property("primary_production_random_factor_set", economy)
+            params = [
+                self.get_perm_num("base_prod_factor"),
+                # we want the index of the primary_production_random_factor_set so we can switch on it in nml
+                global_constants.primary_production_random_factor_sets.index(primary_production_random_factor_set)
+            ]
+            return "build_prod_change: randomise_primary_production_on_build(" + ",".join([str(i) for i in params]) + ");"
 
     def get_extra_text_fund(self, economy):
         # some fund text options are orthogonal, there is no support for combining them currently
