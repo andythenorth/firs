@@ -7,7 +7,7 @@ industry = IndustryPrimaryNoSupplies(
         ("O2__", 15),
         # realism suggests that oxygen and nitrogen might be roughly equal in output, but gameplay eh
         ("N7__", 10),
-        ("WELD", 5),
+        ("WELD", 6),
     ],
     prob_in_game="4",
     prob_map_gen="7",
