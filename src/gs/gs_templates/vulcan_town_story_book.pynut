@@ -25,7 +25,8 @@ class VulcanTownStoryPage {
 
     constructor(vulcan_town) {
         local town_name = GSTown.GetName(vulcan_town.town);
-        this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Town: " + town_name);
+        local town_name_suffix = GSTown.IsCity(vulcan_town.town) ? "City" : "Town";
+        this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, town_name + " (" + town_name_suffix + ")");
         this.CreatePageElements(vulcan_town);
     }
 
