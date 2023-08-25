@@ -206,18 +206,17 @@ industry.add_spritelayout(
 )
 
 # this industry needs outpost layout as there are lots of cargos
-"""
 industry.add_industry_outpost_layout(
     id="blast_furnace_industry_outpost_layout_1",
     layout=[
         # test outpost layout
-        (0, 0, "blast_furnace_spritelayout_brick_building"),
-        (0, 1, "blast_furnace_spritelayout_small_shed"),
-        (1, 0, "blast_furnace_spritelayout_small_shed"),
-        (1, 1, "blast_furnace_spritelayout_greeble"),
+        (0, 0, "blast_furnace_spritelayout_blast_furnace_1"),
+        (0, 1, "blast_furnace_spritelayout_blast_furnace_2"),
+        (1, 0, "blast_furnace_spritelayout_small_tanks"),
+        (1, 1, "blast_furnace_spritelayout_brick_building"),
     ],
 )
-"""
+
 # core layouts are roughly 6x4 or 5x5
 industry.add_industry_layout(
     id="blast_furnace_industry_layout_1",
