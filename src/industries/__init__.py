@@ -83,7 +83,7 @@ from industries import strip_mill
 from industries import supply_yard
 from industries import timber_yard
 from industries import trading_post
-from industries import tube_mill
+from industries import tube_and_pipe_mill
 from industries import tyre_plant
 from industries import vehicle_distributor
 from industries import vineyard
@@ -173,7 +173,7 @@ strip_mill.industry.register()
 supply_yard.industry.register()
 timber_yard.industry.register()
 trading_post.industry.register()
-tube_mill.industry.register()
+tube_and_pipe_mill.industry.register()
 tyre_plant.industry.register()
 vehicle_distributor.industry.register()
 vineyard.industry.register()
