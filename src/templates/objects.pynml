@@ -77,7 +77,7 @@
 
         <tal:economies repeat="economy industry.economies_enabled_for_industry">
             if (economy==${economy.numeric_id} && objects) {
-                item(FEAT_OBJECTS, ${grf_object.id}, ${object_ids[grf_object.id]}) {
+                item(FEAT_OBJECTS, ${grf_object.id}, ${grf_object.numeric_id}) {
                     property {
                         <!--! class is: industry ID, padded out with 0s and F pre-pended, e.g. F001 etc
                               it's accepted that this might collide with other sets but eh

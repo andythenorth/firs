@@ -19,7 +19,6 @@ registered_cargos = firs.registered_cargos
 registered_industries = firs.registered_industries
 registered_economies = firs.registered_economies
 incompatible_industries = firs.incompatible_industries
-object_ids = firs.object_ids
 
 from chameleon import PageTemplateLoader  # chameleon used in most template cases
 
@@ -42,7 +41,6 @@ def render_header_item_nml(header_item):
             registered_industries=registered_industries,
             registered_cargos=registered_cargos,
             economies=registered_economies,
-            object_ids=object_ids,
             perm_storage_mappings=perm_storage_mappings,
             get_perm_num=get_perm_num,
             incompatible_grfs=incompatible_grfs,
