@@ -797,7 +797,11 @@ class GRFObject(object):
     def __init__(self, industry, add_to_object_num):
         # note spacing numeric part of id to add a leading 0 if needed, otherwise python lexical sort returns 'foo_1, foo_10, foo_2' etc
         self.id = f"{industry.id}_object_{add_to_object_num:02}"
-        self.add_to_object_num = add_to_object_num
+        # we allocate up a range of up to 100 object numeric IDs per industry, using the industry numeric ID
+        # this will keep object IDs relatively stable across releases unless the industry numeric ID changes or add_to_object_num changes
+        if add_to_object_num > 99:
+            raise BaseException("Industry " + industry.id + " defines an object with numeric ID " + str(add_to_object_num) + " which exceeds the limit of 99")
+        self.numeric_id = (industry.numeric_id * 100) + add_to_object_num
         self.views = []
         self.industry = industry
 

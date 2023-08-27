@@ -134,16 +134,11 @@ for industry_id, industry_numeric_id in global_constants.industry_numeric_ids.it
     if found == False:
         utils.echo_message("Not found: " + industry_id + " from global_constants")
 
-# objects have no order control other than by id
-# so auto-generate object ids in alphabetical order, using the industry id as key
-# this could be made more accurate by using the industry name string, but id will do for now
-# this approach means that object IDs will not be stable across changes, but it's the best of the available choices currently
-object_ids = {}
+# guard against (1) too many objects (2) invalid objects
 counter = 0
-for industry in sorted(registered_industries, key=lambda industry: industry.id):
-    for grf_object in sorted(industry.objects.values(), key=lambda grf_object: grf_object.id):
+for industry in registered_industries:
+    for grf_object in industry.objects.values():
         grf_object.validate()
-        object_ids[grf_object.id] = counter
         counter += 1
-        if counter > 255:
+        if counter > 64000:
             raise BaseException("Object ID limit exceeded", counter, grf_object.id) # yair, try harder
