@@ -1,4 +1,10 @@
 # Definition of numeric IDs for industries
+# 127 is last ID to be used (128 industry limit, zero-based)
+# see also why 128 is a hard limit as of 2020 http://webster.openttdcoop.org/?channel=openttd&date=1586563200#1586641232
+# if 128 is hit, will have to manually assign IDs per economy
+# possibly auto-assignment, but non-alphabetised and with a placeholder option for removals, i.e. a system of 64 slots, and slots are occupied or not
+# a pure alphabetised list for auto-IDs will constantly wreck savegames, does that matter?
+
 industry_numeric_ids = dict(
     coal_mine=0,
     ####UNUSED?####steel_mill = 1,
@@ -6,7 +12,7 @@ industry_numeric_ids = dict(
     cryo_plant=3,
     iron_ore_mine=4,
     peatlands=5,
-    ####UNUSED?####smithy_forge = 6,
+    appliance_factory=6,
     blast_furnace=7,
     basic_oxygen_furnace=8,
     metal_workshop=9,
@@ -100,7 +106,7 @@ industry_numeric_ids = dict(
     ###BLTC###tinplate_works = 97,
     cider_mill=98,
     lime_kiln=99,
-    hardware_factory = 100,
+    hardware_factory=100,
     ###BLTC###factory_2 = 101,
     ###BLTC###factory_3 = 102,
     tube_mill=103,
@@ -123,15 +129,10 @@ industry_numeric_ids = dict(
     elastomer_products_plant=120,
     crane_and_hoist_factory=121,
 )
-# 127 is last ID to be used (128 industry limit, zero-based)
-# see also why 128 is a hard limit as of 2020 http://webster.openttdcoop.org/?channel=openttd&date=1586563200#1586641232
-# if 128 is hit, will have to manually assign IDs per economy
-# possibly auto-assignment, but non-alphabetised and with a placeholder option for removals, i.e. a system of 64 slots, and slots are occupied or not
-# a pure alphabetised list for auto-IDs will constantly wreck savegames, does that matter?
-
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
 tile_numeric_ids = dict(
+    appliance_factory_tile_1=70,
     crane_and_hoist_factory_tile_1=71,
     elastomer_products_plant_tile_1=72,
     elastomer_products_plant_tile_2=73,
@@ -317,7 +318,6 @@ tile_numeric_ids = dict(
     fishing_village_tile_2=253,
     chemical_plant_tile_2=254,
 )
-
 
 metadata = {
     "dev_thread_url": "http://www.tt-forums.net/viewtopic.php?t=41607",

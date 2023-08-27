@@ -1,6 +1,7 @@
 registered_industries = []
 # keep these alphabetised for ease of maintaining
 
+from industries import appliance_factory
 from industries import arable_farm
 from industries import assembly_plant
 from industries import bar_and_section_mill
@@ -90,6 +91,7 @@ from industries import wharf
 from industries import wire_rope_factory
 from industries import wire_rod_mill
 
+appliance_factory.industry.register()
 arable_farm.industry.register()
 assembly_plant.industry.register()
 bar_and_section_mill.industry.register()
