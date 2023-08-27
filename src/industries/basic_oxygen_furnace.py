@@ -76,11 +76,23 @@ spriteset_air_plant = industry.add_spriteset(
 spriteset_caster = industry.add_spriteset(
     sprites=[(360, 10, 64, 122, -31, -90)],
 )
-spriteset_metal_1 = industry.add_spriteset(
+spriteset_metal_with_small_train_car_1 = industry.add_spriteset(
     sprites=[(430, 10, 64, 122, -31, -90)],
 )
 spriteset_shed = industry.add_spriteset(
+    sprites=[(500, 10, 64, 122, -31, -90)],
+)
+spriteset_metal_1 = industry.add_spriteset(
+    sprites=[(570, 10, 64, 122, -31, -90)],
+)
+spriteset_metal_2 = industry.add_spriteset(
+    sprites=[(640, 10, 64, 122, -31, -90)],
+)
+spriteset_metal_3 = industry.add_spriteset(
     sprites=[(710, 10, 64, 122, -31, -90)],
+)
+spriteset_metal_4 = industry.add_spriteset(
+    sprites=[(780, 10, 64, 122, -31, -90)],
 )
 spriteset_caster_crane_animated = industry.add_spriteset(
     sprites=[
@@ -255,11 +267,11 @@ industry.add_spritelayout(
     add_to_object_num=2,
 )
 industry.add_spritelayout(
-    id="basic_oxygen_furnace_spritelayout_metal_1",
+    id="basic_oxygen_furnace_spritelayout_metal_with_small_train_car_1",
     tile="basic_oxygen_furnace_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_metal_1],
+    building_sprites=[spriteset_metal_with_small_train_car_1],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=6,
 )
@@ -273,6 +285,42 @@ industry.add_spritelayout(
     add_to_object_num=5,
 )
 industry.add_spritelayout(
+    id="basic_oxygen_furnace_spritelayout_metal_1",
+    tile="basic_oxygen_furnace_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_metal_1],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=7,
+)
+industry.add_spritelayout(
+    id="basic_oxygen_furnace_spritelayout_metal_2",
+    tile="basic_oxygen_furnace_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_metal_2],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=8,
+)
+industry.add_spritelayout(
+    id="basic_oxygen_furnace_spritelayout_metal_3",
+    tile="basic_oxygen_furnace_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_metal_3],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=9,
+)
+industry.add_spritelayout(
+    id="basic_oxygen_furnace_spritelayout_metal_4",
+    tile="basic_oxygen_furnace_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_metal_4],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=10,
+)
+industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_animated_casting_front_part",
     tile="basic_oxygen_furnace_tile_2",
     ground_sprite=spriteset_ground_tile_animated_crane,
@@ -284,6 +332,7 @@ industry.add_spritelayout(
     ],
     fences=["nw", "ne", "se", "sw"],
     perma_fences=["sw"],
+    # no animated object; fails on mismatched spritesets, TMWFTLB as of August 2023
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_animated_casting_rear_part",
@@ -296,6 +345,7 @@ industry.add_spritelayout(
     ],
     fences=["nw", "ne", "se", "sw"],
     perma_fences=["sw"],
+    # no animated object; fails on mismatched spritesets, TMWFTLB as of August 2023
 )
 
 # this industry needs outpost layout as there are lots of cargos
@@ -326,7 +376,7 @@ industry.add_industry_outpost_layout(
         (
             2,
             0,
-            "basic_oxygen_furnace_spritelayout_metal_1",
+            "basic_oxygen_furnace_spritelayout_metal_with_small_train_car_1",
         ),
         (
             2,
