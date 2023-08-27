@@ -1,0 +1,3038 @@
+[GLOBAL_PRAGMA]
+grflangid = "0x30"
+plural = "7"
+gender = "m f n"
+case = "b c d m n w"
+
+[STR_GRF_DESC]
+base = "{ORANGE}FIRS Industry Replacement Set{}{BLACK}Autorzy: andythenorth, FooBar, planetmaker, Terkhen, Yexo i inni. {SILVER}Więcej informacji w pliku readme. {BLACK}Licencja: GPL v2."
+
+[STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY]
+base = "Maksymalna odległość od linii brzegowej dla łowisk, platform wiertniczych i pogłębiarek."
+
+[STR_PARAM_DESC_ECONOMIES]
+base = "Każda z dostępnych w FIRS ekonomii oferuje inną kombinację towarów i fabryk.{}{}Dla graczy preferujących proste zasady gry zalecany jest wybór ekonomii {SILVER}Zwykła. {BLACK}Zawiera ona mniej fabryk i towarów niż inne ekonomie FIRS.{}{}Strona internetowa FIRS zawiera szczegółowe informacje na temat każdej z ekonomii."
+
+[STR_PARAM_DESC_NO_OPENINGS]
+base = "Domyślnie nowe przedsiębiorstwa powstają w trakcie gry.{}{}Jeśli parametr {SILVER}zapobiegaj powstawaniu przedsiębiorstw {BLACK}jest włączony to zakłady nie będą otwierane, a gracz nie będzie miał możliwości ich fundowania."
+
+[STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY]
+base = "Maksymalny dystans przedsiębiorstw morskich od wybrzeża"
+
+[STR_PARAM_NAME_ECONOMIES]
+base = "Ekonomia"
+
+[STR_PARAM_NAME_NO_OPENINGS]
+base = "Zapobiegaj powstawaniu przedsiębiorstw"
+
+[STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0]
+base = "bez limitu"
+
+[STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT]
+base = "Surowce potrzebne dla zwiększonej produkcji (domyślnie 16)"
+
+[STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT]
+base = "Surowce potrzebne dla niewiarygodnej produkcji (domyślnie 80)"
+
+[STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT]
+base = "Gospodarstwa, kopalnie i podobne zakłady zwiększą produkcję, kiedy surowce są dostarczane, najpierw do {SILVER}zwiększonej{BLACK}, a później do {SILVER}niewiarygodnej{BLACK}.{}{}Domyślne wartości są dobre, ale jeśli chcesz, to możesz zmienić je tutaj.{}{}Wymagania dotyczące ilości dostarczanych surowców dla portów będą 8-krotnością wartości tu ustalonej."
+
+[STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS]
+base = "Zwiększony poziom produkcji (%)"
+
+[STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS]
+base = "Niewiarygodny poziom produkcji (%)"
+
+[STR_PARAM_DESC_PRIMARY_LEVEL_BONUS]
+base = "Produkcja w gospodarstwach, kopalniach i podobnych zakładach kiedy wymagania dotyczące dostaw są spełnione (jako procent {SILVER}normalnego {BLACK}poziomu produkcji)."
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE]
+base = "Zwykła ekonomia dla klimatu umiarkowanego"
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC]
+base = "Zwykła ekonomia dla klimatu arktycznego"
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC]
+base = "Zwykła ekonomia dla klimatu tropikalnego"
+
+[STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY]
+base = "W Gorącym Kraju"
+
+[STR_PARAM_VALUE_ECONOMIES_STEELTOWN]
+base = "Stalowa metropolia"
+
+[STR_CARGO_NAME_ACID]
+base = "{G=m}Kwas"
+
+["STR_CARGO_NAME_ACID.b"]
+base = "kwas"
+
+["STR_CARGO_NAME_ACID.c"]
+base = "kwasowi"
+
+["STR_CARGO_NAME_ACID.d"]
+base = "kwasu"
+
+["STR_CARGO_NAME_ACID.m"]
+base = "kwasie"
+
+["STR_CARGO_NAME_ACID.n"]
+base = "kwasem"
+
+["STR_CARGO_NAME_ACID.w"]
+base = "kwasie"
+
+[STR_CARGO_NAME_ALCOHOL]
+base = "{G=m}Alkohol"
+
+["STR_CARGO_NAME_ALCOHOL.b"]
+base = "alkohol"
+
+["STR_CARGO_NAME_ALCOHOL.c"]
+base = "alkoholowi"
+
+["STR_CARGO_NAME_ALCOHOL.d"]
+base = "alkoholu"
+
+["STR_CARGO_NAME_ALCOHOL.n"]
+base = "alkoholem"
+
+[STR_CARGO_NAME_ALUMINIA]
+base = "{G=m}Tlenek glinu"
+
+["STR_CARGO_NAME_ALUMINIA.b"]
+base = "tlenek glinu"
+
+["STR_CARGO_NAME_ALUMINIA.d"]
+base = "tlenku glinu"
+
+[STR_CARGO_NAME_ALUMINIUM]
+base = "{G=m}Glin"
+
+["STR_CARGO_NAME_ALUMINIUM.b"]
+base = "glin"
+
+["STR_CARGO_NAME_ALUMINIUM.d"]
+base = "glinu"
+
+[STR_CARGO_NAME_AMMONIA]
+base = "{G=m}Amoniak"
+
+["STR_CARGO_NAME_AMMONIA.b"]
+base = "amoniak"
+
+["STR_CARGO_NAME_AMMONIA.d"]
+base = "amoniaku"
+
+[STR_CARGO_NAME_AMMONIUM_NITRATE]
+base = "{G=m}Azotan amonu"
+
+["STR_CARGO_NAME_AMMONIUM_NITRATE.b"]
+base = "azotan amonu"
+
+["STR_CARGO_NAME_AMMONIUM_NITRATE.d"]
+base = "azotanu amonu"
+
+[STR_CARGO_NAME_BAUXITE]
+base = "{G=m}Boksyt"
+
+["STR_CARGO_NAME_BAUXITE.b"]
+base = "boksyt"
+
+["STR_CARGO_NAME_BAUXITE.d"]
+base = "boksytu"
+
+[STR_CARGO_NAME_BEANS]
+base = "{G=f}Soja"
+
+["STR_CARGO_NAME_BEANS.b"]
+base = "soję"
+
+["STR_CARGO_NAME_BEANS.c"]
+base = "soi"
+
+["STR_CARGO_NAME_BEANS.d"]
+base = "soi"
+
+["STR_CARGO_NAME_BEANS.m"]
+base = "soi"
+
+["STR_CARGO_NAME_BEANS.n"]
+base = "soją"
+
+[STR_CARGO_NAME_BUILDING_MATERIALS]
+base = "Materiały budowlane"
+
+["STR_CARGO_NAME_BUILDING_MATERIALS.b"]
+base = "materiały budowlane"
+
+["STR_CARGO_NAME_BUILDING_MATERIALS.d"]
+base = "materiałów budowlanych"
+
+[STR_CARGO_NAME_CARBON_BLACK]
+base = "{G=f}Sadza"
+
+["STR_CARGO_NAME_CARBON_BLACK.b"]
+base = "sadzę"
+
+["STR_CARGO_NAME_CARBON_BLACK.d"]
+base = "sadzy"
+
+[STR_CARGO_NAME_CASSAVA]
+base = "{G=m}Maniok"
+
+["STR_CARGO_NAME_CASSAVA.b"]
+base = "maniok"
+
+["STR_CARGO_NAME_CASSAVA.c"]
+base = "maniokowi"
+
+["STR_CARGO_NAME_CASSAVA.d"]
+base = "manioku"
+
+["STR_CARGO_NAME_CASSAVA.n"]
+base = "maniokiem"
+
+[STR_CARGO_NAME_CAST_IRON]
+base = "{G=n}Żeliwo"
+
+["STR_CARGO_NAME_CAST_IRON.b"]
+base = "żeliwo"
+
+["STR_CARGO_NAME_CAST_IRON.d"]
+base = "żeliwa"
+
+[STR_CARGO_NAME_CEMENT]
+base = "{G=m}Cement"
+
+["STR_CARGO_NAME_CEMENT.b"]
+base = "cement"
+
+["STR_CARGO_NAME_CEMENT.c"]
+base = "cementowi"
+
+["STR_CARGO_NAME_CEMENT.d"]
+base = "cementu"
+
+["STR_CARGO_NAME_CEMENT.m"]
+base = "cemencie"
+
+["STR_CARGO_NAME_CEMENT.n"]
+base = "cementem"
+
+["STR_CARGO_NAME_CEMENT.w"]
+base = "cemencie"
+
+[STR_CARGO_NAME_CHEMICALS]
+base = "{G=n}Chemikalia"
+
+["STR_CARGO_NAME_CHEMICALS.b"]
+base = "chemikalia"
+
+["STR_CARGO_NAME_CHEMICALS.d"]
+base = "chemikaliów"
+
+[STR_CARGO_NAME_CHLORINE]
+base = "{G=m}Chlor"
+
+["STR_CARGO_NAME_CHLORINE.b"]
+base = "chlor"
+
+["STR_CARGO_NAME_CHLORINE.c"]
+base = "chlorowi"
+
+["STR_CARGO_NAME_CHLORINE.d"]
+base = "chloru"
+
+["STR_CARGO_NAME_CHLORINE.m"]
+base = "chlorze"
+
+["STR_CARGO_NAME_CHLORINE.n"]
+base = "chlorem"
+
+["STR_CARGO_NAME_CHLORINE.w"]
+base = "chlorze"
+
+[STR_CARGO_NAME_CHROMITE_ORE]
+base = "{G=m}Chromit"
+
+["STR_CARGO_NAME_CHROMITE_ORE.b"]
+base = "chromit"
+
+["STR_CARGO_NAME_CHROMITE_ORE.d"]
+base = "chromitu"
+
+[STR_CARGO_NAME_CLAY]
+base = "{G=f}Glina"
+
+["STR_CARGO_NAME_CLAY.b"]
+base = "glinę"
+
+["STR_CARGO_NAME_CLAY.d"]
+base = "gliny"
+
+[STR_CARGO_NAME_CLEANING_AGENTS]
+base = "Środki czyszczące"
+
+["STR_CARGO_NAME_CLEANING_AGENTS.b"]
+base = "środki czyszczące"
+
+["STR_CARGO_NAME_CLEANING_AGENTS.d"]
+base = "środków czyszczących"
+
+[STR_CARGO_NAME_COAL_TAR]
+base = "{G=f}Smoła pogazowa"
+
+["STR_CARGO_NAME_COAL_TAR.b"]
+base = "smołę pogazową"
+
+["STR_CARGO_NAME_COAL_TAR.d"]
+base = "smoły pogazowej"
+
+[STR_CARGO_NAME_COFFEE]
+base = "{G=f}Kawa"
+
+["STR_CARGO_NAME_COFFEE.b"]
+base = "kawę"
+
+["STR_CARGO_NAME_COFFEE.c"]
+base = "kawie"
+
+["STR_CARGO_NAME_COFFEE.d"]
+base = "kawy"
+
+["STR_CARGO_NAME_COFFEE.m"]
+base = "kawie"
+
+["STR_CARGO_NAME_COFFEE.n"]
+base = "kawą"
+
+["STR_CARGO_NAME_COFFEE.w"]
+base = "kawo"
+
+[STR_CARGO_NAME_COKE]
+base = "{G=m}Koks"
+
+["STR_CARGO_NAME_COKE.b"]
+base = "koks"
+
+["STR_CARGO_NAME_COKE.c"]
+base = "koksowi"
+
+["STR_CARGO_NAME_COKE.d"]
+base = "koksu"
+
+["STR_CARGO_NAME_COKE.m"]
+base = "koksie"
+
+["STR_CARGO_NAME_COKE.n"]
+base = "koksem"
+
+["STR_CARGO_NAME_COKE.w"]
+base = "koksie"
+
+[STR_CARGO_NAME_COPPER]
+base = "{G=f}Miedź"
+
+["STR_CARGO_NAME_COPPER.b"]
+base = "miedź"
+
+["STR_CARGO_NAME_COPPER.c"]
+base = "miedzi"
+
+["STR_CARGO_NAME_COPPER.d"]
+base = "miedzi"
+
+["STR_CARGO_NAME_COPPER.n"]
+base = "miedzią"
+
+["# STR_CARGO_NAME_COPPER_CONCENTRATE"]
+base = "Copper Concentrate //unused in current version, not sure how to translate"
+
+[STR_CARGO_NAME_EDIBLE_OIL]
+base = "{G=m}Olej jadalny"
+
+["STR_CARGO_NAME_EDIBLE_OIL.b"]
+base = "olej jadalny"
+
+["STR_CARGO_NAME_EDIBLE_OIL.c"]
+base = "olejowi jadalnemu"
+
+["STR_CARGO_NAME_EDIBLE_OIL.d"]
+base = "oleju jadalnego"
+
+["STR_CARGO_NAME_EDIBLE_OIL.n"]
+base = "olejem jadalnym"
+
+[STR_CARGO_NAME_ELECTRICAL_PARTS]
+base = "Części elektryczne"
+
+["STR_CARGO_NAME_ELECTRICAL_PARTS.b"]
+base = "części elektryczne"
+
+["STR_CARGO_NAME_ELECTRICAL_PARTS.d"]
+base = "części elektrycznych"
+
+[STR_CARGO_NAME_ENGINEERING_SUPPLIES]
+base = "{G=n}Zaopatrzenie techniczne"
+
+["STR_CARGO_NAME_ENGINEERING_SUPPLIES.b"]
+base = "zaopatrzenie techniczne"
+
+["STR_CARGO_NAME_ENGINEERING_SUPPLIES.c"]
+base = "zaopatrzeniu technicznemu"
+
+["STR_CARGO_NAME_ENGINEERING_SUPPLIES.d"]
+base = "zaopatrzenia technicznego"
+
+["STR_CARGO_NAME_ENGINEERING_SUPPLIES.m"]
+base = "zaopatrzeniu technicznym"
+
+["STR_CARGO_NAME_ENGINEERING_SUPPLIES.n"]
+base = "zaopatrzeniem technicznym"
+
+[STR_CARGO_NAME_ETHYLENE]
+base = "{G=m}Etylen"
+
+["STR_CARGO_NAME_ETHYLENE.b"]
+base = "etylen"
+
+["STR_CARGO_NAME_ETHYLENE.d"]
+base = "etylenu"
+
+[STR_CARGO_NAME_EXPLOSIVES]
+base = "Materiały wybuchowe"
+
+["STR_CARGO_NAME_EXPLOSIVES.b"]
+base = "materiały wybuchowe"
+
+["STR_CARGO_NAME_EXPLOSIVES.c"]
+base = "materiałom wybuchowym"
+
+["STR_CARGO_NAME_EXPLOSIVES.d"]
+base = "materiałów wybuchowych"
+
+["STR_CARGO_NAME_EXPLOSIVES.m"]
+base = "materiałach wybuchowych"
+
+["STR_CARGO_NAME_EXPLOSIVES.n"]
+base = "materiałami wybuchowymi"
+
+[STR_CARGO_NAME_FERROCHROME]
+base = "{G=m}Żelazochrom"
+
+["STR_CARGO_NAME_FERROCHROME.b"]
+base = "żelazochrom"
+
+["STR_CARGO_NAME_FERROCHROME.d"]
+base = "żelazochromu"
+
+[STR_CARGO_NAME_FIBRES]
+base = "Włókna roślinne"
+
+["STR_CARGO_NAME_FIBRES.b"]
+base = "włókna roślinne"
+
+["STR_CARGO_NAME_FIBRES.c"]
+base = "włóknom roślinnym"
+
+["STR_CARGO_NAME_FIBRES.d"]
+base = "włókien roślinnych"
+
+["STR_CARGO_NAME_FIBRES.n"]
+base = "włóknami roślinnymi"
+
+[STR_CARGO_NAME_FISH]
+base = "Ryby"
+
+["STR_CARGO_NAME_FISH.b"]
+base = "ryby"
+
+["STR_CARGO_NAME_FISH.c"]
+base = "rybom"
+
+["STR_CARGO_NAME_FISH.d"]
+base = "ryb"
+
+["STR_CARGO_NAME_FISH.m"]
+base = "rybach"
+
+["STR_CARGO_NAME_FISH.n"]
+base = "rybami"
+
+[STR_CARGO_NAME_FARM_SUPPLIES]
+base = "{G=n}Zaopatrzenie rolnictwa"
+
+["STR_CARGO_NAME_FARM_SUPPLIES.b"]
+base = "zaopatrzenie rolnictwa"
+
+["STR_CARGO_NAME_FARM_SUPPLIES.c"]
+base = "zaopatrzeniu rolnictwa"
+
+["STR_CARGO_NAME_FARM_SUPPLIES.d"]
+base = "zaopatrzenia rolnictwa"
+
+["STR_CARGO_NAME_FARM_SUPPLIES.m"]
+base = "zaopatrzeniem rolnictwa"
+
+[STR_CARGO_NAME_FERTILISER]
+base = "Nawóz"
+
+["STR_CARGO_NAME_FERTILISER.b"]
+base = "nawóz"
+
+["STR_CARGO_NAME_FERTILISER.c"]
+base = "nawozowi"
+
+["STR_CARGO_NAME_FERTILISER.d"]
+base = "nawozu"
+
+["STR_CARGO_NAME_FERTILISER.m"]
+base = "nawozie"
+
+["STR_CARGO_NAME_FERTILISER.n"]
+base = "nawozem"
+
+["STR_CARGO_NAME_FERTILISER.w"]
+base = "nawozie"
+
+["# STR_CARGO_NAME_FOOD_ADDITIVES"]
+base = "Food Additives //unused in current version, not sure how to translate"
+
+[STR_CARGO_NAME_FORMIC_ACID]
+base = "{G=m}Kwas mrówkowy"
+
+["STR_CARGO_NAME_FORMIC_ACID.b"]
+base = "kwas mrówkowy"
+
+["STR_CARGO_NAME_FORMIC_ACID.d"]
+base = "kwasu mrówkowego"
+
+[STR_CARGO_NAME_FRUITS]
+base = "{G=m}Owoce"
+
+["STR_CARGO_NAME_FRUITS.b"]
+base = "owoce"
+
+["STR_CARGO_NAME_FRUITS.d"]
+base = "owoców"
+
+[STR_CARGO_NAME_FURNITURE]
+base = "Meble"
+
+["STR_CARGO_NAME_FURNITURE.b"]
+base = "meble"
+
+["STR_CARGO_NAME_FURNITURE.d"]
+base = "mebli"
+
+[STR_CARGO_NAME_GLASS]
+base = "{G=n}Szkło"
+
+["STR_CARGO_NAME_GLASS.b"]
+base = "szkło"
+
+["STR_CARGO_NAME_GLASS.d"]
+base = "szkła"
+
+[STR_CARGO_NAME_HYDROCHLORIC_ACID]
+base = "{G=m}Kwas solny"
+
+["STR_CARGO_NAME_HYDROCHLORIC_ACID.b"]
+base = "kwas solny"
+
+["STR_CARGO_NAME_HYDROCHLORIC_ACID.d"]
+base = "kwasu solnego"
+
+[STR_CARGO_NAME_KAOLIN]
+base = "{G=m}Kaolinit"
+
+["STR_CARGO_NAME_KAOLIN.b"]
+base = "kaolinit"
+
+["STR_CARGO_NAME_KAOLIN.c"]
+base = "kaolinitowi"
+
+["STR_CARGO_NAME_KAOLIN.d"]
+base = "kaolinitu"
+
+["STR_CARGO_NAME_KAOLIN.m"]
+base = "kaolinicie"
+
+["STR_CARGO_NAME_KAOLIN.n"]
+base = "kaolinitem"
+
+["STR_CARGO_NAME_KAOLIN.w"]
+base = "kaolinicie"
+
+[STR_CARGO_NAME_LIMESTONE]
+base = "{G=n}Wapień"
+
+["STR_CARGO_NAME_LIMESTONE.b"]
+base = "wapień"
+
+["STR_CARGO_NAME_LIMESTONE.d"]
+base = "wapienia"
+
+[STR_CARGO_NAME_LOGS]
+base = "{G=n}Drewno"
+
+["STR_CARGO_NAME_LOGS.b"]
+base = "drewno"
+
+["STR_CARGO_NAME_LOGS.d"]
+base = "drewna"
+
+[STR_CARGO_NAME_TIMBER]
+base = "{G=f}Deski"
+
+["STR_CARGO_NAME_TIMBER.b"]
+base = "deski"
+
+["STR_CARGO_NAME_TIMBER.d"]
+base = "desek"
+
+[STR_CARGO_NAME_LYE]
+base = "{G=m}Wodorotlenek sodu"
+
+["STR_CARGO_NAME_LYE.b"]
+base = "wodorotlenek sodu"
+
+["STR_CARGO_NAME_LYE.d"]
+base = "wodorotlenku sodu"
+
+[STR_CARGO_NAME_METAL]
+base = "{G=m}Metal"
+
+["STR_CARGO_NAME_METAL.b"]
+base = "metal"
+
+["STR_CARGO_NAME_METAL.d"]
+base = "metalu"
+
+[STR_CARGO_NAME_METHANE]
+base = "{G=m}Metan"
+
+["STR_CARGO_NAME_METHANE.b"]
+base = "metan"
+
+["STR_CARGO_NAME_METHANE.d"]
+base = "metanu"
+
+[STR_CARGO_NAME_METHANOL]
+base = "{G=m}Metanol"
+
+["STR_CARGO_NAME_METHANOL.b"]
+base = "metanol"
+
+["STR_CARGO_NAME_METHANOL.d"]
+base = "metanolu"
+
+[STR_CARGO_NAME_MILK]
+base = "{G=n}Mleko"
+
+["STR_CARGO_NAME_MILK.b"]
+base = "mleko"
+
+["STR_CARGO_NAME_MILK.d"]
+base = "mleka"
+
+[STR_CARGO_NAME_MANGANESE]
+base = "{G=m}Mangan"
+
+["STR_CARGO_NAME_MANGANESE.b"]
+base = "mangan"
+
+["STR_CARGO_NAME_MANGANESE.c"]
+base = "manganowi"
+
+["STR_CARGO_NAME_MANGANESE.d"]
+base = "manganu"
+
+["STR_CARGO_NAME_MANGANESE.n"]
+base = "manganem"
+
+["# STR_CARGO_NAME_NAPHTHA"]
+base = "Naphtha //Not sure if should be \"nafta\" (EN: paraffin, more common popular name) or \"benzyna surowa\" (more official, technical)"
+
+[STR_CARGO_NAME_NICKEL]
+base = "{G=m}Nikiel"
+
+["STR_CARGO_NAME_NICKEL.b"]
+base = "nikiel"
+
+["STR_CARGO_NAME_NICKEL.d"]
+base = "niklu"
+
+[STR_CARGO_NAME_NITRATES]
+base = "{G=f}Saletra"
+
+["STR_CARGO_NAME_NITRATES.b"]
+base = "saletrę"
+
+["STR_CARGO_NAME_NITRATES.c"]
+base = "saletrze"
+
+["STR_CARGO_NAME_NITRATES.d"]
+base = "saletry"
+
+["STR_CARGO_NAME_NITRATES.m"]
+base = "saletrze"
+
+["STR_CARGO_NAME_NITRATES.n"]
+base = "saletrą"
+
+[STR_CARGO_NAME_NUTS]
+base = "Orzechy"
+
+["STR_CARGO_NAME_NUTS.b"]
+base = "orzechy"
+
+["STR_CARGO_NAME_NUTS.c"]
+base = "orzechom"
+
+["STR_CARGO_NAME_NUTS.d"]
+base = "orzechów"
+
+["STR_CARGO_NAME_NUTS.n"]
+base = "orzechami"
+
+[STR_CARGO_NAME_OXYGEN]
+base = "{G=m}Tlen"
+
+["STR_CARGO_NAME_OXYGEN.b"]
+base = "tlen"
+
+["STR_CARGO_NAME_OXYGEN.d"]
+base = "tlenu"
+
+[STR_CARGO_NAME_PACKAGING]
+base = "Opakowania"
+
+["STR_CARGO_NAME_PACKAGING.b"]
+base = "opakowania"
+
+["STR_CARGO_NAME_PACKAGING.c"]
+base = "opakowaniom"
+
+["STR_CARGO_NAME_PACKAGING.d"]
+base = "opakowań"
+
+["STR_CARGO_NAME_PACKAGING.m"]
+base = "opakowaniach"
+
+["STR_CARGO_NAME_PACKAGING.n"]
+base = "opakowaniami"
+
+[STR_CARGO_NAME_PAINTS_AND_COATINGS]
+base = "Farby i lakiery"
+
+["STR_CARGO_NAME_PAINTS_AND_COATINGS.b"]
+base = "farby i lakiery"
+
+["STR_CARGO_NAME_PAINTS_AND_COATINGS.d"]
+base = "farb i lakierów"
+
+[STR_CARGO_NAME_PEAT]
+base = "{G=m}Torf"
+
+["STR_CARGO_NAME_PEAT.c"]
+base = "torfowi"
+
+["STR_CARGO_NAME_PEAT.d"]
+base = "torfu"
+
+["STR_CARGO_NAME_PEAT.m"]
+base = "torfie"
+
+["STR_CARGO_NAME_PEAT.n"]
+base = "torfem"
+
+["STR_CARGO_NAME_PEAT.w"]
+base = "torfie"
+
+[STR_CARGO_NAME_PETROL]
+base = "{G=n}Paliwa"
+
+["STR_CARGO_NAME_PETROL.b"]
+base = "paliwa"
+
+["STR_CARGO_NAME_PETROL.c"]
+base = "paliwom"
+
+["STR_CARGO_NAME_PETROL.d"]
+base = "paliw"
+
+["STR_CARGO_NAME_PETROL.n"]
+base = "paliwami"
+
+[STR_CARGO_NAME_PHOSPHATE]
+base = "Fosforan"
+
+["STR_CARGO_NAME_PHOSPHATE.b"]
+base = "fosforan"
+
+["STR_CARGO_NAME_PHOSPHATE.c"]
+base = "fosforanowi"
+
+["STR_CARGO_NAME_PHOSPHATE.d"]
+base = "fosforanu"
+
+["STR_CARGO_NAME_PHOSPHATE.n"]
+base = "fosforanem"
+
+[STR_CARGO_NAME_PHOSPHORIC_ACID]
+base = "{G=m}Kwas fosforowy"
+
+["STR_CARGO_NAME_PHOSPHORIC_ACID.b"]
+base = "kwas fosforowy"
+
+["STR_CARGO_NAME_PHOSPHORIC_ACID.d"]
+base = "kwasu fosforowego"
+
+[STR_CARGO_NAME_PIG_IRON]
+base = "{G=f}Surówka hutnicza"
+
+["STR_CARGO_NAME_PIG_IRON.b"]
+base = "surówkę hutniczą"
+
+["STR_CARGO_NAME_PIG_IRON.d"]
+base = "surówki hutniczej"
+
+[STR_CARGO_NAME_PLASTICS]
+base = "Plastiki"
+
+["STR_CARGO_NAME_PLASTICS.b"]
+base = "plastiki"
+
+["STR_CARGO_NAME_PLASTICS.d"]
+base = "plastików"
+
+[STR_CARGO_NAME_POTASH]
+base = "{G=m}Potaż"
+
+["STR_CARGO_NAME_POTASH.c"]
+base = "potażowi"
+
+["STR_CARGO_NAME_POTASH.d"]
+base = "potażu"
+
+["STR_CARGO_NAME_POTASH.m"]
+base = "potażu"
+
+["STR_CARGO_NAME_POTASH.n"]
+base = "potażem"
+
+["STR_CARGO_NAME_POTASH.w"]
+base = "potażu"
+
+[STR_CARGO_NAME_PROPYLENE]
+base = "{G=m}Propen"
+
+["STR_CARGO_NAME_PROPYLENE.b"]
+base = "propen"
+
+["STR_CARGO_NAME_PROPYLENE.d"]
+base = "propenu"
+
+[STR_CARGO_NAME_PYRITE_ORE]
+base = "{G=f}Ruda pirytu"
+
+["STR_CARGO_NAME_PYRITE_ORE.b"]
+base = "rudę pirytu"
+
+["STR_CARGO_NAME_PYRITE_ORE.c"]
+base = "rudzie pirytu"
+
+["STR_CARGO_NAME_PYRITE_ORE.d"]
+base = "rudy pirytu"
+
+["STR_CARGO_NAME_PYRITE_ORE.n"]
+base = "rudą pirytu"
+
+[STR_CARGO_NAME_QUICKLIME]
+base = "{G=n}Wapno palone"
+
+["STR_CARGO_NAME_QUICKLIME.c"]
+base = "wapnu palonemu"
+
+["STR_CARGO_NAME_QUICKLIME.d"]
+base = "wapna palonego"
+
+["STR_CARGO_NAME_QUICKLIME.m"]
+base = "wapnie palonym"
+
+["STR_CARGO_NAME_QUICKLIME.n"]
+base = "wapnem palonym"
+
+["# STR_CARGO_NAME_RAW_LATEX"]
+base = "Raw Latex //not sure how to translate, but not used in current version"
+
+[STR_CARGO_NAME_REBAR]
+base = "{G=n}Zbrojenie"
+
+["STR_CARGO_NAME_REBAR.b"]
+base = "zbrojenie"
+
+["STR_CARGO_NAME_REBAR.d"]
+base = "zbrojenia"
+
+[STR_CARGO_NAME_RECYCLABLES]
+base = "Surowce wtórne"
+
+["STR_CARGO_NAME_RECYCLABLES.b"]
+base = "surowce wtórne"
+
+["STR_CARGO_NAME_RECYCLABLES.d"]
+base = "surowców wtórnych"
+
+[STR_CARGO_NAME_SALT]
+base = "{G=f}Sól"
+
+["STR_CARGO_NAME_SALT.b"]
+base = "sól"
+
+["STR_CARGO_NAME_SALT.d"]
+base = "soli"
+
+[STR_CARGO_NAME_SAND]
+base = "{G=m}Piasek"
+
+["STR_CARGO_NAME_SAND.b"]
+base = "piasek"
+
+["STR_CARGO_NAME_SAND.d"]
+base = "piasku"
+
+[STR_CARGO_NAME_SCRAP_METAL]
+base = "{G=m}Złom"
+
+["STR_CARGO_NAME_SCRAP_METAL.b"]
+base = "złom"
+
+["STR_CARGO_NAME_SCRAP_METAL.d"]
+base = "złomu"
+
+[STR_CARGO_NAME_SLAG]
+base = "{G=m}Żużel"
+
+["STR_CARGO_NAME_SLAG.b"]
+base = "żużel"
+
+["STR_CARGO_NAME_SLAG.c"]
+base = "żużlowi"
+
+["STR_CARGO_NAME_SLAG.d"]
+base = "żużla"
+
+["STR_CARGO_NAME_SLAG.m"]
+base = "żużlu"
+
+["STR_CARGO_NAME_SLAG.n"]
+base = "żużlem"
+
+["STR_CARGO_NAME_SLAG.w"]
+base = "żużlu"
+
+[STR_CARGO_NAME_SODA_ASH]
+base = "{G=m}Węglan sodu"
+
+["STR_CARGO_NAME_SODA_ASH.b"]
+base = "węglan sodu"
+
+["STR_CARGO_NAME_SODA_ASH.c"]
+base = "węglanowi sodu"
+
+["STR_CARGO_NAME_SODA_ASH.d"]
+base = "węglanu sodu"
+
+["STR_CARGO_NAME_SODA_ASH.m"]
+base = "węglanie sodu"
+
+["STR_CARGO_NAME_SODA_ASH.n"]
+base = "węglanem sodu"
+
+["STR_CARGO_NAME_SODA_ASH.w"]
+base = "węglanie sodu"
+
+[STR_CARGO_NAME_STEEL]
+base = "{G=f}Stal"
+
+["STR_CARGO_NAME_STEEL.b"]
+base = "stal"
+
+["STR_CARGO_NAME_STEEL.c"]
+base = "stali"
+
+["STR_CARGO_NAME_STEEL.d"]
+base = "stali"
+
+["STR_CARGO_NAME_STEEL.m"]
+base = "stali"
+
+["STR_CARGO_NAME_STEEL.n"]
+base = "stalą"
+
+["STR_CARGO_NAME_STEEL.w"]
+base = "stali"
+
+[STR_CARGO_NAME_STEEL_SECTIONS]
+base = "Profile stalowe"
+
+["STR_CARGO_NAME_STEEL_SECTIONS.b"]
+base = "profile stalowe"
+
+["STR_CARGO_NAME_STEEL_SECTIONS.d"]
+base = "profili stalowych"
+
+[STR_CARGO_NAME_STEEL_SHEET]
+base = "{G=f}Blacha stalowa"
+
+["STR_CARGO_NAME_STEEL_SHEET.b"]
+base = "blachę stalową"
+
+["STR_CARGO_NAME_STEEL_SHEET.d"]
+base = "blachy stalowej"
+
+[STR_CARGO_NAME_STEEL_WIRE_ROD]
+base = "{G=f}Walcówka stalowa"
+
+["STR_CARGO_NAME_STEEL_WIRE_ROD.b"]
+base = "walcówkę stalową"
+
+["STR_CARGO_NAME_STEEL_WIRE_ROD.d"]
+base = "walcówki stalowej"
+
+[STR_CARGO_NAME_AGGREGATES]
+base = "Kamienie"
+
+[STR_CARGO_NAME_SUGAR_BEET]
+base = "Buraki cukrowe"
+
+["STR_CARGO_NAME_SUGAR_BEET.b"]
+base = "buraki cukrowe"
+
+["STR_CARGO_NAME_SUGAR_BEET.d"]
+base = "buraków cukrowych"
+
+[STR_CARGO_NAME_SULPHUR]
+base = "{G=f}Siarka"
+
+["STR_CARGO_NAME_SULPHUR.b"]
+base = "siarkę"
+
+["STR_CARGO_NAME_SULPHUR.c"]
+base = "siarce"
+
+["STR_CARGO_NAME_SULPHUR.d"]
+base = "siarki"
+
+["STR_CARGO_NAME_SULPHUR.m"]
+base = "siarce"
+
+["STR_CARGO_NAME_SULPHUR.n"]
+base = "siarką"
+
+["STR_CARGO_NAME_SULPHUR.w"]
+base = "siarko"
+
+[STR_CARGO_NAME_SULPHURIC_ACID]
+base = "{G=m}Kwas siarkowy"
+
+["STR_CARGO_NAME_SULPHURIC_ACID.b"]
+base = "kwas siarkowy"
+
+["STR_CARGO_NAME_SULPHURIC_ACID.d"]
+base = "kwasu siarkowego"
+
+[STR_CARGO_NAME_TEXTILES]
+base = "{G=f}Odzież"
+
+["STR_CARGO_NAME_TEXTILES.b"]
+base = "odzież"
+
+["STR_CARGO_NAME_TEXTILES.d"]
+base = "odzieży"
+
+[STR_CARGO_NAME_TIN]
+base = "{G=f}Cyna"
+
+["STR_CARGO_NAME_TIN.b"]
+base = "cynę"
+
+["STR_CARGO_NAME_TIN.d"]
+base = "cyny"
+
+[STR_CARGO_NAME_TINPLATE]
+base = "{G=f}Blacha cynowana"
+
+["STR_CARGO_NAME_TINPLATE.b"]
+base = "blachę cynowaną"
+
+["STR_CARGO_NAME_TINPLATE.d"]
+base = "blachy cynowanej"
+
+[STR_CARGO_NAME_TYRES]
+base = "Opony"
+
+["STR_CARGO_NAME_TYRES.b"]
+base = "opony"
+
+["STR_CARGO_NAME_TYRES.d"]
+base = "opon"
+
+[STR_CARGO_NAME_UREA]
+base = "{G=m}Mocznik"
+
+["STR_CARGO_NAME_UREA.b"]
+base = "mocznik"
+
+["STR_CARGO_NAME_UREA.d"]
+base = "mocznika"
+
+[STR_CARGO_NAME_VEHICLE_BODIES]
+base = "{G=f}Karoseria"
+
+["STR_CARGO_NAME_VEHICLE_BODIES.b"]
+base = "karoserię"
+
+["STR_CARGO_NAME_VEHICLE_BODIES.c"]
+base = "karoserii"
+
+["STR_CARGO_NAME_VEHICLE_BODIES.d"]
+base = "karoserii"
+
+["STR_CARGO_NAME_VEHICLE_BODIES.m"]
+base = "karoserii"
+
+["STR_CARGO_NAME_VEHICLE_BODIES.n"]
+base = "karoserią"
+
+["STR_CARGO_NAME_VEHICLE_BODIES.w"]
+base = "karoserio"
+
+[STR_CARGO_NAME_VEHICLE_ENGINES]
+base = "Silniki samochodowe"
+
+["STR_CARGO_NAME_VEHICLE_ENGINES.b"]
+base = "silniki samochodowe"
+
+["STR_CARGO_NAME_VEHICLE_ENGINES.d"]
+base = "silników samochodowych"
+
+[STR_CARGO_NAME_VEHICLE_PARTS]
+base = "Części samochodowe"
+
+["STR_CARGO_NAME_VEHICLE_PARTS.b"]
+base = "części samochodowe"
+
+["STR_CARGO_NAME_VEHICLE_PARTS.c"]
+base = "częściom samochodowym"
+
+["STR_CARGO_NAME_VEHICLE_PARTS.d"]
+base = "części samochodowych"
+
+["STR_CARGO_NAME_VEHICLE_PARTS.n"]
+base = "częściami samochodowymi"
+
+[STR_CARGO_NAME_VEHICLES]
+base = "Samochody"
+
+["STR_CARGO_NAME_VEHICLES.b"]
+base = "samochody"
+
+["STR_CARGO_NAME_VEHICLES.c"]
+base = "samochodom"
+
+["STR_CARGO_NAME_VEHICLES.d"]
+base = "samochodów"
+
+["STR_CARGO_NAME_VEHICLES.n"]
+base = "samochodami"
+
+[STR_CARGO_NAME_WOOL]
+base = "{G=f}Wełna"
+
+["STR_CARGO_NAME_WOOL.b"]
+base = "wełnę"
+
+["STR_CARGO_NAME_WOOL.d"]
+base = "wełny"
+
+[STR_CARGO_NAME_YARN]
+base = "{G=f}Przędza"
+
+["STR_CARGO_NAME_YARN.b"]
+base = "przędzę"
+
+["STR_CARGO_NAME_YARN.d"]
+base = "przędzy"
+
+[STR_CARGO_NAME_ZINC]
+base = "{G=m}Cynk"
+
+["STR_CARGO_NAME_ZINC.c"]
+base = "cynkowi"
+
+["STR_CARGO_NAME_ZINC.d"]
+base = "cynku"
+
+["STR_CARGO_NAME_ZINC.m"]
+base = "cynku"
+
+["STR_CARGO_NAME_ZINC.n"]
+base = "cynkiem"
+
+["STR_CARGO_NAME_ZINC.w"]
+base = "cynku"
+
+[STR_CARGO_UNIT_ACID]
+base = "{VOLUME} kwasu"
+
+[STR_CARGO_UNIT_ALCOHOL]
+base = "{VOLUME} alkoholu"
+
+[STR_CARGO_UNIT_ALUMINIA]
+base = "{WEIGHT} tlenku glinu"
+
+[STR_CARGO_UNIT_ALUMINIUM]
+base = "{WEIGHT} glinu"
+
+[STR_CARGO_UNIT_AMMONIA]
+base = "{VOLUME} amoniaku"
+
+[STR_CARGO_UNIT_AMMONIUM_NITRATE]
+base = "{VOLUME} azotanu amonu"
+
+[STR_CARGO_UNIT_BAUXITE]
+base = "{WEIGHT} boksytu"
+
+[STR_CARGO_UNIT_BEANS]
+base = "{WEIGHT} soi"
+
+[STR_CARGO_UNIT_BUILDING_MATERIALS]
+base = "{WEIGHT} materiałów budowlanych"
+
+[STR_CARGO_UNIT_CARBON_BLACK]
+base = "{WEIGHT} sadzy"
+
+[STR_CARGO_UNIT_CASSAVA]
+base = "{WEIGHT} manioku"
+
+[STR_CARGO_UNIT_CAST_IRON]
+base = "{WEIGHT} żeliwa"
+
+[STR_CARGO_UNIT_CEMENT]
+base = "{WEIGHT} cementu"
+
+[STR_CARGO_UNIT_CHEMICALS]
+base = "{VOLUME} chemikaliów"
+
+[STR_CARGO_UNIT_CHLORINE]
+base = "{VOLUME} chloru"
+
+[STR_CARGO_UNIT_CHROMITE_ORE]
+base = "{WEIGHT} chromitu"
+
+[STR_CARGO_UNIT_CLAY]
+base = "{WEIGHT} gliny"
+
+[STR_CARGO_UNIT_CLEANING_AGENTS]
+base = "{WEIGHT} środków czyszczących"
+
+[STR_CARGO_UNIT_COAL_TAR]
+base = "{VOLUME} smoły pogazowej"
+
+[STR_CARGO_UNIT_COFFEE]
+base = "{SIGNED_WORD} wor{P 0 ek ki ków} kawy"
+
+[STR_CARGO_UNIT_COKE]
+base = "{WEIGHT} koksu"
+
+[STR_CARGO_UNIT_COPPER]
+base = "{WEIGHT} miedzi"
+
+["# STR_CARGO_UNIT_COPPER_CONCENTRATE"]
+base = "{WEIGHT} of copper concentrate //unused in current version, not sure how to translate"
+
+[STR_CARGO_UNIT_EDIBLE_OIL]
+base = "{VOLUME} oleju jadalnego"
+
+[STR_CARGO_UNIT_ELECTRICAL_PARTS]
+base = "{WEIGHT} części elektrycznych"
+
+[STR_CARGO_UNIT_ENGINEERING_SUPPLIES]
+base = "{SIGNED_WORD} skrzy{P 0 nia nie ń} zaopatrzenia technicznego"
+
+[STR_CARGO_UNIT_ETHYLENE]
+base = "{VOLUME} etylenu"
+
+[STR_CARGO_UNIT_EXPLOSIVES]
+base = "{SIGNED_WORD} skrzy{P 0 nia nie ń} materiałów wybuchowych"
+
+[STR_CARGO_UNIT_FERROCHROME]
+base = "{WEIGHT} żelazochromu"
+
+[STR_CARGO_UNIT_FERTILISER]
+base = "{WEIGHT} nawozu"
+
+["# STR_CARGO_UNIT_FOOD_ADDITIVES"]
+base = "{WEIGHT} of food additives //unused in current version, not sure how to translate"
+
+[STR_CARGO_UNIT_FORMIC_ACID]
+base = "{VOLUME} kwasu mrówkowego"
+
+[STR_CARGO_UNIT_FIBRES]
+base = "{SIGNED_WORD} bel{P 0 a e i} włókien roślinnych"
+
+[STR_CARGO_UNIT_FISH]
+base = "{WEIGHT} ryb"
+
+[STR_CARGO_UNIT_FMSP]
+base = "{SIGNED_WORD} skrzy{P 0 nia nie ń} zaopatrzenia rolnictwa"
+
+[STR_CARGO_UNIT_FRUITS]
+base = "{WEIGHT} owoców"
+
+[STR_CARGO_UNIT_FURNITURE]
+base = "{WEIGHT} mebli"
+
+[STR_CARGO_UNIT_GLASS]
+base = "{WEIGHT} szkła"
+
+[STR_CARGO_UNIT_HYDROCHLORIC_ACID]
+base = "{VOLUME} kwasu solnego"
+
+[STR_CARGO_UNIT_KAOLIN]
+base = "{WEIGHT} kaolinitu"
+
+[STR_CARGO_UNIT_LIMESTONE]
+base = "{WEIGHT} wapienia"
+
+[STR_CARGO_UNIT_LOGS]
+base = "{WEIGHT} drewna"
+
+[STR_CARGO_UNIT_TIMBER]
+base = "{WEIGHT} desek"
+
+[STR_CARGO_UNIT_LYE]
+base = "{VOLUME} wodorotlenku sodu"
+
+[STR_CARGO_UNIT_MANGANESE]
+base = "{WEIGHT} manganu"
+
+[STR_CARGO_UNIT_METAL]
+base = "{WEIGHT} metalu"
+
+[STR_CARGO_UNIT_METHANE]
+base = "{VOLUME} metanu"
+
+[STR_CARGO_UNIT_METHANOL]
+base = "{VOLUME} metanolu"
+
+[STR_CARGO_UNIT_MILK]
+base = "{VOLUME} mleka"
+
+["# STR_CARGO_UNIT_NAPHTHA"]
+base = "{VOLUME} of naphtha //Not sure if should be \"nafta\" (EN: paraffin, more common popular name) or \"benzyna surowa\" (more official, technical)"
+
+[STR_CARGO_UNIT_NICKEL]
+base = "{WEIGHT} niklu"
+
+[STR_CARGO_UNIT_NITRATES]
+base = "{WEIGHT} saletry"
+
+[STR_CARGO_UNIT_NUTS]
+base = "{SIGNED_WORD} wor{P 0 ek ki ków} orzechów"
+
+[STR_CARGO_UNIT_OXYGEN]
+base = "{VOLUME} tlenu"
+
+[STR_CARGO_UNIT_PACKAGING]
+base = "{WEIGHT} opakowań"
+
+[STR_CARGO_UNIT_PAINTS_AND_COATINGS]
+base = "{VOLUME} farb i lakierów"
+
+[STR_CARGO_UNIT_PEAT]
+base = "{WEIGHT} torfu"
+
+[STR_CARGO_UNIT_PETROL]
+base = "{VOLUME} paliw"
+
+[STR_CARGO_UNIT_PHOSPHATE]
+base = "{WEIGHT} fosforanu"
+
+[STR_CARGO_UNIT_PHOSPHORIC_ACID]
+base = "{VOLUME} kwasu fosforowego"
+
+[STR_CARGO_UNIT_PIG_IRON]
+base = "{WEIGHT} surówki hutniczej"
+
+[STR_CARGO_UNIT_PLASTICS]
+base = "{WEIGHT} plastików"
+
+[STR_CARGO_UNIT_POTASH]
+base = "{WEIGHT} potażu"
+
+[STR_CARGO_UNIT_PROPYLENE]
+base = "{VOLUME} propenu"
+
+[STR_CARGO_UNIT_PYRITE_ORE]
+base = "{WEIGHT} rudy pirytu"
+
+[STR_CARGO_UNIT_QUICKLIME]
+base = "{WEIGHT} wapna palonego"
+
+["# STR_CARGO_UNIT_RAW_LATEX"]
+base = "{VOLUME} of raw latex //not sure how to translate, but not used in current version"
+
+[STR_CARGO_UNIT_REBAR]
+base = "{WEIGHT} zbrojenia"
+
+[STR_CARGO_UNIT_RECYCLABLES]
+base = "{WEIGHT} surowców wtórnych"
+
+[STR_CARGO_UNIT_SALT]
+base = "{WEIGHT} soli"
+
+[STR_CARGO_UNIT_SAND]
+base = "{WEIGHT} piasku"
+
+[STR_CARGO_UNIT_SCRAP_METAL]
+base = "{WEIGHT} złomu"
+
+[STR_CARGO_UNIT_SLAG]
+base = "{WEIGHT} żużlu"
+
+[STR_CARGO_UNIT_SODA_ASH]
+base = "{WEIGHT} węglanu sodu"
+
+[STR_CARGO_UNIT_STEEL]
+base = "{WEIGHT} stali"
+
+[STR_CARGO_UNIT_STEEL_SECTIONS]
+base = "{WEIGHT} profili stalowych"
+
+[STR_CARGO_UNIT_STEEL_SHEET]
+base = "{WEIGHT} blachy stalowej"
+
+[STR_CARGO_UNIT_STEEL_WIRE_ROD]
+base = "{WEIGHT} walcówki stalowej"
+
+[STR_CARGO_UNIT_AGGREGATES]
+base = "{WEIGHT} kamieni"
+
+[STR_CARGO_UNIT_SUGAR_BEET]
+base = "{WEIGHT} buraków cukrowych"
+
+[STR_CARGO_UNIT_SULPHUR]
+base = "{WEIGHT} siarki"
+
+[STR_CARGO_UNIT_SULPHURIC_ACID]
+base = "{VOLUME} kwasu siarkowego"
+
+[STR_CARGO_UNIT_TEXTILES]
+base = "{WEIGHT} odzieży"
+
+[STR_CARGO_UNIT_TIN]
+base = "{WEIGHT} cyny"
+
+[STR_CARGO_UNIT_TINPLATE]
+base = "{WEIGHT} blachy cynowanej"
+
+[STR_CARGO_UNIT_TYRES]
+base = "{WEIGHT} opon"
+
+[STR_CARGO_UNIT_UREA]
+base = "{WEIGHT} mocznika"
+
+[STR_CARGO_UNIT_VEHICLE_BODIES]
+base = "{WEIGHT} karoserii"
+
+[STR_CARGO_UNIT_VEHICLE_ENGINES]
+base = "{WEIGHT} silników samochodowych"
+
+[STR_CARGO_UNIT_VEHICLE_PARTS]
+base = "{WEIGHT} części samochodowych"
+
+[STR_CARGO_UNIT_VEHICLES]
+base = "{WEIGHT} samochodów"
+
+[STR_CARGO_UNIT_WOOL]
+base = "{SIGNED_WORD} bel{P 0 a e i} wełny"
+
+[STR_CARGO_UNIT_YARN]
+base = "{SIGNED_WORD} bel{P 0 a e i} przędzy"
+
+[STR_CARGO_UNIT_ZINC]
+base = "{WEIGHT} cynku"
+
+[STR_CID_ACID]
+base = "{TINYFONT}KWAS"
+
+[STR_CID_ALCOHOL]
+base = "{TINYFONT}ALKO"
+
+[STR_CID_ALUMINIA]
+base = "{TINYFONT}TG"
+
+[STR_CID_ALUMINIUM]
+base = "{TINYFONT}AL"
+
+[STR_CID_AMMONIA]
+base = "{TINYFONT}AM"
+
+[STR_CID_AMMONIUM_NITRATE]
+base = "{TINYFONT}AZAM"
+
+[STR_CID_BAUXITE]
+base = "{TINYFONT}BOK"
+
+[STR_CID_BEANS]
+base = "{TINYFONT}SOJA"
+
+[STR_CID_BUILDING_MATERIALS]
+base = "{TINYFONT}MB"
+
+[STR_CID_CARBON_BLACK]
+base = "{TINYFONT}SADZ"
+
+[STR_CID_CASSAVA]
+base = "{TINYFONT}MK"
+
+[STR_CID_CAST_IRON]
+base = "{TINYFONT}ŻELI"
+
+[STR_CID_CEMENT]
+base = "{TINYFONT}CEM"
+
+[STR_CID_CHEMICALS]
+base = "{TINYFONT}CHEM"
+
+[STR_CID_CHROMITE_ORE]
+base = "{TINYFONT}CHR"
+
+[STR_CID_CHLORINE]
+base = "{TINYFONT}CHL"
+
+[STR_CID_CLAY]
+base = "{TINYFONT}GL"
+
+[STR_CID_CLEANING_AGENTS]
+base = "{TINYFONT}ŚRCZ"
+
+[STR_CID_COFFEE]
+base = "{TINYFONT}KAWA"
+
+[STR_CID_COAL_TAR]
+base = "{TINYFONT}SMŁ"
+
+[STR_CID_COKE]
+base = "{TINYFONT}KOKS"
+
+[STR_CID_COPPER]
+base = "{TINYFONT}MI"
+
+["# STR_CID_COPPER_CONCENTRATE"]
+base = "{TINYFONT}CC //unused in current version, not sure how to translate"
+
+[STR_CID_EDIBLE_OIL]
+base = "{TINYFONT}OJ"
+
+[STR_CID_ELECTRICAL_PARTS]
+base = "{TINYFONT}CZEL"
+
+[STR_CID_ENGINEERING_SUPPLIES]
+base = "{TINYFONT}ZT"
+
+[STR_CID_ETHYLENE]
+base = "{TINYFONT}ETY"
+
+[STR_CID_EXPLOSIVES]
+base = "{TINYFONT}MW"
+
+[STR_CID_FARM_SUPPLIES]
+base = "{TINYFONT}ZR"
+
+[STR_CID_FERROCHROME]
+base = "{TINYFONT}ŻECH"
+
+[STR_CID_FERTILISER]
+base = "{TINYFONT}NW"
+
+[STR_CID_FIBRES]
+base = "{TINYFONT}WN"
+
+[STR_CID_FISH]
+base = "{TINYFONT}RB"
+
+["# STR_CID_FOOD_ADDITIVES"]
+base = "{TINYFONT}FV //unused in current version, not sure how to translate"
+
+[STR_CID_FORMIC_ACID]
+base = "{TINYFONT}KWMR"
+
+[STR_CID_FURNITURE]
+base = "{TINYFONT}MBL"
+
+[STR_CID_GLASS]
+base = "{TINYFONT}SZK"
+
+[STR_CID_HYDROCHLORIC_ACID]
+base = "{TINYFONT}KWSO"
+
+[STR_CID_KAOLIN]
+base = "{TINYFONT}KA"
+
+[STR_CID_LIMESTONE]
+base = "{TINYFONT}WP"
+
+[STR_CID_LOGS]
+base = "{TINYFONT}DW"
+
+[STR_CID_TIMBER]
+base = "{TINYFONT}DS"
+
+[STR_CID_LYE]
+base = "{TINYFONT}WS"
+
+[STR_CID_MANGANESE]
+base = "{TINYFONT}MN"
+
+[STR_CID_METAL]
+base = "{TINYFONT}MT"
+
+[STR_CID_METHANE]
+base = "{TINYFONT}MTN"
+
+[STR_CID_METHANOL]
+base = "{TINYFONT}MTOL"
+
+[STR_CID_MILK]
+base = "{TINYFONT}MK"
+
+["# STR_CID_NAPHTHA"]
+base = "{TINYFONT}NA //Not sure if should be \"nafta\" (EN: paraffin, more common popular name) or \"benzyna surowa\" (more official, technical)"
+
+[STR_CID_NICKEL]
+base = "{TINYFONT}NK"
+
+[STR_CID_NITRATES]
+base = "{TINYFONT}SL"
+
+[STR_CID_NUTS]
+base = "{TINYFONT}OR"
+
+[STR_CID_OXYGEN]
+base = "{TINYFONT}O2"
+
+[STR_CID_PACKAGING]
+base = "{TINYFONT}OPAK"
+
+[STR_CID_PAINTS_AND_COATINGS]
+base = "{TINYFONT}FARB"
+
+[STR_CID_PEAT]
+base = "{TINYFONT}TORF"
+
+[STR_CID_PETROL]
+base = "{TINYFONT}PW"
+
+[STR_CID_PIG_IRON]
+base = "{TINYFONT}SH"
+
+[STR_CID_PHOSPHATE]
+base = "{TINYFONT}FSF"
+
+[STR_CID_PHOSPHORIC_ACID]
+base = "{TINYFONT}KWFS"
+
+[STR_CID_PLASTICS]
+base = "{TINYFONT}PLAS"
+
+[STR_CID_POTASH]
+base = "{TINYFONT}PŻ"
+
+[STR_CID_PROPYLENE]
+base = "{TINYFONT}PR"
+
+[STR_CID_PYRITE_ORE]
+base = "{TINYFONT}PI"
+
+[STR_CID_QUICKLIME]
+base = "{TINYFONT}WP"
+
+["# STR_CID_RAW_LATEX"]
+base = "{TINYFONT}RL //not sure how to translate, but not used in current version"
+
+[STR_CID_REBAR]
+base = "{TINYFONT}ZBR"
+
+[STR_CID_RECYCLABLES]
+base = "{TINYFONT}SW"
+
+[STR_CID_SALT]
+base = "{TINYFONT}SL"
+
+[STR_CID_SAND]
+base = "{TINYFONT}PK"
+
+[STR_CID_SCRAP_METAL]
+base = "{TINYFONT}ZŁOM"
+
+[STR_CID_SLAG]
+base = "{TINYFONT}ŻŻL"
+
+[STR_CID_SODA_ASH]
+base = "{TINYFONT}WS"
+
+[STR_CID_STEEL]
+base = "{TINYFONT}ST"
+
+[STR_CID_AGGREGATES]
+base = "{TINYFONT}KM"
+
+[STR_CID_SUGAR_BEET]
+base = "{TINYFONT}BC"
+
+[STR_CID_SULPHUR]
+base = "{TINYFONT}SI"
+
+[STR_CID_SULPHURIC_ACID]
+base = "{TINYFONT}KWSI"
+
+[STR_CID_STEEL_SECTIONS]
+base = "{TINYFONT}STPR"
+
+[STR_CID_STEEL_SHEET]
+base = "{TINYFONT}STBL"
+
+[STR_CID_STEEL_WIRE_ROD]
+base = "{TINYFONT}STWA"
+
+[STR_CID_TEXTILES]
+base = "{TINYFONT}ODZ"
+
+[STR_CID_TIN]
+base = "{TINYFONT}CYNA"
+
+[STR_CID_TINPLATE]
+base = "{TINYFONT}BLCY"
+
+[STR_CID_TYRES]
+base = "{TINYFONT}OPN"
+
+[STR_CID_UREA]
+base = "{TINYFONT}MCZK"
+
+[STR_CID_VEHICLE_BODIES]
+base = "{TINYFONT}KR"
+
+[STR_CID_VEHICLE_ENGINES]
+base = "{TINYFONT}SIL"
+
+[STR_CID_VEHICLE_PARTS]
+base = "{TINYFONT}CZ"
+
+[STR_CID_VEHICLES]
+base = "{TINYFONT}SM"
+
+[STR_CID_WOOL]
+base = "{TINYFONT}WE"
+
+[STR_CID_YARN]
+base = "{TINYFONT}PRZ"
+
+[STR_CID_ZINC]
+base = "{TINYFONT}ZN"
+
+[STR_ERR_CLIMATE_TOYLAND]
+base = "{ORANGE}FIRS nie został zaprojektowany do użycia z klimatem zabawkowym"
+
+[STR_ERR_OPENTTD_VERSION]
+base = "{ORANGE}E00: FIRS wymaga OpenTTD w wersji przynajmniej 1.7.0 (rewizja 27769 i kolejne)"
+
+[STR_ERR_INCOMPATIBLE_SET]
+base = "{ORANGE}E01: {YELLOW}Niekompatybilny NewGRF: {ORANGE}{STRING}"
+
+[STR_ERR_INCOMPATIBLE_PARAM_CANSET]
+base = "{ORANGE}E02: {YELLOW}Niekompatybilny parametr: {ORANGE}CanSet parametr 2 musi być ustawiony na 0 aby działać z FIRS."
+
+[STR_ERR_INCOMPATIBLE_PARAM_CITYSET]
+base = "{ORANGE}E02: {YELLOW}Niekompatybilny parametr: {ORANGE}NA City Set parametr 2 musi być ustawiony na 0 aby działać z FIRS."
+
+[STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION]
+base = "{ORANGE}E04: {YELLOW}Niekompatybilna wersja: {ORANGE}Total Town Replacement Set musi być w wersji 3.11 lub nowszej."
+
+[STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE]
+base = "musi być ustawione poniżej linii śniegu."
+
+[STR_ERR_LOCATION_NOT_BELOW_SNOWLINE]
+base = "musi być ustawione nad linią śniegu."
+
+[STR_ERR_LOCATION_NOT_ON_WATER]
+base = "musi być ustawione na suchym lądzie."
+
+[STR_ERR_LOCATION_NOT_IN_DESERT]
+base = "nie może być ustawione na pustyni."
+
+[STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE]
+base = "nie może być ustawione na stromym zboczu."
+
+[STR_ERR_LOCATION_LIMIT_1_PER_TOWN]
+base = "dozwolone tylko jedno przedsiębiorstwo tego typu na jedno miasto."
+
+[STR_IND_ALUMINIUM_PLANT]
+base = "{G=f}Huta aluminium"
+
+["STR_IND_ALUMINIUM_PLANT.d"]
+base = "huty aluminium"
+
+[STR_IND_AMMONIA_PLANT]
+base = "{G=f}Fabryka amoniaku"
+
+["STR_IND_AMMONIA_PLANT.d"]
+base = "fabryki amoniaku"
+
+[STR_IND_ARABLE_FARM]
+base = "{G=n}Pole uprawne"
+
+["STR_IND_ARABLE_FARM.d"]
+base = "pola uprawnego"
+
+[STR_IND_ASSEMBLY_PLANT]
+base = "{G=f}Fabryka samochodów"
+
+["STR_IND_ASSEMBLY_PLANT.b"]
+base = "fabrykę samochodów"
+
+["STR_IND_ASSEMBLY_PLANT.c"]
+base = "fabryce samochodów"
+
+["STR_IND_ASSEMBLY_PLANT.d"]
+base = "fabryki samochodów"
+
+["STR_IND_ASSEMBLY_PLANT.n"]
+base = "fabryką samochodów"
+
+[STR_IND_BASIC_OXYGEN_FURNACE]
+base = "{G=m}Konwertor tlenowy"
+
+["STR_IND_BASIC_OXYGEN_FURNACE.c"]
+base = "konwertorowi tlenowemu"
+
+["STR_IND_BASIC_OXYGEN_FURNACE.d"]
+base = "konwertora tlenowego"
+
+["STR_IND_BASIC_OXYGEN_FURNACE.m"]
+base = "konwertorze tlenowym"
+
+["STR_IND_BASIC_OXYGEN_FURNACE.n"]
+base = "konwertorem tlenowym"
+
+["STR_IND_BASIC_OXYGEN_FURNACE.w"]
+base = "konwertorze tlenowy"
+
+[STR_IND_BIOREFINERY]
+base = "{G=f}Biorafineria"
+
+["STR_IND_BIOREFINERY.d"]
+base = "biorafinerii"
+
+[STR_IND_BLAST_FURNACE]
+base = "{G=m}Wielki piec"
+
+["STR_IND_BLAST_FURNACE.c"]
+base = "wielkiemu piecowi"
+
+["STR_IND_BLAST_FURNACE.d"]
+base = "wielkiego pieca"
+
+["STR_IND_BLAST_FURNACE.m"]
+base = "wielkim piecu"
+
+["STR_IND_BLAST_FURNACE.n"]
+base = "wielkim piecem"
+
+["STR_IND_BLAST_FURNACE.w"]
+base = "wielki piecu"
+
+[STR_IND_BODY_PLANT]
+base = "{G=f}Fabryka karoserii"
+
+["STR_IND_BODY_PLANT.d"]
+base = "fabryki karoserii"
+
+[STR_IND_BREWERY]
+base = "{G=m}Browar"
+
+["STR_IND_BREWERY.d"]
+base = "browaru"
+
+[STR_IND_CIDER_MILL]
+base = "{G=f}Wytwórnia cydru"
+
+["STR_IND_CIDER_MILL.b"]
+base = "wytwórnię cydru"
+
+["STR_IND_CIDER_MILL.c"]
+base = "wytwórni cydru"
+
+["STR_IND_CIDER_MILL.d"]
+base = "wytwórni cydru"
+
+["STR_IND_CIDER_MILL.m"]
+base = "wytwórni cydru"
+
+["STR_IND_CIDER_MILL.n"]
+base = "wytwórnią cydru"
+
+["STR_IND_CIDER_MILL.w"]
+base = "wytwórnio cydru"
+
+[STR_IND_BRICK_WORKS]
+base = "{G=f}Cegielnia"
+
+["STR_IND_BRICK_WORKS.d"]
+base = "cegielni"
+
+[STR_IND_BUILDERS_YARD]
+base = "{G=f}Spółka budowlana"
+
+["STR_IND_BUILDERS_YARD.d"]
+base = "spółki budowlanej"
+
+[STR_IND_BULK_TERMINAL]
+base = "{G=m}Port handlowy"
+
+["STR_IND_BULK_TERMINAL.d"]
+base = "portu handlowego"
+
+[STR_IND_CARBON_BLACK_PLANT]
+base = "{G=f}Przetwórnia smoły pogazowej"
+
+["STR_IND_CARBON_BLACK_PLANT.d"]
+base = "przetwórni smoły pogazowej"
+
+[STR_IND_CEMENT_PLANT]
+base = "{G=f}Cementownia"
+
+["STR_IND_CEMENT_PLANT.d"]
+base = "cementowni"
+
+[STR_IND_CHEMICAL_PLANT]
+base = "{G=m}Zakład chemiczny"
+
+["STR_IND_CHEMICAL_PLANT.d"]
+base = "zakładu chemicznego"
+
+[STR_IND_CHLOR_ALKALI_PLANT]
+base = "{G=m}Zakład chloro-alkaliczny"
+
+["STR_IND_CHLOR_ALKALI_PLANT.d"]
+base = "zakładu chloro-alkalicznego"
+
+[STR_IND_CHROMITE_MINE]
+base = "{G=f}Kopalnia chromitu"
+
+["STR_IND_CHROMITE_MINE.d"]
+base = "kopalni chromitu"
+
+[STR_IND_CIVIL_EXPLOSIVES_FACILITY]
+base = "{G=f}Fabryka materiałów wybuchowych"
+
+["STR_IND_CIVIL_EXPLOSIVES_FACILITY.d"]
+base = "fabryki materiałów wybuchowych"
+
+[STR_IND_CLAY_PIT]
+base = "{G=f}Glinianka"
+
+["STR_IND_CLAY_PIT.d"]
+base = "glinianki"
+
+[STR_IND_COFFEE_ESTATE]
+base = "{G=f}Plantacja kawy"
+
+["STR_IND_COFFEE_ESTATE.d"]
+base = "plantacji kawy"
+
+[STR_IND_COKE_OVEN]
+base = "{G=f}Koksownia"
+
+["STR_IND_COKE_OVEN.b"]
+base = "koksownię"
+
+["STR_IND_COKE_OVEN.c"]
+base = "koksowni"
+
+["STR_IND_COKE_OVEN.d"]
+base = "koksowni"
+
+["STR_IND_COKE_OVEN.m"]
+base = "koksowni"
+
+["STR_IND_COKE_OVEN.n"]
+base = "koksownią"
+
+["STR_IND_COKE_OVEN.w"]
+base = "koksownio"
+
+[STR_IND_COMPONENT_FACTORY]
+base = "{G=f}Fabryka części samochodowych"
+
+["STR_IND_COMPONENT_FACTORY.d"]
+base = "fabryki części samochodowych"
+
+["# STR_IND_COPPER_CONCENTRATOR"]
+base = "Copper Concentrator //depends on COPPER_CONCENTRATE translation"
+
+["# STR_IND_COPPER_CONCENTRATOR.d"]
+base = "Copper Concentrator //depends on COPPER_CONCENTRATE translation"
+
+[STR_IND_COPPER_SMELTER]
+base = "{G=f}Rafineria miedzi"
+
+["STR_IND_COPPER_SMELTER.b"]
+base = "rafinerię miedzi"
+
+["STR_IND_COPPER_SMELTER.c"]
+base = "rafinerii miedzi"
+
+["STR_IND_COPPER_SMELTER.d"]
+base = "rafinerii miedzi"
+
+["STR_IND_COPPER_SMELTER.n"]
+base = "rafinerią miedzi"
+
+[STR_IND_CRYO_PLANT]
+base = "{G=m}Generator tlenu"
+
+["STR_IND_CRYO_PLANT.d"]
+base = "generatora tlenu"
+
+[STR_IND_DAIRY]
+base = "{G=f}Mleczarnia"
+
+["STR_IND_DAIRY.d"]
+base = "mleczarni"
+
+[STR_IND_DAIRY_FARM]
+base = "{G=f}Hodowla"
+
+["STR_IND_DAIRY_FARM.b"]
+base = "hodowlę"
+
+["STR_IND_DAIRY_FARM.c"]
+base = "hodowli"
+
+["STR_IND_DAIRY_FARM.d"]
+base = "hodowli"
+
+["STR_IND_DAIRY_FARM.m"]
+base = "hodowli"
+
+["STR_IND_DAIRY_FARM.n"]
+base = "hodowlą"
+
+["STR_IND_DAIRY_FARM.w"]
+base = "hodowlo"
+
+[STR_IND_DREDGING_SITE]
+base = "{G=f}Pogłębiarka"
+
+["STR_IND_DREDGING_SITE.d"]
+base = "pogłębiarki"
+
+[STR_IND_ELECTRIC_ARC_FURNACE]
+base = "{G=m}Piec łukowy"
+
+["STR_IND_ELECTRIC_ARC_FURNACE.c"]
+base = "piecowi łukowemu"
+
+["STR_IND_ELECTRIC_ARC_FURNACE.d"]
+base = "pieca łukowego"
+
+["STR_IND_ELECTRIC_ARC_FURNACE.m"]
+base = "piecu łukowym"
+
+["STR_IND_ELECTRIC_ARC_FURNACE.n"]
+base = "piecem łukowym"
+
+["STR_IND_ELECTRIC_ARC_FURNACE.w"]
+base = "piecu łukowy"
+
+[STR_IND_ENGINE_PLANT]
+base = "{G=f}Fabryka silników samochodowych"
+
+["STR_IND_ENGINE_PLANT.d"]
+base = "fabryki silników"
+
+["# STR_IND_ETHYLENE_CRACKER"]
+base = "Naphtha Cracker //Depends on NAPHTHA translation"
+
+["# STR_IND_ETHYLENE_CRACKER.d"]
+base = "Naphtha Cracker"
+
+[STR_IND_FARM]
+base = "{G=f}Farma"
+
+["STR_IND_FARM.d"]
+base = "farmy"
+
+[STR_IND_FERROCHROME_SMELTER]
+base = "{G=f}Wytwórnia żelazochromu"
+
+["STR_IND_FERROCHROME_SMELTER.d"]
+base = "wytwórni żelazochromu"
+
+[STR_IND_FERTILISER_PLANT]
+base = "{G=f}Fabryka nawozu"
+
+["STR_IND_FERTILISER_PLANT.d"]
+base = "fabryki nawozu"
+
+["# STR_IND_FACTORY_1"]
+base = "Factory 1 //These factory numbers does not look like final names"
+
+["# STR_IND_FACTORY_1.d"]
+base = "Factory 1"
+
+["# STR_IND_FACTORY_2"]
+base = "Factory 2"
+
+["# STR_IND_FACTORY_2.d"]
+base = "Factory 2"
+
+["# STR_IND_FACTORY_3"]
+base = "Factory 3"
+
+["# STR_IND_FACTORY_3.d"]
+base = "Factory 3"
+
+[STR_IND_FISCHER_TROPSCH_PLANT]
+base = "{G=m}Zakład syntezy Fischera-Tropscha"
+
+["STR_IND_FISCHER_TROPSCH_PLANT.d"]
+base = "zakładu syntezy Fischera-Tropscha"
+
+[STR_IND_FISH_FARM]
+base = "{G=f}Hodowla ryb"
+
+["STR_IND_FISH_FARM.d"]
+base = "hodowli ryb"
+
+[STR_IND_FISHING_GROUND]
+base = "{G=n}Łowisko"
+
+["STR_IND_FISHING_GROUND.d"]
+base = "łowiska"
+
+[STR_IND_FISHING_HARBOUR]
+base = "{G=m}Port rybacki"
+
+["STR_IND_FISHING_HARBOUR.d"]
+base = "portu rybackiego"
+
+[STR_IND_FISHING_VILLAGE]
+base = "{G=f}Wioska rybacka"
+
+["STR_IND_FISHING_VILLAGE.b"]
+base = "wioskę rybacką"
+
+["STR_IND_FISHING_VILLAGE.c"]
+base = "wiosce rybackiej"
+
+["STR_IND_FISHING_VILLAGE.d"]
+base = "wioski rybackiej"
+
+["STR_IND_FISHING_VILLAGE.n"]
+base = "wioską rybacką"
+
+[STR_IND_FLOUR_MILL]
+base = "{G=m}Młyn"
+
+["STR_IND_FLOUR_MILL.b"]
+base = "młyn"
+
+["STR_IND_FLOUR_MILL.c"]
+base = "młynowi"
+
+["STR_IND_FLOUR_MILL.d"]
+base = "młyna"
+
+["STR_IND_FLOUR_MILL.n"]
+base = "młynem"
+
+[STR_IND_FOOD_MARKET]
+base = "{G=m}Sklep spożywczy"
+
+["STR_IND_FOOD_MARKET.d"]
+base = "sklepu spożywczego"
+
+[STR_IND_FOOD_PROCESSOR]
+base = "{G=f}Przetwórnia żywności"
+
+["STR_IND_FOOD_PROCESSOR.d"]
+base = "przetwórni żywności"
+
+[STR_IND_FURNITURE_FACTORY]
+base = "{G=f}Fabryka mebli"
+
+["STR_IND_FURNITURE_FACTORY.d"]
+base = "fabryki mebli"
+
+[STR_IND_GENERAL_STORE]
+base = "{G=m}Sklep"
+
+["STR_IND_GENERAL_STORE.d"]
+base = "sklepu"
+
+[STR_IND_GLASS_WORKS]
+base = "{G=f}Huta szkła"
+
+["STR_IND_GLASS_WORKS.d"]
+base = "huty szkła"
+
+[STR_IND_HARDWARE_STORE]
+base = "{G=m}Sklep przemysłowy"
+
+["STR_IND_HARDWARE_STORE.d"]
+base = "sklepu przemysłowego"
+
+[STR_IND_HOTEL]
+base = "{G=m}Hotel"
+
+["STR_IND_HOTEL.d"]
+base = "hotelu"
+
+[STR_IND_HERDING_COOP]
+base = "{G=f}Hodowla bydła"
+
+["STR_IND_HERDING_COOP.b"]
+base = "hodowlę bydła"
+
+["STR_IND_HERDING_COOP.c"]
+base = "hodowli bydła"
+
+["STR_IND_HERDING_COOP.d"]
+base = "hodowli bydła"
+
+["STR_IND_HERDING_COOP.m"]
+base = "hodowli bydła"
+
+["STR_IND_HERDING_COOP.n"]
+base = "hodowlą bydła"
+
+["STR_IND_HERDING_COOP.w"]
+base = "hodowlo bydła"
+
+[STR_IND_IRON_WORKS]
+base = "{G=m}Piec hutniczy"
+
+["STR_IND_IRON_WORKS.d"]
+base = "pieca hutniczego"
+
+[STR_IND_SCRAP_YARD]
+base = "{G=n}Złomowisko"
+
+["STR_IND_SCRAP_YARD.d"]
+base = "złomowiska"
+
+["# STR_IND_LATEX_PROCESSOR"]
+base = "Latex Processor //depends on RAW_LATEX translation"
+
+["# STR_IND_LATEX_PROCESSOR.d"]
+base = "Latex Processor"
+
+[STR_IND_LIME_KILN]
+base = "{G=m}Wapiennik"
+
+["STR_IND_LIME_KILN.d"]
+base = "wapiennika"
+
+[STR_IND_LIMESTONE_MINE]
+base = "{G=f}Kopalnia wapienia"
+
+["STR_IND_LIMESTONE_MINE.d"]
+base = "kopalni wapienia"
+
+[STR_IND_LIQUIDS_TERMINAL]
+base = "{G=m}Port ładunków ciekłych"
+
+["STR_IND_LIQUIDS_TERMINAL.c"]
+base = "Portowi ładunków ciekłych"
+
+["STR_IND_LIQUIDS_TERMINAL.d"]
+base = "portu ładunków ciekłych"
+
+["STR_IND_LIQUIDS_TERMINAL.m"]
+base = "Porcie ładunków ciekłych"
+
+["STR_IND_LIQUIDS_TERMINAL.n"]
+base = "Portem ładunków ciekłych"
+
+["STR_IND_LIQUIDS_TERMINAL.w"]
+base = "Port ładunków ciekłych"
+
+[STR_IND_TIMBER_YARD]
+base = "{G=f}Stolarnia"
+
+["STR_IND_TIMBER_YARD.d"]
+base = "stolarni"
+
+[STR_IND_MACHINE_SHOP]
+base = "{G=f}Fabryka maszyn"
+
+["STR_IND_MACHINE_SHOP.d"]
+base = "fabryki maszyn"
+
+[STR_IND_MACHINE_WORKS]
+base = "{G=f}Wytwórnia części elektrycznych"
+
+["STR_IND_MACHINE_WORKS.d"]
+base = "wytwórni części elektrycznych"
+
+[STR_IND_MANGANESE_MINE]
+base = "{G=f}Kopalnia manganu"
+
+["STR_IND_MANGANESE_MINE.b"]
+base = "kopalnię manganu"
+
+["STR_IND_MANGANESE_MINE.c"]
+base = "kopalni manganu"
+
+["STR_IND_MANGANESE_MINE.d"]
+base = "kopalni manganu"
+
+["STR_IND_MANGANESE_MINE.n"]
+base = "kopalnią manganu"
+
+[STR_IND_METAL_WORKSHOP]
+base = "{G=m}Warsztat metalowy"
+
+["STR_IND_METAL_WORKSHOP.c"]
+base = "warsztatowi metalowemu"
+
+["STR_IND_METAL_WORKSHOP.d"]
+base = "warsztatu metalowego"
+
+["STR_IND_METAL_WORKSHOP.m"]
+base = "warsztacie metalowym"
+
+["STR_IND_METAL_WORKSHOP.n"]
+base = "warsztatem metalowym"
+
+["STR_IND_METAL_WORKSHOP.w"]
+base = "warsztacie metalowy"
+
+[STR_IND_MIXEDFARM]
+base = "{G=n}Gospdarstwo rolne"
+
+["STR_IND_MIXEDFARM.d"]
+base = "gospodarstwa rolnego"
+
+[STR_IND_NITRATE_MINE]
+base = "{G=f}Kopalnia saletry"
+
+["STR_IND_NITRATE_MINE.d"]
+base = "kopalni saletry"
+
+[STR_IND_ORCHARD_PIGGERY]
+base = "{G=m}Sad i hodowla trzody chlewnej"
+
+["STR_IND_ORCHARD_PIGGERY.d"]
+base = "sadu i hodowli trzody chlewnej"
+
+[STR_IND_PEATLANDS]
+base = "{G=n}Torfowisko"
+
+["STR_IND_PEATLANDS.c"]
+base = "torfowisku"
+
+["STR_IND_PEATLANDS.d"]
+base = "torfowiska"
+
+["STR_IND_PEATLANDS.m"]
+base = "torfowisku"
+
+["STR_IND_PEATLANDS.n"]
+base = "torfowiskiem"
+
+[STR_IND_PETROLPUMP]
+base = "{G=f}Stacja paliw"
+
+["STR_IND_PETROLPUMP.d"]
+base = "stacji paliw"
+
+[STR_IND_PHOSPHATE_MINE]
+base = "{G=f}Kopalnia fosforytów"
+
+["STR_IND_PHOSPHATE_MINE.b"]
+base = "kopalnię fosforytów"
+
+["STR_IND_PHOSPHATE_MINE.d"]
+base = "kopalni fosforytów"
+
+[STR_IND_PHOSPHORIC_ACID_PLANT]
+base = "{G=f}Wytwórnia kwasu fosforowego"
+
+["STR_IND_PHOSPHORIC_ACID_PLANT.d"]
+base = "wytwórni kwasu fosforowego"
+
+[STR_IND_PLASTICS_PLANT]
+base = "{G=f}Fabryka tworzyw sztucznych"
+
+["STR_IND_PLASTICS_PLANT.d"]
+base = "fabryki tworzyw sztucznych"
+
+[STR_IND_POLYETHYLENE_PLANT]
+base = "{G=f}Fabryka polietylenu"
+
+["STR_IND_POLYETHYLENE_PLANT.d"]
+base = "fabryki polietylenu"
+
+[STR_IND_POLYPROPYLENE_PLANT]
+base = "{G=f}Fabryka polipropylenu"
+
+["STR_IND_POLYPROPYLENE_PLANT.d"]
+base = "fabryki polipropylenu"
+
+[STR_IND_PORT]
+base = "{G=m}Port"
+
+["STR_IND_PORT.d"]
+base = "portu"
+
+[STR_IND_POTASH_MINE]
+base = "{G=f}Kopalnia potażu"
+
+["STR_IND_POTASH_MINE.b"]
+base = "kopalnię potażu"
+
+["STR_IND_POTASH_MINE.c"]
+base = "kopalni potażu"
+
+["STR_IND_POTASH_MINE.d"]
+base = "kopalni potażu"
+
+["STR_IND_POTASH_MINE.m"]
+base = "kopalni potażu"
+
+["STR_IND_POTASH_MINE.n"]
+base = "kopalnią potażu"
+
+["STR_IND_POTASH_MINE.w"]
+base = "kopalnio potażu"
+
+[STR_IND_PYRITE_MINE]
+base = "{G=f}Kopalnia pirytu"
+
+["STR_IND_PYRITE_MINE.b"]
+base = "kopalnię pirytu"
+
+["STR_IND_PYRITE_MINE.c"]
+base = "kopalni pirytu"
+
+["STR_IND_PYRITE_MINE.d"]
+base = "kopalni pirytu"
+
+["STR_IND_PYRITE_MINE.n"]
+base = "kopalnią pirytu"
+
+[STR_IND_PYRITE_SMELTER]
+base = "{G=f}Prażalnia pirytu"
+
+["STR_IND_PYRITE_SMELTER.b"]
+base = "prażalnię pirytu"
+
+["STR_IND_PYRITE_SMELTER.c"]
+base = "prażalni pirytu"
+
+["STR_IND_PYRITE_SMELTER.d"]
+base = "prażalni pirytu"
+
+["STR_IND_PYRITE_SMELTER.n"]
+base = "prażalnią pirytu"
+
+[STR_IND_POWER_PLANT]
+base = "{G=f}Elektrownia"
+
+["STR_IND_POWER_PLANT.b"]
+base = "elektrownię"
+
+["STR_IND_POWER_PLANT.c"]
+base = "elektrowni"
+
+["STR_IND_POWER_PLANT.d"]
+base = "elektrowni"
+
+["STR_IND_POWER_PLANT.n"]
+base = "elektrownią"
+
+[STR_IND_QUARRY]
+base = "{G=m}Kamieniołom"
+
+["STR_IND_QUARRY.c"]
+base = "kamieniołomowi"
+
+["STR_IND_QUARRY.d"]
+base = "kamieniołomu"
+
+["STR_IND_QUARRY.m"]
+base = "kamieniołomie"
+
+["STR_IND_QUARRY.n"]
+base = "kamieniołomem"
+
+["STR_IND_QUARRY.w"]
+base = "kamieniołomie"
+
+[STR_IND_RANCH]
+base = "{G=n}Ranczo"
+
+["STR_IND_RANCH.d"]
+base = "rancza"
+
+[STR_IND_RECYCLING_DEPOT]
+base = "{G=n}Składowisko odpadów"
+
+["STR_IND_RECYCLING_DEPOT.c"]
+base = "składowisku odpadów"
+
+["STR_IND_RECYCLING_DEPOT.d"]
+base = "składowiska odpadów"
+
+["STR_IND_RECYCLING_DEPOT.m"]
+base = "składowisku odpadów"
+
+["STR_IND_RECYCLING_DEPOT.n"]
+base = "składowiskiem odpadów"
+
+[STR_IND_RECYCLING_PLANT]
+base = "{G=m}Zakład recyklingu"
+
+["STR_IND_RECYCLING_PLANT.c"]
+base = "zakładowi recyklingu"
+
+["STR_IND_RECYCLING_PLANT.d"]
+base = "zakładu recyklingu"
+
+["STR_IND_RECYCLING_PLANT.m"]
+base = "zakładzie recyklingu"
+
+["STR_IND_RECYCLING_PLANT.n"]
+base = "zakładem recyklingu"
+
+["STR_IND_RECYCLING_PLANT.w"]
+base = "zakładzie recyklingu"
+
+[STR_IND_REINDEER_FARM]
+base = "{G=f}Farma reniferów"
+
+["STR_IND_REINDEER_FARM.b"]
+base = "farmę reniferów"
+
+["STR_IND_REINDEER_FARM.c"]
+base = "farmie reniferów"
+
+["STR_IND_REINDEER_FARM.d"]
+base = "farmy reniferów"
+
+["STR_IND_REINDEER_FARM.m"]
+base = "farmie reniferów"
+
+["STR_IND_REINDEER_FARM.n"]
+base = "farmą reniferów"
+
+["STR_IND_REINDEER_FARM.w"]
+base = "farmo reniferów"
+
+[STR_IND_SALT_MINE]
+base = "{G=f}Kopalnia soli"
+
+["STR_IND_SALT_MINE.d"]
+base = "kopalni soli"
+
+[STR_IND_SHEEPFARM]
+base = "{G=f}Ferma owiec"
+
+["STR_IND_SHEEPFARM.d"]
+base = "fermy owiec"
+
+[STR_IND_SLAG_GRINDING_PLANT]
+base = "{G=f}Przetwórnia żużlu"
+
+["STR_IND_SLAG_GRINDING_PLANT.c"]
+base = "przetwórni żużlu"
+
+["STR_IND_SLAG_GRINDING_PLANT.d"]
+base = "przetwórni żużlu"
+
+[STR_IND_SMITHY_FORGE]
+base = "{G=f}Kuźnia"
+
+["STR_IND_SMITHY_FORGE.d"]
+base = "kuźni"
+
+[STR_IND_SODA_ASH_MINE]
+base = "{G=f}Fabryka sody"
+
+["STR_IND_SODA_ASH_MINE.b"]
+base = "fabrykę sody"
+
+["STR_IND_SODA_ASH_MINE.d"]
+base = "fabryki sody"
+
+[STR_IND_SOLVAY_PLANT]
+base = "{G=f}Wytwórnia węglanu sodu"
+
+["STR_IND_SOLVAY_PLANT.d"]
+base = "wytwórni węglanu sodu"
+
+[STR_IND_INTEGRATED_STEEL_MILL]
+base = "{G=f}Huta stali"
+
+["STR_IND_INTEGRATED_STEEL_MILL.d"]
+base = "huty stali"
+
+[STR_IND_STOCKYARD]
+base = "{G=f}Ubojnia"
+
+["STR_IND_STOCKYARD.d"]
+base = "ubojni"
+
+[STR_IND_SUGAR_REFINERY]
+base = "{G=f}Cukrownia"
+
+["STR_IND_SUGAR_REFINERY.d"]
+base = "cukrowni"
+
+[STR_IND_SULPHURIC_ACID_PLANT]
+base = "{G=f}Wytwórnia kwasu siarkowego"
+
+["STR_IND_SULPHURIC_ACID_PLANT.d"]
+base = "wytwórni kwasu siarkowego"
+
+[STR_IND_SUPPLY_YARD]
+base = "{G=m}Magazyn zaopatrzeniowy"
+
+["STR_IND_SUPPLY_YARD.b"]
+base = "magazyn zaopatrzeniowy"
+
+["STR_IND_SUPPLY_YARD.c"]
+base = "magazynowi zaopatrzeniowemu"
+
+["STR_IND_SUPPLY_YARD.d"]
+base = "magazynu zaopatrzeniowego"
+
+["STR_IND_SUPPLY_YARD.n"]
+base = "magazynem zaopatrzeniowym"
+
+[STR_IND_TEXTILE_MILL]
+base = "{G=m}Zakład odzieżowy"
+
+["STR_IND_TEXTILE_MILL.d"]
+base = "zakładu odzieżowego"
+
+[STR_IND_TINPLATE_WORKS]
+base = "{G=f}Fabryka blachy cynowanej"
+
+["STR_IND_TINPLATE_WORKS.d"]
+base = "fabryki blachy cynowanej"
+
+[STR_IND_TRADING_POST]
+base = "{G=m}Punkt handlowy"
+
+["STR_IND_TRADING_POST.d"]
+base = "punktu handlowego"
+
+[STR_IND_TYRE_PLANT]
+base = "{G=f}Fabryka opon"
+
+["STR_IND_TYRE_PLANT.b"]
+base = "fabrykę opon"
+
+["STR_IND_TYRE_PLANT.c"]
+base = "fabryce opon"
+
+["STR_IND_TYRE_PLANT.d"]
+base = "fabryki opon"
+
+["STR_IND_TYRE_PLANT.n"]
+base = "fabryką opon"
+
+[STR_IND_VINEYARD]
+base = "{G=f}Winnica"
+
+["STR_IND_VINEYARD.b"]
+base = "winnicę"
+
+["STR_IND_VINEYARD.c"]
+base = "winnicy"
+
+["STR_IND_VINEYARD.d"]
+base = "winnicy"
+
+["STR_IND_VINEYARD.n"]
+base = "winnicą"
+
+[STR_IND_VEHICLE_DISTRIBUTOR]
+base = "{G=m}Salon samochodowy"
+
+["STR_IND_VEHICLE_DISTRIBUTOR.d"]
+base = "salonu samochodowego"
+
+[STR_IND_WHARF]
+base = "{G=n}Nabrzeże"
+
+["STR_IND_WHARF.d"]
+base = "nabrzeża"
+
+[STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG]
+base = "{BLACK}(dostarczono)"
+
+[STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY]
+base = "{BLACK}Produkuje z maksymalną wydajnością, jeśli dostarczany jest {WHITE}którykolwiek {BLACK}z potrzebnych towarów."
+
+[STR_EXTRA_TEXT_TOWN_PRODUCER]
+base = "{BLACK}Produkcja jest proporcjonalna do populacji miasta. Przynajmniej {WHITE}{SIGNED_WORD} jednostek{BLACK} i nie więcej niż {WHITE}{SIGNED_WORD} jednostek{BLACK} towaru będzie produkowanych każdego miesiąca."
+
+[STR_PRIMARY_PRODUCTION_1X]
+base = "{BLACK}Aktualna produkcja: {YELLOW}normalna{}{}{BLACK}Dla {WHITE}zwiększonej {BLACK}produkcji, dostarcz {SIGNED_WORD} skrzyń zaopatrzenia w ciągu trzech miesięcy.{}Dla {WHITE}niewiarygodnej {BLACK}produkcji dostarcz {SIGNED_WORD} skrzyń."
+
+[STR_PRIMARY_PRODUCTION_2X]
+base = "{BLACK}Aktualna produkcja: {YELLOW}zwiększona{}{}{BLACK}By utrzymać ten poziom, dostarcz {SIGNED_WORD} skrzyń zaopatrzenia w ciągu trzech miesięcy.{}Dla {WHITE}niewiarygodnej {BLACK}produkcji, dostarcz {SIGNED_WORD} skrzyń."
+
+[STR_PRIMARY_PRODUCTION_4X]
+base = "{BLACK}Aktualna produkcja: {YELLOW}niewiarygodna{}{}{BLACK}By utrzymać ten poziom, dostarcz {SKIP}{SIGNED_WORD} skrzyń zaopatrzenia w ciągu trzech miesięcy."
+
+[STR_PORT_PRODUCTION_1X]
+base = "{BLACK}Aktualna produkcja: {YELLOW}normalna{}{}{BLACK}Dla {WHITE}zwiększonej {BLACK}produkcji dostarcz {SIGNED_WORD} jednostek towaru w ciągu trzech miesięcy.{}Dla {WHITE}niewiarygodnej {BLACK}produkcji dostarcz {SIGNED_WORD} jednostek."
+
+[STR_PORT_PRODUCTION_2X]
+base = "{BLACK}Aktualna produkcja: {YELLOW}zwiększona{}{}{BLACK}By utrzymać ten poziom, dostarcz {SIGNED_WORD} jednostek towaru w ciągu trzech miesięcy.{}Dla {WHITE}niewiarygodnej {BLACK}produkcji dostarcz {SIGNED_WORD} jednostek."
+
+[STR_PORT_PRODUCTION_4X]
+base = "{BLACK}Aktualna produkcja: {YELLOW}niewiarygodna{}{}{BLACK}By utrzymać ten poziom, dostarcz {SKIP}{SIGNED_WORD} jednostek towaru w ciągu trzech miesięcy."
+
+[STR_GENERIC_NEWLINE]
+base = "{}"
+
+[STR_FUND_ARABLE_FARM]
+base = "{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni."
+
+[STR_FUND_COFFEE_ESTATE]
+base = "{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni."
+
+[STR_FUND_DAIRY_FARM]
+base = "{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni."
+
+[STR_FUND_FARM]
+base = "{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni."
+
+[STR_FUND_FOREST]
+base = "{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na pustyni."
+
+[STR_FUND_FRUIT_PLANTATION]
+base = "{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu."
+
+[STR_FUND_HERDING_COOP]
+base = "{}{BLACK}Lokalizacja: {YELLOW}Może być budowane tylko na śniegu."
+
+[STR_FUND_ORCHARD_PIGGERY]
+base = "{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni."
+
+[STR_FUND_RUBBER_PLANTATION]
+base = "{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni."
+
+[STR_FUND_VINEYARD]
+base = "{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni."
+
+[STR_FUND_AVAILABLE_FROM]
+base = "{}{BLACK}Dostępne od: {YELLOW}{COMMA}"
+
+[STR_FUND_AVAILABLE_UNTIL]
+base = "{}{BLACK}Niedostępne po: {YELLOW}{COMMA}"
+
+[STR_TOWN]
+base = "{STRING}"
+
+[STR_STATION]
+base = "{STRING} {STRING}"
+
+[STR_STATION_ANIMALS]
+base = "Oborniki"
+
+[STR_STATION_AUTOMOTIVE]
+base = "Montownia"
+
+[STR_STATION_BAR_GRILL_AND_ROOMS]
+base = "Hotel"
+
+[STR_STATION_BARNS]
+base = "Ferma"
+
+[STR_STATION_BARREL_AND_KEG]
+base = "Gorzelnia"
+
+[STR_STATION_BASE]
+base = "Baza sprzętu"
+
+[STR_STATION_BONEYARD]
+base = "Złomowisko"
+
+[STR_STATION_BANK_TOP]
+base = "Hałdy"
+
+[STR_STATION_BRINE_WORKS]
+base = "Solanka"
+
+[STR_STATION_CASTINGS]
+base = "Odlewnia"
+
+[STR_STATION_COLLIERY]
+base = "Kopalnia Węgla"
+
+["STR_STATION_COLLIERY.b"]
+base = "kopalnię węgla"
+
+["STR_STATION_COLLIERY.c"]
+base = "kopalni węgla"
+
+["STR_STATION_COLLIERY.d"]
+base = "kopalni węgla"
+
+["STR_STATION_COLLIERY.m"]
+base = "kopalni węgla"
+
+["STR_STATION_COLLIERY.n"]
+base = "kopalnią węgla"
+
+["STR_STATION_COLLIERY.w"]
+base = "kopalnio węgla"
+
+[STR_STATION_COMPONENTS]
+base = "Manufaktura Części"
+
+[STR_STATION_COPPER_LODE]
+base = "Odkrywka miedzi"
+
+[STR_STATION_CREOSOTING]
+base = "Stolarnia"
+
+[STR_STATION_CRYO_PLANT]
+base = "Generator"
+
+[STR_STATION_DAIRY_LANE]
+base = "Mleczarnia"
+
+[STR_STATION_DYNAMO]
+base = "Maszynownia"
+
+[STR_STATION_ESTATE]
+base = "Posiadłość"
+
+[STR_STATION_EXCHANGE]
+base = "Składy"
+
+[STR_STATION_FARM_1]
+base = "Folwark"
+
+[STR_STATION_FARM_2]
+base = "Łąki"
+
+[STR_STATION_FARM_3]
+base = "{G=n}Ranczo"
+
+[STR_STATION_FISHMARKET]
+base = "Targ Rybny"
+
+[STR_STATION_FISH_PENS]
+base = "Stawy"
+
+[STR_STATION_FOOD_CORPORATION]
+base = "Zakłady Spożywcze"
+
+[STR_STATION_FOREST]
+base = "Polanka"
+
+[STR_STATION_FORGE]
+base = "{G=f}Kuźnia"
+
+[STR_STATION_FURNACE]
+base = "Wielki Piec"
+
+[STR_STATION_HEAVY_EQUIPMENT_YARD]
+base = "Baza zaopatrzenia"
+
+[STR_STATION_HEAVY_INDUSTRY_2]
+base = "Zakłady"
+
+[STR_STATION_HERDING_COOP]
+base = "Koliba"
+
+[STR_STATION_INDUSTRY_ESTATE_1]
+base = "Fabryka"
+
+[STR_STATION_INDUSTRY_HARBOUR_1]
+base = "Nabrzeże Górnicze"
+
+[STR_STATION_INDUSTRY_HARBOUR_2]
+base = "Molo"
+
+[STR_STATION_INDUSTRY_HARBOUR_3]
+base = "Przystań"
+
+[STR_STATION_INDUSTRY_HARBOUR_4]
+base = "Port"
+
+[STR_STATION_IRONSTONE]
+base = "Rudawa"
+
+[STR_STATION_JOINERS_SHOP]
+base = "Stolarnia"
+
+[STR_STATION_KILNS]
+base = "Cegielnia"
+
+[STR_STATION_KIMBERLITE_DEPOSITS]
+base = "Złoża Kimberlitu"
+
+[STR_STATION_LIMESTONE_MINES]
+base = "Kamieniołomy Wapienne"
+
+[STR_STATION_MANGANESE_MINES]
+base = "Kopalnie Manganu"
+
+[STR_STATION_MARKET]
+base = "Targowisko"
+
+[STR_STATION_MERCHANTS_LANE]
+base = "Rynek"
+
+[STR_STATION_MILL]
+base = "Młyny"
+
+[STR_STATION_MINE]
+base = "Zagłębie"
+
+[STR_STATION_MOULDINGS]
+base = "Formiernia"
+
+[STR_STATION_OIL_RIG]
+base = "Pole Naftowe"
+
+[STR_STATION_ORCHARDS]
+base = "Sady"
+
+[STR_STATION_PHENOLS]
+base = "Fenole"
+
+[STR_STATION_PIT]
+base = "Wyrobisko"
+
+[STR_STATION_PLANTATION]
+base = "Plantacja"
+
+[STR_STATION_POWERHUNGRY]
+base = "Elektrownia"
+
+[STR_STATION_POWERTRAIN]
+base = "Fabryka Silników"
+
+[STR_STATION_PUMPS]
+base = "Pompy"
+
+[STR_STATION_PYRITES]
+base = "Sztolnia"
+
+[STR_STATION_REFINERY]
+base = "Rafineria"
+
+[STR_STATION_ROD_MILL]
+base = "Walcownia"
+
+[STR_STATION_RUBBER_COMPANY]
+base = "Fabryka Opon"
+
+[STR_STATION_SALTPETER_WORKS]
+base = "Azoty"
+
+[STR_STATION_SEAFOOD]
+base = "Owoce Morza"
+
+[STR_STATION_SHARP_STREET]
+base = "Huta Szkła"
+
+[STR_STATION_SHEEP_FOLD]
+base = "Owczarnia"
+
+[STR_STATION_SHOALS]
+base = "Łowisko"
+
+[STR_STATION_SILO]
+base = "Silosy"
+
+[STR_STATION_SMELTER]
+base = "Huta"
+
+[STR_STATION_STACKS]
+base = "Stosy"
+
+[STR_STATION_STAMP_AND_PLATE]
+base = "Walcownia"
+
+[STR_STATION_SUGAR_COMPANY]
+base = "Cukrownia"
+
+[STR_STATION_TANK_FARM]
+base = "Naftoport"
+
+[STR_STATION_TAPPERS_SHED]
+base = "Plantacja Kauczuku"
+
+[STR_STATION_TOWN_1]
+base = "Stare Miasto"
+
+[STR_STATION_TOWN_2]
+base = "Krzyżówka"
+
+[STR_STATION_TOWN_3]
+base = "Centrum Handlowe"
+
+[STR_STATION_TRONA_BEDS]
+base = "Złoża Soli"
+
+[STR_STATION_WATER]
+base = "Zatoka"
+
+[STR_STATION_WEAVE_AND_DYE]
+base = "Tkalnia"
+
+[STR_STATION_WELLS]
+base = "Wiertnie"
+
+[STR_STATION_WINERY]
+base = "{G=f}Winiarnia"
+
+["STR_STATION_WINERY.b"]
+base = "winiarnię"
+
+["STR_STATION_WINERY.c"]
+base = "winiarni"
+
+["STR_STATION_WINERY.d"]
+base = "winiarni"
+
+["STR_STATION_WINERY.m"]
+base = "winiarni"
+
+["STR_STATION_WINERY.n"]
+base = "winiarnią"
+
+["STR_STATION_WINERY.w"]
+base = "winiarnio"
+
+[STR_STATION_VEHICLE_DISTRIBUTOR]
+base = "Salon Samochodowy"

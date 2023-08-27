@@ -1,0 +1,1830 @@
+[GLOBAL_PRAGMA]
+grflangid = "0x01"
+plural = "0"
+
+[STR_GRF_DESC]
+base = "{ORANGE}FIRS Industry Replacement Set{}{BLACK}Brought to you by andythenorth, FooBar, planetmaker, Terkhen and Yexo, with help from many others. {SILVER}See readme for more information, including how to use FIRS. {BLACK}License: GPL v2."
+
+[STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY]
+base = "Maximum distance of fishing grounds, oil rigs and dredging sites from the coast in tiles."
+
+[STR_PARAM_DESC_ECONOMIES]
+base = "Each economy provides a different combination of cargos and industries.{}{}For players who want simple gameplay, {SILVER}Basic {BLACK}economies contain fewer industries and cargos than other FIRS economies.{}{}The FIRS website provides detailed information about each economy."
+
+[STR_PARAM_DESC_NO_OPENINGS]
+base = "By default, new industries will open during the game.{}{}If {SILVER}prevent opening {BLACK}is turned on industries will not open during game, and players will not be able to fund or prospect for industries."
+
+[STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY]
+base = "Maximum coastal distance of marine industries in tiles"
+
+[STR_PARAM_NAME_ECONOMIES]
+base = "Economy"
+
+[STR_PARAM_NAME_NO_OPENINGS]
+base = "Prevent industries opening during gameplay"
+
+[STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0]
+base = "No limit"
+
+[STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT]
+base = "Supply crates required for Enhanced primary production (default 16)"
+
+[STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT]
+base = "Supply crates required for Gung-ho primary production (default 80)"
+
+[STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT]
+base = "Farms, mines and similar industries will increase production when supply crates are delivered, first to {SILVER}Enhanced{BLACK}, and then to {SILVER}Gung-ho{BLACK}, if enough crates are delivered.  {}{}The default values are good, but if you need to, you can change them here.  {}{}Cargo requirements for port-type industries will be 8x the values set here."
+
+[STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS]
+base = "Enhanced primary production level (%)"
+
+[STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS]
+base = "Gung-ho primary production level (%)"
+
+[STR_PARAM_DESC_PRIMARY_LEVEL_BONUS]
+base = "Production at farms, mines and similar industries when supply requirements are met (as percentage of {SILVER}Normal {BLACK}production level)."
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE]
+base = "Temperate Basic"
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC]
+base = "Arctic Basic"
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC]
+base = "Tropic Basic"
+
+[STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY]
+base = "In A Hot Country"
+
+[STR_PARAM_VALUE_ECONOMIES_STEELTOWN]
+base = "Steeltown"
+
+[STR_PARAM_NAME_OBJECTS]
+base = "FIRS landscaping objects"
+
+[STR_PARAM_DESC_OBJECTS]
+base = "FIRS includes a set of landscaping objects, which players can place to make certain industries appear larger. Landscape object have no gameplay effect. Landscaping objects can be turned on or off."
+
+[STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG]
+base = "{BLACK}(supplied)"
+
+[STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY]
+base = "{BLACK}Supply {WHITE}at least one {BLACK} required cargo for maximum production."
+
+[STR_EXTRA_TEXT_SECONDARY_COMBINATORY_BOTH]
+base = "{BLACK}For maximum production rate, supply {WHITE}both {BLACK}required cargos at least once every three months."
+
+[STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ALL]
+base = "{BLACK}For maximum production rate, supply {WHITE}all {BLACK}required cargos at least once every three months."
+
+[STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_TWO]
+base = "{BLACK}For maximum production rate, supply {WHITE}at least two {BLACK}required cargos at least once every three months."
+
+[STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_THREE]
+base = "{BLACK}For maximum production rate, supply {WHITE}at least three {BLACK}required cargos at least once every three months."
+
+[STR_EXTRA_TEXT_TOWN_PRODUCER]
+base = "{BLACK}Production is proportional to town population. At least {WHITE}{SIGNED_WORD} units{BLACK} and not more than {WHITE}{SIGNED_WORD} units{BLACK} of cargo will be produced every month."
+
+[STR_PRIMARY_PRODUCTION_1X]
+base = "{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} crates of supplies at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates."
+
+[STR_PRIMARY_PRODUCTION_2X]
+base = "{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this level, deliver {SIGNED_WORD} crates of supplies at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates."
+
+[STR_PRIMARY_PRODUCTION_4X]
+base = "{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} crates of supplies at least once every three months."
+
+[STR_PORT_PRODUCTION_1X]
+base = "{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} units of cargo at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} units."
+
+[STR_PORT_PRODUCTION_2X]
+base = "{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this level, deliver {SIGNED_WORD} units of cargo at least once every three months.{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} units."
+
+[STR_PORT_PRODUCTION_4X]
+base = "{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} units of cargo at least once every three months."
+
+[STR_CARGO_NAME_ACID]
+base = "Acid"
+
+[STR_CARGO_NAME_AGGREGATES]
+base = "Aggregates"
+
+[STR_CARGO_NAME_ALCOHOL]
+base = "Alcohol"
+
+[STR_CARGO_NAME_ALUMINIUM]
+base = "Aluminium"
+
+[STR_CARGO_NAME_ALUMINIA]
+base = "Aluminia"
+
+[STR_CARGO_NAME_AMMONIA]
+base = "Ammonia"
+
+[STR_CARGO_NAME_AMMONIUM_NITRATE]
+base = "Ammonium Nitrate"
+
+[STR_CARGO_NAME_BAUXITE]
+base = "Bauxite"
+
+[STR_CARGO_NAME_BEANS]
+base = "Beans"
+
+[STR_CARGO_NAME_BUILDING_MATERIALS]
+base = "Building Materials"
+
+[STR_CARGO_NAME_CARBON_BLACK]
+base = "Carbon Black"
+
+[STR_CARGO_NAME_CASSAVA]
+base = "Cassava"
+
+[STR_CARGO_NAME_CAST_IRON]
+base = "Cast Iron"
+
+[STR_CARGO_NAME_CEMENT]
+base = "Cement"
+
+[STR_CARGO_NAME_CHEMICALS]
+base = "Chemicals"
+
+[STR_CARGO_NAME_CHLORINE]
+base = "Chlorine"
+
+[STR_CARGO_NAME_CHROMITE_ORE]
+base = "Chromite Ore"
+
+[STR_CARGO_NAME_CLAY]
+base = "Clay"
+
+[STR_CARGO_NAME_CLEANING_AGENTS]
+base = "Cleaning Agents"
+
+[STR_CARGO_NAME_COFFEE]
+base = "Coffee"
+
+[STR_CARGO_NAME_COAL_TAR]
+base = "Coal Tar"
+
+[STR_CARGO_NAME_COKE]
+base = "Coke"
+
+[STR_CARGO_NAME_CONCRETE_PRODUCTS]
+base = "Concrete Products"
+
+[STR_CARGO_NAME_COPPER]
+base = "Copper"
+
+[STR_CARGO_NAME_COPPER_CONCENTRATE]
+base = "Copper Concentrate"
+
+[STR_CARGO_NAME_CRANES_AND_HOISTS]
+base = "Cranes & Hoists"
+
+[STR_CARGO_NAME_EDIBLE_OIL]
+base = "Edible Oil"
+
+[STR_CARGO_NAME_ELASTOMER_PRODUCTS]
+base = "Seals, Hoses & Belts"
+
+[STR_CARGO_NAME_ELECTRICAL_PARTS]
+base = "Electrical Parts"
+
+[STR_CARGO_NAME_ENGINEERING_SUPPLIES]
+base = "Engineering Supplies"
+
+[STR_CARGO_NAME_ETHYLENE]
+base = "Ethylene"
+
+[STR_CARGO_NAME_EXPLOSIVES]
+base = "Explosives"
+
+[STR_CARGO_NAME_FERROALLOYS]
+base = "Ferroalloys"
+
+[STR_CARGO_NAME_FERROCHROME]
+base = "Ferrochrome"
+
+[STR_CARGO_NAME_FIBRES]
+base = "Plant Fibres"
+
+[STR_CARGO_NAME_FISH]
+base = "Fish"
+
+[STR_CARGO_NAME_FARM_SUPPLIES]
+base = "Farm Supplies"
+
+[STR_CARGO_NAME_FERTILISER]
+base = "Fertiliser"
+
+[STR_CARGO_NAME_FOOD_ADDITIVES]
+base = "Food Additives"
+
+[STR_CARGO_NAME_FORGINGS_AND_CASTINGS]
+base = "Forgings & Castings"
+
+[STR_CARGO_NAME_FORMIC_ACID]
+base = "Formic Acid"
+
+[STR_CARGO_NAME_FRUITS]
+base = "Fruit"
+
+[STR_CARGO_NAME_FURNITURE]
+base = "Furniture"
+
+[STR_CARGO_NAME_GLASS]
+base = "Glass"
+
+[STR_CARGO_NAME_HARDWARE]
+base = "Hardware"
+
+[STR_CARGO_NAME_HYDROCHLORIC_ACID]
+base = "Hydrochloric Acid"
+
+[STR_CARGO_NAME_KAOLIN]
+base = "China Clay"
+
+[STR_CARGO_NAME_LIFTING_EQUIPMENT]
+base = "Actuators & Winches"
+
+[STR_CARGO_NAME_LIMESTONE]
+base = "Limestone"
+
+[STR_CARGO_NAME_LOGS]
+base = "Logs"
+
+[STR_CARGO_NAME_LYE]
+base = "Sodium Hydroxide"
+
+[STR_CARGO_NAME_METAL]
+base = "Metal"
+
+[STR_CARGO_NAME_METHANE]
+base = "Methane"
+
+[STR_CARGO_NAME_METHANOL]
+base = "Methanol"
+
+[STR_CARGO_NAME_MILK]
+base = "Milk"
+
+[STR_CARGO_NAME_MANGANESE]
+base = "Manganese"
+
+[STR_CARGO_NAME_NAPHTHA]
+base = "Naphtha"
+
+[STR_CARGO_NAME_NICKEL]
+base = "Nickel"
+
+[STR_CARGO_NAME_NITRATES]
+base = "Nitrates"
+
+[STR_CARGO_NAME_NITROGEN]
+base = "Nitrogen"
+
+[STR_CARGO_NAME_NUTS]
+base = "Nuts"
+
+[STR_CARGO_NAME_OXYGEN]
+base = "Oxygen"
+
+[STR_CARGO_NAME_PACKAGING]
+base = "Packaging"
+
+[STR_CARGO_NAME_PAINTS_AND_COATINGS]
+base = "Paints & Coatings"
+
+[STR_CARGO_NAME_PEAT]
+base = "Peat"
+
+[STR_CARGO_NAME_PETROL]
+base = "Petroleum Fuels"
+
+[STR_CARGO_NAME_PIPEWORK]
+base = "Pipework"
+
+[STR_CARGO_NAME_PHOSPHATE]
+base = "Phosphate"
+
+[STR_CARGO_NAME_PHOSPHORIC_ACID]
+base = "Phosphoric Acid"
+
+[STR_CARGO_NAME_PIG_IRON]
+base = "Pig Iron"
+
+[STR_CARGO_NAME_PLASTICS]
+base = "Plastics"
+
+[STR_CARGO_NAME_POTASH]
+base = "Potash"
+
+[STR_CARGO_NAME_PROPYLENE]
+base = "Propylene"
+
+[STR_CARGO_NAME_PUMPS_AND_VALVES]
+base = "Pumps & Valves"
+
+[STR_CARGO_NAME_PYRITE_ORE]
+base = "Pyrite Ore"
+
+[STR_CARGO_NAME_QUICKLIME]
+base = "Quicklime"
+
+[STR_CARGO_NAME_RAW_LATEX]
+base = "Raw Latex"
+
+[STR_CARGO_NAME_REBAR]
+base = "Rebar"
+
+[STR_CARGO_NAME_RECYCLABLES]
+base = "Recyclables"
+
+[STR_CARGO_NAME_SALT]
+base = "Salt"
+
+[STR_CARGO_NAME_SAND]
+base = "Sand"
+
+[STR_CARGO_NAME_SCRAP_METAL]
+base = "Scrap Metal"
+
+[STR_CARGO_NAME_SLAG]
+base = "Slag"
+
+[STR_CARGO_NAME_SODA_ASH]
+base = "Soda Ash"
+
+[STR_CARGO_NAME_STEEL]
+base = "Steel"
+
+[STR_CARGO_NAME_STEEL_BILLETS_AND_BLOOMS]
+base = "Steel Billets & Blooms"
+
+[STR_CARGO_NAME_STEEL_INGOTS]
+base = "Steel Ingots"
+
+[STR_CARGO_NAME_STEEL_MERCHANT_BAR]
+base = "Steel Merchant Bar"
+
+[STR_CARGO_NAME_STEEL_PIPE]
+base = "Steel Pipe"
+
+[STR_CARGO_NAME_STEEL_SECTIONS]
+base = "Structural Steel"
+
+[STR_CARGO_NAME_STEEL_SHEET]
+base = "Steel Sheet & Strip"
+
+[STR_CARGO_NAME_STEEL_SLAB]
+base = "Steel Slab"
+
+[STR_CARGO_NAME_STEEL_TUBE]
+base = "Steel Tube"
+
+[STR_CARGO_NAME_STEEL_WIRE_ROD]
+base = "Steel Wire Rod"
+
+[STR_CARGO_NAME_STEEL_WIRE_ROPE]
+base = "Steel Wire Rope"
+
+[STR_CARGO_NAME_SUGAR_BEET]
+base = "Sugar Beet"
+
+[STR_CARGO_NAME_SULPHUR]
+base = "Sulphur"
+
+[STR_CARGO_NAME_SULPHURIC_ACID]
+base = "Sulphuric Acid"
+
+[STR_CARGO_NAME_TEXTILES]
+base = "Textiles"
+
+[STR_CARGO_NAME_TIMBER]
+base = "Timber"
+
+[STR_CARGO_NAME_TIN]
+base = "Tin"
+
+[STR_CARGO_NAME_TINPLATE]
+base = "Tinplate"
+
+[STR_CARGO_NAME_TYRE_CORD]
+base = "Tyre Cord"
+
+[STR_CARGO_NAME_TYRES]
+base = "Tyres"
+
+[STR_CARGO_NAME_UREA]
+base = "Urea"
+
+[STR_CARGO_NAME_VEHICLE_BODIES]
+base = "Vehicle Bodies"
+
+[STR_CARGO_NAME_VEHICLE_ENGINES]
+base = "Vehicle Engines"
+
+[STR_CARGO_NAME_VEHICLE_PARTS]
+base = "Vehicle Parts"
+
+[STR_CARGO_NAME_VEHICLES]
+base = "Vehicles"
+
+[STR_CARGO_NAME_WELDING_CONSUMABLES]
+base = "Welding Consumables"
+
+[STR_CARGO_NAME_WOOL]
+base = "Wool"
+
+[STR_CARGO_NAME_YARN]
+base = "Yarn"
+
+[STR_CARGO_NAME_ZINC]
+base = "Zinc"
+
+[STR_CARGO_UNIT_ACID]
+base = "{VOLUME} of acid"
+
+[STR_CARGO_UNIT_AGGREGATES]
+base = "{WEIGHT} of aggregates"
+
+[STR_CARGO_UNIT_ALCOHOL]
+base = "{VOLUME} of alcohol"
+
+[STR_CARGO_UNIT_ALUMINIA]
+base = "{WEIGHT} of aluminia"
+
+[STR_CARGO_UNIT_ALUMINIUM]
+base = "{WEIGHT} of aluminium"
+
+[STR_CARGO_UNIT_AMMONIA]
+base = "{VOLUME} of ammonia"
+
+[STR_CARGO_UNIT_AMMONIUM_NITRATE]
+base = "{VOLUME} of ammonium nitrate"
+
+[STR_CARGO_UNIT_BAUXITE]
+base = "{WEIGHT} of bauxite"
+
+[STR_CARGO_UNIT_BEANS]
+base = "{WEIGHT} of beans"
+
+[STR_CARGO_UNIT_BUILDING_MATERIALS]
+base = "{WEIGHT} of building materials"
+
+[STR_CARGO_UNIT_CARBON_BLACK]
+base = "{WEIGHT} of carbon black"
+
+[STR_CARGO_UNIT_CASSAVA]
+base = "{WEIGHT} of cassava"
+
+[STR_CARGO_UNIT_CAST_IRON]
+base = "{WEIGHT} of cast iron"
+
+[STR_CARGO_UNIT_CEMENT]
+base = "{WEIGHT} of cement"
+
+[STR_CARGO_UNIT_CHEMICALS]
+base = "{VOLUME} of chemicals"
+
+[STR_CARGO_UNIT_CHLORINE]
+base = "{VOLUME} of chlorine"
+
+[STR_CARGO_UNIT_CHROMITE_ORE]
+base = "{WEIGHT} of chromite ore"
+
+[STR_CARGO_UNIT_CLAY]
+base = "{WEIGHT} of clay"
+
+[STR_CARGO_UNIT_CLEANING_AGENTS]
+base = "{WEIGHT} of cleaning agents"
+
+[STR_CARGO_UNIT_COAL_TAR]
+base = "{VOLUME} of coal tar"
+
+[STR_CARGO_UNIT_COFFEE]
+base = "{SIGNED_WORD} sack{P 0 \"\" s} of coffee"
+
+[STR_CARGO_UNIT_COKE]
+base = "{WEIGHT} of coke"
+
+[STR_CARGO_UNIT_CONCRETE_PRODUCTS]
+base = "{WEIGHT} of concrete products"
+
+[STR_CARGO_UNIT_COPPER]
+base = "{WEIGHT} of copper"
+
+[STR_CARGO_UNIT_COPPER_CONCENTRATE]
+base = "{WEIGHT} of copper concentrate"
+
+[STR_CARGO_UNIT_CRANES_AND_HOISTS]
+base = "{WEIGHT} of cranes & hoists"
+
+[STR_CARGO_UNIT_EDIBLE_OIL]
+base = "{VOLUME} of edible oil"
+
+[STR_CARGO_UNIT_ELASTOMER_PRODUCTS]
+base = "{WEIGHT} of seals, hoses & belts"
+
+[STR_CARGO_UNIT_ELECTRICAL_PARTS]
+base = "{WEIGHT} of electrical parts"
+
+[STR_CARGO_UNIT_ENGINEERING_SUPPLIES]
+base = "{SIGNED_WORD} crate{P 0 \"\" s} of engineering supplies"
+
+[STR_CARGO_UNIT_ETHYLENE]
+base = "{VOLUME} of ethylene"
+
+[STR_CARGO_UNIT_EXPLOSIVES]
+base = "{SIGNED_WORD} crate{P 0 \"\" s} of explosives"
+
+[STR_CARGO_UNIT_FERROALLOYS]
+base = "{WEIGHT} of ferroalloys"
+
+[STR_CARGO_UNIT_FERROCHROME]
+base = "{WEIGHT} of ferrochrome"
+
+[STR_CARGO_UNIT_FERTILISER]
+base = "{WEIGHT} of fertiliser"
+
+[STR_CARGO_UNIT_FOOD_ADDITIVES]
+base = "{WEIGHT} of food additives"
+
+[STR_CARGO_UNIT_FORGINGS_AND_CASTINGS]
+base = "{WEIGHT} of forgings & castings"
+
+[STR_CARGO_UNIT_FORMIC_ACID]
+base = "{VOLUME} of formic acid"
+
+[STR_CARGO_UNIT_FIBRES]
+base = "{SIGNED_WORD} bale{P 0 \"\" s} of plant fibres"
+
+[STR_CARGO_UNIT_FISH]
+base = "{WEIGHT} of fish"
+
+[STR_CARGO_UNIT_FMSP]
+base = "{SIGNED_WORD} crate{P 0 \"\" s} of farm supplies"
+
+[STR_CARGO_UNIT_FRUITS]
+base = "{WEIGHT} of fruit"
+
+[STR_CARGO_UNIT_FURNITURE]
+base = "{WEIGHT} of furniture"
+
+[STR_CARGO_UNIT_GLASS]
+base = "{WEIGHT} of glass"
+
+[STR_CARGO_UNIT_HARDWARE]
+base = "{WEIGHT} of hardware"
+
+[STR_CARGO_UNIT_HYDROCHLORIC_ACID]
+base = "{VOLUME} of hydrochloric acid"
+
+[STR_CARGO_UNIT_KAOLIN]
+base = "{WEIGHT} of china clay"
+
+[STR_CARGO_UNIT_LIFTING_EQUIPMENT]
+base = "{WEIGHT} of actuators & winches"
+
+[STR_CARGO_UNIT_LIMESTONE]
+base = "{WEIGHT} of limestone"
+
+[STR_CARGO_UNIT_LOGS]
+base = "{WEIGHT} of logs"
+
+[STR_CARGO_UNIT_LYE]
+base = "{VOLUME} of sodium hydroxide"
+
+[STR_CARGO_UNIT_MANGANESE]
+base = "{WEIGHT} of manganese"
+
+[STR_CARGO_UNIT_METAL]
+base = "{WEIGHT} of metal"
+
+[STR_CARGO_UNIT_METHANE]
+base = "{VOLUME} of methane"
+
+[STR_CARGO_UNIT_METHANOL]
+base = "{VOLUME} of methanol"
+
+[STR_CARGO_UNIT_MILK]
+base = "{VOLUME} of milk"
+
+[STR_CARGO_UNIT_NAPHTHA]
+base = "{VOLUME} of naphtha"
+
+[STR_CARGO_UNIT_NICKEL]
+base = "{WEIGHT} of nickel"
+
+[STR_CARGO_UNIT_NITRATES]
+base = "{WEIGHT} of nitrates"
+
+[STR_CARGO_UNIT_NITROGEN]
+base = "{VOLUME} of nitrogen"
+
+[STR_CARGO_UNIT_NUTS]
+base = "{SIGNED_WORD} sack{P 0 \"\" s}  of nuts"
+
+[STR_CARGO_UNIT_OXYGEN]
+base = "{VOLUME} of oxygen"
+
+[STR_CARGO_UNIT_PACKAGING]
+base = "{WEIGHT} of packaging"
+
+[STR_CARGO_UNIT_PAINTS_AND_COATINGS]
+base = "{VOLUME} of paints & coatings"
+
+[STR_CARGO_UNIT_PEAT]
+base = "{WEIGHT} of peat"
+
+[STR_CARGO_UNIT_PETROL]
+base = "{VOLUME} of petroleum fuels"
+
+[STR_CARGO_UNIT_PHOSPHATE]
+base = "{WEIGHT} of phosphate"
+
+[STR_CARGO_UNIT_PHOSPHORIC_ACID]
+base = "{VOLUME} of phosphoric acid"
+
+[STR_CARGO_UNIT_PIG_IRON]
+base = "{WEIGHT} of pig iron"
+
+[STR_CARGO_UNIT_PIPEWORK]
+base = "{WEIGHT} of pipework"
+
+[STR_CARGO_UNIT_PLASTICS]
+base = "{WEIGHT} of plastics"
+
+[STR_CARGO_UNIT_POTASH]
+base = "{WEIGHT} of potash"
+
+[STR_CARGO_UNIT_PROPYLENE]
+base = "{VOLUME} of propylene"
+
+[STR_CARGO_UNIT_PYRITE_ORE]
+base = "{WEIGHT} of pyrite ore"
+
+[STR_CARGO_UNIT_PUMPS_AND_VALVES]
+base = "{WEIGHT} of pumps & valves"
+
+[STR_CARGO_UNIT_QUICKLIME]
+base = "{WEIGHT} of quicklime"
+
+[STR_CARGO_UNIT_RAW_LATEX]
+base = "{VOLUME} of raw latex"
+
+[STR_CARGO_UNIT_REBAR]
+base = "{WEIGHT} of rebar"
+
+[STR_CARGO_UNIT_RECYCLABLES]
+base = "{WEIGHT} of recyclables"
+
+[STR_CARGO_UNIT_SALT]
+base = "{WEIGHT} of salt"
+
+[STR_CARGO_UNIT_SAND]
+base = "{WEIGHT} of sand"
+
+[STR_CARGO_UNIT_SCRAP_METAL]
+base = "{WEIGHT} of scrap metal"
+
+[STR_CARGO_UNIT_SLAG]
+base = "{WEIGHT} of slag"
+
+[STR_CARGO_UNIT_SODA_ASH]
+base = "{WEIGHT} of soda ash"
+
+[STR_CARGO_UNIT_STEEL]
+base = "{WEIGHT} of steel"
+
+[STR_CARGO_UNIT_STEEL_BILLETS_AND_BLOOMS]
+base = "{WEIGHT} of steel billets & blooms"
+
+[STR_CARGO_UNIT_STEEL_INGOTS]
+base = "{WEIGHT} of steel ingots"
+
+[STR_CARGO_UNIT_STEEL_MERCHANT_BAR]
+base = "{WEIGHT} of steel merchant bar"
+
+[STR_CARGO_UNIT_STEEL_PIPE]
+base = "{WEIGHT} of steel pipe"
+
+[STR_CARGO_UNIT_STEEL_SECTIONS]
+base = "{WEIGHT} of structural steel"
+
+[STR_CARGO_UNIT_STEEL_SHEET]
+base = "{WEIGHT} of steel sheet & strip"
+
+[STR_CARGO_UNIT_STEEL_SLAB]
+base = "{WEIGHT} of steel slab"
+
+[STR_CARGO_UNIT_STEEL_TUBE]
+base = "{WEIGHT} of steel tube"
+
+[STR_CARGO_UNIT_STEEL_WIRE_ROD]
+base = "{WEIGHT} of steel wire rod"
+
+[STR_CARGO_UNIT_STEEL_WIRE_ROPE]
+base = "{WEIGHT} of steel wire rope"
+
+[STR_CARGO_UNIT_SUGAR_BEET]
+base = "{WEIGHT} of sugar beet"
+
+[STR_CARGO_UNIT_SULPHUR]
+base = "{WEIGHT} of sulphur"
+
+[STR_CARGO_UNIT_SULPHURIC_ACID]
+base = "{VOLUME} of sulphuric acid"
+
+[STR_CARGO_UNIT_TEXTILES]
+base = "{WEIGHT} of textiles"
+
+[STR_CARGO_UNIT_TIMBER]
+base = "{WEIGHT} of timber"
+
+[STR_CARGO_UNIT_TIN]
+base = "{WEIGHT} of tin"
+
+[STR_CARGO_UNIT_TINPLATE]
+base = "{WEIGHT} of tinplate"
+
+[STR_CARGO_UNIT_TYRE_CORD]
+base = "{WEIGHT} of tyre cord"
+
+[STR_CARGO_UNIT_TYRES]
+base = "{WEIGHT} of tyres"
+
+[STR_CARGO_UNIT_UREA]
+base = "{WEIGHT} of urea"
+
+[STR_CARGO_UNIT_VEHICLE_BODIES]
+base = "{WEIGHT} of vehicle bodies"
+
+[STR_CARGO_UNIT_VEHICLE_ENGINES]
+base = "{WEIGHT} of vehicle engines"
+
+[STR_CARGO_UNIT_VEHICLE_PARTS]
+base = "{WEIGHT} of vehicle parts"
+
+[STR_CARGO_UNIT_VEHICLES]
+base = "{WEIGHT} of vehicles"
+
+[STR_CARGO_UNIT_WELDING_CONSUMABLES]
+base = "{WEIGHT} of welding consumables"
+
+[STR_CARGO_UNIT_WOOL]
+base = "{SIGNED_WORD} bale{P 0 \"\" s} of wool"
+
+[STR_CARGO_UNIT_YARN]
+base = "{SIGNED_WORD} bale{P 0 \"\" s} of yarn"
+
+[STR_CARGO_UNIT_ZINC]
+base = "{WEIGHT} of zinc"
+
+[STR_CID_ACID]
+base = "{TINYFONT}AC"
+
+[STR_CID_AGGREGATES]
+base = "{TINYFONT}AG"
+
+[STR_CID_ALCOHOL]
+base = "{TINYFONT}AL"
+
+[STR_CID_ALUMINIA]
+base = "{TINYFONT}AA"
+
+[STR_CID_ALUMINIUM]
+base = "{TINYFONT}AM"
+
+[STR_CID_AMMONIA]
+base = "{TINYFONT}AO"
+
+[STR_CID_AMMONIUM_NITRATE]
+base = "{TINYFONT}AN"
+
+[STR_CID_BAUXITE]
+base = "{TINYFONT}BX"
+
+[STR_CID_BEANS]
+base = "{TINYFONT}BN"
+
+[STR_CID_BUILDING_MATERIALS]
+base = "{TINYFONT}BM"
+
+[STR_CID_CARBON_BLACK]
+base = "{TINYFONT}CB"
+
+[STR_CID_CASSAVA]
+base = "{TINYFONT}CA"
+
+[STR_CID_CAST_IRON]
+base = "{TINYFONT}CI"
+
+[STR_CID_CEMENT]
+base = "{TINYFONT}CE"
+
+[STR_CID_CHEMICALS]
+base = "{TINYFONT}CH"
+
+[STR_CID_CHROMITE_ORE]
+base = "{TINYFONT}CO"
+
+[STR_CID_CHLORINE]
+base = "{TINYFONT}CH"
+
+[STR_CID_CLAY]
+base = "{TINYFONT}CY"
+
+[STR_CID_CLEANING_AGENTS]
+base = "{TINYFONT}CN"
+
+[STR_CID_COFFEE]
+base = "{TINYFONT}CF"
+
+[STR_CID_COAL_TAR]
+base = "{TINYFONT}CT"
+
+[STR_CID_COKE]
+base = "{TINYFONT}CK"
+
+[STR_CID_CONCRETE_PRODUCTS]
+base = "{TINYFONT}CP"
+
+[STR_CID_COPPER]
+base = "{TINYFONT}CR"
+
+[STR_CID_COPPER_CONCENTRATE]
+base = "{TINYFONT}CC"
+
+[STR_CID_CRANES_AND_HOISTS]
+base = "{TINYFONT}CR"
+
+[STR_CID_EDIBLE_OIL]
+base = "{TINYFONT}EO"
+
+[STR_CID_ELASTOMER_PRODUCTS]
+base = "{TINYFONT}EL"
+
+[STR_CID_ELECTRICAL_PARTS]
+base = "{TINYFONT}EP"
+
+[STR_CID_ENGINEERING_SUPPLIES]
+base = "{TINYFONT}ES"
+
+[STR_CID_ETHYLENE]
+base = "{TINYFONT}EY"
+
+[STR_CID_EXPLOSIVES]
+base = "{TINYFONT}EX"
+
+[STR_CID_FARM_SUPPLIES]
+base = "{TINYFONT}FS"
+
+[STR_CID_FERROALLOYS]
+base = "{TINYFONT}FA"
+
+[STR_CID_FERROCHROME]
+base = "{TINYFONT}FC"
+
+[STR_CID_FERTILISER]
+base = "{TINYFONT}FL"
+
+[STR_CID_FIBRES]
+base = "{TINYFONT}PF"
+
+[STR_CID_FISH]
+base = "{TINYFONT}FI"
+
+[STR_CID_FOOD_ADDITIVES]
+base = "{TINYFONT}FV"
+
+[STR_CID_FORMIC_ACID]
+base = "{TINYFONT}FA"
+
+[STR_CID_FORGINGS_AND_CASTINGS]
+base = "{TINYFONT}FO"
+
+[STR_CID_FURNITURE]
+base = "{TINYFONT}FU"
+
+[STR_CID_GLASS]
+base = "{TINYFONT}GL"
+
+[STR_CID_HARDWARE]
+base = "{TINYFONT}HW"
+
+[STR_CID_HYDROCHLORIC_ACID]
+base = "{TINYFONT}HA"
+
+[STR_CID_KAOLIN]
+base = "{TINYFONT}KA"
+
+[STR_CID_LIFTING_EQUIPMENT]
+base = "{TINYFONT}AW"
+
+[STR_CID_LIMESTONE]
+base = "{TINYFONT}LS"
+
+[STR_CID_LOGS]
+base = "{TINYFONT}LG"
+
+[STR_CID_LYE]
+base = "{TINYFONT}SY"
+
+[STR_CID_MANGANESE]
+base = "{TINYFONT}MN"
+
+[STR_CID_METAL]
+base = "{TINYFONT}MT"
+
+[STR_CID_METHANE]
+base = "{TINYFONT}MA"
+
+[STR_CID_METHANOL]
+base = "{TINYFONT}ML"
+
+[STR_CID_MILK]
+base = "{TINYFONT}MK"
+
+[STR_CID_NAPHTHA]
+base = "{TINYFONT}NA"
+
+[STR_CID_NICKEL]
+base = "{TINYFONT}NK"
+
+[STR_CID_NITRATES]
+base = "{TINYFONT}NI"
+
+[STR_CID_NITROGEN]
+base = "{TINYFONT}N7"
+
+[STR_CID_NUTS]
+base = "{TINYFONT}NT"
+
+[STR_CID_OXYGEN]
+base = "{TINYFONT}O2"
+
+[STR_CID_PACKAGING]
+base = "{TINYFONT}PK"
+
+[STR_CID_PAINTS_AND_COATINGS]
+base = "{TINYFONT}PC"
+
+[STR_CID_PEAT]
+base = "{TINYFONT}PE"
+
+[STR_CID_PETROL]
+base = "{TINYFONT}PT"
+
+[STR_CID_PIG_IRON]
+base = "{TINYFONT}PI"
+
+[STR_CID_PIPEWORK]
+base = "{TINYFONT}PW"
+
+[STR_CID_PHOSPHATE]
+base = "{TINYFONT}PH"
+
+[STR_CID_PHOSPHORIC_ACID]
+base = "{TINYFONT}PA"
+
+[STR_CID_PLASTICS]
+base = "{TINYFONT}PL"
+
+[STR_CID_POTASH]
+base = "{TINYFONT}PA"
+
+[STR_CID_PROPYLENE]
+base = "{TINYFONT}PR"
+
+[STR_CID_PUMPS_AND_VALVES]
+base = "{TINYFONT}PV"
+
+[STR_CID_PYRITE_ORE]
+base = "{TINYFONT}PY"
+
+[STR_CID_QUICKLIME]
+base = "{TINYFONT}QL"
+
+[STR_CID_RAW_LATEX]
+base = "{TINYFONT}RL"
+
+[STR_CID_REBAR]
+base = "{TINYFONT}RB"
+
+[STR_CID_RECYCLABLES]
+base = "{TINYFONT}RC"
+
+[STR_CID_SALT]
+base = "{TINYFONT}NA"
+
+[STR_CID_SAND]
+base = "{TINYFONT}SA"
+
+[STR_CID_SCRAP_METAL]
+base = "{TINYFONT}SM"
+
+[STR_CID_SLAG]
+base = "{TINYFONT}SG"
+
+[STR_CID_SODA_ASH]
+base = "{TINYFONT}SO"
+
+[STR_CID_STEEL]
+base = "{TINYFONT}SL"
+
+[STR_CID_STEEL_BILLETS_AND_BLOOMS]
+base = "{TINYFONT}BB"
+
+[STR_CID_STEEL_INGOTS]
+base = "{TINYFONT}SI"
+
+[STR_CID_STEEL_MERCHANT_BAR]
+base = "{TINYFONT}SB"
+
+[STR_CID_STEEL_PIPE]
+base = "{TINYFONT}SP"
+
+[STR_CID_STEEL_SECTIONS]
+base = "{TINYFONT}SC"
+
+[STR_CID_STEEL_SHEET]
+base = "{TINYFONT}SH"
+
+[STR_CID_STEEL_SLAB]
+base = "{TINYFONT}SL"
+
+[STR_CID_STEEL_TUBE]
+base = "{TINYFONT}ST"
+
+[STR_CID_STEEL_WIRE_ROD]
+base = "{TINYFONT}SW"
+
+[STR_CID_STEEL_WIRE_ROPE]
+base = "{TINYFONT}SR"
+
+[STR_CID_SUGAR_BEET]
+base = "{TINYFONT}SB"
+
+[STR_CID_SULPHUR]
+base = "{TINYFONT}SU"
+
+[STR_CID_SULPHURIC_ACID]
+base = "{TINYFONT}SD"
+
+[STR_CID_TEXTILES]
+base = "{TINYFONT}TX"
+
+[STR_CID_TIMBER]
+base = "{TINYFONT}LU"
+
+[STR_CID_TIN]
+base = "{TINYFONT}TI"
+
+[STR_CID_TINPLATE]
+base = "{TINYFONT}TP"
+
+[STR_CID_TYRE_CORD]
+base = "{TINYFONT}TC"
+
+[STR_CID_TYRES]
+base = "{TINYFONT}TY"
+
+[STR_CID_UREA]
+base = "{TINYFONT}UR"
+
+[STR_CID_VEHICLE_BODIES]
+base = "{TINYFONT}VB"
+
+[STR_CID_VEHICLE_ENGINES]
+base = "{TINYFONT}VE"
+
+[STR_CID_VEHICLE_PARTS]
+base = "{TINYFONT}VP"
+
+[STR_CID_VEHICLES]
+base = "{TINYFONT}VS"
+
+[STR_CID_WELDING_CONSUMABLES]
+base = "{TINYFONT}WS"
+
+[STR_CID_WOOL]
+base = "{TINYFONT}WL"
+
+[STR_CID_YARN]
+base = "{TINYFONT}YN"
+
+[STR_CID_ZINC]
+base = "{TINYFONT}ZN"
+
+[STR_ERR_CLIMATE_TOYLAND]
+base = "{ORANGE}FIRS is not designed to be used with Toyland climate"
+
+[STR_ERR_OPENTTD_VERSION]
+base = "{ORANGE}E00: FIRS requires OpenTTD 1.7.0 (or for those using trunk builds, r27769)"
+
+[STR_ERR_INCOMPATIBLE_SET]
+base = "{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}{STRING}"
+
+[STR_ERR_INCOMPATIBLE_PARAM_CANSET]
+base = "{ORANGE}E02: {YELLOW}Incompatible parameter: {ORANGE}CanSet parameter 2 must be 0 to work with FIRS."
+
+[STR_ERR_INCOMPATIBLE_PARAM_CITYSET]
+base = "{ORANGE}E02: {YELLOW}Incompatible parameter: {ORANGE}NA City Set parameter 2 must be 0 to work with FIRS."
+
+[STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION]
+base = "{ORANGE}E04: {YELLOW}Incompatible version: {ORANGE}Total Town Replacement Set must be version release 3.11 or newer."
+
+[STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE]
+base = "must be placed below the snow line."
+
+[STR_ERR_LOCATION_NOT_BELOW_SNOWLINE]
+base = "must be placed above the snow line."
+
+[STR_ERR_LOCATION_NOT_ON_WATER]
+base = "must be placed on dry land."
+
+[STR_ERR_LOCATION_NOT_IN_DESERT]
+base = "must not be placed in the desert."
+
+[STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE]
+base = "cannot be placed on steep slopes."
+
+[STR_ERR_LOCATION_LIMIT_1_PER_TOWN]
+base = "only one industry of this type allowed per town."
+
+[STR_IND_ALUMINIUM_PLANT]
+base = "Aluminium Plant"
+
+[STR_IND_AMMONIA_PLANT]
+base = "Ammonia Plant"
+
+[STR_IND_APPLIANCE_FACTORY]
+base = "Appliance Factory"
+
+[STR_IND_ARABLE_FARM]
+base = "Arable Farm"
+
+[STR_IND_ASSEMBLY_PLANT]
+base = "Assembly Plant"
+
+[STR_IND_BAR_AND_SECTION_MILL]
+base = "Bar & Section Mill"
+
+[STR_IND_BASIC_OXYGEN_FURNACE]
+base = "Basic Oxygen Furnace"
+
+[STR_IND_BIOREFINERY]
+base = "Biorefinery"
+
+[STR_IND_BLAST_FURNACE]
+base = "Blast Furnace"
+
+[STR_IND_BODY_PLANT]
+base = "Body Plant"
+
+[STR_IND_BREWERY]
+base = "Brewery"
+
+[STR_IND_CIDER_MILL]
+base = "Cider Mill"
+
+[STR_IND_BRICK_WORKS]
+base = "Brick Works"
+
+[STR_IND_BUILDERS_YARD]
+base = "Builders Yard"
+
+[STR_IND_BULK_TERMINAL]
+base = "Bulk Terminal"
+
+[STR_IND_CARBON_BLACK_PLANT]
+base = "Carbon Black Plant"
+
+[STR_IND_CEMENT_PLANT]
+base = "Cement Plant"
+
+[STR_IND_CHEMICAL_PLANT]
+base = "Chemical Plant"
+
+[STR_IND_CHLOR_ALKALI_PLANT]
+base = "Chlor-alkali Plant"
+
+[STR_IND_CHROMITE_MINE]
+base = "Chromite Mine"
+
+[STR_IND_CIVIL_EXPLOSIVES_FACILITY]
+base = "Civil Explosives Facility"
+
+[STR_IND_CLAY_PIT]
+base = "Clay Pit"
+
+[STR_IND_COFFEE_ESTATE]
+base = "Coffee Estate"
+
+[STR_IND_COKE_OVEN]
+base = "Coke Oven"
+
+[STR_IND_COMPONENT_FACTORY]
+base = "Precision Parts Plant"
+
+[STR_IND_COPPER_CONCENTRATOR]
+base = "Copper Concentrator"
+
+[STR_IND_COPPER_SMELTER]
+base = "Copper Smelter"
+
+[STR_IND_CRANE_AND_HOIST_FACTORY]
+base = "Crane & Hoist Factory"
+
+[STR_IND_CRYO_PLANT]
+base = "Cryo Plant"
+
+[STR_IND_DAIRY]
+base = "Dairy"
+
+[STR_IND_DAIRY_FARM]
+base = "Dairy Farm"
+
+[STR_IND_DREDGING_SITE]
+base = "Dredging Site"
+
+[STR_IND_ELASTOMER_PRODUCTS_PLANT]
+base = "Elastomer Products Plant"
+
+[STR_IND_ELECTRIC_ARC_FURNACE]
+base = "Electric Arc Furnace"
+
+[STR_IND_ENGINE_PLANT]
+base = "Engine Plant"
+
+[STR_IND_ETHYLENE_CRACKER]
+base = "Naphtha Cracker"
+
+[STR_IND_FARM]
+base = "Farm"
+
+[STR_IND_FERROCHROME_SMELTER]
+base = "Ferrochrome Smelter"
+
+[STR_IND_FERTILISER_PLANT]
+base = "Fertiliser Plant"
+
+[STR_IND_FACTORY_1]
+base = "Factory 1"
+
+[STR_IND_FACTORY_2]
+base = "Factory 2"
+
+[STR_IND_FACTORY_3]
+base = "Factory 3"
+
+[STR_IND_FISCHER_TROPSCH_PLANT]
+base = "Fischer-Tropsch Plant"
+
+[STR_IND_FISH_FARM]
+base = "Fish Farm"
+
+[STR_IND_FISHING_GROUND]
+base = "Fishing Grounds"
+
+[STR_IND_FISHING_HARBOUR]
+base = "Fishing Harbour"
+
+[STR_IND_FISHING_VILLAGE]
+base = "Fishing Village"
+
+[STR_IND_FLOUR_MILL]
+base = "Flour Mill"
+
+[STR_IND_FOOD_MARKET]
+base = "Grocer's Shop"
+
+[STR_IND_FOOD_PROCESSOR]
+base = "Food Processing Plant"
+
+[STR_IND_FORGE_AND_FOUNDRY]
+base = "Steel Forge & Foundry"
+
+[STR_IND_FURNITURE_FACTORY]
+base = "Furniture Factory"
+
+[STR_IND_GENERAL_STORE]
+base = "General Store"
+
+[STR_IND_GLASS_WORKS]
+base = "Glass Works"
+
+[STR_IND_HARDWARE_FACTORY]
+base = "Hardware Factory"
+
+[STR_IND_HARDWARE_STORE]
+base = "Hardware Store"
+
+[STR_IND_HERDING_COOP]
+base = "Herding Co-op"
+
+[STR_IND_HOTEL]
+base = "Hotel"
+
+[STR_IND_INTEGRATED_STEEL_MILL]
+base = "Steel Mill"
+
+[STR_IND_IRON_WORKS]
+base = "Iron Works"
+
+[STR_IND_SCRAP_YARD]
+base = "Scrap Yard"
+
+[STR_IND_LATEX_PROCESSOR]
+base = "Latex Processor"
+
+[STR_IND_LIME_KILN]
+base = "Lime Kiln"
+
+[STR_IND_LIMESTONE_MINE]
+base = "Limestone Mine"
+
+[STR_IND_LIQUIDS_TERMINAL]
+base = "Liquids Terminal"
+
+[STR_IND_TIMBER_YARD]
+base = "Timber Yard"
+
+[STR_IND_MACHINE_SHOP]
+base = "Tracked Machine Factory"
+
+[STR_IND_MACHINE_WORKS]
+base = "Machine Works"
+
+[STR_IND_MANGANESE_MINE]
+base = "Manganese Mine"
+
+[STR_IND_METAL_WORKSHOP]
+base = "Metal Workshop"
+
+[STR_IND_MIXEDFARM]
+base = "Mixed Farm"
+
+[STR_IND_NITRATE_MINE]
+base = "Nitrate Mine"
+
+[STR_IND_ORCHARD_PIGGERY]
+base = "Orchard & Piggery"
+
+[STR_IND_PEATLANDS]
+base = "Peatlands"
+
+[STR_IND_PETROLPUMP]
+base = "Petrol Station"
+
+[STR_IND_PHOSPHATE_MINE]
+base = "Phosphate Mine"
+
+[STR_IND_PHOSPHORIC_ACID_PLANT]
+base = "Phosphoric Acid Plant"
+
+[STR_IND_PIPEWORK_FABRICATOR]
+base = "Pipework Fabricator"
+
+[STR_IND_PLATE_MILL]
+base = "Plate Mill"
+
+[STR_IND_PLASTICS_PLANT]
+base = "PVC Plant"
+
+[STR_IND_PLAZA]
+base = "Plaza"
+
+[STR_IND_POLYETHYLENE_PLANT]
+base = "Polyethylene Plant"
+
+[STR_IND_POLYPROPYLENE_PLANT]
+base = "Polypropylene Plant"
+
+[STR_IND_PORT]
+base = "Port"
+
+[STR_IND_POTASH_MINE]
+base = "Potash Mine"
+
+[STR_IND_CONCRETE_PLANT]
+base = "Concrete Plant"
+
+[STR_IND_PYRITE_MINE]
+base = "Pyrite Mine"
+
+[STR_IND_PYRITE_SMELTER]
+base = "Pyrite Smelter"
+
+[STR_IND_POWER_PLANT]
+base = "Power Plant"
+
+[STR_IND_QUARRY]
+base = "Quarry"
+
+[STR_IND_RANCH]
+base = "Ranch"
+
+[STR_IND_RECYCLING_DEPOT]
+base = "Recycling Depot"
+
+[STR_IND_RECYCLING_PLANT]
+base = "Recycling Plant"
+
+[STR_IND_REINDEER_FARM]
+base = "Reindeer Farm"
+
+[STR_IND_SALT_MINE]
+base = "Salt Mine"
+
+[STR_IND_SECTION_MILL]
+base = "Section Mill"
+
+[STR_IND_SHEEPFARM]
+base = "Sheep Farm"
+
+[STR_IND_SLAB_CUTTER]
+base = "Plate Mill"
+
+[STR_IND_SLAG_GRINDING_PLANT]
+base = "Slag Grinding Plant"
+
+[STR_IND_SMITHY_FORGE]
+base = "Smithy Forge"
+
+[STR_IND_SODA_ASH_MINE]
+base = "Soda Ash Mine"
+
+[STR_IND_SOLVAY_PLANT]
+base = "Solvay Plant"
+
+[STR_IND_STOCKYARD]
+base = "Stockyard"
+
+[STR_IND_STRIP_MILL]
+base = "Strip Mill"
+
+[STR_IND_SUGAR_REFINERY]
+base = "Sugar Refinery"
+
+[STR_IND_SULPHURIC_ACID_PLANT]
+base = "Sulphuric Acid Plant"
+
+[STR_IND_SUPPLY_YARD]
+base = "Supply Yard"
+
+[STR_IND_TEXTILE_MILL]
+base = "Textile Mill"
+
+[STR_IND_TINPLATE_WORKS]
+base = "Tinplate Works"
+
+[STR_IND_TRADING_POST]
+base = "Trading Post"
+
+[STR_IND_TUBE_MILL]
+base = "Tube & Pipe Mill"
+
+[STR_IND_TYRE_PLANT]
+base = "Tyre Plant"
+
+[STR_IND_VINEYARD]
+base = "Vineyard"
+
+[STR_IND_VEHICLE_DISTRIBUTOR]
+base = "Vehicle Distributor"
+
+[STR_IND_WHARF]
+base = "Wharf"
+
+[STR_IND_WIRE_ROPE_FACTORY]
+base = "Wire Rope Factory"
+
+[STR_IND_WIRE_ROD_MILL]
+base = "Wire Rod Mill"
+
+[STR_FUND_ARABLE_FARM]
+base = "{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts."
+
+[STR_FUND_COFFEE_ESTATE]
+base = "{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts."
+
+[STR_FUND_DAIRY_FARM]
+base = "{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts."
+
+[STR_FUND_FARM]
+base = "{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts."
+
+[STR_FUND_FOREST]
+base = "{}{BLACK}Location: {YELLOW}Cannot be funded in deserts."
+
+[STR_FUND_FRUIT_PLANTATION]
+base = "{}{BLACK}Location: {YELLOW}Cannot be funded on snow."
+
+[STR_FUND_HERDING_COOP]
+base = "{}{BLACK}Location: {YELLOW}Can only be funded on snow."
+
+[STR_FUND_ORCHARD_PIGGERY]
+base = "{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts."
+
+[STR_FUND_RUBBER_PLANTATION]
+base = "{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts."
+
+[STR_FUND_VINEYARD]
+base = "{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts."
+
+[STR_FUND_AVAILABLE_FROM]
+base = "{}{BLACK}Available from: {YELLOW}{COMMA}"
+
+[STR_FUND_AVAILABLE_UNTIL]
+base = "{}{BLACK}Not available after: {YELLOW}{COMMA}"
+
+[STR_TOWN]
+base = "{STRING}"
+
+[STR_STATION]
+base = "{STRING} {STRING}"
+
+[STR_STATION_ANIMALS]
+base = "Horse Market"
+
+[STR_STATION_AUTOMOTIVE]
+base = "Automotive"
+
+[STR_STATION_BAR_GRILL_AND_ROOMS]
+base = "Bar, Grill and Rooms"
+
+[STR_STATION_BARNS]
+base = "Barns"
+
+[STR_STATION_BARREL_AND_KEG]
+base = "Barrel and Keg"
+
+[STR_STATION_BASE]
+base = "Base"
+
+[STR_STATION_BONEYARD]
+base = "Boneyard"
+
+[STR_STATION_BANK_TOP]
+base = "Bank Top"
+
+[STR_STATION_BRINE_WORKS]
+base = "Brine Works"
+
+[STR_STATION_CASTINGS]
+base = "Castings"
+
+[STR_STATION_COLLIERY]
+base = "Colliery"
+
+[STR_STATION_COMPONENTS]
+base = "Components"
+
+[STR_STATION_COPPER_LODE]
+base = "Copper Lode"
+
+[STR_STATION_CRANE_AND_HOIST]
+base = "Crane and Hoist"
+
+[STR_STATION_CREOSOTING]
+base = "Creosoting"
+
+[STR_STATION_CRYO_PLANT]
+base = "Cryo Plant"
+
+[STR_STATION_DAIRY_LANE]
+base = "Dairy Lane"
+
+[STR_STATION_DYNAMO]
+base = "Dynamo"
+
+[STR_STATION_ELASTOMER_PLANT]
+base = "Seal and Hose"
+
+[STR_STATION_ESTATE]
+base = "Estate"
+
+[STR_STATION_EXCHANGE]
+base = "Exchange"
+
+[STR_STATION_FARM_1]
+base = "Manor"
+
+[STR_STATION_FARM_2]
+base = "Meadows"
+
+[STR_STATION_FARM_3]
+base = "Ranch"
+
+[STR_STATION_FISHMARKET]
+base = "Fish Market"
+
+[STR_STATION_FISH_PENS]
+base = "Fish Pens"
+
+[STR_STATION_FOOD_CORPORATION]
+base = "Food Corporation"
+
+[STR_STATION_FOREST]
+base = "Log Landing"
+
+[STR_STATION_FORGE]
+base = "Forge"
+
+[STR_STATION_FURNACE]
+base = "Furnace"
+
+[STR_STATION_HEAVY_EQUIPMENT_YARD]
+base = "Heavy Equipment Yard"
+
+[STR_STATION_HEAVY_INDUSTRY_2]
+base = "Works"
+
+[STR_STATION_HERDING_COOP]
+base = "Lodge"
+
+[STR_STATION_INDUSTRY_ESTATE_1]
+base = "Industrial Park"
+
+[STR_STATION_INDUSTRY_HARBOUR_1]
+base = "Tidal Yard"
+
+[STR_STATION_INDUSTRY_HARBOUR_2]
+base = "Waterside"
+
+[STR_STATION_INDUSTRY_HARBOUR_3]
+base = "Landing Stage"
+
+[STR_STATION_INDUSTRY_HARBOUR_4]
+base = "Shorefront"
+
+[STR_STATION_IRONSTONE]
+base = "Ironstone"
+
+[STR_STATION_JOINERS_SHOP]
+base = "Joiner's Shop"
+
+[STR_STATION_KILNS]
+base = "Kilns"
+
+[STR_STATION_KIMBERLITE_DEPOSITS]
+base = "Kimberlite Deposits"
+
+[STR_STATION_LIMESTONE_MINES]
+base = "Limestone Mines"
+
+[STR_STATION_MANGANESE_MINES]
+base = "Manganese Mines"
+
+[STR_STATION_MARKET]
+base = "Market"
+
+[STR_STATION_MERCHANTS_LANE]
+base = "Merchant's Lane"
+
+[STR_STATION_MILL]
+base = "Mill"
+
+[STR_STATION_MINE]
+base = "Tanner Road"
+
+[STR_STATION_MOULDINGS]
+base = "Mouldings"
+
+[STR_STATION_OIL_RIG]
+base = "Field"
+
+[STR_STATION_ORCHARDS]
+base = "Orchards"
+
+[STR_STATION_PHENOLS]
+base = "Phenols"
+
+[STR_STATION_PIT]
+base = "Pit"
+
+[STR_STATION_PLANTATION]
+base = "Plantation"
+
+[STR_STATION_PLAZA]
+base = "Plaza"
+
+[STR_STATION_POWERHUNGRY]
+base = "Power Plant"
+
+[STR_STATION_POWERTRAIN]
+base = "Powertrain"
+
+[STR_STATION_PUMPS]
+base = "Pumps"
+
+[STR_STATION_PYRITES]
+base = "Pyrite Deposits"
+
+[STR_STATION_REFINERY]
+base = "Refinery"
+
+[STR_STATION_ROD_MILL]
+base = "Rod Mill"
+
+[STR_STATION_RUBBER_COMPANY]
+base = "Rubber Company"
+
+[STR_STATION_SALTPETER_WORKS]
+base = "Saltpeter Works"
+
+[STR_STATION_SEAFOOD]
+base = "Seafood"
+
+[STR_STATION_SHARP_STREET]
+base = "Sharp Street"
+
+[STR_STATION_SHEEP_FOLD]
+base = "Sheep Fold"
+
+[STR_STATION_SHOALS]
+base = "Shoals"
+
+[STR_STATION_SILO]
+base = "Silo"
+
+[STR_STATION_SMELTER]
+base = "Smelter"
+
+[STR_STATION_SOOT_FURNACE]
+base = "Soot Furnace"
+
+[STR_STATION_STACKS]
+base = "Stacks"
+
+[STR_STATION_STAMP_AND_PLATE]
+base = "Stamp and Plate"
+
+[STR_STATION_STRIP_MILL]
+base = "Strip Mill"
+
+[STR_STATION_SUGAR_COMPANY]
+base = "Sugar Company"
+
+[STR_STATION_TANK_FARM]
+base = "Tank Farm"
+
+[STR_STATION_TAPPERS_SHED]
+base = "Tappers Shed"
+
+[STR_STATION_TOWN_1]
+base = "Old Town Hall"
+
+[STR_STATION_TOWN_2]
+base = "High Road"
+
+[STR_STATION_TOWN_3]
+base = "Stores"
+
+[STR_STATION_TRONA_BEDS]
+base = "Trona Beds"
+
+[STR_STATION_TUBE_MILL]
+base = "Tube Mill"
+
+[STR_STATION_WATER]
+base = "Sandbank"
+
+[STR_STATION_WEAVE_AND_DYE]
+base = "Weave and Dye"
+
+[STR_STATION_WELLS]
+base = "Wells"
+
+[STR_STATION_WINERY]
+base = "Winery"
+
+[STR_STATION_VEHICLE_DISTRIBUTOR]
+base = "Truck Lot"
+
+[STR_GENERIC_NEWLINE]
+base = "{}"
+
+[STR_COLOUR_BLUE]
+base = "{BLUE}"
+
+[STR_COLOUR_GOLD]
+base = "{GOLD}"
+
+[STR_COLOUR_GREEN]
+base = "{GREEN}"
+
+[STR_COLOUR_LTBLUE]
+base = "{LTBLUE}"
+
+[STR_COLOUR_RED]
+base = "{RED}"
+
+[STR_COLOUR_YELLOW]
+base = "{YELLOW}"
+
+[STR_COLOUR_WHITE]
+base = "{WHITE}"

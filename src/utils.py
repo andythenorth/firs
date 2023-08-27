@@ -1,13 +1,18 @@
-from PIL import Image
 import os.path
 import codecs  # used for writing files - more unicode friendly than standard open() module
+import tomllib
+
+currentdir = os.curdir
+
 import global_constants
 from polar_fox import git_info
 from polar_fox.utils import echo_message as echo_message
 from polar_fox.utils import dos_palette_to_rgb as dos_palette_to_rgb
 from polar_fox.utils import unescape_chameleon_output as unescape_chameleon_output
 from polar_fox.utils import split_nml_string_lines as split_nml_string_lines
-from polar_fox.utils import unwrap_nml_string_declaration as unwrap_nml_string_declaration
+from polar_fox.utils import (
+    unwrap_nml_string_declaration as unwrap_nml_string_declaration,
+)
 
 
 def get_makefile_args(sys):
@@ -34,21 +39,26 @@ def get_docs_url():
     return "/".join(result)
 
 
-def parse_base_lang():
-    # pick out strings for docs, both from lang file, and extra strings that can't be in the lang file
-    base_lang_file = codecs.open(
-        os.path.join("src", "lang", "english.lng"), "r", "utf8"
-    )
-    strings = split_nml_string_lines(base_lang_file.readlines())
+def get_lang_data(lang):
+    global_pragma = {}
+    lang_strings = {}
+    with open(os.path.join(currentdir, "src", "lang", lang + ".toml"), "rb") as fp:
+        lang_source = tomllib.load(fp)
 
-    extra_strings_file = codecs.open(
-        os.path.join("src", "docs_templates", "extra_strings.lng"), "r", "utf8"
-    )
-    extra_strings = split_nml_string_lines(extra_strings_file.readlines())
-    for i in extra_strings:
-        strings[i] = extra_strings[i]
+    for node_name, node_value in lang_source.items():
+        if node_name == "GLOBAL_PRAGMA":
+            # explicit handling of global pragma items
+            global_pragma["grflangid"] = node_value["grflangid"]
+            global_pragma["plural"] = node_value["plural"]
+            if node_value.get("gender", False):
+                global_pragma["gender"] = node_value["gender"]
+            if node_value.get("case", False):
+                global_pragma["case"] = node_value["case"]
+        else:
+            lang_strings[node_name] = node_value["base"]
 
-    return strings
+    return {"global_pragma": global_pragma, "lang_strings": lang_strings}
+
 
 def gs_list_repr(_list):
     # chameleon will render lists as ['foo', 'cabbage', '3']; squirrel wants them as ["foo", "cabbage", 3]
@@ -67,13 +77,14 @@ def gs_list_repr(_list):
             raise Exception("gs_list_repr. Don't know what to do with " + str(item))
     return "[" + ",".join(result) + "]"
 
+
 def gs_table_repr(_dict):
     # chameleon will render dicts as {'foo': 'cabbage', 'ham': 'eggs'}; squirrel wants them as tables in the form {"foo" = "cabbage", "ham" = "eggs"}
     result = []
     for key, value in _dict.items():
         kv_result = key + " = "
         if value == None:
-            kv_result = kv_result + 'null'
+            kv_result = kv_result + "null"
         elif isinstance(value, list):
             # this attempts to handle recursive items
             kv_result = kv_result + gs_list_repr(value)

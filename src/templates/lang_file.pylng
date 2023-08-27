@@ -1,0 +1,16 @@
+<!--! global pragma directives -->
+<tal:global_pragma repeat="pragma_directive lang_data.global_pragma.items()">
+    ##${pragma_directive[0]} ${pragma_directive[1]}
+</tal:global_pragma>
+
+<!--! render pre-formatted string lines -->
+<tal:strings_as_lng_lines repeat="lng_line lang_strings_formatted_as_lng_lines">
+    ${lng_line}
+</tal:strings_as_lng_lines>
+
+<!--! non-translated strings -->
+
+STR_GRF_NAME                                                    :FIRS Industry Replacement Set ${git_info.get_version()}
+STR_GRF_DOCS_URL                                                :${utils.get_docs_url()}
+<!--! empty string is not translated :) -->
+STR_EMPTY                                                       :

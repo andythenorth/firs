@@ -1,7 +1,7 @@
 print("[RENDER DOCS] render docs")
 
 import codecs  # used for writing files - more unicode friendly than standard open() module
-
+import tomllib
 import shutil
 import sys
 import os
@@ -43,9 +43,6 @@ docs_templates = PageTemplateLoader(docs_src, format="text")
 # get args passed by makefile
 makefile_args = utils.get_makefile_args(sys)
 
-# get the strings from base lang file so they can be used in docs
-base_lang_strings = utils.parse_base_lang()
-
 metadata = {}
 metadata.update(global_constants.metadata)
 
@@ -63,10 +60,13 @@ palette = utils.dos_palette_to_rgb()
 
 
 class DocHelper(object):
+    def __init__(self, lang_strings):
+        self.lang_strings = lang_strings
+
     # dirty class to help do some doc formatting
     def get_economy_name(self, economy):
         string_id = "STR_PARAM_VALUE_ECONOMIES_" + economy.id
-        name_string = base_lang_strings.get(string_id, "NO_NAME " + economy.id)
+        name_string = self.lang_strings.get(string_id, "NO_NAME " + economy.id)
         return name_string.split(" Economy")[
             0
         ]  # name strings contain 'economy', I don't want that in docs
@@ -79,7 +79,7 @@ class DocHelper(object):
         # cargos don't store the name directly as a python attr, but in lang - so look it up in base_lang using string id
         name = cargo.type_name
         string_id = utils.unwrap_nml_string_declaration(name)
-        return base_lang_strings.get(string_id, "NO NAME " + str(name) + " " + cargo.id)
+        return self.lang_strings.get(string_id, "NO NAME " + str(name) + " " + cargo.id)
 
     def pretty_print_cargo_classes(self, cargo):
         result = []
@@ -117,9 +117,9 @@ class DocHelper(object):
         # industries don't store the name directly as a python attr, but in lang - so look it up in base_lang using string id
         name = industry.get_property("name", economy)
         string_id = utils.unwrap_nml_string_declaration(name)
-        if string_id not in base_lang_strings:
+        if string_id not in self.lang_strings:
             utils.echo_message("Warning: string " + string_id + " missing for docs")
-        return base_lang_strings.get(
+        return self.lang_strings.get(
             string_id, "NO NAME " + str(name) + " " + industry.id
         )
 
@@ -136,7 +136,7 @@ class DocHelper(object):
         result = []
         for name_string in self.get_industry_all_name_strings(industry):
             result.append(
-                base_lang_strings.get(
+                self.lang_strings.get(
                     name_string, "NO NAME " + name_string + " " + industry.id
                 )
             )
@@ -146,7 +146,7 @@ class DocHelper(object):
         station_name = utils.unwrap_nml_string_declaration(
             industry.get_property("nearby_station_name", None)
         )
-        return base_lang_strings[station_name]
+        return self.lang_strings[station_name]
 
     def get_registered_cargo_sorted_by_name(self):
         # cargos don't store the name as a python attr, but we often need to iterate over their names in A-Z order
@@ -165,13 +165,13 @@ class DocHelper(object):
         return sorted(result.items())
 
     def get_economy_extra_info(self, economy):
-        return base_lang_strings.get("ECONOMY_INFO_" + economy.id, "")
+        return self.lang_strings.get("ECONOMY_INFO_" + economy.id, "")
 
     def get_cargo_extra_info(self, cargo):
-        return base_lang_strings.get("CARGO_INFO_" + cargo.id.upper(), "")
+        return self.lang_strings.get("CARGO_INFO_" + cargo.id.upper(), "")
 
     def get_industry_extra_info(self, industry):
-        return base_lang_strings.get("INDUSTRY_INFO_" + industry.id.upper(), "")
+        return self.lang_strings.get("INDUSTRY_INFO_" + industry.id.upper(), "")
 
     def industry_is_unused(self, industry, economy):
         if industry in economy_schemas[economy]["enabled_industries"]:
@@ -290,7 +290,12 @@ class DocHelper(object):
         return ["mail", "passengers"]
 
     def get_cargoflow_supply_cargos(self):
-        return ["farm_supplies", "engineering_supplies", "welding_consumables", "elastomer_products"]
+        return [
+            "farm_supplies",
+            "engineering_supplies",
+            "welding_consumables",
+            "elastomer_products",
+        ]
 
     def get_cargoflow_wormhole_cargos(self, economy):
         result = {"by_industry": {}, "by_cargo": {}}
@@ -299,9 +304,14 @@ class DocHelper(object):
         # we want the actual industry, not the id
         all_wormhole_industries = []
         for industry in registered_industries:
-            if industry.id in (economy.cargoflow_graph_tuning.get("wormhole_industries", [])):
+            if industry.id in (
+                economy.cargoflow_graph_tuning.get("wormhole_industries", [])
+            ):
                 all_wormhole_industries.append(industry)
-            elif getattr(industry, "town_industry_for_cargoflow", False) and industry.economy_variations[economy.id].enabled:
+            elif (
+                getattr(industry, "town_industry_for_cargoflow", False)
+                and industry.economy_variations[economy.id].enabled
+            ):
                 all_wormhole_industries.append(industry)
 
         # then structure the result by industry, for both wormhole industries and wormhole cargos
@@ -318,7 +328,7 @@ class DocHelper(object):
         return ("", "active")[doc_name == nav_link]
 
 
-def render_docs(doc_list, file_type, use_markdown=False, source_is_repo_root=False):
+def render_docs(doc_list, file_type, doc_helper, use_markdown=False, source_is_repo_root=False):
     if source_is_repo_root:
         doc_path = os.path.join(currentdir)
     else:
@@ -341,7 +351,7 @@ def render_docs(doc_list, file_type, use_markdown=False, source_is_repo_root=Fal
             git_info=git_info,
             metadata=metadata,
             utils=utils,
-            doc_helper=DocHelper(),
+            doc_helper=doc_helper,
             doc_name=doc_name,
         )
         if use_markdown:
@@ -356,7 +366,7 @@ def render_docs(doc_list, file_type, use_markdown=False, source_is_repo_root=Fal
                 git_info=git_info,
                 metadata=metadata,
                 utils=utils,
-                doc_helper=DocHelper(),
+                doc_helper=doc_helper,
                 doc_name=doc_name,
             )
         if file_type == "html":
@@ -376,7 +386,23 @@ def render_docs(doc_list, file_type, use_markdown=False, source_is_repo_root=Fal
 
 
 def main():
+    print("[RENDER DOCS] render_docs.py")
     start = time()
+
+    lang_strings = utils.get_lang_data("english")["lang_strings"]
+
+    # we also have some strings which are docs-only, so get those
+    # should be in a dedicated method probably, but eh
+    with open(os.path.join(currentdir, "src", "docs_templates", "extra_strings.toml"), "rb") as fp:
+        extra_strings_source = tomllib.load(fp)
+    for node_name, node_value in extra_strings_source.items():
+        lang_strings[node_name] = node_value['base']
+    #print(lang_strings)
+
+    doc_helper = DocHelper(
+        lang_strings=lang_strings
+    )
+
     for economy in registered_economies:
         enabled_cargos = [
             cargo for cargo in registered_cargos if cargo.id in economy.cargo_ids
@@ -418,31 +444,36 @@ def main():
     graph_docs = ["cargoflow"]
     stylesheets = ["cargoflow_styles"]
 
-    render_docs(html_docs, "html")
-    render_docs(txt_docs, "txt")
+    render_docs(html_docs, "html", doc_helper)
+    render_docs(txt_docs, "txt", doc_helper)
     render_docs(
         license_docs,
         "txt",
+        doc_helper,
         source_is_repo_root=True,
     )
     # just render the markdown docs twice to get txt and html versions, simples no?
-    render_docs(markdown_docs, "txt")
-    render_docs(markdown_docs, "html", use_markdown=True)
-    render_docs(graph_docs, "dotall")
-    render_docs(stylesheets, "css")
+    render_docs(markdown_docs, "txt", doc_helper)
+    render_docs(markdown_docs, "html", doc_helper, use_markdown=True)
+    render_docs(graph_docs, "dotall", doc_helper)
+    render_docs(stylesheets, "css", doc_helper)
 
     # cargoflow wrappers are just different enough to not fit generic render_docs() case without making it painfully convoluted
     for economy in registered_economies:
         template = docs_templates["cargoflow_wrapper.pt"]
-        result = template(economy=economy, doc_helper=DocHelper())
-        doc_name = "cargoflow_" + DocHelper().get_economy_name_char_safe(economy)
+        result = template(economy=economy, doc_helper=doc_helper)
+        doc_name = "cargoflow_" + doc_helper.get_economy_name_char_safe(economy)
         doc_file = codecs.open(
             os.path.join(docs_output_path, "html", doc_name + ".html"), "w", "utf8"
         )
         doc_file.write(result)
         doc_file.close()
-    # eh, how long does this take anyway?
-    print(format((time() - start), ".2f") + "s")
+
+    print(
+        "[RENDER DOCS]",
+        "- complete",
+        format((time() - start), ".2f") + "s",
+    )
 
 
 if __name__ == "__main__":

@@ -1,0 +1,1402 @@
+[GLOBAL_PRAGMA]
+grflangid = "0x24"
+plural = "2"
+case = "ba t"
+
+[STR_GRF_DESC]
+base = "{ORANGE}FIRS Industry Replacement Set{}{BLACK}Készítette: andythenorth, FooBar, planetmaker, Terkhen, Yexo és még sokan mások. {SILVER}További információkhoz (például a FIRS használatához) lásd a readme-t. {BLACK}Licenc: GPL v2."
+
+[STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY]
+base = "A halászterületek, olajfúró tornyok és mederkotrások maximális távolsága a parttól."
+
+[STR_PARAM_DESC_ECONOMIES]
+base = "Az egyes gazdaságokban különféle rakományok és gazdasági épületek érhetőek el.{}{}Az egyszerűbb játékmenet érdekében az {SILVER}alap {BLACK}gazdaságok kevesebb rakományt és gazdasági épületet tartalmaznak, mint a többi FIRS gazdaság.{}{}A FIRS weboldalán részletes leírás található mindegyik gazdaságról."
+
+[STR_PARAM_DESC_NO_OPENINGS]
+base = "{SILVER}{BLACK}Alapértelmezésben a játék folyamán új gazdasági épületek fognak nyílni.{}{}Ha ez a beállítás be van kapcsolva, nem fognak új gazdasági épületek nyílni a játék folyamán, és a játékosok sem fognak tudni újakat építtetni."
+
+[STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY]
+base = "Tengeri gazdasági létesítmények maximális távolsága a parttól"
+
+[STR_PARAM_NAME_ECONOMIES]
+base = "Gazdaság"
+
+[STR_PARAM_NAME_NO_OPENINGS]
+base = "Új gazdasági épületek nyitásának meggátlása"
+
+[STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0]
+base = "Nincs határ"
+
+[STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT]
+base = "A Megnövekedett termelési szint eléréséhez szükséges felszerelés mennyisége (alapértelmezés: 16 láda)"
+
+[STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT]
+base = "A Maximális termelési szint eléréséhez szükséges felszerelés mennyisége (alapértelmezés: 80 láda)"
+
+[STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT]
+base = "A farmok, bányák és hasonló gazdasági épületek növelik a termelésüket, ha felszerelést kapnak; először {SILVER}Megnövekedett{BLACK}, majd pedig {SILVER}Maximális {BLACK}szintre, ha elég a szállítmány.{}{} Az alapértelmezett értékek megfelelőek, de igény szerint itt megváltoztathatod őket.{}{}Kikötő típusú gazdasági épületek esetén az itt beállított értékek 8-szorosa érvényesül."
+
+[STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS]
+base = "Megnövekedett termelési szint (%)"
+
+[STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS]
+base = "Maximális termelési szint (%)"
+
+[STR_PARAM_DESC_PRIMARY_LEVEL_BONUS]
+base = "Farmok, bányák és hasonló gazdasági épületek termelése, ha az ellátás eléri a megfelelő szintet (az {SILVER}Alapszintű {BLACK}termelés százalékában)."
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE]
+base = "Alap mérsékelt égövi"
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC]
+base = "Alap szubarktikus"
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC]
+base = "Alap szubtrópusi"
+
+[STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY]
+base = "Meleg ország"
+
+[STR_PARAM_VALUE_ECONOMIES_STEELTOWN]
+base = "Fémipar"
+
+[STR_CARGO_NAME_ACID]
+base = "Sav"
+
+["STR_CARGO_NAME_ACID.t"]
+base = "savat"
+
+[STR_CARGO_NAME_ALCOHOL]
+base = "Szeszes ital"
+
+["STR_CARGO_NAME_ALCOHOL.t"]
+base = "szeszes italt"
+
+[STR_CARGO_NAME_BAUXITE]
+base = "Bauxit"
+
+["STR_CARGO_NAME_BAUXITE.t"]
+base = "bauxitot"
+
+[STR_CARGO_NAME_BEANS]
+base = "Bab"
+
+["STR_CARGO_NAME_BEANS.t"]
+base = "babot"
+
+[STR_CARGO_NAME_BUILDING_MATERIALS]
+base = "Építőanyag"
+
+["STR_CARGO_NAME_BUILDING_MATERIALS.t"]
+base = "építőanyagot"
+
+[STR_CARGO_NAME_CASSAVA]
+base = "Manióka"
+
+["STR_CARGO_NAME_CASSAVA.t"]
+base = "maniókát"
+
+[STR_CARGO_NAME_CEMENT]
+base = "Cement"
+
+["STR_CARGO_NAME_CEMENT.t"]
+base = "cementet"
+
+[STR_CARGO_NAME_CHEMICALS]
+base = "Vegyszer"
+
+["STR_CARGO_NAME_CHEMICALS.t"]
+base = "vegyszert"
+
+[STR_CARGO_NAME_CHLORINE]
+base = "Klór"
+
+["STR_CARGO_NAME_CHLORINE.t"]
+base = "klórt"
+
+[STR_CARGO_NAME_CLAY]
+base = "Agyag"
+
+["STR_CARGO_NAME_CLAY.t"]
+base = "agyagot"
+
+[STR_CARGO_NAME_COFFEE]
+base = "Kávé"
+
+["STR_CARGO_NAME_COFFEE.t"]
+base = "kávét"
+
+[STR_CARGO_NAME_COKE]
+base = "Koksz"
+
+["STR_CARGO_NAME_COKE.t"]
+base = "kokszot"
+
+[STR_CARGO_NAME_COPPER]
+base = "Réz"
+
+["STR_CARGO_NAME_COPPER.t"]
+base = "rezet"
+
+[STR_CARGO_NAME_EDIBLE_OIL]
+base = "Étolaj"
+
+[STR_CARGO_NAME_ENGINEERING_SUPPLIES]
+base = "Ipari felszerelés"
+
+["STR_CARGO_NAME_ENGINEERING_SUPPLIES.t"]
+base = "ipari felszerelést"
+
+[STR_CARGO_NAME_EXPLOSIVES]
+base = "Robbanóanyag"
+
+["STR_CARGO_NAME_EXPLOSIVES.t"]
+base = "robbanóanyagot"
+
+[STR_CARGO_NAME_FIBRES]
+base = "Rostnövény"
+
+["STR_CARGO_NAME_FIBRES.t"]
+base = "rostnövényt"
+
+[STR_CARGO_NAME_FISH]
+base = "Hal"
+
+["STR_CARGO_NAME_FISH.t"]
+base = "halat"
+
+[STR_CARGO_NAME_FARM_SUPPLIES]
+base = "Mezőgazdasági felszerelés"
+
+["STR_CARGO_NAME_FARM_SUPPLIES.t"]
+base = "mezőgazdasági felszerelés"
+
+[STR_CARGO_NAME_FERTILISER]
+base = "Műtrágya"
+
+["STR_CARGO_NAME_FERTILISER.t"]
+base = "műtrágyát"
+
+[STR_CARGO_NAME_FRUITS]
+base = "Gyümölcs"
+
+["STR_CARGO_NAME_FRUITS.t"]
+base = "gyümölcsöt"
+
+[STR_CARGO_NAME_KAOLIN]
+base = "Kaolin"
+
+["STR_CARGO_NAME_KAOLIN.t"]
+base = "kaolint"
+
+[STR_CARGO_NAME_LIMESTONE]
+base = "Mészkő"
+
+["STR_CARGO_NAME_LIMESTONE.t"]
+base = "mészkövet"
+
+[STR_CARGO_NAME_TIMBER]
+base = "Fűrészáru"
+
+["STR_CARGO_NAME_TIMBER.t"]
+base = "fűrészárut"
+
+[STR_CARGO_NAME_METAL]
+base = "Fém"
+
+["STR_CARGO_NAME_METAL.t"]
+base = "fémet"
+
+[STR_CARGO_NAME_MILK]
+base = "Tej"
+
+["STR_CARGO_NAME_MILK.t"]
+base = "tejet"
+
+[STR_CARGO_NAME_MANGANESE]
+base = "Mangán"
+
+["STR_CARGO_NAME_MANGANESE.t"]
+base = "mangánt"
+
+[STR_CARGO_NAME_NITRATES]
+base = "Salétrom"
+
+["STR_CARGO_NAME_NITRATES.t"]
+base = "salétromot"
+
+[STR_CARGO_NAME_NUTS]
+base = "Dió"
+
+["STR_CARGO_NAME_NUTS.t"]
+base = "dió"
+
+[STR_CARGO_NAME_PACKAGING]
+base = "Csomagolás"
+
+["STR_CARGO_NAME_PACKAGING.t"]
+base = "csomagolást"
+
+[STR_CARGO_NAME_PEAT]
+base = "Tőzeg"
+
+["STR_CARGO_NAME_PEAT.t"]
+base = "tőzeget"
+
+[STR_CARGO_NAME_PETROL]
+base = "Üzemanyag"
+
+["STR_CARGO_NAME_PETROL.t"]
+base = "üzemanyagot"
+
+[STR_CARGO_NAME_PHOSPHATE]
+base = "Foszfátok"
+
+["STR_CARGO_NAME_PHOSPHATE.t"]
+base = "foszfátokat"
+
+[STR_CARGO_NAME_PIG_IRON]
+base = "Nyersvas"
+
+["STR_CARGO_NAME_PIG_IRON.t"]
+base = "nyersvasat"
+
+[STR_CARGO_NAME_POTASH]
+base = "Hamuzsír"
+
+["STR_CARGO_NAME_POTASH.t"]
+base = "hamuzsírt"
+
+[STR_CARGO_NAME_PYRITE_ORE]
+base = "Piritérc"
+
+["STR_CARGO_NAME_PYRITE_ORE.t"]
+base = "piritércet"
+
+[STR_CARGO_NAME_QUICKLIME]
+base = "Égetett mész"
+
+["STR_CARGO_NAME_QUICKLIME.t"]
+base = "égetett meszet"
+
+[STR_CARGO_NAME_RECYCLABLES]
+base = "Újrahasznosítható áru"
+
+["STR_CARGO_NAME_RECYCLABLES.t"]
+base = "újrahasznosítható árut"
+
+[STR_CARGO_NAME_SALT]
+base = "Só"
+
+["STR_CARGO_NAME_SALT.t"]
+base = "sót"
+
+[STR_CARGO_NAME_SAND]
+base = "Homok"
+
+["STR_CARGO_NAME_SAND.t"]
+base = "homokot"
+
+[STR_CARGO_NAME_SCRAP_METAL]
+base = "Fémhulladék"
+
+["STR_CARGO_NAME_SCRAP_METAL.t"]
+base = "fémhulladékot"
+
+[STR_CARGO_NAME_SLAG]
+base = "Salak"
+
+["STR_CARGO_NAME_SLAG.t"]
+base = "salakot"
+
+[STR_CARGO_NAME_SODA_ASH]
+base = "Sziksó"
+
+["STR_CARGO_NAME_SODA_ASH.t"]
+base = "sziksót"
+
+[STR_CARGO_NAME_STEEL]
+base = "Acél"
+
+["STR_CARGO_NAME_STEEL.t"]
+base = "acélt"
+
+[STR_CARGO_NAME_AGGREGATES]
+base = "Kő"
+
+[STR_CARGO_NAME_SUGAR_BEET]
+base = "Cukorrépa"
+
+["STR_CARGO_NAME_SUGAR_BEET.t"]
+base = "cukorrépát"
+
+[STR_CARGO_NAME_SULPHUR]
+base = "Kén"
+
+["STR_CARGO_NAME_SULPHUR.t"]
+base = "ként"
+
+[STR_CARGO_NAME_VEHICLE_BODIES]
+base = "Karosszéria elemek"
+
+["STR_CARGO_NAME_VEHICLE_BODIES.t"]
+base = "karosszéria elemeket"
+
+[STR_CARGO_NAME_VEHICLE_PARTS]
+base = "Járműalkatrész"
+
+["STR_CARGO_NAME_VEHICLE_PARTS.t"]
+base = "járműalkatrészt"
+
+[STR_CARGO_NAME_VEHICLES]
+base = "Járművek"
+
+[STR_CARGO_NAME_WOOL]
+base = "Gyapjú"
+
+["STR_CARGO_NAME_WOOL.t"]
+base = "gyapjút"
+
+[STR_CARGO_NAME_ZINC]
+base = "Cink"
+
+["STR_CARGO_NAME_ZINC.t"]
+base = "cinket"
+
+[STR_CARGO_UNIT_ACID]
+base = "{VOLUME} sav"
+
+[STR_CARGO_UNIT_ALCOHOL]
+base = "{VOLUME} szeszes ital"
+
+[STR_CARGO_UNIT_BAUXITE]
+base = "{WEIGHT} bauxit"
+
+[STR_CARGO_UNIT_BEANS]
+base = "{WEIGHT} bab"
+
+[STR_CARGO_UNIT_BUILDING_MATERIALS]
+base = "{WEIGHT} építőanyag"
+
+[STR_CARGO_UNIT_CASSAVA]
+base = "{WEIGHT} manióka"
+
+[STR_CARGO_UNIT_CEMENT]
+base = "{WEIGHT} cement"
+
+[STR_CARGO_UNIT_CHEMICALS]
+base = "{VOLUME} vegyszer"
+
+[STR_CARGO_UNIT_CHLORINE]
+base = "{VOLUME} klór"
+
+[STR_CARGO_UNIT_CLAY]
+base = "{WEIGHT} agyag"
+
+[STR_CARGO_UNIT_COFFEE]
+base = "{SIGNED_WORD} zsák kávé"
+
+[STR_CARGO_UNIT_COKE]
+base = "{WEIGHT} koksz"
+
+[STR_CARGO_UNIT_COPPER]
+base = "{WEIGHT} réz"
+
+[STR_CARGO_UNIT_EDIBLE_OIL]
+base = "{VOLUME} étolaj"
+
+[STR_CARGO_UNIT_ENGINEERING_SUPPLIES]
+base = "{SIGNED_WORD} láda ipari felszerelés"
+
+[STR_CARGO_UNIT_EXPLOSIVES]
+base = "{SIGNED_WORD} láda robbanóanyag"
+
+[STR_CARGO_UNIT_FERTILISER]
+base = "{WEIGHT} műtrágya"
+
+[STR_CARGO_UNIT_FIBRES]
+base = "{SIGNED_WORD} bála rostnövény"
+
+[STR_CARGO_UNIT_FISH]
+base = "{WEIGHT} hal"
+
+[STR_CARGO_UNIT_FMSP]
+base = "{SIGNED_WORD} láda mezőgazdasági felszerelés"
+
+[STR_CARGO_UNIT_FRUITS]
+base = "{WEIGHT} gyümölcs"
+
+[STR_CARGO_UNIT_KAOLIN]
+base = "{WEIGHT} kaolin"
+
+[STR_CARGO_UNIT_LIMESTONE]
+base = "{WEIGHT} mészkő"
+
+[STR_CARGO_UNIT_TIMBER]
+base = "{WEIGHT} fűrészáru"
+
+[STR_CARGO_UNIT_LYE]
+base = "{VOLUME} lúg"
+
+[STR_CARGO_UNIT_MANGANESE]
+base = "{WEIGHT} mangán"
+
+[STR_CARGO_UNIT_METAL]
+base = "{WEIGHT} fém"
+
+[STR_CARGO_UNIT_MILK]
+base = "{VOLUME} tej"
+
+[STR_CARGO_UNIT_NICKEL]
+base = "{WEIGHT} nikkel"
+
+[STR_CARGO_UNIT_NITRATES]
+base = "{WEIGHT} salétrom"
+
+[STR_CARGO_UNIT_NUTS]
+base = "{SIGNED_WORD} zsák dió"
+
+[STR_CARGO_UNIT_PACKAGING]
+base = "{WEIGHT} csomagolás"
+
+[STR_CARGO_UNIT_PEAT]
+base = "{WEIGHT} tőzeg"
+
+[STR_CARGO_UNIT_PETROL]
+base = "{VOLUME} üzemanyag"
+
+[STR_CARGO_UNIT_PHOSPHATE]
+base = "{WEIGHT} foszfát"
+
+[STR_CARGO_UNIT_PIG_IRON]
+base = "{WEIGHT} nyersvas"
+
+[STR_CARGO_UNIT_POTASH]
+base = "{WEIGHT} hamuzsír"
+
+[STR_CARGO_UNIT_PYRITE_ORE]
+base = "{WEIGHT} piritérc"
+
+[STR_CARGO_UNIT_QUICKLIME]
+base = "{WEIGHT} égetett mész"
+
+[STR_CARGO_UNIT_RECYCLABLES]
+base = "{WEIGHT} újrahasznosítható áru"
+
+[STR_CARGO_UNIT_SALT]
+base = "{WEIGHT} só"
+
+[STR_CARGO_UNIT_SAND]
+base = "{WEIGHT} homok"
+
+[STR_CARGO_UNIT_SCRAP_METAL]
+base = "{WEIGHT} fémhulladék"
+
+[STR_CARGO_UNIT_SLAG]
+base = "{WEIGHT} salak"
+
+[STR_CARGO_UNIT_SODA_ASH]
+base = "{WEIGHT} sziksó"
+
+[STR_CARGO_UNIT_STEEL]
+base = "{WEIGHT} acél"
+
+[STR_CARGO_UNIT_AGGREGATES]
+base = "{WEIGHT} kő"
+
+[STR_CARGO_UNIT_SUGAR_BEET]
+base = "{WEIGHT} cukorrépa"
+
+[STR_CARGO_UNIT_SULPHUR]
+base = "{WEIGHT} kén"
+
+[STR_CARGO_UNIT_VEHICLE_BODIES]
+base = "{WEIGHT} karosszéria elem"
+
+[STR_CARGO_UNIT_VEHICLE_PARTS]
+base = "{WEIGHT} járműalkatrész"
+
+[STR_CARGO_UNIT_VEHICLES]
+base = "{WEIGHT} jármű"
+
+[STR_CARGO_UNIT_WOOL]
+base = "{SIGNED_WORD} bála gyapjú"
+
+[STR_CARGO_UNIT_ZINC]
+base = "{WEIGHT} cink"
+
+[STR_CID_ACID]
+base = "{TINYFONT}SA"
+
+[STR_CID_ALCOHOL]
+base = "{TINYFONT}IT"
+
+[STR_CID_BAUXITE]
+base = "{TINYFONT}BX"
+
+[STR_CID_BEANS]
+base = "{TINYFONT}BB"
+
+[STR_CID_BUILDING_MATERIALS]
+base = "{TINYFONT}ÉA"
+
+[STR_CID_CASSAVA]
+base = "{TINYFONT}MA"
+
+[STR_CID_CEMENT]
+base = "{TINYFONT}CE"
+
+[STR_CID_CHEMICALS]
+base = "{TINYFONT}VS"
+
+[STR_CID_CHLORINE]
+base = "{TINYFONT}KL"
+
+[STR_CID_CLAY]
+base = "{TINYFONT}AG"
+
+[STR_CID_COFFEE]
+base = "{TINYFONT}KV"
+
+[STR_CID_COKE]
+base = "{TINYFONT}KK"
+
+[STR_CID_COPPER]
+base = "{TINYFONT}RZ"
+
+[STR_CID_EDIBLE_OIL]
+base = "{TINYFONT}ÉO"
+
+[STR_CID_ENGINEERING_SUPPLIES]
+base = "{TINYFONT}IF"
+
+[STR_CID_EXPLOSIVES]
+base = "{TINYFONT}RO"
+
+[STR_CID_FARM_SUPPLIES]
+base = "{TINYFONT}MF"
+
+[STR_CID_FERTILISER]
+base = "{TINYFONT}MT"
+
+[STR_CID_FIBRES]
+base = "{TINYFONT}RN"
+
+[STR_CID_FISH]
+base = "{TINYFONT}HL"
+
+[STR_CID_KAOLIN]
+base = "{TINYFONT}KA"
+
+[STR_CID_LIMESTONE]
+base = "{TINYFONT}MÉ"
+
+[STR_CID_TIMBER]
+base = "{TINYFONT}FÜ"
+
+[STR_CID_LYE]
+base = "{TINYFONT}LÚ"
+
+[STR_CID_MANGANESE]
+base = "{TINYFONT}MN"
+
+[STR_CID_METAL]
+base = "{TINYFONT}FM"
+
+[STR_CID_MILK]
+base = "{TINYFONT}TJ"
+
+[STR_CID_NICKEL]
+base = "{TINYFONT}NI"
+
+[STR_CID_NITRATES]
+base = "{TINYFONT}SL"
+
+[STR_CID_NUTS]
+base = "{TINYFONT}DI"
+
+[STR_CID_PACKAGING]
+base = "{TINYFONT}CM"
+
+[STR_CID_PEAT]
+base = "{TINYFONT}TZ"
+
+[STR_CID_PETROL]
+base = "{TINYFONT}ÜA"
+
+[STR_CID_PIG_IRON]
+base = "{TINYFONT}NV"
+
+[STR_CID_PHOSPHATE]
+base = "{TINYFONT}FO"
+
+[STR_CID_POTASH]
+base = "{TINYFONT}HZ"
+
+[STR_CID_PYRITE_ORE]
+base = "{TINYFONT}PI"
+
+[STR_CID_QUICKLIME]
+base = "{TINYFONT}ÉM"
+
+[STR_CID_RECYCLABLES]
+base = "{TINYFONT}ÚÁ"
+
+[STR_CID_SALT]
+base = "{TINYFONT}SÓ"
+
+[STR_CID_SAND]
+base = "{TINYFONT}HM"
+
+[STR_CID_SCRAP_METAL]
+base = "{TINYFONT}FH"
+
+[STR_CID_SLAG]
+base = "{TINYFONT}SK"
+
+[STR_CID_SODA_ASH]
+base = "{TINYFONT}SS"
+
+[STR_CID_STEEL]
+base = "{TINYFONT}AC"
+
+[STR_CID_AGGREGATES]
+base = "{TINYFONT}KÖ"
+
+[STR_CID_SUGAR_BEET]
+base = "{TINYFONT}CR"
+
+[STR_CID_SULPHUR]
+base = "{TINYFONT}KN"
+
+[STR_CID_VEHICLE_BODIES]
+base = "{TINYFONT}KA"
+
+[STR_CID_VEHICLE_PARTS]
+base = "{TINYFONT}JA"
+
+[STR_CID_VEHICLES]
+base = "{TINYFONT}JM"
+
+[STR_CID_WOOL]
+base = "{TINYFONT}GY"
+
+[STR_CID_ZINC]
+base = "{TINYFONT}CN"
+
+[STR_ERR_CLIMATE_TOYLAND]
+base = "{ORANGE}A FIRS nem a játékvilág tájhoz lett tervezve."
+
+[STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE]
+base = "csak a hóhatár alatt építhető."
+
+[STR_ERR_LOCATION_NOT_BELOW_SNOWLINE]
+base = "csak a hóhatár felett építhető."
+
+[STR_ERR_LOCATION_NOT_ON_WATER]
+base = "csak szárazföldön építhető."
+
+[STR_ERR_LOCATION_NOT_IN_DESERT]
+base = "nem építhető sivatagban."
+
+[STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE]
+base = "nem építhető meredek lejtőkön."
+
+[STR_ERR_LOCATION_LIMIT_1_PER_TOWN]
+base = "településenként csak egy ilyen gazdasági épület építhető."
+
+[STR_IND_ALUMINIUM_PLANT]
+base = "Alumíniumkohó"
+
+["STR_IND_ALUMINIUM_PLANT.t"]
+base = "alumíniumkohót"
+
+[STR_IND_AMMONIA_PLANT]
+base = "Ammóniaüzem"
+
+["STR_IND_AMMONIA_PLANT.t"]
+base = "ammóniaüzemet"
+
+[STR_IND_ARABLE_FARM]
+base = "Földműves gazdaság"
+
+["STR_IND_ARABLE_FARM.t"]
+base = "földműves gazdaságot"
+
+[STR_IND_ASSEMBLY_PLANT]
+base = "Járműgyár"
+
+["STR_IND_ASSEMBLY_PLANT.t"]
+base = "járműgyárat"
+
+[STR_IND_BASIC_OXYGEN_FURNACE]
+base = "LD-konverter"
+
+["STR_IND_BASIC_OXYGEN_FURNACE.t"]
+base = "LD-konvertert"
+
+[STR_IND_BIOREFINERY]
+base = "Bioüzem"
+
+["STR_IND_BIOREFINERY.t"]
+base = "bioüzemet"
+
+[STR_IND_BLAST_FURNACE]
+base = "Nagyolvasztó"
+
+["STR_IND_BLAST_FURNACE.t"]
+base = "nagyolvasztót"
+
+[STR_IND_BREWERY]
+base = "Sörfőzde"
+
+["STR_IND_BREWERY.t"]
+base = "sörfőzdét"
+
+[STR_IND_CIDER_MILL]
+base = "Almabor-készítő üzem"
+
+["STR_IND_CIDER_MILL.t"]
+base = "almabor-készítő üzemet"
+
+[STR_IND_BRICK_WORKS]
+base = "Téglagyár"
+
+["STR_IND_BRICK_WORKS.t"]
+base = "téglagyárat"
+
+[STR_IND_BUILDERS_YARD]
+base = "Építkezés"
+
+["STR_IND_BUILDERS_YARD.t"]
+base = "építkezési területet"
+
+[STR_IND_BULK_TERMINAL]
+base = "Tömegáru-rakodó"
+
+["STR_IND_BULK_TERMINAL.t"]
+base = "tömegáru-rakodót"
+
+[STR_IND_CEMENT_PLANT]
+base = "Cementgyár"
+
+["STR_IND_CEMENT_PLANT.t"]
+base = "cementgyárat"
+
+[STR_IND_CHEMICAL_PLANT]
+base = "Vegyi üzem"
+
+["STR_IND_CHEMICAL_PLANT.t"]
+base = "vegyi üzemet"
+
+[STR_IND_CLAY_PIT]
+base = "Agyagbánya"
+
+["STR_IND_CLAY_PIT.t"]
+base = "agyagbányát"
+
+[STR_IND_COFFEE_ESTATE]
+base = "Kávéültetvény"
+
+["STR_IND_COFFEE_ESTATE.t"]
+base = "kávéültetvényt"
+
+[STR_IND_COKE_OVEN]
+base = "Kokszoló"
+
+["STR_IND_COKE_OVEN.t"]
+base = "kokszolót"
+
+[STR_IND_COPPER_SMELTER]
+base = "Rézkohó"
+
+["STR_IND_COPPER_SMELTER.t"]
+base = "rézkohót"
+
+[STR_IND_DAIRY]
+base = "Tejüzem"
+
+["STR_IND_DAIRY.t"]
+base = "tejüzemet"
+
+[STR_IND_DAIRY_FARM]
+base = "Marhafarm"
+
+["STR_IND_DAIRY_FARM.t"]
+base = "marhafarmot"
+
+[STR_IND_DREDGING_SITE]
+base = "Mederkotrás"
+
+["STR_IND_DREDGING_SITE.t"]
+base = "mederkotrási területet"
+
+[STR_IND_ELECTRIC_ARC_FURNACE]
+base = "Ívkemence"
+
+["STR_IND_ELECTRIC_ARC_FURNACE.t"]
+base = "ívkemencét"
+
+[STR_IND_FISHING_GROUND]
+base = "Halászterület"
+
+["STR_IND_FISHING_GROUND.t"]
+base = "halászterületet"
+
+[STR_IND_FISHING_HARBOUR]
+base = "Halászkikötő"
+
+["STR_IND_FISHING_HARBOUR.t"]
+base = "halászkikötőt"
+
+[STR_IND_FISHING_VILLAGE]
+base = "Halászfalu"
+
+[STR_IND_FLOUR_MILL]
+base = "Malom"
+
+["STR_IND_FLOUR_MILL.t"]
+base = "malmot"
+
+[STR_IND_FOOD_MARKET]
+base = "Élelmiszerbolt"
+
+["STR_IND_FOOD_MARKET.t"]
+base = "élelmiszerboltot"
+
+[STR_IND_FOOD_PROCESSOR]
+base = "Konzervgyár"
+
+["STR_IND_FOOD_PROCESSOR.t"]
+base = "konzervgyárat"
+
+[STR_IND_FURNITURE_FACTORY]
+base = "Bútorgyár"
+
+["STR_IND_FURNITURE_FACTORY.t"]
+base = "bútorgyárat"
+
+[STR_IND_GENERAL_STORE]
+base = "Áruház"
+
+["STR_IND_GENERAL_STORE.t"]
+base = "áruházat"
+
+[STR_IND_GLASS_WORKS]
+base = "Üveggyár"
+
+["STR_IND_GLASS_WORKS.t"]
+base = "üveggyárat"
+
+[STR_IND_HARDWARE_STORE]
+base = "Barkácsbolt"
+
+["STR_IND_HARDWARE_STORE.t"]
+base = "barkácsboltot"
+
+[STR_IND_HOTEL]
+base = "Szálloda"
+
+["STR_IND_HOTEL.t"]
+base = "szállodát"
+
+[STR_IND_HERDING_COOP]
+base = "Baromfigazdaság"
+
+["STR_IND_HERDING_COOP.t"]
+base = "baromfigazdaságot"
+
+[STR_IND_IRON_WORKS]
+base = "Vaskohó"
+
+["STR_IND_IRON_WORKS.t"]
+base = "vaskohót"
+
+[STR_IND_SCRAP_YARD]
+base = "Roncstelep"
+
+["STR_IND_SCRAP_YARD.t"]
+base = "roncstelepet"
+
+[STR_IND_LIME_KILN]
+base = "Mészégető"
+
+["STR_IND_LIME_KILN.t"]
+base = "mészégetőt"
+
+[STR_IND_LIMESTONE_MINE]
+base = "Mészkőbánya"
+
+["STR_IND_LIMESTONE_MINE.t"]
+base = "mészkőbányát"
+
+[STR_IND_LIQUIDS_TERMINAL]
+base = "Olajterminál"
+
+["STR_IND_LIQUIDS_TERMINAL.t"]
+base = "olajterminált"
+
+[STR_IND_TIMBER_YARD]
+base = "Fatelep"
+
+["STR_IND_TIMBER_YARD.t"]
+base = "fatelepet"
+
+[STR_IND_MACHINE_SHOP]
+base = "Gépjárműüzem"
+
+["STR_IND_MACHINE_SHOP.t"]
+base = "gépjárműüzemet"
+
+[STR_IND_MANGANESE_MINE]
+base = "Mangánbánya"
+
+["STR_IND_MANGANESE_MINE.t"]
+base = "mangánbányát"
+
+[STR_IND_METAL_WORKSHOP]
+base = "Fémipari üzem"
+
+["STR_IND_METAL_WORKSHOP.t"]
+base = "fémipari üzemet"
+
+[STR_IND_MIXEDFARM]
+base = "Vegyes farm"
+
+["STR_IND_MIXEDFARM.t"]
+base = "vegyes farmot"
+
+[STR_IND_NITRATE_MINE]
+base = "Salétrombánya"
+
+["STR_IND_NITRATE_MINE.t"]
+base = "salétrombányát"
+
+[STR_IND_ORCHARD_PIGGERY]
+base = "Gyümölcs- és állatgazdaság"
+
+["STR_IND_ORCHARD_PIGGERY.t"]
+base = "gyümölcs- és állatgazdaságot"
+
+[STR_IND_PEATLANDS]
+base = "Tőzegbánya"
+
+["STR_IND_PEATLANDS.t"]
+base = "tőzegbányát"
+
+[STR_IND_PETROLPUMP]
+base = "Benzinkút"
+
+["STR_IND_PETROLPUMP.t"]
+base = "benzinkutat"
+
+[STR_IND_PHOSPHATE_MINE]
+base = "Foszfátbánya"
+
+["STR_IND_PHOSPHATE_MINE.t"]
+base = "foszfátbányát"
+
+[STR_IND_PLASTICS_PLANT]
+base = "Műanyaggyár"
+
+["STR_IND_PLASTICS_PLANT.t"]
+base = "műanyaggyárat"
+
+[STR_IND_PORT]
+base = "Kikötő"
+
+["STR_IND_PORT.t"]
+base = "kikötőt"
+
+[STR_IND_POTASH_MINE]
+base = "Hamuzsírbánya"
+
+["STR_IND_POTASH_MINE.t"]
+base = "hamuzsírbányát"
+
+[STR_IND_PYRITE_MINE]
+base = "Piritbánya"
+
+["STR_IND_PYRITE_MINE.t"]
+base = "piritbányát"
+
+[STR_IND_PYRITE_SMELTER]
+base = "Piritolvasztó"
+
+["STR_IND_PYRITE_SMELTER.t"]
+base = "piritolvasztót"
+
+[STR_IND_POWER_PLANT]
+base = "Erőmű"
+
+["STR_IND_POWER_PLANT.t"]
+base = "erőművet"
+
+[STR_IND_QUARRY]
+base = "Kőfejtő"
+
+["STR_IND_QUARRY.t"]
+base = "kőfejtőt"
+
+[STR_IND_RANCH]
+base = "Birkafarm"
+
+["STR_IND_RANCH.t"]
+base = "birkafarm"
+
+[STR_IND_RECYCLING_DEPOT]
+base = "Hulladékgyűjtő"
+
+["STR_IND_RECYCLING_DEPOT.t"]
+base = "hulladékgyűjtőt"
+
+[STR_IND_RECYCLING_PLANT]
+base = "Újrahasznosító telep"
+
+["STR_IND_RECYCLING_PLANT.t"]
+base = "újrahasznosító telepet"
+
+[STR_IND_REINDEER_FARM]
+base = "Rénszarvasfarm"
+
+["STR_IND_REINDEER_FARM.t"]
+base = "rénszarvasfarmot"
+
+[STR_IND_SHEEPFARM]
+base = "Birkafarm"
+
+["STR_IND_SHEEPFARM.t"]
+base = "birkafarmot"
+
+[STR_IND_SLAG_GRINDING_PLANT]
+base = "Salakfeldolgozó"
+
+["STR_IND_SLAG_GRINDING_PLANT.t"]
+base = "salakfeldolgozót"
+
+[STR_IND_SMITHY_FORGE]
+base = "Kovácsműhely"
+
+["STR_IND_SMITHY_FORGE.t"]
+base = "kovácsműhelyt"
+
+[STR_IND_SODA_ASH_MINE]
+base = "Sziksóbánya"
+
+["STR_IND_SODA_ASH_MINE.t"]
+base = "sziksóbányát"
+
+[STR_IND_STOCKYARD]
+base = "Vágóhíd"
+
+["STR_IND_STOCKYARD.t"]
+base = "vágóhidat"
+
+[STR_IND_SUGAR_REFINERY]
+base = "Cukorfinomító"
+
+["STR_IND_SUGAR_REFINERY.t"]
+base = "cukorfinomítót"
+
+[STR_IND_SUPPLY_YARD]
+base = "Alkatrészgyártó üzem"
+
+["STR_IND_SUPPLY_YARD.t"]
+base = "alkatrészgyártó üzemet"
+
+[STR_IND_TEXTILE_MILL]
+base = "Textilüzem"
+
+["STR_IND_TEXTILE_MILL.t"]
+base = "textilüzemet"
+
+[STR_IND_TRADING_POST]
+base = "Kereskedelmi állomás"
+
+["STR_IND_TRADING_POST.t"]
+base = "kereskedelmi állomást"
+
+[STR_IND_TYRE_PLANT]
+base = "Gumiabroncs gyár"
+
+[STR_IND_VINEYARD]
+base = "Szőlőskert"
+
+[STR_IND_WHARF]
+base = "Rakpart"
+
+["STR_IND_WHARF.t"]
+base = "rakpartot"
+
+[STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG]
+base = "{BLACK}(szállítva)"
+
+[STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY]
+base = "{BLACK}A maximális termelés eléréséhez {WHITE}bármely {BLACK}rakomány szállítása elegendő."
+
+[STR_PRIMARY_PRODUCTION_1X]
+base = "{BLACK}Jelenlegi termelés: {YELLOW}Alapszintű{}{}{BLACK}A {WHITE}Megnövekedett {BLACK} szint eléréséhez {SIGNED_WORD} láda felszerelés szállítása szükséges 3 hónapon belül.{}A {WHITE}Maximális {BLACK}szint eléréséhez {SIGNED_WORD} láda szükséges."
+
+[STR_PRIMARY_PRODUCTION_2X]
+base = "{BLACK}Jelenlegi termelés: {YELLOW}Megnövekedett{}{}{BLACK}A szint fenntartásához {SIGNED_WORD} láda felszerelés szállítása szükséges 3 hónapon belül.{}A {WHITE}Maximális {BLACK}szint eléréséhez {SIGNED_WORD} láda szükséges."
+
+[STR_PRIMARY_PRODUCTION_4X]
+base = "{BLACK}Jelenlegi termelés: {YELLOW}maximális{}{}{BLACK}A szint fenntartásához {SKIP}{SIGNED_WORD} láda felszerelés szállítása szükséges 3 hónapon belül."
+
+[STR_PORT_PRODUCTION_1X]
+base = "{BLACK}Jelenlegi termelés: {YELLOW}Alapszintű{}{}{BLACK}A {WHITE}Megnövekedett {BLACK} szint eléréséhez {SIGNED_WORD} egység rakomány szállítása szükséges 3 hónapon belül.{}A {WHITE}Maximális {BLACK}szint eléréséhez {SIGNED_WORD} egység rakomány szükséges."
+
+[STR_PORT_PRODUCTION_2X]
+base = "{BLACK}Jelenlegi termelés: {YELLOW}Megnövekedett{}{}{BLACK}A szint fenntartásához {SIGNED_WORD} egység rakomány szállítása szükséges 3 hónapon belül.{}A {WHITE}Maximális {BLACK}szint eléréséhez {SIGNED_WORD} egység rakomány szükséges."
+
+[STR_PORT_PRODUCTION_4X]
+base = "{BLACK}Jelenlegi termelés: {YELLOW}maximális{}{}{BLACK}A szint fenntartásához {SKIP}{SIGNED_WORD} egység rakomány szállítása szükséges 3 hónapon belül."
+
+[STR_GENERIC_NEWLINE]
+base = "{}"
+
+[STR_FUND_ARABLE_FARM]
+base = "{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban."
+
+[STR_FUND_COFFEE_ESTATE]
+base = "{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban."
+
+[STR_FUND_DAIRY_FARM]
+base = "{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban."
+
+[STR_FUND_FOREST]
+base = "{}{BLACK}Helyszín: {YELLOW}Nem építhető sivatagban."
+
+[STR_FUND_FRUIT_PLANTATION]
+base = "{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen."
+
+[STR_FUND_HERDING_COOP]
+base = "{}{BLACK}Helyszín: {YELLOW}Csak havas területen építhető."
+
+[STR_FUND_ORCHARD_PIGGERY]
+base = "{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban."
+
+[STR_FUND_RUBBER_PLANTATION]
+base = "{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban."
+
+[STR_FUND_VINEYARD]
+base = "{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban."
+
+[STR_FUND_AVAILABLE_FROM]
+base = "{}{BLACK}Elérhető {YELLOW}{COMMA} {BLACK}után"
+
+[STR_FUND_AVAILABLE_UNTIL]
+base = "{}{BLACK}Nem elérhető {YELLOW}{COMMA} {BLACK}után"
+
+[STR_TOWN]
+base = "{STRING}"
+
+[STR_STATION]
+base = "{STRING} {STRING}"
+
+[STR_STATION_ANIMALS]
+base = "Hentes"
+
+[STR_STATION_AUTOMOTIVE]
+base = "Automotív"
+
+[STR_STATION_BAR_GRILL_AND_ROOMS]
+base = "Szálló"
+
+[STR_STATION_BARNS]
+base = "Istállók"
+
+[STR_STATION_BARREL_AND_KEG]
+base = "Szeszfőzde"
+
+[STR_STATION_BASE]
+base = "Telep"
+
+[STR_STATION_BONEYARD]
+base = "Roncstelep"
+
+[STR_STATION_BANK_TOP]
+base = "Kokszoló"
+
+[STR_STATION_CASTINGS]
+base = "Öntöde"
+
+[STR_STATION_COLLIERY]
+base = "Szénbánya"
+
+[STR_STATION_COPPER_LODE]
+base = "Rézlelőhely"
+
+[STR_STATION_CREOSOTING]
+base = "Fatelep"
+
+[STR_STATION_DAIRY_LANE]
+base = "Tejüzem"
+
+[STR_STATION_ESTATE]
+base = "Birtok"
+
+[STR_STATION_EXCHANGE]
+base = "Átrakó"
+
+[STR_STATION_FARM_1]
+base = "Tanya"
+
+[STR_STATION_FARM_2]
+base = "Legelő"
+
+[STR_STATION_FARM_3]
+base = "Major"
+
+[STR_STATION_FISHMARKET]
+base = "Halpiac"
+
+[STR_STATION_FOOD_CORPORATION]
+base = "Konzervgyár"
+
+[STR_STATION_FOREST]
+base = "Favágótelep"
+
+[STR_STATION_FORGE]
+base = "Műhely"
+
+[STR_STATION_FURNACE]
+base = "Kohó"
+
+[STR_STATION_HEAVY_EQUIPMENT_YARD]
+base = "Nehézgéptelep"
+
+[STR_STATION_HEAVY_INDUSTRY_2]
+base = "Művek"
+
+[STR_STATION_HERDING_COOP]
+base = "Tyúkól"
+
+[STR_STATION_INDUSTRY_ESTATE_1]
+base = "Ipari park"
+
+[STR_STATION_INDUSTRY_HARBOUR_1]
+base = "Ipari kikötő"
+
+[STR_STATION_INDUSTRY_HARBOUR_2]
+base = "Part"
+
+[STR_STATION_INDUSTRY_HARBOUR_3]
+base = "Kereskedő"
+
+[STR_STATION_IRONSTONE]
+base = "Vasércbánya"
+
+[STR_STATION_JOINERS_SHOP]
+base = "Asztalos"
+
+[STR_STATION_KILNS]
+base = "Égető"
+
+[STR_STATION_KIMBERLITE_DEPOSITS]
+base = "Gyémántlelőhely"
+
+[STR_STATION_LIMESTONE_MINES]
+base = "Mészkőbánya"
+
+[STR_STATION_MANGANESE_MINES]
+base = "Mangánbánya"
+
+[STR_STATION_MARKET]
+base = "Piac"
+
+[STR_STATION_MERCHANTS_LANE]
+base = "Újváros"
+
+[STR_STATION_MILL]
+base = "Malom"
+
+[STR_STATION_MINE]
+base = "Tímár út"
+
+[STR_STATION_MOULDINGS]
+base = "Műanyaggyár"
+
+[STR_STATION_OIL_RIG]
+base = "Olajmező"
+
+[STR_STATION_ORCHARDS]
+base = "Gyümölcsös"
+
+[STR_STATION_PIT]
+base = "Fejtés"
+
+[STR_STATION_PLANTATION]
+base = "Ültetvény"
+
+[STR_STATION_POWERHUNGRY]
+base = "Erőmű"
+
+[STR_STATION_PUMPS]
+base = "Pumpa"
+
+[STR_STATION_PYRITES]
+base = "Piritlelőhely"
+
+[STR_STATION_REFINERY]
+base = "Finomító"
+
+[STR_STATION_RUBBER_COMPANY]
+base = "Gumigyár"
+
+[STR_STATION_SALTPETER_WORKS]
+base = "Salétrombánya"
+
+[STR_STATION_SHARP_STREET]
+base = "Üveggyár"
+
+[STR_STATION_SHEEP_FOLD]
+base = "Birkafarm"
+
+[STR_STATION_SHOALS]
+base = "Halászterület"
+
+[STR_STATION_SILO]
+base = "Siló"
+
+[STR_STATION_SMELTER]
+base = "Olvasztó"
+
+[STR_STATION_STACKS]
+base = "Lerakat"
+
+[STR_STATION_STAMP_AND_PLATE]
+base = "Lakatos"
+
+[STR_STATION_SUGAR_COMPANY]
+base = "Cukorfinomító"
+
+[STR_STATION_TANK_FARM]
+base = "Tartálytelep"
+
+[STR_STATION_TAPPERS_SHED]
+base = "Gumifa ültetvény"
+
+[STR_STATION_TOWN_1]
+base = "Régi városháza"
+
+[STR_STATION_TOWN_2]
+base = "Fő út"
+
+[STR_STATION_TOWN_3]
+base = "Áruház"
+
+[STR_STATION_TRONA_BEDS]
+base = "Szikvidék"
+
+[STR_STATION_WATER]
+base = "Zátony"
+
+[STR_STATION_WEAVE_AND_DYE]
+base = "Szabóság"
+
+[STR_STATION_WELLS]
+base = "Olajkút"
+
+[STR_STATION_WINERY]
+base = "Borászat"
