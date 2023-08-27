@@ -1,0 +1,462 @@
+[GLOBAL_PRAGMA]
+grflangid = "0x5a"
+plural = "1"
+
+[STR_GRF_DESC]
+base = "{ORANGE}FIRS Industry Replacement Set -{}{BLACK}Dibuat untuk anda oleh andythenorth, FooBar, planetmaker, Terkhen and Yexo, dan bantuan dari yang lain. {SILVER}Lihat readme untuk informasi lebih lanjut, termasuk cara penggunaan FIRS. {BLACK}Lisensi: GPL v2."
+
+[STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY]
+base = "Jarak maksimal untuk area tangkapan ikan, anjungan lepas pantai dan pengerukan pasir laut dari pantai dalam petak."
+
+[STR_PARAM_DESC_ECONOMIES]
+base = "Setiap ekonomi menyediakan campuran kargo dan industri yang berbeda.{}{}Untuk pemain yang mau main yang gampang, ekonomi 'Dasar' berisi industri dan kargo lebih kurang daripada ekonomi FIRS yang lain."
+
+[STR_PARAM_DESC_NO_OPENINGS]
+base = "Secara normal, industri baru akan dibuat dalam permainan.{}{}Jika diaktifkan tidak ada industri dibuat dalam permainan, dan pemain tidak akan bisa membiayai atau memprospek industri."
+
+[STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY]
+base = "Jarak terjauh untuk industri lepas pantai dari garis pantai dalam blok area"
+
+[STR_PARAM_NAME_ECONOMIES]
+base = "Sistem Ekonomi"
+
+[STR_PARAM_NAME_NO_OPENINGS]
+base = "Tiadakan pembukaan industri baru"
+
+[STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0]
+base = "Tak Terbatas"
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE]
+base = "Sedang (Iklim) Dasar"
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC]
+base = "Arktik Dasar"
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC]
+base = "Tropis Dasar"
+
+[STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY]
+base = "Hati Kegelapan"
+
+[STR_CARGO_NAME_ALCOHOL]
+base = "Bir"
+
+[STR_CARGO_NAME_BAUXITE]
+base = "Bauksit"
+
+[STR_CARGO_NAME_BUILDING_MATERIALS]
+base = "Material Bangunan"
+
+[STR_CARGO_NAME_CEMENT]
+base = "Semen"
+
+[STR_CARGO_NAME_CHEMICALS]
+base = "Bahan Kimia"
+
+[STR_CARGO_NAME_CLAY]
+base = "Tanah Liat"
+
+[STR_CARGO_NAME_COFFEE]
+base = "Kopi"
+
+[STR_CARGO_NAME_ENGINEERING_SUPPLIES]
+base = "Alat Teknik"
+
+[STR_CARGO_NAME_FIBRES]
+base = "Serat Tanaman"
+
+[STR_CARGO_NAME_FISH]
+base = "Ikan"
+
+[STR_CARGO_NAME_FARM_SUPPLIES]
+base = "Alat Pertanian"
+
+[STR_CARGO_NAME_FRUITS]
+base = "Buah"
+
+[STR_CARGO_NAME_TIMBER]
+base = "Kayu Potong"
+
+[STR_CARGO_NAME_METAL]
+base = "Besi"
+
+[STR_CARGO_NAME_MILK]
+base = "Susu"
+
+[STR_CARGO_NAME_PETROL]
+base = "Bahan Bakar"
+
+[STR_CARGO_NAME_RECYCLABLES]
+base = "Bahan Daur ulang"
+
+[STR_CARGO_NAME_SAND]
+base = "Pasir"
+
+[STR_CARGO_NAME_SCRAP_METAL]
+base = "Besi Bekas"
+
+[STR_CARGO_NAME_AGGREGATES]
+base = "Batu"
+
+[STR_CARGO_NAME_SUGAR_BEET]
+base = "Bit Gula"
+
+[STR_CARGO_NAME_WOOL]
+base = "Wol"
+
+[STR_CARGO_UNIT_ALCOHOL]
+base = "{VOLUME} dari bir"
+
+[STR_CARGO_UNIT_BAUXITE]
+base = "{WEIGHT} dari bauksit"
+
+[STR_CARGO_UNIT_BUILDING_MATERIALS]
+base = "{WEIGHT} dari material bangunan"
+
+[STR_CARGO_UNIT_CHEMICALS]
+base = "{VOLUME} dari bahan kimia"
+
+[STR_CARGO_UNIT_CLAY]
+base = "{WEIGHT} dari tanah liat"
+
+[STR_CARGO_UNIT_COFFEE]
+base = "{SIGNED_WORD} karung kopi"
+
+[STR_CARGO_UNIT_ENGINEERING_SUPPLIES]
+base = "{SIGNED_WORD} peti dari alat teknik"
+
+[STR_CARGO_UNIT_FIBRES]
+base = "{SIGNED_WORD} ikat dari serat tanaman"
+
+[STR_CARGO_UNIT_FISH]
+base = "{WEIGHT} dari ikan"
+
+[STR_CARGO_UNIT_FMSP]
+base = "{SIGNED_WORD} peti dari alat pertanian"
+
+[STR_CARGO_UNIT_FRUITS]
+base = "{WEIGHT} dari buah"
+
+[STR_CARGO_UNIT_TIMBER]
+base = "{WEIGHT} dari kayu"
+
+[STR_CARGO_UNIT_METAL]
+base = "{WEIGHT} dari besi"
+
+[STR_CARGO_UNIT_MILK]
+base = "{VOLUME} dari susu"
+
+[STR_CARGO_UNIT_PETROL]
+base = "{VOLUME} dari bahan bakar"
+
+[STR_CARGO_UNIT_RECYCLABLES]
+base = "{WEIGHT} dari sampah"
+
+[STR_CARGO_UNIT_SAND]
+base = "{WEIGHT} dari pasir"
+
+[STR_CARGO_UNIT_SCRAP_METAL]
+base = "{WEIGHT} dari besi bekas"
+
+[STR_CARGO_UNIT_AGGREGATES]
+base = "{WEIGHT} dari batu"
+
+[STR_CARGO_UNIT_SUGAR_BEET]
+base = "{WEIGHT} dari bit gula"
+
+[STR_CARGO_UNIT_WOOL]
+base = "{SIGNED_WORD} ikat dari wol"
+
+[STR_CID_ALCOHOL]
+base = "{TINYFONT}BR"
+
+[STR_CID_BAUXITE]
+base = "{TINYFONT}BX"
+
+[STR_CID_BUILDING_MATERIALS]
+base = "{TINYFONT}MB"
+
+[STR_CID_CHEMICALS]
+base = "{TINYFONT}BK"
+
+[STR_CID_CLAY]
+base = "{TINYFONT}TL"
+
+[STR_CID_COFFEE]
+base = "{TINYFONT}KP"
+
+[STR_CID_ENGINEERING_SUPPLIES]
+base = "{TINYFONT}AT"
+
+[STR_CID_FARM_SUPPLIES]
+base = "{TINYFONT}AP"
+
+[STR_CID_FIBRES]
+base = "{TINYFONT}ST"
+
+[STR_CID_FISH]
+base = "{TINYFONT}IK"
+
+[STR_CID_TIMBER]
+base = "{TINYFONT}KP"
+
+[STR_CID_METAL]
+base = "{TINYFONT}BS"
+
+[STR_CID_MILK]
+base = "{TINYFONT}SS"
+
+[STR_CID_PETROL]
+base = "{TINYFONT}BM"
+
+[STR_CID_RECYCLABLES]
+base = "{TINYFONT}SP"
+
+[STR_CID_SAND]
+base = "{TINYFONT}PS"
+
+[STR_CID_SCRAP_METAL]
+base = "{TINYFONT}BB"
+
+[STR_CID_AGGREGATES]
+base = "{TINYFONT}BT"
+
+[STR_CID_SUGAR_BEET]
+base = "{TINYFONT}BG"
+
+[STR_CID_WOOL]
+base = "{TINYFONT}WL"
+
+[STR_ERR_CLIMATE_TOYLAND]
+base = "{ORANGE}FIRS tidak dibuat untuk digunakan dengan lanskap \"Taman Bermain\""
+
+[STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE]
+base = "hanya diletakkan di atas garis salju."
+
+[STR_ERR_LOCATION_NOT_ON_WATER]
+base = "hanya diletakkan di atas tanah kering."
+
+[STR_ERR_LOCATION_NOT_IN_DESERT]
+base = "tidak dapat diletakkan di gurun."
+
+[STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE]
+base = "tidak dapat diletakkan di tebing."
+
+[STR_ERR_LOCATION_LIMIT_1_PER_TOWN]
+base = "hanya satu diperbolehkan di kota ini."
+
+[STR_IND_ALUMINIUM_PLANT]
+base = "Peleburan Aluminium"
+
+[STR_IND_ARABLE_FARM]
+base = "Pertanian Garapan"
+
+[STR_IND_BIOREFINERY]
+base = "Biorefinery"
+
+[STR_IND_BREWERY]
+base = "Pabrik Pembuatan Bir"
+
+[STR_IND_CIDER_MILL]
+base = "Pabrik Cider"
+
+[STR_IND_BRICK_WORKS]
+base = "Pabrik Batu Bata"
+
+[STR_IND_BUILDERS_YARD]
+base = "Toko Bangunan"
+
+[STR_IND_BULK_TERMINAL]
+base = "Terminal Pengumpulan"
+
+[STR_IND_CEMENT_PLANT]
+base = "Pabrik Semen"
+
+[STR_IND_CLAY_PIT]
+base = "Tambang Tanah Liat"
+
+[STR_IND_COFFEE_ESTATE]
+base = "Perkebunan Kopi"
+
+[STR_IND_DAIRY]
+base = "Pabrik Susu"
+
+[STR_IND_DREDGING_SITE]
+base = "Pengerukan Pasir Laut"
+
+[STR_IND_FISHING_GROUND]
+base = "Area Tangkapan Ikan"
+
+[STR_IND_FISHING_HARBOUR]
+base = "Pelabuhan Ikan"
+
+[STR_IND_FOOD_MARKET]
+base = "Toko Bahan Pangan"
+
+[STR_IND_FURNITURE_FACTORY]
+base = "Pabrik Furnitur"
+
+[STR_IND_GENERAL_STORE]
+base = "Toko"
+
+[STR_IND_GLASS_WORKS]
+base = "Peleburan Kaca"
+
+[STR_IND_HARDWARE_STORE]
+base = "Toko Perangkat Keras"
+
+[STR_IND_HOTEL]
+base = "Hotel"
+
+[STR_IND_IRON_WORKS]
+base = "Peleburan Besi"
+
+[STR_IND_SCRAP_YARD]
+base = "Pembuangan Besi Bekas"
+
+[STR_IND_LIME_KILN]
+base = "Pabrik Pembakaran Kapur"
+
+[STR_IND_TIMBER_YARD]
+base = "Pemotongan Kayu"
+
+[STR_IND_MACHINE_SHOP]
+base = "Toko Mesin"
+
+[STR_IND_MIXEDFARM]
+base = "Pertanian Campuran"
+
+[STR_IND_ORCHARD_PIGGERY]
+base = "Perkebunan Buah-Buahan dan Perkebunan Babi"
+
+[STR_IND_PETROLPUMP]
+base = "Stasiun Bahan Bakar"
+
+[STR_IND_PLASTICS_PLANT]
+base = "Pabrik Plastik"
+
+[STR_IND_PORT]
+base = "Pekabuhan"
+
+[STR_IND_QUARRY]
+base = "Tambang Pasir"
+
+[STR_IND_RANCH]
+base = "Pertanian Besar"
+
+[STR_IND_RECYCLING_DEPOT]
+base = "Tempat Pembuangan Sampah"
+
+[STR_IND_RECYCLING_PLANT]
+base = "Pabrik Daur Ulang"
+
+[STR_IND_SHEEPFARM]
+base = "Peternakan Domba"
+
+[STR_IND_SMITHY_FORGE]
+base = "Bengkel Pandai Besi"
+
+[STR_IND_STOCKYARD]
+base = "Pabrik Pengalengan"
+
+[STR_IND_SUGAR_REFINERY]
+base = "Pabrik Gula"
+
+[STR_IND_TEXTILE_MILL]
+base = "Pabrik Pakaian"
+
+[STR_IND_TRADING_POST]
+base = "Tempat Perdagangan"
+
+[STR_PRIMARY_PRODUCTION_1X]
+base = "{BLACK}Produksi sekarang: {YELLOW}Normal{}{}{BLACK}Untuk menggandakan produksi antarkan {SIGNED_WORD} peti alat dalam tiga bulan (atau {SIGNED_WORD} peti untuk produksi empat kali lipat)"
+
+[STR_PRIMARY_PRODUCTION_2X]
+base = "{BLACK}Produksi sekarang: {YELLOW}Naikkan (ganda){}{}{BLACK}Untuk meneruskan tingkat ini, antarkan {SIGNED_WORD} peti alat dalam tiga bulan, atau {SIGNED_WORD} peti alat untuk naikkan ke produksi empat kali lipat"
+
+[STR_PRIMARY_PRODUCTION_4X]
+base = "{BLACK}Produksi sekarang: {YELLOW}Gung ho (empat kali lipat){}{}{BLACK}Untuk meneruskan tingkat ini, antarkan {SKIP}{SIGNED_WORD} peti alat dalam tiga bulan"
+
+[STR_PORT_PRODUCTION_1X]
+base = "{BLACK}Produksi sekarang: {YELLOW}Normal{}{}{BLACK}Untuk menggandakan produksi antarkan {SIGNED_WORD} satuan kargo dalam tiga bulan{}Untuk produksi empat kali lipat antarkan {SIGNED_WORD} satuan kargo dalam tiga bulan"
+
+[STR_PORT_PRODUCTION_2X]
+base = "{BLACK}Produksi sekarang: {YELLOW}Naikkan (ganda){}{}{BLACK}Untuk meneruskan tingkat ini, antarkan {SIGNED_WORD} satuan kargo dalam tiga bulan, atau {SIGNED_WORD} satuan kargo untuk naikkan ke produksi empat kali lipat"
+
+[STR_PORT_PRODUCTION_4X]
+base = "{BLACK}Produksi sekarang: {YELLOW}Gung ho (empat kali lipat){}{}{BLACK}Untuk meneruskan tingkat ini, antarkan {SKIP}{SIGNED_WORD} satuan kargo dalam tiga bulan"
+
+[STR_GENERIC_NEWLINE]
+base = "{}"
+
+[STR_FUND_ARABLE_FARM]
+base = "{}{BLACK}Lokasi: {YELLOW}Tidak dapat dibuat di atas garis salju atau di daerah gurun."
+
+[STR_FUND_COFFEE_ESTATE]
+base = "{}{BLACK}Lokasi: {YELLOW}Tidak bisa dibuat di salju atau di gurun."
+
+[STR_FUND_FOREST]
+base = "{}{BLACK}Lokasi: {YELLOW}Tidak dapat dibuat di daerah gurun."
+
+[STR_FUND_FRUIT_PLANTATION]
+base = "{}{BLACK}Lokasi: {YELLOW}Tidak dapat dibuat di atas garis salju."
+
+[STR_FUND_ORCHARD_PIGGERY]
+base = "{}{BLACK}Lokasi: {YELLOW}Tidak bisa dibuat di salju atau di gurun."
+
+[STR_FUND_RUBBER_PLANTATION]
+base = "{}{BLACK}Lokasi: {YELLOW}Tidak bisa dibuat di salju atau di gurun."
+
+[STR_FUND_AVAILABLE_FROM]
+base = "{}{BLACK}Dapat dibuat sejak: {YELLOW}{COMMA}"
+
+[STR_FUND_AVAILABLE_UNTIL]
+base = "{}{BLACK}Tidak dapat dibuat sejak: {YELLOW}{COMMA}"
+
+[STR_TOWN]
+base = "{STRING}"
+
+[STR_STATION]
+base = "{STRING} {STRING}"
+
+[STR_STATION_ANIMALS]
+base = "Pasar Kuda"
+
+[STR_STATION_FARM_1]
+base = "Tanah milik bangsawan"
+
+[STR_STATION_FISHMARKET]
+base = "Pasar Ikan"
+
+[STR_STATION_INDUSTRY_ESTATE_1]
+base = "Taman Industri"
+
+[STR_STATION_INDUSTRY_HARBOUR_1]
+base = "Pelabuhan Industri"
+
+[STR_STATION_MARKET]
+base = "Pasar"
+
+[STR_STATION_MILL]
+base = "Pabrik"
+
+[STR_STATION_MINE]
+base = "Jalan penyamak kulit"
+
+[STR_STATION_PIT]
+base = "Lubang"
+
+[STR_STATION_PLANTATION]
+base = "Perkebunan"
+
+[STR_STATION_POWERHUNGRY]
+base = "Pembangkit listrik"
+
+[STR_STATION_REFINERY]
+base = "Tanah pelabuhan"
+
+[STR_STATION_TOWN_1]
+base = "Balai kota tua"
+
+[STR_STATION_WATER]
+base = "Gosong pasir"

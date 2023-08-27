@@ -1,0 +1,514 @@
+[GLOBAL_PRAGMA]
+grflangid = "0x1b"
+plural = "0"
+gender = "male"
+
+[STR_GRF_DESC]
+base = "{ORANGE}FIRS Nywerheid vervanging stel{}{BLACK}Aan u gebring deur andythenorth, FooBar, planetmaker, Terkhen and Yexo, met help van baie ander. {SILVER}Sien readme vir meer inligting, ingesluit hoe om FIRS te gebruik. {BLACK}Lisensie: GPL v2."
+
+[STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY]
+base = "Die maksimum afstand teëls wat die vis waters, oliebore en baggerwerk-terreine van die kus af is."
+
+[STR_PARAM_DESC_ECONOMIES]
+base = "Elke ekonomie bied 'n ander kombinasie van vragte en nywerhede.{}{} Vir spelers wat 'n eenvoudige spel wil hê, 'basiese' ekonomie bevat minder nywerhede en vragte as ander FIRS ekonomieë."
+
+[STR_PARAM_DESC_NO_OPENINGS]
+base = "By verstek, nuwe nywerhede sal begin tydens spel.{} Indien 'n \"verhoed die opening\" aangeskakel is sal nywerhede nie oopmaak tydens die spel nie, en die spelers sal nie in staat wees om die vooruitsig vir nywerhede te bevonds nie."
+
+[STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY]
+base = "Maksimum kus afstand van mariene nywerhede in teëls"
+
+[STR_PARAM_NAME_ECONOMIES]
+base = "Ekonomie"
+
+[STR_PARAM_NAME_NO_OPENINGS]
+base = "Verhoed dat nywerhede oop maak tydens die spel"
+
+[STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0]
+base = "Geen limiet"
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE]
+base = "Matige Basies"
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC]
+base = "Basiese Arkties"
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC]
+base = "Basiese Tropies"
+
+[STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY]
+base = "Hart van Duisternis"
+
+[STR_CARGO_NAME_ALCOHOL]
+base = "Alkohol"
+
+[STR_CARGO_NAME_BAUXITE]
+base = "Bauxiet"
+
+[STR_CARGO_NAME_BEANS]
+base = "Bone"
+
+[STR_CARGO_NAME_BUILDING_MATERIALS]
+base = "Bou Materiaal"
+
+[STR_CARGO_NAME_CHEMICALS]
+base = "Chemikalieë"
+
+[STR_CARGO_NAME_CLAY]
+base = "Klei"
+
+[STR_CARGO_NAME_COFFEE]
+base = "Koffee"
+
+[STR_CARGO_NAME_COPPER]
+base = "Koper"
+
+[STR_CARGO_NAME_ENGINEERING_SUPPLIES]
+base = "Ingenieurswese Benodighede"
+
+[STR_CARGO_NAME_FIBRES]
+base = "Plant Vesels"
+
+[STR_CARGO_NAME_FISH]
+base = "Vis"
+
+[STR_CARGO_NAME_FARM_SUPPLIES]
+base = "Plaas Benodighede"
+
+[STR_CARGO_NAME_FRUITS]
+base = "Vrugte"
+
+[STR_CARGO_NAME_TIMBER]
+base = "Timmerhout"
+
+[STR_CARGO_NAME_METAL]
+base = "Metaal"
+
+[STR_CARGO_NAME_MILK]
+base = "Melk"
+
+[STR_CARGO_NAME_NITRATES]
+base = "Nitrate"
+
+[STR_CARGO_NAME_NUTS]
+base = "Neute"
+
+[STR_CARGO_NAME_PETROL]
+base = "Petroleum Brandstof"
+
+[STR_CARGO_NAME_RECYCLABLES]
+base = "Herwinbaares"
+
+[STR_CARGO_NAME_SAND]
+base = "Sand"
+
+[STR_CARGO_NAME_SCRAP_METAL]
+base = "Skrap Metaal"
+
+[STR_CARGO_NAME_AGGREGATES]
+base = "Stene"
+
+[STR_CARGO_NAME_SUGAR_BEET]
+base = "Suiker Beet"
+
+[STR_CARGO_NAME_VEHICLE_PARTS]
+base = "Voertuig Onderdele"
+
+[STR_CARGO_NAME_VEHICLES]
+base = "Voertuie"
+
+[STR_CARGO_NAME_WOOL]
+base = "Wol"
+
+[STR_CARGO_UNIT_ALCOHOL]
+base = "{VOLUME} alkohol"
+
+[STR_CARGO_UNIT_BAUXITE]
+base = "{WEIGHT} bauxite"
+
+[STR_CARGO_UNIT_BEANS]
+base = "{WEIGHT} bone"
+
+[STR_CARGO_UNIT_BUILDING_MATERIALS]
+base = "{WEIGHT} bou materiaal"
+
+[STR_CARGO_UNIT_CHEMICALS]
+base = "{VOLUME} chemikalieë"
+
+[STR_CARGO_UNIT_CLAY]
+base = "{WEIGHT} klei"
+
+[STR_CARGO_UNIT_COFFEE]
+base = "{SIGNED_WORD} sak{P 0 \"\" ke} koffee"
+
+[STR_CARGO_UNIT_ENGINEERING_SUPPLIES]
+base = "{SIGNED_WORD} krat{P 0 \"\" te} ingenieurswese benodighede"
+
+[STR_CARGO_UNIT_FIBRES]
+base = "{SIGNED_WORD} ba{P 0 al le} plant vesels"
+
+[STR_CARGO_UNIT_FISH]
+base = "{WEIGHT} vis"
+
+[STR_CARGO_UNIT_FMSP]
+base = "{SIGNED_WORD} krat{P 0 \"\" te} plaas benodighede"
+
+[STR_CARGO_UNIT_FRUITS]
+base = "{WEIGHT} vrugte"
+
+[STR_CARGO_UNIT_TIMBER]
+base = "{WEIGHT} timmerhout"
+
+[STR_CARGO_UNIT_METAL]
+base = "{WEIGHT} metaal"
+
+[STR_CARGO_UNIT_MILK]
+base = "{VOLUME} melk"
+
+[STR_CARGO_UNIT_NITRATES]
+base = "{WEIGHT} nitrate"
+
+[STR_CARGO_UNIT_NUTS]
+base = "{SIGNED_WORD} sak{P 0 \"\" ke}  neute"
+
+[STR_CARGO_UNIT_PETROL]
+base = "{VOLUME} petrol"
+
+[STR_CARGO_UNIT_RECYCLABLES]
+base = "{WEIGHT} herwinbares"
+
+[STR_CARGO_UNIT_SAND]
+base = "{WEIGHT} sand"
+
+[STR_CARGO_UNIT_SCRAP_METAL]
+base = "{WEIGHT} skrap metaal"
+
+[STR_CARGO_UNIT_AGGREGATES]
+base = "{WEIGHT} stene"
+
+[STR_CARGO_UNIT_SUGAR_BEET]
+base = "{WEIGHT} suiker beet"
+
+[STR_CARGO_UNIT_VEHICLE_PARTS]
+base = "{SIGNED_WORD} krat{P 0 \"\" te} voertuig onderdele"
+
+[STR_CARGO_UNIT_VEHICLES]
+base = "{SIGNED_WORD} voertui{P 0 \"g\" e}"
+
+[STR_CARGO_UNIT_WOOL]
+base = "{SIGNED_WORD} ba{P 0 al le} wol"
+
+[STR_CID_ALCOHOL]
+base = "{TINYFONT}AL"
+
+[STR_CID_BAUXITE]
+base = "{TINYFONT}BX"
+
+[STR_CID_BEANS]
+base = "{TINYFONT}BN"
+
+[STR_CID_BUILDING_MATERIALS]
+base = "{TINYFONT}BM"
+
+[STR_CID_CHEMICALS]
+base = "{TINYFONT}CH"
+
+[STR_CID_CLAY]
+base = "{TINYFONT}CY"
+
+[STR_CID_COFFEE]
+base = "{TINYFONT}CF"
+
+[STR_CID_ENGINEERING_SUPPLIES]
+base = "{TINYFONT}ES"
+
+[STR_CID_FARM_SUPPLIES]
+base = "{TINYFONT}FS"
+
+[STR_CID_FIBRES]
+base = "{TINYFONT}PF"
+
+[STR_CID_FISH]
+base = "{TINYFONT}FI"
+
+[STR_CID_TIMBER]
+base = "{TINYFONT}LU"
+
+[STR_CID_METAL]
+base = "{TINYFONT}MT"
+
+[STR_CID_MILK]
+base = "{TINYFONT}MK"
+
+[STR_CID_NITRATES]
+base = "{TINYFONT}NI"
+
+[STR_CID_PETROL]
+base = "{TINYFONT}PT"
+
+[STR_CID_RECYCLABLES]
+base = "{TINYFONT}RC"
+
+[STR_CID_SAND]
+base = "{TINYFONT}SA"
+
+[STR_CID_SCRAP_METAL]
+base = "{TINYFONT}SM"
+
+[STR_CID_AGGREGATES]
+base = "{TINYFONT}ST"
+
+[STR_CID_SUGAR_BEET]
+base = "{TINYFONT}SB"
+
+[STR_CID_VEHICLE_PARTS]
+base = "{TINYFONT}VP"
+
+[STR_CID_WOOL]
+base = "{TINYFONT}WL"
+
+[STR_ERR_CLIMATE_TOYLAND]
+base = "{ORANGE}FIRS is nie bedoel om in die Toyland klimaat te gebruik nie"
+
+[STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE]
+base = "moet onder die sneeulyn wees."
+
+[STR_ERR_LOCATION_NOT_ON_WATER]
+base = "moet op droë land wees."
+
+[STR_ERR_LOCATION_NOT_IN_DESERT]
+base = "kannie in die woestyn wees nie."
+
+[STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE]
+base = "kannie op styl slope geplaas word nie."
+
+[STR_ERR_LOCATION_LIMIT_1_PER_TOWN]
+base = "net een van die nywerheid word per dorp toe gelaat."
+
+[STR_IND_ALUMINIUM_PLANT]
+base = "Aluminium Fabriek"
+
+[STR_IND_ARABLE_FARM]
+base = "Bewerk Plaas"
+
+[STR_IND_ASSEMBLY_PLANT]
+base = "Voertuig Vervaardiger"
+
+[STR_IND_BIOREFINERY]
+base = "Bioraffinadery"
+
+[STR_IND_BREWERY]
+base = "Brouery"
+
+[STR_IND_CIDER_MILL]
+base = "Sider Meule"
+
+[STR_IND_BRICK_WORKS]
+base = "Steen Werke"
+
+[STR_IND_BUILDERS_YARD]
+base = "Bouers Werf"
+
+[STR_IND_BULK_TERMINAL]
+base = "Bulk Terminaal"
+
+[STR_IND_CEMENT_PLANT]
+base = "Sement Fabriek"
+
+[STR_IND_CHEMICAL_PLANT]
+base = "Chemiese Aanleg"
+
+[STR_IND_CLAY_PIT]
+base = "Klei Pit"
+
+[STR_IND_COFFEE_ESTATE]
+base = "Koffee Landgoed"
+
+[STR_IND_DAIRY]
+base = "Melkery"
+
+[STR_IND_DREDGING_SITE]
+base = "Baggerwerk terrein"
+
+[STR_IND_FISHING_GROUND]
+base = "Vis Waters"
+
+[STR_IND_FISHING_HARBOUR]
+base = "Vis Hawe"
+
+[STR_IND_FOOD_MARKET]
+base = "Kruidenierswinkel"
+
+[STR_IND_FOOD_PROCESSOR]
+base = "Voedsel Verwerkings Fabriek"
+
+[STR_IND_FURNITURE_FACTORY]
+base = "Meubelfabriek"
+
+[STR_IND_GENERAL_STORE]
+base = "Algemene Handelaar"
+
+[STR_IND_GLASS_WORKS]
+base = "Glas Werke"
+
+[STR_IND_HARDWARE_STORE]
+base = "Hardewarewinkel"
+
+[STR_IND_HOTEL]
+base = "Hotel"
+
+[STR_IND_IRON_WORKS]
+base = "Staal Werke"
+
+[STR_IND_SCRAP_YARD]
+base = "Skrootwerf"
+
+[STR_IND_LIME_KILN]
+base = "Kalkoond"
+
+[STR_IND_TIMBER_YARD]
+base = "Houtwerf"
+
+[STR_IND_MACHINE_SHOP]
+base = "Masjienwinkel"
+
+[STR_IND_MIXEDFARM]
+base = "Gemende Plaas"
+
+[STR_IND_NITRATE_MINE]
+base = "Nitrate Myn"
+
+[STR_IND_ORCHARD_PIGGERY]
+base = "Boord en Varkplaas"
+
+[STR_IND_PETROLPUMP]
+base = "Petrol Stasie"
+
+[STR_IND_PLASTICS_PLANT]
+base = "Plastiese Fabriek"
+
+[STR_IND_PORT]
+base = "Hawe"
+
+[STR_IND_QUARRY]
+base = "Quarry"
+
+[STR_IND_RANCH]
+base = "Plaas"
+
+[STR_IND_RECYCLING_DEPOT]
+base = "Herwinningsdepot"
+
+[STR_IND_RECYCLING_PLANT]
+base = "Herwinningsplant"
+
+[STR_IND_SHEEPFARM]
+base = "Skaap Plaas"
+
+[STR_IND_SMITHY_FORGE]
+base = "Smeltery"
+
+[STR_IND_STOCKYARD]
+base = "Slagpale"
+
+[STR_IND_SUGAR_REFINERY]
+base = "Suiker Meule"
+
+[STR_IND_TEXTILE_MILL]
+base = "Textiel Fabriek"
+
+[STR_IND_TRADING_POST]
+base = "Handelspos"
+
+[STR_PRIMARY_PRODUCTION_1X]
+base = "{BLACK}Huidige produksie: {YELLOW}Normaal{}{}{BLACK}Om die vlak te verhoog, Lewer {SIGNED_WORD} eenhede vrag af binne drie maande (of {SIGNED_WORD}eenhede vrag om produksie viervoudig te verhoog)"
+
+[STR_PRIMARY_PRODUCTION_2X]
+base = "{BLACK}Huidige produksie: {YELLOW}Verbeterde (dubbel){}{}{BLACK}Om hierdie vlak te handhaaf, lewer {SIGNED_WORD} kratte voorraad af binne drie maande, of {SIGNED_WORD} kratte voorraad om produksie viervoudig te verhoog"
+
+[STR_PRIMARY_PRODUCTION_4X]
+base = "{BLACK}Huidige produksie: {YELLOW}VGung ho{}{}{BLACK}Om hierdie vlak te handhaaf, lewer {SKIP}{SIGNED_WORD} kratte voorraad af binne drie maande"
+
+[STR_PORT_PRODUCTION_1X]
+base = "{BLACK}Huidige produksie: {YELLOW}Normaal{}{}{BLACK}Om die vlak te verhoog, Lewer {SIGNED_WORD} eenhede vrag af binne drie maande{}Vir viervoudige produksie, lewer {SIGNED_WORD} eenhede vrag af binne drie maande"
+
+[STR_PORT_PRODUCTION_2X]
+base = "{BLACK}Huidige produksie: {YELLOW}Verbeterde (dubbel){}{}{BLACK}Om hierdie vlak te handhaaf, lewer {SIGNED_WORD} eenhede vrag af binne drie maande, of {SIGNED_WORD}eenhede vrag  om produksie viervoudig te verhoog"
+
+[STR_PORT_PRODUCTION_4X]
+base = "{BLACK}Huidige produksie: {YELLOW}VGung ho{}{}{BLACK}Om hierdie vlak te handhaaf, lewer {SKIP}{SIGNED_WORD} kratte voorraad af binne drie maande"
+
+[STR_GENERIC_NEWLINE]
+base = "{}"
+
+[STR_FUND_ARABLE_FARM]
+base = "{}{BLACK}Ligging: {YELLOW}Kannie befonds word in sneeu of in die woestyn nie."
+
+[STR_FUND_COFFEE_ESTATE]
+base = "{}{BLACK}Plek: {YELLOW}Kan nie op die sneeu of in woestyne befonds word."
+
+[STR_FUND_FOREST]
+base = "{}{BLACK}Ligging: {YELLOW}Kannie befonds word in die woestyn."
+
+[STR_FUND_FRUIT_PLANTATION]
+base = "{}{BLACK}Ligging: {YELLOW}Kannie befonds word in sneeu."
+
+[STR_FUND_ORCHARD_PIGGERY]
+base = "{}{BLACK}Plek: {YELLOW}Kan nie op die sneeu of in woestyne befonds word."
+
+[STR_FUND_RUBBER_PLANTATION]
+base = "{}{BLACK}Plek: {YELLOW}Kan nie op die sneeu of in woestyne befonds word."
+
+[STR_FUND_AVAILABLE_FROM]
+base = "{}{BLACK}Beskikbaar van: {YELLOW}{COMMA}"
+
+[STR_FUND_AVAILABLE_UNTIL]
+base = "{}{BLACK}nie beskikbaar tot: {YELLOW}{COMMA}"
+
+[STR_TOWN]
+base = "{STRING}"
+
+[STR_STATION]
+base = "{STRING} {STRING}"
+
+[STR_STATION_ANIMALS]
+base = "Perde Markte"
+
+[STR_STATION_FARM_1]
+base = "Landgoed"
+
+[STR_STATION_FISHMARKET]
+base = "Vis Mark"
+
+[STR_STATION_INDUSTRY_ESTATE_1]
+base = "Industriële Park"
+
+[STR_STATION_INDUSTRY_HARBOUR_1]
+base = "Industriële Hawe"
+
+[STR_STATION_MARKET]
+base = "Mark"
+
+[STR_STATION_MILL]
+base = "Meule"
+
+[STR_STATION_MINE]
+base = "Leerlooiery Straat"
+
+[STR_STATION_PIT]
+base = "Mynskag"
+
+[STR_STATION_PLANTATION]
+base = "Plantasie"
+
+[STR_STATION_POWERHUNGRY]
+base = "Kragsentrale"
+
+[STR_STATION_REFINERY]
+base = "Portland"
+
+[STR_STATION_TOWN_1]
+base = "Ou Stadsaal"
+
+[STR_STATION_WATER]
+base = "Sandbank"
