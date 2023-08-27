@@ -1828,7 +1828,7 @@ class Industry(object):
             elif int(max_ratio / len(accept_cargos_with_ratios)) == 3:
                 # rare case of 3 out of n cargos being required
                 # to prevent surprises we guard on known industry ids
-                if self.id not in ["component_factory", "appliance_factory"]:
+                if self.id not in ["precision_parts_plant", "appliance_factory"]:
                     raise Exception(
                         "get_extra_text_string: "
                         + self.id

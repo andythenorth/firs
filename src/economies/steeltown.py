@@ -101,7 +101,7 @@ economy = Economy(
         ],
         "clusters": [
             {
-                "nodes": ["hardware_factory", "component_factory", "appliance_factory"],
+                "nodes": ["hardware_factory", "precision_parts_plant", "appliance_factory"],
                 "rank": "same",
                 "color": "white",
             },
