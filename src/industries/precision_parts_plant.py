@@ -1,7 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
-    id="component_factory",
+    id="precision_parts_plant",
     accept_cargos_with_input_ratios=[
         # lots of inputs, but only 3 are required (see industry.py for the kludge to make that work)
         # all input ratios *must* be 3
@@ -21,7 +21,7 @@ industry = IndustrySecondary(
     prob_in_game="1",  # low chance of build during gameplay
     prob_map_gen="8",
     map_colour="166",
-    name="string(STR_IND_COMPONENT_FACTORY)",
+    name="string(STR_IND_PRECISION_PARTS_PLANT)",
     nearby_station_name="string(STR_STATION_COMPONENTS)",
     fund_cost_multiplier="95",
     pollution_and_squalor_factor=1,
@@ -32,7 +32,7 @@ industry.enable_in_economy(
 )
 
 industry.add_tile(
-    id="component_factory_tile_1",
+    id="precision_parts_plant_tile_1",
     location_checks=TileLocationChecks(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
@@ -65,40 +65,40 @@ spriteset_7 = industry.add_spriteset(
 )
 
 industry.add_spritelayout(
-    id="component_factory_spritelayout_large_building_1",
-    tile="component_factory_tile_1",
+    id="precision_parts_plant_spritelayout_large_building_1",
+    tile="precision_parts_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="component_factory_spritelayout_large_building_2",
-    tile="component_factory_tile_1",
+    id="precision_parts_plant_spritelayout_large_building_2",
+    tile="precision_parts_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="component_factory_spritelayout_large_building_3",
-    tile="component_factory_tile_1",
+    id="precision_parts_plant_spritelayout_large_building_3",
+    tile="precision_parts_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="component_factory_spritelayout_4",
-    tile="component_factory_tile_1",
+    id="precision_parts_plant_spritelayout_4",
+    tile="precision_parts_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se"],
 )
 industry.add_spritelayout(
-    id="component_factory_spritelayout_5",
-    tile="component_factory_tile_1",
+    id="precision_parts_plant_spritelayout_5",
+    tile="precision_parts_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[
@@ -108,54 +108,54 @@ industry.add_spritelayout(
 )
 
 industry.add_industry_layout(
-    id="component_factory_industry_layout_1",
+    id="precision_parts_plant_industry_layout_1",
     layout=[
         (
             0,
             0,
-            "component_factory_spritelayout_large_building_2",
+            "precision_parts_plant_spritelayout_large_building_2",
         ),
         (
             0,
             1,
-            "component_factory_spritelayout_large_building_3",
+            "precision_parts_plant_spritelayout_large_building_3",
         ),
         (
             0,
             2,
-            "component_factory_spritelayout_large_building_2",
+            "precision_parts_plant_spritelayout_large_building_2",
         ),
         (
             0,
             3,
-            "component_factory_spritelayout_large_building_3",
+            "precision_parts_plant_spritelayout_large_building_3",
         ),
         (
             0,
             4,
-            "component_factory_spritelayout_large_building_3",
+            "precision_parts_plant_spritelayout_large_building_3",
         ),
         (
             1,
             0,
-            "component_factory_spritelayout_large_building_1",
+            "precision_parts_plant_spritelayout_large_building_1",
         ),
-        (1, 1, "component_factory_spritelayout_4"),
-        (1, 2, "component_factory_spritelayout_5"),
-        (1, 3, "component_factory_spritelayout_4"),
-        (1, 4, "component_factory_spritelayout_4"),
+        (1, 1, "precision_parts_plant_spritelayout_4"),
+        (1, 2, "precision_parts_plant_spritelayout_5"),
+        (1, 3, "precision_parts_plant_spritelayout_4"),
+        (1, 4, "precision_parts_plant_spritelayout_4"),
         (
             2,
             0,
-            "component_factory_spritelayout_large_building_2",
+            "precision_parts_plant_spritelayout_large_building_2",
         ),
         (
             2,
             1,
-            "component_factory_spritelayout_large_building_3",
+            "precision_parts_plant_spritelayout_large_building_3",
         ),
-        (2, 2, "component_factory_spritelayout_5"),
-        (2, 3, "component_factory_spritelayout_5"),
-        (2, 4, "component_factory_spritelayout_5"),
+        (2, 2, "precision_parts_plant_spritelayout_5"),
+        (2, 3, "precision_parts_plant_spritelayout_5"),
+        (2, 4, "precision_parts_plant_spritelayout_5"),
     ],
 )

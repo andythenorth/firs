@@ -20,7 +20,7 @@ from industries import clay_pit
 from industries import coal_mine
 from industries import coffee_estate
 from industries import coke_oven
-from industries import component_factory
+from industries import precision_parts_plant
 from industries import copper_mine
 from industries import copper_smelter
 from industries import crane_and_hoist_factory
@@ -110,7 +110,7 @@ clay_pit.industry.register()
 coal_mine.industry.register()
 coffee_estate.industry.register()
 coke_oven.industry.register()
-component_factory.industry.register()
+precision_parts_plant.industry.register()
 copper_mine.industry.register()
 copper_smelter.industry.register()
 crane_and_hoist_factory.industry.register()
