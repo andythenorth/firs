@@ -52,7 +52,7 @@ from industries import iron_ore_mine
 from industries import lime_kiln
 from industries import limestone_mine
 from industries import liquids_terminal
-from industries import machine_shop
+from industries import tracked_machine_factory
 from industries import manganese_mine
 from industries import metal_workshop
 from industries import nitrate_mine
@@ -142,7 +142,7 @@ iron_ore_mine.industry.register()
 lime_kiln.industry.register()
 limestone_mine.industry.register()
 liquids_terminal.industry.register()
-machine_shop.industry.register()
+tracked_machine_factory.industry.register()
 manganese_mine.industry.register()
 metal_workshop.industry.register()
 nitrate_mine.industry.register()
