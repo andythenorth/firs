@@ -419,7 +419,7 @@ def main():
 
     # copy the cargo icons to an oversized image so they're legible
     cargo_icons_src = os.path.join(
-        currentdir, "src", "graphics", "other", "cargoicons.png"
+        currentdir, "src", "graphics", "cargoicons.png"
     )
     cargo_icons_spritesheet = Image.open(os.path.join(cargo_icons_src))
     processed_cargo_icons_spritesheet = cargo_icons_spritesheet.resize(
