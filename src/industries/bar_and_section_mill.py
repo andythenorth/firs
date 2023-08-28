@@ -219,7 +219,7 @@ industry.add_spritelayout(
     ],
     fences=[],
     # no animated object; fails on mismatched spritesets, TMWFTLB as of August 2023
-    #add_to_object_num=10,
+    # add_to_object_num=10,
 )
 
 # this industry needs outpost layout as there are lots of cargos

@@ -328,7 +328,9 @@ class DocHelper(object):
         return ("", "active")[doc_name == nav_link]
 
 
-def render_docs(doc_list, file_type, doc_helper, use_markdown=False, source_is_repo_root=False):
+def render_docs(
+    doc_list, file_type, doc_helper, use_markdown=False, source_is_repo_root=False
+):
     if source_is_repo_root:
         doc_path = os.path.join(currentdir)
     else:
@@ -393,15 +395,15 @@ def main():
 
     # we also have some strings which are docs-only, so get those
     # should be in a dedicated method probably, but eh
-    with open(os.path.join(currentdir, "src", "docs_templates", "extra_strings.toml"), "rb") as fp:
+    with open(
+        os.path.join(currentdir, "src", "docs_templates", "extra_strings.toml"), "rb"
+    ) as fp:
         extra_strings_source = tomllib.load(fp)
     for node_name, node_value in extra_strings_source.items():
-        lang_strings[node_name] = node_value['base']
-    #print(lang_strings)
+        lang_strings[node_name] = node_value["base"]
+    # print(lang_strings)
 
-    doc_helper = DocHelper(
-        lang_strings=lang_strings
-    )
+    doc_helper = DocHelper(lang_strings=lang_strings)
 
     for economy in registered_economies:
         enabled_cargos = [
@@ -418,9 +420,7 @@ def main():
         }
 
     # copy the cargo icons to an oversized image so they're legible
-    cargo_icons_src = os.path.join(
-        currentdir, "src", "graphics", "cargoicons.png"
-    )
+    cargo_icons_src = os.path.join(currentdir, "src", "graphics", "cargoicons.png")
     cargo_icons_spritesheet = Image.open(os.path.join(cargo_icons_src))
     processed_cargo_icons_spritesheet = cargo_icons_spritesheet.resize(
         (2 * cargo_icons_spritesheet.size[0], 2 * cargo_icons_spritesheet.size[1]),

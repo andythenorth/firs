@@ -34,6 +34,7 @@ if not os.path.exists(generated_nml_path):
 # get args passed by makefile
 makefile_args = utils.get_makefile_args(sys)
 
+
 def render_header_item_nml(header_item):
     template = templates[header_item + ".pynml"]
     result = utils.unescape_chameleon_output(
