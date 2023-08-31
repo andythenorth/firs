@@ -101,7 +101,7 @@ spriteset_extra_pipe_huts_rear = industry.add_spriteset(
 spriteset_extra_pipe_huts_front = industry.add_spriteset(
     sprites=[(780, 10, 64, 122, -31, -91)],
 )
-spriteset_extra_tile_tar_tanks = industry.add_spriteset(
+spriteset_tile_tar_tanks = industry.add_spriteset(
     sprites=[(850, 10, 64, 122, -31, -91)],
 )
 spriteset_pipe_gantry_angled = industry.add_spriteset(
@@ -113,7 +113,7 @@ spriteset_extra_coal_front = industry.add_spriteset(
 spriteset_extra_coal_rear = industry.add_spriteset(
     sprites=[(1060, 10, 64, 122, -31, -91)],
 )
-spriteset_extra_mostly_empty = industry.add_spriteset(
+spriteset_mostly_empty = industry.add_spriteset(
     sprites=[(1130, 10, 64, 122, -31, -91)],
 )
 sprite_smoke_big_1 = industry.add_smoke_sprite(
@@ -268,7 +268,7 @@ industry.add_spritelayout(
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_extra_tile_tar_tanks],
+    building_sprites=[spriteset_tile_tar_tanks],
     add_to_object_num=8,
 )
 industry.add_spritelayout(
@@ -288,11 +288,11 @@ industry.add_spritelayout(
     add_to_object_num=10,
 )
 industry.add_spritelayout(
-    id="coke_oven_spritelayout_extra_mostly_empty",
+    id="coke_oven_spritelayout_mostly_empty",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_extra_mostly_empty],
+    building_sprites=[spriteset_mostly_empty],
     add_to_object_num=13,
 )
 
@@ -325,7 +325,7 @@ industry.add_industry_outpost_layout(
         (0, 0, "coke_oven_spritelayout_coal_handling_rear"),
         (0, 1, "coke_oven_spritelayout_gas_plant_1"),
         (1, 0, "coke_oven_spritelayout_coal_handling_front"),
-        (1, 1, "coke_oven_spritelayout_gas_plant_1"),
+        (1, 1, "coke_oven_spritelayout_tar_tanks"),
     ],
 )
 industry.add_industry_outpost_layout(
@@ -333,7 +333,7 @@ industry.add_industry_outpost_layout(
     layout=[
         (0, 0, "coke_oven_spritelayout_gas_plant_1"),
         (0, 1, "coke_oven_spritelayout_coal_handling_rear"),
-        (1, 0, "coke_oven_spritelayout_gas_plant_1"),
+        (1, 0, "coke_oven_spritelayout_tar_tanks"),
         (1, 1, "coke_oven_spritelayout_coal_handling_front"),
     ],
 )
@@ -344,10 +344,10 @@ industry.add_industry_layout(
         (0, 0, "coke_oven_spritelayout_gas_plant_1"),
         (0, 1, "coke_oven_spritelayout_oven_battery_larry_car"),
         (0, 2, "coke_oven_spritelayout_pusher_rails_empty"),
-        (1, 0, "coke_oven_spritelayout_coal_handling_rear"),
+        (1, 0, "coke_oven_spritelayout_mostly_empty"),
         (1, 1, "coke_oven_spritelayout_oven_battery_pipes_only"),
         (1, 2, "coke_oven_spritelayout_pusher_rails_with_house"),
-        (2, 0, "coke_oven_spritelayout_coal_handling_front"),
+        (2, 0, "coke_oven_spritelayout_tar_tanks"),
         (2, 1, "coke_oven_spritelayout_silo"),
         (2, 2, "coke_oven_spritelayout_pusher_rails_animated"),
         (3, 0, "coke_oven_spritelayout_coal_handling_rear"),
@@ -368,8 +368,8 @@ industry.add_industry_layout(
         (1, 0, "coke_oven_spritelayout_coal_handling_front"),
         (1, 1, "coke_oven_spritelayout_oven_battery_larry_car"),
         (1, 2, "coke_oven_spritelayout_pusher_rails_empty"),
-        (1, 3, "coke_oven_spritelayout_empty"),
-        (2, 0, "coke_oven_spritelayout_empty"),
+        (1, 3, "coke_oven_spritelayout_tar_tanks"),
+        (2, 0, "coke_oven_spritelayout_mostly_empty"),
         (2, 1, "coke_oven_spritelayout_oven_battery_pipes_only"),
         (2, 2, "coke_oven_spritelayout_pusher_rails_with_house"),
         (2, 3, "coke_oven_spritelayout_coal_handling_rear"),
@@ -386,12 +386,12 @@ industry.add_industry_layout(
         (0, 1, "coke_oven_spritelayout_pusher_rails_with_house"),
         (0, 2, "coke_oven_spritelayout_quench_tower"),
         (0, 3, "coke_oven_spritelayout_gas_plant_1"),
-        (0, 4, "coke_oven_spritelayout_coal_handling_rear"),
+        (0, 4, "coke_oven_spritelayout_tar_tanks"),
         (1, 0, "coke_oven_spritelayout_silo"),
         (1, 1, "coke_oven_spritelayout_pusher_rails_animated"),
         (1, 2, "coke_oven_spritelayout_oven_battery_larry_car"),
         (1, 3, "coke_oven_spritelayout_pusher_rails_empty"),
-        (1, 4, "coke_oven_spritelayout_coal_handling_front"),
+        (1, 4, "coke_oven_spritelayout_mostly_empty"),
         (2, 0, "coke_oven_spritelayout_oven_battery_pipes_only"),
         (2, 1, "coke_oven_spritelayout_pusher_rails_empty"),
         (2, 2, "coke_oven_spritelayout_silo"),
@@ -407,22 +407,22 @@ industry.add_industry_layout(
 industry.add_industry_layout(
     id="coke_oven_industry_layout_4",
     layout=[
-        (0, 0, "coke_oven_spritelayout_empty"),
+        (0, 0, "coke_oven_spritelayout_coal_handling_rear"),
         (0, 1, "coke_oven_spritelayout_oven_battery_pipes_only"),
         (0, 2, "coke_oven_spritelayout_pusher_rails_with_house"),
         (0, 3, "coke_oven_spritelayout_oven_battery_pipes_only"),
         (0, 4, "coke_oven_spritelayout_pusher_rails_with_house"),
-        (1, 0, "coke_oven_spritelayout_coal_handling_rear"),
+        (1, 0, "coke_oven_spritelayout_coal_handling_front"),
         (1, 1, "coke_oven_spritelayout_silo"),
         (1, 2, "coke_oven_spritelayout_pusher_rails_empty"),
         (1, 3, "coke_oven_spritelayout_oven_battery_larry_car"),
         (1, 4, "coke_oven_spritelayout_pusher_rails_empty"),
-        (2, 0, "coke_oven_spritelayout_coal_handling_front"),
+        (2, 0, "coke_oven_spritelayout_gas_plant_1"),
         (2, 1, "coke_oven_spritelayout_oven_battery_larry_car"),
         (2, 2, "coke_oven_spritelayout_pusher_rails_animated"),
         (2, 3, "coke_oven_spritelayout_silo"),
         (2, 4, "coke_oven_spritelayout_pusher_rails_animated"),
-        (3, 0, "coke_oven_spritelayout_gas_plant_1"),
+        (3, 0, "coke_oven_spritelayout_tar_tanks"),
         (3, 1, "coke_oven_spritelayout_quench_tower"),
         (3, 2, "coke_oven_spritelayout_pusher_rails_empty"),
         (3, 3, "coke_oven_spritelayout_quench_tower"),
@@ -436,7 +436,7 @@ industry.add_industry_layout(
         (0, 1, "coke_oven_spritelayout_silo"),
         (0, 2, "coke_oven_spritelayout_quench_tower"),
         (0, 3, "coke_oven_spritelayout_silo"),
-        (0, 4, "coke_oven_spritelayout_gas_plant_1"),
+        (0, 4, "coke_oven_spritelayout_gas_plant_1"), # tar tanks don't fit in this layout, lolz
         (1, 0, "coke_oven_spritelayout_coal_handling_front"),
         (1, 1, "coke_oven_spritelayout_oven_battery_pipes_only"),
         (1, 2, "coke_oven_spritelayout_pusher_rails_animated"),
