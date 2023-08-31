@@ -95,6 +95,27 @@ spriteset_quench_tower = industry.add_spriteset(
 spriteset_gas_plant_1 = industry.add_spriteset(
     sprites=[(640, 10, 64, 122, -31, -91)],
 )
+spriteset_extra_pipe_huts_rear = industry.add_spriteset(
+    sprites=[(710, 10, 64, 122, -31, -91)],
+)
+spriteset_extra_pipe_huts_front = industry.add_spriteset(
+    sprites=[(780, 10, 64, 122, -31, -91)],
+)
+spriteset_extra_tile_tar_tanks = industry.add_spriteset(
+    sprites=[(850, 10, 64, 122, -31, -91)],
+)
+spriteset_pipe_gantry_angled = industry.add_spriteset(
+    sprites=[(920, 10, 64, 122, -31, -91)],
+)
+spriteset_extra_coal_front = industry.add_spriteset(
+    sprites=[(990, 10, 64, 122, -31, -91)],
+)
+spriteset_extra_coal_rear = industry.add_spriteset(
+    sprites=[(1060, 10, 64, 122, -31, -91)],
+)
+spriteset_extra_mostly_empty = industry.add_spriteset(
+    sprites=[(1130, 10, 64, 122, -31, -91)],
+)
 sprite_smoke_big_1 = industry.add_smoke_sprite(
     smoke_type="white_smoke_big",
     xoffset=8,
@@ -198,7 +219,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_gas_plant_1],
-    add_to_object_num=8,
+    add_to_object_num=7,
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_coal_handling_front",
@@ -206,7 +227,6 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_coal_handling_front],
-    add_to_object_num=7,
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_coal_handling_rear",
@@ -214,7 +234,88 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_coal_handling_rear],
+)
+industry.add_spritelayout(
+    id="coke_oven_spritelayout_extra_coal_front",
+    tile="coke_oven_tile_1",
+    ground_sprite=sprite_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_extra_coal_front],
+)
+industry.add_spritelayout(
+    id="coke_oven_spritelayout_extra_coal_rear",
+    tile="coke_oven_tile_1",
+    ground_sprite=sprite_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_extra_coal_rear],
+)
+industry.add_spritelayout(
+    id="coke_oven_spritelayout_extra_pipe_huts_front",
+    tile="coke_oven_tile_1",
+    ground_sprite=sprite_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_extra_pipe_huts_front],
+)
+industry.add_spritelayout(
+    id="coke_oven_spritelayout_extra_pipe_huts_rear",
+    tile="coke_oven_tile_1",
+    ground_sprite=sprite_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_extra_pipe_huts_rear],
+)
+industry.add_spritelayout(
+    id="coke_oven_spritelayout_tar_tanks",
+    tile="coke_oven_tile_1",
+    ground_sprite=sprite_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_extra_tile_tar_tanks],
+    add_to_object_num=8,
+)
+industry.add_spritelayout(
+    id="coke_oven_spritelayout_extra_pipe_gantry_plain",
+    tile="coke_oven_tile_1",
+    ground_sprite=sprite_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_pipe_gantry],
+    add_to_object_num=9,
+)
+industry.add_spritelayout(
+    id="coke_oven_spritelayout_extra_pipe_gantry_fancy",
+    tile="coke_oven_tile_1",
+    ground_sprite=sprite_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_pipe_gantry_angled],
+    add_to_object_num=10,
+)
+industry.add_spritelayout(
+    id="coke_oven_spritelayout_extra_mostly_empty",
+    tile="coke_oven_tile_1",
+    ground_sprite=sprite_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_extra_mostly_empty],
+    add_to_object_num=13,
+)
+
+industry.add_multi_tile_object(
     add_to_object_num=6,
+    view_layout=[
+        (0, 0, "coke_oven_spritelayout_coal_handling_rear"),
+        (1, 0, "coke_oven_spritelayout_coal_handling_front"),
+    ],
+)
+industry.add_multi_tile_object(
+    add_to_object_num=12,
+    view_layout=[
+        (0, 0, "coke_oven_spritelayout_extra_coal_rear"),
+        (1, 0, "coke_oven_spritelayout_extra_coal_front"),
+    ],
+)
+industry.add_multi_tile_object(
+    add_to_object_num=11,
+    view_layout=[
+        (0, 0, "coke_oven_spritelayout_extra_pipe_huts_rear"),
+        (0, 1, "coke_oven_spritelayout_extra_pipe_huts_front"),
+    ],
 )
 
 # this industry needs outpost layout as there are lots of cargos
