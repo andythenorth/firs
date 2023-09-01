@@ -11,27 +11,26 @@ Helper <- SuperLib.Helper;
 /* Local pseudo-libs, alphabetised */
 // Atlas handles map geometry
 require("atlas/atlas.nut");
-// Grind handles basic debugging and development tasks
-require("grind/grind.nut");
+// Grind handles using the story book as a fake debugger
+require("grind/debug_storybook.nut");
 // our own wrapper around default logging
-require("log.nut");
-Log <- _FIRSLog();
+require("vulcan/log.nut");
+Log <- VulcanLog();
 // our own implementation of pretty printing as I can't figure out how to use the one in Squirrel 2, if it exists
 require("repr.nut");
 Repr <- _Repr.Repr;
 // Persistent storage manager for save/load of state in savegame
 require("persistent_storage.nut");
-// Vulcan handles the economy / gameplay
-require("vulcan/vulcan_companies.nut");
-require("vulcan/vulcan_industry_cargo_stats.nut");
-require("vulcan/vulcan_industry_control.nut");
-require("vulcan/vulcan_industry_spec.nut");
-require("vulcan/vulcan_map_curator.nut");
-require("vulcan/vulcan_town_control.nut");
-require("vulcan/vulcan_town_story_book.nut");
+// Vulcan namespaces most of our scripts
+require("vulcan/companies.nut");
+require("vulcan/industry_cargo_stats.nut");
+require("vulcan/industry_control.nut");
+require("vulcan/industry_spec.nut");
+require("vulcan/map_curator.nut");
+require("vulcan/town_control.nut");
+require("vulcan/town_story_book.nut");
 
-/* GS files */
-// FIRS industry structure
+// exposes FIRS grf structure to GS
 require("firs.nut");
 // other GS files
 require("version.nut");

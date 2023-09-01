@@ -1,8 +1,9 @@
-// Wrapper around log so we can better control what's displayed
+// Vulcan-specific wrapper around log so we can better control what's displayed
 // inspired by Superlib.Log
+// namespaced to Vulcan because it needs to know about Vulcan constants, so it's not just a generic log
 // optional filtering by log types, rather than log levels, this is probably unwise, but eh
 
-class _FIRSLog {
+class VulcanLog {
     // no constructor, no Init
 
     // extend ReportLogStatus if classes are changed / added
@@ -12,19 +13,19 @@ class _FIRSLog {
 	static CLASS_VULCAN_TOWN_CONTROL = "log_class_vulcan_town_control";
 
     function Info(text, log_class=null) {
-        if (_FIRSLog.IsClassAccepted(log_class)) {
+        if (VulcanLog.IsClassAccepted(log_class)) {
             GSLog.Info("[" + _SuperLib_Helper.GetCurrentDateString() + "]  " + text);
         }
     }
 
     function Warning(text, log_class=null) {
-        if (_FIRSLog.IsClassAccepted(log_class)) {
+        if (VulcanLog.IsClassAccepted(log_class)) {
             GSLog.Warning("[" + _SuperLib_Helper.GetCurrentDateString() + "]  " + text)
         }
     }
 
     function Error(text, log_class=null) {
-        if (_FIRSLog.IsClassAccepted(log_class)) {
+        if (VulcanLog.IsClassAccepted(log_class)) {
             GSLog.Error("[" + _SuperLib_Helper.GetCurrentDateString() + "]  " + text);
         }
     }
@@ -49,7 +50,7 @@ class _FIRSLog {
 
         if (GSGameSettings.GetValue("gui.ai_developer_tools")) {
             foreach (log_class in log_classes) {
-                if (!GSController.GetSetting(_FIRSLog[log_class])) {
+                if (!GSController.GetSetting(VulcanLog[log_class])) {
                     Log.Info("Logging is currently off in settings for " + log_class);
                 }
             }

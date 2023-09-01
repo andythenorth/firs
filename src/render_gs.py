@@ -55,11 +55,15 @@ class GSHelper(object):
 
 
 def render_nuts(nuts_by_subdir):
-    # setup the places we look for templates
-    nut_templates = PageTemplateLoader(
-        os.path.join(currentdir, "src", "gs", "gs_templates"), format="text"
-    )
     for subdir_name, nuts in nuts_by_subdir.items():
+        if subdir_name == "root":
+            nut_templates = PageTemplateLoader(
+                os.path.join(currentdir, "src", "gs"), format="text"
+            )
+        else:
+            nut_templates = PageTemplateLoader(
+                os.path.join(currentdir, "src", "gs", subdir_name), format="text"
+            )
         if subdir_name == "root":
             dst_dir = gs_dst
         else:
@@ -109,22 +113,22 @@ def main():
         "root": [
             "firs",
             "info",
-            "log",
             "main",
             "persistent_storage",
             "repr",
             "version",
         ],
-        "grind": ["grind"],
+        "grind": ["debug_storybook"],
         "atlas": ["atlas"],
         "vulcan": [
-            "vulcan_companies",
-            "vulcan_industry_cargo_stats",
-            "vulcan_industry_control",
-            "vulcan_industry_spec",
-            "vulcan_map_curator",
-            "vulcan_town_control",
-            "vulcan_town_story_book",
+            "companies",
+            "industry_cargo_stats",
+            "industry_control",
+            "industry_spec",
+            "log",
+            "map_curator",
+            "town_control",
+            "town_story_book",
         ],
         # "minigames": ["winning_move", "zellepins"],
     }
