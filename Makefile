@@ -121,7 +121,7 @@ bundle_src: $(MD5_FILE)
 	$(MK_ARCHIVE) --tar --output=$(SOURCE_NAME).tar --base=$(SOURCE_NAME) \
 		`$(FIND_FILES) $(BUNDLE_DIR)/src` $(MD5_FILE)
 
-$(GS_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.pynut --ext=.txt src)
+$(GS_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.pynut --ext=.pt --ext=.txt src)
 	$(_V) $(PYTHON3) src/render_gs.py $(ARGS)
 
 # this expects to find a '../../grf.farm' path relative to the project, and will fail otherwise

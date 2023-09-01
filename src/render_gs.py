@@ -55,6 +55,10 @@ class GSHelper(object):
 
 
 def render_nuts(nuts_by_subdir):
+    meta_header = PageTemplateLoader(
+        os.path.join(currentdir, "src", "gs"), format="text"
+    )["_meta_header.pt"](git_info=git_info)
+
     for subdir_name, nuts in nuts_by_subdir.items():
         if subdir_name == "root":
             nut_templates = PageTemplateLoader(
@@ -77,6 +81,7 @@ def render_nuts(nuts_by_subdir):
             dst_file = codecs.open(
                 os.path.join(dst_dir, nut_name + ".nut"), "w", "utf8"
             )
+            dst_file.write(meta_header)
             result = utils.unescape_chameleon_output(
                 nut_template(
                     gs_helper=GSHelper(),
