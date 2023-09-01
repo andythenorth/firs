@@ -97,6 +97,29 @@ def render_nuts(nuts_by_subdir):
             dst_file.close()
 
 
+def render_docs(doc_list, file_type, source_is_repo_root=False):
+    if source_is_repo_root:
+        doc_path = os.path.join(currentdir)
+    else:
+        # GS doesn't have complex docs, so keep them with the GS src
+        doc_path = gs_src
+
+    docs_templates = PageTemplateLoader(doc_path, format="text")
+
+    for doc_name in doc_list:
+        template = docs_templates[
+            doc_name + ".pt"
+        ]  # .pt is the conventional extension for chameleon page templates
+        doc = template(git_info=git_info)
+        doc_file = codecs.open(
+            os.path.join(gs_dst, doc_name + "." + file_type),
+            "w",
+            "utf8",
+        )
+        doc_file.write(doc)
+        doc_file.close()
+
+
 def main():
     start = time()
     print("[RENDER GS] render_gs.py")
@@ -138,6 +161,18 @@ def main():
         # "minigames": ["winning_move", "zellepins"],
     }
     render_nuts(nuts_by_subdir)
+
+    license_docs = ["license"]
+    render_docs(
+        license_docs,
+        "txt",
+        source_is_repo_root=True,
+    )
+    plain_text_docs = ["readme"] # note no changelog as of Aug 2023, overkill, adjust as needed
+    render_docs(
+        plain_text_docs,
+        "txt",
+    )
 
     # copy lang dir also
     shutil.copytree(os.path.join(gs_src, "lang"), os.path.join(gs_dst, "lang"))
