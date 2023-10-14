@@ -45,7 +45,7 @@ industry.add_tile(
 )
 
 spriteset_ground_bakery = industry.add_spriteset(
-    type="cobble",
+    type="dirty_concrete",
 )
 spriteset_ground_overlay_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 31, -31, 0)],

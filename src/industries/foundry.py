@@ -90,7 +90,7 @@ spriteset_iron_pigs_anim = industry.add_spriteset(
     animation_rate=1,
 )
 spriteset_ground_pigs = industry.add_spriteset(
-    type="cobble",
+    type="dirty_concrete",
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_iron_pigs_anim.sprites),
 )

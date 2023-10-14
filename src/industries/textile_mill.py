@@ -35,7 +35,7 @@ industry.add_tile(
     ),
 )
 
-spriteset_ground = industry.add_spriteset(type="cobble")
+spriteset_ground = industry.add_spriteset(type="dirty_concrete")
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_large_chimney = industry.add_spriteset(
     sprites=[(10, 60, 64, 103, -31, -74)],
