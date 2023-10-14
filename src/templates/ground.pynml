@@ -6,7 +6,7 @@ template tmpl_ground_tile(x, y) {
 <tal:spritesets repeat="ground_tile [('mud', 0), ('dirty_concrete', 80), ('hard_standing_dirt', 150), ('snow', 290), ('slab', 360)]">
     <!--! the frame variants are to support animated, they're hard-coded to match current animation amounts and must be extended if industry animations evolve -->
     <tal:frame_variants repeat="frame_count global_constants.animated_ground_tile_frame_counts">
-        spriteset(spriteset_ground_tile_${ground_tile[0]}_${frame_count}, "src/graphics/ground_tiles.png") {
+        spriteset(spriteset_ground_tile_${ground_tile[0]}_${frame_count}, "src/graphics/ground.png") {
             <tal:autofill_sprites repeat="autosprite_num range(frame_count)">
                 tmpl_ground_tile(${ground_tile[1]}, 10)
             </tal:autofill_sprites>
