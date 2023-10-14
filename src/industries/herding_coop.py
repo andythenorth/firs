@@ -33,7 +33,7 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(type="empty")
-sprite_ground_mud = industry.add_sprite(sprite_number=3943)
+sprite_ground_dirt = industry.add_sprite(sprite_number=3943)
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 52, -31, -21)],
@@ -88,16 +88,16 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="herding_coop_spritelayout_paddock_1",
     tile="herding_coop_tile_1",
-    ground_sprite=sprite_ground_mud,
-    ground_overlay=sprite_ground_mud,
+    ground_sprite=sprite_ground_dirt,
+    ground_overlay=sprite_ground_dirt,
     building_sprites=[spriteset_4],
     terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="herding_coop_spritelayout_paddock_2",
     tile="herding_coop_tile_1",
-    ground_sprite=sprite_ground_mud,
-    ground_overlay=sprite_ground_mud,
+    ground_sprite=sprite_ground_dirt,
+    ground_overlay=sprite_ground_dirt,
     building_sprites=[spriteset_5],
     terrain_aware_ground=True,
 )

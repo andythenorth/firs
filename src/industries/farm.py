@@ -60,7 +60,7 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(type="empty")
-sprite_ground_mud = industry.add_sprite(sprite_number="GROUNDSPRITE_CLEARED")
+sprite_ground_dirt = industry.add_sprite(sprite_number="GROUNDSPRITE_CLEARED")
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 52, -31, -21)],
@@ -118,7 +118,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="farm_spritelayout_3",
     tile="farm_tile_1",
-    ground_sprite=sprite_ground_mud,
+    ground_sprite=sprite_ground_dirt,
     ground_overlay=spriteset_3_ground,
     building_sprites=[spriteset_3],
 )

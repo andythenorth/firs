@@ -28,7 +28,7 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(
-    type="slab",
+    type="pavement",
 )
 spriteset_ground_overlay = industry.add_spriteset(
     sprites=[(10, 10, 64, 31, -31, 0)],

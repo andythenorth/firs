@@ -61,7 +61,7 @@ industry.add_tile(
 
 
 spriteset_ground = industry.add_spriteset(
-    type="hard_standing_dirt",
+    type="gravel",
 )
 spriteset_ground_overlay = industry.add_spriteset(
     type="empty",
@@ -90,7 +90,7 @@ spriteset_iron_pigs_anim = industry.add_spriteset(
     animation_rate=1,
 )
 spriteset_ground_pigs = industry.add_spriteset(
-    type="dirty_concrete",
+    type="asphalt",
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_iron_pigs_anim.sprites),
 )
