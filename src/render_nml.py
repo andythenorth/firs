@@ -99,7 +99,7 @@ def main():
         "colour",
         "construction_states",
         "fences",
-        "ground_tiles",
+        "ground",
         "location_check_procedures_industry",
         "magic_trees",
         "perm_storage_mappings",
