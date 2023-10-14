@@ -40,7 +40,7 @@ industry.add_tile(
     ),
 )
 
-spriteset_ground = industry.add_spriteset(type="dirty_concrete")
+spriteset_ground = industry.add_spriteset(type="asphalt")
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 # spriteset_1 deprecated
 spriteset_2 = industry.add_spriteset(

@@ -56,7 +56,7 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(
-    type="dirty_concrete",
+    type="asphalt",
 )
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_silos = industry.add_spriteset(
@@ -107,7 +107,7 @@ spriteset_animated_dozer = industry.add_spriteset(
 )
 # filled out version of ground for slag pit with animation frames
 spriteset_animated_ground = industry.add_spriteset(
-    type="dirty_concrete",
+    type="asphalt",
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_animated_dozer.sprites),
 )

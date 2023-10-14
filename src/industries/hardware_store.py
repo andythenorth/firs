@@ -34,7 +34,7 @@ industry.add_tile(
 )
 
 hardware_store_spriteset_ground = industry.add_spriteset(
-    type="slab",
+    type="pavement",
 )
 hardware_store_spriteset_ground_overlay = industry.add_spriteset(
     type="empty",
