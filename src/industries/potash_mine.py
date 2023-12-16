@@ -11,7 +11,7 @@ industry = IndustryPrimaryExtractive(
     location_checks=dict(require_cluster=[70, 3]),
     prospect_chance="0.75",
     name="string(STR_IND_POTASH_MINE)",
-    nearby_station_name="string(STR_STATION_MINE)",
+    nearby_station_name="string(STR_STATION_POTASH_MINE)",
     fund_cost_multiplier="232",
     pollution_and_squalor_factor=1,
     primary_production_random_factor_set="wide_range",

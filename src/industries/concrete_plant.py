@@ -17,7 +17,7 @@ industry = IndustrySecondary(
     map_colour="10",
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
     name="string(STR_IND_CONCRETE_PLANT)",
-    nearby_station_name="string(STR_STATION_MERCHANTS_LANE)",
+    nearby_station_name="string(STR_STATION_CONCRETE_PLANT)",
     fund_cost_multiplier="80",
     sprites_complete=False,
 )

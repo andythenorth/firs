@@ -19,7 +19,7 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="49",
     name="string(STR_IND_TRACKED_MACHINE_FACTORY)",
-    nearby_station_name="string(STR_STATION_HEAVY_EQUIPMENT_YARD)",
+    nearby_station_name="string(STR_STATION_TRACKED_MACHINE_FACTORY)",
     fund_cost_multiplier="145",
     sprites_complete=False,
 )
