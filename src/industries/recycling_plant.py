@@ -28,6 +28,7 @@ industry.add_tile(
     location_checks=TileLocationChecks(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
+    sprites_complete=False,
 )
 
 spriteset_ground = industry.add_spriteset(type="asphalt")

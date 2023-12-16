@@ -21,6 +21,7 @@ industry = IndustryTertiary(
     fund_cost_multiplier="101",
     # for IndustryTertiary, this property doesn't have to be set unless there's production
     primary_production_random_factor_set="wide_range",
+    sprites_complete=True,
 )
 
 industry.enable_in_economy(

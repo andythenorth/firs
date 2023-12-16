@@ -18,6 +18,7 @@ industry = IndustryPrimaryOrganic(
     override_default_construction_states=True,
     provides_snow=True,
     primary_production_random_factor_set="wide_range",
+    sprites_complete=True,
 )
 
 industry.enable_in_economy(

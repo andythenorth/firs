@@ -15,6 +15,7 @@ industry = IndustryPrimaryPort(
     fund_cost_multiplier="152",
     override_default_construction_states=True,
     primary_production_random_factor_set="wide_range",
+    sprites_complete=True,
 )
 
 industry.enable_in_economy(

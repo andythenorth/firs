@@ -18,6 +18,7 @@ industry = IndustryTownProducerPopulationDependent(
     fund_cost_multiplier="118",
     intro_year=1978,
     provides_snow=True,
+    sprites_complete=False,
 )
 
 

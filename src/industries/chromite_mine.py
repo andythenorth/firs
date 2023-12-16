@@ -12,6 +12,7 @@ industry = IndustryPrimaryExtractive(
     nearby_station_name="string(STR_STATION_PYRITES)",
     fund_cost_multiplier="252",
     primary_production_random_factor_set="wide_range",
+    sprites_complete=False,
 )
 
 # industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

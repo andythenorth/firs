@@ -12,6 +12,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_BRINE_WORKS)",
     fund_cost_multiplier="170",
     pollution_and_squalor_factor=2,
+    sprites_complete=True,
 )
 
 industry.enable_in_economy(

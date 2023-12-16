@@ -16,6 +16,7 @@ industry = IndustryPrimaryOrganic(
     nearby_station_name="string(STR_STATION_HERDING_COOP)",
     fund_cost_multiplier="88",
     primary_production_random_factor_set="wide_range",
+    sprites_complete=True,
 )
 
 industry.enable_in_economy(

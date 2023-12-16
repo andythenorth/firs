@@ -16,6 +16,7 @@ industry = IndustrySecondary(
     name="string(STR_IND_FEED_MILL)",
     nearby_station_name="string(STR_STATION_MILLS)",
     fund_cost_multiplier="170",
+    sprites_complete=False,
 )
 
 industry.add_tile(

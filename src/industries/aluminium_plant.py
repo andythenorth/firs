@@ -15,6 +15,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_SMELTER)",
     fund_cost_multiplier="200",
     provides_snow=True,
+    sprites_complete=False,
 )
 
 # industry.enable_in_economy("MILD_MILD_WEST",)

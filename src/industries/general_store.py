@@ -20,6 +20,7 @@ industry = IndustryTertiary(
     nearby_station_name="string(STR_STATION_TOWN_3)",
     fund_cost_multiplier="15",
     provides_snow=True,
+    sprites_complete=True,
 )
 
 industry.enable_in_economy(

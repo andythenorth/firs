@@ -14,6 +14,7 @@ industry = IndustrySecondary(
     name="string(STR_IND_TINPLATE_WORKS)",
     nearby_station_name="string(STR_STATION_HEAVY_INDUSTRY_2)",
     fund_cost_multiplier="120",
+    sprites_complete=False,
 )
 
 # Tinplate is *not* in Steeltown because it fragments the consumers of Acid too much.  Maybe Better Living Through Chemistry?

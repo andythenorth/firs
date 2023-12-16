@@ -1472,6 +1472,7 @@ class Industry(object):
             self, kwargs.get("location_checks", {})
         )
         self.provides_snow = kwargs.get("provides_snow", False)
+        self.sprites_complete = kwargs["sprites_complete"]
 
     def register(self):
         if (

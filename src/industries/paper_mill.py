@@ -19,6 +19,7 @@ industry = IndustrySecondary(
     name="TTD_STR_INDUSTRY_NAME_PAPER_MILL",
     override="14",
     pollution_and_squalor_factor=2,
+    sprites_complete=True,
 )
 
 industry.enable_in_economy(

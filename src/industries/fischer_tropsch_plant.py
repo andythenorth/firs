@@ -16,6 +16,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="200",
     name="string(STR_IND_FISCHER_TROPSCH_PLANT)",
     nearby_station_name="string(STR_STATION_REFINERY)",
+    sprites_complete=False,
 )
 
 # industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

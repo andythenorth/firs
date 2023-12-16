@@ -23,6 +23,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="150",
     override_default_construction_states=True,
     pollution_and_squalor_factor=1,
+    sprites_complete=True,
 )
 
 industry.enable_in_economy(

@@ -15,6 +15,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="115",
     pollution_and_squalor_factor=2,
     provides_snow=True,
+    sprites_complete=True,
 )
 
 industry.enable_in_economy(
