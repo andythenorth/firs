@@ -17,6 +17,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="200",
     name="TTD_STR_INDUSTRY_NAME_OIL_REFINERY",
     nearby_station_name="string(STR_STATION_REFINERY)",
+    sprites_complete=True,
 )
 
 industry.add_tile(

@@ -15,6 +15,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_HEAVY_EQUIPMENT_YARD)",
     fund_cost_multiplier="145",
     intro_year=1790,
+    sprites_complete=False,
 )
 
 industry.enable_in_economy(

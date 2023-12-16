@@ -16,6 +16,7 @@ industry = IndustryTertiary(
     nearby_station_name="string(STR_STATION_MERCHANTS_LANE)",
     fund_cost_multiplier="16",
     provides_snow=True,
+    sprites_complete=True,
 )
 
 

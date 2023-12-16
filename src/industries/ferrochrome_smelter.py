@@ -16,6 +16,7 @@ industry = IndustrySecondary(
     name="string(STR_IND_FERROCHROME_SMELTER)",
     nearby_station_name="string(STR_STATION_SMELTER)",
     fund_cost_multiplier="120",
+    sprites_complete=False,
 )
 
 # industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

@@ -19,6 +19,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_DYNAMO)",
     fund_cost_multiplier="120",
     provides_snow=True,
+    sprites_complete=False,
 )
 
 # industry.economy_variations['STEELTOWN'].enabled = True

@@ -18,6 +18,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_REFINERY)",
     fund_cost_multiplier="170",
     provides_snow=True,
+    sprites_complete=False,
 )
 
 

@@ -20,6 +20,7 @@ industry = IndustryPrimaryPort(
     nearby_station_name="string(STR_STATION_POWERHUNGRY)",
     fund_cost_multiplier="15",
     primary_production_random_factor_set="wide_range",
+    sprites_complete=False,
 )
 
 industry.add_tile(

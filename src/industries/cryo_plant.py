@@ -22,6 +22,7 @@ industry = IndustryPrimaryNoSupplies(
     allow_production_change_from_gs=True,
     # cryo plant is more satisfying with medium range randomisation
     primary_production_random_factor_set="medium_range",
+    sprites_complete=True,
 )
 
 industry.enable_in_economy(

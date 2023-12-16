@@ -127,7 +127,7 @@
                                 </span>
                             </td>
                             <td>${doc_helper.get_nearby_station_name(industry)}</td>
-                            <td>${industry.get_property('pollution_and_squalor_factor', None)}</td>
+                            <td>${industry.sprites_complete}</td>
                         </tr>
                     </tal:industry>
                 </tal:industries>

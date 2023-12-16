@@ -18,6 +18,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="63",
     expiry_year=1948,
     provides_snow=True,
+    sprites_complete=False,
 )
 
 

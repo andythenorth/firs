@@ -15,6 +15,7 @@ industry = IndustryPrimaryOrganic(
     fund_cost_multiplier="45",
     provides_snow=True,
     primary_production_random_factor_set="wide_range",
+    sprites_complete=False,
 )
 
 industry.add_tile(

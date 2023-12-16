@@ -17,6 +17,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_SUGAR_COMPANY)",
     fund_cost_multiplier="140",
     provides_snow=True,
+    sprites_complete=False,
 )
 
 industry.add_tile(
