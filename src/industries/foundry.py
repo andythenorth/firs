@@ -16,7 +16,7 @@ industry = IndustrySecondary(
     ],
     prob_in_game="2",
     prob_map_gen="5",
-    map_colour="168",
+    map_colour="166",
     name="string(STR_IND_FORGE_AND_FOUNDRY)",
     nearby_station_name="string(STR_STATION_FORGE)",
     fund_cost_multiplier="63",
