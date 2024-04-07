@@ -23,7 +23,6 @@ from industries import coke_oven
 from industries import precision_parts_plant
 from industries import copper_mine
 from industries import copper_smelter
-from industries import crane_and_hoist_factory
 from industries import cryo_plant
 from industries import dairy
 from industries import dairy_farm
@@ -88,7 +87,6 @@ from industries import tyre_plant
 from industries import vehicle_distributor
 from industries import vineyard
 from industries import wharf
-from industries import wire_rope_factory
 from industries import wire_rod_mill
 
 appliance_factory.industry.register()
@@ -113,7 +111,6 @@ coke_oven.industry.register()
 precision_parts_plant.industry.register()
 copper_mine.industry.register()
 copper_smelter.industry.register()
-crane_and_hoist_factory.industry.register()
 cryo_plant.industry.register()
 dairy.industry.register()
 dairy_farm.industry.register()
@@ -178,5 +175,4 @@ tyre_plant.industry.register()
 vehicle_distributor.industry.register()
 vineyard.industry.register()
 wharf.industry.register()
-wire_rope_factory.industry.register()
 wire_rod_mill.industry.register()

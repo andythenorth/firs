@@ -6,7 +6,7 @@ industry = IndustrySecondary(
         ("VPTS", 2),
         ("VENG", 1),
         ("STSE", 3),
-        ("LFEQ", 1),  # possibly redundant but eh, makes cargoflow look better
+        ("PUMP", 1),
         ("WELD", 1),
     ],
     prod_cargo_types_with_output_ratios=[

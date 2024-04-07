@@ -26,7 +26,7 @@ economy = Economy(
         "coal_tar",
         "coke",
         "concrete_products",
-        "cranes_and_hoists",
+        "cranes_and_hoists", # !!! deprecated, needs removed
         "electrical_parts",
         "engineering_supplies",
         "farm_supplies",
@@ -34,7 +34,7 @@ economy = Economy(
         "forgings_and_castings",
         "glass",
         "iron_ore",
-        "lifting_equipment",
+        "lifting_equipment", # !!! deprecated, needs removed
         "limestone",
         "lye",
         "elastomer_products", # !! out of order to preserve testing savegame, needs moved
@@ -61,7 +61,7 @@ economy = Economy(
         "steel_sheet",
         "steel_tube",
         "steel_wire_rod",
-        "steel_wire_rope",
+        "steel_wire_rope", # !!! deprecated, needs removed
         "sulphur",
         "tyre_cord",
         "tyres",
@@ -97,7 +97,7 @@ economy = Economy(
             ("same", ["lime_kiln", "glass_works"]),
             ("same", ["engine_plant", "tyre_plant", "body_plant"]),
             ("same", ["oxygen", "coke", "iron_ore"]),
-            ("sink", ["food", "farm", "cranes_and_hoists", "hardware", "goods", "vehicles", "pipework", "assembly_plant", "tracked_machine_factory", "pipework_fabricator", "crane_and_hoist_factory"]),
+            ("sink", ["food", "farm", "hardware", "goods", "vehicles", "pipework", "assembly_plant", "tracked_machine_factory", "pipework_fabricator"]),
         ],
         "clusters": [
             {

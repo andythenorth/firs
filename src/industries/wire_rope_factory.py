@@ -23,9 +23,11 @@ industry = IndustrySecondary(
     sprites_complete=False,
 )
 
+"""
 industry.enable_in_economy(
     "STEELTOWN",
 )
+"""
 
 industry.add_tile(
     id="wire_rope_factory_tile_1",

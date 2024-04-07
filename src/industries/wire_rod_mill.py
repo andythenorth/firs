@@ -8,9 +8,8 @@ industry = IndustrySecondary(
         ("SOAP", 2),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("STWR", 4),
-        ("RBAR", 2),
-        ("TYCO", 1),
+        ("RBAR", 3),
+        ("TYCO", 2),
         ("WELD", 1),
     ],
     # do not build during gameplay
