@@ -42,7 +42,6 @@ industry.enable_in_economy(
         "HWAR",
         "PPWK",
         "VEHI",
-        "CRAN",
     ],
     prod_cargo_types_with_multipliers=[
         ("ENSP", 12),

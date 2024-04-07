@@ -25,7 +25,6 @@ from cargos import coke
 from cargos import copper
 from cargos import copper_concentrate
 from cargos import copper_ore
-from cargos import cranes_and_hoists
 from cargos import diamonds
 from cargos import edible_oil
 from cargos import elastomer_products
@@ -48,7 +47,6 @@ from cargos import hardware
 from cargos import hydrochloric_acid
 from cargos import iron_ore
 from cargos import kaolin
-from cargos import lifting_equipment
 from cargos import livestock
 from cargos import limestone
 from cargos import logs
@@ -100,7 +98,6 @@ from cargos import steel_sheet
 from cargos import steel_slab
 from cargos import steel_tube
 from cargos import steel_wire_rod
-from cargos import steel_wire_rope
 from cargos import sulphur
 from cargos import sulphuric_acid
 from cargos import timber
@@ -142,7 +139,6 @@ coke.cargo.register()
 copper.cargo.register()
 # IAHC copper_concentrate.cargo.register()
 copper_ore.cargo.register()
-cranes_and_hoists.cargo.register()
 diamonds.cargo.register()
 edible_oil.cargo.register()
 elastomer_products.cargo.register()
@@ -165,7 +161,6 @@ grain.cargo.register()
 hardware.cargo.register()
 iron_ore.cargo.register()
 kaolin.cargo.register()
-lifting_equipment.cargo.register()
 livestock.cargo.register()
 limestone.cargo.register()
 logs.cargo.register()
@@ -217,7 +212,6 @@ steel_sheet.cargo.register()
 steel_slab.cargo.register()
 steel_tube.cargo.register()
 steel_wire_rod.cargo.register()
-steel_wire_rope.cargo.register()
 sulphur.cargo.register()
 # BLTC sulphuric_acid.cargo.register()
 timber.cargo.register()

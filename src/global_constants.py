@@ -124,22 +124,22 @@ industry_numeric_ids = dict(
     wire_rod_mill=115,
     strip_mill=116,
     pipework_fabricator=117,
-    wire_rope_factory=118,
+    ####UNUSED?####wire_rope_factory=118,
     concrete_plant=119,
     elastomer_products_plant=120,
-    crane_and_hoist_factory=121,
+    ####UNUSED?####crane_and_hoist_factory=121,
 )
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
 tile_numeric_ids = dict(
     appliance_factory_tile_1=70,
-    crane_and_hoist_factory_tile_1=71,
+    ####UNUSED?####crane_and_hoist_factory_tile_1=71,
     elastomer_products_plant_tile_1=72,
     elastomer_products_plant_tile_2=73,
     plate_mill_tile_1=74,
     bar_and_section_mill_tile_2=75,
     concrete_plant_tile_1=76,
-    wire_rope_factory_tile_1=77,
+    ####UNUSED?####wire_rope_factory_tile_1=77,
     pipework_fabricator_tile_1=78,
     strip_mill_tile_1=79,
     wire_rod_mill_tile_1=80,
