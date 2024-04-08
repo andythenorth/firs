@@ -3,20 +3,11 @@ from economy import Economy
 economy = Economy(
     id="STEELTOWN",
     numeric_id=5,
-    # as of May 2015 the following cargos must have fixed positions if used by an economy:
-    # passengers: 0, mail: 2, goods 5, food 11
-    # keep the rest of the cargos alphabetised
-    # bump the min. compatible version if this list changes
     cargos=[
-        "passengers",
         "acid",
-        "mail",
         "aggregates",
-        "steel_slab", # !! out of order to preserve testing savegame, needs moved
-        "goods",
-        "hardware", # !! out of order to preserve testing savegame, needs moved
+        "aluminium",
         "carbon_black",
-        "steel_billets_and_blooms", # !! out of order to preserve testing savegame, needs moved
         "cast_iron",
         "cement",
         "food",
@@ -26,25 +17,26 @@ economy = Economy(
         "coal_tar",
         "coke",
         "concrete_products",
-        "cranes_and_hoists", # !!! deprecated, needs removed
+        "elastomer_products",
         "electrical_parts",
         "engineering_supplies",
         "farm_supplies",
         "ferroalloys",
         "forgings_and_castings",
         "glass",
+        "goods",
+        "hardware",
         "iron_ore",
-        "lifting_equipment", # !!! deprecated, needs removed
         "limestone",
         "lye",
-        "elastomer_products", # !! out of order to preserve testing savegame, needs moved
+        "mail",
         "nitrogen",
         "oxygen",
         "paints_and_coatings",
+        "passengers",
         "pig_iron",
         "potash",
         "pipework",
-        "aluminium", # !! out of order to preserve testing savegame, needs moved
         "pumps_and_valves",
         "quicklime",
         "rebar",
@@ -54,14 +46,15 @@ economy = Economy(
         "scrap_metal",
         "slag",
         "soda_ash",
+        "steel_billets_and_blooms",
         "steel_ingots",
         "steel_merchant_bar",
         "steel_pipe",
         "steel_sections",
         "steel_sheet",
+        "steel_slab",
         "steel_tube",
         "steel_wire_rod",
-        "steel_wire_rope", # !!! deprecated, needs removed
         "sulphur",
         "tyre_cord",
         "tyres",

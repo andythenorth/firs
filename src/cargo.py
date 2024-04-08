@@ -65,20 +65,6 @@ class Cargo(object):
             if self.id in economy.cargo_ids:
                 # create an economy variation
                 numeric_id = economy.cargo_ids.index(self.id)
-                # As of May 2015, OTTD requires some cargos in specific slots, otherwise default houses break
-                mandatory_numeric_ids = {"PASS": 0, "MAIL": 2, "GOOD": 5, "FOOD": 11}
-                for key, value in mandatory_numeric_ids.items():
-                    if self.cargo_label == key and numeric_id != value:
-                        raise Exception(
-                            "Economy "
-                            + economy.id
-                            + ": has cargo "
-                            + self.id
-                            + " in position "
-                            + str(numeric_id)
-                            + "; needs to be in position "
-                            + str(value)
-                        )
                 self.economy_variations[economy] = {"numeric_id": numeric_id}
 
         # guard against overlapping icon indices, icons should be unique per cargo
