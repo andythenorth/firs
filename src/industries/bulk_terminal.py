@@ -39,7 +39,6 @@ industry.enable_in_economy(
         ("FEAL", 20),
         ("ALUM", 11),
         ("ZINC", 16),
-        ("ACID", 8),
     ],
 )
 
