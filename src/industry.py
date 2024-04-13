@@ -1735,39 +1735,14 @@ class Industry(object):
                                     tile_def[3],
                                 )
                                 combined_layout.append(new_tile_def)
-                            # layouts can't use -ve xy values,
-                            # ensure that the layout is valid by transposing it to put north tile on 0,0
-                            # temp IndustryLayout objs created here just to use their min_x, min_y methods for convenience
-                            shift_x = (
-                                -1
-                                * IndustryLayout(
-                                    industry=self,
-                                    id=new_id,
-                                    layout=combined_layout,
-                                    validate_xy=False,
-                                ).min_x
-                            )
-                            shift_y = (
-                                -1
-                                * IndustryLayout(
-                                    industry=self,
-                                    id=new_id,
-                                    layout=combined_layout,
-                                    validate_xy=False,
-                                ).min_y
-                            )
-                            shifted_layout = []
-                            for tile_def in combined_layout:
-                                shifted_tile_def = (
-                                    tile_def[0] + shift_x,
-                                    tile_def[1] + shift_y,
-                                    tile_def[2],
-                                    tile_def[3],
+                            transposed_layout = (
+                                self.transpose_industry_layout_to_set_n_tile_as_origin(
+                                    combined_layout
                                 )
-                                shifted_layout.append(shifted_tile_def)
+                            )
                             result.append(
                                 IndustryLayout(
-                                    industry=self, id=new_id, layout=shifted_layout
+                                    industry=self, id=new_id, layout=transposed_layout
                                 )
                             )
         return result
@@ -1779,6 +1754,39 @@ class Industry(object):
         for layout in self._industry_layouts["jetties"]:
             result.append(layout)
         return result
+
+    def transpose_industry_layout_to_set_n_tile_as_origin(self, layout):
+        transposed_layout = []
+        # layouts can't use -ve xy values,
+        # ensure that the layout is valid by transposing it to put north tile on 0,0
+        # temp IndustryLayout objs created here just to use their min_x, min_y methods for convenience
+        transpose_x = (
+            -1
+            * IndustryLayout(
+                industry=self,
+                id="temp",
+                layout=layout,
+                validate_xy=False,
+            ).min_x
+        )
+        transpose_y = (
+            -1
+            * IndustryLayout(
+                industry=self,
+                id="temp",
+                layout=layout,
+                validate_xy=False,
+            ).min_y
+        )
+        for tile_def in layout:
+            transposed_tile_def = (
+                tile_def[0] + transpose_x,
+                tile_def[1] + transpose_y,
+                tile_def[2],
+                tile_def[3],
+            )
+            transposed_layout.append(transposed_tile_def)
+        return transposed_layout
 
     @property
     def industry_layouts_as_nml_property(self):
