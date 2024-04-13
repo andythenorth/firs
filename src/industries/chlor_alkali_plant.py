@@ -206,7 +206,7 @@ industry.add_spritelayout(
 # this industry needs outpost layout as there are lots of cargos
 # generally outposts are 2x2, but this industry uses 3x2 or so as the sprites seem to work better with it
 industry.add_industry_outpost_layout(
-    id="coke_oven_industry_outpost_layout_1",
+    id="chlor_alkali_plant_industry_outpost_layout_1",
     layout=[
         (
             0,
@@ -241,7 +241,7 @@ industry.add_industry_outpost_layout(
     ],
 )
 industry.add_industry_outpost_layout(
-    id="coke_oven_industry_outpost_layout_2",
+    id="chlor_alkali_plant_industry_outpost_layout_2",
     layout=[
         (
             0,
