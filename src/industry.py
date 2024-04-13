@@ -1693,7 +1693,7 @@ class Industry(object):
                             # 0 - (outpost_layout.xy_dimensions[1] + 2),
                             # ),
                         ]
-                        for outpust_direction_counter, xy_offset in enumerate(
+                        for outpost_direction_counter, xy_offset in enumerate(
                             outpost_xy_offsets
                         ):
                             composite_layout_counter += 1
@@ -1704,7 +1704,7 @@ class Industry(object):
                                 + "_"
                                 + outpost_layout.id
                                 + "_"
-                                + str(outpust_direction_counter)
+                                + str(outpost_direction_counter)
                                 + "_composite_layout_num_"
                                 + str(composite_layout_counter)
                             )
