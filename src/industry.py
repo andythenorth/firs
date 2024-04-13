@@ -800,7 +800,13 @@ class GRFObject(object):
         # we allocate up a range of up to 100 object numeric IDs per industry, using the industry numeric ID
         # this will keep object IDs relatively stable across releases unless the industry numeric ID changes or add_to_object_num changes
         if add_to_object_num > 99:
-            raise BaseException("Industry " + industry.id + " defines an object with numeric ID " + str(add_to_object_num) + " which exceeds the limit of 99")
+            raise BaseException(
+                "Industry "
+                + industry.id
+                + " defines an object with numeric ID "
+                + str(add_to_object_num)
+                + " which exceeds the limit of 99"
+            )
         self.numeric_id = (industry.numeric_id * 100) + add_to_object_num
         self.views = []
         self.industry = industry
@@ -1425,7 +1431,9 @@ class IndustryProperties(object):
         )
         self.extra_text_fund = kwargs.get("extra_text_fund", None)
         # used by primaries only as of August 2023
-        self.primary_production_random_factor_set = kwargs.get("primary_production_random_factor_set", None)
+        self.primary_production_random_factor_set = kwargs.get(
+            "primary_production_random_factor_set", None
+        )
         # default and/or economy-specific configuration for FIRS GS at compile time
         self.vulcan_config = kwargs.get("vulcan_config", {})
         # nml properties we want to prevent being set for one reason or another
@@ -1457,7 +1465,7 @@ class Industry(object):
         # objects dict keyed on the object num local to the industry, for convenience of access creating/appending - isn't significant for rendering
         self.objects = {}
         self.extra_graphics_switches = []
-        self._industry_layouts = {"core": [], "outposts": []}
+        self._industry_layouts = {"core": [], "outposts": [], "jetties": []}
         self.default_industry_properties = IndustryProperties(**kwargs)
         # economy variation structure is provisioned containing all economies, but with empty industry config, industry is then enabled for economies later
         # this could be changed so that economies are only provisioned by enable_in_economy(), but it's easy to ensure economy looks up don't fail this way
@@ -1570,6 +1578,9 @@ class Industry(object):
     def add_industry_outpost_layout(self, *args, **kwargs):
         return self.add_industry_layout("outposts", *args, **kwargs)
 
+    def add_industry_jetty_layout(self, *args, **kwargs):
+        return self.add_industry_layout("jetties", *args, **kwargs)
+
     def add_economy_variation(self, economy):
         self.economy_variations[economy.id] = IndustryProperties()
 
@@ -1634,6 +1645,15 @@ class Industry(object):
 
     @property
     def industry_layouts(self):
+        # JFDI switching, it's either default layouts or jetties (for port-type and harbour industries)
+        if len(self._industry_layouts["jetties"]) > 0:
+            # jetties can't be combined with other industry layout approaches, it's XOR
+            return self.industry_layouts_jetties
+        else:
+            return self.industry_layouts_default
+
+    @property
+    def industry_layouts_default(self):
         # industry layouts are composed from
         # - main layouts in _industry_layouts
         # - optional outpost layouts
@@ -1753,6 +1773,14 @@ class Industry(object):
         return result
 
     @property
+    def industry_layouts_jetties(self):
+        # non-standard case, used for port-type industries and harbours
+        result = []
+        for layout in self._industry_layouts["jetties"]:
+            result.append(layout)
+        return result
+
+    @property
     def industry_layouts_as_nml_property(self):
         result = [
             industry_layout.id + "_tilelayout"
@@ -1761,18 +1789,29 @@ class Industry(object):
         return "layouts: [" + ",".join(result) + "];"
 
     def randomise_primary_production_on_build_as_nml_property(self, economy):
-        if self.get_property("prod_cargo_types_with_multipliers", economy) in [None, []]:
+        if self.get_property("prod_cargo_types_with_multipliers", economy) in [
+            None,
+            [],
+        ]:
             # if there's no production, there's no point setting this prop (this mostly handles case of IndustryTertiary where hotel produces and others do not)
             return ""
         else:
             # don't otherwise bother handling errors, just fail if this is missing
-            primary_production_random_factor_set = self.get_property("primary_production_random_factor_set", economy)
+            primary_production_random_factor_set = self.get_property(
+                "primary_production_random_factor_set", economy
+            )
             params = [
                 self.get_perm_num("base_prod_factor"),
                 # we want the index of the primary_production_random_factor_set so we can switch on it in nml
-                global_constants.primary_production_random_factor_sets.index(primary_production_random_factor_set)
+                global_constants.primary_production_random_factor_sets.index(
+                    primary_production_random_factor_set
+                ),
             ]
-            return "build_prod_change: randomise_primary_production_on_build(" + ",".join([str(i) for i in params]) + ");"
+            return (
+                "build_prod_change: randomise_primary_production_on_build("
+                + ",".join([str(i) for i in params])
+                + ");"
+            )
 
     def get_extra_text_fund(self, economy):
         # some fund text options are orthogonal, there is no support for combining them currently
