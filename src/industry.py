@@ -1654,13 +1654,13 @@ class Industry(object):
                         outpost_xy_offsets = [
                             # north
                             (
-                                0 - (outpost_layout.xy_dimensions[0] + 1),
+                                0 - (outpost_layout.xy_dimensions[0] + 2),
                                 0 - (outpost_layout.xy_dimensions[1] + 1),
                             ),
                             # south
                             (
                                 core_layout.xy_dimensions[0] + 1,
-                                core_layout.xy_dimensions[1] + 1,
+                                core_layout.xy_dimensions[1] + 2,
                             ),
                             # east
                             (
@@ -1698,7 +1698,6 @@ class Industry(object):
                         ):
                             composite_layout_counter += 1
                             combined_layout = core_layout.layout.copy()
-                            # !! might want to improve this id generation - calculate the actual layout number - eases grf debugging?
                             new_id = (
                                 core_layout.id
                                 + "_"
