@@ -215,7 +215,7 @@ industry.add_magic_spritelayout(
     base_id="trading_post_spritelayout_coast_small_warehouse",
     tile="trading_post_tile_2",
     config={
-        "ground_sprite": spriteset_ground_empty,  # should alqways be empty for this magic spritelayout
+        "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
         "building_sprites": [spriteset_concrete, spriteset_small_warehouse],
         "foundation_sprites": {
             "ne_sw": spriteset_jetty_ne_sw,
@@ -232,7 +232,7 @@ industry.add_magic_spritelayout(
     base_id="trading_post_spritelayout_coast_large_warehouse",
     tile="trading_post_tile_2",
     config={
-        "ground_sprite": spriteset_ground_empty,  # should alqways be empty for this magic spritelayout
+        "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
         "building_sprites": [spriteset_concrete, spriteset_large_warehouse],
         "foundation_sprites": {
             "ne_sw": spriteset_jetty_ne_sw,

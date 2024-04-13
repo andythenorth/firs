@@ -314,7 +314,7 @@ industry.add_magic_spritelayout(
     base_id="bulk_terminal_spritelayout_coast_tanks",
     tile="bulk_terminal_tile_2",
     config={
-        "ground_sprite": spriteset_ground_empty,  # should alqways be empty for this magic spritelayout
+        "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
         "building_sprites": [spriteset_concrete, spriteset_tanks],
         "foundation_sprites": {
             "ne_sw": spriteset_jetty_ne_sw,
@@ -331,7 +331,7 @@ industry.add_magic_spritelayout(
     base_id="bulk_terminal_spritelayout_coast_warehouse",
     tile="bulk_terminal_tile_2",
     config={
-        "ground_sprite": spriteset_ground_empty,  # should alqways be empty for this magic spritelayout
+        "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
         "building_sprites": [spriteset_concrete, spriteset_warehouse],
         "foundation_sprites": {
             "ne_sw": spriteset_jetty_ne_sw,
