@@ -1646,8 +1646,11 @@ class Industry(object):
     @property
     def industry_layouts(self):
         # JFDI switching, it's either default layouts or jetties (for port-type and harbour industries)
+        # jetties can't be combined with other industry layout approaches, it's XOR
         if len(self._industry_layouts["jetties"]) > 0:
-            # jetties can't be combined with other industry layout approaches, it's XOR
+            # precisely 2 jetty layouts must be provided
+            if len(self._industry_layouts["jetties"]) != 2:
+                raise BaseException("For industry using jetty layouts, precisely 2 layouts must be provided; industry " + self.id + " provides " + str(len(self._industry_layouts["jetties"])))
             return self.industry_layouts_jetties
         else:
             return self.industry_layouts_default

@@ -423,7 +423,7 @@ industry.add_industry_layout(
     ],
 )
 industry.add_industry_jetty_layout(
-    id="wharf_industry_layout_3",
+    id="wharf_industry_jetty_layout_1",
     layout=[
         (0, 1, "wharf_spritelayout_coast_warehouse"),
         (0, 2, "wharf_spritelayout_coast_warehouse"),
@@ -457,7 +457,7 @@ industry.add_industry_jetty_layout(
     ],
 )
 industry.add_industry_jetty_layout(
-    id="wharf_industry_layout_4",
+    id="wharf_industry_jetty_layout_2",
     layout=[
         (0, 0, "wharf_spritelayout_coast_tanks"),
         (0, 1, "wharf_spritelayout_11"),
