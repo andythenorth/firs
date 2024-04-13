@@ -118,7 +118,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_tank_4],
 )
 industry.add_magic_spritelayout(
-    type="harbour_coast_foundations",
+    type="jetty_coast_foundations",
     base_id="fish_farm_spritelayout_coast_warehouse",
     tile="fish_farm_tile_2",
     config={

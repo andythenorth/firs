@@ -103,7 +103,7 @@ industry.add_spritelayout(
     ],
 )
 industry.add_magic_spritelayout(
-    type="harbour_coast_foundations",
+    type="jetty_coast_foundations",
     base_id="liquids_terminal_spritelayout_coast_large_cylinder_tank",
     tile="liquids_terminal_tile_2",
     config={
@@ -120,7 +120,7 @@ industry.add_magic_spritelayout(
     },
 )
 industry.add_magic_spritelayout(
-    type="harbour_coast_foundations",
+    type="jetty_coast_foundations",
     base_id="liquids_terminal_spritelayout_coast_office",
     tile="liquids_terminal_tile_2",
     config={
@@ -137,7 +137,7 @@ industry.add_magic_spritelayout(
     },
 )
 industry.add_magic_spritelayout(
-    type="harbour_coast_foundations",
+    type="jetty_coast_foundations",
     base_id="liquids_terminal_spritelayout_coast_spherical_tank",
     tile="liquids_terminal_tile_2",
     config={

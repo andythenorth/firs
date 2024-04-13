@@ -211,7 +211,7 @@ industry.add_spritelayout(
     ],
 )
 industry.add_magic_spritelayout(
-    type="harbour_coast_foundations",
+    type="jetty_coast_foundations",
     base_id="trading_post_spritelayout_coast_small_warehouse",
     tile="trading_post_tile_2",
     config={
@@ -228,7 +228,7 @@ industry.add_magic_spritelayout(
     },
 )
 industry.add_magic_spritelayout(
-    type="harbour_coast_foundations",
+    type="jetty_coast_foundations",
     base_id="trading_post_spritelayout_coast_large_warehouse",
     tile="trading_post_tile_2",
     config={

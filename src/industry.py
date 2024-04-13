@@ -1547,7 +1547,7 @@ class Industry(object):
         if type == "slope_aware_trees":
             # the Magic is so magic that we don't have any further assignment, instantiating the class does all the registration etc (ugh)
             MagicSpritelayoutSlopeAwareTrees(self, base_id, config)
-        if type == "harbour_coast_foundations":
+        if type == "jetty_coast_foundations":
             # the Magic is so magic that we don't have any further assignment, instantiating the class does all the registration etc (ugh)
             MagicSpritelayoutHarbourCoastFoundations(self, base_id, config)
         # we do have to book-keep the magic, as their are Magic taxes that must be paid
