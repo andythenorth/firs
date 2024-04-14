@@ -1790,23 +1790,24 @@ class Industry(object):
             (
                 "se",
                 [
-                    (jetty_layout_1.xy_dimensions[0] + 2, 0),
-                    (jetty_layout_1.xy_dimensions[0] + 2, 1),
-                    (jetty_layout_1.xy_dimensions[0] + 2, 2),
-                    (jetty_layout_1.xy_dimensions[0] + 2, -1),
-                    (jetty_layout_1.xy_dimensions[0] + 2, -2),
+                    (jetty_layout_1.xy_dimensions[0] + 3, 0),
+                    (jetty_layout_1.xy_dimensions[0] + 3, 1),
+                    (jetty_layout_1.xy_dimensions[0] + 3, 2),
+                    (jetty_layout_1.xy_dimensions[0] + 3, -1),
+                    (jetty_layout_1.xy_dimensions[0] + 3, -2),
                 ],
-                jetty_layout_1.layout,
+                # note the transposition of the two layouts, to get the desired effect
                 jetty_layout_2.layout,
+                jetty_layout_1.layout,
             ),
             (
                 "ne",
                 [
-                    (jetty_layout_1.xy_dimensions[0] + 2, 0),
-                    (jetty_layout_1.xy_dimensions[0] + 2, 1),
-                    (jetty_layout_1.xy_dimensions[0] + 2, 2),
-                    (jetty_layout_1.xy_dimensions[0] + 2, -1),
-                    (jetty_layout_1.xy_dimensions[0] + 2, -2),
+                    (jetty_layout_1.xy_dimensions[0] + 3, 0),
+                    (jetty_layout_1.xy_dimensions[0] + 3, 1),
+                    (jetty_layout_1.xy_dimensions[0] + 3, 2),
+                    (jetty_layout_1.xy_dimensions[0] + 3, -1),
+                    (jetty_layout_1.xy_dimensions[0] + 3, -2),
                 ],
                 jetty_layout_1.layout_rotated_180,
                 jetty_layout_2.layout_rotated_180,
@@ -1815,11 +1816,11 @@ class Industry(object):
                 "sw",
                 [
                     # note that we have to use the x dimensions to calculate y offset as we are rotating this one 90 degrees
-                    (0, jetty_layout_1.xy_dimensions[0] + 2),
-                    (1, jetty_layout_1.xy_dimensions[0] + 2),
-                    (2, jetty_layout_1.xy_dimensions[0] + 2),
-                    (-1, jetty_layout_1.xy_dimensions[0] + 2),
-                    (-2, jetty_layout_1.xy_dimensions[0] + 2),
+                    (0, jetty_layout_1.xy_dimensions[0] + 3),
+                    (1, jetty_layout_1.xy_dimensions[0] + 3),
+                    (2, jetty_layout_1.xy_dimensions[0] + 3),
+                    (-1, jetty_layout_1.xy_dimensions[0] + 3),
+                    (-2, jetty_layout_1.xy_dimensions[0] + 3),
                 ],
                 jetty_layout_1.layout_rotated_90,
                 jetty_layout_2.layout_rotated_90,
@@ -1828,14 +1829,15 @@ class Industry(object):
                 "ne",
                 [
                     # note that we have to use the x dimensions to calculate y offset as we are rotating this one 270 degrees
-                    (0, jetty_layout_1.xy_dimensions[0] + 2),
-                    (1, jetty_layout_1.xy_dimensions[0] + 2),
-                    (2, jetty_layout_1.xy_dimensions[0] + 2),
-                    (-1, jetty_layout_1.xy_dimensions[0] + 2),
-                    (-2, jetty_layout_1.xy_dimensions[0] + 2),
+                    (0, jetty_layout_1.xy_dimensions[0] + 3),
+                    (1, jetty_layout_1.xy_dimensions[0] + 3),
+                    (2, jetty_layout_1.xy_dimensions[0] + 3),
+                    (-1, jetty_layout_1.xy_dimensions[0] + 3),
+                    (-2, jetty_layout_1.xy_dimensions[0] + 3),
                 ],
-                jetty_layout_1.layout_rotated_270,
+                # note the transposition of the two layouts, to get the desired effect
                 jetty_layout_2.layout_rotated_270,
+                jetty_layout_1.layout_rotated_270,
             )
         ]
         for orientation_label, xy_offsets, layout_1, layout_2 in coast_configurations:
