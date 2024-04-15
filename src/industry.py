@@ -1801,7 +1801,7 @@ class Industry(object):
                 jetty_layout_1.layout,
             ),
             (
-                "ne",
+                "nw",
                 [
                     (jetty_layout_1.xy_dimensions[0] + 3, 0),
                     (jetty_layout_1.xy_dimensions[0] + 3, 1),
