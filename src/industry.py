@@ -1590,7 +1590,7 @@ class Industry(object):
         if type == "jetty_coast_foundations":
             # the Magic is so magic that we don't have any further assignment, instantiating the class does all the registration etc (ugh)
             MagicSpritelayoutHarbourCoastFoundations(self, base_id, config)
-        # we do have to book-keep the magic, as their are Magic taxes that must be paid
+        # we do have to book-keep the magic, as there are Magic taxes that must be paid
         self.magic_spritelayout_tile_ids[base_id] = tile
 
     def add_slope_graphics_switch(self, *args, **kwargs):
@@ -1838,7 +1838,7 @@ class Industry(object):
                 # note the transposition of the two layouts, to get the desired effect
                 jetty_layout_2.layout_rotated_270,
                 jetty_layout_1.layout_rotated_270,
-            )
+            ),
         ]
         for orientation_label, xy_offsets, layout_1, layout_2 in coast_configurations:
             for xy_offset in xy_offsets:
@@ -1852,15 +1852,29 @@ class Industry(object):
                     + "_orientation_"
                     + orientation_label
                 )
+                layout = []
+                for tiledef in self.composite_two_industry_layouts(
+                    layout_1,
+                    layout_2,
+                    xy_offset,
+                ):
+                    spritelayout_id = tiledef[3]
+                    if orientation_label in ["ne", "sw"]:
+                        if spritelayout_id.find("nw_se_auto_orient") != -1:
+                            spritelayout_id = spritelayout_id.replace("nw_se_auto_orient", "ne_sw_auto_orient")
+                            print("CABBAGE 9222", spritelayout_id)
+                        # *must* be elif or we'll replace what we already just replaced
+                        elif spritelayout_id.find("ne_sw_auto_orient") != -1:
+                            spritelayout_id = spritelayout_id.replace("ne_sw_auto_orient", "nw_se_auto_orient")
+                            print("CABBAGE 7777", spritelayout_id)
+                    tiledef = (tiledef[0], tiledef[1], tiledef[2], spritelayout_id)
+                    layout.append(tiledef)
+                    print(layout)
                 result.append(
                     IndustryLayout(
                         industry=self,
                         id=new_id,
-                        layout=self.composite_two_industry_layouts(
-                            layout_1,
-                            layout_2,
-                            xy_offset,
-                        ),
+                        layout=layout,
                     )
                 )
         return result

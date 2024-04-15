@@ -159,35 +159,16 @@ spriteset_boat_8 = industry.add_spriteset(
     sprites=[(290, 110, 64, 39, -32, -21)],
 )
 industry.add_spritelayout(
-    id="wharf_spritelayout_crane_rails_nw_se",
-    tile="wharf_tile_1",
-    ground_sprite=spriteset_ground_empty,
-    ground_overlay=spriteset_ground_empty,
-    building_sprites=[
-        spriteset_jetty_se_nw,
-        spriteset_jetty_ne_sw,
-        spriteset_concrete,
-        spriteset_crane_rails_nw_se,
-    ],
-)
-industry.add_spritelayout(
-    id="wharf_spritelayout_crane_rails_ne_sw",
-    tile="wharf_tile_1",
-    ground_sprite=spriteset_ground_empty,
-    ground_overlay=spriteset_ground_empty,
-    building_sprites=[
-        spriteset_jetty_se_nw,
-        spriteset_jetty_ne_sw,
-        spriteset_concrete,
-        spriteset_crane_rails_ne_sw,
-    ],
-)
-industry.add_spritelayout(
     id="wharf_spritelayout_11",
     tile="wharf_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_empty,
-    building_sprites=[spriteset_jetty_se_nw, spriteset_concrete, spriteset_silos],
+    building_sprites=[
+        spriteset_jetty_se_nw,
+        spriteset_jetty_ne_sw,
+        spriteset_concrete,
+        spriteset_silos,
+    ],
 )
 industry.add_spritelayout(
     id="wharf_spritelayout_water_barge_sw_ne",
@@ -265,7 +246,31 @@ industry.add_spritelayout(
     ],
 )
 industry.add_spritelayout(
-    id="wharf_spritelayout_crane_nw_se",
+    id="wharf_spritelayout_crane_rails_nw_se_auto_orient",
+    tile="wharf_tile_1",
+    ground_sprite=spriteset_ground_empty,
+    ground_overlay=spriteset_ground_empty,
+    building_sprites=[
+        spriteset_jetty_se_nw,
+        spriteset_jetty_ne_sw,
+        spriteset_concrete,
+        spriteset_crane_rails_nw_se,
+    ],
+)
+industry.add_spritelayout(
+    id="wharf_spritelayout_crane_rails_ne_sw_auto_orient",
+    tile="wharf_tile_1",
+    ground_sprite=spriteset_ground_empty,
+    ground_overlay=spriteset_ground_empty,
+    building_sprites=[
+        spriteset_jetty_se_nw,
+        spriteset_jetty_ne_sw,
+        spriteset_concrete,
+        spriteset_crane_rails_ne_sw,
+    ],
+)
+industry.add_spritelayout(
+    id="wharf_spritelayout_crane_nw_se_auto_orient",
     tile="wharf_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_empty,
@@ -277,7 +282,7 @@ industry.add_spritelayout(
     ],
 )
 industry.add_spritelayout(
-    id="wharf_spritelayout_crane_sw_ne",
+    id="wharf_spritelayout_crane_sw_ne_auto_orient",
     tile="wharf_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_empty,
@@ -289,7 +294,7 @@ industry.add_spritelayout(
     ],
 )
 industry.add_spritelayout(
-    id="wharf_spritelayout_crane_ne_sw",
+    id="wharf_spritelayout_crane_ne_sw_auto_orient",
     tile="wharf_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_empty,
@@ -301,7 +306,7 @@ industry.add_spritelayout(
     ],
 )
 industry.add_spritelayout(
-    id="wharf_spritelayout_crane_se_nw",
+    id="wharf_spritelayout_crane_se_nw_auto_orient",
     tile="wharf_tile_1",
     ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_empty,
@@ -357,31 +362,31 @@ industry.add_industry_jetty_layout(
     id="wharf_industry_jetty_layout_1",
     layout=[
         (0, 0, "wharf_spritelayout_coast_tanks"),
-        (0, 1, "wharf_spritelayout_crane_nw_se"),
-        (0, 2, "wharf_spritelayout_crane_rails_nw_se"),
-        (0, 3, "wharf_spritelayout_crane_nw_se"),
+        (0, 1, "wharf_spritelayout_crane_nw_se_auto_orient"),
+        (0, 2, "wharf_spritelayout_crane_rails_nw_se_auto_orient"),
+        (0, 3, "wharf_spritelayout_crane_nw_se_auto_orient"),
         (0, 4, "wharf_spritelayout_11"),
-        (0, 5, "wharf_spritelayout_crane_rails_nw_se"),
-        (0, 6, "wharf_spritelayout_crane_nw_se"),
+        (0, 5, "wharf_spritelayout_crane_rails_nw_se_auto_orient"),
+        (0, 6, "wharf_spritelayout_crane_nw_se_auto_orient"),
         (0, 7, "spritelayout_null_water"),
-        (1, 4, "wharf_spritelayout_crane_rails_ne_sw"),
+        (1, 4, "wharf_spritelayout_crane_rails_ne_sw_auto_orient"),
         (1, 5, "wharf_spritelayout_water_barge_nw_se"),
-        (2, 4, "wharf_spritelayout_crane_ne_sw"),
+        (2, 4, "wharf_spritelayout_crane_ne_sw_auto_orient"),
     ],
 )
 industry.add_industry_jetty_layout(
     id="wharf_industry_jetty_layout_2",
     layout=[
-        (0, 4, "wharf_spritelayout_crane_rails_ne_sw"),
-        (1, 4, "wharf_spritelayout_crane_ne_sw"),
-        (1, 5, "wharf_spritelayout_water_coaster_nw_se"),
+        (0, 4, "wharf_spritelayout_crane_rails_ne_sw_auto_orient"),
+        (1, 4, "wharf_spritelayout_crane_ne_sw_auto_orient"),
+        (1, 5, "wharf_spritelayout_water_coaster_ne_sw"),
         (2, 0, "wharf_spritelayout_coast_warehouse"),
-        (2, 1, "wharf_spritelayout_crane_rails_nw_se"),
-        (2, 2, "wharf_spritelayout_crane_nw_se"),
-        (2, 3, "wharf_spritelayout_crane_rails_nw_se"),
+        (2, 1, "wharf_spritelayout_crane_rails_nw_se_auto_orient"),
+        (2, 2, "wharf_spritelayout_crane_nw_se_auto_orient"),
+        (2, 3, "wharf_spritelayout_crane_rails_nw_se_auto_orient"),
         (2, 4, "wharf_spritelayout_cone_silo"),
-        (2, 5, "wharf_spritelayout_crane_rails_nw_se"),
-        (2, 6, "wharf_spritelayout_crane_nw_se"),
+        (2, 5, "wharf_spritelayout_crane_rails_nw_se_auto_orient"),
+        (2, 6, "wharf_spritelayout_crane_nw_se_auto_orient"),
         (2, 7, "spritelayout_null_water"),
     ],
 )
