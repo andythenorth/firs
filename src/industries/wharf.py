@@ -372,21 +372,29 @@ industry.add_industry_jetty_layout(
         (1, 4, "wharf_spritelayout_crane_rails_ne_sw_auto_orient"),
         (1, 5, "wharf_spritelayout_water_barge_nw_se"),
         (2, 4, "wharf_spritelayout_crane_ne_sw_auto_orient"),
+        (3, 2, "spritelayout_null_water"), # clearance around t-piece jetty
+        (3, 3, "spritelayout_null_water"), # clearance around t-piece jetty
+        (3, 4, "spritelayout_null_water"), # clearance around t-piece jetty
+        (3, 5, "spritelayout_null_water"), # clearance around t-piece jetty
     ],
 )
 industry.add_industry_jetty_layout(
     id="wharf_industry_jetty_layout_2",
     layout=[
-        (0, 4, "wharf_spritelayout_crane_rails_ne_sw_auto_orient"),
-        (1, 4, "wharf_spritelayout_crane_ne_sw_auto_orient"),
-        (1, 5, "wharf_spritelayout_water_coaster_ne_sw"),
-        (2, 0, "wharf_spritelayout_coast_warehouse"),
-        (2, 1, "wharf_spritelayout_crane_rails_nw_se_auto_orient"),
-        (2, 2, "wharf_spritelayout_crane_nw_se_auto_orient"),
-        (2, 3, "wharf_spritelayout_crane_rails_nw_se_auto_orient"),
-        (2, 4, "wharf_spritelayout_cone_silo"),
-        (2, 5, "wharf_spritelayout_crane_rails_nw_se_auto_orient"),
-        (2, 6, "wharf_spritelayout_crane_nw_se_auto_orient"),
-        (2, 7, "spritelayout_null_water"),
+        (0, 2, "spritelayout_null_water"), # clearance around t-piece jetty
+        (0, 3, "spritelayout_null_water"), # clearance around t-piece jetty
+        (0, 4, "spritelayout_null_water"), # clearance around t-piece jetty
+        (0, 5, "spritelayout_null_water"), # clearance around t-piece jetty
+        (1, 4, "wharf_spritelayout_crane_rails_ne_sw_auto_orient"),
+        (2, 4, "wharf_spritelayout_crane_ne_sw_auto_orient"),
+        (2, 5, "wharf_spritelayout_water_coaster_ne_sw"),
+        (3, 0, "wharf_spritelayout_coast_warehouse"),
+        (3, 1, "wharf_spritelayout_crane_rails_nw_se_auto_orient"),
+        (3, 2, "wharf_spritelayout_crane_nw_se_auto_orient"),
+        (3, 3, "wharf_spritelayout_crane_rails_nw_se_auto_orient"),
+        (3, 4, "wharf_spritelayout_cone_silo"),
+        (3, 5, "wharf_spritelayout_crane_rails_nw_se_auto_orient"),
+        (3, 6, "wharf_spritelayout_crane_nw_se_auto_orient"),
+        (3, 7, "spritelayout_null_water"),
     ],
 )
