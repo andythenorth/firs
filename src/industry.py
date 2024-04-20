@@ -972,6 +972,31 @@ class MagicSpritelayoutHarbourCoastFoundations(object):
         )
 
 
+class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
+    """
+    Occasionally we need magic.  If we're going magic, let's go full on magic.
+    This one provides tiles for jetties that automatically orient to the coast direction, fine-grained configurable per spritelayout.
+    """
+
+    def __init__(self, industry, base_id, config):
+        ground_sprite=config[
+            "ground_sprite"
+        ]  # should always be empty sprite for this magic layout
+        ground_overlay=config[
+            "ground_sprite"
+        ]  # should always be empty sprite for this magic layout
+        for coast_direction in ["se", "sw", "nw", "ne"]:
+            building_sprites=[]
+            building_sprites.extend(config["foundation_sprites"])
+            building_sprites.extend(config["jetty_top_sprites"])
+            building_sprites.extend(config["building_sprites"][coast_direction])
+            industry.add_spritelayout(
+                id=base_id + "_" + coast_direction,
+                ground_sprite=ground_sprite,
+                ground_overlay=ground_overlay,
+                building_sprites=building_sprites,
+            )
+
 class GraphicsSwitch(object):
     """base class for extra graphics switches"""
 
@@ -1590,6 +1615,9 @@ class Industry(object):
         if type == "jetty_coast_foundations":
             # the Magic is so magic that we don't have any further assignment, instantiating the class does all the registration etc (ugh)
             MagicSpritelayoutHarbourCoastFoundations(self, base_id, config)
+        if type == "jetty_auto_orient_to_coast_direction":
+            # the Magic is so magic that we don't have any further assignment, instantiating the class does all the registration etc (ugh)
+            MagicSpritelayoutJettyAutoOrientToCoastDirection(self, base_id, config)
         # we do have to book-keep the magic, as there are Magic taxes that must be paid
         self.magic_spritelayout_tile_ids[base_id] = tile
 
@@ -1840,7 +1868,7 @@ class Industry(object):
                 jetty_layout_1.layout_rotated_270,
             ),
         ]
-        for orientation_label, xy_offsets, layout_1, layout_2 in coast_configurations:
+        for coast_direction, xy_offsets, layout_1, layout_2 in coast_configurations:
             for xy_offset in xy_offsets:
                 composite_layout_counter += 1
                 new_id = (
@@ -1850,7 +1878,7 @@ class Industry(object):
                     + "_composite_layout_num_"
                     + str(composite_layout_counter)
                     + "_orientation_"
-                    + orientation_label
+                    + coast_direction
                 )
                 layout = []
                 for tiledef in self.composite_two_industry_layouts(
@@ -1859,17 +1887,10 @@ class Industry(object):
                     xy_offset,
                 ):
                     spritelayout_id = tiledef[3]
-                    if orientation_label in ["ne", "sw"]:
-                        if spritelayout_id.find("nw_se_auto_orient") != -1:
-                            spritelayout_id = spritelayout_id.replace("nw_se_auto_orient", "ne_sw_auto_orient")
-                            print("CABBAGE 9222", spritelayout_id)
-                        # *must* be elif or we'll replace what we already just replaced
-                        elif spritelayout_id.find("ne_sw_auto_orient") != -1:
-                            spritelayout_id = spritelayout_id.replace("ne_sw_auto_orient", "nw_se_auto_orient")
-                            print("CABBAGE 7777", spritelayout_id)
+                    if spritelayout_id.find("auto_orient") != -1:
+                        spritelayout_id = spritelayout_id + "_" + coast_direction
                     tiledef = (tiledef[0], tiledef[1], tiledef[2], spritelayout_id)
                     layout.append(tiledef)
-                    print(layout)
                 result.append(
                     IndustryLayout(
                         industry=self,
