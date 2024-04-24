@@ -10,7 +10,6 @@ from industries import blast_furnace
 from industries import body_plant
 from industries import brewery
 from industries import builders_yard
-from industries import bulk_terminal
 from industries import carbon_black_plant
 from industries import cement_plant
 from industries import chemical_plant
@@ -98,7 +97,6 @@ blast_furnace.industry.register()
 body_plant.industry.register()
 brewery.industry.register()
 builders_yard.industry.register()
-bulk_terminal.industry.register()
 carbon_black_plant.industry.register()
 cement_plant.industry.register()
 chemical_plant.industry.register()
