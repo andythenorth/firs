@@ -30,18 +30,6 @@ industry.enable_in_economy(
         ("FMSP", 12),
     ],
 )
-industry.enable_in_economy(
-    "STEELTOWN",
-    # quite a lot of accepted types, this is intentional to provide flexibility in obtaining boost
-    accept_cargo_types=["FOOD", "POTA", "CHLO", "CMNT", "STIG", "STSE", "STSH"],
-    prod_cargo_types_with_multipliers=[
-        ("RUBR", 16),
-        ("FEAL", 20),
-        ("ALUM", 11),
-        ("ZINC", 16),
-    ],
-)
-
 industry.add_tile(
     id="bulk_terminal_tile_1",
     land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",
