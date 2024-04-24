@@ -8,7 +8,7 @@ industry = IndustryPrimaryPort(
     prob_map_gen="8",
     map_colour="186",
     special_flags=["IND_FLAG_BUILT_ON_WATER"],
-    location_checks=dict(same_type_distance=16),
+    location_checks=dict(same_type_distance=32),
     prospect_chance="0.75",
     name="string(STR_IND_PORT)",
     nearby_station_name="string(STR_STATION_INDUSTRY_HARBOUR_2)",
