@@ -18,18 +18,6 @@ industry = IndustryPrimaryPort(
     sprites_complete=True,
 )
 
-industry.enable_in_economy(
-    "IN_A_HOT_COUNTRY",
-    accept_cargo_types=[
-        "MNO2",
-        "PHOS",
-        "BDMT",
-    ],
-    prod_cargo_types_with_multipliers=[
-        ("RFPR", 12),
-        ("FMSP", 12),
-    ],
-)
 industry.add_tile(
     id="bulk_terminal_tile_1",
     land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",

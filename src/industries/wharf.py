@@ -33,6 +33,19 @@ industry.enable_in_economy(
 )
 
 industry.enable_in_economy(
+    "IN_A_HOT_COUNTRY",
+    accept_cargo_types=[
+        "MNO2",
+        "PHOS",
+        "BDMT",
+    ],
+    prod_cargo_types_with_multipliers=[
+        ("RFPR", 12),
+        ("FMSP", 12),
+    ],
+)
+
+industry.enable_in_economy(
     "STEELTOWN",
     # quite a lot of accepted types, this is intentional to provide flexibility in obtaining boost
     accept_cargo_types=[
