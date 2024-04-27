@@ -1812,17 +1812,15 @@ class Industry(object):
         # non-standard case, used for port-type industries and harbours
         result = []
         composite_layout_counter = 0
+        tile_gap_between_jetty_layouts = 2
+        jetty_layout_y_offset_range = range(-3, 3)
         jetty_layout_1 = self._industry_layouts["jetties"][0]
         jetty_layout_2 = self._industry_layouts["jetties"][1]
         coast_configurations = [
             (
                 "se",
                 [
-                    (jetty_layout_2.xy_dimensions[0] + 3, 0),
-                    (jetty_layout_2.xy_dimensions[0] + 3, 1),
-                    (jetty_layout_2.xy_dimensions[0] + 3, 2),
-                    (jetty_layout_2.xy_dimensions[0] + 3, -1),
-                    (jetty_layout_2.xy_dimensions[0] + 3, -2),
+                    (jetty_layout_2.xy_dimensions[0] + tile_gap_between_jetty_layouts, jetty_layout_y_offset) for jetty_layout_y_offset in jetty_layout_y_offset_range
                 ],
                 # note the transposition of the two layouts, to get the desired effect
                 jetty_layout_2.layout,
@@ -1831,11 +1829,7 @@ class Industry(object):
             (
                 "nw",
                 [
-                    (jetty_layout_1.xy_dimensions[0] + 3, 0),
-                    (jetty_layout_1.xy_dimensions[0] + 3, 1),
-                    (jetty_layout_1.xy_dimensions[0] + 3, 2),
-                    (jetty_layout_1.xy_dimensions[0] + 3, -1),
-                    (jetty_layout_1.xy_dimensions[0] + 3, -2),
+                    (jetty_layout_1.xy_dimensions[0] + tile_gap_between_jetty_layouts, jetty_layout_y_offset) for jetty_layout_y_offset in jetty_layout_y_offset_range
                 ],
                 jetty_layout_1.layout_rotated_180,
                 jetty_layout_2.layout_rotated_180,
@@ -1844,11 +1838,7 @@ class Industry(object):
                 "sw",
                 [
                     # note that we have to use the x dimensions to calculate y offset as we are rotating this one 90 degrees
-                    (0, jetty_layout_1.xy_dimensions[0] + 3),
-                    (1, jetty_layout_1.xy_dimensions[0] + 3),
-                    (2, jetty_layout_1.xy_dimensions[0] + 3),
-                    (-1, jetty_layout_1.xy_dimensions[0] + 3),
-                    (-2, jetty_layout_1.xy_dimensions[0] + 3),
+                    (jetty_layout_y_offset, jetty_layout_1.xy_dimensions[0] + tile_gap_between_jetty_layouts) for jetty_layout_y_offset in jetty_layout_y_offset_range
                 ],
                 jetty_layout_1.layout_rotated_90,
                 jetty_layout_2.layout_rotated_90,
@@ -1857,11 +1847,7 @@ class Industry(object):
                 "ne",
                 [
                     # note that we have to use the x dimensions to calculate y offset as we are rotating this one 270 degrees
-                    (0, jetty_layout_2.xy_dimensions[0] + 3),
-                    (1, jetty_layout_2.xy_dimensions[0] + 3),
-                    (2, jetty_layout_2.xy_dimensions[0] + 3),
-                    (-1, jetty_layout_2.xy_dimensions[0] + 3),
-                    (-2, jetty_layout_2.xy_dimensions[0] + 3),
+                    (jetty_layout_y_offset, jetty_layout_2.xy_dimensions[0] + tile_gap_between_jetty_layouts) for jetty_layout_y_offset in jetty_layout_y_offset_range
                 ],
                 # note the transposition of the two layouts, to get the desired effect
                 jetty_layout_2.layout_rotated_270,

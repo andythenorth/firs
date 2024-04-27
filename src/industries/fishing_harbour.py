@@ -263,7 +263,7 @@ industry.add_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_coast_foundations",
-    base_id="port_spritelayout_coast_empty",
+    base_id="fishing_harbour_spritelayout_coast_empty",
     tile="fishing_harbour_tile_2",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -280,7 +280,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_coast_foundations",
-    base_id="port_spritelayout_coast_shed",
+    base_id="fishing_harbour_spritelayout_coast_shed",
     tile="fishing_harbour_tile_2",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -300,12 +300,12 @@ industry.add_industry_layout(
     id="fishing_harbour_industry_layout_1",
     layout=[
         (0, 3, "fishing_harbour_spritelayout_27"),
-        (0, 4, "port_spritelayout_coast_empty"),
+        (0, 4, "fishing_harbour_spritelayout_coast_empty"),
         (1, 0, "spritelayout_null_water"),
         (1, 1, "fishing_harbour_spritelayout_11"),
         (1, 2, "fishing_harbour_spritelayout_29"),
         (1, 3, "fishing_harbour_spritelayout_11"),
-        (1, 4, "port_spritelayout_coast_shed"),
+        (1, 4, "fishing_harbour_spritelayout_coast_shed"),
         (2, 1, "fishing_harbour_spritelayout_24"),
         (2, 2, "fishing_harbour_spritelayout_24"),
     ],
@@ -323,16 +323,16 @@ industry.add_industry_layout(
         (2, 1, "fishing_harbour_spritelayout_12"),
         (2, 2, "fishing_harbour_spritelayout_21"),
         (2, 3, "spritelayout_null_water"),
-        (3, 1, "port_spritelayout_coast_shed"),
-        (3, 2, "port_spritelayout_coast_empty"),
+        (3, 1, "fishing_harbour_spritelayout_coast_shed"),
+        (3, 2, "fishing_harbour_spritelayout_coast_empty"),
     ],
 )
 industry.add_industry_layout(
     id="fishing_harbour_industry_layout_3",
     layout=[
-        (0, 0, "port_spritelayout_coast_shed"),
-        (0, 1, "port_spritelayout_coast_shed"),
-        (0, 2, "port_spritelayout_coast_shed"),
+        (0, 0, "fishing_harbour_spritelayout_coast_shed"),
+        (0, 1, "fishing_harbour_spritelayout_coast_shed"),
+        (0, 2, "fishing_harbour_spritelayout_coast_shed"),
         (1, 0, "fishing_harbour_spritelayout_24"),
         (1, 2, "fishing_harbour_spritelayout_2"),
         (2, 1, "fishing_harbour_spritelayout_26"),
@@ -346,13 +346,13 @@ industry.add_industry_layout(
 industry.add_industry_layout(
     id="fishing_harbour_industry_layout_4",
     layout=[
-        (0, 0, "port_spritelayout_coast_shed"),
+        (0, 0, "fishing_harbour_spritelayout_coast_shed"),
         (0, 1, "fishing_harbour_spritelayout_11"),
         (0, 2, "fishing_harbour_spritelayout_1"),
         (0, 3, "fishing_harbour_spritelayout_1"),
         (0, 4, "fishing_harbour_spritelayout_28"),
         (0, 5, "spritelayout_null_water"),
-        (1, 0, "port_spritelayout_coast_empty"),
+        (1, 0, "fishing_harbour_spritelayout_coast_empty"),
         (1, 1, "fishing_harbour_spritelayout_31"),
         (1, 2, "fishing_harbour_spritelayout_32"),
         (1, 4, "fishing_harbour_spritelayout_25"),
@@ -365,7 +365,7 @@ industry.add_industry_layout(
 industry.add_industry_layout(
     id="fishing_harbour_industry_layout_5",
     layout=[
-        (0, 0, "port_spritelayout_coast_empty"),
+        (0, 0, "fishing_harbour_spritelayout_coast_empty"),
         (1, 0, "fishing_harbour_spritelayout_28"),
         (1, 2, "spritelayout_null_water"),
         (2, 0, "fishing_harbour_spritelayout_2"),
