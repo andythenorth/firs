@@ -15,7 +15,7 @@ industry = IndustrySecondary(
     # do not build during gameplay
     prob_in_game="0",
     prob_map_gen="5",
-    map_colour="45",
+    map_colour="177",
     name="string(STR_IND_ENGINE_PLANT)",
     nearby_station_name="string(STR_STATION_POWERTRAIN)",
     fund_cost_multiplier="120",
