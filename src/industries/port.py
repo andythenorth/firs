@@ -140,60 +140,73 @@ spriteset_warehouse_half_se_nw = industry.add_spriteset(
 spriteset_warehouse_half_sw_ne = industry.add_spriteset(
     sprites=[(650, 10, 64, 84, -31, -61)],
 )
-spriteset_warehouse_nw_se = industry.add_spriteset(
+spriteset_warehouse_full_nw_se = industry.add_spriteset(
     sprites=[(720, 10, 64, 84, -31, -61)],
 )
-spriteset_warehouse_ne_sw = industry.add_spriteset(
+spriteset_warehouse_full_ne_sw = industry.add_spriteset(
     sprites=[(790, 10, 64, 84, -31, -61)],
 )
-spriteset_shed_nw_se = industry.add_spriteset(
+spriteset_shed_half_nw_se = industry.add_spriteset(
     sprites=[(440, 210, 64, 84, -31, -61)],
 )
-spriteset_shed_ne_sw = industry.add_spriteset(
+spriteset_shed_half_ne_sw = industry.add_spriteset(
     sprites=[(510, 210, 64, 84, -31, -61)],
+)
+spriteset_shed_half_se_nw = industry.add_spriteset(
+    sprites=[(580, 210, 64, 84, -31, -61)],
+)
+spriteset_shed_half_sw_ne = industry.add_spriteset(
+    sprites=[(650, 210, 64, 84, -31, -61)],
+)
+spriteset_shed_full_nw_se = industry.add_spriteset(
+    sprites=[(720, 210, 64, 84, -31, -61)],
+)
+spriteset_shed_full_ne_sw = industry.add_spriteset(
+    sprites=[(790, 210, 64, 84, -31, -61)],
 )
 # horizontal tanks use the same sprite, but adjusted offsets for each coast
 spriteset_tanks_horizontal_nw_se = industry.add_spriteset(
-    sprites=[(720, 110, 64, 84, -31, -61)],
+    sprites=[(580, 110, 64, 84, -31, -61)],
 )
 spriteset_tanks_horizontal_ne_sw = industry.add_spriteset(
-    sprites=[(720, 110, 64, 84, -27, -61)],
+    sprites=[(580, 110, 64, 84, -27, -61)],
 )
 spriteset_tanks_horizontal_se_nw = industry.add_spriteset(
-    sprites=[(720, 110, 64, 84, -30, -61)],
+    sprites=[(580, 110, 64, 84, -30, -61)],
 )
 spriteset_tanks_horizontal_sw_ne = industry.add_spriteset(
-    sprites=[(720, 110, 64, 84, -28, -61)],
+    sprites=[(580, 110, 64, 84, -28, -61)],
 )
 # sphere tanks use the same sprite, but adjusted offsets for each coast
 spriteset_tanks_sphere_nw_se = industry.add_spriteset(
-    sprites=[(790, 110, 64, 84, -31, -61)],
+    sprites=[(650, 110, 64, 84, -31, -61)],
 )
 spriteset_tanks_sphere_ne_sw = industry.add_spriteset(
-    sprites=[(790, 110, 64, 84, -30, -61)],
+    sprites=[(650, 110, 64, 84, -30, -61)],
 )
 spriteset_tanks_sphere_se_nw = industry.add_spriteset(
-    sprites=[(790, 110, 64, 84, -30, -61)],
+    sprites=[(650, 110, 64, 84, -30, -61)],
 )
 spriteset_tanks_sphere_sw_ne = industry.add_spriteset(
-    sprites=[(790, 110, 64, 84, -31, -61)],
+    sprites=[(650, 110, 64, 84, -31, -61)],
 )
 # sphere tanks use the same sprite, but adjusted offsets for each coast
 spriteset_silos_nw_se = industry.add_spriteset(
-    sprites=[(720, 210, 64, 84, -31, -61)],
+    sprites=[(720, 110, 64, 84, -31, -61)],
 )
 spriteset_silos_ne_sw = industry.add_spriteset(
-    sprites=[(720, 210, 64, 84, -31, -61)],
+    sprites=[(720, 110, 64, 84, -31, -61)],
 )
 spriteset_silos_se_nw = industry.add_spriteset(
-    sprites=[(720, 210, 64, 84, -33, -60)],
+    sprites=[(720, 110, 64, 84, -33, -60)],
 )
 spriteset_silos_sw_ne = industry.add_spriteset(
-    sprites=[(720, 210, 64, 84, -33, -60)],
+    sprites=[(720, 110, 64, 84, -33, -60)],
 )
 spriteset_gatehouse = industry.add_spriteset(
-    sprites=[(790, 210, 64, 84, -31, -61)],
+    sprites=[(790, 110, 64, 84, -31, -61)],
 )
+# only 2 angles for crawler crane, to keep things visually simple
 spriteset_crawler_crane_ne_sw = industry.add_spriteset(
     sprites=[(440, 110, 64, 84, -31, -43)],
     zoffset=18,
@@ -202,25 +215,30 @@ spriteset_crawler_crane_nw_se = industry.add_spriteset(
     sprites=[(510, 110, 64, 84, -31, -43)],
     zoffset=18,
 )
-spriteset_crawler_crane_se_nw = industry.add_spriteset(
-    sprites=[(580, 110, 64, 84, -31, -43)],
-    zoffset=18,
+# there are 2 variations of the ship, (reversed, unreversed) with coast appropriate offsets for each
+spriteset_ship_1_ne_sw = industry.add_spriteset(
+    sprites=[(10, 110, 64, 39, -40, -18)],
 )
-spriteset_crawler_crane_sw_ne = industry.add_spriteset(
-    sprites=[(650, 110, 64, 84, -31, -43)],
-    zoffset=18,
+spriteset_ship_1_nw_se = industry.add_spriteset(
+    sprites=[(80, 110, 64, 39, -22, -18)],
 )
-spriteset_ship_ne_sw = industry.add_spriteset(
-    sprites=[(10, 110, 64, 39, -15, -11)],
+spriteset_ship_1_sw_ne = industry.add_spriteset(
+    sprites=[(150, 110, 64, 39, -30, -22)],
 )
-spriteset_ship_nw_se = industry.add_spriteset(
-    sprites=[(80, 110, 64, 39, -20, -15)],
+spriteset_ship_1_se_nw = industry.add_spriteset(
+    sprites=[(220, 110, 64, 39, -27, -20)],
 )
-spriteset_ship_sw_ne = industry.add_spriteset(
-    sprites=[(150, 110, 64, 39, -15, -11)],
+spriteset_ship_2_ne_sw = industry.add_spriteset(
+    sprites=[(150, 110, 64, 39, -40, -18)],
 )
-spriteset_ship_se_nw = industry.add_spriteset(
-    sprites=[(220, 110, 64, 39, -25, -20)],
+spriteset_ship_2_nw_se = industry.add_spriteset(
+    sprites=[(220, 110, 64, 39, -22, -18)],
+)
+spriteset_ship_2_sw_ne = industry.add_spriteset(
+    sprites=[(10, 110, 64, 39, -30, -22)],
+)
+spriteset_ship_2_se_nw = industry.add_spriteset(
+    sprites=[(80, 110, 64, 39, -27, -20)],
 )
 industry.add_spritelayout(
     id="port_spritelayout_water_empty",
@@ -255,30 +273,6 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_crane_parallel_auto_orient",
-    tile="port_tile_1",
-    config={
-        "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
-        "foundation_sprites": [spriteset_jetty_ne_sw, spriteset_jetty_se_nw],
-        "jetty_top_sprites": [spriteset_concrete],
-        "building_sprites": {
-            "se": [
-                spriteset_crawler_crane_se_nw,
-            ],
-            "sw": [
-                spriteset_crawler_crane_ne_sw,
-            ],
-            "nw": [
-                spriteset_crawler_crane_se_nw,
-            ],
-            "ne": [
-                spriteset_crawler_crane_ne_sw,
-            ],
-        },
-    },
-)
-industry.add_magic_spritelayout(
-    type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_crane_orthogonal_auto_orient",
     tile="port_tile_1",
     config={
@@ -293,10 +287,10 @@ industry.add_magic_spritelayout(
                 spriteset_crawler_crane_nw_se,
             ],
             "nw": [
-                spriteset_crawler_crane_sw_ne,
+                spriteset_crawler_crane_ne_sw,
             ],
             "ne": [
-                spriteset_crawler_crane_se_nw,
+                spriteset_crawler_crane_nw_se,
             ],
         },
     },
@@ -407,23 +401,23 @@ industry.add_magic_spritelayout(
         "jetty_top_sprites": [spriteset_concrete],
         "building_sprites": {
             "se": [
-                spriteset_warehouse_nw_se,
+                spriteset_warehouse_full_nw_se,
             ],
             "sw": [
-                spriteset_warehouse_ne_sw,
+                spriteset_warehouse_full_ne_sw,
             ],
             "nw": [
-                spriteset_warehouse_nw_se,
+                spriteset_warehouse_full_nw_se,
             ],
             "ne": [
-                spriteset_warehouse_ne_sw,
+                spriteset_warehouse_full_ne_sw,
             ],
         },
     },
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_shed_auto_orient",
+    base_id="port_spritelayout_shed_half_1_auto_orient",
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -431,19 +425,19 @@ industry.add_magic_spritelayout(
         "jetty_top_sprites": [spriteset_concrete],
         "building_sprites": {
             "se": [
-                spriteset_shed_nw_se,
+                spriteset_shed_half_nw_se,
                 spriteset_crawler_crane_nw_se,
             ],
             "sw": [
-                spriteset_shed_ne_sw,
+                spriteset_shed_half_ne_sw,
                 spriteset_crawler_crane_ne_sw,
             ],
             "nw": [
-                spriteset_shed_nw_se,
+                spriteset_shed_half_se_nw,
                 spriteset_crawler_crane_nw_se,
             ],
             "ne": [
-                spriteset_shed_ne_sw,
+                spriteset_shed_half_sw_ne,
                 spriteset_crawler_crane_ne_sw,
             ],
         },
@@ -451,7 +445,64 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_water_ship_auto_orient",
+    base_id="port_spritelayout_shed_half_2_auto_orient",
+    tile="port_tile_1",
+    config={
+        "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
+        "foundation_sprites": [spriteset_jetty_ne_sw, spriteset_jetty_se_nw],
+        "jetty_top_sprites": [spriteset_concrete],
+        # reversed variant of the half-shed for alternate end of the shed
+        "building_sprites": {
+            "se": [
+                spriteset_shed_half_se_nw,
+                spriteset_crawler_crane_nw_se,
+            ],
+            "sw": [
+                spriteset_shed_half_sw_ne,
+                spriteset_crawler_crane_ne_sw,
+            ],
+            "nw": [
+                spriteset_shed_half_nw_se,
+                spriteset_crawler_crane_nw_se,
+            ],
+            "ne": [
+                spriteset_shed_half_ne_sw,
+                spriteset_crawler_crane_ne_sw,
+            ],
+        },
+    },
+)
+industry.add_magic_spritelayout(
+    type="jetty_auto_orient_to_coast_direction",
+    base_id="port_spritelayout_shed_full_auto_orient",
+    tile="port_tile_1",
+    config={
+        "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
+        "foundation_sprites": [spriteset_jetty_ne_sw, spriteset_jetty_se_nw],
+        "jetty_top_sprites": [spriteset_concrete],
+        "building_sprites": {
+            "se": [
+                spriteset_shed_full_nw_se,
+                spriteset_crawler_crane_nw_se,
+            ],
+            "sw": [
+                spriteset_shed_full_ne_sw,
+                spriteset_crawler_crane_ne_sw,
+            ],
+            "nw": [
+                spriteset_shed_full_nw_se,
+                spriteset_crawler_crane_nw_se,
+            ],
+            "ne": [
+                spriteset_shed_full_ne_sw,
+                spriteset_crawler_crane_ne_sw,
+            ],
+        },
+    },
+)
+industry.add_magic_spritelayout(
+    type="jetty_auto_orient_to_coast_direction",
+    base_id="port_spritelayout_water_ship_1_auto_orient",
     tile="port_tile_1",
     config={
         "ground_sprite": sprite_ground,
@@ -459,16 +510,40 @@ industry.add_magic_spritelayout(
         "jetty_top_sprites": [],
         "building_sprites": {
             "se": [
-                spriteset_ship_nw_se,  # wrong? or needs offsets adjusted?
+                spriteset_ship_1_nw_se,
             ],
             "sw": [
-                spriteset_ship_ne_sw,  # wrong? or needs offsets adjusted?
+                spriteset_ship_1_ne_sw,
             ],
             "nw": [
-                spriteset_ship_se_nw,  # wrong? or needs offsets adjusted?
+                spriteset_ship_1_se_nw,
             ],
             "ne": [
-                spriteset_ship_sw_ne,  # wrong? or needs offsets adjusted?
+                spriteset_ship_1_sw_ne,
+            ],
+        },
+    },
+)
+industry.add_magic_spritelayout(
+    type="jetty_auto_orient_to_coast_direction",
+    base_id="port_spritelayout_water_ship_2_auto_orient",
+    tile="port_tile_1",
+    config={
+        "ground_sprite": sprite_ground,
+        "foundation_sprites": [],
+        "jetty_top_sprites": [],
+        "building_sprites": {
+            "se": [
+                spriteset_ship_2_nw_se,
+            ],
+            "sw": [
+                spriteset_ship_2_ne_sw,
+            ],
+            "nw": [
+                spriteset_ship_2_se_nw,
+            ],
+            "ne": [
+                spriteset_ship_2_sw_ne,
             ],
         },
     },
@@ -488,14 +563,14 @@ industry.add_industry_jetty_layout(
         (1, 2, "port_spritelayout_warehouse_half_auto_orient"),
         (1, 3, "port_spritelayout_warehouse_full_auto_orient"),
         (1, 4, "port_spritelayout_warehouse_half_auto_orient"),
-        (1, 5, "port_spritelayout_water_ship_auto_orient"),
+        (1, 5, "port_spritelayout_water_ship_1_auto_orient"),
         (1, 6, "spritelayout_null_water"),
         (1, 7, "spritelayout_null_water"),
         # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
         (1, 8, "spritelayout_null_water"),
         # ensure spacing from coast, to improve map-gen buildabilty
-        (2, 2, "port_spritelayout_shed_auto_orient"),
-        (2, 3, "port_spritelayout_shed_auto_orient"),
+        (2, 2, "port_spritelayout_shed_half_2_auto_orient"),
+        (2, 3, "port_spritelayout_shed_full_auto_orient"),
         (2, 4, "port_spritelayout_warehouse_half_auto_orient"),
         (2, 5, "port_spritelayout_tanks_small_auto_orient"),
         (2, 6, "port_spritelayout_tanks_sphere_auto_orient"),
@@ -518,15 +593,15 @@ industry.add_industry_jetty_layout(
         (1, 2, "port_spritelayout_silos_1_auto_orient"),
         (1, 3, "port_spritelayout_silos_1_auto_orient"),
         (1, 4, "port_spritelayout_warehouse_half_auto_orient"),
-        (1, 5, "port_spritelayout_shed_auto_orient"),
-        (1, 6, "port_spritelayout_shed_auto_orient"),
+        (1, 5, "port_spritelayout_shed_full_auto_orient"),
+        (1, 6, "port_spritelayout_shed_half_1_auto_orient"),
         (1, 7, "spritelayout_null_water"),
         (2, 0, "port_spritelayout_coast_gatehouse"),
         (2, 1, "port_spritelayout_warehouse_full_auto_orient"),
         (2, 2, "port_spritelayout_warehouse_half_auto_orient"),
         (2, 3, "port_spritelayout_warehouse_full_auto_orient"),
         (2, 4, "port_spritelayout_warehouse_half_auto_orient"),
-        (2, 5, "port_spritelayout_water_ship_auto_orient"),
+        (2, 5, "port_spritelayout_water_ship_2_auto_orient"),
         (2, 6, "spritelayout_null_water"),
         (2, 7, "spritelayout_null_water"),
         # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
