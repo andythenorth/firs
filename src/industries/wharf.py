@@ -428,6 +428,8 @@ industry.add_industry_jetty_layout(
         (0, 5, "wharf_spritelayout_warehouse_full_auto_orient"),
         (0, 6, "wharf_spritelayout_crane_rails_orthogonal_auto_orient"),
         (0, 7, "spritelayout_null_water"),
+        # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
+        (0, 8, "spritelayout_null_water"),
         # ensure spacing from coast, to improve map-gen buildabilty
         (1, 2, "wharf_spritelayout_warehouse_half_auto_orient"),
         (1, 3, "wharf_spritelayout_warehouse_half_auto_orient"),
@@ -476,5 +478,7 @@ industry.add_industry_jetty_layout(
         (3, 5, "wharf_spritelayout_warehouse_half_auto_orient"),
         (3, 6, "wharf_spritelayout_crane_orthogonal_auto_orient"),
         (3, 7, "spritelayout_null_water"),
+        # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
+        (3, 8, "spritelayout_null_water"),
     ],
 )

@@ -5,7 +5,7 @@ industry = IndustryPrimaryExtractive(
     prod_cargo_types_with_multipliers=[],
     prob_in_game="4",
     prob_map_gen="7",
-    map_colour="45",
+    map_colour="192",
     # allow longer distance on clustering than usual, and more clusters, as industry is hard to locate
     location_checks=dict(require_cluster=[90, 4]),
     prospect_chance="0.75",

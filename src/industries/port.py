@@ -455,6 +455,8 @@ industry.add_industry_jetty_layout(
         (1, 5, "port_spritelayout_water_ship_auto_orient"),
         (1, 6, "spritelayout_null_water"),
         (1, 7, "spritelayout_null_water"),
+        # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
+        (1, 8, "spritelayout_null_water"),
         # ensure spacing from coast, to improve map-gen buildabilty
         (2, 2, "port_spritelayout_shed_auto_orient"),
         (2, 3, "port_spritelayout_shed_auto_orient"),
@@ -491,6 +493,8 @@ industry.add_industry_jetty_layout(
         (2, 5, "port_spritelayout_water_ship_auto_orient"),
         (2, 6, "spritelayout_null_water"),
         (2, 7, "spritelayout_null_water"),
+        # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
+        (2, 8, "spritelayout_null_water"),
         # ensure spacing from coast, to improve map-gen buildabilty
         (3, 2, "port_spritelayout_tanks_small_auto_orient"),
         (3, 3, "port_spritelayout_tanks_sphere_auto_orient"),
