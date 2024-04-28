@@ -3,14 +3,8 @@ from economy import Economy
 economy = Economy(
     id="MILD_MILD_WEST",
     numeric_id=6,
-    # as of May 2015 the following cargos must have fixed positions if used by an economy:
-    # passengers: 0, mail: 2, goods 5, food 11
-    # keep the rest of the cargos alphabetised
-    # bump the min. compatible version if this list changes
     cargos=[
-        "passengers",
         "acetic_acid",
-        "mail",
         "alcohol",
         "ammonia",
         "apples",
@@ -19,11 +13,11 @@ economy = Economy(
         "chemical_intermediates",
         "coal",
         "coke",
-        "food",
         "engineering_supplies",
-        "food_additives",
         "farm_supplies",
         "fish",
+        "food",
+        "food_additives",
         "glass",
         "grain",
         "iron_ore",
@@ -32,6 +26,7 @@ economy = Economy(
         "livestock",
         "logs",
         "lumber",
+        "mail",
         "milk",
         "molasses",
         "naphtha",
@@ -41,6 +36,7 @@ economy = Economy(
         "packaging",
         "paper",
         "paper_chemicals",
+        "passengers",
         "petrol",
         "phosphate",
         "phosphoric_acid",
@@ -65,8 +61,7 @@ economy = Economy(
     ],
     cargoflow_graph_tuning={
         "group_edges_subgraphs": [],
-        "ranking_subgraphs": [
-        ],
+        "ranking_subgraphs": [],
         "clusters": [
             # {"nodes": [], "rank": "", "color": ""},
         ],
@@ -76,37 +71,36 @@ economy = Economy(
 # some deliberate overlapping of biomes for mixing at boundaries
 economy.add_biome(
     "far_far_west",
-    min_x_percent = 80,
-    max_x_percent = 100,
-    min_y_percent = 0,
-    max_y_percent = 100,
+    min_x_percent=80,
+    max_x_percent=100,
+    min_y_percent=0,
+    max_y_percent=100,
 )
 economy.add_biome(
     "moors_and_levels",
-    min_x_percent = 60,
-    max_x_percent = 85,
-    min_y_percent = 0,
-    max_y_percent = 100,
+    min_x_percent=60,
+    max_x_percent=85,
+    min_y_percent=0,
+    max_y_percent=100,
 )
 economy.add_biome(
     "severnside",
-    min_x_percent = 30,
-    max_x_percent = 70,
-    min_y_percent = 0,
-    max_y_percent = 100,
+    min_x_percent=30,
+    max_x_percent=70,
+    min_y_percent=0,
+    max_y_percent=100,
 )
 economy.add_biome(
     "valleys_and_marches",
-    min_x_percent = 15,
-    max_x_percent = 40,
-    min_y_percent = 0,
-    max_y_percent = 100,
+    min_x_percent=15,
+    max_x_percent=40,
+    min_y_percent=0,
+    max_y_percent=100,
 )
 economy.add_biome(
     "fake_cumbria",
-    min_x_percent = 0,
-    max_x_percent = 20,
-    min_y_percent = 0,
-    max_y_percent = 100,
+    min_x_percent=0,
+    max_x_percent=20,
+    min_y_percent=0,
+    max_y_percent=100,
 )
-

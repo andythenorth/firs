@@ -67,7 +67,12 @@ economy = Economy(
     ],
     cargoflow_graph_tuning={
         # also any industries with !!!!??????? will be automatically added to wormhole_industries
-        "wormhole_industries": ["wharf", "port", "hardware_factory", "appliance_factory"],
+        "wormhole_industries": [
+            "wharf",
+            "port",
+            "hardware_factory",
+            "appliance_factory",
+        ],
         "cargos_with_individual_produce_nodes": [
             "steel_ingots",
             "steel_slab",
@@ -90,11 +95,28 @@ economy = Economy(
             ("same", ["lime_kiln", "glass_works"]),
             ("same", ["engine_plant", "tyre_plant", "body_plant"]),
             ("same", ["oxygen", "coke", "iron_ore"]),
-            ("sink", ["food", "farm", "hardware", "goods", "vehicles", "pipework", "assembly_plant", "tracked_machine_factory", "pipework_fabricator"]),
+            (
+                "sink",
+                [
+                    "food",
+                    "farm",
+                    "hardware",
+                    "goods",
+                    "vehicles",
+                    "pipework",
+                    "assembly_plant",
+                    "tracked_machine_factory",
+                    "pipework_fabricator",
+                ],
+            ),
         ],
         "clusters": [
             {
-                "nodes": ["hardware_factory", "precision_parts_plant", "appliance_factory"],
+                "nodes": [
+                    "hardware_factory",
+                    "precision_parts_plant",
+                    "appliance_factory",
+                ],
                 "rank": "same",
                 "color": "white",
             },
