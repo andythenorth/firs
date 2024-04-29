@@ -82,12 +82,20 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "STEELTOWN",
     # quite a lot of accepted types, this is intentional to provide flexibility in obtaining boost
-    accept_cargo_types=["FOOD", "POTA", "CHLO", "CMNT", "STIG", "STSE", "STSH"],
+    accept_cargo_types=[
+        "FOOD",
+        "LYE_",
+        "CMNT",
+        "HWAR",
+        "PPWK",
+        "VEHI",
+        "GOOD",
+    ],
     prod_cargo_types_with_multipliers=[
-        ("RUBR", 16),
-        ("FEAL", 20),
-        ("ALUM", 11),
-        ("ZINC", 16),
+        ("ENSP", 12),
+        ("POWR", 14),
+        ("COAT", 10),
+        ("SOAP", 10),
     ],
 )
 # industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['DIAM', 'EOIL', 'JAVA', 'WDPR']
