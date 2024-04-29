@@ -174,29 +174,29 @@ spriteset_shed_full_ne_sw = industry.add_spriteset(
 )
 # horizontal tanks use the same sprite, but adjusted offsets for each coast
 spriteset_tanks_horizontal_nw_se = industry.add_spriteset(
-    sprites=[(580, 110, 64, 84, -31, -61)],
+    sprites=[(440, 310, 64, 84, -31, -61)],
 )
 spriteset_tanks_horizontal_ne_sw = industry.add_spriteset(
-    sprites=[(580, 110, 64, 84, -27, -61)],
+    sprites=[(440, 310, 64, 84, -27, -61)],
 )
 spriteset_tanks_horizontal_se_nw = industry.add_spriteset(
-    sprites=[(580, 110, 64, 84, -30, -61)],
+    sprites=[(440, 310, 64, 84, -30, -61)],
 )
 spriteset_tanks_horizontal_sw_ne = industry.add_spriteset(
-    sprites=[(580, 110, 64, 84, -28, -61)],
+    sprites=[(440, 310, 64, 84, -28, -61)],
 )
 # sphere tanks use the same sprite, but adjusted offsets for each coast
 spriteset_tanks_sphere_nw_se = industry.add_spriteset(
-    sprites=[(650, 110, 64, 84, -31, -61)],
+    sprites=[(510, 310, 64, 84, -31, -61)],
 )
 spriteset_tanks_sphere_ne_sw = industry.add_spriteset(
-    sprites=[(650, 110, 64, 84, -30, -61)],
+    sprites=[(510, 310, 64, 84, -30, -61)],
 )
 spriteset_tanks_sphere_se_nw = industry.add_spriteset(
-    sprites=[(650, 110, 64, 84, -30, -61)],
+    sprites=[(510, 310, 64, 84, -30, -61)],
 )
 spriteset_tanks_sphere_sw_ne = industry.add_spriteset(
-    sprites=[(650, 110, 64, 84, -31, -61)],
+    sprites=[(510, 310, 64, 84, -31, -61)],
 )
 # sphere tanks use the same sprite, but adjusted offsets for each coast
 spriteset_silos_nw_se = industry.add_spriteset(
@@ -560,8 +560,8 @@ industry.add_industry_jetty_layout(
     id="port_industry_jetty_layout_1",
     layout=[
         # ensure spacing from coast, to improve map-gen buildabilty
-        (0, 2, "port_spritelayout_warehouse_full_auto_orient"),
-        (0, 3, "port_spritelayout_warehouse_half_auto_orient"),
+        (0, 2, "port_spritelayout_shed_full_auto_orient"),
+        (0, 3, "port_spritelayout_shed_half_1_auto_orient"),
         (0, 4, "port_spritelayout_silos_1_auto_orient"),
         (0, 5, "port_spritelayout_silos_1_auto_orient"),
         (0, 6, "port_spritelayout_warehouse_half_auto_orient"),
@@ -605,8 +605,8 @@ industry.add_industry_jetty_layout(
         (1, 6, "port_spritelayout_shed_half_1_auto_orient"),
         (1, 7, "spritelayout_null_water"),
         (2, 0, "port_spritelayout_coast_gatehouse"),
-        (2, 1, "port_spritelayout_warehouse_full_auto_orient"),
-        (2, 2, "port_spritelayout_warehouse_half_auto_orient"),
+        (2, 1, "port_spritelayout_shed_full_auto_orient"),
+        (2, 2, "port_spritelayout_shed_half_1_auto_orient"),
         (2, 3, "port_spritelayout_warehouse_full_auto_orient"),
         (2, 4, "port_spritelayout_warehouse_half_auto_orient"),
         (2, 5, "port_spritelayout_water_ship_2_auto_orient"),
