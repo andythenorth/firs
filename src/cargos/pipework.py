@@ -14,7 +14,7 @@ cargo = Cargo(
     items_of_cargo="string(STR_CARGO_UNIT_PIPEWORK)",
     penalty_lowerbound="30",
     single_penalty_length="42",
-    price_factor=170,
+    price_factor=161,
     capacity_multiplier="1",
     icon_indices=(2, 6),
     # used by FIRS GS
