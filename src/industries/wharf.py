@@ -59,12 +59,18 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="wharf_tile_1",
-    land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",
+    # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
+    foundations="return CB_RESULT_NO_FOUNDATIONS",
+     # supporting autoslope for the water tiles produces too many edge cases which are difficult to handle, so ban it
+    autoslope="return CB_RESULT_NO_AUTOSLOPE",
     location_checks=TileLocationChecks(always_allow_founder=False),
 )
 industry.add_tile(
     id="wharf_tile_2",
+    # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
+     # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
+    autoslope="return CB_RESULT_NO_AUTOSLOPE",
     location_checks=TileLocationChecks(always_allow_founder=False, require_coast=True),
 )
 
@@ -564,16 +570,16 @@ industry.add_industry_jetty_layout(
         (1, 3, "wharf_spritelayout_crane_rails_orthogonal_auto_orient"),
         (1, 4, "spritelayout_null_water"),
         # ensure spacing from coast, to improve map-gen buildabilty
-        (2, 2, "wharf_spritelayout_warehouse_full_auto_orient"),
+        (2, 2, "wharf_spritelayout_warehouse_half_auto_orient"),
         (2, 3, "wharf_spritelayout_crane_orthogonal_auto_orient"),
         (2, 4, "wharf_spritelayout_water_ship_2_auto_orient"),
-        (2, 5, "wharf_spritelayout_shed_1_auto_orient"),
+        (2, 5, "wharf_spritelayout_tanks_1_auto_orient"),
         (2, 6, "spritelayout_null_water"),
         (3, 0, "wharf_spritelayout_coast_building"),
-        (3, 1, "wharf_spritelayout_silo_1_auto_orient"),
-        (3, 2, "wharf_spritelayout_silo_2_auto_orient"),
-        (3, 3, "wharf_spritelayout_shed_1_auto_orient"),
-        (3, 4, "wharf_spritelayout_tanks_1_auto_orient"),
+        (3, 1, "wharf_spritelayout_shed_1_auto_orient"),
+        (3, 2, "wharf_spritelayout_silo_1_auto_orient"),
+        (3, 3, "wharf_spritelayout_silo_2_auto_orient"),
+        (3, 4, "wharf_spritelayout_shed_1_auto_orient"),
         (3, 5, "wharf_spritelayout_tanks_2_auto_orient"),
         (3, 6, "spritelayout_null_water"),
         # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
