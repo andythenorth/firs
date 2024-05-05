@@ -196,7 +196,7 @@ industry.add_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_coast_building_auto_orient",
+    base_id="wharf_spritelayout_coast_building",
     tile="wharf_tile_2",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -219,7 +219,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_crane_rails_parallel_auto_orient",
+    base_id="wharf_spritelayout_crane_rails_parallel",
     tile="wharf_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -242,7 +242,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_crane_rails_orthogonal_auto_orient",
+    base_id="wharf_spritelayout_crane_rails_orthogonal",
     tile="wharf_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -265,7 +265,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_crane_parallel_auto_orient",
+    base_id="wharf_spritelayout_crane_parallel",
     tile="wharf_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -292,7 +292,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_crane_orthogonal_auto_orient",
+    base_id="wharf_spritelayout_crane_orthogonal",
     tile="wharf_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -319,7 +319,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_tanks_1_auto_orient",
+    base_id="wharf_spritelayout_tanks_1",
     tile="wharf_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -342,7 +342,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_tanks_2_auto_orient",
+    base_id="wharf_spritelayout_tanks_2",
     tile="wharf_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -365,7 +365,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_silo_1_auto_orient",
+    base_id="wharf_spritelayout_silo_1",
     tile="wharf_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -388,7 +388,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_silo_2_auto_orient",
+    base_id="wharf_spritelayout_silo_2",
     tile="wharf_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -411,7 +411,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_warehouse_half_auto_orient",
+    base_id="wharf_spritelayout_warehouse_half",
     tile="wharf_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -434,7 +434,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_warehouse_full_auto_orient",
+    base_id="wharf_spritelayout_warehouse_full",
     tile="wharf_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -457,7 +457,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_shed_1_auto_orient",
+    base_id="wharf_spritelayout_shed_1",
     tile="wharf_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -480,7 +480,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_water_ship_1_auto_orient",
+    base_id="wharf_spritelayout_water_ship_1",
     tile="wharf_tile_1",
     config={
         "ground_sprite": sprite_ground,
@@ -503,7 +503,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_water_ship_2_auto_orient",
+    base_id="wharf_spritelayout_water_ship_2",
     tile="wharf_tile_1",
     config={
         "ground_sprite": sprite_ground,
@@ -527,25 +527,25 @@ industry.add_magic_spritelayout(
 industry.add_industry_jetty_layout(
     id="wharf_industry_jetty_layout_1",
     layout=[
-        (0, 0, "wharf_spritelayout_coast_building_auto_orient"),
-        (0, 1, "wharf_spritelayout_shed_1_auto_orient"),
-        (0, 2, "wharf_spritelayout_silo_1_auto_orient"),
-        (0, 3, "wharf_spritelayout_silo_2_auto_orient"),
-        (0, 4, "wharf_spritelayout_warehouse_full_auto_orient"),
+        (0, 0, "wharf_spritelayout_coast_building"),
+        (0, 1, "wharf_spritelayout_shed_1"),
+        (0, 2, "wharf_spritelayout_silo_1"),
+        (0, 3, "wharf_spritelayout_silo_2"),
+        (0, 4, "wharf_spritelayout_warehouse_full"),
         (0, 6, "spritelayout_null_water"),
         # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
         (0, 7, "spritelayout_null_water"),
-        (1, 1, "wharf_spritelayout_tanks_1_auto_orient"),
-        (1, 2, "wharf_spritelayout_tanks_2_auto_orient"),
-        (1, 3, "wharf_spritelayout_shed_1_auto_orient"),
-        (1, 4, "wharf_spritelayout_warehouse_half_auto_orient"),
+        (1, 1, "wharf_spritelayout_tanks_1"),
+        (1, 2, "wharf_spritelayout_tanks_2"),
+        (1, 3, "wharf_spritelayout_shed_1"),
+        (1, 4, "wharf_spritelayout_warehouse_half"),
         (1, 5, "spritelayout_null_water"),
         # ensure spacing from coast, to improve map-gen buildabilty
-        (2, 2, "wharf_spritelayout_warehouse_full_auto_orient"),
-        (2, 3, "wharf_spritelayout_crane_orthogonal_auto_orient"),
-        (2, 4, "wharf_spritelayout_water_ship_1_auto_orient"),
-        (3, 2, "wharf_spritelayout_warehouse_half_auto_orient"),
-        (3, 3, "wharf_spritelayout_crane_rails_orthogonal_auto_orient"),
+        (2, 2, "wharf_spritelayout_warehouse_full"),
+        (2, 3, "wharf_spritelayout_crane_orthogonal"),
+        (2, 4, "wharf_spritelayout_water_ship_1"),
+        (3, 2, "wharf_spritelayout_warehouse_half"),
+        (3, 3, "wharf_spritelayout_crane_rails_orthogonal"),
         (3, 4, "spritelayout_null_water"),
         (4, 5, "spritelayout_null_water"),
         (4, 6, "spritelayout_null_water"),
@@ -560,21 +560,21 @@ industry.add_industry_jetty_layout(
         (0, 6, "spritelayout_null_water"),
         (0, 7, "spritelayout_null_water"),
         # ensure spacing from coast, to improve map-gen buildabilty
-        (1, 2, "wharf_spritelayout_warehouse_full_auto_orient"),
-        (1, 3, "wharf_spritelayout_crane_rails_orthogonal_auto_orient"),
+        (1, 2, "wharf_spritelayout_warehouse_full"),
+        (1, 3, "wharf_spritelayout_crane_rails_orthogonal"),
         (1, 4, "spritelayout_null_water"),
         # ensure spacing from coast, to improve map-gen buildabilty
-        (2, 2, "wharf_spritelayout_warehouse_half_auto_orient"),
-        (2, 3, "wharf_spritelayout_crane_orthogonal_auto_orient"),
-        (2, 4, "wharf_spritelayout_water_ship_2_auto_orient"),
-        (2, 5, "wharf_spritelayout_tanks_1_auto_orient"),
+        (2, 2, "wharf_spritelayout_warehouse_half"),
+        (2, 3, "wharf_spritelayout_crane_orthogonal"),
+        (2, 4, "wharf_spritelayout_water_ship_2"),
+        (2, 5, "wharf_spritelayout_tanks_1"),
         (2, 6, "spritelayout_null_water"),
-        (3, 0, "wharf_spritelayout_coast_building_auto_orient"),
-        (3, 1, "wharf_spritelayout_shed_1_auto_orient"),
-        (3, 2, "wharf_spritelayout_silo_1_auto_orient"),
-        (3, 3, "wharf_spritelayout_silo_2_auto_orient"),
-        (3, 4, "wharf_spritelayout_shed_1_auto_orient"),
-        (3, 5, "wharf_spritelayout_tanks_2_auto_orient"),
+        (3, 0, "wharf_spritelayout_coast_building"),
+        (3, 1, "wharf_spritelayout_shed_1"),
+        (3, 2, "wharf_spritelayout_silo_1"),
+        (3, 3, "wharf_spritelayout_silo_2"),
+        (3, 4, "wharf_spritelayout_shed_1"),
+        (3, 5, "wharf_spritelayout_tanks_2"),
         (3, 6, "spritelayout_null_water"),
         # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
         (3, 7, "spritelayout_null_water"),

@@ -293,7 +293,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_crane_orthogonal_auto_orient",
+    base_id="port_spritelayout_crane_orthogonal",
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -316,7 +316,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_tanks_small_auto_orient",
+    base_id="port_spritelayout_tanks_small",
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -339,7 +339,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_tanks_sphere_auto_orient",
+    base_id="port_spritelayout_tanks_sphere",
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -362,7 +362,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_silos_auto_orient",
+    base_id="port_spritelayout_silos",
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -385,7 +385,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_bulk_handling_auto_orient",
+    base_id="port_spritelayout_bulk_handling",
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -412,7 +412,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_warehouse_half_auto_orient",
+    base_id="port_spritelayout_warehouse_half",
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -435,7 +435,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_warehouse_full_auto_orient",
+    base_id="port_spritelayout_warehouse_full",
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -458,7 +458,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_shed_half_1_auto_orient",
+    base_id="port_spritelayout_shed_half_1",
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -485,7 +485,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_shed_half_2_auto_orient",
+    base_id="port_spritelayout_shed_half_2",
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -513,7 +513,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_shed_full_auto_orient",
+    base_id="port_spritelayout_shed_full",
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
@@ -540,7 +540,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_water_ship_1_auto_orient",
+    base_id="port_spritelayout_water_ship_1",
     tile="port_tile_1",
     config={
         "ground_sprite": sprite_ground,
@@ -563,7 +563,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_water_ship_2_auto_orient",
+    base_id="port_spritelayout_water_ship_2",
     tile="port_tile_1",
     config={
         "ground_sprite": sprite_ground,
@@ -588,28 +588,28 @@ industry.add_industry_jetty_layout(
     id="port_industry_jetty_layout_1",
     layout=[
         # ensure spacing from coast, to improve map-gen buildabilty
-        (0, 2, "port_spritelayout_warehouse_full_auto_orient"),
-        (0, 3, "port_spritelayout_warehouse_half_auto_orient"),
-        (0, 4, "port_spritelayout_silos_auto_orient"),
-        (0, 5, "port_spritelayout_silos_auto_orient"),
-        (0, 6, "port_spritelayout_bulk_handling_auto_orient"),
+        (0, 2, "port_spritelayout_warehouse_full"),
+        (0, 3, "port_spritelayout_warehouse_half"),
+        (0, 4, "port_spritelayout_silos"),
+        (0, 5, "port_spritelayout_silos"),
+        (0, 6, "port_spritelayout_bulk_handling"),
         (0, 7, "spritelayout_null_water"),
         (1, 0, "port_spritelayout_coast_gatehouse"),
-        (1, 1, "port_spritelayout_warehouse_full_auto_orient"),
-        (1, 2, "port_spritelayout_warehouse_half_auto_orient"),
-        (1, 3, "port_spritelayout_warehouse_full_auto_orient"),
-        (1, 4, "port_spritelayout_warehouse_half_auto_orient"),
-        (1, 5, "port_spritelayout_water_ship_1_auto_orient"),
+        (1, 1, "port_spritelayout_warehouse_full"),
+        (1, 2, "port_spritelayout_warehouse_half"),
+        (1, 3, "port_spritelayout_warehouse_full"),
+        (1, 4, "port_spritelayout_warehouse_half"),
+        (1, 5, "port_spritelayout_water_ship_1"),
         (1, 6, "spritelayout_null_water"),
         (1, 7, "spritelayout_null_water"),
         # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
         (1, 8, "spritelayout_null_water"),
         # ensure spacing from coast, to improve map-gen buildabilty
-        (2, 2, "port_spritelayout_shed_half_2_auto_orient"),
-        (2, 3, "port_spritelayout_shed_full_auto_orient"),
-        (2, 4, "port_spritelayout_bulk_handling_auto_orient"),
-        (2, 5, "port_spritelayout_tanks_small_auto_orient"),
-        (2, 6, "port_spritelayout_tanks_sphere_auto_orient"),
+        (2, 2, "port_spritelayout_shed_half_2"),
+        (2, 3, "port_spritelayout_shed_full"),
+        (2, 4, "port_spritelayout_bulk_handling"),
+        (2, 5, "port_spritelayout_tanks_small"),
+        (2, 6, "port_spritelayout_tanks_sphere"),
         (2, 7, "spritelayout_null_water"),
         (3, 3, "spritelayout_null_water"),
         (3, 4, "spritelayout_null_water"),
@@ -626,28 +626,28 @@ industry.add_industry_jetty_layout(
         (0, 6, "spritelayout_null_water"),
         (0, 7, "spritelayout_null_water"),
         # ensure spacing from coast, to improve map-gen buildabilty
-        (1, 2, "port_spritelayout_silos_auto_orient"),
-        (1, 3, "port_spritelayout_silos_auto_orient"),
-        (1, 4, "port_spritelayout_bulk_handling_auto_orient"),
-        (1, 5, "port_spritelayout_shed_full_auto_orient"),
-        (1, 6, "port_spritelayout_shed_half_1_auto_orient"),
+        (1, 2, "port_spritelayout_silos"),
+        (1, 3, "port_spritelayout_silos"),
+        (1, 4, "port_spritelayout_bulk_handling"),
+        (1, 5, "port_spritelayout_shed_full"),
+        (1, 6, "port_spritelayout_shed_half_1"),
         (1, 7, "spritelayout_null_water"),
         (2, 0, "port_spritelayout_coast_gatehouse"),
-        (2, 1, "port_spritelayout_warehouse_full_auto_orient"),
-        (2, 2, "port_spritelayout_warehouse_half_auto_orient"),
-        (2, 3, "port_spritelayout_warehouse_full_auto_orient"),
-        (2, 4, "port_spritelayout_warehouse_half_auto_orient"),
-        (2, 5, "port_spritelayout_water_ship_2_auto_orient"),
+        (2, 1, "port_spritelayout_warehouse_full"),
+        (2, 2, "port_spritelayout_warehouse_half"),
+        (2, 3, "port_spritelayout_warehouse_full"),
+        (2, 4, "port_spritelayout_warehouse_half"),
+        (2, 5, "port_spritelayout_water_ship_2"),
         (2, 6, "spritelayout_null_water"),
         (2, 7, "spritelayout_null_water"),
         # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
         (2, 8, "spritelayout_null_water"),
         # ensure spacing from coast, to improve map-gen buildabilty
-        (3, 2, "port_spritelayout_tanks_small_auto_orient"),
-        (3, 3, "port_spritelayout_tanks_sphere_auto_orient"),
-        (3, 4, "port_spritelayout_bulk_handling_auto_orient"),
-        (3, 5, "port_spritelayout_warehouse_full_auto_orient"),
-        (3, 6, "port_spritelayout_warehouse_half_auto_orient"),
+        (3, 2, "port_spritelayout_tanks_small"),
+        (3, 3, "port_spritelayout_tanks_sphere"),
+        (3, 4, "port_spritelayout_bulk_handling"),
+        (3, 5, "port_spritelayout_warehouse_full"),
+        (3, 6, "port_spritelayout_warehouse_half"),
         (3, 7, "spritelayout_null_water"),
     ],
 )
