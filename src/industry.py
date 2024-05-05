@@ -480,6 +480,100 @@ class SpriteLayout(object):
                 return tile
 
 
+class MagicSpritelayoutJettyFoundations(object):
+    """
+    Occasionally we need magic.  If we're going magic, let's go full on magic.
+    This one provides the slope-aware foundations needed for jetty tiles (either coast, or flat water).
+    """
+
+    # Class attributes eh?  Might as well, these aren't supposed to be mutable
+
+    slope_spritelayout_nums = {
+        0: "1",
+        1: "4",
+        2: "8",
+        3: "2",
+        4: "6",
+        5: "5",
+        6: "7",
+        7: "1",
+        8: "3",
+        9: "4",
+        10: "8",
+        11: "2",
+        12: "6",
+        13: "5",
+        14: "7",
+    }
+
+    spritelayout_foundations = {
+        "1": [],
+        "2": ["slope_sw_ne"],
+        "3": ["se_nw", "ne_sw"],
+        "4": ["ne_sw", "slope_nw_se"],
+        "5": ["slope_ne_sw", "slope_nw_se"],
+        "6": ["slope_ne_sw", "se_nw"],
+        "7": ["slope_se_nw"],
+        "8": ["slope_se_nw", "slope_sw_ne"],
+    }
+
+    def __init__(self, industry, base_id, tile, config):
+        self.tile = tile
+        for spritelayout_num, foundations in self.spritelayout_foundations.items():
+            building_sprites = [
+                config["foundation_sprites"][foundation_sprites]
+                for foundation_sprites in foundations
+            ]
+            building_sprites.extend(config["building_sprites"])
+            industry.add_spritelayout(
+                id=base_id + str(spritelayout_num),
+                ground_sprite=config[
+                    "ground_sprite"
+                ],  # should always be empty sprite for this magic layout
+                ground_overlay=config[
+                    "ground_sprite"
+                ],  # should always be empty sprite for this magic layout
+                building_sprites=building_sprites,
+            )
+        id_slope_mapping = {
+            slope: base_id + str(spritelayout_num)
+            for slope, spritelayout_num in self.slope_spritelayout_nums.items()
+        }
+        industry.add_slope_graphics_switch(
+            base_id,
+            default_result=base_id + "1",
+            slope_spritelayout_mapping={
+                slope_id: slope for slope_id, slope in id_slope_mapping.items()
+            },
+        )
+
+
+class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
+    """
+    Occasionally we need magic.  If we're going magic, let's go full on magic.
+    This one provides tiles for jetties that automatically orient to the coast direction, fine-grained configurable per spritelayout.
+    """
+
+    def __init__(self, industry, base_id, tile, config):
+        self.tile = tile
+        print("MagicSpritelayoutJettyAutoOrientToCoastDirection should set water ground and ground overlay directly, not rely on them from config")
+        ground_sprite=config[
+            "ground_sprite"
+        ]  # should always be empty sprite for this magic layout
+        ground_overlay=config[
+            "ground_sprite"
+        ]  # should always be empty sprite for this magic layout
+        for coast_direction in ["se", "sw", "nw", "ne"]:
+            building_sprites=[]
+            building_sprites.extend(config["building_sprites"][coast_direction])
+            industry.add_spritelayout(
+                id=base_id + "_" + coast_direction,
+                ground_sprite=ground_sprite,
+                ground_overlay=ground_overlay,
+                building_sprites=building_sprites,
+                jetty_foundations=config["jetty_foundations"],
+            )
+
 class MagicSpritelayoutSlopeAwareTrees(object):
     """Occasionally we need magic.  If we're going magic, let's go full on magic.  This one makes 4 climate-aware trees on a slope-aware ground tile"""
 
@@ -906,100 +1000,6 @@ class MagicTree(object):
         self.xoffset = offsets[tree_num][0]
         self.yoffset = offsets[tree_num][1]
 
-
-class MagicSpritelayoutJettyFoundations(object):
-    """
-    Occasionally we need magic.  If we're going magic, let's go full on magic.
-    This one provides the slope-aware foundations needed for jetty tiles (either coast, or flat water).
-    """
-
-    # Class attributes eh?  Might as well, these aren't supposed to be mutable
-
-    slope_spritelayout_nums = {
-        0: "1",
-        1: "4",
-        2: "8",
-        3: "2",
-        4: "6",
-        5: "5",
-        6: "7",
-        7: "1",
-        8: "3",
-        9: "4",
-        10: "8",
-        11: "2",
-        12: "6",
-        13: "5",
-        14: "7",
-    }
-
-    spritelayout_foundations = {
-        "1": [],
-        "2": ["slope_sw_ne"],
-        "3": ["se_nw", "ne_sw"],
-        "4": ["ne_sw", "slope_nw_se"],
-        "5": ["slope_ne_sw", "slope_nw_se"],
-        "6": ["slope_ne_sw", "se_nw"],
-        "7": ["slope_se_nw"],
-        "8": ["slope_se_nw", "slope_sw_ne"],
-    }
-
-    def __init__(self, industry, base_id, tile, config):
-        self.tile = tile
-        for spritelayout_num, foundations in self.spritelayout_foundations.items():
-            building_sprites = [
-                config["foundation_sprites"][foundation_sprites]
-                for foundation_sprites in foundations
-            ]
-            building_sprites.extend(config["building_sprites"])
-            industry.add_spritelayout(
-                id=base_id + str(spritelayout_num),
-                ground_sprite=config[
-                    "ground_sprite"
-                ],  # should always be empty sprite for this magic layout
-                ground_overlay=config[
-                    "ground_sprite"
-                ],  # should always be empty sprite for this magic layout
-                building_sprites=building_sprites,
-            )
-        id_slope_mapping = {
-            slope: base_id + str(spritelayout_num)
-            for slope, spritelayout_num in self.slope_spritelayout_nums.items()
-        }
-        industry.add_slope_graphics_switch(
-            base_id,
-            default_result=base_id + "1",
-            slope_spritelayout_mapping={
-                slope_id: slope for slope_id, slope in id_slope_mapping.items()
-            },
-        )
-
-
-class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
-    """
-    Occasionally we need magic.  If we're going magic, let's go full on magic.
-    This one provides tiles for jetties that automatically orient to the coast direction, fine-grained configurable per spritelayout.
-    """
-
-    def __init__(self, industry, base_id, tile, config):
-        self.tile = tile
-        print("MagicSpritelayoutJettyAutoOrientToCoastDirection should set water ground and ground overlay directly, not rely on them from config")
-        ground_sprite=config[
-            "ground_sprite"
-        ]  # should always be empty sprite for this magic layout
-        ground_overlay=config[
-            "ground_sprite"
-        ]  # should always be empty sprite for this magic layout
-        for coast_direction in ["se", "sw", "nw", "ne"]:
-            building_sprites=[]
-            building_sprites.extend(config["building_sprites"][coast_direction])
-            industry.add_spritelayout(
-                id=base_id + "_" + coast_direction,
-                ground_sprite=ground_sprite,
-                ground_overlay=ground_overlay,
-                building_sprites=building_sprites,
-                jetty_foundations=config["jetty_foundations"],
-            )
 
 class GraphicsSwitch(object):
     """base class for extra graphics switches"""
