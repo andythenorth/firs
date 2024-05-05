@@ -13,33 +13,3 @@ template tmpl_ground_tile(x, y) {
         }
     </tal:frame_variants>
 </tal:spritesets>
-
-
-<!--! Foundations pre-composed with ground tiles (less calculation to pre-compose, and they change very rarely) -->
-template tmpl_jetty_foundations_and_surface(x, y) {
-	[x, y, 64, 40, -31, 0, ANIM]
-}
-
-<!--! See https://newgrf-specs.tt-wiki.net/wiki/NML:List_of_tile_slopes for which slope is which -->
-spriteset(spriteset_jetty_foundations_and_surface_1, "src/graphics/ground.png") {
-    tmpl_jetty_foundations_and_surface(10, 270)   // 0
-    tmpl_jetty_foundations_and_surface(80, 270)   // 1
-    tmpl_jetty_foundations_and_surface(150, 270)  // 2
-    tmpl_jetty_foundations_and_surface(220, 270)  // 3
-    tmpl_jetty_foundations_and_surface(290, 270)  // 4
-    tmpl_jetty_foundations_and_surface(360, 270)  // 5
-    tmpl_jetty_foundations_and_surface(430, 270)  // 6
-    tmpl_jetty_foundations_and_surface(500, 270)  // 7
-    tmpl_jetty_foundations_and_surface(570, 270)  // 8
-    tmpl_jetty_foundations_and_surface(640, 270)  // 9
-    tmpl_jetty_foundations_and_surface(710, 270)  // 10
-    tmpl_jetty_foundations_and_surface(780, 270)  // 11
-    tmpl_jetty_foundations_and_surface(850, 270)  // 12
-    tmpl_jetty_foundations_and_surface(920, 270)  // 13
-    tmpl_jetty_foundations_and_surface(990, 270)  // 14
-    <!--! 4 steep slopes not supported - use empty sprite -->
-    tmpl_jetty_foundations_and_surface(1060, 270) // 15
-    tmpl_jetty_foundations_and_surface(1060, 270) // 16
-    tmpl_jetty_foundations_and_surface(1060, 270) // 17
-    tmpl_jetty_foundations_and_surface(1060, 270) // 18
-}

@@ -37,7 +37,6 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_industry_construction_state_grap
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_switch_graphics, [
-                                    <!--!switch_jetty_foundations_and_surface_slope_check(),--> <!--! !!!!!!!! this is JFDI hax, not every industry needs this -->
                                     switch_tile_fences_industry(),
                                     switch_terrain_industry(),
                                     switch_tile_buildings(),

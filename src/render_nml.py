@@ -100,6 +100,7 @@ def main():
         "construction_states",
         "fences",
         "ground",
+        "jetty_foundations_and_surface",
         "location_check_procedures_industry",
         "magic_trees",
         "perm_storage_mappings",
