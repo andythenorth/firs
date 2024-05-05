@@ -556,15 +556,17 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
 
     def __init__(self, industry, base_id, tile, config):
         self.tile = tile
-        print("MagicSpritelayoutJettyAutoOrientToCoastDirection should set water ground and ground overlay directly, not rely on them from config")
-        ground_sprite=config[
+        print(
+            "MagicSpritelayoutJettyAutoOrientToCoastDirection should set water ground and ground overlay directly, not rely on them from config"
+        )
+        ground_sprite = config[
             "ground_sprite"
         ]  # should always be empty sprite for this magic layout
-        ground_overlay=config[
+        ground_overlay = config[
             "ground_sprite"
         ]  # should always be empty sprite for this magic layout
         for coast_direction in ["se", "sw", "nw", "ne"]:
-            building_sprites=[]
+            building_sprites = []
             building_sprites.extend(config["building_sprites"][coast_direction])
             industry.add_spritelayout(
                 id=base_id + "_" + coast_direction,
@@ -573,6 +575,7 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
                 building_sprites=building_sprites,
                 jetty_foundations=config["jetty_foundations"],
             )
+
 
 class MagicSpritelayoutSlopeAwareTrees(object):
     """Occasionally we need magic.  If we're going magic, let's go full on magic.  This one makes 4 climate-aware trees on a slope-aware ground tile"""
@@ -1613,11 +1616,17 @@ class Industry(object):
         # sometimes magic is the only way
         # this is for very specific spritelayout patterns that repeat across multiple industries and require long declarations and extra switches
         if type == "slope_aware_trees":
-            magic_spritelayout = MagicSpritelayoutSlopeAwareTrees(self, base_id, tile, config)
+            magic_spritelayout = MagicSpritelayoutSlopeAwareTrees(
+                self, base_id, tile, config
+            )
         if type == "jetty_coast_foundations":
-            magic_spritelayout = MagicSpritelayoutJettyFoundations(self, base_id, tile, config)
+            magic_spritelayout = MagicSpritelayoutJettyFoundations(
+                self, base_id, tile, config
+            )
         if type == "jetty_auto_orient_to_coast_direction":
-            magic_spritelayout = MagicSpritelayoutJettyAutoOrientToCoastDirection(self, base_id, tile, config)
+            magic_spritelayout = MagicSpritelayoutJettyAutoOrientToCoastDirection(
+                self, base_id, tile, config
+            )
         # we do have to book-keep the magic, as there are Magic taxes that must be paid
         self.magic_spritelayouts_by_id[base_id] = magic_spritelayout
 
@@ -1820,7 +1829,12 @@ class Industry(object):
             (
                 "se",
                 [
-                    (jetty_layout_2.xy_dimensions[0] + tile_gap_between_jetty_layouts, jetty_layout_y_offset) for jetty_layout_y_offset in jetty_layout_y_offset_range
+                    (
+                        jetty_layout_2.xy_dimensions[0]
+                        + tile_gap_between_jetty_layouts,
+                        jetty_layout_y_offset,
+                    )
+                    for jetty_layout_y_offset in jetty_layout_y_offset_range
                 ],
                 # note the transposition of the two layouts, to get the desired effect
                 jetty_layout_2.layout,
@@ -1829,7 +1843,12 @@ class Industry(object):
             (
                 "nw",
                 [
-                    (jetty_layout_1.xy_dimensions[0] + tile_gap_between_jetty_layouts, jetty_layout_y_offset) for jetty_layout_y_offset in jetty_layout_y_offset_range
+                    (
+                        jetty_layout_1.xy_dimensions[0]
+                        + tile_gap_between_jetty_layouts,
+                        jetty_layout_y_offset,
+                    )
+                    for jetty_layout_y_offset in jetty_layout_y_offset_range
                 ],
                 jetty_layout_1.layout_rotated_180,
                 jetty_layout_2.layout_rotated_180,
@@ -1838,7 +1857,12 @@ class Industry(object):
                 "sw",
                 [
                     # note that we have to use the x dimensions to calculate y offset as we are rotating this one 90 degrees
-                    (jetty_layout_y_offset, jetty_layout_1.xy_dimensions[0] + tile_gap_between_jetty_layouts) for jetty_layout_y_offset in jetty_layout_y_offset_range
+                    (
+                        jetty_layout_y_offset,
+                        jetty_layout_1.xy_dimensions[0]
+                        + tile_gap_between_jetty_layouts,
+                    )
+                    for jetty_layout_y_offset in jetty_layout_y_offset_range
                 ],
                 jetty_layout_1.layout_rotated_90,
                 jetty_layout_2.layout_rotated_90,
@@ -1847,7 +1871,12 @@ class Industry(object):
                 "ne",
                 [
                     # note that we have to use the x dimensions to calculate y offset as we are rotating this one 270 degrees
-                    (jetty_layout_y_offset, jetty_layout_2.xy_dimensions[0] + tile_gap_between_jetty_layouts) for jetty_layout_y_offset in jetty_layout_y_offset_range
+                    (
+                        jetty_layout_y_offset,
+                        jetty_layout_2.xy_dimensions[0]
+                        + tile_gap_between_jetty_layouts,
+                    )
+                    for jetty_layout_y_offset in jetty_layout_y_offset_range
                 ],
                 # note the transposition of the two layouts, to get the desired effect
                 jetty_layout_2.layout_rotated_270,
