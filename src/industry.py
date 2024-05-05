@@ -1823,7 +1823,7 @@ class Industry(object):
         result = []
         composite_layout_counter = 0
         tile_gap_between_jetty_layouts = 2
-        jetty_layout_y_offset_range = range(-3, 3)
+        jetty_layout_y_offset_range = range(-4, 4)
         jetty_layout_1 = self._industry_layouts["jetties"][0]
         jetty_layout_2 = self._industry_layouts["jetties"][1]
         coast_configurations = [
