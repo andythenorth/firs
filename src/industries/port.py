@@ -117,6 +117,16 @@ industry.add_tile(
     autoslope="return CB_RESULT_NO_AUTOSLOPE",
     location_checks=TileLocationChecks(always_allow_founder=False, require_coast=True),
 )
+industry.add_tile(
+    id="port_tile_3",
+    # this is a totally flat tile for ships or other pure water features, so do not allow on coast slopes
+    land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",
+    # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
+    foundations="return CB_RESULT_NO_FOUNDATIONS",
+    # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
+    autoslope="return CB_RESULT_NO_AUTOSLOPE",
+    location_checks=TileLocationChecks(always_allow_founder=False),
+)
 
 spriteset_warehouse_half_nw_se = industry.add_spriteset(
     sprites=[(440, 10, 64, 84, -31, -61)],
@@ -504,7 +514,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_water_ship_1",
-    tile="port_tile_1",
+    tile="port_tile_3",
     config={
         "jetty_foundations": False,
         "building_sprites": {
@@ -526,7 +536,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_water_ship_2",
-    tile="port_tile_1",
+    tile="port_tile_3",
     config={
         "jetty_foundations": False,
         "building_sprites": {
