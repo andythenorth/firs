@@ -1,4 +1,5 @@
 <tal:extra_graphics_switches repeat="graphics_switch industry.extra_graphics_switches">
+    <!--! !!!!!!!! think this can be dropped?? too much architecture for a single use case that is being replaced anyway -->
     <!--! if more extra graphics switch types are added, this would need conditional tal wrapped around each type -->
     switch(FEAT_INDUSTRYTILES, SELF, ${graphics_switch.id}, nearby_tile_slope(0,0)) {
         <tal:slope_spritelayout_mapping repeat="slope_spritelayout graphics_switch.slope_spritelayout_mapping.items()">
@@ -36,6 +37,7 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_industry_construction_state_grap
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_switch_graphics, [
+                                    <!--!switch_jetty_foundations_and_surface_slope_check(),--> <!--! !!!!!!!! this is JFDI hax, not every industry needs this -->
                                     switch_tile_fences_industry(),
                                     switch_terrain_industry(),
                                     switch_tile_buildings(),

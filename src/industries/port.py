@@ -297,8 +297,7 @@ industry.add_magic_spritelayout(
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
-        "foundation_sprites": [spriteset_jetty_ne_sw, spriteset_jetty_se_nw],
-        "jetty_top_sprites": [spriteset_concrete],
+        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_crawler_crane_ne_sw,
@@ -321,8 +320,7 @@ industry.add_magic_spritelayout(
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
-        "foundation_sprites": [spriteset_jetty_ne_sw, spriteset_jetty_se_nw],
-        "jetty_top_sprites": [spriteset_concrete],
+        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_tanks_horizontal_nw_se,
@@ -345,8 +343,7 @@ industry.add_magic_spritelayout(
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
-        "foundation_sprites": [spriteset_jetty_ne_sw, spriteset_jetty_se_nw],
-        "jetty_top_sprites": [spriteset_concrete],
+        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_tanks_sphere_nw_se,
@@ -369,8 +366,7 @@ industry.add_magic_spritelayout(
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
-        "foundation_sprites": [spriteset_jetty_ne_sw, spriteset_jetty_se_nw],
-        "jetty_top_sprites": [spriteset_concrete],
+        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_silos_nw_se,
@@ -393,8 +389,7 @@ industry.add_magic_spritelayout(
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
-        "foundation_sprites": [spriteset_jetty_ne_sw, spriteset_jetty_se_nw],
-        "jetty_top_sprites": [spriteset_concrete],
+        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_warehouse_half_nw_se,
@@ -421,8 +416,7 @@ industry.add_magic_spritelayout(
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
-        "foundation_sprites": [spriteset_jetty_ne_sw, spriteset_jetty_se_nw],
-        "jetty_top_sprites": [spriteset_concrete],
+        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_warehouse_half_nw_se,
@@ -445,8 +439,7 @@ industry.add_magic_spritelayout(
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
-        "foundation_sprites": [spriteset_jetty_ne_sw, spriteset_jetty_se_nw],
-        "jetty_top_sprites": [spriteset_concrete],
+        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_warehouse_full_nw_se,
@@ -469,8 +462,7 @@ industry.add_magic_spritelayout(
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
-        "foundation_sprites": [spriteset_jetty_ne_sw, spriteset_jetty_se_nw],
-        "jetty_top_sprites": [spriteset_concrete],
+        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_shed_half_nw_se,
@@ -497,8 +489,7 @@ industry.add_magic_spritelayout(
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
-        "foundation_sprites": [spriteset_jetty_ne_sw, spriteset_jetty_se_nw],
-        "jetty_top_sprites": [spriteset_concrete],
+        "jetty_foundations": True,
         # reversed variant of the half-shed for alternate end of the shed
         "building_sprites": {
             "se": [
@@ -526,8 +517,7 @@ industry.add_magic_spritelayout(
     tile="port_tile_1",
     config={
         "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
-        "foundation_sprites": [spriteset_jetty_ne_sw, spriteset_jetty_se_nw],
-        "jetty_top_sprites": [spriteset_concrete],
+        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_shed_full_nw_se,
@@ -554,8 +544,7 @@ industry.add_magic_spritelayout(
     tile="port_tile_1",
     config={
         "ground_sprite": sprite_ground,
-        "foundation_sprites": [],
-        "jetty_top_sprites": [],
+        "jetty_foundations": False,
         "building_sprites": {
             "se": [
                 spriteset_ship_1_nw_se,
@@ -578,8 +567,7 @@ industry.add_magic_spritelayout(
     tile="port_tile_1",
     config={
         "ground_sprite": sprite_ground,
-        "foundation_sprites": [],
-        "jetty_top_sprites": [],
+        "jetty_foundations": False,
         "building_sprites": {
             "se": [
                 spriteset_ship_2_nw_se,

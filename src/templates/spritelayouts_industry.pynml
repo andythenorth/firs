@@ -125,6 +125,24 @@
                 hide_sprite: (construction_state != 2);
             }
         </tal:optional_construction_sprites>
+
+        <tal:jetty_foundations condition="spritelayout.jetty_foundations">
+            <!--! optional manual handling of jetty foundations (for water industries) -->
+            building {
+                sprite: spriteset_jetty_foundations_and_surface_1(slope_to_sprite_offset(nearby_tile_slope(0,0)));
+                recolour_mode: RECOLOUR_REMAP;
+                palette: PALETTE_USE_DEFAULT;
+                xoffset: 0;
+                yoffset: 0;
+                zoffset: 8;
+                xextent: 16;
+                yextent: 16;
+                zextent: 8;
+                always_draw: 1;
+                hide_sprite: 0;
+            }
+        </tal:jetty_foundations>
+
         <tal:building_sprites repeat="building_sprite spritelayout.building_sprites">
             <!--! buildings (snow aware) -->
             building {
@@ -213,13 +231,13 @@
                     hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_se}) == 0);
                 </tal:hide_sprite>
                 xoffset: 0;
-                yoffset:  16;
-                zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_se}) * 8;
+                yoffset: 16;
+                zoffset: LOAD_TEMP(${graphics_temp_storage.var_fence_offset_se}) * 8;
                 xextent: 16;
                 yextent: 1;
                 zextent: 6;
                 recolour_mode: RECOLOUR_REMAP;
-                palette:       PALETTE_USE_DEFAULT;
+                palette: PALETTE_USE_DEFAULT;
             }
         </tal:optional_fence>
         <tal:optional_fence condition="'sw' in spritelayout.fences">
@@ -230,13 +248,13 @@
                     hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_use_fence_sw}) == 0);
                 </tal:hide_sprite>
                 xoffset: 16;
-                yoffset:  0;
-                zoffset:  LOAD_TEMP(${graphics_temp_storage.var_fence_offset_sw}) * 8;
+                yoffset: 0;
+                zoffset: LOAD_TEMP(${graphics_temp_storage.var_fence_offset_sw}) * 8;
                 xextent: 1;
                 yextent: 16;
                 zextent: 6;
                 recolour_mode: RECOLOUR_REMAP;
-                palette:       PALETTE_USE_DEFAULT;
+                palette: PALETTE_USE_DEFAULT;
             }
         </tal:optional_fence>
 

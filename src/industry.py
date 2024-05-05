@@ -451,6 +451,7 @@ class SpriteLayout(object):
         fences=[],
         perma_fences=[],
         magic_trees=[],
+        jetty_foundations=False,
         terrain_aware_ground=False,
         tile=None,
         add_to_object_num=None,
@@ -465,6 +466,7 @@ class SpriteLayout(object):
         # optionally prevent fences hiding when a station is adjacent.  Same string values as fences.
         self.perma_fences = perma_fences
         self.magic_trees = magic_trees
+        self.jetty_foundations = jetty_foundations
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
         # as of September 2022, spritelayouts can define which tile they use
         # - this is optional as a migration strategy, but is intended to be the only supported approach in future
@@ -904,11 +906,10 @@ class MagicTree(object):
         self.yoffset = offsets[tree_num][1]
 
 
-class MagicSpritelayoutHarbourCoastFoundations(object):
+class MagicSpritelayoutJettyFoundations(object):
     """
     Occasionally we need magic.  If we're going magic, let's go full on magic.
-    This one provides the slope-aware foundations needed for coast tiles.
-    Possibly could be used generically for all slopes, there's nothing specific to coasts in it, but other cases weren't needed when writing it.
+    This one provides the slope-aware foundations needed for jetty tiles (either coast, or flat water).
     """
 
     # Class attributes eh?  Might as well, these aren't supposed to be mutable
@@ -979,6 +980,7 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
     """
 
     def __init__(self, industry, base_id, config):
+        print("MagicSpritelayoutJettyAutoOrientToCoastDirection should set water ground and ground overlay directly, not rely on them from config")
         ground_sprite=config[
             "ground_sprite"
         ]  # should always be empty sprite for this magic layout
@@ -987,14 +989,13 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
         ]  # should always be empty sprite for this magic layout
         for coast_direction in ["se", "sw", "nw", "ne"]:
             building_sprites=[]
-            building_sprites.extend(config["foundation_sprites"])
-            building_sprites.extend(config["jetty_top_sprites"])
             building_sprites.extend(config["building_sprites"][coast_direction])
             industry.add_spritelayout(
                 id=base_id + "_" + coast_direction,
                 ground_sprite=ground_sprite,
                 ground_overlay=ground_overlay,
                 building_sprites=building_sprites,
+                jetty_foundations=config["jetty_foundations"],
             )
 
 class GraphicsSwitch(object):
@@ -1614,7 +1615,7 @@ class Industry(object):
             MagicSpritelayoutSlopeAwareTrees(self, base_id, config)
         if type == "jetty_coast_foundations":
             # the Magic is so magic that we don't have any further assignment, instantiating the class does all the registration etc (ugh)
-            MagicSpritelayoutHarbourCoastFoundations(self, base_id, config)
+            MagicSpritelayoutJettyFoundations(self, base_id, config)
         if type == "jetty_auto_orient_to_coast_direction":
             # the Magic is so magic that we don't have any further assignment, instantiating the class does all the registration etc (ugh)
             MagicSpritelayoutJettyAutoOrientToCoastDirection(self, base_id, config)
