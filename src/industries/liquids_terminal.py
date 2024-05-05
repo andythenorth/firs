@@ -30,40 +30,33 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="liquids_terminal_tile_1",
-    land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",
+    # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
+    foundations="return CB_RESULT_NO_FOUNDATIONS",
+    # supporting autoslope for the water tiles produces too many edge cases which are difficult to handle, so ban it
+    autoslope="return CB_RESULT_NO_AUTOSLOPE",
     location_checks=TileLocationChecks(always_allow_founder=False),
 )
 industry.add_tile(
     id="liquids_terminal_tile_2",
+    # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
+    # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
+    autoslope="return CB_RESULT_NO_AUTOSLOPE",
     location_checks=TileLocationChecks(always_allow_founder=False, require_coast=True),
+)
+industry.add_tile(
+    id="liquids_terminal_tile_3",
+    # this is a totally flat tile for ships or other pure water features, so do not allow on coast slopes
+    land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",
+    # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
+    foundations="return CB_RESULT_NO_FOUNDATIONS",
+    # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
+    autoslope="return CB_RESULT_NO_AUTOSLOPE",
+    location_checks=TileLocationChecks(always_allow_founder=False),
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDSPRITE_WATER")
 spriteset_ground_empty = industry.add_spriteset(type="empty")
-spriteset_concrete = industry.add_spriteset(
-    sprites=[(10, 10, 64, 39, -31, -8)],
-    always_draw=1,
-)
-spriteset_jetty_se_nw = industry.add_spriteset(
-    sprites=[(10, 60, 64, 39, -31, -7)],
-    always_draw=1,
-)
-spriteset_jetty_ne_sw = industry.add_spriteset(
-    sprites=[(80, 60, 64, 39, -31, -7)], always_draw=1
-)
-spriteset_jetty_slope_nw_se = industry.add_spriteset(
-    sprites=[(150, 60, 64, 39, -31, -7)],
-)
-spriteset_jetty_slope_ne_sw = industry.add_spriteset(
-    sprites=[(220, 60, 64, 39, -31, -7)],
-)
-spriteset_jetty_slope_se_nw = industry.add_spriteset(
-    sprites=[(290, 60, 64, 39, -31, -7)],
-)
-spriteset_jetty_slope_sw_ne = industry.add_spriteset(
-    sprites=[(360, 60, 64, 39, -31, -7)],
-)
 spriteset_small_tanks = industry.add_spriteset(
     sprites=[(440, 110, 64, 84, -31, -43)],
     zoffset=18,
@@ -71,477 +64,216 @@ spriteset_small_tanks = industry.add_spriteset(
 spriteset_office = industry.add_spriteset(
     sprites=[(440, 10, 64, 84, -31, -43)], zoffset=18
 )
-spriteset_spherical_tank = industry.add_spriteset(
-    sprites=[(510, 10, 64, 84, -35, -61)],
+spriteset_sphere_tank = industry.add_spriteset(
+    sprites=[(510, 10, 64, 84, -31, -60)],
 )
 spriteset_large_cylinder_tank = industry.add_spriteset(
     sprites=[(510, 110, 64, 84, -31, -43)],
     zoffset=18,
 )
-spriteset_boat_1 = industry.add_spriteset(
-    sprites=[(10, 110, 64, 39, -35, -15)],
+spriteset_barge_1_ne_sw = industry.add_spriteset(
+    sprites=[(10, 110, 64, 39, -22, 0)],
 )
-spriteset_boat_2 = industry.add_spriteset(
-    sprites=[(80, 110, 64, 39, -40, -12)],
+spriteset_barge_1_nw_se = industry.add_spriteset(
+    sprites=[(80, 110, 64, 39, -23, -13)],
 )
-spriteset_boat_3 = industry.add_spriteset(
-    sprites=[(150, 110, 64, 39, -13, -19)],
+spriteset_barge_1_sw_ne = industry.add_spriteset(
+    sprites=[(150, 110, 64, 39, -38, -13)],
 )
-spriteset_boat_4 = industry.add_spriteset(
-    sprites=[(220, 110, 64, 39, -27, -12)],
+spriteset_barge_1_se_nw = industry.add_spriteset(
+    sprites=[(220, 110, 64, 39, -47, -1)],
 )
-industry.add_spritelayout(
-    id="liquids_terminal_spritelayout_small_tanks",
-    tile="liquids_terminal_tile_1",
-    ground_sprite=spriteset_ground_empty,
-    ground_overlay=spriteset_ground_empty,
-    building_sprites=[
-        spriteset_jetty_se_nw,
-        spriteset_jetty_ne_sw,
-        spriteset_concrete,
-        spriteset_small_tanks,
-    ],
+spriteset_barge_2_ne_sw = industry.add_spriteset(
+    sprites=[(150, 110, 64, 39, -22, 0)],
 )
-industry.add_magic_spritelayout(
-    type="jetty_coast_foundations",
-    base_id="liquids_terminal_spritelayout_coast_large_cylinder_tank",
-    tile="liquids_terminal_tile_2",
-    config={
-        "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
-        "building_sprites": [spriteset_concrete, spriteset_large_cylinder_tank],
-        "foundation_sprites": {
-            "ne_sw": spriteset_jetty_ne_sw,
-            "se_nw": spriteset_jetty_se_nw,
-            "slope_nw_se": spriteset_jetty_slope_nw_se,
-            "slope_ne_sw": spriteset_jetty_slope_ne_sw,
-            "slope_se_nw": spriteset_jetty_slope_se_nw,
-            "slope_sw_ne": spriteset_jetty_slope_sw_ne,
-        },
-    },
+spriteset_barge_2_nw_se = industry.add_spriteset(
+    sprites=[(220, 110, 64, 39, -23, -13)],
+)
+spriteset_barge_2_sw_ne = industry.add_spriteset(
+    sprites=[(10, 110, 64, 39, -38, -13)],
+)
+spriteset_barge_2_se_nw = industry.add_spriteset(
+    sprites=[(80, 110, 64, 39, -47, -1)],
 )
 industry.add_magic_spritelayout(
-    type="jetty_coast_foundations",
+    type="jetty_auto_orient_to_coast_direction",
     base_id="liquids_terminal_spritelayout_coast_office",
     tile="liquids_terminal_tile_2",
     config={
-        "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
-        "building_sprites": [spriteset_concrete, spriteset_office],
-        "foundation_sprites": {
-            "ne_sw": spriteset_jetty_ne_sw,
-            "se_nw": spriteset_jetty_se_nw,
-            "slope_nw_se": spriteset_jetty_slope_nw_se,
-            "slope_ne_sw": spriteset_jetty_slope_ne_sw,
-            "slope_se_nw": spriteset_jetty_slope_se_nw,
-            "slope_sw_ne": spriteset_jetty_slope_sw_ne,
+        "jetty_foundations": True,
+        "building_sprites": {
+            "se": [
+                spriteset_office,
+            ],
+            "sw": [
+                spriteset_office,
+            ],
+            "nw": [
+                spriteset_office,
+            ],
+            "ne": [
+                spriteset_office,
+            ],
         },
     },
 )
 industry.add_magic_spritelayout(
-    type="jetty_coast_foundations",
-    base_id="liquids_terminal_spritelayout_coast_spherical_tank",
-    tile="liquids_terminal_tile_2",
+    type="jetty_auto_orient_to_coast_direction",
+    base_id="liquids_terminal_spritelayout_sphere_tank",
+    tile="liquids_terminal_tile_1",
     config={
-        "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
-        "building_sprites": [spriteset_concrete, spriteset_spherical_tank],
-        "foundation_sprites": {
-            "ne_sw": spriteset_jetty_ne_sw,
-            "se_nw": spriteset_jetty_se_nw,
-            "slope_nw_se": spriteset_jetty_slope_nw_se,
-            "slope_ne_sw": spriteset_jetty_slope_ne_sw,
-            "slope_se_nw": spriteset_jetty_slope_se_nw,
-            "slope_sw_ne": spriteset_jetty_slope_sw_ne,
+        "jetty_foundations": True,
+        "building_sprites": {
+            "se": [
+                spriteset_sphere_tank,
+            ],
+            "sw": [
+                spriteset_sphere_tank,
+            ],
+            "nw": [
+                spriteset_sphere_tank,
+            ],
+            "ne": [
+                spriteset_sphere_tank,
+            ],
+        },
+    },
+)
+industry.add_magic_spritelayout(
+    type="jetty_auto_orient_to_coast_direction",
+    base_id="liquids_terminal_spritelayout_small_tanks",
+    tile="liquids_terminal_tile_1",
+    config={
+        "jetty_foundations": True,
+        "building_sprites": {
+            "se": [
+                spriteset_small_tanks,
+            ],
+            "sw": [
+                spriteset_small_tanks,
+            ],
+            "nw": [
+                spriteset_small_tanks,
+            ],
+            "ne": [
+                spriteset_small_tanks,
+            ],
+        },
+    },
+)
+industry.add_magic_spritelayout(
+    type="jetty_auto_orient_to_coast_direction",
+    base_id="liquids_terminal_spritelayout_large_tank",
+    tile="liquids_terminal_tile_1",
+    config={
+        "jetty_foundations": True,
+        "building_sprites": {
+            "se": [
+                spriteset_large_cylinder_tank,
+            ],
+            "sw": [
+                spriteset_large_cylinder_tank,
+            ],
+            "nw": [
+                spriteset_large_cylinder_tank,
+            ],
+            "ne": [
+                spriteset_large_cylinder_tank,
+            ],
         },
     },
 )
 
-industry.add_spritelayout(
-    id="liquids_terminal_spritelayout_water_barge_sw_ne",
-    tile="liquids_terminal_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
-    building_sprites=[spriteset_boat_1],
+industry.add_magic_spritelayout(
+    type="jetty_auto_orient_to_coast_direction",
+    base_id="liquids_terminal_spritelayout_water_barge_1",
+    tile="liquids_terminal_tile_3",
+    config={
+        "jetty_foundations": False,
+        "building_sprites": {
+            "se": [
+                spriteset_barge_1_nw_se,
+            ],
+            "sw": [
+                spriteset_barge_1_ne_sw,
+            ],
+            "nw": [
+                spriteset_barge_1_se_nw,
+            ],
+            "ne": [
+                spriteset_barge_1_sw_ne,
+            ],
+        },
+    },
 )
-industry.add_spritelayout(
-    id="liquids_terminal_spritelayout_water_barge_ne_sw",
-    tile="liquids_terminal_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
-    building_sprites=[spriteset_boat_2],
-)
-industry.add_spritelayout(
-    id="liquids_terminal_spritelayout_water_barge_se_nw",
-    tile="liquids_terminal_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
-    building_sprites=[spriteset_boat_3],
-)
-industry.add_spritelayout(
-    id="liquids_terminal_spritelayout_water_barge_nw_se",
-    tile="liquids_terminal_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
-    building_sprites=[spriteset_boat_4],
-)
-industry.add_spritelayout(
-    id="liquids_terminal_spritelayout_water_empty",
-    tile="liquids_terminal_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
-    building_sprites=[],
-)
-industry.add_spritelayout(
-    id="liquids_terminal_spritelayout_office",
-    tile="liquids_terminal_tile_1",
-    ground_sprite=spriteset_ground_empty,
-    ground_overlay=spriteset_ground_empty,
-    building_sprites=[
-        spriteset_jetty_se_nw,
-        spriteset_jetty_ne_sw,
-        spriteset_concrete,
-        spriteset_office,
-    ],
-)
-industry.add_spritelayout(
-    id="liquids_terminal_spritelayout_large_cylinder_tank",
-    tile="liquids_terminal_tile_1",
-    ground_sprite=spriteset_ground_empty,
-    ground_overlay=spriteset_ground_empty,
-    building_sprites=[
-        spriteset_jetty_se_nw,
-        spriteset_jetty_ne_sw,
-        spriteset_concrete,
-        spriteset_large_cylinder_tank,
-    ],
-)
-industry.add_spritelayout(
-    id="liquids_terminal_spritelayout_crane_ne_sw",
-    tile="liquids_terminal_tile_1",
-    ground_sprite=spriteset_ground_empty,
-    ground_overlay=spriteset_ground_empty,
-    building_sprites=[
-        spriteset_jetty_se_nw,
-        spriteset_jetty_ne_sw,
-        spriteset_concrete,
-        spriteset_small_tanks,
-    ],
-)
-industry.add_spritelayout(
-    id="liquids_terminal_spritelayout_jetty_empty",
-    tile="liquids_terminal_tile_1",
-    ground_sprite=spriteset_ground_empty,
-    ground_overlay=spriteset_ground_empty,
-    building_sprites=[spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete],
+industry.add_magic_spritelayout(
+    type="jetty_auto_orient_to_coast_direction",
+    base_id="liquids_terminal_spritelayout_water_barge_2",
+    tile="liquids_terminal_tile_3",
+    config={
+        "jetty_foundations": False,
+        "building_sprites": {
+            "se": [
+                spriteset_barge_2_nw_se,
+            ],
+            "sw": [
+                spriteset_barge_2_ne_sw,
+            ],
+            "nw": [
+                spriteset_barge_2_se_nw,
+            ],
+            "ne": [
+                spriteset_barge_2_sw_ne,
+            ],
+        },
+    },
 )
 
-industry.add_industry_layout(
+# 2 jetty layouts which will be combined for different coast angles
+# by convention, the jetty layout definitions are aligned to the SE coast
+industry.add_industry_jetty_layout(
     id="liquids_terminal_industry_layout_1",
     layout=[
-        (0, 0, "spritelayout_null_water"),
-        (0, 1, "liquids_terminal_spritelayout_water_empty"),
-        (0, 2, "liquids_terminal_spritelayout_water_empty"),
-        (0, 3, "liquids_terminal_spritelayout_office"),
-        (
-            0,
-            4,
-            "liquids_terminal_spritelayout_coast_spherical_tank",
-        ),
-        (1, 0, "spritelayout_null_water"),
-        (1, 1, "liquids_terminal_spritelayout_small_tanks"),
-        (1, 2, "liquids_terminal_spritelayout_small_tanks"),
-        (1, 3, "liquids_terminal_spritelayout_jetty_empty"),
-        (1, 4, "liquids_terminal_spritelayout_coast_office"),
-        (2, 0, "spritelayout_null_water"),
-        (
-            2,
-            1,
-            "liquids_terminal_spritelayout_water_barge_se_nw",
-        ),
-        (2, 2, "liquids_terminal_spritelayout_water_empty"),
-        (
-            2,
-            3,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (
-            2,
-            4,
-            "liquids_terminal_spritelayout_coast_large_cylinder_tank",
-        ),
-        (3, 0, "spritelayout_null_water"),
-        (
-            3,
-            1,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (
-            3,
-            2,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (
-            3,
-            3,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (
-            3,
-            4,
-            "liquids_terminal_spritelayout_coast_large_cylinder_tank",
-        ),
-        (4, 0, "spritelayout_null_water"),
-        (4, 1, "liquids_terminal_spritelayout_water_empty"),
-        (
-            4,
-            2,
-            "liquids_terminal_spritelayout_water_barge_nw_se",
-        ),
-        (
-            4,
-            3,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (
-            4,
-            4,
-            "liquids_terminal_spritelayout_coast_large_cylinder_tank",
-        ),
-        (5, 0, "spritelayout_null_water"),
-        (5, 1, "spritelayout_null_water"),
-        (5, 2, "spritelayout_null_water"),
-        (5, 3, "spritelayout_null_water"),
-        (5, 4, "spritelayout_null_water"),
+        (0, 0, "liquids_terminal_spritelayout_coast_office"),
+        (0, 1, "liquids_terminal_spritelayout_large_tank"),
+        (0, 2, "liquids_terminal_spritelayout_large_tank"),
+        (0, 3, "liquids_terminal_spritelayout_small_tanks"),
+        (0, 4, "spritelayout_null_water"),
+        (1, 0, "liquids_terminal_spritelayout_sphere_tank"),
+        (1, 1, "liquids_terminal_spritelayout_sphere_tank"),
+        (1, 2, "liquids_terminal_spritelayout_water_barge_2"),
+        (1, 3, "spritelayout_null_water"),
+        (1, 4, "spritelayout_null_water"),
+        (2, 0, "liquids_terminal_spritelayout_large_tank"),
+        (2, 1, "liquids_terminal_spritelayout_large_tank"),
+        (2, 2, "liquids_terminal_spritelayout_small_tanks"),
+        (2, 3, "liquids_terminal_spritelayout_small_tanks"),
+        (2, 4, "spritelayout_null_water"),
+        # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
+        (2, 5, "spritelayout_null_water"),
+        (3, 0, "liquids_terminal_spritelayout_large_tank"),
+        (3, 1, "liquids_terminal_spritelayout_large_tank"),
+        (3, 2, "liquids_terminal_spritelayout_water_barge_1"),
+        (3, 3, "spritelayout_null_water"),
     ],
 )
-industry.add_industry_layout(
+
+industry.add_industry_jetty_layout(
     id="liquids_terminal_industry_layout_2",
     layout=[
-        (0, 0, "spritelayout_null_water"),
-        (0, 1, "spritelayout_null_water"),
-        (0, 2, "spritelayout_null_water"),
-        (0, 3, "spritelayout_null_water"),
-        (0, 4, "spritelayout_null_water"),
-        (0, 5, "spritelayout_null_water"),
-        (1, 0, "liquids_terminal_spritelayout_water_empty"),
-        (
-            1,
-            1,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (
-            1,
-            2,
-            "liquids_terminal_spritelayout_water_barge_sw_ne",
-        ),
+        (0, 0, "liquids_terminal_spritelayout_large_tank"),
+        (0, 1, "liquids_terminal_spritelayout_large_tank"),
+        (1, 0, "liquids_terminal_spritelayout_large_tank"),
+        (1, 1, "liquids_terminal_spritelayout_large_tank"),
+        (1, 2, "liquids_terminal_spritelayout_small_tanks"),
         (1, 3, "liquids_terminal_spritelayout_small_tanks"),
-        (1, 4, "liquids_terminal_spritelayout_water_empty"),
-        (1, 5, "spritelayout_null_water"),
-        (2, 0, "liquids_terminal_spritelayout_water_empty"),
-        (
-            2,
-            1,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (2, 2, "liquids_terminal_spritelayout_water_empty"),
-        (2, 3, "liquids_terminal_spritelayout_small_tanks"),
-        (
-            2,
-            4,
-            "liquids_terminal_spritelayout_water_barge_ne_sw",
-        ),
-        (2, 5, "spritelayout_null_water"),
-        (
-            3,
-            0,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (
-            3,
-            1,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (
-            3,
-            2,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (3, 3, "liquids_terminal_spritelayout_jetty_empty"),
-        (3, 4, "liquids_terminal_spritelayout_office"),
-        (3, 5, "spritelayout_null_water"),
-        (
-            4,
-            0,
-            "liquids_terminal_spritelayout_coast_large_cylinder_tank",
-        ),
-        (
-            4,
-            1,
-            "liquids_terminal_spritelayout_coast_large_cylinder_tank",
-        ),
-        (
-            4,
-            2,
-            "liquids_terminal_spritelayout_coast_large_cylinder_tank",
-        ),
-        (4, 3, "liquids_terminal_spritelayout_coast_office"),
-        (
-            4,
-            4,
-            "liquids_terminal_spritelayout_coast_spherical_tank",
-        ),
-    ],
-)
-industry.add_industry_layout(
-    id="liquids_terminal_industry_layout_3",
-    layout=[
-        (
-            0,
-            1,
-            "liquids_terminal_spritelayout_coast_spherical_tank",
-        ),
-        (0, 2, "liquids_terminal_spritelayout_coast_office"),
-        (
-            0,
-            3,
-            "liquids_terminal_spritelayout_coast_large_cylinder_tank",
-        ),
-        (
-            0,
-            4,
-            "liquids_terminal_spritelayout_coast_large_cylinder_tank",
-        ),
-        (
-            0,
-            5,
-            "liquids_terminal_spritelayout_coast_large_cylinder_tank",
-        ),
-        (1, 0, "spritelayout_null_water"),
-        (1, 1, "liquids_terminal_spritelayout_office"),
-        (1, 2, "liquids_terminal_spritelayout_jetty_empty"),
-        (
-            1,
-            3,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (
-            1,
-            4,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (
-            1,
-            5,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (2, 0, "spritelayout_null_water"),
-        (2, 1, "liquids_terminal_spritelayout_water_empty"),
-        (2, 2, "liquids_terminal_spritelayout_small_tanks"),
-        (2, 3, "liquids_terminal_spritelayout_water_empty"),
-        (
-            2,
-            4,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (
-            2,
-            5,
-            "liquids_terminal_spritelayout_water_barge_se_nw",
-        ),
-        (3, 0, "spritelayout_null_water"),
-        (3, 1, "liquids_terminal_spritelayout_water_empty"),
-        (3, 2, "liquids_terminal_spritelayout_crane_ne_sw"),
-        (
-            3,
-            3,
-            "liquids_terminal_spritelayout_water_barge_ne_sw",
-        ),
-        (
-            3,
-            4,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (3, 5, "liquids_terminal_spritelayout_water_empty"),
-        (4, 0, "spritelayout_null_water"),
-        (4, 1, "spritelayout_null_water"),
-        (4, 2, "spritelayout_null_water"),
-        (4, 3, "spritelayout_null_water"),
-        (4, 4, "spritelayout_null_water"),
-        (4, 5, "spritelayout_null_water"),
-    ],
-)
-industry.add_industry_layout(
-    id="liquids_terminal_industry_layout_4",
-    layout=[
-        (
-            0,
-            0,
-            "liquids_terminal_spritelayout_coast_large_cylinder_tank",
-        ),
-        (
-            0,
-            1,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (0, 2, "liquids_terminal_spritelayout_water_empty"),
-        (0, 3, "liquids_terminal_spritelayout_water_empty"),
-        (0, 4, "spritelayout_null_water"),
-        (
-            1,
-            0,
-            "liquids_terminal_spritelayout_coast_large_cylinder_tank",
-        ),
-        (
-            1,
-            1,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (
-            1,
-            2,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (
-            1,
-            3,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
         (1, 4, "spritelayout_null_water"),
-        (
-            2,
-            0,
-            "liquids_terminal_spritelayout_coast_large_cylinder_tank",
-        ),
-        (
-            2,
-            1,
-            "liquids_terminal_spritelayout_large_cylinder_tank",
-        ),
-        (2, 2, "liquids_terminal_spritelayout_water_empty"),
-        (
-            2,
-            3,
-            "liquids_terminal_spritelayout_water_barge_nw_se",
-        ),
+        # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
+        (1, 5, "spritelayout_null_water"),
+        (2, 0, "liquids_terminal_spritelayout_coast_office"),
+        (2, 1, "liquids_terminal_spritelayout_sphere_tank"),
+        (2, 2, "liquids_terminal_spritelayout_water_barge_1"),
+        (2, 3, "spritelayout_null_water"),
         (2, 4, "spritelayout_null_water"),
-        (3, 0, "liquids_terminal_spritelayout_coast_office"),
-        (3, 1, "liquids_terminal_spritelayout_jetty_empty"),
-        (3, 2, "liquids_terminal_spritelayout_small_tanks"),
-        (3, 3, "liquids_terminal_spritelayout_small_tanks"),
-        (3, 4, "spritelayout_null_water"),
-        (
-            4,
-            0,
-            "liquids_terminal_spritelayout_coast_spherical_tank",
-        ),
-        (4, 1, "liquids_terminal_spritelayout_office"),
-        (
-            4,
-            2,
-            "liquids_terminal_spritelayout_water_barge_ne_sw",
-        ),
-        (4, 3, "liquids_terminal_spritelayout_water_empty"),
-        (4, 4, "spritelayout_null_water"),
-        (5, 2, "spritelayout_null_water"),
-        (5, 3, "spritelayout_null_water"),
-        (5, 4, "spritelayout_null_water"),
     ],
 )
