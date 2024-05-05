@@ -722,7 +722,8 @@ class MagicSpritelayoutSlopeAwareTrees(object):
         ),
     }  # done
 
-    def __init__(self, industry, base_id, config):
+    def __init__(self, industry, base_id, tile, config):
+        self.tile = tile
         # !! ground sprites are slaved to sprite numbers currently, needs extending for spritesets
         ground_sprite = industry.add_sprite(
             sprite_number=str(config["ground_sprite"])
@@ -943,7 +944,8 @@ class MagicSpritelayoutJettyFoundations(object):
         "8": ["slope_se_nw", "slope_sw_ne"],
     }
 
-    def __init__(self, industry, base_id, config):
+    def __init__(self, industry, base_id, tile, config):
+        self.tile = tile
         for spritelayout_num, foundations in self.spritelayout_foundations.items():
             building_sprites = [
                 config["foundation_sprites"][foundation_sprites]
@@ -979,7 +981,8 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
     This one provides tiles for jetties that automatically orient to the coast direction, fine-grained configurable per spritelayout.
     """
 
-    def __init__(self, industry, base_id, config):
+    def __init__(self, industry, base_id, tile, config):
+        self.tile = tile
         print("MagicSpritelayoutJettyAutoOrientToCoastDirection should set water ground and ground overlay directly, not rely on them from config")
         ground_sprite=config[
             "ground_sprite"
@@ -1104,7 +1107,7 @@ class IndustryLayout(object):
                         break
                 # not found, look in other book-keeping lists of tile ids
                 if tile == None:
-                    tile = self.industry.magic_spritelayout_tile_ids[layout_def[2]]
+                    tile = self.industry.magic_spritelayouts_by_id[layout_def[2]].tile
                 if tile == None:
                     raise BaseException(
                         self.id
@@ -1518,8 +1521,7 @@ class Industry(object):
         self.spritesets = []
         # by convention spritelayout is one word :P
         self.spritelayouts = []
-        # magic has a cost - we can't look up tiles in magic spritelayouts using the standard (non-magic) methods, so we have to do book-keeping
-        self.magic_spritelayout_tile_ids = {}
+        self.magic_spritelayouts_by_id = {}
         # objects dict keyed on the object num local to the industry, for convenience of access creating/appending - isn't significant for rendering
         self.objects = {}
         self.extra_graphics_switches = []
@@ -1611,16 +1613,13 @@ class Industry(object):
         # sometimes magic is the only way
         # this is for very specific spritelayout patterns that repeat across multiple industries and require long declarations and extra switches
         if type == "slope_aware_trees":
-            # the Magic is so magic that we don't have any further assignment, instantiating the class does all the registration etc (ugh)
-            MagicSpritelayoutSlopeAwareTrees(self, base_id, config)
+            magic_spritelayout = MagicSpritelayoutSlopeAwareTrees(self, base_id, tile, config)
         if type == "jetty_coast_foundations":
-            # the Magic is so magic that we don't have any further assignment, instantiating the class does all the registration etc (ugh)
-            MagicSpritelayoutJettyFoundations(self, base_id, config)
+            magic_spritelayout = MagicSpritelayoutJettyFoundations(self, base_id, tile, config)
         if type == "jetty_auto_orient_to_coast_direction":
-            # the Magic is so magic that we don't have any further assignment, instantiating the class does all the registration etc (ugh)
-            MagicSpritelayoutJettyAutoOrientToCoastDirection(self, base_id, config)
+            magic_spritelayout = MagicSpritelayoutJettyAutoOrientToCoastDirection(self, base_id, tile, config)
         # we do have to book-keep the magic, as there are Magic taxes that must be paid
-        self.magic_spritelayout_tile_ids[base_id] = tile
+        self.magic_spritelayouts_by_id[base_id] = magic_spritelayout
 
     def add_slope_graphics_switch(self, *args, **kwargs):
         new_graphics_switch = GraphicsSwitchSlopes(*args, **kwargs)
@@ -1874,6 +1873,8 @@ class Industry(object):
                     xy_offset,
                 ):
                     spritelayout_id = tiledef[3]
+                    # this is a fragile string detection, as we don't actually have the original magic spritelayout in context here
+                    # that could be fixed, we do somewhat book-keep magic spritelayouts, but not sufficiently to support detecting them here
                     if spritelayout_id.find("auto_orient") != -1:
                         spritelayout_id = spritelayout_id + "_" + coast_direction
                     tiledef = (tiledef[0], tiledef[1], tiledef[2], spritelayout_id)
