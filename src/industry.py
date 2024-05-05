@@ -557,15 +557,8 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
     def __init__(self, industry, base_id, tile, config):
         self.tile = tile
         self.auto_orient = True
-        print(
-            "MagicSpritelayoutJettyAutoOrientToCoastDirection should set water ground and ground overlay directly, not rely on them from config"
-        )
-        ground_sprite = config[
-            "ground_sprite"
-        ]  # should always be empty sprite for this magic layout
-        ground_overlay = config[
-            "ground_sprite"
-        ]  # should always be empty sprite for this magic layout
+        ground_sprite = industry.add_sprite(sprite_number="GROUNDSPRITE_WATER")
+        ground_overlay = industry.add_spriteset(type="empty")
         for coast_direction in ["se", "sw", "nw", "ne"]:
             building_sprites = []
             building_sprites.extend(config["building_sprites"][coast_direction])
