@@ -61,7 +61,7 @@ industry.add_tile(
     id="wharf_tile_1",
     # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
-     # supporting autoslope for the water tiles produces too many edge cases which are difficult to handle, so ban it
+    # supporting autoslope for the water tiles produces too many edge cases which are difficult to handle, so ban it
     autoslope="return CB_RESULT_NO_AUTOSLOPE",
     location_checks=TileLocationChecks(always_allow_founder=False),
 )
@@ -69,7 +69,7 @@ industry.add_tile(
     id="wharf_tile_2",
     # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
-     # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
+    # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
     autoslope="return CB_RESULT_NO_AUTOSLOPE",
     location_checks=TileLocationChecks(always_allow_founder=False, require_coast=True),
 )
