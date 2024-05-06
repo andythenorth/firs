@@ -15,7 +15,7 @@ industry = IndustryPrimaryPort(
     fund_cost_multiplier="152",
     override_default_construction_states=True,
     primary_production_random_factor_set="wide_range",
-    sprites_complete=False,
+    sprites_complete=True,
 )
 
 industry.enable_in_economy(
@@ -98,17 +98,11 @@ spriteset_warehouse_half_nw_se = industry.add_spriteset(
 spriteset_warehouse_half_ne_sw = industry.add_spriteset(
     sprites=[(510, 10, 64, 84, -31, -61)],
 )
-spriteset_warehouse_half_se_nw = industry.add_spriteset(
+spriteset_warehouse_full_nw_se = industry.add_spriteset(
     sprites=[(580, 10, 64, 84, -31, -61)],
 )
-spriteset_warehouse_half_sw_ne = industry.add_spriteset(
+spriteset_warehouse_full_ne_sw = industry.add_spriteset(
     sprites=[(650, 10, 64, 84, -31, -61)],
-)
-spriteset_warehouse_nw_se = industry.add_spriteset(
-    sprites=[(720, 10, 64, 84, -31, -61)],
-)
-spriteset_warehouse_ne_sw = industry.add_spriteset(
-    sprites=[(790, 10, 64, 84, -31, -61)],
 )
 spriteset_shed_nw_se = industry.add_spriteset(
     sprites=[(440, 310, 64, 84, -31, -61)],
@@ -398,7 +392,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_warehouse_half",
+    base_id="wharf_spritelayout_warehouse_1",
     tile="wharf_tile_1",
     config={
         "jetty_foundations": True,
@@ -407,10 +401,10 @@ industry.add_magic_spritelayout(
                 spriteset_warehouse_half_ne_sw,
             ],
             "sw": [
-                spriteset_warehouse_half_se_nw,
+                spriteset_warehouse_full_nw_se,
             ],
             "nw": [
-                spriteset_warehouse_half_sw_ne,
+                spriteset_warehouse_full_ne_sw,
             ],
             "ne": [
                 spriteset_warehouse_half_nw_se,
@@ -420,22 +414,22 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="wharf_spritelayout_warehouse_full",
+    base_id="wharf_spritelayout_warehouse_2",
     tile="wharf_tile_1",
     config={
         "jetty_foundations": True,
         "building_sprites": {
             "se": [
-                spriteset_warehouse_ne_sw,
+                spriteset_warehouse_full_ne_sw,
             ],
             "sw": [
-                spriteset_warehouse_nw_se,
+                spriteset_warehouse_half_nw_se,
             ],
             "nw": [
-                spriteset_warehouse_ne_sw,
+                spriteset_warehouse_half_ne_sw,
             ],
             "ne": [
-                spriteset_warehouse_nw_se,
+                spriteset_warehouse_full_nw_se,
             ],
         },
     },
@@ -506,6 +500,9 @@ industry.add_magic_spritelayout(
         },
     },
 )
+
+# 2 jetty layouts which will be combined for different coast angles
+# by convention, the jetty layout definitions are aligned to the SE coast
 industry.add_industry_jetty_layout(
     id="wharf_industry_jetty_layout_1",
     layout=[
@@ -513,19 +510,19 @@ industry.add_industry_jetty_layout(
         (0, 1, "wharf_spritelayout_shed_1"),
         (0, 2, "wharf_spritelayout_silo_1"),
         (0, 3, "wharf_spritelayout_silo_2"),
-        (0, 4, "wharf_spritelayout_warehouse_full"),
+        (0, 4, "wharf_spritelayout_warehouse_2"),
         (0, 5, "spritelayout_null_water"),
         # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
         (0, 6, "spritelayout_null_water"),
         (1, 1, "wharf_spritelayout_tanks_1"),
         (1, 2, "wharf_spritelayout_tanks_2"),
         (1, 3, "wharf_spritelayout_shed_1"),
-        (1, 4, "wharf_spritelayout_warehouse_half"),
+        (1, 4, "wharf_spritelayout_warehouse_1"),
         (1, 5, "spritelayout_null_water"),
-        (2, 2, "wharf_spritelayout_warehouse_full"),
+        (2, 2, "wharf_spritelayout_warehouse_2"),
         (2, 3, "wharf_spritelayout_crane_orthogonal"),
         (2, 4, "wharf_spritelayout_water_ship_1"),
-        (3, 2, "wharf_spritelayout_warehouse_half"),
+        (3, 2, "wharf_spritelayout_warehouse_1"),
         (3, 3, "wharf_spritelayout_crane_rails_orthogonal"),
         (3, 4, "spritelayout_null_water"),
         (3, 5, "spritelayout_null_water"),
@@ -534,12 +531,12 @@ industry.add_industry_jetty_layout(
 industry.add_industry_jetty_layout(
     id="wharf_industry_jetty_layout_2",
     layout=[
-        (0, 2, "wharf_spritelayout_warehouse_full"),
+        (0, 2, "wharf_spritelayout_warehouse_2"),
         (0, 3, "wharf_spritelayout_crane_rails_orthogonal"),
         (0, 4, "spritelayout_null_water"),
         (0, 5, "spritelayout_null_water"),
         (0, 6, "spritelayout_null_water"),
-        (1, 2, "wharf_spritelayout_warehouse_half"),
+        (1, 2, "wharf_spritelayout_warehouse_1"),
         (1, 3, "wharf_spritelayout_crane_orthogonal"),
         (1, 4, "wharf_spritelayout_water_ship_2"),
         (1, 5, "wharf_spritelayout_tanks_1"),
