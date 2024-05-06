@@ -123,13 +123,31 @@ spriteset_tanks_sphere = industry.add_spriteset(
     sprites=[(790, 210, 64, 84, -31, -61)],
 )
 spriteset_gatehouse = industry.add_spriteset(
+    sprites=[(580, 310, 64, 84, -31, -61)],
+)
+spriteset_silo_1_nw_se = industry.add_spriteset(
     sprites=[(440, 110, 64, 84, -31, -61)],
 )
-spriteset_silo_1 = industry.add_spriteset(
-    sprites=[(720, 110, 64, 84, -31, -61)],
+spriteset_silo_1_ne_sw = industry.add_spriteset(
+    sprites=[(580, 110, 64, 84, -31, -61)],
 )
-spriteset_silo_2 = industry.add_spriteset(
-    sprites=[(790, 110, 64, 84, -31, -61)],
+spriteset_silo_1_se_nw = industry.add_spriteset(
+    sprites=[(510, 110, 64, 84, -31, -61)],
+)
+spriteset_silo_1_sw_ne = industry.add_spriteset(
+    sprites=[(650, 110, 64, 84, -31, -61)],
+)
+spriteset_silo_2_nw_se = industry.add_spriteset(
+    sprites=[(510, 110, 64, 84, -31, -61)],
+)
+spriteset_silo_2_ne_sw = industry.add_spriteset(
+    sprites=[(650, 110, 64, 84, -31, -61)],
+)
+spriteset_silo_2_se_nw = industry.add_spriteset(
+    sprites=[(440, 110, 64, 84, -31, -61)],
+)
+spriteset_silo_2_sw_ne = industry.add_spriteset(
+    sprites=[(580, 110, 64, 84, -31, -61)],
 )
 spriteset_large_crane_ne_sw = industry.add_spriteset(
     sprites=[(440, 210, 64, 84, -31, -43)],
@@ -342,16 +360,16 @@ industry.add_magic_spritelayout(
         "jetty_foundations": True,
         "building_sprites": {
             "se": [
-                spriteset_silo_1,
+                spriteset_silo_1_nw_se,
             ],
             "sw": [
-                spriteset_silo_1,
+                spriteset_silo_1_ne_sw,
             ],
             "nw": [
-                spriteset_silo_1,
+                spriteset_silo_1_se_nw,
             ],
             "ne": [
-                spriteset_silo_1,
+                spriteset_silo_1_sw_ne,
             ],
         },
     },
@@ -364,16 +382,16 @@ industry.add_magic_spritelayout(
         "jetty_foundations": True,
         "building_sprites": {
             "se": [
-                spriteset_silo_2,
+                spriteset_silo_2_nw_se,
             ],
             "sw": [
-                spriteset_silo_2,
+                spriteset_silo_2_ne_sw,
             ],
             "nw": [
-                spriteset_silo_2,
+                spriteset_silo_2_se_nw,
             ],
             "ne": [
-                spriteset_silo_2,
+                spriteset_silo_2_sw_ne,
             ],
         },
     },
