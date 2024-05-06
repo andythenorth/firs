@@ -555,6 +555,9 @@ industry.add_magic_spritelayout(
         },
     },
 )
+
+# 2 jetty layouts which will be combined for different coast angles
+# by convention, the jetty layout definitions are aligned to the SE coast
 industry.add_industry_jetty_layout(
     id="port_industry_jetty_layout_1",
     layout=[
