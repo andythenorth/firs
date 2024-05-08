@@ -164,33 +164,13 @@ spriteset_shed_full_nw_se = industry.add_spriteset(
 spriteset_shed_full_ne_sw = industry.add_spriteset(
     sprites=[(790, 210, 64, 84, -31, -61)],
 )
-# horizontal tanks use the same sprite, but adjusted offsets for each coast
-spriteset_tanks_horizontal_nw_se = industry.add_spriteset(
+spriteset_tanks_horizontal = industry.add_spriteset(
     sprites=[(440, 310, 64, 84, -31, -61)],
 )
-spriteset_tanks_horizontal_ne_sw = industry.add_spriteset(
-    sprites=[(440, 310, 64, 84, -27, -61)],
-)
-spriteset_tanks_horizontal_se_nw = industry.add_spriteset(
-    sprites=[(440, 310, 64, 84, -30, -61)],
-)
-spriteset_tanks_horizontal_sw_ne = industry.add_spriteset(
-    sprites=[(440, 310, 64, 84, -28, -61)],
-)
-# sphere tanks use the same sprite, but adjusted offsets for each coast
-spriteset_tanks_sphere_nw_se = industry.add_spriteset(
+spriteset_tanks_sphere = industry.add_spriteset(
     sprites=[(510, 310, 64, 84, -31, -61)],
 )
-spriteset_tanks_sphere_ne_sw = industry.add_spriteset(
-    sprites=[(510, 310, 64, 84, -30, -61)],
-)
-spriteset_tanks_sphere_se_nw = industry.add_spriteset(
-    sprites=[(510, 310, 64, 84, -30, -61)],
-)
-spriteset_tanks_sphere_sw_ne = industry.add_spriteset(
-    sprites=[(510, 310, 64, 84, -31, -61)],
-)
-# sphere tanks use the same sprite, but adjusted offsets for each coast
+# silos use the same sprite, but adjusted offsets for each coast
 spriteset_silos_nw_se = industry.add_spriteset(
     sprites=[(720, 110, 64, 84, -33, -60)],
 )
@@ -304,16 +284,16 @@ industry.add_magic_spritelayout(
         "jetty_foundations": True,
         "building_sprites": {
             "se": [
-                spriteset_tanks_horizontal_nw_se,
+                spriteset_tanks_horizontal,
             ],
             "sw": [
-                spriteset_tanks_horizontal_ne_sw,
+                spriteset_tanks_horizontal,
             ],
             "nw": [
-                spriteset_tanks_horizontal_se_nw,
+                spriteset_tanks_horizontal,
             ],
             "ne": [
-                spriteset_tanks_horizontal_sw_ne,
+                spriteset_tanks_horizontal,
             ],
         },
     },
@@ -326,16 +306,16 @@ industry.add_magic_spritelayout(
         "jetty_foundations": True,
         "building_sprites": {
             "se": [
-                spriteset_tanks_sphere_nw_se,
+                spriteset_tanks_sphere,
             ],
             "sw": [
-                spriteset_tanks_sphere_ne_sw,
+                spriteset_tanks_sphere,
             ],
             "nw": [
-                spriteset_tanks_sphere_se_nw,
+                spriteset_tanks_sphere,
             ],
             "ne": [
-                spriteset_tanks_sphere_sw_ne,
+                spriteset_tanks_sphere,
             ],
         },
     },
