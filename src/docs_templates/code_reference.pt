@@ -19,23 +19,24 @@
     <br />
     <hr />
 
-    <div id="compiling">
+    <section id="compiling">
         <h3>Compiling</h3>
         <p>
            FIRS source includes a makefile for convenient building.
            This requires '<a href="https://en.wikipedia.org/wiki/Make_(software)">Make</a>',
-           typically provided by the ports tree on Linux / Unix, <a href="http://www.mingw.org/wiki/msys">MSYS</a>  on Windows
-           and <a href="https://developer.apple.com/xcode/">Xcode</a> on macOS.
+           typically provided by the ports tree on Linux / Unix,
+           <a href="https://developer.apple.com/xcode/">Xcode</a> on macOS,
+           and other build systems on Windows.
         </p>
         <p>Other dependencies include:</p>
         <ul>
-            <li><a href="https://www.python.org/">Python 3.8+</a></li>
-            <li><a href="https://newgrf-specs.tt-wiki.net/wiki/NML:Getting_started">NML 0.5.0 or newer</a> (NewGRF compiler)</li>
+            <li><a href="https://www.python.org/">Python 3.11+</a></li>
+            <li><a href="https://newgrf-specs.tt-wiki.net/wiki/NML:Getting_started">NML 0.7.5 or newer</a> (NewGRF compiler)</li>
             <li><a href="http://chameleon.readthedocs.org/en/latest/">Chameleon</a> (Template engine)</li>
             <li><a href="https://pypi.python.org/pypi/Markdown">Markdown</a> (Markdown text format parser)</li>
             <li><a href="http://www.graphviz.org">Graphviz</a> (optional, used to generate cargo flow charts in html docs)</li>
         </ul>
-    </div>
+    </section>
     <br />
     <hr />
 
