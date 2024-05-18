@@ -1,36 +1,30 @@
-import os.path
-currentdir = os.curdir
+import os
+# note that we use tomlkit here, not standard library tomllib, as we need write, and tomllib is read-only
+import tomlkit
 
-import codecs
+# List of strings to be removed from the TOML files
+dead_strings = [
+    "STR_CID_CARBON_STEEL"
+]
 
-import sys
-sys.path.append(os.path.join('src')) # add to the module search path
+def delete_string(dead_strings, file_path):
+    with open(file_path, "r", encoding="utf-8") as file:
+        lang_source = tomlkit.load(file)
 
-# Sometimes strings are deprecated and need removing from all lang files
-# this script removes dead strings - adjust the 'dead_strings' list to suit
+    for string_id in dead_strings:
+        if string_id in lang_source:
+            print(f"Removing {string_id} from {file_path}")
+            del lang_source[string_id]
 
-# never leave empty strings or strings with only spaces in this list, that will strip everything from a lang file
-dead_strings = ["STR_CARGO_NAME_PIPE", "STR_CID_PIPE", "STR_CARGO_UNIT_PIPE", "STR_IND_SHEET_AND_PIPE_MILL"]
+    with open(file_path, "w", encoding="utf-8") as file:
+        file.write(tomlkit.dumps(lang_source))
 
-def delete_string(dead_string):
-    for filename in os.listdir(os.path.join('src','lang')):
-        print(filename)
-        if filename is not '.DS_Store':
-            file = codecs.open(os.path.join('src','lang', filename),'r', encoding='utf-8')
-            content = file.readlines()
-            result = []
+def main():
+    lang_dir = os.path.join('src', 'lang')
+    for filename in os.listdir(lang_dir):
+        if filename.endswith(".toml"):
+            file_path = os.path.join(lang_dir, filename)
+            delete_string(dead_strings, file_path)
 
-            for line in content:
-                # be aware this has no protection against unwanted substring matches, e.g. 'NAME_FOO' will cause 'NAME_FOOD' to also be removed
-                if dead_string not in line:
-                    result.append(line)
-
-            file = open(os.path.join('src','lang',filename),'w')
-            for line in result:
-                file.write(line)
-            file.close
-
-for dead_string in dead_strings:
-    #pass
-    delete_string(dead_string)
-    #insert_property(filename)
+if __name__ == "__main__":
+    main()
