@@ -116,7 +116,7 @@ def render_docs(
 
 
 def main():
-    print("[RENDER DOCS] render_docs.py")
+    print("[RENDER DOCS]")
     start = time()
 
     lang_strings = utils.get_lang_data("english")["lang_strings"]

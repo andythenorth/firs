@@ -122,7 +122,7 @@ def render_docs(doc_list, file_type, source_is_repo_root=False):
 
 def main():
     start = time()
-    print("[RENDER GS] render_gs.py")
+    print("[RENDER GS]")
 
     if os.path.exists(gs_dst):
         shutil.rmtree(gs_dst)
@@ -177,7 +177,12 @@ def main():
     # copy lang dir also
     shutil.copytree(os.path.join(gs_src, "lang"), os.path.join(gs_dst, "lang"))
 
-    print(format((time() - start), ".2f") + "s")
+    # eh, how long does this take anyway?
+    print(
+        "[RENDER GS]",
+        "- complete",
+        format((time() - start), ".2f") + "s",
+    )
 
 
 if __name__ == "__main__":

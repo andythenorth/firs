@@ -1,5 +1,3 @@
-print("[RENDER LANG] render_lang.py")
-
 import firs
 import utils
 from polar_fox import git_info
@@ -57,6 +55,7 @@ def render_lang(lang_name, lang_dst):
 
 
 def main():
+    print("[RENDER LANG]")
     start = time()
 
     lang_dst = os.path.join(firs.generated_files_path, "lang")

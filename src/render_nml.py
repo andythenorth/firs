@@ -1,5 +1,3 @@
-print("[RENDER NML] render nml")
-
 import codecs  # used for writing files - more unicode friendly than standard open() module
 
 import sys
@@ -83,6 +81,7 @@ def render_industry_nml(industry):
 
 
 def main():
+    print("[RENDER NML]")
     start = time()
     grf_nml = codecs.open(
         os.path.join(firs.generated_files_path, "firs.nml"), "w", "utf8"
@@ -117,7 +116,11 @@ def main():
         grf_nml.write(render_industry_nml(industry))
     grf_nml.close()
     # eh, how long does this take anyway?
-    print(format((time() - start), ".2f") + "s")
+    print(
+        "[RENDER NML]",
+        "- complete",
+        format((time() - start), ".2f") + "s",
+    )
 
 
 if __name__ == "__main__":
