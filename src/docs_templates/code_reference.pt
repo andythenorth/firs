@@ -52,13 +52,13 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>NML Identifier</th>
                     <th>Label</th>
                     <th>Icon</th>
                     <th class="number">Weight</th>
                     <th nowrap="true" class="number">Price Factor*</th>
                     <th class="text">Cargo Classes</th>
                     <th class="text">Town Growth Effect**</th><!--! request by Zuu, don't just delete this because it's boring -->
+                    <th nowrap="true">Sprites Done?</th>
                 </tr>
             </thead>
             <tbody>
@@ -68,7 +68,6 @@
                             <td>
                                 <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>
                             </td>
-                            <td>${cargo.id}</td>
                             <td>${cargo.cargo_label}</td>
                             <td>
                                 <span style="display:inline-block;
@@ -82,6 +81,7 @@
                             <td class="number">${cargo.price_factor}</td>
                             <td class="text">${doc_helper.pretty_print_cargo_classes(cargo)}</td>
                             <td class="text">${cargo.town_growth_effect}</td>
+                            <td>${cargo.sprites_complete}</td>
                         </tr>
                     </tal:cargo>
                 </tal:cargos>

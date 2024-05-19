@@ -16,9 +16,6 @@ def report_sprites_complete(cargos, industries):
     complete = len(
         [cargo.sprites_complete for cargo in cargos if cargo.sprites_complete]
     )
-    for cargo in cargos:
-        if cargo.sprites_complete == False:
-            print(cargo.id)
     print(
         "Sprites complete for",
         complete,
