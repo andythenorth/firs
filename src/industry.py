@@ -1194,7 +1194,7 @@ class IndustryLocationChecks(object):
                 "near_at_least_one_of_these_keystone_industries set by",
                 industry.id,
                 "- should be in economy location checks only",
-                "(is this supported yet?)",
+                "(unsupported - see economy_biome_checks as an equivalent economy-specific check)",
                 message_type="info",
             )
         self.require_cluster = location_args.get("require_cluster", None)
