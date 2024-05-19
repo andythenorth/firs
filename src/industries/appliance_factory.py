@@ -57,7 +57,7 @@ spriteset_office = industry.add_spriteset(
 )
 
 industry.add_spritelayout(
-    id="factory_spritelayout_empty",
+    id="appliance_factory_spritelayout_empty",
     tile="appliance_factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
@@ -65,16 +65,16 @@ industry.add_spritelayout(
     fences=[],
 )
 industry.add_spritelayout(
-    id="factory_spritelayout_shed_1",
+    id="appliance_factory_spritelayout_shed_1",
     tile="appliance_factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_shed_1],
-    fences=["nw", "ne", "se", "sw"],
+    fences=["nw", "ne"],
     # add_to_object_num=5,
 )
 industry.add_spritelayout(
-    id="factory_spritelayout_shed_2",
+    id="appliance_factory_spritelayout_shed_2",
     tile="appliance_factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
@@ -83,7 +83,7 @@ industry.add_spritelayout(
     # add_to_object_num=5,
 )
 industry.add_spritelayout(
-    id="factory_spritelayout_office",
+    id="appliance_factory_spritelayout_office",
     tile="appliance_factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
@@ -92,7 +92,7 @@ industry.add_spritelayout(
     # add_to_object_num=5,
 )
 industry.add_spritelayout(
-    id="factory_spritelayout_tanks",
+    id="appliance_factory_spritelayout_tanks",
     tile="appliance_factory_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
@@ -101,19 +101,19 @@ industry.add_spritelayout(
     # add_to_object_num=5,
 )
 industry.add_industry_layout(
-    id="factory_industry_layout_1",
+    id="appliance_factory_industry_layout_1",
     layout=[
-        (0, 0, "factory_spritelayout_shed_1"),
-        (0, 1, "factory_spritelayout_shed_1"),
-        (0, 2, "factory_spritelayout_shed_1"),
-        (0, 3, "factory_spritelayout_shed_2"),
-        (1, 0, "factory_spritelayout_shed_1"),
-        (1, 1, "factory_spritelayout_shed_1"),
-        (1, 2, "factory_spritelayout_empty"),
-        (1, 3, "factory_spritelayout_office"),
-        (2, 0, "factory_spritelayout_shed_1"),
-        (2, 1, "factory_spritelayout_shed_1"),
-        (2, 2, "factory_spritelayout_shed_2"),
-        (2, 3, "factory_spritelayout_tanks"),
+        (0, 0, "appliance_factory_spritelayout_shed_1"),
+        (0, 1, "appliance_factory_spritelayout_shed_1"),
+        (0, 2, "appliance_factory_spritelayout_shed_1"),
+        (0, 3, "appliance_factory_spritelayout_shed_2"),
+        (1, 0, "appliance_factory_spritelayout_shed_1"),
+        (1, 1, "appliance_factory_spritelayout_shed_1"),
+        (1, 2, "appliance_factory_spritelayout_empty"),
+        (1, 3, "appliance_factory_spritelayout_office"),
+        (2, 0, "appliance_factory_spritelayout_shed_1"),
+        (2, 1, "appliance_factory_spritelayout_shed_1"),
+        (2, 2, "appliance_factory_spritelayout_shed_2"),
+        (2, 3, "appliance_factory_spritelayout_tanks"),
     ],
 )
