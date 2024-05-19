@@ -10,7 +10,7 @@ industry = IndustrySecondary(
         ("POWR", 3),
         ("PUMP", 3),
         ("COAT", 3),
-        ("ELAS", 3),
+        ("SEAL", 3),
     ],
     prod_cargo_types_with_output_ratios=[
         ("GOOD", 8),

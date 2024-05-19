@@ -11,7 +11,7 @@ industry = IndustrySecondary(
         ("FOCA", 3),
         ("POWR", 3),
         ("WELD", 3),
-        ("ELAS", 3),
+        ("SEAL", 3),
     ],
     prod_cargo_types_with_output_ratios=[
         ("VPTS", 4),

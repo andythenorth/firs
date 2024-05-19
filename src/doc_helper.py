@@ -252,7 +252,7 @@ class DocHelper(object):
             "farm_supplies",
             "engineering_supplies",
             "welding_consumables",
-            "elastomer_products",
+            "seals_belts_and_hoses",
         ]
 
     def get_cargoflow_wormhole_cargos(self, economy):
