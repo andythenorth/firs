@@ -3,10 +3,10 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="engine_plant",
     accept_cargos_with_input_ratios=[
-        ("CSTI", 4),
+        ("CSTI", 3),
         ("ALUM", 2),
         ("SEAL", 1),
-        ("SAND", 1),
+        ("SAND", 2),
     ],
     prod_cargo_types_with_output_ratios=[
         # high engine plant production is unwanted as there is only one output cargo
