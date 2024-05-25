@@ -12,12 +12,69 @@ Changelog
 
 *Changes*
 
-- X reworked Steeltown
-- X Aggregates not Stone
-- X Cryo Plant is prospectable as primary, make sure always succeeds as it does not depend on resources
-- X more objects for multiple industries
-- X drop cobble ground type from use
-- X reworked port-type industries
+- significantly reworked Steeltown
+    - provide a more diverse range of uses for steel
+    - represent steel by the more common physical form (billets, ingots, slab, bars, etc), rather than the specific grade of steel (carbon, stainless etc)
+    - add more end-stage cargos alongside Vehicles, including Concrete Products, Goods, Hardware and Pipework
+    - accept more cargos at Port and Wharf to make it easier to boost production
+- added cargos
+    - Concrete Products
+    - Ferroalloys
+    - Forgings & Castings
+    - Hardware
+    - Nitrogen
+    - Pipework
+    - Pumps & Valves
+    - Rebar
+    - Seals, Hoses & Belts
+    - Steel Billets & Blooms
+    - Steel Ingots
+    - Steel Merchant Bar
+    - Steel Pipe
+    - Steel Slab
+    - Steel Tube
+    - Structural Steel
+    - Tyre Cord
+    - Welding Consumables
+- removed cargos
+    - Alloy Steel
+    - Carbon Steel
+    - Ferrochrome
+    - Steel Sections
+    - Vehicle Engines
+- renamed cargos
+    - Stone now Aggregates
+    - Steel Sheet now Steel Sheet & Strip
+- added industries
+    - Appliance Factory
+    - Bar & Section Mill
+    - Concrete Plant
+    - Elastomer Products Plant
+    - Hardware Factory
+    - Pipework Fabricator
+    - Plate Mill
+    - Precision Parts Plant
+    - Steel Forge & Foundry
+    - Strip Mill
+    - Tracked Machine Factory
+    - Tube & Pipe Mill
+    - Wire Rod Mill
+- removed industries
+    - Bulk Terminal
+    - Sheet and Pipe Mill
+    - Wire and Section Mill
+- reworked port-type industries
+    - can now locate on many more coast locations, so easier for OpenTTD to place them during map generation or during gameplay
+    - unfortunately can still be difficult for player to place
+    - sprites and layouts reworked for both Port and Wharf
+    - layouts reworked for Liquids Terminal
+- added more objects for multiple industries
+    - Electric Arc Furnace
+    - Coke Oven
+    - Wire Rod Mill
+    - Blast Furnace
+    - Basic Oxygen Furnace
+- remove cobble ground type and convert industries using it to alternative ground types
 
 
 *Docs*
@@ -25,6 +82,12 @@ Changelog
 - X improvements to cargoflow display
 - update code reference info about deps and python version
 - mysys no longer relevant, remove mention of it from code reference page
+
+
+*Fixes*
+
+- make sure always Cryo Plant prospecting always succeeds (as long as there is a suitable place for it on the map)
+- Lime Kiln purchase cost was too low
 
 
 *Codechanges*
