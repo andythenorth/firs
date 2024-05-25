@@ -9,7 +9,8 @@ industry = IndustrySecondary(
         ("TYRE", 2),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("VEHI", 6),
+        # over-production of vehicles isn't wanted
+        ("VEHI", 5),
         ("ENSP", 1),
         ("FMSP", 1),
     ],
