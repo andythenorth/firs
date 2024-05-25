@@ -12,8 +12,29 @@ Changelog
 
 *Changes*
 
--
--
+- X reworked Steeltown
+- X Aggregates not Stone
+- X Cryo Plant is prospectable as primary, make sure always succeeds as it does not depend on resources
+- X more objects for multiple industries
+- X drop cobble ground type from use
+- X reworked port-type industries
+
+
+*Docs*
+
+- X improvements to cargoflow display
+- update code reference info about deps and python version
+- mysys no longer relevant, remove mention of it from code reference page
+
+
+*Codechanges*
+
+- switch lang files to TOML format
+- add FIRS GS generation (proof of concept)
+- make use of increased object limit in OpenTTD
+- track cargo and industry sprite completion
+- reduce python boilerplate by using dynamic imports for cargo, economies and industries
+- cargos no longer need specific order to avoid breaking house cargo acceptance/production (as of OpenTTD #11378)
 
 
 --------------
