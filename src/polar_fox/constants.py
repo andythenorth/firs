@@ -130,6 +130,14 @@ cargo_labels = [
     "H2__",
     "ALO_",
     "NHNO",
+    "STIG",
+    "STBL",
+    "STSL",
+    "FEAL",
+    "STTB",
+    "TYCO",
+    "HWAR",
+    "STBR",
     #
     "NULL",
 ]
@@ -217,7 +225,7 @@ allowed_refits_by_label = {
         "NHNO",
         # not CBLK, gets dedicated vehicles or box
     ],
-    "cryo_gases": ["CHLO", "O2__", "NH3_", "N7__", "WELD", "H2__"],
+    "cryo_gases": ["CHLO", "O2__", "NH3_", "N7__", "WELD", "H2__", "N7__"],
     "edible_liquids": ["MILK", "WATR", "BEER", "FOOD", "EOIL"],
     "farm_products": [
         "BEAN",
@@ -225,6 +233,7 @@ allowed_refits_by_label = {
         "CERE",
         "FERT",
         "FMSP",
+        "FOOD",
         "FRUT",
         "GRAI",
         "JAVA",
@@ -254,6 +263,9 @@ allowed_refits_by_label = {
         "PIPE",
         "ZINC",
         "ENSP",
+        "STSL",
+        "STBL",
+        "STIG",
     ],
     # hax for intermodal container sprite selection - reefer car refits work just fine using CC_REFRIGERATED
     "reefer": [
@@ -297,6 +309,7 @@ disallowed_refits_by_label = {
         "EOIL",
         "O2__",
         "CHLO",
+        "N7__",
     ],
     "non_flatbed_freight": [
         "FOOD",
@@ -329,9 +342,9 @@ default_cargos = {
     "box_intermodal": ["POWR", "GOOD", "PAPR"],
     "box_sliding_wall": ["VENG", "BOOM", "PAPR", "JAVA", "GOOD"],
     "box_vehicle_parts": ["VPTS", "PAPR", "RUBR", "STEL", "WOOL", "GOOD"],
-    "bulkhead": ["STCB", "PIPE", "STPP", "WDPR", "ALUM", "ZINC", "STEL", "COPR"],
-    "coil": ["STST", "STAL", "STEL"],
-    "coil_covered": ["STSH", "STEL"],
+    "bulkhead": ["STSL", "STBL", "STCB", "PIPE", "STPP", "WDPR", "ALUM", "ZINC", "STEL", "COPR"],
+    "coil": ["STSH", "STWR", "STST", "STAL", "STEL"],
+    "coil_covered": ["STSH", "STWR", "STEL"],
     "covered_ag": ["GRAI", "MAIZ", "BEAN", "NUTS", "FERT", "QLME"],
     "covered_chemical": ["RFPR", "POTA", "PHOS", "SALT", "SAND"],
     "covered_mineral": ["QLME", "SALT", "PHOS", "POTA", "SAND", "KAOL", "NITR"],
@@ -351,8 +364,9 @@ default_cargos = {
         "FMSP",
         "GOOD",
         "FOOD",
+        "HWAR", # because delivered to towns
     ],
-    "farm_products_box": ["FRUT", "BEAN", "CASS", "JAVA", "NUTS"],
+    "farm_products_box": ["FRUT", "BEAN", "CASS", "JAVA", "NUTS", "FOOD"],
     "farm_products_hopper": [
         "MAIZ",
         "GRAI",
@@ -362,6 +376,7 @@ default_cargos = {
         "OLSD",
         "CASS",
         "NUTS",
+        "FOOD",
     ],
     "flat": ["ALUM", "WDPR", "STEL", "COPR", "METL"],
     # possibly sliding roof shouldn't be flat at all?
@@ -513,7 +528,7 @@ piece_sprites_to_cargo_labels_maps = {
     "copper_coils_eye_to_sky_1": ["COPR"],
     "crates_1": ["GOOD"],
     "fruit_1": ["FRUT"],
-    "ingots_1": ["ALUM", "ZINC"],
+    "ingots_1": ["ALUM", "STIG", "ZINC"],
     "logs_1": ["WOOD"],
     # logs_2 is intended for vehicles that *only* use the log sprite, so just provide DFLT to avoid duplicate warnings from nmlc
     "logs_2": ["DFLT"],
@@ -522,10 +537,10 @@ piece_sprites_to_cargo_labels_maps = {
     "paper_coils_eye_to_sky_1": ["PAPR"],
     "pipes_1": ["PIPE", "STPP"],
     "sugarcane_1": ["SGCN"],
-    "steel_coils_eye_longitudinal_1": ["STEL", "METL", "STAL", "STCB", "STST", "STSH"],
-    "steel_coils_eye_to_sky_1": ["STEL", "METL", "STSH"],
-    "steel_slab_1": ["STAL", "STCB", "STST"],
-    "steel_wire_rod_1": ["STWR"],
+    "steel_coils_eye_longitudinal_1": ["METL", "STAL", "STCB", "STEL", "STST", "STSH"],
+    "steel_coils_eye_to_sky_1": ["STEL", "STSH", "METL"],
+    "steel_slab_1": [ "STAL", "STBL", "STCB", "STSL", "STSE", "STST"],
+    "steel_wire_rod_1": ["RBAR", "STWR", "TYCO"],
     "tarps_blue_1": ["FMSP"],
     "tarps_gold_1": ["ENSP"],
     "tarps_red_1": ["BDMT"],
