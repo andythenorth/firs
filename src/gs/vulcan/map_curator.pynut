@@ -91,30 +91,33 @@ class VulcanMapCuratorIndustryType {
         local self_count = this.industry_spec.GetCount();
         local town_list = GSTownList();
 
-        // remove towns where the industry type is already present
-        local towns_with_industry_type_present = {}
-        local industry_list = GSIndustryList();
-        foreach (industry, _ in industry_list) {
-            if (GSIndustry.GetIndustryType(industry) == this.industry_spec.global_id) {
-                local industry_town = GSTile.GetClosestTown(GSIndustry.GetLocation(industry));
-                towns_with_industry_type_present[industry_town] <- true;
-            }
-        }
-        foreach (town, _ in town_list) {
-            if (town in towns_with_industry_type_present) {
-                town_list.RemoveItem(town);
-            }
-        }
-
-        // filter town list to remove towns that are too small
+        // filter town list to remove towns that are too small or too large
         if (this.map_curator_config["min_population"] > 0) {
             town_list.Valuate(GSTown.GetPopulation);
             town_list.KeepAboveValue(this.map_curator_config["min_population"]);
 
         }
-        // we want scrap yards in 2/3 towns with large enough population
+        if (this.map_curator_config["max_population"] > 0) {
+            town_list.Valuate(GSTown.GetPopulation);
+            town_list.KeepBelowValue(this.map_curator_config["max_population"]);
+
+        }
+        // this is the total number of towns where this industry should be present (factored by industry:town ratio)
         local target_industry_count = (town_list.Count() * this.map_curator_config["industry_town_ratio"]).tointeger();
-        local num_industries_to_build = target_industry_count - towns_with_industry_type_present.len();
+        // book-keeping for towns where the industry type is already present
+        local num_qualifying_towns_with_industry_present = 0;
+        local industry_list = GSIndustryList();
+        foreach (industry, _ in industry_list) {
+            if (GSIndustry.GetIndustryType(industry) == this.industry_spec.global_id) {
+                local industry_town = GSTile.GetClosestTown(GSIndustry.GetLocation(industry));
+                if (town_list.HasItem(industry_town)) {
+                    num_qualifying_towns_with_industry_present += 1;
+                    town_list.RemoveItem(industry_town);
+                    Log.Info("removing " + GSTown.GetName(industry_town), Log.CLASS_VULCAN_MAP_CURATOR);
+                }
+            }
+        }
+        local num_industries_to_build = target_industry_count - num_qualifying_towns_with_industry_present;
         if (num_industries_to_build > 0) {
             town_list.Valuate(GSBase.RandItem);
             town_list.Sort(GSList.SORT_BY_VALUE, GSList.SORT_ASCENDING);
