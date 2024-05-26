@@ -97,6 +97,13 @@ industry.enable_in_economy(
         ("COAT", 10),
         ("SOAP", 10),
     ],
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["appliance_factory", "body_plant", "foundry", "precision_parts_plant", "tube_and_pipe_mill", "wire_rod_mill"],
+            "companion_industries_ratio": 0.33,
+        }
+    },
 )
 # industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['DIAM', 'EOIL', 'JAVA', 'WDPR']
 # industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('GOOD', 14), ('SASH', 12)]
