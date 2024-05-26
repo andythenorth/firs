@@ -8,6 +8,7 @@ currentdir = os.curdir
 from time import time
 
 import firs
+import global_constants
 import utils
 from polar_fox import git_info
 
@@ -49,9 +50,7 @@ class GSHelper(object):
         return result
 
     def get_grfid(self):
-        # !! grfid needs moved out of header.pynml to global constants (may have done this for other grfs already?)
-        utils.echo_message("GSHelper.get_grf_id incomplete, returning hard-coded value")
-        return "0xF1250008"
+        return "0x" + global_constants.grfid
 
 
 def render_nuts(nuts_by_subdir):
