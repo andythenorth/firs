@@ -50,6 +50,14 @@ industry.enable_in_economy(
         "FOOD",
         "GOOD",
     ],
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToTowns",
+            "min_population": 50,
+            "max_population": 0,
+            "industry_town_ratio": 1,
+        }
+    },
 )
 
 industry.add_tile(
