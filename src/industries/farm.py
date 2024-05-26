@@ -44,6 +44,7 @@ industry.enable_in_economy(
         "map_curator": {
             "curation_function": "MinimumRatioToTowns",
             "min_population": 0,
+            "max_population": 0,
             "industry_town_ratio": 0.5,
         }
     },

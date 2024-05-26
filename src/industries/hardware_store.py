@@ -26,6 +26,14 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "STEELTOWN",
     accept_cargo_types=["HWAR"],
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToTowns",
+            "min_population": 50,
+            "max_population": 401, # we force GS-placed hardware stores into smaller towns, larger towns get builders yards
+            "industry_town_ratio": 1,
+        }
+    },
 )
 
 
