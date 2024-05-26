@@ -28,7 +28,7 @@ industry.enable_in_economy(
     vulcan_config={
         "map_curator": {
             "curation_function": "MinimumRatioToCompanionIndustryTypes",
-            "companion_industries": ["glass_works", "foundry"],
+            "companion_industries": ["engine_plant", "glass_works", "foundry"],
             "companion_industries_ratio": 0.5,
         }
     },
