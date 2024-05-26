@@ -4,40 +4,40 @@ plural = "11"
 gender = "m f"
 
 [STR_GRF_DESC]
-base = "{ORANGE}FIRS 산업 시설 대체 세트{}{BLACK}andythenorth, FooBar, planetmaker, Terkhen, Yexo 등 많은 분들의 도움을 받아 제공됩니다. {SILVER}FIRS를 사용하는 방법 등을 포함한 자세한 정보는 읽어보기를 참고하세요. {BLACK}라이선스: GPL v2"
+base = "{ORANGE}FIRS 산업시설 대체 세트{}{BLACK}andythenorth, FooBar, planetmaker, Terkhen, Yexo 등 많은 분들의 도움을 받아 제작되었습니다. {SILVER}FIRS를 사용하는 방법 등을 포함한 자세한 정보는 읽어보기를 참고하세요. {BLACK}라이선스: GPL v2"
 
 [STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY]
 base = "어장, 유전, 준설 부지의 최대 해안 거리 (단위: 칸)"
 
 [STR_PARAM_DESC_ECONOMIES]
-base = "각각의 경제 설정에 따라 화물과 산업시설의 구성이 달라집니다.{}{}간단한 게임 플레이를 원하는 플레이어의 경우, 다른 FIRS 경제에 비해 '{SILVER}기본{BLACK}' 경제가 산업 시설과 화물의 종류가 적으므로 이를 사용하십시오.{}{} FIRS 웹 사이트에서 각 경제 설정에 대한 상세 정보를 확인하실 수 있습니다."
+base = "각각의 경제 설정에 따라 화물과 산업시설의 구성이 달라집니다.{}{}간단한 게임 플레이를 원하는 플레이어의 경우, 다른 FIRS 경제에 비해 '{SILVER}기본{BLACK}' 경제가 산업시설과 화물의 종류가 적으므로 이를 사용하십시오.{}{} FIRS 웹 사이트에서 각 경제 설정에 대한 상세 정보를 확인하실 수 있습니다."
 
 [STR_PARAM_DESC_NO_OPENINGS]
-base = "기본적으로, 게임 중에 새로운 산업 시설이 건설될 것입니다.{}{}만약 '{SILVER}건설 금지{BLACK}' 옵션을 켠다면 게임 중에 산업 시설이 건설되지 않을 것이고, 플레이어는 산업시설에 투자하거나 산업 시설을 탐사할 수 없게 됩니다."
+base = "기본적으로, 게임 중에 새로운 산업시설이 건설될 것입니다.{}{}만약 '{SILVER}건설 금지{BLACK}' 옵션을 켠다면 게임 중에 산업시설이 건설되지 않을 것이고, 플레이어는 산업시설에 투자하거나 산업시설을 탐사할 수 없게 됩니다."
 
 [STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY]
-base = "해양 산업 시설의 최대 해안 거리 (단위: 칸)"
+base = "해양 산업시설의 최대 해안 거리 (단위: 칸)"
 
 [STR_PARAM_NAME_ECONOMIES]
 base = "경제"
 
 [STR_PARAM_NAME_NO_OPENINGS]
-base = "게임 플레이 중 산업 시설의 건설을 금지"
+base = "게임 플레이 중 산업시설의 건설을 금지"
 
 [STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0]
 base = "제한 없음"
 
 [STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT]
-base = "1차 산업 시설의 생산량을 2배로 늘리기 위해 수송해야 할 화물량 (기본값: 16)"
+base = "1차 산업시설의 생산량을 2배로 늘리기 위해 수송해야 할 화물량 (기본값: 16)"
 
 [STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT]
-base = "1차 산업 시설의 생산량을 4배로 늘리기 위해 수송해야 할 화물량 (기본값: 80)"
+base = "1차 산업시설의 생산량을 4배로 늘리기 위해 수송해야 할 화물량 (기본값: 80)"
 
 [STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT]
 base = "농장, 광산, 기타 유사 산업시설은 적당한 양의 공급량이 수송되면 생산량이 처음에는 {SILVER}2배{BLACK}로, 그 다음엔 {SILVER}4배{BLACK}로 증가합니다.{}{}기본 값을 사용해도 괜찮지만, 필요한 경우 여기서 변경할 수 있습니다.{}{}항구 타입 산업시설의 화물 요구량은 여기서 설정한 값의 8배로 설정됩니다."
 
 [STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS]
-base = "생산량이 많은 1차 산업 시설의 생산 수준 (%)"
+base = "생산량이 많은 1차 산업시설의 생산 수준 (%)"
 
 [STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS]
 base = "생산량이 격렬히 많은 1차 산업시설의 생산 수준 (%)"
@@ -60,8 +60,56 @@ base = "더운 나라"
 [STR_PARAM_VALUE_ECONOMIES_STEELTOWN]
 base = "철강 도시"
 
+[STR_PARAM_NAME_OBJECTS]
+base = "FIRS 풍경 오브젝트"
+
+[STR_PARAM_DESC_OBJECTS]
+base = "FIRS는 플레이어가 산업 시설을 더 크게 보이게 만들 수 있도록 풍경 오브젝트 세트를 포함하고 있습니다. 풍경 오브젝트는 게임 플레이에 효과를 주지 않습니다. 풍경 오브젝트는 켜거나 끌 수 있습니다."
+
+[STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG]
+base = " {BLACK}(공급됨)"
+
+[STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY]
+base = "{BLACK}최대 생산량을 내려면, {WHITE}최소 1개 이상{BLACK}의 화물을 화물이나 공급하세요."
+
+[STR_EXTRA_TEXT_SECONDARY_COMBINATORY_BOTH]
+base = "{BLACK}최대 생산량을 내려면, 매 3개월마다 최소 1번 이상 {WHITE}모든 {BLACK}화물을 공급하세요."
+
+[STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ALL]
+base = "{BLACK}최대 생산량을 내려면, 매 3개월마다 최소 1번 이상 {WHITE}모든 {BLACK}화물을 공급하세요."
+
+[STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_TWO]
+base = "{BLACK}최대 생산량을 내려면, 매 3개월마다 최소 1번 이상 {WHITE}최소 2개 이상{BLACK}의 화물을 공급하세요."
+
+[STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_THREE]
+base = "{BLACK}최대 생산량을 내려면, 매 3개월마다 최소 1번 이상 {WHITE}최소 3개 이상{BLACK}의 화물을 공급하세요."
+
+[STR_EXTRA_TEXT_TOWN_PRODUCER]
+base = "{BLACK}생산량이 도시 인구에 비례합니다. 매월마다 최소 {WHITE}{SIGNED_WORD} 단위{BLACK}에서 {WHITE}{SIGNED_WORD} 단위{BLACK} 사이의 화물이 생산될 것입니다."
+
+[STR_PRIMARY_PRODUCTION_1X]
+base = "{BLACK}현재 생산량: {YELLOW}보통{}{}{BLACK}생산량을 {WHITE}2배{BLACK}로 늘리려면, 3개월 안에 {SIGNED_WORD}상자의 화물을 공급하세요.{}생산량을 {WHITE}4배{BLACK}로 늘리려면, {SIGNED_WORD}상자를 공급하세요."
+
+[STR_PRIMARY_PRODUCTION_2X]
+base = "{BLACK}현재 생산량: {YELLOW}많음{}{}{BLACK}현재 수준을 유지하려면, 3개월 안에 {SIGNED_WORD}상자의 공급품을 공급하세요.{} {WHITE}4배{BLACK}로 늘리려면, {SIGNED_WORD}상자를 공급하세요."
+
+[STR_PRIMARY_PRODUCTION_4X]
+base = "{BLACK}현재 생산량: {YELLOW}격렬히 많음{}{}{BLACK}현재 수준을 유지하려면, 3개월 안에 {SKIP}{SIGNED_WORD}상자의 공급품을 공급하세요."
+
+[STR_PORT_PRODUCTION_1X]
+base = "{BLACK}현재 생산량: {YELLOW}보통{}{}{BLACK}생산량을 {WHITE}2배{BLACK}로 늘리려면, 3개월 안에 {SIGNED_WORD}단위의 화물을 공급하세요.{}{WHITE}4배{BLACK}로 늘리려면, {SIGNED_WORD}단위의 화물을 공급하세요."
+
+[STR_PORT_PRODUCTION_2X]
+base = "{BLACK}현재 생산량: {YELLOW}많음{}{}{BLACK}현재 수준을 유지하려면, 매 3개월마다 최소 1번 이상 {SIGNED_WORD}단위의 화물을 공급하세요.{}{WHITE}4배{BLACK}로 늘리려면, {SIGNED_WORD}단위의 화물을 공급하세요."
+
+[STR_PORT_PRODUCTION_4X]
+base = "{BLACK}현재 생산량: {YELLOW}격렬히 많음{}{}{BLACK}현재 수준을 유지하려면, 매 3개월마다 최소 1번 이상 {SKIP}{SIGNED_WORD}단위의 화물을 공급하세요."
+
 [STR_CARGO_NAME_ACID]
 base = "{G=m}산"
+
+[STR_CARGO_NAME_AGGREGATES]
+base = "{G=f}골재"
 
 [STR_CARGO_NAME_ALCOHOL]
 base = "{G=m}술"
@@ -123,6 +171,9 @@ base = "{G=f}콜타르"
 [STR_CARGO_NAME_COKE]
 base = "{G=f}코크스"
 
+[STR_CARGO_NAME_CONCRETE_PRODUCTS]
+base = "{G=m}콘크리트 생산품"
+
 [STR_CARGO_NAME_COPPER]
 base = "{G=f}구리"
 
@@ -144,6 +195,9 @@ base = "{G=m}에틸렌"
 [STR_CARGO_NAME_EXPLOSIVES]
 base = "{G=m}폭발물"
 
+[STR_CARGO_NAME_FERROALLOYS]
+base = "{G=m}합금철"
+
 [STR_CARGO_NAME_FERROCHROME]
 base = "{G=m}크롬철"
 
@@ -162,6 +216,9 @@ base = "{G=f}비료"
 [STR_CARGO_NAME_FOOD_ADDITIVES]
 base = "{G=m}식품 첨가물"
 
+[STR_CARGO_NAME_FORGINGS_AND_CASTINGS]
+base = "{G=m}단·주조물"
+
 [STR_CARGO_NAME_FORMIC_ACID]
 base = "{G=m}포름산"
 
@@ -174,6 +231,9 @@ base = "{G=f}가구"
 [STR_CARGO_NAME_GLASS]
 base = "{G=f}유리"
 
+[STR_CARGO_NAME_HARDWARE]
+base = "{G=m}철물"
+
 [STR_CARGO_NAME_HYDROCHLORIC_ACID]
 base = "{G=m}염산"
 
@@ -185,9 +245,6 @@ base = "{G=m}석회석"
 
 [STR_CARGO_NAME_LOGS]
 base = "{G=f}목재"
-
-[STR_CARGO_NAME_TIMBER]
-base = "{G=m}제재목"
 
 [STR_CARGO_NAME_LYE]
 base = "{G=m}수산화나트륨"
@@ -216,6 +273,9 @@ base = "{G=m}니켈"
 [STR_CARGO_NAME_NITRATES]
 base = "{G=m}질산염"
 
+[STR_CARGO_NAME_NITROGEN]
+base = "{G=f}질소"
+
 [STR_CARGO_NAME_NUTS]
 base = "{G=f}견과류"
 
@@ -234,6 +294,9 @@ base = "{G=m}토탄"
 [STR_CARGO_NAME_PETROL]
 base = "{G=f}석유 연료"
 
+[STR_CARGO_NAME_PIPEWORK]
+base = "{G=m}배관"
+
 [STR_CARGO_NAME_PHOSPHATE]
 base = "{G=m}인산염"
 
@@ -251,6 +314,9 @@ base = "{G=m}탄산칼륨"
 
 [STR_CARGO_NAME_PROPYLENE]
 base = "{G=m}프로필렌"
+
+[STR_CARGO_NAME_PUMPS_AND_VALVES]
+base = "{G=f}펌프 & 밸브"
 
 [STR_CARGO_NAME_PYRITE_ORE]
 base = "{G=m}황철석"
@@ -276,6 +342,9 @@ base = "{G=f}모래"
 [STR_CARGO_NAME_SCRAP_METAL]
 base = "{G=m}고철"
 
+[STR_CARGO_NAME_SEALS_HOSES_AND_BELTS]
+base = "{G=f}씰, 호스 & 벨트"
+
 [STR_CARGO_NAME_SLAG]
 base = "{G=f}광재"
 
@@ -285,17 +354,32 @@ base = "{G=f}소다회"
 [STR_CARGO_NAME_STEEL]
 base = "{G=m}강철"
 
+[STR_CARGO_NAME_STEEL_BILLETS_AND_BLOOMS]
+base = "{G=m}강편 & 분굉강"
+
+[STR_CARGO_NAME_STEEL_INGOTS]
+base = "{G=f}강철괴"
+
+[STR_CARGO_NAME_STEEL_MERCHANT_BAR]
+base = "{G=m}강철연봉"
+
+[STR_CARGO_NAME_STEEL_PIPE]
+base = "{G=f}강철 파이프"
+
 [STR_CARGO_NAME_STEEL_SECTIONS]
 base = "{G=m}형강"
 
 [STR_CARGO_NAME_STEEL_SHEET]
 base = "{G=m}강판"
 
+[STR_CARGO_NAME_STEEL_SLAB]
+base = "{G=m}강철판"
+
+[STR_CARGO_NAME_STEEL_TUBE]
+base = "{G=f}강철튜브"
+
 [STR_CARGO_NAME_STEEL_WIRE_ROD]
 base = "{G=m}강선봉"
-
-[STR_CARGO_NAME_AGGREGATES]
-base = "{G=f}석재"
 
 [STR_CARGO_NAME_SUGAR_BEET]
 base = "{G=f}사탕무"
@@ -309,11 +393,17 @@ base = "{G=m}황산"
 [STR_CARGO_NAME_TEXTILES]
 base = "{G=m}옷감"
 
+[STR_CARGO_NAME_TIMBER]
+base = "{G=m}제재목"
+
 [STR_CARGO_NAME_TIN]
 base = "{G=m}주석"
 
 [STR_CARGO_NAME_TINPLATE]
 base = "{G=m}양철"
+
+[STR_CARGO_NAME_TYRE_CORD]
+base = "{G=f}타이어 코드"
 
 [STR_CARGO_NAME_TYRES]
 base = "{G=f}타이어"
@@ -333,6 +423,9 @@ base = "{G=m}자동차 부품"
 [STR_CARGO_NAME_VEHICLES]
 base = "{G=f}자동차"
 
+[STR_CARGO_NAME_WELDING_CONSUMABLES]
+base = "{G=m}용접 소모품"
+
 [STR_CARGO_NAME_WOOL]
 base = "{G=m}양털"
 
@@ -344,6 +437,9 @@ base = "{G=m}아연"
 
 [STR_CARGO_UNIT_ACID]
 base = "산 {VOLUME}"
+
+[STR_CARGO_UNIT_AGGREGATES]
+base = "골재 {WEIGHT}"
 
 [STR_CARGO_UNIT_ALCOHOL]
 base = "술 {VOLUME}"
@@ -405,6 +501,9 @@ base = "커피 {SIGNED_WORD}자루"
 [STR_CARGO_UNIT_COKE]
 base = "코크스 {WEIGHT}"
 
+[STR_CARGO_UNIT_CONCRETE_PRODUCTS]
+base = "콘크리트 생산품 {WEIGHT}"
+
 [STR_CARGO_UNIT_COPPER]
 base = "구리 {WEIGHT}"
 
@@ -426,6 +525,9 @@ base = "에틸렌 {VOLUME}"
 [STR_CARGO_UNIT_EXPLOSIVES]
 base = "폭발물 {SIGNED_WORD}상자"
 
+[STR_CARGO_UNIT_FERROALLOYS]
+base = "합금철 {WEIGHT}"
+
 [STR_CARGO_UNIT_FERROCHROME]
 base = "크롬철 {WEIGHT}"
 
@@ -434,6 +536,9 @@ base = "비료 {WEIGHT}"
 
 [STR_CARGO_UNIT_FOOD_ADDITIVES]
 base = "식품첨가물 {WEIGHT}"
+
+[STR_CARGO_UNIT_FORGINGS_AND_CASTINGS]
+base = "단·주조물 {WEIGHT}"
 
 [STR_CARGO_UNIT_FORMIC_ACID]
 base = "포름산 {VOLUME}"
@@ -456,6 +561,9 @@ base = "가구 {WEIGHT}"
 [STR_CARGO_UNIT_GLASS]
 base = "유리 {WEIGHT}"
 
+[STR_CARGO_UNIT_HARDWARE]
+base = "철물 {WEIGHT}"
+
 [STR_CARGO_UNIT_HYDROCHLORIC_ACID]
 base = "염산 {VOLUME}"
 
@@ -467,9 +575,6 @@ base = "석회석 {WEIGHT}"
 
 [STR_CARGO_UNIT_LOGS]
 base = "목재 {WEIGHT}"
-
-[STR_CARGO_UNIT_TIMBER]
-base = "제재목 {WEIGHT}"
 
 [STR_CARGO_UNIT_LYE]
 base = "수산화나트륨 {VOLUME}"
@@ -498,6 +603,9 @@ base = "니켈 {WEIGHT}"
 [STR_CARGO_UNIT_NITRATES]
 base = "질산염 {WEIGHT}"
 
+[STR_CARGO_UNIT_NITROGEN]
+base = "질소 {VOLUME}"
+
 [STR_CARGO_UNIT_NUTS]
 base = "견과류 {SIGNED_WORD}자루"
 
@@ -525,6 +633,9 @@ base = "인산 {VOLUME}"
 [STR_CARGO_UNIT_PIG_IRON]
 base = "선철 {WEIGHT}"
 
+[STR_CARGO_UNIT_PIPEWORK]
+base = "배관 {WEIGHT}"
+
 [STR_CARGO_UNIT_PLASTICS]
 base = "플라스틱 {WEIGHT}"
 
@@ -536,6 +647,9 @@ base = "프로필렌 {VOLUME}"
 
 [STR_CARGO_UNIT_PYRITE_ORE]
 base = "황철석 {WEIGHT}"
+
+[STR_CARGO_UNIT_PUMPS_AND_VALVES]
+base = "펌프 & 밸브 {WEIGHT}"
 
 [STR_CARGO_UNIT_QUICKLIME]
 base = "생석회 {WEIGHT}"
@@ -558,6 +672,9 @@ base = "모래 {WEIGHT}"
 [STR_CARGO_UNIT_SCRAP_METAL]
 base = "고철 {WEIGHT}"
 
+[STR_CARGO_UNIT_SEALS_HOSES_AND_BELTS]
+base = "씰, 호스 & 벨트 {WEIGHT}"
+
 [STR_CARGO_UNIT_SLAG]
 base = "광재 {WEIGHT}"
 
@@ -567,17 +684,32 @@ base = "소다회 {WEIGHT}"
 [STR_CARGO_UNIT_STEEL]
 base = "강철 {WEIGHT}"
 
+[STR_CARGO_UNIT_STEEL_BILLETS_AND_BLOOMS]
+base = "강편 & 분굉강 {WEIGHT}"
+
+[STR_CARGO_UNIT_STEEL_INGOTS]
+base = "강철괴 {WEIGHT}"
+
+[STR_CARGO_UNIT_STEEL_MERCHANT_BAR]
+base = "강철연봉 {WEIGHT}"
+
+[STR_CARGO_UNIT_STEEL_PIPE]
+base = "강철파이프 {WEIGHT}"
+
 [STR_CARGO_UNIT_STEEL_SECTIONS]
 base = "형강 {WEIGHT}"
 
 [STR_CARGO_UNIT_STEEL_SHEET]
 base = "강판 {WEIGHT}"
 
+[STR_CARGO_UNIT_STEEL_SLAB]
+base = "강철판 {WEIGHT}"
+
+[STR_CARGO_UNIT_STEEL_TUBE]
+base = "강철튜브 {WEIGHT}"
+
 [STR_CARGO_UNIT_STEEL_WIRE_ROD]
 base = "강선봉 {WEIGHT}"
-
-[STR_CARGO_UNIT_AGGREGATES]
-base = "석재 {WEIGHT}"
 
 [STR_CARGO_UNIT_SUGAR_BEET]
 base = "사탕무 {WEIGHT}"
@@ -591,11 +723,17 @@ base = "황산 {VOLUME}"
 [STR_CARGO_UNIT_TEXTILES]
 base = "옷감 {WEIGHT}"
 
+[STR_CARGO_UNIT_TIMBER]
+base = "제재목 {WEIGHT}"
+
 [STR_CARGO_UNIT_TIN]
 base = "주석 {WEIGHT}"
 
 [STR_CARGO_UNIT_TINPLATE]
 base = "양철 {WEIGHT}"
+
+[STR_CARGO_UNIT_TYRE_CORD]
+base = "타이어 코드 {WEIGHT}"
 
 [STR_CARGO_UNIT_TYRES]
 base = "타이어 {WEIGHT}"
@@ -615,6 +753,9 @@ base = "자동차 부품 {WEIGHT}"
 [STR_CARGO_UNIT_VEHICLES]
 base = "자동차 {WEIGHT}"
 
+[STR_CARGO_UNIT_WELDING_CONSUMABLES]
+base = "용접 소모품 {WEIGHT}"
+
 [STR_CARGO_UNIT_WOOL]
 base = "양털 {SIGNED_WORD}뭉치"
 
@@ -626,6 +767,9 @@ base = "아연 {WEIGHT}"
 
 [STR_CID_ACID]
 base = "{TINYFONT}산"
+
+[STR_CID_AGGREGATES]
+base = "{TINYFONT}골"
 
 [STR_CID_ALCOHOL]
 base = "{TINYFONT}술"
@@ -687,6 +831,9 @@ base = "{TINYFONT}타"
 [STR_CID_COKE]
 base = "{TINYFONT}코"
 
+[STR_CID_CONCRETE_PRODUCTS]
+base = "{TINYFONT}콘"
+
 [STR_CID_COPPER]
 base = "{TINYFONT}구"
 
@@ -711,6 +858,9 @@ base = "{TINYFONT}폭"
 [STR_CID_FARM_SUPPLIES]
 base = "{TINYFONT}농"
 
+[STR_CID_FERROALLOYS]
+base = "{TINYFONT}합"
+
 [STR_CID_FERROCHROME]
 base = "{TINYFONT}롬"
 
@@ -729,11 +879,17 @@ base = "{TINYFONT}첨"
 [STR_CID_FORMIC_ACID]
 base = "{TINYFONT}포"
 
+[STR_CID_FORGINGS_AND_CASTINGS]
+base = "{TINYFONT}단"
+
 [STR_CID_FURNITURE]
 base = "{TINYFONT}가"
 
 [STR_CID_GLASS]
 base = "{TINYFONT}유"
+
+[STR_CID_HARDWARE]
+base = "{TINYFONT}철"
 
 [STR_CID_HYDROCHLORIC_ACID]
 base = "{TINYFONT}염"
@@ -746,9 +902,6 @@ base = "{TINYFONT}회"
 
 [STR_CID_LOGS]
 base = "{TINYFONT}목"
-
-[STR_CID_TIMBER]
-base = "{TINYFONT}제"
 
 [STR_CID_LYE]
 base = "{TINYFONT}수"
@@ -775,6 +928,9 @@ base = "{TINYFONT}나"
 base = "{TINYFONT}니"
 
 [STR_CID_NITRATES]
+base = "{TINYFONT}염"
+
+[STR_CID_NITROGEN]
 base = "{TINYFONT}질"
 
 [STR_CID_NUTS]
@@ -798,6 +954,9 @@ base = "{TINYFONT}휘"
 [STR_CID_PIG_IRON]
 base = "{TINYFONT}선"
 
+[STR_CID_PIPEWORK]
+base = "{TINYFONT}관"
+
 [STR_CID_PHOSPHATE]
 base = "{TINYFONT}염"
 
@@ -812,6 +971,9 @@ base = "{TINYFONT}칼"
 
 [STR_CID_PROPYLENE]
 base = "{TINYFONT}프"
+
+[STR_CID_PUMPS_AND_VALVES]
+base = "{TINYFONT}브"
 
 [STR_CID_PYRITE_ORE]
 base = "{TINYFONT}황"
@@ -837,6 +999,9 @@ base = "{TINYFONT}사"
 [STR_CID_SCRAP_METAL]
 base = "{TINYFONT}고"
 
+[STR_CID_SEALS_HOSES_AND_BELTS]
+base = "{TINYFONT}씰"
+
 [STR_CID_SLAG]
 base = "{TINYFONT}재"
 
@@ -846,8 +1011,32 @@ base = "{TINYFONT}소"
 [STR_CID_STEEL]
 base = "{TINYFONT}철"
 
-[STR_CID_AGGREGATES]
-base = "{TINYFONT}석"
+[STR_CID_STEEL_BILLETS_AND_BLOOMS]
+base = "{TINYFONT}편"
+
+[STR_CID_STEEL_INGOTS]
+base = "{TINYFONT}괴"
+
+[STR_CID_STEEL_MERCHANT_BAR]
+base = "{TINYFONT}봉"
+
+[STR_CID_STEEL_PIPE]
+base = "{TINYFONT}파"
+
+[STR_CID_STEEL_SECTIONS]
+base = "{TINYFONT}형"
+
+[STR_CID_STEEL_SHEET]
+base = "{TINYFONT}강"
+
+[STR_CID_STEEL_SLAB]
+base = "{TINYFONT}판"
+
+[STR_CID_STEEL_TUBE]
+base = "{TINYFONT}튜"
+
+[STR_CID_STEEL_WIRE_ROD]
+base = "{TINYFONT}선"
 
 [STR_CID_SUGAR_BEET]
 base = "{TINYFONT}무"
@@ -858,23 +1047,20 @@ base = "{TINYFONT}황"
 [STR_CID_SULPHURIC_ACID]
 base = "{TINYFONT}황"
 
-[STR_CID_STEEL_SECTIONS]
-base = "{TINYFONT}형"
-
-[STR_CID_STEEL_SHEET]
-base = "{TINYFONT}강"
-
-[STR_CID_STEEL_WIRE_ROD]
-base = "{TINYFONT}선"
-
 [STR_CID_TEXTILES]
 base = "{TINYFONT}옷"
+
+[STR_CID_TIMBER]
+base = "{TINYFONT}제"
 
 [STR_CID_TIN]
 base = "{TINYFONT}주"
 
 [STR_CID_TINPLATE]
 base = "{TINYFONT}양"
+
+[STR_CID_TYRE_CORD]
+base = "{TINYFONT}코"
 
 [STR_CID_TYRES]
 base = "{TINYFONT}타"
@@ -893,6 +1079,9 @@ base = "{TINYFONT}부"
 
 [STR_CID_VEHICLES]
 base = "{TINYFONT}차"
+
+[STR_CID_WELDING_CONSUMABLES]
+base = "{TINYFONT}용"
 
 [STR_CID_WOOL]
 base = "{TINYFONT}모"
@@ -937,334 +1126,349 @@ base = "사막에 지을 수 없습니다."
 base = "가파른 경사 위에 지을 수 없습니다."
 
 [STR_ERR_LOCATION_LIMIT_1_PER_TOWN]
-base = "이 종류의 산업 시설은 한 도시에 하나만 지을 수 있습니다."
+base = "이 종류의 산업시설은 한 도시에 하나만 지을 수 있습니다."
 
 [STR_IND_ALUMINIUM_PLANT]
-base = "알루미늄 제련소"
+base = "{G=f}알루미늄 제련소"
 
 [STR_IND_AMMONIA_PLANT]
-base = "암모니아 공장"
+base = "{G=m}암모니아 공장"
+
+[STR_IND_APPLIANCE_FACTORY]
+base = "{G=m}가전제품 공장"
 
 [STR_IND_ARABLE_FARM]
-base = "경작 농장"
+base = "{G=m}경작 농장"
 
 [STR_IND_ASSEMBLY_PLANT]
-base = "자동차 공장"
+base = "{G=m}자동차 공장"
+
+[STR_IND_BAR_AND_SECTION_MILL]
+base = "{G=m}차체 공장"
 
 [STR_IND_BASIC_OXYGEN_FURNACE]
-base = "기본 산소 용광로"
+base = "{G=f}기본 산소 용광로"
 
 [STR_IND_BIOREFINERY]
-base = "바이오 리파이너리"
+base = "{G=f}바이오 리파이너리"
 
 [STR_IND_BLAST_FURNACE]
-base = "용광로"
+base = "{G=f}용광로"
 
 [STR_IND_BODY_PLANT]
-base = "차체 공장"
+base = "{G=m}차체 공장"
 
 [STR_IND_BREWERY]
-base = "양조장"
+base = "{G=m}양조장"
 
 [STR_IND_CIDER_MILL]
-base = "과실주 양조장"
+base = "{G=m}과실주 양조장"
 
 [STR_IND_BRICK_WORKS]
-base = "벽돌 공장"
+base = "{G=m}벽돌 공장"
 
 [STR_IND_BUILDERS_YARD]
-base = "공사장"
+base = "{G=m}공사장"
 
 [STR_IND_BULK_TERMINAL]
-base = "선적하물 부두"
+base = "{G=f}선적하물 부두"
 
 [STR_IND_CARBON_BLACK_PLANT]
-base = "탄소 검댕 공장"
+base = "{G=m}탄소 검댕 공장"
 
 [STR_IND_CEMENT_PLANT]
-base = "시멘트 공장"
+base = "{G=m}시멘트 공장"
 
 [STR_IND_CHEMICAL_PLANT]
-base = "화학 제품 공장"
+base = "{G=m}화학 제품 공장"
 
 [STR_IND_CHLOR_ALKALI_PLANT]
-base = "클로르 알칼리 공장"
+base = "{G=m}클로르 알칼리 공장"
 
 [STR_IND_CHROMITE_MINE]
-base = "크로마이트 광산"
+base = "{G=m}크로마이트 광산"
 
 [STR_IND_CIVIL_EXPLOSIVES_FACILITY]
-base = "민간 폭발물 시설"
+base = "{G=m}민간 폭발물 시설"
 
 [STR_IND_CLAY_PIT]
-base = "점토 채취장"
+base = "{G=m}점토 채취장"
 
 [STR_IND_COFFEE_ESTATE]
-base = "커피 농장"
+base = "{G=m}커피 농장"
 
 [STR_IND_COKE_OVEN]
-base = "코크스 가마"
+base = "{G=f}코크스 가마"
 
-[STR_IND_PRECISION_PARTS_PLANT]
-base = "부품 공장"
+[STR_IND_CONCRETE_PLANT]
+base = "{G=m}콘크리트 공장"
 
 [STR_IND_COPPER_CONCENTRATOR]
-base = "구리 농축 공장"
+base = "{G=m}구리 농축 공장"
 
 [STR_IND_COPPER_SMELTER]
-base = "구리 정제 공장"
+base = "{G=m}구리 정제 공장"
 
 [STR_IND_CRYO_PLANT]
-base = "냉각 공장"
+base = "{G=m}냉각 공장"
 
 [STR_IND_DAIRY]
-base = "유제품 회사"
+base = "{G=f}유제품 회사"
 
 [STR_IND_DAIRY_FARM]
-base = "낙농장"
+base = "{G=m}낙농장"
 
 [STR_IND_DREDGING_SITE]
-base = "준설 부지"
+base = "{G=f}준설 부지"
+
+[STR_IND_ELASTOMER_PRODUCTS_PLANT]
+base = "{G=m}탄성중합체 생산 공장"
 
 [STR_IND_ELECTRIC_ARC_FURNACE]
-base = "전기 아크로"
+base = "{G=f}전기 아크로"
 
 [STR_IND_ENGINE_PLANT]
-base = "엔진 공장"
+base = "{G=m}엔진 공장"
 
 [STR_IND_ETHYLENE_CRACKER]
-base = "나프타 공장"
+base = "{G=m}나프타 공장"
 
 [STR_IND_FARM]
-base = "농장"
+base = "{G=m}농장"
 
 [STR_IND_FERROCHROME_SMELTER]
-base = "크롬철 용광로"
+base = "{G=f}크롬철 용광로"
 
 [STR_IND_FERTILISER_PLANT]
-base = "비료 공장"
+base = "{G=m}비료 공장"
 
 [STR_IND_FACTORY_1]
-base = "공장 1"
+base = "{G=m}공장 1"
 
 [STR_IND_FACTORY_2]
-base = "공장 2"
+base = "{G=m}공장 2"
 
 [STR_IND_FACTORY_3]
-base = "공장 3"
+base = "{G=m}공장 3"
 
 [STR_IND_FISCHER_TROPSCH_PLANT]
-base = "피셔 트로프슈 공장"
+base = "{G=m}피셔 트로프슈 공장"
 
 [STR_IND_FISH_FARM]
-base = "양식장"
+base = "{G=m}양식장"
 
 [STR_IND_FISHING_GROUND]
-base = "어장"
+base = "{G=m}어장"
 
 [STR_IND_FISHING_HARBOUR]
-base = "수산항"
+base = "{G=m}수산항"
 
 [STR_IND_FISHING_VILLAGE]
-base = "어촌"
+base = "{G=m}어촌"
 
 [STR_IND_FLOUR_MILL]
-base = "제분소"
+base = "{G=f}제분소"
 
 [STR_IND_FOOD_MARKET]
-base = "반찬 가게"
+base = "{G=f}반찬 가게"
 
 [STR_IND_FOOD_PROCESSOR]
-base = "식품 공장"
+base = "{G=m}식품 공장"
+
+[STR_IND_FORGE_AND_FOUNDRY]
+base = "{G=f}강철 대장간 & 주조소"
 
 [STR_IND_FURNITURE_FACTORY]
-base = "가구 공장"
+base = "{G=m}가구 공장"
 
 [STR_IND_GENERAL_STORE]
-base = "일반 상점"
+base = "{G=m}일반 상점"
 
 [STR_IND_GLASS_WORKS]
-base = "유리 공장"
+base = "{G=m}유리 공장"
+
+[STR_IND_HARDWARE_FACTORY]
+base = "{G=m}철물 공장"
 
 [STR_IND_HARDWARE_STORE]
-base = "철물점"
-
-[STR_IND_HOTEL]
-base = "호텔"
+base = "{G=m}철물점"
 
 [STR_IND_HERDING_COOP]
-base = "사냥 캠프"
+base = "{G=f}사냥 캠프"
+
+[STR_IND_HOTEL]
+base = "{G=m}호텔"
+
+[STR_IND_INTEGRATED_STEEL_MILL]
+base = "{G=f}제철소"
 
 [STR_IND_IRON_WORKS]
-base = "제철소"
+base = "{G=f}제철소"
 
 [STR_IND_SCRAP_YARD]
-base = "고철 집적소"
+base = "{G=f}고철 집적소"
 
 [STR_IND_LATEX_PROCESSOR]
-base = "고무 처리 공장"
+base = "{G=m}고무 처리 공장"
 
 [STR_IND_LIME_KILN]
-base = "석회 가마"
+base = "{G=f}석회 가마"
 
 [STR_IND_LIMESTONE_MINE]
-base = "석회석 광산"
+base = "{G=m}석회석 광산"
 
 [STR_IND_LIQUIDS_TERMINAL]
-base = "유류 부두"
-
-[STR_IND_TIMBER_YARD]
-base = "저목장"
-
-[STR_IND_TRACKED_MACHINE_FACTORY]
-base = "기계 상점"
+base = "{G=f}유류 부두"
 
 [STR_IND_MACHINE_WORKS]
-base = "기계 공장"
+base = "{G=m}기계 공장"
 
 [STR_IND_MANGANESE_MINE]
-base = "망가니즈 광산"
+base = "{G=m}망가니즈 광산"
 
 [STR_IND_MIXEDFARM]
-base = "혼합 농장"
+base = "{G=m}혼합 농장"
 
 [STR_IND_NITRATE_MINE]
-base = "질산염 광산"
+base = "{G=m}질산염 광산"
 
 [STR_IND_ORCHARD_PIGGERY]
-base = "과수원 및 양돈장"
+base = "{G=m}과수원 및 양돈장"
 
 [STR_IND_PEATLANDS]
-base = "토탄지"
+base = "{G=f}토탄지"
 
 [STR_IND_PETROLPUMP]
-base = "주유소"
+base = "{G=f}주유소"
 
 [STR_IND_PHOSPHATE_MINE]
-base = "인산염 광산"
+base = "{G=m}인산염 광산"
 
 [STR_IND_PHOSPHORIC_ACID_PLANT]
-base = "인산 공장"
+base = "{G=m}인산 공장"
+
+[STR_IND_PIPEWORK_FABRICATOR]
+base = "{G=m}배관 제작 공장"
+
+[STR_IND_PLATE_MILL]
+base = "{G=m}압연 공장"
 
 [STR_IND_PLASTICS_PLANT]
-base = "플라스틱 공장"
+base = "{G=m}플라스틱 공장"
+
+[STR_IND_PLAZA]
+base = "{G=f}쇼핑센터"
 
 [STR_IND_POLYETHYLENE_PLANT]
-base = "폴리에틸렌 공장"
+base = "{G=m}폴리에틸렌 공장"
 
 [STR_IND_POLYPROPYLENE_PLANT]
-base = "폴리프로필렌 공장"
+base = "{G=m}폴리프로필렌 공장"
 
 [STR_IND_PORT]
-base = "항구"
+base = "{G=f}항구"
 
 [STR_IND_POTASH_MINE]
-base = "탄산칼륨 광산"
+base = "{G=m}탄산칼륨 광산"
+
+[STR_IND_PRECISION_PARTS_PLANT]
+base = "{G=m}정밀 부품 공장"
 
 [STR_IND_PYRITE_MINE]
-base = "황철석 광산"
+base = "{G=m}황철석 광산"
 
 [STR_IND_PYRITE_SMELTER]
-base = "황철석 용광로"
+base = "{G=f}황철석 용광로"
 
 [STR_IND_POWER_PLANT]
-base = "발전소"
+base = "{G=f}발전소"
 
 [STR_IND_QUARRY]
-base = "채석장"
+base = "{G=m}채석장"
 
 [STR_IND_RANCH]
-base = "목장"
+base = "{G=m}목장"
 
 [STR_IND_RECYCLING_DEPOT]
-base = "재활용품 창고"
+base = "{G=f}재활용품 창고"
 
 [STR_IND_RECYCLING_PLANT]
-base = "재활용품 처리 공장"
+base = "{G=m}재활용품 처리 공장"
 
 [STR_IND_REINDEER_FARM]
-base = "순록 농장"
+base = "{G=m}순록 농장"
 
 [STR_IND_SALT_MINE]
-base = "소금 광산"
+base = "{G=m}소금 광산"
+
+[STR_IND_SECTION_MILL]
+base = "{G=m}섹션 압연소"
 
 [STR_IND_SHEEPFARM]
-base = "목양장"
+base = "{G=m}목양장"
+
+[STR_IND_SLAB_CUTTER]
+base = "{G=m}압연 공장"
 
 [STR_IND_SLAG_GRINDING_PLANT]
-base = "광재 분쇄 공장"
+base = "{G=m}광재 분쇄 공장"
 
 [STR_IND_SMITHY_FORGE]
-base = "대장간"
+base = "{G=m}대장간"
 
 [STR_IND_SODA_ASH_MINE]
-base = "소다회 광산"
+base = "{G=m}소다회 광산"
 
 [STR_IND_SOLVAY_PLANT]
-base = "솔베이 공장"
+base = "{G=m}솔베이 공장"
 
 [STR_IND_STOCKYARD]
-base = "도축장"
+base = "{G=m}도축장"
+
+[STR_IND_STRIP_MILL]
+base = "{G=m}강판 공장"
 
 [STR_IND_SUGAR_REFINERY]
-base = "제당소"
+base = "{G=f}제당소"
 
 [STR_IND_SULPHURIC_ACID_PLANT]
-base = "황산 공장"
+base = "{G=m}황산 공장"
 
 [STR_IND_SUPPLY_YARD]
-base = "물류 창고"
+base = "{G=f}물류 창고"
 
 [STR_IND_TEXTILE_MILL]
-base = "방직 공장"
+base = "{G=m}방직 공장"
+
+[STR_IND_TIMBER_YARD]
+base = "{G=f}제재목 저장소"
 
 [STR_IND_TINPLATE_WORKS]
-base = "양철 공장"
+base = "{G=m}양철 공장"
+
+[STR_IND_TRACKED_MACHINE_FACTORY]
+base = "{G=m}무한궤도 차량 공장"
 
 [STR_IND_TRADING_POST]
-base = "교역소"
+base = "{G=f}교역소"
+
+[STR_IND_TUBE_AND_PIPE_MILL]
+base = "{G=m}튜브 & 파이프 공장"
 
 [STR_IND_TYRE_PLANT]
-base = "타이어 공장"
+base = "{G=m}타이어 공장"
 
 [STR_IND_VINEYARD]
-base = "포도밭"
+base = "{G=m}포도밭"
 
 [STR_IND_VEHICLE_DISTRIBUTOR]
-base = "자동차 판매점"
+base = "{G=m}자동차 판매점"
 
 [STR_IND_WHARF]
-base = "부두"
+base = "{G=f}부두"
 
-[STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG]
-base = "{BLACK}(공급됨)"
-
-[STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY]
-base = "{BLACK}최대 생산량을 내려면, {WHITE}아무 {BLACK} 화물이나 공급하십시오."
-
-[STR_EXTRA_TEXT_TOWN_PRODUCER]
-base = "{BLACK}생산량이 도시 인구에 비례합니다. 매월마다 최소 {WHITE}{SIGNED_WORD} 단위{BLACK}에서 {WHITE}{SIGNED_WORD} 단위{BLACK} 사이의 화물이 생산될 것입니다."
-
-[STR_PRIMARY_PRODUCTION_1X]
-base = "{BLACK}현재 생산량: {YELLOW}보통{}{}{BLACK}생산량을 {WHITE}2배{BLACK}로 늘리려면, 3개월 안에 {SIGNED_WORD}상자의 공급품을 수송하십시오.{}생산량을 {WHITE}4배{BLACK}로 늘리려면, {SIGNED_WORD}상자를 수송하십시오."
-
-[STR_PRIMARY_PRODUCTION_2X]
-base = "{BLACK}현재 생산량: {YELLOW}많음{}{}{BLACK}현재 수준을 유지하려면, 3개월 안에 {SIGNED_WORD}상자의 공급품을 수송하십시오.{} {WHITE}4배{BLACK}로 늘리려면, {SIGNED_WORD} 상자를 수송하십시오."
-
-[STR_PRIMARY_PRODUCTION_4X]
-base = "{BLACK}현재 생산량: {YELLOW}격렬히 많음{}{}{BLACK}현재 수준을 유지하려면, 3개월 안에 {SKIP}{SIGNED_WORD}상자의 공급품을 수송하십시오."
-
-[STR_PORT_PRODUCTION_1X]
-base = "{BLACK}현재 생산량: {YELLOW}보통{}{}{BLACK}생산량을 {WHITE}2배{BLACK}로 늘리려면, 3개월 안에 {SIGNED_WORD} 단위의 화물을 수송하십시오.{}{WHITE}4배{BLACK}로 늘리려면, {SIGNED_WORD} 단위의 화물을 수송하십시오."
-
-[STR_PORT_PRODUCTION_2X]
-base = "{BLACK}현재 생산량: {YELLOW}많음{}{}{BLACK}현재 수준을 유지하려면, 3개월 안에 {SIGNED_WORD} 단위의 화물을 수송하십시오.{}{WHITE}4배{BLACK}로 늘리려면, {SIGNED_WORD} 단위의 화물을 수송하십시오."
-
-[STR_PORT_PRODUCTION_4X]
-base = "{BLACK}현재 생산량: {YELLOW}격렬히 많음{}{}{BLACK}현재 수준을 유지하려면, 3개월 안에 {SKIP}{SIGNED_WORD} 단위의 화물을 수송하십시오."
-
-[STR_GENERIC_NEWLINE]
-base = "{}"
+[STR_IND_WIRE_ROD_MILL]
+base = "{G=m}선재 공장"
 
 [STR_FUND_ARABLE_FARM]
 base = "{}{BLACK}위치: {YELLOW}눈이나 사막 위에 세울 수 없음"
@@ -1311,8 +1515,14 @@ base = "{STRING} {STRING}"
 [STR_STATION_ANIMALS]
 base = "마시장"
 
+[STR_STATION_APPLIANCE_FACTORY]
+base = "가전제품 공장"
+
 [STR_STATION_AUTOMOTIVE]
 base = "자동차"
+
+[STR_STATION_BAR_AND_SECTION_MILL]
+base = "차체 공장"
 
 [STR_STATION_BAR_GRILL_AND_ROOMS]
 base = "객실"
@@ -1332,6 +1542,9 @@ base = "폐차장"
 [STR_STATION_BANK_TOP]
 base = "굴뚝"
 
+[STR_STATION_BODY_PLANT]
+base = "압착"
+
 [STR_STATION_BRINE_WORKS]
 base = "염수 공장"
 
@@ -1343,6 +1556,9 @@ base = "탄광"
 
 [STR_STATION_COMPONENTS]
 base = "부품"
+
+[STR_STATION_CONCRETE_PLANT]
+base = "콘크리트 공장"
 
 [STR_STATION_COPPER_LODE]
 base = "동광맥"
@@ -1357,7 +1573,10 @@ base = "냉각 공장"
 base = "낙농길"
 
 [STR_STATION_DYNAMO]
-base = "발전기"
+base = "발전소"
+
+[STR_STATION_ELASTOMER_PLANT]
+base = "씰 & 호스"
 
 [STR_STATION_ESTATE]
 base = "커피 농장"
@@ -1391,6 +1610,9 @@ base = "대장간"
 
 [STR_STATION_FURNACE]
 base = "용광로"
+
+[STR_STATION_HARDWARE_FACTORY]
+base = "철물 공장"
 
 [STR_STATION_HEAVY_EQUIPMENT_YARD]
 base = "중장비 창고"
@@ -1458,11 +1680,23 @@ base = "과수원"
 [STR_STATION_PHENOLS]
 base = "페놀"
 
+[STR_STATION_PIPEWORK_FABRICATOR]
+base = "배관 제작 공장"
+
 [STR_STATION_PIT]
 base = "갱"
 
 [STR_STATION_PLANTATION]
 base = "플랜테이션"
+
+[STR_STATION_PLATE_MILL]
+base = "압연 공장"
+
+[STR_STATION_PLAZA]
+base = "쇼핑센터"
+
+[STR_STATION_POTASH_MINE]
+base = "광산"
 
 [STR_STATION_POWERHUNGRY]
 base = "발전소"
@@ -1515,6 +1749,9 @@ base = "무더기"
 [STR_STATION_STAMP_AND_PLATE]
 base = "철공소"
 
+[STR_STATION_STRIP_MILL]
+base = "강판 공장"
+
 [STR_STATION_SUGAR_COMPANY]
 base = "제당회사"
 
@@ -1533,8 +1770,14 @@ base = "간선도로"
 [STR_STATION_TOWN_3]
 base = "상점"
 
+[STR_STATION_TRACKED_MACHINE_FACTORY]
+base = "차량 공장"
+
 [STR_STATION_TRONA_BEDS]
 base = "중탄산소다석 지층"
+
+[STR_STATION_TUBE_MILL]
+base = "튜브 공장"
 
 [STR_STATION_WATER]
 base = "모래톱"
@@ -1550,3 +1793,27 @@ base = "양조장"
 
 [STR_STATION_VEHICLE_DISTRIBUTOR]
 base = "트럭 창고"
+
+[STR_GENERIC_NEWLINE]
+base = "{}"
+
+[STR_COLOUR_BLUE]
+base = "{BLUE}"
+
+[STR_COLOUR_GOLD]
+base = "{GOLD}"
+
+[STR_COLOUR_GREEN]
+base = "{GREEN}"
+
+[STR_COLOUR_LTBLUE]
+base = "{LTBLUE}"
+
+[STR_COLOUR_RED]
+base = "{RED}"
+
+[STR_COLOUR_YELLOW]
+base = "{YELLOW}"
+
+[STR_COLOUR_WHITE]
+base = "{WHITE}"
