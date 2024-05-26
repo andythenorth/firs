@@ -55,6 +55,13 @@ industry.enable_in_economy(
         ("ALUM", 11),
         ("ZINC", 16),
     ],
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["basic_oxygen_furnace", "electric_arc_furnace"],
+            "companion_industries_ratio": 1,
+        }
+    },
 )
 
 industry.add_tile(
