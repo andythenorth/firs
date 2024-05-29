@@ -128,10 +128,12 @@ industry_numeric_ids = dict(
     concrete_plant=119,
     elastomer_products_plant=120,
     ####UNUSED?####crane_and_hoist_factory=121,
+    # 127 left free for GarryG
 )
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
 tile_numeric_ids = dict(
+    # 0 left free for GarryG
     appliance_factory_tile_1=70,
     ####UNUSED?####crane_and_hoist_factory_tile_1=71,
     elastomer_products_plant_tile_1=72,
