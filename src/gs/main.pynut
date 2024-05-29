@@ -27,6 +27,7 @@ require("vulcan/industry_cargo_stats.nut");
 require("vulcan/industry_control.nut");
 require("vulcan/industry_spec.nut");
 require("vulcan/map_curator.nut");
+require("vulcan/manufacturers.nut");
 require("vulcan/town_control.nut");
 require("vulcan/town_story_book.nut");
 
@@ -137,6 +138,7 @@ function MainClass::Init() {
     VulcanIndustryCargoStatsManager.Init();
     VulcanIndustryControl.Init();
     VulcanMapCurator.Init();
+    VulcanManufacturers.Init();
     VulcanTownControl.Init();
 
     // for the game load case, clean out the story book, and refresh it on Start()
@@ -200,6 +202,8 @@ function MainClass::HandleEvents() {
 function MainClass::OnNewMonth() {
     // note that cargo stats should be run before town to ensure town access to latest industry stats
     VulcanIndustryCargoStatsManager.RunPeriodicProcessing("OnNewMonth");
+    // !! this might need to explicitly be per month, or more or less frequently?
+    VulcanManufacturers.RunPeriodicProcessing("OnNewMonth");
     // !! this might need to explicitly be per month, or more or less frequently?
     VulcanTownControl.RunPeriodicProcessing("OnNewMonth");
     // this would only need to run every 3 months or so

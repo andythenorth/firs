@@ -154,6 +154,7 @@ def main():
             "industry_spec",
             "log",
             "map_curator",
+            "manufacturers",
             "town_control",
             "town_story_book",
         ],

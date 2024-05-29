@@ -1,0 +1,14 @@
+class VulcanManufacturers {
+    // vulcan_manufacturers is a singleton that manages the actual manufacturers
+    function Init() {
+        Log.Info("--", Log.CLASS_VULCAN_MAP_CURATOR)
+        Log.Info("VulcanManufacturers Init()", Log.CLASS_VULCAN_MAP_CURATOR)
+        Log.Info("--", Log.CLASS_VULCAN_MAP_CURATOR)
+        VulcanManufacturers.RunPeriodicProcessing("Init");
+    }
+
+    function RunPeriodicProcessing(caller_type) {
+        Log.Info("VulcanManufacturers RunPeriodicProcessing()", Log.CLASS_VULCAN_MAP_CURATOR)
+    }
+
+}

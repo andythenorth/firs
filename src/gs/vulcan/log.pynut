@@ -10,6 +10,7 @@ class VulcanLog {
 	static CLASS_VULCAN_INDUSTRY_CARGO_STATS = "log_class_vulcan_industry_cargo_stats";
 	static CLASS_VULCAN_INDUSTRY_CONTROL = "log_class_vulcan_industry_control";
 	static CLASS_VULCAN_MAP_CURATOR = "log_class_vulcan_map_curator";
+	static CLASS_VULCAN_MANUFACTURERS = "log_class_vulcan_manufacturers";
 	static CLASS_VULCAN_TOWN_CONTROL = "log_class_vulcan_town_control";
 
     function Info(text, log_class=null) {
@@ -45,6 +46,7 @@ class VulcanLog {
             "CLASS_VULCAN_INDUSTRY_CARGO_STATS",
             "CLASS_VULCAN_INDUSTRY_CONTROL",
             "CLASS_VULCAN_MAP_CURATOR",
+            "CLASS_VULCAN_MANUFACTURERS",
             "CLASS_VULCAN_TOWN_CONTROL",
         ];
 

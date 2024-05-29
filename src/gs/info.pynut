@@ -24,6 +24,15 @@ class FMainClass extends GSInfo {
 			flags = CONFIG_BOOLEAN | CONFIG_INGAME | CONFIG_DEVELOPER
 		});
 		AddSetting({
+		    name = "log_class_vulcan_manufacturers",
+		    description = "Log Vulcan manufacturers messages",
+		    easy_value = 1,
+		    medium_value = 1,
+		    hard_value = 1,
+		    custom_value = 1,
+			flags = CONFIG_BOOLEAN | CONFIG_INGAME | CONFIG_DEVELOPER
+		});
+		AddSetting({
 		    name = "log_class_vulcan_industry_cargo_stats",
 		    description = "Log Vulcan industry cargo stats",
 		    easy_value = 1,
