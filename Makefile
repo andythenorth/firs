@@ -69,7 +69,7 @@ gs: $(GS_DIR)
 # remove the @ for more verbose output (@ suppresses command output)
 _V ?= @
 
-$(LANG_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.lng src)
+$(LANG_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.toml src)
 	$(_V) $(PYTHON3) src/render_lang.py $(ARGS)
 
 $(HTML_DOCS): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.pt --ext=.lng src)
