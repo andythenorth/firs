@@ -9,5 +9,5 @@
 
 // this is the GS savegame data version, and is separate from the git version
 // !! incremement SELF_VERSION linearly upwards when GS savegame data migrations are needed
-SELF_VERSION <- 2;
+SELF_VERSION <- 3;
 GIT_VERSION <- "${git_info.get_version()}";

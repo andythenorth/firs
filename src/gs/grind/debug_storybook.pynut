@@ -90,9 +90,14 @@ class GrindStoryPageUtility extends GrindStoryPage {
     // but note that currently there is just a single page provisioned
     constructor() {
         this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Grind: LOLZ Dev Utils / Debugger");
+
         local clean_industry_texts = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_BUTTON_PUSH, 1, "Clean industry texts");
         // !! this is ass backwards because it's designed for a bunch of if statements to check, should be a simple function dispatcher
         grind_story_book.button_element_ids[clean_industry_texts] <- "clean_industry_texts";
+
+        local clean_industry_texts = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_BUTTON_PUSH, 1, "Regenerate manufacturers");
+        // !! this is ass backwards because it's designed for a bunch of if statements to check, should be a simple function dispatcher
+        grind_story_book.button_element_ids[clean_industry_texts] <- "regenerate_manufacturers";
     }
 }
 

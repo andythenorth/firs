@@ -1,0 +1,91 @@
+class VulcanIndustryOwnership {
+    // Initialize persistent storage for industry owners
+    static function Init() {
+        if (!("industry_owners" in ::persistent_storage)) {
+            ::persistent_storage.industry_owners <- {};
+        }
+        // Call periodic processing loop on init
+        VulcanIndustryOwnership.PeriodicProcessing("init");
+    }
+
+    // Functions for managing industry ownership
+    static function AssignOwner(industry_id, owner_type, owner_id) {
+        ::persistent_storage.industry_owners[industry_id] <- {type = owner_type, id = owner_id};
+    }
+
+    static function RemoveOwner(industry_id) {
+        ::persistent_storage.industry_owners.remove(industry_id);
+    }
+
+    static function GetOwner(industry_id) {
+        if (industry_id in ::persistent_storage.industry_owners) {
+            return ::persistent_storage.industry_owners[industry_id];
+        }
+        return null;
+    }
+
+    static function ListIndustries(owner_type, owner_id) {
+        local industries = [];
+        foreach (industry_id, owner in ::persistent_storage.industry_owners) {
+            if (owner.type == owner_type && owner.id == owner_id) {
+                industries.append(industry_id);
+            }
+        }
+        return industries;
+    }
+
+    static function IsIndustryOwned(industry_id) {
+        return industry_id in ::persistent_storage.industry_owners;
+    }
+
+    // Periodic processing loop
+    static function PeriodicProcessing(caller_reason) {
+        Log.Info("VulcanIndustryOwnership.PeriodicProcessing called due to: " + caller_reason);
+
+        local industry_list = GSIndustryList();
+        foreach (industry_id in industry_list) {
+            if (!VulcanIndustryOwnership.IsIndustryOwned(industry_id)) {
+                // Determine owner type and assign owner
+                local industry_type = GSIndustry.GetIndustryType(industry_id);
+                // Placeholder logic for assigning owners
+                if (industry_type in ["Farm", "Forest"]) {
+                    VulcanIndustryOwnership.AssignOwner(industry_id, "Self", industry_id);
+                } else {
+                    // Assign to manufacturer or other entity
+                    VulcanIndustryOwnership.AssignOwner(industry_id, "Manufacturer", 1); // Example: assigning to manufacturer with ID 1
+                }
+            }
+        }
+    }
+
+    // Example function to assign industries to manufacturers
+    static function AssignIndustriesToManufacturers(manufacturers) {
+        foreach (manufacturer_id, manufacturer in manufacturers) {
+            foreach (tier in manufacturer.core_tiers) {
+                foreach (industry_id in GSIndustryList()) {
+                    // Check if industry type matches the tier and assign owner
+                    if (GSIndustry.GetIndustryType(industry_id) in tier) {
+                        VulcanIndustryOwnership.AssignOwner(industry_id, "Manufacturer", manufacturer_id);
+                    }
+                }
+            }
+        }
+    }
+
+    // Function to resolve owner details from owner ID
+    static function ResolveOwnerDetails(owner_type, owner_id) {
+        if (owner_type == "Manufacturer" && owner_id in ::persistent_storage.manufacturers) {
+            return ::persistent_storage.manufacturers[owner_id];
+        }
+        if (owner_type == "Town") {
+            return GSTown.GetName(owner_id);
+        }
+        if (owner_type == "Company") {
+            return GSCompany.GetName(owner_id);
+        }
+        if (owner_type == "Self") {
+            return "Self-owned";
+        }
+        return null;
+    }
+}

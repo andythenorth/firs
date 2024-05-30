@@ -25,6 +25,7 @@ require("persistent_storage.nut");
 require("vulcan/companies.nut");
 require("vulcan/industry_cargo_stats.nut");
 require("vulcan/industry_control.nut");
+require("vulcan/industry_ownership.nut");
 require("vulcan/industry_spec.nut");
 require("vulcan/map_curator.nut");
 require("vulcan/manufacturers.nut");
@@ -37,23 +38,22 @@ require("firs.nut");
 require("version.nut");
 
 class MainClass extends GSController {
-	_loaded_data = null;
-	_loaded_from_version = null;
-	_init_done = null;
+    _loaded_data = null;
+    _loaded_from_version = null;
+    _init_done = null;
 
-	/*
-	 * This method is called when your GS is constructed.
-	 * It is recommended to only do basic initialization of member variables
-	 * here.
-	 * Many API functions are unavailable from the constructor. Instead do
-	 * or call most of your initialization code from MainClass::Init.
-	 */
-	constructor()
-	{
-		this._init_done = false;
-		this._loaded_data = null;
-		this._loaded_from_version = null;
-	}
+    /*
+     * This method is called when your GS is constructed.
+     * It is recommended to only do basic initialization of member variables
+     * here.
+     * Many API functions are unavailable from the constructor. Instead do
+     * or call most of your initialization code from MainClass::Init.
+     */
+    constructor() {
+        this._init_done = false;
+        this._loaded_data = null;
+        this._loaded_from_version = null;
+    }
 }
 
 /*
@@ -65,58 +65,53 @@ class MainClass extends GSController {
  * located in Init), and then the main loop.
  */
 function MainClass::Start() {
-	// Some OpenTTD versions are affected by a bug where all API methods
-	// that create things in the game world during world generation will
-	// return object id 0 even if the created object has a different ID.
-	// In that case, the easiest workaround is to delay Init until the
-	// game has started.
-	if (Helper.HasWorldGenBug()) GSController.Sleep(1);
+    // Some OpenTTD versions are affected by a bug where all API methods
+    // that create things in the game world during world generation will
+    // return object id 0 even if the created object has a different ID.
+    // In that case, the easiest workaround is to delay Init until the
+    // game has started.
+    if (Helper.HasWorldGenBug()) GSController.Sleep(1);
 
-	this.Init();
+    this.Init();
 
-	// Wait for the game to start (or more correctly, tell OpenTTD to not
-	// execute our GS further in world generation)
-	GSController.Sleep(1);
+    // Wait for the game to start (or more correctly, tell OpenTTD to not
+    // execute our GS further in world generation)
+    GSController.Sleep(1);
 
     // AFAICT, GS story pages can't be added during init (as we might still be in world gen)
     VulcanTownStoryBook.Init();
     GrindStoryBook.Init();
 
-	// Game has now started and if it is a single player game,
-	// company 0 exist and is the human company.
+    // Game has now started and if it is a single player game,
+    // company 0 exist and is the human company.
 
-	// Main Game Script loop
-	local last_loop_date = GSDate.GetCurrentDate();
-	while (true) {
-		local loop_start_tick = GSController.GetTick();
+    // Main Game Script loop
+    local last_loop_date = GSDate.GetCurrentDate();
+    while (true) {
+        local loop_start_tick = GSController.GetTick();
 
         GrindStoryBook.CheckShowHide();
 
-		// Handle incoming messages from OpenTTD
-		this.HandleEvents();
+        // Handle incoming messages from OpenTTD
+        this.HandleEvents();
 
-		// Reached new year/month?
-		local current_date = GSDate.GetCurrentDate();
-		if (last_loop_date != null) {
-			local year = GSDate.GetYear(current_date);
-			local month = GSDate.GetMonth(current_date);
-			if (year != GSDate.GetYear(last_loop_date)) {
-				this.OnNewYear();
-			}
-			if (month != GSDate.GetMonth(last_loop_date)) {
-				this.OnNewMonth();
-			}
-		}
-		last_loop_date = current_date;
+        // Reached new year/month?
+        local current_date = GSDate.GetCurrentDate();
+        if (last_loop_date != null) {
+            local year = GSDate.GetYear(current_date);
+            local month = GSDate.GetMonth(current_date);
+            if (year != GSDate.GetYear(last_loop_date)) {
+                this.OnNewYear();
+            }
+            if (month != GSDate.GetMonth(last_loop_date)) {
+                this.OnNewMonth();
+            }
+        }
+        last_loop_date = current_date;
 
-        /*
-		// Loop with a frequency of five days
-		local ticks_used = GSController.GetTick() - loop_start_tick;
-		GSController.Sleep(max(1, 5 * 74 - ticks_used));
-		*/
-		// Try looping aggressively fast, this may nerf game FPS / FFWD speed? 5 is an arbitrary value for testing with
-		GSController.Sleep(5);
-	}
+        // Try looping aggressively fast, this may nerf game FPS / FFWD speed? 5 is an arbitrary value for testing with
+        GSController.Sleep(5);
+    }
 }
 
 /*
@@ -127,7 +122,6 @@ function MainClass::Start() {
  * exist. The benefit of doing initialization in world gen is that commands
  * that alter the game world are much cheaper before the game starts.
  */
-
 function MainClass::Init() {
     PersistentStorageManager.Init(this._loaded_data, this._loaded_from_version);
 
@@ -137,6 +131,7 @@ function MainClass::Init() {
     VulcanCompanies.Init();
     VulcanIndustryCargoStatsManager.Init();
     VulcanIndustryControl.Init();
+    VulcanIndustryOwnership.Init();
     VulcanMapCurator.Init();
     VulcanManufacturers.Init();
     VulcanTownControl.Init();
@@ -148,51 +143,47 @@ function MainClass::Init() {
     foreach (story_page, _ in story_page_list) {
         GSStoryPage.Remove(story_page);
     }
-    local asyncmode = null;
+    asyncmode = null;
 
-    /*
-    PowerGrid.build_
-    (
-        GSObjectType.ResolveNewGRFID(0x47477015, 0x51),
-        GSIndustryType.ResolveNewGRFID(firs.grfid, 0x42) // to-do: convert to list of industries
-    );
-    */
-
-    // set_town_text_test();
-
-    //tile_walker();
-
-    //find_power_sources();
-
-	// Indicate that all data structures has been initialized/restored.
-	this._init_done = true;
-	this._loaded_data = null; // the loaded data has no more use now after that _init_done is true.
+    // Indicate that all data structures have been initialized/restored.
+    this._init_done = true;
+    this._loaded_data = null; // the loaded data has no more use now after that _init_done is true.
 }
 
 /*
  * This method handles incoming events from OpenTTD.
  */
 function MainClass::HandleEvents() {
-	if(GSEventController.IsEventWaiting()) {
-		local ev = GSEventController.GetNextEvent();
-		if (ev == null) return;
+    if (GSEventController.IsEventWaiting()) {
+        local ev = GSEventController.GetNextEvent();
+        if (ev == null) return;
 
-		local ev_type = ev.GetEventType();
-		switch (ev_type) {
-			case GSEvent.ET_STORYPAGE_BUTTON_CLICK: {
-				local button_event = GSEventStoryPageButtonClick.Convert(ev);
-				local company_id = button_event.GetCompanyID();
+        local ev_type = ev.GetEventType();
+        switch (ev_type) {
+            case GSEvent.ET_STORYPAGE_BUTTON_CLICK: {
+                local button_event = GSEventStoryPageButtonClick.Convert(ev);
+                local company_id = button_event.GetCompanyID();
                 Log.Info("Button clicked! " + button_event.GetStoryPageID() + " " + button_event.GetElementID())
 
                 if (grind_story_book.button_element_ids[button_event.GetElementID()] == "clean_industry_texts") {
                     local industry_list = GSIndustryList();
-                	foreach (industry, _ in industry_list) {
-                	    GSIndustry.SetText(industry, null);
-                	}
+                    foreach (industry, _ in industry_list) {
+                        GSIndustry.SetText(industry, null);
+                    }
                 }
             }
-		}
-	}
+            case GSEvent.ET_STORYPAGE_BUTTON_CLICK: {
+                local button_event = GSEventStoryPageButtonClick.Convert(ev);
+                local company_id = button_event.GetCompanyID();
+                Log.Info("Button clicked! " + button_event.GetStoryPageID() + " " + button_event.GetElementID())
+
+                if (grind_story_book.button_element_ids[button_event.GetElementID()] == "regenerate_manufacturers") {
+                    ::persistent_storage["manufacturers"] = {};
+                    VulcanManufacturers.Init()
+                }
+            }
+        }
+    }
 }
 
 /*
@@ -226,31 +217,32 @@ function MainClass::OnNewYear() {
  * floating point values cannot be stored by OpenTTD.
  */
 function MainClass::Save() {
-	Log.Info("Saving data to savegame");
+    Log.Info("Saving data to savegame");
 
-	// In case (auto-)save happens before we have initialized all data,
-	// save the raw _loaded_data if available or an empty table.
-	if (!this._init_done) {
-		return this._loaded_data != null ? this._loaded_data : {};
-	}
+    // In case (auto-)save happens before we have initialized all data,
+    // save the raw _loaded_data if available or an empty table.
+    if (!this._init_done) {
+        return this._loaded_data != null ? this._loaded_data : {};
+    }
 
-	return ::persistent_storage
+    // Save persistent storage data
+    return ::persistent_storage;
 }
 
 /*
  * When a game is loaded, OpenTTD will call this method and pass you the
  * table that you sent to OpenTTD in Save().
  */
-function MainClass::Load(version, tbl) {
-	Log.Info("Loading data from savegame made with version " + version + " of the game script");
+function MainClass::Load(version, savegame_data) {
+    Log.Info("Loading data from savegame made with version " + version + " of the game script");
 
-	// Store a copy of the table from the save game
-	// but do not process the loaded data yet. Wait with that to Init
-	// so that OpenTTD doesn't kick us for taking too long to load.
-	this._loaded_data = {}
-   	foreach(key, val in tbl) {
-		this._loaded_data.rawset(key, val);
-	}
+    // Store a copy of the table from the save game
+    // but do not process the loaded data yet. Wait with that to Init
+    // so that OpenTTD doesn't kick us for taking too long to load.
+    this._loaded_data = {}
+    foreach(key, val in savegame_data) {
+        this._loaded_data.rawset(key, val);
+    }
 
-	this._loaded_from_version = version;
+    this._loaded_from_version = version;
 }

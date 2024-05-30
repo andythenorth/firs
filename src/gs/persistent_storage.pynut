@@ -21,6 +21,8 @@ class PersistentStorageManager {
         town_primary_industry_production_increase_timeseries = {},
         industry_production_increase_timeseries = {},
         industry_cargo_stats = {},
+        manufacturers = {},
+        industry_owners = {},
     };
 
     // no constructor, no instance attributes, keep it simple
@@ -56,6 +58,11 @@ class PersistentStorageManager {
                 min_firs_gs_data_version = 2,
                 migration_method = PersistentStorageManager.MigrateTownPrimaryIndustryProductionIncreaseTimeseries,
             }
+            manufacturers = {
+                // when a migration is needed, bump SELF_VERSION in version.pynut and match min_gs_data_version to the bumped value at the time
+                min_firs_gs_data_version = 3,
+                migration_method = PersistentStorageManager.MigrateManufacturers,
+            }
         };
         local slot_data = loaded_data[slot_name]
         if (slot_name in migrations) {
@@ -87,4 +94,11 @@ class PersistentStorageManager {
         }
         return result;
     }
+
+    function MigrateManufacturers(slot_data) {
+        // blank the storage to clear out old table format
+        local result = {};
+        return result;
+    }
+
 }

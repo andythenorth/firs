@@ -80,7 +80,7 @@ def render_nuts(nuts_by_subdir):
             dst_file = codecs.open(
                 os.path.join(dst_dir, nut_name + ".nut"), "w", "utf8"
             )
-            dst_file.write(meta_header)
+            # dst_file.write(meta_header) # tempoarily disabled as it borks line numbers for debugging
             result = utils.unescape_chameleon_output(
                 nut_template(
                     gs_helper=GSHelper(),
@@ -151,6 +151,7 @@ def main():
             "companies",
             "industry_cargo_stats",
             "industry_control",
+            "industry_ownership",
             "industry_spec",
             "log",
             "map_curator",
