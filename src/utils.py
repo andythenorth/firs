@@ -80,6 +80,8 @@ def gs_list_repr(_list):
 
 def gs_table_repr(_dict):
     # chameleon will render dicts as {'foo': 'cabbage', 'ham': 'eggs'}; squirrel wants them as tables in the form {"foo" = "cabbage", "ham" = "eggs"}
+    # although it wasn't a problem here as of May 2024, note that, as far as testing shows, strings can't be used as table slot ids (keys) in Squirrel
+    # this works because chameleon renders the python literal strings out as ids in the .nut, which is fine
     result = []
     for key, value in _dict.items():
         kv_result = key + " = "
