@@ -19,7 +19,7 @@ industry = IndustrySecondary(
     map_colour="49",
     special_flags=["IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE"],
     location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[["blast_furnace"], 72],
+        near_at_least_one_of_these_keystone_industries=[["blast_furnace"], 56],
         same_type_distance=72,
     ),
     name="string(STR_IND_BASIC_OXYGEN_FURNACE)",
