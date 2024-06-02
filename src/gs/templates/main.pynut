@@ -10,7 +10,7 @@ Helper <- SuperLib.Helper;
 
 /* Local pseudo-libs, alphabetised */
 // Atlas handles map geometry
-require("atlas/atlas.nut");
+require("atlas/tile_lists_by_shape.nut");
 // Grind handles using the story book as a fake debugger
 require("grind/debug_storybook.nut");
 // our own wrapper around default logging

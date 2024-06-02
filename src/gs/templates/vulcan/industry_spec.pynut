@@ -41,7 +41,7 @@ class VulcanIndustrySpec {
         // write our own version of prospecting, scoped to a town
 
         // this area isn't actually scoped to the town, it's just a circle around it in which to check tiles, we'll filter by GetClosestTown later
-        local town_circular_area = AtlasCircle(GSTown.GetLocation(town), 32).GetTiles();
+        local town_circular_area = AtlasTilesCircle(GSTown.GetLocation(town), 32).GetTiles();
 
         local result = false;
         do {

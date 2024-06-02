@@ -1,19 +1,6 @@
-/* Atlas handles map geometry, for example:
-  - finding tiles in lists by shape
-*/
+/* tiles lists conforming to shapes */
 
-// !! lib structure of Atlas is WIP
-
-function DeltaYFromDeltaXPythagoras(delta_x, radius) {
-    /*
-        given a distance x, find an equivalent distance y which will sit on the circumference of a cirle with given radius
-        this can be done by rearranging pythagoras so that b^2 = c^2 - a^2 where c is radius and a is delta_x
-        if we wanted ellipses, that would be achieved by just scaling the return result by some factor
-    */
-    return sqrt((radius * radius) - (delta_x * delta_x)).tointeger();
-}
-
-class AtlasCircle {
+class AtlasTilesCircle {
     origin_tile = null;
     origin_x = null;
     origin_y = null;
@@ -26,12 +13,21 @@ class AtlasCircle {
         this.radius = radius;
     }
 
+    function DeltaYFromDeltaXPythagoras(delta_x, radius) {
+        /*
+            given a distance x, find an equivalent distance y which will sit on the circumference of a cirle with given radius
+            this can be done by rearranging pythagoras so that b^2 = c^2 - a^2 where c is radius and a is delta_x
+            if we wanted ellipses, that would be achieved by just scaling the return result by some factor
+        */
+        return sqrt((radius * radius) - (delta_x * delta_x)).tointeger();
+    }
+
     function GetTiles() {
         local result = array(0);
         // method using pythagoras to find y from each x using radius, then use y as the constraint for a tile file
         // this walks only the tiles that are explicitly needed and _may_ scale slightly better with larger radii, but eh, I have no fine-grained timing info
         for (local x = origin_x - radius; x <= origin_x + radius; x++) {
-            local delta_y = DeltaYFromDeltaXPythagoras(origin_x - x, radius);
+            local delta_y = AtlasTilesCircle.DeltaYFromDeltaXPythagoras(origin_x - x, radius);
             for (local y = origin_y - delta_y; y <= origin_y + delta_y; y++) {
                 result.push(GSMap.GetTileIndex(x, y));
 
@@ -41,7 +37,7 @@ class AtlasCircle {
     }
 }
 
-class AtlasRect {
+class AtlasTilesRect {
     tile_from = null;
     tile_to = null;
     x_1 = null;

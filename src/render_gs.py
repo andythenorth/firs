@@ -118,7 +118,7 @@ def main():
             "version",
         ],
         "grind": ["debug_storybook"],
-        "atlas": ["atlas"],
+        "atlas": ["tile_lists_by_shape"],
         "vulcan": [
             "companies",
             "industry_cargo_stats",
