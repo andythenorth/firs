@@ -1,0 +1,86 @@
+/* Grind handles basic debugging and development tasks, for example
+  - adding story pages for debugging information
+  - using story buttons to invalidate or refresh state
+*/
+
+class GrindStoryBook {
+
+    function Init() {
+        // note that this creates a table in root
+        // not designed to return a class instance
+        // grind_story_book is a singleton, and allegedly a table with slots is more efficient for that case than a singleton class instance
+        ::grind_story_book <- {};
+        grind_story_book.button_element_ids <- {};
+        grind_story_book.show <- null;
+        GrindStoryBook.CheckShowHide();
+    }
+
+    function CheckShowHide() {
+        if (GSController.GetSetting("grind_show") != grind_story_book.show) {
+            grind_story_book.show <- GSController.GetSetting("grind_show");
+            if (grind_story_book.show) {
+                GrindStoryBook.Show();
+            } else {
+                GrindStoryBook.Hide();
+            }
+        }
+    }
+
+    function Hide() {
+        local asyncmode = GSAsyncMode(true);
+        foreach (page_type in ["utility_pages", "persistent_storage_pages", "industry_spec_pages"]) {
+            // check for page_type to avoid crashing if not found, because a crashing debug utility is lolz
+            if (page_type in grind_story_book) {
+                foreach (grind_page in grind_story_book[page_type]) {
+                    GSStoryPage.Remove(grind_page.story_page);
+                }
+            }
+        }
+        local asyncmode = null;
+    }
+
+    function Show() {
+        local asyncmode = GSAsyncMode(true);
+        GrindStoryBook.AddUtilityPages();
+        GrindStoryBook.AddPersistentStoragePages();
+        GrindStoryBook.AddIndustrySpecStoryPages();
+        local asyncmode = null;
+    }
+
+    function AddUtilityPages() {
+        if (grind_story_book.show) {
+            // note that this also automatically clears all current pages, that can be changed if needed, but trivially prevents duplication currently
+            grind_story_book.utility_pages <- {};
+            // note that currently there is just a single page provisioned
+            grind_story_book.utility_pages.debug_page_1 <- GrindStoryPageUtility();
+        }
+    }
+
+    function AddPersistentStoragePages() {
+        if (grind_story_book.show) {
+            // note that this also automatically clears all current pages, that can be changed if needed, but trivially prevents duplication currently
+            grind_story_book.persistent_storage_pages <- {};
+            // note that currently there is just a single page provisioned
+            foreach (slot_name, slot_value in ::persistent_storage) {
+                grind_story_book.persistent_storage_pages[slot_name] <- GrindStoryPagePersistentStorage(slot_name, slot_value);
+            }
+        }
+    }
+
+    function AddIndustrySpecStoryPages() {
+        if (grind_story_book.show) {
+            // note that this also automatically clears all current pages, that can be changed if needed, but trivially prevents duplication currently
+            grind_story_book.industry_spec_pages <- {};
+            foreach (industry_id in firs.active_economy.GetIndustryIDsSortedByName()) {
+                grind_story_book.industry_spec_pages[industry_id] <- GrindStoryPageIndustrySpec(industry_id);
+            }
+        }
+    }
+}
+
+class GrindStoryPage {
+    /* base class for various types of Grind page */
+
+    // keep a copy of the story page (for convenience)
+    story_page = null;
+}

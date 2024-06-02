@@ -117,7 +117,7 @@ def main():
             "repr",
             "version",
         ],
-        "grind": ["debug_storybook"],
+        "grind": ["grind_industries", "grind_storybook", "grind_persistent_storage", "grind_utils"],
         "atlas": ["tile_lists_by_shape"],
         "vulcan": [
             "companies",

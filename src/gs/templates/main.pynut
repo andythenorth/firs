@@ -12,7 +12,10 @@ Helper <- SuperLib.Helper;
 // Atlas handles map geometry
 require("atlas/tile_lists_by_shape.nut");
 // Grind handles using the story book as a fake debugger
-require("grind/debug_storybook.nut");
+require("grind/grind_storybook.nut");
+require("grind/grind_industries.nut");
+require("grind/grind_persistent_storage.nut");
+require("grind/grind_utils.nut");
 // our own wrapper around default logging
 require("vulcan/log.nut");
 Log <- VulcanLog();
