@@ -2733,7 +2733,8 @@ class Vulcan(object):
     def __init__(self, industry):
         self.industry = industry
 
-    def get_default_vulcan_config_as_gs_table(self):
+    @property
+    def default_vulcan_config(self):
         vulcan_config = self.industry.get_property("vulcan_config", None)
         result = {}
         result["allow_production_change_from_gs"] = getattr(
@@ -2745,9 +2746,10 @@ class Vulcan(object):
             if self.industry.id in ["builders_yard", "hardware_store", "general_store"]
             else False
         )
-        return utils.gs_table_repr(result)
+        return result
 
-    def get_economy_variations_as_gs_table(self):
+    @property
+    def economy_variations(self):
         result = {}
         for economy in self.industry.economies_enabled_for_industry:
             economy_config = {}
@@ -2758,4 +2760,4 @@ class Vulcan(object):
                 "vulcan_config", economy
             )
             result[economy.id] = economy_config
-        return utils.gs_table_repr(result)
+        return result

@@ -10,6 +10,7 @@ from time import time
 import firs
 import global_constants
 import utils
+from gs.gs_helper import GSHelper
 from polar_fox import git_info
 
 registered_cargos = firs.registered_cargos
@@ -24,34 +25,6 @@ makefile_args = utils.get_makefile_args(sys)
 gs_src = os.path.join(currentdir, "src", "gs")
 gs_src_templates = os.path.join(gs_src, "templates")
 gs_dst = os.path.join(firs.generated_files_path, "gs")
-
-
-class GSHelper(object):
-    # GS-specific methods for formatting etc in chameleon templates, this is only for things not handled in industry.py or utils.py
-
-    def get_economy_fingerprint(self, registered_industries, economy):
-        result = ""
-        # as of August 2021, port and wharf were sufficiently unique, and at least one of them is in every economy
-        # !! this could use a guard to enforce uniqueness
-        for industry in registered_industries:
-            if industry.id in ["port", "wharf"]:
-                if industry.economy_variations[economy.id].enabled:
-                    fingerprint_industry = industry
-                    break
-        result = (
-            result
-            + "Accepts: "
-            + " ".join(sorted(fingerprint_industry.get_accept_cargo_types(economy)))
-        )
-        result = result + " Produces:"
-        for cargo_label, prod_multiplier in sorted(
-            fingerprint_industry.get_prod_cargo_types(economy)
-        ):
-            result = result + " " + cargo_label
-        return result
-
-    def get_grfid(self):
-        return "0x" + global_constants.grfid
 
 
 def render_nuts(nuts_by_subdir):

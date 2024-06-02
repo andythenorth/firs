@@ -103,12 +103,13 @@ class Cargo(object):
         value = self.get_property(property_name, economy)
         return property_name + ": " + str(value) + ";"
 
-    def get_selected_properties_as_gs_table(self):
+    @property
+    def properties_for_gs(self):
         result = {}
         result["cargo_label"] = self.cargo_label
         result["id"] = self.id
         result["vulcan_town_effect"] = self.vulcan_town_effect
-        return utils.gs_table_repr(result)
+        return result
 
     def register(self):
         if len(self.economy_variations) == 0:

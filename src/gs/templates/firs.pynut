@@ -24,7 +24,7 @@ class FIRS {
         <tal:cargos repeat="cargo registered_cargos">
             // cargo props are simple as of April 2023, provide a Vulcan spec later if needed
             // note that cargo.numeric ID is not provided by FIRS as the grflocal numeric ID is economy-specific
-            local cargo = ${cargo.get_selected_properties_as_gs_table()};
+            local cargo = ${gs_helper.gs_table_repr(cargo.properties_for_gs)};
             // we store cargos indexed on the label, as that's the most convenient way to look them up in GS
             firs.cargos["${cargo.cargo_label}"] <- cargo;
         </tal:cargos>
@@ -35,8 +35,8 @@ class FIRS {
             firs.industries["${industry.id}"] <- VulcanIndustrySpec(
                 ${industry.numeric_id},
                 GSIndustryType.ResolveNewGRFID(firs.grfid, ${industry.numeric_id}),
-                ${industry.vulcan.get_default_vulcan_config_as_gs_table()},
-                ${industry.vulcan.get_economy_variations_as_gs_table()}
+                ${gs_helper.gs_table_repr(industry.vulcan.default_vulcan_config)},
+                ${gs_helper.gs_table_repr(industry.vulcan.economy_variations)}
             );
         </tal:industries>
 
@@ -46,7 +46,7 @@ class FIRS {
             local economy = {};
             economy.id <- "${economy.id}";
             economy.numeric_id <- ${economy.numeric_id};
-            economy.cargo_labels <- ${utils.gs_list_repr([cargo.cargo_label for cargo in economy.get_cargos(registered_cargos)])};
+            economy.cargo_labels <- ${gs_helper.gs_list_repr([cargo.cargo_label for cargo in economy.get_cargos(registered_cargos)])};
             // fingerprint relies on wharf or port industry types as of March 2023; this was sufficiently unique, but may be fragile if economies are changed
             economy.fingerprint <- "${gs_helper.get_economy_fingerprint(registered_industries, economy)}";
             firs.economies["${economy.id}"] <- economy;
