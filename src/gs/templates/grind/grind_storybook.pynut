@@ -42,7 +42,7 @@ class GrindStoryBook {
         local asyncmode = GSAsyncMode(true);
         GrindStoryBook.AddUtilityPages();
         GrindStoryBook.AddPersistentStoragePages();
-        GrindStoryBook.AddIndustrySpecStoryPages();
+        //GrindStoryBook.AddIndustrySpecStoryPages();
         local asyncmode = null;
     }
 
