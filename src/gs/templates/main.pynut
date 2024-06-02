@@ -34,6 +34,7 @@ require("vulcan/industry_ownership.nut");
 require("vulcan/industry_spec.nut");
 require("vulcan/map_curator.nut");
 require("vulcan/manufacturers.nut");
+require("vulcan/manufacturers_story_book.nut");
 require("vulcan/town_control.nut");
 require("vulcan/town_story_book.nut");
 
@@ -85,6 +86,7 @@ function MainClass::Start() {
 
     // AFAICT, GS story pages can't be added during init (as we might still be in world gen)
     VulcanTownStoryBook.Init();
+    VulcanManufacturersStoryBook.Init();
     GrindStoryBook.Init();
 
     // Game has now started and if it is a single player game,

@@ -129,6 +129,7 @@ def main():
             "log",
             "map_curator",
             "manufacturers",
+            "manufacturers_story_book",
             "town_control",
             "town_story_book",
         ],

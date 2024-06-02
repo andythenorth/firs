@@ -1,0 +1,62 @@
+class VulcanManufacturersStoryBook {
+
+    function Init() {
+        // note that this creates a table in root
+        // not designed to return a class instance
+        // vulcan_manufacturers_story_pages is a singleton, and allegedly a table with slots is more efficient for that case than a singleton class instance
+        ::vulcan_manufacturers_story_pages <- {};
+        VulcanManufacturersStoryBook.AddManfuacturersStoryPages();
+    }
+
+    function AddManfuacturersStoryPages() {
+        local asyncmode = GSAsyncMode(true);
+        foreach (manufacturer_id, manufacturer in ::persistent_storage["manufacturers"]) {
+            vulcan_manufacturers_story_pages[manufacturer_id] <- VulcanManufacturerStoryPage(manufacturer_id, manufacturer);
+        }
+        local asyncmode = null;
+    }
+}
+
+class VulcanManufacturerStoryPage {
+
+    // keep a copy of the story page (for convenience)
+    story_page = null
+    page_elements = null
+
+    constructor(manufacturer_id, manufacturer) {
+        this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, manufacturer["name"] + " (Manufacturer)");
+        this.CreatePageElements(manufacturer);
+    }
+
+    function TestCabbage(manufacturer, extra_params) {
+        local cabbage = ["Ham", "Eggs", "Popeye", "Alligator", "Zebedee", "The KLF"][GSBase.RandRange(5)];
+        return GSText(GSText.STR_MANUFACTURERS_STORY_PAGE_TEST, cabbage);
+    }
+
+    function CreatePageElements(manufacturer) {
+        // define the elements
+        this.page_elements = [];
+        // growth report
+        this.page_elements.append({
+            reference = null,
+            text_method = this.TestCabbage,
+        });
+        // add the elements
+        foreach (page_element in this.page_elements) {
+            local extra_params = null;
+            if ("extra_params" in page_element) {
+                extra_params = page_element.extra_params;
+            }
+            page_element.reference = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, page_element.text_method(manufacturer, extra_params));
+        }
+    }
+
+    function UpdatePage(manufacturer) {
+        // remove all elements and recreate them, it's the safest way to accommodate changing entities such as industries which can open / close
+        foreach (page_element in this.page_elements) {
+            GSStoryPage.RemoveElement(page_element.reference);
+        }
+        this.CreatePageElements(manufacturer);
+        GSStoryPage.SetDate(this.story_page, GSDate.GetCurrentDate());
+    }
+}
