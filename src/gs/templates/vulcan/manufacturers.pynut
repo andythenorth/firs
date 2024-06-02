@@ -12,30 +12,37 @@ class VulcanManufacturers {
         Log.Info("--", Log.CLASS_VULCAN_MANUFACTURERS);
 
         // Check if manufacturers are loaded from save, if not, create some for demonstration
-        local required_types = ["Steelmaker", "Automaker", "EquipmentManufacturer", "ChemicalsManufacturer", "BuildingMaterialsManufacturer"];
-        local existing_types = {};
+        local required_categories = ["Steelmaker", "Automaker", "EquipmentManufacturer", "ChemicalsManufacturer", "BuildingMaterialsManufacturer"];
+        local existing_categories = {};
 
-        // Populate existing types from persistent storage
-        foreach (id, manufacturer in ::persistent_storage["manufacturers"]) {
+        // Populate existing categories from persistent storage
+        foreach (manufacturer_id, manufacturer in ::persistent_storage["manufacturers"]) {
             Log.Info(manufacturer, Log.CLASS_VULCAN_MANUFACTURERS);
-            existing_types[manufacturer["type"]] <- true;
+            existing_categories[manufacturer["category"]] <- true;
         }
 
         // Create missing manufacturer types
-        foreach (type in required_types) {
-            if (!(type in existing_types)) {
-                local name = VulcanManufacturers.GenerateUniqueName(type);
-                VulcanManufacturers.CreateManufacturer(type, name);
+        foreach (category in required_categories) {
+            if (!(category in existing_categories)) {
+                local name = VulcanManufacturers.GenerateUniqueName(category);
+                VulcanManufacturers.CreateManufacturer(category, name);
             }
         }
 
         VulcanManufacturers.AssignHQTowns();
         VulcanManufacturers.AssignOtherTowns();
+
+        foreach (manufacturer_id, manufacturer in ::persistent_storage["manufacturers"]) {
+            if (manufacturer["category"] == "Steelmaker") {
+                TestSteelMaker.AssignIndustries(manufacturer_id, manufacturer);
+            }
+        }
+
         VulcanManufacturers.RunPeriodicProcessing("Init");
     }
 
-    // Generate a unique name for a new manufacturer based on type
-    static function GenerateUniqueName(type) {
+    // Generate a unique name for a new manufacturer based on category
+    static function GenerateUniqueName(category) {
         local base_names = {};
         base_names["Steelmaker"] <- ["Central Steel Inc.", "Steeltown Metals", "Ironclad Steel"];
         base_names["Automaker"] <- ["AutoWorks Ltd.", "Speedster Motors", "RoadKing Vehicles"];
@@ -44,13 +51,13 @@ class VulcanManufacturers {
         base_names["BuildingMaterialsManufacturer"] <- ["BuildRight Materials", "Concretia Supplies", "ConstructCo"];
 
         local used_names = {};
-        foreach (id, manufacturer in ::persistent_storage["manufacturers"]) {
+        foreach (manufacturer_id, manufacturer in ::persistent_storage["manufacturers"]) {
             used_names[manufacturer["name"]] <- true;
         }
 
-        local possible_names = base_names[type];
+        local possible_names = base_names[category];
         if (possible_names == null) {
-            throw "No possible names found for type: " + type;
+            throw "No possible names found for category: " + category;
         }
 
         foreach (name in possible_names) {
@@ -62,7 +69,7 @@ class VulcanManufacturers {
         // If all possible names are used, generate a new unique name
         local suffix = 1;
         while (true) {
-            local new_name = type + " " + suffix.tostring();
+            local new_name = category + " " + suffix.tostring();
             if (!(new_name in used_names)) {
                 return new_name;
             }
@@ -73,22 +80,28 @@ class VulcanManufacturers {
     // Run periodic processing
     static function RunPeriodicProcessing(caller_type) {
         Log.Info("VulcanManufacturers RunPeriodicProcessing()", Log.CLASS_VULCAN_MANUFACTURERS);
-        foreach (id, manufacturer in ::persistent_storage["manufacturers"]) {
-            Log.Info("Processing manufacturer ID: " + id, Log.CLASS_VULCAN_MANUFACTURERS);
+        foreach (manufacturer_id, manufacturer in ::persistent_storage["manufacturers"]) {
+            Log.Info("Processing manufacturer manufacturer_id: " + manufacturer_id, Log.CLASS_VULCAN_MANUFACTURERS);
             VulcanManufacturers.ProcessMonthly(manufacturer);
         }
+        /*
+        if (caller_type != "Init") {
+            Log.Info("...updating manufacturer story pages", Log.CLASS_VULCAN_MANUFACTURERS);
+            VulcanManufacturers.UpdateManufacturerStoryPage();
+        }
+        */
     }
 
     // Create a new manufacturer
-    static function CreateManufacturer(type, name) {
+    static function CreateManufacturer(category, name) {
         local manufacturer = {};
-        manufacturer["type"] <- type;
+        manufacturer["category"] <- category;
         manufacturer["name"] <- name;
         manufacturer["hq_town"] <- null;
         manufacturer["valid_towns"] <- [];
 
         ::persistent_storage["manufacturers"][name] <- manufacturer;
-        Log.Info("Created manufacturer: " + name + " (" + type + ")", Log.CLASS_VULCAN_MANUFACTURERS);
+        Log.Info("Created manufacturer: " + name + " (" + category + ")", Log.CLASS_VULCAN_MANUFACTURERS);
     }
 
     static function AssignHQTowns() {
@@ -136,17 +149,42 @@ class VulcanManufacturers {
         return null;
     }
 
-    // Generate a unique ID for a new manufacturer
+    // Generate a unique manufacturer_id for a new manufacturer
     static function GenerateUniqueID() {
         local max_id = 0;
-        foreach (id, _ in ::persistent_storage["manufacturers"]) {
-            if (id.tointeger() > max_id) max_id = id.tointeger();
+        foreach (manufacturer_id, _ in ::persistent_storage["manufacturers"]) {
+            if (manufacturer_id.tointeger() > max_id) max_id = manufacturer_id.tointeger();
         }
         return (max_id + 1).tostring();
     }
 
+    /*
+    function UpdateManfacturerStoryPage() {
+        vulcan_manufacturers_story_pages[this.town].UpdatePage(this);
+    }
+    */
+
     // Process monthly updates
     static function ProcessMonthly(manufacturer) {
-        Log.Info("Processing monthly for " + manufacturer["name"] + " (" + manufacturer["type"] + ")", Log.CLASS_VULCAN_MANUFACTURERS);
+        Log.Info("Processing monthly for " + manufacturer["name"] + " (" + manufacturer["category"] + ")", Log.CLASS_VULCAN_MANUFACTURERS);
     }
+}
+
+// prototyping of industry behaviour
+
+class TestSteelMaker {
+    static function AssignIndustries(manufacturer_id, manufacturer) {
+        Log.Info("Assigning industries for " + manufacturer["name"], Log.CLASS_VULCAN_MANUFACTURERS);
+        local industry_list = GSIndustryList();
+        foreach (industry, _ in industry_list) {
+            foreach (industry_type in ["blast_furnace", "basic_oxygen_furnace"]) {
+                if (GSIndustry.GetIndustryType(industry) == firs.industries[industry_type].global_id) {
+                    Log.Info("Found " + GSIndustry.GetName(industry), Log.CLASS_VULCAN_MANUFACTURERS);
+                    VulcanIndustryOwnership.AssignOwner(industry, "manufacturer", manufacturer_id);
+                }
+            }
+        }
+        Log.Info("Industries owned by " + manufacturer["name"] + ": " + Repr(VulcanIndustryOwnership.ListIndustries("manufacturer", manufacturer_id)));
+    }
+
 }

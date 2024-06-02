@@ -10,7 +10,11 @@ class VulcanIndustryOwnership {
 
     // Functions for managing industry ownership
     static function AssignOwner(industry_id, owner_type, owner_id) {
-        ::persistent_storage.industry_owners[industry_id] <- {type = owner_type, id = owner_id};
+        ::persistent_storage.industry_owners[industry_id] <- {category = owner_type, id = owner_id};
+        if (owner_type == "manufacturer") {
+            local owner_name = ::persistent_storage["manufacturers"][owner_id]["name"];
+            GSIndustry.SetText(industry_id, GSText(GSText.STR_INDUSTRY_OWNER, owner_name));
+        }
     }
 
     static function RemoveOwner(industry_id) {
@@ -27,7 +31,7 @@ class VulcanIndustryOwnership {
     static function ListIndustries(owner_type, owner_id) {
         local industries = [];
         foreach (industry_id, owner in ::persistent_storage.industry_owners) {
-            if (owner.type == owner_type && owner.id == owner_id) {
+            if (owner.category == owner_type && owner.id == owner_id) {
                 industries.append(industry_id);
             }
         }
@@ -45,14 +49,14 @@ class VulcanIndustryOwnership {
         local industry_list = GSIndustryList();
         foreach (industry_id in industry_list) {
             if (!VulcanIndustryOwnership.IsIndustryOwned(industry_id)) {
-                // Determine owner type and assign owner
+                // Determine owner category and assign owner
                 local industry_type = GSIndustry.GetIndustryType(industry_id);
                 // Placeholder logic for assigning owners
                 if (industry_type in ["Farm", "Forest"]) {
-                    VulcanIndustryOwnership.AssignOwner(industry_id, "Self", industry_id);
+                    VulcanIndustryOwnership.AssignOwner(industry_id, "self", industry_id);
                 } else {
                     // Assign to manufacturer or other entity
-                    VulcanIndustryOwnership.AssignOwner(industry_id, "Manufacturer", 1); // Example: assigning to manufacturer with ID 1
+                    VulcanIndustryOwnership.AssignOwner(industry_id, "manufacturer", 1); // Example: assigning to manufacturer with ID 1
                 }
             }
         }

@@ -25,22 +25,59 @@ class VulcanManufacturerStoryPage {
 
     constructor(manufacturer_id, manufacturer) {
         this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, manufacturer["name"] + " (Manufacturer)");
-        this.CreatePageElements(manufacturer);
+        this.CreatePageElements(manufacturer_id, manufacturer);
     }
 
-    function TestCabbage(manufacturer, extra_params) {
-        local cabbage = ["Ham", "Eggs", "Popeye", "Alligator", "Zebedee", "The KLF"][GSBase.RandRange(5)];
-        return GSText(GSText.STR_MANUFACTURERS_STORY_PAGE_TEST, cabbage);
+    function ListIndustriesOwned(manufacturer, extra_params) {
+        local result = [];
+        foreach (industry in VulcanIndustryOwnership.ListIndustries("manufacturer", extra_params[0])) {
+            result.append(GSIndustry.GetName(industry));
+        }
+        return GSText(GSText.STR_MANUFACTURERS_STORY_PAGE_INDUSTRIES_OWNED, Repr(result));
     }
 
-    function CreatePageElements(manufacturer) {
+    function CreatePageElements(manufacturer_id, manufacturer) {
         // define the elements
         this.page_elements = [];
-        // growth report
+
         this.page_elements.append({
             reference = null,
-            text_method = this.TestCabbage,
+            // when only a GSText is needed, just wrap it in an anonymous function
+            text_method = function(vulcan_town, extra_params) {
+                return GSText(GSText.STR_MANUFACTURERS_STORY_PAGE_NAME, extra_params[0])
+            },
+            extra_params = [manufacturer["name"]]
         });
+        this.page_elements.append({
+            reference = null,
+            // when only a GSText is needed, just wrap it in an anonymous function
+            text_method = function(vulcan_town, extra_params) {
+                return GSText(GSText.STR_MANUFACTURERS_STORY_PAGE_CATEGORY, extra_params[0])
+            },
+            extra_params = [manufacturer["category"]]
+        });
+        this.page_elements.append({
+            reference = null,
+            // when only a GSText is needed, just wrap it in an anonymous function
+            text_method = function(vulcan_town, extra_params) {
+                return GSText(GSText.STR_MANUFACTURERS_STORY_PAGE_HQ_TOWN, extra_params[0])
+            },
+            extra_params = [manufacturer["hq_town"]]
+        });
+        this.page_elements.append({
+            reference = null,
+            // when only a GSText is needed, just wrap it in an anonymous function
+            text_method = function(vulcan_town, extra_params) {
+                return GSText(GSText.STR_MANUFACTURERS_STORY_PAGE_VALID_TOWNS, extra_params[0])
+            },
+            extra_params = [Repr(manufacturer["valid_towns"])]
+        });
+        this.page_elements.append({
+            reference = null,
+            text_method = ListIndustriesOwned,
+            extra_params = [manufacturer_id]
+        });
+
         // add the elements
         foreach (page_element in this.page_elements) {
             local extra_params = null;
@@ -51,12 +88,12 @@ class VulcanManufacturerStoryPage {
         }
     }
 
-    function UpdatePage(manufacturer) {
+    function UpdatePage(manufacturer_id, manufacturer) {
         // remove all elements and recreate them, it's the safest way to accommodate changing entities such as industries which can open / close
         foreach (page_element in this.page_elements) {
             GSStoryPage.RemoveElement(page_element.reference);
         }
-        this.CreatePageElements(manufacturer);
+        this.CreatePageElements(manufacturer_id, manufacturer);
         GSStoryPage.SetDate(this.story_page, GSDate.GetCurrentDate());
     }
 }
