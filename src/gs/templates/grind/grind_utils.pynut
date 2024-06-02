@@ -28,11 +28,13 @@ class GrindStoryPageUtility extends GrindStoryPage {
         if (button_event.GetElementID() == handler_kwargs.button_element_id) {
             // this can either handle button clicks directly inline, or call out to functions, as needed
             if (handler_kwargs.button_name == "clean_industry_texts") {
+                local asyncmode = GSAsyncMode(true);
                 Log.Info("Clearing industry texts");
                 local industry_list = GSIndustryList();
                 foreach (industry, _ in industry_list) {
                     GSIndustry.SetText(industry, null);
                 }
+                asyncmode = null;
             }
             if (handler_kwargs.button_name == "regenerate_manufacturers") {
                 Log.Info("Regenerating manufacturers");
