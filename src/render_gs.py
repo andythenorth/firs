@@ -22,6 +22,7 @@ from chameleon import PageTemplateLoader  # chameleon used in most template case
 makefile_args = utils.get_makefile_args(sys)
 
 gs_src = os.path.join(currentdir, "src", "gs")
+gs_src_templates = os.path.join(gs_src, "templates")
 gs_dst = os.path.join(firs.generated_files_path, "gs")
 
 
@@ -54,18 +55,16 @@ class GSHelper(object):
 
 
 def render_nuts(nuts_by_subdir):
-    meta_header = PageTemplateLoader(
-        os.path.join(currentdir, "src", "gs"), format="text"
-    )["_meta_header.pt"](git_info=git_info)
+    meta_header = PageTemplateLoader(gs_src_templates, format="text")["_meta_header.pt"](
+        git_info=git_info
+    )
 
     for subdir_name, nuts in nuts_by_subdir.items():
         if subdir_name == "root":
-            nut_templates = PageTemplateLoader(
-                os.path.join(currentdir, "src", "gs"), format="text"
-            )
+            nut_templates = PageTemplateLoader(gs_src_templates, format="text")
         else:
             nut_templates = PageTemplateLoader(
-                os.path.join(currentdir, "src", "gs", subdir_name), format="text"
+                os.path.join(gs_src_templates, subdir_name), format="text"
             )
         if subdir_name == "root":
             dst_dir = gs_dst
@@ -169,7 +168,9 @@ def main():
         "txt",
         source_is_repo_root=True,
     )
-    plain_text_docs = ["readme"] # note no changelog as of Aug 2023, overkill, adjust as needed
+    plain_text_docs = [
+        "readme"
+    ]  # note no changelog as of Aug 2023, overkill, adjust as needed
     render_docs(
         plain_text_docs,
         "txt",
