@@ -162,10 +162,16 @@ function MainClass::Init() {
  * This method handles incoming events from OpenTTD.
  */
 function MainClass::HandleEvents() {
-    if (GSEventController.IsEventWaiting()) {
-        local event = GSEventController.GetNextEvent();
-        if (event == null) return;
+    // async mode is not expected to make any difference here as no commands are executed
+    // any expensive event handling functions might need to set async mode for their commands
 
+    // this while loop potentially unclosed if events are added to the queue, but 'probably fine'
+    // we use the while loop as we want to try and clear all events from the queue in each iteration of main loop
+    // this is to increase responsiveness to events, especially button clicks
+    // if very large numbers of events are generated (and also actually handled), this may hit the opcode limit, but tradeoffs eh?
+    while (GSEventController.IsEventWaiting()) {
+        local event = GSEventController.GetNextEvent();
+        if (event == null) continue;
         EventManager.HandleEvent(event);
     }
 }
