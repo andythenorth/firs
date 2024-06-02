@@ -25,6 +25,7 @@ class EventManager {
         // handlers have
         // - a function name, which is called by HandleEvent
         // - arbitrary kwargs in a table, which are passed to the function to do as it wishes
+        local event_type = GSEvent[event_type]; // convert to actual GSEvent event type
         if (!(event_type in ::registered_events)) {
             ::registered_events[event_type] <- [];
         }
@@ -35,12 +36,10 @@ class EventManager {
         Log.Info("HandleEvent called", Log.CLASS_EVENT_MANAGER);
 
         local event_type = event.GetEventType();
-        foreach (handled_event_type, handlers in ::registered_events) {
-            if (event_type == GSEvent[handled_event_type]) {
-                foreach (handler_config in handlers) {
-                    Log.Info(Repr(handler_config), Log.CLASS_EVENT_MANAGER);
-                    handler_config["handler"](event, handler_config["kwargs"]);
-                }
+        if (event_type in ::registered_events) {
+            foreach (handler_config in ::registered_events[event_type]) {
+                Log.Info(Repr(handler_config), Log.CLASS_EVENT_MANAGER);
+                handler_config["handler"](event, handler_config["kwargs"]);
             }
         }
     }
