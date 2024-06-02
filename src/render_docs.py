@@ -17,15 +17,16 @@ import firs
 from incompatible_grfs import incompatible_grfs
 from doc_helper import DocHelper
 
-docs_src = os.path.join(currentdir, "src", "docs_templates")
+docs_src = os.path.join(currentdir, "src", "docs")
 docs_output_path = os.path.join(currentdir, "docs")
 if os.path.exists(docs_output_path):
     shutil.rmtree(docs_output_path)
 os.mkdir(docs_output_path)
+os.mkdir(os.path.join(docs_output_path, "html"))
 
 shutil.copy(os.path.join(docs_src, "index.html"), docs_output_path)
 
-static_dir_src = os.path.join(docs_src, "html", "static")
+static_dir_src = os.path.join(docs_src, "static")
 static_dir_dst = os.path.join(docs_output_path, "html", "static")
 shutil.copytree(static_dir_src, static_dir_dst)
 shutil.copy(os.path.join(docs_src, "index.html"), docs_output_path)
@@ -35,8 +36,7 @@ images_dir_dst = os.path.join(static_dir_dst, "img")
 from chameleon import PageTemplateLoader  # chameleon used in most template cases
 
 # setup the places we look for templates
-docs_templates = PageTemplateLoader(docs_src, format="text")
-
+docs_templates = PageTemplateLoader(os.path.join(docs_src, "templates"), format="text")
 
 # get args passed by makefile
 makefile_args = utils.get_makefile_args(sys)
@@ -60,15 +60,13 @@ def render_docs(
     doc_list, file_type, doc_helper, use_markdown=False, source_is_repo_root=False
 ):
     if source_is_repo_root:
-        doc_path = os.path.join(currentdir)
+        templates = PageTemplateLoader(os.path.join(currentdir), format="text")
     else:
-        doc_path = docs_src
-
-    docs_templates = PageTemplateLoader(doc_path, format="text")
+        templates = docs_templates
 
     for doc_name in doc_list:
-        template = docs_templates[
-            doc_name + ".pt"
+        template = templates[
+            doc_name + (".md" if use_markdown else ".pt")
         ]  # .pt is the conventional extension for chameleon page templates
         doc = template(
             registered_cargos=registered_cargos,
@@ -84,11 +82,9 @@ def render_docs(
             doc_helper=doc_helper,
             doc_name=doc_name,
         )
-        if use_markdown:
-            # the doc might be in markdown format, if so we need to render markdown to html, and wrap the result in some boilerplate html
-            markdown_wrapper = PageTemplateLoader(docs_src, format="text")[
-                "markdown_wrapper.pt"
-            ]
+        if use_markdown and file_type=="html":
+            # if the source is markdown, we need to render markdown to html, and wrap the result in some boilerplate html
+            markdown_wrapper = docs_templates["markdown_wrapper.pt"]
             doc = markdown_wrapper(
                 content=markdown.markdown(doc),
                 global_constants=global_constants,
@@ -124,7 +120,7 @@ def main():
     # we also have some strings which are docs-only, so get those
     # should be in a dedicated method probably, but eh
     with open(
-        os.path.join(currentdir, "src", "docs_templates", "extra_strings.toml"), "rb"
+        os.path.join(currentdir, "src", "docs", "extra_strings.toml"), "rb"
     ) as fp:
         extra_strings_source = tomllib.load(fp)
     for node_name, node_value in extra_strings_source.items():
@@ -187,8 +183,8 @@ def main():
         source_is_repo_root=True,
     )
     # just render the markdown docs twice to get txt and html versions, simples no?
-    render_docs(markdown_docs, "txt", doc_helper)
-    render_docs(markdown_docs, "html", doc_helper, use_markdown=True)
+    render_docs(markdown_docs, "txt", doc_helper, use_markdown=True, source_is_repo_root=True)
+    render_docs(markdown_docs, "html", doc_helper, use_markdown=True, source_is_repo_root=True)
     render_docs(graph_docs, "dotall", doc_helper)
     render_docs(stylesheets, "css", doc_helper)
 
