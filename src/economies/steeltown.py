@@ -162,3 +162,12 @@ economy = Economy(
         ],
     },
 )
+
+# some deliberate overlapping of biomes for mixing at boundaries
+economy.add_biome(
+    "exclude_map_edges",
+    min_x_percent=25,
+    max_x_percent=75,
+    min_y_percent=25,
+    max_y_percent=75,
+)

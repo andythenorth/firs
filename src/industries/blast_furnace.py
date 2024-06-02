@@ -24,6 +24,9 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "STEELTOWN",
+    locate_in_specific_biomes=[
+        "exclude_map_edges",
+    ],
 )
 
 industry.add_tile(
