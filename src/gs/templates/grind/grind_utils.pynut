@@ -5,11 +5,40 @@ class GrindStoryPageUtility extends GrindStoryPage {
         this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Grind: LOLZ Dev Utils / Debugger");
 
         local clean_industry_texts = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_BUTTON_PUSH, 1, "Clean industry texts");
-        // !! this is ass backwards because it's designed for a bunch of if statements to check, should be a simple function dispatcher
-        grind_story_book.button_element_ids[clean_industry_texts] <- "clean_industry_texts";
+        local handler_kwargs = {button_element_id = clean_industry_texts, button_name = "clean_industry_texts"};
+        EventManager().RegisterEvent("ET_STORYPAGE_BUTTON_CLICK", this.GrindStoryPageUtilityButtonHandler, handler_kwargs);
 
-        local clean_industry_texts = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_BUTTON_PUSH, 1, "Regenerate manufacturers");
-        // !! this is ass backwards because it's designed for a bunch of if statements to check, should be a simple function dispatcher
-        grind_story_book.button_element_ids[clean_industry_texts] <- "regenerate_manufacturers";
+        local regenerate_manufacturers = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_BUTTON_PUSH, 1, "Regenerate manufacturers");
+        local handler_kwargs = {button_element_id = regenerate_manufacturers, button_name = "regenerate_manufacturers"};
+        EventManager().RegisterEvent("ET_STORYPAGE_BUTTON_CLICK", this.GrindStoryPageUtilityButtonHandler, handler_kwargs);
+    }
+
+    static function GrindStoryPageUtilityButtonHandler(event, handler_kwargs) {
+        // we use one generic button handler function for Grind Utility stuff
+        // this is because button handler needs to check button IDs, which the event manager doesn't do as it's too specific to button events
+
+        Log.Info("GrindStoryPageUtilityButtonHandler event handler called");
+        Log.Info("handler_kwargs: " + Repr(handler_kwargs));
+
+        local button_event = GSEventStoryPageButtonClick.Convert(event);
+
+        Log.Info(button_event);
+        Log.Info(button_event.GetElementID());
+
+        if (button_event.GetElementID() == handler_kwargs.button_element_id) {
+            // this can either handle button clicks directly inline, or call out to functions, as needed
+            if (handler_kwargs.button_name == "clean_industry_texts") {
+                Log.Info("Clearing industry texts");
+                local industry_list = GSIndustryList();
+                foreach (industry, _ in industry_list) {
+                    GSIndustry.SetText(industry, null);
+                }
+            }
+            if (handler_kwargs.button_name == "regenerate_manufacturers") {
+                Log.Info("Regenerating manufacturers");
+                ::persistent_storage["manufacturers"] = {};
+                VulcanManufacturers.Init();
+            }
+        }
     }
 }

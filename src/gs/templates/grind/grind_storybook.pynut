@@ -10,7 +10,6 @@ class GrindStoryBook {
         // not designed to return a class instance
         // grind_story_book is a singleton, and allegedly a table with slots is more efficient for that case than a singleton class instance
         ::grind_story_book <- {};
-        grind_story_book.button_element_ids <- {};
         grind_story_book.show <- null;
         GrindStoryBook.CheckShowHide();
     }

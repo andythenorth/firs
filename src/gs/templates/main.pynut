@@ -8,7 +8,14 @@ Helper <- SuperLib.Helper;
 /* Import other libs */
 // none
 
-/* Local pseudo-libs, alphabetised */
+/* Local pseudo-libs */
+// Events manager for GSEvent handling
+require("events.nut");
+// Persistent storage manager for save/load of state in savegame
+require("persistent_storage.nut");
+// our own implementation of pretty printing as I can't figure out how to use the one in Squirrel 2, if it exists
+require("repr.nut");
+Repr <- _Repr.Repr;
 // Atlas handles map geometry
 require("atlas/tile_lists_by_shape.nut");
 // Grind handles using the story book as a fake debugger
@@ -19,11 +26,6 @@ require("grind/grind_utils.nut");
 // our own wrapper around default logging
 require("vulcan/log.nut");
 Log <- VulcanLog();
-// our own implementation of pretty printing as I can't figure out how to use the one in Squirrel 2, if it exists
-require("repr.nut");
-Repr <- _Repr.Repr;
-// Persistent storage manager for save/load of state in savegame
-require("persistent_storage.nut");
 // Vulcan namespaces most of our scripts
 require("vulcan/companies.nut");
 require("vulcan/industry_cargo_stats.nut");
@@ -126,6 +128,7 @@ function MainClass::Start() {
  * that alter the game world are much cheaper before the game starts.
  */
 function MainClass::Init() {
+    EventManager.Init();
     PersistentStorageManager.Init(this._loaded_data, this._loaded_from_version);
 
     Log.Info(GIT_VERSION);
@@ -158,34 +161,10 @@ function MainClass::Init() {
  */
 function MainClass::HandleEvents() {
     if (GSEventController.IsEventWaiting()) {
-        local ev = GSEventController.GetNextEvent();
-        if (ev == null) return;
+        local event = GSEventController.GetNextEvent();
+        if (event == null) return;
 
-        local ev_type = ev.GetEventType();
-        switch (ev_type) {
-            case GSEvent.ET_STORYPAGE_BUTTON_CLICK: {
-                local button_event = GSEventStoryPageButtonClick.Convert(ev);
-                local company_id = button_event.GetCompanyID();
-                Log.Info("Button clicked! " + button_event.GetStoryPageID() + " " + button_event.GetElementID())
-
-                if (grind_story_book.button_element_ids[button_event.GetElementID()] == "clean_industry_texts") {
-                    local industry_list = GSIndustryList();
-                    foreach (industry, _ in industry_list) {
-                        GSIndustry.SetText(industry, null);
-                    }
-                }
-            }
-            case GSEvent.ET_STORYPAGE_BUTTON_CLICK: {
-                local button_event = GSEventStoryPageButtonClick.Convert(ev);
-                local company_id = button_event.GetCompanyID();
-                Log.Info("Button clicked! " + button_event.GetStoryPageID() + " " + button_event.GetElementID())
-
-                if (grind_story_book.button_element_ids[button_event.GetElementID()] == "regenerate_manufacturers") {
-                    ::persistent_storage["manufacturers"] = {};
-                    VulcanManufacturers.Init()
-                }
-            }
-        }
+        EventManager.HandleEvent(event);
     }
 }
 

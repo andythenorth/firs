@@ -1,0 +1,47 @@
+/*
+    Supports arbitrary registration of GSEvent to handle via HandleEvents in main.pynut
+    Just a table mapping event to a handler function.
+    Events will bubble - all registered handlers will be called.
+    Handling order is whatever they were registered in, no prioritisation currently.
+    Not namespaced to Vulcan as it is generically available to anything in the GS.
+*/
+
+class EventManager {
+    /*
+        structure for managing events
+        this is just a convenient way to namespace functions
+        try to keep it simple eh?
+    */
+
+    // no constructor, no instance attributes, keep it simple
+    function Init() {
+        ::registered_events <- {};
+    }
+
+    function RegisterEvent(event_type, handler, kwargs = null) {
+        // event structure is a table
+        // keys are event types as e.g. ET_STORYPAGE_BUTTON_CLICK or similar
+        // values are arrays of handlers
+        // handlers have
+        // - a function name, which is called by HandleEvent
+        // - arbitrary kwargs in a table, which are passed to the function to do as it wishes
+        if (!(event_type in ::registered_events)) {
+            ::registered_events[event_type] <- [];
+        }
+        ::registered_events[event_type].append({handler = handler, kwargs = kwargs});
+    }
+
+    function HandleEvent(event) {
+        Log.Info("HandleEvent called", Log.CLASS_EVENT_MANAGER);
+
+        local event_type = event.GetEventType();
+        foreach (handled_event_type, handlers in ::registered_events) {
+            if (event_type == GSEvent[handled_event_type]) {
+                foreach (handler_config in handlers) {
+                    Log.Info(Repr(handler_config), Log.CLASS_EVENT_MANAGER);
+                    handler_config["handler"](event, handler_config["kwargs"]);
+                }
+            }
+        }
+    }
+}

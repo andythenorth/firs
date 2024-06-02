@@ -110,6 +110,7 @@ def main():
     nuts_by_subdir = {
         # alphabetise nuts in each list for simplicity
         "root": [
+            "events",
             "firs",
             "info",
             "main",

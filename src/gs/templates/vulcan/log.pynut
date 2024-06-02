@@ -12,6 +12,8 @@ class VulcanLog {
 	static CLASS_VULCAN_MAP_CURATOR = "log_class_vulcan_map_curator";
 	static CLASS_VULCAN_MANUFACTURERS = "log_class_vulcan_manufacturers";
 	static CLASS_VULCAN_TOWN_CONTROL = "log_class_vulcan_town_control";
+	// we can also some log non-Vulcan things if we need to
+	static CLASS_EVENT_MANAGER = "log_class_event_manager";
 
     function Info(text, log_class=null) {
         if (VulcanLog.IsClassAccepted(log_class)) {
@@ -48,6 +50,7 @@ class VulcanLog {
             "CLASS_VULCAN_MAP_CURATOR",
             "CLASS_VULCAN_MANUFACTURERS",
             "CLASS_VULCAN_TOWN_CONTROL",
+            "CLASS_EVENT_MANAGER",
         ];
 
         if (GSGameSettings.GetValue("gui.ai_developer_tools")) {
