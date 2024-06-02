@@ -1,63 +1,8 @@
 /* Atlas handles map geometry, for example:
   - finding tiles in lists by shape
-  - managing regions
 */
 
 // !! lib structure of Atlas is WIP
-
-class Region {
-   /*
-        Manages a list of areas
-    */
-    static areas = array(0);
-    static negative_areas = array(0);
-}
-
-function Region::AddArea(area) {
-    this.areas.push(area);
-}
-
-function Region::AddNegativeArea(area) {
-    this.negative_areas.push(area);
-}
-
-function Region::GetUnifiedAreas() {
-    Log.Info("unifying areas...");
-    local time_start = GSDate.GetSystemTime();
-    local result = array(0);
-    ::index <- {}
-    ::excluded_index <- {}
-
-    foreach (negative_area in this.negative_areas) {
-        foreach (tile in negative_area.GetTiles()) {
-            if ((tile in ::excluded_index) == false) {
-                ::excluded_index[tile] <- null;
-            }
-        }
-    }
-
-    foreach (area in this.areas) {
-        foreach (tile in area.GetTiles()) {
-            // don't add excluded tiles
-            if (tile in ::excluded_index) {
-                // excluded, don't add it
-                continue;
-            }
-            // don't add duplicates
-            if ((tile in ::index) == false) {
-                ::index[tile] <- {};
-            }
-            else {
-                break;
-            }
-            result.push(tile);
-        }
-    }
-    Log.Info("...areas unified. Elapsed time: " + (GSDate.GetSystemTime() - time_start) + " seconds");
-    delete ::index
-    delete ::excluded_index
-    return result
-}
 
 function DeltaYFromDeltaXPythagoras(delta_x, radius) {
     /*
