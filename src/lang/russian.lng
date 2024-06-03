@@ -13,219 +13,670 @@ STR_PARAM_NAME_ECONOMIES                                                        
 STR_PARAM_NAME_NO_OPENINGS                                                      :Запретить создание предприятий во время игры
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :без ограничений
 
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Ресурсы, необходимые для увеличения производства (по умолчанию 16)
+STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Ресурсы, необходимые для максимального производства (по умолчанию 80)
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Фермы, шахты и подобные заводы увеличат производство, когда будет доставлено сырье{SILVER}повысился{BLACK}, и позже{SILVER}максимальный{BLACK}.{}{}Значения по умолчанию подходят, но вы можете изменить их здесь, если хотите.{}{}Требования к доставке портовых ресурсов будут в 8 раз больше, чем указано здесь.
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Повышение уровня производства (%)
+STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Максимальный уровень производства (%)
+STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Производство на фермах, шахтах и ​​подобных предприятиях при удовлетворении потребностей в поставках (в процентах от {SILVER}низкого {BLACK}уровеня производства).
+
+STR_PARAM_NAME_EXPERIMENTAL_FEATURES                                            :Включить экспериментальные функции.
+STR_PARAM_DESC_EXPERIMENTAL_FEATURES                                            :Включает или отключает экспериментальные функции.
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Умеренная Простая
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Арктическая Простая
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Тропическая Простая
-STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                      :Сердце Тьмы
+STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                      :Тропическая Сложная
+STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Тяжелая Промышленность
 
-STR_CARGO_NAME_ALCOHOL                                                          :{G=n}Спиртное
-STR_CARGO_NAME_ALCOHOL.acc                                                      :спиртное
-STR_CARGO_NAME_ALCOHOL.gen                                                      :спиртного
-STR_CARGO_NAME_BAUXITE                                                          :{G=p}Бокситы
+STR_PARAM_NAME_OBJECTS                                                          :FIRS объекты благоустройства
+STR_PARAM_DESC_OBJECTS                                                          :FIRS включает в себя набор объектов ландшафтного дизайна, которые игроки могут размещать, чтобы определенные отрасли казались больше. Ландшафтные объекты не имеют игрового эффекта. Ландшафтные объекты можно включать и выключать.
+
+STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG                                   :{BLACK}(доставлено)
+STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}Производит с максимальной скоростью, если доставлен {WHITE}любой {BLACK}необходимый груз.
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}Для максимальной производительности поставляйте {WHITE}все {BLACK}необходимые грузы не реже одного раза в три месяца.
+STR_EXTRA_TEXT_TOWN_PRODUCER                                                    :{BLACK}Для максимальной производительности поставляйте {WHITE}все {BLACK}необходимые грузы не реже одного раза в три месяца.
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Текущий уровень производства: {YELLOW}Низкий {}{}{BLACK}Для {WHITE}Улучшенного {BLACK}производства доставляйте {SIGNED_WORD} ящиков с расходными материалами не реже одного раза в три месяца.{}Для {WHITE}Максимального {BLACK}производства доставьте {SIGNED_WORD} ящиков.
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Текущий уровень производства: {YELLOW}Средний {}{}{BLACK}Чтобы сохранить этот уровень, доставляйте {SIGNED_WORD} ящиков с расходными материалами не реже одного раза в три месяца.{}Для {WHITE}Максимального {BLACK}уровня доставьте {SIGNED_WORD} ящиков.
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Текущий уровень производства: {YELLOW}Максимальный {}{}{BLACK}Чтобы сохранить этот уровень, доставляйте {SKIP}{SIGNED_WORD} ящиков с припасами не реже одного раза в три месяца..
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Текущий уровень производства: {YELLOW}Низкий {}{}{BLACK}Для {WHITE}Улучшенного {BLACK}уровня доставьте {SIGNED_WORD} единиц груза не реже одного раза в три месяца.{}Для {WHITE}Максимального {BLACK}уровня доставьте {SIGNED_WORD} едениц.
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Текущий уровень производства: {YELLOW}Средний {}{}{BLACK}Чтобы сохранить этот уровень, доставляйте {SIGNED_WORD} единиц груза не реже одного раза в три месяца.{}Для {WHITE}Максимального {BLACK} уровня доставляйте {SIGNED_WORD} единиц.
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Текущий уровень производства: {YELLOW}Максимальный {}{}{BLACK}Чтобы сохранить этот уровень, доставляйте {SKIP}{SIGNED_WORD} единиц груза не реже одного раза в три месяца.
+
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA                                                :{SKIP}{SKIP}Настроение населения:{} {STRING}{STRING}{}{}{BLACK}Оценка оптимизма: {STRING}{SIGNED_WORD} балл {}{BLACK} Потребности и роскошь удовлетворены: {YELLOW}{SIGNED_WORD} балл {}{BLACK} Загрязнение и убожество: {YELLOW}{SIGNED_WORD} балл {}{}{BLACK}Загрязнение и нищета увеличиваются вместе с населением и определенными видами промышленности.{}{}Потребности и предметы роскоши удовлетворяются за счет доставки в определенные виды промышленности.{}{}Если показатель оптимизма больше 10, настроение населения будет {WHITE}оптимистичным{BLACK} . Если показатель оптимизма меньше -10, настроение населения будет {WHITE}мрачное{BLACK}.
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC                                :Оптимистичный
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY                                    :Мрачный
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL                                   :Нейтральный
+
+STR_CARGO_NAME_ACID                                                             :Кислота
+STR_CARGO_NAME_ACID.acc                                                         :кислота
+STR_CARGO_NAME_ACID.gen                                                         :кислоты
+STR_CARGO_NAME_ALCOHOL                                                          :Алкоголь
+STR_CARGO_NAME_ALCOHOL.acc                                                      :алкоголь
+STR_CARGO_NAME_ALCOHOL.gen                                                      :алкоголь
+STR_CARGO_NAME_ALLOY_STEEL                                                      :Легированная сталь
+STR_CARGO_NAME_ALLOY_STEEL.acc                                                  :легированная сталь
+STR_CARGO_NAME_ALLOY_STEEL.gen                                                  :легированной стали
+STR_CARGO_NAME_ALUMINIUM                                                        :Оксид алюминия
+STR_CARGO_NAME_ALUMINIUM.acc                                                    :оксид алюминия
+STR_CARGO_NAME_ALUMINIUM.gen                                                    :оксида алюминия
+STR_CARGO_NAME_ALUMINIA                                                         :Алюминий
+STR_CARGO_NAME_ALUMINIA.acc                                                     :алюминий
+STR_CARGO_NAME_ALUMINIA.gen                                                     :алюминия
+STR_CARGO_NAME_AMMONIA                                                          :Аммиак
+STR_CARGO_NAME_AMMONIA.acc                                                      :аммиака
+STR_CARGO_NAME_AMMONIA.gen                                                      :аммиак
+STR_CARGO_NAME_AMMONIUM_NITRATE                                                 :Селитра
+STR_CARGO_NAME_AMMONIUM_NITRATE.acc                                             :селитра
+STR_CARGO_NAME_AMMONIUM_NITRATE.gen                                             :селитры
+STR_CARGO_NAME_BAUXITE                                                          :Бокситы
 STR_CARGO_NAME_BAUXITE.acc                                                      :бокситы
 STR_CARGO_NAME_BAUXITE.gen                                                      :бокситов
-STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=p}Стройматериалы
-STR_CARGO_NAME_BUILDING_MATERIALS.acc                                           :стройматериалы
-STR_CARGO_NAME_BUILDING_MATERIALS.gen                                           :стройматериалов
+STR_CARGO_NAME_BEANS                                                            :Бобы
+STR_CARGO_NAME_BEANS.acc                                                        :бобы
+STR_CARGO_NAME_BEANS.gen                                                        :бобов
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :Строительные материалы
+STR_CARGO_NAME_BUILDING_MATERIALS.acc                                           :строительные материалы
+STR_CARGO_NAME_BUILDING_MATERIALS.gen                                           :строительных материалов
+STR_CARGO_NAME_CARBON_BLACK                                                     :Углерод
+STR_CARGO_NAME_CARBON_BLACK.acc                                                 :углерод
+STR_CARGO_NAME_CARBON_BLACK.gen                                                 :углерода
+STR_CARGO_NAME_CARBON_STEEL                                                     :Углеродистая сталь
+STR_CARGO_NAME_CARBON_STEEL.acc                                                 :углеродистая сталь
+STR_CARGO_NAME_CARBON_STEEL.gen                                                 :углеродистой стали
+STR_CARGO_NAME_CASSAVA                                                          :Маниока
+STR_CARGO_NAME_CASSAVA.acc                                                      :маниока
+STR_CARGO_NAME_CASSAVA.gen                                                      :маниоки
+STR_CARGO_NAME_CAST_IRON                                                        :Чугун
+STR_CARGO_NAME_CAST_IRON.acc                                                    :чугун
+STR_CARGO_NAME_CAST_IRON.gen                                                    :чугуна
 STR_CARGO_NAME_CEMENT                                                           :Цемент
-STR_CARGO_NAME_CHEMICALS                                                        :{G=p}Химикаты
+STR_CARGO_NAME_CEMENT.acc                                                       :цемент
+STR_CARGO_NAME_CEMENT.gen                                                       :цемента
+STR_CARGO_NAME_CHEMICALS                                                        :Химикаты
 STR_CARGO_NAME_CHEMICALS.acc                                                    :химикаты
 STR_CARGO_NAME_CHEMICALS.gen                                                    :химикатов
-STR_CARGO_NAME_CLAY                                                             :{G=f}Глина
-STR_CARGO_NAME_CLAY.acc                                                         :глину
+STR_CARGO_NAME_CHLORINE                                                         :Хлор
+STR_CARGO_NAME_CHLORINE.acc                                                     :хлор
+STR_CARGO_NAME_CHLORINE.gen                                                     :хлора
+STR_CARGO_NAME_CHROMITE_ORE                                                     :Хром
+STR_CARGO_NAME_CHROMITE_ORE.acc                                                 :хром
+STR_CARGO_NAME_CHROMITE_ORE.gen                                                 :хрома
+STR_CARGO_NAME_CLAY                                                             :Глина
+STR_CARGO_NAME_CLAY.acc                                                         :глина
 STR_CARGO_NAME_CLAY.gen                                                         :глины
-STR_CARGO_NAME_COFFEE                                                           :{G=m}Кофе
-STR_CARGO_NAME_COFFEE.acc                                                       :Кофе
-STR_CARGO_NAME_COFFEE.gen                                                       :Кофе
-STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=n}Оборудование
+STR_CARGO_NAME_CLEANING_AGENTS                                                  :Чистящие средства
+STR_CARGO_NAME_CLEANING_AGENTS.acc                                              :чистящие средства
+STR_CARGO_NAME_CLEANING_AGENTS.gen                                              :чистящих средств
+STR_CARGO_NAME_COFFEE                                                           :Кофе
+STR_CARGO_NAME_COFFEE.acc                                                       :кофе
+STR_CARGO_NAME_COFFEE.gen                                                       :кофе
+STR_CARGO_NAME_COAL_TAR                                                         :Деготь
+STR_CARGO_NAME_COAL_TAR.acc                                                     :деготь
+STR_CARGO_NAME_COAL_TAR.gen                                                     :дегтя
+STR_CARGO_NAME_COKE                                                             :Кокс
+STR_CARGO_NAME_COKE.acc                                                         :кокс
+STR_CARGO_NAME_COKE.gen                                                         :кокса
+STR_CARGO_NAME_COPPER                                                           :Медь
+STR_CARGO_NAME_COPPER.acc                                                       :медь
+STR_CARGO_NAME_COPPER.gen                                                       :меди
+STR_CARGO_NAME_COPPER_CONCENTRATE                                               :Медный концентрат
+STR_CARGO_NAME_COPPER_CONCENTRATE.acc                                           :медный концентрат
+STR_CARGO_NAME_COPPER_CONCENTRATE.gen                                           :медного концентрата
+STR_CARGO_NAME_EDIBLE_OIL                                                       :Пищевое масло
+STR_CARGO_NAME_EDIBLE_OIL.acc                                                   :пищевое масло
+STR_CARGO_NAME_EDIBLE_OIL.gen                                                   :пищевого масла
+STR_CARGO_NAME_ELECTRICAL_PARTS                                                 :Электрические детали
+STR_CARGO_NAME_ELECTRICAL_PARTS.acc                                             :электрические детали
+STR_CARGO_NAME_ELECTRICAL_PARTS.gen                                             :электрических деталей
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Оборудование
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.acc                                         :оборудование
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.gen                                         :оборудования
-STR_CARGO_NAME_FIBRES                                                           :{G=p}Растительные волокна
+STR_CARGO_NAME_ETHYLENE                                                         :Этилен
+STR_CARGO_NAME_ETHYLENE.acc                                                     :этилен
+STR_CARGO_NAME_ETHYLENE.gen                                                     :этилена
+STR_CARGO_NAME_EXPLOSIVES                                                       :Взрывчатка
+STR_CARGO_NAME_EXPLOSIVES.acc                                                   :взрывчатка
+STR_CARGO_NAME_EXPLOSIVES.gen                                                   :взрывчатки
+STR_CARGO_NAME_FERROCHROME                                                      :Феррохром
+STR_CARGO_NAME_FERROCHROME.acc                                                  :феррохром
+STR_CARGO_NAME_FERROCHROME.gen                                                  :феррохрома
+STR_CARGO_NAME_FIBRES                                                           :Растительные волокна
 STR_CARGO_NAME_FIBRES.acc                                                       :растительные волокна
 STR_CARGO_NAME_FIBRES.gen                                                       :растительных волокон
-STR_CARGO_NAME_FISH                                                             :{G=f}Рыба
-STR_CARGO_NAME_FISH.acc                                                         :рыбу
+STR_CARGO_NAME_FISH                                                             :Рыба
+STR_CARGO_NAME_FISH.acc                                                         :рыба
 STR_CARGO_NAME_FISH.gen                                                         :рыбы
-STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=p}Агротехсредства
-STR_CARGO_NAME_FARM_SUPPLIES.acc                                                :агротехсредства
-STR_CARGO_NAME_FARM_SUPPLIES.gen                                                :агротехсредств
-STR_CARGO_NAME_FRUITS                                                           :{G=p}Фрукты
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Фермерские принадлежности
+STR_CARGO_NAME_FARM_SUPPLIES.acc                                                :фермерские принадлежности
+STR_CARGO_NAME_FARM_SUPPLIES.gen                                                :фермерских принадлежностей
+STR_CARGO_NAME_FERTILISER                                                       :Удобрения
+STR_CARGO_NAME_FERTILISER.acc                                                   :удобрения
+STR_CARGO_NAME_FERTILISER.gen                                                   :удобрений
+STR_CARGO_NAME_FOOD_ADDITIVES                                                   :Пищевые добавки
+STR_CARGO_NAME_FOOD_ADDITIVES.acc                                               :пищевые добавки
+STR_CARGO_NAME_FOOD_ADDITIVES.gen                                               :пищевых добавок
+STR_CARGO_NAME_FORMIC_ACID                                                      :Муравьиная кислота
+STR_CARGO_NAME_FORMIC_ACID.acc                                                  :муравьиная кислота
+STR_CARGO_NAME_FORMIC_ACID.gen                                                  :муравьиной кислоты
+STR_CARGO_NAME_FRUITS                                                           :Фрукты
 STR_CARGO_NAME_FRUITS.acc                                                       :фрукты
 STR_CARGO_NAME_FRUITS.gen                                                       :фруктов
-STR_CARGO_NAME_TIMBER                                                           :{G=p}Лесоматериалы
-STR_CARGO_NAME_TIMBER.acc                                                       :лесоматериалы
-STR_CARGO_NAME_TIMBER.gen                                                       :лесоматериалов
-STR_CARGO_NAME_METAL                                                            :{G=m}Металл
+STR_CARGO_NAME_FURNITURE                                                        :Мебель
+STR_CARGO_NAME_FURNITURE.acc                                                    :мебель
+STR_CARGO_NAME_FURNITURE.gen                                                    :мебели
+STR_CARGO_NAME_GLASS                                                            :Стекло
+STR_CARGO_NAME_GLASS.acc                                                        :стекло
+STR_CARGO_NAME_GLASS.gen                                                        :стекла
+STR_CARGO_NAME_HYDROCHLORIC_ACID                                                :Соляная кислота
+STR_CARGO_NAME_HYDROCHLORIC_ACID.acc                                            :соляная кислота
+STR_CARGO_NAME_HYDROCHLORIC_ACID.gen                                            :соляной кислоты
+STR_CARGO_NAME_KAOLIN                                                           :Глина
+STR_CARGO_NAME_KAOLIN.acc                                                       :глина
+STR_CARGO_NAME_KAOLIN.gen                                                       :глины
+STR_CARGO_NAME_LIMESTONE                                                        :Известняк
+STR_CARGO_NAME_LIMESTONE.acc                                                    :известняк
+STR_CARGO_NAME_LIMESTONE.gen                                                    :известняка
+STR_CARGO_NAME_LOGS                                                             :Бревна
+STR_CARGO_NAME_LOGS.acc                                                         :бревна
+STR_CARGO_NAME_LOGS.gen                                                         :бревен
+STR_CARGO_NAME_TIMBER                                                           :Пиломатериалы
+STR_CARGO_NAME_TIMBER.acc                                                       :пиломатериалы
+STR_CARGO_NAME_TIMBER.gen                                                       :пиломатериалов
+# cargo uses Sodium Hydroxide as string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
+STR_CARGO_NAME_LYE                                                              :Щелоч
+STR_CARGO_NAME_LYE.acc                                                          :щелоч
+STR_CARGO_NAME_LYE.gen                                                          :щелочи
+STR_CARGO_NAME_METAL                                                            :Металл
 STR_CARGO_NAME_METAL.acc                                                        :металл
 STR_CARGO_NAME_METAL.gen                                                        :металла
-STR_CARGO_NAME_MILK                                                             :{G=n}Молоко
+STR_CARGO_NAME_METHANE                                                          :Метан
+STR_CARGO_NAME_METHANE.acc                                                      :метан
+STR_CARGO_NAME_METHANE.gen                                                      :метана
+STR_CARGO_NAME_METHANOL                                                         :Метанол
+STR_CARGO_NAME_METHANOL.acc                                                     :метанол
+STR_CARGO_NAME_METHANOL.gen                                                     :метанола
+STR_CARGO_NAME_MILK                                                             :Молоко
 STR_CARGO_NAME_MILK.acc                                                         :молоко
 STR_CARGO_NAME_MILK.gen                                                         :молока
-STR_CARGO_NAME_PETROL                                                           :{G=m}Бензин
+STR_CARGO_NAME_MANGANESE                                                        :Марганец
+STR_CARGO_NAME_MANGANESE.acc                                                    :марганец
+STR_CARGO_NAME_MANGANESE.gen                                                    :марганца
+STR_CARGO_NAME_NAPHTHA                                                          :Нефть
+STR_CARGO_NAME_NAPHTHA.acc                                                      :нефть
+STR_CARGO_NAME_NAPHTHA.gen                                                      :нефти
+STR_CARGO_NAME_NICKEL                                                           :Никель
+STR_CARGO_NAME_NICKEL.acc                                                       :никель
+STR_CARGO_NAME_NICKEL.gen                                                       :никеля
+STR_CARGO_NAME_NITRATES                                                         :Нитраты
+STR_CARGO_NAME_NITRATES.acc                                                     :нитраты
+STR_CARGO_NAME_NITRATES.gen                                                     :нитратов
+STR_CARGO_NAME_NUTS                                                             :Орехи
+STR_CARGO_NAME_NUTS.acc                                                         :орехи
+STR_CARGO_NAME_NUTS.gen                                                         :орехов
+STR_CARGO_NAME_OXYGEN                                                           :Кислород
+STR_CARGO_NAME_OXYGEN.acc                                                       :кислород
+STR_CARGO_NAME_OXYGEN.gen                                                       :кислорода
+STR_CARGO_NAME_PACKAGING                                                        :Упаковка
+STR_CARGO_NAME_PACKAGING.acc                                                    :упаковка
+STR_CARGO_NAME_PACKAGING.gen                                                    :упаковки
+STR_CARGO_NAME_PAINTS_AND_COATINGS                                              :Краска
+STR_CARGO_NAME_PAINTS_AND_COATINGS.acc                                          :краска
+STR_CARGO_NAME_PAINTS_AND_COATINGS.gen                                          :краски
+STR_CARGO_NAME_PEAT                                                             :Торф
+STR_CARGO_NAME_PEAT.acc                                                         :торф
+STR_CARGO_NAME_PEAT.gen                                                         :торфа
+STR_CARGO_NAME_PETROL                                                           :Бензин
 STR_CARGO_NAME_PETROL.acc                                                       :бензин
 STR_CARGO_NAME_PETROL.gen                                                       :бензина
-STR_CARGO_NAME_RECYCLABLES                                                      :{G=n}Вторсырьё
-STR_CARGO_NAME_RECYCLABLES.acc                                                  :вторсырьё
+STR_CARGO_NAME_PHOSPHATE                                                        :Фосфаты
+STR_CARGO_NAME_PHOSPHATE.acc                                                    :фосфаты
+STR_CARGO_NAME_PHOSPHATE.gen                                                    :фосфатов
+STR_CARGO_NAME_PHOSPHORIC_ACID                                                  :Фосфорная кислота
+STR_CARGO_NAME_PHOSPHORIC_ACID.acc                                              :фосфорная кислота
+STR_CARGO_NAME_PHOSPHORIC_ACID.gen                                              :фосфорной кислоты
+STR_CARGO_NAME_PIG_IRON                                                         :Чугунные слитки
+STR_CARGO_NAME_PIG_IRON.acc                                                     :чугунные слитки
+STR_CARGO_NAME_PIG_IRON.gen                                                     :чугунных слитков
+STR_CARGO_NAME_PIPE                                                             :Трубы
+STR_CARGO_NAME_PIPE.acc                                                         :трубы
+STR_CARGO_NAME_PIPE.gen                                                         :труб
+STR_CARGO_NAME_PLASTICS                                                         :Пластик
+STR_CARGO_NAME_PLASTICS.acc                                                     :пластик
+STR_CARGO_NAME_PLASTICS.gen                                                     :пластика
+STR_CARGO_NAME_POTASH                                                           :Калий
+STR_CARGO_NAME_POTASH.acc                                                       :калий
+STR_CARGO_NAME_POTASH.gen                                                       :калия
+STR_CARGO_NAME_PROPYLENE                                                        :Пропилен
+STR_CARGO_NAME_PROPYLENE.acc                                                    :пропилен
+STR_CARGO_NAME_PROPYLENE.gen                                                    :пропилена
+STR_CARGO_NAME_PYRITE_ORE                                                       :Пиритовая руда
+STR_CARGO_NAME_PYRITE_ORE.acc                                                   :пиритовая руда
+STR_CARGO_NAME_PYRITE_ORE.gen                                                   :пиритовой руды
+STR_CARGO_NAME_QUICKLIME                                                        :Известь
+STR_CARGO_NAME_QUICKLIME.acc                                                    :известь
+STR_CARGO_NAME_QUICKLIME.gen                                                    :извести
+STR_CARGO_NAME_RAW_LATEX                                                        :Латекс
+STR_CARGO_NAME_RAW_LATEX.acc                                                    :латекс
+STR_CARGO_NAME_RAW_LATEX.gen                                                    :латекса
+STR_CARGO_NAME_REBAR                                                            :Арматура
+STR_CARGO_NAME_REBAR.acc                                                        :арматура
+STR_CARGO_NAME_REBAR.gen                                                        :арматуры
+STR_CARGO_NAME_RECYCLABLES                                                      :Вторсырье
+STR_CARGO_NAME_RECYCLABLES.acc                                                  :вторсырье
 STR_CARGO_NAME_RECYCLABLES.gen                                                  :вторсырья
-STR_CARGO_NAME_SAND                                                             :{G=m}Песок
+STR_CARGO_NAME_SALT                                                             :Соль
+STR_CARGO_NAME_SALT.acc                                                         :соль
+STR_CARGO_NAME_SALT.gen                                                         :соли
+STR_CARGO_NAME_SAND                                                             :Песок
 STR_CARGO_NAME_SAND.acc                                                         :песок
 STR_CARGO_NAME_SAND.gen                                                         :песка
-STR_CARGO_NAME_SCRAP_METAL                                                      :{G=m}Металлолом
+STR_CARGO_NAME_SCRAP_METAL                                                      :Металлолом
 STR_CARGO_NAME_SCRAP_METAL.acc                                                  :металлолом
 STR_CARGO_NAME_SCRAP_METAL.gen                                                  :металлолома
-STR_CARGO_NAME_STONE                                                            :{G=m}Известняк
-STR_CARGO_NAME_STONE.acc                                                        :известняк
-STR_CARGO_NAME_STONE.gen                                                        :известняка
-STR_CARGO_NAME_SUGAR_BEET                                                       :{G=f}Сахарная свёкла
-STR_CARGO_NAME_SUGAR_BEET.acc                                                   :сахарную свёклу
-STR_CARGO_NAME_SUGAR_BEET.gen                                                   :сахарной свёклы
-STR_CARGO_NAME_WOOL                                                             :{G=f}Шерсть
+STR_CARGO_NAME_SLAG                                                             :Шлак
+STR_CARGO_NAME_SLAG.acc                                                         :шлак
+STR_CARGO_NAME_SLAG.gen                                                         :шлака
+STR_CARGO_NAME_SODA_ASH                                                         :Сода
+STR_CARGO_NAME_SODA_ASH.acc                                                     :сода
+STR_CARGO_NAME_SODA_ASH.gen                                                     :соды
+STR_CARGO_NAME_STAINLESS_STEEL                                                  :Нержавеющая сталь
+STR_CARGO_NAME_STAINLESS_STEEL.acc                                              :нержавеющая сталь
+STR_CARGO_NAME_STAINLESS_STEEL.gen                                              :нержавеющей стали
+STR_CARGO_NAME_STEEL                                                            :Сталь
+STR_CARGO_NAME_STEEL.acc                                                        :сталь
+STR_CARGO_NAME_STEEL.gen                                                        :стали
+STR_CARGO_NAME_STEEL_SECTIONS                                                   :Стальные секции
+STR_CARGO_NAME_STEEL_SECTIONS.acc                                               :стальные секции
+STR_CARGO_NAME_STEEL_SECTIONS.gen                                               :стальных секций
+STR_CARGO_NAME_STEEL_SHEET                                                      :Стальные листы
+STR_CARGO_NAME_STEEL_SHEET.acc                                                  :стальные листы
+STR_CARGO_NAME_STEEL_SHEET.gen                                                  :стальных листов
+STR_CARGO_NAME_STEEL_WIRE_ROD                                                   :Стальная проволка
+STR_CARGO_NAME_STEEL_WIRE_ROD.acc                                               :стальная проволка
+STR_CARGO_NAME_STEEL_WIRE_ROD.gen                                               :стальной проволки
+STR_CARGO_NAME_STONE                                                            :Гравий
+STR_CARGO_NAME_STONE.acc                                                        :гравий
+STR_CARGO_NAME_STONE.gen                                                        :гравия
+STR_CARGO_NAME_SUGAR_BEET                                                       :Сахарная свекла
+STR_CARGO_NAME_SUGAR_BEET.acc                                                   :сахарная свекла
+STR_CARGO_NAME_SUGAR_BEET.gen                                                   :сахарной свекы
+STR_CARGO_NAME_SULPHUR                                                          :Сера
+STR_CARGO_NAME_SULPHUR.acc                                                      :сера
+STR_CARGO_NAME_SULPHUR.gen                                                      :серы
+STR_CARGO_NAME_SULPHURIC_ACID                                                   :Серная кислота
+STR_CARGO_NAME_SULPHURIC_ACID.acc                                               :серная кислота
+STR_CARGO_NAME_SULPHURIC_ACID.gen                                               :серной кислоты
+STR_CARGO_NAME_TEXTILES                                                         :Текстиль
+STR_CARGO_NAME_TEXTILES.acc                                                     :текстиль
+STR_CARGO_NAME_TEXTILES.gen                                                     :текстиля
+STR_CARGO_NAME_TIN                                                              :Банка
+STR_CARGO_NAME_TIN.acc                                                          :банка
+STR_CARGO_NAME_TIN.gen                                                          :банок
+STR_CARGO_NAME_TINPLATE                                                         :Жесть
+STR_CARGO_NAME_TINPLATE.acc                                                     :жесть
+STR_CARGO_NAME_TINPLATE.gen                                                     :жести
+STR_CARGO_NAME_TYRES                                                            :Шины
+STR_CARGO_NAME_TYRES.acc                                                        :шины
+STR_CARGO_NAME_TYRES.gen                                                        :шин
+STR_CARGO_NAME_UREA                                                             :Мочевина
+STR_CARGO_NAME_UREA.acc                                                         :мочевина
+STR_CARGO_NAME_UREA.gen                                                         :мочевины
+STR_CARGO_NAME_VEHICLE_BODIES                                                   :Кузова
+STR_CARGO_NAME_VEHICLE_BODIES.acc                                               :кузова
+STR_CARGO_NAME_VEHICLE_BODIES.gen                                               :кузовов
+STR_CARGO_NAME_VEHICLE_ENGINES                                                  :Двигатели
+STR_CARGO_NAME_VEHICLE_ENGINES.acc                                              :двигатели
+STR_CARGO_NAME_VEHICLE_ENGINES.gen                                              :двигателей
+STR_CARGO_NAME_VEHICLE_PARTS                                                    :Автозапчасти
+STR_CARGO_NAME_VEHICLE_PARTS.acc                                                :автозапчасти
+STR_CARGO_NAME_VEHICLE_PARTS.gen                                                :автозапчастей
+STR_CARGO_NAME_VEHICLES                                                         :Автомобили
+STR_CARGO_NAME_VEHICLES.acc                                                     :автомобили
+STR_CARGO_NAME_VEHICLES.gen                                                     :автомобилей
+STR_CARGO_NAME_WOOL                                                             :Шерсть
 STR_CARGO_NAME_WOOL.acc                                                         :шерсть
 STR_CARGO_NAME_WOOL.gen                                                         :шерсти
+STR_CARGO_NAME_YARN                                                             :Пряжа
+STR_CARGO_NAME_YARN.acc                                                         :пряжа
+STR_CARGO_NAME_YARN.gen                                                         :пряжи
+STR_CARGO_NAME_ZINC                                                             :Цинк
+STR_CARGO_NAME_ZINC.acc                                                         :цинк
+STR_CARGO_NAME_ZINC.gen                                                         :цинка
 
-STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} спиртного
+STR_CARGO_UNIT_ACID                                                             :{VOLUME} кислоты
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} алкоголя
+STR_CARGO_UNIT_ALLOY_STEEL                                                      :{WEIGHT} легированной стали
+STR_CARGO_UNIT_ALUMINIA                                                         :{WEIGHT} алюминия
+STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} оксида алюминия
+STR_CARGO_UNIT_AMMONIA                                                          :{VOLUME} амиака
+STR_CARGO_UNIT_AMMONIUM_NITRATE                                                 :{VOLUME} селитры
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} бокситов
-STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} стройматериалов
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} бобов
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} строительных материалов
+STR_CARGO_UNIT_CARBON_BLACK                                                     :{WEIGHT} углерода
+STR_CARGO_UNIT_CARBON_STEEL                                                     :{WEIGHT} углеродистой стали
+STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} маниоки
+STR_CARGO_UNIT_CAST_IRON                                                        :{WEIGHT} чугуна
+STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} цемента
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} химикатов
+STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} хлора
+STR_CARGO_UNIT_CHROMITE_ORE                                                     :{WEIGHT} хрома
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} глины
+STR_CARGO_UNIT_CLEANING_AGENTS                                                  :{WEIGHT} чистящих средств
+STR_CARGO_UNIT_COAL_TAR                                                         :{VOLUME} дегтя
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} меш{P 0 ок ка ков} кофе
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} единиц{P 0 а ы ""} оборудования
+STR_CARGO_UNIT_COKE                                                             :{WEIGHT} кокса
+STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} меди
+STR_CARGO_UNIT_COPPER_CONCENTRATE                                               :{WEIGHT} медного концентрата
+STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} пищевого масла
+STR_CARGO_UNIT_ELECTRICAL_PARTS                                                 :{WEIGHT} электрических деталей
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} ящик{P 0 "" а ов} оборудования
+STR_CARGO_UNIT_ETHYLENE                                                         :{VOLUME} этилена
+STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} ящик{P 0 "" а ов} взрывчатки
+STR_CARGO_UNIT_FERROCHROME                                                      :{WEIGHT} феррохрома
+STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} удобрений
+STR_CARGO_UNIT_FOOD_ADDITIVES                                                   :{WEIGHT} пищевых добавок
+STR_CARGO_UNIT_FORMIC_ACID                                                      :{VOLUME} муравьиной кислоты
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} тюк{P 0 "" а ов} растительных волокон
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} рыбы
-STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} ящик{P 0 "" а ов} агротехсредств
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} ящик{P 0 "" а ов} фермерских принадлежностей
+STR_CARGO_UNIT_FARM_SUPPLIES                                                	:{SIGNED_WORD} ящик{P 0 "" а ов} фермерских принадлежностей
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} фруктов
-STR_CARGO_UNIT_TIMBER                                                           :{WEIGHT} лесоматериалов
+STR_CARGO_UNIT_FURNITURE                                                        :{WEIGHT} мебели
+STR_CARGO_UNIT_GLASS                                                            :{WEIGHT} стекла
+STR_CARGO_UNIT_HYDROCHLORIC_ACID                                                :{VOLUME} соляной кислоты
+STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} глины
+STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} известняка
+STR_CARGO_UNIT_LOGS                                                             :{WEIGHT} бревен
+STR_CARGO_UNIT_TIMBER                                                           :{WEIGHT} пиломатериалов
+# cargo uses Sodium Hydroxide as string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
+STR_CARGO_UNIT_LYE                                                              :{VOLUME} щелочи
+STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} марганец
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} металла
+STR_CARGO_UNIT_METHANE                                                          :{VOLUME} метана
+STR_CARGO_UNIT_METHANOL                                                         :{VOLUME} метанола
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} молока
+STR_CARGO_UNIT_NAPHTHA                                                          :{VOLUME} нефти
+STR_CARGO_UNIT_NICKEL                                                           :{WEIGHT} никеля
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} нитратов
+STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} меш{P 0 ок ка ков} орехов
+STR_CARGO_UNIT_OXYGEN                                                           :{VOLUME} кислорода
+STR_CARGO_UNIT_PACKAGING                                                        :{WEIGHT} упаковки
+STR_CARGO_UNIT_PAINTS_AND_COATINGS                                              :{VOLUME} краски
+STR_CARGO_UNIT_PEAT                                                             :{WEIGHT} торфа
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} бензина
+STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} фосфатов
+STR_CARGO_UNIT_PHOSPHORIC_ACID                                                  :{VOLUME} фосфорной кислоты
+STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} чугунных слитков
+STR_CARGO_UNIT_PIPE                                                             :{WEIGHT} труб
+STR_CARGO_UNIT_PLASTICS                                                         :{WEIGHT} пластика
+STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} калия
+STR_CARGO_UNIT_PROPYLENE                                                        :{VOLUME} пропилена
+STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} пиритовой руды
+STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} извести
+STR_CARGO_UNIT_RAW_LATEX                                                        :{VOLUME} латекса
+STR_CARGO_UNIT_REBAR                                                            :{WEIGHT} арматуры
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} вторсырья
+STR_CARGO_UNIT_SALT                                                             :{WEIGHT} соли
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} песка
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} металлолома
-STR_CARGO_UNIT_STONE                                                            :{WEIGHT} известняка
+STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} шлака
+STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} соды
+STR_CARGO_UNIT_STAINLESS_STEEL                                                  :{WEIGHT} нержавеющей стали
+STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} стали
+STR_CARGO_UNIT_STEEL_SECTIONS                                                   :{WEIGHT} стальных секций
+STR_CARGO_UNIT_STEEL_SHEET                                                      :{WEIGHT} стальных листов
+STR_CARGO_UNIT_STEEL_WIRE_ROD                                                   :{WEIGHT} стальной проволки
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} гравия
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} сахарной свеклы
+STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} серы
+STR_CARGO_UNIT_SULPHURIC_ACID                                                   :{VOLUME} серной кислоты
+STR_CARGO_UNIT_TEXTILES                                                         :{WEIGHT} текстиля
+STR_CARGO_UNIT_TIN                                                              :{WEIGHT} банок
+STR_CARGO_UNIT_TINPLATE                                                         :{WEIGHT} жести
+STR_CARGO_UNIT_TYRES                                                            :{WEIGHT} шин
+STR_CARGO_UNIT_UREA                                                             :{WEIGHT} мочивины
+STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{SIGNED_WORD} кузов{P 0 "" а ов}
+STR_CARGO_UNIT_VEHICLE_ENGINES                                                  :{SIGNED_WORD} двигател{P 0 ь я ей}
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{WEIGHT} автозапчастей
+STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} автомобил{P 0 ь я ей}
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} тюк{P 0 "" а ов} шерсти
+STR_CARGO_UNIT_YARN                                                             :{SIGNED_WORD} тюк{P 0 "" а ов} пряжи
+STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} цинка
 
-STR_CID_ALCOHOL                                                                 :{TINYFONT}СП
-STR_CID_BAUXITE                                                                 :{TINYFONT}БО
-STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}СМ
-STR_CID_CHEMICALS                                                               :{TINYFONT}ХИ
-STR_CID_CLAY                                                                    :{TINYFONT}ГЛ
-STR_CID_COFFEE                                                                  :{TINYFONT}КФ
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ОБ
-STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}АГ
-STR_CID_FIBRES                                                                  :{TINYFONT}РВ
-STR_CID_FISH                                                                    :{TINYFONT}РЫ
-STR_CID_TIMBER                                                                  :{TINYFONT}ПМ
-STR_CID_METAL                                                                   :{TINYFONT}МЕ
-STR_CID_MILK                                                                    :{TINYFONT}МО
-STR_CID_PETROL                                                                  :{TINYFONT}БЕ
-STR_CID_RECYCLABLES                                                             :{TINYFONT}ВС
-STR_CID_SAND                                                                    :{TINYFONT}ПЕ
-STR_CID_SCRAP_METAL                                                             :{TINYFONT}МЛ
-STR_CID_STONE                                                                   :{TINYFONT}ИЗ
-STR_CID_SUGAR_BEET                                                              :{TINYFONT}СС
-STR_CID_WOOL                                                                    :{TINYFONT}ШЕ
-
+# it seems that using 2 chars for these is a convention not a limit, I tested 4 chars and OpenTTD renders it fine - May 2020
+STR_CID_ACID                                                                    :{TINYFONT}AC
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_ALLOY_STEEL                                                             :{TINYFONT}AS
+STR_CID_ALUMINIA                                                                :{TINYFONT}AA
+STR_CID_ALUMINIUM                                                               :{TINYFONT}AM
+STR_CID_AMMONIA                                                                 :{TINYFONT}AO
+STR_CID_AMMONIUM_NITRATE                                                        :{TINYFONT}AN
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BEANS                                                                   :{TINYFONT}BN
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CID_CARBON_BLACK                                                            :{TINYFONT}CB
+STR_CID_CARBON_STEEL                                                            :{TINYFONT}CS
+STR_CID_CASSAVA                                                                 :{TINYFONT}CA
+STR_CID_CAST_IRON                                                               :{TINYFONT}CI
+STR_CID_CEMENT                                                                  :{TINYFONT}CE
+STR_CID_CHEMICALS                                                               :{TINYFONT}CH
+STR_CID_CHROMITE_ORE                                                            :{TINYFONT}CO
+STR_CID_CHLORINE                                                                :{TINYFONT}CH
+STR_CID_CLAY                                                                    :{TINYFONT}CY
+STR_CID_CLEANING_AGENTS                                                         :{TINYFONT}CN
+STR_CID_COFFEE                                                                  :{TINYFONT}CF
+STR_CID_COAL_TAR                                                                :{TINYFONT}CT
+STR_CID_COKE                                                                    :{TINYFONT}CK
+STR_CID_COPPER                                                                  :{TINYFONT}CR
+STR_CID_COPPER_CONCENTRATE                                                      :{TINYFONT}CC
+STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
+STR_CID_ELECTRICAL_PARTS                                                        :{TINYFONT}EP
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
+STR_CID_ETHYLENE                                                                :{TINYFONT}EY
+STR_CID_EXPLOSIVES                                                              :{TINYFONT}EX
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
+STR_CID_FERROCHROME                                                             :{TINYFONT}FC
+STR_CID_FERTILISER                                                              :{TINYFONT}FL
+STR_CID_FIBRES                                                                  :{TINYFONT}PF
+STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_FOOD_ADDITIVES                                                          :{TINYFONT}FV
+STR_CID_FORMIC_ACID                                                             :{TINYFONT}FA
+STR_CID_FURNITURE                                                               :{TINYFONT}FU
+STR_CID_GLASS                                                                   :{TINYFONT}GL
+STR_CID_HYDROCHLORIC_ACID                                                       :{TINYFONT}HA
+STR_CID_KAOLIN                                                                  :{TINYFONT}KA
+STR_CID_LIMESTONE                                                               :{TINYFONT}LS
+STR_CID_LOGS                                                                    :{TINYFONT}LG
+STR_CID_TIMBER                                                                  :{TINYFONT}LU
+# cargo uses Sodium Hydroxide as name string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
+STR_CID_LYE                                                                     :{TINYFONT}SY
+STR_CID_MANGANESE                                                               :{TINYFONT}MN
+STR_CID_METAL                                                                   :{TINYFONT}MT
+STR_CID_METHANE                                                                 :{TINYFONT}MA
+STR_CID_METHANOL                                                                :{TINYFONT}ME
+STR_CID_MILK                                                                    :{TINYFONT}MK
+STR_CID_NAPHTHA                                                                 :{TINYFONT}NA
+STR_CID_NICKEL                                                                  :{TINYFONT}NK
+STR_CID_NITRATES                                                                :{TINYFONT}NI
+STR_CID_NUTS                                                                    :{TINYFONT}NT
+STR_CID_OXYGEN                                                                  :{TINYFONT}O2
+STR_CID_PACKAGING                                                               :{TINYFONT}PK
+STR_CID_PAINTS_AND_COATINGS                                                     :{TINYFONT}PC
+STR_CID_PEAT                                                                    :{TINYFONT}PE
+STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_PIG_IRON                                                                :{TINYFONT}PI
+STR_CID_PIPE                                                                    :{TINYFONT}PP
+STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
+STR_CID_PHOSPHORIC_ACID                                                         :{TINYFONT}PA
+STR_CID_PLASTICS                                                                :{TINYFONT}PL
+STR_CID_POTASH                                                                  :{TINYFONT}PA
+STR_CID_PROPYLENE                                                               :{TINYFONT}PR
+STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
+STR_CID_QUICKLIME                                                               :{TINYFONT}QL
+STR_CID_RAW_LATEX                                                               :{TINYFONT}RL
+STR_CID_REBAR                                                                   :{TINYFONT}RB
+STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
+STR_CID_SALT                                                                    :{TINYFONT}NA
+STR_CID_SAND                                                                    :{TINYFONT}SA
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
+STR_CID_SLAG                                                                    :{TINYFONT}SG
+STR_CID_SODA_ASH                                                                :{TINYFONT}SO
+STR_CID_STAINLESS_STEEL                                                         :{TINYFONT}SS
+STR_CID_STEEL                                                                   :{TINYFONT}SL
+STR_CID_STONE                                                                   :{TINYFONT}ST
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
+STR_CID_SULPHUR                                                                 :{TINYFONT}SU
+STR_CID_SULPHURIC_ACID                                                          :{TINYFONT}SD
+STR_CID_STEEL_SECTIONS                                                          :{TINYFONT}SE
+STR_CID_STEEL_SHEET                                                             :{TINYFONT}SH
+STR_CID_STEEL_WIRE_ROD                                                          :{TINYFONT}SW
+STR_CID_TEXTILES                                                                :{TINYFONT}TX
+STR_CID_TIN                                                                     :{TINYFONT}TI
+STR_CID_TINPLATE                                                                :{TINYFONT}TP
+STR_CID_TYRES                                                                   :{TINYFONT}TY
+STR_CID_UREA                                                                    :{TINYFONT}UR
+STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}VB
+STR_CID_VEHICLE_ENGINES                                                         :{TINYFONT}VE
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}VP
+STR_CID_VEHICLES                                                                :{TINYFONT}VS
+STR_CID_WOOL                                                                    :{TINYFONT}WL
+STR_CID_YARN                                                                    :{TINYFONT}YN
+STR_CID_ZINC                                                                    :{TINYFONT}ZN
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS не предназначен для использования в игрушечном мире
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS требует OpenTTD 13.1 или новее
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Несовместимый набор: {ORANGE}{STRING}
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Несовместимый параметр: {ORANGE}CanSet параметр 2 должен быть 0 чтобы работать с FIRS.
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Несовместимый параметр: {ORANGE}NA City Set параметр 2 должен быть 0 чтобы работать с FIRS.
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Несовместимая версия: {ORANGE}Total Town Replacement Set должен быть версии 3.11 или новее.
 
-STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :должно находиться ниже снеговой линии.
-STR_ERR_LOCATION_NOT_ON_WATER                                                   :должно находиться на суше.
-STR_ERR_LOCATION_NOT_IN_DESERT                                                  :не должно находиться в пустыне.
-STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :не может находиться на крутых склонах.
-STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :разрешено только одно предприятие такого типа на город.
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :должен располагаться ниже снежной линии.
+STR_ERR_LOCATION_NOT_BELOW_SNOWLINE                                             :должен располагаться выше снежной линии.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :должен быть размещены на суше.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :нельзя размещать в пустыне.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :нельзя размещать на крутых склонах.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :в каждом городе разрешено только одно производство этого типа.
 
-STR_IND_ALUMINIUM_PLANT                                                         :{G=m}Алюминиевый завод
-STR_IND_ALUMINIUM_PLANT.gen                                                     :алюминиевого завода
-STR_IND_ARABLE_FARM                                                             :{G=n}Земледельческое хозяйство
-STR_IND_ARABLE_FARM.gen                                                         :земледельческого хозяйства
-STR_IND_BIOREFINERY                                                             :{G=m}Биоперерабатывающий завод
-STR_IND_BIOREFINERY.gen                                                         :биоперерабатывающего завода
-STR_IND_BREWERY                                                                 :{G=m}Пивоваренный завод
-STR_IND_BREWERY.gen                                                             :пивоваренного завода
-STR_IND_CIDER_MILL                                                              :{G=f}Пивоварня
-STR_IND_BRICK_WORKS                                                             :{G=m}Кирпичный завод
-STR_IND_BRICK_WORKS.gen                                                         :кирпичного завода
-STR_IND_BUILDERS_YARD                                                           :{G=m}Склад стройматериалов
-STR_IND_BUILDERS_YARD.gen                                                       :склада стройматериалов
-STR_IND_BULK_TERMINAL                                                           :Портовый Грузовой Терминал
-STR_IND_CEMENT_PLANT                                                            :{G=m}Цементный завод
-STR_IND_CEMENT_PLANT.gen                                                        :цементного завода
-STR_IND_CLAY_PIT                                                                :{G=m}Глиняный карьер
-STR_IND_CLAY_PIT.gen                                                            :глиняного карьера
-STR_IND_COFFEE_ESTATE                                                           :{G=f}Кофейная плантация
-STR_IND_DAIRY                                                                   :{G=m}Молокозавод
-STR_IND_DAIRY.gen                                                               :молокозавода
-STR_IND_DREDGING_SITE                                                           :{G=m}Участок углубления дна
-STR_IND_DREDGING_SITE.gen                                                       :участка углубления дна
-STR_IND_FISHING_GROUND                                                          :{G=m}Рыболовный промысел
-STR_IND_FISHING_GROUND.gen                                                      :рыболовного промысла
-STR_IND_FISHING_HARBOUR                                                         :{G=m}Рыболовный порт
-STR_IND_FISHING_HARBOUR.gen                                                     :рыболовного порта
-STR_IND_FOOD_MARKET                                                             :{G=m}Продовольственный магазин
-STR_IND_FOOD_MARKET.gen                                                         :продовольственного магазина
-STR_IND_FURNITURE_FACTORY                                                       :{G=f}Мебельная фабрика
-STR_IND_FURNITURE_FACTORY.gen                                                   :мебельной фабрики
-STR_IND_GENERAL_STORE                                                           :{G=m}Магазин
-STR_IND_GLASS_WORKS                                                             :{G=m}Стекольный завод
-STR_IND_GLASS_WORKS.gen                                                         :стекольного завода
-STR_IND_HARDWARE_STORE                                                          :{G=m}Хозяйственный магазин
-STR_IND_HARDWARE_STORE.gen                                                      :хозяйственного магазина
-STR_IND_HOTEL                                                                   :{G=f}Гостинница
-STR_IND_HOTEL.gen                                                               :гостинницы
-STR_IND_IRON_WORKS                                                              :{G=m}Металлургический завод
-STR_IND_IRON_WORKS.gen                                                          :металлургического завода
-STR_IND_SCRAP_YARD                                                                :{G=f}Свалка
-STR_IND_SCRAP_YARD.gen                                                            :свалки
-STR_IND_LIME_KILN                                                               :{G=m}Известковый завод
-STR_IND_LIME_KILN.gen                                                           :известкового завода
-STR_IND_TIMBER_YARD                                                             :{G=m}Склад лесоматериалов
-STR_IND_TIMBER_YARD.gen                                                         :склада лесоматериалов
-STR_IND_MACHINE_SHOP                                                            :{G=m}Механический завод
-STR_IND_MACHINE_SHOP.gen                                                        :механического завода
-STR_IND_MIXEDFARM                                                               :{G=n}Смешанное хозяйство
-STR_IND_MIXEDFARM.gen                                                           :смешанного хозяйства
-STR_IND_ORCHARD_PIGGERY                                                         :Сады и Скотный Двор
-STR_IND_PETROLPUMP                                                              :{G=f}Заправочная станция
-STR_IND_PETROLPUMP.gen                                                          :заправочной станции
-STR_IND_PLASTICS_PLANT                                                          :{G=m}Пластмассовый завод
-STR_IND_PLASTICS_PLANT.gen                                                      :пластмассового завода
+STR_PROD_CHANGE_TEST                                                            :{BIGFONT}{BLACK}Крыса перепрыгнула через кошку
+
+STR_IND_ALUMINIUM_PLANT                                                         :Алюминиевый завод
+STR_IND_AMMONIA_PLANT                                                           :Аммиачный завод
+STR_IND_ARABLE_FARM                                                             :Пахотная ферма
+STR_IND_ASSEMBLY_PLANT                                                          :Сборочный завод
+STR_IND_BASIC_OXYGEN_FURNACE                                                    :Кислородная печь
+STR_IND_BIOREFINERY                                                             :Биоперерабатывающий завод
+STR_IND_BLAST_FURNACE                                                           :Доменная печь
+STR_IND_BODY_PLANT                                                              :Автозавод
+STR_IND_BREWERY                                                                 :Пивоварня
+STR_IND_CIDER_MILL                                                              :Винодельня
+STR_IND_BRICK_WORKS                                                             :Кирпичный завод
+STR_IND_BUILDERS_YARD                                                           :Строительная база
+STR_IND_BULK_TERMINAL                                                           :Портовый грузовой терминал
+STR_IND_CARBON_BLACK_PLANT                                                      :Углеродный завод
+STR_IND_CEMENT_PLANT                                                            :Цементный завод
+STR_IND_CHEMICAL_PLANT                                                          :Химзавод
+STR_IND_CHLOR_ALKALI_PLANT                                                      :Хлорно-щелочной завод
+STR_IND_CHROMITE_MINE                                                           :Хромитовый рудник
+STR_IND_CIVIL_EXPLOSIVES_FACILITY                                               :Пороховой завод
+STR_IND_CLAY_PIT                                                                :Глиняный карьер
+STR_IND_COFFEE_ESTATE                                                           :Садовое хозяйство
+STR_IND_COKE_OVEN                                                               :Коксовая печь
+STR_IND_COMPONENT_FACTORY                                                       :Фабрика компонентов
+STR_IND_COPPER_CONCENTRATOR                                                     :Медный концентратор
+STR_IND_COPPER_SMELTER                                                          :Медеплавильный завод
+STR_IND_CRYO_PLANT                                                              :Криозавод
+STR_IND_DAIRY                                                                   :Сыроварня
+STR_IND_DAIRY_FARM                                                              :Молочная ферма
+STR_IND_DREDGING_SITE                                                           :Участок углубления дна
+STR_IND_ELECTRIC_ARC_FURNACE                                                    :Электрическая дуговая печь
+STR_IND_ENGINE_PLANT                                                            :Завод двигателей
+STR_IND_ETHYLENE_CRACKER                                                        :Нефтезавод
+STR_IND_FARM                                                                    :Животноводческая ферма
+STR_IND_FERROCHROME_SMELTER                                                     :Хромоплавильный завод
+STR_IND_FERTILISER_PLANT                                                        :Завод удобрений
+STR_IND_FACTORY_1                                                               :Фабрика 1
+STR_IND_FACTORY_2                                                               :Фабрика 2
+STR_IND_FACTORY_3                                                               :Фабрика 3
+STR_IND_FISCHER_TROPSCH_PLANT                                                   :Завод Фишера-Тропша
+STR_IND_FISH_FARM                                                               :Рыбная ферма
+STR_IND_FISHING_GROUND                                                          :Рыболовные угодья
+STR_IND_FISHING_HARBOUR                                                         :Рыбацкая гавань
+STR_IND_FISHING_VILLAGE                                                         :Рыбацкая деревня
+STR_IND_FLOUR_MILL                                                              :Мукомольная фабрика
+STR_IND_FOOD_MARKET                                                             :Бакалейная лавка
+STR_IND_FOOD_PROCESSOR                                                          :Пищеперерабатывающий завод
+STR_IND_FURNITURE_FACTORY                                                       :Мебельная фабрика
+STR_IND_GENERAL_STORE                                                           :Супермаркет
+STR_IND_GLASS_WORKS                                                             :Стекольный завод
+STR_IND_HARDWARE_STORE                                                          :Хозяйственный магазин
+STR_IND_HOTEL                                                                   :Гостиница
+STR_IND_HERDING_COOP                                                            :Животноводческая ферма
+STR_IND_IRON_WORKS                                                              :Металлургический завод
+STR_IND_SCRAP_YARD                                                              :Свалка
+STR_IND_LATEX_PROCESSOR                                                         :Латексная фабрика
+STR_IND_LIME_KILN                                                               :Известковая печь
+STR_IND_LIMESTONE_MINE                                                          :Известняковый карьер
+STR_IND_LIQUIDS_TERMINAL                                                        :Терминал жидкостей
+STR_IND_TIMBER_YARD                                                             :Столярная мастерская
+STR_IND_MACHINE_SHOP                                                            :Автомобильный магазин
+STR_IND_MACHINE_WORKS                                                           :Механический цех
+STR_IND_MANGANESE_MINE                                                          :Марганцевая шахта
+STR_IND_METAL_WORKSHOP                                                          :Металлическая мастерская
+STR_IND_MIXEDFARM                                                               :Смешанная ферма
+STR_IND_NITRATE_MINE                                                            :Нитратная шахта
+STR_IND_ORCHARD_PIGGERY                                                         :Свиноводческая ферма
+STR_IND_PEATLANDS                                                               :Торфяники
+STR_IND_PETROLPUMP                                                              :Заправочная станция
+STR_IND_PHOSPHATE_MINE                                                          :Фосфатный карьер
+STR_IND_PHOSPHORIC_ACID_PLANT                                                   :Завод фосфорной кислоты
+STR_IND_PLASTICS_PLANT                                                          :Пластиковый завод
+STR_IND_PLAZA                                                                   :Площадь
+STR_IND_POLYETHYLENE_PLANT                                                      :Полиэтиленовый завод
+STR_IND_POLYPROPYLENE_PLANT                                                     :Полипропиленовый завод
 STR_IND_PORT                                                                    :Порт
-STR_IND_QUARRY                                                                  :{G=m}Карьер
-STR_IND_QUARRY.gen                                                              :карьера
-STR_IND_RANCH                                                                   :{G=n}Животноводческое хозяйство
-STR_IND_RECYCLING_DEPOT                                                         :{G=m}Пункт приёма отходов
-STR_IND_RECYCLING_DEPOT.gen                                                     :пункта приёма отходов
-STR_IND_RECYCLING_PLANT                                                         :{G=m}Завод по переработке отходов
-STR_IND_RECYCLING_PLANT.gen                                                     :завода по переработке отходов
-STR_IND_SHEEPFARM                                                               :{G=n}Овцеводческое хозяйство
-STR_IND_SHEEPFARM.gen                                                           :овцеводческого хозяйства
-STR_IND_SMITHY_FORGE                                                            :{G=f}Мастерская
-STR_IND_SMITHY_FORGE.gen                                                        :мастерской
-STR_IND_STOCKYARD                                                               :{G=m}Мясокомбинат
-STR_IND_STOCKYARD.gen                                                           :скотобойни
-STR_IND_SUGAR_REFINERY                                                          :{G=m}Сахарный завод
-STR_IND_SUGAR_REFINERY.gen                                                      :сахарного завода
-STR_IND_TEXTILE_MILL                                                            :{G=f}Текстильная фабрика
-STR_IND_TEXTILE_MILL.gen                                                        :текстильной фабрики
-STR_IND_TRADING_POST                                                            :Торговый Причал
+STR_IND_POTASH_MINE                                                             :Калийный рудник
+STR_IND_PYRITE_MINE                                                             :Пиритовая шахта
+STR_IND_PYRITE_SMELTER                                                          :Пиритоплавильный завод
+STR_IND_POWER_PLANT                                                             :Электростанция
+STR_IND_QUARRY                                                                  :Песчаный карьер
+STR_IND_RANCH                                                                   :Ранчо
+STR_IND_RECYCLING_DEPOT                                                         :Склад вторичной переработки
+STR_IND_RECYCLING_PLANT                                                         :Завод вторичной переработки
+STR_IND_REINDEER_FARM                                                           :Оленья ферма
+STR_IND_SALT_MINE                                                               :Соляная шахта
+STR_IND_SHEEPFARM                                                               :Овечья ферма
+STR_IND_SLAG_GRINDING_PLANT                                                     :Завод по измельчению шлака
+STR_IND_SMITHY_FORGE                                                            :Кузница
+STR_IND_SODA_ASH_MINE                                                           :Шахта кальцинированной соды
+STR_IND_SOLVAY_PLANT                                                            :Завод Сольвея
+# we use 'integrated_steel_mill' in code to avoid confusion with Steeltown mills, but it's easier to just use 'Steel Mill' for name that players see
+STR_IND_INTEGRATED_STEEL_MILL                                                   :Металлургический комбинат
+STR_IND_SHEET_AND_PIPE_MILL                                                     :Листовотрубный комбинат
+STR_IND_STOCKYARD                                                               :Мясокомбинат
+STR_IND_SUGAR_REFINERY                                                          :Сахарный комбинат
+STR_IND_SULPHURIC_ACID_PLANT                                                    :Сернокислотный завод
+STR_IND_SUPPLY_YARD                                                             :Фабрика оборудывания
+STR_IND_TEXTILE_MILL                                                            :Текстильная фабрика
+STR_IND_TINPLATE_WORKS                                                          :Жестяная фабрика
+STR_IND_TRADING_POST                                                            :Торговая точка
+STR_IND_TYRE_PLANT                                                              :Шинный завод
+STR_IND_VINEYARD                                                                :Виноградник
+STR_IND_VEHICLE_DISTRIBUTOR                                                     :Дистрибьютор автомобилей
+STR_IND_WHARF                                                                   :Причал
+STR_IND_WIRE_AND_SECTION_MILL                                                   :Проволочнопрофильная фабрика
 
-
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Уровень производства: {YELLOW}Нормальный{}{}{BLACK}Доставка {SIGNED_WORD} ящик{P "" а ов} материалов в течении трех месяцев удвоит производство (или {SIGNED_WORD} ящик{P "" а ов} для учетверения производства)
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Уровень производства: {YELLOW}Улучшеный (удвоеный){}{}{BLACK}Для поддержки данного уровня доставте {SIGNED_WORD} ящик{P "" а ов} материалов в течении трех месяцев, или {SIGNED_WORD} ящик{P "" а ов} для учетверения производства
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Уровень производства: {YELLOW}Лучший (учетвененный){}{}{BLACK}Для поддержки данного уровня доставте {SKIP}{SIGNED_WORD} ящик{P "" а ов} материалов в течении трех месяцев
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Уровень производства: {YELLOW}Нормальный{}{}{BLACK}Доставка {SIGNED_WORD} ящик{P 0 "" а ов} материалов в течении трех месяцев удвоит производство (или {SIGNED_WORD} ящик{P 0 "" а ов} для учетверения производства)
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Уровень производства: {YELLOW}Улучшеный (удвоеный){}{}{BLACK}Для поддержки данного уровня доставте {SIGNED_WORD} ящик{P "" а ов} материалов в течении трех месяцев, или {SIGNED_WORD} ящик{P "" а ов} для учетверения производства
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Уровень производства: {YELLOW}Лучший (учетверенный){}{}{BLACK}Для поддержки данного уровня доставьте {SKIP}{SIGNED_WORD} ящик{P "" а ов} материалов в течение трех месяцев
-STR_GENERIC_NEWLINE                                                             :{}
-
-STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Положение: {YELLOW}Нельзя разместить на снегу или в пустыне.
-STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Местность: {YELLOW}Не может быть построена на снегу или в пустыне.
-STR_FUND_FOREST                                                                 :{}{BLACK}Положение: {YELLOW}Нельзя разместить в пустыне.
-STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Положение: {YELLOW}Нельзя разместить на снегу.
-STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Местность: {YELLOW}Не может быть построен на снегу или в пустыне.
-STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Местность: {YELLOW}Не может быть построено на снегу или в пустыне.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Локация: {YELLOW}Не может быть размещен на снегу или в пустыне.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Локация: {YELLOW}Не может быть размещен на снегу или в пустыне.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Локация: {YELLOW}Не может быть размещен на снегу или в пустыне.
+STR_FUND_FARM                                                                   :{}{BLACK}Локация: {YELLOW}Не может быть размещен на снегу или в пустыне.
+STR_FUND_FOREST                                                                 :{}{BLACK}Локация: {YELLOW}Не может быть размещен в пустыне.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Локация: {YELLOW}Не может быть размещен на снегу.
+STR_FUND_HERDING_COOP                                                           :{}{BLACK}Локация: {YELLOW}Может быть размещен только на снегу.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Локация: {YELLOW}Не может быть размещен на снегу или в пустыне.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Локация: {YELLOW}Не может быть размещен на снегу или в пустыне.
+STR_FUND_VINEYARD                                                               :{}{BLACK}Локация: {YELLOW}Не может быть размещен на снегу или в пустыне.
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Доступно с: {YELLOW}{COMMA}
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Недоступно после: {YELLOW}{COMMA}
@@ -233,17 +684,97 @@ STR_FUND_AVAILABLE_UNTIL                                                        
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
 
-STR_STATION_ANIMALS                                                             :{G=m}Лошадиный рынок
-STR_STATION_FARM_1                                                              :{G=f}Усадьба
-STR_STATION_FISHMARKET                                                          :{G=m}Рыбный рынок
-STR_STATION_INDUSTRY_ESTATE_1                                                   :Промзона
-STR_STATION_INDUSTRY_HARBOUR_1                                                  :Грузовой причал
-STR_STATION_MARKET                                                              :{G=m}Рынок
+STR_STATION_ANIMALS                                                             :Скотобаза
+STR_STATION_AUTOMOTIVE                                                          :Сборка Автомобилей
+STR_STATION_BAR_GRILL_AND_ROOMS                                                 :Отель
+STR_STATION_BARNS                                                               :Ферма
+STR_STATION_BARREL_AND_KEG                                                      :Бочковая
+STR_STATION_BASE                                                                :База
+STR_STATION_BONEYARD                                                            :Свалка
+STR_STATION_BANK_TOP                                                            :Печь
+STR_STATION_BRINE_WORKS                                                         :Химия
+STR_STATION_CASTINGS                                                            :Кастинг
+STR_STATION_COLLIERY                                                            :Шахтерская
+STR_STATION_COMPONENTS                                                          :Компонентная
+STR_STATION_COPPER_LODE                                                         :Медная
+STR_STATION_CREOSOTING                                                          :Креозотирование
+STR_STATION_CRYO_PLANT                                                          :Криозавод
+STR_STATION_DAIRY_LANE                                                          :Молочная
+STR_STATION_DYNAMO                                                              :Динамо
+STR_STATION_ESTATE                                                              :Кофейная
+STR_STATION_EXCHANGE                                                            :Обменная
+STR_STATION_FARM_1                                                              :Сельская
+STR_STATION_FARM_2                                                              :Ферма
+STR_STATION_FARM_3                                                              :Ранчо
+STR_STATION_FISHMARKET                                                          :Рыбный рынок
+STR_STATION_FISH_PENS                                                           :Рыбная
+STR_STATION_FOOD_CORPORATION                                                    :Продовольственная
+STR_STATION_FOREST                                                              :Лесная
+STR_STATION_FORGE                                                               :Кузница
+STR_STATION_FURNACE                                                             :Печь
+STR_STATION_HEAVY_EQUIPMENT_YARD                                                :Тяжелая
+STR_STATION_HEAVY_INDUSTRY_2                                                    :Рабочая
+STR_STATION_HERDING_COOP                                                        :Пастушья
+STR_STATION_INDUSTRY_ESTATE_1                                                   :Промышленный Парк
+STR_STATION_INDUSTRY_HARBOUR_1                                                  :Портовая
+STR_STATION_INDUSTRY_HARBOUR_2                                                  :Причал
+STR_STATION_INDUSTRY_HARBOUR_3                                                  :Гавань
+STR_STATION_INDUSTRY_HARBOUR_4                                                  :Побережье
+STR_STATION_IRONSTONE                                                           :Добыча
+STR_STATION_JOINERS_SHOP                                                        :Столярная
+STR_STATION_KILNS                                                               :Обжиг
+STR_STATION_KIMBERLITE_DEPOSITS                                                 :Алмазная
+STR_STATION_LIMESTONE_MINES                                                     :Известняковый Карьер
+STR_STATION_MANGANESE_MINES                                                     :Рудник
+STR_STATION_MARKET                                                              :Рынок
+STR_STATION_MERCHANTS_LANE                                                      :Строительная
 STR_STATION_MILL                                                                :Мельница
-STR_STATION_MINE                                                                :{G=f}Шахтерская
-STR_STATION_PIT                                                                 :Впадина
+STR_STATION_MINE                                                                :Шахта
+STR_STATION_MOULDINGS                                                           :Пластмассовая
+STR_STATION_OIL_RIG                                                             :Нефтяная Платформа
+STR_STATION_ORCHARDS                                                            :Сады
+STR_STATION_PHENOLS                                                             :Фенолы
+STR_STATION_PIT                                                                 :Яма
+STR_STATION_PIPE_MILL                                                           :Трубный Завод
 STR_STATION_PLANTATION                                                          :Плантация
+STR_STATION_PLAZA                                                               :Площадь
 STR_STATION_POWERHUNGRY                                                         :Электростанция
-STR_STATION_REFINERY                                                            :{G=f}Нефтяная
-STR_STATION_TOWN_1                                                              :Старый Город
-STR_STATION_WATER                                                               :{G=f}Песчаная Набережная
+STR_STATION_POWERTRAIN                                                          :Агрегатная
+STR_STATION_PUMPS                                                               :Насосы
+STR_STATION_PYRITES                                                             :Пиритовая
+STR_STATION_REFINERY                                                            :Нефтепереработка
+STR_STATION_ROD_MILL                                                            :Cтержневая Мельница
+STR_STATION_RUBBER_COMPANY                                                      :Резиновая
+STR_STATION_SALTPETER_WORKS                                                     :Селитровый Завод
+STR_STATION_SEAFOOD                                                             :Морепродукты
+STR_STATION_SHARP_STREET                                                        :Острая
+STR_STATION_SHEEP_FOLD                                                          :Овцеводство
+STR_STATION_SHOALS                                                              :Рыбное место
+STR_STATION_SILO                                                                :Силос
+STR_STATION_SMELTER                                                             :Плавильный Завод
+STR_STATION_SOOT_FURNACE                                                        :Сажа
+STR_STATION_STACKS                                                              :Стопки
+STR_STATION_STAMP_AND_PLATE                                                     :Пресс
+STR_STATION_SUGAR_COMPANY                                                       :Сахарная Компания
+STR_STATION_TANK_FARM                                                           :Нефтебаза
+STR_STATION_TAPPERS_SHED                                                        :Сарай
+STR_STATION_TOWN_1                                                              :Старый город
+STR_STATION_TOWN_2                                                              :Шоссе
+STR_STATION_TOWN_3                                                              :Магазины
+STR_STATION_TRONA_BEDS                                                          :Кровати
+STR_STATION_WATER                                                               :Песчаная
+STR_STATION_WEAVE_AND_DYE                                                       :Покраска
+STR_STATION_WELLS                                                               :Нефтевышка
+STR_STATION_WINERY                                                              :Винодельня
+STR_STATION_VEHICLE_DISTRIBUTOR                                                 :Продажа Автомобилей
+
+# do not translate these
+STR_GENERIC_NEWLINE                                                             :{}
+# to use when dynamically choosing text colours, and we can't return a colour code directly
+STR_COLOUR_BLUE                                                                 :{BLUE}
+STR_COLOUR_GOLD                                                                 :{GOLD}
+STR_COLOUR_GREEN                                                                :{GREEN}
+STR_COLOUR_LTBLUE                                                               :{LTBLUE}
+STR_COLOUR_RED                                                                  :{RED}
+STR_COLOUR_YELLOW                                                               :{YELLOW}
+STR_COLOUR_WHITE                                                                :{WHITE}
