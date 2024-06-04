@@ -24,7 +24,7 @@ class VulcanManufacturerStoryPage {
     page_elements = null
 
     constructor(manufacturer_id, manufacturer) {
-        this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, manufacturer["name"] + " (Manufacturer)");
+        this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, manufacturer["name"] + " (" + manufacturer["category"] + ")");
         this.CreatePageElements(manufacturer_id, manufacturer);
     }
 

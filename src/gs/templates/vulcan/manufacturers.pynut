@@ -24,19 +24,22 @@ class VulcanManufacturers {
         // Create missing manufacturer types
         foreach (category in required_categories) {
             if (!(category in existing_categories)) {
+                // !! hax to create 2 for testing 'n' instances support
+                local name = VulcanManufacturers.GenerateUniqueName(category);
+                VulcanManufacturers.CreateManufacturer(category, name);
                 local name = VulcanManufacturers.GenerateUniqueName(category);
                 VulcanManufacturers.CreateManufacturer(category, name);
             }
         }
 
+        // first find one industry for each manufacturer, in a priority order, then use that industry's town as HQ town for each manufacturer
+        VulcanManufacturers.AssignFirstIndustries();
         VulcanManufacturers.AssignHQTowns();
-        VulcanManufacturers.AssignOtherTowns();
 
-        foreach (manufacturer_id, manufacturer in ::persistent_storage["manufacturers"]) {
-            if (manufacturer["category"] == "Steelmaker") {
-                TestSteelMaker.AssignIndustries(manufacturer_id, manufacturer);
-            }
-        }
+        // !! the remaining industries need to round-robin between manufacturers, but we want to co-locate them near the HQ if possible, so eh
+        // !! walk each manufacturer in turn, picking eligible industries from the industryy list until all eligible industries are assigned?
+        // !! pre-assign a bunch of industries to 'self' ownership by type
+        // CABBAGE
 
         VulcanManufacturers.RunPeriodicProcessing("Init");
     }
@@ -104,51 +107,6 @@ class VulcanManufacturers {
         Log.Info("Created manufacturer: " + name + " (" + category + ")", Log.CLASS_VULCAN_MANUFACTURERS);
     }
 
-    static function AssignHQTowns() {
-        local town_list = GSTownList();
-        town_list.Valuate(GSBase.RandItem);
-        town_list.Sort(GSList.SORT_BY_VALUE, GSList.SORT_ASCENDING);
-        local town_list_towns = [];
-        foreach (town, _ in town_list) {
-            town_list_towns.append(town);
-        }
-        local manufacturers = ::persistent_storage["manufacturers"];
-
-        foreach (manufacturer_name, manufacturer in manufacturers) {
-            // note that this round-robins the randomised towns, so ideally we have no more than 1 manufacturer per town
-            // but if manufacturers > towns, we don't deadlock
-            local town_id = town_list_towns.pop();
-            manufacturers[manufacturer_name]["hq_town"] <- town_id;
-            town_list_towns.insert(0, town_id);
-        }
-    }
-
-    // Example of a function to assign specific other towns
-    static function AssignOtherTowns() {
-        local town_list = GSTownList();
-        local town_list_towns = [];
-        // !! no filtering currently, just all towns
-        foreach (town, _ in town_list) {
-            town_list_towns.append(town);
-        }
-
-        local manufacturers = ::persistent_storage["manufacturers"];
-
-        foreach (manufacturer_name, manufacturer in manufacturers) {
-            manufacturers[manufacturer_name]["valid_towns"] <- town_list_towns;
-        }
-    }
-
-    static function GetManufacturerByHQTown(town_id) {
-        local manufacturers = ::persistent_storage["manufacturers"];
-        foreach (name, manufacturer in manufacturers) {
-            if (manufacturer["hq_town"] == town_id) {
-                return manufacturer;
-            }
-        }
-        return null;
-    }
-
     // Generate a unique manufacturer_id for a new manufacturer
     static function GenerateUniqueID() {
         local max_id = 0;
@@ -156,6 +114,27 @@ class VulcanManufacturers {
             if (manufacturer_id.tointeger() > max_id) max_id = manufacturer_id.tointeger();
         }
         return (max_id + 1).tostring();
+    }
+
+    static function AssignFirstIndustries() {
+        local industry_list = GSIndustryList();
+        foreach (manufacturer_id, manufacturer in ::persistent_storage["manufacturers"]) {
+            TestManufacturerCabbage.AssignFirstIndustry(industry_list, manufacturer_id, manufacturer, TestManufacturerCabbage.GetKeystonesTemp(manufacturer));
+        }
+    }
+
+    static function AssignHQTowns() {
+        foreach (manufacturer_id, manufacturer in ::persistent_storage["manufacturers"]) {
+            local manufacturer_industries = VulcanIndustryOwnership.ListIndustries("manufacturer", manufacturer_id);
+            if (manufacturer_industries.len() > 0) {
+                manufacturer["hq_town"] = GSTile.GetClosestTown(GSIndustry.GetLocation(manufacturer_industries[0]));
+            }
+            else {
+                // if the manufacturer had *no* valid industries on the map, then assign a random town as HQ
+                // we might try to build some industries near there later, or not(?)
+                manufacturer["hq_town"] = AtlasRandomTown();
+            }
+        }
     }
 
     /*
@@ -172,19 +151,33 @@ class VulcanManufacturers {
 
 // prototyping of industry behaviour
 
-class TestSteelMaker {
-    static function AssignIndustries(manufacturer_id, manufacturer) {
+class TestManufacturerCabbage {
+    static function GetKeystonesTemp(manufacturer) {
+        local keystones_temp = {
+            Steelmaker = ["blast_furnace", "electric_arc_furnace"],
+            Automaker = ["assembly_plant", "body_plant", "engine_plant"],
+            EquipmentManufacturer = ["precision_parts_plant", "hardware_factory", "appliance_factory"],
+            ChemicalsManufacturer = ["chlor_alkali_plant", "cryo_plant"],
+            BuildingMaterialsManufacturer = ["concrete_plant", "pipework_fabricator"],
+        };
+        return keystones_temp[manufacturer["category"]];
+    }
+
+    static function AssignFirstIndustry(candidate_industry_list, manufacturer_id, manufacturer, target_industry_types) {
         Log.Info("Assigning industries for " + manufacturer["name"], Log.CLASS_VULCAN_MANUFACTURERS);
-        local industry_list = GSIndustryList();
-        foreach (industry, _ in industry_list) {
-            foreach (industry_type in ["blast_furnace", "basic_oxygen_furnace"]) {
+        foreach (industry, _ in candidate_industry_list) {
+            if (VulcanIndustryOwnership.IsIndustryOwned(industry)) {
+                continue;
+            }
+            // !!! this will always select keystones in order currently, that might be better randomised (or not)?
+            foreach (industry_type in target_industry_types) {
                 if (GSIndustry.GetIndustryType(industry) == firs.industries[industry_type].global_id) {
                     Log.Info("Found " + GSIndustry.GetName(industry), Log.CLASS_VULCAN_MANUFACTURERS);
                     VulcanIndustryOwnership.AssignOwner(industry, "manufacturer", manufacturer_id);
+                    return true;
                 }
             }
         }
-        Log.Info("Industries owned by " + manufacturer["name"] + ": " + Repr(VulcanIndustryOwnership.ListIndustries("manufacturer", manufacturer_id)));
+        return false; // No industry assigned
     }
-
 }

@@ -17,6 +17,7 @@ require("persistent_storage.nut");
 require("repr.nut");
 Repr <- _Repr.Repr;
 // Atlas handles map geometry
+require("atlas/random_map_items.nut");
 require("atlas/tile_lists_by_shape.nut");
 // Grind handles using the story book as a fake debugger
 require("grind/grind_storybook.nut");

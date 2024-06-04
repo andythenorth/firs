@@ -1,0 +1,6 @@
+// convenience methods for random map items
+function AtlasRandomTown() {
+    local town_list = GSTownList();
+    town_list.Valuate(GSBase.RandItem);
+    return town_list.Begin();
+}

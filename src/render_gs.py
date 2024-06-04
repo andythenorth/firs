@@ -119,7 +119,7 @@ def main():
             "version",
         ],
         "grind": ["grind_industries", "grind_storybook", "grind_persistent_storage", "grind_utils"],
-        "atlas": ["tile_lists_by_shape"],
+        "atlas": ["random_map_items", "tile_lists_by_shape"],
         "vulcan": [
             "companies",
             "industry_cargo_stats",
