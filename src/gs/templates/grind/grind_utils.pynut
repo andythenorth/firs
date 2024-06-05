@@ -4,30 +4,27 @@ class GrindStoryPageUtility extends GrindStoryPage {
     constructor() {
         this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, "Grind: LOLZ Dev Utils / Debugger");
 
-        local clean_industry_texts = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_BUTTON_PUSH, 1, "Clean industry texts");
-        local handler_kwargs = {button_element_id = clean_industry_texts, button_name = "clean_industry_texts"};
+        local btn_clean_industry_texts = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_BUTTON_PUSH, 1, "Clean industry texts");
+        local handler_kwargs = {button_element_id = btn_clean_industry_texts, button_name = "btn_clean_industry_texts"};
         EventManager().RegisterEvent("ET_STORYPAGE_BUTTON_CLICK", this.GrindStoryPageUtilityButtonHandler, handler_kwargs);
 
-        local regenerate_manufacturers = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_BUTTON_PUSH, 1, "Regenerate manufacturers");
-        local handler_kwargs = {button_element_id = regenerate_manufacturers, button_name = "regenerate_manufacturers"};
+        local btn_regenerate_manufacturers = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_BUTTON_PUSH, 1, "Regenerate manufacturers");
+        local handler_kwargs = {button_element_id = btn_regenerate_manufacturers, button_name = "btn_regenerate_manufacturers"};
         EventManager().RegisterEvent("ET_STORYPAGE_BUTTON_CLICK", this.GrindStoryPageUtilityButtonHandler, handler_kwargs);
     }
 
-    static function GrindStoryPageUtilityButtonHandler(event, handler_kwargs) {
+    function GrindStoryPageUtilityButtonHandler(event, handler_kwargs) {
         // we use one generic button handler function for Grind Utility stuff
         // this is because button handler needs to check button IDs, which the event manager doesn't do as it's too specific to button events
 
-        Log.Info("GrindStoryPageUtilityButtonHandler event handler called");
-        Log.Info("handler_kwargs: " + Repr(handler_kwargs));
+        //Log.Info("GrindStoryPageUtilityButtonHandler event handler called");
+        //Log.Info("handler_kwargs: " + Repr(handler_kwargs));
 
         local button_event = GSEventStoryPageButtonClick.Convert(event);
 
-        Log.Info(button_event);
-        Log.Info(button_event.GetElementID());
-
         if (button_event.GetElementID() == handler_kwargs.button_element_id) {
             // this can either handle button clicks directly inline, or call out to functions, as needed
-            if (handler_kwargs.button_name == "clean_industry_texts") {
+            if (handler_kwargs.button_name == "btn_lean_industry_texts") {
                 local asyncmode = GSAsyncMode(true);
                 Log.Info("Clearing industry texts");
                 local industry_list = GSIndustryList();
@@ -36,7 +33,7 @@ class GrindStoryPageUtility extends GrindStoryPage {
                 }
                 asyncmode = null;
             }
-            if (handler_kwargs.button_name == "regenerate_manufacturers") {
+            if (handler_kwargs.button_name == "btn_regenerate_manufacturers") {
                 Log.Info("Regenerating manufacturers");
                 VulcanIndustryOwnership.RemoveOwners("manufacturer");
                 Log.Info("....create new manufacturers");
