@@ -22,7 +22,7 @@ class PersistentStorageManager {
         industry_production_increase_timeseries = {},
         industry_cargo_stats = {},
         manufacturers = {},
-        industry_owners = {},
+        owned_industries = {},
     };
 
     // no constructor, no instance attributes, keep it simple

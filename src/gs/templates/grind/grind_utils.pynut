@@ -38,6 +38,8 @@ class GrindStoryPageUtility extends GrindStoryPage {
             }
             if (handler_kwargs.button_name == "regenerate_manufacturers") {
                 Log.Info("Regenerating manufacturers");
+                VulcanIndustryOwnership.RemoveOwners("manufacturer");
+                Log.Info("....create new manufacturers");
                 ::persistent_storage["manufacturers"] = {};
                 VulcanManufacturers.Init();
             }

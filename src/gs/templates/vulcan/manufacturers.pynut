@@ -35,6 +35,7 @@ class VulcanManufacturers {
         // first find one industry for each manufacturer, in a priority order, then use that industry's town as HQ town for each manufacturer
         VulcanManufacturers.AssignFirstIndustries();
         VulcanManufacturers.AssignHQTowns();
+        VulcanManufacturers.AssignRemainingIndustries();
 
         // !! the remaining industries need to round-robin between manufacturers, but we want to co-locate them near the HQ if possible, so eh
         // !! walk each manufacturer in turn, picking eligible industries from the industryy list until all eligible industries are assigned?
@@ -120,6 +121,71 @@ class VulcanManufacturers {
         local industry_list = GSIndustryList();
         foreach (manufacturer_id, manufacturer in ::persistent_storage["manufacturers"]) {
             TestManufacturerCabbage.AssignFirstIndustry(industry_list, manufacturer_id, manufacturer, TestManufacturerCabbage.GetKeystonesTemp(manufacturer));
+        }
+    }
+
+    static function IndustryDistanceToHQTown(industry, manufacturer_hq_town) {
+        return GSTown.GetDistanceManhattanToTile(manufacturer_hq_town, GSIndustry.GetLocation(industry))
+    }
+
+    static function IndustryIsValidCandidateForTier(industry, target_industry_types) {
+        local industry_type = GSIndustry.GetIndustryType(industry);
+        foreach (target_industry_type in target_industry_types) {
+            if (industry_type == firs.industries[target_industry_type].global_id) {
+                return true;
+            }
+        }
+        return false
+    }
+
+    static function AssignIndustriesByTierAndManufacturerType(target_industry_types, candidate_manufacturers) {
+        local index = 0;
+        local industry_list = GSIndustryList();
+        local temp_cabbage_list = [];
+        industry_list.Valuate(VulcanIndustryOwnership.IsIndustryOwned);
+        industry_list.RemoveBelowValue(1);
+        local temp_cabbage_list = [];
+        foreach (industry, _ in industry_list) {
+            Log.Info(GSIndustry.GetName(industry));
+        }
+        industry_list.Valuate(VulcanManufacturers.IndustryIsValidCandidateForTier, target_industry_types);
+        industry_list.RemoveBelowValue(1);
+        while (industry_list.Count() > 0) {
+            local manufacturer_id = candidate_manufacturers[index % candidate_manufacturers.len()][0];
+            local manufacturer_hq_town = candidate_manufacturers[index % candidate_manufacturers.len()][1];
+            industry_list.Valuate(VulcanManufacturers.IndustryDistanceToHQTown, manufacturer_hq_town);
+            industry_list.Sort(GSList.SORT_BY_VALUE, GSList.SORT_ASCENDING);
+            VulcanIndustryOwnership.AssignOwner(industry_list.Begin(), "manufacturer", manufacturer_id);
+            industry_list.RemoveTop(1);
+            index++;
+        }
+    }
+
+    static function AssignRemainingIndustries() {
+        local cabbage_tiers = {
+            foo_1 = ["Steelmaker", "Automaker"],
+            foo_2 = ["EquipmentManufacturer", "ChemicalsManufacturer", "BuildingMaterialsManufacturer"],
+        }
+        local cabbage_industries = {
+            foo_1 = ["blast_furnace", "electric_arc_furnace", "assembly_plant", "body_plant", "engine_plant"],
+            foo_2 = ["precision_parts_plant", "hardware_factory", "appliance_factory", "chlor_alkali_plant", "cryo_plant", "pipework_fabricator"],
+        }
+
+        foreach (tier_id, cabbage_tier in cabbage_tiers) {
+            // parse manufacturer data into a list so we can loop on indexes
+            local candidate_manufacturers = [];
+            local target_industry_types = cabbage_industries[tier_id];
+            // !!!! needs to also filter by manufacturer type, and industrial tier
+            Log.Info("cabbage_tier " + Repr(cabbage_tier));
+            Log.Info("target_industry_types " + Repr(target_industry_types));
+            foreach (manufacturer_id, manufacturer in ::persistent_storage["manufacturers"]) {
+                // can't array.find in squirrel 2.2 but Superlib has _SuperLib_Helper::ArrayFind
+                if (_SuperLib_Helper.ArrayFind(cabbage_tier, manufacturer["category"]) != null) {
+                    candidate_manufacturers.append([manufacturer_id, manufacturer["hq_town"]]);
+                }
+            }
+            Log.Info("candidate_manufacturers " + Repr(candidate_manufacturers));
+            VulcanManufacturers.AssignIndustriesByTierAndManufacturerType(target_industry_types, candidate_manufacturers);
         }
     }
 
