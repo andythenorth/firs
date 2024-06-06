@@ -42,7 +42,7 @@ def get_docs_url():
 def get_lang_data(lang):
     global_pragma = {}
     lang_strings = {}
-    with open(os.path.join(currentdir, "src", "lang", lang + ".toml"), "rb") as fp:
+    with open(os.path.join(currentdir, "src", "grf", "lang", lang + ".toml"), "rb") as fp:
         lang_source = tomllib.load(fp)
 
     for node_name, node_value in lang_source.items():
