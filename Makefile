@@ -53,7 +53,7 @@ DOT  ?= $(shell which dot)
 
 # Build rules
 .PHONY: default graphics lang nml grf tar bundle_tar bundle_zip bundle_src clean
-default: html_docs grf
+default: html_docs grf gs
 # bundle needs to clean first to ensure we don't use outdated/cached version info
 bundle_tar: clean tar
 bundle_zip: $(ZIP_FILE)
