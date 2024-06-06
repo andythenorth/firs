@@ -141,15 +141,21 @@ class VulcanManufacturers {
     static function AssignIndustriesByTierAndManufacturerType(target_industry_types, candidate_manufacturers) {
         local index = 0;
         local industry_list = GSIndustryList();
-        local temp_cabbage_list = [];
-        industry_list.Valuate(VulcanIndustryOwnership.IsIndustryOwned);
-        industry_list.RemoveBelowValue(1);
-        local temp_cabbage_list = [];
+        // I tried valuate here against IsIndustryOwned, but it just wasn't working as expected
+        local to_remove = [];
         foreach (industry, _ in industry_list) {
-            Log.Info(GSIndustry.GetName(industry));
+            if (VulcanIndustryOwnership.IsIndustryOwned(industry)) {
+                to_remove.append(industry);
+                continue;
+            }
+            if (!VulcanManufacturers.IndustryIsValidCandidateForTier(industry, target_industry_types)) {
+                to_remove.append(industry);
+                continue;
+            }
         }
-        industry_list.Valuate(VulcanManufacturers.IndustryIsValidCandidateForTier, target_industry_types);
-        industry_list.RemoveBelowValue(1);
+        foreach (industry in to_remove) {
+            industry_list.RemoveItem(industry);
+        }
         while (industry_list.Count() > 0) {
             local manufacturer_id = candidate_manufacturers[index % candidate_manufacturers.len()][0];
             local manufacturer_hq_town = candidate_manufacturers[index % candidate_manufacturers.len()][1];
@@ -167,7 +173,7 @@ class VulcanManufacturers {
             foo_2 = ["EquipmentManufacturer", "ChemicalsManufacturer", "BuildingMaterialsManufacturer"],
         }
         local cabbage_industries = {
-            foo_1 = ["blast_furnace", "electric_arc_furnace", "assembly_plant", "body_plant", "engine_plant"],
+            foo_1 = ["blast_furnace", "electric_arc_furnace", "basic_oxygen_furnace", "assembly_plant", "body_plant", "engine_plant"],
             foo_2 = ["precision_parts_plant", "hardware_factory", "appliance_factory", "chlor_alkali_plant", "cryo_plant", "pipework_fabricator"],
         }
 
