@@ -25,6 +25,12 @@ class PersistentStorageManager {
         owned_industries = {},
     };
 
+    // as of Jun 2024, this is only used to assist with display of slot keys in Grind story book, but could be extended for other uses if needed
+    static slot_key_types = {
+        owned_industries = "industry",
+        industry_cargo_stats = "industry",
+    }
+
     // no constructor, no instance attributes, keep it simple
     function Init(loaded_data, loaded_from_version) {
         // handle the default case, this means we don't fail on development savegames where the GS has no data stored

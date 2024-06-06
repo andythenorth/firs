@@ -37,6 +37,16 @@ class GrindStoryPagePersistentStorage extends GrindStoryPage {
         this.page_elements = [];
         // assume we want to show all the keys for the slot, then just repr the values, even if they're nested tables
         foreach (prop_name, prop_value in this.slot_value) {
+            // optional extra hint text to aid e.g. finding storage contents for a specific industry or town from the key
+            if (this.slot_name in PersistentStorageManager.slot_key_types) {
+                if (PersistentStorageManager.slot_key_types[this.slot_name] == "industry") {
+                    this.page_elements.append({
+                        reference = null,
+                        element_text = GSText(GSText.STR_GRIND_TEST_INDUSTRY_NAME, prop_name)
+                    });
+                }
+            }
+            // the storage contents
             this.page_elements.append({
                 reference = null,
                 element_text = GSText(GSText.STR_GRIND_TEST, prop_name.tostring(), Repr(prop_value))
