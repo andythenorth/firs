@@ -22,7 +22,7 @@ from chameleon import PageTemplateLoader  # chameleon used in most template case
 
 # setup the places we look for templates
 templates = PageTemplateLoader(
-    os.path.join(currentdir, "src", "templates"), format="text"
+    os.path.join(currentdir, "src", "grf", "templates"), format="text"
 )
 
 generated_nml_path = os.path.join(firs.generated_files_path, "nml")

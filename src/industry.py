@@ -19,7 +19,7 @@ from chameleon import PageTemplateLoader  # chameleon used in most template case
 
 # setup the places we look for templates
 templates = PageTemplateLoader(
-    os.path.join(currentdir, "src", "templates"), format="text"
+    os.path.join(currentdir, "src", "grf", "templates"), format="text"
 )
 
 from perm_storage_mappings import register_perm_storage_mapping, get_perm_num

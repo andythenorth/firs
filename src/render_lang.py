@@ -15,7 +15,7 @@ sys.path.append(os.path.join("src"))  # add to the module search path
 from chameleon import PageTemplateLoader  # chameleon used in most template cases
 
 # setup the places we look for templates
-templates = PageTemplateLoader(os.path.join(currentdir, "src", "templates"))
+templates = PageTemplateLoader(os.path.join(currentdir, "src", "grf", "templates"))
 
 # get args passed by makefile
 makefile_args = utils.get_makefile_args(sys)
