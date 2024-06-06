@@ -15,7 +15,7 @@ import global_constants as global_constants
 from polar_fox import git_info
 import firs
 from grf.incompatible_grfs import incompatible_grfs
-from doc_helper import DocHelper
+from docs.doc_helper import DocHelper
 
 docs_src = os.path.join(currentdir, "src", "docs")
 docs_output_path = os.path.join(currentdir, "docs")
