@@ -10,7 +10,7 @@ import firs
 import utils
 import global_constants
 from polar_fox import git_info
-from incompatible_grfs import incompatible_grfs
+from grf.incompatible_grfs import incompatible_grfs
 from grf.perm_storage_mappings import perm_storage_mappings, get_perm_num
 
 registered_cargos = firs.registered_cargos
