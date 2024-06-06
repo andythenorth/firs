@@ -115,7 +115,7 @@ def main():
     print("[RENDER DOCS]")
     start = time()
 
-    lang_strings = utils.get_lang_data("english")["lang_strings"]
+    lang_strings = utils.get_lang_data("grf", "english")["lang_strings"]
 
     # we also have some strings which are docs-only, so get those
     # should be in a dedicated method probably, but eh

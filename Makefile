@@ -15,9 +15,9 @@ MK_ARCHIVE = bin/mk-archive
 # Project details
 PROJECT_NAME = firs
 
-LANG_DIR = generated/lang
+NML_LANG_DIR = generated/lang
 NML_FILE = generated/firs.nml
-NML_FLAGS =-c -l $(LANG_DIR) --verbosity=4 --no-optimisation-warning
+NML_FLAGS =-c -l $(NML_LANG_DIR) --verbosity=4 --no-optimisation-warning
 GS_DIR = generated/gs
 
 -include Makefile.local
@@ -59,7 +59,7 @@ bundle_tar: clean tar
 bundle_zip: $(ZIP_FILE)
 release: bundle_tar copy_docs_to_grf_farm
 install: install_grf install_gs
-lang: $(LANG_DIR)
+lang: $(NML_LANG_DIR)
 nml: $(NML_FILE)
 grf: $(GRF_FILE)
 tar: $(TAR_FILE)
@@ -69,8 +69,8 @@ gs: $(GS_DIR)
 # remove the @ for more verbose output (@ suppresses command output)
 _V ?= @
 
-$(LANG_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.toml src)
-	$(_V) $(PYTHON3) src/render_lang.py $(ARGS)
+$(NML_LANG_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.pylng --ext=.toml src)
+	$(_V) $(PYTHON3) src/render_lang.py $(ARGS) "grf"
 
 $(HTML_DOCS): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.pt --ext=.lng src)
 	$(_V) $(PYTHON3) src/render_docs.py $(ARGS)
@@ -88,7 +88,7 @@ $(NML_FILE): $(shell $(FIND_FILES) --ext=.py --ext=.pynml src)
 	# this is a temporary hack to call render_graphics which is only used for book-keeping as of Oct 2022
 	$(_V) $(PYTHON3) src/render_graphics.py $(ARGS)
 
-$(GRF_FILE): $(shell $(FIND_FILES) --ext=.py --ext=.png src) $(LANG_DIR) $(NML_FILE) $(HTML_DOCS)
+$(GRF_FILE): $(shell $(FIND_FILES) --ext=.py --ext=.png src) $(NML_LANG_DIR) $(NML_FILE) $(HTML_DOCS)
 	$(NMLC) $(NML_FLAGS) --grf=$(GRF_FILE) $(NML_FILE)
 
 $(TAR_FILE): $(GRF_FILE) $(HTML_DOCS)
@@ -121,8 +121,9 @@ bundle_src: $(MD5_FILE)
 	$(MK_ARCHIVE) --tar --output=$(SOURCE_NAME).tar --base=$(SOURCE_NAME) \
 		`$(FIND_FILES) $(BUNDLE_DIR)/src` $(MD5_FILE)
 
-$(GS_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.pynut --ext=.pt --ext=.txt src)
+$(GS_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.pynut --ext=.pt --ext=.txt --ext=.pytxt --ext=.toml src)
 	$(_V) $(PYTHON3) src/render_gs.py $(ARGS)
+	$(_V) $(PYTHON3) src/render_lang.py $(ARGS) "gs"
 
 # this expects to find a '../../grf.farm' path relative to the project, and will fail otherwise
 copy_docs_to_grf_farm:

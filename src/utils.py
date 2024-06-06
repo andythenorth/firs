@@ -25,6 +25,10 @@ def get_makefile_args(sys):
     else:
         # provide any necessary defaults here
         makefile_args = {}
+
+    # !! nasty hax to get the grf or gs target, this would be better done with argparse, per Iron Horse
+    if len(sys.argv) > 3:
+        makefile_args["target"] = sys.argv[3]
     return makefile_args
 
 
@@ -39,10 +43,10 @@ def get_docs_url():
     return "/".join(result)
 
 
-def get_lang_data(lang):
+def get_lang_data(target, lang):
     global_pragma = {}
     lang_strings = {}
-    with open(os.path.join(currentdir, "src", "grf", "lang", lang + ".toml"), "rb") as fp:
+    with open(os.path.join(currentdir, "src", target, "lang", lang + ".toml"), "rb") as fp:
         lang_source = tomllib.load(fp)
 
     for node_name, node_value in lang_source.items():

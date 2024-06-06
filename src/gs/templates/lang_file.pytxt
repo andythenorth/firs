@@ -1,0 +1,4 @@
+<!--! render pre-formatted string lines -->
+<tal:strings_as_lng_lines repeat="lng_line lang_strings_formatted_as_lng_lines">
+    ${lng_line}
+</tal:strings_as_lng_lines>

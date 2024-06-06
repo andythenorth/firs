@@ -151,9 +151,6 @@ def main():
         "txt",
     )
 
-    # copy lang dir also
-    shutil.copytree(os.path.join(gs_src, "lang"), os.path.join(gs_dst, "lang"))
-
     # eh, how long does this take anyway?
     print(
         "[RENDER GS]",
