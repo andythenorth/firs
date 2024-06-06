@@ -22,7 +22,7 @@ templates = PageTemplateLoader(
     os.path.join(currentdir, "src", "grf", "templates"), format="text"
 )
 
-from perm_storage_mappings import register_perm_storage_mapping, get_perm_num
+from grf.perm_storage_mappings import register_perm_storage_mapping, get_perm_num
 from economies import registered_economies
 from industries import registered_industries
 

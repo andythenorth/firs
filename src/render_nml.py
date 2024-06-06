@@ -11,7 +11,7 @@ import utils
 import global_constants
 from polar_fox import git_info
 from incompatible_grfs import incompatible_grfs
-from perm_storage_mappings import perm_storage_mappings, get_perm_num
+from grf.perm_storage_mappings import perm_storage_mappings, get_perm_num
 
 registered_cargos = firs.registered_cargos
 registered_industries = firs.registered_industries
