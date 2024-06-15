@@ -1,0 +1,129 @@
+<tal:main_template metal:use-macro="load: main_template.pt">
+<div metal:fill-slot='body'>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header text-center">
+                <ul class="list-inline">
+                    <li><i class="fa fa-check-circle-o"></i> ${len(registered_cargos)} cargos</li>
+                    <li><i class="fa fa-check-circle-o"></i> ${len(registered_industries)} industries</li>
+                    <li><i class="fa fa-check-circle-o"></i> ${len(economy_schemas)} economies - choose simple or complex gameplay</li>
+                    <li><i class="fa fa-check-circle-o"></i> Primary industries don't close</li>
+                    <li><i class="fa fa-check-circle-o"></i> Optional secondary industry closure</li>
+                    <li><i class="fa fa-check-circle-o"></i> Snow for buildings above snowline</li>
+                    <li><i class="fa fa-check-circle-o"></i> Beautiful hand-drawn pixels</li>
+                    <li><i class="fa fa-check-circle-o"></i> GPL v2 license</li>
+                </ul>
+                <ul class="list-inline">
+                    <li><a href="#firs-gameplay">FIRS Gameplay</a></li>
+                    <li><a href="#download-firs">Download FIRS</a></li>
+                    <li><a href="#choose-economy">Setting up a Game with FIRS</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="firs-gameplay">
+        <div class="col-xs-12 col-sm-4">
+            <h2>FIRS Gameplay</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <p class="lead" style="margin-top:1em;">You can jump right into FIRS gameplay.</p>
+            <ul>
+                <li>There are familiar industries and cargos you'll recognise from default OpenTTD.</li>
+                <li>FIRS also adds lots of exciting new cargos and industries to play with.</li>
+                <li>Primary industries like mines and farms will always produce some cargo.</li>
+                <li>Secondary industries like the steel mill and cement plant will always produce some output cargo when an accepted cargo is delivered.</li>
+            </ul>
+            <h3>Gameplay Tips</h3>
+            <ul>
+                <li>Deliver supplies to primary industries regularly to boost production.</li>
+                <li>Some secondary industries boost production when more than one accepted cargo is delivered regularly.</li>
+                <li>Industries will never close.</li>
+                <li>Some industries are available from year 0. Some industries (and the cargos
+                    they use) are only available after a certain date.</li>
+                <li>FIRS adjusts default town behaviour: towns above snowline do not require food to grow, and towns in desert do not require food and water to grow.</li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+    <div class="row" id="download-firs">
+        <div class="col-xs-12 col-sm-4">
+            <h2>Download FIRS</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <p style="margin-top:1em;">
+                FIRS is available:
+            <p>
+            <ul>
+                <li><strong>From the content service (Bananas) in OpenTTD (<em>recommended</em>)</strong>. <a href="http://wiki.openttd.org/Content_downloading">Instructions</a>.</li>
+                <li>As a source checkout for compiling. <a href="code_reference.html">How to checkout and compile</a>.</li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+    <div class="row" id="vehicles">
+        <div class="col-xs-12 col-sm-4">
+            <h2>FIRS vehicle compatibility</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <p style="margin-top:1em;">FIRS cargos are transportable using the default OpenTTD vehicles (for OpenTTD 12.0 or newer).</p>
+            <p>There are also lots of great NewGRF vehicle sets with FIRS support.</p>
+            <p>The OpenTTD content service (Bananas) is a good place to find these.</p>
+        </div>
+    </div>
+    <hr />
+    <div class="row" id="choose-economy">
+        <div class="col-xs-12 col-sm-4">
+            <h2>Activate FIRS and Choose an Economy</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <p style="margin-top:1em;">
+                FIRS offers <a href="economies.html">${len(economy_schemas)} economies</a>.
+                The 'Basic' economies are simple and offer a good starting point for players new to FIRS.
+                Other economies are more complex and challenging.
+            </p>
+            <ul>
+                <li>Activate FIRS via the <a href="https://wiki.openttd.org/NewGRF#Activating_NewGRFs">NewGRF settings window</a>.</li>
+                <li>Choose which economy you want using the parameter settings window.</li>
+                <li>Only one economy can be active at once.</li>
+                <li>Economies can be used in any OpenTTD climate, but some are designed to work best in the temperate, sub-arctic or sub-tropic climates.</li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-xs-12 col-sm-4">
+            <h2>Advanced FIRS Parameters</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <p style="margin-top:1em;">
+                In addition to the economy parameter, FIRS provides a number of other parameters.
+            </p>
+            <p>
+                It's fine to leave these on the defaults, they're provided for advanced players
+                who want to adjust certain aspects of FIRS gameplay.
+            </p>
+        </div>
+    </div>
+    <hr />
+    <div class="row" id="conflicts">
+        <div class="col-xs-12 col-sm-4">
+            <h2>Conflict Detection</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <p style="margin-top:1em;">
+                When you begin a new OpenTTD game, FIRS will disable itself if certain conflicting newgrfs are detected.
+            </p>
+            <p>
+                You'll see a message if this happens.
+            </p>
+            <p>There's a list of <a href="code_reference.html#incompatible-grfs">conflicting newgrfs</a>.</p>
+        </div>
+    </div>
+    <hr />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+</tal:main_template>

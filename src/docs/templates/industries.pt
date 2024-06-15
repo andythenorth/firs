@@ -1,0 +1,93 @@
+<tal:page_with_sidebar_template metal:use-macro="load: main_template.pt">
+
+<div metal:fill-slot='body'>
+    <div class="page-header">
+        <div class="row">
+            <div class="col-xs-12 col-sm-5">
+                <h2>Industries (${len(registered_industries)})</h2>
+            </div>
+            <div class="col-xs-12 col-sm-7">
+                <div class="text-right" style="margin-top:22px;">
+                    <script type="text/javascript">
+                        <!--
+                        function MM_jumpMenu(targ,selObj,restore){ //v3.0
+                        eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+                        if (restore) selObj.selectedIndex=0;
+                        }
+                        //-->
+                    </script>
+                    <label for="jumpmenu">Jump to industry:</label>
+                    <select id="jumpmenu" name="jumpmenu" onchange="MM_jumpMenu('parent',this,1)">
+                        <option value="#">Choose industry...</option>
+                        <tal:industries repeat="item doc_helper.get_registered_industries_sorted_by_name()">
+                            <tal:industry define="name item[0]; industry item[1]">
+                                <option value="#${industry.id}">${' / '.join(doc_helper.get_industry_all_names(industry))}</option>
+                            </tal:industry>
+                        </tal:industries>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <tal:industries repeat="item doc_helper.get_registered_industries_sorted_by_name()">
+        <tal:industry define="name item[0]; industry item[1]">
+            <div class="row" id="${industry.id}" style="padding-bottom:20px;">
+                <div class="col-xs-12 col-sm-3">
+                    <h3 class="firs-title-with-anchor">
+                        <a href="#${industry.id}">${' / '.join(doc_helper.get_industry_all_names(industry))}</a>
+                    </h3>
+                    <p class="muted" tal:condition="len(doc_helper.get_industry_all_names(industry)) > 1">Industry name varies by economy.</p>
+                    <p class="muted">${doc_helper.get_industry_extra_info(industry)}</p>
+                </div>
+                <div class="col-xs-12 col-sm-5">
+                    <img src="static/img/industries/${industry.id}.png" alt="${doc_helper.get_industry_name(industry)}" />
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <table class="table table-bordered table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Economy</th>
+                                <th>Accepts</th>
+                                <th>Produces</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tal:industry_cargos repeat="economy registered_economies">
+                                <tr tal:condition="not: doc_helper.industry_is_unused(industry, economy)">
+                                    <th>
+                                        <strong>
+                                            <a href="economies.html#${doc_helper.get_economy_name_char_safe(economy)}">
+                                                ${doc_helper.get_economy_name(economy)}
+                                            </a>
+                                        </strong>
+                                    </th>
+                                    <td style="width:36%;">
+                                        <tal:cargos repeat="cargo doc_helper.cargos_accepted_by_industry(industry, economy)">
+                                            <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}${(',', '')[repeat.cargo.end]}</a>
+                                        </tal:cargos>
+                                        <tal:no_cargos condition="len(doc_helper.cargos_accepted_by_industry(industry, economy)) == 0">
+                                            <span class="muted">Nothing</span>
+                                        </tal:no_cargos>
+                                    </td>
+                                    <td style="width:36%;">
+                                        <tal:cargos repeat="cargo doc_helper.cargos_produced_by_industry(industry, economy)">
+                                            <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}${(',', '')[repeat.cargo.end]}</a>
+                                        </tal:cargos>
+                                        <tal:no_cargos condition="len(doc_helper.cargos_produced_by_industry(industry, economy)) == 0">
+                                            <span class="muted">Nothing</span>
+                                        </tal:no_cargos>
+                                    </td>
+                                </tr>
+                            </tal:industry_cargos>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br />
+            <hr />
+            <br />
+        </tal:industry>
+    </tal:industries>
+</div>
+</tal:page_with_sidebar_template>

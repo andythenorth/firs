@@ -1,0 +1,94 @@
+<tal:page_with_sidebar_template metal:use-macro="load: main_template.pt">
+
+<div metal:fill-slot='body'>
+    <div class="page-header">
+        <div class="row">
+            <div class="col-xs-12 col-sm-5">
+                <h2>Cargos (${len(registered_cargos)})</h2>
+            </div>
+            <div class="col-xs-12 col-sm-7">
+                <div class="text-right" style="margin-top:22px;">
+                    <script type="text/javascript">
+                        <!--
+                        function MM_jumpMenu(targ,selObj,restore){ //v3.0
+                        eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+                        if (restore) selObj.selectedIndex=0;
+                        }
+                        //-->
+                    </script>
+                    <label for="jumpmenu">Jump to cargo:</label>
+                    <select id="jumpmenu" name="jumpmenu" onchange="MM_jumpMenu('parent',this,1)">
+                        <option value="#">Choose cargo...</option>
+                        <tal:cargos repeat="item doc_helper.get_registered_cargo_sorted_by_name()">
+                            <tal:cargo define="name item[0]; cargo item[1]">
+                                <option value="#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</option>
+                            </tal:cargo>
+                        </tal:cargos>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <tal:cargos repeat="item doc_helper.get_registered_cargo_sorted_by_name()">
+        <tal:cargo define="name item[0]; cargo item[1]">
+            <div class="row" id="${cargo.id}">
+                <div class="col-xs-12 col-sm-4">
+                    <h3 class="firs-title-with-anchor">
+                        <a href="#${cargo.id}">
+                            <span style="display:inline-block;
+                                         width:20px;
+                                         height:20px;
+                                         margin-right: 7px;
+                                         background-image:url('static/img/cargoicons.png');
+                                         background-position:-${20 + 40 * cargo.icon_indices[0]}px -${20 + 40 * cargo.icon_indices[1]}px;">
+                            </span>${doc_helper.get_cargo_name(cargo)}
+                        </a>
+                    </h3>
+                    <p class="lead">${doc_helper.get_cargo_extra_info(cargo)}</p>
+                    <tal:unused condition="doc_helper.cargo_is_unused_in_any_economy(cargo) and cargo.id != 'mail'">
+                        <p>This cargo is currently unused in FIRS</p>
+                    </tal:unused>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                    <table class="table table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Economy
+                                </th>
+                                <th style="width:36%;">Produced by</th>
+                                <th style="width:36%;">Accepted by</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tal:economy repeat="economy registered_economies">
+                                <tr tal:condition="not: doc_helper.cargo_is_unused(cargo, economy)">
+                                    <th>
+                                        <a href="economies.html#${doc_helper.get_economy_name_char_safe(economy)}">
+                                            ${doc_helper.get_economy_name(economy)}
+                                        </a>
+                                    </th>
+                                    <td>
+                                        <tal:produced_by repeat="produced_by doc_helper.industries_producing_cargo(cargo, economy)">
+                                            <a href="industries.html#${produced_by.id}">${' / '.join(doc_helper.get_industry_all_names(produced_by))}${(',', '')[repeat.produced_by.end]}</a>
+                                        </tal:produced_by>
+                                    </td>
+                                    <td>
+                                        <tal:accepting_industries repeat="accepted_by doc_helper.industries_accepting_cargo(cargo, economy)">
+                                            <a href="industries.html#${accepted_by.id}">${' / '.join(doc_helper.get_industry_all_names(accepted_by))}${(',', '')[repeat.accepted_by.end]}</a>
+                                        </tal:accepting_industries>
+                                    </td>
+                                </tr>
+                            </tal:economy>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br />
+            <hr />
+            <br />
+        </tal:cargo>
+    </tal:cargos>
+</div>
+</tal:page_with_sidebar_template>

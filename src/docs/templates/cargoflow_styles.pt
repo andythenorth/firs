@@ -1,0 +1,31 @@
+<tal:industries repeat="industry registered_industries">
+    #${industry.id} text {
+        fill: #000;
+    }
+</tal:industries>
+
+<tal:cargos repeat="cargo registered_cargos">
+    #${cargo.id} ellipse {
+        // fill: #D8DBE2;
+        stroke-width: 3;
+        // stroke: #D8DBE2;
+        <tal:supplies condition="cargo.id in doc_helper.get_cargoflow_supply_cargos()">
+            fill: #C5E5F4;
+            stroke: #C5E5F4;
+        </tal:supplies>
+    }
+</tal:cargos>
+
+g.edge path {
+    // stroke: black;
+    // stroke-width: 3;
+}
+g.edge:hover path {
+    stroke: #105799;
+    stroke-width: 6;
+}
+g.edge:hover polygon {
+    fill: #105799;
+    stroke: #105799;
+    stroke-width: 6;
+}

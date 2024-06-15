@@ -1,0 +1,57 @@
+<tal:page_with_sidebar_template metal:use-macro="load: main_template.pt">
+
+<div metal:fill-slot='body'>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header text-center">
+                <h2>Economies</h2>
+                <p>In FIRS, the Economy parameter setting controls which industries and cargos will be used in the game.</p>
+                <ul class="list-inline">
+                    <tal:economies repeat="economy registered_economies">
+                        <li><a href="#${doc_helper.get_economy_name_char_safe(economy)}">${doc_helper.get_economy_name(economy)}</a></li>
+                    </tal:economies>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <tal:economies repeat="economy registered_economies">
+        <div class="row" id="${doc_helper.get_economy_name_char_safe(economy)}"  style="padding-bottom:20px;">
+            <div class="col-xs-12 col-sm-4">
+                <h3 class="firs-title-with-anchor">
+                    <a href="#${doc_helper.get_economy_name_char_safe(economy)}">${doc_helper.get_economy_name(economy)}</a>
+                </h3>
+                <p class="lead">${structure:doc_helper.get_economy_extra_info(economy)}</p>
+            </div>
+            <div class="col-xs-12 col-sm-8" style="padding-top:16px;">
+
+                <h4>${len(economy_schemas[economy].enabled_cargos)} Cargos</h4>
+                <tal:cargos repeat="cargo sorted(economy_schemas[economy].enabled_cargos, key=doc_helper.get_cargo_name)">
+                    <a href="cargos.html#${cargo.id}">
+                        ${doc_helper.get_cargo_name(cargo)}${(',', '')[repeat.cargo.end]}
+                    </a>
+                </tal:cargos>
+
+                <h4>${len(economy_schemas[economy].enabled_industries)} Industries</h4>
+                <tal:industries repeat="industry sorted(economy_schemas[economy].enabled_industries, key=doc_helper.get_industry_name)">
+                    <a href="industries.html#${industry.id}">${doc_helper.get_industry_name(industry, economy)}${(',', '')[repeat.industry.end]}</a>
+                </tal:industries>
+            </div>
+            <div class="col-xs-12">
+                <div style="margin-top: 40px; margin-bottom: 40px;">
+                    <h4>Cargo Flow</h4>
+                    <object style="max-width:100%;" data="${doc_helper.get_economy_name_char_safe(economy)}.dot.svg" type="image/svg+xml"></object>
+                </div>
+
+                <div class="pull-right">
+                    <a href="cargoflow_${doc_helper.get_economy_name_char_safe(economy)}.html">
+                        <i class="fa fa-search-plus"></i> View Cargo Flow Larger
+                    </a>
+                    |
+                    <a href="${doc_helper.get_economy_name_char_safe(economy)}.dot"><small>Download Cargo Flow as .dot</small></a>
+                </div>
+            </div>
+        </div>
+        <hr />
+    </tal:economies>
+</div>
+</tal:page_with_sidebar_template>

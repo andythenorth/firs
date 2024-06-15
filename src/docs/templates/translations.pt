@@ -1,0 +1,38 @@
+<tal:page_with_sidebar_template metal:use-macro="load: main_template.pt">
+<div metal:fill-slot='body'>
+    <div class="page-header">
+        <div class="alert alert-danger">
+            <strong>This page is outdated. Translations cannot be updated currently (December 2020).</strong>
+        </div>
+        <h1>Help Translate FIRS</h1>
+        <p>FIRS has already been translated into multiple languages, and more translations are always welcome.</p>
+        <p>FIRS translations use the <a href="https://translator.openttdcoop.org">Web Translator</a> from #openttdcoop.</p>
+    </div>
+
+    <div id="status">
+        <h2>Current Translation Status</h2>
+        <p>See which languages FIRS has been translated into, and how complete each translation is.</p>
+        <a class="btn btn-info" href="https://translator.openttdcoop.org/project/firs">Translation Status Report</a>
+    </div>
+    <br />
+    <hr />
+
+    <div id="translating">
+        <h2>Get Started with Translating</h2>
+        <h3>1. Get a Web Translator account.</h3>
+        <p>If you don't already have a Web Translator account, you'll need to apply for one.</p>
+        <p><a class="btn btn-info" href="https://translator.openttdcoop.org">Apply to be a Translator</a></p>
+        <br />
+
+        <h3>2. Translate Strings</h3>
+        <p>Change or update FIRS strings to appropriate translations for the language.</p>
+        <p><a class="btn btn-primary btn-large" href="https://translator.openttdcoop.org/project/firs">Translate FIRS</a></p>
+        <br />
+        <h3>3. Have Cake</h3>
+        <p>The translations will be featured in the next release of FIRS.  There's no timetable for releases, it might be days or it might be months, but it <strong>will</strong> be released eventually.</p>
+        <p>Thanks :)</p>
+        <br />
+    </div>
+
+</div>
+</tal:page_with_sidebar_template>

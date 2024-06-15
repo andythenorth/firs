@@ -1,0 +1,166 @@
+<tal:page_with_sidebar_template metal:use-macro="load: main_template.pt">
+<div metal:fill-slot='body'>
+    <div class="page-header text-center">
+        <h2>Code Reference</h2>
+        <ul class="list-inline">
+            <li class="nav-header">Code Reference</li>
+            <li><a href="#source">Obtaining Source</a></li>
+            <li><a href="#compiling">Compiling</a></li>
+            <li><a href="#cargos">Cargos (${len(registered_cargos)})</a></li>
+            <li><a href="#industries">Industries (${len(registered_industries)})</a></li>
+            <li><a href="#incompatible-grfs">Incompatible NewGRFs (${len(incompatible_grfs)})</a></li>
+        </ul>
+    </div>
+    <div id="source">
+        <h3>Obtaining Source</h3>
+        <p>Source checkout available from <a href="${metadata['repo_url']}">the FIRS Repo on GitHub</a>.</p>
+        <p>FIRS is licensed under <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPL(v2)</a>.</p>
+    </div>
+    <br />
+    <hr />
+
+    <section id="compiling">
+        <h3>Compiling</h3>
+        <p>
+           FIRS source includes a makefile for convenient building.
+           This requires '<a href="https://en.wikipedia.org/wiki/Make_(software)">Make</a>',
+           typically provided by the ports tree on Linux / Unix,
+           <a href="https://developer.apple.com/xcode/">Xcode</a> on macOS,
+           and other build systems on Windows.
+        </p>
+        <p>Other dependencies include:</p>
+        <ul>
+            <li><a href="https://www.python.org/">Python 3.11+</a></li>
+            <li><a href="https://newgrf-specs.tt-wiki.net/wiki/NML:Getting_started">NML 0.7.5 or newer</a> (NewGRF compiler)</li>
+            <li><a href="http://chameleon.readthedocs.org/en/latest/">Chameleon</a> (Template engine)</li>
+            <li><a href="https://pypi.python.org/pypi/Markdown">Markdown</a> (Markdown text format parser)</li>
+            <li><a href="http://www.graphviz.org">Graphviz</a> (optional, used to generate cargo flow charts in html docs)</li>
+        </ul>
+    </section>
+    <br />
+    <hr />
+
+    <div id="cargos">
+        <h3>Cargos (${len(registered_cargos)}) <small>Code Reference</small></h3>
+        <p>
+            Don't rely on the classes for detailed vehicle support, they might change with no warning.  Use labels instead.
+            <a href="http://newgrf-specs.tt-wiki.net/wiki/NML:Cargos#Cargo_IDs">&#187; NML Reference for NewGRF cargos</a>
+        </p>
+        <p><small>* Price Factor is a base value, will be automatically adjusted per economy to ensure no prices overlap.</small></p>
+        <p><small>** Town growth effects: apart from TOWNGROWTH_PASSENGERS and TOWNGROWTH_MAIL, FIRS does not set any town growth effects; this has the intended effect of disabling food / water requirements for towns in desert and above snowline.</small></p>
+        <table class="table table-striped tablesorter firs-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Label</th>
+                    <th>Icon</th>
+                    <th class="number">Weight</th>
+                    <th nowrap="true" class="number">Price Factor*</th>
+                    <th class="text">Cargo Classes</th>
+                    <th class="text">Town Growth Effect**</th><!--! request by Zuu, don't just delete this because it's boring -->
+                    <th nowrap="true">Sprites Done?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tal:cargos repeat="item doc_helper.get_registered_cargo_sorted_by_name()">
+                    <tal:cargo define="name item[0]; cargo item[1]">
+                        <tr>
+                            <td>
+                                <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>
+                            </td>
+                            <td>${cargo.cargo_label}</td>
+                            <td>
+                                <span style="display:inline-block;
+                                             width:20px;
+                                             height:20px;
+                                             background-image:url('static/img/cargoicons.png');
+                                             background-position:-${20 + 40 * cargo.icon_indices[0]}px -${20 + 40 * cargo.icon_indices[1]}px;">
+                                </span>
+                            </td>
+                            <td class="number">${cargo.weight}</td>
+                            <td class="number">${cargo.price_factor}</td>
+                            <td class="text">${doc_helper.pretty_print_cargo_classes(cargo)}</td>
+                            <td class="text">${cargo.town_growth_effect}</td>
+                            <td>${cargo.sprites_complete}</td>
+                        </tr>
+                    </tal:cargo>
+                </tal:cargos>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <hr />
+    <br />
+
+    <div id="industries">
+        <h3>Industries (${len(registered_industries)}) <small>Code Reference</small></h3>
+        <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/IndustryDefaultProps">&#187; Reference for NewGRF industry IDs</a></p>
+        <table class="table table-striped tablesorter firs-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th nowrap="true" class="number">ID <span class="muted">(decimal)</span></th>
+                    <th nowrap="true" class="number">Available From</th>
+                    <th nowrap="true" class="number">Map Colour</th>
+                    <th nowrap="true">Station Name</th>
+                    <th nowrap="true">Sprites Done?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tal:industries repeat="item doc_helper.get_registered_industries_sorted_by_name()">
+                    <tal:industry define="name item[0]; industry item[1]">
+                        <tr>
+                            <td>
+                                <a href="industries.html#${industry.id}">${' / '.join(doc_helper.get_industry_all_names(industry))}</a>
+                            </td>
+                            <td class="number">${global_constants.industry_numeric_ids[industry.id]}</td>
+                            <td class="number">${industry.get_intro_year(None)}</td>
+                            <td class="number">
+                                ${industry.get_property('map_colour', None)}
+                                <span style="background-color:rgb${doc_helper.get_industry_colour(industry)};
+                                             border:solid 1px #000;
+                                             width:16px;
+                                             height:16px;
+                                             display:inline-block;
+                                             vertical-align:top;
+                                             margin-top:1px;
+                                             margin-left:2px;">
+                                </span>
+                            </td>
+                            <td>${doc_helper.get_nearby_station_name(industry)}</td>
+                            <td>${industry.sprites_complete}</td>
+                        </tr>
+                    </tal:industry>
+                </tal:industries>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <hr />
+    <br />
+
+    <div id="incompatible-grfs">
+        <h3>Incompatible NewGRFs (${len(incompatible_grfs)}) <small>Code Reference</small></h3>
+        <table class="table table-striped tablesorter firs-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>GRFID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tal:incompatible repeat="incompatible_grf incompatible_grfs">
+                    <tr>
+                        <td>
+                            ${incompatible_grf.grfname}
+                        </td>
+                        <td>
+                            ${incompatible_grf.grfid}
+                        </td>
+                    </tr>
+                </tal:incompatible>
+            </tbody>
+        </table>
+    </div>
+</div>
+</tal:page_with_sidebar_template>
