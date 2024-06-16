@@ -113,7 +113,7 @@ class DocHelper(object):
         )
         return sorted(result.items())
 
-    def get_registered_industries_sorted_by_name(self):
+    def get_industries_sorted_by_name(self):
         # industries don't store the name as a python attr, but we often need to iterate over their names in A-Z order
         # note the list slice so that we sort on the first name in alpha-order for industries with multiple names
         result = dict(

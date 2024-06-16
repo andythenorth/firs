@@ -87,7 +87,7 @@
             function random_img(num_images){
                 var images=new Array(
                     <!--! exclude images for industries using original TTD sprites -->
-                    ${','.join(["'" + i[1].id + "'" for i in doc_helper.get_registered_industries_sorted_by_name() if i[1].id not in ['copper_mine','hotel','oil_rig','power_plant','sawmill']])}
+                    ${','.join(["'" + i[1].id + "'" for i in doc_helper.get_industries_sorted_by_name() if i[1].id not in ['copper_mine','hotel','oil_rig','power_plant','sawmill']])}
                 );
 
                 for(i = 0; i < num_images; i++){

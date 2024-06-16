@@ -19,7 +19,7 @@
                     <label for="jumpmenu">Jump to industry:</label>
                     <select id="jumpmenu" name="jumpmenu" onchange="MM_jumpMenu('parent',this,1)">
                         <option value="#">Choose industry...</option>
-                        <tal:industries repeat="item doc_helper.get_registered_industries_sorted_by_name()">
+                        <tal:industries repeat="item doc_helper.get_industries_sorted_by_name()">
                             <tal:industry define="name item[0]; industry item[1]">
                                 <option value="#${industry.id}">${' / '.join(doc_helper.get_industry_all_names(industry))}</option>
                             </tal:industry>
@@ -30,7 +30,7 @@
         </div>
     </div>
     <br />
-    <tal:industries repeat="item doc_helper.get_registered_industries_sorted_by_name()">
+    <tal:industries repeat="item doc_helper.get_industries_sorted_by_name()">
         <tal:industry define="name item[0]; industry item[1]">
             <div class="row" id="${industry.id}" style="padding-bottom:20px;">
                 <div class="col-xs-12 col-sm-3">
