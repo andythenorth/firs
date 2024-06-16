@@ -1,7 +1,3 @@
-import importlib
-
-registered_cargos = []
-
 # keep these alphabetised for ease of maintaining
 cargo_module_names = [
     "acid",
@@ -99,10 +95,3 @@ cargo_module_names = [
     "wool",
     "zinc",
 ]
-
-package_name = "cargos"
-for cargo_module_name in cargo_module_names:
-    cargo_module = importlib.import_module(
-        "." + cargo_module_name, package_name
-    )
-    cargo_module.cargo.register()

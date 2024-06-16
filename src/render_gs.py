@@ -14,8 +14,6 @@ from gs.gs_helper import GSHelper
 from gs import manufacturers
 from polar_fox import git_info
 
-registered_cargos = firs.registered_cargos
-
 from chameleon import PageTemplateLoader  # chameleon used in most template cases
 
 # get args passed by makefile
@@ -58,7 +56,6 @@ def render_nuts(nuts_by_subdir):
                     gs_helper=GSHelper(),
                     makefile_args=makefile_args,
                     git_info=git_info,
-                    registered_cargos=registered_cargos,
                     manufacturers=manufacturers,
                     utils=utils,
                 )

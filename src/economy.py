@@ -1,6 +1,4 @@
 import utils
-from economies import registered_economies
-
 
 class Economy(object):
     """class to hold economies, this comment is pointless eh?"""
@@ -11,18 +9,6 @@ class Economy(object):
         self.cargo_ids = kwargs.get("cargos")
         self.cargoflow_graph_tuning = kwargs.get("cargoflow_graph_tuning")
         self.biomes = []
-
-    def register(self):
-        # guard, duplicate numeric IDs don't work :P
-        for economy in registered_economies:
-            if self.numeric_id == economy.numeric_id:
-                raise Exception(
-                    "Economy "
-                    + self.id
-                    + " has same numeric ID as economy "
-                    + economy.id
-                )
-        registered_economies.append(self)
 
     def add_biome(self, biome_id, **kwargs):
         self.biomes.append(Biome(biome_id, **kwargs))
@@ -37,6 +23,7 @@ class Economy(object):
     def forcibly_space_cargo_price_factors(self, registered_cargos):
         # check for overlapping price factors (and adjust if necessary) to ensure they're all unique per economy
         # prevents cargos overlapping on the payment curves chart in-game
+        print("CABBAGE - can forcibly_space_cargo_price_factors be called from EconomyManager().post_init_actions()?")
         cargos_by_price_factor = []
         for cargo_id in self.cargo_ids:
             for cargo in registered_cargos:

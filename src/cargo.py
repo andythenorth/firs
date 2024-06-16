@@ -19,9 +19,8 @@ templates = PageTemplateLoader(
     os.path.join(currentdir, "src", "templates"), format="text"
 )
 
-from economies import registered_economies
-from cargos import registered_cargos
-
+# firs is imported, but main is not called in this module, this relies on firs already being present in the context
+import firs
 
 class Cargo(object):
     """ Base class to hold cargos"""
@@ -61,22 +60,14 @@ class Cargo(object):
             "sprites_complete", False
         )
         self.economy_variations = {}
-        for economy in registered_economies:
+        for economy in firs.economy_manager:
             if self.id in economy.cargo_ids:
                 # create an economy variation
                 numeric_id = economy.cargo_ids.index(self.id)
                 self.economy_variations[economy] = {"numeric_id": numeric_id}
 
-        # guard against overlapping icon indices, icons should be unique per cargo
-        # if two cargos use same icon (1) don't, copy-paste, then adjust some pixels for one of them (2) see 1
-        for cargo in registered_cargos:
-            if cargo.icon_indices == self.icon_indices:
-                utils.echo_message(
-                    "Cargo "
-                    + self.id
-                    + " has overlapping icon_indices with cargo "
-                    + cargo.id
-                )
+        if len(self.economy_variations) == 0:
+            utils.echo_message(self.id + " is not used in any economy")
 
     def get_numeric_id(self, economy):
         return self.economy_variations[economy].get("numeric_id")
@@ -110,8 +101,3 @@ class Cargo(object):
         result["id"] = self.id
         result["vulcan_town_effect"] = self.vulcan_town_effect
         return result
-
-    def register(self):
-        if len(self.economy_variations) == 0:
-            utils.echo_message(self.id + " is not used in any economy")
-        registered_cargos.append(self)

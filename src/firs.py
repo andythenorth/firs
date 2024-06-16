@@ -19,8 +19,6 @@ import cargos
 import economies
 import industries
 
-registered_cargos = cargos.registered_cargos
-
 
 class CargoManager(list):
     """
@@ -35,6 +33,25 @@ class CargoManager(list):
         )
         self.append(cargo_module.cargo)
 
+    def post_init_actions(self):
+        self.validate_icon_indices()
+
+    def validate_icon_indices(self):
+        # guard against overlapping icon indices, icons should be unique per cargo
+        # if two cargos use same icon (1) don't, copy-paste, then adjust some pixels for one of them (2) see 1
+        seen = {}
+        for cargo in self:
+            if cargo.icon_indices in seen.keys():
+                utils.echo_message(
+                    "Cargo "
+                    + cargo.id
+                    + " has overlapping icon_indices with cargo(s) "
+                    + str([cargo.id for cargo in seen[cargo.icon_indices]])
+                )
+            if not cargo.icon_indices in seen.keys():
+                seen[cargo.icon_indices] = []
+            seen[cargo.icon_indices].append(cargo)
+
 
 class EconomyManager(list):
     """
@@ -48,6 +65,22 @@ class EconomyManager(list):
             "." + economy_module_name, package="economies"
         )
         self.append(economy_module.economy)
+
+    def post_init_actions(self):
+        self.validate_economy_ids()
+
+    def validate_economy_ids(self):
+        # guard, duplicate numeric IDs don't work :P
+        seen = {}
+        for economy in self:
+            if economy.numeric_id in seen.keys():
+                raise Exception(
+                    "Economy "
+                    + economy.id
+                    + " has same numeric ID as economy "
+                    + seen[economy.numeric_id].id
+                )
+            seen[economy.numeric_id] = economy
 
 
 class IndustryManager(list):
@@ -180,14 +213,14 @@ def main():
         industry_manager.add_industry(industry_module_name)
 
     # post init actions called after all industries, cargos and economies are inited
+    economy_manager.post_init_actions()
+    cargo_manager.post_init_actions()
     industry_manager.post_init_actions()
 
     # guard against mistakes with cargo ids in economies
     # !! CABBAGE - should this be directly on the economy - surely it should validate itself?
     known_cargo_ids = [cargo.id for cargo in cargo_manager]
-    cargo_label_id_mapping = {
-        cargo.cargo_label: cargo.id for cargo in cargo_manager
-    }
+    cargo_label_id_mapping = {cargo.cargo_label: cargo.id for cargo in cargo_manager}
     for economy in economy_manager:
         for cargo_id in economy.cargo_ids:
             if cargo_id not in known_cargo_ids:
