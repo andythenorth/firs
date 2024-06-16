@@ -47,7 +47,9 @@ def render_lang(target, lang_name, lang_dst, dst_file_extension):
     stripped_lines = [line.lstrip() for line in lines]
     cleaned_lang_content = "\n".join(stripped_lines)
     # write the output eh
-    dst_file = codecs.open(os.path.join(lang_dst, lang_name + dst_file_extension), "w", "utf8")
+    dst_file = codecs.open(
+        os.path.join(lang_dst, lang_name + dst_file_extension), "w", "utf8"
+    )
     dst_file.write(cleaned_lang_content)
     dst_file.close()
 

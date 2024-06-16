@@ -71,7 +71,7 @@ def render_docs(
             doc_helper=doc_helper,
             doc_name=doc_name,
         )
-        if use_markdown and file_type=="html":
+        if use_markdown and file_type == "html":
             # if the source is markdown, we need to render markdown to html, and wrap the result in some boilerplate html
             markdown_wrapper = docs_templates["markdown_wrapper.pt"]
             doc = markdown_wrapper(
@@ -172,8 +172,12 @@ def main():
         source_is_repo_root=True,
     )
     # just render the markdown docs twice to get txt and html versions, simples no?
-    render_docs(markdown_docs, "txt", doc_helper, use_markdown=True, source_is_repo_root=True)
-    render_docs(markdown_docs, "html", doc_helper, use_markdown=True, source_is_repo_root=True)
+    render_docs(
+        markdown_docs, "txt", doc_helper, use_markdown=True, source_is_repo_root=True
+    )
+    render_docs(
+        markdown_docs, "html", doc_helper, use_markdown=True, source_is_repo_root=True
+    )
     render_docs(graph_docs, "dotall", doc_helper)
     render_docs(stylesheets, "css", doc_helper)
 

@@ -7,6 +7,7 @@ from time import time
 
 import firs
 
+
 def report_sprites_complete(cargos, industries):
     # project management eh :P
     # cargos
@@ -22,9 +23,7 @@ def report_sprites_complete(cargos, industries):
         str(int(100 * (complete / len(cargos)))) + "%",
     )
     # industries
-    complete = len(
-        [industry for industry in industries if industry.sprites_complete]
-    )
+    complete = len([industry for industry in industries if industry.sprites_complete])
     print(
         "Sprites complete for",
         complete,

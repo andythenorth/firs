@@ -25,9 +25,9 @@ gs_dst = os.path.join(firs.generated_files_path, "gs")
 
 
 def render_nuts(nuts_by_subdir):
-    meta_header = PageTemplateLoader(gs_src_templates, format="text")["_meta_header.pt"](
-        git_info=git_info
-    )
+    meta_header = PageTemplateLoader(gs_src_templates, format="text")[
+        "_meta_header.pt"
+    ](git_info=git_info)
 
     for subdir_name, nuts in nuts_by_subdir.items():
         if subdir_name == "root":
@@ -116,7 +116,12 @@ def main():
             "repr",
             "version",
         ],
-        "grind": ["grind_industries", "grind_storybook", "grind_persistent_storage", "grind_utils"],
+        "grind": [
+            "grind_industries",
+            "grind_storybook",
+            "grind_persistent_storage",
+            "grind_utils",
+        ],
         "atlas": ["random_map_items", "tile_lists_by_shape"],
         "vulcan": [
             "companies",

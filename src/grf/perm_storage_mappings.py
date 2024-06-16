@@ -18,7 +18,7 @@ def register_perm_storage_mapping(id, mapping):
 
 
 class PermStorageMapping(object):
-    """ sparse class mapping properties names to int numbers 1-16, used to aid readability when using STORE_PERM and LOAD_PERM"""
+    """sparse class mapping properties names to int numbers 1-16, used to aid readability when using STORE_PERM and LOAD_PERM"""
 
     def __init__(self, id, identifiers):
         # doesn't need any numbers, just don't mess with positions of identifiers (or bump savegame version if you do)

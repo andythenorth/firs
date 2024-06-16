@@ -22,8 +22,9 @@ templates = PageTemplateLoader(
 # firs is imported, but main is not called in this module, this relies on firs already being present in the context
 import firs
 
+
 class Cargo(object):
-    """ Base class to hold cargos"""
+    """Base class to hold cargos"""
 
     def __init__(self, id, **kwargs):
         self.id = id
@@ -48,17 +49,11 @@ class Cargo(object):
         self.vulcan_town_effect = kwargs.get("vulcan_town_effect", None)
         # not nml properties
         # suppress nml warnings about animated pixels
-        self.allow_animated_pixels = kwargs.get(
-            "allow_animated_pixels", False
-        )
+        self.allow_animated_pixels = kwargs.get("allow_animated_pixels", False)
         # icon indices relate to position of icon in cargo icons spritesheet
-        self.icon_indices = kwargs[
-            "icon_indices"
-        ]
+        self.icon_indices = kwargs["icon_indices"]
         # housekeeping
-        self.sprites_complete = kwargs.get(
-            "sprites_complete", False
-        )
+        self.sprites_complete = kwargs.get("sprites_complete", False)
         self.economy_variations = {}
         for economy in firs.economy_manager:
             if self.id in economy.cargo_ids:

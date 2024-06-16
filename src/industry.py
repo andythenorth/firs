@@ -1385,7 +1385,9 @@ class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
     def __init__(self, industry_type, distance):
         self.industry_type = industry_type
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
-        self.industry_type_numeric_id = firs.industry_manager.get_industry_by_type(industry_type).numeric_id
+        self.industry_type_numeric_id = firs.industry_manager.get_industry_by_type(
+            industry_type
+        ).numeric_id
         self.distance = distance
         self.procedure_name = "require_min_distance_to_another_industry_type"
         self.params = [self.industry_type_numeric_id, self.distance]
@@ -1396,7 +1398,9 @@ class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
 
     def __init__(self, industry_type, distance, permissive_flag):
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
-        self.industry_type_numeric_id = firs.industry_manager.get_industry_by_type(industry_type).numeric_id
+        self.industry_type_numeric_id = firs.industry_manager.get_industry_by_type(
+            industry_type
+        ).numeric_id
         self.distance = distance
         self.permissive_flag = permissive_flag
         self.procedure_name = "require_max_distance_to_another_industry_type"
@@ -1545,7 +1549,6 @@ class Industry(object):
         ):
             # warn only if not used, no need to raise exception
             utils.echo_message(self.id + " is not used in any economy")
-
 
     def enable_in_economy(self, economy_id, **kwargs):
         self.economy_variations[economy_id].enabled = True
@@ -1891,7 +1894,11 @@ class Industry(object):
                 ):
                     spritelayout_id = tiledef[3]
                     if spritelayout_id in self.magic_spritelayouts_by_id.keys():
-                        if getattr(self.magic_spritelayouts_by_id[spritelayout_id], "auto_orient", False):
+                        if getattr(
+                            self.magic_spritelayouts_by_id[spritelayout_id],
+                            "auto_orient",
+                            False,
+                        ):
                             spritelayout_id = spritelayout_id + "_" + coast_direction
                     tiledef = (tiledef[0], tiledef[1], tiledef[2], spritelayout_id)
                     layout.append(tiledef)
