@@ -437,7 +437,11 @@ industry.add_industry_layout(
         (0, 1, "coke_oven_spritelayout_silo"),
         (0, 2, "coke_oven_spritelayout_quench_tower"),
         (0, 3, "coke_oven_spritelayout_silo"),
-        (0, 4, "coke_oven_spritelayout_gas_plant_1"), # tar tanks don't fit in this layout, lolz
+        (
+            0,
+            4,
+            "coke_oven_spritelayout_gas_plant_1",
+        ),  # tar tanks don't fit in this layout, lolz
         (1, 0, "coke_oven_spritelayout_coal_handling_front"),
         (1, 1, "coke_oven_spritelayout_oven_battery_pipes_only"),
         (1, 2, "coke_oven_spritelayout_pusher_rails_animated"),

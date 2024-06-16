@@ -100,7 +100,14 @@ industry.enable_in_economy(
     vulcan_config={
         "map_curator": {
             "curation_function": "MinimumRatioToCompanionIndustryTypes",
-            "companion_industries": ["appliance_factory", "body_plant", "foundry", "precision_parts_plant", "tube_and_pipe_mill", "wire_rod_mill"],
+            "companion_industries": [
+                "appliance_factory",
+                "body_plant",
+                "foundry",
+                "precision_parts_plant",
+                "tube_and_pipe_mill",
+                "wire_rod_mill",
+            ],
             "companion_industries_ratio": 0.33,
         }
     },
