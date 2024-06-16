@@ -1,5 +1,7 @@
 import utils
 
+# firs is imported, but main is not called in this module, this relies on firs already being present in the context
+import firs
 
 class Economy(object):
     """class to hold economies, this comment is pointless eh?"""
@@ -14,9 +16,9 @@ class Economy(object):
     def add_biome(self, biome_id, **kwargs):
         self.biomes.append(Biome(biome_id, **kwargs))
 
-    def get_cargos(self, registered_cargos):
+    def get_cargos(self):
         result = []
-        for cargo in registered_cargos:
+        for cargo in firs.cargo_manager:
             if cargo.id in self.cargo_ids:
                 result.append(cargo)
         return result
