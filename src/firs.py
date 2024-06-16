@@ -41,6 +41,8 @@ class IndustryManager(list):
 
     def __init__(self):
         self.incompatible_industries = {}
+        self.industries_per_accepted_cargo = {}
+        self.industries_per_produced_cargo = {}
 
     def add_industry(self, industry_module):
         industry_module.industry.validate()
@@ -48,6 +50,8 @@ class IndustryManager(list):
 
     def post_init_actions(self):
         self.provision_incompatible_industries()
+        self.provision_industries_per_accepted_cargo()
+        self.provision_industries_per_produced_cargo()
 
     def get_industry_by_type(self, industry_id):
         # be aware that this shouldn't be called before all industries have been initialised
@@ -63,51 +67,42 @@ class IndustryManager(list):
             incompatible = []
             # special case supplies, pax, mail to exclude them (not useful in checks)
             excluded_cargos = ["ENSP", "FMSP", "PASS", "MAIL"]
-            for cargo, prod_industries in industries_producing_cargo().items():
+            for cargo, prod_industries in self.industries_per_produced_cargo.items():
                 if cargo not in excluded_cargos:
                     if industry in prod_industries:
-                        incompatible.extend(industries_accepting_cargo()[cargo])
-            for cargo, accept_industries in industries_accepting_cargo().items():
+                        incompatible.extend(self.industries_per_accepted_cargo[cargo])
+            for cargo, accept_industries in self.industries_per_accepted_cargo.items():
                 # special case supplies, pax, mail to exclude them (not useful in checks)
                 if cargo not in excluded_cargos:
                     if industry in accept_industries:
-                        incompatible.extend(industries_producing_cargo()[cargo])
+                        incompatible.extend(self.industries_per_produced_cargo[cargo])
             self.incompatible_industries[industry] = set(incompatible)
 
+    def provision_industries_per_accepted_cargo(self):
+        # this can't be called until all industries, economies and cargos are registered
+        for cargo in registered_cargos:
+            self.industries_per_accepted_cargo[cargo.cargo_label] = []
 
-def industries_producing_cargo():
-    # !! this is in firs module root temporarily whilst refactoring firs module to use main()
-    result = {}
-    for cargo in registered_cargos:
-        result[cargo.cargo_label] = []
+        for industry in self:
+            accepted = []
+            for economy in registered_economies:
+                for cargo_label in industry.get_accept_cargo_types(economy):
+                    accepted.append(cargo_label)
+            for cargo_label in set(accepted):
+                self.industries_per_accepted_cargo[cargo_label].append(industry)
 
-    for industry in industry_manager:
-        produced = []
-        for economy in registered_economies:
-            for cargo_label, ratio in industry.get_prod_cargo_types(economy):
-                produced.append(cargo_label)
-        for cargo_label in set(produced):
-            result[cargo_label].append(industry)
+    def provision_industries_per_produced_cargo(self):
+        # this can't be called until all industries, economies and cargos are registered
+        for cargo in registered_cargos:
+            self.industries_per_produced_cargo[cargo.cargo_label] = []
 
-    return result
-
-
-def industries_accepting_cargo():
-    # !! this is in firs module root temporarily whilst refactoring firs module to use main()
-    # this can't be called until all industries, economies and cargos are registered
-    result = {}
-    for cargo in registered_cargos:
-        result[cargo.cargo_label] = []
-
-    for industry in industry_manager:
-        accepted = []
-        for economy in registered_economies:
-            for cargo_label in industry.get_accept_cargo_types(economy):
-                accepted.append(cargo_label)
-        for cargo_label in set(accepted):
-            result[cargo_label].append(industry)
-
-    return result
+        for industry in self:
+            produced = []
+            for economy in registered_economies:
+                for cargo_label, ratio in industry.get_prod_cargo_types(economy):
+                    produced.append(cargo_label)
+            for cargo_label in set(produced):
+                self.industries_per_produced_cargo[cargo_label].append(industry)
 
 
 def main():

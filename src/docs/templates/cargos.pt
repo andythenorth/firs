@@ -70,12 +70,12 @@
                                         </a>
                                     </th>
                                     <td>
-                                        <tal:produced_by repeat="produced_by doc_helper.industries_producing_cargo(cargo, economy)">
+                                        <tal:produced_by repeat="produced_by doc_helper.industries_producing_cargo_for_economy(cargo, economy)">
                                             <a href="industries.html#${produced_by.id}">${' / '.join(doc_helper.get_industry_all_names(produced_by))}${(',', '')[repeat.produced_by.end]}</a>
                                         </tal:produced_by>
                                     </td>
                                     <td>
-                                        <tal:accepting_industries repeat="accepted_by doc_helper.industries_accepting_cargo(cargo, economy)">
+                                        <tal:accepting_industries repeat="accepted_by doc_helper.industries_accepting_cargo_for_economy(cargo, economy)">
                                             <a href="industries.html#${accepted_by.id}">${' / '.join(doc_helper.get_industry_all_names(accepted_by))}${(',', '')[repeat.accepted_by.end]}</a>
                                         </tal:accepting_industries>
                                     </td>

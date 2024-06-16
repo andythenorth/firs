@@ -137,20 +137,10 @@ class DocHelper(object):
         else:
             return True
 
-    def industries_producing_cargo(self, cargo, economy):
+    def industries_accepting_cargo_for_economy(self, cargo, economy):
         result = set()
         if cargo in self.economy_schemas[economy]["enabled_cargos"]:
-            for industry in self.economy_schemas[economy]["enabled_industries"]:
-                cargo_list = industry.get_prod_cargo_types(economy)
-                for cargo_label, output_ratio in cargo_list:
-                    if cargo.cargo_label == cargo_label:
-                        result.add(industry)
-        result = sorted(result, key=self.get_industry_name)
-        return result
-
-    def industries_accepting_cargo(self, cargo, economy):
-        result = set()
-        if cargo in self.economy_schemas[economy]["enabled_cargos"]:
+            # this could be updated to use firs.industry_manager methods, but eh
             for industry in self.economy_schemas[economy]["enabled_industries"]:
                 cargo_list = industry.get_accept_cargo_types(economy)
                 for cargo_label in cargo_list:
@@ -159,11 +149,23 @@ class DocHelper(object):
         result = sorted(result, key=self.get_industry_name)
         return result
 
+    def industries_producing_cargo_for_economy(self, cargo, economy):
+        result = set()
+        if cargo in self.economy_schemas[economy]["enabled_cargos"]:
+            # this could be updated to use firs.industry_manager methods, but eh
+            for industry in self.economy_schemas[economy]["enabled_industries"]:
+                cargo_list = industry.get_prod_cargo_types(economy)
+                for cargo_label, output_ratio in cargo_list:
+                    if cargo.cargo_label == cargo_label:
+                        result.add(industry)
+        result = sorted(result, key=self.get_industry_name)
+        return result
+
     def cargo_is_unused_in_any_economy(self, cargo):
         result = 0
         for economy in self.registered_economies:
-            result += len(self.industries_accepting_cargo(cargo, economy))
-            result += len(self.industries_producing_cargo(cargo, economy))
+            result += len(self.industries_accepting_cargo_for_economy(cargo, economy))
+            result += len(self.industries_producing_cargo_for_economy(cargo, economy))
         if result == 0:
             return True
         else:
@@ -171,8 +173,8 @@ class DocHelper(object):
 
     def cargo_is_unused(self, cargo, economy):
         result = 0
-        result += len(self.industries_accepting_cargo(cargo, economy))
-        result += len(self.industries_producing_cargo(cargo, economy))
+        result += len(self.industries_accepting_cargo_for_economy(cargo, economy))
+        result += len(self.industries_producing_cargo_for_economy(cargo, economy))
         if result == 0:
             return True
         else:
