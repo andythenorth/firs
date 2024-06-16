@@ -144,6 +144,7 @@ def main():
     industry_manager.post_init_actions()
 
     # guard against mistakes with cargo ids in economies
+    # !! CABBAGE - should this be directly on the economy - surely it should validate itself?
     known_cargo_ids = [cargo.id for cargo in registered_cargos]
     cargo_label_id_mapping = {
         cargo.cargo_label: cargo.id for cargo in registered_cargos
