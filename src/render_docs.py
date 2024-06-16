@@ -44,8 +44,6 @@ makefile_args = utils.get_makefile_args(sys)
 metadata = {}
 metadata.update(global_constants.metadata)
 
-economy_schemas = {}
-
 
 def render_docs(
     doc_list, file_type, doc_helper, use_markdown=False, source_is_repo_root=False
@@ -61,7 +59,6 @@ def render_docs(
         ]  # .pt is the conventional extension for chameleon page templates
         doc = template(
             firs=firs,
-            economy_schemas=economy_schemas,
             incompatible_grfs=incompatible_grfs,
             global_constants=global_constants,
             makefile_args=makefile_args,
@@ -118,16 +115,9 @@ def main():
         lang_strings[node_name] = node_value["base"]
     # print(lang_strings)
 
-    for economy in firs.economy_manager:
-        economy_schemas[economy] = {
-            "enabled_cargos": economy.cargos,
-            "enabled_industries": economy.industries,
-        }
-
     doc_helper = DocHelper(
         firs=firs,
         lang_strings=lang_strings,
-        economy_schemas=economy_schemas,
     )
 
     # copy the cargo icons to an oversized image so they're legible

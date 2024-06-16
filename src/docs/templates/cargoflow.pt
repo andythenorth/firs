@@ -13,7 +13,7 @@
             output="edgesfirst"
             tooltip="${doc_helper.get_economy_name(economy)}"
 
-            <tal:cargos repeat="cargo sorted(economy_schemas[economy].enabled_cargos, key=doc_helper.get_cargo_name)">
+            <tal:cargos repeat="cargo sorted(economy.cargos, key=doc_helper.get_cargo_name)">
                 <tal:not_banned condition="(cargo.id not in banned_cargos) and (cargo.id not in doc_helper.get_cargoflow_supply_cargos())">
                     C_${cargo.id} [
                         shape="box"
@@ -38,7 +38,7 @@
                 </tal:not_banned>
             </tal:cargos>
 
-            <tal:industries repeat="industry sorted(economy_schemas[economy].enabled_industries, key=doc_helper.get_industry_name)">
+            <tal:industries repeat="industry sorted(economy.industries, key=doc_helper.get_industry_name)">
                 <tal:not_banned condition="not getattr(industry, 'town_industry_for_cargoflow', False)">
                     I_${industry.id} [
                         shape=none

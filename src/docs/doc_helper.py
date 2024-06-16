@@ -11,11 +11,9 @@ class DocHelper(object):
         self,
         firs,
         lang_strings,
-        economy_schemas,
     ):
         self.firs = firs
         self.lang_strings = lang_strings
-        self.economy_schemas = economy_schemas
 
     # dirty class to help do some doc formatting
     def get_economy_name(self, economy):
@@ -80,7 +78,7 @@ class DocHelper(object):
     def get_industry_all_name_strings(self, industry):
         # names can vary in each economy
         result = []
-        for economy in self.economy_schemas:
+        for economy in self.firs.economy_manager:
             name = industry.get_property("name", economy)
             result.append(utils.unwrap_nml_string_declaration(name))
         return set(result)
@@ -128,16 +126,15 @@ class DocHelper(object):
         return self.lang_strings.get("INDUSTRY_INFO_" + industry.id.upper(), "")
 
     def industry_is_unused(self, industry, economy):
-        if industry in self.economy_schemas[economy]["enabled_industries"]:
+        if industry in economy.industries:
             return False
         else:
             return True
 
     def industries_accepting_cargo_for_economy(self, cargo, economy):
         result = set()
-        if cargo in self.economy_schemas[economy]["enabled_cargos"]:
-            # this could be updated to use firs.industry_manager methods, but eh
-            for industry in self.economy_schemas[economy]["enabled_industries"]:
+        if cargo in economy.cargos:
+            for industry in economy.industries:
                 cargo_list = industry.get_accept_cargo_types(economy)
                 for cargo_label in cargo_list:
                     if cargo.cargo_label == cargo_label:
@@ -147,9 +144,8 @@ class DocHelper(object):
 
     def industries_producing_cargo_for_economy(self, cargo, economy):
         result = set()
-        if cargo in self.economy_schemas[economy]["enabled_cargos"]:
-            # this could be updated to use firs.industry_manager methods, but eh
-            for industry in self.economy_schemas[economy]["enabled_industries"]:
+        if cargo in economy.cargos:
+            for industry in economy.industries:
                 cargo_list = industry.get_prod_cargo_types(economy)
                 for cargo_label, output_ratio in cargo_list:
                     if cargo.cargo_label == cargo_label:
@@ -184,19 +180,10 @@ class DocHelper(object):
                     result.append(cargo)
         return result
 
-    def filter_cargos_by_active_in_economy(self, cargo_list, economy):
-        # For industries, OpenTTD automatically filters non-active cargos in-game, but the docs need to do it manually
-        result = []
-        for cargo in cargo_list:
-            if cargo in self.economy_schemas[economy]["enabled_cargos"]:
-                result.append(cargo)
-        return result
-
     def cargos_produced_by_industry(self, industry, economy):
         result = self.get_cargo_objects_from_labels(
             [label for label, output_ratio in industry.get_prod_cargo_types(economy)]
         )
-        result = self.filter_cargos_by_active_in_economy(result, economy)
         result = sorted(result, key=self.get_cargo_name)
         return result
 
@@ -204,7 +191,6 @@ class DocHelper(object):
         result = self.get_cargo_objects_from_labels(
             industry.get_accept_cargo_types(economy)
         )
-        result = self.filter_cargos_by_active_in_economy(result, economy)
         result = sorted(result, key=self.get_cargo_name)
         return result
 
