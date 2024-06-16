@@ -53,8 +53,10 @@ def render_lang(target, lang_name, lang_dst, dst_file_extension):
 
 
 def main():
-    print("[RENDER LANG]")
     start = time()
+    print("[RENDER LANG]")
+
+    firs.main()
 
     if "target" in makefile_args:
         targets = [makefile_args["target"]]

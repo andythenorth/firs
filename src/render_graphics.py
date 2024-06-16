@@ -43,6 +43,8 @@ def main():
     start = time()
     print("[RENDER GRAPHICS]")
 
+    firs.main()
+
     report_sprites_complete(registered_cargos, registered_industries)
 
     # eh, how long does this take anyway?

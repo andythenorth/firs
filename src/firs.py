@@ -32,113 +32,124 @@ import economies
 
 registered_economies = economies.registered_economies
 
-# guard against mistakes with cargo ids in economies
-known_cargo_ids = [cargo.id for cargo in registered_cargos]
-cargo_label_id_mapping = {cargo.cargo_label: cargo.id for cargo in registered_cargos}
-for economy in registered_economies:
-    for cargo_id in economy.cargo_ids:
-        if cargo_id not in known_cargo_ids:
-            raise Exception(
-                economy.id
-                + ' economy includes cargo ID "'
-                + cargo_id
-                + '" which does not exist'
-            )
-    # guard against industries defining accepted / produced cargos that aren't available in the economy
-    # - prevents callback failures
-    # - prevents possibly incorrect combinatorial production maths
+def incompatible_industries():
+    # !! this is in firs module root temporarily whilst refactoring firs module to use main()
+    # this can't be called until all industries, economies and cargos are registered
+    result = {}
     for industry in registered_industries:
-        if industry.economy_variations[economy.id].enabled:
-            for cargo_label in industry.get_accept_cargo_types(economy):
-                if cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
-                    utils.echo_message(
-                        " ".join(
-                            [
-                                "In economy",
-                                economy.id,
-                                "industry",
-                                industry.id,
-                                "accepts",
-                                cargo_label,
-                                "which is not available for that economy",
-                            ]
-                        )
-                    )
-            for cargo_label, amount in industry.get_prod_cargo_types(economy):
-                if cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
-                    utils.echo_message(
-                        " ".join(
-                            [
-                                "In economy",
-                                economy.id,
-                                "industry",
-                                industry.id,
-                                "produces",
-                                cargo_label,
-                                "which is not available for that economy",
-                            ]
-                        )
-                    )
-
-# cargo production and incompatibility lists have to be done after all industries, economies and cargos are registered
-# this means they have to live here, which isn't ideal, but eh
-industries_producing_cargo = {}
-for cargo in registered_cargos:
-    industries_producing_cargo[cargo.cargo_label] = []
-
-for industry in registered_industries:
-    produced = []
-    for economy in registered_economies:
-        for cargo_label, ratio in industry.get_prod_cargo_types(economy):
-            produced.append(cargo_label)
-    for cargo_label in set(produced):
-        industries_producing_cargo[cargo_label].append(industry)
-
-industries_accepting_cargo = {}
-for cargo in registered_cargos:
-    industries_accepting_cargo[cargo.cargo_label] = []
-
-for industry in registered_industries:
-    accepted = []
-    for economy in registered_economies:
-        for cargo_label in industry.get_accept_cargo_types(economy):
-            accepted.append(cargo_label)
-    for cargo_label in set(accepted):
-        industries_accepting_cargo[cargo_label].append(industry)
-
-incompatible_industries = {}
-for industry in registered_industries:
-    incompatible = []
-    # special case supplies, pax, mail to exclude them (not useful in checks)
-    excluded_cargos = ["ENSP", "FMSP", "PASS", "MAIL"]
-    for cargo, prod_industries in industries_producing_cargo.items():
-        if cargo not in excluded_cargos:
-            if industry in prod_industries:
-                incompatible.extend(industries_accepting_cargo[cargo])
-    for cargo, accept_industries in industries_accepting_cargo.items():
+        incompatible = []
         # special case supplies, pax, mail to exclude them (not useful in checks)
-        if cargo not in excluded_cargos:
-            if industry in accept_industries:
-                incompatible.extend(industries_producing_cargo[cargo])
-    incompatible_industries[industry] = set(incompatible)
+        excluded_cargos = ["ENSP", "FMSP", "PASS", "MAIL"]
+        for cargo, prod_industries in industries_producing_cargo().items():
+            if cargo not in excluded_cargos:
+                if industry in prod_industries:
+                    incompatible.extend(industries_accepting_cargo()[cargo])
+        for cargo, accept_industries in industries_accepting_cargo().items():
+            # special case supplies, pax, mail to exclude them (not useful in checks)
+            if cargo not in excluded_cargos:
+                if industry in accept_industries:
+                    incompatible.extend(industries_producing_cargo()[cargo])
+        result[industry] = set(incompatible)
+    return result
 
-# guard against unused / wasted industry IDs
-# n.b. sometimes there are valid unused IDs during development
-# note also that tile ID should be cleaned up if removing an industry id
-for industry_id, industry_numeric_id in global_constants.industry_numeric_ids.items():
-    found = False
+def industries_producing_cargo():
+    # !! this is in firs module root temporarily whilst refactoring firs module to use main()
+    result = {}
+    for cargo in registered_cargos:
+        result[cargo.cargo_label] = []
+
     for industry in registered_industries:
-        if industry_id == industry.id:
-            found = True
-            break
-    if found == False:
-        utils.echo_message("Not found: " + industry_id + " from global_constants")
+        produced = []
+        for economy in registered_economies:
+            for cargo_label, ratio in industry.get_prod_cargo_types(economy):
+                produced.append(cargo_label)
+        for cargo_label in set(produced):
+            result[cargo_label].append(industry)
 
-# guard against (1) too many objects (2) invalid objects
-counter = 0
-for industry in registered_industries:
-    for grf_object in industry.objects.values():
-        grf_object.validate()
-        counter += 1
-        if counter > 64000:
-            raise BaseException("Object ID limit exceeded", counter, grf_object.id) # yair, try harder
+    return result
+
+def industries_accepting_cargo():
+    # !! this is in firs module root temporarily whilst refactoring firs module to use main()
+    # this can't be called until all industries, economies and cargos are registered
+    result = {}
+    for cargo in registered_cargos:
+        result[cargo.cargo_label] = []
+
+    for industry in registered_industries:
+        accepted = []
+        for economy in registered_economies:
+            for cargo_label in industry.get_accept_cargo_types(economy):
+                accepted.append(cargo_label)
+        for cargo_label in set(accepted):
+            result[cargo_label].append(industry)
+
+    return result
+
+def main():
+    # guard against mistakes with cargo ids in economies
+    known_cargo_ids = [cargo.id for cargo in registered_cargos]
+    cargo_label_id_mapping = {cargo.cargo_label: cargo.id for cargo in registered_cargos}
+    for economy in registered_economies:
+        for cargo_id in economy.cargo_ids:
+            if cargo_id not in known_cargo_ids:
+                raise Exception(
+                    economy.id
+                    + ' economy includes cargo ID "'
+                    + cargo_id
+                    + '" which does not exist'
+                )
+        # guard against industries defining accepted / produced cargos that aren't available in the economy
+        # - prevents callback failures
+        # - prevents possibly incorrect combinatorial production maths
+        for industry in registered_industries:
+            if industry.economy_variations[economy.id].enabled:
+                for cargo_label in industry.get_accept_cargo_types(economy):
+                    if cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
+                        utils.echo_message(
+                            " ".join(
+                                [
+                                    "In economy",
+                                    economy.id,
+                                    "industry",
+                                    industry.id,
+                                    "accepts",
+                                    cargo_label,
+                                    "which is not available for that economy",
+                                ]
+                            )
+                        )
+                for cargo_label, amount in industry.get_prod_cargo_types(economy):
+                    if cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
+                        utils.echo_message(
+                            " ".join(
+                                [
+                                    "In economy",
+                                    economy.id,
+                                    "industry",
+                                    industry.id,
+                                    "produces",
+                                    cargo_label,
+                                    "which is not available for that economy",
+                                ]
+                            )
+                        )
+    # guard against unused / wasted industry IDs
+    # n.b. sometimes there are valid unused IDs during development
+    # note also that tile ID should be cleaned up if removing an industry id
+    for industry_id, industry_numeric_id in global_constants.industry_numeric_ids.items():
+        found = False
+        for industry in registered_industries:
+            if industry_id == industry.id:
+                found = True
+                break
+        if found == False:
+            utils.echo_message("Not found: " + industry_id + " from global_constants")
+
+    # guard against (1) too many objects (2) invalid objects
+    counter = 0
+    for industry in registered_industries:
+        for grf_object in industry.objects.values():
+            grf_object.validate()
+            counter += 1
+            if counter > 64000:
+                raise BaseException("Object ID limit exceeded", counter, grf_object.id) # yair, try harder

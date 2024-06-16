@@ -112,8 +112,10 @@ def render_docs(
 
 
 def main():
-    print("[RENDER DOCS]")
     start = time()
+    print("[RENDER DOCS]")
+
+    firs.main()
 
     lang_strings = utils.get_lang_data("grf", "english")["lang_strings"]
 

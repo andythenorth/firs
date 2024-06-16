@@ -97,6 +97,8 @@ def main():
     start = time()
     print("[RENDER GS]")
 
+    firs.main()
+
     if os.path.exists(gs_dst):
         shutil.rmtree(gs_dst)
     if not os.path.exists(gs_dst):

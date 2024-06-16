@@ -16,7 +16,6 @@ from grf.perm_storage_mappings import perm_storage_mappings, get_perm_num
 registered_cargos = firs.registered_cargos
 registered_industries = firs.registered_industries
 registered_economies = firs.registered_economies
-incompatible_industries = firs.incompatible_industries
 
 from chameleon import PageTemplateLoader  # chameleon used in most template cases
 
@@ -66,7 +65,7 @@ def render_industry_nml(industry):
     only_build_test_industry = makefile_args.get("test_industry", None)
     if not only_build_test_industry or only_build_test_industry == industry.id:
         result = industry.render_nml(
-            incompatible_industries=incompatible_industries,
+            incompatible_industries=firs.incompatible_industries(),
         )
     else:
         result = ""
@@ -81,8 +80,11 @@ def render_industry_nml(industry):
 
 
 def main():
-    print("[RENDER NML]")
     start = time()
+    print("[RENDER NML]")
+
+    firs.main()
+
     grf_nml = codecs.open(
         os.path.join(firs.generated_files_path, "firs.nml"), "w", "utf8"
     )
