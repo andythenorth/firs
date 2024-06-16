@@ -56,6 +56,10 @@ class CargoManager(list):
     def cargo_ids(self):
         return [cargo.id for cargo in self]
 
+    @property
+    def cargo_label_id_mapping(self):
+        return {cargo.cargo_label: cargo.id for cargo in self}
+
 
 class EconomyManager(list):
     """
@@ -228,7 +232,7 @@ def main():
 
     # guard against mistakes with cargo ids in economies
     # !! CABBAGE - should this be directly on the economy - surely it should validate itself?
-    cargo_label_id_mapping = {cargo.cargo_label: cargo.id for cargo in cargo_manager}
+    # !! should probably be on the industry, it's an industry-local validation concern
     for economy in economy_manager:
         # guard against industries defining accepted / produced cargos that aren't available in the economy
         # - prevents callback failures
@@ -236,7 +240,7 @@ def main():
         for industry in industry_manager:
             if industry.economy_variations[economy.id].enabled:
                 for cargo_label in industry.get_accept_cargo_types(economy):
-                    if cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
+                    if cargo_manager.cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
                         utils.echo_message(
                             " ".join(
                                 [
@@ -251,7 +255,7 @@ def main():
                             )
                         )
                 for cargo_label, amount in industry.get_prod_cargo_types(economy):
-                    if cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
+                    if cargo_manager.cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
                         utils.echo_message(
                             " ".join(
                                 [
