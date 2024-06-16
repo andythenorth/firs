@@ -45,6 +45,8 @@ class IndustryManager(list):
         self.provision_incompatible_industries()
         self.provision_industries_per_accepted_cargo()
         self.provision_industries_per_produced_cargo()
+        self.validate_industry_ids()
+        self.validate_object_ids()
 
     def get_industry_by_type(self, industry_id):
         # be aware that this shouldn't be called before all industries have been initialised
@@ -96,6 +98,34 @@ class IndustryManager(list):
                     produced.append(cargo_label)
             for cargo_label in set(produced):
                 self.industries_per_produced_cargo[cargo_label].append(industry)
+
+    def validate_industry_ids(self):
+            # guard against unused / wasted industry IDs
+        # n.b. sometimes there are valid unused IDs during development
+        # note also that tile ID should be cleaned up if removing an industry id
+        for (
+            industry_id,
+            industry_numeric_id,
+        ) in global_constants.industry_numeric_ids.items():
+            found = False
+            for industry in industry_manager:
+                if industry_id == industry.id:
+                    found = True
+                    break
+            if found == False:
+                utils.echo_message("Not found: " + industry_id + " from global_constants")
+
+    def validate_object_ids(self):
+        # guard against (1) too many objects (2) invalid objects
+        counter = 0
+        for industry in industry_manager:
+            for grf_object in industry.objects.values():
+                grf_object.validate()
+                counter += 1
+                if counter > 64000:
+                    raise BaseException(
+                        "Object ID limit exceeded", counter, grf_object.id
+                    )  # yair, try harder
 
 
 def main():
@@ -161,28 +191,3 @@ def main():
                                 ]
                             )
                         )
-    # guard against unused / wasted industry IDs
-    # n.b. sometimes there are valid unused IDs during development
-    # note also that tile ID should be cleaned up if removing an industry id
-    for (
-        industry_id,
-        industry_numeric_id,
-    ) in global_constants.industry_numeric_ids.items():
-        found = False
-        for industry in industry_manager:
-            if industry_id == industry.id:
-                found = True
-                break
-        if found == False:
-            utils.echo_message("Not found: " + industry_id + " from global_constants")
-
-    # guard against (1) too many objects (2) invalid objects
-    counter = 0
-    for industry in industry_manager:
-        for grf_object in industry.objects.values():
-            grf_object.validate()
-            counter += 1
-            if counter > 64000:
-                raise BaseException(
-                    "Object ID limit exceeded", counter, grf_object.id
-                )  # yair, try harder
