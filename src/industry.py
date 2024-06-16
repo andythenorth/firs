@@ -1555,7 +1555,7 @@ class Industry(object):
             # - prevents callback failures
             # - prevents possibly incorrect combinatorial production maths
             if self.economy_variations[economy.id].enabled:
-                for cargo_label in self.get_accept_cargo_types(economy):
+                for cargo_label in self.get_accepted_cargo_labels_by_economy(economy):
                     if firs.cargo_manager.cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
                         utils.echo_message(
                             " ".join(
@@ -2186,7 +2186,7 @@ class Industry(object):
         cargo_types.extend(
             [
                 'accept_cargo("' + label + '")'
-                for label in self.get_accept_cargo_types(economy)
+                for label in self.get_accepted_cargo_labels_by_economy(economy)
             ]
         )
         zero_output = "0"  # *all* industry production is via production cb, so force output to 0 in the action 0 prop
@@ -2199,7 +2199,7 @@ class Industry(object):
         result = "cargo_types: [" + ",".join(cargo_types) + "];"
         return result
 
-    def get_accept_cargo_types(self, economy):
+    def get_accepted_cargo_labels_by_economy(self, economy):
         # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed
         accept_cargo_types = self.get_property("accept_cargo_types", economy)
         if accept_cargo_types is None:
@@ -2217,6 +2217,13 @@ class Industry(object):
                 economy.id,
             )
         return result
+
+    def get_produced_cargo_labels_by_economy(self, economy):
+        result = []
+        for cargo_label, input_ratio in self.get_prod_cargo_types(economy):
+            result.append(cargo_label)
+        return result
+
 
     def get_prod_cargo_types(self, economy):
         # stub, this should be handled in Industry subclasses
@@ -2618,7 +2625,7 @@ class IndustrySecondary(Industry):
                 cargo_num - 1
             ][1]
 
-    def get_accept_cargo_types(self, economy):
+    def get_accepted_cargo_labels_by_economy(self, economy):
         # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed
         accept_cargo_types = [
             i[0] for i in self.get_property("accept_cargos_with_input_ratios", economy)
@@ -2786,7 +2793,7 @@ class Vulcan(object):
         result = {}
         for economy in self.industry.economies_enabled_for_industry:
             economy_config = {}
-            economy_config["accept_cargo_types"] = self.industry.get_accept_cargo_types(
+            economy_config["accept_cargo_types"] = self.industry.get_accepted_cargo_labels_by_economy(
                 economy
             )
             economy_config["vulcan_config"] = self.industry.get_property(

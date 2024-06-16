@@ -155,7 +155,7 @@ class IndustryManager(list):
         for industry in self:
             accepted = []
             for economy in economy_manager:
-                for cargo_label in industry.get_accept_cargo_types(economy):
+                for cargo_label in industry.get_accepted_cargo_labels_by_economy(economy):
                     accepted.append(cargo_label)
             for cargo_label in set(accepted):
                 self.industries_per_accepted_cargo[cargo_label].append(industry)
@@ -229,4 +229,3 @@ def main():
     economy_manager.post_init_actions()
     cargo_manager.post_init_actions()
     industry_manager.post_init_actions()
-

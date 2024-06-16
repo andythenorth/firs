@@ -16,7 +16,7 @@ class GSHelper(object):
         result = (
             result
             + "Accepts: "
-            + " ".join(sorted(fingerprint_industry.get_accept_cargo_types(economy)))
+            + " ".join(sorted(fingerprint_industry.get_accepted_cargo_labels_by_economy(economy)))
         )
         result = result + " Produces:"
         for cargo_label, prod_multiplier in sorted(

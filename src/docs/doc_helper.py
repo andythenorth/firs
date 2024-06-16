@@ -135,8 +135,8 @@ class DocHelper(object):
         result = set()
         if cargo in economy.cargos:
             for industry in economy.industries:
-                cargo_list = industry.get_accept_cargo_types(economy)
-                for cargo_label in cargo_list:
+                cargo_label_list = industry.get_accepted_cargo_labels_by_economy(economy)
+                for cargo_label in cargo_label_list:
                     if cargo.cargo_label == cargo_label:
                         result.add(industry)
         result = sorted(result, key=self.get_industry_name)
@@ -189,7 +189,7 @@ class DocHelper(object):
 
     def cargos_accepted_by_industry(self, industry, economy):
         result = self.get_cargo_objects_from_labels(
-            industry.get_accept_cargo_types(economy)
+            industry.get_accepted_cargo_labels_by_economy(economy)
         )
         result = sorted(result, key=self.get_cargo_name)
         return result
