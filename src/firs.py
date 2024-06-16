@@ -5,6 +5,8 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
+import importlib
+
 import os
 
 currentdir = os.curdir
@@ -29,6 +31,7 @@ import economies
 registered_cargos = cargos.registered_cargos
 registered_economies = economies.registered_economies
 
+
 class IndustryManager(list):
     """
     It's convenient to have a structure for working with industries.
@@ -36,17 +39,17 @@ class IndustryManager(list):
     Extends default python list, as it's a convenient behaviour (the instantiated class instance behaves like a list object).
     """
 
-    def __init__(self):
-        # !! CABBAGE - later we want to register industries directly into this structure, and remove registered_industries module structure
-        for industry in industries.registered_industries:
-            self.append(industry)
+    def add_industry(self, industry_module):
+        industry_module.industry.validate()
+        self.append(industry_module.industry)
 
-    """
-    # !! CABBAGE - later we want to register industries directly into this structure, and remove registered_industries module structure
-    def add_railtype(self, railtype_module):
-        railtype = railtype_module.main(disabled=False)
-        self.append(railtype)
-    """
+    def get_industry_by_type(self, industry_id):
+        # be aware that this shouldn't be called before all industries have been initialised
+        for industry in self:
+            if industry.id == industry_id:
+                return industry
+        # if none found, that's an error, don't handle the error, just blow up
+
 
 def incompatible_industries():
     # !! this is in firs module root temporarily whilst refactoring firs module to use main()
@@ -68,6 +71,7 @@ def incompatible_industries():
         result[industry] = set(incompatible)
     return result
 
+
 def industries_producing_cargo():
     # !! this is in firs module root temporarily whilst refactoring firs module to use main()
     result = {}
@@ -83,6 +87,7 @@ def industries_producing_cargo():
             result[cargo_label].append(industry)
 
     return result
+
 
 def industries_accepting_cargo():
     # !! this is in firs module root temporarily whilst refactoring firs module to use main()
@@ -101,13 +106,27 @@ def industries_accepting_cargo():
 
     return result
 
+
 def main():
     # globals *within* this module so they can be accessed externally by other modules using iron_horse.foo
-    globals()['industry_manager'] = IndustryManager()
+    globals()["industry_manager"] = IndustryManager()
+
+    # industrys
+    for industry_module_name in industries.industry_module_names:
+        industry_module = importlib.import_module(
+            "." + industry_module_name, package="industries"
+        )
+        industry_manager.add_industry(industry_module)
+
+    # !! CABBAGE convert to a post-processing method on industry_manage
+    for industry in industry_manager:
+        industry.industry_manager = industry_manager
 
     # guard against mistakes with cargo ids in economies
     known_cargo_ids = [cargo.id for cargo in registered_cargos]
-    cargo_label_id_mapping = {cargo.cargo_label: cargo.id for cargo in registered_cargos}
+    cargo_label_id_mapping = {
+        cargo.cargo_label: cargo.id for cargo in registered_cargos
+    }
     for economy in registered_economies:
         for cargo_id in economy.cargo_ids:
             if cargo_id not in known_cargo_ids:
@@ -155,7 +174,10 @@ def main():
     # guard against unused / wasted industry IDs
     # n.b. sometimes there are valid unused IDs during development
     # note also that tile ID should be cleaned up if removing an industry id
-    for industry_id, industry_numeric_id in global_constants.industry_numeric_ids.items():
+    for (
+        industry_id,
+        industry_numeric_id,
+    ) in global_constants.industry_numeric_ids.items():
         found = False
         for industry in industry_manager:
             if industry_id == industry.id:
@@ -171,4 +193,6 @@ def main():
             grf_object.validate()
             counter += 1
             if counter > 64000:
-                raise BaseException("Object ID limit exceeded", counter, grf_object.id) # yair, try harder
+                raise BaseException(
+                    "Object ID limit exceeded", counter, grf_object.id
+                )  # yair, try harder

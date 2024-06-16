@@ -1,7 +1,3 @@
-import importlib
-
-registered_industries = []
-
 # keep these alphabetised for ease of maintaining
 industry_module_names = [
     "appliance_factory",
@@ -91,9 +87,3 @@ industry_module_names = [
     "wharf",
     "wire_rod_mill",
 ]
-
-
-package_name = "industries"
-for industry_module_name in industry_module_names:
-    industry_module = importlib.import_module("." + industry_module_name, package_name)
-    industry_module.industry.register()

@@ -22,18 +22,11 @@ templates = PageTemplateLoader(
     os.path.join(currentdir, "src", "grf", "templates"), format="text"
 )
 
+# firs is imported, but main is not called in this module, this relies on firs already being present in the context
+import firs
+
 from grf.perm_storage_mappings import register_perm_storage_mapping, get_perm_num
 from economies import registered_economies
-from industries import registered_industries
-
-
-def get_another_industry(id):
-    # utility function so that we can provide numeric ids in nml output, rather than relying identifiers
-    # this enables compiling single-industries without nml barfing on missing identifiers (in location checks and such)
-    for industry in registered_industries:
-        if industry.id == id:
-            return industry
-    # if none found, that's an error, don't handle the error, just blow up
 
 
 class Tile(object):
@@ -1284,7 +1277,7 @@ class IndustryLocationChecks(object):
                 # if the ID of the keystone type is higher than the current industry, the current industry won't be built on smaller maps or low industry settings
                 # this is because OpenTTD places first round of industries sequentially by ID (lowest first) at map gen time
                 if self.industry.numeric_id < (
-                    get_another_industry(industry_type).numeric_id
+                    firs.industry_manager.get_industry_by_type(industry_type).numeric_id
                 ):
                     utils.echo_message(
                         self.industry.id
@@ -1348,7 +1341,7 @@ class IndustryLocationCheckTownIndustryCount(IndustryLocationCheck):
 
     def __init__(self, require_town_industry_count):
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
-        self.industry_type_numeric_id = get_another_industry(
+        self.industry_type_numeric_id = firs.industry_manager.get_industry_by_type(
             require_town_industry_count[0]
         ).numeric_id
         self.min_count = require_town_industry_count[1]
@@ -1393,7 +1386,7 @@ class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
     def __init__(self, industry_type, distance):
         self.industry_type = industry_type
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
-        self.industry_type_numeric_id = get_another_industry(industry_type).numeric_id
+        self.industry_type_numeric_id = firs.industry_manager.get_industry_by_type(industry_type).numeric_id
         self.distance = distance
         self.procedure_name = "require_min_distance_to_another_industry_type"
         self.params = [self.industry_type_numeric_id, self.distance]
@@ -1404,7 +1397,7 @@ class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
 
     def __init__(self, industry_type, distance, permissive_flag):
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
-        self.industry_type_numeric_id = get_another_industry(industry_type).numeric_id
+        self.industry_type_numeric_id = firs.industry_manager.get_industry_by_type(industry_type).numeric_id
         self.distance = distance
         self.permissive_flag = permissive_flag
         self.procedure_name = "require_max_distance_to_another_industry_type"
@@ -1512,6 +1505,8 @@ class Industry(object):
 
     def __init__(self, id, **kwargs):
         self.id = id
+        # industry manager is provided by firs in post-processing, after all industries have been initialised
+        self.industry_manager = None
         self.tiles = []
         self.sprites = []
         self.smoke_sprites = []
@@ -1539,7 +1534,8 @@ class Industry(object):
         self.provides_snow = kwargs.get("provides_snow", False)
         self.sprites_complete = kwargs["sprites_complete"]
 
-    def register(self):
+    def validate(self):
+        # any post init checks we want to do can go here
         if (
             len(
                 [
@@ -1550,8 +1546,9 @@ class Industry(object):
             )
             == 0
         ):
+            # warn only if not used, no need to raise exception
             utils.echo_message(self.id + " is not used in any economy")
-        registered_industries.append(self)
+
 
     def enable_in_economy(self, economy_id, **kwargs):
         self.economy_variations[economy_id].enabled = True
@@ -2200,9 +2197,6 @@ class Industry(object):
             raise BaseException("Unknown animation_context ", animation_context)
         return {"tiles": tiles, "feature": feature}
 
-    def get_another_industry(self, id):
-        return get_another_industry(id)
-
     @property
     def uses_magic_trees(self):
         for spritelayout in self.spritelayouts:
@@ -2328,7 +2322,6 @@ class Industry(object):
                 get_perm_num=self.get_perm_num,
                 global_constants=global_constants,
                 graphics_temp_storage=global_constants.graphics_temp_storage,  # convenience measure
-                registered_industries=registered_industries,
                 incompatible_industries=incompatible_industries,
                 economies=registered_economies,
                 utils=utils,
