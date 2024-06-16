@@ -116,7 +116,6 @@ def main():
     # print(lang_strings)
 
     doc_helper = DocHelper(
-        firs=firs,
         lang_strings=lang_strings,
     )
 

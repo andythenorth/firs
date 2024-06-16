@@ -3,16 +3,16 @@ import colorsys
 import utils as utils
 import global_constants as global_constants
 
+# firs is imported, but main is not called in this module, this relies on firs already being present in the context
+import firs
 
 class DocHelper(object):
     palette = utils.dos_palette_to_rgb()
 
     def __init__(
         self,
-        firs,
         lang_strings,
     ):
-        self.firs = firs
         self.lang_strings = lang_strings
 
     # dirty class to help do some doc formatting
@@ -78,7 +78,7 @@ class DocHelper(object):
     def get_industry_all_name_strings(self, industry):
         # names can vary in each economy
         result = []
-        for economy in self.firs.economy_manager:
+        for economy in firs.economy_manager:
             name = industry.get_property("name", economy)
             result.append(utils.unwrap_nml_string_declaration(name))
         return set(result)
@@ -103,7 +103,7 @@ class DocHelper(object):
     def get_registered_cargo_sorted_by_name(self):
         # cargos don't store the name as a python attr, but we often need to iterate over their names in A-Z order
         result = dict(
-            (self.get_cargo_name(cargo), cargo) for cargo in self.firs.cargo_manager
+            (self.get_cargo_name(cargo), cargo) for cargo in firs.cargo_manager
         )
         return sorted(result.items())
 
@@ -112,7 +112,7 @@ class DocHelper(object):
         # note the list slice so that we sort on the first name in alpha-order for industries with multiple names
         result = dict(
             (self.get_industry_all_names(industry)[0], industry)
-            for industry in self.firs.industry_manager
+            for industry in firs.industry_manager
         )
         return sorted(result.items())
 
@@ -155,7 +155,7 @@ class DocHelper(object):
 
     def cargo_is_unused_in_any_economy(self, cargo):
         result = 0
-        for economy in self.firs.economy_manager:
+        for economy in firs.economy_manager:
             result += len(self.industries_accepting_cargo_for_economy(cargo, economy))
             result += len(self.industries_producing_cargo_for_economy(cargo, economy))
         if result == 0:
@@ -175,7 +175,7 @@ class DocHelper(object):
     def get_cargo_objects_from_labels(self, cargo_list):
         result = []
         for cargo_label in cargo_list:
-            for cargo in self.firs.cargo_manager:
+            for cargo in firs.cargo_manager:
                 if cargo_label == cargo.cargo_label:
                     result.append(cargo)
         return result
@@ -213,10 +213,10 @@ class DocHelper(object):
         return result
 
     def unpack_cargoflow_node_name(self, node):
-        for cargo in self.firs.cargo_manager:
+        for cargo in firs.cargo_manager:
             if cargo.id == node:
                 return "C_" + node
-        for industry in self.firs.industry_manager:
+        for industry in firs.industry_manager:
             if industry.id == node:
                 return "I_" + node
         # fail if the node can't be unpacked
@@ -245,7 +245,7 @@ class DocHelper(object):
         # first find the industries from (1) cargoflow_graph_tuning (2) town industries
         # we want the actual industry, not the id
         all_wormhole_industries = []
-        for industry in self.firs.industry_manager:
+        for industry in firs.industry_manager:
             if industry.id in (
                 economy.cargoflow_graph_tuning.get("wormhole_industries", [])
             ):
