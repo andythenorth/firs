@@ -1549,6 +1549,42 @@ class Industry(object):
         ):
             # warn only if not used, no need to raise exception
             utils.echo_message(self.id + " is not used in any economy")
+        # guard against mistakes with cargo ids in economies
+        for economy in firs.economy_manager:
+            # guard against industries defining accepted / produced cargos that aren't available in the economy
+            # - prevents callback failures
+            # - prevents possibly incorrect combinatorial production maths
+            if self.economy_variations[economy.id].enabled:
+                for cargo_label in self.get_accept_cargo_types(economy):
+                    if firs.cargo_manager.cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
+                        utils.echo_message(
+                            " ".join(
+                                [
+                                    "In economy",
+                                    economy.id,
+                                    "industry",
+                                    self.id,
+                                    "accepts",
+                                    cargo_label,
+                                    "which is not available for that economy",
+                                ]
+                            )
+                        )
+                for cargo_label, amount in self.get_prod_cargo_types(economy):
+                    if firs.cargo_manager.cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
+                        utils.echo_message(
+                            " ".join(
+                                [
+                                    "In economy",
+                                    economy.id,
+                                    "industry",
+                                    self.id,
+                                    "produces",
+                                    cargo_label,
+                                    "which is not available for that economy",
+                                ]
+                            )
+                        )
 
     def enable_in_economy(self, economy_id, **kwargs):
         self.economy_variations[economy_id].enabled = True
