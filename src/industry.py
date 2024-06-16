@@ -2248,6 +2248,7 @@ class Industry(object):
     def incompatible_industries(self):
         # there's no sensible way to get incompatible_industries from here, it has to be passed in when rendering templates
         # there are genuine performance reasons to have incompatibility calculated once and only once by firs.py
+        # as of June 2024, this might be outdated, and firs.industry_manager might eliminate this issue, but haven't updated this
         utils.echo_message(
             "Incompatible industries not implemented in industry.py, must be passed from firs.py at render time"
         )
