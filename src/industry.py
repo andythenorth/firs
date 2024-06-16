@@ -1505,8 +1505,6 @@ class Industry(object):
 
     def __init__(self, id, **kwargs):
         self.id = id
-        # industry manager is provided by firs in post-processing, after all industries have been initialised
-        self.industry_manager = None
         self.tiles = []
         self.sprites = []
         self.smoke_sprites = []

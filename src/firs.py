@@ -52,7 +52,6 @@ class IndustryManager(list):
 
     @property
     def incompatible_industries(self):
-        # !! this is in firs module root temporarily whilst refactoring firs module to use main()
         # this can't be called until all industries, economies and cargos are registered
         result = {}
         for industry in self:
@@ -111,16 +110,12 @@ def main():
     # globals *within* this module so they can be accessed externally by other modules using iron_horse.foo
     globals()["industry_manager"] = IndustryManager()
 
-    # industrys
+    # industries
     for industry_module_name in industries.industry_module_names:
         industry_module = importlib.import_module(
             "." + industry_module_name, package="industries"
         )
         industry_manager.add_industry(industry_module)
-
-    # !! CABBAGE convert to a post-processing method on industry_manage
-    for industry in industry_manager:
-        industry.industry_manager = industry_manager
 
     # guard against mistakes with cargo ids in economies
     known_cargo_ids = [cargo.id for cargo in registered_cargos]
