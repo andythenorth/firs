@@ -1,4 +1,4 @@
-<tal:industries repeat="industry registered_industries">
+<tal:industries repeat="industry firs.industry_manager">
     #${industry.id} text {
         fill: #000;
     }

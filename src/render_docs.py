@@ -48,10 +48,6 @@ metadata.update(global_constants.metadata)
 registered_cargos = sorted(
     firs.registered_cargos, key=lambda registered_cargos: registered_cargos.id
 )
-registered_industries = sorted(
-    firs.registered_industries,
-    key=lambda registered_industries: registered_industries.id,
-)
 registered_economies = firs.registered_economies
 economy_schemas = {}
 
@@ -69,8 +65,8 @@ def render_docs(
             doc_name + (".md" if use_markdown else ".pt")
         ]  # .pt is the conventional extension for chameleon page templates
         doc = template(
+            firs=firs,
             registered_cargos=registered_cargos,
-            registered_industries=registered_industries,
             registered_economies=registered_economies,
             economy_schemas=economy_schemas,
             incompatible_grfs=incompatible_grfs,
@@ -135,7 +131,7 @@ def main():
         ]
         enabled_industries = [
             industry
-            for industry in registered_industries
+            for industry in firs.industry_manager
             if industry.economy_variations[economy.id].enabled
         ]
         economy_schemas[economy] = {
@@ -144,8 +140,8 @@ def main():
         }
 
     doc_helper = DocHelper(
+        firs=firs,
         lang_strings=lang_strings,
-        registered_industries=registered_industries,
         registered_cargos=registered_cargos,
         registered_economies=registered_economies,
         economy_schemas=economy_schemas,

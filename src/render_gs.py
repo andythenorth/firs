@@ -15,7 +15,6 @@ from gs import manufacturers
 from polar_fox import git_info
 
 registered_cargos = firs.registered_cargos
-registered_industries = firs.registered_industries
 registered_economies = firs.registered_economies
 
 from chameleon import PageTemplateLoader  # chameleon used in most template cases
@@ -56,10 +55,10 @@ def render_nuts(nuts_by_subdir):
             # dst_file.write(meta_header) # tempoarily disabled as it borks line numbers for debugging
             result = utils.unescape_chameleon_output(
                 nut_template(
+                    firs=firs,
                     gs_helper=GSHelper(),
                     makefile_args=makefile_args,
                     git_info=git_info,
-                    registered_industries=registered_industries,
                     registered_cargos=registered_cargos,
                     registered_economies=registered_economies,
                     manufacturers=manufacturers,

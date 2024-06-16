@@ -7,7 +7,7 @@
             <li><a href="#source">Obtaining Source</a></li>
             <li><a href="#compiling">Compiling</a></li>
             <li><a href="#cargos">Cargos (${len(registered_cargos)})</a></li>
-            <li><a href="#industries">Industries (${len(registered_industries)})</a></li>
+            <li><a href="#industries">Industries (${len(firs.industry_manager)})</a></li>
             <li><a href="#incompatible-grfs">Incompatible NewGRFs (${len(incompatible_grfs)})</a></li>
         </ul>
     </div>
@@ -93,7 +93,7 @@
     <br />
 
     <div id="industries">
-        <h3>Industries (${len(registered_industries)}) <small>Code Reference</small></h3>
+        <h3>Industries (${len(firs.industry_manager)}) <small>Code Reference</small></h3>
         <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/IndustryDefaultProps">&#187; Reference for NewGRF industry IDs</a></p>
         <table class="table table-striped tablesorter firs-table">
             <thead>

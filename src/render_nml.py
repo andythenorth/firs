@@ -14,7 +14,6 @@ from grf.incompatible_grfs import incompatible_grfs
 from grf.perm_storage_mappings import perm_storage_mappings, get_perm_num
 
 registered_cargos = firs.registered_cargos
-registered_industries = firs.registered_industries
 registered_economies = firs.registered_economies
 
 from chameleon import PageTemplateLoader  # chameleon used in most template cases
@@ -36,7 +35,7 @@ def render_header_item_nml(header_item):
     template = templates[header_item + ".pynml"]
     result = utils.unescape_chameleon_output(
         template(
-            registered_industries=registered_industries,
+            firs=firs,
             registered_cargos=registered_cargos,
             economies=registered_economies,
             perm_storage_mappings=perm_storage_mappings,
@@ -114,7 +113,7 @@ def main():
         grf_nml.write(render_header_item_nml(header_item))
 
     # multiprocessing was tried here and removed as it was empirically slower in testing (due to overhead of starting extra pythons probably)
-    for industry in registered_industries:
+    for industry in firs.industry_manager:
         grf_nml.write(render_industry_nml(industry))
     grf_nml.close()
     # eh, how long does this take anyway?

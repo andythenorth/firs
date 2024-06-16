@@ -9,14 +9,14 @@ class DocHelper(object):
 
     def __init__(
         self,
+        firs,
         lang_strings,
-        registered_industries,
         registered_cargos,
         registered_economies,
         economy_schemas,
     ):
+        self.firs = firs
         self.lang_strings = lang_strings
-        self.registered_industries = registered_industries
         self.registered_cargos = registered_cargos
         self.registered_economies = registered_economies
         self.economy_schemas = economy_schemas
@@ -118,7 +118,7 @@ class DocHelper(object):
         # note the list slice so that we sort on the first name in alpha-order for industries with multiple names
         result = dict(
             (self.get_industry_all_names(industry)[0], industry)
-            for industry in self.registered_industries
+            for industry in self.firs.industry_manager
         )
         return sorted(result.items())
 
@@ -232,7 +232,7 @@ class DocHelper(object):
         for cargo in self.registered_cargos:
             if cargo.id == node:
                 return "C_" + node
-        for industry in self.registered_industries:
+        for industry in self.firs.industry_manager:
             if industry.id == node:
                 return "I_" + node
         # fail if the node can't be unpacked
@@ -261,7 +261,7 @@ class DocHelper(object):
         # first find the industries from (1) cargoflow_graph_tuning (2) town industries
         # we want the actual industry, not the id
         all_wormhole_industries = []
-        for industry in self.registered_industries:
+        for industry in self.firs.industry_manager:
             if industry.id in (
                 economy.cargoflow_graph_tuning.get("wormhole_industries", [])
             ):

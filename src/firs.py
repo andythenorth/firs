@@ -27,14 +27,32 @@ import industries
 import economies
 
 registered_cargos = cargos.registered_cargos
-registered_industries = industries.registered_industries
 registered_economies = economies.registered_economies
+
+class IndustryManager(list):
+    """
+    It's convenient to have a structure for working with industries.
+    This is a class to manage that, intended for use as a singleton, which can be passed to templates etc.
+    Extends default python list, as it's a convenient behaviour (the instantiated class instance behaves like a list object).
+    """
+
+    def __init__(self):
+        # !! CABBAGE - later we want to register industries directly into this structure, and remove registered_industries module structure
+        for industry in industries.registered_industries:
+            self.append(industry)
+
+    """
+    # !! CABBAGE - later we want to register industries directly into this structure, and remove registered_industries module structure
+    def add_railtype(self, railtype_module):
+        railtype = railtype_module.main(disabled=False)
+        self.append(railtype)
+    """
 
 def incompatible_industries():
     # !! this is in firs module root temporarily whilst refactoring firs module to use main()
     # this can't be called until all industries, economies and cargos are registered
     result = {}
-    for industry in registered_industries:
+    for industry in industry_manager:
         incompatible = []
         # special case supplies, pax, mail to exclude them (not useful in checks)
         excluded_cargos = ["ENSP", "FMSP", "PASS", "MAIL"]
@@ -56,7 +74,7 @@ def industries_producing_cargo():
     for cargo in registered_cargos:
         result[cargo.cargo_label] = []
 
-    for industry in registered_industries:
+    for industry in industry_manager:
         produced = []
         for economy in registered_economies:
             for cargo_label, ratio in industry.get_prod_cargo_types(economy):
@@ -73,7 +91,7 @@ def industries_accepting_cargo():
     for cargo in registered_cargos:
         result[cargo.cargo_label] = []
 
-    for industry in registered_industries:
+    for industry in industry_manager:
         accepted = []
         for economy in registered_economies:
             for cargo_label in industry.get_accept_cargo_types(economy):
@@ -84,6 +102,9 @@ def industries_accepting_cargo():
     return result
 
 def main():
+    # globals *within* this module so they can be accessed externally by other modules using iron_horse.foo
+    globals()['industry_manager'] = IndustryManager()
+
     # guard against mistakes with cargo ids in economies
     known_cargo_ids = [cargo.id for cargo in registered_cargos]
     cargo_label_id_mapping = {cargo.cargo_label: cargo.id for cargo in registered_cargos}
@@ -99,7 +120,7 @@ def main():
         # guard against industries defining accepted / produced cargos that aren't available in the economy
         # - prevents callback failures
         # - prevents possibly incorrect combinatorial production maths
-        for industry in registered_industries:
+        for industry in industry_manager:
             if industry.economy_variations[economy.id].enabled:
                 for cargo_label in industry.get_accept_cargo_types(economy):
                     if cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
@@ -136,7 +157,7 @@ def main():
     # note also that tile ID should be cleaned up if removing an industry id
     for industry_id, industry_numeric_id in global_constants.industry_numeric_ids.items():
         found = False
-        for industry in registered_industries:
+        for industry in industry_manager:
             if industry_id == industry.id:
                 found = True
                 break
@@ -145,7 +166,7 @@ def main():
 
     # guard against (1) too many objects (2) invalid objects
     counter = 0
-    for industry in registered_industries:
+    for industry in industry_manager:
         for grf_object in industry.objects.values():
             grf_object.validate()
             counter += 1

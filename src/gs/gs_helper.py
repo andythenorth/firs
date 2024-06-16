@@ -4,11 +4,11 @@ import global_constants
 class GSHelper(object):
     # GS-specific methods for formatting etc in chameleon templates, this is only for things not handled in industry.py or utils.py
 
-    def get_economy_fingerprint(self, registered_industries, economy):
+    def get_economy_fingerprint(self, firs, economy):
         result = ""
         # as of August 2021, port and wharf were sufficiently unique, and at least one of them is in every economy
         # !! this could use a guard to enforce uniqueness
-        for industry in registered_industries:
+        for industry in firs.industry_manager:
             if industry.id in ["port", "wharf"]:
                 if industry.economy_variations[economy.id].enabled:
                     fingerprint_industry = industry

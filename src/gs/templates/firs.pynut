@@ -31,7 +31,7 @@ class FIRS {
 
         /* initial configuration of industry properties */
         firs.industries <- {};
-        <tal:industries repeat="industry registered_industries">
+        <tal:industries repeat="industry firs.industry_manager">
             firs.industries["${industry.id}"] <- VulcanIndustrySpec(
                 ${industry.numeric_id},
                 GSIndustryType.ResolveNewGRFID(firs.grfid, ${industry.numeric_id}),
@@ -48,7 +48,7 @@ class FIRS {
             economy.numeric_id <- ${economy.numeric_id};
             economy.cargo_labels <- ${gs_helper.gs_list_repr([cargo.cargo_label for cargo in economy.get_cargos(registered_cargos)])};
             // fingerprint relies on wharf or port industry types as of March 2023; this was sufficiently unique, but may be fragile if economies are changed
-            economy.fingerprint <- "${gs_helper.get_economy_fingerprint(registered_industries, economy)}";
+            economy.fingerprint <- "${gs_helper.get_economy_fingerprint(firs, economy)}";
             firs.economies["${economy.id}"] <- economy;
         </tal:economies>
 
