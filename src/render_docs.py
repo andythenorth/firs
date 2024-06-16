@@ -119,17 +119,9 @@ def main():
     # print(lang_strings)
 
     for economy in firs.economy_manager:
-        enabled_cargos = [
-            cargo for cargo in firs.cargo_manager if cargo.id in economy.cargo_ids
-        ]
-        enabled_industries = [
-            industry
-            for industry in firs.industry_manager
-            if industry.economy_variations[economy.id].enabled
-        ]
         economy_schemas[economy] = {
-            "enabled_cargos": enabled_cargos,
-            "enabled_industries": enabled_industries,
+            "enabled_cargos": economy.cargos,
+            "enabled_industries": economy.industries,
         }
 
     doc_helper = DocHelper(

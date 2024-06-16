@@ -27,11 +27,20 @@ class Economy(object):
                     + '" which does not exist'
                 )
 
-    def get_cargos(self):
+    @property
+    def cargos(self):
         result = []
         for cargo in firs.cargo_manager:
             if cargo.id in self.cargo_ids:
                 result.append(cargo)
+        return result
+
+    @property
+    def industries(self):
+        result = []
+        for industry in firs.industry_manager:
+            if industry.economy_variations[self.id].enabled:
+                result.append(industry)
         return result
 
     def forcibly_space_cargo_price_factors(self, registered_cargos):

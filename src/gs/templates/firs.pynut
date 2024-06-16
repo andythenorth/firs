@@ -46,7 +46,7 @@ class FIRS {
             local economy = {};
             economy.id <- "${economy.id}";
             economy.numeric_id <- ${economy.numeric_id};
-            economy.cargo_labels <- ${gs_helper.gs_list_repr([cargo.cargo_label for cargo in economy.get_cargos()])};
+            economy.cargo_labels <- ${gs_helper.gs_list_repr([cargo.cargo_label for cargo in economy.cargos])};
             // fingerprint relies on wharf or port industry types as of March 2023; this was sufficiently unique, but may be fragile if economies are changed
             economy.fingerprint <- "${gs_helper.get_economy_fingerprint(firs, economy)}";
             firs.economies["${economy.id}"] <- economy;
