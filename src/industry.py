@@ -26,7 +26,6 @@ templates = PageTemplateLoader(
 import firs
 
 from grf.perm_storage_mappings import register_perm_storage_mapping, get_perm_num
-from economies import registered_economies
 
 
 class Tile(object):
@@ -1520,7 +1519,7 @@ class Industry(object):
         # economy variation structure is provisioned containing all economies, but with empty industry config, industry is then enabled for economies later
         # this could be changed so that economies are only provisioned by enable_in_economy(), but it's easy to ensure economy looks up don't fail this way
         self.economy_variations = {}
-        for economy in registered_economies:
+        for economy in firs.economy_manager:
             self.add_economy_variation(economy)
         # Vulcan is used to configure FIRS GS compile-time properties, and holds Vulcan-specific properties and methods
         self.vulcan = Vulcan(self)
@@ -1668,7 +1667,7 @@ class Industry(object):
     @property
     def economies_enabled_for_industry(self):
         result = []
-        for economy in registered_economies:
+        for economy in firs.economy_manager:
             if self.get_property("enabled", economy):
                 result.append(economy)
         return result
@@ -2315,12 +2314,12 @@ class Industry(object):
         industry_template = templates[self.template]
         templated_nml = utils.unescape_chameleon_output(
             industry_template(
+                firs=firs,
                 industry=self,
                 get_perm_num=self.get_perm_num,
                 global_constants=global_constants,
                 graphics_temp_storage=global_constants.graphics_temp_storage,  # convenience measure
                 incompatible_industries=firs.industry_manager.incompatible_industries,
-                economies=registered_economies,
                 utils=utils,
             )
         )
@@ -2676,7 +2675,7 @@ class IndustryTertiary(Industry):
     def has_production(self):
         # bool, used to micro-optimise compile
         result = False
-        for economy in registered_economies:
+        for economy in firs.economy_manager:
             if (
                 self.get_property("prod_cargo_types_with_multipliers", economy)
                 is not None

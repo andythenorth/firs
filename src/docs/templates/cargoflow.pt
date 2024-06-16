@@ -1,4 +1,4 @@
-<tal:economies repeat="economy registered_economies">
+<tal:economies repeat="economy firs.economy_manager">
     <tal:vars define="banned_cargos doc_helper.get_cargoflow_banned_cargos();
                       supply_cargos doc_helper.get_cargoflow_supply_cargos();
                       wormhole_cargos doc_helper.get_cargoflow_wormhole_cargos(economy)">

@@ -4,7 +4,7 @@
     }
 </tal:industries>
 
-<tal:cargos repeat="cargo registered_cargos">
+<tal:cargos repeat="cargo firs.cargo_manager">
     #${cargo.id} ellipse {
         // fill: #D8DBE2;
         stroke-width: 3;

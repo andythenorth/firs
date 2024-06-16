@@ -19,7 +19,7 @@ item(FEAT_CARGOS, ${cargo.id}_${economy.id}, ${cargo.get_numeric_id(economy)}) {
         <!--! props that can't be fetched with standard methods -->
         cargo_payment_list_colour: ${cargo.get_cargo_colour(economy)};
         station_list_colour: ${cargo.get_cargo_colour(economy)};
-        price_factor: ${economy.forcibly_space_cargo_price_factors(registered_cargos)[cargo.id]};
+        price_factor: ${economy.forcibly_space_cargo_price_factors(firs.cargo_manager)[cargo.id]};
         cargo_label: ${cargo.get_cargo_label()};
         number: ${cargo.get_numeric_id(economy)};
     }

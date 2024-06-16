@@ -44,11 +44,6 @@ makefile_args = utils.get_makefile_args(sys)
 metadata = {}
 metadata.update(global_constants.metadata)
 
-# default sort for docs is by id
-registered_cargos = sorted(
-    firs.registered_cargos, key=lambda registered_cargos: registered_cargos.id
-)
-registered_economies = firs.registered_economies
 economy_schemas = {}
 
 
@@ -66,8 +61,6 @@ def render_docs(
         ]  # .pt is the conventional extension for chameleon page templates
         doc = template(
             firs=firs,
-            registered_cargos=registered_cargos,
-            registered_economies=registered_economies,
             economy_schemas=economy_schemas,
             incompatible_grfs=incompatible_grfs,
             global_constants=global_constants,
@@ -125,9 +118,9 @@ def main():
         lang_strings[node_name] = node_value["base"]
     # print(lang_strings)
 
-    for economy in registered_economies:
+    for economy in firs.economy_manager:
         enabled_cargos = [
-            cargo for cargo in registered_cargos if cargo.id in economy.cargo_ids
+            cargo for cargo in firs.cargo_manager if cargo.id in economy.cargo_ids
         ]
         enabled_industries = [
             industry
@@ -142,8 +135,6 @@ def main():
     doc_helper = DocHelper(
         firs=firs,
         lang_strings=lang_strings,
-        registered_cargos=registered_cargos,
-        registered_economies=registered_economies,
         economy_schemas=economy_schemas,
     )
 
@@ -187,7 +178,7 @@ def main():
     render_docs(stylesheets, "css", doc_helper)
 
     # cargoflow wrappers are just different enough to not fit generic render_docs() case without making it painfully convoluted
-    for economy in registered_economies:
+    for economy in firs.economy_manager:
         template = docs_templates["cargoflow_wrapper.pt"]
         result = template(economy=economy, doc_helper=doc_helper)
         doc_name = "cargoflow_" + doc_helper.get_economy_name_char_safe(economy)

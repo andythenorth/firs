@@ -16,11 +16,38 @@ os.environ["CHAMELEON_CACHE"] = chameleon_cache_path
 generated_files_path = os.path.join(currentdir, global_constants.generated_files_dir)
 
 import cargos
-import industries
 import economies
+import industries
 
 registered_cargos = cargos.registered_cargos
-registered_economies = economies.registered_economies
+
+
+class CargoManager(list):
+    """
+    It's convenient to have a structure for working with cargos.
+    This is a class to manage that, intended for use as a singleton, which can be passed to templates etc.
+    Extends default python list, as it's a convenient behaviour (the instantiated class instance behaves like a list object).
+    """
+
+    def add_cargo(self, cargo_module_name):
+        cargo_module = importlib.import_module(
+            "." + cargo_module_name, package="cargos"
+        )
+        self.append(cargo_module.cargo)
+
+
+class EconomyManager(list):
+    """
+    It's convenient to have a structure for working with economies.
+    This is a class to manage that, intended for use as a singleton, which can be passed to templates etc.
+    Extends default python list, as it's a convenient behaviour (the instantiated class instance behaves like a list object).
+    """
+
+    def add_economy(self, economy_module_name):
+        economy_module = importlib.import_module(
+            "." + economy_module_name, package="economies"
+        )
+        self.append(economy_module.economy)
 
 
 class IndustryManager(list):
@@ -35,7 +62,10 @@ class IndustryManager(list):
         self.industries_per_accepted_cargo = {}
         self.industries_per_produced_cargo = {}
 
-    def add_industry(self, industry_module):
+    def add_industry(self, industry_module_name):
+        industry_module = importlib.import_module(
+            "." + industry_module_name, package="industries"
+        )
         industry_module.industry.validate()
         self.append(industry_module.industry)
 
@@ -73,12 +103,12 @@ class IndustryManager(list):
 
     def provision_industries_per_accepted_cargo(self):
         # this can't be called until all industries, economies and cargos are registered
-        for cargo in registered_cargos:
+        for cargo in cargo_manager:
             self.industries_per_accepted_cargo[cargo.cargo_label] = []
 
         for industry in self:
             accepted = []
-            for economy in registered_economies:
+            for economy in economy_manager:
                 for cargo_label in industry.get_accept_cargo_types(economy):
                     accepted.append(cargo_label)
             for cargo_label in set(accepted):
@@ -86,19 +116,19 @@ class IndustryManager(list):
 
     def provision_industries_per_produced_cargo(self):
         # this can't be called until all industries, economies and cargos are registered
-        for cargo in registered_cargos:
+        for cargo in cargo_manager:
             self.industries_per_produced_cargo[cargo.cargo_label] = []
 
         for industry in self:
             produced = []
-            for economy in registered_economies:
+            for economy in economy_manager:
                 for cargo_label, ratio in industry.get_prod_cargo_types(economy):
                     produced.append(cargo_label)
             for cargo_label in set(produced):
                 self.industries_per_produced_cargo[cargo_label].append(industry)
 
     def validate_industry_ids(self):
-            # guard against unused / wasted industry IDs
+        # guard against unused / wasted industry IDs
         # n.b. sometimes there are valid unused IDs during development
         # note also that tile ID should be cleaned up if removing an industry id
         for (
@@ -111,7 +141,9 @@ class IndustryManager(list):
                     found = True
                     break
             if found == False:
-                utils.echo_message("Not found: " + industry_id + " from global_constants")
+                utils.echo_message(
+                    "Not found: " + industry_id + " from global_constants"
+                )
 
     def validate_object_ids(self):
         # guard against (1) too many objects (2) invalid objects
@@ -131,25 +163,32 @@ def main():
         os.mkdir(generated_files_path)
 
     # globals *within* this module so they can be accessed externally by other modules using iron_horse.foo
+    globals()["economy_manager"] = EconomyManager()
+    globals()["cargo_manager"] = CargoManager()
     globals()["industry_manager"] = IndustryManager()
+
+    # economies
+    for economy_module_name in economies.economy_module_names:
+        economy_manager.add_economy(economy_module_name)
+
+    # cargos
+    for cargo_module_name in cargos.cargo_module_names:
+        cargo_manager.add_cargo(cargo_module_name)
 
     # industries
     for industry_module_name in industries.industry_module_names:
-        industry_module = importlib.import_module(
-            "." + industry_module_name, package="industries"
-        )
-        industry_manager.add_industry(industry_module)
+        industry_manager.add_industry(industry_module_name)
 
     # post init actions called after all industries, cargos and economies are inited
     industry_manager.post_init_actions()
 
     # guard against mistakes with cargo ids in economies
     # !! CABBAGE - should this be directly on the economy - surely it should validate itself?
-    known_cargo_ids = [cargo.id for cargo in registered_cargos]
+    known_cargo_ids = [cargo.id for cargo in cargo_manager]
     cargo_label_id_mapping = {
-        cargo.cargo_label: cargo.id for cargo in registered_cargos
+        cargo.cargo_label: cargo.id for cargo in cargo_manager
     }
-    for economy in registered_economies:
+    for economy in economy_manager:
         for cargo_id in economy.cargo_ids:
             if cargo_id not in known_cargo_ids:
                 raise Exception(

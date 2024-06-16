@@ -83,7 +83,7 @@ switch (FEAT_INDUSTRIES, SELF, GetTileY, var[0x80, 0, 0xFFFFFFFF] / map_x_edge) 
     return;
 }
 
-<tal:economies repeat="economy economies">
+<tal:economies repeat="economy firs.economy_manager">
     <tal:biomes repeat="biome economy.biomes">
         switch (FEAT_INDUSTRIES, SELF, location_check_industry_economy_biome_test_${economy.id}_${biome.id},
                 [

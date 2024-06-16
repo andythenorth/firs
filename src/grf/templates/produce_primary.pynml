@@ -33,7 +33,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_calculate_current_productio
 }
 
 <!--! On arrival of supplies, push the amount to perm storage, then clear from stockpile -->
-<tal:economies repeat="economy economies">
+<tal:economies repeat="economy firs.economy_manager">
     produce (${industry.id}_clear_incoming_cargo_waiting_${economy.numeric_id},
         [
             <tal:subtract repeat="cargo industry.get_accept_cargo_types(economy)">
@@ -75,14 +75,14 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_calculate_current_productio
 </tal:economies>
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_cargo_arrival, economy) {
-    <tal:economies repeat="economy economies">
+    <tal:economies repeat="economy firs.economy_manager">
         ${economy.numeric_id}: ${industry.id}_store_incoming_cargo_waiting_${economy.numeric_id};
     </tal:economies>
 }
 
 
 <!--! On 256 ticks, if supplied, produce extra output cargo at appropriate multiplier -->
-<tal:economies repeat="economy economies">
+<tal:economies repeat="economy firs.economy_manager">
     produce(${industry.id}_produce_256_ticks_economy_${economy.numeric_id},
         [<!--! no accept in 256 cb -->],
         [
@@ -100,7 +100,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_cargo_arrival, economy) {
 </tal:economies>
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks_switch_economy, economy) {
-<tal:economies repeat="economy economies">
+<tal:economies repeat="economy firs.economy_manager">
     ${economy.numeric_id}: ${industry.id}_produce_256_ticks_economy_${economy.numeric_id};
 </tal:economies>
 }

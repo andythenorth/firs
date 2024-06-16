@@ -3,7 +3,7 @@
     Very simple.
 -->
 
-<tal:economies repeat="economy economies">
+<tal:economies repeat="economy firs.economy_manager">
     produce(${industry.id}_production_256_economy_${economy.numeric_id},
         [<!--! no accept in 256 cb -->],
         [
@@ -21,7 +21,7 @@
 </tal:economies>
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks, economy) {
-<tal:economies repeat="economy economies">
+<tal:economies repeat="economy firs.economy_manager">
     ${economy.numeric_id}: ${industry.id}_production_256_economy_${economy.numeric_id};
 </tal:economies>
 }

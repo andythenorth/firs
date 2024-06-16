@@ -53,7 +53,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tal:industry_cargos repeat="economy registered_economies">
+                            <tal:industry_cargos repeat="economy firs.economy_manager">
                                 <tr tal:condition="not: doc_helper.industry_is_unused(industry, economy)">
                                     <th>
                                         <strong>

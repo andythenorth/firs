@@ -7,8 +7,6 @@ from time import time
 
 import firs
 
-registered_cargos = firs.registered_cargos
-
 def report_sprites_complete(cargos, industries):
     # project management eh :P
     # cargos
@@ -44,7 +42,7 @@ def main():
 
     firs.main()
 
-    report_sprites_complete(registered_cargos, firs.industry_manager)
+    report_sprites_complete(firs.cargo_manager, firs.industry_manager)
 
     # eh, how long does this take anyway?
     print(

@@ -8,7 +8,7 @@
     Actual production is on delivery.
 -->
 
-<tal:economies repeat="economy economies">
+<tal:economies repeat="economy firs.economy_manager">
     produce (${industry.id}_produce_${economy.numeric_id},
         [
             <tal:subtract repeat="cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
@@ -132,7 +132,7 @@
 </tal:economies>
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_cargo_arrival, economy) {
-    <tal:economies repeat="economy economies">
+    <tal:economies repeat="economy firs.economy_manager">
         ${economy.numeric_id}: ${industry.id}_produce_calculation_${economy.numeric_id};
     </tal:economies>
 }

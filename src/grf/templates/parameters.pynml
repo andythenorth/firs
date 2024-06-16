@@ -18,7 +18,7 @@ if (marine_industry_max_coastal_distance == 0) {
 // !! as the selected value in the action 14 UI remains constant (thereby changing which economy is active)
 // !! there is zero chance of it being worthwhile to write a migration for existing savegames
 // !! therefore rethink this - whether it's worthwhile, or whether to just reset economy order every time when adding new economies
-<tal:economy_param repeat="economy economies">
+<tal:economy_param repeat="economy firs.economy_manager">
     if (economy_selection == ${repeat.economy.index}) {
         economy = ${economy.numeric_id};
     }

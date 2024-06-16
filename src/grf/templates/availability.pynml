@@ -24,7 +24,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_available_game_mode, game_mode == 
 }
 
 <!--! Allow only within the availability years (variable by economy) -->
-<tal:economy_dates repeat="economy economies">
+<tal:economy_dates repeat="economy firs.economy_manager">
     /* ${industry.get_intro_year(economy)} */
     switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_availability_${economy.numeric_id}, current_date) {
         date(${industry.get_intro_year(economy)},1,1) .. date(${industry.get_expiry_year(economy)},12,31): ${industry.id}_available_game_mode;
@@ -33,7 +33,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_available_game_mode, game_mode == 
 </tal:economy_dates>
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_availability, economy) {
-    <tal:economy_switches repeat="economy economies">
+    <tal:economy_switches repeat="economy firs.economy_manager">
         ${economy.numeric_id}: ${industry.id}_check_availability_${economy.numeric_id};
     </tal:economy_switches>
 }

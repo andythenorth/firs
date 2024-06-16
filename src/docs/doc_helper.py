@@ -11,14 +11,10 @@ class DocHelper(object):
         self,
         firs,
         lang_strings,
-        registered_cargos,
-        registered_economies,
         economy_schemas,
     ):
         self.firs = firs
         self.lang_strings = lang_strings
-        self.registered_cargos = registered_cargos
-        self.registered_economies = registered_economies
         self.economy_schemas = economy_schemas
 
     # dirty class to help do some doc formatting
@@ -109,7 +105,7 @@ class DocHelper(object):
     def get_registered_cargo_sorted_by_name(self):
         # cargos don't store the name as a python attr, but we often need to iterate over their names in A-Z order
         result = dict(
-            (self.get_cargo_name(cargo), cargo) for cargo in self.registered_cargos
+            (self.get_cargo_name(cargo), cargo) for cargo in self.firs.cargo_manager
         )
         return sorted(result.items())
 
@@ -163,7 +159,7 @@ class DocHelper(object):
 
     def cargo_is_unused_in_any_economy(self, cargo):
         result = 0
-        for economy in self.registered_economies:
+        for economy in self.firs.economy_manager:
             result += len(self.industries_accepting_cargo_for_economy(cargo, economy))
             result += len(self.industries_producing_cargo_for_economy(cargo, economy))
         if result == 0:
@@ -183,7 +179,7 @@ class DocHelper(object):
     def get_cargo_objects_from_labels(self, cargo_list):
         result = []
         for cargo_label in cargo_list:
-            for cargo in self.registered_cargos:
+            for cargo in self.firs.cargo_manager:
                 if cargo_label == cargo.cargo_label:
                     result.append(cargo)
         return result
@@ -231,7 +227,7 @@ class DocHelper(object):
         return result
 
     def unpack_cargoflow_node_name(self, node):
-        for cargo in self.registered_cargos:
+        for cargo in self.firs.cargo_manager:
             if cargo.id == node:
                 return "C_" + node
         for industry in self.firs.industry_manager:

@@ -15,7 +15,6 @@ from gs import manufacturers
 from polar_fox import git_info
 
 registered_cargos = firs.registered_cargos
-registered_economies = firs.registered_economies
 
 from chameleon import PageTemplateLoader  # chameleon used in most template cases
 
@@ -60,7 +59,6 @@ def render_nuts(nuts_by_subdir):
                     makefile_args=makefile_args,
                     git_info=git_info,
                     registered_cargos=registered_cargos,
-                    registered_economies=registered_economies,
                     manufacturers=manufacturers,
                     utils=utils,
                 )

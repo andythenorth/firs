@@ -13,9 +13,6 @@ from polar_fox import git_info
 from grf.incompatible_grfs import incompatible_grfs
 from grf.perm_storage_mappings import perm_storage_mappings, get_perm_num
 
-registered_cargos = firs.registered_cargos
-registered_economies = firs.registered_economies
-
 from chameleon import PageTemplateLoader  # chameleon used in most template cases
 
 # setup the places we look for templates
@@ -36,8 +33,6 @@ def render_header_item_nml(header_item):
     result = utils.unescape_chameleon_output(
         template(
             firs=firs,
-            registered_cargos=registered_cargos,
-            economies=registered_economies,
             perm_storage_mappings=perm_storage_mappings,
             get_perm_num=get_perm_num,
             incompatible_grfs=incompatible_grfs,
