@@ -12,7 +12,7 @@ class VulcanManufacturers {
         Log.Info("--", Log.CLASS_VULCAN_MANUFACTURERS);
 
         // Check if manufacturers are loaded from save, if not, create some for demonstration
-        local required_categories = ["Steelmaker", "Automaker", "EquipmentManufacturer", "ChemicalsManufacturer", "BuildingMaterialsManufacturer"];
+        local required_categories = firs.manufacturers.manufacturer_types; // !! temp
         local existing_categories = {};
 
         // Populate existing categories from persistent storage
@@ -48,11 +48,11 @@ class VulcanManufacturers {
     // Generate a unique name for a new manufacturer based on category
     static function GenerateUniqueName(category) {
         local base_names = {};
-        base_names["Steelmaker"] <- ["Central Steel Inc.", "Steeltown Metals", "Ironclad Steel"];
-        base_names["Automaker"] <- ["AutoWorks Ltd.", "Speedster Motors", "RoadKing Vehicles"];
-        base_names["EquipmentManufacturer"] <- ["HeavyMach Corp.", "EquipCo", "Machinists Ltd."];
-        base_names["ChemicalsManufacturer"] <- ["ChemMasters Inc.", "Industrial Chems", "Chemicals Co."];
-        base_names["BuildingMaterialsManufacturer"] <- ["BuildRight Materials", "Concretia Supplies", "ConstructCo"];
+        base_names["steelmaker"] <- ["Central Steel Inc.", "Steeltown Metals", "Ironclad Steel"];
+        base_names["automaker"] <- ["AutoWorks Ltd.", "Speedster Motors", "RoadKing Vehicles"];
+        base_names["equipment_manufacturer"] <- ["HeavyMach Corp.", "EquipCo", "Machinists Ltd."];
+        base_names["chemicals_manufacturer"] <- ["ChemMasters Inc.", "Industrial Chems", "Chemicals Co."];
+        base_names["building_materials_manufacturer"] <- ["BuildRight Materials", "Concretia Supplies", "ConstructCo"];
 
         local used_names = {};
         foreach (manufacturer_id, manufacturer in ::persistent_storage["manufacturers"]) {
@@ -120,7 +120,7 @@ class VulcanManufacturers {
     static function AssignFirstIndustries() {
         local industry_list = GSIndustryList();
         foreach (manufacturer_id, manufacturer in ::persistent_storage["manufacturers"]) {
-            TestManufacturerCabbage.AssignFirstIndustry(industry_list, manufacturer_id, manufacturer, TestManufacturerCabbage.GetKeystonesTemp(manufacturer));
+            TestManufacturerCabbage.AssignFirstIndustry(industry_list, manufacturer_id, manufacturer, TestManufacturerCabbage.GetAnchorsTemp(manufacturer));
         }
     }
 
@@ -169,8 +169,8 @@ class VulcanManufacturers {
 
     static function AssignRemainingIndustries() {
         local cabbage_tiers = {
-            foo_1 = ["Steelmaker", "Automaker"],
-            foo_2 = ["EquipmentManufacturer", "ChemicalsManufacturer", "BuildingMaterialsManufacturer"],
+            foo_1 = ["steelmaker", "automaker"],
+            foo_2 = ["equipment_manufacturer", "chemicals_manufacturer", "building_materials_manufacturer"],
         }
         local cabbage_industries = {
             foo_1 = ["blast_furnace", "electric_arc_furnace", "basic_oxygen_furnace", "assembly_plant", "body_plant", "engine_plant"],
@@ -224,25 +224,49 @@ class VulcanManufacturers {
 // prototyping of industry behaviour
 
 class TestManufacturerCabbage {
-    static function GetKeystonesTemp(manufacturer) {
-        local keystones_temp = {
-            Steelmaker = ["blast_furnace", "electric_arc_furnace"],
-            Automaker = ["assembly_plant", "body_plant", "engine_plant"],
-            EquipmentManufacturer = ["precision_parts_plant", "hardware_factory", "appliance_factory"],
-            ChemicalsManufacturer = ["chlor_alkali_plant", "cryo_plant"],
-            BuildingMaterialsManufacturer = ["concrete_plant", "pipework_fabricator"],
+    static function GetAnchorsTemp(manufacturer) {
+
+        // MOVE TO INDUSTRY OWNERSHIP OR KEEP HERE?
+
+        Log.Info(Repr(firs.industries["blast_furnace"].economy_variations[firs.active_economy.id].vulcan_config.industry_ownership))
+        local result = []
+        foreach (industry_id, industry_spec in firs.active_economy.industries) {
+            if ("industry_ownership" in industry_spec) {
+                if ("manufacturer_types_this_is_anchor_for" in industry_spec.industry_ownership) {
+                    industry_spec.economy_variations[firs.active_economy.id].vulcan_config.industry_ownership
+                    Log.Info(industry_spec.economy_variations[firs.active_economy.id].vulcan_config.industry_ownership.manufacturer_types_this_is_anchor_for);
+                    local manufacturer_types_this_is_anchor_for = industry_spec.economy_variations[firs.active_economy.id].vulcan_config.industry_ownership.manufacturer_types_this_is_anchor_for;
+                    if (_SuperLib_Helper.ArrayFind(manufacturer_types_this_is_anchor_for, manufacturer["category"]) != null) {
+                        result.append(industry_id);
+                    }
+                }
+            }
+        }
+        // !! CABBAGE TEMP
+        if (result.len() > 0) {
+            return result;
+        }
+
+
+        // !! CABBAGE migration support - remove later
+        local anchors_temp = {
+            steelmaker = ["blast_furnace", "electric_arc_furnace"],
+            automaker = ["assembly_plant", "body_plant", "engine_plant"],
+            equipment_manufacturer = ["precision_parts_plant", "hardware_factory", "appliance_factory"],
+            chemicals_manufacturer = ["chlor_alkali_plant", "cryo_plant"],
+            building_materials_manufacturer = ["concrete_plant", "pipework_fabricator"],
         };
-        return keystones_temp[manufacturer["category"]];
+        return anchors_temp[manufacturer["category"]];
     }
 
-    static function AssignFirstIndustry(candidate_industry_list, manufacturer_id, manufacturer, target_industry_types) {
+    static function AssignFirstIndustry(candidate_industry_list, manufacturer_id, manufacturer, anchor_industry_types) {
         Log.Info("Assigning industries for " + manufacturer["name"], Log.CLASS_VULCAN_MANUFACTURERS);
         foreach (industry, _ in candidate_industry_list) {
             if (VulcanIndustryOwnership.IsIndustryOwned(industry)) {
                 continue;
             }
-            // !!! this will always select keystones in order currently, that might be better randomised (or not)?
-            foreach (industry_type in target_industry_types) {
+            // !!! this will always select anchors in order currently, that might be better randomised (or not)?
+            foreach (industry_type in anchor_industry_types) {
                 if (GSIndustry.GetIndustryType(industry) == firs.industries[industry_type].global_id) {
                     Log.Info("Found " + GSIndustry.GetName(industry), Log.CLASS_VULCAN_MANUFACTURERS);
                     VulcanIndustryOwnership.AssignOwner(industry, "manufacturer", manufacturer_id);

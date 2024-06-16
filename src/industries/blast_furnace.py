@@ -27,6 +27,13 @@ industry.enable_in_economy(
     locate_in_specific_biomes=[
         "exclude_map_edges",
     ],
+    vulcan_config={
+        "industry_ownership": {
+            "owner_types": ["manufacturer"],
+            "production_tiers": ["steel_production"],
+            "manufacturer_types_this_is_anchor_for": ["steelmaker"],
+        }
+    },
 )
 
 industry.add_tile(

@@ -107,6 +107,13 @@ class FIRS {
         if (firs.active_economy.id == "STEELTOWN") {
             Log.Info("It's Steeltown");
         }
+
+        /* configuration of manufacturers */
+        firs.manufacturers <- {};
+        firs.manufacturers.manufacturer_types <- [];
+        <tal:manufacturers repeat="manufacturer_type manufacturers.manufacturer_types">
+            firs.manufacturers.manufacturer_types.append("${manufacturer_type}");
+        </tal:manufacturers>
     }
 
     function GetCargoLabelsByGlobalID(cargo_labels) {

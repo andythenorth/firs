@@ -11,6 +11,7 @@ import firs
 import global_constants
 import utils
 from gs.gs_helper import GSHelper
+from gs import manufacturers
 from polar_fox import git_info
 
 registered_cargos = firs.registered_cargos
@@ -61,6 +62,7 @@ def render_nuts(nuts_by_subdir):
                     registered_industries=registered_industries,
                     registered_cargos=registered_cargos,
                     registered_economies=registered_economies,
+                    manufacturers=manufacturers,
                     utils=utils,
                 )
             )
