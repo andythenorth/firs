@@ -16,6 +16,17 @@ class Economy(object):
     def add_biome(self, biome_id, **kwargs):
         self.biomes.append(Biome(biome_id, **kwargs))
 
+
+    def validate_economy_cargo_ids(self):
+        for cargo_id in self.cargo_ids:
+            if cargo_id not in firs.cargo_manager.cargos_by_id:
+                raise Exception(
+                    self.id
+                    + ' economy includes cargo ID "'
+                    + cargo_id
+                    + '" which does not exist'
+                )
+
     def get_cargos(self):
         result = []
         for cargo in firs.cargo_manager:

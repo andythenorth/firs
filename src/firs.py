@@ -52,6 +52,10 @@ class CargoManager(list):
                 seen[cargo.icon_indices] = []
             seen[cargo.icon_indices].append(cargo)
 
+    @property
+    def cargos_by_id(self):
+        return [cargo.id for cargo in self]
+
 
 class EconomyManager(list):
     """
@@ -68,6 +72,7 @@ class EconomyManager(list):
 
     def post_init_actions(self):
         self.validate_economy_ids()
+        self.validate_economies_cargo_ids()
 
     def validate_economy_ids(self):
         # guard, duplicate numeric IDs don't work :P
@@ -81,6 +86,10 @@ class EconomyManager(list):
                     + seen[economy.numeric_id].id
                 )
             seen[economy.numeric_id] = economy
+
+    def validate_economies_cargo_ids(self):
+        for economy in self:
+            economy.validate_economy_cargo_ids()
 
 
 class IndustryManager(list):
@@ -222,14 +231,6 @@ def main():
     known_cargo_ids = [cargo.id for cargo in cargo_manager]
     cargo_label_id_mapping = {cargo.cargo_label: cargo.id for cargo in cargo_manager}
     for economy in economy_manager:
-        for cargo_id in economy.cargo_ids:
-            if cargo_id not in known_cargo_ids:
-                raise Exception(
-                    economy.id
-                    + ' economy includes cargo ID "'
-                    + cargo_id
-                    + '" which does not exist'
-                )
         # guard against industries defining accepted / produced cargos that aren't available in the economy
         # - prevents callback failures
         # - prevents possibly incorrect combinatorial production maths
