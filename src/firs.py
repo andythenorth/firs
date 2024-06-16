@@ -39,9 +39,15 @@ class IndustryManager(list):
     Extends default python list, as it's a convenient behaviour (the instantiated class instance behaves like a list object).
     """
 
+    def __init__(self):
+        self.incompatible_industries = {}
+
     def add_industry(self, industry_module):
         industry_module.industry.validate()
         self.append(industry_module.industry)
+
+    def post_init_actions(self):
+        self.provision_incompatible_industries()
 
     def get_industry_by_type(self, industry_id):
         # be aware that this shouldn't be called before all industries have been initialised
@@ -50,10 +56,9 @@ class IndustryManager(list):
                 return industry
         # if none found, that's an error, don't handle the error, just blow up
 
-    @property
-    def incompatible_industries(self):
+    def provision_incompatible_industries(self):
         # this can't be called until all industries, economies and cargos are registered
-        result = {}
+        # this was tested as expensive if called repeatedly (9s vs 2s when cached), so it needs to to be called once during post init and cached
         for industry in self:
             incompatible = []
             # special case supplies, pax, mail to exclude them (not useful in checks)
@@ -67,8 +72,7 @@ class IndustryManager(list):
                 if cargo not in excluded_cargos:
                     if industry in accept_industries:
                         incompatible.extend(industries_producing_cargo()[cargo])
-            result[industry] = set(incompatible)
-        return result
+            self.incompatible_industries[industry] = set(incompatible)
 
 
 def industries_producing_cargo():
@@ -116,6 +120,9 @@ def main():
             "." + industry_module_name, package="industries"
         )
         industry_manager.add_industry(industry_module)
+
+    # post init actions called after all industries, cargos and economies are inited
+    industry_manager.post_init_actions()
 
     # guard against mistakes with cargo ids in economies
     known_cargo_ids = [cargo.id for cargo in registered_cargos]
