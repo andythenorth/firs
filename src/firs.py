@@ -23,13 +23,11 @@ if not os.path.exists(generated_files_path):
     os.mkdir(generated_files_path)
 
 import cargos
-
-registered_cargos = cargos.registered_cargos
 import industries
-
-registered_industries = industries.registered_industries
 import economies
 
+registered_cargos = cargos.registered_cargos
+registered_industries = industries.registered_industries
 registered_economies = economies.registered_economies
 
 def incompatible_industries():
