@@ -37,9 +37,6 @@ class Economy(object):
     def forcibly_space_cargo_price_factors(self, registered_cargos):
         # check for overlapping price factors (and adjust if necessary) to ensure they're all unique per economy
         # prevents cargos overlapping on the payment curves chart in-game
-        print(
-            "CABBAGE - can forcibly_space_cargo_price_factors be called from EconomyManager().post_init_actions()?"
-        )
         cargos_by_price_factor = []
         for cargo_id in self.cargo_ids:
             for cargo in registered_cargos:
