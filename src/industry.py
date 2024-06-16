@@ -2313,8 +2313,7 @@ class Industry(object):
         # just a silly pass-through to perm_storage_mappings.get_perm_num
         return get_perm_num(identifier, industry_type=self.__class__.__name__)
 
-    def render_nml(self, incompatible_industries):
-        # incompatible industries isn't known at init time, only at compile time, so it has to be passed in
+    def render_nml(self):
         industry_template = templates[self.template]
         templated_nml = utils.unescape_chameleon_output(
             industry_template(
@@ -2322,7 +2321,7 @@ class Industry(object):
                 get_perm_num=self.get_perm_num,
                 global_constants=global_constants,
                 graphics_temp_storage=global_constants.graphics_temp_storage,  # convenience measure
-                incompatible_industries=incompatible_industries,
+                incompatible_industries=firs.industry_manager.incompatible_industries,
                 economies=registered_economies,
                 utils=utils,
             )

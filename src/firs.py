@@ -50,26 +50,26 @@ class IndustryManager(list):
                 return industry
         # if none found, that's an error, don't handle the error, just blow up
 
-
-def incompatible_industries():
-    # !! this is in firs module root temporarily whilst refactoring firs module to use main()
-    # this can't be called until all industries, economies and cargos are registered
-    result = {}
-    for industry in industry_manager:
-        incompatible = []
-        # special case supplies, pax, mail to exclude them (not useful in checks)
-        excluded_cargos = ["ENSP", "FMSP", "PASS", "MAIL"]
-        for cargo, prod_industries in industries_producing_cargo().items():
-            if cargo not in excluded_cargos:
-                if industry in prod_industries:
-                    incompatible.extend(industries_accepting_cargo()[cargo])
-        for cargo, accept_industries in industries_accepting_cargo().items():
+    @property
+    def incompatible_industries(self):
+        # !! this is in firs module root temporarily whilst refactoring firs module to use main()
+        # this can't be called until all industries, economies and cargos are registered
+        result = {}
+        for industry in self:
+            incompatible = []
             # special case supplies, pax, mail to exclude them (not useful in checks)
-            if cargo not in excluded_cargos:
-                if industry in accept_industries:
-                    incompatible.extend(industries_producing_cargo()[cargo])
-        result[industry] = set(incompatible)
-    return result
+            excluded_cargos = ["ENSP", "FMSP", "PASS", "MAIL"]
+            for cargo, prod_industries in industries_producing_cargo().items():
+                if cargo not in excluded_cargos:
+                    if industry in prod_industries:
+                        incompatible.extend(industries_accepting_cargo()[cargo])
+            for cargo, accept_industries in industries_accepting_cargo().items():
+                # special case supplies, pax, mail to exclude them (not useful in checks)
+                if cargo not in excluded_cargos:
+                    if industry in accept_industries:
+                        incompatible.extend(industries_producing_cargo()[cargo])
+            result[industry] = set(incompatible)
+        return result
 
 
 def industries_producing_cargo():

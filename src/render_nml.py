@@ -63,9 +63,7 @@ def render_header_item_nml(header_item):
 def render_industry_nml(industry):
     only_build_test_industry = makefile_args.get("test_industry", None)
     if not only_build_test_industry or only_build_test_industry == industry.id:
-        result = industry.render_nml(
-            incompatible_industries=firs.incompatible_industries(),
-        )
+        result = industry.render_nml()
     else:
         result = ""
     # write the nml per vehicle to disk, it aids debugging
