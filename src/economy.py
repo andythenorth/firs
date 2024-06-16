@@ -19,7 +19,7 @@ class Economy(object):
 
     def validate_economy_cargo_ids(self):
         for cargo_id in self.cargo_ids:
-            if cargo_id not in firs.cargo_manager.cargos_by_id:
+            if cargo_id not in firs.cargo_manager.cargo_ids:
                 raise Exception(
                     self.id
                     + ' economy includes cargo ID "'

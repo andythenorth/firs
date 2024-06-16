@@ -53,7 +53,7 @@ class CargoManager(list):
             seen[cargo.icon_indices].append(cargo)
 
     @property
-    def cargos_by_id(self):
+    def cargo_ids(self):
         return [cargo.id for cargo in self]
 
 
@@ -228,7 +228,6 @@ def main():
 
     # guard against mistakes with cargo ids in economies
     # !! CABBAGE - should this be directly on the economy - surely it should validate itself?
-    known_cargo_ids = [cargo.id for cargo in cargo_manager]
     cargo_label_id_mapping = {cargo.cargo_label: cargo.id for cargo in cargo_manager}
     for economy in economy_manager:
         # guard against industries defining accepted / produced cargos that aren't available in the economy
