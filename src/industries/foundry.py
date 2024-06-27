@@ -10,13 +10,15 @@ industry = IndustrySecondary(
         ("SOAP", 1),
     ],
     prod_cargo_types_with_output_ratios=[
-        # high foundry output production is unwanted
-        ("FOCA", 5),
-        ("ENSP", 1),
+        ("FOCA", 6),
+        ("ENSP", 2),
     ],
     prob_in_game="2",
     prob_map_gen="5",
     map_colour="166",
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[["basic_oxygen_furnace", "electric_arc_furnace"], 56],
+    ),
     name="string(STR_IND_FORGE_AND_FOUNDRY)",
     nearby_station_name="string(STR_STATION_FORGE)",
     fund_cost_multiplier="63",
