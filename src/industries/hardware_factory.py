@@ -35,8 +35,9 @@ industry.enable_in_economy(
         ("ALUM", 6),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("HWAR", 4),
-        ("GOOD", 4),
+        ("HWAR", 3),
+        ("GOOD", 3),
+        ("ENSP", 2),
     ],
 )
 
