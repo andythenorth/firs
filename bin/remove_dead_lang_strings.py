@@ -4,7 +4,7 @@ import tomlkit
 
 # List of strings to be removed from the TOML files
 dead_strings = [
-    "STR_CID_CARBON_STEEL"
+    "STR_IND_METAL_WORKSHOP"
 ]
 
 def delete_string(dead_strings, file_path):
@@ -19,8 +19,10 @@ def delete_string(dead_strings, file_path):
     with open(file_path, "w", encoding="utf-8") as file:
         file.write(tomlkit.dumps(lang_source))
 
+    print("removed", dead_strings)
+
 def main():
-    lang_dir = os.path.join('src', 'lang')
+    lang_dir = os.path.join('src', 'grf', 'lang')
     for filename in os.listdir(lang_dir):
         if filename.endswith(".toml"):
             file_path = os.path.join(lang_dir, filename)

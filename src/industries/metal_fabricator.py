@@ -1,7 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
-    id="hardware_factory",
+    id="metal_fabricator",
     accept_cargos_with_input_ratios=[
         ("STEL", 6),
         ("RFPR", 2),
@@ -12,7 +12,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="209",
-    name="string(STR_IND_HARDWARE_FACTORY)",
+    name="string(STR_IND_METAL_FABRICATOR)",
     nearby_station_name="string(STR_STATION_HARDWARE_FACTORY)",
     fund_cost_multiplier="120",
     pollution_and_squalor_factor=1,
