@@ -321,7 +321,7 @@ tile_numeric_ids = dict(
     chemical_plant_tile_2=254,
 )
 
-grfid = "F1250008"
+grfid = "F1250009"
 
 metadata = {
     "dev_thread_url": "http://www.tt-forums.net/viewtopic.php?t=41607",
