@@ -112,6 +112,21 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
     # add_to_object_num=5,
 )
+
+# this industry needs outpost layout as there are lots of cargos
+industry.add_industry_outpost_layout(
+    id="hardware_factory_industry_outpost_layout_1",
+    layout=[
+        # test outpost layout
+        (0, 0, "hardware_factory_spritelayout_shed_1"),
+        (0, 1, "hardware_factory_spritelayout_shed_1"),
+        (0, 2, "hardware_factory_spritelayout_office"),
+        (1, 0, "hardware_factory_spritelayout_shed_1"),
+        (1, 1, "hardware_factory_spritelayout_shed_2"),
+        (1, 2, "hardware_factory_spritelayout_tanks"),
+    ],
+)
+
 industry.add_industry_layout(
     id="hardware_factory_industry_layout_1",
     layout=[
@@ -119,13 +134,16 @@ industry.add_industry_layout(
         (0, 1, "hardware_factory_spritelayout_shed_1"),
         (0, 2, "hardware_factory_spritelayout_shed_1"),
         (0, 3, "hardware_factory_spritelayout_shed_2"),
+        (0, 4, "hardware_factory_spritelayout_empty"),
         (1, 0, "hardware_factory_spritelayout_shed_1"),
         (1, 1, "hardware_factory_spritelayout_shed_1"),
         (1, 2, "hardware_factory_spritelayout_empty"),
         (1, 3, "hardware_factory_spritelayout_office"),
+        (1, 4, "hardware_factory_spritelayout_office"),
         (2, 0, "hardware_factory_spritelayout_shed_1"),
         (2, 1, "hardware_factory_spritelayout_shed_1"),
         (2, 2, "hardware_factory_spritelayout_shed_2"),
         (2, 3, "hardware_factory_spritelayout_tanks"),
+        (2, 4, "hardware_factory_spritelayout_tanks"),
     ],
 )
