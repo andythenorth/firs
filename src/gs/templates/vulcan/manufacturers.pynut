@@ -174,7 +174,7 @@ class VulcanManufacturers {
         }
         local cabbage_industries = {
             foo_1 = ["blast_furnace", "electric_arc_furnace", "basic_oxygen_furnace", "assembly_plant", "body_plant", "engine_plant"],
-            foo_2 = ["precision_parts_plant", "hardware_factory", "appliance_factory", "chlor_alkali_plant", "cryo_plant", "pipework_fabricator"],
+            foo_2 = ["precision_parts_plant", "metal_fabricator", "appliance_factory", "chlor_alkali_plant", "cryo_plant", "pipework_fabricator"],
         }
 
         foreach (tier_id, cabbage_tier in cabbage_tiers) {
@@ -232,6 +232,7 @@ class TestManufacturerCabbage {
         local result = []
         foreach (industry_id, industry_spec in firs.active_economy.industries) {
             if ("industry_ownership" in industry_spec) {
+                // CABBAGE - manufacturer_types_this_is_anchor_for is deprecated, put the industries on the manufacturer instead
                 if ("manufacturer_types_this_is_anchor_for" in industry_spec.industry_ownership) {
                     industry_spec.economy_variations[firs.active_economy.id].vulcan_config.industry_ownership
                     Log.Info(industry_spec.economy_variations[firs.active_economy.id].vulcan_config.industry_ownership.manufacturer_types_this_is_anchor_for);
@@ -252,7 +253,7 @@ class TestManufacturerCabbage {
         local anchors_temp = {
             steelmaker = ["blast_furnace", "electric_arc_furnace"],
             automaker = ["assembly_plant", "body_plant", "engine_plant"],
-            equipment_manufacturer = ["precision_parts_plant", "hardware_factory", "appliance_factory"],
+            equipment_manufacturer = ["precision_parts_plant", "metal_fabricator", "appliance_factory"],
             chemicals_manufacturer = ["chlor_alkali_plant", "cryo_plant"],
             building_materials_manufacturer = ["concrete_plant", "pipework_fabricator"],
         };

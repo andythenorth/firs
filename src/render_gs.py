@@ -92,6 +92,7 @@ def main():
     print("[RENDER GS]")
 
     firs.main()
+    manufacturers.main()
 
     if os.path.exists(gs_dst):
         shutil.rmtree(gs_dst)

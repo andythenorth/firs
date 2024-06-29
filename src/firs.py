@@ -95,6 +95,10 @@ class EconomyManager(list):
         for economy in self:
             economy.validate_economy_cargo_ids()
 
+    def get_economy_by_id(self, id):
+        for economy in self:
+            if economy.id == id:
+                return economy
 
 class IndustryManager(list):
     """

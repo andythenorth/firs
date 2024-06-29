@@ -223,7 +223,7 @@ allowed_refits_by_label = {
         "BAKE",
         "ALO_",
         "NHNO",
-        # not CBLK, gets dedicated vehicles or box
+        "CBLK",
     ],
     "cryo_gases": ["CHLO", "O2__", "NH3_", "N7__", "WELD", "H2__", "N7__"],
     "edible_liquids": ["MILK", "WATR", "BEER", "FOOD", "EOIL"],
