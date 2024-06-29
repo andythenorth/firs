@@ -209,8 +209,8 @@ class IndustryManager(list):
 
 
 def main():
-    if not os.path.exists(generated_files_path):
-        os.mkdir(generated_files_path)
+    # exist_ok=True is used for case with parallel make (`make -j 2` or similar), don't fail with error if dir already exists
+    os.makedirs(generated_files_path, exist_ok=True)
 
     # globals *within* this module so they can be accessed externally by other modules using iron_horse.foo
     globals()["economy_manager"] = EconomyManager()
