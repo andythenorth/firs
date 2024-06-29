@@ -18,18 +18,18 @@ Changelog
     - add more end-stage cargos alongside Vehicles, including Concrete Products, Goods, Hardware and Pipework
     - accept more cargos at Port and Wharf to make it easier to boost production
 - added cargos
+    - Billets & Blooms
     - Concrete Products
     - Ferroalloys
     - Forgings & Castings
     - Hardware
+    - Merchant Bar
     - Nitrogen
     - Pipework
     - Pumps & Valves
     - Rebar
     - Seals, Hoses & Belts
-    - Steel Billets & Blooms
     - Steel Ingots
-    - Steel Merchant Bar
     - Steel Pipe
     - Steel Slab
     - Steel Tube
@@ -50,8 +50,8 @@ Changelog
     - Bar & Section Mill
     - Concrete Plant
     - Elastomer Products Plant
-    - Hardware Factory
-    - Pipework Fabricator
+    - Metal Fabricator
+    - Pipe Shop
     - Plate Mill
     - Precision Parts Plant
     - Steel Forge & Foundry
@@ -80,7 +80,7 @@ Changelog
 
 *Docs*
 
-- X improvements to cargoflow display
+- XYX improvements to cargoflow display
 - update code reference info about deps and python version
 - mysys no longer relevant, remove mention of it from code reference page
 
@@ -94,11 +94,12 @@ Changelog
 *Codechanges*
 
 - switch lang files to TOML format
-- add FIRS GS generation (proof of concept)
 - make use of increased object limit in OpenTTD
 - track cargo and industry sprite completion
 - reduce python boilerplate by using dynamic imports for cargo, economies and industries
 - cargos no longer need specific order to avoid breaking house cargo acceptance/production (as of OpenTTD #11378)
+- reorganise src directories
+- add FIRS GS generation
 
 
 --------------
