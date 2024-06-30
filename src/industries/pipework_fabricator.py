@@ -11,6 +11,12 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="160",
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[
+            ["tube_and_pipe_mill", "precision_parts_plant"],
+            84,
+        ],
+    ),
     name="string(STR_IND_PIPEWORK_FABRICATOR)",
     nearby_station_name="string(STR_STATION_PIPEWORK_FABRICATOR)",
     fund_cost_multiplier="145",
