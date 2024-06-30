@@ -3,7 +3,7 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 industry = IndustryPrimaryExtractive(
     id="limestone_mine",
     prod_cargo_types_with_multipliers=[
-        ("LIME", 20),
+        ("LIME", 22),
     ],
     prob_in_game="4",
     prob_map_gen="7",

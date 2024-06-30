@@ -21,7 +21,8 @@ industry = IndustryPrimaryExtractive(
 industry.enable_in_economy(
     "STEELTOWN",
     prod_cargo_types_with_multipliers=[
-        ("SAND", 16),
+        # generally we want a lot of sand and limestone
+        ("SAND", 20),
         ("LIME", 18),
         ("GRVL", 9),
     ],
