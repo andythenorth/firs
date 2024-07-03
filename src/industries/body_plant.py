@@ -3,14 +3,14 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="body_plant",
     accept_cargos_with_input_ratios=[
-        ("STSH", 4),
-        ("GLAS", 2),
-        ("COAT", 1),
+        ("STSH", 5),
+        ("COAT", 2),
         ("WELD", 1),
     ],
     prod_cargo_types_with_output_ratios=[
         # high body plant production is unwanted as there is only one output cargo
-        ("VBOD", 5),
+        ("VBOD", 4),
+        ("SCMT", 2),
     ],
     # do not build during gameplay
     prob_in_game="0",
