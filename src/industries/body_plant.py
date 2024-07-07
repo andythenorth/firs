@@ -10,7 +10,6 @@ industry = IndustrySecondary(
     prod_cargo_types_with_output_ratios=[
         # high body plant production is unwanted as there is only one output cargo
         ("VBOD", 4),
-        ("SCMT", 2),
     ],
     # do not build during gameplay
     prob_in_game="0",
