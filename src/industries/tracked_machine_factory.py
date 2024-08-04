@@ -2,11 +2,13 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="tracked_machine_factory",
+    # what a lot of cargos eh?  Probably fine, this is pretty much the final 'launch the bulldozer' nod to Factorio
     accept_cargos_with_input_ratios=[
-        ("VPTS", 2),
-        ("VENG", 1),
-        ("STSE", 3),
         ("COAT", 1),
+        ("STSH", 1),
+        ("STSE", 2),
+        ("VENG", 1),
+        ("VPTS", 2),
         ("WELD", 1),
     ],
     prod_cargo_types_with_output_ratios=[
