@@ -5,19 +5,8 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-import os.path
-
 import global_constants as global_constants
 import utils as utils
-
-currentdir = os.curdir
-
-from chameleon import PageTemplateLoader  # chameleon used in most template cases
-
-# setup the places we look for templates
-templates = PageTemplateLoader(
-    os.path.join(currentdir, "src", "templates"), format="text"
-)
 
 # firs is imported, but main is not called in this module, this relies on firs already being present in the context
 import firs
