@@ -34,6 +34,8 @@ class CargoManager(list):
         self.append(cargo_module.cargo)
 
     def post_init_actions(self):
+        for cargo in self:
+            cargo.validate_cargo_classes()
         self.validate_icon_indices()
 
     def validate_icon_indices(self):

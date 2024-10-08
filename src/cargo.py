@@ -89,6 +89,39 @@ class Cargo(object):
         value = self.get_property(property_name, economy)
         return property_name + ": " + str(value) + ";"
 
+    def validate_cargo_classes(self):
+        # as of October 2024, I concluded that whilst the fundamental classes are useful, the extra 'exclude only' classes are not worth the candle
+        # (1) there's no clear heuristic for when to set them or not
+        # - IRL both pipe and farm machines are 'oversized', but STPP was setting CC_OVERSIZED, whilst FMSP was not
+        # - there's no compelling evidence about how, or even if, these extra classes are useful to vehicle set authors
+        # (2) setting them is likely to lead to unpredictable effects which are hard to reason about, whereas not setting them is easy to reason about
+        # https://newgrf-specs.tt-wiki.net/wiki/Action0/Cargos#CargoClasses_.2816.29 and https://newgrf-specs.tt-wiki.net/wiki/NML:Cargos#Cargo_classes
+
+        # so we only permit the fundamental classes
+        allowed_cargo_classes = [
+            "CC_PASSENGERS",
+            "CC_MAIL",
+            "CC_EXPRESS",
+            "CC_ARMOURED",
+            "CC_BULK",
+            "CC_PIECE_GOODS",
+            "CC_LIQUID",
+        ]
+        # the cargo def has an nml string in `bitmask([list of classes...])` form, so extract the classes
+        start = self.cargo_classes.find('(') + 1
+        end = self.cargo_classes.find(')')
+        extracted = self.cargo_classes[start:end]
+        parsed_cargo_classes = [item.strip() for item in extracted.split(',')]
+
+        for cargo_class in parsed_cargo_classes:
+            if cargo_class not in allowed_cargo_classes:
+                raise BaseException(
+                    self.id
+                    + " defines cargo class "
+                    + cargo_class
+                    + " which is not permitted."
+                )
+
     @property
     def properties_for_gs(self):
         result = {}
