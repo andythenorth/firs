@@ -95,14 +95,9 @@ class Cargo(object):
             "CC_BULK",
             "CC_PIECE_GOODS",
             "CC_LIQUID",
+            "NO_CARGO_CLASS",
         ]
-        # the cargo def has an nml string in `bitmask([list of classes...])` form, so extract the classes
-        start = self.cargo_classes.find('(') + 1
-        end = self.cargo_classes.find(')')
-        extracted = self.cargo_classes[start:end]
-        parsed_cargo_classes = [item.strip() for item in extracted.split(',')]
-
-        for cargo_class in parsed_cargo_classes:
+        for cargo_class in self.cargo_classes:
             if cargo_class not in allowed_cargo_classes:
                 raise BaseException(
                     self.id
