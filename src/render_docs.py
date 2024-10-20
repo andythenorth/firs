@@ -85,16 +85,15 @@ class DocHelper(object):
         result = []
         pretty_names = {
             "CC_ARMOURED": "Armoured",
-            "CC_BULK": "Bulk (uncountable)",
-            "CC_COVERED": "Covered (weather protected)",
+            "CC_COVERED_BULK": "Covered Bulk",
             "CC_EXPRESS": "Express",
-            "CC_HAZARDOUS": "Hazardous",
+            "CC_GAS": "Gas",
             "CC_LIQUID": "Liquid",
             "CC_MAIL": "Mail",
             "CC_NON_POURABLE": "Not Pourable",
-            "CC_OVERSIZED": "Oversized",
+            "CC_OPEN_BULK": "Open Bulk",
             "CC_PASSENGERS": "Passengers",
-            "CC_PIECE_GOODS": "Piece Goods (countable)",
+            "CC_PIECE_GOODS": "Piece Goods",
             "CC_POWDERIZED": "Powderized",
             "CC_REFRIGERATED": "Refrigerated",
         }
