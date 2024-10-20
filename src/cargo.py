@@ -22,9 +22,15 @@ templates = PageTemplateLoader(
 from economies import registered_economies
 from cargos import registered_cargos
 
+# this will be suboptimal for performance, as it will be imported multiple times per compile, causing duplicat TOML parsing
+# fine for v4, but for v5, this might be better centralised?
+from polar_fox.cargo_classes import cargo_classes
+
+cargo_class_scheme = cargo_classes.CargoClassSchemes().default_scheme
+
 
 class Cargo(object):
-    """ Base class to hold cargos"""
+    """Base class to hold cargos"""
 
     def __init__(self, id, **kwargs):
         self.id = id
@@ -96,6 +102,21 @@ class Cargo(object):
     def get_cargo_colour(self, economy):
         # automatically provide a colour specific to the economy, don't attempt to provide a consistent colour across all economies, PITA to maintain
         return global_constants.valid_cargo_colours[self.get_numeric_id(economy)]
+
+    def get_cargo_classes_for_nml(self):
+        classes_mapped_to_nml_constants = []
+        for cargo_class in self.cargo_classes:
+            if cargo_class in cargo_class_scheme.cargo_classes_taxonomy:
+                classes_mapped_to_nml_constants.append(
+                    cargo_class_scheme.cargo_classes_taxonomy[cargo_class][
+                        "nml_cargo_class_name"
+                    ]
+                )
+            else:
+                print("NOT FOUND:", cargo_class)
+                # CABBAGE to make compile work for now
+                classes_mapped_to_nml_constants.append(cargo_class)
+        return "bitmask(" + ",".join(classes_mapped_to_nml_constants) + ")"
 
     def get_property(self, property_name, economy):
         # straightforward lookup of a property, doesn't try to handle failure case of property not found; don't look up props that don't exist
