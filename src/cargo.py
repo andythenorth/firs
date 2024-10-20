@@ -110,9 +110,31 @@ class Cargo(object):
                 )
         for cargo_class in self.cargo_classes:
             # CC_GAS doesn't bother validating for food-grade bits as of 2024, food-grade gases tends to not be relevant
-            if cargo_class in ["CC_EXPRESS", "CC_PIECE_GOODS", "CC_OPEN_BULK", "CC_COVERED_BULK", "CC_LIQUID", "CC_POWDERIZED"]:
-                if ("CC_FOOD_GRADE" not in self.cargo_classes) and ("CC_NON_FOOD_GRADE" not in self.cargo_classes):
-                    raise BaseException(self.id + " should set one of CC_FOOD_GRADE or CC_NON_FOOD_GRADE")
+            if cargo_class in [
+                "CC_EXPRESS",
+                "CC_PIECE_GOODS",
+                "CC_OPEN_BULK",
+                "CC_COVERED_BULK",
+                "CC_LIQUID",
+                "CC_POWDERIZED",
+            ]:
+                if ("CC_FOOD_GRADE" not in self.cargo_classes) and (
+                    "CC_NON_FOOD_GRADE" not in self.cargo_classes
+                ):
+                    raise BaseException(
+                        self.id
+                        + " should set one of CC_FOOD_GRADE or CC_NON_FOOD_GRADE"
+                    )
+            if cargo_class in ["CC_GAS", "CC_COVERED_BULK", "CC_POWDERIZED"]:
+                if (
+                    ("CC_PIECE_GOODS" not in self.cargo_classes)
+                    and ("CC_OPEN_BULK" not in self.cargo_classes)
+                    and ("CC_LIQUID" not in self.cargo_classes)
+                ):
+                    raise BaseException(
+                        self.id
+                        + " should have a fallback set (CC_PIECE_GOODS, CC_OPEN_BULK or CC_LIQUID"
+                    )
 
     def get_numeric_id(self, economy):
         return self.economy_variations[economy].get("numeric_id")
