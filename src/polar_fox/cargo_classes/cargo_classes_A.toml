@@ -256,10 +256,11 @@ set_bit_13 = "false"
 set_bit_14 = "false"
 vehicle_grf_advice = [
     "Cargo might need dedicated vehicles, with label refits.",
-    "Open general cargo vehicles or flat vehicles might be sensible as fallback choices.",
-    "Disallowing CC_WEIRD is unwise as it's only intended as a fallback for unknown weird cargos; there are very few cargos using this class, so just allow/disallow their labels explicitly if you want to control their vehicle refits precisely.",
+    "Open general cargo vehicles might be sensible as fallback choices.",
+    "Can be used to disallow CC_WEIRD cargos in some vehicles, but ensure there's at least one type of vehicle that allows this class (recommended).",
+    "CC_WEIRD is really only intended as a fallback for unknown weird cargos; there are very few cargos using this class, so better to allow/disallow their labels explicitly if you want to control their vehicle refits precisely.",
 ]
-vehicle_set_as_allow = false # CABBAGE
+vehicle_set_as_allow = false
 vehicle_set_as_disallow = false
 
 [CC_FOOD_GRADE]
@@ -426,6 +427,11 @@ name = "Grain"
 cargo_description = "Grain CABBAGE - different classes to base game grain, have to handle with label"
 cargo_classes = ["CC_COVERED_BULK", "CC_FOOD_GRADE", "CC_PIECE_GOODS"]
 
+[CARGO_LIVESTOCK]
+name = "Livestock"
+cargo_description = "Livestock CABBAGE - piece goods for legacy base game reasons - use label LVST for accurate control. CC_WEIRD also set to flag that this cargo is non-standard and would be better handled on labels."
+cargo_classes = ["CC_PIECE_GOODS", "CC_WEIRD", "CC_NON_FOOD_GRADE"]
+
 [CARGO_STEEL]
 name = "Steel"
 cargo_description = "Steel CABBAGE"
@@ -507,9 +513,9 @@ cargo_classes_disallowed = ["CC_FOOD_GRADE"]
 
 [VEHICLE_BOX_VAN_LESS_PERMISSIVE]
 name = "Box Van (less permissive)"
-vehicle_description = "An example of a box van with relatively restricted refits."
+vehicle_description = "An example of a box van with relatively restricted refits. CC_WEIRD is disallowed as an example, but this should only be done if other vehicles support CC_WEIRD."
 cargo_classes_allowed = ["CC_PIECE_GOODS", "CC_EXPRESS"]
-cargo_classes_disallowed = []
+cargo_classes_disallowed = ["CC_WEIRD"]
 
 [VEHICLE_BOX_VAN_MORE_PERMISSIVE]
 name = "Box Van (more permissive)"
@@ -518,7 +524,7 @@ vehicle_description = """
     This assumes that cargos will be 'packaged' if necessary, for example liquids in barrels.
     No classes are disallowed, but note that CC_WEIRD is not in the 'allow' list, as this class might be applied to cargos that wouldn't easily fit in box vans.
 """
-cargo_classes_allowed = ["CC_LIVESTOCK", "CC_EXPRESS", "CC_PIECE_GOODS", "CC_OPEN_BULK", "CC_COVERED_BULK", "CC_LIQUID", "CC_GAS", "CC_POWDERIZED"]
+cargo_classes_allowed = ["CC_EXPRESS", "CC_PIECE_GOODS", "CC_OPEN_BULK", "CC_COVERED_BULK", "CC_LIQUID", "CC_GAS", "CC_POWDERIZED"]
 cargo_classes_disallowed = []
 
 [VEHICLE_INTERMODAL_CONTAINERS]
@@ -527,7 +533,7 @@ vehicle_description = """
     Refits most freight classes, to maximise compatibility with industry GRFs.
     No classes are disallowed.
 """
-cargo_classes_allowed = ["CC_LIVESTOCK", "CC_EXPRESS", "CC_PIECE_GOODS", "CC_OPEN_BULK", "CC_COVERED_BULK", "CC_LIQUID", "CC_GAS", "CC_POWDERIZED", "CC_FLATBED", "CC_REFRIGERATED", "CC_WEIRD"]
+cargo_classes_allowed = ["CC_EXPRESS", "CC_PIECE_GOODS", "CC_OPEN_BULK", "CC_COVERED_BULK", "CC_LIQUID", "CC_GAS", "CC_POWDERIZED", "CC_FLATBED", "CC_REFRIGERATED", "CC_WEIRD"]
 cargo_classes_disallowed = []
 
 [VEHICLE_MAIL_VAN]
@@ -551,7 +557,7 @@ cargo_classes_disallowed = []
 [VEHICLE_OPEN_CARGO_MORE_PERMISSIVE]
 name = "Open Cargo Vehicle (more permissive)"
 vehicle_description = "An example of a vehicle that will refit most freight classes, to maximise compatibility with industry GRFs.  This assumes that cargos will be 'packaged' if necessary, for example liquids in barrels. No classes are disallowed."
-cargo_classes_allowed = ["CC_LIVESTOCK", "CC_EXPRESS", "CC_PIECE_GOODS", "CC_OPEN_BULK", "CC_COVERED_BULK", "CC_LIQUID", "CC_GAS", "CC_POWDERIZED", "CC_FLATBED", "CC_WEIRD"]
+cargo_classes_allowed = ["CC_EXPRESS", "CC_PIECE_GOODS", "CC_OPEN_BULK", "CC_COVERED_BULK", "CC_LIQUID", "CC_GAS", "CC_POWDERIZED", "CC_FLATBED", "CC_WEIRD"]
 cargo_classes_disallowed = []
 
 [VEHICLE_POWDER_TANKER]
@@ -589,3 +595,9 @@ name = "Refrigerated Vehicle"
 vehicle_description = "Cabbage. Includes CC_REFRIGERATED to support legacy cargos."
 cargo_classes_allowed = ["CC_EXPRESS", "CC_REFRIGERATED"]
 cargo_classes_disallowed = ["CC_NON_FOOD_GRADE"]
+
+[VEHICLE_LIVESTOCK_CARRIER]
+name = "Livestock Carrier"
+vehicle_description = "CABBAGE. No classes. Uses label refit to LVST."
+cargo_classes_allowed = []
+cargo_classes_disallowed = []
