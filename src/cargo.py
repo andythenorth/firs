@@ -42,6 +42,7 @@ class Cargo(object):
         self.weight = kwargs["weight"]
         self.is_freight = kwargs["is_freight"]
         self.cargo_classes = kwargs["cargo_classes"]
+        self.validate_cargo_classes()
         self.town_growth_effect = kwargs["town_growth_effect"]
         self.town_growth_multiplier = kwargs["town_growth_multiplier"]
         self.units_of_cargo = kwargs["units_of_cargo"]
@@ -88,6 +89,10 @@ class Cargo(object):
                     + " has overlapping icon_indices with cargo "
                     + cargo.id
                 )
+
+    def validate_cargo_classes(self):
+        pass
+        #nothing
 
     def get_numeric_id(self, economy):
         return self.economy_variations[economy].get("numeric_id")
