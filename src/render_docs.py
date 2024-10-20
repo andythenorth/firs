@@ -98,9 +98,7 @@ class DocHelper(object):
             "CC_POWDERIZED": "Powderized",
             "CC_REFRIGERATED": "Refrigerated",
         }
-        cargo_classes_as_literal = cargo.cargo_classes[8:-1]
-        cargo_classes = [i.strip() for i in cargo_classes_as_literal.split(",")]
-        for cargo_class in cargo_classes:
+        for cargo_class in cargo.cargo_classes:
             if cargo_class not in pretty_names:
                 utils.echo_message(
                     "cargo class "
