@@ -83,22 +83,23 @@ class DocHelper(object):
 
     def pretty_print_cargo_classes(self, cargo):
         result = []
+        # order of dict key corresponds to sort order of cargos when pretty-printed
         pretty_names = {
-            "CC_ARMOURED": "Armoured",
-            "CC_COVERED_BULK": "Covered Bulk",
-            "CC_EXPRESS": "Express",
-            "CC_FLATBED": "Flatbed",
-            "CC_FOOD_GRADE": "Food-Grade",
-            "CC_GAS": "Gas",
-            "CC_LIQUID": "Liquid",
-            "CC_MAIL": "Mail",
-            "CC_NON_FOOD_GRADE": "Non-Food-Grade",
-            "CC_OPEN_BULK": "Open Bulk",
             "CC_PASSENGERS": "Passengers",
+            "CC_MAIL": "Mail",
+            "CC_EXPRESS": "Express",
+            "CC_ARMOURED": "Armoured",
             "CC_PIECE_GOODS": "Piece Goods",
+            "CC_OPEN_BULK": "Open Bulk",
+            "CC_COVERED_BULK": "Covered Bulk",
+            "CC_LIQUID": "Liquid",
+            "CC_GAS": "Gas",
             "CC_POWDERIZED": "Powderized",
+            "CC_FLATBED": "Flatbed",
             "CC_REFRIGERATED": "Refrigerated",
             "CC_WEIRD": "Weird",
+            "CC_FOOD_GRADE": "Food-Grade",
+            "CC_NON_FOOD_GRADE": "Non-Food-Grade",
         }
         for cargo_class in cargo.cargo_classes:
             if cargo_class not in pretty_names:
@@ -109,7 +110,9 @@ class DocHelper(object):
                     + cargo.id
                     + ")"
                 )
-            else:
+
+        for cargo_class in pretty_names:
+            if cargo_class in cargo.cargo_classes:
                 result.append(pretty_names[cargo_class])
         return ", ".join(result)
 
