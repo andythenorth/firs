@@ -104,19 +104,14 @@ class Cargo(object):
         return global_constants.valid_cargo_colours[self.get_numeric_id(economy)]
 
     def get_cargo_classes_for_nml(self):
-        classes_mapped_to_nml_constants = []
+        classes_mapped_to_bit_numbers = []
         for cargo_class in self.cargo_classes:
-            if cargo_class in cargo_class_scheme.cargo_classes_taxonomy:
-                classes_mapped_to_nml_constants.append(
-                    cargo_class_scheme.cargo_classes_taxonomy[cargo_class][
-                        "nml_cargo_class_name"
-                    ]
+            classes_mapped_to_bit_numbers.append(
+                str(
+                    cargo_class_scheme.cargo_classes_taxonomy[cargo_class]["bit_number"]
                 )
-            else:
-                print("NOT FOUND:", cargo_class)
-                # CABBAGE to make compile work for now
-                classes_mapped_to_nml_constants.append(cargo_class)
-        return "bitmask(" + ",".join(classes_mapped_to_nml_constants) + ")"
+            )
+        return "bitmask(" + ",".join(classes_mapped_to_bit_numbers) + ")"
 
     def get_property(self, property_name, economy):
         # straightforward lookup of a property, doesn't try to handle failure case of property not found; don't look up props that don't exist

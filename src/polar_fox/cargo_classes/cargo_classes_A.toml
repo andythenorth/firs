@@ -198,7 +198,7 @@ vehicle_set_as_disallow = false
 [CC_FOOD_GRADE]
 bit_number = 13
 code = "0x2000"
-nml_cargo_class_name = "[new class]"
+nml_cargo_class_name = "CC_FOOD_GRADE"
 name = "Food Grade"
 cargo_class_description = ["CC_FOOD_GRADE."]
 cargo_grf_advice = [
@@ -217,7 +217,7 @@ vehicle_set_as_disallow = true
 [CC_NON_FOOD_GRADE]
 bit_number = 14
 code = "0x4000"
-nml_cargo_class_name = "[new class]"
+nml_cargo_class_name = "CC_NON_FOOD_GRADE"
 name = "Non-Food Grade"
 cargo_class_description = ["CC_NON_FOOD_GRADE."]
 cargo_grf_advice = [

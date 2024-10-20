@@ -8,7 +8,7 @@ cargo = Cargo(
     sprite="NEW_CARGO_SPRITE",
     weight="1.1",
     is_freight="1",
-    cargo_classes = ["CC_EXPRESS", "CC_LIQUID", "CC_REFRIGERATED"],
+    cargo_classes = ["CC_EXPRESS", "CC_LIQUID", "CC_FOOD_GRADE", "CC_REFRIGERATED"], # refrigerated for legacy support
     cargo_label="MILK",
     # apart from TOWNGROWTH_PASSENGERS and TOWNGROWTH_MAIL, FIRS does not set any town growth effects; this has the intended effect of disabling food / water requirements for towns in desert and above snowline
     town_growth_effect="TOWNGROWTH_NONE",
