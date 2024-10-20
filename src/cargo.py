@@ -125,7 +125,7 @@ class Cargo(object):
                         self.id
                         + " should set one of CC_FOOD_GRADE or CC_NON_FOOD_GRADE"
                     )
-            if cargo_class in ["CC_GAS", "CC_COVERED_BULK", "CC_POWDERIZED"]:
+            if cargo_class in ["CC_GAS", "CC_COVERED_BULK", "CC_POWDERIZED", "CC_FLATBED"]:
                 if (
                     ("CC_PIECE_GOODS" not in self.cargo_classes)
                     and ("CC_OPEN_BULK" not in self.cargo_classes)
@@ -135,6 +135,16 @@ class Cargo(object):
                         self.id
                         + " should have a fallback set (CC_PIECE_GOODS, CC_OPEN_BULK or CC_LIQUID"
                     )
+            if cargo_class in ["CC_FLATBED", "CC_REFRIGERATED"]:
+                if (
+                    ("CC_PIECE_GOODS" not in self.cargo_classes)
+                    and ("CC_EXPRESS" not in self.cargo_classes)
+                ):
+                    raise BaseException(
+                        self.id
+                        + " should have a fallback set (CC_PIECE_GOODS or CC_EXPRESS"
+                    )
+
 
     def get_numeric_id(self, economy):
         return self.economy_variations[economy].get("numeric_id")
