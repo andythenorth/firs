@@ -42,7 +42,6 @@ class Cargo(object):
         self.weight = kwargs["weight"]
         self.is_freight = kwargs["is_freight"]
         self.cargo_classes = kwargs["cargo_classes"]
-        self.validate_cargo_classes()
         self.town_growth_effect = kwargs["town_growth_effect"]
         self.town_growth_multiplier = kwargs["town_growth_multiplier"]
         self.units_of_cargo = kwargs["units_of_cargo"]
@@ -78,7 +77,11 @@ class Cargo(object):
                             + str(value)
                         )
                 self.economy_variations[economy] = {"numeric_id": numeric_id}
+        # validation
+        self.validate_cargo_classes()
+        self.validate_icon_indices()
 
+    def validate_icon_indices(self):
         # guard against overlapping icon indices, icons should be unique per cargo
         # if two cargos use same icon (1) don't, copy-paste, then adjust some pixels for one of them (2) see 1
         for cargo in registered_cargos:
@@ -92,7 +95,7 @@ class Cargo(object):
 
     def validate_cargo_classes(self):
         pass
-        #nothing
+        # nothing
 
     def get_numeric_id(self, economy):
         return self.economy_variations[economy].get("numeric_id")
