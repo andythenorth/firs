@@ -52,6 +52,60 @@ class Cargo(object):
 
         if len(self.economy_variations) == 0:
             utils.echo_message(self.id + " is not used in any economy")
+        # validation
+        self.validate_cargo_classes()
+
+    def validate_cargo_classes(self):
+        # crude, not intended to solve everything
+        disallowed_pairs = [("CC_FOOD_GRADE", "CC_NON_FOOD_GRADE")]
+        for disallowed_pair in disallowed_pairs:
+            if (disallowed_pair[0] in self.cargo_classes) and (
+                disallowed_pair[1] in self.cargo_classes
+            ):
+                raise BaseException(
+                    self.id
+                    + " sets both "
+                    + disallowed_pair[0]
+                    + " and "
+                    + disallowed_pair[1]
+                    + " which is not supported"
+                )
+        for cargo_class in self.cargo_classes:
+            # CC_GAS doesn't bother validating for food-grade bits as of 2024, food-grade gases tends to not be relevant
+            if cargo_class in [
+                "CC_EXPRESS",
+                "CC_PIECE_GOODS",
+                "CC_OPEN_BULK",
+                "CC_COVERED_BULK",
+                "CC_LIQUID",
+                "CC_POWDERIZED",
+            ]:
+                if ("CC_FOOD_GRADE" not in self.cargo_classes) and (
+                    "CC_NON_FOOD_GRADE" not in self.cargo_classes
+                ):
+                    raise BaseException(
+                        self.id
+                        + " should set one of CC_FOOD_GRADE or CC_NON_FOOD_GRADE"
+                    )
+            if cargo_class in ["CC_GAS", "CC_COVERED_BULK", "CC_POWDERIZED", "CC_FLATBED"]:
+                if (
+                    ("CC_PIECE_GOODS" not in self.cargo_classes)
+                    and ("CC_OPEN_BULK" not in self.cargo_classes)
+                    and ("CC_LIQUID" not in self.cargo_classes)
+                ):
+                    raise BaseException(
+                        self.id
+                        + " should have a fallback set (CC_PIECE_GOODS, CC_OPEN_BULK or CC_LIQUID"
+                    )
+            if cargo_class in ["CC_FLATBED", "CC_REFRIGERATED"]:
+                if (
+                    ("CC_PIECE_GOODS" not in self.cargo_classes)
+                    and ("CC_EXPRESS" not in self.cargo_classes)
+                ):
+                    raise BaseException(
+                        self.id
+                        + " should have a fallback set (CC_PIECE_GOODS or CC_EXPRESS"
+                    )
 
     def get_numeric_id(self, economy):
         return self.economy_variations[economy].get("numeric_id")
@@ -77,34 +131,6 @@ class Cargo(object):
     def get_property_declaration(self, property_name, economy=None):
         value = self.get_property(property_name, economy)
         return property_name + ": " + str(value) + ";"
-
-    def validate_cargo_classes(self):
-        # as of October 2024, I concluded that whilst the fundamental classes are useful, the extra 'exclude only' classes are not worth the candle
-        # (1) there's no clear heuristic for when to set them or not
-        # - IRL both pipe and farm machines are 'oversized', but STPP was setting CC_OVERSIZED, whilst FMSP was not
-        # - there's no compelling evidence about how, or even if, these extra classes are useful to vehicle set authors
-        # (2) setting them is likely to lead to unpredictable effects which are hard to reason about, whereas not setting them is easy to reason about
-        # https://newgrf-specs.tt-wiki.net/wiki/Action0/Cargos#CargoClasses_.2816.29 and https://newgrf-specs.tt-wiki.net/wiki/NML:Cargos#Cargo_classes
-
-        # so we only permit the fundamental classes
-        allowed_cargo_classes = [
-            "CC_PASSENGERS",
-            "CC_MAIL",
-            "CC_EXPRESS",
-            "CC_ARMOURED",
-            "CC_BULK",
-            "CC_PIECE_GOODS",
-            "CC_LIQUID",
-            "NO_CARGO_CLASS",
-        ]
-        for cargo_class in self.cargo_classes:
-            if cargo_class not in allowed_cargo_classes:
-                raise BaseException(
-                    self.id
-                    + " defines cargo class "
-                    + cargo_class
-                    + " which is not permitted."
-                )
 
     @property
     def properties_for_gs(self):
