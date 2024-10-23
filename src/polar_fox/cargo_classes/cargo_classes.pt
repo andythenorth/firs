@@ -194,11 +194,18 @@
             <table class="table table-striped table-condensed table-bordered tablesorter">
                 <tr>
                     <th>Example Cargo</th>
+                    <th>Recommended Classes</th>
                 </tr>
                 <tal:cargo_nodes repeat="cargo_node sorted(cargo_class_scheme.example_cargos.items())">
                     <tal:example_cargo define="cargo_node_id cargo_node[0]; example_cargo cargo_node[1];">
                         <tr>
                             <td><a href="#${cargo_node_id}">${example_cargo.name}</a></td>
+                            <!--! showing classes might be overkill, dunno -->
+                            <td style="width:50%;">
+                                <tal:block repeat="cargo_class example_cargo.cargo_classes">
+                                    ${cargo_class}
+                                </tal:block>
+                            </td>
                         </tr>
                     </tal:example_cargo>
                 </tal:cargo_nodes>
@@ -219,7 +226,7 @@
                             <tr>
                                 <th>Cargo classes</th>
                                 <td>
-                                    <tal:block repeat="cargo_class sorted(example_cargo.cargo_classes)">
+                                    <tal:block repeat="cargo_class example_cargo.cargo_classes">
                                         ${cargo_class}
                                     </tal:block>
                                 </td>
@@ -277,7 +284,7 @@
                             <tr>
                                 <th>Cargo classes allowed</th>
                                 <td>
-                                    <tal:block repeat="cargo_class sorted(example_vehicle.cargo_classes_allowed)">
+                                    <tal:block repeat="cargo_class example_vehicle.cargo_classes_allowed">
                                         ${cargo_class}
                                     </tal:block>
                                 </td>
@@ -285,7 +292,7 @@
                             <tr>
                                 <th>Cargo classes disallowed</th>
                                 <td>
-                                    <tal:block repeat="cargo_class sorted(example_vehicle.cargo_classes_disallowed)">
+                                    <tal:block repeat="cargo_class example_vehicle.cargo_classes_disallowed">
                                         ${cargo_class}
                                     </tal:block>
                                 </td>

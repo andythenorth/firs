@@ -75,6 +75,8 @@ class CargoClassScheme(object):
             for node, attrs in self.scheme_raw_config.items()
             if "cargo_description" in attrs
         }
+        for node_id, attrs in result.items():
+            result[node_id]["cargo_classes"] = self.sort_cargo_classes_by_taxonomy_order(attrs["cargo_classes"])
         return result
 
     @property
@@ -84,6 +86,9 @@ class CargoClassScheme(object):
             for node, attrs in self.scheme_raw_config.items()
             if "vehicle_description" in attrs
         }
+        for node_id, attrs in result.items():
+            result[node_id]["cargo_classes_allowed"] = self.sort_cargo_classes_by_taxonomy_order(attrs["cargo_classes_allowed"])
+            result[node_id]["cargo_classes_disallowed"] = self.sort_cargo_classes_by_taxonomy_order(attrs["cargo_classes_disallowed"])
         return result
 
     @property
@@ -142,6 +147,19 @@ class CargoClassScheme(object):
                             result.setdefault(example_cargo_node_id, []).append(
                                 example_vehicle_node_id
                             )
+
+        for k, v in result.items():
+            # remove duplicates
+            result[k] = list(set(v))
+
+        return result
+
+    def sort_cargo_classes_by_taxonomy_order(self, cargo_classes):
+        # sort classes for display by class order in taxonomy (can't do this in the template, too fiddly)
+        result = []
+        for cargo_class in self.cargo_classes_taxonomy.keys():
+            if cargo_class in cargo_classes:
+                result.append(cargo_class)
         return result
 
 

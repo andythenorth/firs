@@ -199,7 +199,7 @@ vehicle_set_as_disallow = false
 bit_number = 10
 code = "0x0400"
 nml_cargo_class_name = "CC_OVERSIZED"
-name = "Flatbed CABBAGE"
+name = "Flatbed"
 cargo_class_description = [
     "Flatbed CABBAGE",
 ]
@@ -245,7 +245,9 @@ nml_cargo_class_name = "CC_NON_POURABLE"
 name = "Weird"
 cargo_class_description = [
     "Cargos that don't fit standard classes, and should be handled by label, but need to fallback to a class for vehicle grfs that aren't aware of the label.",
-    "This is for cargos that need very special handling and really don't fit as CC_PIECE_GOODS or other standard class.",
+    "This is for cargos that require dedicated vehicles and really don't fit as CC_PIECE_GOODS or other standard class.",
+    "Example: things that are alive but aren't CC_PASSENGERS, such as livestock.",
+    "Example: things that are radioactive, such as nuclear fuel or waste.",
 ]
 cargo_grf_advice = [
     "This class is rarely used.",
@@ -435,22 +437,22 @@ cargo_classes = ["CC_PIECE_GOODS", "CC_WEIRD", "CC_NON_FOOD_GRADE"]
 [CARGO_STEEL]
 name = "Steel"
 cargo_description = "Steel CABBAGE"
-cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED"]
+cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED", "CC_NON_FOOD_GRADE"]
 
 [CARGO_PAPER]
 name = "Paper"
 cargo_description = "Paper CABBAGE"
-cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED"]
+cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED", "CC_NON_FOOD_GRADE"]
 
 [CARGO_PIPE]
 name = "Pipe"
 cargo_description = "Pipe CABBAGE"
-cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED"]
+cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED", "CC_NON_FOOD_GRADE"]
 
 [CARGO_TIMBER]
 name = "Timber"
 cargo_description = "Timber CABBAGE"
-cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED"]
+cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED", "CC_NON_FOOD_GRADE"]
 
 [CARGO_YETI_DUDES]
 name = "YETI Dudes (Workers)"
