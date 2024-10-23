@@ -143,33 +143,76 @@ cargo_labels = [
 ]
 
 # shared lists of allowed classes, shared across multiple vehicle types
+# !! CABBAGE PARTLY UPDATED OCT 2024 UNFINISHED
 base_refits_by_class = {
-    "all_freight": [
-        "CC_BULK",
-        "CC_PIECE_GOODS",
-        "CC_EXPRESS",
-        "CC_LIQUID",
-        "CC_ARMOURED",
-        "CC_REFRIGERATED",
-        "CC_COVERED",
-        "CC_NON_POURABLE",
-    ],
-    "covered_hopper_freight": [],  # explicit allowal by label instead
-    "dump_freight": ["CC_BULK"],
-    "empty": [],
-    "express_freight": ["CC_EXPRESS", "CC_ARMOURED"],
-    "flatbed_freight": ["CC_PIECE_GOODS"],
-    "liquids": ["CC_LIQUID"],
-    "mail": ["CC_MAIL"],
-    "packaged_freight": ["CC_PIECE_GOODS", "CC_EXPRESS", "CC_ARMOURED", "CC_LIQUID"],
-    "pax": ["CC_PASSENGERS"],
-    "refrigerated_freight": ["CC_REFRIGERATED"],
+    "all_freight": {
+        "allowed": [
+            "CC_ARMOURED",
+            "CC_COVERED_BULK",
+            "CC_EXPRESS",
+            "CC_FLATBED",
+            "CC_GAS",
+            "CC_LIQUID",
+            "CC_OPEN_BULK",
+            "CC_PIECE_GOODS",
+            "CC_POWDERIZED",
+            "CC_REFRIGERATED",
+            "CC_WEIRD",
+        ],
+        "disallowed": [],
+    },
+    "covered_hopper_freight_any_grade": {
+        "allowed": [
+            "CC_COVERED_BULK",
+        ],
+        "disallowed": [],
+    },
+    "covered_hopper_freight_food_grade": {
+        "allowed": [
+            "CC_COVERED_BULK",
+        ],
+        "disallowed": [
+            "CC_NON_FOOD_GRADE",
+        ],
+    },
+    "covered_hopper_freight_non_food_grade": {
+        "allowed": [
+            "CC_COVERED_BULK",
+        ],
+        "disallowed": [
+            "CC_FOOD_GRADE",
+        ],
+    },
+    "cryo_gases": {"allowed": ["CC_GAS"], "disallowed": []},
+    "dump_freight": {"allowed": ["CC_OPEN_BULK"], "disallowed": []},
+    "empty": {"allowed": [], "disallowed": []},
+    "express_freight": {"allowed": ["CC_EXPRESS", "CC_ARMOURED"], "disallowed": []},
+    "flatbed_freight": {"allowed": ["CC_FLATBED"], "disallowed": []},
+    "liquids_non_food_grade": {
+        "allowed": ["CC_LIQUID"],
+        "disallowed": ["CC_FOOD_GRADE"],
+    },
+    "liquids_food_grade": {
+        "allowed": ["CC_LIQUID"],
+        "disallowed": ["CC_NON_FOOD_GRADE"],
+    },
+    "mail": {"allowed": ["CC_MAIL"], "disallowed": []},
+    "packaged_freight": {
+        "allowed": ["CC_PIECE_GOODS", "CC_EXPRESS"],
+        "disallowed": ["CC_WEIRD"],  # weird covered in all_freight,
+    },
+    "pax": {"allowed": ["CC_PASSENGERS"], "disallowed": []},
+    "refrigerated_freight": {"allowed": ["CC_REFRIGERATED"], "disallowed": []},
+    "silo_powders": {"allowed": ["CC_POWDERIZED"], "disallowed": []},
 }
 
 # generally we want to allow refit on classes, and disallow on labels (see disallowed_refits_by_label)
 # BUT for _some_ specialist vehicle types, it's simpler to just allow refit by label
+# !! CABBAGE NEEDS UPDATED OCT 2024 NOT CLEAR THESE ALL NEEDED !!
 allowed_refits_by_label = {
     # box cars get some extended cargos
+    # !! CABBAGE NEEDS UPDATED OCT 2024 - STILL NEEDED?
+    # !! some of these might be able to drop back to classes with FIRS 4 or 5
     "box_freight": [
         "BEAN",
         "CMNT",
@@ -181,6 +224,9 @@ allowed_refits_by_label = {
         "WHEA",
     ],
     # seems to be used by intermodal, otherwise chemicals tankers are deprecated in favour of product tankers
+    # !! CABBAGE NEEDS UPDATED OCT 2024 - STILL NEEDED?
+    # !! some of these might be able to drop back to classes with FIRS 4 or 5
+    # !! not used in Horse
     "chemicals": [
         "ACID",
         "CHLO",
@@ -206,6 +252,8 @@ allowed_refits_by_label = {
         "ZINC",
     ],
     # 'dirty' mine/quarry covered hopper cargos
+    # !! CABBAGE NEEDS UPDATED OCT 2024 - STILL NEEDED?
+    # !! some of these might be able to drop back to classes with FIRS 4 or 5
     "covered_hoppers_mineral": [
         "ALO_",
         "BDMT",
@@ -225,35 +273,28 @@ allowed_refits_by_label = {
     ],
     # non-food cargos that need 'clean' covered hopper
     # preference is not to overlap with mineral covered hoppers and farm hoppers (as they will be combined where needed)
+    # !! CABBAGE NEEDS UPDATED OCT 2024 - STILL NEEDED?
+    # !! some of these might be able to drop back to classes with FIRS 4 or 5
     "covered_hoppers_pellet_powder": [
         "CBLK",
         "NHNO",
         "PLAS",
         "RUBR",
     ],
-    "cryo_gases": [
-        "CHLO",
-        "H2__",
-        "N7__",
-        "NH3_",
-        "O2__",
-        "WELD",
-    ],
-    "edible_liquids": [
-        "BEER",
-        "EOIL",
-        "FOOD",
-        "MILK",
-        "WATR",
-    ],
+    # !! CABBAGE NEEDS UPDATED OCT 2024 - STILL NEEDED?
+    # !! dropped in Horse, keyword still here to avoid breaking Sam compile, but can be dropped after that
+    "cryo_gases": [],
+    # !! CABBAGE NEEDS UPDATED OCT 2024 - STILL NEEDED?
+    # !! some of these might be able to drop back to classes with FIRS 4 or 5
+    # !! dropped in Horse, keyword still here to avoid breaking Sam compile, but can be dropped after that
+    "edible_liquids": [],
+    # !! CABBAGE NEEDS UPDATED OCT 2024 - STILL NEEDED?
+    # !! some of these might be able to drop back to classes with FIRS 4 or 5
     "farm_food_products": [
         "BAKE",
-        "BEAN",
-        "CASS",
         "CERE",
         "FERT",
         "FMSP",
-        "FOOD",
         "FRUT",
         "GRAI",
         "JAVA",
@@ -266,6 +307,7 @@ allowed_refits_by_label = {
         "TATO",
         "WHEA",
     ],
+    # !! CABBAGE NEEDS UPDATED OCT 2024 - STILL NEEDED?
     # for bolster wagon
     "long_products": [
         "ALUM",
@@ -288,6 +330,7 @@ allowed_refits_by_label = {
         "WOOD",
         "ZINC",
     ],
+    # !! CABBAGE NEEDS UPDATED OCT 2024 - STILL NEEDED?
     # hax for intermodal container sprite selection - reefer car refits work just fine using CC_REFRIGERATED
     "reefer": [
         "FISH",
@@ -297,6 +340,7 @@ allowed_refits_by_label = {
 }
 
 # rather than using disallowed classes (can cause breakage), specific labels are disallowed
+# !! CABBAGE NEEDS UPDATED OCT 2024 - STILL NEEDED?
 disallowed_refits_by_label = {
     "non_dump_bulk": [
         "WOOD",
@@ -332,22 +376,8 @@ disallowed_refits_by_label = {
         "CHLO",
         "N7__",
     ],
-    "non_flatbed_freight": [
-        "FOOD",
-        "FISH",
-        "LVST",
-        "FRUT",
-        "BEER",
-        "MILK",
-        "JAVA",
-        "SUGR",
-        "NUTS",
-        "EOIL",
-        "BOOM",
-        "FERT",
-        "PLAS",
-        "CBLK",
-    ],
+    # !! CABBAGE ... DEPRECATED
+    "non_flatbed_freight": [],
     "non_freight_special_cases": ["TOUR"],
 }
 

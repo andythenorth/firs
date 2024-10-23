@@ -1,0 +1,60 @@
+img {
+    image-rendering: pixelated;
+}
+
+.do_not_use {
+    font-style:italic;
+}
+
+td.number, th.number {
+    text-align:right;
+    padding-right:8px;
+}
+th a.table-link-dark, td a.table-link-dark {
+    color: #333;
+}
+.tablesorter-header {
+    cursor:pointer;
+}
+
+.tablesorter-headerAsc, .tablesorter-headerDesc {
+    background-color:#0077CC;
+    color:#fff;
+}
+
+table.cargo-class-facts {
+    background: #e0f4fc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 30px;
+    vertical-align: top;
+}
+table.cargo-class-facts th {
+    background: #b4dcec;
+    color: #18506c;
+    width: 310px; /* oof exact pixel sizing, regrettable */
+    padding: 16px;
+    text-align: right;
+    border-bottom: solid 1px #b4dcec;
+    vertical-align: top;
+}
+table.cargo-class-facts td {
+    margin: 0;
+    padding: 16px;
+    border-bottom: solid 1px #b4dcec;
+    vertical-align: top;
+}
+table.cargo-class-facts tr:first-of-type th {
+    border-top-left-radius: 4px;
+}
+table.cargo-class-facts tr:first-of-type th, table.cargo-class-facts tr:first-of-type td {
+    padding-top: 21px;
+}
+table.cargo-class-facts tr:last-of-type th {
+    border-bottom-left-radius: 4px;
+}
+table.cargo-class-facts tr:last-of-type th, table.cargo-class-facts tr:last-of-type td {
+    padding-bottom: 21px;
+    border-bottom: none;
+}
