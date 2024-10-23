@@ -7,11 +7,11 @@ from cargo_classes import CargoClassSchemes
 
 
 def main():
-    print("[CARGO CLASSES - RENDER DOCS]")
+    print("[CARGO CLASSES - RENDER NML CONSTANTS]")
     # note that we support rendering multiple schemes in the docs, to support comparing changes
     cargo_class_schemes = CargoClassSchemes()
-    cargo_class_schemes.render_docs()
-    print("[CARGO CLASSES - RENDER DOCS] - complete")
+    cargo_class_schemes.render_nml()
+    print("[CARGO CLASSES - RENDER NML CONSTANTS] - complete")
 
 
 if __name__ == "__main__":

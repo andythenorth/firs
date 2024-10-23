@@ -1,0 +1,12 @@
+// extra nml constants for Polar Fox 2024 cargo class names that substitute legacy NML class names
+<tal:cargo_class_nodes repeat="cargo_class_node cargo_class_scheme.cargo_classes_taxonomy.items()">
+    <tal:cargo_class define="cargo_class_node_id cargo_class_node[0]; cargo_class cargo_class_node[1];">
+        <tal:block condition="cargo_class_node_id != cargo_class.nml_cargo_class_name">
+            const ${cargo_class_node_id} = ${cargo_class.nml_cargo_class_name}; // bit number for reference ${cargo_class.bit_number}
+         </tal:block>
+    </tal:cargo_class>
+</tal:cargo_class_nodes>
+
+// extra nml constants for Polar Fox 2024 cargo class names that are new and use bit numbers directly
+const CC_FOOD_GRADE = ${cargo_class_scheme.cargo_classes_taxonomy['CC_FOOD_GRADE'].bit_number};
+const CC_NON_FOOD_GRADE = ${cargo_class_scheme.cargo_classes_taxonomy['CC_NON_FOOD_GRADE'].bit_number};

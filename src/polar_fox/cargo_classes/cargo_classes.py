@@ -28,6 +28,21 @@ class CargoClassSchemes(dict):
     def default_scheme(self):
         return self[self.default_scheme_name]
 
+    def render_nml(self):
+        # render out nml with `const foo = bar` for currend scheme
+        nml_template = PageTemplateLoader(current_dir, format="text")[
+            "nml_cargo_class_constants.pt"
+        ]
+        rendered_nml = drop_whitespace(nml_template(
+            cargo_class_scheme=self.default_scheme,
+        ))
+
+        # docs are stored in the repo, as we actually want to commit them and have them available on github
+        docs_dir = os.path.join(current_dir, "docs")
+        output_file_path = os.path.join(docs_dir, "cargo_class_constants.nml")
+        with open(output_file_path, "w", encoding="utf-8") as nml_file:
+            nml_file.write(rendered_nml)
+
     def render_docs(self):
         # render out docs (html currently) for all in-scope schemes
         for cargo_class_scheme in self.values():
@@ -162,6 +177,14 @@ class CargoClassScheme(object):
                 result.append(cargo_class)
         return result
 
+def drop_whitespace(escaped_nml):
+    escaped_nml = "\n".join(
+        [x for x in escaped_nml.split("\n") if x.strip(" \t\n\r") != ""]
+    )
+    escaped_nml = "\n".join(
+        [x.lstrip() for x in escaped_nml.split("\n")]
+    )
+    return escaped_nml
 
 def main():
     # nothing on import, use this as a module
