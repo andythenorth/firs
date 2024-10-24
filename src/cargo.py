@@ -22,13 +22,6 @@ templates = PageTemplateLoader(
 from economies import registered_economies
 from cargos import registered_cargos
 
-# this will be suboptimal for performance, as it will be imported multiple times per compile, causing duplicat TOML parsing
-# fine for v4, but for v5, this might be better centralised?
-from polar_fox.cargo_classes import cargo_classes
-
-cargo_class_scheme = cargo_classes.CargoClassSchemes().default_scheme
-
-
 class Cargo(object):
     """Base class to hold cargos"""
 
@@ -161,14 +154,7 @@ class Cargo(object):
         return global_constants.valid_cargo_colours[self.get_numeric_id(economy)]
 
     def get_cargo_classes_for_nml(self):
-        classes_mapped_to_bit_numbers = []
-        for cargo_class in self.cargo_classes:
-            classes_mapped_to_bit_numbers.append(
-                str(
-                    cargo_class_scheme.cargo_classes_taxonomy[cargo_class]["bit_number"]
-                )
-            )
-        return "bitmask(" + ",".join(classes_mapped_to_bit_numbers) + ")"
+        return "bitmask(" + ",".join(self.cargo_classes) + ")"
 
     def get_property(self, property_name, economy):
         # straightforward lookup of a property, doesn't try to handle failure case of property not found; don't look up props that don't exist
