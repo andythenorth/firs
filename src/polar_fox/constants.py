@@ -199,7 +199,7 @@ base_refits_by_class = {
     "mail": {"allowed": ["CC_MAIL"], "disallowed": []},
     "packaged_freight": {
         "allowed": ["CC_PIECE_GOODS", "CC_EXPRESS"],
-        "disallowed": ["CC_WEIRD"],  # weird goes in all_freight
+        "disallowed": ["CC_WEIRD"],  # weird covered in all_freight,
     },
     "pax": {"allowed": ["CC_PASSENGERS"], "disallowed": []},
     "refrigerated_freight": {"allowed": ["CC_REFRIGERATED"], "disallowed": []},
@@ -292,12 +292,9 @@ allowed_refits_by_label = {
     # !! some of these might be able to drop back to classes with FIRS 4 or 5
     "farm_food_products": [
         "BAKE",
-        "BEAN",
-        "CASS",
         "CERE",
         "FERT",
         "FMSP",
-        "FOOD",
         "FRUT",
         "GRAI",
         "JAVA",
@@ -379,22 +376,8 @@ disallowed_refits_by_label = {
         "CHLO",
         "N7__",
     ],
-    "non_flatbed_freight": [
-        "FOOD",
-        "FISH",
-        "LVST",
-        "FRUT",
-        "BEER",
-        "MILK",
-        "JAVA",
-        "SUGR",
-        "NUTS",
-        "EOIL",
-        "BOOM",
-        "FERT",
-        "PLAS",
-        "CBLK",
-    ],
+    # !! CABBAGE ... DEPRECATED
+    "non_flatbed_freight": [],
     "non_freight_special_cases": ["TOUR"],
 }
 
