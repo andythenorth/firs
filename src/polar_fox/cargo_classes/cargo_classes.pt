@@ -53,6 +53,7 @@
                 <tr>
                     <th>Cargo class</th>
                     <th>ID</th>
+                    <th>CARGO_CLASS_TAXONOMY_TAGS</th>
                     <th>Bit number</th>
                 </tr>
                 <tal:cargo_class_nodes repeat="cargo_class_node cargo_class_scheme.cargo_classes_taxonomy.items()">
@@ -66,6 +67,7 @@
 
                             </td>
                             <td>${cargo_class_node_id}</td>
+                            <td>${cargo_class.cargo_class_taxonomy_tags}</td>
                             <td>${cargo_class.bit_number}</td>
                         </tr>
                     </tal:cargo_class>
@@ -139,13 +141,13 @@
                                         </tal:list_items>
                                     </tal:block>
                                     <p tal:condition="cargo_class.fallback_to_piece_goods">This cargo class may not be widely supported by older vehicle GRFs. Also set CC_PIECE_GOODS as a fallback (recommended).</p>
-                                    <p tal:condition="cargo_class.set_bit_13 == 'true'">Also set CC_FOOD_GRADE (recommended).</p>
-                                    <p tal:condition="cargo_class.set_bit_14 == 'true'">Also set CC_NON_FOOD_GRADE (recommended).</p>
-                                    <p tal:condition="cargo_class.set_bit_13 == 'as_appropriate'">Also set CC_FOOD_GRADE if appropriate to cargo.</p>
-                                    <p tal:condition="cargo_class.set_bit_14 == 'as_appropriate'">Also set CC_NON_FOOD_GRADE if appropriate to cargo.</p>
+                                    <p tal:condition="cargo_class.set_bit_13 == 'true'">Also set CC_POTABLE (recommended).</p>
+                                    <p tal:condition="cargo_class.set_bit_14 == 'true'">Also set CC_NON_POTABLE (recommended).</p>
+                                    <p tal:condition="cargo_class.set_bit_13 == 'as_appropriate'">Also set CC_POTABLE if appropriate to cargo.</p>
+                                    <p tal:condition="cargo_class.set_bit_14 == 'as_appropriate'">Also set CC_NON_POTABLE if appropriate to cargo.</p>
                                     <p tal:condition="(cargo_class.set_bit_13 == 'as_appropriate' and cargo_class.set_bit_14 == 'as_appropriate') or cargo_class.set_bit_13 == 'never' or cargo_class.set_bit_14 == 'never'"
                                        style="color:red;">
-                                        <small>Do <strong>not</strong> set both CC_FOOD_GRADE and CC_NON_FOOD_GRADE on a cargo, as this can cause the cargo to become unrefittable. If a cargo does not specifically require food-grade or non-food-grade transport, leave both of those classes unset.</small>
+                                        <small>Do <strong>not</strong> set both CC_POTABLE and CC_NON_POTABLE on a cargo, as this can cause the cargo to become unrefittable. If a cargo does not specifically require food-grade or non-food-grade transport, leave both of those classes unset.</small>
                                     </p>
 
                                 </td>
