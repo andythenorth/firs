@@ -6,7 +6,3 @@
          </tal:block>
     </tal:cargo_class>
 </tal:cargo_class_nodes>
-
-// extra nml constants for Polar Fox 2024 cargo class names that are new and use bit numbers directly
-const CC_FOOD_GRADE = ${cargo_class_scheme.cargo_classes_taxonomy['CC_FOOD_GRADE'].bit_number};
-const CC_NON_FOOD_GRADE = ${cargo_class_scheme.cargo_classes_taxonomy['CC_NON_FOOD_GRADE'].bit_number};

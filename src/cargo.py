@@ -88,7 +88,7 @@ class Cargo(object):
 
     def validate_cargo_classes(self):
         # crude, not intended to solve everything
-        disallowed_pairs = [("CC_FOOD_GRADE", "CC_NON_FOOD_GRADE")]
+        disallowed_pairs = [("CC_POTABLE", "CC_NON_POTABLE")]
         for disallowed_pair in disallowed_pairs:
             if (disallowed_pair[0] in self.cargo_classes) and (
                 disallowed_pair[1] in self.cargo_classes
@@ -111,12 +111,12 @@ class Cargo(object):
                 "CC_LIQUID",
                 "CC_POWDERIZED",
             ]:
-                if ("CC_FOOD_GRADE" not in self.cargo_classes) and (
-                    "CC_NON_FOOD_GRADE" not in self.cargo_classes
+                if ("CC_POTABLE" not in self.cargo_classes) and (
+                    "CC_NON_POTABLE" not in self.cargo_classes
                 ):
                     raise BaseException(
                         self.id
-                        + " should set one of CC_FOOD_GRADE or CC_NON_FOOD_GRADE"
+                        + " should set one of CC_POTABLE or CC_NON_POTABLE"
                     )
             if cargo_class in ["CC_GAS", "CC_COVERED_BULK", "CC_POWDERIZED", "CC_FLATBED"]:
                 if (

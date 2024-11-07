@@ -92,14 +92,14 @@ class DocHelper(object):
             "CC_PIECE_GOODS": "Piece Goods",
             "CC_OPEN_BULK": "Open Bulk",
             "CC_COVERED_BULK": "Covered Bulk",
-            "CC_LIQUID": "Liquid",
-            "CC_GAS": "Gas",
-            "CC_POWDERIZED": "Powderized",
+            "CC_POWDER_BULK": "Powder Bulk",
+            "CC_LIQUID_BULK": "Liquid Bulk",
+            "CC_GAS_BULK": "Gas Bulk",
             "CC_FLATBED": "Flatbed",
             "CC_REFRIGERATED": "Refrigerated",
             "CC_WEIRD": "Weird",
-            "CC_FOOD_GRADE": "Food-Grade",
-            "CC_NON_FOOD_GRADE": "Non-Food-Grade",
+            "CC_POTABLE": "Potable",
+            "CC_NON_POTABLE": "Non-Potable",
         }
         for cargo_class in cargo.cargo_classes:
             if cargo_class not in pretty_names:

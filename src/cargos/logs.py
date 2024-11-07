@@ -8,7 +8,7 @@ cargo = Cargo(
     sprite="NEW_CARGO_SPRITE",
     weight="1.0",
     is_freight="1",
-    cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED", "CC_NON_FOOD_GRADE"],
+    cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED", "CC_NON_POTABLE"],
     # for legacy compatibility WOOD label is used as there is very wide support for it
     # but as a name string that has proven ambiguous in games - conflates with finished wood products (lumber, finished timber etc)
     cargo_label="WOOD",
