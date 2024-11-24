@@ -1,0 +1,261 @@
+:root {
+    --fox-fact-dark-blue: #18506c;
+    --fox-fact-mid-blue: #B4DCEC;
+    --fox-fact-light-blue: #E0F4FC;
+}
+img {
+    image-rendering: pixelated;
+}
+
+.fox-banner-image {
+    image-rendering: auto;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 5px 12px rgb(135 201 242 / 100%);
+    transform: rotate(2deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.do_not_use {
+    font-style:italic;
+}
+
+.fox-bg-blue {
+    background-color: #2282ca;
+}
+.hero {
+    color: var(--bs-white);
+    background: linear-gradient(180deg, #0a6ab2, #2282ca);
+}
+.hero h1 {
+    font-weight: 600;
+}
+
+code a {
+    color: var(--bs-red);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px; /* thicker to obscure underscores */
+    background: rgb(247, 247, 249);
+    padding: 2px 4px 5px 4px;
+    white-space: nowrap;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(225, 225, 232);
+    border-radius: 3px;
+}
+code a:hover {
+}
+
+/* copy of bootstrap docs callout */
+
+.bd-callout {
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #eee;
+  border-left-width: 4px;
+  border-radius: 0.25rem;
+}
+
+.bd-callout-warning {
+    color: rgb(102, 77, 3);
+    background: rgb(255, 243, 205);;
+    border-left-color: rgb(255, 230, 156);
+}
+
+.bd-callout h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.bd-callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* guide stuff */
+.guide-section {
+    border-left: solid 4px var(--fox-fact-dark-blue);
+    padding-left: 2em;
+    padding-bottom: 1em;
+}
+.guide-sub-section {
+    border-left: solid 3px var(--fox-fact-mid-blue);
+    background: var(--fox-fact-light-blue);
+    padding: 1.5em;
+    padding-bottom: 0.5em;
+}
+
+.guide-section-link-block {
+    border-left: solid 4px var(--fox-fact-dark-blue);
+    height: 6em;
+    padding-top: 2em;
+    padding-left: 2em;
+    width: 100%;
+}
+.guide-section-link-block hr {
+    background: none;
+    border-top: dashed 4px #ddd;
+}
+
+.guide-arrow-down {
+  position: relative;
+  width: 16px; /* Width of the rectangle */
+  height: 8px; /* Height of the rectangle */
+  background-color: var(--fox-fact-mid-blue); /* Rectangle color */
+  top: 0;
+  left: 2.9em;
+  margin-top: 0.8em;
+  margin-bottom: 1.6em;
+}
+.guide-arrow-down::before {
+  content: "";
+  position: absolute;
+  top: 8px; /* Position the triangle above the rectangle */
+  left: 50%;
+  transform: translateX(-50%); /* Center the triangle */
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent; /* Half of the triangle's width */
+  border-right: 16px solid transparent; /* Half of the triangle's width */
+  border-top: 16px solid var(--fox-fact-mid-blue); /* Color of the triangle */
+}
+
+/* Add a stubby line before each h2 section */
+.guide-section h3::before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 0.7em;
+    left: -1.2em; /* This positions the line on the left side of the border */
+    width: 0.8em; /* Length of the horizontal line */
+    height: 4px; /* Height of the line */
+    background-color: var(--fox-fact-dark-blue); /* Line color */
+}
+
+.guide-heading {
+    color: var(--fox-fact-dark-blue);
+}
+
+.guide-step-heading {
+    display: inline-flex;
+    align-items: center; /* Vertically aligns the circle and text */
+    margin-bottom: 1.5em;
+}
+
+.guide-step-marker {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    background-color: var(--fox-fact-dark-blue);
+    border: solid 4px var(--fox-fact-dark-blue);
+    border-radius: 50%; /* Ensures a circular shape */
+    width: 1.5em; /* Set a fixed width */
+    height: 1.5em; /* Set the same height to make it a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5em; /* Space between the circle and the text */
+}
+
+.guide-list-group {
+    border-left: solid 1px var(--fox-fact-dark-blue);
+    overflow: hidden;
+    padding-left: 1.5em;
+    margin-left: 0.2em;
+}
+.guide-list-group-item {
+    list-style-type: none;
+    margin-top: 0.66em;
+    margin-bottom: 0.66em;
+}
+.guide-list-group-item:before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 0.9em;
+    left: -1.5em; /* This positions the line on the left side of the border */
+    width: 0.8em; /* Length of the horizontal line */
+    height: 1px; /* Height of the line */
+    background-color: var(--fox-fact-dark-blue); /* Line color */
+
+}
+
+/* Custom hover color for bootstrap table rows */
+.table-hover tbody tr:hover {
+    background-color: #D9F5FF !important; /* Apply custom color and ensure it overrides Bootstrap's */
+}
+/* smaller font for data-heavy tables */
+.table-small-font {
+    font-size: 0.875rem; /* or any desired size */
+}
+/* Cursor change for sortable headers */
+.sortable th {
+    cursor: pointer;
+    padding-right: 16px; /* Adjust as needed */
+    position: relative;  /* For proper arrow positioning */
+    border-right: solid 1px white;
+}
+
+/* Basic styling for sorted columns */
+.sortable th.sorted-asc::after,
+.sortable th.sorted-desc::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: 16px; /* Position arrow to the far right within the padding */
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+}
+
+.sortable th.sorted-asc::after {
+    border-bottom: 5px solid black; /* Arrow pointing up */
+    top: 13px;
+}
+
+.sortable th.sorted-desc::after {
+    border-top: 5px solid black; /* Arrow pointing down */
+    top: 18px;
+}
+
+table.cargo-class-facts {
+    background: #E0F4FC;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 30px;
+    vertical-align: top;
+}
+table.cargo-class-facts th {
+    background: #b4dcec;
+    color: var(--fox-fact-dark-blue);
+    width: 310px; /* oof exact pixel sizing, regrettable */
+    padding: 16px;
+    text-align: right;
+    border-bottom: solid 1px #b4dcec;
+    vertical-align: top;
+}
+table.cargo-class-facts td {
+    margin: 0;
+    padding: 16px;
+    border-bottom: solid 1px #b4dcec;
+    vertical-align: top;
+}
+table.cargo-class-facts tr:first-of-type th {
+    border-top-left-radius: 4px;
+}
+table.cargo-class-facts tr:first-of-type th, table.cargo-class-facts tr:first-of-type td {
+    padding-top: 21px;
+}
+table.cargo-class-facts tr:last-of-type th {
+    border-bottom-left-radius: 4px;
+}
+table.cargo-class-facts tr:last-of-type th, table.cargo-class-facts tr:last-of-type td {
+    padding-bottom: 21px;
+    border-bottom: none;
+}
+table.cargo-class-facts p:last-of-type {
+    margin-bottom: 0;
+}
+

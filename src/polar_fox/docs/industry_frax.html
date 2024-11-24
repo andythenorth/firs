@@ -1,0 +1,3513 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            
+        FRAX for Industry Authors | Polar Fox
+    
+        </title>
+        <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
+        <link type="text/css" href="static/css/style.css" rel="stylesheet">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelectorAll("table.sortable th").forEach(header => {
+                    header.addEventListener("click", () => {
+                        const table = header.closest("table");
+                        const columnIndex = Array.from(header.parentNode.children).indexOf(header);
+                        const type = header.getAttribute("data-type");
+                        const isAsc = table.getAttribute("data-sort") !== "asc";
+                        const rows = Array.from(table.querySelector("tbody").rows);
+
+                        // Remove sorted classes from all headers
+                        header.parentNode.querySelectorAll("th").forEach(th => th.classList.remove("sorted-asc", "sorted-desc"));
+
+                        // Add sorted class to the current header
+                        header.classList.add(isAsc ? "sorted-asc" : "sorted-desc");
+
+                        rows.sort((a, b) => {
+                            let aVal = a.cells[columnIndex].innerText;
+                            let bVal = b.cells[columnIndex].innerText;
+                            if (type === 'number') {
+                                aVal = parseFloat(aVal) || 0;
+                                bVal = parseFloat(bVal) || 0;
+                            }
+                            return isAsc ? (aVal > bVal ? 1 : -1) : (aVal < bVal ? 1 : -1);
+                        });
+
+                        rows.forEach(row => table.querySelector("tbody").appendChild(row));
+                        table.setAttribute("data-sort", isAsc ? "asc" : "desc");
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-light text-decoration-underline"
+                           href="index.html">Polar Fox</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light text-decoration-underline"
+                           href="frax.html">FRAX Cargo Classes</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Inject the URL prefix from Chameleon's docs_pages['overview']
+                var prefix = "frax.html";
+
+                // Regular expression to match 'CC_' followed by uppercase letters or underscores
+                var regex = /\b(CC_[A-Z_]+)\b/g;
+
+                // Select all elements within the body
+                var elements = document.querySelectorAll('body *');
+
+                elements.forEach(function(element) {
+                    element.childNodes.forEach(function(child) {
+                        if (child.nodeType === Node.TEXT_NODE) {
+                            var matches = child.nodeValue.match(regex);
+                            if (matches) {
+                                // Replace matched patterns with linked <code> elements
+                                var newHTML = child.nodeValue.replace(regex, function(match) {
+                                    return '<code><a href="' + prefix + '#' + match + '">' + match + '</a></code>';
+                                });
+                                // Create a new span element to hold the transformed HTML
+                                var span = document.createElement('span');
+                                span.innerHTML = newHTML;
+                                // Replace the original text node with the new span
+                                element.replaceChild(span, child);
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
+        <div class="hero fox-bg-blue">
+            <div class="container pt-3 pb-1">
+                <h1 class="display-6">FRAX Cargo Class Scheme</h1>
+                <p><small><i>FRAX Routes all Xenon etc</i></small></p>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg fox-bg-blue" style="border-bottom: solid 1px black;">
+            <div class="container">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-light text-decoration-underline"
+                           href="frax.html">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light text-decoration-underline"
+                           href="vehicle_frax.html">For Vehicle Authors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light text-decoration-underline"
+                           href="industry_frax.html">For Industry Authors</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+            
+        
+
+        <div class="flex-grow-1 container pt-5 pb-5">
+            <div>
+        <div>
+
+        <h1>Guide for Industry Authors</h1>
+
+        <div class="pt-3 pb-3">
+            <p>Sections:</p>
+            <ul>
+                <li><a href="#guide">Guide</a></li>
+                <li><a href="#example-cargos-table">Example Cargos - Table</a></li>
+                <li><a href="#example-cargos-details">Example Cargos - Details</a></li>
+            </ul>
+        </div>
+
+        <hr />
+
+        <div class="pt-3 pb-3">
+            <div class="bd-callout bd-callout-warning">
+                <p>
+                    <strong>Heads up!</strong> Cargo classes are matched individually, so cargos with multiple classes refit into any vehicle matching <strong>one</strong> of the classes, not all.
+                </p>
+            </div>
+            <div class="pt-3 pb-3">
+                <h2 id="guide">Guide</h2>
+                <p>
+                    There are three categories of cargo:
+                    <a href="#passenger_cargo">passenger</a>,
+                    <a href="#mail_cargo">mail</a>, and
+                    <a href="#freight_cargo">freight</a>.
+                </p>
+            </div>
+
+            <div class="ps-1">
+                <div class="guide-section">
+                    <h3 id="passenger_cargo" class="guide-heading mb-0">Passenger Cargo</h3>
+
+                    <div class="guide-arrow-down"></div>
+
+                    <div class="guide-sub-section">
+                        <h4 class="guide-heading guide-step-heading">
+                            <span class="guide-step-marker">1</span> Simply Passengers
+                        </h4>
+                        <p>Set CC_PASSENGERS. No other classes needed. Done.</p>
+                    </div>
+                </div>
+
+                <div class="guide-section-link-block">
+                    <hr />
+                </div>
+
+                <div class="guide-section">
+                    <h3 id="mail_cargo" class="guide-heading mb-0">Mail Cargo</h3>
+
+                    <div class="guide-arrow-down"></div>
+
+                    <div class="guide-sub-section">
+                        <h4 class="guide-heading guide-step-heading">
+                            <span class="guide-step-marker">1</span> Just Mail
+                        </h4>
+                        <p>Set CC_MAIL. No other classes needed. Done.</p>
+                    </div>
+                </div>
+
+                <div class="guide-section-link-block">
+                    <hr />
+                </div>
+
+                <div class="guide-section">
+                    <h3 id="freight_cargo" class="guide-heading mb-0">Freight Cargo</h3>
+
+                    <div class="guide-arrow-down"></div>
+
+                    <div class="guide-sub-section">
+                        <h4 class="guide-heading guide-step-heading">
+                            <span class="guide-step-marker">1</span> Potable Status
+                        </h4>
+                        <h5>Set <strong>potable status</strong></h5>
+                        <ul class="guide-list-group">
+                            
+                                <li class="guide-list-group-item">CC_POTABLE</li>
+                            
+                                <li class="guide-list-group-item">CC_NON_POTABLE</li>
+                            
+                        </ul>
+                        <p>This is a boolean flag (true / false), and <strong>one</strong> of these classes should be set appropriately for <strong>all</strong> freight cargos.</p>
+                        <p>Do <strong>not</strong> set both of these classes on a cargo. They are mutually exclusive.</p>
+                    </div>
+
+                    <div class="guide-arrow-down"></div>
+
+                    <div class="guide-sub-section">
+                        <h4 class="guide-heading guide-step-heading">
+                            <span class="guide-step-marker">2</span> Basic Handling
+                        </h4>
+                        <h5>Set any <strong>basic handling</strong> classes that apply.</h5>
+                        <ul class="guide-list-group">
+                            
+                                <li class="guide-list-group-item">CC_PIECE_GOODS</li>
+                            
+                                <li class="guide-list-group-item">CC_OPEN_BULK</li>
+                            
+                                <li class="guide-list-group-item">CC_COVERED_BULK</li>
+                            
+                                <li class="guide-list-group-item">CC_POWDER_BULK</li>
+                            
+                                <li class="guide-list-group-item">CC_LIQUID_BULK</li>
+                            
+                                <li class="guide-list-group-item">CC_GAS_BULK</li>
+                            
+                        </ul>
+                        <p><em>Most</em> cargos should <strong>include at least one basic handling class</strong>.</p>
+                        <p>You can assign multiple basic handling classes if the cargo is transported in different forms. Be sure to include all applicable classes.</p>
+                        <p>For better compatibility with vehicle GRFs, consider adding CC_PIECE_GOODS, as many cargos can be transported this way. Refer to the CC_PIECE_GOODS section for detailed guidance.</p>
+                        <p><em>Some</em> unique or non-standard cargos may not use any basic handling classes and instead rely solely on special handling classes.</p>
+                    </div>
+
+                    <div class="guide-arrow-down"></div>
+
+                    <div class="guide-sub-section">
+                        <h4 class="guide-heading guide-step-heading">
+                            <span class="guide-step-marker">3</span> Special Handling
+                        </h4>
+                        <h5>Set any <strong>special handling</strong> classes that apply.</h5>
+                        <ul class="guide-list-group">
+                            
+                                <li class="guide-list-group-item">CC_FLATBED</li>
+                            
+                                <li class="guide-list-group-item">CC_EXPRESS</li>
+                            
+                                <li class="guide-list-group-item">CC_ARMOURED</li>
+                            
+                                <li class="guide-list-group-item">CC_REFRIGERATED</li>
+                            
+                                <li class="guide-list-group-item">CC_WEIRD</li>
+                            
+                        </ul>
+                        <p>
+                            These classes are designed for less common, specialized vehicles and highlight which cargos are best suited to them.
+                            They represent a recommendation—'should use' rather than 'can use.'
+                            For example, while steel could technically be transported in a refrigerated vehicle, it doesn’t need refrigeration.
+                            Similarly, diamonds should be marked as armoured because they require secure transport. However, marking diamonds as flatbed cargo would be inappropriate and unhelpful.
+                        </p>
+                        <p>Assign as many special handling classes as genuinely necessary for the cargo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="pt-3 pb-3">
+        <h2 id="example-cargos-table">Example Cargos - Table</h2>
+            
+            <table class="table table-striped table-condensed table-bordered tablesorter">
+                <tr>
+                    <th>Example Cargo</th>
+                    <th>Recommended Classes</th>
+                </tr>
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_AMMONIA">Ammonia</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_PIECE_GOODS
+                                
+                                    CC_GAS_BULK
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_BEANS">Beans</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_POTABLE
+                                
+                                    CC_PIECE_GOODS
+                                
+                                    CC_COVERED_BULK
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_CEMENT">Cement</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_PIECE_GOODS
+                                
+                                    CC_POWDER_BULK
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_CHLORINE">Chlorine</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_PIECE_GOODS
+                                
+                                    CC_GAS_BULK
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_COAL">Coal</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_OPEN_BULK
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_DIAMONDS">Diamonds</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_ARMOURED
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_EXPLOSIVES">Explosives</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_PIECE_GOODS
+                                
+                                    CC_EXPRESS
+                                
+                                    CC_ARMOURED
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_FISH">Fish</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_POTABLE
+                                
+                                    CC_EXPRESS
+                                
+                                    CC_REFRIGERATED
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_FLOUR">Flour</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_POTABLE
+                                
+                                    CC_PIECE_GOODS
+                                
+                                    CC_COVERED_BULK
+                                
+                                    CC_POWDER_BULK
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_FOOD">Food</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_POTABLE
+                                
+                                    CC_PIECE_GOODS
+                                
+                                    CC_COVERED_BULK
+                                
+                                    CC_LIQUID_BULK
+                                
+                                    CC_EXPRESS
+                                
+                                    CC_REFRIGERATED
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_GOODS">Goods</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_PIECE_GOODS
+                                
+                                    CC_FLATBED
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_GRAIN">Grain</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_POTABLE
+                                
+                                    CC_PIECE_GOODS
+                                
+                                    CC_COVERED_BULK
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_IRON_ORE">Iron Ore</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_OPEN_BULK
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_LIVESTOCK">Livestock</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_WEIRD
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_MAIL">Mail</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_MAIL
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_MILK">Milk</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_POTABLE
+                                
+                                    CC_LIQUID_BULK
+                                
+                                    CC_EXPRESS
+                                
+                                    CC_REFRIGERATED
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_NUCLEAR_FUEL">Nuclear fuel</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_ARMOURED
+                                
+                                    CC_WEIRD
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_OIL">Oil</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_LIQUID_BULK
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_OXYGEN">Oxygen</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_GAS_BULK
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_PAPER">Paper</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_PIECE_GOODS
+                                
+                                    CC_FLATBED
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_PASSENGERS">Passengers</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_PASSENGERS
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_PIPE">Pipe</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_PIECE_GOODS
+                                
+                                    CC_FLATBED
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_QUICKLIME">Quicklime</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_PIECE_GOODS
+                                
+                                    CC_COVERED_BULK
+                                
+                                    CC_POWDER_BULK
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_SAND">Sand</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_OPEN_BULK
+                                
+                                    CC_COVERED_BULK
+                                
+                                    CC_POWDER_BULK
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_SCRAP_METAL">Scrap Metal</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_OPEN_BULK
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_SODIUM_HYDROXIDE">Sodium Hydroxide</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_PIECE_GOODS
+                                
+                                    CC_LIQUID_BULK
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_STEEL">Steel</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_PIECE_GOODS
+                                
+                                    CC_FLATBED
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_SULPHUR">Sulphur</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_OPEN_BULK
+                                
+                                    CC_COVERED_BULK
+                                
+                            </td>
+                        </tr>
+                    
+                
+                    
+                        <tr>
+                            <td><a href="#CARGO_TIMBER">Timber</a></td>
+                            
+                            <td style="width:50%;">
+                                
+                                    CC_NON_POTABLE
+                                
+                                    CC_PIECE_GOODS
+                                
+                                    CC_FLATBED
+                                
+                            </td>
+                        </tr>
+                    
+                
+            </table>
+        </div>
+
+        <hr>
+
+        <div class="pt-3 pb-3">
+            <h2 id="example-cargos-details">Example Cargos - Details</h2>
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_AMMONIA">
+                            <div class="d-flex justify-content-between">
+                                Ammonia
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Ammonia is transported using pressurised tankers, of similar type to those used for gas, so CC_GAS_BULK is set. Although ammonia is transported as a pressurized liquid, it is not suitable for standard liquids tankers, so CC_LIQUID is not set. CC_PIECE_GOODS is set as some vehicle grfs may not provide pressurised tankers, so a fallback is needed (representing ammonia in portable tanks).</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_PIECE_GOODS
+                                        
+                                            CC_GAS_BULK
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_PRESSURISED_TANKER">Pressurised Tanker</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_TANKER_MORE_PERMISSIVE">Tanker Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_BEANS">
+                            <div class="d-flex justify-content-between">
+                                Beans
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Beans are transported using covered bulk vehicles, and packaged in crates, sacks, boxes etc. Beans require food-grade transport, so CC_POTABLE is set.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_POTABLE
+                                        
+                                            CC_PIECE_GOODS
+                                        
+                                            CC_COVERED_BULK
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_COVERED_HOPPER">Covered Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_COVERED_HOPPER_FOOD_GRADE">Food Grade Covered Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_CEMENT">
+                            <div class="d-flex justify-content-between">
+                                Cement
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Cement is transported by bulk powder vehicles, and packaged in bags, sacks etc.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_PIECE_GOODS
+                                        
+                                            CC_POWDER_BULK
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_POWDER_TANKER">Powder Tanker</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_CHLORINE">
+                            <div class="d-flex justify-content-between">
+                                Chlorine
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Chlorine is transported using pressurised tankers, using CC_GAS_BULK. CC_PIECE_GOODS is set as some vehicle grfs may not provide pressurised tankers, so a fallback is needed (representing chlorine in portable tanks).</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_PIECE_GOODS
+                                        
+                                            CC_GAS_BULK
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_PRESSURISED_TANKER">Pressurised Tanker</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_TANKER_MORE_PERMISSIVE">Tanker Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_COAL">
+                            <div class="d-flex justify-content-between">
+                                Coal
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Coal is transported as open bulk. Coal is generally weather resistant, and more specialised bulk vehicles are generally not used for coal.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_OPEN_BULK
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_HOPPER">Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_ORE_DUMP">Ore Dump Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_DIAMONDS">
+                            <div class="d-flex justify-content-between">
+                                Diamonds
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Diamonds are armoured, and that's probably all that's needed.  CC_NON_POTABLE could be set, but is probably not necessary for Diamonds.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_ARMOURED
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_ARMOURED_VAN">Armoured Van</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_EXPLOSIVES">
+                            <div class="d-flex justify-content-between">
+                                Explosives
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Explosives are valuable, high priority cargo, suitable for armoured or express vehicles. CC_PIECE_GOODS is set as explosives can also be transported in ordinary goods vehicles.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_PIECE_GOODS
+                                        
+                                            CC_EXPRESS
+                                        
+                                            CC_ARMOURED
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_ARMOURED_VAN">Armoured Van</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_MAIL_VAN">Mail Van</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_FISH">
+                            <div class="d-flex justify-content-between">
+                                Fish
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Fish is suitable for high priority express transport, or refrigerated transport. Fish requires food-grade transport, so CC_POTABLE is set.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_POTABLE
+                                        
+                                            CC_EXPRESS
+                                        
+                                            CC_REFRIGERATED
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_MAIL_VAN">Mail Van</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_REFRIGERATED">Refrigerated Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_FLOUR">
+                            <div class="d-flex justify-content-between">
+                                Flour
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Flour is transported using bulk powder vehicles, covered bulk vehicles, and packaged in sacks, bags etc. Flour requires food-grade transport, so CC_POTABLE is set.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_POTABLE
+                                        
+                                            CC_PIECE_GOODS
+                                        
+                                            CC_COVERED_BULK
+                                        
+                                            CC_POWDER_BULK
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_COVERED_HOPPER">Covered Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_COVERED_HOPPER_FOOD_GRADE">Food Grade Covered Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_POWDER_TANKER">Powder Tanker</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_FOOD">
+                            <div class="d-flex justify-content-between">
+                                Food
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Food is a generic cargo, and can be transported in many forms, including high priority express vehicles, ordinary goods vehicles, rerigerated vehicles, food tankers, and covered bulk food vehicles. Food requires food-grade transport, so CC_POTABLE is set.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_POTABLE
+                                        
+                                            CC_PIECE_GOODS
+                                        
+                                            CC_COVERED_BULK
+                                        
+                                            CC_LIQUID_BULK
+                                        
+                                            CC_EXPRESS
+                                        
+                                            CC_REFRIGERATED
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_COVERED_HOPPER">Covered Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_COVERED_HOPPER_FOOD_GRADE">Food Grade Covered Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_FOOD_TANKER">Food Tanker</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_MAIL_VAN">Mail Van</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_REFRIGERATED">Refrigerated Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_TANKER_MORE_PERMISSIVE">Tanker Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_GOODS">
+                            <div class="d-flex justify-content-between">
+                                Goods
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Goods is a generic cargo, and is transported using general cargo vehicles, or flatbed vehicles.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_PIECE_GOODS
+                                        
+                                            CC_FLATBED
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_FLATBED">Flatbed Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_GRAIN">
+                            <div class="d-flex justify-content-between">
+                                Grain
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Grain is transported using covered bulk vehicles, or in sacks, bags etc using general cargo vehicles. Grain requires food-grade transport, so CC_POTABLE is set.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_POTABLE
+                                        
+                                            CC_PIECE_GOODS
+                                        
+                                            CC_COVERED_BULK
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_COVERED_HOPPER">Covered Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_COVERED_HOPPER_FOOD_GRADE">Food Grade Covered Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_IRON_ORE">
+                            <div class="d-flex justify-content-between">
+                                Iron Ore
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Iron Ore is transported as open bulk. Iron ore is generally weather resistant, and more specialised bulk vehicles are generally not used for iron ore.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_OPEN_BULK
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_HOPPER">Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_ORE_DUMP">Ore Dump Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_LIVESTOCK">
+                            <div class="d-flex justify-content-between">
+                                Livestock
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Livestock is a unique cargo, and vehicles should handle it using the cargo label LVST. CC_WEIRD also set to flag that this cargo is non-standard and should be handled using a label.  The base game sets livestock to CC_PIECE_GOODS, but this is not considered helpful for grfs.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_WEIRD
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_MAIL">
+                            <div class="d-flex justify-content-between">
+                                Mail
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Mail is simple.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_MAIL
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_MAIL_VAN">Mail Van</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_MILK">
+                            <div class="d-flex justify-content-between">
+                                Milk
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Milk is transported as high priority freight in express vehicles, as temperature controlled cargo in refrigerated vehicles, and in food tankers. Milk requires food-grade transport, so CC_POTABLE is set.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_POTABLE
+                                        
+                                            CC_LIQUID_BULK
+                                        
+                                            CC_EXPRESS
+                                        
+                                            CC_REFRIGERATED
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_FOOD_TANKER">Food Tanker</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_MAIL_VAN">Mail Van</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_REFRIGERATED">Refrigerated Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_TANKER_MORE_PERMISSIVE">Tanker Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_NUCLEAR_FUEL">
+                            <div class="d-flex justify-content-between">
+                                Nuclear fuel
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>    Nuclear fuel, typically transported as high-risk cargo in suitable shielded containers.
+    CC_WEIRD is set to indicate that the cargo should be handled directly by label.
+    CC_ARMOURED is set because nuclear fuel is valuable and should be protected from theft. This provides a fallback, but means vehicle grfs may need to exclude nuclear fuel from armoured vehicles.
+</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_ARMOURED
+                                        
+                                            CC_WEIRD
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_ARMOURED_VAN">Armoured Van</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_OIL">
+                            <div class="d-flex justify-content-between">
+                                Oil
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Oil is transported in tanker vehicles.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_LIQUID_BULK
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_TANKER_LESS_PERMISSIVE">Tanker Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_TANKER_MORE_PERMISSIVE">Tanker Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_OXYGEN">
+                            <div class="d-flex justify-content-between">
+                                Oxygen
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Oxygen is transported as a gas under pressure. CC_PIECE_GOODS is set as some vehicle grfs may not provide pressurised tankers, so a fallback is needed (representing ammonia in portable tanks).</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_GAS_BULK
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_PRESSURISED_TANKER">Pressurised Tanker</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_TANKER_MORE_PERMISSIVE">Tanker Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_PAPER">
+                            <div class="d-flex justify-content-between">
+                                Paper
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Paper is transported using general cargo vehicles or flatbed vehicles. Although paper is sensitive to weather, it can be assumed that it is suitably protected by packaging for transport.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_PIECE_GOODS
+                                        
+                                            CC_FLATBED
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_FLATBED">Flatbed Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_PASSENGERS">
+                            <div class="d-flex justify-content-between">
+                                Passengers
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Passengers is simple.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_PASSENGERS
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_PASSENGER_VEHICLE">Passenger Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_PIPE">
+                            <div class="d-flex justify-content-between">
+                                Pipe
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Pipe is transported using flatbed vehicles or general cargo vehicles.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_PIECE_GOODS
+                                        
+                                            CC_FLATBED
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_FLATBED">Flatbed Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_QUICKLIME">
+                            <div class="d-flex justify-content-between">
+                                Quicklime
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Quicklime is transported using covered bulk vehicles, or bulk powder vehicles.  Quicklime can also be transported as general cargo in barrels etc, so CC_PIECE_GOODS is set as a fallback.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_PIECE_GOODS
+                                        
+                                            CC_COVERED_BULK
+                                        
+                                            CC_POWDER_BULK
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_COVERED_HOPPER">Covered Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_COVERED_HOPPER_INDUSTRIAL">Industrial Covered Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_POWDER_TANKER">Powder Tanker</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_SAND">
+                            <div class="d-flex justify-content-between">
+                                Sand
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Sand is transported using open bulk vehicles, covered bulk vehicles, or using bulk powder vehicles. Although CC_PIECE_GOODS could be set for sand in bags, that isn't necessary as CC_BULK_OPEN is widely supported by vehicle grfs.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_OPEN_BULK
+                                        
+                                            CC_COVERED_BULK
+                                        
+                                            CC_POWDER_BULK
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_COVERED_HOPPER">Covered Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_COVERED_HOPPER_INDUSTRIAL">Industrial Covered Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_HOPPER">Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_ORE_DUMP">Ore Dump Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_POWDER_TANKER">Powder Tanker</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_SCRAP_METAL">
+                            <div class="d-flex justify-content-between">
+                                Scrap Metal
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Scrap Metal is transported using open bulk vehicles. Although CC_PIECE_GOODS could be set, representing scrap metal in bales or cubes, that isn't necessary as CC_BULK_OPEN is widely supported by vehicle grfs.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_OPEN_BULK
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_HOPPER">Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_ORE_DUMP">Ore Dump Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_SODIUM_HYDROXIDE">
+                            <div class="d-flex justify-content-between">
+                                Sodium Hydroxide
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Sodium Hydroxide is transported using tanker vehicles, or as piece goods in barrels etc.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_PIECE_GOODS
+                                        
+                                            CC_LIQUID_BULK
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_TANKER_LESS_PERMISSIVE">Tanker Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_TANKER_MORE_PERMISSIVE">Tanker Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_STEEL">
+                            <div class="d-flex justify-content-between">
+                                Steel
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Steel is transported as pieces, coils, etc, using general cargo vehicles or flatbed vehicles.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_PIECE_GOODS
+                                        
+                                            CC_FLATBED
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_FLATBED">Flatbed Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_SULPHUR">
+                            <div class="d-flex justify-content-between">
+                                Sulphur
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Sulphur is transported using covered bulk and open bulk vehicles.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_OPEN_BULK
+                                        
+                                            CC_COVERED_BULK
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_COVERED_HOPPER">Covered Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_COVERED_HOPPER_INDUSTRIAL">Industrial Covered Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_HOPPER">Hopper</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_ORE_DUMP">Ore Dump Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+                
+                    <div class="mt-5">
+                        <h3 id="CARGO_TIMBER">
+                            <div class="d-flex justify-content-between">
+                                Timber
+                                 <small class="text-muted text-end">Example</small>
+                            </div>
+                        </h3>
+
+                        <table class="cargo-class-facts">
+                            <tbody>
+                                <tr>
+                                    <th>Cargo description</th>
+                                    <td>Timber is transported using general cargo vehicles or flatbed vehicles.</td>
+                                </tr>
+                                <tr>
+                                    <th>Cargo classes</th>
+                                    <td>
+                                        
+                                            CC_NON_POTABLE
+                                        
+                                            CC_PIECE_GOODS
+                                        
+                                            CC_FLATBED
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Example vehicles</th>
+                                    <td>
+
+                                        <ul class="guide-list-group">
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_LESS_PERMISSIVE">Box Van (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_BOX_VAN_MORE_PERMISSIVE">Box Van (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_FLATBED">Flatbed Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_INTERMODAL_CONTAINERS">Intermodal Container Vehicle</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_LESS_PERMISSIVE">Open Cargo Vehicle (less permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                                
+                                                    <li class="guide-list-group-item">
+                                                        
+                                                            <a href="vehicle_frax.html#VEHICLE_OPEN_CARGO_MORE_PERMISSIVE">Open Cargo Vehicle (more permissive)</a>
+                                                        
+                                                        
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+            
+        </div>
+
+    </div>
+    </div>
+        </div>
+
+        <div class="mt-auto">
+            <div style="text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">
+                With thanks to all who helped
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

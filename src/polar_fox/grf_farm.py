@@ -20,8 +20,13 @@ def copy_docs_from_current_project():
         "Copying current docs to grf.farm src dir as",
         "'" + project_name + "/" + tag_name + "'",
     )
-    # makes assumption about location of grf.farm relative to projects being "../../"
-    common_parent_path = os.path.dirname(os.path.dirname(os.path.abspath(currentdir)))
+
+    if project_name in ["polar_fox"]:
+        # makes assumption about location of grf.farm relative to projects being "../"
+        common_parent_path = os.path.dirname(os.path.abspath(currentdir))
+    else:
+        # makes assumption about location of grf.farm relative to projects being "../../"
+        common_parent_path = os.path.dirname(os.path.dirname(os.path.abspath(currentdir)))
     grf_farm_path = os.path.join(common_parent_path, "grf.farm", "src", project_name)
 
     # this could actually be handled by reading the output of git_info.get_monorepo_tag_parts()...
