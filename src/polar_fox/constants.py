@@ -151,11 +151,11 @@ base_refits_by_class = {
             "CC_COVERED_BULK",
             "CC_EXPRESS",
             "CC_FLATBED",
-            "CC_GAS",
-            "CC_LIQUID",
+            "CC_GAS_BULK",
+            "CC_LIQUID_BULK",
             "CC_OPEN_BULK",
             "CC_PIECE_GOODS",
-            "CC_POWDERIZED",
+            "CC_POWDER_BULK",
             "CC_REFRIGERATED",
             "CC_WEIRD",
         ],
@@ -172,7 +172,7 @@ base_refits_by_class = {
             "CC_COVERED_BULK",
         ],
         "disallowed": [
-            "CC_NON_FOOD_GRADE",
+            "CC_NON_POTABLE",
         ],
     },
     "covered_hopper_freight_non_food_grade": {
@@ -180,21 +180,21 @@ base_refits_by_class = {
             "CC_COVERED_BULK",
         ],
         "disallowed": [
-            "CC_FOOD_GRADE",
+            "CC_POTABLE",
         ],
     },
-    "cryo_gases": {"allowed": ["CC_GAS"], "disallowed": []},
+    "cryo_gases": {"allowed": ["CC_GAS_BULK"], "disallowed": []},
     "dump_freight": {"allowed": ["CC_OPEN_BULK"], "disallowed": []},
     "empty": {"allowed": [], "disallowed": []},
     "express_freight": {"allowed": ["CC_EXPRESS", "CC_ARMOURED"], "disallowed": []},
     "flatbed_freight": {"allowed": ["CC_FLATBED"], "disallowed": []},
     "liquids_non_food_grade": {
-        "allowed": ["CC_LIQUID"],
-        "disallowed": ["CC_FOOD_GRADE"],
+        "allowed": ["CC_LIQUID_BULK"],
+        "disallowed": ["CC_POTABLE"],
     },
     "liquids_food_grade": {
-        "allowed": ["CC_LIQUID"],
-        "disallowed": ["CC_NON_FOOD_GRADE"],
+        "allowed": ["CC_LIQUID_BULK"],
+        "disallowed": ["CC_NON_POTABLE"],
     },
     "mail": {"allowed": ["CC_MAIL"], "disallowed": []},
     "packaged_freight": {
@@ -202,8 +202,11 @@ base_refits_by_class = {
         "disallowed": ["CC_WEIRD"],  # weird covered in all_freight,
     },
     "pax": {"allowed": ["CC_PASSENGERS"], "disallowed": []},
-    "refrigerated_freight": {"allowed": ["CC_REFRIGERATED"], "disallowed": []},
-    "silo_powders": {"allowed": ["CC_POWDERIZED"], "disallowed": []},
+    "refrigerated_freight": {
+        "allowed": ["CC_REFRIGERATED"],
+        "disallowed": ["CC_NON_POTABLE"],
+    },
+    "silo_powders": {"allowed": ["CC_POWDER_BULK"], "disallowed": []},
 }
 
 # generally we want to allow refit on classes, and disallow on labels (see disallowed_refits_by_label)

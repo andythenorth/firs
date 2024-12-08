@@ -6,27 +6,10 @@ from chameleon import PageTemplateLoader
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 
-class CargoClassSchemes(dict):
-    """
-    Singleton class just for ease of keeping all the schemes around easily.
-    Extends default python list, as we also use it when we want a list of active rosters (the instantiated class instance behaves like a list object).
-    """
+class CargoClassManager(object):
 
     def __init__(self):
-        # we support multiple schemes for the purposes of comparing them via rendered docs
-        # however we only support one scheme (prod) in prod. use with grfs
-        self.scheme_names = ["cargo_classes_A"]
-        self.default_scheme_name = "cargo_classes_A"
-        self.load_and_parse_config()
-
-    def load_and_parse_config(self):
-        # on init, load and parse TOML into a convenient structure for access
-        for scheme_name in self.scheme_names:
-            self[scheme_name] = CargoClassScheme(scheme_name)
-
-    @property
-    def default_scheme(self):
-        return self[self.default_scheme_name]
+        self.cargo_class_scheme = CargoClassScheme("cargo_classes_FIRS")
 
     def render_nml(self):
         # render out nml with `const foo = bar` for currend scheme
@@ -34,32 +17,13 @@ class CargoClassSchemes(dict):
             "nml_cargo_class_constants.pt"
         ]
         rendered_nml = drop_whitespace(nml_template(
-            cargo_class_scheme=self.default_scheme,
+            cargo_class_scheme=self.cargo_class_scheme,
         ))
 
-        # docs are stored in the repo, as we actually want to commit them and have them available on github
-        docs_dir = os.path.join(current_dir, "docs")
-        output_file_path = os.path.join(docs_dir, "cargo_class_constants.nml")
+        # rendered nml is written to the repo, unusual but convenient
+        output_file_path = os.path.join(current_dir, "cargo_class_constants.nml")
         with open(output_file_path, "w", encoding="utf-8") as nml_file:
             nml_file.write(rendered_nml)
-
-    def render_docs(self):
-        # render out docs (html currently) for all in-scope schemes
-        for cargo_class_scheme in self.values():
-
-            docs_template = PageTemplateLoader(current_dir, format="text")[
-                "cargo_classes.pt"
-            ]
-            rendered_html = docs_template(
-                cargo_class_scheme=cargo_class_scheme,
-            )
-
-            # docs are stored in the repo, as we actually want to commit them and have them available on github
-            docs_dir = os.path.join(current_dir, "docs")
-            output_file_path = os.path.join(docs_dir, cargo_class_scheme.name + ".html")
-            with open(output_file_path, "w", encoding="utf-8") as html_file:
-                html_file.write(rendered_html)
-
 
 class CargoClassScheme(object):
 
@@ -72,16 +36,28 @@ class CargoClassScheme(object):
             self.scheme_raw_config = tomllib.load(toml_file)
 
     @property
-    def metadata(self):
-        return self.scheme_raw_config["METADATA"]
-
-    @property
     def cargo_classes_taxonomy(self):
         return {
             node: attrs
             for node, attrs in self.scheme_raw_config.items()
             if "cargo_class_description" in attrs
         }
+
+    @property
+    def cargo_classes_taxonomy_by_tags(self):
+        result = {}
+        tags_hierarchy = {"Non-Freight": ["Passengers", "Mail"], "Freight": ["Potable Status", "Basic Handling", "Special Handling"]}
+        for parent_tag, child_tags in tags_hierarchy.items():
+            result[parent_tag] = {}
+            for child_tag in child_tags:
+                result[parent_tag][child_tag] = []
+        for node_id, attrs in self.cargo_classes_taxonomy.items():
+            if len(attrs["cargo_class_taxonomy_tags"]) == 2:
+                parent_tag = attrs["cargo_class_taxonomy_tags"][0]
+                child_tag = attrs["cargo_class_taxonomy_tags"][1]
+                result[parent_tag][child_tag].append(node_id)
+
+        return result
 
     @property
     def example_cargos(self):
