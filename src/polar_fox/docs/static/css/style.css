@@ -158,6 +158,22 @@ code a:hover {
     margin-right: 0.5em; /* Space between the circle and the text */
 }
 
+.guide-sub-section details {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.2em;
+    border-left: solid 1px var(--fox-fact-dark-blue);
+    color: var(--fox-fact-dark-blue);
+}
+
+.guide-sub-section .details-inner-container {
+    padding: 0.8em;
+    padding-left: 1.6em;
+}
+.guide-sub-section .details-inner-container p:last-of-type {
+    margin-bottom: 0;
+}
+
 .guide-list-group {
     border-left: solid 1px var(--fox-fact-dark-blue);
     overflow: hidden;
@@ -257,5 +273,37 @@ table.cargo-class-facts tr:last-of-type th, table.cargo-class-facts tr:last-of-t
 }
 table.cargo-class-facts p:last-of-type {
     margin-bottom: 0;
+}
+
+/* misc */
+
+.overview-step-heading-list {
+    padding-left: 1em;
+}
+.overview-step-heading {
+    display: flex;
+    align-items: center; /* Vertically aligns the circle and text */
+    margin-bottom: 1.5em;
+    margin-left: 0;
+    font-size: 1.5em;
+}
+.overview-step-heading a {
+    color: var(--fox-fact-dark-blue);
+    display: inline-flex;
+}
+.overview-step-marker {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: white;
+    background-color: var(--fox-fact-dark-blue);
+    border: solid 4px var(--fox-fact-dark-blue);
+    border-radius: 50%; /* Ensures a circular shape */
+    width: 1.5em; /* Set a fixed width */
+    height: 1.5em; /* Set the same height to make it a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5em; /* Space between the circle and the text */
+    margin-top: 0.1em;
 }
 

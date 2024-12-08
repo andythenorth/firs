@@ -12,7 +12,7 @@ cargo_class_description = ["Passengers."]
 cargo_grf_advice = ["Generally this only applies to specific Passengers cargo (cargo label PASS)."]
 cargo_class_taxonomy_tags = ["Non-Freight", "Passengers"]
 fallback_to_piece_goods = false
-vehicle_grf_advice = []
+vehicle_grf_advice = ["Passenger vehicles are simple and just set CC_PASSENGERS."]
 vehicle_set_as_allow = true
 vehicle_set_as_disallow = false
 
