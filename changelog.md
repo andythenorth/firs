@@ -93,6 +93,7 @@ Changelog
 
 *Codechanges*
 
+- change cargo classes to FRAX scheme
 - switch lang files to TOML format
 - make use of increased object limit in OpenTTD
 - track cargo and industry sprite completion
