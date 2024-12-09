@@ -4,7 +4,13 @@ import tomlkit
 
 # List of strings to be removed from the TOML files
 dead_strings = [
-    "STR_IND_METAL_WORKSHOP"
+    "STR_COLOUR_BLUE",
+    "STR_COLOUR_GOLD",
+    "STR_COLOUR_GREEN",
+    "STR_COLOUR_LTBLUE",
+    "STR_COLOUR_RED",
+    "STR_COLOUR_YELLOW",
+    "STR_COLOUR_WHITE",
 ]
 
 def delete_string(dead_strings, file_path):
