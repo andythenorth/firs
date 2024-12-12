@@ -1,6 +1,6 @@
 grf {
 	grfid: "${utils.DwordGrfID(global_constants.grfid).grfid}";
-	name: string(STR_GRF_NAME);
+	name: string(STR_GRF_NAME_AND_VERSION, string(STR_GRF_NAME));
 	desc: string(STR_GRF_DESC);
 	url: string(STR_GRF_DOCS_URL);
 	version: ${git_info.get_revision()};

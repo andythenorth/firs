@@ -10,7 +10,7 @@
 
 <!--! non-translated strings -->
 
-STR_GRF_NAME                                                    :FIRS Industry Replacement Set ${git_info.get_version()}
+STR_GRF_NAME_AND_VERSION                                        :{STRING} ${git_info.get_version()}
 STR_GRF_DOCS_URL                                                :${utils.get_docs_url()}
 <!--! empty string is not translated :) -->
 STR_EMPTY                                                       :

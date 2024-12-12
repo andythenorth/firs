@@ -2,6 +2,10 @@
 grflangid = "0x01"
 plural = "0"
 
+[STR_GRF_NAME]
+# only translate the FIRS name if it's strictly necessary for the language
+base = "FIRS Industry Replacement Set"
+
 [STR_GRF_DESC]
 base = "{ORANGE}FIRS Industry Replacement Set{}{BLACK}Brought to you by andythenorth, FooBar, planetmaker, Terkhen and Yexo, with help from many others. {SILVER}See readme for more information, including how to use FIRS. {BLACK}License: GPL v2."
 
