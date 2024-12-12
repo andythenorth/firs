@@ -45,12 +45,6 @@ base = "Bônus de produção primária, em %, quando em nível Sem Limites (Gung
 [STR_PARAM_DESC_PRIMARY_LEVEL_BONUS]
 base = "Produção em fazendas, minas e indústrias similares quando os suprimentos requisitados forem entregues (como % do nível {SILVER}Normal {BLACK} de produção)"
 
-[STR_PARAM_NAME_EXPERIMENTAL_FEATURES]
-base = "Habilitar conteúdo experimental"
-
-[STR_PARAM_DESC_EXPERIMENTAL_FEATURES]
-base = "Liga e desliga conteúdo experimental"
-
 [STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE]
 base = "Economia Básica Clima Temperado"
 
@@ -78,9 +72,6 @@ base = "{BLACK}(entregue)"
 [STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY]
 base = "{BLACK}Produz ao máximo se {WHITE}qualquer{BLACK} suprimento necessário for entregue."
 
-[STR_EXTRA_TEXT_SECONDARY_COMBINATORY]
-base = "{BLACK}Para uma produtividade máxima, supra {WHITE}todas {BLACK} as necessidades de suprimentos pelo menos uma vez a cada três meses."
-
 [STR_EXTRA_TEXT_TOWN_PRODUCER]
 base = "{BLACK}A produção é proporcional ao número de habitantes da cidade. Ao menos {WHITE}{SIGNED_WORD}unidades{BLACK} e não mais que {WHITE}{SIGNED_WORD} unidades de carga serão produzidas todo mês."
 
@@ -102,18 +93,6 @@ base = "{BLACK}Produção atual: {YELLOW}Aprimorado (dobra){}{}{BLACK}Para mante
 [STR_PORT_PRODUCTION_4X]
 base = "{BLACK}Produção atual: {YELLOW}Dedicado (quadruplica){}{}{BLACK}Para manter este nível, entregue {SKIP}{SIGNED_WORD} unidades de carga dentro de três meses"
 
-[STR_INFORMATIVE_EXTRA_TEXT_PLAZA]
-base = "{SKIP}{SKIP}Ânimo da população:{} {STRING}{STRING}{}{}{BLACK}Nível de otimismo: {STRING}{SIGNED_WORD}ponto{P 2 \"\" s}{}{BLACK} Necessidades e luxos garantidos: {YELLOW}{SIGNED_WORD} point{P 3 \"\" s} {}{BLACK} Poluição e miséria: {YELLOW}{SIGNED_WORD}pontos{P 4 \"\" s} {}{}{BLACK}Poluição e miséria aumentam com a população e com certos tipos de indústrias.{}{}Necessidades e luxos são garantidos ao entregar para certos tipos de indústrias.{}{}Se o nível de otimismo for maior que 10, o animo da população será {WHITE}otimista{BLACK}. Se o nível de otimismo for menor que -10, o animo da população será {WHITE}desanimado{BLACK}."
-
-[STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC]
-base = "Otimista"
-
-[STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY]
-base = "Desanimado"
-
-[STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL]
-base = "Neutro"
-
 [STR_CARGO_NAME_AGGREGATES]
 base = "Agregados"
 
@@ -122,9 +101,6 @@ base = "Ácido"
 
 [STR_CARGO_NAME_ALCOHOL]
 base = "Álcool"
-
-[STR_CARGO_NAME_ALLOY_STEEL]
-base = "Liga de aço"
 
 [STR_CARGO_NAME_ALUMINIUM]
 base = "Alumínio"
@@ -149,9 +125,6 @@ base = "Materiais de Construção"
 
 [STR_CARGO_NAME_CARBON_BLACK]
 base = "Negro de Carbono"
-
-[STR_CARGO_NAME_CARBON_STEEL]
-base = "Aço Carbono"
 
 [STR_CARGO_NAME_CASSAVA]
 base = "Mandioca"
@@ -306,9 +279,6 @@ base = "Ácido Fosfórico"
 [STR_CARGO_NAME_PIG_IRON]
 base = "Ferro Gusa"
 
-[STR_CARGO_NAME_PIPE]
-base = "Canos"
-
 [STR_CARGO_NAME_PLASTICS]
 base = "Plásticos"
 
@@ -348,9 +318,6 @@ base = "Escória"
 [STR_CARGO_NAME_SODA_ASH]
 base = "Soda"
 
-[STR_CARGO_NAME_STAINLESS_STEEL]
-base = "Aço Inoxidável"
-
 [STR_CARGO_NAME_STEEL]
 base = "Aço"
 
@@ -362,9 +329,6 @@ base = "Chapa Metálica"
 
 [STR_CARGO_NAME_STEEL_WIRE_ROD]
 base = "Fio-Máquina de Aço"
-
-[STR_CARGO_NAME_STONE]
-base = "Pedra"
 
 [STR_CARGO_NAME_SUGAR_BEET]
 base = "Beterraba Sacarina"
@@ -420,9 +384,6 @@ base = "{WEIGHT} de agregados"
 [STR_CARGO_UNIT_ALCOHOL]
 base = "{VOLUME} de álcool"
 
-[STR_CARGO_UNIT_ALLOY_STEEL]
-base = "{WEIGHT} de liga de aço"
-
 [STR_CARGO_UNIT_ALUMINIA]
 base = "{WEIGHT} de alumina"
 
@@ -446,9 +407,6 @@ base = "{WEIGHT} de materias de construção"
 
 [STR_CARGO_UNIT_CARBON_BLACK]
 base = "{WEIGHT} de negro de carbono"
-
-[STR_CARGO_UNIT_CARBON_STEEL]
-base = "{WEIGHT} de aço carbono"
 
 [STR_CARGO_UNIT_CASSAVA]
 base = "{WEIGHT} de mandioca"
@@ -603,9 +561,6 @@ base = "{VOLUME} de ácido fosfórico"
 [STR_CARGO_UNIT_PIG_IRON]
 base = "{WEIGHT} de ferro gusa"
 
-[STR_CARGO_UNIT_PIPE]
-base = "{WEIGHT} de canos"
-
 [STR_CARGO_UNIT_PLASTICS]
 base = "{WEIGHT} de plásticos"
 
@@ -645,9 +600,6 @@ base = "{WEIGHT} de escória"
 [STR_CARGO_UNIT_SODA_ASH]
 base = "{WEIGHT} de soda"
 
-[STR_CARGO_UNIT_STAINLESS_STEEL]
-base = "{WEIGHT} de aço inoxidável"
-
 [STR_CARGO_UNIT_STEEL]
 base = "{WEIGHT} de aço"
 
@@ -659,9 +611,6 @@ base = "{WEIGHT} de chapas metálicas"
 
 [STR_CARGO_UNIT_STEEL_WIRE_ROD]
 base = "{WEIGHT} de fio-máquina de aço"
-
-[STR_CARGO_UNIT_STONE]
-base = "{WEIGHT} de pedra"
 
 [STR_CARGO_UNIT_SUGAR_BEET]
 base = "{WEIGHT} de beterraba sacarina"
