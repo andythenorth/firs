@@ -17,7 +17,7 @@ PROJECT_NAME = firs
 
 NML_LANG_DIR = generated/lang
 NML_FILE = generated/firs.nml
-NML_FLAGS =-c -l $(NML_LANG_DIR) --verbosity=4 --no-optimisation-warning
+NML_FLAGS =-c -l $(NML_LANG_DIR) --verbosity=4 --no-optimisation-warning --list-unused-strings
 GS_DIR = generated/gs
 
 -include Makefile.local
