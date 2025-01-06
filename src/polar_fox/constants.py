@@ -298,6 +298,7 @@ allowed_refits_by_label = {
         "CERE",
         "FERT",
         "FMSP",
+        "FOOD",
         "FRUT",
         "GRAI",
         "JAVA",
@@ -347,7 +348,6 @@ allowed_refits_by_label = {
 disallowed_refits_by_label = {
     "non_dump_bulk": [
         "WOOD",
-        "SGCN",
         "FICR",
         "BDMT",
         "WDPR",
@@ -745,6 +745,11 @@ bulk_cargo_recolour_maps_extended = (
     ("SCMT", "1CC", {170: 104, 171: 3, 172: 2, 173: 70, 174: 71, 175: 72, 176: 3}),
     ("SGBT", "1CC", {170: 60, 171: 53, 172: 54, 173: 55, 174: 56, 175: 57, 176: 58}),
     ("SLAG", "1CC", {170: 24, 171: 3, 172: 2, 173: 3, 174: 4, 175: 5, 176: 5}),
+    (
+        "SGCN",
+        "1CC",
+        {170: 104, 171: 53, 172: 54, 173: 55, 174: 56, 175: 58, 176: 59},
+    ),
     ("SULP", "1CC", {170: 65, 171: 67, 172: 66, 173: 67, 174: 68, 175: 69, 176: 69}),
     (
         "WDCH",
