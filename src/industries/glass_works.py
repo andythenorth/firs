@@ -133,6 +133,34 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 
+# this industry needs outpost layout as there are lots of cargos
+industry.add_industry_outpost_layout(
+    id="glass_works_industry_outpost_layout_1",
+    layout=[
+        # test outpost layout
+        (
+            0,
+            0,
+            "glass_works_spritelayout_4",
+        ),
+        (
+            0,
+            1,
+            "glass_works_spritelayout_3",
+        ),
+        (
+            1,
+            0,
+            "glass_works_spritelayout_1",
+        ),
+        (
+            1,
+            1,
+            "glass_works_spritelayout_2",
+        ),
+    ],
+)
+
 industry.add_industry_layout(
     id="glass_works_industry_layout_1",
     layout=[

@@ -134,6 +134,34 @@ industry.add_spritelayout(
     building_sprites=[overhead_crane_2_rear, blocks_2, overhead_crane_2_front],
 )
 
+# this industry needs outpost layout as there are lots of cargos
+industry.add_industry_outpost_layout(
+    id="concrete_plant_industry_outpost_layout_1",
+    layout=[
+        # test outpost layout
+        (
+            0,
+            0,
+            "concrete_plant_spritelayout_shed_1",
+        ),
+        (
+            0,
+            1,
+            "concrete_plant_spritelayout_blocks_1",
+        ),
+        (
+            1,
+            0,
+            "concrete_plant_spritelayout_shed_1",
+        ),
+        (
+            1,
+            1,
+            "concrete_plant_spritelayout_blocks_2",
+        ),
+    ],
+)
+
 # relatively large IRL, and these are probably regional, not town-local
 industry.add_industry_layout(
     id="concrete_plant_industry_layout_1",

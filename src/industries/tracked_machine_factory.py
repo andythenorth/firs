@@ -210,6 +210,44 @@ industry.add_spritelayout(
 )
 
 
+# this industry needs outpost layout as there are lots of cargos
+industry.add_industry_outpost_layout(
+    id="tracked_machine_factory_industry_outpost_layout_1",
+    layout=[
+        # test outpost layout
+        (
+            0,
+            0,
+            "tracked_machine_factory_spritelayout_1",
+        ),
+        (
+            0,
+            1,
+            "tracked_machine_factory_spritelayout_7",
+        ),
+        (
+            0,
+            2,
+            "tracked_machine_factory_spritelayout_12",
+        ),
+        (
+            1,
+            0,
+            "tracked_machine_factory_spritelayout_6",
+        ),
+        (
+            1,
+            1,
+            "tracked_machine_factory_spritelayout_5",
+        ),
+        (
+            1,
+            2,
+            "tracked_machine_factory_spritelayout_11",
+        ),
+    ],
+)
+
 industry.add_industry_layout(
     id="tracked_machine_factory_industry_layout_1",
     layout=[

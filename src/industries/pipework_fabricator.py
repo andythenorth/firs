@@ -207,6 +207,44 @@ industry.add_spritelayout(
     fences=[],
 )
 
+# this industry needs outpost layout as there are lots of cargos
+industry.add_industry_outpost_layout(
+    id="pipework_fabricator_industry_outpost_layout_1",
+    layout=[
+        # test outpost layout
+        (
+            0,
+            0,
+            "pipework_fabricator_spritelayout_1",
+        ),
+        (
+            0,
+            1,
+            "pipework_fabricator_spritelayout_10",
+        ),
+        (
+            0,
+            2,
+            "pipework_fabricator_spritelayout_12",
+        ),
+        (
+            1,
+            0,
+            "pipework_fabricator_spritelayout_9",
+        ),
+        (
+            1,
+            1,
+            "pipework_fabricator_spritelayout_8",
+        ),
+        (
+            1,
+            2,
+            "pipework_fabricator_spritelayout_13",
+        ),
+    ],
+)
+
 industry.add_industry_layout(
     id="pipework_fabricator_industry_layout_1",
     layout=[
