@@ -166,6 +166,45 @@ industry.add_spritelayout(
     building_sprites=[],
     fences=["nw", "ne", "se"],
 )
+
+# this industry needs outpost layout as there are lots of cargos
+industry.add_industry_outpost_layout(
+    id="foundry_industry_outpost_layout_1",
+    layout=[
+        # test outpost layout
+        (
+            0,
+            0,
+            "foundry_spritelayout_large_shed_clerestory_roof",
+        ),
+        (
+            0,
+            1,
+            "foundry_spritelayout_furnace_anim",
+        ),
+        (
+            0,
+            2,
+            "foundry_spritelayout_iron_pigs_anim",
+        ),
+        (
+            1,
+            0,
+            "foundry_spritelayout_large_shed",
+        ),
+        (
+            1,
+            1,
+            "foundry_spritelayout_staithes",
+        ),
+        (
+            1,
+            2,
+            "foundry_spritelayout_logs",
+        ),
+    ],
+)
+
 industry.add_industry_layout(
     id="foundry_industry_layout_1",
     layout=[
