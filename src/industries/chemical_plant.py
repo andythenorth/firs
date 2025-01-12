@@ -232,6 +232,79 @@ industry.add_spritelayout(
 )
 
 
+# this industry needs outpost layout as there are lots of cargos
+# generally outposts are 2x2, but this industry uses 3x2 or so as the sprites seem to work better with it
+industry.add_industry_outpost_layout(
+    id="chemical_plant_industry_outpost_layout_1",
+    layout=[
+        (
+            0,
+            0,
+            "chemical_plant_spritelayout_fat_chimney",
+        ),
+        (
+            0,
+            1,
+            "chemical_plant_spritelayout_drop_tower_and_thin_chimney",
+        ),
+        (
+            0,
+            2,
+            "chemical_plant_spritelayout_spherical_tanks",
+        ),
+        (
+            1,
+            0,
+            "chemical_plant_spritelayout_large_building",
+        ),
+        (
+            1,
+            1,
+            "chemical_plant_spritelayout_frac_columns",
+        ),
+        (
+            1,
+            2,
+            "chemical_plant_spritelayout_horizontal_tanks",
+        ),
+    ],
+)
+industry.add_industry_outpost_layout(
+    id="chemical_plant_industry_outpost_layout_2",
+    layout=[
+        (
+            0,
+            0,
+            "chemical_plant_spritelayout_horizontal_tanks",
+        ),
+        (
+            0,
+            1,
+            "chemical_plant_spritelayout_fat_chimney",
+        ),
+        (
+            1,
+            0,
+            "chemical_plant_spritelayout_frac_columns",
+        ),
+        (
+            1,
+            1,
+            "chemical_plant_spritelayout_large_building",
+        ),
+        (
+            2,
+            0,
+            "chemical_plant_spritelayout_drop_tower_and_thin_chimney",
+        ),
+        (
+            2,
+            1,
+            "chemical_plant_spritelayout_spherical_tanks",
+        ),
+    ],
+)
+# core layouts are roughly 3x4 or 3x3
 industry.add_industry_layout(
     id="chemical_plant_industry_layout_1",
     layout=[
