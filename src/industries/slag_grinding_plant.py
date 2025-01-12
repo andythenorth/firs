@@ -231,6 +231,34 @@ industry.add_multi_tile_object(
     ],
 )
 
+# this industry needs outpost layout as there are lots of cargos
+industry.add_industry_outpost_layout(
+    id="slag_grinding_plant_industry_outpost_layout_1",
+    layout=[
+        # test outpost layout
+        (
+            0,
+            0,
+            "slag_grinding_plant_spritelayout_large_shed",
+        ),
+        (
+            0,
+            1,
+            "slag_grinding_plant_spritelayout_large_silo",
+        ),
+        (
+            1,
+            0,
+            "slag_grinding_plant_spritelayout_conveyors_1",
+        ),
+        (
+            1,
+            1,
+            "slag_grinding_plant_spritelayout_conveyors_2",
+        ),
+    ],
+)
+
 industry.add_industry_layout(
     id="slag_grinding_plant_industry_layout_1",
     layout=[
