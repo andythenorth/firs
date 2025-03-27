@@ -1,492 +1,582 @@
-##grflangid 0x24
-##plural 2
-##case ba t
+##grflangid 0x01
+##plural 0
 
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Készítette: andythenorth, FooBar, planetmaker, Terkhen, Yexo és még sokan mások. {SILVER}További információkhoz (például a FIRS használatához) lásd a readme-t. {BLACK}Licenc: GPL v2.
+STR_GRF_DESC																	:{ORANGE}FIRS Industry Replacement Set{}{BLACK} Brought to you by andythenorth, FooBar, planetmaker, Terkhen and Yexo, with help from many others. {SILVER}See readme for more information, including how to use FIRS. {BLACK}License: GPL v2.
 
-STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :A halászterületek, olajfúró tornyok és mederkotrások maximális távolsága a parttól.
-STR_PARAM_DESC_ECONOMIES                                                        :Az egyes gazdaságokban különféle rakományok és gazdasági épületek érhetőek el.{}{}Az egyszerűbb játékmenet érdekében az {SILVER}alap {BLACK}gazdaságok kevesebb rakományt és gazdasági épületet tartalmaznak, mint a többi FIRS gazdaság.{}{}A FIRS weboldalán részletes leírás található mindegyik gazdaságról.
-STR_PARAM_DESC_NO_OPENINGS                                                      :{SILVER}{BLACK}Alapértelmezésben a játék folyamán új gazdasági épületek fognak nyílni.{}{}Ha ez a beállítás be van kapcsolva, nem fognak új gazdasági épületek nyílni a játék folyamán, és a játékosok sem fognak tudni újakat építtetni.
-STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Tengeri gazdasági létesítmények maximális távolsága a parttól
-STR_PARAM_NAME_ECONOMIES                                                        :Gazdaság
-STR_PARAM_NAME_NO_OPENINGS                                                      :Új gazdasági épületek nyitásának meggátlása
-STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Nincs határ
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY									:A halászóhelyek, olajfúrótorony és kotróhelyek maximális távolsága a parttól, csempén mérve.
+STR_PARAM_DESC_ECONOMIES														:Minden gazdaság más kombinációjú árukat és iparágakat kínál.{}{}Az egyszerű játékmenetet kereső játékosok számára a {SILVER}Alap {BLACK}gazdaságok kevesebb iparágat és árut tartalmaznak, mint más FIRS gazdaságok.{}{}A FIRS weboldalon részletes információk találhatók minden gazdaságról.
+STR_PARAM_DESC_NO_OPENINGS														:Alapértelmezés szerint új iparágak nyílnak meg a játék során.{}{}Ha a {SILVER}új iparágak megnyitásának megakadályozása{BLACK} be van kapcsolva, az iparágak nem nyílnak meg a játékban, és a játékosok nem tudják finanszírozni vagy keresni az iparágakat.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY									:A tengeri iparágak maximális part menti távolsága csempén.
+STR_PARAM_NAME_ECONOMIES														:Gazdaság
+STR_PARAM_NAME_NO_OPENINGS														:Iparágak megnyitásának megakadályozása a játék során
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0											:Nincs korlátozás
 
-STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :A Megnövekedett termelési szint eléréséhez szükséges felszerelés mennyisége (alapértelmezés: 16 láda)
-STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :A Maximális termelési szint eléréséhez szükséges felszerelés mennyisége (alapértelmezés: 80 láda)
-STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :A farmok, bányák és hasonló gazdasági épületek növelik a termelésüket, ha felszerelést kapnak; először {SILVER}Megnövekedett{BLACK}, majd pedig {SILVER}Maximális {BLACK}szintre, ha elég a szállítmány.{}{} Az alapértelmezett értékek megfelelőek, de igény szerint itt megváltoztathatod őket.{}{}Kikötő típusú gazdasági épületek esetén az itt beállított értékek 8-szorosa érvényesül.
-STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Megnövekedett termelési szint (%)
-STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Maximális termelési szint (%)
-STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Farmok, bányák és hasonló gazdasági épületek termelése, ha az ellátás eléri a megfelelő szintet (az {SILVER}Alapszintű {BLACK}termelés százalékában).
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT										:A szükséges szállítmányok száma az alapvető termeléshez (alapértelmezett: 16)
+STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT										:A szükséges szállítmányok száma a fokozott alapvető termeléshez (alapértelmezett: 80)
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT										:A farmok, bányák és hasonló iparágak fokozzák a termelést, ha szállítmányokat hoznak, először a {SILVER}Fokozott{BLACK}, majd a {SILVER}Gung-ho{BLACK} termeléshez, ha elegendő szállítmány érkezik.{}{}Az alapértelmezett értékek megfelelőek, de ha szükséges, itt módosíthatók.{}{}A kikötő típusú iparágakhoz szükséges szállítmányok értéke 8-szorosára nő a megadott értékeknek.
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS												:Fokozott alapvető termelési szint (%)
+STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS												:Gung-ho alapvető termelési szint (%)
+STR_PARAM_DESC_PRIMARY_LEVEL_BONUS												:A termelés farmokon, bányákon és hasonló iparágakon, amikor a szállítási követelmények teljesülnek (a {SILVER}Normál{BLACK} termelési szinthez viszonyítva).
 
-STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Alap mérsékelt égövi
-STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Alap szubarktikus
-STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Alap szubtrópusi
-STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY                                          :Meleg ország
-STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Fémipar
+STR_PARAM_NAME_EXPERIMENTAL_FEATURES											:Kísérleti funkciók engedélyezése
+STR_PARAM_DESC_EXPERIMENTAL_FEATURES											:A kísérleti funkciók be- vagy kikapcsolása.
+
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE										:Mérsékelt Alap
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC											:Arktikus Alap
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC											:Trópusi Alap
+STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY										:Egy Forró Országban
+STR_PARAM_VALUE_ECONOMIES_STEELTOWN												:Acélváros
+
+STR_PARAM_NAME_OBJECTS															:FIRS tájformálási objektumok
+STR_PARAM_DESC_OBJECTS															:A FIRS tartalmaz egy sor tájformálási objektumot, amelyeket a játékosok elhelyezhetnek, hogy egyes iparágakat nagyobbnak tűnjenek. A tájformáló objektumoknak nincs játékmeneti hatása. A tájformáló objektumok be- vagy kikapcsolhatók.
+
+STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG                                   : {BLACK}(szállítva)
+STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}A maximális termelési sebesség elérése érdekében elegendő, ha {WHITE}bármely {BLACK}szükséges árut szállítanak.
+STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}A maximális termelési sebesség eléréséhez minden {WHITE}szükséges {BLACK}árut legalább egyszer három havonta szállítani kell.
+STR_EXTRA_TEXT_TOWN_PRODUCER                                                    :{BLACK}A termelés arányos a város népességével. Minden hónapban legalább {WHITE}{SIGNED_WORD} egység{BLACK}, de legfeljebb {WHITE}{SIGNED_WORD} egység{BLACK} áru fog előállítani.
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}Normál {}{}{BLACK}A {WHITE}Fejlettebb {BLACK}termeléshez {SIGNED_WORD} crate szállítása szükséges legalább három havonta.{}A {WHITE}Gung-ho {BLACK}termeléshez {SIGNED_WORD} crate szállítása szükséges.
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}Fejlettebb {}{}{BLACK}A szint fenntartásához legalább {SIGNED_WORD} crate szállítása szükséges három havonta.{}A {WHITE}Gung-ho {BLACK}termeléshez {SIGNED_WORD} crate szállítása szükséges.
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}Gung-ho {}{}{BLACK}A szint fenntartásához legalább {SKIP}{SIGNED_WORD} crate szállítása szükséges három havonta.
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}Normál {}{}{BLACK}A {WHITE}Fejlettebb {BLACK}termeléshez {SIGNED_WORD} egység áru szállítása szükséges három havonta.{}A {WHITE}Gung-ho {BLACK}termeléshez {SIGNED_WORD} egység szállítása szükséges.
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}Fejlettebb {}{}{BLACK}A szint fenntartásához legalább {SIGNED_WORD} egység áru szállítása szükséges három havonta.{}A {WHITE}Gung-ho {BLACK}termeléshez {SIGNED_WORD} egység szállítása szükséges.
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}Gung-ho {}{}{BLACK}A szint fenntartásához legalább {SKIP}{SIGNED_WORD} egység áru szállítása szükséges három havonta.
+
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA                                                :{SKIP}{SKIP}Népesség hangulata:{} {STRING}{STRING}{}{}{BLACK}Optimizmus pontszám: {STRING}{SIGNED_WORD} pont{P 2 "" s}{}{BLACK} Szükségletek és luxusok kielégítve: {YELLOW}{SIGNED_WORD} pont{P 3 "" s} {}{BLACK} Szennyezés és nyomor: {YELLOW}{SIGNED_WORD} pont{P 4 "" s} {}{}{BLACK}A szennyezés és a nyomor a népesség és bizonyos iparágak típusának növekedésével nő.{}{}A szükségletek és luxusok egyes iparágaknak való szállítással teljesíthetők.{}{}Ha az optimizmus pontszám több mint 10, a népesség hangulata {WHITE}optimista{BLACK} lesz. Ha az optimizmus pontszám kevesebb, mint -10, a népesség hangulata {WHITE}borongós{BLACK} lesz.
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_OPTIMISTIC                                :Optimista
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_GLOOMY                                    :Borongós
+STR_INFORMATIVE_EXTRA_TEXT_PLAZA_MOOD_NEUTRAL                                   :Semleges
 
 STR_CARGO_NAME_ACID                                                             :Sav
-STR_CARGO_NAME_ACID.t                                                           :savat
-STR_CARGO_NAME_ALCOHOL                                                          :Szeszes ital
-STR_CARGO_NAME_ALCOHOL.t                                                        :szeszes italt
+STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
+STR_CARGO_NAME_ALLOY_STEEL                                                      :Ötvözött acél
+STR_CARGO_NAME_ALUMINIUM                                                        :Alumínium
+STR_CARGO_NAME_ALUMINIA                                                         :Aluminia
+STR_CARGO_NAME_AMMONIA                                                          :Ammonia
+STR_CARGO_NAME_AMMONIUM_NITRATE                                                 :Ammonium-nitrát
 STR_CARGO_NAME_BAUXITE                                                          :Bauxit
-STR_CARGO_NAME_BAUXITE.t                                                        :bauxitot
 STR_CARGO_NAME_BEANS                                                            :Bab
-STR_CARGO_NAME_BEANS.t                                                          :babot
-STR_CARGO_NAME_BUILDING_MATERIALS                                               :Építőanyag
-STR_CARGO_NAME_BUILDING_MATERIALS.t                                             :építőanyagot
-STR_CARGO_NAME_CASSAVA                                                          :Manióka
-STR_CARGO_NAME_CASSAVA.t                                                        :maniókát
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :Építőanyagok
+STR_CARGO_NAME_CARBON_BLACK                                                     :Szénfekete
+STR_CARGO_NAME_CARBON_STEEL                                                     :Szénacél
+STR_CARGO_NAME_CASSAVA                                                          :Kasszáva
+STR_CARGO_NAME_CAST_IRON                                                        :Öntöttvas
 STR_CARGO_NAME_CEMENT                                                           :Cement
-STR_CARGO_NAME_CEMENT.t                                                         :cementet
-STR_CARGO_NAME_CHEMICALS                                                        :Vegyszer
-STR_CARGO_NAME_CHEMICALS.t                                                      :vegyszert
+STR_CARGO_NAME_CHEMICALS                                                        :Kémiai anyagok
 STR_CARGO_NAME_CHLORINE                                                         :Klór
-STR_CARGO_NAME_CHLORINE.t                                                       :klórt
+STR_CARGO_NAME_CHROMITE_ORE                                                     :Kromitérc
 STR_CARGO_NAME_CLAY                                                             :Agyag
-STR_CARGO_NAME_CLAY.t                                                           :agyagot
+STR_CARGO_NAME_CLEANING_AGENTS                                                  :Tisztítószerek
 STR_CARGO_NAME_COFFEE                                                           :Kávé
-STR_CARGO_NAME_COFFEE.t                                                         :kávét
-STR_CARGO_NAME_COKE                                                             :Koksz
-STR_CARGO_NAME_COKE.t                                                           :kokszot
+STR_CARGO_NAME_COAL_TAR                                                         :Kőolajkátrány
+STR_CARGO_NAME_COKE                                                             :Kohószén
 STR_CARGO_NAME_COPPER                                                           :Réz
-STR_CARGO_NAME_COPPER.t                                                         :rezet
-STR_CARGO_NAME_EDIBLE_OIL                                                       :Étolaj
-STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Ipari felszerelés
-STR_CARGO_NAME_ENGINEERING_SUPPLIES.t                                           :ipari felszerelést
-STR_CARGO_NAME_EXPLOSIVES                                                       :Robbanóanyag
-STR_CARGO_NAME_EXPLOSIVES.t                                                     :robbanóanyagot
-STR_CARGO_NAME_FIBRES                                                           :Rostnövény
-STR_CARGO_NAME_FIBRES.t                                                         :rostnövényt
+STR_CARGO_NAME_COPPER_CONCENTRATE                                               :Rézkészítmény
+STR_CARGO_NAME_EDIBLE_OIL                                                       :Ehető olaj
+STR_CARGO_NAME_ELECTRICAL_PARTS                                                 :Elektronikai alkatrészek
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Mérnöki ellátmányok
+STR_CARGO_NAME_ETHYLENE                                                         :Etilén
+STR_CARGO_NAME_EXPLOSIVES                                                       :Robbanóanyagok
+STR_CARGO_NAME_FERROCHROME                                                      :Ferrokróm
+STR_CARGO_NAME_FIBRES                                                           :Növényi rostok
 STR_CARGO_NAME_FISH                                                             :Hal
-STR_CARGO_NAME_FISH.t                                                           :halat
-STR_CARGO_NAME_FARM_SUPPLIES                                                    :Mezőgazdasági felszerelés
-STR_CARGO_NAME_FARM_SUPPLIES.t                                                  :mezőgazdasági felszerelés
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Gazdasági kellékek
 STR_CARGO_NAME_FERTILISER                                                       :Műtrágya
-STR_CARGO_NAME_FERTILISER.t                                                     :műtrágyát
+STR_CARGO_NAME_FOOD_ADDITIVES                                                   :Élelmiszer-adalékanyagok
+STR_CARGO_NAME_FORMIC_ACID                                                      :Hangyasav
 STR_CARGO_NAME_FRUITS                                                           :Gyümölcs
-STR_CARGO_NAME_FRUITS.t                                                         :gyümölcsöt
-STR_CARGO_NAME_KAOLIN                                                           :Kaolin
-STR_CARGO_NAME_KAOLIN.t                                                         :kaolint
+STR_CARGO_NAME_FURNITURE                                                        :Bútor
+STR_CARGO_NAME_GLASS                                                            :Üveg
+STR_CARGO_NAME_HYDROCHLORIC_ACID                                                :Sósav
+STR_CARGO_NAME_KAOLIN                                                           :Kína agyag
 STR_CARGO_NAME_LIMESTONE                                                        :Mészkő
-STR_CARGO_NAME_LIMESTONE.t                                                      :mészkövet
+STR_CARGO_NAME_LOGS                                                             :Fák
 STR_CARGO_NAME_TIMBER                                                           :Fűrészáru
-STR_CARGO_NAME_TIMBER.t                                                         :fűrészárut
+# cargo uses Sodium Hydroxide as string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
+STR_CARGO_NAME_LYE                                                              :Nátrium-hidroxid
 STR_CARGO_NAME_METAL                                                            :Fém
-STR_CARGO_NAME_METAL.t                                                          :fémet
+STR_CARGO_NAME_METHANE                                                          :Metán
+STR_CARGO_NAME_METHANOL                                                         :Metanol
 STR_CARGO_NAME_MILK                                                             :Tej
-STR_CARGO_NAME_MILK.t                                                           :tejet
 STR_CARGO_NAME_MANGANESE                                                        :Mangán
-STR_CARGO_NAME_MANGANESE.t                                                      :mangánt
-STR_CARGO_NAME_NITRATES                                                         :Salétrom
-STR_CARGO_NAME_NITRATES.t                                                       :salétromot
-STR_CARGO_NAME_NUTS                                                             :Dió
-STR_CARGO_NAME_NUTS.t                                                           :dió
+STR_CARGO_NAME_NAPHTHA                                                          :Náfta
+STR_CARGO_NAME_NICKEL                                                           :Nikkel
+STR_CARGO_NAME_NITRATES                                                         :Nitrátok
+STR_CARGO_NAME_NUTS                                                             :Diófélék
+STR_CARGO_NAME_OXYGEN                                                           :Oxigén
 STR_CARGO_NAME_PACKAGING                                                        :Csomagolás
-STR_CARGO_NAME_PACKAGING.t                                                      :csomagolást
+STR_CARGO_NAME_PAINTS_AND_COATINGS                                              :Festékek és bevonatok
 STR_CARGO_NAME_PEAT                                                             :Tőzeg
-STR_CARGO_NAME_PEAT.t                                                           :tőzeget
-STR_CARGO_NAME_PETROL                                                           :Üzemanyag
-STR_CARGO_NAME_PETROL.t                                                         :üzemanyagot
-STR_CARGO_NAME_PHOSPHATE                                                        :Foszfátok
-STR_CARGO_NAME_PHOSPHATE.t                                                      :foszfátokat
-STR_CARGO_NAME_PIG_IRON                                                         :Nyersvas
-STR_CARGO_NAME_PIG_IRON.t                                                       :nyersvasat
-STR_CARGO_NAME_PIPE                                                             :Csövek
-STR_CARGO_NAME_PIPE.t                                                           :csöveket
-STR_CARGO_NAME_POTASH                                                           :Hamuzsír
-STR_CARGO_NAME_POTASH.t                                                         :hamuzsírt
-STR_CARGO_NAME_PYRITE_ORE                                                       :Piritérc
-STR_CARGO_NAME_PYRITE_ORE.t                                                     :piritércet
+STR_CARGO_NAME_PETROL                                                           :Kőolaj üzemanyagok
+STR_CARGO_NAME_PHOSPHATE                                                        :Foszfát
+STR_CARGO_NAME_PHOSPHORIC_ACID                                                  :Foszforsav
+STR_CARGO_NAME_PIG_IRON                                                         :Vasérc
+STR_CARGO_NAME_PIPE                                                             :Cső
+STR_CARGO_NAME_PLASTICS                                                         :Műanyagok
+STR_CARGO_NAME_POTASH                                                           :Kálisó
+STR_CARGO_NAME_PROPYLENE                                                        :Propilén
+STR_CARGO_NAME_PYRITE_ORE                                                       :Pirites érct
 STR_CARGO_NAME_QUICKLIME                                                        :Égetett mész
-STR_CARGO_NAME_QUICKLIME.t                                                      :égetett meszet
-STR_CARGO_NAME_RECYCLABLES                                                      :Újrahasznosítható áru
-STR_CARGO_NAME_RECYCLABLES.t                                                    :újrahasznosítható árut
+STR_CARGO_NAME_RAW_LATEX                                                        :Nyers latex
+STR_CARGO_NAME_REBAR                                                            :Hegesztett vas
+STR_CARGO_NAME_RECYCLABLES                                                      :Újrahasznosítható anyagok
 STR_CARGO_NAME_SALT                                                             :Só
-STR_CARGO_NAME_SALT.t                                                           :sót
 STR_CARGO_NAME_SAND                                                             :Homok
-STR_CARGO_NAME_SAND.t                                                           :homokot
 STR_CARGO_NAME_SCRAP_METAL                                                      :Fémhulladék
-STR_CARGO_NAME_SCRAP_METAL.t                                                    :fémhulladékot
 STR_CARGO_NAME_SLAG                                                             :Salak
-STR_CARGO_NAME_SLAG.t                                                           :salakot
-STR_CARGO_NAME_SODA_ASH                                                         :Sziksó
-STR_CARGO_NAME_SODA_ASH.t                                                       :sziksót
+STR_CARGO_NAME_SODA_ASH                                                         :Szóda hamu
+STR_CARGO_NAME_STAINLESS_STEEL                                                  :Rozsdamentes acél
 STR_CARGO_NAME_STEEL                                                            :Acél
-STR_CARGO_NAME_STEEL.t                                                          :acélt
+STR_CARGO_NAME_STEEL_SECTIONS                                                   :Acél szekciók
+STR_CARGO_NAME_STEEL_SHEET                                                      :Acél lemez
+STR_CARGO_NAME_STEEL_WIRE_ROD                                                   :Acél huzal
 STR_CARGO_NAME_STONE                                                            :Kő
-STR_CARGO_NAME_STONE.t                                                          :követ
 STR_CARGO_NAME_SUGAR_BEET                                                       :Cukorrépa
-STR_CARGO_NAME_SUGAR_BEET.t                                                     :cukorrépát
 STR_CARGO_NAME_SULPHUR                                                          :Kén
-STR_CARGO_NAME_SULPHUR.t                                                        :ként
-STR_CARGO_NAME_VEHICLE_BODIES                                                   :Karosszéria elemek
-STR_CARGO_NAME_VEHICLE_BODIES.t                                                 :karosszéria elemeket
-STR_CARGO_NAME_VEHICLE_PARTS                                                    :Járműalkatrész
-STR_CARGO_NAME_VEHICLE_PARTS.t                                                  :járműalkatrészt
+STR_CARGO_NAME_SULPHURIC_ACID                                                   :Kénsav
+STR_CARGO_NAME_TEXTILES                                                         :Textíliák
+STR_CARGO_NAME_TIN                                                              :Ólom
+STR_CARGO_NAME_TINPLATE                                                         :Ólmozott lemez
+STR_CARGO_NAME_TYRES                                                            :Gumiabroncsok
+STR_CARGO_NAME_UREA                                                             :Karbamid
+STR_CARGO_NAME_VEHICLE_BODIES                                                   :Jármű karosszériák
+STR_CARGO_NAME_VEHICLE_ENGINES                                                  :Jármű motorok
+STR_CARGO_NAME_VEHICLE_PARTS                                                    :Jármű alkatrészek
 STR_CARGO_NAME_VEHICLES                                                         :Járművek
 STR_CARGO_NAME_WOOL                                                             :Gyapjú
-STR_CARGO_NAME_WOOL.t                                                           :gyapjút
+STR_CARGO_NAME_YARN                                                             :Fonál
 STR_CARGO_NAME_ZINC                                                             :Cink
-STR_CARGO_NAME_ZINC.t                                                           :cinket
 
 STR_CARGO_UNIT_ACID                                                             :{VOLUME} sav
-STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} szeszes ital
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkohol
+STR_CARGO_UNIT_ALLOY_STEEL                                                      :{WEIGHT} ötvözet acél
+STR_CARGO_UNIT_ALUMINIA                                                         :{WEIGHT} alínium-oxid
+STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} alumínium
+STR_CARGO_UNIT_AMMONIA                                                          :{VOLUME} ammónia
+STR_CARGO_UNIT_AMMONIUM_NITRATE                                                 :{VOLUME} ammónium-nitrát
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxit
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} bab
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} építőanyag
+STR_CARGO_UNIT_CARBON_BLACK                                                     :{WEIGHT} szénfekete
+STR_CARGO_UNIT_CARBON_STEEL                                                     :{WEIGHT} szénacél
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} manióka
+STR_CARGO_UNIT_CAST_IRON                                                        :{WEIGHT} öntöttvas
 STR_CARGO_UNIT_CEMENT                                                           :{WEIGHT} cement
-STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} vegyszer
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} vegyszerek
 STR_CARGO_UNIT_CHLORINE                                                         :{VOLUME} klór
+STR_CARGO_UNIT_CHROMITE_ORE                                                     :{WEIGHT} krómérc
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} agyag
-STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} zsák kávé
+STR_CARGO_UNIT_CLEANING_AGENTS                                                  :{WEIGHT} tisztítószerek
+STR_CARGO_UNIT_COAL_TAR                                                         :{VOLUME} kőszénkátrány
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} zsák{P 0 "" s} kávé
 STR_CARGO_UNIT_COKE                                                             :{WEIGHT} koksz
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} réz
+STR_CARGO_UNIT_COPPER_CONCENTRATE                                               :{WEIGHT} rézkonzentrátum
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} étolaj
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} láda ipari felszerelés
-STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} láda robbanóanyag
+STR_CARGO_UNIT_ELECTRICAL_PARTS                                                 :{WEIGHT} elektromos alkatrészek
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} láda{P 0 "" s} mérnöki kellékek
+STR_CARGO_UNIT_ETHYLENE                                                         :{VOLUME} etilén
+STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} láda{P 0 "" s} robbanóanyagok
+STR_CARGO_UNIT_FERROCHROME                                                      :{WEIGHT} ferrokróm
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} műtrágya
-STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bála rostnövény
+STR_CARGO_UNIT_FOOD_ADDITIVES                                                   :{WEIGHT} élelmiszer-adalékanyagok
+STR_CARGO_UNIT_FORMIC_ACID                                                      :{VOLUME} hangyasav
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bála{P 0 "" s} növényi rostok
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} hal
-STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} láda mezőgazdasági felszerelés
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} láda{P 0 "" s} mezőgazdasági kellékek
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} gyümölcs
-STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} kaolin
+STR_CARGO_UNIT_FURNITURE                                                        :{WEIGHT} bútor
+STR_CARGO_UNIT_GLASS                                                            :{WEIGHT} üveg
+STR_CARGO_UNIT_HYDROCHLORIC_ACID                                                :{VOLUME} sósav
+STR_CARGO_UNIT_KAOLIN                                                           :{WEIGHT} kínai agyag
 STR_CARGO_UNIT_LIMESTONE                                                        :{WEIGHT} mészkő
-STR_CARGO_UNIT_TIMBER                                                           :{WEIGHT} fűrészáru
-STR_CARGO_UNIT_LYE                                                              :{VOLUME} lúg
+STR_CARGO_UNIT_LOGS                                                             :{WEIGHT} rönkök
+STR_CARGO_UNIT_TIMBER                                                           :{WEIGHT} faanyag
+# cargo uses Sodium Hydroxide as string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
+STR_CARGO_UNIT_LYE                                                              :{VOLUME} nátrium-hidroxid
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} mangán
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} fém
+STR_CARGO_UNIT_METHANE                                                          :{VOLUME} metán
+STR_CARGO_UNIT_METHANOL                                                         :{VOLUME} metanol
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} tej
+STR_CARGO_UNIT_NAPHTHA                                                          :{VOLUME} nafta
 STR_CARGO_UNIT_NICKEL                                                           :{WEIGHT} nikkel
-STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} salétrom
-STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} zsák dió
-STR_CARGO_UNIT_PACKAGING                                                        :{WEIGHT} csomagolás
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} nitrátok
+STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} zsák{P 0 "" s} diófélék
+STR_CARGO_UNIT_OXYGEN                                                           :{VOLUME} oxigén
+STR_CARGO_UNIT_PACKAGING                                                        :{WEIGHT} csomagolóanyag
+STR_CARGO_UNIT_PAINTS_AND_COATINGS                                              :{VOLUME} festékek és bevonatok
 STR_CARGO_UNIT_PEAT                                                             :{WEIGHT} tőzeg
-STR_CARGO_UNIT_PETROL                                                           :{VOLUME} üzemanyag
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} kőolaj
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} foszfát
-STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} nyersvas
+STR_CARGO_UNIT_PHOSPHORIC_ACID                                                  :{VOLUME} foszforsav
+STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} malomvas
 STR_CARGO_UNIT_PIPE                                                             :{WEIGHT} cső
-STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} hamuzsír
-STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} piritérc
-STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} égetett mész
-STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} újrahasznosítható áru
+STR_CARGO_UNIT_PLASTICS                                                         :{WEIGHT} műanyag
+STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} kálium-oxid
+STR_CARGO_UNIT_PROPYLENE                                                        :{VOLUME} propilén
+STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pirítérc
+STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} oltott mész
+STR_CARGO_UNIT_RAW_LATEX                                                        :{VOLUME} nyers latex
+STR_CARGO_UNIT_REBAR                                                            :{WEIGHT} acélrudak
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} újrahasznosítható anyagok
 STR_CARGO_UNIT_SALT                                                             :{WEIGHT} só
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} homok
-STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} fémhulladék
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} hulladék fém
 STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} salak
-STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} sziksó
+STR_CARGO_UNIT_SODA_ASH                                                         :{WEIGHT} szódabikarbóna
+STR_CARGO_UNIT_STAINLESS_STEEL                                                  :{WEIGHT} rozsdamentes acél
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} acél
+STR_CARGO_UNIT_STEEL_SECTIONS                                                   :{WEIGHT} acél szelvények
+STR_CARGO_UNIT_STEEL_SHEET                                                      :{WEIGHT} acél lemez
+STR_CARGO_UNIT_STEEL_WIRE_ROD                                                   :{WEIGHT} acél huzalrúd
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kő
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} cukorrépa
 STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} kén
-STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} karosszéria elem
-STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{WEIGHT} járműalkatrész
-STR_CARGO_UNIT_VEHICLES                                                         :{WEIGHT} jármű
-STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bála gyapjú
+STR_CARGO_UNIT_SULPHURIC_ACID                                                   :{VOLUME} kénsav
+STR_CARGO_UNIT_TEXTILES                                                         :{WEIGHT} textíliák
+STR_CARGO_UNIT_TIN                                                              :{WEIGHT} ón
+STR_CARGO_UNIT_TINPLATE                                                         :{WEIGHT} ónozott lemez
+STR_CARGO_UNIT_TYRES                                                            :{WEIGHT} gumik
+STR_CARGO_UNIT_UREA                                                             :{WEIGHT} karbamid
+STR_CARGO_UNIT_VEHICLE_BODIES                                                   :{WEIGHT} jármű karosszéria
+STR_CARGO_UNIT_VEHICLE_ENGINES                                                  :{WEIGHT} jármű motorok
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{WEIGHT} jármű alkatrészek
+STR_CARGO_UNIT_VEHICLES                                                         :{WEIGHT} járművek
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bála{P 0 "" s} gyapjú
+STR_CARGO_UNIT_YARN                                                             :{SIGNED_WORD} bála{P 0 "" s} fonal
 STR_CARGO_UNIT_ZINC                                                             :{WEIGHT} cink
 
-STR_CID_ACID                                                                    :{TINYFONT}SA
-STR_CID_ALCOHOL                                                                 :{TINYFONT}IT
-STR_CID_BAUXITE                                                                 :{TINYFONT}BX
-STR_CID_BEANS                                                                   :{TINYFONT}BB
-STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}ÉA
-STR_CID_CASSAVA                                                                 :{TINYFONT}MA
-STR_CID_CEMENT                                                                  :{TINYFONT}CE
-STR_CID_CHEMICALS                                                               :{TINYFONT}VS
+# it seems that using 2 chars for these is a convention not a limit, I tested 4 chars and OpenTTD renders it fine - May 2020
+STR_CID_ACID                                                                    :{TINYFONT}SAV
+STR_CID_ALCOHOL                                                                 :{TINYFONT}ALK
+STR_CID_ALLOY_STEEL                                                             :{TINYFONT}ÖV
+STR_CID_ALUMINIA                                                                :{TINYFONT}AL
+STR_CID_ALUMINIUM                                                               :{TINYFONT}AL
+STR_CID_AMMONIA                                                                 :{TINYFONT}AM
+STR_CID_AMMONIUM_NITRATE                                                        :{TINYFONT}AN
+STR_CID_BAUXITE                                                                 :{TINYFONT}BA
+STR_CID_BEANS                                                                   :{TINYFONT}BO
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}ÉP
+STR_CID_CARBON_BLACK                                                            :{TINYFONT}SZ
+STR_CID_CARBON_STEEL                                                            :{TINYFONT}SZ
+STR_CID_CASSAVA                                                                 :{TINYFONT}KAS
+STR_CID_CAST_IRON                                                               :{TINYFONT}ÖNT
+STR_CID_CEMENT                                                                  :{TINYFONT}CEM
+STR_CID_CHEMICALS                                                               :{TINYFONT}KÉM
+STR_CID_CHROMITE_ORE                                                            :{TINYFONT}KR
 STR_CID_CHLORINE                                                                :{TINYFONT}KL
-STR_CID_CLAY                                                                    :{TINYFONT}AG
-STR_CID_COFFEE                                                                  :{TINYFONT}KV
-STR_CID_COKE                                                                    :{TINYFONT}KK
-STR_CID_COPPER                                                                  :{TINYFONT}RZ
-STR_CID_EDIBLE_OIL                                                              :{TINYFONT}ÉO
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}IF
-STR_CID_EXPLOSIVES                                                              :{TINYFONT}RO
-STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}MF
-STR_CID_FERTILISER                                                              :{TINYFONT}MT
-STR_CID_FIBRES                                                                  :{TINYFONT}RN
-STR_CID_FISH                                                                    :{TINYFONT}HL
-STR_CID_KAOLIN                                                                  :{TINYFONT}KA
-STR_CID_LIMESTONE                                                               :{TINYFONT}MÉ
-STR_CID_TIMBER                                                                  :{TINYFONT}FÜ
-STR_CID_LYE                                                                     :{TINYFONT}LÚ
-STR_CID_MANGANESE                                                               :{TINYFONT}MN
-STR_CID_METAL                                                                   :{TINYFONT}FM
-STR_CID_MILK                                                                    :{TINYFONT}TJ
-STR_CID_NICKEL                                                                  :{TINYFONT}NI
-STR_CID_NITRATES                                                                :{TINYFONT}SL
-STR_CID_NUTS                                                                    :{TINYFONT}DI
-STR_CID_PACKAGING                                                               :{TINYFONT}CM
-STR_CID_PEAT                                                                    :{TINYFONT}TZ
-STR_CID_PETROL                                                                  :{TINYFONT}ÜA
-STR_CID_PIG_IRON                                                                :{TINYFONT}NV
-STR_CID_PIPE                                                                    :{TINYFONT}CS
-STR_CID_PHOSPHATE                                                               :{TINYFONT}FO
-STR_CID_POTASH                                                                  :{TINYFONT}HZ
-STR_CID_PYRITE_ORE                                                              :{TINYFONT}PI
-STR_CID_QUICKLIME                                                               :{TINYFONT}ÉM
-STR_CID_RECYCLABLES                                                             :{TINYFONT}ÚÁ
+STR_CID_CLAY                                                                    :{TINYFONT}AGY
+STR_CID_CLEANING_AGENTS                                                         :{TINYFONT}TISZ
+STR_CID_COFFEE                                                                  :{TINYFONT}KÁVÉ
+STR_CID_COAL_TAR                                                                :{TINYFONT}KŐ
+STR_CID_COKE                                                                    :{TINYFONT}KOK
+STR_CID_COPPER                                                                  :{TINYFONT}REZ
+STR_CID_COPPER_CONCENTRATE                                                      :{TINYFONT}REZ
+STR_CID_EDIBLE_OIL                                                              :{TINYFONT}OL
+STR_CID_ELECTRICAL_PARTS                                                        :{TINYFONT}ELEK
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}MŰSZ
+STR_CID_ETHYLENE                                                                :{TINYFONT}ET
+STR_CID_EXPLOSIVES                                                              :{TINYFONT}ROBB
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FARM
+STR_CID_FERROCHROME                                                             :{TINYFONT}FERR
+STR_CID_FERTILISER                                                              :{TINYFONT}TRÁ
+STR_CID_FIBRES                                                                  :{TINYFONT}SZÖ
+STR_CID_FISH                                                                    :{TINYFONT}HAL
+STR_CID_FOOD_ADDITIVES                                                          :{TINYFONT}TÁP
+STR_CID_FORMIC_ACID                                                             :{TINYFONT}FORM
+STR_CID_FURNITURE                                                               :{TINYFONT}BÚT
+STR_CID_GLASS                                                                   :{TINYFONT}ÜVEG
+STR_CID_HYDROCHLORIC_ACID                                                       :{TINYFONT}HCL
+STR_CID_KAOLIN                                                                  :{TINYFONT}KAOL
+STR_CID_LIMESTONE                                                               :{TINYFONT}MES
+STR_CID_LOGS                                                                    :{TINYFONT}FA
+STR_CID_TIMBER                                                                  :{TINYFONT}FA
+# cargo uses Sodium Hydroxide as name string as it's interchangeable with Lye, but lye is convenient for filename / cargo label
+STR_CID_LYE                                                                     :{TINYFONT}NÁ
+STR_CID_MANGANESE                                                               :{TINYFONT}MANG
+STR_CID_METAL                                                                   :{TINYFONT}FÉM
+STR_CID_METHANE                                                                 :{TINYFONT}METÁ
+STR_CID_METHANOL                                                                :{TINYFONT}METAN
+STR_CID_MILK                                                                    :{TINYFONT}TEJ
+STR_CID_NAPHTHA                                                                 :{TINYFONT}KÁ
+STR_CID_NICKEL                                                                  :{TINYFONT}NIK
+STR_CID_NITRATES                                                                :{TINYFONT}NIT
+STR_CID_NUTS                                                                    :{TINYFONT}DIO
+STR_CID_OXYGEN                                                                  :{TINYFONT}OXY
+STR_CID_PACKAGING                                                               :{TINYFONT}CSOM
+STR_CID_PAINTS_AND_COATINGS                                                     :{TINYFONT}FEST
+STR_CID_PEAT                                                                    :{TINYFONT}TŐZ
+STR_CID_PETROL                                                                  :{TINYFONT}BÚZ
+STR_CID_PIG_IRON                                                                :{TINYFONT}VAS
+STR_CID_PIPE                                                                    :{TINYFONT}CSÖ
+STR_CID_PHOSPHATE                                                               :{TINYFONT}FOS
+STR_CID_PHOSPHORIC_ACID                                                         :{TINYFONT}FOSF
+STR_CID_PLASTICS                                                                :{TINYFONT}MŰA
+STR_CID_POTASH                                                                  :{TINYFONT}KÁL
+STR_CID_PROPYLENE                                                               :{TINYFONT}PROP
+STR_CID_PYRITE_ORE                                                              :{TINYFONT}PYR
+STR_CID_QUICKLIME                                                               :{TINYFONT}OLT
+STR_CID_RAW_LATEX                                                               :{TINYFONT}LAT
+STR_CID_REBAR                                                                   :{TINYFONT}VASC
+STR_CID_RECYCLABLES                                                             :{TINYFONT}ÚJRA
 STR_CID_SALT                                                                    :{TINYFONT}SÓ
-STR_CID_SAND                                                                    :{TINYFONT}HM
-STR_CID_SCRAP_METAL                                                             :{TINYFONT}FH
-STR_CID_SLAG                                                                    :{TINYFONT}SK
-STR_CID_SODA_ASH                                                                :{TINYFONT}SS
-STR_CID_STEEL                                                                   :{TINYFONT}AC
-STR_CID_STONE                                                                   :{TINYFONT}KÖ
-STR_CID_SUGAR_BEET                                                              :{TINYFONT}CR
-STR_CID_SULPHUR                                                                 :{TINYFONT}KN
-STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}KA
-STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}JA
-STR_CID_VEHICLES                                                                :{TINYFONT}JM
-STR_CID_WOOL                                                                    :{TINYFONT}GY
-STR_CID_ZINC                                                                    :{TINYFONT}CN
+STR_CID_SAND                                                                    :{TINYFONT}HOM
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}FÉM
+STR_CID_SLAG                                                                    :{TINYFONT}SAL
+STR_CID_SODA_ASH                                                                :{TINYFONT}HAM
+STR_CID_STAINLESS_STEEL                                                         :{TINYFONT}ROST
+STR_CID_STEEL                                                                   :{TINYFONT}ACÉL
+STR_CID_STONE                                                                   :{TINYFONT}KŐ
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}CÉL
+STR_CID_SULPHUR                                                                 :{TINYFONT}KÉ
+STR_CID_SULPHURIC_ACID                                                          :{TINYFONT}KÉM
+STR_CID_STEEL_SECTIONS                                                          :{TINYFONT}SZE
+STR_CID_STEEL_SHEET                                                             :{TINYFONT}LAP
+STR_CID_STEEL_WIRE_ROD                                                          :{TINYFONT}DRÓT
+STR_CID_TEXTILES                                                                :{TINYFONT}TEXT
+STR_CID_TIN                                                                     :{TINYFONT}ÓN
+STR_CID_TINPLATE                                                                :{TINYFONT}ÓNAL
+STR_CID_TYRES                                                                   :{TINYFONT}GUM
+STR_CID_UREA                                                                    :{TINYFONT}URÉ
+STR_CID_VEHICLE_BODIES                                                          :{TINYFONT}JÁRM
+STR_CID_VEHICLE_ENGINES                                                         :{TINYFONT}MOTOR
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}ALKATRÉS
+STR_CID_VEHICLES                                                                :{TINYFONT}JÁRMŰ
+STR_CID_WOOL                                                                    :{TINYFONT}GYAP
+STR_CID_YARN                                                                    :{TINYFONT}FON
+STR_CID_ZINC                                                                    :{TINYFONT}CINK
 
 
-STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}A FIRS nem a játékvilág tájhoz lett tervezve.
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}A FIRS nem alkalmas a Toyland éghajlathoz.
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: A FIRS az OpenTTD 1.7.0 verzióját igényli (vagy azok számára, akik trunk verziókat használnak, r27769).
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Inkompatibilis készlet: {ORANGE}{STRING}
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Inkompatibilis paraméter: {ORANGE}A CanSet paraméter 2-nek 0-nak kell lennie, hogy működjön a FIRS-szel.
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Inkompatibilis paraméter: {ORANGE}NA City Set paraméter 2-nek 0-nak kell lennie, hogy működjön a FIRS-szel.
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Inkompatibilis verzió: {ORANGE}A Total Town Replacement Set-nek a 3.11-es vagy újabb verziójú kiadása kell legyen.
 
-STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :csak a hóhatár alatt építhető.
-STR_ERR_LOCATION_NOT_BELOW_SNOWLINE                                             :csak a hóhatár felett építhető.
-STR_ERR_LOCATION_NOT_ON_WATER                                                   :csak szárazföldön építhető.
-STR_ERR_LOCATION_NOT_IN_DESERT                                                  :nem építhető sivatagban.
-STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :nem építhető meredek lejtőkön.
-STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :településenként csak egy ilyen gazdasági épület építhető.
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :A hóvonal fölé nem lehet elhelyezni.
+STR_ERR_LOCATION_NOT_BELOW_SNOWLINE                                             :A hóvonal alá nem lehet elhelyezni.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :Szárazföldön kell elhelyezni.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :Nem lehet a sivatagban elhelyezni.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :Nem lehet meredek lejtőn elhelyezni.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :Ebből a típusú iparból csak egy lehet egy városban.
 
-STR_IND_ALUMINIUM_PLANT                                                         :Alumíniumkohó
-STR_IND_ALUMINIUM_PLANT.t                                                       :alumíniumkohót
-STR_IND_AMMONIA_PLANT                                                           :Ammóniaüzem
-STR_IND_AMMONIA_PLANT.t                                                         :ammóniaüzemet
-STR_IND_ARABLE_FARM                                                             :Földműves gazdaság
-STR_IND_ARABLE_FARM.t                                                           :földműves gazdaságot
-STR_IND_ASSEMBLY_PLANT                                                          :Járműgyár
-STR_IND_ASSEMBLY_PLANT.t                                                        :járműgyárat
-STR_IND_BASIC_OXYGEN_FURNACE                                                    :LD-konverter
-STR_IND_BASIC_OXYGEN_FURNACE.t                                                  :LD-konvertert
-STR_IND_BIOREFINERY                                                             :Bioüzem
-STR_IND_BIOREFINERY.t                                                           :bioüzemet
-STR_IND_BLAST_FURNACE                                                           :Nagyolvasztó
-STR_IND_BLAST_FURNACE.t                                                         :nagyolvasztót
+STR_PROD_CHANGE_TEST                                                            :{BIGFONT}{BLACK}A patkány átugrott a macska fölött
+
+STR_IND_ALUMINIUM_PLANT                                                         :Alumínium Üzem
+STR_IND_AMMONIA_PLANT                                                           :Ammonia Üzem
+STR_IND_ARABLE_FARM                                                             :Művelhető Tanyák
+STR_IND_ASSEMBLY_PLANT                                                          :Összeszerelő Üzem
+STR_IND_BASIC_OXYGEN_FURNACE                                                    :Alap Oxigén Kemence
+STR_IND_BIOREFINERY                                                             :Biorefinéria
+STR_IND_BLAST_FURNACE                                                           :Pufogó Kemence
+STR_IND_BODY_PLANT                                                              :Karosszéria Üzem
 STR_IND_BREWERY                                                                 :Sörfőzde
-STR_IND_BREWERY.t                                                               :sörfőzdét
-STR_IND_CIDER_MILL                                                              :Almabor-készítő üzem
-STR_IND_CIDER_MILL.t                                                            :almabor-készítő üzemet
-STR_IND_BRICK_WORKS                                                             :Téglagyár
-STR_IND_BRICK_WORKS.t                                                           :téglagyárat
-STR_IND_BUILDERS_YARD                                                           :Építkezés
-STR_IND_BUILDERS_YARD.t                                                         :építkezési területet
-STR_IND_BULK_TERMINAL                                                           :Tömegáru-rakodó
-STR_IND_BULK_TERMINAL.t                                                         :tömegáru-rakodót
-STR_IND_CEMENT_PLANT                                                            :Cementgyár
-STR_IND_CEMENT_PLANT.t                                                          :cementgyárat
-STR_IND_CHEMICAL_PLANT                                                          :Vegyi üzem
-STR_IND_CHEMICAL_PLANT.t                                                        :vegyi üzemet
+STR_IND_CIDER_MILL                                                              :Almapréselő Üzem
+STR_IND_BRICK_WORKS                                                             :Tégla Üzem
+STR_IND_BUILDERS_YARD                                                           :Építői Telep
+STR_IND_BULK_TERMINAL                                                           :Ömlesztett Áru Terminál
+STR_IND_CARBON_BLACK_PLANT                                                      :Szénfekete Üzem
+STR_IND_CEMENT_PLANT                                                            :Cement Üzem
+STR_IND_CHEMICAL_PLANT                                                          :Vegyi Üzem
+STR_IND_CHLOR_ALKALI_PLANT                                                      :Klor-alkáliai Üzem
+STR_IND_CHROMITE_MINE                                                           :Krómérc Bánya
+STR_IND_CIVIL_EXPLOSIVES_FACILITY                                               :Polgári Robbanószer Üzem
 STR_IND_CLAY_PIT                                                                :Agyagbánya
-STR_IND_CLAY_PIT.t                                                              :agyagbányát
-STR_IND_COFFEE_ESTATE                                                           :Kávéültetvény
-STR_IND_COFFEE_ESTATE.t                                                         :kávéültetvényt
-STR_IND_COKE_OVEN                                                               :Kokszoló
-STR_IND_COKE_OVEN.t                                                             :kokszolót
-STR_IND_COPPER_SMELTER                                                         :Rézkohó
-STR_IND_COPPER_SMELTER.t                                                       :rézkohót
+STR_IND_COFFEE_ESTATE                                                           :Kávé Ültetvény
+STR_IND_COKE_OVEN                                                               :Kohó Kemence
+STR_IND_COMPONENT_FACTORY                                                       :Komponensgyár
+STR_IND_COPPER_CONCENTRATOR                                                     :Rézkoncentrátor
+STR_IND_COPPER_SMELTER                                                         :Rézolvasztó
+STR_IND_CRYO_PLANT                                                              :Kriogén Üzem
 STR_IND_DAIRY                                                                   :Tejüzem
-STR_IND_DAIRY.t                                                                 :tejüzemet
-STR_IND_DAIRY_FARM                                                              :Marhafarm
-STR_IND_DAIRY_FARM.t                                                            :marhafarmot
-STR_IND_DREDGING_SITE                                                           :Mederkotrás
-STR_IND_DREDGING_SITE.t                                                         :mederkotrási területet
-STR_IND_ELECTRIC_ARC_FURNACE                                                    :Ívkemence
-STR_IND_ELECTRIC_ARC_FURNACE.t                                                  :ívkemencét
-STR_IND_FISHING_GROUND                                                          :Halászterület
-STR_IND_FISHING_GROUND.t                                                        :halászterületet
-STR_IND_FISHING_HARBOUR                                                         :Halászkikötő
-STR_IND_FISHING_HARBOUR.t                                                       :halászkikötőt
-STR_IND_FISHING_VILLAGE                                                         :Halászfalu
-STR_IND_FLOUR_MILL                                                              :Malom
-STR_IND_FLOUR_MILL.t                                                            :malmot
+STR_IND_DAIRY_FARM                                                              :Tej Farm
+STR_IND_DREDGING_SITE                                                           :Kikötői Helyszín
+STR_IND_ELECTRIC_ARC_FURNACE                                                    :Elektromos Ívkemence
+STR_IND_ENGINE_PLANT                                                            :Motor Üzem
+STR_IND_ETHYLENE_CRACKER                                                        :Naphtha Repesztő
+STR_IND_FARM                                                                    :Farm
+STR_IND_FERROCHROME_SMELTER                                                     :Ferrokróm Olvasztó
+STR_IND_FERTILISER_PLANT                                                        :Műtrágya Üzem
+STR_IND_FACTORY_1                                                               :Gyár 1
+STR_IND_FACTORY_2                                                               :Gyár 2
+STR_IND_FACTORY_3                                                               :Gyár 3
+STR_IND_FISCHER_TROPSCH_PLANT                                                   :Fischer-Tropsch Üzem
+STR_IND_FISH_FARM                                                               :Halfarm
+STR_IND_FISHING_GROUND                                                          :Halászóhely
+STR_IND_FISHING_HARBOUR                                                         :Halászati Kikötő
+STR_IND_FISHING_VILLAGE                                                         :Halászati Falu
+STR_IND_FLOUR_MILL                                                              :Lisztmalom
 STR_IND_FOOD_MARKET                                                             :Élelmiszerbolt
-STR_IND_FOOD_MARKET.t                                                           :élelmiszerboltot
-STR_IND_FOOD_PROCESSOR                                                          :Konzervgyár
-STR_IND_FOOD_PROCESSOR.t                                                        :konzervgyárat
-STR_IND_FURNITURE_FACTORY                                                       :Bútorgyár
-STR_IND_FURNITURE_FACTORY.t                                                     :bútorgyárat
-STR_IND_GENERAL_STORE                                                           :Áruház
-STR_IND_GENERAL_STORE.t                                                         :áruházat
+STR_IND_FOOD_PROCESSOR                                                          :Élelmiszer-feldolgozó Üzem
+STR_IND_FURNITURE_FACTORY                                                       :Bútor Gyár
+STR_IND_GENERAL_STORE                                                           :Általános Bolt
 STR_IND_GLASS_WORKS                                                             :Üveggyár
-STR_IND_GLASS_WORKS.t                                                           :üveggyárat
-STR_IND_HARDWARE_STORE                                                          :Barkácsbolt
-STR_IND_HARDWARE_STORE.t                                                        :barkácsboltot
+STR_IND_HARDWARE_STORE                                                          :Háztartási Bolt
 STR_IND_HOTEL                                                                   :Szálloda
-STR_IND_HOTEL.t                                                                 :szállodát
-STR_IND_HERDING_COOP                                                            :Baromfigazdaság
-STR_IND_HERDING_COOP.t                                                          :baromfigazdaságot
-STR_IND_IRON_WORKS                                                              :Vaskohó
-STR_IND_IRON_WORKS.t                                                            :vaskohót
+STR_IND_HERDING_COOP                                                            :Juhászképző Szövetkezet
+STR_IND_IRON_WORKS                                                              :Vasgyár
 STR_IND_SCRAP_YARD                                                                :Roncstelep
-STR_IND_SCRAP_YARD.t                                                              :roncstelepet
-STR_IND_LIME_KILN                                                               :Mészégető
-STR_IND_LIME_KILN.t                                                             :mészégetőt
+STR_IND_LATEX_PROCESSOR                                                         :Latex Feldolgozó
+STR_IND_LIME_KILN                                                               :Mészkemence
 STR_IND_LIMESTONE_MINE                                                          :Mészkőbánya
-STR_IND_LIMESTONE_MINE.t                                                        :mészkőbányát
-STR_IND_LIQUIDS_TERMINAL                                                        :Olajterminál
-STR_IND_LIQUIDS_TERMINAL.t                                                      :olajterminált
-STR_IND_TIMBER_YARD                                                             :Fatelep
-STR_IND_TIMBER_YARD.t                                                           :fatelepet
-STR_IND_MACHINE_SHOP                                                            :Gépjárműüzem
-STR_IND_MACHINE_SHOP.t                                                          :gépjárműüzemet
+STR_IND_LIQUIDS_TERMINAL                                                        :Folyadék Terminál
+STR_IND_TIMBER_YARD                                                             :Fakitermelő Telep
+STR_IND_MACHINE_SHOP                                                            :Gépészműhely
+STR_IND_MACHINE_WORKS                                                           :Gépgyár
 STR_IND_MANGANESE_MINE                                                          :Mangánbánya
-STR_IND_MANGANESE_MINE.t                                                        :mangánbányát
-STR_IND_METAL_WORKSHOP                                                          :Fémipari üzem
-STR_IND_METAL_WORKSHOP.t                                                        :fémipari üzemet
-STR_IND_MIXEDFARM                                                               :Vegyes farm
-STR_IND_MIXEDFARM.t                                                             :vegyes farmot
-STR_IND_NITRATE_MINE                                                            :Salétrombánya
-STR_IND_NITRATE_MINE.t                                                          :salétrombányát
-STR_IND_ORCHARD_PIGGERY                                                         :Gyümölcs- és állatgazdaság
-STR_IND_ORCHARD_PIGGERY.t                                                       :gyümölcs- és állatgazdaságot
-STR_IND_PEATLANDS                                                               :Tőzegbánya
-STR_IND_PEATLANDS.t                                                             :tőzegbányát
-STR_IND_PETROLPUMP                                                              :Benzinkút
-STR_IND_PETROLPUMP.t                                                            :benzinkutat
+STR_IND_METAL_WORKSHOP                                                          :Fémműhely
+STR_IND_MIXEDFARM                                                               :Vegyes Tanyák
+STR_IND_NITRATE_MINE                                                            :Nitrátbánya
+STR_IND_ORCHARD_PIGGERY                                                         :Gyümölcsös és Sertéstelep
+STR_IND_PEATLANDS                                                               :Tőzegföldek
+STR_IND_PETROLPUMP                                                              :Kútállomás
 STR_IND_PHOSPHATE_MINE                                                          :Foszfátbánya
-STR_IND_PHOSPHATE_MINE.t                                                        :foszfátbányát
-STR_IND_PLASTICS_PLANT                                                          :Műanyaggyár
-STR_IND_PLASTICS_PLANT.t                                                        :műanyaggyárat
+STR_IND_PHOSPHORIC_ACID_PLANT                                                   :Foszforsav Üzem
+STR_IND_PLASTICS_PLANT                                                          :PVC Üzem
+STR_IND_PLAZA                                                                   :Pláza
+STR_IND_POLYETHYLENE_PLANT                                                      :Polietilén Üzem
+STR_IND_POLYPROPYLENE_PLANT                                                     :Polipropilén Üzem
 STR_IND_PORT                                                                    :Kikötő
-STR_IND_PORT.t                                                                  :kikötőt
-STR_IND_POTASH_MINE                                                             :Hamuzsírbánya
-STR_IND_POTASH_MINE.t                                                           :hamuzsírbányát
-STR_IND_PYRITE_MINE                                                             :Piritbánya
-STR_IND_PYRITE_MINE.t                                                           :piritbányát
-STR_IND_PYRITE_SMELTER                                                          :Piritolvasztó
-STR_IND_PYRITE_SMELTER.t                                                        :piritolvasztót
+STR_IND_POTASH_MINE                                                             :Káliumbánya
+STR_IND_PYRITE_MINE                                                             :Pirites Bánya
+STR_IND_PYRITE_SMELTER                                                          :Pirites Olvasztó
 STR_IND_POWER_PLANT                                                             :Erőmű
-STR_IND_POWER_PLANT.t                                                           :erőművet
-STR_IND_QUARRY                                                                  :Kőfejtő
-STR_IND_QUARRY.t                                                                :kőfejtőt
-STR_IND_RANCH                                                                   :Birkafarm
-STR_IND_RANCH.t                                                                 :birkafarm
-STR_IND_RECYCLING_DEPOT                                                         :Hulladékgyűjtő
-STR_IND_RECYCLING_DEPOT.t                                                       :hulladékgyűjtőt
-STR_IND_RECYCLING_PLANT                                                         :Újrahasznosító telep
-STR_IND_RECYCLING_PLANT.t                                                       :újrahasznosító telepet
-STR_IND_REINDEER_FARM                                                           :Rénszarvasfarm
-STR_IND_REINDEER_FARM.t                                                         :rénszarvasfarmot
-STR_IND_SHEEPFARM                                                               :Birkafarm
-STR_IND_SHEEPFARM.t                                                             :birkafarmot
-STR_IND_SLAG_GRINDING_PLANT                                                     :Salakfeldolgozó
-STR_IND_SLAG_GRINDING_PLANT.t                                                   :salakfeldolgozót
+STR_IND_QUARRY                                                                  :Kőbánya
+STR_IND_RANCH                                                                   :Ranch
+STR_IND_RECYCLING_DEPOT                                                         :Újrahasznosító Telep
+STR_IND_RECYCLING_PLANT                                                         :Újrahasznosító Üzem
+STR_IND_REINDEER_FARM                                                           :Rénszarvas Farm
+STR_IND_SALT_MINE                                                               :Sóbánya
+STR_IND_SHEEPFARM                                                               :Juhfarm
+STR_IND_SLAG_GRINDING_PLANT                                                     :Salakőrlemény Üzem
 STR_IND_SMITHY_FORGE                                                            :Kovácsműhely
-STR_IND_SMITHY_FORGE.t                                                          :kovácsműhelyt
-STR_IND_SODA_ASH_MINE                                                           :Sziksóbánya
-STR_IND_SODA_ASH_MINE.t                                                         :sziksóbányát
-STR_IND_STOCKYARD                                                               :Vágóhíd
-STR_IND_STOCKYARD.t                                                             :vágóhidat
+STR_IND_SODA_ASH_MINE                                                           :Szóda-ash Bánya
+STR_IND_SOLVAY_PLANT                                                            :Solvay Üzem
+# we use 'integrated_steel_mill' in code to avoid confusion with Steeltown mills, but it's easier to just use 'Steel Mill' for name that players see
+STR_IND_INTEGRATED_STEEL_MILL                                                   :Acélmű
+STR_IND_SHEET_AND_PIPE_MILL                                                     :Lemez és Csőműhely
+STR_IND_STOCKYARD                                                               :Áru Terep
 STR_IND_SUGAR_REFINERY                                                          :Cukorfinomító
-STR_IND_SUGAR_REFINERY.t                                                        :cukorfinomítót
-STR_IND_SUPPLY_YARD                                                             :Alkatrészgyártó üzem
-STR_IND_SUPPLY_YARD.t                                                           :alkatrészgyártó üzemet
-STR_IND_TEXTILE_MILL                                                            :Textilüzem
-STR_IND_TEXTILE_MILL.t                                                          :textilüzemet
-STR_IND_TRADING_POST                                                            :Kereskedelmi állomás
-STR_IND_TRADING_POST.t                                                          :kereskedelmi állomást
-STR_IND_TYRE_PLANT                                                              :Gumiabroncs gyár
-STR_IND_VINEYARD                                                                :Szőlőskert
+STR_IND_SULPHURIC_ACID_PLANT                                                    :Kénsav Üzem
+STR_IND_SUPPLY_YARD                                                             :Ellátmány Telep
+STR_IND_TEXTILE_MILL                                                            :Textilgyár
+STR_IND_TINPLATE_WORKS                                                          :Ónlemez Műhely
+STR_IND_TRADING_POST                                                            :Kereskedelmi Posta
+STR_IND_TYRE_PLANT                                                              :Gumiabroncs Üzem
+STR_IND_VINEYARD                                                                :Szőlőültetvény
+STR_IND_VEHICLE_DISTRIBUTOR                                                     :Jármű Terjesztő
 STR_IND_WHARF                                                                   :Rakpart
-STR_IND_WHARF.t                                                                 :rakpartot
+STR_IND_WIRE_AND_SECTION_MILL                                                   :Drót és Szakasz Műhely
 
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Helyszín: {YELLOW}Nem finanszírozható hóban vagy sivatagban.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Helyszín: {YELLOW}Nem finanszírozható hóban vagy sivatagban.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Helyszín: {YELLOW}Nem finanszírozható hóban vagy sivatagban.
+STR_FUND_FARM                                                                   :{}{BLACK}Helyszín: {YELLOW}Nem finanszírozható hóban vagy sivatagban.
+STR_FUND_FOREST                                                                 :{}{BLACK}Helyszín: {YELLOW}Nem finanszírozható sivatagban.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Helyszín: {YELLOW}Nem finanszírozható hóban.
+STR_FUND_HERDING_COOP                                                           :{}{BLACK}Helyszín: {YELLOW}Csak hóban finanszírozható.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Helyszín: {YELLOW}Nem finanszírozható hóban vagy sivatagban.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Helyszín: {YELLOW}Nem finanszírozható hóban vagy sivatagban.
+STR_FUND_VINEYARD                                                               :{}{BLACK}Helyszín: {YELLOW}Nem finanszírozható hóban vagy sivatagban.
 
-STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG                             : {BLACK}(szállítva)
-STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY                                        :{BLACK}A maximális termelés eléréséhez {WHITE}bármely {BLACK}rakomány szállítása elegendő.
-STR_EXTRA_TEXT_SECONDARY_COMBINATORY                                            :{BLACK}A maximális termelés eléréséhez {WHITE}minden {BLACK}rakomány szállítása szükséges minimum 3 havonta.
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}Alapszintű{}{}{BLACK}A {WHITE}Megnövekedett {BLACK} szint eléréséhez {SIGNED_WORD} láda felszerelés szállítása szükséges 3 hónapon belül.{}A {WHITE}Maximális {BLACK}szint eléréséhez {SIGNED_WORD} láda szükséges.
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}Megnövekedett{}{}{BLACK}A szint fenntartásához {SIGNED_WORD} láda felszerelés szállítása szükséges 3 hónapon belül.{}A {WHITE}Maximális {BLACK}szint eléréséhez {SIGNED_WORD} láda szükséges.
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}maximális{}{}{BLACK}A szint fenntartásához {SKIP}{SIGNED_WORD} láda felszerelés szállítása szükséges 3 hónapon belül.
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}Alapszintű{}{}{BLACK}A {WHITE}Megnövekedett {BLACK} szint eléréséhez {SIGNED_WORD} egység rakomány szállítása szükséges 3 hónapon belül.{}A {WHITE}Maximális {BLACK}szint eléréséhez {SIGNED_WORD} egység rakomány szükséges.
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}Megnövekedett{}{}{BLACK}A szint fenntartásához {SIGNED_WORD} egység rakomány szállítása szükséges 3 hónapon belül.{}A {WHITE}Maximális {BLACK}szint eléréséhez {SIGNED_WORD} egység rakomány szükséges.
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}maximális{}{}{BLACK}A szint fenntartásához {SKIP}{SIGNED_WORD} egység rakomány szállítása szükséges 3 hónapon belül.
-STR_GENERIC_NEWLINE                                                             :{}
-
-STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
-STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
-STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
-STR_FUND_FOREST                                                                 :{}{BLACK}Helyszín: {YELLOW}Nem építhető sivatagban.
-STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen.
-STR_FUND_HERDING_COOP                                                           :{}{BLACK}Helyszín: {YELLOW}Csak havas területen építhető.
-STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
-STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
-STR_FUND_VINEYARD                                                               :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
-
-STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Elérhető {YELLOW}{COMMA} {BLACK}után
-STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Nem elérhető {YELLOW}{COMMA} {BLACK}után
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Elérhető ettől: {YELLOW}{COMMA}
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Nem elérhető utána: {YELLOW}{COMMA}
 
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
 
-STR_STATION_ANIMALS                                                             :Hentes
-STR_STATION_AUTOMOTIVE                                                          :Automotív
-STR_STATION_BAR_GRILL_AND_ROOMS                                                 :Szálló
-STR_STATION_BARNS                                                               :Istállók
-STR_STATION_BARREL_AND_KEG                                                      :Szeszfőzde
-STR_STATION_BASE                                                                :Telep
-STR_STATION_BONEYARD                                                            :Roncstelep
-STR_STATION_BANK_TOP                                                            :Kokszoló
-STR_STATION_CASTINGS                                                            :Öntöde
-STR_STATION_COLLIERY                                                            :Szénbánya
-STR_STATION_COPPER_LODE                                                         :Rézlelőhely
-STR_STATION_CREOSOTING                                                          :Fatelep
-STR_STATION_DAIRY_LANE                                                          :Tejüzem
+STR_STATION_ANIMALS                                                             :Lópiac
+STR_STATION_AUTOMOTIVE                                                          :Autóipar
+STR_STATION_BAR_GRILL_AND_ROOMS                                                 :Bár, Grill és Szobák
+STR_STATION_BARNS                                                               :Tanyák
+STR_STATION_BARREL_AND_KEG                                                      :Hordó és Keg
+STR_STATION_BASE                                                                :Bázis
+STR_STATION_BONEYARD                                                            :Csonttemető
+STR_STATION_BANK_TOP                                                            :Banki Teteje
+STR_STATION_BRINE_WORKS                                                         :Sósav Művek
+STR_STATION_CASTINGS                                                            :Öntvények
+STR_STATION_COLLIERY                                                            :Bánya
+STR_STATION_COMPONENTS                                                          :Alkatrészek
+STR_STATION_COPPER_LODE                                                         :Rézérc
+STR_STATION_CREOSOTING                                                          :Kreozózás
+STR_STATION_CRYO_PLANT                                                          :Krió Mű
+STR_STATION_DAIRY_LANE                                                          :Tejtermelő Út
+STR_STATION_DYNAMO                                                              :Dinamó
 STR_STATION_ESTATE                                                              :Birtok
-STR_STATION_EXCHANGE                                                            :Átrakó
-STR_STATION_FARM_1                                                              :Tanya
-STR_STATION_FARM_2                                                              :Legelő
-STR_STATION_FARM_3                                                              :Major
-STR_STATION_FISHMARKET                                                          :Halpiac
-STR_STATION_FOOD_CORPORATION                                                    :Konzervgyár
-STR_STATION_FOREST                                                              :Favágótelep
-STR_STATION_FORGE                                                               :Műhely
-STR_STATION_FURNACE                                                             :Kohó
-STR_STATION_HEAVY_EQUIPMENT_YARD                                                :Nehézgéptelep
-STR_STATION_HEAVY_INDUSTRY_2                                                    :Művek
-STR_STATION_HERDING_COOP                                                        :Tyúkól
-STR_STATION_INDUSTRY_ESTATE_1                                                   :Ipari park
-STR_STATION_INDUSTRY_HARBOUR_1                                                  :Ipari kikötő
-STR_STATION_INDUSTRY_HARBOUR_2                                                  :Part
-STR_STATION_INDUSTRY_HARBOUR_3                                                  :Kereskedő
-STR_STATION_IRONSTONE                                                           :Vasércbánya
-STR_STATION_JOINERS_SHOP                                                        :Asztalos
-STR_STATION_KILNS                                                               :Égető
-STR_STATION_KIMBERLITE_DEPOSITS                                                 :Gyémántlelőhely
-STR_STATION_LIMESTONE_MINES                                                     :Mészkőbánya
-STR_STATION_MANGANESE_MINES                                                     :Mangánbánya
+STR_STATION_EXCHANGE                                                            :Tőzsde
+STR_STATION_FARM_1                                                              :Kúria
+STR_STATION_FARM_2                                                              :Rétek
+STR_STATION_FARM_3                                                              :Farm
+STR_STATION_FISHMARKET                                                          :Halaspiac
+STR_STATION_FISH_PENS                                                           :Halászháló
+STR_STATION_FOOD_CORPORATION                                                    :Élelmiszeripari Vállalat
+STR_STATION_FOREST                                                              :Fakitermelő
+STR_STATION_FORGE                                                               :Kovácsműhely
+STR_STATION_FURNACE                                                             :Kemence
+STR_STATION_HEAVY_EQUIPMENT_YARD                                                :Nehézgép Udvar
+STR_STATION_HEAVY_INDUSTRY_2                                                    :Munkák
+STR_STATION_HERDING_COOP                                                        :Nyáj Farm
+STR_STATION_INDUSTRY_ESTATE_1                                                   :Ipari Park
+STR_STATION_INDUSTRY_HARBOUR_1                                                  :Árapály Udvar
+STR_STATION_INDUSTRY_HARBOUR_2                                                  :Vízpart
+STR_STATION_INDUSTRY_HARBOUR_3                                                  :Rakodóhely
+STR_STATION_INDUSTRY_HARBOUR_4                                                  :Tengerpart
+STR_STATION_IRONSTONE                                                           :Vasérc
+STR_STATION_JOINERS_SHOP                                                        :Ácsbolt
+STR_STATION_KILNS                                                               :Égetők
+STR_STATION_KIMBERLITE_DEPOSITS                                                 :Kimberlit Leletek
+STR_STATION_LIMESTONE_MINES                                                     :Mészkőbányák
+STR_STATION_MANGANESE_MINES                                                     :Mangánbányák
 STR_STATION_MARKET                                                              :Piac
-STR_STATION_MERCHANTS_LANE                                                      :Újváros
+STR_STATION_MERCHANTS_LANE                                                      :Kereskedői Út
 STR_STATION_MILL                                                                :Malom
-STR_STATION_MINE                                                                :Tímár út
-STR_STATION_MOULDINGS                                                           :Műanyaggyár
-STR_STATION_OIL_RIG                                                             :Olajmező
-STR_STATION_ORCHARDS                                                            :Gyümölcsös
-STR_STATION_PIT                                                                 :Fejtés
+STR_STATION_MINE                                                                :Cipőút
+STR_STATION_MOULDINGS                                                           :Formák
+STR_STATION_OIL_RIG                                                             :Kút
+STR_STATION_ORCHARDS                                                            :Gyümölcsösök
+STR_STATION_PHENOLS                                                             :Fenolok
+STR_STATION_PIT                                                                 :Bánya
+STR_STATION_PIPE_MILL                                                           :Csőmalom
 STR_STATION_PLANTATION                                                          :Ültetvény
+STR_STATION_PLAZA                                                               :Pláza
 STR_STATION_POWERHUNGRY                                                         :Erőmű
-STR_STATION_PUMPS                                                               :Pumpa
-STR_STATION_PYRITES                                                             :Piritlelőhely
+STR_STATION_POWERTRAIN                                                          :Erőátvitel
+STR_STATION_PUMPS                                                               :Szivattyúk
+STR_STATION_PYRITES                                                             :Pirit Leletek
 STR_STATION_REFINERY                                                            :Finomító
-STR_STATION_RUBBER_COMPANY                                                      :Gumigyár
-STR_STATION_SALTPETER_WORKS                                                     :Salétrombánya
-STR_STATION_SHARP_STREET                                                        :Üveggyár
-STR_STATION_SHEEP_FOLD                                                          :Birkafarm
-STR_STATION_SHOALS                                                              :Halászterület
+STR_STATION_ROD_MILL                                                            :Rúdmalom
+STR_STATION_RUBBER_COMPANY                                                      :Gumiipari Vállalat
+STR_STATION_SALTPETER_WORKS                                                     :Salétrom Művek
+STR_STATION_SEAFOOD                                                             :Tengeri Ételek
+STR_STATION_SHARP_STREET                                                        :Éles Utca
+STR_STATION_SHEEP_FOLD                                                          :Juhnyáj
+STR_STATION_SHOALS                                                              :Zátonyok
 STR_STATION_SILO                                                                :Siló
 STR_STATION_SMELTER                                                             :Olvasztó
-STR_STATION_STACKS                                                              :Lerakat
-STR_STATION_STAMP_AND_PLATE                                                     :Lakatos
-STR_STATION_SUGAR_COMPANY                                                       :Cukorfinomító
-STR_STATION_TANK_FARM                                                           :Tartálytelep
-STR_STATION_TAPPERS_SHED                                                        :Gumifa ültetvény
-STR_STATION_TOWN_1                                                              :Régi városháza
-STR_STATION_TOWN_2                                                              :Fő út
-STR_STATION_TOWN_3                                                              :Áruház
-STR_STATION_TRONA_BEDS                                                          :Szikvidék
-STR_STATION_WATER                                                               :Zátony
-STR_STATION_WEAVE_AND_DYE                                                       :Szabóság
-STR_STATION_WELLS                                                               :Olajkút
+STR_STATION_SOOT_FURNACE                                                        :Korom Kemence
+STR_STATION_STACKS                                                              :Kémények
+STR_STATION_STAMP_AND_PLATE                                                     :Pecsét és Tábla
+STR_STATION_SUGAR_COMPANY                                                       :Cukor Vállalat
+STR_STATION_TANK_FARM                                                           :Tartályfarm
+STR_STATION_TAPPERS_SHED                                                        :Fúvó Ülőhely
+STR_STATION_TOWN_1                                                              :Régi Városháza
+STR_STATION_TOWN_2                                                              :Főút
+STR_STATION_TOWN_3                                                              :Áruházak
+STR_STATION_TRONA_BEDS                                                          :Tróna Ágyak
+STR_STATION_WATER                                                               :Homokpad
+STR_STATION_WEAVE_AND_DYE                                                       :Szövés és Festés
+STR_STATION_WELLS                                                               :Kútak
 STR_STATION_WINERY                                                              :Borászat
+STR_STATION_VEHICLE_DISTRIBUTOR                                                 :Teherautó Park
+
+# do not translate these
+STR_GENERIC_NEWLINE                                                             :{}
+# to use when dynamically choosing text colours, and we can't return a colour code directly
+STR_COLOUR_BLUE                                                                 :{BLUE}
+STR_COLOUR_GOLD                                                                 :{GOLD}
+STR_COLOUR_GREEN                                                                :{GREEN}
+STR_COLOUR_LTBLUE                                                               :{LTBLUE}
+STR_COLOUR_RED                                                                  :{RED}
+STR_COLOUR_YELLOW                                                               :{YELLOW}
+STR_COLOUR_WHITE                                                                :{WHITE}
