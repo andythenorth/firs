@@ -623,14 +623,14 @@ tanker_livery_recolour_maps_extended = (
         # second value is body recolour map for intermodal bulk containers
         "1CC",
         {136: 1, 137: 2, 138: 3, 139: 4, 140: 5, 141: 6, 142: 7, 143: 8},
-        # weathered variant
+        # weathered state
         {136: 104, 137: 1, 138: 2, 139: 3, 140: 4, 141: 5, 142: 6, 143: 7},
     ),
     (
         "CTAR",
         "1CC",
         {136: 104, 137: 1, 138: 2, 139: 3, 140: 4, 141: 5, 142: 6, 143: 7},
-        # weathered variant
+        # weathered state
         {136: 70, 137: 104, 138: 1, 139: 2, 140: 3, 141: 4, 142: 5, 143: 6},
     ),
     # see note on DFLT above
@@ -647,7 +647,7 @@ tanker_livery_recolour_maps_extended = (
             142: 204,
             143: 205,
         },
-        # weathered variant
+        # weathered state
         {
             136: 198,
             137: 199,
@@ -663,7 +663,7 @@ tanker_livery_recolour_maps_extended = (
         "SULP",
         "1CC",
         {136: 62, 137: 63, 138: 64, 139: 65, 140: 66, 141: 67, 142: 68, 143: 69},
-        # weathered variant
+        # weathered state
         {136: 62, 137: 63, 138: 64, 139: 193, 140: 194, 141: 50, 142: 51, 143: 52},
     ),
     # RFPR deliberately 2CC to allow combining with 1CC livery details
@@ -671,21 +671,21 @@ tanker_livery_recolour_maps_extended = (
         "RFPR",
         "1CC",
         {136: 80, 137: 81, 138: 82, 139: 83, 140: 84, 141: 85, 142: 86, 143: 87},
-        # weathered variant
+        # weathered state
         {136: 80, 137: 81, 138: 82, 139: 83, 140: 84, 141: 85, 142: 86, 143: 87},
     ),
     (
         "RUBR",
         "1CC",
         {136: 40, 137: 41, 138: 42, 139: 43, 140: 44, 141: 45, 142: 46, 143: 47},
-        # weathered variant
+        # weathered state
         {136: 71, 137: 72, 138: 73, 139: 43, 140: 44, 141: 76, 142: 77, 143: 47},
     ),
     (
         "PETR",
         "1CC",
         {136: 16, 137: 17, 138: 18, 139: 19, 140: 20, 141: 21, 142: 22, 143: 23},
-        # weathered variant
+        # weathered state
         {136: 16, 137: 5, 138: 6, 139: 8, 140: 9, 141: 21, 142: 22, 143: 23},
     ),
 )
@@ -696,7 +696,7 @@ tanker_livery_recolour_maps = [
 tanker_livery_recolour_maps_weathered = [
     (i[0], i[3]) for i in tanker_livery_recolour_maps_extended
 ]
-# drop the weathered variant for containers, the container handling expects a 3-tuple only (oof)
+# drop the weathered state for containers, the container handling expects a 3-tuple only (oof)
 tanker_livery_recolour_maps_containers = [
     (i[0], i[1], i[2]) for i in tanker_livery_recolour_maps_extended
 ]
