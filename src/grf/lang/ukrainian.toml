@@ -1,0 +1,2801 @@
+[GLOBAL_PRAGMA]
+grflangid = "0x33"
+plural = "6"
+gender = "m f n p"
+case = "abl acc dat f gen m n nom p pre"
+
+[STR_GRF_DESC]
+base = "{ORANGE}Набір заміни промисловості FIRS{}{BLACK}Створений andythenorth, FooBar, planetmaker, Terkhen та Yexo за допомогою багатьох інших. {SILVER}Дивіться readme для отримання додаткової інформації, включаючи як використовувати FIRS. {BLACK}Ліцензія: GPL v2."
+
+[STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY]
+base = "Максимальна відстань риболовних угідь, нафтових вишок та днопоглиблювальних майданчиків від берега у клітинках."
+
+[STR_PARAM_DESC_ECONOMIES]
+base = "Кожна економіка надає різні комбінації вантажів та промисловостей.{}{}Для гравців, які хочуть простий геймплей, {SILVER}Базові {BLACK}економіки містять менше промисловостей та вантажів, ніж інші економіки FIRS.{}{}Вебсайт FIRS надає детальну інформацію про кожну економіку."
+
+[STR_PARAM_DESC_NO_OPENINGS]
+base = "За замовчуванням нові промисловості будуть відкриватися під час гри.{}{}Якщо {SILVER}заборонити відкриття {BLACK}увімкнено, промисловості не будуть відкриватися під час гри, і гравці не зможуть фінансувати або розвідувати промисловості."
+
+[STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY]
+base = "Максимальна берегова відстань морських промисловостей у клітинках"
+
+[STR_PARAM_NAME_ECONOMIES]
+base = "Економіка"
+
+[STR_PARAM_NAME_NO_OPENINGS]
+base = "Заборонити відкриття промисловостей під час гри"
+
+[STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0]
+base = "Без обмежень"
+
+[STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT]
+base = "Ящики припасів, необхідні для Покращеного первинного виробництва (за замовчуванням 16)"
+
+[STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT]
+base = "Ящики припасів, необхідні для Максимального первинного виробництва (за замовчуванням 80)"
+
+[STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT]
+base = "Ферми, шахти та подібні промисловості збільшать виробництво при доставці ящиків припасів, спочатку до {SILVER}Покращеного{BLACK}, а потім до {SILVER}Максимального{BLACK}, якщо достатньо ящиків доставлено. {}{}Стандартні значення хороші, але за потреби ви можете їх змінити тут. {}{}Вимоги до вантажів для портових промисловостей будуть у 8 разів більше встановлених тут значень."
+
+[STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS]
+base = "Покращений рівень первинного виробництва (%)"
+
+[STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS]
+base = "Максимальний рівень первинного виробництва (%)"
+
+[STR_PARAM_DESC_PRIMARY_LEVEL_BONUS]
+base = "Виробництво на фермах, шахтах та подібних промисловостях при виконанні вимог до постачання (у відсотках від {SILVER}Нормального {BLACK}рівня виробництва)."
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE]
+base = "Помірна базова"
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC]
+base = "Арктична базова"
+
+[STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC]
+base = "Тропічна базова"
+
+[STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY]
+base = "У жаркій країні"
+
+[STR_PARAM_VALUE_ECONOMIES_STEELTOWN]
+base = "Сталеве місто"
+
+[STR_PARAM_NAME_OBJECTS]
+base = "Об'єкти ландшафтного дизайну FIRS"
+
+[STR_PARAM_DESC_OBJECTS]
+base = "FIRS включає набір об'єктів ландшафтного дизайну, які гравці можуть розміщувати, щоб зробити певні промисловості більшими за виглядом. Об'єкти ландшафту не впливають на геймплей. Об'єкти ландшафтного дизайну можна вмикати або вимикати."
+
+[STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG]
+base = " {BLACK}(постачається)"
+
+[STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY]
+base = "{BLACK}Постачайте {WHITE}принаймні один {BLACK}необхідний вантаж для максимального виробництва."
+
+[STR_EXTRA_TEXT_SECONDARY_COMBINATORY_BOTH]
+base = "{BLACK}Для максимальної швидкості виробництва постачайте {WHITE}обидва {BLACK}необхідні вантажі принаймні раз на три хвилини."
+
+[STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ALL]
+base = "{BLACK}Для максимальної швидкості виробництва постачайте {WHITE}всі {BLACK}необхідні вантажі принаймні раз на три хвилини."
+
+[STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_TWO]
+base = "{BLACK}Для максимальної швидкості виробництва постачайте {WHITE}принаймні два {BLACK}необхідні вантажі принаймні раз на три хвилини."
+
+[STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_THREE]
+base = "{BLACK}Для максимальної швидкості виробництва постачайте {WHITE}принаймні три {BLACK}необхідні вантажі принаймні раз на три хвилини."
+
+[STR_EXTRA_TEXT_TOWN_PRODUCER]
+base = "{BLACK}Виробництво пропорційне населенню міста. Принаймні {WHITE}{SIGNED_WORD} одиниць{BLACK} і не більше {WHITE}{SIGNED_WORD} одиниць{BLACK} вантажу буде вироблено щомісяця."
+
+[STR_PRIMARY_PRODUCTION_1X]
+base = "{BLACK}Поточне виробництво: {YELLOW}Нормальне {}{}{BLACK}Для {WHITE}Покращеного {BLACK}виробництва доставте {SIGNED_WORD} ящиків припасів принаймні раз на три хвилини.{}Для {WHITE}Максимального {BLACK}виробництва доставте {SIGNED_WORD} ящиків."
+
+[STR_PRIMARY_PRODUCTION_2X]
+base = "{BLACK}Поточне виробництво: {YELLOW}Покращене {}{}{BLACK}Для підтримки цього рівня доставляйте {SIGNED_WORD} ящиків припасів принаймні раз на три хвилини.{}Для {WHITE}Максимального {BLACK}виробництва доставте {SIGNED_WORD} ящиків."
+
+[STR_PRIMARY_PRODUCTION_4X]
+base = "{BLACK}Поточне виробництво: {YELLOW}Максимальне {}{}{BLACK}Для підтримки цього рівня доставляйте {SKIP}{SIGNED_WORD} ящиків припасів принаймні раз на три хвилини."
+
+[STR_PORT_PRODUCTION_1X]
+base = "{BLACK}Поточне виробництво: {YELLOW}Нормальне {}{}{BLACK}Для {WHITE}Покращеного {BLACK}виробництва доставте {SIGNED_WORD} одиниць вантажу принаймні раз на три хвилини.{}Для {WHITE}Максимального {BLACK}виробництва доставте {SIGNED_WORD} одиниць."
+
+[STR_PORT_PRODUCTION_2X]
+base = "{BLACK}Поточне виробництво: {YELLOW}Покращене {}{}{BLACK}Для підтримки цього рівня доставляйте {SIGNED_WORD} одиниць вантажу принаймні раз на три хвилини.{}Для {WHITE}Максимального {BLACK}виробництва доставте {SIGNED_WORD} одиниць."
+
+[STR_PORT_PRODUCTION_4X]
+base = "{BLACK}Поточне виробництво: {YELLOW}Максимальне {}{}{BLACK}Для підтримки цього рівня достaвляйте {SKIP}{SIGNED_WORD} одиниць вантажу принаймні раз на три хвилини."
+
+[STR_CARGO_NAME_ACID]
+base = "{G=f}кислота"
+
+["STR_CARGO_NAME_ACID.acc"]
+base = "кислоту"
+
+["STR_CARGO_NAME_ACID.gen"]
+base = "кислоти"
+
+[STR_CARGO_NAME_AGGREGATES]
+base = "{G=m}щебінь"
+
+["STR_CARGO_NAME_AGGREGATES.acc"]
+base = "щебінь"
+
+["STR_CARGO_NAME_AGGREGATES.gen"]
+base = "щебеню"
+
+[STR_CARGO_NAME_ALCOHOL]
+base = "{G=m}алкоголь"
+
+["STR_CARGO_NAME_ALCOHOL.acc"]
+base = "алкоголь"
+
+["STR_CARGO_NAME_ALCOHOL.gen"]
+base = "алкоголю"
+
+[STR_CARGO_NAME_ALUMINIUM]
+base = "{G=m}алюміній"
+
+["STR_CARGO_NAME_ALUMINIUM.acc"]
+base = "алюміній"
+
+["STR_CARGO_NAME_ALUMINIUM.gen"]
+base = "алюмінію"
+
+[STR_CARGO_NAME_ALUMINIA]
+base = "{G=m}глинозем"
+
+["STR_CARGO_NAME_ALUMINIA.acc"]
+base = "глинозем"
+
+["STR_CARGO_NAME_ALUMINIA.gen"]
+base = "глинозему"
+
+[STR_CARGO_NAME_AMMONIA]
+base = "{G=m}аміак"
+
+["STR_CARGO_NAME_AMMONIA.acc"]
+base = "аміак"
+
+["STR_CARGO_NAME_AMMONIA.gen"]
+base = "аміаку"
+
+[STR_CARGO_NAME_AMMONIUM_NITRATE]
+base = "{G=m}нітрат амонію"
+
+["STR_CARGO_NAME_AMMONIUM_NITRATE.acc"]
+base = "нітрат амонію"
+
+["STR_CARGO_NAME_AMMONIUM_NITRATE.gen"]
+base = "нітрату амонію"
+
+[STR_CARGO_NAME_BAUXITE]
+base = "{G=m}боксит"
+
+["STR_CARGO_NAME_BAUXITE.acc"]
+base = "боксит"
+
+["STR_CARGO_NAME_BAUXITE.gen"]
+base = "бокситу"
+
+[STR_CARGO_NAME_BEANS]
+base = "{G=p}боби"
+
+["STR_CARGO_NAME_BEANS.acc"]
+base = "боби"
+
+["STR_CARGO_NAME_BEANS.gen"]
+base = "бобів"
+
+[STR_CARGO_NAME_BUILDING_MATERIALS]
+base = "{G=p}будматеріали"
+
+["STR_CARGO_NAME_BUILDING_MATERIALS.acc"]
+base = "будматеріали"
+
+["STR_CARGO_NAME_BUILDING_MATERIALS.gen"]
+base = "будматеріалів"
+
+[STR_CARGO_NAME_CARBON_BLACK]
+base = "{G=m}технічний вуглець"
+
+["STR_CARGO_NAME_CARBON_BLACK.acc"]
+base = "технічний вуглець"
+
+["STR_CARGO_NAME_CARBON_BLACK.gen"]
+base = "технічного вуглецю"
+
+[STR_CARGO_NAME_CASSAVA]
+base = "{G=f}маніока"
+
+["STR_CARGO_NAME_CASSAVA.acc"]
+base = "маніоку"
+
+["STR_CARGO_NAME_CASSAVA.gen"]
+base = "маніоки"
+
+[STR_CARGO_NAME_CAST_IRON]
+base = "{G=m}чавун"
+
+["STR_CARGO_NAME_CAST_IRON.acc"]
+base = "чавун"
+
+["STR_CARGO_NAME_CAST_IRON.gen"]
+base = "чавуну"
+
+[STR_CARGO_NAME_CEMENT]
+base = "{G=m}цемент"
+
+["STR_CARGO_NAME_CEMENT.acc"]
+base = "цемент"
+
+["STR_CARGO_NAME_CEMENT.gen"]
+base = "цементу"
+
+[STR_CARGO_NAME_CHEMICALS]
+base = "{G=p}хімікати"
+
+["STR_CARGO_NAME_CHEMICALS.acc"]
+base = "хімікати"
+
+["STR_CARGO_NAME_CHEMICALS.gen"]
+base = "хімікатів"
+
+[STR_CARGO_NAME_CHLORINE]
+base = "{G=m}хлор"
+
+["STR_CARGO_NAME_CHLORINE.acc"]
+base = "хлор"
+
+["STR_CARGO_NAME_CHLORINE.gen"]
+base = "хлору"
+
+[STR_CARGO_NAME_CHROMITE_ORE]
+base = "{G=f}хромітова руда"
+
+["STR_CARGO_NAME_CHROMITE_ORE.acc"]
+base = "хромітову руду"
+
+["STR_CARGO_NAME_CHROMITE_ORE.gen"]
+base = "хромітової руди"
+
+[STR_CARGO_NAME_CLAY]
+base = "{G=f}глина"
+
+["STR_CARGO_NAME_CLAY.acc"]
+base = "глину"
+
+["STR_CARGO_NAME_CLAY.gen"]
+base = "глини"
+
+[STR_CARGO_NAME_CLEANING_AGENTS]
+base = "{G=p}миючі засоби"
+
+["STR_CARGO_NAME_CLEANING_AGENTS.acc"]
+base = "миючі засоби"
+
+["STR_CARGO_NAME_CLEANING_AGENTS.gen"]
+base = "миючих засобів"
+
+[STR_CARGO_NAME_COFFEE]
+base = "{G=f}кава"
+
+["STR_CARGO_NAME_COFFEE.acc"]
+base = "каву"
+
+["STR_CARGO_NAME_COFFEE.gen"]
+base = "кави"
+
+[STR_CARGO_NAME_COAL_TAR]
+base = "{G=f}кам'яновугільна смола"
+
+["STR_CARGO_NAME_COAL_TAR.acc"]
+base = "кам'яновугільну смолу"
+
+["STR_CARGO_NAME_COAL_TAR.gen"]
+base = "кам'яновугільної смоли"
+
+[STR_CARGO_NAME_COKE]
+base = "{G=m}кокс"
+
+["STR_CARGO_NAME_COKE.acc"]
+base = "кокс"
+
+["STR_CARGO_NAME_COKE.gen"]
+base = "коксу"
+
+[STR_CARGO_NAME_CONCRETE_PRODUCTS]
+base = "{G=p}бетонні вироби"
+
+["STR_CARGO_NAME_CONCRETE_PRODUCTS.acc"]
+base = "бетонні вироби"
+
+["STR_CARGO_NAME_CONCRETE_PRODUCTS.gen"]
+base = "бетонних виробів"
+
+[STR_CARGO_NAME_COPPER]
+base = "{G=f}мідь"
+
+["STR_CARGO_NAME_COPPER.acc"]
+base = "мідь"
+
+["STR_CARGO_NAME_COPPER.gen"]
+base = "міді"
+
+[STR_CARGO_NAME_COPPER_CONCENTRATE]
+base = "{G=m}мідний концентрат"
+
+["STR_CARGO_NAME_COPPER_CONCENTRATE.acc"]
+base = "мідний концентрат"
+
+["STR_CARGO_NAME_COPPER_CONCENTRATE.gen"]
+base = "мідного концентрату"
+
+[STR_CARGO_NAME_EDIBLE_OIL]
+base = "{G=f}харчова олія"
+
+["STR_CARGO_NAME_EDIBLE_OIL.acc"]
+base = "харчову олію"
+
+["STR_CARGO_NAME_EDIBLE_OIL.gen"]
+base = "харчової олії"
+
+[STR_CARGO_NAME_ELECTRICAL_PARTS]
+base = "{G=p}електрокомпоненти"
+
+["STR_CARGO_NAME_ELECTRICAL_PARTS.acc"]
+base = "електрокомпоненти"
+
+["STR_CARGO_NAME_ELECTRICAL_PARTS.gen"]
+base = "електрокомпонентів"
+
+[STR_CARGO_NAME_ENGINEERING_SUPPLIES]
+base = "{G=n}устаткування"
+
+["STR_CARGO_NAME_ENGINEERING_SUPPLIES.acc"]
+base = "устаткування"
+
+["STR_CARGO_NAME_ENGINEERING_SUPPLIES.gen"]
+base = "устаткування"
+
+[STR_CARGO_NAME_ETHYLENE]
+base = "{G=m}етилен"
+
+["STR_CARGO_NAME_ETHYLENE.acc"]
+base = "етилен"
+
+["STR_CARGO_NAME_ETHYLENE.gen"]
+base = "етилену"
+
+[STR_CARGO_NAME_EXPLOSIVES]
+base = "{G=f}вибухівка"
+
+["STR_CARGO_NAME_EXPLOSIVES.acc"]
+base = "вибухівку"
+
+["STR_CARGO_NAME_EXPLOSIVES.gen"]
+base = "вибухівки"
+
+[STR_CARGO_NAME_FERROALLOYS]
+base = "{G=p}феросплави"
+
+["STR_CARGO_NAME_FERROALLOYS.acc"]
+base = "феросплави"
+
+["STR_CARGO_NAME_FERROALLOYS.gen"]
+base = "феросплавів"
+
+[STR_CARGO_NAME_FERROCHROME]
+base = "{G=m}ферохром"
+
+["STR_CARGO_NAME_FERROCHROME.acc"]
+base = "ферохром"
+
+["STR_CARGO_NAME_FERROCHROME.gen"]
+base = "ферохрому"
+
+[STR_CARGO_NAME_FIBRES]
+base = "{G=p}рослинні волокна"
+
+["STR_CARGO_NAME_FIBRES.acc"]
+base = "рослинні волокна"
+
+["STR_CARGO_NAME_FIBRES.gen"]
+base = "рослинних волокон"
+
+[STR_CARGO_NAME_FISH]
+base = "{G=f}риба"
+
+["STR_CARGO_NAME_FISH.acc"]
+base = "рибу"
+
+["STR_CARGO_NAME_FISH.gen"]
+base = "риби"
+
+[STR_CARGO_NAME_FARM_SUPPLIES]
+base = "{G=n}сільгосппостачання"
+
+["STR_CARGO_NAME_FARM_SUPPLIES.acc"]
+base = "сільгосппостачання"
+
+["STR_CARGO_NAME_FARM_SUPPLIES.gen"]
+base = "сільгосппостачання"
+
+[STR_CARGO_NAME_FERTILISER]
+base = "{G=p}добрива"
+
+["STR_CARGO_NAME_FERTILISER.acc"]
+base = "добрива"
+
+["STR_CARGO_NAME_FERTILISER.gen"]
+base = "добрив"
+
+[STR_CARGO_NAME_FOOD_ADDITIVES]
+base = "{G=p}харчові добавки"
+
+["STR_CARGO_NAME_FOOD_ADDITIVES.acc"]
+base = "харчові добавки"
+
+["STR_CARGO_NAME_FOOD_ADDITIVES.gen"]
+base = "харчових добавок"
+
+[STR_CARGO_NAME_FORGINGS_AND_CASTINGS]
+base = "{G=n}кування та лиття"
+
+["STR_CARGO_NAME_FORGINGS_AND_CASTINGS.acc"]
+base = "кування та лиття"
+
+["STR_CARGO_NAME_FORGINGS_AND_CASTINGS.gen"]
+base = "кування та лиття"
+
+[STR_CARGO_NAME_FORMIC_ACID]
+base = "{G=f}мурашина кислота"
+
+["STR_CARGO_NAME_FORMIC_ACID.acc"]
+base = "мурашину кислоту"
+
+["STR_CARGO_NAME_FORMIC_ACID.gen"]
+base = "мурашиної кислоти"
+
+[STR_CARGO_NAME_FRUITS]
+base = "{G=p}фрукти"
+
+["STR_CARGO_NAME_FRUITS.acc"]
+base = "фрукти"
+
+["STR_CARGO_NAME_FRUITS.gen"]
+base = "фруктів"
+
+[STR_CARGO_NAME_FURNITURE]
+base = "{G=p}меблі"
+
+["STR_CARGO_NAME_FURNITURE.acc"]
+base = "меблі"
+
+["STR_CARGO_NAME_FURNITURE.gen"]
+base = "меблів"
+
+[STR_CARGO_NAME_GLASS]
+base = "{G=n}скло"
+
+["STR_CARGO_NAME_GLASS.acc"]
+base = "скло"
+
+["STR_CARGO_NAME_GLASS.gen"]
+base = "скла"
+
+[STR_CARGO_NAME_HARDWARE]
+base = "{G=p}скобяні вироби"
+
+["STR_CARGO_NAME_HARDWARE.acc"]
+base = "скобяні вироби"
+
+["STR_CARGO_NAME_HARDWARE.gen"]
+base = "скобяних виробів"
+
+[STR_CARGO_NAME_HYDROCHLORIC_ACID]
+base = "{G=f}соляна кислота"
+
+["STR_CARGO_NAME_HYDROCHLORIC_ACID.acc"]
+base = "соляну кислоту"
+
+["STR_CARGO_NAME_HYDROCHLORIC_ACID.gen"]
+base = "соляної кислоти"
+
+[STR_CARGO_NAME_KAOLIN]
+base = "{G=m}каолін"
+
+["STR_CARGO_NAME_KAOLIN.acc"]
+base = "каолін"
+
+["STR_CARGO_NAME_KAOLIN.gen"]
+base = "каоліну"
+
+[STR_CARGO_NAME_LIMESTONE]
+base = "{G=m}вапняк"
+
+["STR_CARGO_NAME_LIMESTONE.acc"]
+base = "вапняк"
+
+["STR_CARGO_NAME_LIMESTONE.gen"]
+base = "вапняку"
+
+[STR_CARGO_NAME_LOGS]
+base = "{G=p}колоди"
+
+["STR_CARGO_NAME_LOGS.acc"]
+base = "колоди"
+
+["STR_CARGO_NAME_LOGS.gen"]
+base = "колод"
+
+[STR_CARGO_NAME_LYE]
+base = "{G=m}їдка сода"
+
+["STR_CARGO_NAME_LYE.acc"]
+base = "їдку сода"
+
+["STR_CARGO_NAME_LYE.gen"]
+base = "їдкої соди"
+
+[STR_CARGO_NAME_METAL]
+base = "{G=m}метал"
+
+["STR_CARGO_NAME_METAL.acc"]
+base = "метал"
+
+["STR_CARGO_NAME_METAL.gen"]
+base = "металу"
+
+[STR_CARGO_NAME_METHANE]
+base = "{G=m}метан"
+
+["STR_CARGO_NAME_METHANE.acc"]
+base = "метан"
+
+["STR_CARGO_NAME_METHANE.gen"]
+base = "метану"
+
+[STR_CARGO_NAME_METHANOL]
+base = "{G=m}метанол"
+
+["STR_CARGO_NAME_METHANOL.acc"]
+base = "метанол"
+
+["STR_CARGO_NAME_METHANOL.gen"]
+base = "метанолу"
+
+[STR_CARGO_NAME_MILK]
+base = "{G=n}молоко"
+
+["STR_CARGO_NAME_MILK.acc"]
+base = "молоко"
+
+["STR_CARGO_NAME_MILK.gen"]
+base = "молока"
+
+[STR_CARGO_NAME_MANGANESE]
+base = "{G=m}марганець"
+
+["STR_CARGO_NAME_MANGANESE.acc"]
+base = "марганець"
+
+["STR_CARGO_NAME_MANGANESE.gen"]
+base = "марганцю"
+
+[STR_CARGO_NAME_NAPHTHA]
+base = "{G=f}нафта"
+
+["STR_CARGO_NAME_NAPHTHA.acc"]
+base = "нафту"
+
+["STR_CARGO_NAME_NAPHTHA.gen"]
+base = "нафти"
+
+[STR_CARGO_NAME_NICKEL]
+base = "{G=m}нікель"
+
+["STR_CARGO_NAME_NICKEL.acc"]
+base = "нікель"
+
+["STR_CARGO_NAME_NICKEL.gen"]
+base = "нікелю"
+
+[STR_CARGO_NAME_NITRATES]
+base = "{G=p}нітрати"
+
+["STR_CARGO_NAME_NITRATES.acc"]
+base = "нітрати"
+
+["STR_CARGO_NAME_NITRATES.gen"]
+base = "нітратів"
+
+[STR_CARGO_NAME_NITROGEN]
+base = "{G=m}азот"
+
+["STR_CARGO_NAME_NITROGEN.acc"]
+base = "азот"
+
+["STR_CARGO_NAME_NITROGEN.gen"]
+base = "азоту"
+
+[STR_CARGO_NAME_NUTS]
+base = "{G=p}горіхи"
+
+["STR_CARGO_NAME_NUTS.acc"]
+base = "горіхи"
+
+["STR_CARGO_NAME_NUTS.gen"]
+base = "горіхів"
+
+[STR_CARGO_NAME_OXYGEN]
+base = "{G=m}кисень"
+
+["STR_CARGO_NAME_OXYGEN.acc"]
+base = "кисень"
+
+["STR_CARGO_NAME_OXYGEN.gen"]
+base = "кисню"
+
+[STR_CARGO_NAME_PACKAGING]
+base = "{G=f}пакування"
+
+["STR_CARGO_NAME_PACKAGING.acc"]
+base = "пакування"
+
+["STR_CARGO_NAME_PACKAGING.gen"]
+base = "пакування"
+
+[STR_CARGO_NAME_PAINTS_AND_COATINGS]
+base = "{G=p}фарби та лаки"
+
+["STR_CARGO_NAME_PAINTS_AND_COATINGS.acc"]
+base = "фарби та лаки"
+
+["STR_CARGO_NAME_PAINTS_AND_COATINGS.gen"]
+base = "фарб та лаків"
+
+[STR_CARGO_NAME_PEAT]
+base = "{G=m}торф"
+
+["STR_CARGO_NAME_PEAT.acc"]
+base = "торф"
+
+["STR_CARGO_NAME_PEAT.gen"]
+base = "торфу"
+
+[STR_CARGO_NAME_PETROL]
+base = "{G=p}нафтопродукти"
+
+["STR_CARGO_NAME_PETROL.acc"]
+base = "нафтопродукти"
+
+["STR_CARGO_NAME_PETROL.gen"]
+base = "нафтопродуктів"
+
+[STR_CARGO_NAME_PIPEWORK]
+base = "{G=p}трубопроводи"
+
+["STR_CARGO_NAME_PIPEWORK.acc"]
+base = "трубопроводи"
+
+["STR_CARGO_NAME_PIPEWORK.gen"]
+base = "трубопроводів"
+
+[STR_CARGO_NAME_PHOSPHATE]
+base = "{G=m}фосфати"
+
+["STR_CARGO_NAME_PHOSPHATE.acc"]
+base = "фосфати"
+
+["STR_CARGO_NAME_PHOSPHATE.gen"]
+base = "фосфатів"
+
+[STR_CARGO_NAME_PHOSPHORIC_ACID]
+base = "{G=f}фосфорна кислота"
+
+["STR_CARGO_NAME_PHOSPHORIC_ACID.acc"]
+base = "фосфорну кислоту"
+
+["STR_CARGO_NAME_PHOSPHORIC_ACID.gen"]
+base = "фосфорної кислоти"
+
+[STR_CARGO_NAME_PIG_IRON]
+base = "{G=n}чушкове залізо"
+
+["STR_CARGO_NAME_PIG_IRON.acc"]
+base = "чушкове залізо"
+
+["STR_CARGO_NAME_PIG_IRON.gen"]
+base = "чушкового заліза"
+
+[STR_CARGO_NAME_PLASTICS]
+base = "{G=m}пластик"
+
+["STR_CARGO_NAME_PLASTICS.acc"]
+base = "пластик"
+
+["STR_CARGO_NAME_PLASTICS.gen"]
+base = "пластику"
+
+[STR_CARGO_NAME_POTASH]
+base = "{G=m}поташ"
+
+["STR_CARGO_NAME_POTASH.acc"]
+base = "поташ"
+
+["STR_CARGO_NAME_POTASH.gen"]
+base = "поташу"
+
+[STR_CARGO_NAME_PROPYLENE]
+base = "{G=m}пропілен"
+
+["STR_CARGO_NAME_PROPYLENE.acc"]
+base = "пропілен"
+
+["STR_CARGO_NAME_PROPYLENE.gen"]
+base = "пропілену"
+
+[STR_CARGO_NAME_PUMPS_AND_VALVES]
+base = "{G=p}насоси і клапани"
+
+["STR_CARGO_NAME_PUMPS_AND_VALVES.acc"]
+base = "насоси і клапани"
+
+["STR_CARGO_NAME_PUMPS_AND_VALVES.gen"]
+base = "насосів і клапанів"
+
+[STR_CARGO_NAME_PYRITE_ORE]
+base = "{G=f}піритова руда"
+
+["STR_CARGO_NAME_PYRITE_ORE.acc"]
+base = "піритову руду"
+
+["STR_CARGO_NAME_PYRITE_ORE.gen"]
+base = "піритової руди"
+
+[STR_CARGO_NAME_QUICKLIME]
+base = "{G=n}негашене вапно"
+
+["STR_CARGO_NAME_QUICKLIME.acc"]
+base = "негашене вапно"
+
+["STR_CARGO_NAME_QUICKLIME.gen"]
+base = "негашеного вапна"
+
+[STR_CARGO_NAME_RAW_LATEX]
+base = "{G=m}сирий латекс"
+
+["STR_CARGO_NAME_RAW_LATEX.acc"]
+base = "сирий латекс"
+
+["STR_CARGO_NAME_RAW_LATEX.gen"]
+base = "сирого латексу"
+
+[STR_CARGO_NAME_REBAR]
+base = "{G=f}арматура"
+
+["STR_CARGO_NAME_REBAR.acc"]
+base = "арматуру"
+
+["STR_CARGO_NAME_REBAR.gen"]
+base = "арматури"
+
+[STR_CARGO_NAME_RECYCLABLES]
+base = "{G=f}вторсировина"
+
+["STR_CARGO_NAME_RECYCLABLES.acc"]
+base = "вторсировину"
+
+["STR_CARGO_NAME_RECYCLABLES.gen"]
+base = "вторсировини"
+
+[STR_CARGO_NAME_SALT]
+base = "{G=f}сіль"
+
+["STR_CARGO_NAME_SALT.acc"]
+base = "сіль"
+
+["STR_CARGO_NAME_SALT.gen"]
+base = "солі"
+
+[STR_CARGO_NAME_SAND]
+base = "{G=m}пісок"
+
+["STR_CARGO_NAME_SAND.acc"]
+base = "пісок"
+
+["STR_CARGO_NAME_SAND.gen"]
+base = "піску"
+
+[STR_CARGO_NAME_SCRAP_METAL]
+base = "{G=m}металобрухт"
+
+["STR_CARGO_NAME_SCRAP_METAL.acc"]
+base = "металобрухт"
+
+["STR_CARGO_NAME_SCRAP_METAL.gen"]
+base = "металобрухту"
+
+[STR_CARGO_NAME_SEALS_HOSES_AND_BELTS]
+base = "{G=p}гумотехніка"
+
+["STR_CARGO_NAME_SEALS_HOSES_AND_BELTS.acc"]
+base = "гумотехніку"
+
+["STR_CARGO_NAME_SEALS_HOSES_AND_BELTS.gen"]
+base = "гумотехніки"
+
+[STR_CARGO_NAME_SLAG]
+base = "{G=m}шлак"
+
+["STR_CARGO_NAME_SLAG.acc"]
+base = "шлак"
+
+["STR_CARGO_NAME_SLAG.gen"]
+base = "шлаку"
+
+[STR_CARGO_NAME_SODA_ASH]
+base = "{G=f}сода"
+
+["STR_CARGO_NAME_SODA_ASH.acc"]
+base = "соду"
+
+["STR_CARGO_NAME_SODA_ASH.gen"]
+base = "соди"
+
+[STR_CARGO_NAME_STEEL]
+base = "{G=f}сталь"
+
+["STR_CARGO_NAME_STEEL.acc"]
+base = "сталь"
+
+["STR_CARGO_NAME_STEEL.gen"]
+base = "сталі"
+
+[STR_CARGO_NAME_STEEL_BILLETS_AND_BLOOMS]
+base = "{G=p}сталеві заготовки"
+
+["STR_CARGO_NAME_STEEL_BILLETS_AND_BLOOMS.acc"]
+base = "сталеві заготовки"
+
+["STR_CARGO_NAME_STEEL_BILLETS_AND_BLOOMS.gen"]
+base = "сталевих заготовок"
+
+[STR_CARGO_NAME_STEEL_INGOTS]
+base = "{G=p}сталеві злитки"
+
+["STR_CARGO_NAME_STEEL_INGOTS.acc"]
+base = "сталеві злитки"
+
+["STR_CARGO_NAME_STEEL_INGOTS.gen"]
+base = "сталевих злитків"
+
+[STR_CARGO_NAME_STEEL_MERCHANT_BAR]
+base = "{G=m}сортовий прокат"
+
+["STR_CARGO_NAME_STEEL_MERCHANT_BAR.acc"]
+base = "сортовий прокат"
+
+["STR_CARGO_NAME_STEEL_MERCHANT_BAR.gen"]
+base = "сортового прокату"
+
+[STR_CARGO_NAME_STEEL_PIPE]
+base = "{G=p}сталеві труби"
+
+["STR_CARGO_NAME_STEEL_PIPE.acc"]
+base = "сталеві труби"
+
+["STR_CARGO_NAME_STEEL_PIPE.gen"]
+base = "сталевих труб"
+
+[STR_CARGO_NAME_STEEL_SECTIONS]
+base = "{G=f}конструкційна сталь"
+
+["STR_CARGO_NAME_STEEL_SECTIONS.acc"]
+base = "конструкційну сталь"
+
+["STR_CARGO_NAME_STEEL_SECTIONS.gen"]
+base = "конструкційної сталі"
+
+[STR_CARGO_NAME_STEEL_SHEET]
+base = "{G=m}сталевий лист і стрічка"
+
+["STR_CARGO_NAME_STEEL_SHEET.acc"]
+base = "сталевий лист і стрічку"
+
+["STR_CARGO_NAME_STEEL_SHEET.gen"]
+base = "сталевого листа і стрічки"
+
+[STR_CARGO_NAME_STEEL_SLAB]
+base = "{G=m}сталевий сляб"
+
+["STR_CARGO_NAME_STEEL_SLAB.acc"]
+base = "сталевий сляб"
+
+["STR_CARGO_NAME_STEEL_SLAB.gen"]
+base = "сталевого сляба"
+
+[STR_CARGO_NAME_STEEL_TUBE]
+base = "{G=p}сталеві трубки"
+
+["STR_CARGO_NAME_STEEL_TUBE.acc"]
+base = "сталеві трубки"
+
+["STR_CARGO_NAME_STEEL_TUBE.gen"]
+base = "сталевих трубок"
+
+[STR_CARGO_NAME_STEEL_WIRE_ROD]
+base = "{G=f}сталева катанка"
+
+["STR_CARGO_NAME_STEEL_WIRE_ROD.acc"]
+base = "сталеву катанку"
+
+["STR_CARGO_NAME_STEEL_WIRE_ROD.gen"]
+base = "сталевої катанки"
+
+[STR_CARGO_NAME_SUGAR_BEET]
+base = "{G=m}цукровий буряк"
+
+["STR_CARGO_NAME_SUGAR_BEET.acc"]
+base = "цукровий буряк"
+
+["STR_CARGO_NAME_SUGAR_BEET.gen"]
+base = "цукрового буряку"
+
+[STR_CARGO_NAME_SULPHUR]
+base = "{G=f}сірка"
+
+["STR_CARGO_NAME_SULPHUR.acc"]
+base = "сірку"
+
+["STR_CARGO_NAME_SULPHUR.gen"]
+base = "сірки"
+
+[STR_CARGO_NAME_SULPHURIC_ACID]
+base = "{G=f}сірчана кислота"
+
+["STR_CARGO_NAME_SULPHURIC_ACID.acc"]
+base = "сірчану кислоту"
+
+["STR_CARGO_NAME_SULPHURIC_ACID.gen"]
+base = "сірчаної кислоти"
+
+[STR_CARGO_NAME_TEXTILES]
+base = "{G=m}текстиль"
+
+["STR_CARGO_NAME_TEXTILES.acc"]
+base = "текстиль"
+
+["STR_CARGO_NAME_TEXTILES.gen"]
+base = "текстилю"
+
+[STR_CARGO_NAME_TIMBER]
+base = "{G=p}пиломатеріали"
+
+["STR_CARGO_NAME_TIMBER.acc"]
+base = "пиломатеріали"
+
+["STR_CARGO_NAME_TIMBER.gen"]
+base = "пиломатеріалів"
+
+[STR_CARGO_NAME_TIN]
+base = "{G=n}олово"
+
+["STR_CARGO_NAME_TIN.acc"]
+base = "олово"
+
+["STR_CARGO_NAME_TIN.gen"]
+base = "олова"
+
+[STR_CARGO_NAME_TINPLATE]
+base = "{G=f}жерсть"
+
+["STR_CARGO_NAME_TINPLATE.acc"]
+base = "жерсть"
+
+["STR_CARGO_NAME_TINPLATE.gen"]
+base = "жерсті"
+
+[STR_CARGO_NAME_TYRE_CORD]
+base = "{G=m}шинний корд"
+
+["STR_CARGO_NAME_TYRE_CORD.acc"]
+base = "шинний корд"
+
+["STR_CARGO_NAME_TYRE_CORD.gen"]
+base = "шинного корду"
+
+[STR_CARGO_NAME_TYRES]
+base = "{G=p}шини"
+
+["STR_CARGO_NAME_TYRES.acc"]
+base = "шини"
+
+["STR_CARGO_NAME_TYRES.gen"]
+base = "шин"
+
+[STR_CARGO_NAME_UREA]
+base = "{G=f}сечовина"
+
+["STR_CARGO_NAME_UREA.acc"]
+base = "сечовину"
+
+["STR_CARGO_NAME_UREA.gen"]
+base = "сечовини"
+
+[STR_CARGO_NAME_VEHICLE_BODIES]
+base = "{G=p}кузови транспорту"
+
+["STR_CARGO_NAME_VEHICLE_BODIES.acc"]
+base = "кузови транспорту"
+
+["STR_CARGO_NAME_VEHICLE_BODIES.gen"]
+base = "кузовів транспорту"
+
+[STR_CARGO_NAME_VEHICLE_ENGINES]
+base = "{G=p}двигуни"
+
+["STR_CARGO_NAME_VEHICLE_ENGINES.acc"]
+base = "двигуни"
+
+["STR_CARGO_NAME_VEHICLE_ENGINES.gen"]
+base = "двигунів"
+
+[STR_CARGO_NAME_VEHICLE_PARTS]
+base = "{G=p}автозапчастини"
+
+["STR_CARGO_NAME_VEHICLE_PARTS.acc"]
+base = "автозапчастини"
+
+["STR_CARGO_NAME_VEHICLE_PARTS.gen"]
+base = "автозапчастин"
+
+[STR_CARGO_NAME_VEHICLES]
+base = "{G=m}транспорт"
+
+["STR_CARGO_NAME_VEHICLES.acc"]
+base = "транспорт"
+
+["STR_CARGO_NAME_VEHICLES.gen"]
+base = "транспорту"
+
+[STR_CARGO_NAME_WELDING_CONSUMABLES]
+base = "{G=p}зварювальні матеріали"
+
+["STR_CARGO_NAME_WELDING_CONSUMABLES.acc"]
+base = "зварювальні матеріали"
+
+["STR_CARGO_NAME_WELDING_CONSUMABLES.gen"]
+base = "зварювальних матеріалів"
+
+[STR_CARGO_NAME_WOOL]
+base = "{G=f}вовна"
+
+["STR_CARGO_NAME_WOOL.acc"]
+base = "вовну"
+
+["STR_CARGO_NAME_WOOL.gen"]
+base = "вовни"
+
+[STR_CARGO_NAME_YARN]
+base = "{G=f}пряжа"
+
+["STR_CARGO_NAME_YARN.acc"]
+base = "пряжу"
+
+["STR_CARGO_NAME_YARN.gen"]
+base = "пряжі"
+
+[STR_CARGO_NAME_ZINC]
+base = "{G=m}цинк"
+
+["STR_CARGO_NAME_ZINC.acc"]
+base = "цинк"
+
+["STR_CARGO_NAME_ZINC.gen"]
+base = "цинку"
+
+[STR_CARGO_UNIT_ACID]
+base = "{VOLUME} кислоти"
+
+[STR_CARGO_UNIT_AGGREGATES]
+base = "{WEIGHT} заповнювачів"
+
+[STR_CARGO_UNIT_ALCOHOL]
+base = "{VOLUME} алкоголю"
+
+[STR_CARGO_UNIT_ALUMINIA]
+base = "{WEIGHT} глинозему"
+
+[STR_CARGO_UNIT_ALUMINIUM]
+base = "{WEIGHT} алюмінію"
+
+[STR_CARGO_UNIT_AMMONIA]
+base = "{VOLUME} аміаку"
+
+[STR_CARGO_UNIT_AMMONIUM_NITRATE]
+base = "{VOLUME} нітрату амонію"
+
+[STR_CARGO_UNIT_BAUXITE]
+base = "{WEIGHT} бокситу"
+
+[STR_CARGO_UNIT_BEANS]
+base = "{WEIGHT} бобів"
+
+[STR_CARGO_UNIT_BUILDING_MATERIALS]
+base = "{WEIGHT} будматеріалів"
+
+[STR_CARGO_UNIT_CARBON_BLACK]
+base = "{WEIGHT} технічного вуглецю"
+
+[STR_CARGO_UNIT_CASSAVA]
+base = "{WEIGHT} маніоки"
+
+[STR_CARGO_UNIT_CAST_IRON]
+base = "{WEIGHT} чавуну"
+
+[STR_CARGO_UNIT_CEMENT]
+base = "{WEIGHT} цементу"
+
+[STR_CARGO_UNIT_CHEMICALS]
+base = "{VOLUME} хімікатів"
+
+[STR_CARGO_UNIT_CHLORINE]
+base = "{VOLUME} хлору"
+
+[STR_CARGO_UNIT_CHROMITE_ORE]
+base = "{WEIGHT} хромітової руди"
+
+[STR_CARGO_UNIT_CLAY]
+base = "{WEIGHT} глини"
+
+[STR_CARGO_UNIT_CLEANING_AGENTS]
+base = "{WEIGHT} миючих засобів"
+
+[STR_CARGO_UNIT_COAL_TAR]
+base = "{VOLUME} кам'яного дьогтю"
+
+[STR_CARGO_UNIT_COFFEE]
+base = '{SIGNED_WORD} мішо{P 0 "к" "ки" "ків"} кави'
+
+[STR_CARGO_UNIT_COKE]
+base = "{WEIGHT} коксу"
+
+[STR_CARGO_UNIT_CONCRETE_PRODUCTS]
+base = "{WEIGHT} бетонних виробів"
+
+[STR_CARGO_UNIT_COPPER]
+base = "{WEIGHT} міді"
+
+[STR_CARGO_UNIT_COPPER_CONCENTRATE]
+base = "{WEIGHT} мідного концентрату"
+
+[STR_CARGO_UNIT_EDIBLE_OIL]
+base = "{VOLUME} харчової олії"
+
+[STR_CARGO_UNIT_ELECTRICAL_PARTS]
+base = "{WEIGHT} електричних деталей"
+
+[STR_CARGO_UNIT_ENGINEERING_SUPPLIES]
+base = '{SIGNED_WORD} ящи{P 0 "к" "ки" "ків"} інженерних припасів'
+
+[STR_CARGO_UNIT_ETHYLENE]
+base = "{VOLUME} етилену"
+
+[STR_CARGO_UNIT_EXPLOSIVES]
+base = '{SIGNED_WORD} ящи{P 0 "к" "ки" "ків"} вибухівки'
+
+[STR_CARGO_UNIT_FERROALLOYS]
+base = "{WEIGHT} феросплавів"
+
+[STR_CARGO_UNIT_FERROCHROME]
+base = "{WEIGHT} ферохрому"
+
+[STR_CARGO_UNIT_FERTILISER]
+base = "{WEIGHT} добрив"
+
+[STR_CARGO_UNIT_FOOD_ADDITIVES]
+base = "{WEIGHT} харчових добавок"
+
+[STR_CARGO_UNIT_FORGINGS_AND_CASTINGS]
+base = "{WEIGHT} кувань і відливок"
+
+[STR_CARGO_UNIT_FORMIC_ACID]
+base = "{VOLUME} мураїної кислоти"
+
+[STR_CARGO_UNIT_FIBRES]
+base = '{SIGNED_WORD} кіп{P 0 "а" "и" ""} рослинних волокон'
+
+[STR_CARGO_UNIT_FISH]
+base = "{WEIGHT} риби"
+
+[STR_CARGO_UNIT_FMSP]
+base = '{SIGNED_WORD} ящи{P 0 "к" "ки" "ків"} сільгосппостачання'
+
+[STR_CARGO_UNIT_FRUITS]
+base = "{WEIGHT} фруктів"
+
+[STR_CARGO_UNIT_FURNITURE]
+base = "{WEIGHT} меблів"
+
+[STR_CARGO_UNIT_GLASS]
+base = "{WEIGHT} скла"
+
+[STR_CARGO_UNIT_HARDWARE]
+base = "{WEIGHT} скобяних виробів"
+
+[STR_CARGO_UNIT_HYDROCHLORIC_ACID]
+base = "{VOLUME} соляної кислоти"
+
+[STR_CARGO_UNIT_KAOLIN]
+base = "{WEIGHT} каоліну"
+
+[STR_CARGO_UNIT_LIMESTONE]
+base = "{WEIGHT} вапняку"
+
+[STR_CARGO_UNIT_LOGS]
+base = "{WEIGHT} колод"
+
+[STR_CARGO_UNIT_LYE]
+base = "{VOLUME} їдкого натру"
+
+[STR_CARGO_UNIT_MANGANESE]
+base = "{WEIGHT} марганцю"
+
+[STR_CARGO_UNIT_METAL]
+base = "{WEIGHT} металу"
+
+[STR_CARGO_UNIT_METHANE]
+base = "{VOLUME} метану"
+
+[STR_CARGO_UNIT_METHANOL]
+base = "{VOLUME} метанолу"
+
+[STR_CARGO_UNIT_MILK]
+base = "{VOLUME} молока"
+
+[STR_CARGO_UNIT_NAPHTHA]
+base = "{VOLUME} нафти"
+
+[STR_CARGO_UNIT_NICKEL]
+base = "{WEIGHT} нікелю"
+
+[STR_CARGO_UNIT_NITRATES]
+base = "{WEIGHT} нітратів"
+
+[STR_CARGO_UNIT_NITROGEN]
+base = "{VOLUME} азоту"
+
+[STR_CARGO_UNIT_NUTS]
+base = '{SIGNED_WORD} міш{P 0 "ок" "ки" "ків"} горіхів'
+
+[STR_CARGO_UNIT_OXYGEN]
+base = "{VOLUME} кисню"
+
+[STR_CARGO_UNIT_PACKAGING]
+base = "{WEIGHT} пакування"
+
+[STR_CARGO_UNIT_PAINTS_AND_COATINGS]
+base = "{VOLUME} фарб і покриттів"
+
+[STR_CARGO_UNIT_PEAT]
+base = "{WEIGHT} торфу"
+
+[STR_CARGO_UNIT_PETROL]
+base = "{VOLUME} нафтопродуктів"
+
+[STR_CARGO_UNIT_PHOSPHATE]
+base = "{WEIGHT} фосфату"
+
+[STR_CARGO_UNIT_PHOSPHORIC_ACID]
+base = "{VOLUME} фосфорної кислоти"
+
+[STR_CARGO_UNIT_PIG_IRON]
+base = "{WEIGHT} чушкового заліза"
+
+[STR_CARGO_UNIT_PIPEWORK]
+base = "{WEIGHT} трубопроводів"
+
+[STR_CARGO_UNIT_PLASTICS]
+base = "{WEIGHT} пластику"
+
+[STR_CARGO_UNIT_POTASH]
+base = "{WEIGHT} поташу"
+
+[STR_CARGO_UNIT_PROPYLENE]
+base = "{VOLUME} пропілену"
+
+[STR_CARGO_UNIT_PYRITE_ORE]
+base = "{WEIGHT} піритової руди"
+
+[STR_CARGO_UNIT_PUMPS_AND_VALVES]
+base = "{WEIGHT} насосів і клапанів"
+
+[STR_CARGO_UNIT_QUICKLIME]
+base = "{WEIGHT} негашеного вапна"
+
+[STR_CARGO_UNIT_RAW_LATEX]
+base = "{VOLUME} сирого латексу"
+
+[STR_CARGO_UNIT_REBAR]
+base = "{WEIGHT} арматури"
+
+[STR_CARGO_UNIT_RECYCLABLES]
+base = "{WEIGHT} вторсировини"
+
+[STR_CARGO_UNIT_SALT]
+base = "{WEIGHT} солі"
+
+[STR_CARGO_UNIT_SAND]
+base = "{WEIGHT} піску"
+
+[STR_CARGO_UNIT_SCRAP_METAL]
+base = "{WEIGHT} металобрухту"
+
+[STR_CARGO_UNIT_SEALS_HOSES_AND_BELTS]
+base = "{WEIGHT} прокладок, шлангів і ременів"
+
+[STR_CARGO_UNIT_SLAG]
+base = "{WEIGHT} шлаку"
+
+[STR_CARGO_UNIT_SODA_ASH]
+base = "{WEIGHT} соди"
+
+[STR_CARGO_UNIT_STEEL]
+base = "{WEIGHT} сталі"
+
+[STR_CARGO_UNIT_STEEL_BILLETS_AND_BLOOMS]
+base = "{WEIGHT} заготовок і блюмів"
+
+[STR_CARGO_UNIT_STEEL_INGOTS]
+base = "{WEIGHT} сталевих злитків"
+
+[STR_CARGO_UNIT_STEEL_MERCHANT_BAR]
+base = "{WEIGHT} пруткового прокату"
+
+[STR_CARGO_UNIT_STEEL_PIPE]
+base = "{WEIGHT} сталевих труб"
+
+[STR_CARGO_UNIT_STEEL_SECTIONS]
+base = "{WEIGHT} конструкційної сталі"
+
+[STR_CARGO_UNIT_STEEL_SHEET]
+base = "{WEIGHT} сталевого листа і стрічки"
+
+[STR_CARGO_UNIT_STEEL_SLAB]
+base = "{WEIGHT} сталевого слябу"
+
+[STR_CARGO_UNIT_STEEL_TUBE]
+base = "{WEIGHT} сталевих трубок"
+
+[STR_CARGO_UNIT_STEEL_WIRE_ROD]
+base = "{WEIGHT} сталевої катанки"
+
+[STR_CARGO_UNIT_SUGAR_BEET]
+base = "{WEIGHT} цукрового буряку"
+
+[STR_CARGO_UNIT_SULPHUR]
+base = "{WEIGHT} сірки"
+
+[STR_CARGO_UNIT_SULPHURIC_ACID]
+base = "{VOLUME} сірчаної кислоти"
+
+[STR_CARGO_UNIT_TEXTILES]
+base = "{WEIGHT} текстилю"
+
+[STR_CARGO_UNIT_TIMBER]
+base = "{WEIGHT} пиломатеріалів"
+
+[STR_CARGO_UNIT_TIN]
+base = "{WEIGHT} олова"
+
+[STR_CARGO_UNIT_TINPLATE]
+base = "{WEIGHT} жерсті"
+
+[STR_CARGO_UNIT_TYRE_CORD]
+base = "{WEIGHT} шинного корду"
+
+[STR_CARGO_UNIT_TYRES]
+base = "{WEIGHT} шин"
+
+[STR_CARGO_UNIT_UREA]
+base = "{WEIGHT} сечовини"
+
+[STR_CARGO_UNIT_VEHICLE_BODIES]
+base = "{WEIGHT} кузовів транспорту"
+
+[STR_CARGO_UNIT_VEHICLE_ENGINES]
+base = "{WEIGHT} двигунів транспорту"
+
+[STR_CARGO_UNIT_VEHICLE_PARTS]
+base = "{WEIGHT} автозапчастин"
+
+[STR_CARGO_UNIT_VEHICLES]
+base = "{WEIGHT} транспортних засобів"
+
+[STR_CARGO_UNIT_WELDING_CONSUMABLES]
+base = "{WEIGHT} зварювальних матеріалів"
+
+[STR_CARGO_UNIT_WOOL]
+base = '{SIGNED_WORD} тюк{P 0 \"\" "и" "ів"} вовни'
+
+[STR_CARGO_UNIT_YARN]
+base = '{SIGNED_WORD} тюк{P 0 \"\" "и" "ів"} пряжі'
+
+[STR_CARGO_UNIT_ZINC]
+base = "{WEIGHT} цинку"
+
+[STR_CID_ACID]
+base = "{TINYFONT}КА"
+
+[STR_CID_AGGREGATES]
+base = "{TINYFONT}ЗЧ"
+
+[STR_CID_ALCOHOL]
+base = "{TINYFONT}АЛ"
+
+[STR_CID_ALUMINIA]
+base = "{TINYFONT}АА"
+
+[STR_CID_ALUMINIUM]
+base = "{TINYFONT}АМ"
+
+[STR_CID_AMMONIA]
+base = "{TINYFONT}АО"
+
+[STR_CID_AMMONIUM_NITRATE]
+base = "{TINYFONT}АН"
+
+[STR_CID_BAUXITE]
+base = "{TINYFONT}БК"
+
+[STR_CID_BEANS]
+base = "{TINYFONT}ББ"
+
+[STR_CID_BUILDING_MATERIALS]
+base = "{TINYFONT}БМ"
+
+[STR_CID_CARBON_BLACK]
+base = "{TINYFONT}ТВ"
+
+[STR_CID_CASSAVA]
+base = "{TINYFONT}КС"
+
+[STR_CID_CAST_IRON]
+base = "{TINYFONT}ЧВ"
+
+[STR_CID_CEMENT]
+base = "{TINYFONT}ЦМ"
+
+[STR_CID_CHEMICALS]
+base = "{TINYFONT}ХМ"
+
+[STR_CID_CHROMITE_ORE]
+base = "{TINYFONT}ХР"
+
+[STR_CID_CHLORINE]
+base = "{TINYFONT}ХЛ"
+
+[STR_CID_CLAY]
+base = "{TINYFONT}ГЛ"
+
+[STR_CID_CLEANING_AGENTS]
+base = "{TINYFONT}МЗ"
+
+[STR_CID_COFFEE]
+base = "{TINYFONT}КВ"
+
+[STR_CID_COAL_TAR]
+base = "{TINYFONT}КС"
+
+[STR_CID_COKE]
+base = "{TINYFONT}КК"
+
+[STR_CID_CONCRETE_PRODUCTS]
+base = "{TINYFONT}БВ"
+
+[STR_CID_COPPER]
+base = "{TINYFONT}МД"
+
+[STR_CID_COPPER_CONCENTRATE]
+base = "{TINYFONT}КМ"
+
+[STR_CID_EDIBLE_OIL]
+base = "{TINYFONT}ОЛ"
+
+[STR_CID_ELECTRICAL_PARTS]
+base = "{TINYFONT}ЕЛ"
+
+[STR_CID_ENGINEERING_SUPPLIES]
+base = "{TINYFONT}ІМ"
+
+[STR_CID_ETHYLENE]
+base = "{TINYFONT}ЕТ"
+
+[STR_CID_EXPLOSIVES]
+base = "{TINYFONT}ВВ"
+
+[STR_CID_FARM_SUPPLIES]
+base = "{TINYFONT}СГ"
+
+[STR_CID_FERROALLOYS]
+base = "{TINYFONT}ФС"
+
+[STR_CID_FERROCHROME]
+base = "{TINYFONT}ФХ"
+
+[STR_CID_FERTILISER]
+base = "{TINYFONT}ДБ"
+
+[STR_CID_FIBRES]
+base = "{TINYFONT}ВЛ"
+
+[STR_CID_FISH]
+base = "{TINYFONT}РБ"
+
+[STR_CID_FOOD_ADDITIVES]
+base = "{TINYFONT}ХД"
+
+[STR_CID_FORMIC_ACID]
+base = "{TINYFONT}МК"
+
+[STR_CID_FORGINGS_AND_CASTINGS]
+base = "{TINYFONT}КВ"
+
+[STR_CID_FURNITURE]
+base = "{TINYFONT}МБ"
+
+[STR_CID_GLASS]
+base = "{TINYFONT}СК"
+
+[STR_CID_HARDWARE]
+base = "{TINYFONT}СК"
+
+[STR_CID_HYDROCHLORIC_ACID]
+base = "{TINYFONT}СК"
+
+[STR_CID_KAOLIN]
+base = "{TINYFONT}КЛ"
+
+[STR_CID_LIMESTONE]
+base = "{TINYFONT}ВК"
+
+[STR_CID_LOGS]
+base = "{TINYFONT}КО"
+
+[STR_CID_LYE]
+base = "{TINYFONT}ЛУ"
+
+[STR_CID_MANGANESE]
+base = "{TINYFONT}МГ"
+
+[STR_CID_METAL]
+base = "{TINYFONT}МТ"
+
+[STR_CID_METHANE]
+base = "{TINYFONT}МЕ"
+
+[STR_CID_METHANOL]
+base = "{TINYFONT}МТ"
+
+[STR_CID_MILK]
+base = "{TINYFONT}МЛ"
+
+[STR_CID_NAPHTHA]
+base = "{TINYFONT}НФ"
+
+[STR_CID_NICKEL]
+base = "{TINYFONT}НК"
+
+[STR_CID_NITRATES]
+base = "{TINYFONT}НТ"
+
+[STR_CID_NITROGEN]
+base = "{TINYFONT}АЗ"
+
+[STR_CID_NUTS]
+base = "{TINYFONT}ГР"
+
+[STR_CID_OXYGEN]
+base = "{TINYFONT}КС"
+
+[STR_CID_PACKAGING]
+base = "{TINYFONT}УП"
+
+[STR_CID_PAINTS_AND_COATINGS]
+base = "{TINYFONT}ФБ"
+
+[STR_CID_PEAT]
+base = "{TINYFONT}ТР"
+
+[STR_CID_PETROL]
+base = "{TINYFONT}БЗ"
+
+[STR_CID_PIG_IRON]
+base = "{TINYFONT}ЧГ"
+
+[STR_CID_PIPEWORK]
+base = "{TINYFONT}ТР"
+
+[STR_CID_PHOSPHATE]
+base = "{TINYFONT}ФС"
+
+[STR_CID_PHOSPHORIC_ACID]
+base = "{TINYFONT}ФК"
+
+[STR_CID_PLASTICS]
+base = "{TINYFONT}ПЛ"
+
+[STR_CID_POTASH]
+base = "{TINYFONT}ПТ"
+
+[STR_CID_PROPYLENE]
+base = "{TINYFONT}ПР"
+
+[STR_CID_PUMPS_AND_VALVES]
+base = "{TINYFONT}НА"
+
+[STR_CID_PYRITE_ORE]
+base = "{TINYFONT}ПІ"
+
+[STR_CID_QUICKLIME]
+base = "{TINYFONT}ВП"
+
+[STR_CID_RAW_LATEX]
+base = "{TINYFONT}ЛА"
+
+[STR_CID_REBAR]
+base = "{TINYFONT}АР"
+
+[STR_CID_RECYCLABLES]
+base = "{TINYFONT}ВТ"
+
+[STR_CID_SALT]
+base = "{TINYFONT}СЛ"
+
+[STR_CID_SAND]
+base = "{TINYFONT}ПС"
+
+[STR_CID_SCRAP_METAL]
+base = "{TINYFONT}ЛМ"
+
+[STR_CID_SEALS_HOSES_AND_BELTS]
+base = "{TINYFONT}ГР"
+
+[STR_CID_SLAG]
+base = "{TINYFONT}ШЛ"
+
+[STR_CID_SODA_ASH]
+base = "{TINYFONT}СД"
+
+[STR_CID_STEEL]
+base = "{TINYFONT}СТ"
+
+[STR_CID_STEEL_BILLETS_AND_BLOOMS]
+base = "{TINYFONT}ЗГ"
+
+[STR_CID_STEEL_INGOTS]
+base = "{TINYFONT}ЗЛ"
+
+[STR_CID_STEEL_MERCHANT_BAR]
+base = "{TINYFONT}СР"
+
+[STR_CID_STEEL_PIPE]
+base = "{TINYFONT}СТ"
+
+[STR_CID_STEEL_SECTIONS]
+base = "{TINYFONT}СП"
+
+[STR_CID_STEEL_SHEET]
+base = "{TINYFONT}СЛ"
+
+[STR_CID_STEEL_SLAB]
+base = "{TINYFONT}СС"
+
+[STR_CID_STEEL_TUBE]
+base = "{TINYFONT}СТ"
+
+[STR_CID_STEEL_WIRE_ROD]
+base = "{TINYFONT}ДР"
+
+[STR_CID_SUGAR_BEET]
+base = "{TINYFONT}ЦБ"
+
+[STR_CID_SULPHUR]
+base = "{TINYFONT}СІ"
+
+[STR_CID_SULPHURIC_ACID]
+base = "{TINYFONT}СК"
+
+[STR_CID_TEXTILES]
+base = "{TINYFONT}ТК"
+
+[STR_CID_TIMBER]
+base = "{TINYFONT}ПМ"
+
+[STR_CID_TIN]
+base = "{TINYFONT}ОЛ"
+
+[STR_CID_TINPLATE]
+base = "{TINYFONT}БЯ"
+
+[STR_CID_TYRE_CORD]
+base = "{TINYFONT}КР"
+
+[STR_CID_TYRES]
+base = "{TINYFONT}ШН"
+
+[STR_CID_UREA]
+base = "{TINYFONT}КР"
+
+[STR_CID_VEHICLE_BODIES]
+base = "{TINYFONT}КЗ"
+
+[STR_CID_VEHICLE_ENGINES]
+base = "{TINYFONT}ДВ"
+
+[STR_CID_VEHICLE_PARTS]
+base = "{TINYFONT}АЗ"
+
+[STR_CID_VEHICLES]
+base = "{TINYFONT}АВ"
+
+[STR_CID_WELDING_CONSUMABLES]
+base = "{TINYFONT}ЗМ"
+
+[STR_CID_WOOL]
+base = "{TINYFONT}ВВ"
+
+[STR_CID_YARN]
+base = "{TINYFONT}ПР"
+
+[STR_CID_ZINC]
+base = "{TINYFONT}ЦН"
+
+[STR_ERR_CLIMATE_TOYLAND]
+base = "{ORANGE}FIRS не призначено для використання з кліматом Казкова земля"
+
+[STR_ERR_OPENTTD_VERSION]
+base = "{ORANGE}П00: FIRS потребує OpenTTD 1.7.0 (або для тих, хто використовує trunk збірки, r27769)"
+
+[STR_ERR_INCOMPATIBLE_SET]
+base = "{ORANGE}П01: {YELLOW}Несумісний набір: {ORANGE}{STRING}"
+
+[STR_ERR_INCOMPATIBLE_PARAM_CANSET]
+base = "{ORANGE}П02: {YELLOW}Несумісний параметр: {ORANGE}параметр 2 CanSet має бути 0 для роботи з FIRS."
+
+[STR_ERR_INCOMPATIBLE_PARAM_CITYSET]
+base = "{ORANGE}П02: {YELLOW}Несумісний параметр: {ORANGE}параметр 2 NA City Set має бути 0 для роботи з FIRS."
+
+[STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION]
+base = "{ORANGE}П04: {YELLOW}Несумісна версія: {ORANGE}Total Town Replacement Set має бути версії 3.11 або новішої."
+
+[STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE]
+base = "має бути розміщено нижче снігової лінії."
+
+[STR_ERR_LOCATION_NOT_BELOW_SNOWLINE]
+base = "має бути розміщено вище снігової лінії."
+
+[STR_ERR_LOCATION_NOT_ON_WATER]
+base = "має бути розміщено на суші."
+
+[STR_ERR_LOCATION_NOT_IN_DESERT]
+base = "не може бути розміщено в пустелі."
+
+[STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE]
+base = "не можна розмістити на крутих схилах."
+
+[STR_ERR_LOCATION_LIMIT_1_PER_TOWN]
+base = "дозволена тільки одна підприємство цього типу на місто."
+
+[STR_IND_ALUMINIUM_PLANT]
+base = "{G=m}Алюмінієвий завод"
+
+["STR_IND_ALUMINIUM_PLANT.gen"]
+base = "алюмінієвого заводу"
+
+[STR_IND_AMMONIA_PLANT]
+base = "{G=m}Завод аміаку"
+
+["STR_IND_AMMONIA_PLANT.gen"]
+base = "заводу аміаку"
+
+[STR_IND_APPLIANCE_FACTORY]
+base = "{G=f}Фабрика побутової техніки"
+
+["STR_IND_APPLIANCE_FACTORY.gen"]
+base = "фабрики побутової техніки"
+
+[STR_IND_ARABLE_FARM]
+base = "{G=n}Рільниче господарство"
+
+["STR_IND_ARABLE_FARM.gen"]
+base = "рільничого господарства"
+
+[STR_IND_ASSEMBLY_PLANT]
+base = "{G=m}Складальний завод"
+
+["STR_IND_ASSEMBLY_PLANT.gen"]
+base = "складального заводу"
+
+[STR_IND_BAR_AND_SECTION_MILL]
+base = "{G=m}Прокатний стан арматури"
+
+["STR_IND_BAR_AND_SECTION_MILL.gen"]
+base = "прокатного стану арматури"
+
+[STR_IND_BASIC_OXYGEN_FURNACE]
+base = "{G=m}Кисневий конвертер"
+
+["STR_IND_BASIC_OXYGEN_FURNACE.gen"]
+base = "кисневого конвертера"
+
+[STR_IND_BIOREFINERY]
+base = "{G=m}Бионефтепереробний завод"
+
+["STR_IND_BIOREFINERY.gen"]
+base = "бионефтепереробного заводу"
+
+[STR_IND_BLAST_FURNACE]
+base = "{G=f}Доменна піч"
+
+["STR_IND_BLAST_FURNACE.gen"]
+base = "доменної печі"
+
+[STR_IND_BODY_PLANT]
+base = "{G=m}Завод кузовів"
+
+["STR_IND_BODY_PLANT.gen"]
+base = "заводу кузовів"
+
+[STR_IND_BREWERY]
+base = "{G=f}Пивоварня"
+
+["STR_IND_BREWERY.gen"]
+base = "пивоварні"
+
+[STR_IND_CIDER_MILL]
+base = "{G=f}Сидрова фабрика"
+
+["STR_IND_CIDER_MILL.gen"]
+base = "сидрової фабрики"
+
+[STR_IND_BRICK_WORKS]
+base = "{G=m}Цегельний завод"
+
+["STR_IND_BRICK_WORKS.gen"]
+base = "цегельного заводу"
+
+[STR_IND_BUILDERS_YARD]
+base = "{G=f}Будівельна база"
+
+["STR_IND_BUILDERS_YARD.gen"]
+base = "будівельної бази"
+
+[STR_IND_BULK_TERMINAL]
+base = "{G=m}Насипний термінал"
+
+["STR_IND_BULK_TERMINAL.gen"]
+base = "насипного терміналу"
+
+[STR_IND_CARBON_BLACK_PLANT]
+base = "{G=m}Завод сажі"
+
+["STR_IND_CARBON_BLACK_PLANT.gen"]
+base = "заводу сажі"
+
+[STR_IND_CEMENT_PLANT]
+base = "{G=m}Цементний завод"
+
+["STR_IND_CEMENT_PLANT.gen"]
+base = "цементного заводу"
+
+[STR_IND_CHEMICAL_PLANT]
+base = "{G=m}Хімічний завод"
+
+["STR_IND_CHEMICAL_PLANT.gen"]
+base = "хімічного заводу"
+
+[STR_IND_CHLOR_ALKALI_PLANT]
+base = "{G=m}Хлорно-лужний завод"
+
+["STR_IND_CHLOR_ALKALI_PLANT.gen"]
+base = "хлорно-лужного заводу"
+
+[STR_IND_CHROMITE_MINE]
+base = "{G=m}Хромітовий рудник"
+
+["STR_IND_CHROMITE_MINE.gen"]
+base = "хромітового рудника"
+
+[STR_IND_CIVIL_EXPLOSIVES_FACILITY]
+base = "{G=m}Завод цивільних вибухівок"
+
+["STR_IND_CIVIL_EXPLOSIVES_FACILITY.gen"]
+base = "заводу цивільних вибухівок"
+
+[STR_IND_CLAY_PIT]
+base = "{G=m}Глиняний кар'єр"
+
+["STR_IND_CLAY_PIT.gen"]
+base = "глиняного кар'єру"
+
+[STR_IND_COFFEE_ESTATE]
+base = "{G=f}Кавова плантація"
+
+["STR_IND_COFFEE_ESTATE.gen"]
+base = "кавової плантації"
+
+[STR_IND_COKE_OVEN]
+base = "{G=f}Коксова піч"
+
+["STR_IND_COKE_OVEN.gen"]
+base = "коксової печі"
+
+[STR_IND_CONCRETE_PLANT]
+base = "{G=m}Бетонний завод"
+
+["STR_IND_CONCRETE_PLANT.gen"]
+base = "бетонного заводу"
+
+[STR_IND_COPPER_CONCENTRATOR]
+base = "{G=m}Мідний збагачувальний комбінат"
+
+["STR_IND_COPPER_CONCENTRATOR.gen"]
+base = "мідного збагачувального комбінату"
+
+[STR_IND_COPPER_SMELTER]
+base = "{G=m}Мідеплавильний завод"
+
+["STR_IND_COPPER_SMELTER.gen"]
+base = "мідеплавильного заводу"
+
+[STR_IND_CRYO_PLANT]
+base = "{G=m}Кріогенний завод"
+
+["STR_IND_CRYO_PLANT.gen"]
+base = "кріогенного заводу"
+
+[STR_IND_DAIRY]
+base = "{G=m}Молокозавод"
+
+["STR_IND_DAIRY.gen"]
+base = "молокозаводу"
+
+[STR_IND_DAIRY_FARM]
+base = "{G=f}Молочна ферма"
+
+["STR_IND_DAIRY_FARM.gen"]
+base = "молочної ферми"
+
+[STR_IND_DREDGING_SITE]
+base = "{G=m}Земснарядний майданчик"
+
+["STR_IND_DREDGING_SITE.gen"]
+base = "земснарядного майданчика"
+
+[STR_IND_ELASTOMER_PRODUCTS_PLANT]
+base = "{G=m}Завод еластомерних виробів"
+
+["STR_IND_ELASTOMER_PRODUCTS_PLANT.gen"]
+base = "заводу еластомерних виробів"
+
+[STR_IND_ELECTRIC_ARC_FURNACE]
+base = "{G=f}Електродугова піч"
+
+["STR_IND_ELECTRIC_ARC_FURNACE.gen"]
+base = "електродугової печі"
+
+[STR_IND_ENGINE_PLANT]
+base = "{G=m}Моторобудівний завод"
+
+["STR_IND_ENGINE_PLANT.gen"]
+base = "моторобудівного заводу"
+
+[STR_IND_ETHYLENE_CRACKER]
+base = "{G=f}Установка піролізу нафти"
+
+["STR_IND_ETHYLENE_CRACKER.gen"]
+base = "установки піролізу нафти"
+
+[STR_IND_FARM]
+base = "{G=f}Ферма"
+
+["STR_IND_FARM.gen"]
+base = "ферми"
+
+[STR_IND_FERROCHROME_SMELTER]
+base = "{G=m}Феррохромовий завод"
+
+["STR_IND_FERROCHROME_SMELTER.gen"]
+base = "феррохромового заводу"
+
+[STR_IND_FERTILISER_PLANT]
+base = "{G=m}Завод добрив"
+
+["STR_IND_FERTILISER_PLANT.gen"]
+base = "заводу добрив"
+
+[STR_IND_FACTORY_1]
+base = "{G=f}Фабрика 1"
+
+["STR_IND_FACTORY_1.gen"]
+base = "фабрики 1"
+
+[STR_IND_FACTORY_2]
+base = "{G=f}Фабрика 2"
+
+["STR_IND_FACTORY_2.gen"]
+base = "фабрики 2"
+
+[STR_IND_FACTORY_3]
+base = "{G=f}Фабрика 3"
+
+["STR_IND_FACTORY_3.gen"]
+base = "фабрики 3"
+
+[STR_IND_FISCHER_TROPSCH_PLANT]
+base = "{G=m}Завод Фішера-Тропша"
+
+["STR_IND_FISCHER_TROPSCH_PLANT.gen"]
+base = "заводу Фішера-Тропша"
+
+[STR_IND_FISH_FARM]
+base = "{G=f}Рибна ферма"
+
+["STR_IND_FISH_FARM.gen"]
+base = "рибної ферми"
+
+[STR_IND_FISHING_GROUND]
+base = "{G=p}Риболовецькі угіддя"
+
+["STR_IND_FISHING_GROUND.gen"]
+base = "риболовецьких угідь"
+
+[STR_IND_FISHING_HARBOUR]
+base = "{G=m}Рибний порт"
+
+["STR_IND_FISHING_HARBOUR.gen"]
+base = "рибного порту"
+
+[STR_IND_FISHING_VILLAGE]
+base = "{G=n}Рибацьке село"
+
+["STR_IND_FISHING_VILLAGE.gen"]
+base = "рибацького села"
+
+[STR_IND_FLOUR_MILL]
+base = "{G=m}Борошномельний завод"
+
+["STR_IND_FLOUR_MILL.gen"]
+base = "борошномельного заводу"
+
+[STR_IND_FOOD_MARKET]
+base = "{G=m}Продуктовий магазин"
+
+["STR_IND_FOOD_MARKET.gen"]
+base = "продуктового магазину"
+
+[STR_IND_FOOD_PROCESSOR]
+base = "{G=m}Харчовий комбінат"
+
+["STR_IND_FOOD_PROCESSOR.gen"]
+base = "харчового комбінату"
+
+[STR_IND_FORGE_AND_FOUNDRY]
+base = "{G=m}Сталеливарний завод"
+
+["STR_IND_FORGE_AND_FOUNDRY.gen"]
+base = "сталеливарного заводу"
+
+[STR_IND_FURNITURE_FACTORY]
+base = "{G=f}Меблева фабрика"
+
+["STR_IND_FURNITURE_FACTORY.gen"]
+base = "меблевої фабрики"
+
+[STR_IND_GENERAL_STORE]
+base = "{G=m}Універмаг"
+
+["STR_IND_GENERAL_STORE.gen"]
+base = "універмагу"
+
+[STR_IND_GLASS_WORKS]
+base = "{G=m}Скляний завод"
+
+["STR_IND_GLASS_WORKS.gen"]
+base = "скляного заводу"
+
+[STR_IND_HARDWARE_STORE]
+base = "{G=m}Господарський магазин"
+
+["STR_IND_HARDWARE_STORE.gen"]
+base = "господарського магазину"
+
+[STR_IND_HERDING_COOP]
+base = "{G=m}Кооператив скотарів"
+
+["STR_IND_HERDING_COOP.gen"]
+base = "кооперативу скотарів"
+
+[STR_IND_HOTEL]
+base = "{G=m}Готель"
+
+["STR_IND_HOTEL.gen"]
+base = "готелю"
+
+[STR_IND_INTEGRATED_STEEL_MILL]
+base = "{G=m}Металургійний комбінат"
+
+["STR_IND_INTEGRATED_STEEL_MILL.gen"]
+base = "металургійного комбінату"
+
+[STR_IND_IRON_WORKS]
+base = "{G=m}Металургійний завод"
+
+["STR_IND_IRON_WORKS.gen"]
+base = "металургійного заводу"
+
+[STR_IND_SCRAP_YARD]
+base = "{G=m}Металобрухт"
+
+["STR_IND_SCRAP_YARD.gen"]
+base = "металобрухту"
+
+[STR_IND_LATEX_PROCESSOR]
+base = "{G=m}Завод переробки латексу"
+
+["STR_IND_LATEX_PROCESSOR.gen"]
+base = "заводу переробки латексу"
+
+[STR_IND_LIME_KILN]
+base = "{G=f}Вапняна піч"
+
+["STR_IND_LIME_KILN.gen"]
+base = "вапняної печі"
+
+[STR_IND_LIMESTONE_MINE]
+base = "{G=m}Вапняковий кар'єр"
+
+["STR_IND_LIMESTONE_MINE.gen"]
+base = "вапнякового кар'єру"
+
+[STR_IND_LIQUIDS_TERMINAL]
+base = "{G=m}Рідинний термінал"
+
+["STR_IND_LIQUIDS_TERMINAL.gen"]
+base = "рідинного терміналу"
+
+[STR_IND_MACHINE_WORKS]
+base = "{G=m}Машинобудівний завод"
+
+["STR_IND_MACHINE_WORKS.gen"]
+base = "машинобудівного заводу"
+
+[STR_IND_MANGANESE_MINE]
+base = "{G=m}Марганцевий рудник"
+
+["STR_IND_MANGANESE_MINE.gen"]
+base = "марганцевого рудника"
+
+[STR_IND_METAL_FABRICATOR]
+base = "{G=m}Металообробний завод"
+
+["STR_IND_METAL_FABRICATOR.gen"]
+base = "металообробного заводу"
+
+[STR_IND_MIXEDFARM]
+base = "{G=n}Змішане господарство"
+
+["STR_IND_MIXEDFARM.gen"]
+base = "змішаного господарства"
+
+[STR_IND_NITRATE_MINE]
+base = "{G=m}Нітратний рудник"
+
+["STR_IND_NITRATE_MINE.gen"]
+base = "нітратного рудника"
+
+[STR_IND_ORCHARD_PIGGERY]
+base = "{G=f}Садиба зі свинарником"
+
+["STR_IND_ORCHARD_PIGGERY.gen"]
+base = "садиби зі свинарником"
+
+[STR_IND_PEATLANDS]
+base = "{G=m}Торф'яник"
+
+["STR_IND_PEATLANDS.gen"]
+base = "торф'яника"
+
+[STR_IND_PETROLPUMP]
+base = "{G=f}АЗС"
+
+["STR_IND_PETROLPUMP.gen"]
+base = "АЗС"
+
+[STR_IND_PHOSPHATE_MINE]
+base = "{G=m}Фосфатний рудник"
+
+["STR_IND_PHOSPHATE_MINE.gen"]
+base = "фосфатного рудника"
+
+[STR_IND_PHOSPHORIC_ACID_PLANT]
+base = "{G=m}Завод фосфорної кислоти"
+
+["STR_IND_PHOSPHORIC_ACID_PLANT.gen"]
+base = "заводу фосфорної кислоти"
+
+[STR_IND_PIPEWORK_FABRICATOR]
+base = "{G=m}Трубний завод"
+
+["STR_IND_PIPEWORK_FABRICATOR.gen"]
+base = "трубного заводу"
+
+[STR_IND_PLATE_MILL]
+base = "{G=m}Листопрокатний стан"
+
+["STR_IND_PLATE_MILL.gen"]
+base = "листопрокатного стану"
+
+[STR_IND_PLASTICS_PLANT]
+base = "{G=m}Завод ПВХ"
+
+["STR_IND_PLASTICS_PLANT.gen"]
+base = "заводу ПВХ"
+
+[STR_IND_PLAZA]
+base = "{G=m}Торговий центр"
+
+["STR_IND_PLAZA.gen"]
+base = "торгового центру"
+
+[STR_IND_POLYETHYLENE_PLANT]
+base = "{G=m}Завод поліетилену"
+
+["STR_IND_POLYETHYLENE_PLANT.gen"]
+base = "заводу поліетилену"
+
+[STR_IND_POLYPROPYLENE_PLANT]
+base = "{G=m}Завод поліпропілену"
+
+["STR_IND_POLYPROPYLENE_PLANT.gen"]
+base = "заводу поліпропілену"
+
+[STR_IND_PORT]
+base = "{G=m}Порт"
+
+["STR_IND_PORT.gen"]
+base = "порту"
+
+[STR_IND_POTASH_MINE]
+base = "{G=m}Калійний рудник"
+
+["STR_IND_POTASH_MINE.gen"]
+base = "калійного рудника"
+
+[STR_IND_PRECISION_PARTS_PLANT]
+base = "{G=m}Завод точних деталей"
+
+["STR_IND_PRECISION_PARTS_PLANT.gen"]
+base = "заводу точних деталей"
+
+[STR_IND_PYRITE_MINE]
+base = "{G=m}Піритовий рудник"
+
+["STR_IND_PYRITE_MINE.gen"]
+base = "піритового рудника"
+
+[STR_IND_PYRITE_SMELTER]
+base = "{G=f}Піритна плавильня"
+
+["STR_IND_PYRITE_SMELTER.gen"]
+base = "піритної плавільні"
+
+[STR_IND_POWER_PLANT]
+base = "{G=f}Електростанція"
+
+["STR_IND_POWER_PLANT.gen"]
+base = "електростанції"
+
+[STR_IND_QUARRY]
+base = "{G=m}Кар'єр"
+
+["STR_IND_QUARRY.gen"]
+base = "кар'єру"
+
+[STR_IND_RANCH]
+base = "{G=n}Ранчо"
+
+["STR_IND_RANCH.gen"]
+base = "ранчо"
+
+[STR_IND_RECYCLING_DEPOT]
+base = "{G=m}Пункт переробки"
+
+["STR_IND_RECYCLING_DEPOT.gen"]
+base = "пункту переробки"
+
+[STR_IND_RECYCLING_PLANT]
+base = "{G=m}Переробний завод"
+
+["STR_IND_RECYCLING_PLANT.gen"]
+base = "переробного заводу"
+
+[STR_IND_REINDEER_FARM]
+base = "{G=f}Оленяча ферма"
+
+["STR_IND_REINDEER_FARM.gen"]
+base = "оленячої ферми"
+
+[STR_IND_SALT_MINE]
+base = "{G=f}Соляна шахта"
+
+["STR_IND_SALT_MINE.gen"]
+base = "соляної шахти"
+
+[STR_IND_SECTION_MILL]
+base = "{G=m}Прутково-профільний стан"
+
+["STR_IND_SECTION_MILL.gen"]
+base = "прутково-профільного стану"
+
+[STR_IND_SHEEPFARM]
+base = "{G=f}Вівчарня"
+
+["STR_IND_SHEEPFARM.gen"]
+base = "вівчарні"
+
+[STR_IND_SLAB_CUTTER]
+base = "{G=m}Листопрокатний стан"
+
+["STR_IND_SLAB_CUTTER.gen"]
+base = "листопрокатного стану"
+
+[STR_IND_SLAG_GRINDING_PLANT]
+base = "{G=m}Шлакоподрібнювальний завод"
+
+["STR_IND_SLAG_GRINDING_PLANT.gen"]
+base = "шлакоподрібнювального заводу"
+
+[STR_IND_SMITHY_FORGE]
+base = "{G=f}Кузня"
+
+["STR_IND_SMITHY_FORGE.gen"]
+base = "кузні"
+
+[STR_IND_SODA_ASH_MINE]
+base = "{G=m}Кар'єр кальцинованої соди"
+
+["STR_IND_SODA_ASH_MINE.gen"]
+base = "кар'єру кальцинованої соди"
+
+[STR_IND_SOLVAY_PLANT]
+base = "{G=m}Содовий завод"
+
+["STR_IND_SOLVAY_PLANT.gen"]
+base = "содового заводу"
+
+[STR_IND_STOCKYARD]
+base = "{G=f}Ферма тварин"
+
+["STR_IND_STOCKYARD.gen"]
+base = "ферми тварин"
+
+[STR_IND_STRIP_MILL]
+base = "{G=m}Стрічкопрокатний стан"
+
+["STR_IND_STRIP_MILL.gen"]
+base = "стрічкопрокатного стану"
+
+[STR_IND_SUGAR_REFINERY]
+base = "{G=m}Цукровий завод"
+
+["STR_IND_SUGAR_REFINERY.gen"]
+base = "цукрового заводу"
+
+[STR_IND_SULPHURIC_ACID_PLANT]
+base = "{G=m}Завод сірчаної кислоти"
+
+["STR_IND_SULPHURIC_ACID_PLANT.gen"]
+base = "заводу сірчаної кислоти"
+
+[STR_IND_SUPPLY_YARD]
+base = "{G=f}База постачання"
+
+["STR_IND_SUPPLY_YARD.gen"]
+base = "бази постачання"
+
+[STR_IND_TEXTILE_MILL]
+base = "{G=f}Текстильна фабрика"
+
+["STR_IND_TEXTILE_MILL.gen"]
+base = "текстильної фабрики"
+
+[STR_IND_TIMBER_YARD]
+base = "{G=f}Лісопильня"
+
+["STR_IND_TIMBER_YARD.gen"]
+base = "лісопільні"
+
+[STR_IND_TINPLATE_WORKS]
+base = "{G=m}Жерстевий завод"
+
+["STR_IND_TINPLATE_WORKS.gen"]
+base = "жерстевого заводу"
+
+[STR_IND_TRACKED_MACHINE_FACTORY]
+base = "{G=m}Завод гусеничної техніки"
+
+["STR_IND_TRACKED_MACHINE_FACTORY.gen"]
+base = "заводу гусеничної техніки"
+
+[STR_IND_TRADING_POST]
+base = "{G=m}Торговий пост"
+
+["STR_IND_TRADING_POST.gen"]
+base = "торгового посту"
+
+[STR_IND_TUBE_AND_PIPE_MILL]
+base = "{G=m}Трубопрокатний стан"
+
+["STR_IND_TUBE_AND_PIPE_MILL.gen"]
+base = "трубопрокатного стану"
+
+[STR_IND_TYRE_PLANT]
+base = "{G=m}Шинний завод"
+
+["STR_IND_TYRE_PLANT.gen"]
+base = "шинного заводу"
+
+[STR_IND_VINEYARD]
+base = "{G=m}Виноградник"
+
+["STR_IND_VINEYARD.gen"]
+base = "виноградника"
+
+[STR_IND_VEHICLE_DISTRIBUTOR]
+base = "{G=m}Автосалон"
+
+["STR_IND_VEHICLE_DISTRIBUTOR.gen"]
+base = "автосалону"
+
+[STR_IND_WHARF]
+base = "{G=f}Пристань"
+
+["STR_IND_WHARF.gen"]
+base = "пристані"
+
+[STR_IND_WIRE_ROD_MILL]
+base = "{G=m}Дротопрокатний стан"
+
+["STR_IND_WIRE_ROD_MILL.gen"]
+base = "дротопрокатного стану"
+
+[STR_FUND_ARABLE_FARM]
+base = "{}{BLACK}Розташування: {YELLOW}Не можна фінансувати на снігу або в пустелях."
+
+[STR_FUND_COFFEE_ESTATE]
+base = "{}{BLACK}Розташування: {YELLOW}Не можна фінансувати на снігу або в пустелях."
+
+[STR_FUND_DAIRY_FARM]
+base = "{}{BLACK}Розташування: {YELLOW}Не можна фінансувати на снігу або в пустелях."
+
+[STR_FUND_FARM]
+base = "{}{BLACK}Розташування: {YELLOW}Не можна фінансувати на снігу або в пустелях."
+
+[STR_FUND_FOREST]
+base = "{}{BLACK}Розташування: {YELLOW}Не можна фінансувати в пустелях."
+
+[STR_FUND_FRUIT_PLANTATION]
+base = "{}{BLACK}Розташування: {YELLOW}Не можна фінансувати на снігу."
+
+[STR_FUND_HERDING_COOP]
+base = "{}{BLACK}Розташування: {YELLOW}Можна фінансувати тільки на снігу."
+
+[STR_FUND_ORCHARD_PIGGERY]
+base = "{}{BLACK}Розташування: {YELLOW}Не можна фінансувати на снігу або в пустелях."
+
+[STR_FUND_RUBBER_PLANTATION]
+base = "{}{BLACK}Розташування: {YELLOW}Не можна фінансувати на снігу або в пустелях."
+
+[STR_FUND_VINEYARD]
+base = "{}{BLACK}Розташування: {YELLOW}Не можна фінансувати на снігу або в пустелях."
+
+[STR_FUND_AVAILABLE_FROM]
+base = "{}{BLACK}Доступно з: {YELLOW}{COMMA}"
+
+[STR_FUND_AVAILABLE_UNTIL]
+base = "{}{BLACK}Недоступно після: {YELLOW}{COMMA}"
+
+[STR_TOWN]
+base = "{STRING}"
+
+[STR_STATION]
+base = "{STRING} {STRING}"
+
+[STR_STATION_ANIMALS]
+base = "Кінний ринок"
+
+[STR_STATION_APPLIANCE_FACTORY]
+base = "Електротовари"
+
+[STR_STATION_AUTOMOTIVE]
+base = "Автомобільна"
+
+[STR_STATION_BAR_AND_SECTION_MILL]
+base = "Балки"
+
+[STR_STATION_BAR_GRILL_AND_ROOMS]
+base = "Бар, гриль та кімнати"
+
+[STR_STATION_BARNS]
+base = "Амбари"
+
+[STR_STATION_BARREL_AND_KEG]
+base = "Бочки та кеги"
+
+[STR_STATION_BASE]
+base = "База"
+
+[STR_STATION_BONEYARD]
+base = "Кісткова"
+
+[STR_STATION_BANK_TOP]
+base = "Берегова"
+
+[STR_STATION_BODY_PLANT]
+base = "Штампувальна"
+
+[STR_STATION_BRINE_WORKS]
+base = "Розсільна"
+
+[STR_STATION_CASTINGS]
+base = "Лиття"
+
+[STR_STATION_COLLIERY]
+base = "Шахта"
+
+[STR_STATION_COMPONENTS]
+base = "Компоненти"
+
+[STR_STATION_CONCRETE_PLANT]
+base = "Блокова"
+
+[STR_STATION_COPPER_LODE]
+base = "Мідна жила"
+
+[STR_STATION_CREOSOTING]
+base = "Креозотна"
+
+[STR_STATION_CRYO_PLANT]
+base = "Кріозавод"
+
+[STR_STATION_DAIRY_LANE]
+base = "Молочна алея"
+
+[STR_STATION_DYNAMO]
+base = "Динамо"
+
+[STR_STATION_ELASTOMER_PLANT]
+base = "Ущільнювачі та шланги"
+
+[STR_STATION_ESTATE]
+base = "Маєток"
+
+[STR_STATION_EXCHANGE]
+base = "Біржа"
+
+[STR_STATION_FARM_1]
+base = "Хутір"
+
+[STR_STATION_FARM_2]
+base = "Луки"
+
+[STR_STATION_FARM_3]
+base = "Ранчо"
+
+[STR_STATION_FISHMARKET]
+base = "Рибний ринок"
+
+[STR_STATION_FISH_PENS]
+base = "Рибні садки"
+
+[STR_STATION_FOOD_CORPORATION]
+base = "Харчова корпорація"
+
+[STR_STATION_FOREST]
+base = "Лісосіка"
+
+[STR_STATION_FORGE]
+base = "Кузня"
+
+[STR_STATION_FURNACE]
+base = "Піч"
+
+[STR_STATION_HARDWARE_FACTORY]
+base = "Металовироби"
+
+[STR_STATION_HEAVY_EQUIPMENT_YARD]
+base = "База важкої техніки"
+
+[STR_STATION_HEAVY_INDUSTRY_2]
+base = "Завод"
+
+[STR_STATION_HERDING_COOP]
+base = "Оленячі загони"
+
+[STR_STATION_INDUSTRY_ESTATE_1]
+base = "Індустріальний парк"
+
+[STR_STATION_INDUSTRY_HARBOUR_1]
+base = "Приливний двір"
+
+[STR_STATION_INDUSTRY_HARBOUR_2]
+base = "Набережна"
+
+[STR_STATION_INDUSTRY_HARBOUR_3]
+base = "Причал"
+
+[STR_STATION_INDUSTRY_HARBOUR_4]
+base = "Береговий фронт"
+
+[STR_STATION_IRONSTONE]
+base = "Залізняк"
+
+[STR_STATION_JOINERS_SHOP]
+base = "Столярна майстерня"
+
+[STR_STATION_KILNS]
+base = "Печі"
+
+[STR_STATION_KIMBERLITE_DEPOSITS]
+base = "Кімберлітові поклади"
+
+[STR_STATION_LIMESTONE_MINES]
+base = "Вапнякові копальні"
+
+[STR_STATION_MANGANESE_MINES]
+base = "Марганцеві копальні"
+
+[STR_STATION_MARKET]
+base = "Ринок"
+
+[STR_STATION_MERCHANTS_LANE]
+base = "Торгова вулиця"
+
+[STR_STATION_MILL]
+base = "Млин"
+
+[STR_STATION_MINE]
+base = "Шахтарська дорога"
+
+[STR_STATION_MOULDINGS]
+base = "Ливарня"
+
+[STR_STATION_OIL_RIG]
+base = "Родовище"
+
+[STR_STATION_ORCHARDS]
+base = "Сади"
+
+[STR_STATION_PHENOLS]
+base = "Феноли"
+
+[STR_STATION_PIPEWORK_FABRICATOR]
+base = "Трубопровід"
+
+[STR_STATION_PIT]
+base = "Кар'єр"
+
+[STR_STATION_PLANTATION]
+base = "Плантація"
+
+[STR_STATION_PLATE_MILL]
+base = "Плитний двір"
+
+[STR_STATION_PLAZA]
+base = "Площа"
+
+[STR_STATION_POTASH_MINE]
+base = "Мінерали"
+
+[STR_STATION_POWERHUNGRY]
+base = "Електростанція"
+
+[STR_STATION_POWERTRAIN]
+base = "Силова установка"
+
+[STR_STATION_PUMPS]
+base = "Насоси"
+
+[STR_STATION_PYRITES]
+base = "Піритові поклади"
+
+[STR_STATION_REFINERY]
+base = "Нафтопереробка"
+
+[STR_STATION_ROD_MILL]
+base = "Прутковий стан"
+
+[STR_STATION_RUBBER_COMPANY]
+base = "Гумова компанія"
+
+[STR_STATION_SALTPETER_WORKS]
+base = "Селітряний завод"
+
+[STR_STATION_SEAFOOD]
+base = "Морепродукти"
+
+[STR_STATION_SHARP_STREET]
+base = "Гостра вулиця"
+
+[STR_STATION_SHEEP_FOLD]
+base = "Овечий загін"
+
+[STR_STATION_SHOALS]
+base = "Мілководдя"
+
+[STR_STATION_SILO]
+base = "Силос"
+
+[STR_STATION_SMELTER]
+base = "Плавильня"
+
+[STR_STATION_SOOT_FURNACE]
+base = "Сажова піч"
+
+[STR_STATION_STACKS]
+base = "Склади"
+
+[STR_STATION_STAMP_AND_PLATE]
+base = "Штампи та пластини"
+
+[STR_STATION_STRIP_MILL]
+base = "Стрічковий стан"
+
+[STR_STATION_SUGAR_COMPANY]
+base = "Цукрова компанія"
+
+[STR_STATION_TANK_FARM]
+base = "Резервуарний парк"
+
+[STR_STATION_TAPPERS_SHED]
+base = "Склад збирачів"
+
+[STR_STATION_TOWN_1]
+base = "Стара ратуша"
+
+[STR_STATION_TOWN_2]
+base = "Головна дорога"
+
+[STR_STATION_TOWN_3]
+base = "Магазини"
+
+[STR_STATION_TRACKED_MACHINE_FACTORY]
+base = "Гусеничний завод"
+
+[STR_STATION_TRONA_BEDS]
+base = "Тронові поклади"
+
+[STR_STATION_TUBE_MILL]
+base = "Трубний стан"
+
+[STR_STATION_WATER]
+base = "Піщана коса"
+
+[STR_STATION_WEAVE_AND_DYE]
+base = "Ткацтво і фарбування"
+
+[STR_STATION_WELLS]
+base = "Свердловини"
+
+[STR_STATION_WINERY]
+base = "Винарня"
+
+[STR_STATION_VEHICLE_DISTRIBUTOR]
+base = "Автомайданчик"
+
+[STR_GENERIC_NEWLINE]
+base = "{}"
