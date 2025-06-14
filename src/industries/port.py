@@ -142,6 +142,14 @@ industry.add_tile(
     location_checks=TileLocationChecks(always_allow_founder=False),
 )
 
+spriteset_crane_rails_nw_se = industry.add_spriteset(
+    sprites=[(80, 10, 64, 39, -31, -8)],
+    always_draw=1,
+)
+spriteset_crane_rails_ne_sw = industry.add_spriteset(
+    sprites=[(150, 10, 64, 39, -31, -8)],
+    always_draw=1,
+)
 spriteset_warehouse_half_nw_se = industry.add_spriteset(
     sprites=[(440, 10, 64, 84, -31, -61)],
 )
@@ -178,9 +186,6 @@ spriteset_shed_full_nw_se = industry.add_spriteset(
 spriteset_shed_full_ne_sw = industry.add_spriteset(
     sprites=[(790, 210, 64, 84, -31, -61)],
 )
-spriteset_tanks_horizontal = industry.add_spriteset(
-    sprites=[(440, 310, 64, 84, -31, -61)],
-)
 spriteset_tanks_sphere = industry.add_spriteset(
     sprites=[(510, 310, 64, 84, -31, -61)],
 )
@@ -209,9 +214,6 @@ spriteset_bulk_handling_se_nw = industry.add_spriteset(
 spriteset_bulk_handling_sw_ne = industry.add_spriteset(
     sprites=[(650, 110, 64, 84, -31, -61)],
 )
-spriteset_gatehouse = industry.add_spriteset(
-    sprites=[(790, 110, 64, 84, -31, -61)],
-)
 # only 2 angles for crawler crane, to keep things visually simple
 spriteset_crawler_crane_ne_sw = industry.add_spriteset(
     sprites=[(580, 310, 64, 84, -31, -43)],
@@ -219,6 +221,22 @@ spriteset_crawler_crane_ne_sw = industry.add_spriteset(
 )
 spriteset_crawler_crane_nw_se = industry.add_spriteset(
     sprites=[(650, 310, 64, 84, -31, -43)],
+    zoffset=18,
+)
+spriteset_large_crane_ne_sw = industry.add_spriteset(
+    sprites=[(440, 410, 64, 84, -31, -43)],
+    zoffset=18,
+)
+spriteset_large_crane_nw_se = industry.add_spriteset(
+    sprites=[(510, 410, 64, 84, -31, -43)],
+    zoffset=18,
+)
+spriteset_large_crane_se_nw = industry.add_spriteset(
+    sprites=[(580, 410, 64, 84, -31, -43)],
+    zoffset=18,
+)
+spriteset_large_crane_sw_ne = industry.add_spriteset(
+    sprites=[(650, 410, 64, 84, -31, -43)],
     zoffset=18,
 )
 # there are 2 variations of the ship, (reversed, unreversed) with coast appropriate offsets for each
@@ -248,22 +266,115 @@ spriteset_ship_2_se_nw = industry.add_spriteset(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_coast_gatehouse",
+    base_id="port_spritelayout_gate_shed_coast_part",
     tile="port_tile_2",
     config={
         "jetty_foundations": True,
         "building_sprites": {
             "se": [
-                spriteset_gatehouse,
+                spriteset_shed_half_se_nw,
             ],
             "sw": [
-                spriteset_gatehouse,
+                spriteset_shed_half_sw_ne,
             ],
             "nw": [
-                spriteset_gatehouse,
+                spriteset_shed_half_nw_se,
             ],
             "ne": [
-                spriteset_gatehouse,
+                spriteset_shed_half_ne_sw,
+            ],
+        },
+    },
+)
+industry.add_magic_spritelayout(
+    type="jetty_auto_orient_to_coast_direction",
+    base_id="port_spritelayout_gate_shed_sea_part",
+    tile="port_tile_1",
+    config={
+        "jetty_foundations": True,
+        "building_sprites": {
+            "se": [
+                spriteset_shed_full_nw_se,
+            ],
+            "sw": [
+                spriteset_shed_full_ne_sw,
+            ],
+            "nw": [
+                spriteset_shed_full_nw_se,
+            ],
+            "ne": [
+                spriteset_shed_full_ne_sw,
+            ],
+        },
+    },
+)
+
+industry.add_magic_spritelayout(
+    type="jetty_auto_orient_to_coast_direction",
+    base_id="port_spritelayout_crane_rails_parallel",
+    tile="port_tile_1",
+    config={
+        "jetty_foundations": True,
+        "building_sprites": {
+            "se": [
+                spriteset_crane_rails_nw_se,
+            ],
+            "sw": [
+                spriteset_crane_rails_ne_sw,
+            ],
+            "nw": [
+                spriteset_crane_rails_nw_se,
+            ],
+            "ne": [
+                spriteset_crane_rails_ne_sw,
+            ],
+        },
+    },
+)
+industry.add_magic_spritelayout(
+    type="jetty_auto_orient_to_coast_direction",
+    base_id="port_spritelayout_crane_rails_orthogonal",
+    tile="port_tile_1",
+    config={
+        "jetty_foundations": True,
+        "building_sprites": {
+            "se": [
+                spriteset_crane_rails_ne_sw,
+            ],
+            "sw": [
+                spriteset_crane_rails_nw_se,
+            ],
+            "nw": [
+                spriteset_crane_rails_ne_sw,
+            ],
+            "ne": [
+                spriteset_crane_rails_nw_se,
+            ],
+        },
+    },
+)
+industry.add_magic_spritelayout(
+    type="jetty_auto_orient_to_coast_direction",
+    base_id="port_spritelayout_crane_parallel",
+    tile="port_tile_1",
+    config={
+        "jetty_foundations": True,
+        "building_sprites": {
+            "se": [
+                spriteset_crane_rails_nw_se,
+                spriteset_large_crane_nw_se,
+            ],
+            "sw": [
+                spriteset_crane_rails_ne_sw,
+                spriteset_large_crane_sw_ne,
+            ],
+            "nw": [
+                spriteset_crane_rails_nw_se,
+                spriteset_large_crane_nw_se,
+            ],
+            "ne": [
+                spriteset_crane_rails_ne_sw,
+                spriteset_large_crane_sw_ne,
             ],
         },
     },
@@ -276,38 +387,42 @@ industry.add_magic_spritelayout(
         "jetty_foundations": True,
         "building_sprites": {
             "se": [
-                spriteset_crawler_crane_ne_sw,
+                spriteset_crane_rails_ne_sw,
+                spriteset_large_crane_sw_ne,
             ],
             "sw": [
-                spriteset_crawler_crane_nw_se,
+                spriteset_crane_rails_nw_se,
+                spriteset_large_crane_se_nw,
             ],
             "nw": [
-                spriteset_crawler_crane_ne_sw,
+                spriteset_crane_rails_ne_sw,
+                spriteset_large_crane_sw_ne,
             ],
             "ne": [
-                spriteset_crawler_crane_nw_se,
+                spriteset_crane_rails_nw_se,
+                spriteset_large_crane_se_nw,
             ],
         },
     },
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_tanks_small",
+    base_id="port_spritelayout_crawler_crane_orthogonal",
     tile="port_tile_1",
     config={
         "jetty_foundations": True,
         "building_sprites": {
             "se": [
-                spriteset_tanks_horizontal,
+                spriteset_crawler_crane_ne_sw,
             ],
             "sw": [
-                spriteset_tanks_horizontal,
+                spriteset_crawler_crane_nw_se,
             ],
             "nw": [
-                spriteset_tanks_horizontal,
+                spriteset_crawler_crane_ne_sw,
             ],
             "ne": [
-                spriteset_tanks_horizontal,
+                spriteset_crawler_crane_nw_se,
             ],
         },
     },
@@ -364,19 +479,15 @@ industry.add_magic_spritelayout(
         "jetty_foundations": True,
         "building_sprites": {
             "se": [
-                spriteset_warehouse_half_nw_se,
                 spriteset_bulk_handling_nw_se,
             ],
             "sw": [
-                spriteset_warehouse_half_ne_sw,
                 spriteset_bulk_handling_ne_sw,
             ],
             "nw": [
-                spriteset_warehouse_half_se_nw,
                 spriteset_bulk_handling_se_nw,
             ],
             "ne": [
-                spriteset_warehouse_half_sw_ne,
                 spriteset_bulk_handling_sw_ne,
             ],
         },
@@ -435,19 +546,15 @@ industry.add_magic_spritelayout(
         "building_sprites": {
             "se": [
                 spriteset_shed_half_nw_se,
-                spriteset_crawler_crane_nw_se,
             ],
             "sw": [
                 spriteset_shed_half_ne_sw,
-                spriteset_crawler_crane_ne_sw,
             ],
             "nw": [
                 spriteset_shed_half_se_nw,
-                spriteset_crawler_crane_nw_se,
             ],
             "ne": [
                 spriteset_shed_half_sw_ne,
-                spriteset_crawler_crane_ne_sw,
             ],
         },
     },
@@ -462,19 +569,15 @@ industry.add_magic_spritelayout(
         "building_sprites": {
             "se": [
                 spriteset_shed_half_se_nw,
-                spriteset_crawler_crane_nw_se,
             ],
             "sw": [
                 spriteset_shed_half_sw_ne,
-                spriteset_crawler_crane_ne_sw,
             ],
             "nw": [
                 spriteset_shed_half_nw_se,
-                spriteset_crawler_crane_nw_se,
             ],
             "ne": [
                 spriteset_shed_half_ne_sw,
-                spriteset_crawler_crane_ne_sw,
             ],
         },
     },
@@ -488,19 +591,15 @@ industry.add_magic_spritelayout(
         "building_sprites": {
             "se": [
                 spriteset_shed_full_nw_se,
-                spriteset_crawler_crane_nw_se,
             ],
             "sw": [
                 spriteset_shed_full_ne_sw,
-                spriteset_crawler_crane_ne_sw,
             ],
             "nw": [
                 spriteset_shed_full_nw_se,
-                spriteset_crawler_crane_nw_se,
             ],
             "ne": [
                 spriteset_shed_full_ne_sw,
-                spriteset_crawler_crane_ne_sw,
             ],
         },
     },
@@ -555,12 +654,12 @@ industry.add_magic_spritelayout(
 industry.add_industry_jetty_layout(
     id="port_industry_jetty_layout_1",
     layout=[
-        (0, 0, "port_spritelayout_coast_gatehouse"),
-        (0, 1, "port_spritelayout_bulk_handling"),
-        (0, 2, "port_spritelayout_shed_half_2"),
-        (0, 3, "port_spritelayout_shed_full"),
+        (0, 0, "port_spritelayout_gate_shed_coast_part"),
+        (0, 1, "port_spritelayout_gate_shed_sea_part"),
+        (0, 2, "port_spritelayout_crane_rails_parallel"),
+        (0, 3, "port_spritelayout_crane_parallel"),
         (0, 4, "spritelayout_null_water"),
-        (1, 1, "port_spritelayout_tanks_small"),
+        (1, 1, "port_spritelayout_tanks_sphere"),
         (1, 2, "port_spritelayout_water_ship_1"),
         (1, 3, "spritelayout_null_water"),
         (1, 4, "spritelayout_null_water"),
@@ -583,11 +682,11 @@ industry.add_industry_jetty_layout(
         (0, 1, "port_spritelayout_silos"),
         (0, 2, "port_spritelayout_silos"),
         (0, 3, "port_spritelayout_bulk_handling"),
-        (0, 4, "port_spritelayout_shed_full"),
-        (0, 5, "port_spritelayout_shed_half_1"),
+        (0, 4, "port_spritelayout_crane_parallel"),
+        (0, 5, "port_spritelayout_crane_rails_parallel"),
         (0, 6, "spritelayout_null_water"),
-        (1, 0, "port_spritelayout_coast_gatehouse"),
-        (1, 1, "port_spritelayout_bulk_handling"),
+        (1, 0, "port_spritelayout_gate_shed_coast_part"),
+        (1, 1, "port_spritelayout_gate_shed_sea_part"),
         (1, 2, "port_spritelayout_warehouse_full"),
         (1, 3, "port_spritelayout_warehouse_half"),
         (1, 4, "port_spritelayout_water_ship_2"),
@@ -596,10 +695,10 @@ industry.add_industry_jetty_layout(
         # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
         (1, 7, "spritelayout_null_water"),
         # ensure spacing from coast, to improve map-gen buildabilty
-        (2, 1, "port_spritelayout_tanks_small"),
+        (2, 1, "port_spritelayout_tanks_sphere"),
         (2, 2, "port_spritelayout_tanks_sphere"),
-        (2, 3, "port_spritelayout_warehouse_full"),
-        (2, 4, "port_spritelayout_warehouse_half"),
+        (2, 3, "port_spritelayout_shed_full"),
+        (2, 4, "port_spritelayout_shed_half_1"),
         (2, 5, "spritelayout_null_water"),
     ],
 )
