@@ -1,0 +1,554 @@
+# order here is the default order we want classes in when rendered for docs
+# as needed, the docs compile can locally render the list out by bit order or other attrs
+
+# cargo classes
+
+[CC_PASSENGERS]
+bit_number = 0
+code = "0x0001"
+nml_cargo_class_name = "CC_PASSENGERS"
+name = "Passengers"
+cargo_class_description = ["Passengers."]
+cargo_grf_advice = ["Generally this only applies to specific Passengers cargo (cargo label PASS)."]
+cargo_class_taxonomy_tags = ["Non-Freight", "Passengers"]
+fallback_to_piece_goods = false
+vehicle_grf_advice = ["Passenger vehicles are simple and just set CC_PASSENGERS."]
+vehicle_set_as_allow = true
+vehicle_set_as_disallow = false
+
+[CC_MAIL]
+bit_number = 1
+code = "0x0002"
+nml_cargo_class_name = "CC_MAIL"
+name = "Mail"
+cargo_class_description = ["Mail."]
+cargo_grf_advice = ["Generally this only applies to specific Mail cargo (cargo label MAIL)."]
+cargo_class_taxonomy_tags = ["Non-Freight", "Mail"]
+fallback_to_piece_goods = false
+vehicle_grf_advice = [
+    "Sometimes used alongside CC_EXPRESS and CC_ARMOURED for vehicles such as mail vans.",
+]
+vehicle_set_as_allow = true
+vehicle_set_as_disallow = false
+
+[CC_POTABLE]
+bit_number = 13
+code = "0x2000"
+# CC_POTABLE is food-grade, but the less explicit class name is retained because authors might look it up in the docs, which is encouraged
+nml_cargo_class_name = "CC_POTABLE"
+name = "Potable"
+cargo_class_description = ["Cargo that is edible / food-grade (safe for human consumption and with hygienic transport requirements)."]
+cargo_grf_advice = [
+    "Add to cargos that require food-grade transport.",
+]
+cargo_class_taxonomy_tags = ["Freight", "Potable Status"]
+fallback_to_piece_goods = false
+vehicle_grf_advice = ["Do not set both CC_POTABLE and CC_NON_POTABLE on the same vehicle."]
+vehicle_set_as_allow = false
+vehicle_set_as_disallow = true
+
+[CC_NON_POTABLE]
+bit_number = 14
+code = "0x4000"
+# CC_NON_POTABLE is non-food-grade, but the less explicit class name is retained because authors might look it up in the docs, which is encouraged
+nml_cargo_class_name = "CC_NON_POTABLE"
+name = "Non-Potable"
+cargo_class_description = ["Cargo that is inedible / non-food-grade (unsafe for human consumption and incompatible with hygienic transport requirements)."]
+cargo_grf_advice = [
+    "Add to cargos that are unsuitable for food-grade transport.",
+]
+cargo_class_taxonomy_tags = ["Freight", "Potable Status"]
+fallback_to_piece_goods = false
+vehicle_grf_advice = ["Do not set both CC_POTABLE and CC_NON_POTABLE on the same vehicle."]
+vehicle_set_as_allow = false
+vehicle_set_as_disallow = true
+
+[CC_PIECE_GOODS]
+bit_number = 5
+code = "0x0020"
+nml_cargo_class_name = "CC_PIECE_GOODS"
+name = "Piece Goods"
+cargo_class_description = [
+    "Breakbulk cargo or general cargo. Unitised or individual pieces. Packaged for weather protection and containment, or unpackaged if no packaging is required.",
+    "This class originates from the German term 'Stückgut', which has no single direct translation to English.",
+]
+cargo_grf_advice = [
+    "Almost all types of freight can be transported packaged in crates, boxes, barrels, jars, tins, cans, bags, sacks, bales, bundles or pallets, or as unpackaged items loaded individually into vehicles.",
+    "This class is suitable for the widest range of freight cargos and is supported by almost all vehicle grfs.",
+]
+cargo_class_taxonomy_tags = ["Freight", "Basic Handling"]
+fallback_to_piece_goods = false
+vehicle_grf_advice = [
+    "Always include freight vehicles supporting this class as it represents the most common class for freight cargos (recommended).",
+]
+vehicle_set_as_allow = true
+vehicle_set_as_disallow = false
+
+[CC_OPEN_BULK]
+bit_number = 4
+code = "0x0010"
+nml_cargo_class_name = "CC_BULK"
+name = "Open Bulk"
+cargo_class_description = ["Loose bulk cargo that will flow under gravity that do not require covering."]
+cargo_grf_advice = [
+    "This class is widely supported by vehicle GRFs. An alternative fallback class is not necessary.",
+    "Not mutually exclusive with CC_COVERED_BULK. Both classes are suitable for some cargos.",
+]
+cargo_class_taxonomy_tags = ["Freight", "Basic Handling"]
+fallback_to_piece_goods = false
+vehicle_grf_advice = [
+    "This class is for open-topped bulk vehicles.",
+]
+vehicle_set_as_allow = true
+vehicle_set_as_disallow = false
+
+[CC_COVERED_BULK]
+bit_number = 9
+code = "0x0200"
+nml_cargo_class_name = "CC_COVERED"
+name = "Covered Bulk"
+cargo_class_description = ["Loose bulk cargo that will flow under gravity, and does require covering."]
+cargo_grf_advice = [
+    "Not mutually exclusive with CC_OPEN_BULK. Both classes are suitable for some cargos.",
+]
+cargo_class_taxonomy_tags = ["Freight", "Basic Handling"]
+fallback_to_piece_goods = true
+vehicle_grf_advice = [
+    "This class is for covered bulk vehicles with loading hatches or similar.",
+]
+vehicle_set_as_allow = true
+vehicle_set_as_disallow = false
+
+[CC_POWDER_BULK]
+bit_number = 11
+code = "0x0800"
+nml_cargo_class_name = "CC_POWDERIZED"
+name = "Powder Bulk"
+cargo_class_description = ["Dry powdered materials that flow under air pressure."]
+cargo_grf_advice = ["Set this class for all powder cargos."]
+cargo_class_taxonomy_tags = ["Freight", "Basic Handling"]
+fallback_to_piece_goods = true
+vehicle_grf_advice = []
+vehicle_set_as_allow = true
+vehicle_set_as_disallow = false
+
+[CC_LIQUID_BULK]
+bit_number = 6
+code = "0x0040"
+nml_cargo_class_name = "CC_LIQUID"
+name = "Liquid Bulk"
+cargo_class_description = ["Transport of liquids."]
+cargo_grf_advice = [
+    "This class is widely supported by vehicle GRFs. An alternative fallback class is not necessary."
+]
+cargo_class_taxonomy_tags = ["Freight", "Basic Handling"]
+fallback_to_piece_goods = false
+vehicle_grf_advice = []
+vehicle_set_as_allow = true
+vehicle_set_as_disallow = false
+
+[CC_GAS_BULK]
+bit_number = 8
+code = "0x0100"
+nml_cargo_class_name = "CC_HAZARDOUS"
+name = "Gas Bulk"
+cargo_class_description = ["Gases, including those that may be transported under pressure or cryogenically."]
+cargo_grf_advice = []
+cargo_class_taxonomy_tags = ["Freight", "Basic Handling"]
+fallback_to_piece_goods = true
+vehicle_grf_advice = []
+vehicle_set_as_allow = true
+vehicle_set_as_disallow = false
+
+[CC_FLATBED]
+bit_number = 10
+code = "0x0400"
+nml_cargo_class_name = "CC_OVERSIZED"
+name = "Flatbed"
+cargo_class_description = [
+    "Subset of piece goods, general cargo specifically suited for transport using flatbed vehicles.",
+]
+cargo_grf_advice = [
+    "Any cargo suited to flatbed transport, but specifically including long products, unitised cargos such as machinery, and rolling or wheeled cargo.",
+]
+cargo_class_taxonomy_tags = ["Freight", "Special Handling"]
+fallback_to_piece_goods = true
+vehicle_grf_advice = [
+    "Enables flatbed vehicles to refit to a more specific set of general cargos than CC_PIECE_GOODS.",
+    "Don't exclude, may have unintended consequences."
+]
+vehicle_set_as_allow = true
+vehicle_set_as_disallow = false
+
+[CC_EXPRESS]
+bit_number = 2
+code = "0x0004"
+nml_cargo_class_name = "CC_EXPRESS"
+name = "Express"
+cargo_class_description = ["High priority cargo."]
+cargo_grf_advice = ["To maximise vehicle compatiblity, consider also setting CC_PIECE_GOODS."]
+cargo_class_taxonomy_tags = ["Freight", "Special Handling"]
+fallback_to_piece_goods = false
+vehicle_grf_advice = [
+    "Often applied to higher-speed vehicles.",
+    "Sometimes used alongside CC_MAIL and CC_ARMOURED for vehicles such as mail vans.",
+]
+vehicle_set_as_allow = true
+vehicle_set_as_disallow = false
+
+[CC_ARMOURED]
+bit_number = 3
+code = "0x0008"
+nml_cargo_class_name = "CC_ARMOURED"
+name = "Armoured"
+cargo_class_description = ["Cargos that need protection from theft."]
+cargo_grf_advice = ["To maximise vehicle compatiblity, consider also setting CC_EXPRESS and CC_PIECE_GOODS."]
+cargo_class_taxonomy_tags = ["Freight", "Special Handling"]
+fallback_to_piece_goods = false
+vehicle_grf_advice = [
+    "Sometimes used alongside CC_MAIL and CC_EXPRESS for vehicles such as mail vans.",
+]
+vehicle_set_as_allow = true
+vehicle_set_as_disallow = false
+
+[CC_REFRIGERATED]
+bit_number = 7
+code = "0x0080"
+nml_cargo_class_name = "CC_REFRIGERATED"
+name = "Refrigerated"
+cargo_class_description = [
+    "Food-type cargos requiring refrigeration or temperature control."
+]
+cargo_grf_advice = [
+    "Also set CC_POTABLE. Consider also setting CC_EXPRESS and CC_PIECE_GOODS to maximise vehicle compatibility.",
+]
+cargo_class_taxonomy_tags = ["Freight", "Special Handling"]
+fallback_to_piece_goods = false
+vehicle_grf_advice = ["More flexible if interpreted as any form of temperature control via mechanical cooling, ice, ventilation or insulation."]
+vehicle_set_as_allow = true
+vehicle_set_as_disallow = false
+
+[CC_WEIRD]
+bit_number = 12
+code = "0x1000"
+nml_cargo_class_name = "CC_NON_POURABLE"
+name = "Weird"
+cargo_class_description = [
+    "Unique cargos that don't really fit any standard classes, and are better handled with dedicated vehicles using cargo labels.",
+    "Example: things that are alive but aren't CC_PASSENGERS, such as livestock.",
+    "Example: things that are radioactive, such as nuclear fuel or waste.",
+]
+cargo_grf_advice = [
+    "This class is rarely used. Its purpose is to provide fallback vehicle compatibility for genuinely unique, non-standard cargos.",
+    "Most cargos will work fine with classes such as CC_PIECE_GOODS, CC_EXPRESS, or CC_ARMOURED, and should do that rather than setting CC_WEIRD."
+]
+cargo_class_taxonomy_tags = ["Freight", "Special Handling"]
+fallback_to_piece_goods = false
+vehicle_grf_advice = [
+    "Cargo might need dedicated vehicles, with label refits.",
+    "Open general cargo vehicles might be sensible as fallback choices.",
+    "Can be used to exclude CC_WEIRD cargos in some vehicles, but ensure there's at least one type of vehicle that allows this class (recommended).",
+    "CC_WEIRD is really only intended as a fallback for unknown weird cargos; there are very few cargos using this class, so better to allow/disallow those cargo labels explicitly if you want to control their vehicle refits precisely.",
+]
+vehicle_set_as_allow = true
+vehicle_set_as_disallow = true
+
+[CC_SPECIAL]
+bit_number = 15
+code = "0x8000"
+nml_cargo_class_name = "CC_SPECIAL"
+name = "Special"
+cargo_class_description = ["Reserved.", "Do not use this class."]
+cargo_grf_advice = []
+cargo_class_taxonomy_tags = ["N/A"]
+fallback_to_piece_goods = false
+vehicle_grf_advice = []
+do_not_use = true
+vehicle_set_as_allow = false
+vehicle_set_as_disallow = false
+
+# cargo examples (non-exhaustive)
+
+[CARGO_AMMONIA]
+name = "Ammonia"
+cargo_description = "Ammonia is transported using pressurised tankers, of similar type to those used for gas, so CC_GAS_BULK is set. Although ammonia is transported as a pressurized liquid, it is not suitable for standard liquids tankers, so CC_LIQUID is not set. CC_PIECE_GOODS is set as some vehicle grfs may not provide pressurised tankers, so a fallback is needed (representing ammonia in portable tanks)."
+cargo_classes = ["CC_GAS_BULK", "CC_PIECE_GOODS", "CC_NON_POTABLE"]
+
+[CARGO_BEANS]
+name = "Beans"
+cargo_description = "Beans are transported using covered bulk vehicles, and packaged in crates, sacks, boxes etc. Beans require food-grade transport, so CC_POTABLE is set."
+cargo_classes = ["CC_COVERED_BULK", "CC_PIECE_GOODS", "CC_POTABLE"]
+
+[CARGO_CEMENT]
+name = "Cement"
+cargo_description = "Cement is transported by bulk powder vehicles, and packaged in bags, sacks etc."
+cargo_classes = ["CC_POWDER_BULK", "CC_PIECE_GOODS", "CC_NON_POTABLE"]
+
+[CARGO_CHLORINE]
+name = "Chlorine"
+cargo_description = "Chlorine is transported using pressurised tankers, using CC_GAS_BULK. CC_PIECE_GOODS is set as some vehicle grfs may not provide pressurised tankers, so a fallback is needed (representing chlorine in portable tanks)."
+cargo_classes = ["CC_GAS_BULK", "CC_PIECE_GOODS", "CC_NON_POTABLE"]
+
+[CARGO_COAL]
+name = "Coal"
+cargo_description = "Coal is transported as open bulk. Coal is generally weather resistant, and more specialised bulk vehicles are generally not used for coal."
+cargo_classes = ["CC_OPEN_BULK", "CC_NON_POTABLE"]
+
+[CARGO_DIAMONDS]
+name = "Diamonds"
+cargo_description = "Diamonds are armoured, and that's probably all that's needed.  CC_NON_POTABLE could be set, but is probably not necessary for Diamonds."
+cargo_classes = ["CC_ARMOURED"]
+
+[CARGO_EXPLOSIVES]
+name = "Explosives"
+cargo_description = "Explosives are valuable, high priority cargo, suitable for armoured or express vehicles. CC_PIECE_GOODS is set as explosives can also be transported in ordinary goods vehicles."
+cargo_classes = ["CC_EXPRESS", "CC_PIECE_GOODS", "CC_ARMOURED", "CC_NON_POTABLE"]
+
+[CARGO_FISH]
+name = "Fish"
+cargo_description = "Fish is suitable for high priority express transport, or refrigerated transport. Fish requires food-grade transport, so CC_POTABLE is set."
+cargo_classes = ["CC_EXPRESS", "CC_REFRIGERATED", "CC_POTABLE"]
+
+[CARGO_FLOUR]
+name = "Flour"
+cargo_description = "Flour is transported using bulk powder vehicles, covered bulk vehicles, and packaged in sacks, bags etc. Flour requires food-grade transport, so CC_POTABLE is set."
+cargo_classes = ["CC_POWDER_BULK", "CC_COVERED_BULK", "CC_PIECE_GOODS", "CC_POTABLE"]
+
+[CARGO_FOOD]
+name = "Food"
+cargo_description = "Food is a generic cargo, and can be transported in many forms, including high priority express vehicles, ordinary goods vehicles, rerigerated vehicles, food tankers, and covered bulk food vehicles. Food requires food-grade transport, so CC_POTABLE is set."
+cargo_classes = ["CC_PIECE_GOODS", "CC_EXPRESS", "CC_REFRIGERATED", "CC_LIQUID_BULK", "CC_COVERED_BULK", "CC_POTABLE"]
+
+[CARGO_GRAIN]
+name = "Grain"
+cargo_description = "Grain is transported using covered bulk vehicles, or in sacks, bags etc using general cargo vehicles. Grain requires food-grade transport, so CC_POTABLE is set."
+cargo_classes = ["CC_COVERED_BULK", "CC_PIECE_GOODS", "CC_POTABLE"]
+
+[CARGO_GOODS]
+name = "Goods"
+cargo_description = "Goods is a generic cargo, and is transported using general cargo vehicles, or flatbed vehicles."
+cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED", "CC_NON_POTABLE"]
+
+[CARGO_IRON_ORE]
+name = "Iron Ore"
+cargo_description = "Iron Ore is transported as open bulk. Iron ore is generally weather resistant, and more specialised bulk vehicles are generally not used for iron ore."
+cargo_classes = ["CC_OPEN_BULK", "CC_NON_POTABLE"]
+
+[CARGO_LIVESTOCK]
+name = "Livestock"
+cargo_description = "Livestock is a unique cargo, and vehicles should handle it using the cargo label LVST. CC_WEIRD also set to flag that this cargo is non-standard and should be handled using a label.  The base game sets livestock to CC_PIECE_GOODS, but this is not considered helpful for grfs."
+cargo_classes = ["CC_WEIRD", "CC_NON_POTABLE"]
+
+[CARGO_MAIL]
+name = "Mail"
+cargo_description = "Mail is simple."
+cargo_classes = ["CC_MAIL"]
+
+[CARGO_MILK]
+name = "Milk"
+cargo_description = "Milk is transported as high priority freight in express vehicles, as temperature controlled cargo in refrigerated vehicles, and in food tankers. Milk requires food-grade transport, so CC_POTABLE is set."
+cargo_classes = ["CC_LIQUID_BULK", "CC_EXPRESS", "CC_POTABLE", "CC_REFRIGERATED"]
+
+[CARGO_NUCLEAR_FUEL]
+name = "Nuclear fuel"
+cargo_description = """
+    Nuclear fuel, typically transported as high-risk cargo in suitable shielded containers.
+    CC_WEIRD is set to indicate that the cargo should be handled directly by label.
+    CC_ARMOURED is set because nuclear fuel is valuable and should be protected from theft. This provides a fallback, but means vehicle grfs may need to exclude nuclear fuel from armoured vehicles.
+"""
+cargo_classes = ["CC_WEIRD", "CC_ARMOURED"]
+
+[CARGO_OIL]
+name = "Oil"
+cargo_description = "Oil is transported in tanker vehicles."
+cargo_classes = ["CC_LIQUID_BULK", "CC_NON_POTABLE"]
+
+[CARGO_OXYGEN]
+name = "Oxygen"
+cargo_description = "Oxygen is transported as a gas under pressure. CC_PIECE_GOODS is set as some vehicle grfs may not provide pressurised tankers, so a fallback is needed (representing ammonia in portable tanks)."
+cargo_classes = ["CC_GAS_BULK"]
+
+[CARGO_PAPER]
+name = "Paper"
+cargo_description = "Paper is transported using general cargo vehicles or flatbed vehicles. Although paper is sensitive to weather, it can be assumed that it is suitably protected by packaging for transport."
+cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED", "CC_NON_POTABLE"]
+
+[CARGO_PASSENGERS]
+name = "Passengers"
+cargo_description = "Passengers is simple."
+cargo_classes = ["CC_PASSENGERS"]
+
+[CARGO_PIPE]
+name = "Pipe"
+cargo_description = "Pipe is transported using flatbed vehicles or general cargo vehicles."
+cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED", "CC_NON_POTABLE"]
+
+[CARGO_QUICKLIME]
+name = "Quicklime"
+cargo_description = "Quicklime is transported using covered bulk vehicles, or bulk powder vehicles.  Quicklime can also be transported as general cargo in barrels etc, so CC_PIECE_GOODS is set as a fallback."
+cargo_classes = ["CC_COVERED_BULK", "CC_PIECE_GOODS", "CC_POWDER_BULK", "CC_NON_POTABLE"]
+
+[CARGO_SAND]
+name = "Sand"
+cargo_description = "Sand is transported using open bulk vehicles, covered bulk vehicles, or using bulk powder vehicles. Although CC_PIECE_GOODS could be set for sand in bags, that isn't necessary as CC_BULK_OPEN is widely supported by vehicle grfs."
+cargo_classes = ["CC_OPEN_BULK", "CC_COVERED_BULK", "CC_POWDER_BULK", "CC_NON_POTABLE"]
+
+[CARGO_SCRAP_METAL]
+name = "Scrap Metal"
+cargo_description = "Scrap Metal is transported using open bulk vehicles. Although CC_PIECE_GOODS could be set, representing scrap metal in bales or cubes, that isn't necessary as CC_BULK_OPEN is widely supported by vehicle grfs."
+cargo_classes = ["CC_OPEN_BULK", "CC_NON_POTABLE"]
+
+[CARGO_SODIUM_HYDROXIDE]
+name = "Sodium Hydroxide"
+cargo_description = "Sodium Hydroxide is transported using tanker vehicles, or as piece goods in barrels etc."
+cargo_classes = ["CC_LIQUID_BULK", "CC_PIECE_GOODS", "CC_NON_POTABLE"]
+
+[CARGO_STEEL]
+name = "Steel"
+cargo_description = "Steel is transported as pieces, coils, etc, using general cargo vehicles or flatbed vehicles."
+cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED", "CC_NON_POTABLE"]
+
+[CARGO_SULPHUR]
+name = "Sulphur"
+cargo_description = "Sulphur is transported using covered bulk and open bulk vehicles."
+cargo_classes = ["CC_OPEN_BULK", "CC_COVERED_BULK", "CC_NON_POTABLE"]
+
+[CARGO_TIMBER]
+name = "Timber"
+cargo_description = "Timber is transported using general cargo vehicles or flatbed vehicles."
+cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED", "CC_NON_POTABLE"]
+
+# vehicle examples (non-exhaustive)
+
+[VEHICLE_ARMOURED_VAN]
+name = "Armoured Van"
+vehicle_description = "Secure vehicles for transporting valuable items."
+cargo_classes_allowed = ["CC_ARMOURED"]
+cargo_classes_disallowed = []
+
+[VEHICLE_BOX_VAN_LESS_PERMISSIVE]
+name = "Box Van (less permissive)"
+vehicle_description = "An example of a box van with relatively restricted refits. CC_WEIRD is disallowed as an example, but this should only be done if other vehicles support CC_WEIRD."
+cargo_classes_allowed = ["CC_PIECE_GOODS", "CC_EXPRESS"]
+cargo_classes_disallowed = ["CC_WEIRD"]
+
+[VEHICLE_BOX_VAN_MORE_PERMISSIVE]
+name = "Box Van (more permissive)"
+vehicle_description = """
+    An example of a box van that will refit most freight classes, to maximise compatibility with industry GRFs.
+    This assumes that cargos will be 'packaged' if necessary, for example liquids in barrels, or coal in sacks.
+    No classes are disallowed, but note that CC_WEIRD is not in the 'allow' list, as this class might be applied to cargos that wouldn't easily fit in box vans.
+"""
+cargo_classes_allowed = ["CC_EXPRESS", "CC_PIECE_GOODS", "CC_OPEN_BULK", "CC_COVERED_BULK", "CC_LIQUID_BULK", "CC_GAS_BULK", "CC_POWDER_BULK"]
+cargo_classes_disallowed = []
+
+[VEHICLE_COVERED_HOPPER]
+name = "Covered Hopper"
+vehicle_description = "General purpose covered hopper, with no distinction between food-grade and non-food-grade cargos."
+cargo_classes_allowed = ["CC_COVERED_BULK"]
+cargo_classes_disallowed = []
+
+[VEHICLE_COVERED_HOPPER_FOOD_GRADE]
+name = "Food Grade Covered Hopper"
+vehicle_description = "Suitable for food-grade cargos only."
+cargo_classes_allowed = ["CC_COVERED_BULK"]
+cargo_classes_disallowed = ["CC_NON_POTABLE"]
+
+[VEHICLE_COVERED_HOPPER_INDUSTRIAL]
+name = "Industrial Covered Hopper"
+vehicle_description = "Suitable for mineral cargos, plastic pellets, and similar. Unsuitable for food-grade cargos."
+cargo_classes_allowed = ["CC_COVERED_BULK"]
+cargo_classes_disallowed = ["CC_POTABLE"]
+
+[VEHICLE_FLATBED]
+name = "Flatbed Vehicle"
+vehicle_description = "Suitable for specific flatbed cargos."
+cargo_classes_allowed = ["CC_FLATBED"]
+cargo_classes_disallowed = []
+
+[VEHICLE_FOOD_TANKER]
+name = "Food Tanker"
+vehicle_description = "Suitable for liquid food-grade cargos. Excludes non-food"
+cargo_classes_allowed = ["CC_LIQUID_BULK"]
+cargo_classes_disallowed = ["CC_NON_POTABLE"]
+
+[VEHICLE_HOPPER]
+name = "Hopper"
+vehicle_description = "Open vehicles designed for gravity loading and unloading bulk materials that don't need covering."
+cargo_classes_allowed = ["CC_OPEN_BULK"]
+cargo_classes_disallowed = []
+
+[VEHICLE_INTERMODAL_CONTAINERS]
+name = "Intermodal Container Vehicle"
+vehicle_description = """
+    Refits most freight classes, to maximise compatibility with industry GRFs.
+    No classes are disallowed.
+"""
+cargo_classes_allowed = ["CC_EXPRESS", "CC_PIECE_GOODS", "CC_OPEN_BULK", "CC_COVERED_BULK", "CC_LIQUID_BULK", "CC_GAS_BULK", "CC_POWDER_BULK", "CC_FLATBED", "CC_REFRIGERATED", "CC_WEIRD"]
+cargo_classes_disallowed = []
+
+[VEHICLE_LIVESTOCK_CARRIER]
+name = "Livestock Carrier"
+vehicle_description = "Dedicated vehicle for livestock. No classes set. Refit specifically to cargo label LVST."
+cargo_classes_allowed = []
+cargo_classes_disallowed = []
+
+[VEHICLE_MAIL_VAN]
+name = "Mail Van"
+vehicle_description = "For mail and other high priority cargos."
+cargo_classes_allowed = ["CC_MAIL", "CC_EXPRESS"]
+cargo_classes_disallowed = []
+
+[VEHICLE_OPEN_CARGO_LESS_PERMISSIVE]
+name = "Open Cargo Vehicle (less permissive)"
+vehicle_description = "An example of a vehicle that will refit most dry cargos, any cargos that set CC_PIECE_GOODS as a fallback, and non-standard cargos that rely on CC_WEIRD being handled. No classes are disallowed."
+cargo_classes_allowed = ["CC_PIECE_GOODS", "CC_OPEN_BULK", "CC_WEIRD"]
+cargo_classes_disallowed = []
+
+[VEHICLE_OPEN_CARGO_MORE_PERMISSIVE]
+name = "Open Cargo Vehicle (more permissive)"
+vehicle_description = "An example of a vehicle that will refit most freight classes, to maximise compatibility with industry GRFs.  This assumes that cargos will be 'packaged' if necessary, for example liquids in barrels. No classes are disallowed."
+cargo_classes_allowed = ["CC_EXPRESS", "CC_PIECE_GOODS", "CC_OPEN_BULK", "CC_COVERED_BULK", "CC_LIQUID_BULK", "CC_GAS_BULK", "CC_POWDER_BULK", "CC_FLATBED", "CC_WEIRD"]
+cargo_classes_disallowed = []
+
+[VEHICLE_ORE_DUMP]
+name = "Ore Dump Vehicle"
+vehicle_description = "Open vehicles designed for bulk materials that don't need covering."
+cargo_classes_allowed = ["CC_OPEN_BULK"]
+cargo_classes_disallowed = []
+
+[VEHICLE_PASSENGER_VEHICLE]
+name = "Passenger Vehicle"
+vehicle_description = "Simply passengers."
+cargo_classes_allowed = ["CC_PASSENGERS"]
+cargo_classes_disallowed = []
+
+[VEHICLE_POWDER_TANKER]
+name = "Powder Tanker"
+vehicle_description = "Tank vehicle for handling powder cargos, which must be kept dry and are loaded / unloaded using pneumatic pressure to make the powder flow."
+cargo_classes_allowed = ["CC_POWDER_BULK"]
+cargo_classes_disallowed = []
+
+[VEHICLE_PRESSURISED_TANKER]
+name = "Pressurised Tanker"
+vehicle_description = "Tank vehicle for transporting gases under pressure."
+cargo_classes_allowed = ["CC_GAS_BULK"]
+cargo_classes_disallowed = []
+
+[VEHICLE_REFRIGERATED]
+name = "Refrigerated Vehicle"
+vehicle_description = "Temperature controlled vehicle for food-grade cargos."
+cargo_classes_allowed = ["CC_REFRIGERATED"]
+cargo_classes_disallowed = ["CC_NON_POTABLE"]
+
+[VEHICLE_TANKER_LESS_PERMISSIVE]
+name = "Tanker Vehicle (less permissive)"
+vehicle_description = "General-purpose tanker for liquid cargo, but unsuitable for food-grade cargos."
+cargo_classes_allowed = ["CC_LIQUID_BULK"]
+cargo_classes_disallowed = ["CC_POTABLE"]
+
+[VEHICLE_TANKER_MORE_PERMISSIVE]
+name = "Tanker Vehicle (more permissive)"
+vehicle_description = "General-purpose tanker, for any liquid cargo or gas cargo."
+cargo_classes_allowed = ["CC_LIQUID_BULK", "CC_GAS_BULK"]
+cargo_classes_disallowed = []

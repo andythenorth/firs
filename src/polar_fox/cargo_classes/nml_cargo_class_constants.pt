@@ -1,0 +1,8 @@
+// extra nml constants for Polar Fox 2024 cargo class names that substitute legacy NML class names
+<tal:cargo_class_nodes repeat="cargo_class_node cargo_class_scheme.cargo_classes_taxonomy.items()">
+    <tal:cargo_class define="cargo_class_node_id cargo_class_node[0]; cargo_class cargo_class_node[1];">
+        <tal:block condition="cargo_class_node_id != cargo_class.nml_cargo_class_name">
+            const ${cargo_class_node_id} = ${cargo_class.bit_number}; // remaps legacy NML class: ${cargo_class.nml_cargo_class_name}
+         </tal:block>
+    </tal:cargo_class>
+</tal:cargo_class_nodes>

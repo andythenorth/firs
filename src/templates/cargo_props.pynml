@@ -8,7 +8,6 @@ item(FEAT_CARGOS, ${cargo.id}_${economy.id}, ${cargo.get_numeric_id(economy)}) {
         ${cargo.get_property_declaration('sprite')}
         ${cargo.get_property_declaration('weight')}
         ${cargo.get_property_declaration('is_freight')}
-        ${cargo.get_property_declaration('cargo_classes')}
         ${cargo.get_property_declaration('town_growth_effect', economy)}
         ${cargo.get_property_declaration('town_growth_multiplier', economy)}
         ${cargo.get_property_declaration('units_of_cargo')}
@@ -17,6 +16,7 @@ item(FEAT_CARGOS, ${cargo.id}_${economy.id}, ${cargo.get_numeric_id(economy)}) {
         ${cargo.get_property_declaration('single_penalty_length', economy)}
         ${cargo.get_property_declaration('capacity_multiplier')}
         <!--! props that can't be fetched with standard methods -->
+        cargo_classes: ${cargo.get_cargo_classes_for_nml()};
         cargo_payment_list_colour: ${cargo.get_cargo_colour(economy)};
         station_list_colour: ${cargo.get_cargo_colour(economy)};
         price_factor: ${economy.forcibly_space_cargo_price_factors(registered_cargos)[cargo.id]};

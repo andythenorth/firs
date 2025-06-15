@@ -22,9 +22,8 @@ templates = PageTemplateLoader(
 from economies import registered_economies
 from cargos import registered_cargos
 
-
 class Cargo(object):
-    """ Base class to hold cargos"""
+    """Base class to hold cargos"""
 
     def __init__(self, id, **kwargs):
         self.id = id
@@ -71,7 +70,11 @@ class Cargo(object):
                             + str(value)
                         )
                 self.economy_variations[economy] = {"numeric_id": numeric_id}
+        # validation
+        self.validate_cargo_classes()
+        self.validate_icon_indices()
 
+    def validate_icon_indices(self):
         # guard against overlapping icon indices, icons should be unique per cargo
         # if two cargos use same icon (1) don't, copy-paste, then adjust some pixels for one of them (2) see 1
         for cargo in registered_cargos:
@@ -82,6 +85,59 @@ class Cargo(object):
                     + " has overlapping icon_indices with cargo "
                     + cargo.id
                 )
+
+    def validate_cargo_classes(self):
+        # crude, not intended to solve everything
+        disallowed_pairs = [("CC_POTABLE", "CC_NON_POTABLE")]
+        for disallowed_pair in disallowed_pairs:
+            if (disallowed_pair[0] in self.cargo_classes) and (
+                disallowed_pair[1] in self.cargo_classes
+            ):
+                raise BaseException(
+                    self.id
+                    + " sets both "
+                    + disallowed_pair[0]
+                    + " and "
+                    + disallowed_pair[1]
+                    + " which is not supported"
+                )
+        for cargo_class in self.cargo_classes:
+            # CC_GAS doesn't bother validating for food-grade bits as of 2024, food-grade gases tends to not be relevant
+            if cargo_class in [
+                "CC_EXPRESS",
+                "CC_PIECE_GOODS",
+                "CC_OPEN_BULK",
+                "CC_COVERED_BULK",
+                "CC_LIQUID",
+                "CC_POWDERIZED",
+            ]:
+                if ("CC_POTABLE" not in self.cargo_classes) and (
+                    "CC_NON_POTABLE" not in self.cargo_classes
+                ):
+                    raise BaseException(
+                        self.id
+                        + " should set one of CC_POTABLE or CC_NON_POTABLE"
+                    )
+            if cargo_class in ["CC_GAS", "CC_COVERED_BULK", "CC_POWDERIZED", "CC_FLATBED"]:
+                if (
+                    ("CC_PIECE_GOODS" not in self.cargo_classes)
+                    and ("CC_OPEN_BULK" not in self.cargo_classes)
+                    and ("CC_LIQUID" not in self.cargo_classes)
+                ):
+                    raise BaseException(
+                        self.id
+                        + " should have a fallback set (CC_PIECE_GOODS, CC_OPEN_BULK or CC_LIQUID"
+                    )
+            if cargo_class in ["CC_FLATBED", "CC_REFRIGERATED"]:
+                if (
+                    ("CC_PIECE_GOODS" not in self.cargo_classes)
+                    and ("CC_EXPRESS" not in self.cargo_classes)
+                ):
+                    raise BaseException(
+                        self.id
+                        + " should have a fallback set (CC_PIECE_GOODS or CC_EXPRESS"
+                    )
+
 
     def get_numeric_id(self, economy):
         return self.economy_variations[economy].get("numeric_id")
@@ -96,6 +152,9 @@ class Cargo(object):
     def get_cargo_colour(self, economy):
         # automatically provide a colour specific to the economy, don't attempt to provide a consistent colour across all economies, PITA to maintain
         return global_constants.valid_cargo_colours[self.get_numeric_id(economy)]
+
+    def get_cargo_classes_for_nml(self):
+        return "bitmask(" + ",".join(self.cargo_classes) + ")"
 
     def get_property(self, property_name, economy):
         # straightforward lookup of a property, doesn't try to handle failure case of property not found; don't look up props that don't exist

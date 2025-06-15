@@ -83,24 +83,25 @@ class DocHelper(object):
 
     def pretty_print_cargo_classes(self, cargo):
         result = []
+        # order of dict key corresponds to sort order of cargos when pretty-printed
         pretty_names = {
-            "CC_ARMOURED": "Armoured",
-            "CC_BULK": "Bulk (uncountable)",
-            "CC_COVERED": "Covered (weather protected)",
-            "CC_EXPRESS": "Express",
-            "CC_HAZARDOUS": "Hazardous",
-            "CC_LIQUID": "Liquid",
-            "CC_MAIL": "Mail",
-            "CC_NON_POURABLE": "Not Pourable",
-            "CC_OVERSIZED": "Oversized",
             "CC_PASSENGERS": "Passengers",
-            "CC_PIECE_GOODS": "Piece Goods (countable)",
-            "CC_POWDERIZED": "Powderized",
+            "CC_MAIL": "Mail",
+            "CC_EXPRESS": "Express",
+            "CC_ARMOURED": "Armoured",
+            "CC_PIECE_GOODS": "Piece Goods",
+            "CC_OPEN_BULK": "Open Bulk",
+            "CC_COVERED_BULK": "Covered Bulk",
+            "CC_POWDER_BULK": "Powder Bulk",
+            "CC_LIQUID_BULK": "Liquid Bulk",
+            "CC_GAS_BULK": "Gas Bulk",
+            "CC_FLATBED": "Flatbed",
             "CC_REFRIGERATED": "Refrigerated",
+            "CC_WEIRD": "Weird",
+            "CC_POTABLE": "Potable",
+            "CC_NON_POTABLE": "Non-Potable",
         }
-        cargo_classes_as_literal = cargo.cargo_classes[8:-1]
-        cargo_classes = [i.strip() for i in cargo_classes_as_literal.split(",")]
-        for cargo_class in cargo_classes:
+        for cargo_class in cargo.cargo_classes:
             if cargo_class not in pretty_names:
                 utils.echo_message(
                     "cargo class "
@@ -109,7 +110,9 @@ class DocHelper(object):
                     + cargo.id
                     + ")"
                 )
-            else:
+
+        for cargo_class in pretty_names:
+            if cargo_class in cargo.cargo_classes:
                 result.append(pretty_names[cargo_class])
         return ", ".join(result)
 

@@ -9,6 +9,9 @@ disable_item(FEAT_CARGOS, 0, 29);
 <!--! don't disable 30, it's used by NARS 2 for regearing and disabling it breaks NARS 2 -->
 disable_item(FEAT_CARGOS, 31, 31);
 
+<!--! include constants for 2024 Polar Fox cargo classes -->
+<tal:include metal:use-macro="load: ../polar_fox/cargo_classes/cargo_class_constants.nml" />
+
 <tal:cargos repeat="cargo registered_cargos">
     spriteset(cargoicon_${cargo.id}) {
         [10 + 20 * ${cargo.icon_indices[0]}, 10 + 20 * ${cargo.icon_indices[1]}, 10, 10, 0, 0, ${"ANIM," if cargo.allow_animated_pixels else None} "src/graphics/other/cargoicons.png"]
