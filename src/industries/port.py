@@ -370,11 +370,11 @@ industry.add_magic_spritelayout(
             ],
             "nw": [
                 spriteset_crane_rails_nw_se,
-                spriteset_large_crane_nw_se,
+                spriteset_large_crane_se_nw,
             ],
             "ne": [
                 spriteset_crane_rails_ne_sw,
-                spriteset_large_crane_sw_ne,
+                spriteset_large_crane_ne_sw,
             ],
         },
     },
@@ -495,7 +495,7 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="port_spritelayout_warehouse_half",
+    base_id="port_spritelayout_warehouse_half_1",
     tile="port_tile_1",
     config={
         "jetty_foundations": True,
@@ -511,6 +511,28 @@ industry.add_magic_spritelayout(
             ],
             "ne": [
                 spriteset_warehouse_half_sw_ne,
+            ],
+        },
+    },
+)
+industry.add_magic_spritelayout(
+    type="jetty_auto_orient_to_coast_direction",
+    base_id="port_spritelayout_warehouse_half_2",
+    tile="port_tile_1",
+    config={
+        "jetty_foundations": True,
+        "building_sprites": {
+            "se": [
+                spriteset_warehouse_half_se_nw,
+            ],
+            "sw": [
+                spriteset_warehouse_half_sw_ne,
+            ],
+            "nw": [
+                spriteset_warehouse_half_nw_se,
+            ],
+            "ne": [
+                spriteset_warehouse_half_ne_sw,
             ],
         },
     },
@@ -656,49 +678,51 @@ industry.add_industry_jetty_layout(
     layout=[
         (0, 0, "port_spritelayout_gate_shed_coast_part"),
         (0, 1, "port_spritelayout_gate_shed_sea_part"),
-        (0, 2, "port_spritelayout_crane_rails_parallel"),
-        (0, 3, "port_spritelayout_crane_parallel"),
-        (0, 4, "spritelayout_null_water"),
+        (0, 2, "port_spritelayout_warehouse_full"),
+        (0, 3, "port_spritelayout_warehouse_full"),
+        (0, 4, "port_spritelayout_warehouse_half_1"),
+        (0, 5, "spritelayout_null_water"),
+        # ensure spacing from coast, to improve map-gen buildabilty
         (1, 1, "port_spritelayout_tanks_sphere"),
-        (1, 2, "port_spritelayout_water_ship_1"),
-        (1, 3, "spritelayout_null_water"),
-        (1, 4, "spritelayout_null_water"),
+        (1, 2, "port_spritelayout_tanks_sphere"),
+        (1, 3, "port_spritelayout_crane_rails_parallel"),
+        (1, 4, "port_spritelayout_crane_parallel"),
         # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
         (1, 5, "spritelayout_null_water"),
-        (2, 1, "port_spritelayout_tanks_sphere"),
-        (2, 2, "spritelayout_null_water"),
-        (2, 3, "spritelayout_null_water"),
-        (3, 1, "port_spritelayout_warehouse_full"),
-        (3, 2, "port_spritelayout_warehouse_half"),
-        (4, 1, "port_spritelayout_silos"),
-        (4, 2, "port_spritelayout_silos"),
-        (4, 3, "port_spritelayout_bulk_handling"),
-        (4, 4, "spritelayout_null_water"),
+        # ensure spacing from coast, to improve map-gen buildabilty
+        (2, 1, "port_spritelayout_shed_full"),
+        (2, 2, "port_spritelayout_shed_half_1"),
+        (2, 3, "port_spritelayout_water_ship_1"),
+        (2, 4, "spritelayout_null_water"),
+        (2, 5, "spritelayout_null_water"),
+        (3, 1, "port_spritelayout_silos"),
+        (3, 2, "port_spritelayout_silos"),
+        (3, 3, "port_spritelayout_bulk_handling"),
+        (3, 4, "spritelayout_null_water"),
     ],
 )
 industry.add_industry_jetty_layout(
     id="port_industry_jetty_layout_2",
     layout=[
-        (0, 1, "port_spritelayout_silos"),
-        (0, 2, "port_spritelayout_silos"),
-        (0, 3, "port_spritelayout_bulk_handling"),
-        (0, 4, "port_spritelayout_crane_parallel"),
-        (0, 5, "port_spritelayout_crane_rails_parallel"),
-        (0, 6, "spritelayout_null_water"),
-        (1, 0, "port_spritelayout_gate_shed_coast_part"),
-        (1, 1, "port_spritelayout_gate_shed_sea_part"),
-        (1, 2, "port_spritelayout_warehouse_full"),
-        (1, 3, "port_spritelayout_warehouse_half"),
-        (1, 4, "port_spritelayout_water_ship_2"),
-        (1, 5, "spritelayout_null_water"),
-        (1, 6, "spritelayout_null_water"),
-        # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
-        (1, 7, "spritelayout_null_water"),
         # ensure spacing from coast, to improve map-gen buildabilty
-        (2, 1, "port_spritelayout_tanks_sphere"),
-        (2, 2, "port_spritelayout_tanks_sphere"),
-        (2, 3, "port_spritelayout_shed_full"),
-        (2, 4, "port_spritelayout_shed_half_1"),
-        (2, 5, "spritelayout_null_water"),
+        (0, 1, "port_spritelayout_warehouse_full"),
+        (0, 2, "port_spritelayout_warehouse_full"),
+        (0, 3, "port_spritelayout_warehouse_half_1"),
+        (0, 4, "spritelayout_null_water"),
+        (1, 1, "port_spritelayout_silos"),
+        (1, 2, "port_spritelayout_crane_rails_parallel"),
+        (1, 3, "port_spritelayout_crane_parallel"),
+        (2, 1, "port_spritelayout_silos"),
+        (2, 2, "port_spritelayout_water_ship_2"),
+        (2, 3, "spritelayout_null_water"),
+        (2, 4, "spritelayout_null_water"),
+        (3, 0, "port_spritelayout_gate_shed_coast_part"),
+        (3, 1, "port_spritelayout_gate_shed_sea_part"),
+        (3, 2, "port_spritelayout_bulk_handling"),
+        (3, 3, "port_spritelayout_tanks_sphere"),
+        (3, 4, "port_spritelayout_tanks_sphere"),
+        (3, 5, "spritelayout_null_water"),
+        # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
+        (3, 7, "spritelayout_null_water"),
     ],
 )
