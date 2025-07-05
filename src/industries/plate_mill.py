@@ -12,7 +12,8 @@ industry = IndustrySecondary(
     prod_cargo_types_with_output_ratios=[
         # high plate mill output production is unwanted
         # tried steel pipe as side output, doesn't add anything
-        ("STSE", 6),
+        ("STSE", 5),
+        ("ENSP", 1),
     ],
     # do not build during gameplay
     prob_in_game="0",
