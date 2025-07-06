@@ -92,6 +92,12 @@ spriteset_5 = industry.add_spriteset(
 spriteset_6 = industry.add_spriteset(
     sprites=[(360, 10, 64, 70, -31, -39)],
 )
+spriteset_7 = industry.add_spriteset(
+    sprites=[(430, 10, 64, 70, -31, -39)],
+)
+spriteset_8 = industry.add_spriteset(
+    sprites=[(500, 10, 64, 70, -31, -39)],
+)
 spriteset_iron_pigs_anim = industry.add_spriteset(
     sprites=[
         (10, 90, 64, 70, -31, -39),
@@ -182,13 +188,22 @@ industry.add_spritelayout(
     add_to_object_num=7,
 )
 industry.add_spritelayout(
-    id="foundry_spritelayout_empty",
+    id="foundry_spritelayout_ingots",
     tile="foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[],
+    building_sprites=[spriteset_7],
     fences=[],
     add_to_object_num=8,
+)
+industry.add_spritelayout(
+    id="foundry_spritelayout_ingots_and_gatehouse",
+    tile="foundry_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_8],
+    fences=[],
+    add_to_object_num=9,
 )
 
 # this industry needs outpost layout as there are lots of cargos
@@ -284,7 +299,7 @@ industry.add_industry_layout(
         (1, 2, "foundry_spritelayout_store_shed"),
         (2, 0, "foundry_spritelayout_large_chimney"),
         (2, 1, "foundry_spritelayout_silos"),
-        (2, 2, "foundry_spritelayout_empty"),
+        (2, 2, "foundry_spritelayout_ingots"),
         (
             3,
             0,
@@ -301,7 +316,7 @@ industry.add_industry_layout(
         (4, 2, "foundry_spritelayout_iron_pigs_anim"),
         (5, 0, "foundry_spritelayout_large_chimney"),
         (5, 1, "foundry_spritelayout_silos"),
-        (5, 2, "foundry_spritelayout_empty"),
+        (5, 2, "foundry_spritelayout_ingots"),
     ],
 )
 
@@ -338,7 +353,7 @@ industry.add_industry_layout(
         (1, 5, "foundry_spritelayout_iron_pigs_anim"),
         (2, 0, "foundry_spritelayout_large_chimney"),
         (2, 1, "foundry_spritelayout_silos"),
-        (2, 2, "foundry_spritelayout_empty"),
+        (2, 2, "foundry_spritelayout_ingots"),
         (2, 3, "foundry_spritelayout_large_chimney"),
         (2, 4, "foundry_spritelayout_silos"),
         (2, 5, "foundry_spritelayout_store_shed"),
