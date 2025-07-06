@@ -35,7 +35,9 @@ industry.enable_in_economy(
 # not animated tiles
 industry.add_tile(
     id="foundry_tile_1",
-    location_checks=TileLocationChecks(disallow_industry_adjacent=True),
+    location_checks=TileLocationChecks(
+        require_effectively_flat=True, disallow_industry_adjacent=True
+    ),
 )
 # animated tiles
 industry.add_tile(
@@ -223,6 +225,42 @@ industry.add_industry_outpost_layout(
             1,
             2,
             "foundry_spritelayout_store_shed",
+        ),
+    ],
+)
+industry.add_industry_outpost_layout(
+    id="foundry_industry_outpost_layout_2",
+    layout=[
+        # test outpost layout
+        (
+            0,
+            0,
+            "foundry_spritelayout_large_chimney",
+        ),
+        (
+            0,
+            1,
+            "foundry_spritelayout_store_shed",
+        ),
+        (
+            1,
+            0,
+            "foundry_spritelayout_large_shed_alt",
+        ),
+        (
+            1,
+            1,
+            "foundry_spritelayout_iron_pigs_anim",
+        ),
+        (
+            2,
+            0,
+            "foundry_spritelayout_furnace_anim",
+        ),
+        (
+            2,
+            1,
+            "foundry_spritelayout_silos",
         ),
     ],
 )
