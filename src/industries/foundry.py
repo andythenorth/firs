@@ -17,7 +17,10 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="166",
     location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[["basic_oxygen_furnace", "electric_arc_furnace"], 56],
+        near_at_least_one_of_these_keystone_industries=[
+            ["basic_oxygen_furnace", "electric_arc_furnace"],
+            56,
+        ],
     ),
     name="string(STR_IND_FORGE_AND_FOUNDRY)",
     nearby_station_name="string(STR_STATION_FORGE)",
@@ -119,15 +122,15 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="foundry_spritelayout_large_shed",
+    id="foundry_spritelayout_large_chimney",
     tile="foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
-    fences=[],
+    fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="foundry_spritelayout_large_shed_clerestory_roof",
+    id="foundry_spritelayout_large_shed",
     tile="foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
@@ -143,20 +146,20 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="foundry_spritelayout_staithes",
+    id="foundry_spritelayout_silos",
     tile="foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    fences=["nw", "ne"],
+    fences=[],
 )
 industry.add_spritelayout(
-    id="foundry_spritelayout_logs",
+    id="foundry_spritelayout_store_shed",
     tile="foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
-    fences=["nw", "ne", "se"],
+    fences=["nw", "ne"],
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_empty",
@@ -164,7 +167,7 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
-    fences=["nw", "ne", "se"],
+    fences=[],
 )
 
 # this industry needs outpost layout as there are lots of cargos
@@ -175,7 +178,7 @@ industry.add_industry_outpost_layout(
         (
             0,
             0,
-            "foundry_spritelayout_large_shed_clerestory_roof",
+            "foundry_spritelayout_large_shed",
         ),
         (
             0,
@@ -190,17 +193,17 @@ industry.add_industry_outpost_layout(
         (
             1,
             0,
-            "foundry_spritelayout_large_shed",
+            "foundry_spritelayout_large_chimney",
         ),
         (
             1,
             1,
-            "foundry_spritelayout_staithes",
+            "foundry_spritelayout_silos",
         ),
         (
             1,
             2,
-            "foundry_spritelayout_logs",
+            "foundry_spritelayout_store_shed",
         ),
     ],
 )
@@ -211,36 +214,110 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "foundry_spritelayout_large_shed_clerestory_roof",
+            "foundry_spritelayout_large_shed",
         ),
         (0, 1, "foundry_spritelayout_furnace_anim"),
         (0, 2, "foundry_spritelayout_iron_pigs_anim"),
         (
             1,
             0,
-            "foundry_spritelayout_large_shed_clerestory_roof",
+            "foundry_spritelayout_large_shed",
         ),
         (1, 1, "foundry_spritelayout_furnace_anim"),
         (1, 2, "foundry_spritelayout_iron_pigs_anim"),
-        (2, 0, "foundry_spritelayout_large_shed"),
-        (2, 1, "foundry_spritelayout_staithes"),
-        (2, 2, "foundry_spritelayout_logs"),
+        (2, 0, "foundry_spritelayout_large_chimney"),
+        (2, 1, "foundry_spritelayout_silos"),
+        (2, 2, "foundry_spritelayout_store_shed"),
         (
             3,
             0,
-            "foundry_spritelayout_large_shed_clerestory_roof",
+            "foundry_spritelayout_large_shed",
         ),
         (3, 1, "foundry_spritelayout_furnace_anim"),
         (3, 2, "foundry_spritelayout_iron_pigs_anim"),
         (
             4,
             0,
-            "foundry_spritelayout_large_shed_clerestory_roof",
+            "foundry_spritelayout_large_shed",
         ),
         (4, 1, "foundry_spritelayout_furnace_anim"),
         (4, 2, "foundry_spritelayout_iron_pigs_anim"),
-        (5, 0, "foundry_spritelayout_large_shed"),
-        (5, 1, "foundry_spritelayout_staithes"),
-        (5, 2, "foundry_spritelayout_logs"),
+        (5, 0, "foundry_spritelayout_large_chimney"),
+        (5, 1, "foundry_spritelayout_silos"),
+        (5, 2, "foundry_spritelayout_empty"),
+    ],
+)
+
+industry.add_industry_layout(
+    id="foundry_industry_layout_2",
+    layout=[
+        (
+            0,
+            0,
+            "foundry_spritelayout_large_shed",
+        ),
+        (0, 1, "foundry_spritelayout_furnace_anim"),
+        (0, 2, "foundry_spritelayout_iron_pigs_anim"),
+        (
+            0,
+            3,
+            "foundry_spritelayout_large_shed",
+        ),
+        (0, 4, "foundry_spritelayout_furnace_anim"),
+        (0, 5, "foundry_spritelayout_iron_pigs_anim"),
+        (
+            1,
+            0,
+            "foundry_spritelayout_large_shed",
+        ),
+        (1, 1, "foundry_spritelayout_furnace_anim"),
+        (1, 2, "foundry_spritelayout_iron_pigs_anim"),
+        (
+            1,
+            3,
+            "foundry_spritelayout_large_shed",
+        ),
+        (1, 4, "foundry_spritelayout_furnace_anim"),
+        (1, 5, "foundry_spritelayout_iron_pigs_anim"),
+        (2, 0, "foundry_spritelayout_large_chimney"),
+        (2, 1, "foundry_spritelayout_silos"),
+        (2, 2, "foundry_spritelayout_empty"),
+        (2, 3, "foundry_spritelayout_large_chimney"),
+        (2, 4, "foundry_spritelayout_silos"),
+        (2, 5, "foundry_spritelayout_store_shed"),
+    ],
+)
+
+industry.add_industry_layout(
+    id="foundry_industry_layout_3",
+    layout=[
+        (
+            0,
+            0,
+            "foundry_spritelayout_large_shed",
+        ),
+        (
+            0,
+            1,
+            "foundry_spritelayout_large_shed",
+        ),
+        (0, 2, "foundry_spritelayout_furnace_anim"),
+        (0, 3, "foundry_spritelayout_iron_pigs_anim"),
+        (
+            1,
+            0,
+            "foundry_spritelayout_large_shed",
+        ),
+        (
+            1,
+            1,
+            "foundry_spritelayout_large_shed",
+        ),
+        (1, 2, "foundry_spritelayout_furnace_anim"),
+        (1, 3, "foundry_spritelayout_iron_pigs_anim"),
+        (2, 0, "foundry_spritelayout_large_chimney"),
+        (2, 1, "foundry_spritelayout_large_chimney"),
+        (2, 2, "foundry_spritelayout_silos"),
+        (2, 3, "foundry_spritelayout_store_shed"),
     ],
 )
