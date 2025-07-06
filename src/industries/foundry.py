@@ -340,3 +340,34 @@ industry.add_industry_layout(
         (2, 3, "foundry_spritelayout_store_shed"),
     ],
 )
+
+industry.add_industry_layout(
+    id="foundry_industry_layout_3",
+    layout=[
+        (
+            0,
+            0,
+            "foundry_spritelayout_large_chimney",
+        ),
+        (
+            0,
+            1,
+            "foundry_spritelayout_silos",
+        ),
+        (0, 2, "foundry_spritelayout_store_shed"),
+        (
+            1,
+            0,
+            "foundry_spritelayout_large_shed",
+        ),
+        (
+            1,
+            1,
+            "foundry_spritelayout_large_shed_alt",
+        ),
+        (1, 2, "foundry_spritelayout_iron_pigs_anim"),
+        (2, 0, "foundry_spritelayout_furnace_anim"),
+        (2, 1, "foundry_spritelayout_furnace_anim"),
+        (2, 2, "foundry_spritelayout_silos"),
+    ],
+)
