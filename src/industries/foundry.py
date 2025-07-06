@@ -82,16 +82,19 @@ spriteset_3 = industry.add_spriteset(
     sprites=[(150, 10, 64, 70, -31, -39)],
 )
 spriteset_4 = industry.add_spriteset(
-    sprites=[(430, 10, 64, 70, -31, -39)],
+    sprites=[(220, 10, 64, 70, -31, -39)],
 )
 spriteset_5 = industry.add_spriteset(
-    sprites=[(500, 10, 64, 70, -31, -39)],
+    sprites=[(290, 10, 64, 70, -31, -39)],
+)
+spriteset_6 = industry.add_spriteset(
+    sprites=[(360, 10, 64, 70, -31, -39)],
 )
 spriteset_iron_pigs_anim = industry.add_spriteset(
     sprites=[
-        (220, 10, 64, 70, -31, -39),
-        (290, 10, 64, 70, -31, -39),
-        (360, 10, 64, 70, -31, -39),
+        (10, 90, 64, 70, -31, -39),
+        (80, 90, 64, 70, -31, -39),
+        (150, 90, 64, 70, -31, -39),
     ],
     animation_rate=1,
 )
@@ -120,22 +123,7 @@ industry.add_spritelayout(
     building_sprites=[spriteset_1],
     smoke_sprites=[sprite_smoke],
     fences=["nw", "ne", "se", "sw"],
-)
-industry.add_spritelayout(
-    id="foundry_spritelayout_large_chimney",
-    tile="foundry_tile_1",
-    ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_2],
-    fences=["nw", "ne", "se", "sw"],
-)
-industry.add_spritelayout(
-    id="foundry_spritelayout_large_shed",
-    tile="foundry_tile_1",
-    ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_3],
-    fences=[],
+    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_iron_pigs_anim",
@@ -144,22 +132,52 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay_pigs,
     building_sprites=[spriteset_iron_pigs_anim],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=2,
+)
+industry.add_spritelayout(
+    id="foundry_spritelayout_large_chimney",
+    tile="foundry_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_2],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=3,
+)
+industry.add_spritelayout(
+    id="foundry_spritelayout_large_shed",
+    tile="foundry_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_3],
+    fences=[],
+    add_to_object_num=4,
+)
+industry.add_spritelayout(
+    id="foundry_spritelayout_large_shed_alt",
+    tile="foundry_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_4],
+    fences=[],
+    add_to_object_num=5,
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_silos",
     tile="foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_4],
+    building_sprites=[spriteset_5],
     fences=[],
+    add_to_object_num=6,
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_store_shed",
     tile="foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_5],
+    building_sprites=[spriteset_6],
     fences=["nw", "ne"],
+    add_to_object_num=7,
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_empty",
@@ -168,6 +186,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
     fences=[],
+    add_to_object_num=8,
 )
 
 # this industry needs outpost layout as there are lots of cargos
