@@ -193,7 +193,7 @@ industry.add_industry_outpost_layout(
         (
             2,
             1,
-            "concrete_plant_spritelayout_pipes",
+            "concrete_plant_spritelayout_blocks_1",
         ),
     ],
 )
@@ -202,20 +202,20 @@ industry.add_industry_outpost_layout(
 industry.add_industry_layout(
     id="concrete_plant_industry_layout_1",
     layout=[
-        (0, 0, "concrete_plant_spritelayout_blocks_1"),
-        (0, 1, "concrete_plant_spritelayout_blocks_1"),
+        (0, 0, "concrete_plant_spritelayout_silo_1"),
+        (0, 1, "concrete_plant_spritelayout_pipes"),
         (0, 2, "concrete_plant_spritelayout_pipes"),
-        (1, 0, "concrete_plant_spritelayout_silo_1"),
+        (1, 0, "concrete_plant_spritelayout_shed_1"),
         (1, 1, "concrete_plant_spritelayout_shed_1"),
         (1, 2, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
-        (2, 0, "concrete_plant_spritelayout_blocks_1"),
+        (2, 0, "concrete_plant_spritelayout_shed_1"),
         (2, 1, "concrete_plant_spritelayout_shed_1"),
         (2, 2, "concrete_plant_spritelayout_travelling_crane"),
-        (3, 0, "concrete_plant_spritelayout_pipes"),
+        (3, 0, "concrete_plant_spritelayout_blocks_1"),
         (3, 1, "concrete_plant_spritelayout_overhead_crane_1"),
         (3, 2, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
         (4, 0, "concrete_plant_spritelayout_gatehouse_and_rebar"),
-        (4, 1, "concrete_plant_spritelayout_pipes"),
+        (4, 1, "concrete_plant_spritelayout_blocks_1"),
         (4, 2, "concrete_plant_spritelayout_blocks_1"),
     ],
 )
