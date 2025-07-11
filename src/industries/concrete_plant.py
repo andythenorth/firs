@@ -173,22 +173,22 @@ industry.add_industry_outpost_layout(
         (
             0,
             1,
+            "concrete_plant_spritelayout_gatehouse_and_rebar",
+        ),
+        (
+            1,
+            0,
             "concrete_plant_spritelayout_shed_1",
         ),
         (
             1,
-            0,
-            "concrete_plant_spritelayout_blocks_1",
-        ),
-        (
             1,
-            1,
-            "concrete_plant_spritelayout_overhead_crane_1",
+            "concrete_plant_spritelayout_pipes",
         ),
         (
             2,
             0,
-            "concrete_plant_spritelayout_gatehouse_and_rebar",
+            "concrete_plant_spritelayout_overhead_crane_1",
         ),
         (
             2,
