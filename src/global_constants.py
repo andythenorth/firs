@@ -398,6 +398,10 @@ animated_ground_tile_frame_counts = [1, 3, 6, 7, 10, 12, 31, 32]
 
 industry_colour_schemes = {
     # colours may be repeated to give them more weighting in the distribution
+    # never use: white, orange, cream; these always look bad
+
+    # default scheme is muted and removes red, yellow, standard blue, and two greens
+    # includes grey, brown, mauve, purple, but at lower weighting
     "scheme_1_default": [
         "COLOUR_DARK_BLUE",
         "COLOUR_PALE_GREEN",
@@ -409,6 +413,20 @@ industry_colour_schemes = {
         "COLOUR_LIGHT_BLUE",
         "COLOUR_GREY",
         "COLOUR_BROWN",
+        "COLOUR_MAUVE",
+        "COLOUR_PURPLE",
+    ],
+    # for industries that use a lot of grey (concrete) in their sprites
+    # removes grey and brown
+    "scheme_2_cabbage": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_RED",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_GREEN",
+        "COLOUR_DARK_GREEN",
+        "COLOUR_BLUE",
         "COLOUR_MAUVE",
         "COLOUR_PURPLE",
     ],
