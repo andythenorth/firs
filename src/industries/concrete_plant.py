@@ -165,7 +165,6 @@ industry.add_spritelayout(
 industry.add_industry_outpost_layout(
     id="concrete_plant_industry_outpost_layout_1",
     layout=[
-        # test outpost layout
         (
             0,
             0,
@@ -198,6 +197,41 @@ industry.add_industry_outpost_layout(
         ),
     ],
 )
+industry.add_industry_outpost_layout(
+    id="concrete_plant_industry_outpost_layout_2",
+    layout=[
+        (
+            0,
+            0,
+            "concrete_plant_spritelayout_silo_1",
+        ),
+        (
+            0,
+            1,
+            "concrete_plant_spritelayout_shed_1",
+        ),
+        (
+            0,
+            2,
+            "concrete_plant_spritelayout_gatehouse_and_rebar",
+        ),
+        (
+            1,
+            0,
+            "concrete_plant_spritelayout_pipes",
+        ),
+        (
+            1,
+            1,
+            "concrete_plant_spritelayout_overhead_crane_1",
+        ),
+        (
+            1,
+            2,
+            "concrete_plant_spritelayout_blocks_1",
+        ),
+    ],
+)
 
 # relatively large IRL, and these are probably regional, not town-local
 industry.add_industry_layout(
@@ -218,5 +252,66 @@ industry.add_industry_layout(
         (4, 0, "concrete_plant_spritelayout_gatehouse_and_rebar"),
         (4, 1, "concrete_plant_spritelayout_blocks_1"),
         (4, 2, "concrete_plant_spritelayout_blocks_1"),
+    ],
+)
+industry.add_industry_layout(
+    id="concrete_plant_industry_layout_2",
+    layout=[
+        (0, 0, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
+        (0, 1, "concrete_plant_spritelayout_silo_1"),
+        (0, 2, "concrete_plant_spritelayout_shed_1"),
+        (0, 3, "concrete_plant_spritelayout_shed_1"),
+        (0, 4, "concrete_plant_spritelayout_gatehouse_and_rebar"),
+        (1, 0, "concrete_plant_spritelayout_travelling_crane"),
+        (1, 1, "concrete_plant_spritelayout_blocks_1"),
+        (1, 2, "concrete_plant_spritelayout_shed_1"),
+        (1, 3, "concrete_plant_spritelayout_shed_1"),
+        (1, 4, "concrete_plant_spritelayout_pipes"),
+        (2, 0, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
+        (2, 1, "concrete_plant_spritelayout_blocks_1"),
+        (2, 2, "concrete_plant_spritelayout_blocks_1"),
+        (2, 3, "concrete_plant_spritelayout_overhead_crane_1"),
+        (2, 4, "concrete_plant_spritelayout_pipes"),
+    ],
+)
+industry.add_industry_layout(
+    id="concrete_plant_industry_layout_3",
+    layout=[
+        (0, 0, "concrete_plant_spritelayout_pipes"),
+        (0, 1, "concrete_plant_spritelayout_pipes"),
+        (0, 2, "concrete_plant_spritelayout_gatehouse_and_rebar"),
+        (1, 0, "concrete_plant_spritelayout_silo_1"),
+        (1, 1, "concrete_plant_spritelayout_shed_1"),
+        (1, 2, "concrete_plant_spritelayout_blocks_1"),
+        (2, 0, "concrete_plant_spritelayout_shed_1"),
+        (2, 1, "concrete_plant_spritelayout_shed_1"),
+        (2, 2, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
+        (3, 0, "concrete_plant_spritelayout_shed_1"),
+        (3, 1, "concrete_plant_spritelayout_overhead_crane_1"),
+        (3, 2, "concrete_plant_spritelayout_travelling_crane"),
+        (4, 0, "concrete_plant_spritelayout_blocks_1"),
+        (4, 1, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
+        (4, 2, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
+    ],
+)
+industry.add_industry_layout(
+    id="concrete_plant_industry_layout_4",
+    layout=[
+        (0, 0, "concrete_plant_spritelayout_pipes"),
+        (0, 1, "concrete_plant_spritelayout_silo_1"),
+        (0, 2, "concrete_plant_spritelayout_blocks_1"),
+        (0, 3, "concrete_plant_spritelayout_gatehouse_and_rebar"),
+        (1, 0, "concrete_plant_spritelayout_shed_1"),
+        (1, 1, "concrete_plant_spritelayout_shed_1"),
+        (1, 2, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
+        (1, 3, "concrete_plant_spritelayout_pipes"),
+        (2, 0, "concrete_plant_spritelayout_shed_1"),
+        (2, 1, "concrete_plant_spritelayout_shed_1"),
+        (2, 2, "concrete_plant_spritelayout_travelling_crane"),
+        (2, 3, "concrete_plant_spritelayout_pipes"),
+        (3, 0, "concrete_plant_spritelayout_blocks_1"),
+        (3, 1, "concrete_plant_spritelayout_overhead_crane_1"),
+        (3, 2, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
+        (3, 3, "concrete_plant_spritelayout_blocks_1"),
     ],
 )
