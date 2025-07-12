@@ -8,7 +8,7 @@ industry = IndustryPrimaryOrganic(
     prob_in_game="3",
     prob_map_gen="10",
     map_colour="83",
-    colour_scheme_name="scheme_1_default",
+    colour_scheme_name="scheme_1_elton",
     prospect_chance="0.75",
     location_checks=dict(require_cluster=[72, 3]),
     name="TTD_STR_INDUSTRY_NAME_FOREST",

@@ -6,7 +6,7 @@ industry = IndustryPrimaryExtractive(
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="1",
-    colour_scheme_name="scheme_1_default",
+    colour_scheme_name="scheme_1_elton",
     location_checks=dict(require_cluster=[70, 3]),
     prospect_chance="0.75",
     name="TTD_STR_INDUSTRY_NAME_COAL_MINE",

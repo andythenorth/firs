@@ -9,7 +9,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="64",
-    colour_scheme_name="scheme_1_default",
+    colour_scheme_name="scheme_1_elton",
     name="string(STR_IND_COPPER_SMELTER)",
     # if copper concentrator is added in some economies, using copper mine as keystone will be a problem as the location checks are not economy-specific
     # (and location checks probably shouldn't be economy-specific to avoid complexity)

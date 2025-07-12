@@ -8,7 +8,7 @@ industry = IndustryPrimaryExtractive(
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="72",
-    colour_scheme_name="scheme_1_default",
+    colour_scheme_name="scheme_1_elton",
     # allow longer distance on clustering than usual, and more clusters, as industry is hard to locate
     location_checks=dict(require_cluster=[90, 4]),
     prospect_chance="0.75",

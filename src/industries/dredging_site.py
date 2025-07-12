@@ -8,7 +8,7 @@ industry = IndustryPrimaryExtractive(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="194",
-    colour_scheme_name="scheme_1_default",
+    colour_scheme_name="scheme_3_hendrix",
     special_flags=["IND_FLAG_BUILT_ON_WATER, IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES"],
     location_checks=dict(location_check_industry_disallow_too_far_from_coast=True),
     prospect_chance="0.75",

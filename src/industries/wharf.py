@@ -7,7 +7,7 @@ industry = IndustryPrimaryPort(
     prob_in_game="2",
     prob_map_gen="6",
     map_colour="37",
-    colour_scheme_name="scheme_2_cabbage",
+    colour_scheme_name="scheme_2_dylan",
     special_flags=["IND_FLAG_BUILT_ON_WATER"],
     location_checks=dict(same_type_distance=32),
     prospect_chance="0.75",

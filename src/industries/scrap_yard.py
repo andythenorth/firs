@@ -6,7 +6,7 @@ industry = IndustryTownProducerPopulationDependent(
     prob_in_game="3",
     prob_map_gen="7",
     map_colour="64",
-    colour_scheme_name="scheme_1_default",
+    colour_scheme_name="scheme_1_elton",
     location_checks=dict(require_town_min_population=400),
     prospect_chance="0.75",
     name="string(STR_IND_SCRAP_YARD)",

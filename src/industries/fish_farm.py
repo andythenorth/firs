@@ -10,7 +10,7 @@ industry = IndustryPrimaryOrganic(
     prob_map_gen="14",
     substitute="5",
     map_colour="160",
-    colour_scheme_name="scheme_1_default",
+    colour_scheme_name="scheme_1_elton",
     life_type="IND_LIFE_TYPE_EXTRACTIVE",
     special_flags=[
         "IND_FLAG_BUILT_ON_WATER",

@@ -6,7 +6,7 @@ industry = IndustryPrimaryOrganic(
         ("RUBR", 16),
     ],
     map_colour="121",
-    colour_scheme_name="scheme_1_default",
+    colour_scheme_name="scheme_1_elton",
     prob_in_game="4",
     prob_map_gen="11",
     prospect_chance="0.75",

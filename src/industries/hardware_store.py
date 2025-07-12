@@ -8,7 +8,7 @@ industry = IndustryTertiary(
     prob_map_gen="24",
     prod_multiplier="[0, 0]",
     map_colour="169",
-    colour_scheme_name="scheme_1_default",
+    colour_scheme_name="scheme_3_hendrix",
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
     special_flags=["IND_FLAG_ONLY_IN_TOWNS"],
     location_checks=dict(same_type_distance=16),

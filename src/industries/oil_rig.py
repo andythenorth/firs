@@ -10,7 +10,7 @@ industry = IndustryPrimaryExtractive(
     prob_map_gen="6",
     substitute="5",
     map_colour="151",
-    colour_scheme_name="scheme_1_default",
+    colour_scheme_name="scheme_1_elton",
     special_flags=[
         "IND_FLAG_BUILT_ON_WATER",
         "IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES",

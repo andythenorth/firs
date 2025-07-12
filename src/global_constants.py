@@ -399,26 +399,27 @@ animated_ground_tile_frame_counts = [1, 3, 6, 7, 10, 12, 31, 32]
 industry_colour_schemes = {
     # colours may be repeated to give them more weighting in the distribution
     # never use: white, orange, cream; these always look bad
+    # names are just for memorability, and use rock stars etc, no semantics at all
 
     # default scheme is muted and removes red, yellow, standard blue, and two greens
     # includes grey, brown, mauve, purple, but at lower weighting
-    "scheme_1_default": [
+    "scheme_1_elton": [
+        "COLOUR_DARK_BLUE",
         "COLOUR_DARK_BLUE",
         "COLOUR_PALE_GREEN",
-        "COLOUR_PINK",
-        "COLOUR_LIGHT_BLUE",
-        "COLOUR_DARK_BLUE",
         "COLOUR_PALE_GREEN",
         "COLOUR_PINK",
+        "COLOUR_PINK",
         "COLOUR_LIGHT_BLUE",
-        "COLOUR_GREY",
-        "COLOUR_BROWN",
+        "COLOUR_LIGHT_BLUE",
         "COLOUR_MAUVE",
         "COLOUR_PURPLE",
+        "COLOUR_BROWN",
+        "COLOUR_GREY",
     ],
     # for industries that use a lot of grey (concrete) in their sprites
     # removes grey and brown
-    "scheme_2_cabbage": [
+    "scheme_2_dylan": [
         "COLOUR_DARK_BLUE",
         "COLOUR_PALE_GREEN",
         "COLOUR_PINK",
@@ -429,6 +430,51 @@ industry_colour_schemes = {
         "COLOUR_BLUE",
         "COLOUR_MAUVE",
         "COLOUR_PURPLE",
+    ],
+    # the full set of colours, except white, cream, orange (which look bad)
+    "scheme_3_hendrix": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_YELLOW",
+        "COLOUR_RED",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_GREEN",
+        "COLOUR_DARK_GREEN",
+        "COLOUR_BLUE",
+        "COLOUR_MAUVE",
+        "COLOUR_PURPLE",
+        "COLOUR_BROWN",
+        "COLOUR_GREY",
+    ],
+    # a fairly full set of colours, but no yellow, no blue (themed for cyro plant to avoid clash with yellow-blue pipes)
+    "scheme_4_cher": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_RED",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_GREEN",
+        "COLOUR_DARK_GREEN",
+        "COLOUR_MAUVE",
+        "COLOUR_PURPLE",
+        "COLOUR_BROWN",
+        "COLOUR_GREY",
+    ],
+    # a fairly full set of colours, but excluding standard blue (themed for industries that use blue pipes)
+    "scheme_5_alanis": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_YELLOW",
+        "COLOUR_RED",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_GREEN",
+        "COLOUR_DARK_GREEN",
+        "COLOUR_MAUVE",
+        "COLOUR_PURPLE",
+        "COLOUR_BROWN",
+        "COLOUR_GREY",
     ],
 }
 

@@ -12,7 +12,7 @@ industry = IndustryPrimaryNoSupplies(
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="189",
-    colour_scheme_name="scheme_1_default",
+    colour_scheme_name="scheme_4_cher",
     location_checks=dict(same_type_distance=72),
     # always build a cryo plant, because eh, not dependent on resources
     prospect_chance="1",
