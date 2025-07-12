@@ -616,6 +616,19 @@ industry_colour_schemes = {
         "COLOUR_BROWN",
         "COLOUR_GREY",
     ],
+    # excluding grey, mauve, brown (for industries that are predominantly off-white on concrete ground)
+    "scheme_17_natalie": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_YELLOW",
+        "COLOUR_RED",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_GREEN",
+        "COLOUR_DARK_GREEN",
+        "COLOUR_BLUE",
+        "COLOUR_PURPLE",
+    ],
 }
 
 

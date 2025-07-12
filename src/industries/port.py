@@ -9,7 +9,7 @@ industry = IndustryPrimaryPort(
     # map_colour="186", # former orange before v5?
     # map_colour="177",  # former Bulk Terminal colour?
     map_colour="45",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_9_shania",
     special_flags=["IND_FLAG_BUILT_ON_WATER"],
     location_checks=dict(same_type_distance=32),
     prospect_chance="0.75",

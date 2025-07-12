@@ -6,7 +6,7 @@ industry = IndustryPrimaryOrganic(
         ("RUBR", 16),
     ],
     map_colour="121",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_2_dylan", # cabbage needs checked
     prob_in_game="4",
     prob_map_gen="11",
     prospect_chance="0.75",

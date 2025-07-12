@@ -6,7 +6,7 @@ industry = IndustryPrimaryOrganic(
     prob_in_game="4",
     prob_map_gen="11",
     map_colour="209",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_3_hendrix",
     special_flags=[
         "IND_FLAG_PLANT_FIELDS_PERIODICALLY",
         "IND_FLAG_PLANT_FIELDS_WHEN_BUILT",
