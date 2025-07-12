@@ -1,4 +1,5 @@
 <tal:industries repeat="industry firs.industry_manager">
+    <!--! note that object category order depends on industry module import order, that's not ideal, but is most workable implementation as of July 2025 -->
 
     <tal:include metal:use-macro="load: spritelayouts_object.pynml" />
 
