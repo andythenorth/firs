@@ -16,6 +16,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="214",
+    colour_scheme_name="scheme_1_default",
     name="string(STR_IND_WIRE_ROPE_FACTORY)",
     nearby_station_name="string(STR_STATION_WIRE_ROPE_FACTORY)",
     fund_cost_multiplier="120",

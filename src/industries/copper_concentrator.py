@@ -13,6 +13,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="64",
+    colour_scheme_name="scheme_1_default",
     name="string(STR_IND_COPPER_CONCENTRATOR)",
     nearby_station_name="string(STR_STATION_SMELTER)",
     fund_cost_multiplier="200",

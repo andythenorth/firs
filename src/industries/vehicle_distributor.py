@@ -9,6 +9,7 @@ industry = IndustryTertiary(
     prob_in_game="3",
     prob_map_gen="10",
     map_colour="207",
+    colour_scheme_name="scheme_1_default",
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
     location_checks=dict(
         same_type_distance=32,

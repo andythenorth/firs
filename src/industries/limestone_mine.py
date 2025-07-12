@@ -8,6 +8,7 @@ industry = IndustryPrimaryExtractive(
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="69",
+    colour_scheme_name="scheme_1_default",
     location_checks=dict(require_cluster=[70, 3]),
     prospect_chance="0.75",
     name="string(STR_IND_LIMESTONE_MINE)",

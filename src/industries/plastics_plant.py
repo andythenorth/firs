@@ -13,6 +13,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="209",
+    colour_scheme_name="scheme_1_default",
     name="string(STR_IND_PLASTICS_PLANT)",
     nearby_station_name="string(STR_STATION_MOULDINGS)",
     fund_cost_multiplier="125",

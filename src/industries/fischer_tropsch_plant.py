@@ -12,6 +12,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="191",
+    colour_scheme_name="scheme_1_default",
     special_flags=["IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE"],
     fund_cost_multiplier="200",
     name="string(STR_IND_FISCHER_TROPSCH_PLANT)",

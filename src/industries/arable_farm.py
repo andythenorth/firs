@@ -6,6 +6,7 @@ industry = IndustryPrimaryOrganic(
     prob_in_game="4",
     prob_map_gen="11",
     map_colour="209",
+    colour_scheme_name="scheme_1_default",
     special_flags=[
         "IND_FLAG_PLANT_FIELDS_PERIODICALLY",
         "IND_FLAG_PLANT_FIELDS_WHEN_BUILT",

@@ -13,6 +13,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="186",
+    colour_scheme_name="scheme_1_default",
     special_flags=["IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE"],
     name="string(STR_IND_BIOREFINERY)",
     nearby_station_name="string(STR_STATION_REFINERY)",

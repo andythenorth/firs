@@ -9,6 +9,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="191",
+    colour_scheme_name="scheme_1_default",
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[["orchard_piggery"], 72],
         same_type_distance=72,

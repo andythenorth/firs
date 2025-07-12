@@ -10,6 +10,7 @@ industry = IndustryTertiary(
     prob_map_gen="18",
     prod_multiplier="[0, 0]",
     map_colour="169",
+    colour_scheme_name="scheme_1_default",
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
     prospect_chance="0.75",  # yeah delete this, it's not required for tertiary
     name="string(STR_IND_BUILDERS_YARD)",

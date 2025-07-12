@@ -7,6 +7,7 @@ industry = IndustrySecondary(
     prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",
     map_colour="183",
+    colour_scheme_name="scheme_1_default",
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[
             ["blast_furnace", "coal_mine"],

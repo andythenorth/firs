@@ -9,6 +9,7 @@ industry = IndustryPrimaryOrganic(
     prob_map_gen="10",
     prospect_chance="0.75",
     map_colour="207",
+    colour_scheme_name="scheme_1_default",
     name="TTD_STR_INDUSTRY_NAME_FRUIT_PLANTATION",
     extra_text_fund="string(STR_FUND_FRUIT_PLANTATION)",
     nearby_station_name="string(STR_STATION_PLANTATION)",

@@ -8,6 +8,7 @@ industry = IndustryTownProducerPopulationDependent(
     prob_in_game="20",
     prob_map_gen="20",
     map_colour="191",
+    colour_scheme_name="scheme_1_default",
     life_type="IND_LIFE_TYPE_EXTRACTIVE",
     location_checks=dict(
         same_type_distance=16,

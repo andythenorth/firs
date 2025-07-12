@@ -1463,6 +1463,8 @@ class IndustryProperties(object):
         self.prob_map_gen = kwargs.get("prob_map_gen", None)
         self.prospect_chance = kwargs.get("prospect_chance", None)
         self.map_colour = kwargs.get("map_colour", None)
+        # colour_scheme_name is required, no fallback
+        self.colour_scheme_name = kwargs.get("colour_scheme_name")
         self.life_type = kwargs.get("life_type", None)
         self.fund_cost_multiplier = kwargs.get("fund_cost_multiplier", None)
         self.remove_cost_multiplier = kwargs.get("remove_cost_multiplier", "0")
@@ -2250,6 +2252,11 @@ class Industry(object):
             if len(spritelayout.magic_trees) > 0:
                 return True
         return False
+
+    @property
+    def colour_scheme_name(self):
+        # simple wrapper to get_property(), this is a bit overly-abstracted for the simple case of industry colour, but conforms to the established pattern
+        return self.get_property("colour_scheme_name", None)
 
     @property
     def incompatible_industries(self):

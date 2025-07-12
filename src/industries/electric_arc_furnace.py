@@ -17,6 +17,7 @@ industry = IndustrySecondary(
     prob_in_game="1",  # low chance of build during gameplay
     prob_map_gen="5",
     map_colour="186",
+    colour_scheme_name="scheme_1_default",
     name="string(STR_IND_ELECTRIC_ARC_FURNACE)",
     nearby_station_name="string(STR_STATION_FURNACE)",
     fund_cost_multiplier="160",

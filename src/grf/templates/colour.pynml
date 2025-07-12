@@ -1,41 +1,22 @@
 <!--! industries and objects both derive their colour from the town_index, and an offset taken from the industry.id -->
 
-switch(FEAT_INDUSTRIES, PARENT, switch_colour, offset, [(town_index + offset) % 16]) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
+<tal:industry_colour_schemes repeat="colour_scheme global_constants.industry_colour_schemes.items()">
+    <tal:colour_scheme define="colour_scheme_name colour_scheme[0];
+                               colour_scheme_values colour_scheme[1];">
+        switch(FEAT_INDUSTRIES, PARENT, switch_colour_${colour_scheme_name}, offset, [
+                (town_index + offset) % ${len(colour_scheme_values)}
+            ]) {
+            <tal:colours repeat="colour_name colour_scheme_values">
+                ${repeat.colour_name.index}: return ${colour_name};
+            </tal:colours>
+        }
 
-switch(FEAT_OBJECTS, PARENT, switch_colour_object, offset, [(town_index + offset) % 16]) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
+        switch(FEAT_OBJECTS, PARENT, switch_colour_object_${colour_scheme_name}, offset, [
+                (town_index + offset) % ${len(colour_scheme_values)}
+            ]) {
+            <tal:colours repeat="colour_name colour_scheme_values">
+                ${repeat.colour_name.index}: return ${colour_name};
+            </tal:colours>
+        }
+    </tal:colour_scheme>
+</tal:industry_colour_schemes>

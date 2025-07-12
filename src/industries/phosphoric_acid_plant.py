@@ -12,6 +12,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="191",
+    colour_scheme_name="scheme_1_default",
     location_checks=dict(same_type_distance=128),
     name="string(STR_IND_PHOSPHORIC_ACID_PLANT)",
     nearby_station_name="string(STR_STATION_HEAVY_INDUSTRY_2)",

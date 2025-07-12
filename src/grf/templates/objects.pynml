@@ -105,7 +105,7 @@
                         animation_triggers:     ${grf_object.animation_triggers};
                     }
                     graphics {
-                        colour:                 switch_colour_object(${industry.numeric_id});
+                        colour:                 switch_colour_object_${industry.colour_scheme_name}(${industry.numeric_id});
                         <tal:anim_next_frame condition="grf_object.tile.custom_animation_next_frame">
                             anim_next_frame: return ${grf_object.tile.custom_animation_next_frame};
                         </tal:anim_next_frame>

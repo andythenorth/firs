@@ -4,6 +4,7 @@ industry = IndustryPrimaryOrganic(
     id="coffee_estate",
     prod_cargo_types_with_multipliers=[],
     map_colour="70",
+    colour_scheme_name="scheme_1_default",
     prob_in_game="3",
     prob_map_gen="10",
     prospect_chance="0.75",

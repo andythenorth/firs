@@ -12,6 +12,7 @@ industry = IndustrySecondary(
     prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",
     map_colour="178",
+    colour_scheme_name="scheme_1_default",
     special_flags=["IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE"],
     # it's rare to force co-location of secondaries, but this one is near coke oven by design
     location_checks=dict(

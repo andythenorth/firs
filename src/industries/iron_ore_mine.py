@@ -6,6 +6,7 @@ industry = IndustryPrimaryExtractive(
         ("IORE", 20),
     ],
     map_colour="55",
+    colour_scheme_name="scheme_1_default",
     prob_in_game="4",
     prob_map_gen="7",
     prospect_chance="0.75",

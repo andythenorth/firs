@@ -7,6 +7,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="43",
+    colour_scheme_name="scheme_1_default",
     name="string(STR_IND_TIMBER_YARD)",
     nearby_station_name="string(STR_STATION_CREOSOTING)",
     fund_cost_multiplier="35",

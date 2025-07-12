@@ -378,6 +378,42 @@ graphics_temp_storage = dict(
 # used to magically extend ground spritesets for animated tiles, add a count for each industry animation length
 animated_ground_tile_frame_counts = [1, 3, 6, 7, 10, 12, 31, 32]
 
+# Company colour names for reference below
+# COLOUR_DARK_BLUE
+# COLOUR_PALE_GREEN
+# COLOUR_PINK
+# COLOUR_YELLOW
+# COLOUR_RED
+# COLOUR_LIGHT_BLUE
+# COLOUR_GREEN
+# COLOUR_DARK_GREEN
+# COLOUR_BLUE
+# COLOUR_CREAM
+# COLOUR_MAUVE
+# COLOUR_PURPLE
+# COLOUR_ORANGE
+# COLOUR_BROWN
+# COLOUR_GREY
+# COLOUR_WHITE
+
+industry_colour_schemes = {
+    # colours may be repeated to give them more weighting in the distribution
+    "scheme_1_default": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_GREY",
+        "COLOUR_BROWN",
+        "COLOUR_MAUVE",
+        "COLOUR_PURPLE",
+    ],
+}
+
 # valid industry map colours, derived from an algorithm to ensure contrast against green / dark green / purple minimaps
 # based on work by frosch, https://github.com/frosch123/quaking/tree/main/TTDPalette
 valid_industry_map_colours = [
