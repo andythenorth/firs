@@ -67,17 +67,20 @@ blocks_1 = industry.add_spriteset(
 blocks_2 = industry.add_spriteset(
     sprites=[(80, 100, 64, 56, -31, -26)],
 )
-pipes = industry.add_spriteset(
+pipes_1 = industry.add_spriteset(
     sprites=[(150, 100, 64, 56, -31, -26)],
 )
-travelling_crane_rails_and_blocks = industry.add_spriteset(
+pipes_2 = industry.add_spriteset(
     sprites=[(220, 100, 64, 56, -31, -26)],
 )
-travelling_crane_rear = industry.add_spriteset(
+travelling_crane_rails_and_blocks = industry.add_spriteset(
     sprites=[(290, 100, 64, 56, -31, -26)],
 )
-travelling_crane_front = industry.add_spriteset(
+travelling_crane_rear = industry.add_spriteset(
     sprites=[(360, 100, 64, 56, -31, -26)],
+)
+travelling_crane_front = industry.add_spriteset(
+    sprites=[(430, 100, 64, 56, -31, -26)],
 )
 industry.add_spritelayout(
     id="concrete_plant_spritelayout_gatehouse_and_rebar",
@@ -85,7 +88,7 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[gatehouse_and_rebar],
-    fences=["nw", "ne", "se", "sw"],
+    fences=["nw", "ne"],
     add_to_object_num=1,
 )
 industry.add_spritelayout(
@@ -112,15 +115,26 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[overhead_crane_ground_blocks, overhead_crane_rails_rear, overhead_crane_rails_front],
+    fences=["nw", "ne", "se"],
     add_to_object_num=4,
 )
 industry.add_spritelayout(
-    id="concrete_plant_spritelayout_pipes",
+    id="concrete_plant_spritelayout_pipes_1",
     tile="concrete_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[pipes],
+    building_sprites=[pipes_1],
+    fences=["nw", "ne"],
     add_to_object_num=5,
+)
+industry.add_spritelayout(
+    id="concrete_plant_spritelayout_pipes_2",
+    tile="concrete_plant_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[pipes_2],
+    fences=["se"],
+    add_to_object_num=6,
 )
 industry.add_spritelayout(
     id="concrete_plant_spritelayout_blocks_1",
@@ -128,17 +142,17 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[blocks_1],
-    fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=6,
+    fences=["ne", "se", "sw"],
+    add_to_object_num=7,
 )
 industry.add_spritelayout(
     id="concrete_plant_spritelayout_blocks_2",
     tile="concrete_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[blocks_1],
-    fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=7,
+    building_sprites=[blocks_2],
+    fences=["nw", "ne", "se"],
+    add_to_object_num=8,
 )
 industry.add_spritelayout(
     id="concrete_plant_spritelayout_travelling_crane_rails_and_blocks",
@@ -146,7 +160,8 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[travelling_crane_rails_and_blocks],
-    add_to_object_num=8,
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=9,
 )
 industry.add_spritelayout(
     id="concrete_plant_spritelayout_travelling_crane",
@@ -158,7 +173,8 @@ industry.add_spritelayout(
         travelling_crane_rails_and_blocks,
         travelling_crane_front,
     ],
-    add_to_object_num=9,
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=10,
 )
 
 # this industry needs outpost layout as there are lots of cargos
@@ -183,7 +199,7 @@ industry.add_industry_outpost_layout(
         (
             1,
             1,
-            "concrete_plant_spritelayout_pipes",
+            "concrete_plant_spritelayout_pipes_1",
         ),
         (
             2,
@@ -218,7 +234,7 @@ industry.add_industry_outpost_layout(
         (
             1,
             0,
-            "concrete_plant_spritelayout_pipes",
+            "concrete_plant_spritelayout_pipes_1",
         ),
         (
             1,
@@ -238,8 +254,8 @@ industry.add_industry_layout(
     id="concrete_plant_industry_layout_1",
     layout=[
         (0, 0, "concrete_plant_spritelayout_silo_1"),
-        (0, 1, "concrete_plant_spritelayout_pipes"),
-        (0, 2, "concrete_plant_spritelayout_pipes"),
+        (0, 1, "concrete_plant_spritelayout_pipes_1"),
+        (0, 2, "concrete_plant_spritelayout_pipes_2"),
         (1, 0, "concrete_plant_spritelayout_shed_1"),
         (1, 1, "concrete_plant_spritelayout_shed_1"),
         (1, 2, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
@@ -251,7 +267,7 @@ industry.add_industry_layout(
         (3, 2, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
         (4, 0, "concrete_plant_spritelayout_gatehouse_and_rebar"),
         (4, 1, "concrete_plant_spritelayout_blocks_1"),
-        (4, 2, "concrete_plant_spritelayout_blocks_1"),
+        (4, 2, "concrete_plant_spritelayout_blocks_2"),
     ],
 )
 industry.add_industry_layout(
@@ -263,26 +279,26 @@ industry.add_industry_layout(
         (0, 3, "concrete_plant_spritelayout_shed_1"),
         (0, 4, "concrete_plant_spritelayout_gatehouse_and_rebar"),
         (1, 0, "concrete_plant_spritelayout_travelling_crane"),
-        (1, 1, "concrete_plant_spritelayout_blocks_1"),
+        (1, 1, "concrete_plant_spritelayout_blocks_2"),
         (1, 2, "concrete_plant_spritelayout_shed_1"),
         (1, 3, "concrete_plant_spritelayout_shed_1"),
-        (1, 4, "concrete_plant_spritelayout_pipes"),
+        (1, 4, "concrete_plant_spritelayout_pipes_1"),
         (2, 0, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
         (2, 1, "concrete_plant_spritelayout_blocks_1"),
-        (2, 2, "concrete_plant_spritelayout_blocks_1"),
+        (2, 2, "concrete_plant_spritelayout_blocks_2"),
         (2, 3, "concrete_plant_spritelayout_overhead_crane_1"),
-        (2, 4, "concrete_plant_spritelayout_pipes"),
+        (2, 4, "concrete_plant_spritelayout_pipes_2"),
     ],
 )
 industry.add_industry_layout(
     id="concrete_plant_industry_layout_3",
     layout=[
-        (0, 0, "concrete_plant_spritelayout_pipes"),
-        (0, 1, "concrete_plant_spritelayout_pipes"),
-        (0, 2, "concrete_plant_spritelayout_gatehouse_and_rebar"),
+        (0, 0, "concrete_plant_spritelayout_blocks_1"),
+        (0, 1, "concrete_plant_spritelayout_gatehouse_and_rebar"),
+        (0, 2, "concrete_plant_spritelayout_pipes_1"),
         (1, 0, "concrete_plant_spritelayout_silo_1"),
         (1, 1, "concrete_plant_spritelayout_shed_1"),
-        (1, 2, "concrete_plant_spritelayout_blocks_1"),
+        (1, 2, "concrete_plant_spritelayout_pipes_2"),
         (2, 0, "concrete_plant_spritelayout_shed_1"),
         (2, 1, "concrete_plant_spritelayout_shed_1"),
         (2, 2, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
@@ -290,28 +306,28 @@ industry.add_industry_layout(
         (3, 1, "concrete_plant_spritelayout_overhead_crane_1"),
         (3, 2, "concrete_plant_spritelayout_travelling_crane"),
         (4, 0, "concrete_plant_spritelayout_blocks_1"),
-        (4, 1, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
+        (4, 1, "concrete_plant_spritelayout_blocks_2"),
         (4, 2, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
     ],
 )
 industry.add_industry_layout(
     id="concrete_plant_industry_layout_4",
     layout=[
-        (0, 0, "concrete_plant_spritelayout_pipes"),
+        (0, 0, "concrete_plant_spritelayout_pipes_1"),
         (0, 1, "concrete_plant_spritelayout_silo_1"),
-        (0, 2, "concrete_plant_spritelayout_blocks_1"),
-        (0, 3, "concrete_plant_spritelayout_gatehouse_and_rebar"),
+        (0, 2, "concrete_plant_spritelayout_pipes_1"),
+        (0, 3, "concrete_plant_spritelayout_pipes_2"),
         (1, 0, "concrete_plant_spritelayout_shed_1"),
         (1, 1, "concrete_plant_spritelayout_shed_1"),
         (1, 2, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
-        (1, 3, "concrete_plant_spritelayout_pipes"),
+        (1, 3, "concrete_plant_spritelayout_gatehouse_and_rebar"),
         (2, 0, "concrete_plant_spritelayout_shed_1"),
         (2, 1, "concrete_plant_spritelayout_shed_1"),
         (2, 2, "concrete_plant_spritelayout_travelling_crane"),
-        (2, 3, "concrete_plant_spritelayout_pipes"),
+        (2, 3, "concrete_plant_spritelayout_pipes_2"),
         (3, 0, "concrete_plant_spritelayout_blocks_1"),
         (3, 1, "concrete_plant_spritelayout_overhead_crane_1"),
         (3, 2, "concrete_plant_spritelayout_travelling_crane_rails_and_blocks"),
-        (3, 3, "concrete_plant_spritelayout_blocks_1"),
+        (3, 3, "concrete_plant_spritelayout_blocks_2"),
     ],
 )
