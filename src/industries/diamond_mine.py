@@ -6,7 +6,7 @@ industry = IndustryPrimaryExtractive(
         ("DIAM", 12),
     ],
     map_colour="69",
-    colour_scheme_name="scheme_1_elton",
+    colour_scheme_name="scheme_1_elton", # cabbage needs checked
     prospect_chance="0.75",
     prob_map_gen="4",
     prob_in_game="7",

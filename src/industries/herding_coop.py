@@ -8,7 +8,7 @@ industry = IndustryPrimaryOrganic(
     prob_in_game="14",
     prob_map_gen="14",
     map_colour="207",
-    colour_scheme_name="scheme_1_elton",
+    colour_scheme_name="scheme_1_elton", # cabbage needs checked
     special_flags=["IND_FLAG_NO_PRODUCTION_INCREASE"],
     # herding_coop doesn't cluster, by design - no industry location checks needed
     prospect_chance="0.75",

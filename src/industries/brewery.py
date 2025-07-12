@@ -12,7 +12,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="191",
-    colour_scheme_name="scheme_1_elton",
+    colour_scheme_name="scheme_1_elton", # cabbage needs checked
     # no industry location checks for brewery, by design
     name="string(STR_IND_BREWERY)",
     nearby_station_name="string(STR_STATION_BARREL_AND_KEG)",

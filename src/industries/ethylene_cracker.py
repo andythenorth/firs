@@ -13,7 +13,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="191",
-    colour_scheme_name="scheme_1_elton",
+    colour_scheme_name="scheme_1_elton", # cabbage needs checked
     location_checks=dict(same_type_distance=128),
     name="string(STR_IND_ETHYLENE_CRACKER)",
     nearby_station_name="string(STR_STATION_HEAVY_INDUSTRY_2)",

@@ -418,7 +418,7 @@ industry_colour_schemes = {
         "COLOUR_GREY",
     ],
     # for industries that use a lot of grey (concrete) in their sprites
-    # removes grey and brown
+    # removes yellow, grey, brown
     "scheme_2_dylan": [
         "COLOUR_DARK_BLUE",
         "COLOUR_PALE_GREEN",
@@ -476,7 +476,149 @@ industry_colour_schemes = {
         "COLOUR_BROWN",
         "COLOUR_GREY",
     ],
+    # a fairly full set of colours, but excluding standard green, blue (clashes with industry appearance)
+    "scheme_6_bruce": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_YELLOW",
+        "COLOUR_RED",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_DARK_GREEN",
+        "COLOUR_MAUVE",
+        "COLOUR_PURPLE",
+        "COLOUR_BROWN",
+        "COLOUR_GREY",
+    ],
+    # a fairly full set of colours, but excluding standard green, red, purple (clashes with industry appearance)
+    "scheme_7_bowie": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_YELLOW",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_DARK_GREEN",
+        "COLOUR_BLUE",
+        "COLOUR_MAUVE",
+        "COLOUR_BROWN",
+        "COLOUR_GREY",
+    ],
+    # excluding standard red, blue, purple, yellow, dark green (clashes with industry appearance)
+    "scheme_8_bono": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_GREEN",
+        "COLOUR_MAUVE",
+        "COLOUR_BROWN",
+        "COLOUR_GREY",
+    ],
+    # excluding standard yellow, green (clashes with industry appearance)
+    "scheme_8_haddaway": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_RED",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_DARK_GREEN",
+        "COLOUR_BLUE",
+        "COLOUR_MAUVE",
+        "COLOUR_PURPLE",
+        "COLOUR_BROWN",
+        "COLOUR_GREY",
+    ],
+    # excluding standard red, purple, yellow, green (clashes with industry appearance)
+    "scheme_9_shania": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_DARK_GREEN",
+        "COLOUR_BLUE",
+        "COLOUR_MAUVE",
+        "COLOUR_BROWN",
+        "COLOUR_GREY",
+    ],
+    # excluding standard green, purple (clashes with industry appearance)
+    "scheme_10_wyclef": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_YELLOW",
+        "COLOUR_RED",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_DARK_GREEN",
+        "COLOUR_BLUE",
+        "COLOUR_MAUVE",
+        "COLOUR_BROWN",
+        "COLOUR_GREY",
+    ],
+    # excluding standard green, dark green, blue, purple (clashes with industry appearance)
+    "scheme_11_liam": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_YELLOW",
+        "COLOUR_RED",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_MAUVE",
+        "COLOUR_BROWN",
+        "COLOUR_GREY",
+    ],
+    # excluding standard green, grey, purple (clashes with industry appearance)
+    "scheme_12_mariah": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_YELLOW",
+        "COLOUR_RED",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_DARK_GREEN",
+        "COLOUR_BLUE",
+        "COLOUR_MAUVE",
+        "COLOUR_BROWN",
+    ],
+    # excluding standard green, red, purple, dark green (clashes with industry appearance)
+    "scheme_13_whitney": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_YELLOW",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_BLUE",
+        "COLOUR_MAUVE",
+        "COLOUR_BROWN",
+        "COLOUR_GREY",
+    ],
+    # excluding all greens, light blue (for industries that are predominantly light blue in sprites)
+    "scheme_15_seal": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PINK",
+        "COLOUR_YELLOW",
+        "COLOUR_RED",
+        "COLOUR_BLUE",
+        "COLOUR_MAUVE",
+        "COLOUR_PURPLE",
+        "COLOUR_BROWN",
+        "COLOUR_GREY",
+    ],
+    # excluding standard green, red, dark green (clashes with industry appearance)
+    "scheme_16_grohl": [
+        "COLOUR_DARK_BLUE",
+        "COLOUR_PALE_GREEN",
+        "COLOUR_PINK",
+        "COLOUR_YELLOW",
+        "COLOUR_LIGHT_BLUE",
+        "COLOUR_BLUE",
+        "COLOUR_MAUVE",
+        "COLOUR_PURPLE",
+        "COLOUR_BROWN",
+        "COLOUR_GREY",
+    ],
 }
+
+
 
 # valid industry map colours, derived from an algorithm to ensure contrast against green / dark green / purple minimaps
 # based on work by frosch, https://github.com/frosch123/quaking/tree/main/TTDPalette

@@ -7,7 +7,7 @@ industry = IndustryPrimaryOrganic(
         ("LVST", 8),
     ],
     map_colour="85",
-    colour_scheme_name="scheme_1_elton",
+    colour_scheme_name="scheme_1_elton", # cabbage needs checked
     prob_in_game="4",
     prob_map_gen="11",
     prospect_chance="0.75",

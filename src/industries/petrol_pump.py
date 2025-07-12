@@ -12,7 +12,7 @@ industry = IndustryTertiary(
     prob_map_gen="8",
     prod_multiplier="[0, 0]",
     map_colour="169",
-    colour_scheme_name="scheme_1_elton",
+    colour_scheme_name="scheme_1_elton", # cabbage needs checked
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
     location_checks=dict(same_type_distance=16),
     prospect_chance="0.75",

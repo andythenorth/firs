@@ -9,7 +9,7 @@ industry = IndustryPrimaryOrganic(
     prob_in_game="3",
     prob_map_gen="11",
     map_colour="164",
-    colour_scheme_name="scheme_1_elton",
+    colour_scheme_name="scheme_1_elton", # cabbage needs checked
     # fields aren't 100% appropriate, but without them there are zero farm fields planted in Basic Temperate economy
     special_flags=[
         "IND_FLAG_PLANT_FIELDS_PERIODICALLY",
