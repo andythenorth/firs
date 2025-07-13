@@ -169,8 +169,8 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[
-        travelling_crane_rear,
         travelling_crane_rails_and_blocks,
+        travelling_crane_rear,
         travelling_crane_front,
     ],
     fences=["nw", "ne", "se", "sw"],
