@@ -167,6 +167,18 @@ industry.add_industry_outpost_layout(
         (1, 2, "hardware_factory_spritelayout_greeble_1"),
     ],
 )
+industry.add_industry_outpost_layout(
+    id="hardware_factory_industry_outpost_layout_2",
+    layout=[
+        # test outpost layout
+        (0, 0, "hardware_factory_spritelayout_shed_4_half_with_chimneys"),
+        (0, 1, "hardware_factory_spritelayout_shed_1_with_chimneys"),
+        (1, 0, "hardware_factory_spritelayout_shed_3_half"),
+        (1, 1, "hardware_factory_spritelayout_shed_tall"),
+        (2, 0, "hardware_factory_spritelayout_greeble_1"),
+        (2, 1, "hardware_factory_spritelayout_small_building"),
+    ],
+)
 
 industry.add_industry_layout(
     id="hardware_factory_industry_layout_1",
@@ -189,5 +201,25 @@ industry.add_industry_layout(
         (2, 3, "hardware_factory_spritelayout_greeble_2"),
         (2, 4, "hardware_factory_spritelayout_greeble_1"),
         (2, 5, "hardware_factory_spritelayout_small_building"),
+    ],
+)
+industry.add_industry_layout(
+    id="hardware_factory_industry_layout_2",
+    layout=[
+        (0, 0, "hardware_factory_spritelayout_shed_4_half_with_chimneys"),
+        (0, 1, "hardware_factory_spritelayout_shed_1_with_chimneys"),
+        (0, 2, "hardware_factory_spritelayout_shed_1_with_chimneys"),
+        (1, 0, "hardware_factory_spritelayout_shed_3_half"),
+        (1, 1, "hardware_factory_spritelayout_shed_1_with_chimneys"),
+        (1, 2, "hardware_factory_spritelayout_shed_tall"),
+        (2, 0, "hardware_factory_spritelayout_greeble_2"),
+        (2, 1, "hardware_factory_spritelayout_greeble_1"),
+        (2, 2, "hardware_factory_spritelayout_small_building"),
+        (3, 0, "hardware_factory_spritelayout_shed_4_half_with_chimneys"),
+        (3, 1, "hardware_factory_spritelayout_shed_1_with_chimneys"),
+        (3, 2, "hardware_factory_spritelayout_greeble_1"),
+        (4, 0, "hardware_factory_spritelayout_shed_3_half"),
+        (4, 1, "hardware_factory_spritelayout_shed_1_with_chimneys"),
+        (4, 2, "hardware_factory_spritelayout_shed_tall"),
     ],
 )
