@@ -1,7 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
-    id="bar_and_section_mill",
+    id="section_and_bar_mill",
     # this one is supposed to be an easy dump, so doesn't require ACID or SOAP: products can be mechanically de-scaled and / or assume recycled pickling acid etc
     accept_cargos_with_input_ratios=[
         ("STBL", 8),
@@ -16,7 +16,7 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="190",
     colour_scheme_name="scheme_8_bono",
-    name="string(STR_IND_BAR_AND_SECTION_MILL)",
+    name="string(STR_IND_SECTION_AND_BAR_MILL)",
     nearby_station_name="string(STR_STATION_BAR_AND_SECTION_MILL)",
     fund_cost_multiplier="120",
     pollution_and_squalor_factor=1,
@@ -29,7 +29,7 @@ industry.enable_in_economy(
 )
 
 industry.add_tile(
-    id="bar_and_section_mill_tile_1",
+    id="section_and_bar_mill_tile_1",
     animation_length=7,
     animation_looping=True,
     animation_speed=3,
@@ -42,7 +42,7 @@ industry.add_tile(
     ),
 )
 industry.add_tile(
-    id="bar_and_section_mill_tile_2",
+    id="section_and_bar_mill_tile_2",
     animation_length=10,
     animation_looping=True,
     animation_speed=2,
@@ -128,8 +128,8 @@ sprite_smoke_1 = industry.add_smoke_sprite(
 )
 
 industry.add_spritelayout(
-    id="bar_and_section_mill_spritelayout_shed_sw_ne_small_doors",
-    tile="bar_and_section_mill_tile_1",
+    id="section_and_bar_mill_spritelayout_shed_sw_ne_small_doors",
+    tile="section_and_bar_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -137,8 +137,8 @@ industry.add_spritelayout(
     add_to_object_num=1,
 )
 industry.add_spritelayout(
-    id="bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
-    tile="bar_and_section_mill_tile_1",
+    id="section_and_bar_mill_spritelayout_shed_sw_ne_large_door",
+    tile="section_and_bar_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -146,8 +146,8 @@ industry.add_spritelayout(
     add_to_object_num=2,
 )
 industry.add_spritelayout(
-    id="bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
-    tile="bar_and_section_mill_tile_1",
+    id="section_and_bar_mill_spritelayout_shed_sw_ne_tall_1",
+    tile="section_and_bar_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -155,8 +155,8 @@ industry.add_spritelayout(
     add_to_object_num=3,
 )
 industry.add_spritelayout(
-    id="bar_and_section_mill_spritelayout_shed_sw_ne_tall_2",
-    tile="bar_and_section_mill_tile_1",
+    id="section_and_bar_mill_spritelayout_shed_sw_ne_tall_2",
+    tile="section_and_bar_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -165,8 +165,8 @@ industry.add_spritelayout(
     add_to_object_num=4,
 )
 industry.add_spritelayout(
-    id="bar_and_section_mill_spritelayout_shed_sw_ne_tall_3",
-    tile="bar_and_section_mill_tile_1",
+    id="section_and_bar_mill_spritelayout_shed_sw_ne_tall_3",
+    tile="section_and_bar_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -174,8 +174,8 @@ industry.add_spritelayout(
     add_to_object_num=5,
 )
 industry.add_spritelayout(
-    id="bar_and_section_mill_spritelayout_offices",
-    tile="bar_and_section_mill_tile_1",
+    id="section_and_bar_mill_spritelayout_offices",
+    tile="section_and_bar_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
@@ -183,8 +183,8 @@ industry.add_spritelayout(
     add_to_object_num=6,
 )
 industry.add_spritelayout(
-    id="bar_and_section_mill_spritelayout_steel_1",
-    tile="bar_and_section_mill_tile_1",
+    id="section_and_bar_mill_spritelayout_steel_1",
+    tile="section_and_bar_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
@@ -192,8 +192,8 @@ industry.add_spritelayout(
     add_to_object_num=7,
 )
 industry.add_spritelayout(
-    id="bar_and_section_mill_spritelayout_steel_2",
-    tile="bar_and_section_mill_tile_1",
+    id="section_and_bar_mill_spritelayout_steel_2",
+    tile="section_and_bar_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
@@ -201,8 +201,8 @@ industry.add_spritelayout(
     add_to_object_num=8,
 )
 industry.add_spritelayout(
-    id="bar_and_section_mill_spritelayout_gantry_non_animated_1",
-    tile="bar_and_section_mill_tile_1",
+    id="section_and_bar_mill_spritelayout_gantry_non_animated_1",
+    tile="section_and_bar_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9, spriteset_gantry_non_animated],
@@ -210,8 +210,8 @@ industry.add_spritelayout(
     add_to_object_num=9,
 )
 industry.add_spritelayout(
-    id="bar_and_section_mill_spritelayout_sw_ne_rolling_line",
-    tile="bar_and_section_mill_tile_2",
+    id="section_and_bar_mill_spritelayout_sw_ne_rolling_line",
+    tile="section_and_bar_mill_tile_2",
     ground_sprite=spriteset_ground_tile_animated_rolling_line,
     ground_overlay=spriteset_ground_tile_animated_rolling_line,
     building_sprites=[
@@ -226,274 +226,274 @@ industry.add_spritelayout(
 
 # this industry needs outpost layout as there are lots of cargos
 industry.add_industry_outpost_layout(
-    id="bar_and_section_mill_industry_outpost_layout_1",
+    id="section_and_bar_mill_industry_outpost_layout_1",
     layout=[
         (
             0,
             0,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_large_door",
         ),
         (
             0,
             1,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_large_door",
         ),
         (
             1,
             0,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_large_door",
         ),
         (
             1,
             1,
-            "bar_and_section_mill_spritelayout_steel_1",
+            "section_and_bar_mill_spritelayout_steel_1",
         ),  # shed 2 used as it has smoke
         (
             2,
             0,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_small_doors",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_small_doors",
         ),
         (
             2,
             1,
-            "bar_and_section_mill_spritelayout_offices",
+            "section_and_bar_mill_spritelayout_offices",
         ),
     ],
 )
 industry.add_industry_outpost_layout(
-    id="bar_and_section_mill_industry_outpost_layout_2",
+    id="section_and_bar_mill_industry_outpost_layout_2",
     layout=[
         (
             0,
             0,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_large_door",
         ),
         (
             0,
             1,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_large_door",
         ),
         (
             0,
             2,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_large_door",
         ),
         (
             1,
             0,
-            "bar_and_section_mill_spritelayout_steel_1",
+            "section_and_bar_mill_spritelayout_steel_1",
         ),  # shed 2 used as it has smoke
         (
             1,
             1,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_small_doors",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_small_doors",
         ),
         (
             1,
             2,
-            "bar_and_section_mill_spritelayout_offices",
+            "section_and_bar_mill_spritelayout_offices",
         ),
     ],
 )
 # core layouts are roughly 6x4 or 5x5
 # only one orientation sw_ne, couldn't be faffed changing angles for all sprites to do a se_nw
 industry.add_industry_layout(
-    id="bar_and_section_mill_industry_layout_1",
+    id="section_and_bar_mill_industry_layout_1",
     layout=[
         (
             0,
             0,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_1",
         ),
         (
             0,
             1,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_2",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_2",
         ),
         (
             0,
             2,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_large_door",
         ),
         (
             1,
             0,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_1",
         ),
         (
             1,
             1,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_2",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_2",
         ),
         (
             1,
             2,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_small_doors",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_small_doors",
         ),
         (
             2,
             0,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_1",
         ),
         (
             2,
             1,
-            "bar_and_section_mill_spritelayout_sw_ne_rolling_line",
+            "section_and_bar_mill_spritelayout_sw_ne_rolling_line",
         ),
         (
             2,
             2,
-            "bar_and_section_mill_spritelayout_steel_2",
+            "section_and_bar_mill_spritelayout_steel_2",
         ),
         (
             3,
             0,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_1",
         ),
         (
             3,
             1,
-            "bar_and_section_mill_spritelayout_sw_ne_rolling_line",
+            "section_and_bar_mill_spritelayout_sw_ne_rolling_line",
         ),
         (
             3,
             2,
-            "bar_and_section_mill_spritelayout_steel_2",
+            "section_and_bar_mill_spritelayout_steel_2",
         ),
         (
             4,
             0,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_1",
         ),
         (
             4,
             1,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_large_door",
         ),
         (
             4,
             2,
-            "bar_and_section_mill_spritelayout_steel_1",
+            "section_and_bar_mill_spritelayout_steel_1",
         ),
         (
             5,
             0,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_3",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_3",
         ),
         (
             5,
             1,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_small_doors",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_small_doors",
         ),
         (
             5,
             2,
-            "bar_and_section_mill_spritelayout_offices",
+            "section_and_bar_mill_spritelayout_offices",
         ),
     ],
 )
 industry.add_industry_layout(
-    id="bar_and_section_mill_industry_layout_2",
+    id="section_and_bar_mill_industry_layout_2",
     layout=[
         (
             0,
             0,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_1",
         ),
         (
             0,
             1,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_2",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_2",
         ),
         (
             0,
             2,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_2",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_2",
         ),
         (
             0,
             3,
-            "bar_and_section_mill_spritelayout_offices",
+            "section_and_bar_mill_spritelayout_offices",
         ),
         (
             1,
             0,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_1",
         ),
         (
             1,
             1,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_1",
         ),
         (
             1,
             2,
-            "bar_and_section_mill_spritelayout_sw_ne_rolling_line",
+            "section_and_bar_mill_spritelayout_sw_ne_rolling_line",
         ),
         (
             1,
             3,
-            "bar_and_section_mill_spritelayout_steel_2",
+            "section_and_bar_mill_spritelayout_steel_2",
         ),
         (
             2,
             0,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_1",
         ),
         (
             2,
             1,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_1",
         ),
         (
             2,
             2,
-            "bar_and_section_mill_spritelayout_sw_ne_rolling_line",
+            "section_and_bar_mill_spritelayout_sw_ne_rolling_line",
         ),
         (
             2,
             3,
-            "bar_and_section_mill_spritelayout_steel_2",
+            "section_and_bar_mill_spritelayout_steel_2",
         ),
         (
             3,
             0,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_2",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_2",
         ),
         (
             3,
             1,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_1",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_1",
         ),
         (
             3,
             2,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_large_door",
         ),
         (
             3,
             3,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_large_door",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_large_door",
         ),
         (
             4,
             0,
-            "bar_and_section_mill_spritelayout_steel_1",
+            "section_and_bar_mill_spritelayout_steel_1",
         ),
         (
             4,
             1,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_tall_3",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_tall_3",
         ),
         (
             4,
             2,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_small_doors",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_small_doors",
         ),
         (
             4,
             3,
-            "bar_and_section_mill_spritelayout_shed_sw_ne_small_doors",
+            "section_and_bar_mill_spritelayout_shed_sw_ne_small_doors",
         ),
     ],
 )
