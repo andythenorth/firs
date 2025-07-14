@@ -70,7 +70,7 @@ economy = Economy(
         "wormhole_industries": [
             "wharf",
             "port",
-            "metal_fabricator",
+            "metal_works",
             "appliance_factory",
         ],
         "cargos_with_individual_produce_nodes": [
@@ -113,7 +113,7 @@ economy = Economy(
         "clusters": [
             {
                 "nodes": [
-                    "metal_fabricator",
+                    "metal_works",
                     "precision_parts_plant",
                     "appliance_factory",
                 ],

@@ -2113,7 +2113,7 @@ class Industry(object):
             else:
                 # as of April 2023, we just assume that any 2 will give a max ratio
                 # to prevent surprises we guard on known industry ids
-                if self.id not in ["metal_fabricator"]:
+                if self.id not in ["metal_works"]:
                     raise Exception(
                         "get_extra_text_string: "
                         + self.id

@@ -22,25 +22,7 @@ industry = IndustrySecondary(
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
 )
-"""
-industry.enable_in_economy(
-    "STEELTOWN",
-    accept_cargos_with_input_ratios=[
-        ("STSH", 6),
-        ("CSTI", 6),
-        ("STWR", 6),
-        ("STBR", 6),
-        ("POWR", 6),
-        ("FOCA", 6),
-    ],
-    prod_cargo_types_with_output_ratios=[
-        # high output production is unwanted due to single cargo
-        ("HWAR", 6),
-    ],
-    # temp
-    name="string(STR_IND_HARDWARE_FACTORY)",
-)
-"""
+
 industry.add_tile(
     id="factory_tile_1",
     animation_length=47,

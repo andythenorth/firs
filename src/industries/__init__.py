@@ -50,7 +50,7 @@ industry_module_names = [
     "limestone_mine",
     "liquids_terminal",
     "manganese_mine",
-    "metal_fabricator",
+    "metal_works",
     "nitrate_mine",
     "oil_rig",
     "oil_wells",

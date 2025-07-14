@@ -1,7 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
-    id="metal_fabricator",
+    id="metal_works",
     accept_cargos_with_input_ratios=[
         ("STEL", 6),
         ("RFPR", 2),
@@ -13,8 +13,8 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="209",
     colour_scheme_name="scheme_3_hendrix",
-    name="string(STR_IND_METAL_FABRICATOR)",
-    nearby_station_name="string(STR_STATION_HARDWARE_FACTORY)",
+    name="string(STR_IND_METAL_WORKS)",
+    nearby_station_name="string(STR_STATION_METAL_WORKS)",
     fund_cost_multiplier="120",
     pollution_and_squalor_factor=1,
     sprites_complete=True,
@@ -43,7 +43,7 @@ industry.enable_in_economy(
 )
 
 industry.add_tile(
-    id="hardware_factory_tile_1",
+    id="metal_works_tile_1",
     animation_length=47,
     animation_looping=True,
     animation_speed=2,
@@ -82,8 +82,8 @@ spriteset_greeble_2 = industry.add_spriteset(
 )
 
 industry.add_spritelayout(
-    id="hardware_factory_spritelayout_shed_1_with_chimneys",
-    tile="hardware_factory_tile_1",
+    id="metal_works_spritelayout_shed_1_with_chimneys",
+    tile="metal_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_shed_1_with_chimneys],
@@ -91,8 +91,8 @@ industry.add_spritelayout(
     add_to_object_num=1,
 )
 industry.add_spritelayout(
-    id="hardware_factory_spritelayout_shed_2",
-    tile="hardware_factory_tile_1",
+    id="metal_works_spritelayout_shed_2",
+    tile="metal_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_shed_2],
@@ -100,8 +100,8 @@ industry.add_spritelayout(
     add_to_object_num=2,
 )
 industry.add_spritelayout(
-    id="hardware_factory_spritelayout_shed_3_half",
-    tile="hardware_factory_tile_1",
+    id="metal_works_spritelayout_shed_3_half",
+    tile="metal_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_shed_3_half],
@@ -109,8 +109,8 @@ industry.add_spritelayout(
     add_to_object_num=3,
 )
 industry.add_spritelayout(
-    id="hardware_factory_spritelayout_shed_4_half_with_chimneys",
-    tile="hardware_factory_tile_1",
+    id="metal_works_spritelayout_shed_4_half_with_chimneys",
+    tile="metal_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_shed_4_half_with_chimneys],
@@ -118,8 +118,8 @@ industry.add_spritelayout(
     add_to_object_num=4,
 )
 industry.add_spritelayout(
-    id="hardware_factory_spritelayout_shed_tall",
-    tile="hardware_factory_tile_1",
+    id="metal_works_spritelayout_shed_tall",
+    tile="metal_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_shed_tall],
@@ -127,8 +127,8 @@ industry.add_spritelayout(
     add_to_object_num=5,
 )
 industry.add_spritelayout(
-    id="hardware_factory_spritelayout_small_building",
-    tile="hardware_factory_tile_1",
+    id="metal_works_spritelayout_small_building",
+    tile="metal_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_small_building],
@@ -136,8 +136,8 @@ industry.add_spritelayout(
     add_to_object_num=6,
 )
 industry.add_spritelayout(
-    id="hardware_factory_spritelayout_greeble_1",
-    tile="hardware_factory_tile_1",
+    id="metal_works_spritelayout_greeble_1",
+    tile="metal_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_greeble_1],
@@ -145,8 +145,8 @@ industry.add_spritelayout(
     add_to_object_num=7,
 )
 industry.add_spritelayout(
-    id="hardware_factory_spritelayout_greeble_2",
-    tile="hardware_factory_tile_1",
+    id="metal_works_spritelayout_greeble_2",
+    tile="metal_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_greeble_2],
@@ -156,70 +156,70 @@ industry.add_spritelayout(
 
 # this industry needs outpost layout as there are lots of cargos
 industry.add_industry_outpost_layout(
-    id="hardware_factory_industry_outpost_layout_1",
+    id="metal_works_industry_outpost_layout_1",
     layout=[
         # test outpost layout
-        (0, 0, "hardware_factory_spritelayout_shed_4_half_with_chimneys"),
-        (0, 1, "hardware_factory_spritelayout_shed_1_with_chimneys"),
-        (0, 2, "hardware_factory_spritelayout_small_building"),
-        (1, 0, "hardware_factory_spritelayout_shed_3_half"),
-        (1, 1, "hardware_factory_spritelayout_shed_tall"),
-        (1, 2, "hardware_factory_spritelayout_greeble_1"),
+        (0, 0, "metal_works_spritelayout_shed_4_half_with_chimneys"),
+        (0, 1, "metal_works_spritelayout_shed_1_with_chimneys"),
+        (0, 2, "metal_works_spritelayout_small_building"),
+        (1, 0, "metal_works_spritelayout_shed_3_half"),
+        (1, 1, "metal_works_spritelayout_shed_tall"),
+        (1, 2, "metal_works_spritelayout_greeble_1"),
     ],
 )
 industry.add_industry_outpost_layout(
-    id="hardware_factory_industry_outpost_layout_2",
+    id="metal_works_industry_outpost_layout_2",
     layout=[
         # test outpost layout
-        (0, 0, "hardware_factory_spritelayout_shed_4_half_with_chimneys"),
-        (0, 1, "hardware_factory_spritelayout_shed_1_with_chimneys"),
-        (1, 0, "hardware_factory_spritelayout_shed_3_half"),
-        (1, 1, "hardware_factory_spritelayout_shed_tall"),
-        (2, 0, "hardware_factory_spritelayout_greeble_1"),
-        (2, 1, "hardware_factory_spritelayout_small_building"),
+        (0, 0, "metal_works_spritelayout_shed_4_half_with_chimneys"),
+        (0, 1, "metal_works_spritelayout_shed_1_with_chimneys"),
+        (1, 0, "metal_works_spritelayout_shed_3_half"),
+        (1, 1, "metal_works_spritelayout_shed_tall"),
+        (2, 0, "metal_works_spritelayout_greeble_1"),
+        (2, 1, "metal_works_spritelayout_small_building"),
     ],
 )
 
 industry.add_industry_layout(
-    id="hardware_factory_industry_layout_1",
+    id="metal_works_industry_layout_1",
     layout=[
-        (0, 0, "hardware_factory_spritelayout_shed_4_half_with_chimneys"),
-        (0, 1, "hardware_factory_spritelayout_shed_1_with_chimneys"),
-        (0, 2, "hardware_factory_spritelayout_shed_1_with_chimneys"),
-        (0, 3, "hardware_factory_spritelayout_shed_tall"),
-        (0, 4, "hardware_factory_spritelayout_shed_4_half_with_chimneys"),
-        (0, 5, "hardware_factory_spritelayout_shed_1_with_chimneys"),
-        (1, 0, "hardware_factory_spritelayout_shed_3_half"),
-        (1, 1, "hardware_factory_spritelayout_shed_1_with_chimneys"),
-        (1, 2, "hardware_factory_spritelayout_greeble_1"),
-        (1, 3, "hardware_factory_spritelayout_greeble_1"),
-        (1, 4, "hardware_factory_spritelayout_shed_3_half"),
-        (1, 5, "hardware_factory_spritelayout_shed_tall"),
-        (2, 0, "hardware_factory_spritelayout_shed_3_half"),
-        (2, 1, "hardware_factory_spritelayout_shed_1_with_chimneys"),
-        (2, 2, "hardware_factory_spritelayout_shed_tall"),
-        (2, 3, "hardware_factory_spritelayout_greeble_2"),
-        (2, 4, "hardware_factory_spritelayout_greeble_1"),
-        (2, 5, "hardware_factory_spritelayout_small_building"),
+        (0, 0, "metal_works_spritelayout_shed_4_half_with_chimneys"),
+        (0, 1, "metal_works_spritelayout_shed_1_with_chimneys"),
+        (0, 2, "metal_works_spritelayout_shed_1_with_chimneys"),
+        (0, 3, "metal_works_spritelayout_shed_tall"),
+        (0, 4, "metal_works_spritelayout_shed_4_half_with_chimneys"),
+        (0, 5, "metal_works_spritelayout_shed_1_with_chimneys"),
+        (1, 0, "metal_works_spritelayout_shed_3_half"),
+        (1, 1, "metal_works_spritelayout_shed_1_with_chimneys"),
+        (1, 2, "metal_works_spritelayout_greeble_1"),
+        (1, 3, "metal_works_spritelayout_greeble_1"),
+        (1, 4, "metal_works_spritelayout_shed_3_half"),
+        (1, 5, "metal_works_spritelayout_shed_tall"),
+        (2, 0, "metal_works_spritelayout_shed_3_half"),
+        (2, 1, "metal_works_spritelayout_shed_1_with_chimneys"),
+        (2, 2, "metal_works_spritelayout_shed_tall"),
+        (2, 3, "metal_works_spritelayout_greeble_2"),
+        (2, 4, "metal_works_spritelayout_greeble_1"),
+        (2, 5, "metal_works_spritelayout_small_building"),
     ],
 )
 industry.add_industry_layout(
-    id="hardware_factory_industry_layout_2",
+    id="metal_works_industry_layout_2",
     layout=[
-        (0, 0, "hardware_factory_spritelayout_shed_4_half_with_chimneys"),
-        (0, 1, "hardware_factory_spritelayout_shed_1_with_chimneys"),
-        (0, 2, "hardware_factory_spritelayout_shed_1_with_chimneys"),
-        (1, 0, "hardware_factory_spritelayout_shed_3_half"),
-        (1, 1, "hardware_factory_spritelayout_shed_1_with_chimneys"),
-        (1, 2, "hardware_factory_spritelayout_shed_tall"),
-        (2, 0, "hardware_factory_spritelayout_greeble_2"),
-        (2, 1, "hardware_factory_spritelayout_greeble_1"),
-        (2, 2, "hardware_factory_spritelayout_small_building"),
-        (3, 0, "hardware_factory_spritelayout_shed_4_half_with_chimneys"),
-        (3, 1, "hardware_factory_spritelayout_shed_1_with_chimneys"),
-        (3, 2, "hardware_factory_spritelayout_greeble_1"),
-        (4, 0, "hardware_factory_spritelayout_shed_3_half"),
-        (4, 1, "hardware_factory_spritelayout_shed_1_with_chimneys"),
-        (4, 2, "hardware_factory_spritelayout_shed_tall"),
+        (0, 0, "metal_works_spritelayout_shed_4_half_with_chimneys"),
+        (0, 1, "metal_works_spritelayout_shed_1_with_chimneys"),
+        (0, 2, "metal_works_spritelayout_shed_1_with_chimneys"),
+        (1, 0, "metal_works_spritelayout_shed_3_half"),
+        (1, 1, "metal_works_spritelayout_shed_1_with_chimneys"),
+        (1, 2, "metal_works_spritelayout_shed_tall"),
+        (2, 0, "metal_works_spritelayout_greeble_2"),
+        (2, 1, "metal_works_spritelayout_greeble_1"),
+        (2, 2, "metal_works_spritelayout_small_building"),
+        (3, 0, "metal_works_spritelayout_shed_4_half_with_chimneys"),
+        (3, 1, "metal_works_spritelayout_shed_1_with_chimneys"),
+        (3, 2, "metal_works_spritelayout_greeble_1"),
+        (4, 0, "metal_works_spritelayout_shed_3_half"),
+        (4, 1, "metal_works_spritelayout_shed_1_with_chimneys"),
+        (4, 2, "metal_works_spritelayout_shed_tall"),
     ],
 )
