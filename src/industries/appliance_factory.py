@@ -13,7 +13,8 @@ industry = IndustrySecondary(
         ("SEAL", 3),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("GOOD", 8),
+        ("GOOD", 6),
+        ("ENSP", 6),
     ],
     prob_in_game="3",
     prob_map_gen="5",
