@@ -27,7 +27,7 @@ industry.enable_in_economy(
     prob_map_gen="9",
     accept_cargo_types=[
         "PPWK",
-        "STSE",
+        "STSW",
         "CCPR",
         "GLAS",
         "HWAR",

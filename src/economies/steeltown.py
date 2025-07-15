@@ -64,6 +64,8 @@ economy = Economy(
         "vehicle_parts",
         "welding_consumables",
         "zinc",
+        "steel_plate",
+        "structural_steelwork",
     ],
     cargoflow_graph_tuning={
         # also any industries with !!!!??????? will be automatically added to wormhole_industries

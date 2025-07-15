@@ -30,6 +30,7 @@ industry_module_names = [
     "elastomer_products_plant",
     "electric_arc_furnace",
     "engine_plant",
+    "fab_yard",
     "farm",
     "fish_farm",
     "fishing_grounds",

@@ -7,7 +7,7 @@ industry = IndustrySecondary(
     # ... IRL the structural steel representation of plate is good enough for major parts of excavators, bulldozers etc, sheet not essential
     accept_cargos_with_input_ratios=[
         ("COAT", 1),
-        ("STSE", 3),
+        ("STPL", 3),
         ("VENG", 1),
         ("VPTS", 2),
         ("WELD", 1),
