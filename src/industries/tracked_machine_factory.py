@@ -3,10 +3,11 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="tracked_machine_factory",
     # what a lot of cargos eh?  Probably fine, this is pretty much the final 'launch the bulldozer' nod to Factorio
+    # dropped Steel Sheet & Strip July 2025, was just too many 'all required' cargos...
+    # ... IRL the structural steel representation of plate is good enough for major parts of excavators, bulldozers etc, sheet not essential
     accept_cargos_with_input_ratios=[
         ("COAT", 1),
-        ("STSH", 1),
-        ("STSE", 2),
+        ("STSE", 3),
         ("VENG", 1),
         ("VPTS", 2),
         ("WELD", 1),
