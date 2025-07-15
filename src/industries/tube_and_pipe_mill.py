@@ -9,9 +9,8 @@ industry = IndustrySecondary(
         ("COAT", 1),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("STTB", 3),
+        ("STTB", 4),
         ("STPP", 3),
-        ("ENSP", 1),
     ],
     # do not build during gameplay
     prob_in_game="0",
