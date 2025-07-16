@@ -10,9 +10,12 @@ industry = IndustrySecondary(
         ("WELD", 2),
     ],
     prod_cargo_types_with_output_ratios=[
-        # high plate mill output production is unwanted
-        # tried steel pipe (rolled and welded) as side output, doesn't add anything
+        # steel pipe (rolled and welded) as side output
+        # - this is problematic in some ways, but I want to represent welded pipe in game, not just seamless pipe
+        # - however it's basically slab -> pipe, which is no different to billets -> pipe in number of steps
+        # - but I don't want to add a standalone welded pipe industry, it will conflate with pipe mill and pipe shop
         ("STPL", 6),
+        ("STPP", 2),
     ],
     # do not build during gameplay
     prob_in_game="0",
