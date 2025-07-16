@@ -3,10 +3,9 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="tube_and_pipe_mill",
     accept_cargos_with_input_ratios=[
-        ("STBL", 5),
+        ("STBL", 6),
         ("ACID", 1),
         ("SOAP", 1),
-        ("COAT", 1),
     ],
     prod_cargo_types_with_output_ratios=[
         ("STTB", 4),

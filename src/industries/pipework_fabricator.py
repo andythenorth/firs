@@ -2,7 +2,7 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="pipework_fabricator",
-    accept_cargos_with_input_ratios=[("STPP", 4), ("PUMP", 3), ("WELD", 1)],
+    accept_cargos_with_input_ratios=[("STPP", 4), ("PUMP", 2), ("COAT", 1), ("WELD", 1)],
     prod_cargo_types_with_output_ratios=[
         # high output production is unwanted
         ("PPWK", 5),
