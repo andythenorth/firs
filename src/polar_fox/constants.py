@@ -138,6 +138,8 @@ cargo_labels = [
     "TYCO",
     "HWAR",
     "STBR",
+    "STSW",
+    "STPL",
     #
     "NULL",
 ]
@@ -246,10 +248,12 @@ allowed_refits_by_label = {
         "STCB",
         "STEL",
         "STIG",
+        "STPL",
         "STSE",
         "STSH",
         "STSL",
         "STST",
+        "STSW",
         "STWR",
         "TYCO",
         "ZINC",

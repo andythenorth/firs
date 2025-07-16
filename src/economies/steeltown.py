@@ -50,7 +50,7 @@ economy = Economy(
         "steel_ingots",
         "steel_merchant_bar",
         "steel_pipe",
-        "steel_sections",
+        "steel_plate",
         "steel_sheet",
         "steel_slab",
         "steel_tube",
@@ -64,7 +64,6 @@ economy = Economy(
         "vehicle_parts",
         "welding_consumables",
         "zinc",
-        "steel_plate",
         "structural_steelwork",
     ],
     cargoflow_graph_tuning={

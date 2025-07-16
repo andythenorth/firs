@@ -8,7 +8,7 @@ industry = IndustrySecondary(
     ],
     prod_cargo_types_with_output_ratios=[
         ("STBR", 3),
-        ("STSE", 3),
+        ("STSW", 3),
         ("RBAR", 2),
         # dropped ENSP, it divides output too far
     ],

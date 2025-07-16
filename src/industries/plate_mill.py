@@ -3,19 +3,17 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="plate_mill",
     accept_cargos_with_input_ratios=[
-        # this is a Quarto type plate mill
+        # this is a Quarto type plate mill + on-site processing for rolling, forming
         # water-jet descaling, no pickling, https://spartan.metinvestholding.com/en/activities/manufacturing
-        # uses gas for plate cutting / heat treatment, might be weird, but eh we'll see
+        # uses gas and burn bars for plate cutting / heat treatment, might be weird, but eh we'll see, it's more weird to remove it
         ("STSL", 6),
         ("WELD", 2),
     ],
     prod_cargo_types_with_output_ratios=[
-        # steel pipe (rolled and welded) as side output
-        # - this is problematic in some ways, but I want to represent welded pipe in game, not just seamless pipe
-        # - however it's basically slab -> pipe, which is no different to billets -> pipe in number of steps
-        # - but I don't want to add a standalone welded pipe industry, it will conflate with pipe mill and pipe shop
-        ("STPL", 6),
+        # includes pipe in rolled and welded format
+        ("STPL", 4),
         ("STPP", 2),
+        ("STSW", 2),
     ],
     # do not build during gameplay
     prob_in_game="0",
@@ -89,6 +87,44 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
     fences=[],
+)
+
+# this industry needs outpost layout
+industry.add_industry_outpost_layout(
+    id="plate_mill_industry_outpost_layout_1",
+    layout=[
+        # test outpost layout
+        (
+            0,
+            0,
+            "plate_mill_spritelayout_shed_2",
+        ),
+        (
+            0,
+            1,
+            "plate_mill_spritelayout_shed_2",
+        ),
+        (
+            0,
+            2,
+            "plate_mill_spritelayout_metal_1",
+        ),
+        (
+            1,
+            0,
+            "plate_mill_spritelayout_shed_1",
+        ),
+        (
+            1,
+            1,
+            "plate_mill_spritelayout_metal_1",
+        ),
+        (
+            1,
+            2,
+            "plate_mill_spritelayout_empty",
+        ),
+    ],
 )
 
 industry.add_industry_layout(

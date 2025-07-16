@@ -7,7 +7,7 @@ industry = IndustrySecondary(
         # all input ratios *must* be 3
         # note also that it's deliberately easy to get a partly-efficient supply of Goods from a Wharf by combining POWR and COAT
         ("STPL", 3),
-        ("STSE", 3),
+        #("STSE", 3),
         ("STTB", 3),
         ("COAT", 3),
         ("WELD", 3),
@@ -24,12 +24,11 @@ industry = IndustrySecondary(
     provides_snow=False,
     sprites_complete=False,
 )
-
-
+"""
 industry.enable_in_economy(
     "STEELTOWN",
 )
-
+"""
 # non-animated tile, allowed on slopes
 industry.add_tile(
     id="fab_yard_tile_1",
