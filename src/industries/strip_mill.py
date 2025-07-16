@@ -8,8 +8,9 @@ industry = IndustrySecondary(
         ("ZINC", 2),
     ],
     prod_cargo_types_with_output_ratios=[
-        # high strip mill production is unwanted as there is only one output cargo
-        ("STSH", 6),
+        # high strip mill production is unwanted
+        ("STSH", 5),
+        ("STPL", 2), # plate-from-coil is a valid route
     ],
     # do not build during gameplay
     prob_in_game="0",
