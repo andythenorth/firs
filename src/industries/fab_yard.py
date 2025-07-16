@@ -6,8 +6,8 @@ industry = IndustrySecondary(
         # lots of inputs, but only 3 are required (see industry.py for the kludge to make that work)
         # all input ratios *must* be 3
         # note also that it's deliberately easy to get a partly-efficient supply of Goods from a Wharf by combining POWR and COAT
-        ("STSE", 3),
         ("STPL", 3),
+        ("STSE", 3),
         ("STTB", 3),
         ("COAT", 3),
         ("WELD", 3),
@@ -16,7 +16,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="43",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     name="string(STR_IND_FAB_YARD)",
     nearby_station_name="string(STR_STATION_FABRICATION)",
     fund_cost_multiplier="35",
@@ -33,7 +33,9 @@ industry.enable_in_economy(
 # non-animated tile, allowed on slopes
 industry.add_tile(
     id="fab_yard_tile_1",
-    location_checks=TileLocationChecks(disallow_industry_adjacent=True),
+    location_checks=TileLocationChecks(
+        require_effectively_flat=True, disallow_industry_adjacent=True
+    ),
 )
 
 # animated kiln-building tile, graphics break if built on slopes
