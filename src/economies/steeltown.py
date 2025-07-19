@@ -74,7 +74,7 @@ economy = Economy(
             "port",
             "metal_works",
             "appliance_factory",
-            "fab_yard",
+            "power_systems_factory",
         ],
         "cargos_with_individual_produce_nodes": [
             "steel_ingots",
