@@ -10,10 +10,10 @@ industry = IndustrySecondary(
         ("WELD", 2),
     ],
     prod_cargo_types_with_output_ratios=[
-        # includes pipe in rolled and welded format
-        ("STPL", 4),
-        ("STPP", 2),
-        ("STSW", 2),
+        # structural steel being a composite also covering rolled sections, but applied here to:
+        # heavy plate, cut/treated plate, chequer plate, floor plate, and minor fab such as flanging parts or large beam fabrication
+        ("STPL", 5),
+        ("STSW", 3),
     ],
     # do not build during gameplay
     prob_in_game="0",

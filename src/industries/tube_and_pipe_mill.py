@@ -1,5 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
+# dropped 'pipe' from the name July 2025, consistent with Plate Mill which also produces pipe
+
 industry = IndustrySecondary(
     id="tube_and_pipe_mill",
     accept_cargos_with_input_ratios=[

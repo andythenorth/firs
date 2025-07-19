@@ -1,12 +1,15 @@
 from industry import IndustrySecondary, TileLocationChecks
 
+# fabricator of pressure-grade, assembled liquid-handling systems
+
 industry = IndustrySecondary(
     id="pipework_fabricator",
-    accept_cargos_with_input_ratios=[("STPP", 4), ("PUMP", 2), ("COAT", 1), ("WELD", 1)],
+    accept_cargos_with_input_ratios=[("STPP", 2), ("STPL", 2), ("PUMP", 2), ("COAT", 1), ("WELD", 1)],
     prod_cargo_types_with_output_ratios=[
         # high output production is unwanted
-        ("PPWK", 5),
-        ("ENSP", 1),
+        ("PPWK", 4),
+        ("ENSP", 2),
+        ("FMSP", 1),
     ],
     prob_in_game="3",
     prob_map_gen="5",
@@ -14,7 +17,7 @@ industry = IndustrySecondary(
     colour_scheme_name="scheme_10_wyclef",
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[
-            ["tube_and_pipe_mill", "precision_parts_plant"],
+            ["tube_and_pipe_mill", "precision_parts_plant", "plate_mill"],
             84,
         ],
     ),

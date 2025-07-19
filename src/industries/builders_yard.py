@@ -31,6 +31,7 @@ industry.enable_in_economy(
         "CCPR",
         "GLAS",
         "HWAR",
+        "PLNT",
     ],
     vulcan_config={
         "map_curator": {

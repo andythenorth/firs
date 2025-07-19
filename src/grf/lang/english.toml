@@ -298,7 +298,7 @@ base = "Peat"
 base = "Petroleum Fuels"
 
 [STR_CARGO_NAME_PIPEWORK]
-base = "Pipework"
+base = "Pipework & Tanks"
 
 [STR_CARGO_NAME_PHOSPHATE]
 base = "Phosphate"
@@ -311,6 +311,9 @@ base = "Pig Iron"
 
 [STR_CARGO_NAME_PLASTICS]
 base = "Plastics"
+
+[STR_CARGO_NAME_PLANT_AND_MACHINERY]
+base = "Plant & Machinery"
 
 [STR_CARGO_NAME_POTASH]
 base = "Potash"
@@ -424,7 +427,7 @@ base = "Urea"
 base = "Vehicle Bodies"
 
 [STR_CARGO_NAME_VEHICLE_ENGINES]
-base = "Vehicle Engines"
+base = "Engines & Driveline"
 
 [STR_CARGO_NAME_VEHICLE_PARTS]
 base = "Vehicle Parts"
@@ -643,10 +646,13 @@ base = "{VOLUME} of phosphoric acid"
 base = "{WEIGHT} of pig iron"
 
 [STR_CARGO_UNIT_PIPEWORK]
-base = "{WEIGHT} of pipework"
+base = "{WEIGHT} of pipework & tanks"
 
 [STR_CARGO_UNIT_PLASTICS]
 base = "{WEIGHT} of plastics"
+
+[STR_CARGO_UNIT_PLANT_AND_MACHINERY]
+base = "{WEIGHT} of plant & machinery"
 
 [STR_CARGO_UNIT_POTASH]
 base = "{WEIGHT} of potash"
@@ -760,7 +766,7 @@ base = "{WEIGHT} of urea"
 base = "{WEIGHT} of vehicle bodies"
 
 [STR_CARGO_UNIT_VEHICLE_ENGINES]
-base = "{WEIGHT} of vehicle engines"
+base = "{WEIGHT} of engines & driveline"
 
 [STR_CARGO_UNIT_VEHICLE_PARTS]
 base = "{WEIGHT} of vehicle parts"
@@ -980,6 +986,9 @@ base = "{TINYFONT}PA"
 
 [STR_CID_PLASTICS]
 base = "{TINYFONT}PL"
+
+[STR_CID_PLANT_AND_MACHINERY]
+base = "{TINYFONT}PM"
 
 [STR_CID_POTASH]
 base = "{TINYFONT}PA"
@@ -1254,8 +1263,8 @@ base = "Engine Plant"
 [STR_IND_ETHYLENE_CRACKER]
 base = "Naphtha Cracker"
 
-[STR_IND_FAB_YARD]
-base = "Fab Yard"
+[STR_IND_FAB_YARD] # CABBAGE
+base = "Plant & Machinery Producer"
 
 [STR_IND_FARM]
 base = "Farm"

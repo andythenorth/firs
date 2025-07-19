@@ -1,18 +1,20 @@
 from industry import IndustrySecondary, TileLocationChecks
 
+# CABBAGE - now some sort of plant & machinery manufacturer
+
 industry = IndustrySecondary(
     id="fab_yard",
     accept_cargos_with_input_ratios=[
         # lots of inputs, but only 3 are required (see industry.py for the kludge to make that work)
         # all input ratios *must* be 3
-        # note also that it's deliberately easy to get a partly-efficient supply of Goods from a Wharf by combining POWR and COAT
-        ("STPL", 3),
-        #("STSE", 3),
-        ("STTB", 3),
+        ("STSW", 3),
+        ("FOCA", 3),
+        ("VENG", 3),
+        ("POWR", 3),
+        ("PUMP", 3),
         ("COAT", 3),
-        ("WELD", 3),
     ],
-    prod_cargo_types_with_output_ratios=[("STSW", 5), ("ENSP", 3)],
+    prod_cargo_types_with_output_ratios=[("PLNT", 5), ("ENSP", 2), ("FMSP", 1)],
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="43",
@@ -24,11 +26,11 @@ industry = IndustrySecondary(
     provides_snow=False,
     sprites_complete=False,
 )
-"""
+
 industry.enable_in_economy(
     "STEELTOWN",
 )
-"""
+
 # non-animated tile, allowed on slopes
 industry.add_tile(
     id="fab_yard_tile_1",

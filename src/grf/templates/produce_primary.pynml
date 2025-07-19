@@ -2,10 +2,9 @@
     Primary production (also includes permanent production change).
     Supplies includes ENSP, FMSP, and multiple cargos in the case of port-type industries.
     Supply deliveries are tracked over 27 production cycles.
-    This gives the easiest approximation of the 'every 3 months' the player is told.
-    27 cycles is about 93 game days, and works in player's favour, accomodating varying length months.
+    All production takes place on the 256 tick callback - the real time duration of 256 tick callback is fixed as economy time doesn't scale with wallclock.
+    Tick length is 27ms. So 27 cycles of 256 ticks is about 3 minutes (62.2 seconds)
     There is admin with registers to support total production over the 27 cargo cycles, and for handling 'Supplied' text to be displayed in industry windows.
-    All production takes place on the 256 tick callback.
     Acceptance and clearing of stockpile is handled on delivery of cargo.
     Admin functions are called on 256 tick and also on delivery (so player sees immediate change to 'Supplied' and to production level that will be used on next 256 tick cycle).
     This template also handles permanent production change as the concerns seem to be closely related.

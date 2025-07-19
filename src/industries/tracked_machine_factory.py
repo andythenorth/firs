@@ -14,9 +14,10 @@ industry = IndustrySecondary(
     ],
     prod_cargo_types_with_output_ratios=[
         # high output production is unwanted
-        ("VEHI", 2),
-        ("FMSP", 2),
+        ("PLNT", 2),
         ("ENSP", 2),
+        ("VEHI", 1),
+        ("FMSP", 1),
     ],
     prob_in_game="3",
     prob_map_gen="5",

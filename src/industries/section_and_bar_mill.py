@@ -7,10 +7,10 @@ industry = IndustrySecondary(
         ("STBL", 8),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("STBR", 3),
         ("STSW", 3),
+        ("STBR", 2),
         ("RBAR", 2),
-        # dropped ENSP, it divides output too far
+        ("ENSP", 1),
     ],
     prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",

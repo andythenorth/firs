@@ -60,6 +60,7 @@ cargo_module_names = [
     "phosphate",
     "pig_iron",
     "pipework",
+    "plant_and_machinery",
     "potash",
     "concrete_products",
     "pumps_and_valves",

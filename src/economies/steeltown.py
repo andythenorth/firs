@@ -65,6 +65,7 @@ economy = Economy(
         "welding_consumables",
         "zinc",
         "structural_steelwork",
+        "plant_and_machinery",
     ],
     cargoflow_graph_tuning={
         # also any industries with !!!!??????? will be automatically added to wormhole_industries
@@ -73,6 +74,7 @@ economy = Economy(
             "port",
             "metal_works",
             "appliance_factory",
+            "fab_yard",
         ],
         "cargos_with_individual_produce_nodes": [
             "steel_ingots",
@@ -106,8 +108,8 @@ economy = Economy(
                     "vehicles",
                     "pipework",
                     "assembly_plant",
-                    "tracked_machine_factory",
-                    "pipework_fabricator",
+                    #"tracked_machine_factory",
+                    #"pipework_fabricator",
                 ],
             ),
         ],
