@@ -1,5 +1,9 @@
 from cargo import Cargo
 
+# not noted in the docs because it would be overly specific, but comprised of:
+# power generation and transmission gear, boilers & heating gear, HVAC, pumps (irrigation, industrial, domestic)...
+# ...lift machinery, handling equipment, industrial process mixers, crushers and similar fixed or movable machinery
+
 cargo = Cargo(
     id="plant_and_machinery",
     type_name="string(STR_CARGO_NAME_PLANT_AND_MACHINERY)",
