@@ -10,8 +10,10 @@ industry = IndustrySecondary(
         ("SOAP", 1),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("STTB", 4),
+        # deliberately not a full 8/8 output
+        ("STTB", 3),
         ("STPP", 3),
+        # tried structural steel, might return to it, wasn't convinced initially
     ],
     # do not build during gameplay
     prob_in_game="0",
