@@ -51,25 +51,31 @@ spriteset_ground_overlay = industry.add_spriteset(
 )
 
 spriteset_horizontal_tanks = industry.add_spriteset(
-    sprites=[(150, 10, 64, 114, -31, -83)],
+    sprites=[(10, 10, 64, 114, -31, -83)],
 )
 spriteset_frac_columns = industry.add_spriteset(
-    sprites=[(220, 10, 64, 114, -31, -83)],
+    sprites=[(80, 10, 64, 114, -31, -83)],
 )
 spriteset_drop_tower_and_thin_chimney = industry.add_spriteset(
-    sprites=[(290, 10, 64, 114, -31, -83)],
+    sprites=[(150, 10, 64, 114, -31, -83)],
 )
 spriteset_large_building = industry.add_spriteset(
-    sprites=[(360, 10, 64, 114, -31, -83)],
+    sprites=[(220, 10, 64, 114, -31, -83)],
 )
 spriteset_fat_chimney = industry.add_spriteset(
+    sprites=[(290, 10, 64, 114, -31, -83)],
+)
+spriteset_extra_pipe_huts_rear = industry.add_spriteset(
+    sprites=[(360, 10, 64, 114, -31, -83)],
+)
+spriteset_extra_pipe_huts_front = industry.add_spriteset(
     sprites=[(430, 10, 64, 114, -31, -83)],
 )
 spriteset_spherical_tanks = industry.add_spriteset(
-    sprites=[(500, 10, 64, 66, -31, -35)],
+    sprites=[(570, 10, 64, 66, -31, -35)],
 )
 spriteset_vertical_tanks = industry.add_spriteset(
-    sprites=[(570, 10, 64, 66, -31, -35)],
+    sprites=[(640, 10, 64, 66, -31, -35)],
 )
 spriteset_barrels = industry.add_spriteset(
     sprites=[(710, 10, 64, 66, -31, -35)],
@@ -202,6 +208,27 @@ industry.add_spritelayout(
     building_sprites=[spriteset_barrels],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=8,
+)
+industry.add_spritelayout(
+    id="chlor_alkali_plant_spritelayout_extra_pipe_huts_front",
+    tile="chlor_alkali_plant_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_extra_pipe_huts_front],
+)
+industry.add_spritelayout(
+    id="chlor_alkali_plant_spritelayout_extra_pipe_huts_rear",
+    tile="chlor_alkali_plant_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_extra_pipe_huts_rear],
+)
+industry.add_multi_tile_object(
+    add_to_object_num=9,
+    view_layout=[
+        (0, 0, "chlor_alkali_plant_spritelayout_extra_pipe_huts_rear"),
+        (0, 1, "chlor_alkali_plant_spritelayout_extra_pipe_huts_front"),
+    ],
 )
 
 # this industry needs outpost layout as there are lots of cargos
