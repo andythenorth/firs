@@ -71,7 +71,7 @@ spriteset_shed_4_half_with_chimneys = industry.add_spriteset(
 spriteset_shed_tall = industry.add_spriteset(
     sprites=[(290, 10, 64, 80, -31, -50)],
 )
-spriteset_small_building = industry.add_spriteset(
+spriteset_small_building_1 = industry.add_spriteset(
     sprites=[(360, 10, 64, 80, -31, -50)],
 )
 spriteset_greeble_1 = industry.add_spriteset(
@@ -79,6 +79,9 @@ spriteset_greeble_1 = industry.add_spriteset(
 )
 spriteset_greeble_2 = industry.add_spriteset(
     sprites=[(500, 10, 64, 80, -31, -50)],
+)
+spriteset_small_building_2 = industry.add_spriteset(
+    sprites=[(570, 10, 64, 80, -31, -50)],
 )
 
 industry.add_spritelayout(
@@ -127,11 +130,11 @@ industry.add_spritelayout(
     add_to_object_num=5,
 )
 industry.add_spritelayout(
-    id="metal_works_spritelayout_small_building",
+    id="metal_works_spritelayout_small_building_1",
     tile="metal_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_small_building],
+    building_sprites=[spriteset_small_building_1],
     fences=["nw", "ne", "sw"],
     add_to_object_num=6,
 )
@@ -153,6 +156,15 @@ industry.add_spritelayout(
     fences=["nw", "ne"],
     add_to_object_num=8,
 )
+industry.add_spritelayout(
+    id="metal_works_spritelayout_small_building_2",
+    tile="metal_works_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_small_building_2],
+    fences=["nw", "ne"],
+    add_to_object_num=9,
+)
 
 # this industry needs outpost layout as there are lots of cargos
 industry.add_industry_outpost_layout(
@@ -161,7 +173,7 @@ industry.add_industry_outpost_layout(
         # test outpost layout
         (0, 0, "metal_works_spritelayout_shed_4_half_with_chimneys"),
         (0, 1, "metal_works_spritelayout_shed_1_with_chimneys"),
-        (0, 2, "metal_works_spritelayout_small_building"),
+        (0, 2, "metal_works_spritelayout_small_building_1"),
         (1, 0, "metal_works_spritelayout_shed_3_half"),
         (1, 1, "metal_works_spritelayout_shed_tall"),
         (1, 2, "metal_works_spritelayout_greeble_1"),
@@ -176,7 +188,7 @@ industry.add_industry_outpost_layout(
         (1, 0, "metal_works_spritelayout_shed_3_half"),
         (1, 1, "metal_works_spritelayout_shed_tall"),
         (2, 0, "metal_works_spritelayout_greeble_1"),
-        (2, 1, "metal_works_spritelayout_small_building"),
+        (2, 1, "metal_works_spritelayout_small_building_1"),
     ],
 )
 
@@ -200,7 +212,7 @@ industry.add_industry_layout(
         (2, 2, "metal_works_spritelayout_shed_tall"),
         (2, 3, "metal_works_spritelayout_greeble_2"),
         (2, 4, "metal_works_spritelayout_greeble_1"),
-        (2, 5, "metal_works_spritelayout_small_building"),
+        (2, 5, "metal_works_spritelayout_small_building_1"),
     ],
 )
 industry.add_industry_layout(
@@ -214,7 +226,7 @@ industry.add_industry_layout(
         (1, 2, "metal_works_spritelayout_shed_tall"),
         (2, 0, "metal_works_spritelayout_greeble_2"),
         (2, 1, "metal_works_spritelayout_greeble_1"),
-        (2, 2, "metal_works_spritelayout_small_building"),
+        (2, 2, "metal_works_spritelayout_small_building_1"),
         (3, 0, "metal_works_spritelayout_shed_4_half_with_chimneys"),
         (3, 1, "metal_works_spritelayout_shed_1_with_chimneys"),
         (3, 2, "metal_works_spritelayout_greeble_1"),
