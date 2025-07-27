@@ -61,6 +61,15 @@ silo_1 = industry.add_spriteset(
 gatehouse_and_rebar = industry.add_spriteset(
     sprites=[(430, 10, 64, 84, -31, -53)],
 )
+aggregate_handling_1 = industry.add_spriteset(
+    sprites=[(500, 10, 64, 84, -31, -53)],
+)
+aggregate_handling_2 = industry.add_spriteset(
+    sprites=[(570, 10, 64, 84, -31, -53)],
+)
+mostly_empty = industry.add_spriteset(
+    sprites=[(640, 10, 64, 84, -31, -53)],
+)
 blocks_1 = industry.add_spriteset(
     sprites=[(10, 100, 64, 56, -31, -26)],
 )
@@ -175,6 +184,39 @@ industry.add_spritelayout(
     ],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=10,
+)
+industry.add_spritelayout(
+    id="concrete_plant_spritelayout_aggregate_handling_1",
+    tile="concrete_plant_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[
+        aggregate_handling_1,
+    ],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=11,
+)
+industry.add_spritelayout(
+    id="concrete_plant_spritelayout_aggregate_handling_2",
+    tile="concrete_plant_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[
+        aggregate_handling_2,
+    ],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=12,
+)
+industry.add_spritelayout(
+    id="concrete_plant_spritelayout_mostly_empty",
+    tile="concrete_plant_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[
+        mostly_empty,
+    ],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=13,
 )
 
 # this industry needs outpost layout as there are lots of cargos
