@@ -63,6 +63,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_shed_1],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="plate_mill_spritelayout_shed_2",
@@ -71,6 +72,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_shed_2],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=2,
 )
 industry.add_spritelayout(
     id="plate_mill_spritelayout_metal_1",
@@ -79,6 +81,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_shed_metal_1],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="plate_mill_spritelayout_empty",
@@ -87,6 +90,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
     fences=[],
+    add_to_object_num=4,
 )
 
 # this industry needs outpost layout
