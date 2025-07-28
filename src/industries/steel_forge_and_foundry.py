@@ -1,7 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
-    id="foundry",
+    id="steel_forge_and_foundry",
     # runs both casting line (sand) and forging line (soap)
     # cleaning agents also stand in for shot-blasting etc
     accept_cargos_with_input_ratios=[
@@ -35,14 +35,14 @@ industry.enable_in_economy(
 
 # not animated tiles
 industry.add_tile(
-    id="foundry_tile_1",
+    id="steel_forge_and_foundry_tile_1",
     location_checks=TileLocationChecks(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
 )
 # animated tiles
 industry.add_tile(
-    id="foundry_tile_2",
+    id="steel_forge_and_foundry_tile_2",
     animation_length=180,
     animation_looping=True,
     animation_speed=2,
@@ -55,7 +55,7 @@ industry.add_tile(
     ),
 )
 industry.add_tile(
-    id="foundry_tile_3",
+    id="steel_forge_and_foundry_tile_3",
     animation_length=3,
     animation_looping=True,
     animation_speed=8,
@@ -126,7 +126,7 @@ sprite_smoke = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="foundry_spritelayout_furnace_anim",
-    tile="foundry_tile_2",
+    tile="steel_forge_and_foundry_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
@@ -136,7 +136,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_iron_pigs_anim",
-    tile="foundry_tile_3",
+    tile="steel_forge_and_foundry_tile_3",
     ground_sprite=spriteset_ground_pigs,
     ground_overlay=spriteset_ground_overlay_pigs,
     building_sprites=[spriteset_iron_pigs_anim],
@@ -145,7 +145,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_large_chimney",
-    tile="foundry_tile_1",
+    tile="steel_forge_and_foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
@@ -154,7 +154,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_large_shed",
-    tile="foundry_tile_1",
+    tile="steel_forge_and_foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
@@ -163,7 +163,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_large_shed_alt",
-    tile="foundry_tile_1",
+    tile="steel_forge_and_foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
@@ -172,7 +172,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_silos",
-    tile="foundry_tile_1",
+    tile="steel_forge_and_foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
@@ -181,7 +181,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_store_shed",
-    tile="foundry_tile_1",
+    tile="steel_forge_and_foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
@@ -190,7 +190,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_ingots",
-    tile="foundry_tile_1",
+    tile="steel_forge_and_foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
@@ -199,7 +199,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="foundry_spritelayout_ingots_and_gatehouse",
-    tile="foundry_tile_1",
+    tile="steel_forge_and_foundry_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
