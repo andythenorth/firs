@@ -89,6 +89,12 @@ spriteset_9 = industry.add_spriteset(
 spriteset_gantry_non_animated = industry.add_spriteset(
     sprites=[(570, 30, 64, 64, -31, -33)],
 )
+spriteset_shed_large_extra = industry.add_spriteset(
+    sprites=[(640, 10, 64, 84, -31, -53)],
+)
+spriteset_nearly_empty = industry.add_spriteset(
+    sprites=[(500, 10, 64, 31, -31, 0)],
+)
 spriteset_rolling_line_metal_animated = industry.add_spriteset(
     sprites=[
         (10, 250, 64, 64, -31, -33),
@@ -201,13 +207,22 @@ industry.add_spritelayout(
     add_to_object_num=8,
 )
 industry.add_spritelayout(
+    id="section_and_bar_mill_spritelayout_nearly_empty",
+    tile="section_and_bar_mill_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_nearly_empty],
+    fences=["nw", "ne"],
+    add_to_object_num=9,
+)
+industry.add_spritelayout(
     id="section_and_bar_mill_spritelayout_gantry_non_animated_1",
     tile="section_and_bar_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9, spriteset_gantry_non_animated],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=9,
+    add_to_object_num=10,
 )
 industry.add_spritelayout(
     id="section_and_bar_mill_spritelayout_sw_ne_rolling_line",
@@ -222,6 +237,15 @@ industry.add_spritelayout(
     fences=[],
     # no animated object; fails on mismatched spritesets, TMWFTLB as of August 2023
     # add_to_object_num=10,
+)
+industry.add_spritelayout(
+    id="section_and_bar_mill_spritelayout_shed_large_extra",
+    tile="section_and_bar_mill_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_shed_large_extra],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=11,
 )
 
 # this industry needs outpost layout as there are lots of cargos
