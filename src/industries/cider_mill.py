@@ -11,7 +11,6 @@ industry = IndustrySecondary(
     map_colour="191",
     colour_scheme_name="scheme_3_hendrix",
     location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[["orchard_piggery"], 72],
         same_type_distance=72,
     ),
     name="string(STR_IND_CIDER_MILL)",
@@ -40,7 +39,6 @@ industry.add_tile(
     },
     location_checks=TileLocationChecks(
         require_effectively_flat=True,
-        require_houses_nearby=True,
         disallow_industry_adjacent=True,
     ),
 )
