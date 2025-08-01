@@ -104,7 +104,7 @@ industry.enable_in_economy(
             "companion_industries": [
                 "appliance_factory",
                 "body_plant",
-                "foundry",
+                "steel_forge_and_foundry",
                 "precision_parts_plant",
                 "tube_and_pipe_mill",
                 "wire_rod_mill",
