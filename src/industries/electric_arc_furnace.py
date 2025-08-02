@@ -80,6 +80,9 @@ spriteset_air_plant = industry.add_spriteset(
 spriteset_extra_shed_1 = industry.add_spriteset(
     sprites=[(360, 10, 64, 64, -31, -33)],
 )
+spriteset_metal_0 = industry.add_spriteset(
+    sprites=[(290, 160, 64, 64, -31, -33)],
+)
 spriteset_metal_1 = industry.add_spriteset(
     sprites=[(430, 10, 64, 64, -31, -33)],
 )
@@ -101,6 +104,9 @@ spriteset_scrap_2 = industry.add_spriteset(
 spriteset_scrap_3 = industry.add_spriteset(
     sprites=[(850, 10, 64, 64, -31, -33)],
 )
+spriteset_scrap_4 = industry.add_spriteset(
+    sprites=[(920, 10, 64, 64, -31, -33)],
+)
 spriteset_casting_shed_1 = industry.add_spriteset(
     sprites=[(10, 160, 64, 64, -31, -33)],
 )
@@ -109,6 +115,9 @@ spriteset_casting_shed_2 = industry.add_spriteset(
 )
 spriteset_casting_shed_3 = industry.add_spriteset(
     sprites=[(150, 160, 64, 64, -31, -33)],
+)
+spriteset_small_extra_shed = industry.add_spriteset(
+    sprites=[(220, 160, 64, 64, -31, -33)],
 )
 spriteset_caster_line_metal_animated = industry.add_spriteset(
     sprites=[
@@ -267,15 +276,6 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="electric_arc_furnace_spritelayout_tanks",
-    tile="electric_arc_furnace_tile_1",
-    ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_tanks],
-    fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=9,
-)
-industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_air_plant",
     tile="electric_arc_furnace_tile_1",
     ground_sprite=spriteset_ground,
@@ -289,13 +289,40 @@ industry.add_spritelayout(
     add_to_object_num=8,
 )
 industry.add_spritelayout(
+    id="electric_arc_furnace_spritelayout_tanks",
+    tile="electric_arc_furnace_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_tanks],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=9,
+)
+industry.add_spritelayout(
+    id="electric_arc_furnace_spritelayout_small_extra_shed",
+    tile="electric_arc_furnace_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_small_extra_shed],
+    fences=["nw", "ne"],
+    add_to_object_num=10,
+)
+industry.add_spritelayout(
+    id="electric_arc_furnace_spritelayout_metal_0",
+    tile="electric_arc_furnace_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_metal_0],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=11,
+)
+industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_metal_1",
     tile="electric_arc_furnace_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_metal_1],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=10,
+    add_to_object_num=12,
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_metal_2",
@@ -304,7 +331,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_metal_2],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=11,
+    add_to_object_num=13,
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_metal_3",
@@ -313,7 +340,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_metal_3],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=12,
+    add_to_object_num=14,
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_metal_4",
@@ -322,7 +349,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_metal_4],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=13,
+    add_to_object_num=15,
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_extra_shed_1",
@@ -340,7 +367,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_scrap_1],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=14,
+    add_to_object_num=16,
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_scrap_2",
@@ -349,7 +376,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_scrap_2],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=15,
+    add_to_object_num=17,
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_scrap_3",
@@ -358,7 +385,16 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_scrap_3],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=16,
+    add_to_object_num=18,
+)
+industry.add_spritelayout(
+    id="electric_arc_furnace_spritelayout_scrap_4",
+    tile="electric_arc_furnace_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_scrap_4],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=19,
 )
 
 # this industry needs outpost layout as there are lots of cargos
