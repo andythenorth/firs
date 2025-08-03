@@ -95,6 +95,9 @@ spriteset_slag_dump_extra_1 = industry.add_spriteset(
 spriteset_slag_dump_extra_2 = industry.add_spriteset(
     sprites=[(710, 10, 64, 120, -31, -89)],
 )
+spriteset_gatehouse = industry.add_spriteset(
+    sprites=[(780, 10, 64, 120, -31, -89)],
+)
 spriteset_animated_dozer = industry.add_spriteset(
     sprites=[
         (10, 140, 64, 64, -31, -31),
@@ -145,7 +148,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=8,
+    add_to_object_num=9,
 )
 industry.add_spritelayout(
     id="slag_grinding_plant_spritelayout_large_silo",
@@ -240,7 +243,15 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=2,
 )
-
+industry.add_spritelayout(
+    id="slag_grinding_plant_spritelayout_gatehouse",
+    tile="slag_grinding_plant_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_gatehouse],
+    fences=[], # no fences, entrance tile
+    add_to_object_num=8,
+)
 industry.add_multi_tile_object(
     add_to_object_num=4,
     view_layout=[
