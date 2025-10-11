@@ -149,7 +149,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
     fences=["nw", "ne", "se", "sw"],
-    add_to_object_num=7,
+    add_to_object_num=8,
 )
 
 industry.add_industry_layout(
