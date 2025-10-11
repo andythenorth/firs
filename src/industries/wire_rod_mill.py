@@ -189,6 +189,15 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=9,
 )
+industry.add_spritelayout(
+    id="wire_rod_mill_spritelayout_empty",
+    tile="wire_rod_mill_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=12,
+)
 
 # this industry needs outpost layout as there are lots of cargos
 # note there are two outposts, as this industry has sprites oriented sw_ne or se_nw, will select outpost to match main layout orientation

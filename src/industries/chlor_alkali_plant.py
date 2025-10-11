@@ -245,6 +245,14 @@ industry.add_spritelayout(
     building_sprites=[spriteset_salt_handling],
     add_to_object_num=11,
 )
+industry.add_spritelayout(
+    id="chlor_alkali_plant_spritelayout_empty",
+    tile="chlor_alkali_plant_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[],
+    add_to_object_num=12,
+)
 industry.add_multi_tile_object(
     add_to_object_num=9,
     view_layout=[

@@ -229,6 +229,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=11,
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_tanks",

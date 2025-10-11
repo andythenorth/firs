@@ -150,6 +150,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
+    add_to_object_num=14,
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_oven_battery_pipes_only",

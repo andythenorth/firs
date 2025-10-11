@@ -212,6 +212,14 @@ industry.add_spritelayout(
     add_to_object_num=6,
 )
 industry.add_spritelayout(
+    id="potash_mine_spritelayout_empty",
+    tile="potash_mine_tile_2",
+    ground_sprite=sprite_ground,
+    ground_overlay=sprite_ground_overlay,
+    building_sprites=[],
+    add_to_object_num=8,
+)
+industry.add_spritelayout(
     id="potash_mine_spritelayout_winding_house",
     tile="potash_mine_tile_2",
     ground_sprite=sprite_ground,

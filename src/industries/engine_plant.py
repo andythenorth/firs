@@ -131,6 +131,15 @@ industry.add_spritelayout(
     building_sprites=[spriteset_7],
     fences=["nw", "ne", "se", "sw"],
 )
+industry.add_spritelayout(
+    id="engine_plant_spritelayout_empty",
+    tile="engine_plant_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=5,
+)
 
 industry.add_industry_layout(
     id="engine_plant_industry_layout_1",

@@ -138,6 +138,15 @@ industry.add_spritelayout(
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
 )
+industry.add_spritelayout(
+    id="lime_kiln_spritelayout_empty",
+    tile="lime_kiln_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=5,
+)
 
 industry.add_industry_layout(
     id="lime_kiln_industry_layout_1",

@@ -153,21 +153,13 @@ industry.add_spritelayout(
     add_to_object_num=4,
 )
 industry.add_spritelayout(
-    id="strip_mill_spritelayout_office",
-    tile="strip_mill_tile_1",
-    ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_small_office],
-    fences=["nw", "ne", "sw"],
-    add_to_object_num=6,
-)
-industry.add_spritelayout(
     id="strip_mill_spritelayout_coils_1",
     tile="strip_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_coils_1],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=6,
 )
 industry.add_spritelayout(
     id="strip_mill_spritelayout_coils_2",
@@ -176,6 +168,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_coils_2],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=7,
 )
 industry.add_spritelayout(
     id="strip_mill_spritelayout_forklift_1",
@@ -184,6 +177,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_forklift_1],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=8,
 )
 industry.add_spritelayout(
     id="strip_mill_spritelayout_small_office",
@@ -192,6 +186,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_small_office],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=9,
 )
 industry.add_spritelayout(
     id="strip_mill_spritelayout_empty",
@@ -199,7 +194,8 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
-    fences=[],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=10,
 )
 
 # this industry needs outpost layout as there are lots of cargos

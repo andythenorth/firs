@@ -67,9 +67,6 @@ spriteset_5 = industry.add_spriteset(
 spriteset_6 = industry.add_spriteset(
     sprites=[(360, 10, 64, 64, -31, -32)],
 )
-spriteset_7 = industry.add_spriteset(
-    sprites=[(430, 10, 64, 64, -31, -32)],
-)
 
 industry.add_spritelayout(
     id="cryo_plant_spritelayout_separation_tower",
@@ -130,7 +127,8 @@ industry.add_spritelayout(
     tile="cryo_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_7],
+    building_sprites=[],
+    add_to_object_num=7,
 )
 
 industry.add_industry_layout(

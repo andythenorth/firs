@@ -201,6 +201,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=20,
 )
 industry.add_spritelayout(
     id="electric_arc_furnace_spritelayout_large_furnace_shed_1",

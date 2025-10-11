@@ -122,6 +122,15 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=5,
 )
+industry.add_spritelayout(
+    id="body_plant_spritelayout_empty",
+    tile="body_plant_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=6,
+)
 
 industry.add_multi_tile_object(
     add_to_object_num=1,

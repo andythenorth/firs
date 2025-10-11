@@ -247,6 +247,15 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=11,
 )
+industry.add_spritelayout(
+    id="section_and_bar_mill_spritelayout_empty",
+    tile="section_and_bar_mill_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=12,
+)
 
 # this industry needs outpost layout as there are lots of cargos
 industry.add_industry_outpost_layout(

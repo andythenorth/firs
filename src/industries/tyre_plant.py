@@ -151,6 +151,15 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=8,
 )
+industry.add_spritelayout(
+    id="tyre_plant_spritelayout_tyres_empty",
+    tile="tyre_plant_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=9,
+)
 
 industry.add_industry_layout(
     id="tyre_plant_industry_layout_1",

@@ -91,6 +91,7 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
+    add_to_object_num=6,
 )
 industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_boiler",

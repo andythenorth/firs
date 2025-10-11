@@ -214,6 +214,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
     fences=[],
+    add_to_object_num=11,
 )
 
 # this industry needs outpost layout as there are lots of cargos

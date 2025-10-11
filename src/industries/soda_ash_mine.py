@@ -205,6 +205,15 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_truck],
+    add_to_object_num=7,
+)
+industry.add_spritelayout(
+    id="soda_ash_mine_spritelayout_empty",
+    tile="soda_ash_mine_tile_2",
+    ground_sprite=sprite_ground,
+    ground_overlay=sprite_ground_overlay,
+    building_sprites=[],
+    add_to_object_num=8,
 )
 
 industry.add_multi_tile_object(
