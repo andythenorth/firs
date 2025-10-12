@@ -79,15 +79,6 @@ base = "спіртное"
 ["STR_CARGO_NAME_ALCOHOL.gen"]
 base = "спіртнога"
 
-[STR_CARGO_NAME_BAUXITE]
-base = "{G=p}Баксіты"
-
-["STR_CARGO_NAME_BAUXITE.acc"]
-base = "баксіты"
-
-["STR_CARGO_NAME_BAUXITE.gen"]
-base = "баксітаў"
-
 [STR_CARGO_NAME_BEANS]
 base = "{G=f}Фасоля"
 
@@ -204,15 +195,6 @@ base = "выбуховыя рэчывы"
 
 ["STR_CARGO_NAME_EXPLOSIVES.gen"]
 base = "выбуховых рэчываў"
-
-[STR_CARGO_NAME_FIBRES]
-base = "{G=p}Раслінныя валокны"
-
-["STR_CARGO_NAME_FIBRES.acc"]
-base = "раслінныя валокны"
-
-["STR_CARGO_NAME_FIBRES.gen"]
-base = "раслінных валокнаў"
 
 [STR_CARGO_NAME_FISH]
 base = "{G=f}Рыба"
@@ -370,15 +352,6 @@ base = "кальцый"
 ["STR_CARGO_NAME_QUICKLIME.gen"]
 base = "кальцыю"
 
-[STR_CARGO_NAME_RECYCLABLES]
-base = "{G=f}Другасная сыравіна"
-
-["STR_CARGO_NAME_RECYCLABLES.acc"]
-base = "другасную сыравіну"
-
-["STR_CARGO_NAME_RECYCLABLES.gen"]
-base = "другаснай сыравіны"
-
 [STR_CARGO_NAME_SALT]
 base = "{G=f}Соль"
 
@@ -436,15 +409,6 @@ base = "сталі"
 [STR_CARGO_NAME_AGGREGATES]
 base = "{G=p}Камяні"
 
-[STR_CARGO_NAME_SUGAR_BEET]
-base = "{G=p}Буракі"
-
-["STR_CARGO_NAME_SUGAR_BEET.acc"]
-base = "буракі"
-
-["STR_CARGO_NAME_SUGAR_BEET.gen"]
-base = "буракоў"
-
 [STR_CARGO_NAME_SULPHUR]
 base = "{G=f}Сера"
 
@@ -493,9 +457,6 @@ base = "{VOLUME} кіслаты"
 [STR_CARGO_UNIT_ALCOHOL]
 base = "{VOLUME} спіртнога"
 
-[STR_CARGO_UNIT_BAUXITE]
-base = "{WEIGHT} баксітаў"
-
 [STR_CARGO_UNIT_BEANS]
 base = "{WEIGHT} фасолі"
 
@@ -537,9 +498,6 @@ base = "{SIGNED_WORD} скрын{P ка і ак} выбуховых рэчыва
 
 [STR_CARGO_UNIT_FERTILISER]
 base = "{WEIGHT} ўгнаенняў"
-
-[STR_CARGO_UNIT_FIBRES]
-base = "{SIGNED_WORD} {P 0 \"мех\" \"мяхі\" \"\"} раслінных валокнаў"
 
 [STR_CARGO_UNIT_FISH]
 base = "{WEIGHT} рыбы"
@@ -598,9 +556,6 @@ base = "{WEIGHT} пірытавай руды"
 [STR_CARGO_UNIT_QUICKLIME]
 base = "{WEIGHT} марганца"
 
-[STR_CARGO_UNIT_RECYCLABLES]
-base = "{WEIGHT} другаснай сыравіны"
-
 [STR_CARGO_UNIT_SALT]
 base = "{WEIGHT} солі"
 
@@ -621,9 +576,6 @@ base = "{WEIGHT} сталі"
 
 [STR_CARGO_UNIT_AGGREGATES]
 base = "{WEIGHT} вапняку"
-
-[STR_CARGO_UNIT_SUGAR_BEET]
-base = "{WEIGHT} буракоў"
 
 [STR_CARGO_UNIT_SULPHUR]
 base = "{WEIGHT} серы"
@@ -648,9 +600,6 @@ base = "{TINYFONT}КС"
 
 [STR_CID_ALCOHOL]
 base = "{TINYFONT}СП"
-
-[STR_CID_BAUXITE]
-base = "{TINYFONT}БС"
 
 [STR_CID_BEANS]
 base = "{TINYFONT}ФС"
@@ -696,9 +645,6 @@ base = "{TINYFONT}АГ"
 
 [STR_CID_FERTILISER]
 base = "{TINYFONT}УГ"
-
-[STR_CID_FIBRES]
-base = "{TINYFONT}РВ"
 
 [STR_CID_FISH]
 base = "{TINYFONT}РЫ"
@@ -751,9 +697,6 @@ base = "{TINYFONT}КЧ"
 [STR_CID_QUICKLIME]
 base = "{TINYFONT}КЛ"
 
-[STR_CID_RECYCLABLES]
-base = "{TINYFONT}ДС"
-
 [STR_CID_SALT]
 base = "{TINYFONT}СО"
 
@@ -774,9 +717,6 @@ base = "{TINYFONT}СЛ"
 
 [STR_CID_AGGREGATES]
 base = "{TINYFONT}ВП"
-
-[STR_CID_SUGAR_BEET]
-base = "{TINYFONT}БР"
 
 [STR_CID_SULPHUR]
 base = "{TINYFONT}СЕ"

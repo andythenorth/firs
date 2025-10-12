@@ -124,24 +124,6 @@ base = "amoniak"
 ["STR_CARGO_NAME_AMMONIA.d"]
 base = "amoniaku"
 
-[STR_CARGO_NAME_AMMONIUM_NITRATE]
-base = "{G=m}Azotan amonu"
-
-["STR_CARGO_NAME_AMMONIUM_NITRATE.b"]
-base = "azotan amonu"
-
-["STR_CARGO_NAME_AMMONIUM_NITRATE.d"]
-base = "azotanu amonu"
-
-[STR_CARGO_NAME_BAUXITE]
-base = "{G=m}Boksyt"
-
-["STR_CARGO_NAME_BAUXITE.b"]
-base = "boksyt"
-
-["STR_CARGO_NAME_BAUXITE.d"]
-base = "boksytu"
-
 [STR_CARGO_NAME_BEANS]
 base = "{G=f}Soja"
 
@@ -391,15 +373,6 @@ base = "zaopatrzeniu technicznym"
 ["STR_CARGO_NAME_ENGINEERING_SUPPLIES.n"]
 base = "zaopatrzeniem technicznym"
 
-[STR_CARGO_NAME_ETHYLENE]
-base = "{G=m}Etylen"
-
-["STR_CARGO_NAME_ETHYLENE.b"]
-base = "etylen"
-
-["STR_CARGO_NAME_ETHYLENE.d"]
-base = "etylenu"
-
 [STR_CARGO_NAME_EXPLOSIVES]
 base = "Materiały wybuchowe"
 
@@ -417,21 +390,6 @@ base = "materiałach wybuchowych"
 
 ["STR_CARGO_NAME_EXPLOSIVES.n"]
 base = "materiałami wybuchowymi"
-
-[STR_CARGO_NAME_FIBRES]
-base = "Włókna roślinne"
-
-["STR_CARGO_NAME_FIBRES.b"]
-base = "włókna roślinne"
-
-["STR_CARGO_NAME_FIBRES.c"]
-base = "włóknom roślinnym"
-
-["STR_CARGO_NAME_FIBRES.d"]
-base = "włókien roślinnych"
-
-["STR_CARGO_NAME_FIBRES.n"]
-base = "włóknami roślinnymi"
 
 [STR_CARGO_NAME_FISH]
 base = "Ryby"
@@ -490,15 +448,6 @@ base = "nawozie"
 ["# STR_CARGO_NAME_FOOD_ADDITIVES"]
 base = "Food Additives //unused in current version, not sure how to translate"
 
-[STR_CARGO_NAME_FORMIC_ACID]
-base = "{G=m}Kwas mrówkowy"
-
-["STR_CARGO_NAME_FORMIC_ACID.b"]
-base = "kwas mrówkowy"
-
-["STR_CARGO_NAME_FORMIC_ACID.d"]
-base = "kwasu mrówkowego"
-
 [STR_CARGO_NAME_FRUITS]
 base = "{G=m}Owoce"
 
@@ -507,15 +456,6 @@ base = "owoce"
 
 ["STR_CARGO_NAME_FRUITS.d"]
 base = "owoców"
-
-[STR_CARGO_NAME_FURNITURE]
-base = "Meble"
-
-["STR_CARGO_NAME_FURNITURE.b"]
-base = "meble"
-
-["STR_CARGO_NAME_FURNITURE.d"]
-base = "mebli"
 
 [STR_CARGO_NAME_GLASS]
 base = "{G=n}Szkło"
@@ -591,15 +531,6 @@ base = "wodorotlenek sodu"
 
 ["STR_CARGO_NAME_LYE.d"]
 base = "wodorotlenku sodu"
-
-[STR_CARGO_NAME_METHANE]
-base = "{G=m}Metan"
-
-["STR_CARGO_NAME_METHANE.b"]
-base = "metan"
-
-["STR_CARGO_NAME_METHANE.d"]
-base = "metanu"
 
 [STR_CARGO_NAME_METHANOL]
 base = "{G=m}Metanol"
@@ -790,15 +721,6 @@ base = "potażem"
 ["STR_CARGO_NAME_POTASH.w"]
 base = "potażu"
 
-[STR_CARGO_NAME_PROPYLENE]
-base = "{G=m}Propen"
-
-["STR_CARGO_NAME_PROPYLENE.b"]
-base = "propen"
-
-["STR_CARGO_NAME_PROPYLENE.d"]
-base = "propenu"
-
 [STR_CARGO_NAME_PYRITE_ORE]
 base = "{G=f}Ruda pirytu"
 
@@ -840,15 +762,6 @@ base = "zbrojenie"
 
 ["STR_CARGO_NAME_REBAR.d"]
 base = "zbrojenia"
-
-[STR_CARGO_NAME_RECYCLABLES]
-base = "Surowce wtórne"
-
-["STR_CARGO_NAME_RECYCLABLES.b"]
-base = "surowce wtórne"
-
-["STR_CARGO_NAME_RECYCLABLES.d"]
-base = "surowców wtórnych"
 
 [STR_CARGO_NAME_SALT]
 base = "{G=f}Sól"
@@ -961,15 +874,6 @@ base = "walcówki stalowej"
 [STR_CARGO_NAME_AGGREGATES]
 base = "Kamienie"
 
-[STR_CARGO_NAME_SUGAR_BEET]
-base = "Buraki cukrowe"
-
-["STR_CARGO_NAME_SUGAR_BEET.b"]
-base = "buraki cukrowe"
-
-["STR_CARGO_NAME_SUGAR_BEET.d"]
-base = "buraków cukrowych"
-
 [STR_CARGO_NAME_SULPHUR]
 base = "{G=f}Siarka"
 
@@ -1035,15 +939,6 @@ base = "opony"
 
 ["STR_CARGO_NAME_TYRES.d"]
 base = "opon"
-
-[STR_CARGO_NAME_UREA]
-base = "{G=m}Mocznik"
-
-["STR_CARGO_NAME_UREA.b"]
-base = "mocznik"
-
-["STR_CARGO_NAME_UREA.d"]
-base = "mocznika"
 
 [STR_CARGO_NAME_VEHICLE_BODIES]
 base = "{G=f}Karoseria"
@@ -1156,12 +1051,6 @@ base = "{WEIGHT} glinu"
 [STR_CARGO_UNIT_AMMONIA]
 base = "{VOLUME} amoniaku"
 
-[STR_CARGO_UNIT_AMMONIUM_NITRATE]
-base = "{VOLUME} azotanu amonu"
-
-[STR_CARGO_UNIT_BAUXITE]
-base = "{WEIGHT} boksytu"
-
 [STR_CARGO_UNIT_BEANS]
 base = "{WEIGHT} soi"
 
@@ -1219,9 +1108,6 @@ base = "{WEIGHT} części elektrycznych"
 [STR_CARGO_UNIT_ENGINEERING_SUPPLIES]
 base = "{SIGNED_WORD} skrzy{P 0 nia nie ń} zaopatrzenia technicznego"
 
-[STR_CARGO_UNIT_ETHYLENE]
-base = "{VOLUME} etylenu"
-
 [STR_CARGO_UNIT_EXPLOSIVES]
 base = "{SIGNED_WORD} skrzy{P 0 nia nie ń} materiałów wybuchowych"
 
@@ -1231,12 +1117,6 @@ base = "{WEIGHT} nawozu"
 ["# STR_CARGO_UNIT_FOOD_ADDITIVES"]
 base = "{WEIGHT} of food additives //unused in current version, not sure how to translate"
 
-[STR_CARGO_UNIT_FORMIC_ACID]
-base = "{VOLUME} kwasu mrówkowego"
-
-[STR_CARGO_UNIT_FIBRES]
-base = "{SIGNED_WORD} bel{P 0 a e i} włókien roślinnych"
-
 [STR_CARGO_UNIT_FISH]
 base = "{WEIGHT} ryb"
 
@@ -1245,9 +1125,6 @@ base = "{SIGNED_WORD} skrzy{P 0 nia nie ń} zaopatrzenia rolnictwa"
 
 [STR_CARGO_UNIT_FRUITS]
 base = "{WEIGHT} owoców"
-
-[STR_CARGO_UNIT_FURNITURE]
-base = "{WEIGHT} mebli"
 
 [STR_CARGO_UNIT_GLASS]
 base = "{WEIGHT} szkła"
@@ -1272,9 +1149,6 @@ base = "{VOLUME} wodorotlenku sodu"
 
 [STR_CARGO_UNIT_MANGANESE]
 base = "{WEIGHT} manganu"
-
-[STR_CARGO_UNIT_METHANE]
-base = "{VOLUME} metanu"
 
 [STR_CARGO_UNIT_METHANOL]
 base = "{VOLUME} metanolu"
@@ -1321,9 +1195,6 @@ base = "{WEIGHT} plastików"
 [STR_CARGO_UNIT_POTASH]
 base = "{WEIGHT} potażu"
 
-[STR_CARGO_UNIT_PROPYLENE]
-base = "{VOLUME} propenu"
-
 [STR_CARGO_UNIT_PYRITE_ORE]
 base = "{WEIGHT} rudy pirytu"
 
@@ -1335,9 +1206,6 @@ base = "{VOLUME} of raw latex //not sure how to translate, but not used in curre
 
 [STR_CARGO_UNIT_REBAR]
 base = "{WEIGHT} zbrojenia"
-
-[STR_CARGO_UNIT_RECYCLABLES]
-base = "{WEIGHT} surowców wtórnych"
 
 [STR_CARGO_UNIT_SALT]
 base = "{WEIGHT} soli"
@@ -1365,9 +1233,6 @@ base = "{WEIGHT} walcówki stalowej"
 
 [STR_CARGO_UNIT_AGGREGATES]
 base = "{WEIGHT} kamieni"
-
-[STR_CARGO_UNIT_SUGAR_BEET]
-base = "{WEIGHT} buraków cukrowych"
 
 [STR_CARGO_UNIT_SULPHUR]
 base = "{WEIGHT} siarki"
@@ -1425,12 +1290,6 @@ base = "{TINYFONT}AL"
 
 [STR_CID_AMMONIA]
 base = "{TINYFONT}AM"
-
-[STR_CID_AMMONIUM_NITRATE]
-base = "{TINYFONT}AZAM"
-
-[STR_CID_BAUXITE]
-base = "{TINYFONT}BOK"
 
 [STR_CID_BEANS]
 base = "{TINYFONT}SOJA"
@@ -1501,17 +1360,11 @@ base = "{TINYFONT}ZR"
 [STR_CID_FERTILISER]
 base = "{TINYFONT}NW"
 
-[STR_CID_FIBRES]
-base = "{TINYFONT}WN"
-
 [STR_CID_FISH]
 base = "{TINYFONT}RB"
 
 ["# STR_CID_FOOD_ADDITIVES"]
 base = "{TINYFONT}FV //unused in current version, not sure how to translate"
-
-[STR_CID_FORMIC_ACID]
-base = "{TINYFONT}KWMR"
 
 [STR_CID_FURNITURE]
 base = "{TINYFONT}MBL"
@@ -1603,9 +1456,6 @@ base = "{TINYFONT}RL //not sure how to translate, but not used in current versio
 [STR_CID_REBAR]
 base = "{TINYFONT}ZBR"
 
-[STR_CID_RECYCLABLES]
-base = "{TINYFONT}SW"
-
 [STR_CID_SALT]
 base = "{TINYFONT}SL"
 
@@ -1626,9 +1476,6 @@ base = "{TINYFONT}ST"
 
 [STR_CID_AGGREGATES]
 base = "{TINYFONT}KM"
-
-[STR_CID_SUGAR_BEET]
-base = "{TINYFONT}BC"
 
 [STR_CID_SULPHUR]
 base = "{TINYFONT}SI"

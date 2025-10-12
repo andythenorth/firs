@@ -159,18 +159,6 @@ base = "Alkohol"
 ["STR_CARGO_NAME_ALCOHOL.sü"]
 base = "Alkohol"
 
-[STR_CARGO_NAME_BAUXITE]
-base = "Boksiit"
-
-["STR_CARGO_NAME_BAUXITE.g"]
-base = "Boksiit"
-
-["STR_CARGO_NAME_BAUXITE.in"]
-base = "Boksiit"
-
-["STR_CARGO_NAME_BAUXITE.sü"]
-base = "Boksiit"
-
 [STR_CARGO_NAME_BEANS]
 base = "Oad"
 
@@ -233,18 +221,6 @@ base = "Ehitustarvikuid"
 
 ["STR_CARGO_NAME_ENGINEERING_SUPPLIES.sü"]
 base = "Ehitustarvikuid"
-
-[STR_CARGO_NAME_FIBRES]
-base = "Taimekiud"
-
-["STR_CARGO_NAME_FIBRES.g"]
-base = "Taimekiud"
-
-["STR_CARGO_NAME_FIBRES.in"]
-base = "Taimekiud"
-
-["STR_CARGO_NAME_FIBRES.sü"]
-base = "Taimekiud"
 
 [STR_CARGO_NAME_FISH]
 base = "Kala"
@@ -330,18 +306,6 @@ base = "Bensiin"
 ["STR_CARGO_NAME_PETROL.sü"]
 base = "Bensiin"
 
-[STR_CARGO_NAME_RECYCLABLES]
-base = "Taaskasutatavad"
-
-["STR_CARGO_NAME_RECYCLABLES.g"]
-base = "Taaskasutatavad"
-
-["STR_CARGO_NAME_RECYCLABLES.in"]
-base = "Taaskasutatavad"
-
-["STR_CARGO_NAME_RECYCLABLES.sü"]
-base = "Taaskasutatavad"
-
 [STR_CARGO_NAME_SAND]
 base = "Liiv"
 
@@ -368,18 +332,6 @@ base = "Vanametall"
 
 [STR_CARGO_NAME_AGGREGATES]
 base = "Kivi"
-
-[STR_CARGO_NAME_SUGAR_BEET]
-base = "Suhkrupeet"
-
-["STR_CARGO_NAME_SUGAR_BEET.g"]
-base = "Suhkrupeet"
-
-["STR_CARGO_NAME_SUGAR_BEET.in"]
-base = "Suhkrupeet"
-
-["STR_CARGO_NAME_SUGAR_BEET.sü"]
-base = "Suhkrupeet"
 
 [STR_CARGO_NAME_VEHICLE_PARTS]
 base = "Sõidukiosad"
@@ -416,18 +368,6 @@ base = "{VOLUME} alkoholi"
 
 ["STR_CARGO_UNIT_ALCOHOL.sü"]
 base = "{VOLUME} alkoholi"
-
-[STR_CARGO_UNIT_BAUXITE]
-base = "{WEIGHT} boksiidi"
-
-["STR_CARGO_UNIT_BAUXITE.g"]
-base = "{WEIGHT} boksiidi"
-
-["STR_CARGO_UNIT_BAUXITE.in"]
-base = "{WEIGHT} boksiidi"
-
-["STR_CARGO_UNIT_BAUXITE.sü"]
-base = "{WEIGHT} boksiidi"
 
 [STR_CARGO_UNIT_BEANS]
 base = "{WEIGHT} ube"
@@ -500,18 +440,6 @@ base = "{SIGNED_WORD} kasti{P 0 \"\" s} ehitustarvikuid"
 
 ["STR_CARGO_UNIT_ENGINEERING_SUPPLIES.sü"]
 base = "{SIGNED_WORD} kasti{P 0 \"\" s} ehitustarvikuid"
-
-[STR_CARGO_UNIT_FIBRES]
-base = "{SIGNED_WORD} palli{P 0 \"\" s} taimekiudu"
-
-["STR_CARGO_UNIT_FIBRES.g"]
-base = "{SIGNED_WORD} palli{P 0 \"\" s} taimekiudu"
-
-["STR_CARGO_UNIT_FIBRES.in"]
-base = "{SIGNED_WORD} palli{P 0 \"\" s} taimekiudu"
-
-["STR_CARGO_UNIT_FIBRES.sü"]
-base = "{SIGNED_WORD} palli{P 0 \"\" s} taimekiudu"
 
 [STR_CARGO_UNIT_FISH]
 base = "{WEIGHT} kala"
@@ -597,18 +525,6 @@ base = "{VOLUME} bensiini"
 ["STR_CARGO_UNIT_PETROL.sü"]
 base = "{VOLUME} bensiini"
 
-[STR_CARGO_UNIT_RECYCLABLES]
-base = "{WEIGHT} Taaskasutatavad tooteid"
-
-["STR_CARGO_UNIT_RECYCLABLES.g"]
-base = "{WEIGHT} Taaskasutatavad tooteid"
-
-["STR_CARGO_UNIT_RECYCLABLES.in"]
-base = "{WEIGHT} Taaskasutatavad tooteid"
-
-["STR_CARGO_UNIT_RECYCLABLES.sü"]
-base = "{WEIGHT} Taaskasutatavad tooteid"
-
 [STR_CARGO_UNIT_SAND]
 base = "{WEIGHT} liiva"
 
@@ -636,18 +552,6 @@ base = "{WEIGHT} vanametalli"
 [STR_CARGO_UNIT_AGGREGATES]
 base = "{WEIGHT} kive"
 
-[STR_CARGO_UNIT_SUGAR_BEET]
-base = "{WEIGHT}suhkrupeeti"
-
-["STR_CARGO_UNIT_SUGAR_BEET.g"]
-base = "{WEIGHT}suhkrupeeti"
-
-["STR_CARGO_UNIT_SUGAR_BEET.in"]
-base = "{WEIGHT}suhkrupeeti"
-
-["STR_CARGO_UNIT_SUGAR_BEET.sü"]
-base = "{WEIGHT}suhkrupeeti"
-
 [STR_CARGO_UNIT_VEHICLE_PARTS]
 base = "{SIGNED_WORD} kasti{P 0 \"\" s} sõidukiosi"
 
@@ -674,9 +578,6 @@ base = "{SIGNED_WORD} palli{P 0 \"\" s} villa"
 
 [STR_CID_ALCOHOL]
 base = "{TINYFONT}AL"
-
-[STR_CID_BAUXITE]
-base = "{TINYFONT}BX"
 
 [STR_CID_BEANS]
 base = "{TINYFONT}BN"
@@ -707,9 +608,6 @@ base = "{TINYFONT}ES"
 
 [STR_CID_FARM_SUPPLIES]
 base = "{TINYFONT}FS"
-
-[STR_CID_FIBRES]
-base = "{TINYFONT}PF"
 
 [STR_CID_FISH]
 base = "{TINYFONT}FI"
@@ -753,9 +651,6 @@ base = "{TINYFONT}PT"
 ["STR_CID_PETROL.sü"]
 base = "{TINYFONT}PT"
 
-[STR_CID_RECYCLABLES]
-base = "{TINYFONT}RC"
-
 [STR_CID_SAND]
 base = "{TINYFONT}SA"
 
@@ -764,9 +659,6 @@ base = "{TINYFONT}SM"
 
 [STR_CID_AGGREGATES]
 base = "{TINYFONT}ST"
-
-[STR_CID_SUGAR_BEET]
-base = "{TINYFONT}SB"
 
 [STR_CID_VEHICLE_PARTS]
 base = "{TINYFONT}VP"

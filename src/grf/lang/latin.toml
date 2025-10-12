@@ -70,18 +70,6 @@ base = "Alcoholi"
 ["STR_CARGO_NAME_ALCOHOL.gen"]
 base = "alcoholis"
 
-[STR_CARGO_NAME_BAUXITE]
-base = "{G=f}Bauxites"
-
-["STR_CARGO_NAME_BAUXITE.acc"]
-base = "Bauxitam"
-
-["STR_CARGO_NAME_BAUXITE.dat"]
-base = "Bauxitae"
-
-["STR_CARGO_NAME_BAUXITE.gen"]
-base = "bauxitae"
-
 [STR_CARGO_NAME_BEANS]
 base = "{G=fp}Fabae"
 
@@ -189,18 +177,6 @@ base = "Apparatibus Ingeniariis"
 
 ["STR_CARGO_NAME_ENGINEERING_SUPPLIES.gen"]
 base = "apparatuum ingeniariorum"
-
-[STR_CARGO_NAME_FIBRES]
-base = "{G=fp}Fibrae Stirpium"
-
-["STR_CARGO_NAME_FIBRES.acc"]
-base = "Fibras Stirpium"
-
-["STR_CARGO_NAME_FIBRES.dat"]
-base = "Fibris Stirpium"
-
-["STR_CARGO_NAME_FIBRES.gen"]
-base = "fibrarum stirpium"
 
 [STR_CARGO_NAME_FISH]
 base = "{G=mp}Pisces"
@@ -334,18 +310,6 @@ base = "Pyritae"
 ["STR_CARGO_NAME_PYRITE_ORE.gen"]
 base = "pyritae"
 
-[STR_CARGO_NAME_RECYCLABLES]
-base = "{G=np}Regyrabilia"
-
-["STR_CARGO_NAME_RECYCLABLES.acc"]
-base = "Regyrabilia"
-
-["STR_CARGO_NAME_RECYCLABLES.dat"]
-base = "Regyrabilibus"
-
-["STR_CARGO_NAME_RECYCLABLES.gen"]
-base = "regyrabilium"
-
 [STR_CARGO_NAME_SAND]
 base = "{G=f}Harena"
 
@@ -372,18 +336,6 @@ base = "scrutorum metallicorum"
 
 [STR_CARGO_NAME_AGGREGATES]
 base = "{G=fp}Petrae"
-
-[STR_CARGO_NAME_SUGAR_BEET]
-base = "{G=f}Beta Saccharifera"
-
-["STR_CARGO_NAME_SUGAR_BEET.acc"]
-base = "Betam Sacchariferam"
-
-["STR_CARGO_NAME_SUGAR_BEET.dat"]
-base = "Betae Sacchariferae"
-
-["STR_CARGO_NAME_SUGAR_BEET.gen"]
-base = "betae sacchariferae"
 
 [STR_CARGO_NAME_VEHICLE_PARTS]
 base = "{G=fp}Partes Vehiculariae"
@@ -424,9 +376,6 @@ base = "lanae"
 [STR_CARGO_UNIT_ALCOHOL]
 base = "{VOLUME} alcoholis"
 
-[STR_CARGO_UNIT_BAUXITE]
-base = "{WEIGHT} bauxitae"
-
 [STR_CARGO_UNIT_BEANS]
 base = "{WEIGHT} fabarum"
 
@@ -453,9 +402,6 @@ base = "{VOLUME} olei edulis"
 
 [STR_CARGO_UNIT_ENGINEERING_SUPPLIES]
 base = "{G=fp}{SIGNED_WORD} capsa{P 0 \"\" e} apparatuum ingeniariorum"
-
-[STR_CARGO_UNIT_FIBRES]
-base = "{G=fp}{SIGNED_WORD} sarcina{P 0 \"\" e} fibrarum stirpium"
 
 [STR_CARGO_UNIT_FISH]
 base = "{WEIGHT} piscium"
@@ -490,9 +436,6 @@ base = "{WEIGHT} phosphatis"
 [STR_CARGO_UNIT_PYRITE_ORE]
 base = "{WEIGHT} pyritae"
 
-[STR_CARGO_UNIT_RECYCLABLES]
-base = "{WEIGHT} regyrabilium"
-
 [STR_CARGO_UNIT_SAND]
 base = "{WEIGHT} harenae"
 
@@ -501,9 +444,6 @@ base = "{WEIGHT} scrutorum metallicorum"
 
 [STR_CARGO_UNIT_AGGREGATES]
 base = "{WEIGHT} petrarum"
-
-[STR_CARGO_UNIT_SUGAR_BEET]
-base = "{WEIGHT} betae sacchariferae"
 
 [STR_CARGO_UNIT_VEHICLE_PARTS]
 base = "{G=fp}{SIGNED_WORD} capsa{P 0 \"\" e} partium vehiculariarum"
@@ -516,9 +456,6 @@ base = "{G=fp}{SIGNED_WORD} sarcina{P 0 \"\" e} lanae"
 
 [STR_CID_ALCOHOL]
 base = "{TINYFONT}AC"
-
-[STR_CID_BAUXITE]
-base = "{TINYFONT}BX"
 
 [STR_CID_BEANS]
 base = "{TINYFONT}FB"
@@ -550,9 +487,6 @@ base = "{TINYFONT}AI"
 [STR_CID_FARM_SUPPLIES]
 base = "{TINYFONT}AA"
 
-[STR_CID_FIBRES]
-base = "{TINYFONT}FS"
-
 [STR_CID_FISH]
 base = "{TINYFONT}PS"
 
@@ -580,9 +514,6 @@ base = "{TINYFONT}PH"
 [STR_CID_PYRITE_ORE]
 base = "{TINYFONT}PY"
 
-[STR_CID_RECYCLABLES]
-base = "{TINYFONT}RG"
-
 [STR_CID_SAND]
 base = "{TINYFONT}HA"
 
@@ -591,9 +522,6 @@ base = "{TINYFONT}SM"
 
 [STR_CID_AGGREGATES]
 base = "{TINYFONT}PT"
-
-[STR_CID_SUGAR_BEET]
-base = "{TINYFONT}BS"
 
 [STR_CID_VEHICLE_PARTS]
 base = "{TINYFONT}PV"
