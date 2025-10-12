@@ -25,14 +25,15 @@ Changelog
     - Hardware
     - Merchant Bar
     - Nitrogen
-    - Pipework
+    - Plant & Machinery
     - Pumps & Valves
     - Rebar
     - Seals, Hoses & Belts
     - Steel Ingots
-    - Steel Pipe
+    - Steel Plate
     - Steel Slab
     - Steel Tube
+    - Storage Tanks & Pipework
     - Structural Steel
     - Tyre Cord
     - Welding Consumables
@@ -41,19 +42,21 @@ Changelog
     - Carbon Steel
     - Ferrochrome
     - Steel Sections
-    - Vehicle Engines
 - renamed cargos
+    - Pipe now Steel Pipe
     - Stone now Aggregates
     - Steel Sheet now Steel Sheet & Strip
+    - Vehicle Engines now Engines & Driveline
 - added industries
     - Appliance Factory
-    - Bar & Section Mill
     - Concrete Plant
     - Elastomer Products Plant
-    - Metal Fabricator
+    - Metal Works
     - Pipe Shop
     - Plate Mill
+    - Power Systems Factory
     - Precision Parts Plant
+    - Section & Bar Mill
     - Steel Forge & Foundry
     - Strip Mill
     - Tracked Machine Factory
@@ -61,26 +64,24 @@ Changelog
     - Wire Rod Mill
 - removed industries
     - Bulk Terminal
+    - Component Factory
+    - Metal Workshop
     - Sheet and Pipe Mill
     - Wire and Section Mill
 - reworked port-type industries
     - can now locate on many more coast locations, so easier for OpenTTD to place them during map generation or during gameplay
-    - unfortunately can still be difficult for player to place
+    - unfortunately can still be difficult for player to place in some circumstances
     - sprites and layouts reworked for both Port and Wharf
     - layouts reworked for Liquids Terminal
-- added more objects for multiple industries
-    - Electric Arc Furnace
-    - Coke Oven
-    - Wire Rod Mill
-    - Blast Furnace
-    - Basic Oxygen Furnace
+- added more objects for many more industries, including
+    - additional decor objects for some industries, not otherwise used in the industry layout
+    - empty tile objects for many industries, for convenient building of gaps and spaces
 - 'Gung Ho' production is now 250% by default, not 300% (can still be adjusted by parameter)
 - removed cobble ground type and convert industries using it to alternative ground types
 
 
 *Docs*
 
-- XYX improvements to cargoflow display
 - update code reference info about deps and python version
 - mysys no longer relevant, remove mention of it from code reference page
 
