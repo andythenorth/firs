@@ -80,7 +80,6 @@ cargo_module_names = [
     "steel_merchant_bar",
     "steel_pipe",
     "steel_plate",
-    "steel_sections",
     "steel_sheet",
     "steel_slab",
     "steel_tube",
