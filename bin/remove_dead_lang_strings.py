@@ -4,43 +4,31 @@ import tomlkit
 
 # List of strings to be removed from the TOML files
 dead_strings = [
-    "STR_CARGO_NAME_AMMONIUM_NITRATE",
-    "STR_CARGO_NAME_BAUXITE",
-    "STR_CARGO_NAME_ETHYLENE",
-    "STR_CARGO_NAME_FIBRES",
-    "STR_CARGO_NAME_FORMIC_ACID",
-    "STR_CARGO_NAME_FURNITURE",
-    "STR_CARGO_NAME_METHANE",
-    "STR_CARGO_NAME_PROPYLENE",
-    "STR_CARGO_NAME_SUGAR_BEET",
-    "STR_CARGO_NAME_RECYCLABLES",
-    "STR_CARGO_NAME_UREA",
-    "STR_CARGO_UNIT_AMMONIUM_NITRATE",
-    "STR_CARGO_UNIT_ETHYLENE",
-    "STR_CARGO_UNIT_BAUXITE",
-    "STR_CARGO_UNIT_FIBRES",
-    "STR_CARGO_UNIT_FORMIC_ACID",
-    "STR_CARGO_UNIT_FURNITURE",
-    "STR_CARGO_UNIT_METHANE",
-    "STR_CARGO_UNIT_PROPYLENE",
-    "STR_CARGO_UNIT_SUGAR_BEET",
-    "STR_CARGO_UNIT_RECYCLABLES",
-    "STR_CID_AMMONIUM_NITRATE",
-    "STR_CID_BAUXITE",
-    "STR_CID_FIBRES",
-    "STR_CID_FORMIC_ACID",
-    "STR_CID_SUGAR_BEET",
-    "STR_CID_RECYCLABLES",
+    "STR_STATION_FORGE",
+    "STR_STATION_HEAVY_EQUIPMENT_YARD",
+    "STR_STATION_JOINERS_SHOP",
+    "STR_STATION_PHENOLS",
+    "STR_STATION_PLAZA",
+    "STR_STATION_STACKS",
+    "STR_STATION_STAMP_AND_PLATE",
+    "STR_STATION_TOWN_2",
+    "STR_STATION_WEAVE_AND_DYE",
 ]
 
 def delete_string(dead_strings, file_path):
     with open(file_path, "r", encoding="utf-8") as file:
         lang_source = tomlkit.load(file)
 
-    for string_id in dead_strings:
-        if string_id in lang_source:
+    matched = []
+    for string_id in lang_source:
+        # note that we also check for translated nodes with '.' extensions of node name
+        if string_id in dead_strings or string_id.split(".")[0] in dead_strings:
             print(f"Removing {string_id} from {file_path}")
-            del lang_source[string_id]
+            matched.append(string_id)
+            continue
+
+    for string_id in matched:
+        del lang_source[string_id]
 
     with open(file_path, "w", encoding="utf-8") as file:
         file.write(tomlkit.dumps(lang_source))
