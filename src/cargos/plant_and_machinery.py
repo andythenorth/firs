@@ -20,7 +20,7 @@ cargo = Cargo(
     single_penalty_length="255",
     price_factor=165,
     capacity_multiplier="1",
-    icon_indices=(8, 6),
+    icon_indices=(14, 5),
     # used by FIRS GS
     vulcan_town_effect="VTE_GROWTH",
     sprites_complete=False,
