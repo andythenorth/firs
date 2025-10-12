@@ -180,9 +180,6 @@ base = "Tonerde"
 [STR_CARGO_NAME_GLASS]
 base = "Glas"
 
-[STR_CARGO_NAME_HYDROCHLORIC_ACID]
-base = "Salzsäure"
-
 [STR_CARGO_NAME_LIMESTONE]
 base = "{G=m}Kalkstein"
 
@@ -413,9 +410,6 @@ base = "{WEIGHT} Früchte"
 
 [STR_CARGO_UNIT_GLASS]
 base = "{WEIGHT} Glas"
-
-[STR_CARGO_UNIT_HYDROCHLORIC_ACID]
-base = "{VOLUME} Salzsäure"
 
 [STR_CARGO_UNIT_KAOLIN]
 base = "{WEIGHT} Tonerde"
@@ -657,9 +651,6 @@ base = "{TINYFONT}MÖ"
 [STR_CID_GLASS]
 base = "{TINYFONT}GL"
 
-[STR_CID_HYDROCHLORIC_ACID]
-base = "{TINYFONT}SS"
-
 [STR_CID_KAOLIN]
 base = "{TINYFONT}TE"
 
@@ -786,9 +777,6 @@ base = "{TINYFONT}WB"
 [STR_CID_TYRES]
 base = "{TINYFONT}RE"
 
-[STR_CID_UREA]
-base = "{TINYFONT}HS"
-
 [STR_CID_VEHICLE_BODIES]
 base = "{TINYFONT}FK"
 
@@ -810,9 +798,6 @@ base = "{TINYFONT}GA"
 [STR_CID_ZINC]
 base = "{TINYFONT}ZK"
 
-[STR_ERR_CLIMATE_TOYLAND]
-base = "{ORANGE}FIRS ist nicht für die Nutzung mit dem Spielzeugland ausgelegt."
-
 [STR_ERR_OPENTTD_VERSION]
 base = "{ORANGE}E00: FIRS benötigt OpenTTD 1.7.0"
 
@@ -821,9 +806,6 @@ base = "{ORANGE}E01: {YELLOW}Inkompatibele Einstellung: {ORANGE}{STRING}"
 
 [STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE]
 base = "muss unterhalb der Schneegrenze errichtet werden."
-
-[STR_ERR_LOCATION_NOT_BELOW_SNOWLINE]
-base = "muss oberhalb der Schneegrenze errichtet werden."
 
 [STR_ERR_LOCATION_NOT_ON_WATER]
 base = "muss an Land errichtet werden."
@@ -851,9 +833,6 @@ base = "Fahrzeugfabrik"
 
 [STR_IND_BASIC_OXYGEN_FURNACE]
 base = "Oxygenstahlwerk"
-
-[STR_IND_BIOREFINERY]
-base = "{G=w}Bioraffinerie"
 
 [STR_IND_BLAST_FURNACE]
 base = "Hochofen"
@@ -890,9 +869,6 @@ base = "Chloralkalielektrolyse Anlage"
 
 [STR_IND_CHROMITE_MINE]
 base = "Chromit Mine"
-
-[STR_IND_CIVIL_EXPLOSIVES_FACILITY]
-base = "Explosivstoffe Anlage"
 
 [STR_IND_CLAY_PIT]
 base = "{G=w}Tongrube"
@@ -948,14 +924,8 @@ base = "{G=p}Fischgründe"
 [STR_IND_FISHING_HARBOUR]
 base = "{G=m}Fischereihafen"
 
-[STR_IND_FISHING_VILLAGE]
-base = "Fischerdorf"
-
 [STR_IND_FLOUR_MILL]
 base = "Getreidemühle"
-
-[STR_IND_FOOD_MARKET]
-base = "{G=m}Lebensmittelladen"
 
 [STR_IND_FOOD_PROCESSOR]
 base = "Lebensmittelfabrik"
@@ -1002,9 +972,6 @@ base = "{G=m}Maschinenwerkstatt"
 [STR_IND_MANGANESE_MINE]
 base = "Manganerz-Bergwerk"
 
-[STR_IND_MIXEDFARM]
-base = "{G=m}Bauernhof"
-
 [STR_IND_NITRATE_MINE]
 base = "Nitrat-Mine"
 
@@ -1026,9 +993,6 @@ base = "Phosphorsäure Anlage"
 [STR_IND_PLASTICS_PLANT]
 base = "{G=w}Plastikfabrik"
 
-[STR_IND_PLAZA]
-base = "Einkaufszentrum"
-
 [STR_IND_PORT]
 base = "{G=m}Hafen"
 
@@ -1049,9 +1013,6 @@ base = "{G=m}Steinbruch"
 
 [STR_IND_RANCH]
 base = "{G=w}Ranch"
-
-[STR_IND_SALT_MINE]
-base = "Salzbergwerk"
 
 [STR_IND_SHEEPFARM]
 base = "{G=m}Bauernhof (Schafhaltung)"
