@@ -16,7 +16,7 @@ industry = IndustrySecondary(
     map_colour="191",
     colour_scheme_name="scheme_1_elton", # cabbage needs checked
     name="string(STR_IND_FERTILISER_PLANT)",
-    nearby_station_name="string(STR_STATION_BRINE_WORKS)",
+    #nearby_station_name="string(STR_STATION_BRINE_WORKS)",
     fund_cost_multiplier="170",
     sprites_complete=False,
 )
