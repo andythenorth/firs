@@ -91,6 +91,15 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=5,
 )
+industry.add_spritelayout(
+    id="sawmill_spritelayout_empty",
+    tile="sawmill_tile_1",
+    ground_sprite=sprite_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=6,
+)
 
 industry.add_industry_layout(
     id="sawmill_industry_layout_1",

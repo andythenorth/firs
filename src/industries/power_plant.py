@@ -84,6 +84,15 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=4,
 )
+industry.add_spritelayout(
+    id="power_plant_spritelayout_empty",
+    tile="power_plant_tile_1",
+    ground_sprite=sprite_ground,
+    ground_overlay=sprite_ground_overlay,
+    building_sprites=[],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=5,
+)
 
 industry.add_industry_layout(
     id="power_plant_industry_layout_1",

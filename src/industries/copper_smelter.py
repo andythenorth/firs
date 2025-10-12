@@ -203,6 +203,16 @@ industry.add_spritelayout(
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[sprite_transformer],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=9,
+)
+industry.add_spritelayout(
+    id="copper_smelter_spritelayout_empty",
+    tile="copper_smelter_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[],
+    fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=10,
 )
 
 industry.add_multi_tile_object(

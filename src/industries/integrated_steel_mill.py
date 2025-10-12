@@ -138,6 +138,7 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
+    add_to_object_num=8,
 )
 industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_greeble",

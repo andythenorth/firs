@@ -96,6 +96,7 @@ industry.add_spritelayout(
     ground_overlay=sprite_ground_overlay,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
+    add_to_object_num=6,
 )
 industry.add_spritelayout(
     id="diamond_mine_spritelayout_headgear_animated",

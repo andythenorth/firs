@@ -143,6 +143,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[],
+    add_to_object_num=9,
 )
 industry.add_spritelayout(
     id="manganese_mine_spritelayout_headgear_animated",

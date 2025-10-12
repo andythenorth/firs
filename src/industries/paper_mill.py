@@ -159,6 +159,14 @@ industry.add_spritelayout(
     smoke_sprites=[sprite_smoke_1, sprite_smoke_2],
     add_to_object_num=3,
 )
+industry.add_spritelayout(
+    id="paper_mill_spritelayout_empty",
+    tile="paper_mill_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[],
+    add_to_object_num=8,
+)
 
 industry.add_industry_layout(
     id="paper_mill_industry_layout_1",
