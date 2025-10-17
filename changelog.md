@@ -1,6 +1,15 @@
 Changelog
 =========
 
+--------------
+5.0.1 Release
+--------------
+
+
+*Changes*
+
+- removed translations, no longer supportable
+
 
 --------------
 5.0.0 Release
