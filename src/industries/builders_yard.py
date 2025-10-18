@@ -44,6 +44,9 @@ industry.enable_in_economy(
     },
 )
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     prob_map_gen="14",
 )

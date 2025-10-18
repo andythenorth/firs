@@ -2387,6 +2387,7 @@ class Industry(object):
             industry_template(
                 firs=firs,
                 industry=self,
+                industry_id=self.id, # included to identify the industry in python exception if template rendering fails
                 get_perm_num=self.get_perm_num,
                 global_constants=global_constants,
                 graphics_temp_storage=global_constants.graphics_temp_storage,  # convenience measure
