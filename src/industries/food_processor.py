@@ -30,7 +30,6 @@ industry.enable_in_economy(
         ("FRUT", 6),
     ],
 )
-
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     accept_cargos_with_input_ratios=[
@@ -40,6 +39,18 @@ industry.enable_in_economy(
     prod_cargo_types_with_output_ratios=[
         ("EOIL", 4),
         ("FOOD", 4),
+    ],
+)
+print("CABBAGE food processor MMW combinatorial behaviour needs checked!!")
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("AAPL", 3),
+        ("VEG_", 3),
+        ("PACK", 2),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("FOOD", 8),
     ],
 )
 

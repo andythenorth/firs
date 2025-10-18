@@ -26,6 +26,18 @@ industry = IndustrySecondary(
 
 
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("CMNT", 3),
+        ("GRVL", 3),
+        ("STWR", 2),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        # ("CCPR", 7), # CABBAGE
+        ("ENSP", 1),  # small ENSP output
+    ],
+)
+industry.enable_in_economy(
     "STEELTOWN",
 )
 

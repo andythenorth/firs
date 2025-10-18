@@ -1,0 +1,47 @@
+<!--! Extra text in the industry window (callback 3A) -->
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, [
+	STORE_TEMP((primary_level1_requirement * ${industry.supply_requirements[2]}) |
+	(primary_level2_requirement * ${industry.supply_requirements[2]}) << 16, 0x100),
+	LOAD_PERM(${get_perm_num("current_supplies_prod_factor")})
+]) {
+	primary_level2_produced_percent: return string(STR_${industry.supply_requirements[1]}_PRODUCTION_4X);
+	primary_level1_produced_percent: return string(STR_${industry.supply_requirements[1]}_PRODUCTION_2X);
+	return string(STR_${industry.supply_requirements[1]}_PRODUCTION_1X);
+}
+
+<!--!
+    Additional text after the cargos in the industry window (callback 37)
+    The 0x3800 expressions here are related to using extended cb 37 before nml support was added, and can be removed when nml is updated
+-->
+
+<tal:economies repeat="economy industry.economies_enabled_for_industry">
+    <!--! up to 8 cargos, n.b. supplied_flag_cargo_n register names are indexed to 1 not 0 -->
+    <tal:cargos repeat="cargo industry.get_accepted_cargo_labels_by_economy(economy)">
+        switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_${cargo}_economy_${economy.numeric_id}, [
+                LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))})
+            ]) {
+            0: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_OPTIONAL_FLAG);
+            return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG);
+        }
+    </tal:cargos>
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_switch_cargo_economy_${economy.numeric_id}, getbits(extra_callback_info2, 16, 8)) {
+        <!--! up to 8 cargos, indexed to 1 not 0 -->
+        <tal:cargos repeat="cargo industry.get_accepted_cargo_labels_by_economy(economy)">
+            ${cargo}: ${industry.id}_cargo_subtype_display_cargo_${cargo}_economy_${economy.numeric_id};
+        </tal:cargos>
+        return CB_RESULT_NO_TEXT;
+    }
+</tal:economies>
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_switch_economy, economy) {
+    <tal:economies repeat="economy industry.economies_enabled_for_industry">
+        ${economy.numeric_id}:  ${industry.id}_cargo_subtype_display_switch_cargo_economy_${economy.numeric_id};
+    </tal:economies>
+}
+
+<!--! only show subtype in industry window, not other contexts -->
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display, getbits(extra_callback_info2, 8, 8)) {
+    1: ${industry.id}_cargo_subtype_display_switch_economy;
+    return CB_RESULT_NO_TEXT;
+}

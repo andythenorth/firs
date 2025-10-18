@@ -21,6 +21,9 @@ industry = IndustryTownProducerPopulationDependent(
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
 
 industry.enable_in_economy(
     "STEELTOWN",

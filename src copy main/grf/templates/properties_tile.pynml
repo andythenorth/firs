@@ -1,0 +1,47 @@
+<tal:tiles repeat="tile industry.tiles">
+    <!--! tile properties that are same for all economies -->
+    item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
+        property {
+            substitute:         0;
+            land_shape_flags:   ${tile.land_shape_flags};
+            special_flags: ${tile.special_flags};
+            <!--! conditionally setting animation props might result in undefined behaviour? -->
+            <tal:animation_info condition="tile.animation_length > 1">
+                animation_info: [${'ANIMATION_LOOPING' if tile.animation_looping else 'ANIMATION_NON_LOOPING'}, ${tile.animation_length}];
+            </tal:animation_info>
+            <tal:animation_speed condition="tile.animation_speed > 0">
+                animation_speed: ${tile.animation_speed};
+            </tal:animation_speed>
+            animation_triggers: ${tile.animation_triggers};
+        }
+
+        graphics {
+    		<tal:tile_check_location condition="len(tile.location_checks.get_render_tree(tile.id, industry.id)) > 0">
+    		    tile_check: ${tile.location_checks.get_render_tree(tile.id, industry.id)[-1].switch_entry_point};
+            </tal:tile_check_location>
+            <tal:anim_next_frame condition="tile.custom_animation_next_frame">
+                anim_next_frame: return ${tile.custom_animation_next_frame};
+            </tal:anim_next_frame>
+    		<tal:anim_control condition="tile.custom_animation_control is not None">
+    		    <!--! tedious optimisation to avoid a switch that returns 0 for one macro -->
+                <tal:block condition="tile.custom_animation_control['macro'] == 'first_frame_is_0'">
+                    <!--! starts animation on first frame, intended to be called by periodic tile loop -->
+        		    anim_control: 0;
+                </tal:block>
+                <tal:block condition="tile.custom_animation_control['macro'] != 'first_frame_is_0'">
+        		    anim_control: ${tile.id}_industry_anim_control;
+                </tal:block>
+    		</tal:anim_control>
+            <tal:random_trigger condition="tile.random_trigger is not None">
+                random_trigger: ${tile.random_trigger};
+            </tal:random_trigger>
+    		<tal:foundations condition="tile.foundations is not None">
+                foundations: ${tile.foundations};
+            </tal:foundations>
+    		<tal:autoslope condition="tile.autoslope is not None">
+                autoslope: ${tile.autoslope};
+            </tal:autoslope>
+            ${industry.id}_switch_graphics;
+        }
+    }
+</tal:tiles>

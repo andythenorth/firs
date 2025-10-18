@@ -28,6 +28,14 @@ industry.enable_in_economy(
         ("FRUT", 6),
     ],
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("AAPL", 4),
+        ("ENUM", 2),
+        ("PACK", 2),
+    ],
+)
 
 # this industry does use spurious animation for a single non-animated tile, but I didn't want to waste tile IDs as of Oct 2025
 

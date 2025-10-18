@@ -1,0 +1,155 @@
+<!--!
+    Primary production (also includes permanent production change).
+    Supplies includes ENSP, FMSP, and multiple cargos in the case of port-type industries.
+    Supply deliveries are tracked over 27 production cycles.
+    All production takes place on the 256 tick callback - the real time duration of 256 tick callback is fixed as economy time doesn't scale with wallclock.
+    Tick length is 27ms. So 27 cycles of 256 ticks is about 3 minutes (62.2 seconds)
+    There is admin with registers to support total production over the 27 cargo cycles, and for handling 'Supplied' text to be displayed in industry windows.
+    Acceptance and clearing of stockpile is handled on delivery of cargo.
+    Admin functions are called on 256 tick and also on delivery (so player sees immediate change to 'Supplied' and to production level that will be used on next 256 tick cycle).
+    This template also handles permanent production change as the concerns seem to be closely related.
+-->
+
+<!--! get the total amount of supplies delivered in last 27 production cycles -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_total_supplies_delivered,
+    [
+    <tal:total_supplies repeat="var_num range(1, 28)">
+        LOAD_PERM(${get_perm_num("num_supplies_delivered_" + str(var_num))})
+        ${'+' if not repeat.var_num.end else ''}
+    </tal:total_supplies>
+    ]) {
+    return;
+}
+<!--! calculate current production level, based on delivered supplies -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_calculate_current_production_level,
+    [
+         STORE_TEMP(${industry.id}_produce_total_supplies_delivered(), 8),
+         STORE_TEMP((LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level2_requirement)) ? primary_level2_produced_percent :
+                    (LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level1_requirement)) ? primary_level1_produced_percent : 100, 9),
+         STORE_PERM_ALT(${get_perm_num("current_supplies_prod_factor")}, LOAD_TEMP(9)),
+    ]) {
+    return 0;
+}
+
+<!--! On arrival of supplies, push the amount to perm storage, then clear from stockpile -->
+<tal:economies repeat="economy firs.economy_manager">
+    produce (${industry.id}_clear_incoming_cargo_waiting_${economy.numeric_id},
+        [
+            <tal:subtract repeat="cargo industry.get_accepted_cargo_labels_by_economy(economy)">
+                <!--! !!! assume just subtracting all for now, don't faff around with remaindered amounts -->
+                ${cargo}: incoming_cargo_waiting("${cargo}");
+            </tal:subtract>
+        ],
+        [<!--! no prod in arrival cb -->],
+    0)
+    switch(FEAT_INDUSTRIES, SELF, ${industry.id}_store_incoming_cargo_waiting_${economy.numeric_id},
+        [
+            STORE_PERM_ALT(
+                ${get_perm_num("num_supplies_delivered_27")},
+                <tal:store repeat="cargo industry.get_accepted_cargo_labels_by_economy(economy)">
+                    incoming_cargo_waiting("${cargo}") +
+                </tal:store>
+                LOAD_PERM(${get_perm_num("num_supplies_delivered_27")})
+            ),
+            <!--! check if each cargo is delivered in this cycle, and if so reset the supplied cycles remaining
+                  NOTE next cycle will -1 so store 28 so we get 27 cycles in total
+                  this will cause the industry 'supplied' text to show immediately -->
+            <tal:input_cargos repeat="cargo industry.get_accepted_cargo_labels_by_economy(economy)">
+                STORE_PERM_ALT(
+                    ${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))},
+                    (incoming_cargo_waiting("${cargo}") > 0)
+                    ?
+                    28
+                    :
+                    LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))})
+                ),
+            </tal:input_cargos>
+            <!--! update the production level immediately, so that production level text immediately updates in industry window
+                  production won't actually increase until next 256 tick production cycle -->
+            ${industry.id}_produce_calculate_current_production_level(),
+        ]) {
+        ${industry.id}_clear_incoming_cargo_waiting_${economy.numeric_id};
+    }
+
+</tal:economies>
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_cargo_arrival, economy) {
+    <tal:economies repeat="economy firs.economy_manager">
+        ${economy.numeric_id}: ${industry.id}_store_incoming_cargo_waiting_${economy.numeric_id};
+    </tal:economies>
+}
+
+
+<!--! On 256 ticks, if supplied, produce extra output cargo at appropriate multiplier -->
+<tal:economies repeat="economy firs.economy_manager">
+    produce(${industry.id}_produce_256_ticks_economy_${economy.numeric_id},
+        [<!--! no accept in 256 cb -->],
+        [
+            <tal:produce repeat="cargo industry.get_prod_cargo_types(economy)">
+                <!--!
+                      replicates default ottd prod. algorithm but with supply boost applied as needed
+                      note action 0 prod. is not used for primary, prod. cb is used consistently in FIRS, to reduce the number of different prod. methods in use
+                    (cargo amount * production_level * base_prod_factor * supply boost as percent) / (default base_prod_factor * default production_level * 100 because boost is percent)
+                    base_prod_factor is randomised at start (default 16), so that production_level can be used separately for cheats and monthly/random prod changes
+                -->
+                ${cargo[0]}: (${cargo[1]} * production_level * LOAD_PERM(${get_perm_num("base_prod_factor")}) * LOAD_TEMP(9)) / (16 * 16 * 100);
+            </tal:produce>
+        ],
+    0)
+</tal:economies>
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks_switch_economy, economy) {
+<tal:economies repeat="economy firs.economy_manager">
+    ${economy.numeric_id}: ${industry.id}_produce_256_ticks_economy_${economy.numeric_id};
+</tal:economies>
+}
+
+<!--! set the number of supplied cycles remaining per cargo - used to display 'supplied' (or not) in the industry window -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_update_supplied_cycles_remaining_per_cargo,
+    [
+        <tal:cargos repeat="cargo_num range(1, 9)">
+            <!--! check if each cargo is delivered, and if so update the cycles remaining flag for that to 27,
+                  otherwise reduce the number of cycles remaining by 1
+                  cap minimum value to 0, avoid -ve values that might overflow eventually -->
+            STORE_PERM_ALT(
+                ${get_perm_num("supplied_cycles_remaining_cargo_" + str(cargo_num))},
+                max(
+                    0,
+                    LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(cargo_num))})
+                    - 1
+                )
+            ),
+        </tal:cargos>
+    ]) {
+    return 0;
+}
+
+<!--! shift the array of supplies_delivered values one place to the left, and zero the last entry -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks_shift_supplies_delivered,
+    [
+        <tal:shift_supplies repeat="var_num range(1, 27)">
+            STORE_PERM_ALT(
+                ${get_perm_num("num_supplies_delivered_" + str(var_num))},
+                LOAD_PERM(${get_perm_num("num_supplies_delivered_" + str(var_num + 1))}),
+            ),
+        </tal:shift_supplies>
+        STORE_PERM_ALT(${get_perm_num("num_supplies_delivered_27")}, 0)
+    ]) {
+    return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
+    [
+        <!--! there is a good chance that the order of operations here introduces an obiwan on the 27 cycles
+              but it _seems_ to work and I don't think it matters enough to figure it out with pen and paper -->
+        ${industry.id}_produce_calculate_current_production_level(),
+        ${industry.id}_update_supplied_cycles_remaining_per_cargo(),
+        ${industry.id}_produce_256_ticks_shift_supplies_delivered(),
+    ]) {
+    ${industry.id}_produce_256_ticks_switch_economy;
+}
+
+<!--! handle monthly production change -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change, 1) {
+    return CB_RESULT_IND_PROD_NO_CHANGE;
+}

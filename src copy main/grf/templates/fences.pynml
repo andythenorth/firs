@@ -1,0 +1,62 @@
+<!--!
+    Fences are provided by industry tiles, objects, (and possibly station tiles in future).
+    Slightly complex template for a simple approach.
+    Fences are first specified by the entity, for each edge of the tile (NE, NW, SE, SW).
+    Each side of the tile is then checked for neighbouring artefacts.
+    The artefacts checked depend on the feature type, but the candidates are: same entity, industry tiles, objects, station tiles
+    The results are stored in a temp register, which is updated with each check.
+    Final value of register determines whether to hide the fence (0) or show the fence (1).
+-->
+
+<tal:fences repeat="feature_config [
+                                  ('FEAT_INDUSTRYTILES', 'industry', ['TILE_CLASS_STATION', 'TILE_CLASS_OBJECTS']),
+                                  ('FEAT_OBJECTS', 'object', ['TILE_CLASS_STATION', 'TILE_CLASS_INDUSTRY' , 'TILE_CLASS_OBJECTS']),
+                                  ]">
+    <tal:feature define="feature feature_config[0]; feature_suffix feature_config[1]">
+        <tal:other_types repeat="other_type feature_config[2]">
+            switch (${feature}, SELF, switch_tile_fences_${feature_suffix}_neighbouring_other_type_${repeat.other_type.length - repeat.other_type.number}, [
+                        STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_ne}) * (nearby_tile_class(-1,  0) != ${other_type}), ${graphics_temp_storage.var_use_fence_ne}),
+                        STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_nw}) * (nearby_tile_class( 0, -1) != ${other_type}), ${graphics_temp_storage.var_use_fence_nw}),
+                        STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_se}) * (nearby_tile_class( 0,  1) != ${other_type}), ${graphics_temp_storage.var_use_fence_se}),
+                        STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_sw}) * (nearby_tile_class( 1,  0) != ${other_type}), ${graphics_temp_storage.var_use_fence_sw}),
+                    ]) {
+                <tal:next switch="repeat.other_type.start">
+                    <tal:true case="True">
+                        return 1;
+                    </tal:true>
+                    <tal:false case="False">
+                        return switch_tile_fences_${feature_suffix}_neighbouring_other_type_${repeat.other_type.length - repeat.other_type.index};
+                    </tal:false>
+                </tal:next>
+            }
+        </tal:other_types>
+        <!--! note that for objects 'nearby_tile_is_same_object' is only useful for objects larger than 1x1, but we run the check anyway - the performance impact of this is unknown, but probably fine? -->
+        switch (${feature}, SELF, switch_tile_fences_${feature_suffix}_neighbouring_same, [
+                    STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_ne}) * !nearby_tile_is_same_${feature_suffix}(-1,  0), ${graphics_temp_storage.var_use_fence_ne}),
+                    STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_nw}) * !nearby_tile_is_same_${feature_suffix}( 0, -1), ${graphics_temp_storage.var_use_fence_nw}),
+                    STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_se}) * !nearby_tile_is_same_${feature_suffix}( 0,  1), ${graphics_temp_storage.var_use_fence_se}),
+                    STORE_TEMP(LOAD_TEMP(${graphics_temp_storage.var_use_fence_sw}) * !nearby_tile_is_same_${feature_suffix}( 1,  0), ${graphics_temp_storage.var_use_fence_sw}),
+                ]) {
+            switch_tile_fences_${feature_suffix}_neighbouring_other_type_0;
+        }
+
+        switch (${feature}, SELF, switch_tile_fences_${feature_suffix}, [
+                    STORE_TEMP(0, ${graphics_temp_storage.var_fencesprite_ne}),
+                    STORE_TEMP(0, ${graphics_temp_storage.var_fencesprite_nw}),
+                    STORE_TEMP(0, ${graphics_temp_storage.var_fencesprite_se}),
+                    STORE_TEMP(0, ${graphics_temp_storage.var_fencesprite_sw}),
+
+                    STORE_TEMP(1, ${graphics_temp_storage.var_use_fence_ne}),
+                    STORE_TEMP(1, ${graphics_temp_storage.var_use_fence_nw}),
+                    STORE_TEMP(1, ${graphics_temp_storage.var_use_fence_se}),
+                    STORE_TEMP(1, ${graphics_temp_storage.var_use_fence_sw}),
+
+                    STORE_TEMP(0, ${graphics_temp_storage.var_fence_offset_ne}),
+                    STORE_TEMP(0, ${graphics_temp_storage.var_fence_offset_nw}),
+                    STORE_TEMP(0, ${graphics_temp_storage.var_fence_offset_se}),
+                    STORE_TEMP(0, ${graphics_temp_storage.var_fence_offset_sw}),
+                    ]) {
+            switch_tile_fences_${feature_suffix}_neighbouring_same;
+        }
+    </tal:feature>
+</tal:fences>

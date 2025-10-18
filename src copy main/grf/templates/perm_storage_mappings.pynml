@@ -1,0 +1,18 @@
+<!--! I don't like the syntax for STORE_PERM, I prefer the storage number to come before the value as calculations can be long and complex -->
+switch (FEAT_INDUSTRIES, SELF, STORE_PERM_ALT, storage_number, value,
+    [
+        STORE_PERM(
+            value,
+            storage_number,
+        )
+    ]) {
+    return;
+}
+
+<!--! there are no equivalent convenience methods for reading storage
+    1. procedures can only return 15 bit values, which is (1) limited (2) dangerous with signed values as it strips the signed bitl causing incorrect results
+    2. for context SELF (industry), there would be no benefit anyway over LOAD_PERM()
+    3. for towns, have to call out to another switch with context PARENT and store the result in a temp register, return 0 from that switch then OR the result
+         e.g. `(procedure_foo() | LOAD_TEMP(1))` or similar
+       or just chain through a preceeding PARENT switch to stuff a temp register
+-->

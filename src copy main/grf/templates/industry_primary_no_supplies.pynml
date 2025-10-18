@@ -1,0 +1,51 @@
+/* ******************************************************************
+ * Definition of the industry tile, its callbacks, and graphics chain
+ * ******************************************************************/
+
+<tal:include metal:use-macro="load: spritesets.pynml" />
+
+<tal:include metal:use-macro="load: spritelayouts_industry.pynml" />
+
+<tal:include metal:use-macro="load: graphics_switches.pynml" />
+
+<tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
+             metal:use-macro="location_checks_tile.macros['render_tree']" />
+
+<tal:include define="animation_context 'industry';
+                     animation_macros load: animation_macros.pynml"
+                     metal:use-macro="animation_macros.macros['tile_animation']" />
+
+<tal:include metal:use-macro="load: properties_tile.pynml" />
+
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+<tal:include metal:use-macro="load: layouts.pynml" />
+
+<tal:include metal:use-macro="load: produce_primary_no_supplies.pynml" />
+
+<tal:include metal:use-macro="load: availability.pynml" />
+
+<tal:include metal:use-macro="load: location_checks_industry.pynml" />
+
+<tal:include metal:use-macro="load: properties_industry.pynml" />
+
+<!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
+<tal:economies repeat="economy industry.economies_enabled_for_industry">
+    if (economy==${economy.numeric_id}) {
+        item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
+            graphics {
+                construction_probability: ${industry.id}_check_availability;
+                produce_256_ticks:        ${industry.id}_produce_256_ticks;
+                location_check:           ${industry.id}_check_location;
+                monthly_prod_change:      ${industry.id}_monthly_prod_change;
+                random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+                colour:                   switch_colour_${industry.colour_scheme_name}(${industry.numeric_id});
+                <!--! special handling -->
+                ${industry.randomise_primary_production_on_build_as_nml_property(economy)}
+            }
+        }
+    }
+</tal:economies>

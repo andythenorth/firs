@@ -1,0 +1,103 @@
+grf {
+	grfid: "${utils.DwordGrfID(global_constants.grfid).grfid}";
+	name: string(STR_GRF_NAME_AND_VERSION, string(STR_GRF_NAME));
+	desc: string(STR_GRF_DESC);
+	url: string(STR_GRF_DOCS_URL);
+	version: ${git_info.get_revision()};
+	min_compatible_version: 7400;
+	param 0 {
+	    <!--! 'economy_selection' is remapped to 'economy' later because we can't control order and value separately here -->
+		economy_selection {
+			name: string(STR_PARAM_NAME_ECONOMIES);
+			desc: string(STR_PARAM_DESC_ECONOMIES);
+			min_value: 0;
+			max_value: ${len(firs.economy_manager)-1};
+			names: {
+			    <tal:build_economies repeat="economy firs.economy_manager">
+                    ${repeat.economy.index}: string(STR_PARAM_VALUE_ECONOMIES_${economy.id});
+			    </tal:build_economies>
+			};
+		}
+	}
+	param 2 {
+	    <!--! legacy use of bit 2 as other bool params were deleted from here -->
+		restrict_open_during_gameplay {
+			name: string(STR_PARAM_NAME_NO_OPENINGS);
+			desc: string(STR_PARAM_DESC_NO_OPENINGS);
+			type: bool;
+			bit: 2;
+		}
+	}
+	param 7 {
+		primary_level1_produced_percent {
+			name: string(STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS);
+			desc: string(STR_PARAM_DESC_PRIMARY_LEVEL_BONUS);
+			def_value: 150;
+			min_value: 100;
+			max_value: 1000;
+		}
+	}
+	param 9 {
+		primary_level2_produced_percent {
+			name: string(STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS);
+			desc: string(STR_PARAM_DESC_PRIMARY_LEVEL_BONUS);
+			def_value: 250;
+			min_value: 100;
+			max_value: 1000;
+		}
+	}
+	param 6 {
+		primary_level1_requirement {
+			name: string(STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT);
+			desc: string(STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT);
+			def_value: ${global_constants.FARM_MINE_SUPPLY_REQUIREMENT};
+			min_value: 1;
+			max_value: 10000;
+		}
+	}
+	param 8 {
+		primary_level2_requirement {
+			name: string(STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT);
+			desc: string(STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT);
+			def_value: ${5 * global_constants.FARM_MINE_SUPPLY_REQUIREMENT};
+			min_value: 1;
+			max_value: 10000;
+		}
+	}
+	param 4 {
+		marine_industry_max_coastal_distance {
+			name: string(STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY);
+			desc: string(STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY);
+			type: int;
+			def_value: 0;
+			min_value: 0;
+			max_value: 255;
+			names: {
+				0: string(STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0);
+			};
+		}
+	}
+	param 10 {
+		objects {
+			name: string(STR_PARAM_NAME_OBJECTS);
+			desc: string(STR_PARAM_DESC_OBJECTS);
+			type: bool;
+			def_value: 1;
+		}
+	}
+}
+
+basecost {
+	PR_BUILD_INDUSTRY: 2;       // Industries are more expensive
+	PR_BUILD_INDUSTRY_RAW : 2;  // Building primary industries is also expensive
+	PR_CLEAR_INDUSTRY : 2;      // Deleting industries must also be expensive
+}
+
+<!--! Old default values for old savegames -->
+if (param[6] == 0) { param[6] = 100; }
+if (param[7] == 0) { param[7] = 100; }
+if (param[8] == 0) { param[8] = 400; }
+if (param[9] == 0) { param[9] = 300; }
+
+<!--! disable the default industries -->
+disable_item(FEAT_INDUSTRIES, 0, 36);

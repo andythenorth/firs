@@ -1,0 +1,34 @@
+<!--!
+    Primary production WITHOUT supplies.
+    Very simple.
+-->
+
+<tal:economies repeat="economy firs.economy_manager">
+    produce(${industry.id}_production_256_economy_${economy.numeric_id},
+        [<!--! no accept in 256 cb -->],
+        [
+            <tal:produce repeat="cargo industry.get_prod_cargo_types(economy)">
+                <!--!
+                      simply replicates default ottd prod. algorithm but in prod. cb, so action 0 prod. properties can be set 0
+                      prod. cb is used consistently in FIRS, to reduce the number of different prod. methods in use
+                      calculation is (cargo amount * production_level * base_prod_factor) / (default production_level * default base_prod_factor)
+                      base_prod_factor is randomised at start (default 16), so that production_level can be used separately for cheats and monthly/random prod changes
+                -->
+                ${cargo[0]}: (${cargo[1]} * production_level * LOAD_PERM(${get_perm_num("base_prod_factor")})) / (16 * 16);
+            </tal:produce>
+        ],
+    0)
+</tal:economies>
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks, economy) {
+<tal:economies repeat="economy firs.economy_manager">
+    ${economy.numeric_id}: ${industry.id}_production_256_economy_${economy.numeric_id};
+</tal:economies>
+}
+
+<!--! handle monthly production change -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change, 1) {
+    return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+

@@ -1,0 +1,1836 @@
+"""
+  This file is part of FIRS Industry Set for OpenTTD.
+  FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+  FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+"""
+
+import os.path
+
+currentdir = os.curdir
+
+import global_constants as global_constants
+import utils as utils
+
+from chameleon import PageTemplateLoader  # chameleon used in most template cases
+
+# setup the places we look for templates
+templates = PageTemplateLoader(
+    os.path.join(currentdir, "src", "grf", "templates"), format="text"
+)
+
+# firs is imported, but main is not called in this module, this relies on firs already being present in the context
+import firs
+
+from grf.object import GRFObject
+from grf.perm_storage_mappings import register_perm_storage_mapping, get_perm_num
+from grf.spritelayout import (
+    SpriteLayout,
+    MagicSpritelayoutFactory,
+    GraphicsSwitchSlopes,
+)
+from grf.sprite_spriteset import SmokeSprite, Sprite, Spriteset
+from grf.tile import Tile, TileLocationChecks
+
+
+class IndustryLayout(object):
+    """Base class to hold industry layouts"""
+
+    def __init__(
+        self,
+        industry,
+        id,
+        layout,
+        excluded_outpost_layouts=[],
+        validate_xy=True,
+        validate_legacy_layout_defs=False,
+    ):
+        self.id = id
+        self.industry = industry
+        # as of September 2022 there are 2 formats accepted when defining layout
+        #   -  a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spritelayout or next nml switch)
+        #   -  a list of 3-tuples (SE offset from N tile, SW offset from N tile, identifier of spritelayout or next nml switch), where the spritelayout encapsulates the tile identifier
+        # as of September 2022 these are stored in the ._layout private attr, then resolved by a .layout property method
+        self._layout = layout
+        self.excluded_outpost_layouts = excluded_outpost_layouts
+        # validation can be optionally suppressed as combined layouts may be invalid until their xy offsets are shifted positive (for example)
+        if validate_xy:
+            self.validate_xy()
+        # support whilst migrating layout_defs to remove tile ids
+        if validate_legacy_layout_defs:
+            self.validate_legacy_layout_defs()
+
+    def validate_xy(self):
+        # in-game industry layouts must not have negative xy offsets
+        for x, y, tile_id, spritelayout_id in self.layout:
+            for offset_dir in [x, y]:
+                if offset_dir < 0:
+                    raise BaseException(
+                        "Negative values are invalid for x or y offsets: "
+                        + self.id
+                        + " ("
+                        + str(x)
+                        + ", "
+                        + str(y)
+                        + ")"
+                    )
+        # xy offset pairs must be unique per layout
+        xy_offsets = [(i[0], i[1]) for i in self.layout]
+        for x, y in xy_offsets:
+            if xy_offsets.count((x, y)) > 1:
+                raise BaseException(
+                    "Repeated xy offset pair: " + self.id + " " + str((x, y))
+                )
+
+    def validate_legacy_layout_defs(self):
+        # catch legacy layout_defs
+        legacy_found = False
+        for layout_def in self._layout:
+            if len(layout_def) == 4:
+                legacy_found = True
+                for spritelayout in self.industry.spritelayouts:
+                    if spritelayout.id == layout_def[3]:
+                        if spritelayout.tile is not None:
+                            utils.echo_message(
+                                "tile defs migrated, but legacy layout def found for "
+                                + self.industry.id
+                                + " "
+                                + str(layout_def)
+                            )
+                            break
+        if legacy_found:
+            utils.echo_message(
+                "legacy layout def(s) found for " + self.industry.id + " " + self.id
+            )
+
+    @property
+    def layout(self):
+        result = []
+        for layout_def in self._layout:
+            if len(layout_def) == 3:
+                tile = None
+                if layout_def[2] == "spritelayout_null_water":
+                    tile = "255"
+                if layout_def[2] == "spritelayout_null_station":
+                    tile = "24"
+                #  resolve the spritelayout by ID
+                for spritelayout in self.industry.spritelayouts:
+                    if spritelayout.id == layout_def[2]:
+                        if spritelayout.tile == None:
+                            raise BaseException("No tile defined for", spritelayout.id)
+                        else:
+                            tile = spritelayout.tile
+                        break
+                # not found, look in other book-keeping lists of tile ids
+                if tile == None:
+                    tile = self.industry.magic_spritelayouts_by_id[layout_def[2]].tile
+                if tile == None:
+                    raise BaseException(
+                        self.id
+                        + " - no spritelayout found matching id given by "
+                        + str(layout_def)
+                    )
+                else:
+                    # redefine the layout def
+                    layout_def = (
+                        layout_def[0],
+                        layout_def[1],
+                        tile,
+                        layout_def[2],
+                    )
+            # write the original or modified layout def to result,
+            result.append(layout_def)
+        if len(result) == 0:
+            # something went wrong, probably fancy conditions somewhere eh?
+            raise BaseException("layout resolver failed for " + self.id)
+        return result
+
+    @property
+    def layout_rotated_90(self):
+        # Rotate 90 degrees clockwise
+        rotated_layout = [
+            (tile_def[1], self.max_x - tile_def[0], tile_def[2], tile_def[3])
+            for tile_def in self.layout
+        ]
+        return rotated_layout
+
+    @property
+    def layout_rotated_180(self):
+        # Rotate 180 degrees
+        rotated_layout = [
+            (
+                self.max_x - tile_def[0],
+                self.max_y - tile_def[1],
+                tile_def[2],
+                tile_def[3],
+            )
+            for tile_def in self.layout
+        ]
+        return rotated_layout
+
+    @property
+    def layout_rotated_270(self):
+        # Rotate 270 degrees clockwise
+        rotated_layout = [
+            (self.max_y - tile_def[1], tile_def[0], tile_def[2], tile_def[3])
+            for tile_def in self.layout
+        ]
+        return rotated_layout
+
+    @property
+    def min_x(self):
+        return min([i[0] for i in self.layout])
+
+    @property
+    def min_y(self):
+        return min([i[1] for i in self.layout])
+
+    @property
+    def max_x(self):
+        return max([i[0] for i in self.layout])
+
+    @property
+    def max_y(self):
+        return max([i[1] for i in self.layout])
+
+    @property
+    def xy_dimensions(self):
+        # add 1 as the xy are zero based indexes, and we want total tiles
+        return (1 + self.max_x - self.min_x, 1 + self.max_y - self.min_y)
+
+
+class IndustryLocationChecks(object):
+    """Class to hold location checks for an industry"""
+
+    def __init__(self, industry, location_args={}):
+        self.industry = industry
+        self.same_type_distance = location_args.get("same_type_distance", None)
+        self.near_at_least_one_of_these_keystone_industries = location_args.get(
+            "near_at_least_one_of_these_keystone_industries", None
+        )
+        if self.near_at_least_one_of_these_keystone_industries is not None:
+            utils.echo_message(
+                "near_at_least_one_of_these_keystone_industries set by",
+                industry.id,
+                "- should be in economy location checks only",
+                "(unsupported - see economy_biome_checks as an equivalent economy-specific check)",
+                message_type="info",
+            )
+        self.require_cluster = location_args.get("require_cluster", None)
+        self.require_town_industry_count = location_args.get(
+            "require_town_industry_count", None
+        )
+        self.require_town_min_population = location_args.get(
+            "require_town_min_population", None
+        )
+        self.location_check_industry_disallow_too_far_from_coast = location_args.get(
+            "location_check_industry_disallow_too_far_from_coast", None
+        )
+        # this is custom to grain mill, can be made generic if needed
+        self.flour_mill_layouts_by_date = location_args.get(
+            "flour_mill_layouts_by_date", None
+        )
+        # economies may optionally define specific biomes which industries must locate in for that economy
+        self.economy_biome_checks = {}
+
+    def get_pre_player_founding_checks(self, incompatible_industries):
+        result = []
+
+        if self.flour_mill_layouts_by_date:
+            result.append(IndustryLocationCheckGrainMillLayoutsByDate())
+
+        return result
+
+    def get_post_player_founding_checks_AND(self, incompatible_industries):
+        # checks where all conditions must be satisfied
+        result = []
+
+        if self.require_cluster:
+            # special case if clustering is used, require_cluster check handles max distance and cluster counts...
+            # ...and min distance is set to 20 for all types (as all clustered industries were using this value at time of writing)
+            result.append(
+                IndustryLocationCheckCluster(self.industry.id, self.require_cluster)
+            )
+            result.append(
+                IndustryLocationCheckIndustryMinDistance(self.industry.id, 20)
+            )
+        elif self.same_type_distance:
+            # industries can over-ride the default min distance to others of same type
+            result.append(
+                IndustryLocationCheckIndustryMinDistance(
+                    self.industry.id, self.same_type_distance
+                )
+            )
+        else:
+            # enforce a default min distance to other industries of same type
+            result.append(
+                IndustryLocationCheckIndustryMinDistance(self.industry.id, 56)
+            )
+
+        if self.require_town_industry_count:
+            result.append(
+                IndustryLocationCheckTownIndustryCount(self.require_town_industry_count)
+            )
+
+        if self.require_town_min_population:
+            result.append(
+                IndustryLocationCheckTownMinPopulation(self.require_town_min_population)
+            )
+
+        if self.location_check_industry_disallow_too_far_from_coast:
+            result.append(IndustryLocationCheckCoastDistance())
+
+        # prevent locating very near industries in the same accept / produce chain
+        for industry in set(incompatible_industries[self.industry]):
+            # don't check for self type, we have other ways to do that (occasionally economy cargo variations trigger this)
+            if industry.id != self.industry.id:
+                result.append(IndustryLocationCheckIndustryMinDistance(industry.id, 16))
+
+        return result
+
+    def get_post_player_founding_checks_OR(self, incompatible_industries):
+        # checks structured in OR groups
+        # within each OR group, satisyfing any one of the conditions is enough
+        result = []
+
+        keystone_industries = {
+            "OR_group_name": "keystone_industries",
+            "location_checks": [],
+            "next_switch_name": "",
+        }
+        if self.near_at_least_one_of_these_keystone_industries:
+            for industry_type in self.near_at_least_one_of_these_keystone_industries[0]:
+                # if the ID of the keystone type is higher than the current industry, the current industry won't be built on smaller maps or low industry settings
+                # this is because OpenTTD places first round of industries sequentially by ID (lowest first) at map gen time
+                if self.industry.numeric_id < (
+                    firs.industry_manager.get_industry_by_type(industry_type).numeric_id
+                ):
+                    utils.echo_message(
+                        self.industry.id
+                        + " declares a keystone with higher ID ("
+                        + industry_type
+                        + ") - keystones must have lower ID than declaring industry, as industries are placed sequentially by ID (lowest first) when generating map.  Move "
+                        + self.industry.id
+                        + " to a higher ID (probably breaks savegames)."
+                    )
+                    permissive_flag = 1
+                else:
+                    permissive_flag = 0
+                keystone_industries["location_checks"].append(
+                    IndustryLocationCheckIndustryMaxDistance(
+                        industry_type,
+                        self.near_at_least_one_of_these_keystone_industries[1],
+                        permissive_flag,
+                    )
+                )
+        result.append(keystone_industries)
+
+        economy_specific_biomes = {
+            "OR_group_name": "economy_specific_biomes",
+            "location_checks": [],
+            "next_switch_name": "",
+        }
+        for economy_id, biome_list in self.economy_biome_checks.items():
+            for biome_id in biome_list:
+                economy_specific_biomes["location_checks"].append(
+                    IndustryLocationCheckEconomySpecificBiome(economy_id, biome_id)
+                )
+        result.append(economy_specific_biomes)
+
+        for counter, group in enumerate(result):
+            if counter == 0:
+                # last result (switches tree is reversed list order), so branch to AND checks
+                group["next_switch_name"] = "AND"
+            else:
+                group["next_switch_name"] = "OR_" + result[counter - 1]["OR_group_name"]
+
+        return result
+
+
+class IndustryLocationCheck(object):
+    """sparse base class for industry location checks"""
+
+    @property
+    def procedure_name_and_params_as_nml_string(self):
+        params_as_nml_string = ",".join([str(param) for param in self.params])
+        return (
+            "location_check_industry_"
+            + self.procedure_name
+            + "("
+            + params_as_nml_string
+            + ")"
+        )
+
+
+class IndustryLocationCheckTownIndustryCount(IndustryLocationCheck):
+    """Require specific count of industry type in a town"""
+
+    def __init__(self, require_town_industry_count):
+        # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
+        self.industry_type_numeric_id = firs.industry_manager.get_industry_by_type(
+            require_town_industry_count[0]
+        ).numeric_id
+        self.min_count = require_town_industry_count[1]
+        self.max_count = require_town_industry_count[2]
+        if self.min_count != 0 or self.max_count != 0:
+            utils.echo_message(
+                "IndustryLocationCheckTownIndustryCount uses a hardcoded error string limiting to 1 instance per town, add more strings to handle higher limits"
+            )
+        self.procedure_name = "require_town_industry_count"
+        self.params = [self.industry_type_numeric_id, self.min_count, self.max_count]
+
+
+class IndustryLocationCheckTownMinPopulation(IndustryLocationCheck):
+    """Require the nearest town to have a minimum population"""
+
+    def __init__(self, require_town_min_population):
+        self.min_population = require_town_min_population
+        self.procedure_name = "require_town_min_population"
+        self.params = [self.min_population]
+
+
+class IndustryLocationCheckCluster(IndustryLocationCheck):
+    """Require industries to locate in n clusters"""
+
+    def __init__(self, industry_type, require_cluster):
+        # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
+        self.industry_type_numeric_id = industry_type
+        self.max_distance = require_cluster[0]
+        # cluster factor is a fudge, theoretically determines number of clusters per 256x256 section of map, but often irrelevant due to industry counts in any given combination of map/setting/economy/randomisation
+        self.cluster_factor = require_cluster[1]
+        self.procedure_name = "require_cluster"
+        self.params = [
+            self.industry_type_numeric_id,
+            self.cluster_factor,
+            self.max_distance,
+        ]
+
+
+class IndustryLocationCheckIndustryMinDistance(IndustryLocationCheck):
+    """Prevent locating near incompatible industry types"""
+
+    def __init__(self, industry_type, distance):
+        self.industry_type = industry_type
+        # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
+        self.industry_type_numeric_id = firs.industry_manager.get_industry_by_type(
+            industry_type
+        ).numeric_id
+        self.distance = distance
+        self.procedure_name = "require_min_distance_to_another_industry_type"
+        self.params = [self.industry_type_numeric_id, self.distance]
+
+
+class IndustryLocationCheckIndustryMaxDistance(IndustryLocationCheck):
+    """Check distance to another industry type"""
+
+    def __init__(self, industry_type, distance, permissive_flag):
+        # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
+        self.industry_type_numeric_id = firs.industry_manager.get_industry_by_type(
+            industry_type
+        ).numeric_id
+        self.distance = distance
+        self.permissive_flag = permissive_flag
+        self.procedure_name = "require_max_distance_to_another_industry_type"
+        self.params = [
+            self.industry_type_numeric_id,
+            self.distance,
+            self.permissive_flag,
+        ]
+
+
+class IndustryLocationCheckCoastDistance(IndustryLocationCheck):
+    """Maximum distance to coast (player can vary this with parameter)"""
+
+    def __init__(self):
+        self.procedure_name = "disallow_too_far_from_coast"
+        self.params = []
+
+
+class IndustryLocationCheckEconomySpecificBiome(IndustryLocationCheck):
+    """Check for a biome specific to the economy"""
+
+    def __init__(self, economy_id, biome_id):
+        self.procedure_name = "economy_biome_test_" + economy_id + "_" + biome_id
+        self.params = []
+
+
+class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
+    """Custom check for Grain mill, layouts are restricted by date; this is a one-off, but could be made generic if needed"""
+
+    def __init__(self):
+        self.procedure_name = "flour_mill_layouts_by_date"
+        self.params = []
+
+
+class IndustryProperties(object):
+    """Base class to hold industry item properties, as the instance for defaults, or for economy variations"""
+
+    def __init__(self, **kwargs):
+        # nml item properties, most of these should be provided as strings for insertion into nml.  See nml docs for meaning + acceptable values.
+        self.substitute = kwargs.get(
+            "substitute", "0"
+        )  # '0' is safe default, most industries don't need to set this prop explicitly, but the prop must have *a* value or industry won't appear in game
+        self.override = kwargs.get(
+            "override", "0"
+        )  # industries should only set this explicitly when re-using a default industry, otherwise '0' is a safe default
+        self.name = kwargs.get("name", None)
+        self.nearby_station_name = kwargs.get("nearby_station_name", None)
+        self.intro_year = kwargs.get("intro_year", None)
+        self.expiry_year = kwargs.get("expiry_year", None)
+        self.min_cargo_distr = "1"  # just use the most common value from default OTTD industries, this property needs set but has little use
+        #  input multipliers must be explicitly 0 unless set, don't rely on sensible defaults
+        self.input_multiplier_1 = kwargs.get("input_multiplier_1", "[0, 0]")
+        self.input_multiplier_2 = kwargs.get("input_multiplier_2", "[0, 0]")
+        self.input_multiplier_3 = kwargs.get("input_multiplier_3", "[0, 0]")
+        self.prod_increase_msg = kwargs.get("prod_increase_msg", None)
+        self.prod_decrease_msg = kwargs.get("prod_decrease_msg", None)
+        self.new_ind_msg = kwargs.get("new_ind_msg", None)
+        self.closure_msg = kwargs.get("closure_msg", None)
+        self.prob_in_game = kwargs.get("prob_in_game", None)
+        self.prob_map_gen = kwargs.get("prob_map_gen", None)
+        self.prospect_chance = kwargs.get("prospect_chance", None)
+        self.map_colour = kwargs.get("map_colour", None)
+        # colour_scheme_name is required, no fallback
+        self.colour_scheme_name = kwargs.get("colour_scheme_name")
+        self.life_type = kwargs.get("life_type", None)
+        self.fund_cost_multiplier = kwargs.get("fund_cost_multiplier", None)
+        self.remove_cost_multiplier = kwargs.get("remove_cost_multiplier", "0")
+        self._special_flags = kwargs.get("special_flags", [])
+        # not nml properties
+        self.enabled = kwargs.get("enabled", False)
+        self.accept_cargo_types = kwargs.get("accept_cargo_types", None)
+        self.accept_cargos_with_input_ratios = kwargs.get(
+            "accept_cargos_with_input_ratios", None
+        )
+        self.prod_cargo_types_with_multipliers = kwargs.get(
+            "prod_cargo_types_with_multipliers", None
+        )
+        self.prod_cargo_types_with_output_ratios = kwargs.get(
+            "prod_cargo_types_with_output_ratios", None
+        )
+        self.prod_multiplier = kwargs.get("prod_multiplier", None)
+        self.override_default_construction_states = kwargs.get(
+            "override_default_construction_states", False
+        )
+        self.extra_text_fund = kwargs.get("extra_text_fund", None)
+        # used by primaries only as of August 2023
+        self.primary_production_random_factor_set = kwargs.get(
+            "primary_production_random_factor_set", None
+        )
+        # default and/or economy-specific configuration for FIRS GS at compile time
+        self.vulcan_config = kwargs.get("vulcan_config", {})
+        # nml properties we want to prevent being set for one reason or another
+        if "conflicting_ind_types" in kwargs:
+            raise Exception(
+                "Don't set conflicting_ind_types property; use the FIRS location checks for conflicting industry (these are more flexible)."
+            )
+        self.basic_needs_and_luxuries_factor = kwargs.get(
+            "basic_needs_and_luxuries_factor", 0
+        )
+        self.pollution_and_squalor_factor = kwargs.get(
+            "pollution_and_squalor_factor", 0
+        )
+
+
+class Industry(object):
+    """Base class for all types of industry"""
+
+    def __init__(self, id, **kwargs):
+        self.id = id
+        self.tiles = []
+        self.sprites = []
+        self.smoke_sprites = []
+        self.spritesets = []
+        # by convention spritelayout is one word :P
+        self.spritelayouts = []
+        self.magic_spritelayouts_by_id = {}
+        # objects dict keyed on the object num local to the industry, for convenience of access creating/appending - isn't significant for rendering
+        self.objects = {}
+        self.extra_graphics_switches = []
+        self._industry_layouts = {"core": [], "outposts": [], "jetties": []}
+        self.default_industry_properties = IndustryProperties(**kwargs)
+        # economy variation structure is provisioned containing all economies, but with empty industry config, industry is then enabled for economies later
+        # this could be changed so that economies are only provisioned by enable_in_economy(), but it's easy to ensure economy looks up don't fail this way
+        self.economy_variations = {}
+        for economy in firs.economy_manager:
+            self.add_economy_variation(economy)
+        # Vulcan is used to configure FIRS GS compile-time properties, and holds Vulcan-specific properties and methods
+        self.vulcan = Vulcan(self)
+        # template will be set by subcass, and/or by individual industry instances
+        self.template = kwargs.get("template", None)
+        self.location_checks = IndustryLocationChecks(
+            self, kwargs.get("location_checks", {})
+        )
+        self.provides_snow = kwargs.get("provides_snow", False)
+        self.sprites_complete = kwargs["sprites_complete"]
+        self.animated_tiles_fixed = kwargs["animated_tiles_fixed"]
+
+    def validate(self):
+        # any post init checks we want to do can go here
+        if (
+            len(
+                [
+                    i
+                    for i in self.economy_variations
+                    if self.economy_variations[i].enabled is True
+                ]
+            )
+            == 0
+        ):
+            # warn only if not used, no need to raise exception
+            utils.echo_message(self.id + " is not used in any economy")
+        # guard against mistakes with cargo ids in economies
+        for economy in firs.economy_manager:
+            # guard against industries defining accepted / produced cargos that aren't available in the economy
+            # - prevents callback failures
+            # - prevents possibly incorrect combinatorial production maths
+            if self.economy_variations[economy.id].enabled:
+                for cargo_label in self.get_accepted_cargo_labels_by_economy(economy):
+                    if (
+                        firs.cargo_manager.cargo_label_id_mapping[cargo_label]
+                        not in economy.cargo_ids
+                    ):
+                        utils.echo_message(
+                            " ".join(
+                                [
+                                    "In economy",
+                                    economy.id,
+                                    "industry",
+                                    self.id,
+                                    "accepts",
+                                    cargo_label,
+                                    "which is not available for that economy",
+                                ]
+                            )
+                        )
+                for cargo_label, amount in self.get_prod_cargo_types(economy):
+                    if (
+                        firs.cargo_manager.cargo_label_id_mapping[cargo_label]
+                        not in economy.cargo_ids
+                    ):
+                        utils.echo_message(
+                            " ".join(
+                                [
+                                    "In economy",
+                                    economy.id,
+                                    "industry",
+                                    self.id,
+                                    "produces",
+                                    cargo_label,
+                                    "which is not available for that economy",
+                                ]
+                            )
+                        )
+
+    def enable_in_economy(self, economy_id, **kwargs):
+        self.economy_variations[economy_id].enabled = True
+        for kwarg_name, kwarg_value in kwargs.items():
+            # special case for location checks, which must be appended to the dedicated IndustryLocationChecks instance holding the standard checks for the industry
+            if kwarg_name == "locate_in_specific_biomes":
+                self.location_checks.economy_biome_checks[economy_id] = kwarg_value
+            else:
+                if hasattr(self.economy_variations[economy_id], kwarg_name):
+                    setattr(
+                        self.economy_variations[economy_id], kwarg_name, kwarg_value
+                    )
+                else:
+                    raise NameError(
+                        "unknown economy variation kwarg '"
+                        + kwarg_name
+                        + "' declared by "
+                        + self.id
+                    )
+
+    def add_tile(self, *args, **kwargs):
+        new_tile = Tile(self.id, *args, **kwargs)
+        self.tiles.append(new_tile)
+        return new_tile
+
+    def add_sprite(self, *args, **kwargs):
+        new_sprite = Sprite(*args, **kwargs)
+        self.sprites.append(new_sprite)
+        # returning the new sprite isn't essential, but permits the caller giving it a reference for use elsewhere
+        return new_sprite
+
+    def add_smoke_sprite(self, *args, **kwargs):
+        new_smoke_sprite = SmokeSprite(*args, **kwargs)
+        self.smoke_sprites.append(new_smoke_sprite)
+        # returning the new smokesprite isn't essential, but permits the caller giving it a reference for use elsewhere
+        return new_smoke_sprite
+
+    def add_spriteset(self, *args, **kwargs):
+        id = self.id + "_spriteset_" + str(len(self.spritesets))
+        new_spriteset = Spriteset(id=id, *args, **kwargs)
+        self.spritesets.append(new_spriteset)
+        # returning the new spriteset isn't essential, but permits the caller giving it a reference for use elsewhere
+        return new_spriteset
+
+    def add_spritelayout(self, *args, **kwargs):
+        new_spritelayout = SpriteLayout(*args, **kwargs)
+        self.spritelayouts.append(new_spritelayout)
+        if kwargs.get("add_to_object_num", None) is not None:
+            # when adding spritelayouts this way, all views will be single tile, 0-indexed
+            view = [(0, 0, new_spritelayout)]
+            self.add_view_for_object(view, **kwargs)
+        # returning the new spritelayout isn't essential, but permits the caller giving it a reference for use elsewhere
+        return new_spritelayout
+
+    def add_magic_spritelayout(self, type, base_id, tile, config, **kwargs):
+        # sometimes magic is the only way
+        # this is for very specific spritelayout patterns that repeat across multiple industries and require long declarations and extra switches
+        # we do have to book-keep the magic, as there are Magic taxes that must be paid
+        magic_spritelayout = MagicSpritelayoutFactory().produce(self, type, base_id, tile, config, **kwargs)
+        self.magic_spritelayouts_by_id[base_id] = magic_spritelayout
+
+    def add_slope_graphics_switch(self, *args, **kwargs):
+        new_graphics_switch = GraphicsSwitchSlopes(*args, **kwargs)
+        self.extra_graphics_switches.append(new_graphics_switch)
+        # returning the new switch isn't essential, but permits the caller giving it a reference for use elsewhere
+        return new_graphics_switch
+
+    def add_industry_layout(self, layout_type="core", *args, **kwargs):
+        new_industry_layout = IndustryLayout(
+            self, *args, **kwargs, validate_legacy_layout_defs=True
+        )
+        self._industry_layouts[layout_type].append(new_industry_layout)
+        # returning the new layout isn't essential, but permits the caller giving it a reference for use elsewhere
+        return new_industry_layout
+
+    def add_industry_outpost_layout(self, *args, **kwargs):
+        return self.add_industry_layout("outposts", *args, **kwargs)
+
+    def add_industry_jetty_layout(self, *args, **kwargs):
+        return self.add_industry_layout("jetties", *args, **kwargs)
+
+    def add_economy_variation(self, economy):
+        self.economy_variations[economy.id] = IndustryProperties()
+
+    def add_view_for_object(self, view, **kwargs):
+        # view is a list of tuples as [(x, y, spritelayout)], similar to industry layouts, but there's no need for a stubby class for view
+        add_to_object_num = kwargs["add_to_object_num"]
+        # create object with this num if it doesn't exist
+        if add_to_object_num not in self.objects.keys():
+            self.objects[add_to_object_num] = GRFObject(self, **kwargs)
+        self.objects[add_to_object_num].add_view(view)
+
+    def add_multi_tile_object(self, **kwargs):
+        view = []
+        for x_y_spritelayout in kwargs["view_layout"]:
+            # does not handle case of invalid spritelayout id currently, so...don't do that :)
+            for spritelayout in self.spritelayouts:
+                if spritelayout.id == x_y_spritelayout[2]:
+                    view.append(
+                        (x_y_spritelayout[0], x_y_spritelayout[1], spritelayout)
+                    )
+        self.add_view_for_object(view, **kwargs)
+
+    @property
+    def numeric_id(self):
+        return global_constants.industry_numeric_ids[self.id]
+
+    @property
+    def economies_enabled_for_industry(self):
+        result = []
+        for economy in firs.economy_manager:
+            if self.get_property("enabled", economy):
+                result.append(economy)
+        return result
+
+    def get_graphics_file_path(self, terrain=None, construction_state_num=None):
+        if terrain == "snow" and self.provides_snow:
+            terrain_suffix = "_snow"
+        else:
+            terrain_suffix = ""
+        # don't use os.path.join here, this returns a string for use by nml
+        if construction_state_num != None:
+            return (
+                '"src/graphics/industries/'
+                + self.id
+                + "_construction_"
+                + str(construction_state_num + 1)
+                + '.png"'
+            )
+        else:
+            return '"src/graphics/industries/' + self.id + terrain_suffix + '.png"'
+
+    @property
+    def switch_name_for_construction_states(self):
+        # industries use the default construction sprites (shared), or their own handled by automagic spritesets / spritelayouts (graphics in spritesheets with same layout as industry)
+        if (
+            self.default_industry_properties.override_default_construction_states
+            == True
+        ):
+            return self.id + "_industry_graphics_switch_layouts"
+        else:
+            return "spritelayout_default_construction_states"
+
+    @property
+    def industry_layouts(self):
+        # JFDI switching, it's either default layouts or jetties (for port-type and harbour industries)
+        # jetties can't be combined with other industry layout approaches, it's XOR
+        if len(self._industry_layouts["jetties"]) > 0:
+            # precisely 2 jetty layouts must be provided
+            if len(self._industry_layouts["jetties"]) != 2:
+                raise BaseException(
+                    "For industry using jetty layouts, precisely 2 layouts must be provided; industry "
+                    + self.id
+                    + " provides "
+                    + str(len(self._industry_layouts["jetties"]))
+                )
+            return self.industry_layouts_jetties
+        else:
+            return self.industry_layouts_default
+
+    @property
+    def industry_layouts_default(self):
+        # industry layouts are composed from
+        # - main layouts in _industry_layouts
+        # - optional outpost layouts
+        # the outpost layouts increase total catchment area for station building, whilst leaving plenty of room to actually build the stations
+        # when outposts are used, 8 layouts are created, distributing outpusts at compass points around the core layout
+        # outposts are intended for industries with many pickup cargos, where multiple stations are required, outposts are not otherwise advised
+        result = []
+        composite_layout_counter = 0
+        for core_layout in self._industry_layouts["core"]:
+            if len(self._industry_layouts["outposts"]) == 0:
+                result.append(core_layout)
+            else:
+                for outpost_layout in self._industry_layouts["outposts"]:
+                    if outpost_layout.id not in core_layout.excluded_outpost_layouts:
+                        # NOTE the required xy offset depends on size of outpost layout as it reflects how far 0,0 tile is shifted - this is handled by checking outpost dimensions
+                        # 8 outpost placements, 2 for each compass point, leaving a sufficient 2 tile gap to fit a double track / platform in straight, or diagonal double track
+                        # I tested NE, SW etc, but didn't like it - seems to look better at N, S etc diagonal offsets from core layout
+                        outpost_xy_offsets = [
+                            # north
+                            (
+                                0 - (outpost_layout.xy_dimensions[0] + 2),
+                                0 - (outpost_layout.xy_dimensions[1] + 1),
+                            ),
+                            # south
+                            (
+                                core_layout.xy_dimensions[0] + 1,
+                                core_layout.xy_dimensions[1] + 2,
+                            ),
+                            # east
+                            (
+                                0,
+                                core_layout.xy_dimensions[1] + 2,
+                            ),
+                            # this offset removed because it creates a layout with no tiles on N tile
+                            # (
+                            # 0 - (outpost_layout.xy_dimensions[0] + 2),
+                            # core_layout.xy_dimensions[1],
+                            # ),
+                            # this offset removed because it creates a layout with no tiles on N tile
+                            # (
+                            # 0 - (outpost_layout.xy_dimensions[0]),
+                            # core_layout.xy_dimensions[1] + 2,
+                            # ),
+                            # west
+                            (
+                                core_layout.xy_dimensions[0] + 2,
+                                0,
+                            ),
+                            # this offset removed because it creates a layout with no tiles on N tile
+                            # (
+                            # core_layout.xy_dimensions[0] + 2,
+                            # 0 - (outpost_layout.xy_dimensions[1]),
+                            # ),
+                            # this offset removed because it creates a layout with no tiles on N tile
+                            # (
+                            # core_layout.xy_dimensions[0],
+                            # 0 - (outpost_layout.xy_dimensions[1] + 2),
+                            # ),
+                        ]
+                        for outpost_direction_counter, xy_offset in enumerate(
+                            outpost_xy_offsets
+                        ):
+                            composite_layout_counter += 1
+                            new_id = (
+                                core_layout.id
+                                + "_"
+                                + outpost_layout.id
+                                + "_"
+                                + str(outpost_direction_counter)
+                                + "_composite_layout_num_"
+                                + str(composite_layout_counter)
+                            )
+                            result.append(
+                                IndustryLayout(
+                                    industry=self,
+                                    id=new_id,
+                                    layout=self.composite_two_industry_layouts(
+                                        core_layout.layout,
+                                        outpost_layout.layout,
+                                        xy_offset,
+                                    ),
+                                )
+                            )
+        return result
+
+    @property
+    def industry_layouts_jetties(self):
+        # non-standard case, used for port-type industries and harbours
+        result = []
+        composite_layout_counter = 0
+        tile_gap_between_jetty_layouts = 2
+        jetty_layout_y_offset_range = range(-4, 4)
+        jetty_layout_1 = self._industry_layouts["jetties"][0]
+        jetty_layout_2 = self._industry_layouts["jetties"][1]
+        coast_configurations = [
+            (
+                "se",
+                [
+                    (
+                        jetty_layout_2.xy_dimensions[0]
+                        + tile_gap_between_jetty_layouts,
+                        jetty_layout_y_offset,
+                    )
+                    for jetty_layout_y_offset in jetty_layout_y_offset_range
+                ],
+                # note the transposition of the two layouts, to get the desired effect
+                jetty_layout_2.layout,
+                jetty_layout_1.layout,
+            ),
+            (
+                "nw",
+                [
+                    (
+                        jetty_layout_1.xy_dimensions[0]
+                        + tile_gap_between_jetty_layouts,
+                        jetty_layout_y_offset,
+                    )
+                    for jetty_layout_y_offset in jetty_layout_y_offset_range
+                ],
+                jetty_layout_1.layout_rotated_180,
+                jetty_layout_2.layout_rotated_180,
+            ),
+            (
+                "sw",
+                [
+                    # note that we have to use the x dimensions to calculate y offset as we are rotating this one 90 degrees
+                    (
+                        jetty_layout_y_offset,
+                        jetty_layout_1.xy_dimensions[0]
+                        + tile_gap_between_jetty_layouts,
+                    )
+                    for jetty_layout_y_offset in jetty_layout_y_offset_range
+                ],
+                jetty_layout_1.layout_rotated_90,
+                jetty_layout_2.layout_rotated_90,
+            ),
+            (
+                "ne",
+                [
+                    # note that we have to use the x dimensions to calculate y offset as we are rotating this one 270 degrees
+                    (
+                        jetty_layout_y_offset,
+                        jetty_layout_2.xy_dimensions[0]
+                        + tile_gap_between_jetty_layouts,
+                    )
+                    for jetty_layout_y_offset in jetty_layout_y_offset_range
+                ],
+                # note the transposition of the two layouts, to get the desired effect
+                jetty_layout_2.layout_rotated_270,
+                jetty_layout_1.layout_rotated_270,
+            ),
+        ]
+        for coast_direction, xy_offsets, layout_1, layout_2 in coast_configurations:
+            for xy_offset in xy_offsets:
+                composite_layout_counter += 1
+                new_id = (
+                    jetty_layout_1.id
+                    + "_"
+                    + jetty_layout_2.id
+                    + "_composite_layout_num_"
+                    + str(composite_layout_counter)
+                    + "_orientation_"
+                    + coast_direction
+                )
+                layout = []
+                for tiledef in self.composite_two_industry_layouts(
+                    layout_1,
+                    layout_2,
+                    xy_offset,
+                ):
+                    spritelayout_id = tiledef[3]
+                    if spritelayout_id in self.magic_spritelayouts_by_id.keys():
+                        if getattr(
+                            self.magic_spritelayouts_by_id[spritelayout_id],
+                            "auto_orient",
+                            False,
+                        ):
+                            spritelayout_id = spritelayout_id + "_" + coast_direction
+                    tiledef = (tiledef[0], tiledef[1], tiledef[2], spritelayout_id)
+                    layout.append(tiledef)
+                result.append(
+                    IndustryLayout(
+                        industry=self,
+                        id=new_id,
+                        layout=layout,
+                    )
+                )
+        return result
+
+    def composite_two_industry_layouts(self, layout_1, layout_2, xy_offset):
+        # for simplicity, this assumes we only ever want to composite 2 layouts
+        # more than 2 layouts could be supported easily enough, but there was no case so far
+        composite_layout = layout_1.copy()
+        for tile_def in layout_2:
+            new_tile_def = (
+                xy_offset[0] + tile_def[0],
+                xy_offset[1] + tile_def[1],
+                tile_def[2],
+                tile_def[3],
+            )
+            composite_layout.append(new_tile_def)
+
+        composite_layout = self.transpose_industry_layout_to_set_n_tile_as_origin(
+            composite_layout
+        )
+        return composite_layout
+
+    def transpose_industry_layout_to_set_n_tile_as_origin(self, layout):
+        transposed_layout = []
+        # layouts can't use -ve xy values,
+        # ensure that the layout is valid by transposing it to put north tile on 0,0
+        # temp IndustryLayout objs created here just to use their min_x, min_y methods for convenience
+        transpose_x = (
+            -1
+            * IndustryLayout(
+                industry=self,
+                id="temp",
+                layout=layout,
+                validate_xy=False,
+            ).min_x
+        )
+        transpose_y = (
+            -1
+            * IndustryLayout(
+                industry=self,
+                id="temp",
+                layout=layout,
+                validate_xy=False,
+            ).min_y
+        )
+        for tile_def in layout:
+            transposed_tile_def = (
+                tile_def[0] + transpose_x,
+                tile_def[1] + transpose_y,
+                tile_def[2],
+                tile_def[3],
+            )
+            transposed_layout.append(transposed_tile_def)
+        return transposed_layout
+
+    @property
+    def industry_layouts_as_nml_property(self):
+        result = [
+            industry_layout.id + "_tilelayout"
+            for industry_layout in self.industry_layouts
+        ]
+        return "layouts: [" + ",".join(result) + "];"
+
+    def randomise_primary_production_on_build_as_nml_property(self, economy):
+        if self.get_property("prod_cargo_types_with_multipliers", economy) in [
+            None,
+            [],
+        ]:
+            # if there's no production, there's no point setting this prop (this mostly handles case of IndustryTertiary where hotel produces and others do not)
+            return ""
+        else:
+            # don't otherwise bother handling errors, just fail if this is missing
+            primary_production_random_factor_set = self.get_property(
+                "primary_production_random_factor_set", economy
+            )
+            params = [
+                self.get_perm_num("base_prod_factor"),
+                # we want the index of the primary_production_random_factor_set so we can switch on it in nml
+                global_constants.primary_production_random_factor_sets.index(
+                    primary_production_random_factor_set
+                ),
+            ]
+            return (
+                "build_prod_change: randomise_primary_production_on_build("
+                + ",".join([str(i) for i in params])
+                + ");"
+            )
+
+    def get_extra_text_fund(self, economy):
+        # some fund text options are orthogonal, there is no support for combining them currently
+        # support for combined fund text could be added, it's just a substr tree eh?
+        result = (
+            []
+        )  # use a list, because I want to warn if industry tries to set more than one result
+        if self.get_intro_year(economy) != 0:
+            result.append(
+                "string(STR_FUND_AVAILABLE_FROM, "
+                + str(self.get_intro_year(economy))
+                + ")"
+            )
+        if self.get_expiry_year(economy) != global_constants.max_game_date:
+            result.append(
+                "string(STR_FUND_AVAILABLE_UNTIL, "
+                + str(self.get_expiry_year(economy))
+                + ")"
+            )
+
+        if self.get_property("extra_text_fund", economy) is not None:
+            result.append(self.get_property("extra_text_fund", economy))
+
+        # integrity check, no handling of multiple results currently so alert on that at compile time
+        if len(result) > 1:
+            utils.echo_message(
+                "Industry "
+                + self.id
+                + " wants more than one string for extra_text_fund, only one is supported currently"
+            )
+            utils.echo_message(
+                str(self.get_intro_year(economy))
+                + " "
+                + str(self.get_expiry_year(economy))
+            )
+
+        # if no text is needed...
+        if len(result) == 0:
+            result.append("CB_RESULT_NO_TEXT")
+
+        return "return " + result[0]
+
+    def get_extra_text_string(self, economy):
+        accept_cargos_with_ratios = self.get_property(
+            "accept_cargos_with_input_ratios", economy
+        )
+        if len(accept_cargos_with_ratios) == 1:
+            extra_text_string = "STR_EMPTY"  # nothing useful to show where just one cargo is accepted eh
+        elif len(accept_cargos_with_ratios) == 2:
+            extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_BOTH"
+        else:
+            # below here is increasingly JFDI and may well go wrong if industries are inappropriately configured
+            max_ratio = sum(
+                [cargo_with_ratio[1] for cargo_with_ratio in accept_cargos_with_ratios]
+            )
+            if max_ratio == 8:
+                # common case, industry is configured so that ratios sum to 8
+                extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ALL"
+            elif int(max_ratio / len(accept_cargos_with_ratios)) == 8:
+                # less common case: all ratios are 8, so there is no combination
+                # to prevent surprises we guard on known industry ids
+                if self.id not in ["supply_yard", "food_processor"]:
+                    raise Exception(
+                        "get_extra_text_string: "
+                        + self.id
+                        + " needs combinatorial production values checked, they may be incorrect?"
+                    )
+                extra_text_string = "STR_EXTRA_TEXT_SECONDARY_NON_COMBINATORY"
+            elif int(max_ratio / len(accept_cargos_with_ratios)) == 3:
+                # rare case of 3 out of n cargos being required
+                # to prevent surprises we guard on known industry ids
+                if self.id not in [
+                    "precision_parts_plant",
+                    "appliance_factory",
+                    "power_systems_factory",
+                ]:
+                    raise Exception(
+                        "get_extra_text_string: "
+                        + self.id
+                        + " needs combinatorial production values checked, they may be incorrect?"
+                    )
+                extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_THREE"
+            else:
+                # as of April 2023, we just assume that any 2 will give a max ratio
+                # to prevent surprises we guard on known industry ids
+                if self.id not in ["metal_works"]:
+                    raise Exception(
+                        "get_extra_text_string: "
+                        + self.id
+                        + " needs combinatorial production values checked, they may be incorrect?"
+                    )
+                extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_TWO"
+        return "string(" + extra_text_string + ")"
+
+    def get_intro_year(self, economy):
+        # simple wrapper to get_property(), which sanitises intro_year from None to 0 if unspecified by economy
+        result = self.get_property("intro_year", economy)
+        if result == None:
+            return 0
+        else:
+            return result
+
+    def get_expiry_year(self, economy):
+        # simple wrapper to get_property(), which sanitises expiry from None to max game date if unspecified by economy
+        result = self.get_property("expiry_year", economy)
+        if result == None:
+            return global_constants.max_game_date
+        else:
+            return result
+
+    def get_property(self, property_name, economy):
+        # does magic to get the property from the defaults if not set
+        # that enables economies to over-ride selected properties and not bother setting others
+        # doesn't try to handle failure case of property not found at all: don't look up props that don't exist
+
+        default_value = getattr(self.default_industry_properties, property_name)
+        if economy is None:
+            value = default_value
+        else:
+            economy_value = getattr(self.economy_variations[economy.id], property_name)
+            if economy_value is not None:
+                value = economy_value
+            else:
+                value = default_value
+
+        # map colour uses a guarding function
+        if property_name == "map_colour":
+            self.validate_map_colour(value)
+
+        return value
+
+    def get_property_declaration(self, property_name, economy=None):
+        value = self.get_property(property_name, economy)
+        # we don't want to render empty properties for nml
+        if value == None or value == "":
+            return
+        else:
+            return property_name + ": " + value + ";"
+
+    @property
+    def nearby_station_name_as_nml_property(self):
+        return (
+            "nearby_station_name: string(STR_STATION, string(STR_TOWN),"
+            + self.get_property("nearby_station_name", None)
+            + ");"
+        )
+
+    def get_cargo_types_declaration(self, economy):
+        """
+        *Output Format*
+        accept_cargo("COAL", produce_cargo("MAIL", 1), produce_cargo("GOOD", 1), produce_cargo("STEL", 1), produce_cargo("VALU", 1)),
+        accept_cargo("OIL_"),
+        accept_cargo("IORE", produce_cargo("STEL", 4)),
+        produce_cargo("VALU", 0.5)
+        Just use 0 in produce_cargo("STEL", 0) if prod. cb is in use (i.e. secondaries).
+        """
+        cargo_types = []
+        cargo_types.extend(
+            [
+                'accept_cargo("' + label + '")'
+                for label in self.get_accepted_cargo_labels_by_economy(economy)
+            ]
+        )
+        zero_output = "0"  # *all* industry production is via production cb, so force output to 0 in the action 0 prop
+        cargo_types.extend(
+            [
+                'produce_cargo("' + label + '",' + zero_output + ")"
+                for label, output_ratio in self.get_prod_cargo_types(economy)
+            ]
+        )
+        result = "cargo_types: [" + ",".join(cargo_types) + "];"
+        return result
+
+    def get_accepted_cargo_labels_by_economy(self, economy):
+        # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed
+        accept_cargo_types = self.get_property("accept_cargo_types", economy)
+        if accept_cargo_types is None:
+            # returning None causes some things to explode in docs, which I should fix, but haven't, this patches it with jank
+            result = []
+        else:
+            result = accept_cargo_types
+            # although OpenTTD 1.9.0+ supports up to 16 accepted cargos, FIRS caps to 8
+            # - for gameplay reasons (too many cargos in one industry isn't fun)
+            # - because of long-established production rules that calculate cargo output using ratios of n/8
+            assert (
+                len(result) <= 8
+            ), "More than 8 accepted cargos defined for %s in economy %s" % (
+                self.id,
+                economy.id,
+            )
+        return result
+
+    def get_produced_cargo_labels_by_economy(self, economy):
+        result = []
+        for cargo_label, input_ratio in self.get_prod_cargo_types(economy):
+            result.append(cargo_label)
+        return result
+
+    def get_prod_cargo_types(self, economy):
+        # stub, this should be handled in Industry subclasses
+        raise Exception("get_prod_cargo_types called", self.id)
+        return []
+
+    def get_animation_macro_config(self, animation_context):
+        if animation_context == "industry":
+            tiles = self.tiles
+            feature = "FEAT_INDUSTRYTILES"
+        elif animation_context == "object":
+            all_tiles = []
+            for grf_object in self.objects.values():
+                all_tiles.append(grf_object.tile)
+            tiles = list(set(all_tiles))
+            feature = "FEAT_OBJECTS"
+        else:
+            raise BaseException("Unknown animation_context ", animation_context)
+        return {"tiles": tiles, "feature": feature}
+
+    @property
+    def uses_magic_trees(self):
+        for spritelayout in self.spritelayouts:
+            if len(spritelayout.magic_trees) > 0:
+                return True
+        return False
+
+    @property
+    def colour_scheme_name(self):
+        # simple wrapper to get_property(), this is a bit overly-abstracted for the simple case of industry colour, but conforms to the established pattern
+        return self.get_property("colour_scheme_name", None)
+
+    @property
+    def incompatible_industries(self):
+        # there's no sensible way to get incompatible_industries from here, it has to be passed in when rendering templates
+        # there are genuine performance reasons to have incompatibility calculated once and only once by firs.py
+        # as of June 2024, this might be outdated, and firs.industry_manager might eliminate this issue, but haven't updated this
+        utils.echo_message(
+            "Incompatible industries not implemented in industry.py, must be passed from firs.py at render time"
+        )
+
+    @property
+    def special_flags(self):
+        flags = ["IND_FLAG_LONG_CARGO_TYPE_LISTS"]
+        flags.extend(self.get_property("_special_flags", None))
+        return "bitmask(" + ",".join(flags) + ")"
+
+    @property
+    def basic_needs_and_luxuries_score(self):
+        # handled via a method so that multipliers can be applied to adjust scoring, this might not be necessary
+        return 0
+
+    @property
+    def pollution_and_squalor_score(self):
+        # handled via a method so that multipliers can be applied to adjust scoring, this might not be necessary
+        return self.get_property("pollution_and_squalor_factor", None)
+
+    def validate_map_colour(self, value):
+        # we need to guard against map colours that have poor contrast with the green, dark green and purple maps
+        # see the list of valid colours in global_constants
+        # !! this might need special case handling for water industries (list.extend() in global constants?)
+        if int(value) not in global_constants.valid_industry_map_colours:
+            utils.echo_message(
+                "Industry "
+                + self.id
+                + " uses map Colour "
+                + value
+                + " which is invalid (lacks contrast)"
+            )
+
+    def unpack_sprite_or_spriteset(
+        self,
+        sprite_or_spriteset,
+        construction_state_num=3,
+        snow_overlay=False,
+    ):
+        # note the annoying edge case where 'empty' should not have a snow overlay
+        if (
+            snow_overlay == True
+            and getattr(sprite_or_spriteset, "type", None) != "empty"
+        ):
+            suffix = "_snow"
+        else:
+            suffix = ""
+        if isinstance(sprite_or_spriteset, Spriteset):
+            # tiny optimisation, don't use an animation sprite selector if there is no animation
+            if sprite_or_spriteset.animation_rate > 0:
+                if sprite_or_spriteset.custom_sprite_selector:
+                    sprite_selector = (
+                        str(sprite_or_spriteset.animation_rate)
+                        + "*"
+                        + sprite_or_spriteset.custom_sprite_selector
+                    )
+                else:
+                    sprite_selector = (
+                        str(sprite_or_spriteset.animation_rate) + "* (animation_frame)"
+                    )
+            else:
+                sprite_selector = "0"
+            if sprite_or_spriteset.type != "":
+                # ground tile assumes sprite_or_spriteset.type will always map to a ground_tile type
+                # have to accomodate number of frames needed (num_sprites_to_autofill) for animated spritelayouts
+                # !! if this is failing, look if the required number of frames is provided in ground.pynml
+                if (
+                    sprite_or_spriteset.num_sprites_to_autofill
+                    not in global_constants.animated_ground_tile_frame_counts
+                ):
+                    raise BaseException(
+                        self.id
+                        + " needs global_constants.animated_ground_tile_frame_counts extended to add a frame count of "
+                        + str(sprite_or_spriteset.num_sprites_to_autofill)
+                    )
+                return (
+                    "spriteset_ground_tile_"
+                    + sprite_or_spriteset.type
+                    + "_"
+                    + str(sprite_or_spriteset.num_sprites_to_autofill)
+                )
+            elif (
+                construction_state_num != 3
+                and self.default_industry_properties.override_default_construction_states
+                == False
+            ):
+                # default construction state (no custom construction sprites)
+                return (
+                    sprite_or_spriteset.id
+                    + "_spriteset_default_construction_state_"
+                    + str(construction_state_num)
+                    + "("
+                    + sprite_selector
+                    + ")"
+                )
+            else:
+                # default result is a spriteset name and optional frame number
+                return sprite_or_spriteset.id + suffix + "(" + sprite_selector + ")"
+        if isinstance(sprite_or_spriteset, Sprite):
+            return getattr(sprite_or_spriteset, "sprite_number" + suffix)
+
+    def get_perm_num(self, identifier):
+        # just a silly pass-through to perm_storage_mappings.get_perm_num
+        return get_perm_num(identifier, industry_type=self.__class__.__name__)
+
+    def render_nml(self):
+        industry_template = templates[self.template]
+        templated_nml = utils.unescape_chameleon_output(
+            industry_template(
+                firs=firs,
+                industry=self,
+                get_perm_num=self.get_perm_num,
+                global_constants=global_constants,
+                graphics_temp_storage=global_constants.graphics_temp_storage,  # convenience measure
+                incompatible_industries=firs.industry_manager.incompatible_industries,
+                utils=utils,
+            )
+        )
+        return templated_nml
+
+
+class IndustryPrimary(Industry):
+    """Industries that produce cargo and (optionally) boost production if supplies are delivered"""
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.template = kwargs.get("template", "industry_primary.pynml")
+        self.supply_requirements = None  # default None, set appropriately by subclasses
+        register_perm_storage_mapping(
+            self.__class__.__name__,
+            [
+                "unused",
+                "unused",
+                # base prod factor is randomised when industry is constructed, to give production variation between instances of this type
+                # used in the production calculation as n/16
+                # this is NOT built-in production_level which is used, but will always be 16 by default, and can be adjusted by cheats and monthly/random prod change cbs
+                "base_prod_factor",
+                "current_supplies_prod_factor",
+                # used by industry text window to display 'supplied' or not
+                # usually will just be supplies in slot 1 for primaries, except for port-type industries
+                "supplied_cycles_remaining_cargo_1",
+                "supplied_cycles_remaining_cargo_2",
+                "supplied_cycles_remaining_cargo_3",
+                "supplied_cycles_remaining_cargo_4",
+                "supplied_cycles_remaining_cargo_5",
+                "supplied_cycles_remaining_cargo_6",
+                "supplied_cycles_remaining_cargo_7",
+                "supplied_cycles_remaining_cargo_8",
+                # amount of supplies delivered in each of 27 recent production cycles (27 is nice approximation to 3 months, in player's favour given varying month lengths)
+                "num_supplies_delivered_1",
+                "num_supplies_delivered_2",
+                "num_supplies_delivered_3",
+                "num_supplies_delivered_4",
+                "num_supplies_delivered_5",
+                "num_supplies_delivered_6",
+                "num_supplies_delivered_7",
+                "num_supplies_delivered_8",
+                "num_supplies_delivered_9",
+                "num_supplies_delivered_10",
+                "num_supplies_delivered_11",
+                "num_supplies_delivered_12",
+                "num_supplies_delivered_13",
+                "num_supplies_delivered_14",
+                "num_supplies_delivered_15",
+                "num_supplies_delivered_16",
+                "num_supplies_delivered_17",
+                "num_supplies_delivered_18",
+                "num_supplies_delivered_19",
+                "num_supplies_delivered_20",
+                "num_supplies_delivered_21",
+                "num_supplies_delivered_22",
+                "num_supplies_delivered_23",
+                "num_supplies_delivered_24",
+                "num_supplies_delivered_25",
+                "num_supplies_delivered_26",
+                "num_supplies_delivered_27",
+            ],
+        )
+
+    def get_prod_cargo_types(self, economy):
+        # primary industry prod cargo provides multipliers for the produced amounts (8 or 9 times per month)
+        prod_cargo_types = self.get_property(
+            "prod_cargo_types_with_multipliers", economy
+        )
+        # prod_cargo_types cannot be None for primary industries
+        assert prod_cargo_types is not None, (
+            "prod_cargo_types_with_multipliers cannot be None for %s - property should be set in industry definition "
+            % (self.id)
+        )
+        # guard against too many cargos being defined
+        # although OpenTTD 1.9.0+ supports up to 16 produced cargos, FIRS caps to 8
+        # - for gameplay reasons (too many cargos in one industry isn't fun)
+        # - because of long-established production rules that calculate cargo output using ratios of n/8
+        assert (
+            len(prod_cargo_types) <= 8
+        ), "More than 8 produced cargos defined for %s in economy %s" % (
+            self.id,
+            economy.id,
+        )
+        # guard against multipliers being 0
+        for label, prod_multiplier in prod_cargo_types:
+            assert (
+                prod_multiplier != 0
+            ), "Prod multiplier cannot be 0 for %s industry %s in economy %s" % (
+                label,
+                self.id,
+                economy.id,
+            )
+        return prod_cargo_types
+
+
+class IndustryPrimaryExtractive(IndustryPrimary):
+    """
+    Industry that is extractive AND has production boosted by delivery of ENSP (mines and similar)
+    Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
+    """
+
+    def __init__(self, **kwargs):
+        kwargs["accept_cargo_types"] = ["ENSP"]
+        kwargs["life_type"] = "IND_LIFE_TYPE_EXTRACTIVE"
+        super().__init__(**kwargs)
+        # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
+        self.supply_requirements = [
+            0,
+            "PRIMARY",
+            1,
+        ]
+        self.allow_production_change_from_gs = True
+
+
+class IndustryPrimaryOrganic(IndustryPrimary):
+    """
+    Industry that is organic AND has production boosted by delivery of FMSP (farms and similar)
+    Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
+    """
+
+    def __init__(self, **kwargs):
+        kwargs["accept_cargo_types"] = ["FMSP"]
+        kwargs["life_type"] = "IND_LIFE_TYPE_ORGANIC"
+        super().__init__(**kwargs)
+        # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
+        self.supply_requirements = [
+            0,
+            "PRIMARY",
+            1,
+        ]
+        self.allow_production_change_from_gs = True
+
+
+class IndustryPrimaryPort(IndustryPrimary):
+    """
+    Industry that is import-export AND has production boosted by delivery of arbitrary cargos (ports and similar)
+    Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
+    """
+
+    def __init__(self, **kwargs):
+        kwargs["life_type"] = "IND_LIFE_TYPE_BLACK_HOLE"
+        super().__init__(**kwargs)
+        # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
+        self.supply_requirements = [
+            0,
+            "PORT",
+            8,
+        ]
+        self.allow_production_change_from_gs = True
+
+
+class IndustryPrimaryNoSupplies(IndustryPrimary):
+    """Industry that does not accept supplies"""
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.template = kwargs.get("template", "industry_primary_no_supplies.pynml")
+        self.supply_requirements = None  # supplies do not boost this type of primary
+        self.allow_production_change_from_gs = kwargs.get(
+            "allow_production_change_from_gs", False
+        )
+
+
+class IndustryTownProducerPopulationDependent(IndustryPrimary):
+    """Industry that locates near towns, with production amount related to town population"""
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.template = kwargs.get("template", "industry_primary_town_producer.pynml")
+        self.supply_requirements = None  # supplies do not boost this type of primary
+        # town producer industries have lower and upper production caps
+        self.min_production = 64
+        self.max_production = 2048
+
+    def get_prod_cargo_types(self, economy):
+        # town-population-dependent industries provide multipliers which are used as n/16 - set 16 for default
+        prod_cargo_types = self.get_property(
+            "prod_cargo_types_with_multipliers", economy
+        )
+        # prod_cargo_types cannot be None for town-population-dependent industries
+        assert prod_cargo_types is not None, (
+            "prod_cargo_types_with_multipliers cannot be None for %s - property should be set in industry definition "
+            % (self.id)
+        )
+        # guard against too many cargos being defined
+        # although OpenTTD 1.9.0+ supports up to 16 produced cargos, FIRS caps to 8
+        # - for gameplay reasons (too many cargos in one industry isn't fun)
+        # - because of long-established production rules that calculate cargo output using ratios of n/8
+        assert (
+            len(prod_cargo_types) <= 8
+        ), "More than 8 produced cargos defined for %s in economy %s" % (
+            self.id,
+            economy.id,
+        )
+        # guard against multipliers being 0
+        for label, prod_multiplier in prod_cargo_types:
+            assert (
+                prod_multiplier != 0
+            ), "Prod multiplier cannot be 0 for %s industry %s in economy %s" % (
+                label,
+                self.id,
+                economy.id,
+            )
+        return prod_cargo_types
+
+
+class IndustrySecondary(Industry):
+    """Processing industries: input cargo(s) -> output cargo(s)"""
+
+    def __init__(self, **kwargs):
+        kwargs["life_type"] = "IND_LIFE_TYPE_PROCESSING"
+        super().__init__(**kwargs)
+        self.template = kwargs.get("template", "industry_secondary.pynml")
+        register_perm_storage_mapping(
+            self.__class__.__name__,
+            [
+                "closure_counter",  # months without delivery, same as primary industries
+                "current_production_ratio",  # in format n/8, calculated during prod cycle, permanent register used for ease of debugging
+                "total_cargo_produced_this_cycle",  # calculated during prod cycle, permanent register used for ease of debugging
+                # used by industry text window to display 'supplied' or not
+                "supplied_cycles_remaining_cargo_1",
+                "supplied_cycles_remaining_cargo_2",
+                "supplied_cycles_remaining_cargo_3",
+                "supplied_cycles_remaining_cargo_4",
+                "supplied_cycles_remaining_cargo_5",
+                "supplied_cycles_remaining_cargo_6",
+                "supplied_cycles_remaining_cargo_7",
+                "supplied_cycles_remaining_cargo_8",
+                "total_cargo_to_distribute_this_cycle",
+                "total_produced_cargo_available",
+                "unused",
+                "unused",
+                "unused",
+            ],
+        )
+        # guard against prospect chance kword being set, it's pure cruft for secondary industry (harmless, but needless)
+        if "prospect_chance" in kwargs:
+            utils.echo_message(
+                "prospect_chance passed in kwargs for "
+                + self.id
+                + "; secondary industries should not set prospect_chance"
+            )
+
+    def get_prod_ratio(self, cargo_num, economy):
+        if cargo_num > len(
+            self.get_property("accept_cargos_with_input_ratios", economy)
+        ):
+            return 0
+        else:
+            return self.get_property("accept_cargos_with_input_ratios", economy)[
+                cargo_num - 1
+            ][1]
+
+    def get_accepted_cargo_labels_by_economy(self, economy):
+        # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed
+        accept_cargo_types = [
+            i[0] for i in self.get_property("accept_cargos_with_input_ratios", economy)
+        ]
+        # guard against too many cargos being defined
+        if len(accept_cargo_types) > 8:
+            utils.echo_message(
+                "Too many accepted cargos defined for "
+                + self.id
+                + " in economy "
+                + economy.id
+                + " (max 8)"
+            )
+        return accept_cargo_types
+
+    def get_prod_cargo_types(self, economy):
+        # secondary industry prod cargo uses output ratios of n/8 per cargo, which must sum to 8 for all cargos
+        prod_cargo_types = self.get_property(
+            "prod_cargo_types_with_output_ratios", economy
+        )
+        # prod_cargo_types cannot be None for secondary industries
+        assert prod_cargo_types is not None, (
+            "prod_cargo_types_with_output_ratios cannot be None for %s - property should be set in industry definition "
+            % (self.id)
+        )
+        # guard against too many cargos being defined
+        # although OpenTTD 1.9.0+ supports up to 16 produced cargos, FIRS caps to 8
+        # - for gameplay reasons (too many cargos in one industry isn't fun)
+        # - because of long-established production rules that calculate cargo output using ratios of n/8
+        assert (
+            len(prod_cargo_types) <= 8
+        ), "More than 8 produced cargos defined for %s in economy %s" % (
+            self.id,
+            economy.id,
+        )
+        return prod_cargo_types
+
+
+class IndustryTertiary(Industry):
+    """Industries that are typically black holes in or near towns. Consume cargo, may also produce town-type cargos (e.g. pax) at a constant rate unrelated to delivery."""
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.template = "industry_tertiary.pynml"
+        # common case is that tertiary should be treated as town industry when drawing docs cargoflow, but over-ride for cases where that's not wanted
+        self.town_industry_for_cargoflow = kwargs.get(
+            "town_industry_for_cargoflow", True
+        )
+        register_perm_storage_mapping(
+            self.__class__.__name__,
+            [
+                # base prod factor is randomised when industry is constructed, to give production variation between instances of this type
+                # used in the production calculation as n/16
+                # this is NOT built-in production_level which is used, but will always be 16 by default, and can be adjusted by cheats and monthly/random prod change cbs
+                "base_prod_factor",
+                # used by industry text window to display 'supplied' or not
+                # usually will just be supplies in slot 1 for primaries, except for port-type industries
+                "supplied_cycles_remaining_cargo_1",
+                "supplied_cycles_remaining_cargo_2",
+                "supplied_cycles_remaining_cargo_3",
+                "supplied_cycles_remaining_cargo_4",
+                "supplied_cycles_remaining_cargo_5",
+                "supplied_cycles_remaining_cargo_6",
+                "supplied_cycles_remaining_cargo_7",
+                "supplied_cycles_remaining_cargo_8",
+                # amount of supplies delivered in each of 27 recent production cycles (27 is nice approximation to 3 months, in player's favour given varying month lengths)
+                "input_cargo_delivered_1",
+                "input_cargo_delivered_2",
+                "input_cargo_delivered_3",
+                "input_cargo_delivered_4",
+                "input_cargo_delivered_5",
+                "input_cargo_delivered_6",
+                "input_cargo_delivered_7",
+                "input_cargo_delivered_8",
+                "input_cargo_delivered_9",
+                "input_cargo_delivered_10",
+                "input_cargo_delivered_11",
+                "input_cargo_delivered_12",
+                "input_cargo_delivered_13",
+                "input_cargo_delivered_14",
+                "input_cargo_delivered_15",
+                "input_cargo_delivered_16",
+                "input_cargo_delivered_17",
+                "input_cargo_delivered_18",
+                "input_cargo_delivered_19",
+                "input_cargo_delivered_20",
+                "input_cargo_delivered_21",
+                "input_cargo_delivered_22",
+                "input_cargo_delivered_23",
+                "input_cargo_delivered_24",
+                "input_cargo_delivered_25",
+                "input_cargo_delivered_26",
+                "input_cargo_delivered_27",
+            ],
+        )
+
+    @property
+    def has_production(self):
+        # bool, used to micro-optimise compile
+        result = False
+        for economy in firs.economy_manager:
+            if (
+                self.get_property("prod_cargo_types_with_multipliers", economy)
+                is not None
+            ):
+                if (
+                    len(self.get_property("prod_cargo_types_with_multipliers", economy))
+                    > 0
+                ):
+                    result = True
+        return result
+
+    def get_prod_cargo_types(self, economy):
+        # primary industry prod cargo provides multipliers for the produced amounts (8 or 9 times per month)
+        prod_cargo_types = self.get_property(
+            "prod_cargo_types_with_multipliers", economy
+        )
+        if prod_cargo_types is None:
+            return []
+        # guard against too many cargos being defined
+        # although OpenTTD 1.9.0+ supports up to 16 produced cargos, FIRS caps to 8
+        # - for gameplay reasons (too many cargos in one industry isn't fun)
+        # - because of long-established production rules that calculate cargo output using ratios of n/8
+        assert (
+            len(prod_cargo_types) <= 8
+        ), "More than 8 produced cargos defined for %s in economy %s" % (
+            self.id,
+            economy.id,
+        )
+        # guard against prod multipliers that are 0, they're not wanted
+        for label, prod_multiplier in prod_cargo_types:
+            assert (
+                prod_multiplier != 0
+            ), "Prod multiplier cannot be 0 for %s industry %s in economy %s" % (
+                label,
+                self.id,
+                economy.id,
+            )
+        return prod_cargo_types
+
+
+class Vulcan(object):
+    """Used for GS configuration at compile time, which influences GS at run time"""
+
+    def __init__(self, industry):
+        self.industry = industry
+
+    @property
+    def default_vulcan_config(self):
+        vulcan_config = self.industry.get_property("vulcan_config", None)
+        result = {}
+        result["allow_production_change_from_gs"] = getattr(
+            self.industry, "allow_production_change_from_gs", False
+        )
+        # append some additional derived properties to Vulcan config
+        result["town_cargo_sink_industry"] = (
+            True
+            if self.industry.id in ["builders_yard", "hardware_store", "general_store"]
+            else False
+        )
+        return result
+
+    @property
+    def economy_variations(self):
+        result = {}
+        for economy in self.industry.economies_enabled_for_industry:
+            economy_config = {}
+            economy_config["accept_cargo_types"] = (
+                self.industry.get_accepted_cargo_labels_by_economy(economy)
+            )
+            economy_config["vulcan_config"] = self.industry.get_property(
+                "vulcan_config", economy
+            )
+            result[economy.id] = economy_config
+        return result

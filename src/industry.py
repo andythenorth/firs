@@ -1130,6 +1130,7 @@ class Industry(object):
                     "precision_parts_plant",
                     "appliance_factory",
                     "power_systems_factory",
+                    "packaging_factory",
                 ]:
                     raise Exception(
                         "get_extra_text_string: "

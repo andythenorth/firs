@@ -28,7 +28,14 @@ industry.enable_in_economy(
         ("PETR", 7),
     ],
 )
-# industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('NH3_', 16)]
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargo_types=["CHIM", "PETR", "SUAC", "LPG_"],
+    prod_cargo_types_with_multipliers=[
+        ("OIL_", 11),
+        ("ACAC", 7),
+    ],
+)
 
 industry.add_tile(
     id="liquids_terminal_tile_1",

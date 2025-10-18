@@ -26,6 +26,10 @@ industry.enable_in_economy(
     accept_cargo_types=["GOOD", "BDMT"],
 )
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargo_types=["HWAR"],
+)
+industry.enable_in_economy(
     "STEELTOWN",
     accept_cargo_types=["HWAR"],
     vulcan_config={

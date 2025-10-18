@@ -3,12 +3,13 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="plastics_plant",
     accept_cargos_with_input_ratios=[
-        ("CHLO", 4),
-        ("C2H4", 4),
+        ("PLAS", 5),
+        ("KAOL", 2),
+        ("PRCH", 1),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("PLAS", 3),
-        ("COAT", 3),
+        ("GOOD", 4),
+        ("HWAR", 4),
     ],
     prob_in_game="3",
     prob_map_gen="5",
@@ -23,6 +24,9 @@ industry = IndustrySecondary(
     animated_tiles_fixed=False,
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
 
 industry.add_tile(
     id="plastics_plant_tile_1",
@@ -62,6 +66,7 @@ spriteset_9 = industry.add_spriteset(
 
 industry.add_spritelayout(
     id="plastics_plant_spritelayout_1",
+    tile="plastics_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_1],
@@ -69,6 +74,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="plastics_plant_spritelayout_2",
+    tile="plastics_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_2],
@@ -76,6 +82,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="plastics_plant_spritelayout_3",
+    tile="plastics_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_3],
@@ -83,6 +90,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="plastics_plant_spritelayout_4",
+    tile="plastics_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_4],
@@ -90,6 +98,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="plastics_plant_spritelayout_5",
+    tile="plastics_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_5],
@@ -97,6 +106,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="plastics_plant_spritelayout_6",
+    tile="plastics_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_6],
@@ -104,6 +114,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="plastics_plant_spritelayout_7",
+    tile="plastics_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_7],
@@ -111,6 +122,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="plastics_plant_spritelayout_8",
+    tile="plastics_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_8],
@@ -118,6 +130,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="plastics_plant_spritelayout_9",
+    tile="plastics_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_9],
@@ -125,6 +138,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="plastics_plant_spritelayout_10",
+    tile="plastics_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[],
@@ -134,57 +148,57 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="plastics_plant_industry_layout_1",
     layout=[
-        (0, 0, "plastics_plant_tile_1", "plastics_plant_spritelayout_2"),
-        (0, 1, "plastics_plant_tile_1", "plastics_plant_spritelayout_1"),
-        (0, 2, "plastics_plant_tile_1", "plastics_plant_spritelayout_10"),
-        (1, 0, "plastics_plant_tile_1", "plastics_plant_spritelayout_2"),
-        (1, 1, "plastics_plant_tile_1", "plastics_plant_spritelayout_1"),
-        (1, 2, "plastics_plant_tile_1", "plastics_plant_spritelayout_10"),
-        (2, 0, "plastics_plant_tile_1", "plastics_plant_spritelayout_10"),
-        (2, 1, "plastics_plant_tile_1", "plastics_plant_spritelayout_7"),
-        (2, 2, "plastics_plant_tile_1", "plastics_plant_spritelayout_9"),
-        (3, 0, "plastics_plant_tile_1", "plastics_plant_spritelayout_8"),
-        (3, 1, "plastics_plant_tile_1", "plastics_plant_spritelayout_6"),
-        (3, 2, "plastics_plant_tile_1", "plastics_plant_spritelayout_10"),
-        (4, 0, "plastics_plant_tile_1", "plastics_plant_spritelayout_5"),
-        (4, 1, "plastics_plant_tile_1", "plastics_plant_spritelayout_4"),
-        (4, 2, "plastics_plant_tile_1", "plastics_plant_spritelayout_3"),
+        (0, 0, "plastics_plant_spritelayout_2"),
+        (0, 1, "plastics_plant_spritelayout_1"),
+        (0, 2, "plastics_plant_spritelayout_10"),
+        (1, 0, "plastics_plant_spritelayout_2"),
+        (1, 1, "plastics_plant_spritelayout_1"),
+        (1, 2, "plastics_plant_spritelayout_10"),
+        (2, 0, "plastics_plant_spritelayout_10"),
+        (2, 1, "plastics_plant_spritelayout_7"),
+        (2, 2, "plastics_plant_spritelayout_9"),
+        (3, 0, "plastics_plant_spritelayout_8"),
+        (3, 1, "plastics_plant_spritelayout_6"),
+        (3, 2, "plastics_plant_spritelayout_10"),
+        (4, 0, "plastics_plant_spritelayout_5"),
+        (4, 1, "plastics_plant_spritelayout_4"),
+        (4, 2, "plastics_plant_spritelayout_3"),
     ],
 )
 industry.add_industry_layout(
     id="plastics_plant_industry_layout_2",
     layout=[
-        (0, 0, "plastics_plant_tile_1", "plastics_plant_spritelayout_8"),
-        (0, 1, "plastics_plant_tile_1", "plastics_plant_spritelayout_7"),
-        (0, 2, "plastics_plant_tile_1", "plastics_plant_spritelayout_9"),
-        (1, 0, "plastics_plant_tile_1", "plastics_plant_spritelayout_8"),
-        (1, 1, "plastics_plant_tile_1", "plastics_plant_spritelayout_6"),
-        (1, 2, "plastics_plant_tile_1", "plastics_plant_spritelayout_10"),
-        (2, 0, "plastics_plant_tile_1", "plastics_plant_spritelayout_5"),
-        (2, 1, "plastics_plant_tile_1", "plastics_plant_spritelayout_4"),
-        (2, 2, "plastics_plant_tile_1", "plastics_plant_spritelayout_3"),
-        (3, 0, "plastics_plant_tile_1", "plastics_plant_spritelayout_2"),
-        (3, 1, "plastics_plant_tile_1", "plastics_plant_spritelayout_1"),
-        (3, 2, "plastics_plant_tile_1", "plastics_plant_spritelayout_10"),
+        (0, 0, "plastics_plant_spritelayout_8"),
+        (0, 1, "plastics_plant_spritelayout_7"),
+        (0, 2, "plastics_plant_spritelayout_9"),
+        (1, 0, "plastics_plant_spritelayout_8"),
+        (1, 1, "plastics_plant_spritelayout_6"),
+        (1, 2, "plastics_plant_spritelayout_10"),
+        (2, 0, "plastics_plant_spritelayout_5"),
+        (2, 1, "plastics_plant_spritelayout_4"),
+        (2, 2, "plastics_plant_spritelayout_3"),
+        (3, 0, "plastics_plant_spritelayout_2"),
+        (3, 1, "plastics_plant_spritelayout_1"),
+        (3, 2, "plastics_plant_spritelayout_10"),
     ],
 )
 industry.add_industry_layout(
     id="plastics_plant_industry_layout_3",
     layout=[
-        (0, 0, "plastics_plant_tile_1", "plastics_plant_spritelayout_2"),
-        (0, 1, "plastics_plant_tile_1", "plastics_plant_spritelayout_1"),
-        (0, 2, "plastics_plant_tile_1", "plastics_plant_spritelayout_10"),
-        (0, 3, "plastics_plant_tile_1", "plastics_plant_spritelayout_7"),
-        (0, 4, "plastics_plant_tile_1", "plastics_plant_spritelayout_9"),
-        (1, 0, "plastics_plant_tile_1", "plastics_plant_spritelayout_2"),
-        (1, 1, "plastics_plant_tile_1", "plastics_plant_spritelayout_1"),
-        (1, 2, "plastics_plant_tile_1", "plastics_plant_spritelayout_8"),
-        (1, 3, "plastics_plant_tile_1", "plastics_plant_spritelayout_6"),
-        (1, 4, "plastics_plant_tile_1", "plastics_plant_spritelayout_10"),
-        (2, 0, "plastics_plant_tile_1", "plastics_plant_spritelayout_2"),
-        (2, 1, "plastics_plant_tile_1", "plastics_plant_spritelayout_1"),
-        (2, 2, "plastics_plant_tile_1", "plastics_plant_spritelayout_5"),
-        (2, 3, "plastics_plant_tile_1", "plastics_plant_spritelayout_4"),
-        (2, 4, "plastics_plant_tile_1", "plastics_plant_spritelayout_3"),
+        (0, 0, "plastics_plant_spritelayout_2"),
+        (0, 1, "plastics_plant_spritelayout_1"),
+        (0, 2, "plastics_plant_spritelayout_10"),
+        (0, 3, "plastics_plant_spritelayout_7"),
+        (0, 4, "plastics_plant_spritelayout_9"),
+        (1, 0, "plastics_plant_spritelayout_2"),
+        (1, 1, "plastics_plant_spritelayout_1"),
+        (1, 2, "plastics_plant_spritelayout_8"),
+        (1, 3, "plastics_plant_spritelayout_6"),
+        (1, 4, "plastics_plant_spritelayout_10"),
+        (2, 0, "plastics_plant_spritelayout_2"),
+        (2, 1, "plastics_plant_spritelayout_1"),
+        (2, 2, "plastics_plant_spritelayout_5"),
+        (2, 3, "plastics_plant_spritelayout_4"),
+        (2, 4, "plastics_plant_spritelayout_3"),
     ],
 )

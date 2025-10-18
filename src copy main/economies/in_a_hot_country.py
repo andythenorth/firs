@@ -1,0 +1,46 @@
+from economy import Economy
+
+economy = Economy(
+    id="IN_A_HOT_COUNTRY",
+    numeric_id=3,
+    cargos=[
+        "aggregates",
+        "alcohol",
+        "building_materials",
+        "cassava",
+        "chemicals",
+        "clay",
+        "coffee",
+        "copper",
+        "copper_ore",
+        "diamonds",
+        "edible_oil",
+        "engineering_supplies",
+        "farm_supplies",
+        "food",
+        "fruits",
+        "goods",
+        "livestock",
+        "logs",
+        "mail",
+        "maize",
+        "manganese",
+        "nuts",
+        "oil",
+        "passengers",
+        "petrol",
+        "phosphate",
+        "rubber",
+        "sand",
+        "timber",
+    ],
+    cargoflow_graph_tuning={
+        "group_edges_subgraphs": [],
+        "ranking_subgraphs": [
+            ("same", ["port", "goods"]),
+        ],
+        "clusters": [
+            # {"nodes": [], "rank": "", "color": ""},
+        ],
+    },
+)

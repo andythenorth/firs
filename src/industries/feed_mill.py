@@ -1,13 +1,17 @@
 from industry import IndustrySecondary, TileLocationChecks
 
+# !! ID and files need changed to fermentation_plant
+
 industry = IndustrySecondary(
     id="feed_mill",
+    # !! CABBAGE - are these 6 values valid?  They sum to more than 8 !!
     accept_cargos_with_input_ratios=[
         ("GRAI", 6),
         ("MOLA", 6),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("FMSP", 8),
+        ("FMSP", 3),
+        ("ENUM", 3),
     ],
     prob_in_game="3",
     prob_map_gen="5",
@@ -20,6 +24,12 @@ industry = IndustrySecondary(
     sprites_complete=False,
     animated_tiles_fixed=False,
 )
+
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+
+# CABBAGE - needs non-animated tile for performance?
 
 industry.add_tile(
     id="feed_mill_tile_1",
@@ -71,6 +81,7 @@ sprite_smoke_2 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="feed_mill_spritelayout_1",
+    tile="feed_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_1],
@@ -78,6 +89,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="feed_mill_spritelayout_2",
+    tile="feed_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_2],
@@ -85,6 +97,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="feed_mill_spritelayout_3",
+    tile="feed_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_3],
@@ -92,6 +105,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="feed_mill_spritelayout_4",
+    tile="feed_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_4],
@@ -99,6 +113,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="feed_mill_spritelayout_5",
+    tile="feed_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_5],
@@ -106,6 +121,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="feed_mill_spritelayout_6_anim",
+    tile="feed_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_6],
@@ -114,6 +130,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="feed_mill_spritelayout_7",
+    tile="feed_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_7],
@@ -121,6 +138,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="feed_mill_spritelayout_8",
+    tile="feed_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_8],
@@ -128,6 +146,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="feed_mill_spritelayout_9",
+    tile="feed_mill_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[],
@@ -137,74 +156,74 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="feed_mill_industry_layout_1",
     layout=[
-        (0, 0, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
-        (0, 1, "feed_mill_tile_1", "feed_mill_spritelayout_2"),
-        (0, 2, "feed_mill_tile_1", "feed_mill_spritelayout_1"),
-        (0, 3, "feed_mill_tile_1", "feed_mill_spritelayout_1"),
-        (1, 0, "feed_mill_tile_1", "feed_mill_spritelayout_8"),
-        (1, 1, "feed_mill_tile_1", "feed_mill_spritelayout_4"),
-        (1, 2, "feed_mill_tile_1", "feed_mill_spritelayout_5"),
-        (1, 3, "feed_mill_tile_1", "feed_mill_spritelayout_6_anim"),
-        (2, 0, "feed_mill_tile_1", "feed_mill_spritelayout_7"),
-        (2, 1, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
-        (2, 2, "feed_mill_tile_1", "feed_mill_spritelayout_3"),
-        (2, 3, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
+        (0, 0, "feed_mill_spritelayout_9"),
+        (0, 1, "feed_mill_spritelayout_2"),
+        (0, 2, "feed_mill_spritelayout_1"),
+        (0, 3, "feed_mill_spritelayout_1"),
+        (1, 0, "feed_mill_spritelayout_8"),
+        (1, 1, "feed_mill_spritelayout_4"),
+        (1, 2, "feed_mill_spritelayout_5"),
+        (1, 3, "feed_mill_spritelayout_6_anim"),
+        (2, 0, "feed_mill_spritelayout_7"),
+        (2, 1, "feed_mill_spritelayout_9"),
+        (2, 2, "feed_mill_spritelayout_3"),
+        (2, 3, "feed_mill_spritelayout_9"),
     ],
 )
 industry.add_industry_layout(
     id="feed_mill_industry_layout_2",
     layout=[
-        (0, 0, "feed_mill_tile_1", "feed_mill_spritelayout_8"),
-        (0, 1, "feed_mill_tile_1", "feed_mill_spritelayout_4"),
-        (0, 2, "feed_mill_tile_1", "feed_mill_spritelayout_5"),
-        (0, 3, "feed_mill_tile_1", "feed_mill_spritelayout_6_anim"),
-        (0, 4, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
-        (1, 0, "feed_mill_tile_1", "feed_mill_spritelayout_7"),
-        (1, 1, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
-        (1, 2, "feed_mill_tile_1", "feed_mill_spritelayout_3"),
-        (1, 3, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
-        (1, 4, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
-        (2, 0, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
-        (2, 1, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
-        (2, 2, "feed_mill_tile_1", "feed_mill_spritelayout_1"),
-        (2, 3, "feed_mill_tile_1", "feed_mill_spritelayout_1"),
-        (2, 4, "feed_mill_tile_1", "feed_mill_spritelayout_2"),
+        (0, 0, "feed_mill_spritelayout_8"),
+        (0, 1, "feed_mill_spritelayout_4"),
+        (0, 2, "feed_mill_spritelayout_5"),
+        (0, 3, "feed_mill_spritelayout_6_anim"),
+        (0, 4, "feed_mill_spritelayout_9"),
+        (1, 0, "feed_mill_spritelayout_7"),
+        (1, 1, "feed_mill_spritelayout_9"),
+        (1, 2, "feed_mill_spritelayout_3"),
+        (1, 3, "feed_mill_spritelayout_9"),
+        (1, 4, "feed_mill_spritelayout_9"),
+        (2, 0, "feed_mill_spritelayout_9"),
+        (2, 1, "feed_mill_spritelayout_9"),
+        (2, 2, "feed_mill_spritelayout_1"),
+        (2, 3, "feed_mill_spritelayout_1"),
+        (2, 4, "feed_mill_spritelayout_2"),
     ],
 )
 industry.add_industry_layout(
     id="feed_mill_industry_layout_3",
     layout=[
-        (0, 0, "feed_mill_tile_1", "feed_mill_spritelayout_2"),
-        (0, 1, "feed_mill_tile_1", "feed_mill_spritelayout_2"),
-        (0, 2, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
-        (1, 0, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
-        (1, 1, "feed_mill_tile_1", "feed_mill_spritelayout_4"),
-        (1, 2, "feed_mill_tile_1", "feed_mill_spritelayout_3"),
-        (2, 0, "feed_mill_tile_1", "feed_mill_spritelayout_8"),
-        (2, 1, "feed_mill_tile_1", "feed_mill_spritelayout_5"),
-        (2, 2, "feed_mill_tile_1", "feed_mill_spritelayout_6_anim"),
-        (3, 0, "feed_mill_tile_1", "feed_mill_spritelayout_7"),
-        (3, 1, "feed_mill_tile_1", "feed_mill_spritelayout_3"),
-        (3, 2, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
-        (4, 0, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
-        (4, 1, "feed_mill_tile_1", "feed_mill_spritelayout_1"),
-        (4, 2, "feed_mill_tile_1", "feed_mill_spritelayout_1"),
+        (0, 0, "feed_mill_spritelayout_2"),
+        (0, 1, "feed_mill_spritelayout_2"),
+        (0, 2, "feed_mill_spritelayout_9"),
+        (1, 0, "feed_mill_spritelayout_9"),
+        (1, 1, "feed_mill_spritelayout_4"),
+        (1, 2, "feed_mill_spritelayout_3"),
+        (2, 0, "feed_mill_spritelayout_8"),
+        (2, 1, "feed_mill_spritelayout_5"),
+        (2, 2, "feed_mill_spritelayout_6_anim"),
+        (3, 0, "feed_mill_spritelayout_7"),
+        (3, 1, "feed_mill_spritelayout_3"),
+        (3, 2, "feed_mill_spritelayout_9"),
+        (4, 0, "feed_mill_spritelayout_9"),
+        (4, 1, "feed_mill_spritelayout_1"),
+        (4, 2, "feed_mill_spritelayout_1"),
     ],
 )
 industry.add_industry_layout(
     id="feed_mill_industry_layout_4",
     layout=[
-        (0, 0, "feed_mill_tile_1", "feed_mill_spritelayout_1"),
-        (0, 1, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
-        (0, 2, "feed_mill_tile_1", "feed_mill_spritelayout_8"),
-        (1, 0, "feed_mill_tile_1", "feed_mill_spritelayout_1"),
-        (1, 1, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
-        (1, 2, "feed_mill_tile_1", "feed_mill_spritelayout_7"),
-        (2, 0, "feed_mill_tile_1", "feed_mill_spritelayout_4"),
-        (2, 1, "feed_mill_tile_1", "feed_mill_spritelayout_5"),
-        (2, 2, "feed_mill_tile_1", "feed_mill_spritelayout_6_anim"),
-        (3, 0, "feed_mill_tile_1", "feed_mill_spritelayout_2"),
-        (3, 1, "feed_mill_tile_1", "feed_mill_spritelayout_3"),
-        (3, 2, "feed_mill_tile_1", "feed_mill_spritelayout_9"),
+        (0, 0, "feed_mill_spritelayout_1"),
+        (0, 1, "feed_mill_spritelayout_9"),
+        (0, 2, "feed_mill_spritelayout_8"),
+        (1, 0, "feed_mill_spritelayout_1"),
+        (1, 1, "feed_mill_spritelayout_9"),
+        (1, 2, "feed_mill_spritelayout_7"),
+        (2, 0, "feed_mill_spritelayout_4"),
+        (2, 1, "feed_mill_spritelayout_5"),
+        (2, 2, "feed_mill_spritelayout_6_anim"),
+        (3, 0, "feed_mill_spritelayout_2"),
+        (3, 1, "feed_mill_spritelayout_3"),
+        (3, 2, "feed_mill_spritelayout_9"),
     ],
 )

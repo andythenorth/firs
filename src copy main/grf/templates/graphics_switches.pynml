@@ -1,0 +1,48 @@
+<tal:extra_graphics_switches repeat="graphics_switch industry.extra_graphics_switches">
+    <!--! !!!!!!!! think this can be dropped?? too much architecture for a single use case that is being replaced anyway -->
+    <!--! if more extra graphics switch types are added, this would need conditional tal wrapped around each type -->
+    switch(FEAT_INDUSTRYTILES, SELF, ${graphics_switch.id}, nearby_tile_slope(0,0)) {
+        <tal:slope_spritelayout_mapping repeat="slope_spritelayout graphics_switch.slope_spritelayout_mapping.items()">
+            ${slope_spritelayout[0]}: ${slope_spritelayout[1]};
+        </tal:slope_spritelayout_mapping>
+        ${graphics_switch.default_result};
+    }
+</tal:extra_graphics_switches>
+
+<tal:industry_layouts_graphic_switches repeat="industry_layout python:industry.industry_layouts">
+    switch(FEAT_INDUSTRYTILES, SELF, ${industry_layout.id}_graphics_switch, relative_pos) {
+        <tal:build_industry_layout repeat="layout industry_layout.layout">
+            <!--! don't provide a spritelayout for e.g. tiles 255 (water spacer), and in some cases tile 24 (water station) -->
+            <tal:not_null condition="layout[3] not in ['spritelayout_null_water', 'spritelayout_null_station']">
+                relative_coord(${layout[0]}, ${layout[1]}): ${layout[3]};
+            </tal:not_null>
+        </tal:build_industry_layout>
+        return 0; // a default is needed, but should never be reached, layout definitions are explicit
+    }
+</tal:industry_layouts_graphic_switches>
+
+<tal:block condition="len(industry.industry_layouts) > 1">
+switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_graphics_switch_layouts, layout_num) {
+    <tal:available_industry_layouts repeat="layout_num range(len(industry.industry_layouts))">
+        ${layout_num+1}: ${industry.industry_layouts[layout_num].id}_graphics_switch;
+    </tal:available_industry_layouts>
+    ${industry.industry_layouts[0].id}_graphics_switch; // default
+}
+</tal:block>
+
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_industry_construction_state_graphics_switch, construction_state) {
+    0..2: ${industry.switch_name_for_construction_states};
+    <!--! tiny optimisation to avoid generating ranges when there is only one industry layout -->
+    ${industry.id + '_industry_graphics_switch_layouts' if len(industry.industry_layouts) > 1 else industry.industry_layouts[0].id + '_graphics_switch'}; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_switch_graphics, [
+                                    switch_tile_fences_industry(),
+                                    switch_terrain_industry(),
+                                    switch_tile_buildings(),
+                                    ${'switch_magic_trees(),' if industry.uses_magic_trees else ''}
+                                    STORE_TEMP(switch_industry_tile_is_water(), ${graphics_temp_storage.var_tile_is_built_on_water}),
+                                    STORE_TEMP(random_bits, ${graphics_temp_storage.var_random_bits})
+                                 ]) {
+    ${industry.id}_industry_construction_state_graphics_switch;
+}

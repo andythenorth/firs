@@ -44,6 +44,15 @@ industry.enable_in_economy(
     },
 )
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargo_types=[
+        "CMNT",
+        "STSW",
+        "STWR",
+        "WDPR",
+    ],
+)
+industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     prob_map_gen="14",
 )

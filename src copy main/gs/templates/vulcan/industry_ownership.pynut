@@ -1,0 +1,65 @@
+class VulcanIndustryOwnership {
+    static function GetOwnerTypes() {
+        return ["manufacturer", "player_company", "self", "town"];
+    }
+
+    // Initialize persistent storage for industry owners
+    static function Init() {
+        if (!("owned_industries" in ::persistent_storage)) {
+            ::persistent_storage.owned_industries <- {};
+        }
+    }
+
+    static function GetOwnerName(industry, owner_type, owner_id) {
+        if (owner_type == "manufacturer") {
+            return ::persistent_storage["manufacturers"][owner_id]["name"];
+        }
+        if (owner_type == "self") {
+            return GSIndustry.GetName(industry);
+        }
+        // !! CABBAGE other owner types
+    }
+
+    // Functions for managing industry ownership
+    static function AssignOwner(industry, owner_type, owner_id) {
+        ::persistent_storage.owned_industries[industry] <- {owner_type = owner_type, owner_id = owner_id};
+        GSIndustry.SetText(industry, GSText(GSText.STR_INDUSTRY_OWNER, VulcanIndustryOwnership.GetOwnerName(industry, owner_type, owner_id)));
+    }
+
+    static function RemoveOwners(target_owner_type="all") {
+        Log.Info("clearing industry owners for owner_type " + target_owner_type);
+        foreach (industry, owner_data in ::persistent_storage["owned_industries"]) {
+            if ((owner_data["owner_type"] == target_owner_type) || (target_owner_type == "all")) {
+                VulcanIndustryOwnership.RemoveOwner(industry);
+            }
+        }
+    }
+
+    static function RemoveOwner(industry) {
+        delete ::persistent_storage["owned_industries"][industry];
+        GSIndustry.SetText(industry, null);
+    }
+
+    static function GetOwner(industry) {
+        if (industry in ::persistent_storage.owned_industries) {
+            return ::persistent_storage.owned_industries[industry];
+        }
+        return null;
+    }
+
+    static function ListIndustries(owner_type, owner_id) {
+        local industries = [];
+        // !! CABBAGE - this seems to be scoped to specific type, which needs to include "all" or change the name
+        // !! the name isn't great anyway, as it's the industries for a specific owner
+        foreach (industry, owner_data in ::persistent_storage.owned_industries) {
+            if (owner_data["owner_type"] == owner_type && owner_data["owner_id"] == owner_id) {
+                industries.append(industry);
+            }
+        }
+        return industries;
+    }
+
+    static function IsIndustryOwned(industry) {
+        return industry in ::persistent_storage["owned_industries"];
+    }
+}

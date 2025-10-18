@@ -15,7 +15,7 @@ industry_numeric_ids = dict(
     appliance_factory=6,
     blast_furnace=7,
     basic_oxygen_furnace=8,
-    ####UNUSED?####=9,
+    zinc_smelter=9,
     quarry=10,
     forest=11,
     sawmill=12,
@@ -23,17 +23,17 @@ industry_numeric_ids = dict(
     phosphate_mine=14,
     oil_wells=15,
     oil_rig=16,
-    ###BLTC###oil_refinery = 17,
-    ###BLTC###plastics_plant = 18,
+    oil_refinery=17,
+    plastics_plant = 18,
     fish_farm=19,
     dredging_site=20,
-    ####UNUSED?####iron_works = 21,
+    nuclear_power_plant=21,
     glass_works=22,
     ####UNUSED?####recycling_plant = 23,
     ####UNUSED?####recycling_depot = 24,
     scrap_yard=25,
     arable_farm=26,
-    ####UNUSED?####sheep_farm = 27,
+    sheep_farm=27,
     dairy_farm=28,
     farm=29,
     fruit_plantation=30,
@@ -46,7 +46,7 @@ industry_numeric_ids = dict(
     stockyard=37,
     tracked_machine_factory=38,
     ####UNUSED?####=39,
-    ###BLTC###ammonia_plant = 40,
+    ammonia_plant=40,
     timber_yard=41,
     ###BLTC###textile_mill = 42,
     vineyard=43,
@@ -103,37 +103,40 @@ industry_numeric_ids = dict(
     integrated_steel_mill=94,
     section_and_bar_mill=95,
     body_plant=96,
-    ###BLTC###tinplate_works = 97,
+    tinplate_works=97,
     cider_mill=98,
     lime_kiln=99,
     metal_works=100,
-    ###BLTC###factory_2 = 101,
-    ###BLTC###factory_3 = 102,
+    packaging_factory=101,
+    factory_3=102,
     tube_and_pipe_mill=103,
     ###BLTC###solvay_plant = 104,
     ###BLTC###salt_mine = 105,
-    ###BLTC###fertiliser_plant = 106,
+    fertiliser_plant=106,
     ###BLTC###civil_explosives_facility = 107,
-    ###BLTC###phosphoric_acid_plant = 108,
+    phosphoric_acid_plant=108,
     ###BLTC###sulphuric_acid_plant = 109,
     ###BLTC###polypropylene_plant = 110,
     ###BLTC###polyethylene_plant = 111,
-    ###BLTC###ethylene_cracker = 112,
+    bakery=112,
     ##IAHC?##sugar_refinery = 113,
     steel_forge_and_foundry=114,
     wire_rod_mill=115,
     strip_mill=116,
     pipe_shop=117,
-    ####UNUSED?####wire_rope_factory=118,
+    feed_mill=118,
     concrete_plant=119,
     elastomer_products_plant=120,
     power_systems_factory=121,
+    aluminium_plant=122,
     # 127 left free for GarryG
 )
 # Definition of industry tile numeric IDs
 # tiles 0-xxx currently vacant
 tile_numeric_ids = dict(
     # 0 left free for GarryG
+    bakery_tile_1=46,
+    bakery_tile_2=47,
     nitrate_mine_tile_2=48,
     copper_smelter_tile_2=49,
     copper_mine_tile_2=50,
@@ -152,6 +155,8 @@ tile_numeric_ids = dict(
     herding_coop_tile_2=63,
     slag_grinding_plant_tile_3=64,
     section_and_bar_mill_tile_3=65,
+    nuclear_power_plant_tile_1=66,
+    feed_mill_tile_1=67,
     power_systems_factory_tile_1=68,
     power_systems_factory_tile_2=69,
     appliance_factory_tile_1=70,
@@ -161,7 +166,7 @@ tile_numeric_ids = dict(
     plate_mill_tile_1=74,
     section_and_bar_mill_tile_2=75,
     concrete_plant_tile_1=76,
-    ####UNUSED?####wire_rope_factory_tile_1=77,
+    zinc_smelter_tile_1=77,
     pipe_shop_tile_1=78,
     strip_mill_tile_1=79,
     wire_rod_mill_tile_1=80,
@@ -190,7 +195,7 @@ tile_numeric_ids = dict(
     pipe_shop_tile_2=103,
     coke_oven_tile_3=104,
     metal_works_tile_1=105,
-    factory_2_tile_1=106,
+    packaging_factory_tile_1=106,
     factory_3_tile_1=107,
     soda_ash_mine_tile_3=108,
     basic_oxygen_furnace_tile_3=109,
@@ -421,7 +426,6 @@ industry_colour_schemes = {
     # colours may be repeated to give them more weighting in the distribution
     # never use: white, orange, cream; these always look bad
     # names are just for memorability, and use rock stars etc, no semantics at all
-
     # default scheme is muted and removes red, yellow, standard blue, and two greens
     # includes grey, brown, mauve, purple, but at lower weighting
     "scheme_1_elton": [
@@ -651,7 +655,6 @@ industry_colour_schemes = {
         "COLOUR_PURPLE",
     ],
 }
-
 
 
 # valid industry map colours, derived from an algorithm to ensure contrast against green / dark green / purple minimaps

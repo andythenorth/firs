@@ -1,0 +1,55 @@
+/* ******************************************************************
+ * Definition of the industry tile, its callbacks, and graphics chain
+ * ******************************************************************/
+
+<tal:include metal:use-macro="load: spritesets.pynml" />
+
+<tal:include metal:use-macro="load: spritelayouts_industry.pynml" />
+
+<tal:include metal:use-macro="load: graphics_switches.pynml" />
+
+<tal:include define="location_checks_tile load: location_check_macros_tile.pynml"
+             metal:use-macro="location_checks_tile.macros['render_tree']" />
+
+<tal:include define="animation_context 'industry';
+                     animation_macros load: animation_macros.pynml"
+                     metal:use-macro="animation_macros.macros['tile_animation']" />
+
+<tal:include metal:use-macro="load: properties_tile.pynml" />
+
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+<tal:include metal:use-macro="load: layouts.pynml" />
+
+<tal:include metal:use-macro="load: extra_text_secondary.pynml" />
+
+<tal:include metal:use-macro="load: produce_secondary.pynml" />
+
+<tal:include metal:use-macro="load: availability.pynml" />
+
+<tal:include metal:use-macro="load: location_checks_industry.pynml" />
+
+<tal:include metal:use-macro="load: properties_industry.pynml" />
+
+<!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
+<tal:build_economies repeat="economy industry.economies_enabled_for_industry">
+    if (economy==${economy.numeric_id}) {
+        item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
+            graphics {
+                construction_probability: ${industry.id}_check_availability;
+                produce_cargo_arrival:    ${industry.id}_produce_cargo_arrival;
+                produce_256_ticks:        ${industry.id}_produce_256_ticks;
+                monthly_prod_change:     ${industry.id}_monthly_prod_change;
+                random_prod_change:       CB_RESULT_IND_PROD_NO_CHANGE;
+                location_check:           ${industry.id}_check_location;
+                extra_text_fund:          ${industry.get_extra_text_fund(economy)};
+                extra_text_industry:      ${industry.id}_extra_text;
+                cargo_subtype_display:    ${industry.id}_cargo_subtype_display;
+                colour:                   switch_colour_${industry.colour_scheme_name}(${industry.numeric_id});
+            }
+        }
+    }
+</tal:build_economies>

@@ -1,0 +1,90 @@
+<!--! Loop to render animation macro for each tile (if required) -->
+
+<metal:tile_animation metal:define-macro="tile_animation">
+    <tal:block define="animation_macro_config industry.get_animation_macro_config(animation_context);
+                       feature animation_macro_config['feature'];">
+        <tal:tiles repeat="tile animation_macro_config['tiles']">
+            <tal:conditional_macro_call condition="tile.custom_animation_control is not None"
+                                        metal:use-macro="tile.animation_macros()[tile.custom_animation_control['macro']]" />
+        </tal:tiles>
+    </tal:block>
+</metal:tile_animation>
+
+
+<!--!
+    Animation switches are defined as macros, to use these load the template as an object and call the macro from the macros dict
+    e.g. foo.macros[macro_name] where foo has been loaded in a python script or in a chameleon template
+-->
+
+<!--! macros are not currently combinable, this is a bit limited, a tree parser (similar to location checks) would be better -->
+
+<metal:random_first_frame metal:define-macro="random_first_frame">
+    <!--!
+        Randomises the start frame of the animation.
+        Use to desync animations between tiles that are repeated in an industry
+        - avoids a horrible-looking synchronised effect for smoke, etc.
+        Set animation_triggers to 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'.
+    -->
+    <!--!
+        frosch pointed out this case could have simply been handled in the graphics block,
+        returning  "extra_callback_info1 % ${tile.animation_length}" directly for the cb.
+        Would save building a silly switch with a value for every frame.
+        But is slightly more complex to configure in the python industry definition, so eh.
+    -->
+    switch(${feature}, SELF, ${tile.id}_${animation_context}_anim_control, (extra_callback_info1 % ${tile.animation_length})) {
+        <tal:frames repeat="frame range(tile.animation_length)">
+            ${repeat.frame.index}: return ${repeat.frame.index};
+        </tal:frames>
+        return CB_RESULT_NEXT_FRAME;
+    }
+</metal:random_first_frame>
+
+
+<metal:first_frame_is_0 metal:define-macro="first_frame_is_0">
+    <!--! empty, this would just be a switch returning 0 so it's handled directly in the graphics block -->
+</metal:first_frame_is_0>
+
+<metal:oil_wells metal:define-macro="oil_wells">
+    <!--! random stop/start, dedicated to oil wells, not reuseable eh? -->
+    switch (${feature}, SELF, ${tile.id}_${animation_context}_stop_anim, animation_frame) {
+        1: return 11; // jump to the 'stop animation cycle' when triggered and currently animated
+        2: return 12;
+        3: return 13;
+        4: return 14;
+        5: return 15;
+        6: return 16;
+        7: return 17;
+        8: return 18;
+        9: return 19;
+        10: return 20;
+        return CB_RESULT_DO_NOTHING;
+    }
+
+    switch (${feature}, SELF, ${tile.id}_${animation_context}_start_anim, animation_frame) {
+        11: return 1;
+        12: return 2;
+        13: return 3;
+        14: return 4;
+        15: return 5;
+        16: return 6;
+        17: return 7;
+        18: return 8;
+        19: return 9;
+        20: return 10;
+        return CB_RESULT_START_ANIMATION;
+    }
+
+    <!--! !! this won't work with objects, needs the trigger remapped if we want that done - see GRFObject remapping for ideas -->
+    random_switch (${feature}, SELF, ${tile.id}_${animation_context}_anim_control, bitmask(TRIGGER_INDUSTRYTILE_TILELOOP)) {
+        1: return ${tile.id}_${animation_context}_stop_anim;
+        1: return ${tile.id}_${animation_context}_start_anim;
+    }
+
+    <!--! !! next frame would need to know animation context -->
+    switch (${feature}, SELF, ${tile.custom_animation_next_frame}, animation_frame) {
+        10: return 1;
+        11: return CB_RESULT_STOP_ANIMATION; // Don't actually stop animation, just keep looping the same frame over and over.
+        20: return 11;
+        return CB_RESULT_NEXT_FRAME;
+    }
+</metal:oil_wells>

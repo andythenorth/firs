@@ -1,0 +1,11 @@
+<!--!
+    Normal building sprite of 64px width and arbitrary width
+    and normal alignment to the edges of the tile
+-->
+template tmpl_building_sprite(x, y, h, dy) {
+    [x, y, 64, h, -31, dy, ANIM]
+}
+
+template tmpl_building_sprite_filename(x, y, h, dy, filename) {
+    [x, y, 64, h, -31, dy, ANIM | NOCROP, filename]
+}

@@ -1,0 +1,25 @@
+// parameters also referenced by action 14 stuff - likely to be found in header.pynml, unless it got moved
+
+// map_size is total number of tiles on the map
+// compute relative size of the map, compared to 256*256
+relative_map_size = map_size / (256 * 256);
+// number of industry closures is proportional to map size (maps <= 256x256 will have 1 cluster)
+industry_clusters = (relative_map_size / 2) + 1;
+
+param_max_coastal_distance = marine_industry_max_coastal_distance;
+if (marine_industry_max_coastal_distance == 0) {
+	param_max_coastal_distance = 255;
+}
+
+// I want to specify the order of the economies in parameter menu without worrying about breaking savegames etc
+// but action 14 can't separate parameter value and position in menu for economies
+// so here we remap selected economy to actual numeric value
+// !! having tested, this doesn't actually prevent savegame breaking
+// !! as the selected value in the action 14 UI remains constant (thereby changing which economy is active)
+// !! there is zero chance of it being worthwhile to write a migration for existing savegames
+// !! therefore rethink this - whether it's worthwhile, or whether to just reset economy order every time when adding new economies
+<tal:economy_param repeat="economy firs.economy_manager">
+    if (economy_selection == ${repeat.economy.index}) {
+        economy = ${economy.numeric_id};
+    }
+</tal:economy_param>

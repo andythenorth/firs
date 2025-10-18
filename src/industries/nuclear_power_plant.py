@@ -25,6 +25,12 @@ industry = IndustryPrimaryPort(
     animated_tiles_fixed=False,
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+
+# CABBAGE - needs non-animated tile for performance?
+
 industry.add_tile(
     id="nuclear_power_plant_tile_1",
     animation_length=7,
@@ -49,6 +55,7 @@ sprite_smoke_1 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="nuclear_power_plant_sprite_layout_cooling_tower",
+    tile="nuclear_power_plant_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=None,
     building_sprites=[sprite_1],
@@ -56,6 +63,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="nuclear_power_plant_sprite_layout_large_building",
+    tile="nuclear_power_plant_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=None,
     building_sprites=[sprite_2],
@@ -64,6 +72,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="nuclear_power_plant_sprite_layout_small_building",
+    tile="nuclear_power_plant_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=None,
     building_sprites=[sprite_3],
@@ -71,6 +80,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="nuclear_power_plant_sprite_layout_substation",
+    tile="nuclear_power_plant_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=None,
     building_sprites=[sprite_4],
@@ -83,49 +93,41 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_cooling_tower",
         ),
         (
             0,
             1,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_small_building",
         ),
         (
             1,
             0,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_cooling_tower",
         ),
         (
             1,
             1,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_large_building",
         ),
         (
             2,
             0,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_cooling_tower",
         ),
         (
             2,
             1,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_large_building",
         ),
         (
             3,
             0,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_substation",
         ),
         (
             3,
             1,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_substation",
         ),
     ],
@@ -136,49 +138,41 @@ industry.add_industry_layout(
         (
             0,
             1,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_cooling_tower",
         ),
         (
             0,
             2,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_cooling_tower",
         ),
         (
             1,
             0,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_large_building",
         ),
         (
             1,
             1,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_large_building",
         ),
         (
             1,
             2,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_cooling_tower",
         ),
         (
             2,
             0,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_small_building",
         ),
         (
             2,
             1,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_substation",
         ),
         (
             2,
             2,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_small_building",
         ),
     ],
@@ -189,37 +183,31 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_cooling_tower",
         ),
         (
             0,
             1,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_cooling_tower",
         ),
         (
             1,
             0,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_small_building",
         ),
         (
             1,
             1,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_large_building",
         ),
         (
             2,
             0,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_substation",
         ),
         (
             2,
             1,
-            "nuclear_power_plant_tile_1",
             "nuclear_power_plant_sprite_layout_small_building",
         ),
     ],

@@ -1,0 +1,7 @@
+<tal:build_industry_layouts_tilelayouts repeat="industry_layout python:industry.industry_layouts">
+    tilelayout ${industry_layout.id}_tilelayout {
+        <tal:build_industry_layout repeat="layout industry_layout.layout">
+            ${layout[0]}, ${layout[1]}: ${layout[2]};
+        </tal:build_industry_layout>
+    }
+</tal:build_industry_layouts_tilelayouts>

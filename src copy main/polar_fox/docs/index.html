@@ -1,0 +1,110 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            
+        Polar Fox
+    
+        </title>
+        <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
+        <link type="text/css" href="static/css/style.css" rel="stylesheet">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelectorAll("table.sortable th").forEach(header => {
+                    header.addEventListener("click", () => {
+                        const table = header.closest("table");
+                        const columnIndex = Array.from(header.parentNode.children).indexOf(header);
+                        const type = header.getAttribute("data-type");
+                        const isAsc = table.getAttribute("data-sort") !== "asc";
+                        const rows = Array.from(table.querySelector("tbody").rows);
+
+                        // Remove sorted classes from all headers
+                        header.parentNode.querySelectorAll("th").forEach(th => th.classList.remove("sorted-asc", "sorted-desc"));
+
+                        // Add sorted class to the current header
+                        header.classList.add(isAsc ? "sorted-asc" : "sorted-desc");
+
+                        rows.sort((a, b) => {
+                            let aVal = a.cells[columnIndex].innerText;
+                            let bVal = b.cells[columnIndex].innerText;
+                            if (type === 'number') {
+                                aVal = parseFloat(aVal) || 0;
+                                bVal = parseFloat(bVal) || 0;
+                            }
+                            return isAsc ? (aVal > bVal ? 1 : -1) : (aVal < bVal ? 1 : -1);
+                        });
+
+                        rows.forEach(row => table.querySelector("tbody").appendChild(row));
+                        table.setAttribute("data-sort", isAsc ? "asc" : "desc");
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-light text-decoration-underline"
+                           href="index.html">Polar Fox</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light text-decoration-underline"
+                           href="frax.html">FRAX Cargo Classes</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+            
+        
+
+        <div class="flex-grow-1 container pt-5 pb-5">
+            <div>
+
+        <div class="row mt-5 mb-5">
+            <div class="col-6">
+                <h1 class="display-1">
+                    <strong>Such Fox.</strong>
+                    <br>
+                    So Polar
+                </h1>
+
+                <div class="mt-5">
+                    <a class="btn btn-primary btn-lg" href="frax.html">FRAX Cargo Classes</a>
+                </div>
+                <div class="mt-5">
+                    <a class="btn btn-outline-primary btn-lg" href="https://github.com/andythenorth/polar-fox">Polar Fox on Github</a>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <img src="static/img/such-fox.webp" class="fox-banner-image" />
+            </div>
+        </div>
+    </div>
+        </div>
+
+        <div class="mt-auto">
+            <div style="text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">
+                With thanks to all who helped
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

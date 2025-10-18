@@ -1,0 +1,48 @@
+// So we can recursively pretty print generic items like tables and list
+
+class _Repr {
+    // no constructor, no Init
+
+    function Repr(object) {
+        if (typeof object == "table") {
+            return _Repr.PrettyPrintTable(object);
+        }
+        else if (typeof object == "array") {
+            return _Repr.PrettyPrintArray(object);
+        }
+        // add more types as needed
+        else {
+            return object;
+        }
+    }
+
+    function PrettyPrintTable(object) {
+        local result_parts = []
+        foreach (k, v in object) {
+            // Repr(v) will recurse, this is wanted and probably fine eh?
+            result_parts.append(k + ": " + _Repr.Repr(v));
+        }
+        return "{" + _Repr.StringJoinArray(result_parts, ", ") + "}";
+    }
+
+    function PrettyPrintArray(object) {
+        local result_parts = [];
+        foreach (v in object) {
+            // this will recurse, probably fine eh?
+            result_parts.append(_Repr.Repr(v));
+        }
+        return "[" + _Repr.StringJoinArray(result_parts, ", ") + "]";
+    }
+
+    function StringJoinArray(result_parts, separator) {
+        local result = "";
+        for (local i = 0; i < result_parts.len(); i++) {
+            result += result_parts[i];
+            if (i < result_parts.len() - 1) {
+                result += separator;
+            }
+        }
+        return result
+    }
+};
+

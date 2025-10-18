@@ -1,0 +1,224 @@
+class VulcanTownStoryBook {
+
+    function Init() {
+        // note that this creates a table in root
+        // not designed to return a class instance
+        // vulcan_town_story_book is a singleton, and allegedly a table with slots is more efficient for that case than a singleton class instance
+        vulcan_town_control.story_pages <- {};
+        VulcanTownStoryBook.AddTownStoryPages();
+    }
+
+    function AddTownStoryPages() {
+        local asyncmode = GSAsyncMode(true);
+        foreach (vulcan_town in VulcanTownControl.GetVulcanTownsSortedByName()) {
+            vulcan_town_control.story_pages[vulcan_town.town] <- VulcanTownStoryPage(vulcan_town);
+        }
+        local asyncmode = null;
+    }
+}
+
+class VulcanTownStoryPage {
+
+    // keep a copy of the story page (for convenience)
+    story_page = null
+    page_elements = null
+
+    constructor(vulcan_town) {
+        local town_name = GSTown.GetName(vulcan_town.town);
+        local town_name_suffix = GSTown.IsCity(vulcan_town.town) ? "City" : "Town";
+        this.story_page = GSStoryPage.New(GSCompany.COMPANY_INVALID, town_name + " (" + town_name_suffix + ")");
+        this.CreatePageElements(vulcan_town);
+    }
+
+    function TestCabbage(vulcan_town, extra_params) {
+        local cabbage = ["Ham", "Eggs", "Popeye", "Alligator", "Zebedee", "The KLF"][GSBase.RandRange(5)];
+        return GSText(GSText.STR_TOWN_STORY_PAGE_TEST, cabbage);
+    }
+
+    function DisplayGrowthRate(vulcan_town, extra_params) {
+        local growth_rate_value_text = GSTown.GetGrowthRate(vulcan_town.town).tostring();
+        if (GSTown.GetGrowthRate(vulcan_town.town) == GSTown.TOWN_GROWTH_NONE) {
+            growth_rate_value_text = " not growing";
+        }
+        return GSText(GSText.STR_TOWN_STORY_PAGE_GROWTH_RATE, growth_rate_value_text);
+    }
+
+    function RequiredCargoDeliveryStats(vulcan_town, extra_params) {
+        local required_cargo = extra_params[0];
+        return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGO_STATS, required_cargo.cargo, required_cargo.TotalRecentlyDelivered());
+    }
+
+    function IndustryProductionIncreaseHistory(vulcan_town, extra_params) {
+        local industry = extra_params[0];
+        local string_containers = [
+            GSText.STR_TOWN_STORY_INDUSTRY_REPORT_HISTORY_DATE_COUNT_1,
+            GSText.STR_TOWN_STORY_INDUSTRY_REPORT_HISTORY_DATE_COUNT_2,
+            GSText.STR_TOWN_STORY_INDUSTRY_REPORT_HISTORY_DATE_COUNT_3,
+            GSText.STR_TOWN_STORY_INDUSTRY_REPORT_HISTORY_DATE_COUNT_4,
+            GSText.STR_TOWN_STORY_INDUSTRY_REPORT_HISTORY_DATE_COUNT_5,
+            GSText.STR_TOWN_STORY_INDUSTRY_REPORT_HISTORY_DATE_COUNT_6,
+            GSText.STR_TOWN_STORY_INDUSTRY_REPORT_HISTORY_DATE_COUNT_7,
+            GSText.STR_TOWN_STORY_INDUSTRY_REPORT_HISTORY_DATE_COUNT_8,
+            GSText.STR_TOWN_STORY_INDUSTRY_REPORT_HISTORY_DATE_COUNT_9,
+            GSText.STR_TOWN_STORY_INDUSTRY_REPORT_HISTORY_DATE_COUNT_10
+
+        ]
+        if (industry in ::persistent_storage.industry_production_increase_timeseries) {
+            local industry_timeseries = ::persistent_storage.industry_production_increase_timeseries[industry];
+            local result = GSText(
+                string_containers[industry_timeseries.len() - 1]
+            );
+            local counter = 0;
+            foreach (increase_date in industry_timeseries) {
+                // we show max 10 dates for space, and because GSText would be limited to 20 params anyway
+                // if we're only showing production increases, industries are limited to 2 anyway as of August 2023, but eh
+                if (counter > 10) {
+                    break;
+                }
+                result.SetParam(
+                    counter + 1, // parameters seem to be indexed to 1, not 0?
+                    GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_HISTORY_DATE_SUBSTR, increase_date)
+                );
+                counter++;
+            }
+            return result
+        }
+        else {
+            return GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_NEVER_INCREASED);
+        }
+    }
+
+    function CreatePageElements(vulcan_town) {
+        // define the elements
+        this.page_elements = [];
+        // growth report
+        this.page_elements.append({
+            reference = null,
+            text_method = this.DisplayGrowthRate
+        });
+        this.page_elements.append({
+            reference = null,
+            // when only a GSText is needed, just wrap it in an anonymous function
+            text_method = function(vulcan_town, extra_params) {
+                return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGOS_GROWTH_TITLE)
+            },
+        });
+        foreach (cargo_label, required_cargo in vulcan_town.required_cargos) {
+            if (required_cargo.vulcan_town_effect == "VTE_GROWTH") {
+                this.page_elements.append({
+                    reference = null,
+                    text_method = RequiredCargoDeliveryStats,
+                    extra_params = [required_cargo]
+                });
+            }
+        }
+        // happiness report
+        this.page_elements.append({
+            reference = null,
+            // when only a GSText is needed, just wrap it in an anonymous function
+            text_method = function(vulcan_town, extra_params) {
+                return GSText(GSText.STR_TOWN_STORY_PAGE_REQUIRED_CARGOS_HAPPINESS_TITLE)
+            },
+        });
+        foreach (cargo_label, required_cargo in vulcan_town.required_cargos) {
+            if (required_cargo.vulcan_town_effect == "VTE_HAPPINESS") {
+                this.page_elements.append({
+                    reference = null,
+                    text_method = RequiredCargoDeliveryStats,
+                    extra_params = [required_cargo]
+                });
+            }
+        }
+        // industry report
+        this.page_elements.append({
+            reference = null,
+                // when only a GSText is needed, just wrap it in an anonymous function
+            text_method = function(vulcan_town, extra_params) {
+                return GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_TITLE)
+            },
+        });
+        foreach (industry, industry_spec in vulcan_town.town_industries) {
+            local industry_type = GSIndustry.GetIndustryType(industry);
+            this.page_elements.append({
+                reference = null,
+                // when only a GSText is needed, just wrap it in an anonymous function
+                text_method = function(vulcan_town, extra_params) {
+                    return GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_INDUSTRY_NAME, extra_params[0])
+                },
+                extra_params = [industry]
+            });
+            this.page_elements.append({
+                reference = null,
+                // when only a GSText is needed, just wrap it in an anonymous function
+                text_method = function(vulcan_town, extra_params) {
+                    return GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_ACCEPTED_TITLE)
+                },
+            });
+            foreach (cargo, _ in GSIndustryType.GetAcceptedCargo(industry_type)) {
+                local cargo_amount = VulcanIndustryCargoStatsManager.GetLastMonthAccepted(industry, cargo);
+                this.page_elements.append({
+                    reference = null,
+                    // when only a GSText is needed, just wrap it in an anonymous function
+                    text_method = function(vulcan_town, extra_params) {
+                        return GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_CARGO_STATS, extra_params[0], extra_params[1])
+                    },
+                    extra_params = [cargo, cargo_amount]
+                });
+            }
+            this.page_elements.append({
+                reference = null,
+                // when only a GSText is needed, just wrap it in an anonymous function
+                text_method = function(vulcan_town, extra_params) {
+                    return GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_PRODUCED_TITLE)
+                },
+            });
+            foreach (cargo, _ in GSIndustryType.GetProducedCargo(industry_type)) {
+                local cargo_amount = VulcanIndustryCargoStatsManager.GetLastMonthProduced(industry, cargo);
+                this.page_elements.append({
+                    reference = null,
+                    // when only a GSText is needed, just wrap it in an anonymous function
+                    text_method = function(vulcan_town, extra_params) {
+                        return GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_CARGO_STATS, extra_params[0], extra_params[1])
+                    },
+                    extra_params = [cargo, cargo_amount]
+                });
+            }
+            this.page_elements.append({
+                reference = null,
+                text_method = function(vulcan_town, extra_params) {
+                    return GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_HISTORY_TITLE)
+                },
+            });
+            this.page_elements.append({
+                reference = null,
+                text_method = IndustryProductionIncreaseHistory,
+                extra_params = [industry]
+            });
+            this.page_elements.append({
+                reference = null,
+                text_method = function(vulcan_town, extra_params) {
+                    return GSText(GSText.STR_TOWN_STORY_INDUSTRY_REPORT_CURRENT_PROD_LEVEL, GSIndustry.GetProductionLevel(extra_params[0]))
+                },
+                extra_params = [industry]
+            });
+        }
+
+        // add the elements
+        foreach (page_element in this.page_elements) {
+            local extra_params = null;
+            if ("extra_params" in page_element) {
+                extra_params = page_element.extra_params;
+            }
+            page_element.reference = GSStoryPage.NewElement(this.story_page, GSStoryPage.SPET_TEXT, 1, page_element.text_method(vulcan_town, extra_params));
+        }
+    }
+
+    function UpdatePage(vulcan_town) {
+        // remove all elements and recreate them, it's the safest way to accommodate changing entities such as industries which can open / close
+        foreach (page_element in this.page_elements) {
+            GSStoryPage.RemoveElement(page_element.reference);
+        }
+        this.CreatePageElements(vulcan_town);
+        GSStoryPage.SetDate(this.story_page, GSDate.GetCurrentDate());
+    }
+}

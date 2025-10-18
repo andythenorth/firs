@@ -1,0 +1,76 @@
+<!--! Check whether a certain location is suitable for building the industry -->
+
+
+<!--! checks that only apply when the game is constructing the industry, not the player -->
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_location_post_player_founding_checks_AND,
+    [
+    <!--!
+        checks where ALL conditions must be met
+        assumes all checks return 1 for allow and 0 otherwise, then we just AND all the results
+    -->
+    <!--!
+        !! the AND check is a bit spurious, it could have just been repeated OR groups, each returning DISALLOW if not met
+        I believe the AND arose during conversion to use procedures, and looked like it gave the most terse possible switch expression at the time, avoiding chained switches
+        but then multiple OR groups were needed anyway, so it's probably moot - Jan 2022
+    -->
+    <tal:location_checks_industry repeat="location_check industry.location_checks.get_post_player_founding_checks_AND(incompatible_industries)">
+        ${location_check.procedure_name_and_params_as_nml_string}
+        ${'&&' if not repeat.location_check.end else ''}
+    </tal:location_checks_industry>
+    ]) {
+    1: return CB_RESULT_LOCATION_ALLOW;
+    return CB_RESULT_LOCATION_DISALLOW;
+}
+
+<tal:OR_groups repeat="OR_group industry.location_checks.get_post_player_founding_checks_OR(incompatible_industries)">
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_location_post_player_founding_checks_OR_${OR_group['OR_group_name']},
+        [
+        <!--!
+            checks where at least one of the conditions must be met per OR group
+            assumes all checks return 1 for allow and 0 otherwise, then we just OR all the results within the group
+            this can disallow, but doesn't permit building without also checking the other OR groups and the AND conditions
+        -->
+        <tal:location_checks_industry repeat="location_check OR_group['location_checks']">
+            ${location_check.procedure_name_and_params_as_nml_string}
+            <tal:pipe_needs_escaped_for_chameleon_wtf condition="not repeat.location_check.end">
+                ||
+            </tal:pipe_needs_escaped_for_chameleon_wtf >
+        </tal:location_checks_industry>
+        <tal:fallback condition="len(OR_group['location_checks']) == 0">
+            <!--! if the list of checks is empty, nml will barf, so fallback to '1' -->
+            1
+        </tal:fallback>
+        ]) {
+        1: ${industry.id}_check_location_post_player_founding_checks_${OR_group['next_switch_name']};
+        return CB_RESULT_LOCATION_DISALLOW;
+    }
+</tal:OR_groups>
+
+<!--!
+    generally *always* allow player to found industries (tile location checks still apply)
+    but there may be prior checks to e.g. to restrict layouts by date
+-->
+switch (FEAT_INDUSTRIES, SELF,${industry.id}_check_location_allow_player_founding, (
+            (extra_callback_info2 == IND_CREATION_FUND) ||
+            (extra_callback_info2 == IND_CREATION_PROSPECT)
+            )
+        ) {
+    1: return CB_RESULT_LOCATION_ALLOW;
+    ${industry.id}_check_location_post_player_founding_checks_OR_${industry.location_checks.get_post_player_founding_checks_OR(incompatible_industries)[-1]['OR_group_name']};
+}
+<!--! checks that apply to both player and game constructing the industry, e.g. date restricted layouts -->
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_location,
+    [
+    <!--! assumes all checks return 1 for allow and 0 otherwise, then we just AND all the results -->
+    <tal:location_checks_industry repeat="location_check industry.location_checks.get_pre_player_founding_checks(incompatible_industries)">
+        ${location_check.procedure_name_and_params_as_nml_string}
+        ${'&&' if not repeat.location_check.end else ''}
+    </tal:location_checks_industry>
+    <tal:fallback condition="len(industry.location_checks.get_pre_player_founding_checks(incompatible_industries)) == 0">
+        <!--! if the list of checks is empty, nml will barf, so fallback to '1' -->
+        1
+    </tal:fallback>
+    ]) {
+    1: return ${industry.id}_check_location_allow_player_founding;
+    return CB_RESULT_LOCATION_DISALLOW;
+}

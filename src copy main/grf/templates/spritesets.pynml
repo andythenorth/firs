@@ -1,0 +1,34 @@
+<tal:build_spritesets repeat="spriteset python:industry.spritesets">
+    <!--! autofill sprites is magic to allow matching to the number of sprites in a different spriteset -->
+
+    <!--! the default type of spriteset -->
+    <tal:default_feature_or_building condition="spriteset.type == ''">
+        spriteset(${spriteset.id}) {
+            <tal:autofill_sprites repeat="autosprite_num range(spriteset.num_sprites_to_autofill)">
+                <tal:build_sprites repeat="sprite spriteset.sprites">
+                    [${sprite[0]}, ${sprite[1]}, ${sprite[2]}, ${sprite[3]}, ${sprite[4]}, ${sprite[5]}, ANIM | NOCROP, ${industry.get_graphics_file_path()}]
+                </tal:build_sprites>
+            </tal:autofill_sprites>
+        }
+        spriteset(${spriteset.id}_snow) {
+            <tal:autofill_sprites repeat="autosprite_num range(spriteset.num_sprites_to_autofill)">
+                <tal:build_sprites repeat="sprite spriteset.sprites">
+                        [${sprite[0]}, ${sprite[1]}, ${sprite[2]}, ${sprite[3]}, ${sprite[4]}, ${sprite[5]}, ANIM | NOCROP, ${industry.get_graphics_file_path(terrain='snow')}]
+                </tal:build_sprites>
+            </tal:autofill_sprites>
+        }
+    </tal:default_feature_or_building>
+
+    <tal:construction_states condition="spriteset.type == '' and industry.default_industry_properties.override_default_construction_states==True">
+        <!--! Construction states -->
+        <tal:each_state repeat="state_num range(3)">
+            spriteset(${spriteset.id}_spriteset_default_construction_state_${state_num}) {
+                <tal:autofill_sprites repeat="autosprite_num range(spriteset.num_sprites_to_autofill)">
+                    <tal:build_sprites repeat="sprite spriteset.sprites">
+                        [${sprite[0]}, ${sprite[1]}, ${sprite[2]}, ${sprite[3]}, ${sprite[4]}, ${sprite[5]}, ANIM | NOCROP, ${industry.get_graphics_file_path(construction_state_num=state_num)}]
+                    </tal:build_sprites>
+                </tal:autofill_sprites>
+            }
+        </tal:each_state>
+    </tal:construction_states>
+</tal:build_spritesets>

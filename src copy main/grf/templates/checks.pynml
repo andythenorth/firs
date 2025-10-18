@@ -1,0 +1,52 @@
+<!--! !! TODO: add check for debug parameter to disable the checks below -->
+
+<!--!
+    !! The version checks should be moved to header file, it's safe.
+    This file should then be renamed to incompatible_grfs, as that is its purpose.
+-->
+
+<!--! Version for long date string codes -->
+if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(1, 7, 0, 27769)) {
+	error(FATAL, REQUIRES_OPENTTD, string(STR_ERR_OPENTTD_VERSION));
+	exit;
+}
+
+<tal:incompatible_grfs repeat="incompatible_grf incompatible_grfs">
+    if (grf_future_status("${incompatible_grf.grfid}")) {
+        error(FATAL, string(STR_ERR_INCOMPATIBLE_SET, "${incompatible_grf.grfname}"));
+    }
+</tal:incompatible_grfs>
+
+
+<!--!
+    !! At March 2017, these needed refactoring to use the templating.
+    That just needs the IncompatibleGRF object extending to take more optional parameters
+    and the template extending to use them.
+    It's easy, and not vital at time of writing, as nothing else consumes the
+    list of incompatible_grfs  (e.g. docs etc - maybe in future though eh?).
+-->
+/* this one might not survive as artic-only
+if (climate == CLIMATE_ARCTIC) {
+	INCOMPATIBLE_GRF("mb\07\00", "Alpine Climate");
+}
+*/
+
+if (grf_future_status("MG\08\00", "\FF\FF\FF\00")) {
+	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET, "Lumber Mill"));
+}
+
+if (grf_future_status("CACa")) {
+	if (param["CACa", 1] != 0) {
+		error(FATAL, string(STR_ERR_INCOMPATIBLE_PARAM_CITYSET));
+	}
+}
+if (grf_future_status("CASa")) {
+	if (param["CASa", 1] != 0) {
+		error(FATAL, string(STR_ERR_INCOMPATIBLE_PARAM_CANSET));
+	}
+}
+if (grf_future_status("VC\00\01")) {
+	if (param["VC\00\01", 254] <= 17) {
+		error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION));
+	}
+}

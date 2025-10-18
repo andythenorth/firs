@@ -1,0 +1,225 @@
+<!--!
+    Location checks are defined as macros, to use these load the template as an object and call the macro from the macros dict
+    e.g. foo.macros[macro_name] where foo has been loaded in a python script or in a chameleon template
+    !! probably a candidate for conversion to procedures??
+-->
+
+<!--! Loop to render the location checks tree -->
+
+<metal:render_tree metal:define-macro="render_tree">
+    <tal:tile_location_checks repeat="tile industry.tiles">
+        <tal:tile define="location_checks tile.location_checks.get_render_tree(tile.id, industry.id)" repeat="location_check location_checks">
+            <tal:location_check_macro metal:use-macro="location_check.macro" />
+        </tal:tile>
+    </tal:tile_location_checks>
+</metal:render_tree>
+
+
+<!--! Location check macros -->
+
+<metal:require_sea_tile metal:define-macro="require_sea_tile">
+    <!--! Check that the tile has water class sea (or none, for reasons that aren't clear tbh) -->
+    <!--! why is NONE an acceptable water class result for this check?  Related to coast tile checks? -->
+    switch(FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}, nearby_tile_water_class(0,0)) {
+        WATER_CLASS_SEA: ${location_check.switch_result};
+        WATER_CLASS_NONE: ${location_check.switch_result};
+        return CB_RESULT_LOCATION_DISALLOW;
+    }
+</metal:require_sea_tile>
+
+
+<metal:require_height_range metal:define-macro="require_height_range">
+    <!--!  Check that the tile is within a certain height range (repurposeable for multiple checks, e.g. above or below snowline etc)
+           uses more efficient code for (nearby_tile_height(0,0) <= maxh) && (nearby_tile_height(0,0) >= minh) -->
+    switch(FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}, UCMP(nearby_tile_height(0, 0) - ${location_check.minh}, ${location_check.maxh} - ${location_check.minh})) {
+        0..1: ${location_check.switch_result};
+        ${location_check.outrange};
+    }
+</metal:require_height_range>
+
+
+<metal:disallow_coast_or_water metal:define-macro="disallow_coast_or_water">
+    <!--!  Check that the tile itself is not a coast or water tile -->
+    switch(FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}, nearby_tile_is_water(0, 0)) {
+        1: return CB_RESULT_LOCATION_DISALLOW;
+        ${location_check.switch_result};
+    }
+</metal:disallow_coast_or_water>
+
+
+<metal:disallow_steep_slopes metal:define-macro="disallow_steep_slopes">
+    <!--!  Check whether a tile is steep slope and only disallow construction in that case -->
+    switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}, nearby_tile_slope(0,0) & bitmask(IS_STEEP_SLOPE)) {
+        0: ${location_check.switch_result};
+        return string(STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE);
+    }
+</metal:disallow_steep_slopes>
+
+
+<metal:disallow_slopes metal:define-macro="disallow_slopes">
+    <!--!  Check whether a tile is a flat tile and only allow construction in that case -->
+    switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}, nearby_tile_slope(0,0) == SLOPE_FLAT) {
+        1: ${location_check.switch_result};
+        return CB_RESULT_LOCATION_DISALLOW;
+    }
+</metal:disallow_slopes>
+
+
+<metal:require_slope metal:define-macro="require_slope">
+    <!--!  Check whether a tile is a sloped tile and only allow construction in that case (usually for checking coasts) -->
+    switch(FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}, nearby_tile_slope(0,0) == SLOPE_FLAT) {
+        1: return CB_RESULT_LOCATION_DISALLOW;
+        ${location_check.switch_result};
+    }
+
+</metal:require_slope>
+
+
+<metal:require_road_adjacent metal:define-macro="require_road_adjacent">
+    <!--!  Check whether an industry *tile* is adjacent to at least 1 road tile -->
+    <!--!
+        !!! failing with multi-tile industries as they can't all find road
+        nearby_tile_is_same_industry ??
+        move this to an industry location check that works ALL the tiles in the layout, and allows build if ANY are next to road
+    -->
+
+    switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point},
+                                                      (
+                                                      nearby_tile_class(0, -1) == TILE_CLASS_ROAD ? 1 :
+                                                      (nearby_tile_class(0, 1) == TILE_CLASS_ROAD ? 1 :
+                                                      (nearby_tile_class(-1, 0) == TILE_CLASS_ROAD ? 1 :
+                                                      (nearby_tile_class(1, 0) == TILE_CLASS_ROAD ? 1 : 0
+                                                      ))))) {
+        1: ${location_check.switch_result};
+        return CB_RESULT_LOCATION_DISALLOW;
+    }
+</metal:require_road_adjacent>
+
+
+<metal:require_houses_nearby metal:define-macro="require_houses_nearby">
+    <!--!  Check whether an industry *tile* is within a certain distance of houses -->
+    <!--!
+        !! would this not be better as a plain industry location check?
+    -->
+    switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}_${len(location_check.search_points)}, LOAD_TEMP(0)) {
+        1: ${location_check.switch_result};
+        return CB_RESULT_LOCATION_DISALLOW;
+    }
+    <!--! repeat over all the search points, if houses are found in any, a flag is set 1, which is checked at end -->
+    <tal:search_point repeat="search_point location_check.search_points">
+        <tal:switch_num define="switch_num len(location_check.search_points) - repeat.search_point.number">
+            // this ternary needs replaced with, writing to registers with ternary is unreliable - see https://github.com/OpenTTD/nml/issues/241
+            switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}_${switch_num}, [
+                 nearby_tile_class(${search_point[0]}, ${search_point[1]}) == TILE_CLASS_HOUSE ? STORE_TEMP(1, 0) : 0,
+                 LOAD_TEMP(0)
+                ]) {
+                1: ${location_check.switch_entry_point}_${len(location_check.search_points)};
+                return ${location_check.switch_entry_point}_${switch_num + 1};
+            }
+        </tal:switch_num>
+    </tal:search_point>
+    switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}, STORE_TEMP(0, 0)) {
+        return ${location_check.switch_entry_point}_0;
+    }
+</metal:require_houses_nearby>
+
+
+<metal:allow_player metal:define-macro="allow_player">
+    <!--!
+        Used to over-ride non-essential checks when player is building
+        Some tile checks relating to landscape are essential and are placed before player check
+        FOUNDER_GAME means founded by the game, 0 .. 15 are player companies
+    -->
+    switch (FEAT_INDUSTRYTILES, PARENT, ${location_check.switch_entry_point}, (
+                (((extra_callback_info2 & 0xFF00) >> 8) == IND_CREATION_FUND) ||
+                (((extra_callback_info2 & 0xFF00) >> 8) == IND_CREATION_PROSPECT)
+                )
+            ) {
+        1: return CB_RESULT_LOCATION_ALLOW;
+        ${location_check.switch_result};
+    }
+</metal:allow_player>
+
+
+<metal:disallow_industry_adjacent metal:define-macro="disallow_industry_adjacent">
+    <!--!
+        Prevent directly adjacent to another industry, used by most industries, but not all
+        1. Makes it too hard for the game to find a location for some types (typically large flat industries)
+        2. Not necessary for most town industries
+    -->
+    switch(FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point},
+            (nearby_tile_class( 2,  2) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( 2,  1) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( 2,  0) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( 2, -1) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( 2, -2) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( 1,  2) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( 1,  1) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( 1,  0) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( 1, -1) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( 1, -2) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( 0,  2) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( 0,  1) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( 0,  0) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( 0, -1) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( 0, -2) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( -1,  2) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( -1,  1) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( -1,  0) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( -1, -1) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( -1, -2) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( -2,  2) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( -2,  1) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( -2,  0) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( -2, -1) == TILE_CLASS_INDUSTRY) ||
+            (nearby_tile_class( -2, -2) == TILE_CLASS_INDUSTRY)
+        ) {
+        1: return CB_RESULT_LOCATION_DISALLOW;
+        ${location_check.switch_result};
+    }
+</metal:disallow_industry_adjacent>
+
+
+<metal:disallow_desert metal:define-macro="disallow_desert">
+    <!--! Check that the tile and nearby tiles are not desert (could be made generic for other terrain types if needed -->
+    switch(FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point},
+                (nearby_tile_terrain_type( 1, -1) == TILETYPE_DESERT) &&
+                (nearby_tile_terrain_type( 1,  0) == TILETYPE_DESERT) &&
+                (nearby_tile_terrain_type( 1,  1) == TILETYPE_DESERT) &&
+                (nearby_tile_terrain_type( 0, -1) == TILETYPE_DESERT) &&
+                (nearby_tile_terrain_type( 0,  0) == TILETYPE_DESERT) &&
+                (nearby_tile_terrain_type( 0,  1) == TILETYPE_DESERT) &&
+                (nearby_tile_terrain_type(-1, -1) == TILETYPE_DESERT) &&
+                (nearby_tile_terrain_type(-1,  0) == TILETYPE_DESERT) &&
+                (nearby_tile_terrain_type(-1,  1) == TILETYPE_DESERT)
+            ) {
+        1: return CB_RESULT_LOCATION_DISALLOW;
+        ${location_check.switch_result};
+    }
+</metal:disallow_desert>
+
+
+<metal:require_effectively_flat metal:define-macro="require_effectively_flat">
+    <!--!
+        Check whether highest corner of a tile is same as highest corner of industry north tile
+        The check looks really complex, but is simple:
+        - get the tile height of n tile (lowest corner), add 0, 1, or 2 depending on slope (flat, slope, steep slope)
+        - do same for current tile
+        - if the results match, allow building
+        The stacked ternary operators make it look more complicated than it is.
+    -->
+    switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point},
+                (
+                nearby_tile_height(-relative_x, -relative_y)
+                + (nearby_tile_slope(-relative_x, -relative_y)
+                == SLOPE_FLAT ? 0 :
+                nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1
+                )) == (nearby_tile_height(0, 0)
+                + (nearby_tile_slope(0, 0)
+                == SLOPE_FLAT ? 0 :
+                nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+                ) {
+        1: ${location_check.switch_result};
+        return CB_RESULT_LOCATION_DISALLOW;
+    }
+</metal:require_effectively_flat>

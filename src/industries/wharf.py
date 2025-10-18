@@ -48,6 +48,22 @@ industry.enable_in_economy(
 )
 
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargo_types=[
+        "ZINC",
+    ],
+    prod_cargo_types_with_multipliers=[
+        ("IORE", 18),
+        ("SALT", 14),
+        ("POTA", 14),
+        ("WOOD", 14),
+        ("PHOS", 14),
+        ("ZORE", 14),
+        ("ALO_", 14),
+    ],
+)
+
+industry.enable_in_economy(
     "STEELTOWN",
     # quite a lot of accepted types, this is intentional to provide flexibility in obtaining boost
     # NO steel strip, no structural steel, not fitting

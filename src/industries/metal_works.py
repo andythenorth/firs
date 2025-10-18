@@ -26,6 +26,21 @@ industry.enable_in_economy(
 )
 
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    # two-cargo production boost - combined ratios of any two cargos must always be at least 8
+    accept_cargos_with_input_ratios=[
+        ("STSH", 6),
+        ("STWR", 6),
+        ("ALUM", 6),
+        ("PRCH", 6),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("HWAR", 3),
+        ("GOOD", 3),
+        ("ENSP", 2),
+    ],
+)
+industry.enable_in_economy(
     "STEELTOWN",
     # two-cargo production boost - combined ratios of any two cargos must always be at least 8
     accept_cargos_with_input_ratios=[

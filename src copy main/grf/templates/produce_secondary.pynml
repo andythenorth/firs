@@ -1,0 +1,178 @@
+<!--!
+    Secondary production.
+    For combinatory production, deliveries are tracked over 27 production cycles.
+    This gives the easiest approximation of the 'every 3 months' the player is told.
+    27 cycles is about 93 game days, and works in player's favour, accomodating varying length months.
+    There is admin with registers to support calculating production ratio over the 27 cargo cycles, and for handling 'Supplied' text to be displayed in industry windows.
+    Admin functions are called on both 256 tick and on delivery.
+    Actual production is on delivery.
+-->
+
+<tal:economies repeat="economy firs.economy_manager">
+    produce (${industry.id}_produce_${economy.numeric_id},
+        [
+            <tal:subtract repeat="cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
+                <!--! !!! assume just subtracting all for now, don't faff around with remaindered amounts -->
+                ${cargo[0]}: incoming_cargo_waiting("${cargo[0]}");
+            </tal:subtract>
+        ],
+        [
+            <tal:produce repeat="cargo industry.get_property('prod_cargo_types_with_output_ratios', economy)">
+                ${cargo[0]}: (LOAD_PERM(${get_perm_num("total_cargo_to_distribute_this_cycle")}) * ${cargo[1]}) / 8;
+            </tal:produce>
+        ],
+    0)
+
+
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_update_supplied_cycles_remaining_per_cargo_${economy.numeric_id},
+        [
+            <!--! check if each cargo is delivered in this cycle, and if so reset the supplied cycles remaining
+                  NOTE next cycle will -1 so store 28 so we get 27 cycles in total
+                  this will cause the industry 'supplied' text to show immediately -->
+            <tal:input_cargos repeat="cargo industry.get_accepted_cargo_labels_by_economy(economy)">
+                STORE_PERM_ALT(
+                    ${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))},
+                    (incoming_cargo_waiting("${cargo}") > 0)
+                    ?
+                    28
+                    :
+                    LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))})
+                ),
+            </tal:input_cargos>
+            0 <!--! spurious 0 because nmlc was running into a parse error without it - this is actually due to empty lists in some economies-->
+        ]) {
+        return 0;
+    }
+
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_calculate_current_production_level_${economy.numeric_id},
+        [
+            <tal:input_cargos repeat="input_cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
+                <!--! if this cargo was delivered, increase the total production ratio appropriately -->
+                STORE_PERM_ALT(
+                    ${get_perm_num("current_production_ratio")},
+                    <!--! production ratio may not exceed 8 -->
+                    min(
+                        8,
+                        LOAD_PERM(${get_perm_num("current_production_ratio")})
+                        +
+                        (
+                            LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.input_cargo.number))})
+                            > 0 ? ${input_cargo[1]} : 0
+                        )
+                    )
+                ),
+            </tal:input_cargos>
+            0 <!--! spurious 0 because nmlc was running into a parse error without it - this is actually due to empty lists in some economies-->
+        ]) {
+        return 0;
+    }
+
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_calculation_${economy.numeric_id},
+            [
+                <!--! zero the current production ratio, which we will recalculate during this production cycle -->
+                STORE_PERM_ALT(${get_perm_num("current_production_ratio")}, 0),
+                <!--! zero the total production from this cycle, as a starting value-->
+                STORE_PERM_ALT(${get_perm_num("total_cargo_produced_this_cycle")}, 0),
+                ${industry.id}_produce_update_supplied_cycles_remaining_per_cargo_${economy.numeric_id}(),
+                    ${industry.id}_produce_calculate_current_production_level_${economy.numeric_id}(),
+                <!--! add to total amount produced;
+                      note that production_ratio is a value 0..8, and is divided by 8 in the calculation here - this is to account for integer maths
+                      note also that this has to be in a separate loop to the ratio calculation, have sum ratio over all input cargos before calculating production from each input cargo
+                -->
+                <tal:total_production repeat="input_cargo industry.get_property('accept_cargos_with_input_ratios', economy)">
+                    STORE_PERM_ALT(
+                        ${get_perm_num("total_cargo_produced_this_cycle")},
+                        LOAD_PERM(${get_perm_num("total_cargo_produced_this_cycle")})
+                        + ((incoming_cargo_waiting("${input_cargo[0]}") * LOAD_PERM(${get_perm_num("current_production_ratio")})) / 8)
+                    ),
+                </tal:total_production>
+                <!--! when low cargo amounts are delivered, it's possible that final output cargo amounts < 1, which means no cargo is distributed
+                      prevent that by stockpiling produced cargo on each production cycle until there is enough to distribute
+                      the case is triggered by low amounts being moved to the produce cycle as a vehicle gradually unloads, and was noticeable with Road Hog trams
+                -->
+                STORE_PERM_ALT(
+                    ${get_perm_num("total_produced_cargo_available")},
+                    LOAD_PERM(${get_perm_num("total_produced_cargo_available")}) + LOAD_PERM(${get_perm_num("total_cargo_produced_this_cycle")})
+                ),
+                <!--! then check min. distributed by dividing over 8, to get the amount divided by max possible output cargos
+                      8 is the pathological case, this could be made more accurate by checking the lowest output ratio in current economy
+                      for accuracy, this could also store remainders using mod(8) or so, but eh, TMWFTLB?
+                -->
+
+                <!--! OOF, this needs to both assign total_cargo_to_distribute_this_cycle if > 1, and clear total_produced_cargo_available if > 1 -->
+                STORE_PERM_ALT(
+                    ${get_perm_num("total_cargo_to_distribute_this_cycle")},
+                    (LOAD_PERM(${get_perm_num("total_produced_cargo_available")}) / 8) >= 1
+                    ?
+                    LOAD_PERM(${get_perm_num("total_produced_cargo_available")})
+                    :
+                    0
+                ),
+                STORE_PERM_ALT(
+                    ${get_perm_num("total_produced_cargo_available")},
+                    (LOAD_PERM(${get_perm_num("total_produced_cargo_available")}) / 8) >= 1
+                    ?
+                    0
+                    :
+                    LOAD_PERM(${get_perm_num("total_produced_cargo_available")})
+                ),
+                <!--! if any cargo was produced, reset the closure countdown  -->
+                <!--! !! unclear if this is working, separate closure template needs updated for n cargos, currently depends on 3 -->
+                STORE_PERM_ALT(
+                    ${get_perm_num("closure_counter")},
+                    (LOAD_PERM(${get_perm_num("total_cargo_produced_this_cycle")}) == 0)
+                    ?
+                    LOAD_PERM(${get_perm_num("closure_counter")})
+                    :
+                    0
+                ),
+            ]) {
+        ${industry.id}_produce_${economy.numeric_id};
+    }
+</tal:economies>
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_cargo_arrival, economy) {
+    <tal:economies repeat="economy firs.economy_manager">
+        ${economy.numeric_id}: ${industry.id}_produce_calculation_${economy.numeric_id};
+    </tal:economies>
+}
+
+
+
+<!--! 256 ticks doesn't produce, just used to handle current production levels, so produce is just a stub -->
+produce(${industry.id}_produce_256_ticks_produce,
+    [<!--! no accept in 256 cb -->],
+    [<!--! no produce in 256 cb -->],
+0)
+
+<!--! set the number of supplied cycles remaining per cargo - used to display 'supplied' (or not) in the industry window -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_update_supplied_cycles_remaining_per_cargo,
+    [
+        <tal:cargos repeat="cargo_num range(1, 9)">
+            <!--! check if each cargo is delivered, and if so update the cycles remaining flag for that to 27,
+                  otherwise reduce the number of cycles remaining by 1
+                  cap minimum value to 0, avoid -ve values that might overflow eventually -->
+            STORE_PERM_ALT(
+                ${get_perm_num("supplied_cycles_remaining_cargo_" + str(cargo_num))},
+                max(
+                    0,
+                    LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(cargo_num))})
+                    - 1
+                )
+            ),
+        </tal:cargos>
+    ]) {
+    return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
+    [
+        ${industry.id}_update_supplied_cycles_remaining_per_cargo(),
+    ]) {
+    ${industry.id}_produce_256_ticks_produce;
+}
+
+<!--! handle monthly production change -->
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_monthly_prod_change, 1) {
+    return CB_RESULT_IND_PROD_NO_CHANGE;
+}

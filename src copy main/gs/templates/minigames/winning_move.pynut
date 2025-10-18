@@ -1,0 +1,39 @@
+// this is all prototype stuff as of Jan 2023, nothing here is complete
+
+// to handle events - was in main loop
+                /*
+                if (button_event.GetElementID() == 0) {
+                    local town_list = GSTownList();
+                    town_list.Valuate(GSBase.RandItem);
+                    local town = town_list.Begin();
+                    Log.Info("It's a bad time to be in " + GSTown.GetName(town));
+                    local pre_strike_population = GSTown.GetPopulation(town);
+                    local ground_zero = GSTown.GetLocation(town);
+                    Log.Info("Strike! Ground zero: " + GSMap.GetTileX(ground_zero) + ", " + GSMap.GetTileY(ground_zero));
+                    local blast_area_vertex_1 = GSMap.GetTileIndex(GSMap.GetTileX(ground_zero) + 10, GSMap.GetTileY(ground_zero) + 10);
+                    local blast_area_vertex_2 = GSMap.GetTileIndex(GSMap.GetTileX(ground_zero) - 10, GSMap.GetTileY(ground_zero) - 10);
+                    local tile_list = GSTileList();
+                    tile_list.AddRectangle(blast_area_vertex_1, blast_area_vertex_2);
+                    foreach (tile, _ in tile_list) {
+                        GSTile.DemolishTile(tile);
+                    }
+                    Log.Info(pre_strike_population - GSTown.GetPopulation(town) + " non-playing characters have been decommissioned.")
+                */
+
+
+function story_lolz()
+{
+    for (local i = 0; i < 16; i++) {
+        local story_pages = GSStoryPageList(i);
+        foreach (story_page, _ in story_pages) {
+            GSStoryPage.Remove(story_page);
+        }
+        local foo = GSStoryPage.New(i, "Global Thermonuclear War");
+        local go_north = GSStoryPage.NewElement(foo, GSStoryPage.SPET_BUTTON_PUSH, 1, "Nuke a random city");
+        local go_south = GSStoryPage.NewElement(foo, GSStoryPage.SPET_BUTTON_VEHICLE, 1, "Choose a vehicle");
+        local br = GSStoryPage.NewElement(foo, GSStoryPage.SPET_TEXT, 1, "--------------");
+        local go_west = GSStoryPage.NewElement(foo, GSStoryPage.SPET_BUTTON_TILE, 1, "Choose a tile");
+        local tile_displayer = GSStoryPage.NewElement(foo, GSStoryPage.SPET_TEXT, 1, "Tile selected:");
+        local tile_displayer = GSStoryPage.NewElement(foo, GSStoryPage.SPET_TEXT, 1, "(choose a tile)");
+    }
+}

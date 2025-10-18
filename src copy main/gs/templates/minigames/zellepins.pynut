@@ -1,0 +1,58 @@
+// this is all prototype stuff as of Jan 2023, nothing here is complete
+
+//  to handle on button events (was in main loop event handling)
+                /*
+                local foo = GSCompanyMode(0);
+                local vehicles = GSVehicleList();
+                foreach (vehicle, _ in vehicles) {
+                    if (button_event.GetElementID() == 3) {
+                        Log.Info("Bombs Away!");
+                        Log.Info("Vehicle location: " + GSVehicle.GetLocation(vehicle));
+                        GSTile.DemolishTile(GSVehicle.GetLocation(vehicle));
+                        //GSTile.PlantTree(GSVehicle.GetLocation(vehicle));
+                        //GSTile.PlantTree(GSVehicle.GetLocation(vehicle));
+                        //GSTile.PlantTree(GSVehicle.GetLocation(vehicle));
+                    }
+                    else {
+                        do {
+                            GSOrder.RemoveOrder(vehicle, 0);
+                        }
+                        while (GSOrder.GetOrderCount(vehicle) > 0);
+                        local destination = null;
+                        if (button_event.GetElementID() == 0) {
+                            destination = GSStation.GetLocation(0);
+                        }
+                        if (button_event.GetElementID() == 1) {
+                            destination = GSStation.GetLocation(3);
+                        }
+                        if (button_event.GetElementID() == 2) {
+                            destination = GSStation.GetLocation(2);
+                        }
+                        if (button_event.GetElementID() == 4) {
+                            destination = GSStation.GetLocation(1);
+                        }
+                        GSOrder.InsertOrder(vehicle, 0, destination, 0);
+                    }
+                }
+				break;
+			}
+            */
+
+
+function story_lolz()
+{
+    for (local i = 0; i < 16; i++) {
+        local story_pages = GSStoryPageList(i);
+        foreach (story_page, _ in story_pages) {
+            GSStoryPage.Remove(story_page);
+        }
+        local foo = GSStoryPage.New(i, "Chocks Away");
+        local go_north = GSStoryPage.NewElement(foo, GSStoryPage.SPET_BUTTON_PUSH, 1, "Fly North");
+        local ham = GSStoryPage.MakePushButtonReference(2, 2);
+        local go_east = GSStoryPage.NewElement(foo, GSStoryPage.SPET_BUTTON_PUSH, ham, "Fly East");
+        local ham = GSStoryPage.MakePushButtonReference(3, 1);
+        local go_west = GSStoryPage.NewElement(foo, GSStoryPage.SPET_BUTTON_PUSH, ham, "Fly West");
+        local bomb = GSStoryPage.NewElement(foo, GSStoryPage.SPET_BUTTON_PUSH, 5, "Bombs Away!");
+        local go_south = GSStoryPage.NewElement(foo, GSStoryPage.SPET_BUTTON_PUSH, 4, "Fly South");
+    }
+}

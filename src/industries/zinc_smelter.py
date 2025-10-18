@@ -32,6 +32,12 @@ industry = IndustrySecondary(
     animated_tiles_fixed=False,
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+
+# CABBAGE - needs non-animated tile for performance?
+
 industry.add_tile(
     id="zinc_smelter_tile_1",
     animation_length=7,
@@ -89,6 +95,7 @@ sprite_smoke_roaster = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="zinc_smelter_spritelayout_empty",
+    tile="zinc_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[],
@@ -96,6 +103,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="zinc_smelter_spritelayout_greeble",
+    tile="zinc_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_greeble],
@@ -103,6 +111,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="zinc_smelter_spritelayout_roaster_1",
+    tile="zinc_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_roaster_1],
@@ -110,6 +119,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="zinc_smelter_spritelayout_roaster_2",
+    tile="zinc_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_roaster_2],
@@ -118,6 +128,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="zinc_smelter_spritelayout_chimney",
+    tile="zinc_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_chimney],
@@ -126,6 +137,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="zinc_smelter_spritelayout_acid_plant_1",
+    tile="zinc_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_acid_plant_1],
@@ -133,6 +145,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="zinc_smelter_spritelayout_acid_plant_2",
+    tile="zinc_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_acid_plant_2],
@@ -140,6 +153,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="zinc_smelter_spritelayout_metal_1",
+    tile="zinc_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_metal_1],
@@ -147,6 +161,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="zinc_smelter_spritelayout_metal_2",
+    tile="zinc_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_metal_2],
@@ -154,6 +169,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="zinc_smelter_spritelayout_office",
+    tile="zinc_smelter_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_office],
@@ -163,81 +179,81 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="zinc_smelter_industry_layout_1",
     layout=[
-        (0, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (0, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_2"),
-        (0, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (0, 3, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_2"),
-        (0, 4, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_1"),
-        (1, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_chimney"),
-        (1, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (1, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (1, 3, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_1"),
-        (1, 4, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_acid_plant_2"),
-        (2, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_office"),
-        (2, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_greeble"),
-        (2, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_2"),
-        (2, 3, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_empty"),
-        (2, 4, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_acid_plant_1"),
+        (0, 0, "zinc_smelter_spritelayout_metal_1"),
+        (0, 1, "zinc_smelter_spritelayout_roaster_2"),
+        (0, 2, "zinc_smelter_spritelayout_metal_1"),
+        (0, 3, "zinc_smelter_spritelayout_roaster_2"),
+        (0, 4, "zinc_smelter_spritelayout_roaster_1"),
+        (1, 0, "zinc_smelter_spritelayout_chimney"),
+        (1, 1, "zinc_smelter_spritelayout_metal_1"),
+        (1, 2, "zinc_smelter_spritelayout_metal_1"),
+        (1, 3, "zinc_smelter_spritelayout_roaster_1"),
+        (1, 4, "zinc_smelter_spritelayout_acid_plant_2"),
+        (2, 0, "zinc_smelter_spritelayout_office"),
+        (2, 1, "zinc_smelter_spritelayout_greeble"),
+        (2, 2, "zinc_smelter_spritelayout_metal_2"),
+        (2, 3, "zinc_smelter_spritelayout_empty"),
+        (2, 4, "zinc_smelter_spritelayout_acid_plant_1"),
     ],
 )
 industry.add_industry_layout(
     id="zinc_smelter_industry_layout_2",
     layout=[
-        (0, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (0, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_2"),
-        (0, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_1"),
-        (0, 3, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_acid_plant_2"),
-        (1, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (1, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (1, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_2"),
-        (1, 3, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_acid_plant_1"),
-        (2, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (2, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_chimney"),
-        (2, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_1"),
-        (2, 3, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_empty"),
-        (3, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_greeble"),
-        (3, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_2"),
-        (3, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_empty"),
-        (3, 3, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_office"),
+        (0, 0, "zinc_smelter_spritelayout_metal_1"),
+        (0, 1, "zinc_smelter_spritelayout_roaster_2"),
+        (0, 2, "zinc_smelter_spritelayout_roaster_1"),
+        (0, 3, "zinc_smelter_spritelayout_acid_plant_2"),
+        (1, 0, "zinc_smelter_spritelayout_metal_1"),
+        (1, 1, "zinc_smelter_spritelayout_metal_1"),
+        (1, 2, "zinc_smelter_spritelayout_roaster_2"),
+        (1, 3, "zinc_smelter_spritelayout_acid_plant_1"),
+        (2, 0, "zinc_smelter_spritelayout_metal_1"),
+        (2, 1, "zinc_smelter_spritelayout_chimney"),
+        (2, 2, "zinc_smelter_spritelayout_roaster_1"),
+        (2, 3, "zinc_smelter_spritelayout_empty"),
+        (3, 0, "zinc_smelter_spritelayout_greeble"),
+        (3, 1, "zinc_smelter_spritelayout_metal_2"),
+        (3, 2, "zinc_smelter_spritelayout_empty"),
+        (3, 3, "zinc_smelter_spritelayout_office"),
     ],
 )
 industry.add_industry_layout(
     id="zinc_smelter_industry_layout_3",
     layout=[
-        (0, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_2"),
-        (0, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_2"),
-        (0, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_1"),
-        (1, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_1"),
-        (1, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (1, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (2, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_chimney"),
-        (2, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (2, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (3, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_acid_plant_2"),
-        (3, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_greeble"),
-        (3, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_2"),
-        (4, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_acid_plant_1"),
-        (4, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_empty"),
-        (4, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_office"),
+        (0, 0, "zinc_smelter_spritelayout_roaster_2"),
+        (0, 1, "zinc_smelter_spritelayout_roaster_2"),
+        (0, 2, "zinc_smelter_spritelayout_roaster_1"),
+        (1, 0, "zinc_smelter_spritelayout_roaster_1"),
+        (1, 1, "zinc_smelter_spritelayout_metal_1"),
+        (1, 2, "zinc_smelter_spritelayout_metal_1"),
+        (2, 0, "zinc_smelter_spritelayout_chimney"),
+        (2, 1, "zinc_smelter_spritelayout_metal_1"),
+        (2, 2, "zinc_smelter_spritelayout_metal_1"),
+        (3, 0, "zinc_smelter_spritelayout_acid_plant_2"),
+        (3, 1, "zinc_smelter_spritelayout_greeble"),
+        (3, 2, "zinc_smelter_spritelayout_metal_2"),
+        (4, 0, "zinc_smelter_spritelayout_acid_plant_1"),
+        (4, 1, "zinc_smelter_spritelayout_empty"),
+        (4, 2, "zinc_smelter_spritelayout_office"),
     ],
 )
 industry.add_industry_layout(
     id="zinc_smelter_industry_layout_4",
     layout=[
-        (0, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_2"),
-        (0, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_1"),
-        (0, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_chimney"),
-        (1, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_2"),
-        (1, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (1, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_acid_plant_1"),
-        (2, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (2, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (2, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_acid_plant_2"),
-        (3, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_1"),
-        (3, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_roaster_1"),
-        (3, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_office"),
-        (4, 0, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_metal_2"),
-        (4, 1, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_greeble"),
-        (4, 2, "zinc_smelter_tile_1", "zinc_smelter_spritelayout_empty"),
+        (0, 0, "zinc_smelter_spritelayout_roaster_2"),
+        (0, 1, "zinc_smelter_spritelayout_roaster_1"),
+        (0, 2, "zinc_smelter_spritelayout_chimney"),
+        (1, 0, "zinc_smelter_spritelayout_roaster_2"),
+        (1, 1, "zinc_smelter_spritelayout_metal_1"),
+        (1, 2, "zinc_smelter_spritelayout_acid_plant_1"),
+        (2, 0, "zinc_smelter_spritelayout_metal_1"),
+        (2, 1, "zinc_smelter_spritelayout_metal_1"),
+        (2, 2, "zinc_smelter_spritelayout_acid_plant_2"),
+        (3, 0, "zinc_smelter_spritelayout_metal_1"),
+        (3, 1, "zinc_smelter_spritelayout_roaster_1"),
+        (3, 2, "zinc_smelter_spritelayout_office"),
+        (4, 0, "zinc_smelter_spritelayout_metal_2"),
+        (4, 1, "zinc_smelter_spritelayout_greeble"),
+        (4, 2, "zinc_smelter_spritelayout_empty"),
     ],
 )
