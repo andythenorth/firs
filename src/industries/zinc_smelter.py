@@ -31,6 +31,10 @@ industry = IndustrySecondary(
     sprites_complete=False,
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+
 industry.add_tile(
     id="zinc_smelter_tile_1",
     animation_length=7,

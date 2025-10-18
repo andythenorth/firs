@@ -20,6 +20,10 @@ industry = IndustrySecondary(
     sprites_complete=False,
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+
 industry.add_tile(
     id="phosphoric_acid_plant_tile_1",
     animation_length=7,

@@ -21,6 +21,10 @@ industry = IndustrySecondary(
     sprites_complete=True,
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+
 industry.add_tile(
     id="oil_refinery_tile_1",
     location_checks=TileLocationChecks(

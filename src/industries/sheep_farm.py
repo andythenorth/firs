@@ -19,6 +19,10 @@ industry = IndustryPrimaryOrganic(
     sprites_complete=False,
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+
 industry.add_tile(
     id="sheep_farm_tile_1",
     location_checks=TileLocationChecks(

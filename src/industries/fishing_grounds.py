@@ -37,6 +37,9 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "BASIC_ARCTIC",
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
 
 # ['IN_A_HOT_COUNTRY'].enabled = True
 

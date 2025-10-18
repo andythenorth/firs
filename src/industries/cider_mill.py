@@ -27,6 +27,14 @@ industry.enable_in_economy(
         ("FRUT", 6),
     ],
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("AAPL", 4),
+        ("ENUM", 2),
+        ("PACK", 2),
+    ],
+)
 
 industry.add_tile(
     id="cider_mill_tile_1",
