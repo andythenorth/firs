@@ -184,7 +184,10 @@ class Cargo(object):
 
     def get_cargo_colour(self, economy):
         # automatically provide a colour specific to the economy, don't attempt to provide a consistent colour across all economies, PITA to maintain
-        return global_constants.valid_cargo_colours[self.get_numeric_id(economy)]
+        try:
+            return global_constants.valid_cargo_colours[self.get_numeric_id(economy)]
+        except Exception as e:
+            raise Exception(f"Error getting cargo colour for {self.id}, {economy.id}: {e}") from e
 
     def get_cargo_classes_for_nml(self):
         return "bitmask(" + ",".join(self.cargo_classes) + ")"

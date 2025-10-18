@@ -60,6 +60,9 @@ base = "Tropic Basic"
 [STR_PARAM_VALUE_ECONOMIES_IN_A_HOT_COUNTRY]
 base = "In A Hot Country"
 
+[STR_PARAM_VALUE_ECONOMIES_MILD_MILD_WEST]
+base = "Mild Mild West"
+
 [STR_PARAM_VALUE_ECONOMIES_STEELTOWN]
 base = "Steeltown"
 
@@ -108,6 +111,9 @@ base = "{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this leve
 [STR_PORT_PRODUCTION_4X]
 base = "{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} units of cargo at least once every three minutes."
 
+[STR_CARGO_NAME_ACETIC_ACID]
+base = "Acetic Acid"
+
 [STR_CARGO_NAME_ACID]
 base = "Acid"
 
@@ -126,8 +132,14 @@ base = "Aluminia"
 [STR_CARGO_NAME_AMMONIA]
 base = "Ammonia"
 
+[STR_CARGO_NAME_APPLES]
+base = "Apples"
+
 [STR_CARGO_NAME_BEANS]
 base = "Beans"
+
+[STR_CARGO_NAME_BITUMEN]
+base = "Bitumen"
 
 [STR_CARGO_NAME_BUILDING_MATERIALS]
 base = "Building Materials"
@@ -143,6 +155,9 @@ base = "Cast Iron"
 
 [STR_CARGO_NAME_CEMENT]
 base = "Cement"
+
+[STR_CARGO_NAME_CHEMICAL_INTERMEDIATES]
+base = "Chemical Intermediates"
 
 [STR_CARGO_NAME_CHEMICALS]
 base = "Chemicals"
@@ -237,6 +252,9 @@ base = "Milk"
 [STR_CARGO_NAME_MANGANESE]
 base = "Manganese"
 
+[STR_CARGO_NAME_MOLASSES]
+base = "Molasses"
+
 [STR_CARGO_NAME_NAPHTHA]
 base = "Naphtha"
 
@@ -249,14 +267,26 @@ base = "Nitrates"
 [STR_CARGO_NAME_NITROGEN]
 base = "Nitrogen"
 
+[STR_CARGO_NAME_NUCLEAR_FUEL]
+base = "Nuclear Fuel"
+
+[STR_CARGO_NAME_NUCLEAR_WASTE]
+base = "Nuclear Waste"
+
 [STR_CARGO_NAME_NUTS]
 base = "Nuts"
 
 [STR_CARGO_NAME_OXYGEN]
 base = "Oxygen"
 
+[STR_CARGO_NAME_PACKAGING]
+base = "Packaging"
+
 [STR_CARGO_NAME_PAINTS_AND_COATINGS]
 base = "Paints & Coatings"
+
+[STR_CARGO_NAME_PAPER_CHEMICALS]
+base = "Paper Chemicals"
 
 [STR_CARGO_NAME_PEAT]
 base = "Peat"
@@ -284,6 +314,9 @@ base = "Plant & Machinery"
 
 [STR_CARGO_NAME_POTASH]
 base = "Potash"
+
+[STR_CARGO_NAME_PULP_WOOD]
+base = "Pulp Wood"
 
 [STR_CARGO_NAME_PUMPS_AND_VALVES]
 base = "Pumps & Valves"
@@ -375,6 +408,9 @@ base = "Tyre Cord"
 [STR_CARGO_NAME_TYRES]
 base = "Tyres"
 
+[STR_CARGO_NAME_VEGETABLES]
+base = "Vegetables"
+
 [STR_CARGO_NAME_VEHICLE_BODIES]
 base = "Vehicle Bodies"
 
@@ -396,8 +432,17 @@ base = "Wool"
 [STR_CARGO_NAME_YARN]
 base = "Yarn"
 
+[STR_CARGO_NAME_YEAST]
+base = "Yeast"
+
 [STR_CARGO_NAME_ZINC]
 base = "Zinc"
+
+[STR_CARGO_NAME_ZINC_ORE]
+base = "Zinc Ore"
+
+[STR_CARGO_UNIT_ACETIC_ACID]
+base = "{VOLUME} of acetic acid"
 
 [STR_CARGO_UNIT_ACID]
 base = "{VOLUME} of acid"
@@ -417,8 +462,14 @@ base = "{WEIGHT} of aluminium"
 [STR_CARGO_UNIT_AMMONIA]
 base = "{VOLUME} of ammonia"
 
+[STR_CARGO_UNIT_APPLES]
+base = "{VOLUME} of apples"
+
 [STR_CARGO_UNIT_BEANS]
 base = "{WEIGHT} of beans"
+
+[STR_CARGO_UNIT_BITUMEN]
+base = "{VOLUME} of bitumen"
 
 [STR_CARGO_UNIT_BUILDING_MATERIALS]
 base = "{WEIGHT} of building materials"
@@ -434,6 +485,9 @@ base = "{WEIGHT} of cast iron"
 
 [STR_CARGO_UNIT_CEMENT]
 base = "{WEIGHT} of cement"
+
+[STR_CARGO_UNIT_CHEMICAL_INTERMEDIATES]
+base = "{VOLUME} of chemical intermediates"
 
 [STR_CARGO_UNIT_CHEMICALS]
 base = "{VOLUME} of chemicals"
@@ -528,6 +582,9 @@ base = "{VOLUME} of methanol"
 [STR_CARGO_UNIT_MILK]
 base = "{VOLUME} of milk"
 
+[STR_CARGO_UNIT_MOLASSES]
+base = "{VOLUME} of molasses"
+
 [STR_CARGO_UNIT_NAPHTHA]
 base = "{VOLUME} of naphtha"
 
@@ -540,14 +597,26 @@ base = "{WEIGHT} of nitrates"
 [STR_CARGO_UNIT_NITROGEN]
 base = "{VOLUME} of nitrogen"
 
+[STR_CARGO_UNIT_NUCLEAR_FUEL]
+base = "{WEIGHT} of nuclear fuel"
+
+[STR_CARGO_UNIT_NUCLEAR_WASTE]
+base = "{WEIGHT} of nuclear waste"
+
 [STR_CARGO_UNIT_NUTS]
 base = "{SIGNED_WORD} sack{P 0 \"\" s}  of nuts"
 
 [STR_CARGO_UNIT_OXYGEN]
 base = "{VOLUME} of oxygen"
 
+[STR_CARGO_UNIT_PACKAGING]
+base = "{WEIGHT} of packaging"
+
 [STR_CARGO_UNIT_PAINTS_AND_COATINGS]
 base = "{VOLUME} of paints & coatings"
+
+[STR_CARGO_UNIT_PAPER_CHEMICALS]
+base = "{WEIGHT} of paper chemicals"
 
 [STR_CARGO_UNIT_PEAT]
 base = "{WEIGHT} of peat"
@@ -578,6 +647,9 @@ base = "{WEIGHT} of potash"
 
 [STR_CARGO_UNIT_PYRITE_ORE]
 base = "{WEIGHT} of pyrite ore"
+
+[STR_CARGO_UNIT_PULP_WOOD]
+base = "{WEIGHT} of pulp wood"
 
 [STR_CARGO_UNIT_PUMPS_AND_VALVES]
 base = "{WEIGHT} of pumps & valves"
@@ -669,6 +741,9 @@ base = "{WEIGHT} of tyres"
 [STR_CARGO_UNIT_UREA]
 base = "{WEIGHT} of urea"
 
+[STR_CARGO_UNIT_VEGETABLES]
+base = "{WEIGHT} of vegetables"
+
 [STR_CARGO_UNIT_VEHICLE_BODIES]
 base = "{WEIGHT} of vehicle bodies"
 
@@ -690,8 +765,17 @@ base = "{SIGNED_WORD} bale{P 0 \"\" s} of wool"
 [STR_CARGO_UNIT_YARN]
 base = "{SIGNED_WORD} bale{P 0 \"\" s} of yarn"
 
+[STR_CARGO_UNIT_YEAST]
+base = "{WEIGHT} of yeast"
+
 [STR_CARGO_UNIT_ZINC]
 base = "{WEIGHT} of zinc"
+
+[STR_CARGO_UNIT_ZINC_ORE]
+base = "{WEIGHT} of zinc ore"
+
+[STR_CID_ACETIC_ACID]
+base = "{TINYFONT}AA"
 
 [STR_CID_ACID]
 base = "{TINYFONT}AC"
@@ -711,8 +795,14 @@ base = "{TINYFONT}AM"
 [STR_CID_AMMONIA]
 base = "{TINYFONT}AO"
 
+[STR_CID_APPLES]
+base = "{TINYFONT}AP"
+
 [STR_CID_BEANS]
 base = "{TINYFONT}BN"
+
+[STR_CID_BITUMEN]
+base = "{TINYFONT}BI"
 
 [STR_CID_BUILDING_MATERIALS]
 base = "{TINYFONT}BM"
@@ -728,6 +818,9 @@ base = "{TINYFONT}CI"
 
 [STR_CID_CEMENT]
 base = "{TINYFONT}CE"
+
+[STR_CID_CHEMICAL_INTERMEDIATES]
+base = "{TINYFONT}CI"
 
 [STR_CID_CHEMICALS]
 base = "{TINYFONT}CH"
@@ -828,6 +921,9 @@ base = "{TINYFONT}ML"
 [STR_CID_MILK]
 base = "{TINYFONT}MK"
 
+[STR_CID_MOLASSES]
+base = "{TINYFONT}MO"
+
 [STR_CID_NAPHTHA]
 base = "{TINYFONT}NA"
 
@@ -840,13 +936,25 @@ base = "{TINYFONT}NI"
 [STR_CID_NITROGEN]
 base = "{TINYFONT}N7"
 
+[STR_CID_NUCLEAR_FUEL]
+base = "{TINYFONT}NU"
+
+[STR_CID_NUCLEAR_WASTE]
+base = "{TINYFONT}NW"
+
 [STR_CID_NUTS]
 base = "{TINYFONT}NT"
 
 [STR_CID_OXYGEN]
 base = "{TINYFONT}O2"
 
+[STR_CID_PACKAGING]
+base = "{TINYFONT}PG"
+
 [STR_CID_PAINTS_AND_COATINGS]
+base = "{TINYFONT}PC"
+
+[STR_CID_PAPER_CHEMICALS]
 base = "{TINYFONT}PC"
 
 [STR_CID_PEAT]
@@ -878,6 +986,9 @@ base = "{TINYFONT}PA"
 
 [STR_CID_PROPYLENE]
 base = "{TINYFONT}PR"
+
+[STR_CID_PULP_WOOD]
+base = "{TINYFONT}PW"
 
 [STR_CID_PUMPS_AND_VALVES]
 base = "{TINYFONT}PV"
@@ -969,6 +1080,9 @@ base = "{TINYFONT}TC"
 [STR_CID_TYRES]
 base = "{TINYFONT}TY"
 
+[STR_CID_VEGETABLES]
+base = "{TINYFONT}VG"
+
 [STR_CID_VEHICLE_BODIES]
 base = "{TINYFONT}VB"
 
@@ -990,8 +1104,14 @@ base = "{TINYFONT}WL"
 [STR_CID_YARN]
 base = "{TINYFONT}YN"
 
+[STR_CID_YEAST]
+base = "{TINYFONT}YE"
+
 [STR_CID_ZINC]
 base = "{TINYFONT}ZN"
+
+[STR_CID_ZINC_ORE]
+base = "{TINYFONT}ZO"
 
 [STR_ERR_OPENTTD_VERSION]
 base = "{ORANGE}E00: FIRS requires OpenTTD 1.7.0 (or for those using trunk builds, r27769)"
