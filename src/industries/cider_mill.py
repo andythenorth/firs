@@ -19,7 +19,7 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=1,
     provides_snow=True,
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(
@@ -28,6 +28,8 @@ industry.enable_in_economy(
         ("FRUT", 6),
     ],
 )
+
+# this industry does use spurious animation for a single non-animated tile, but I didn't want to waste tile IDs as of Oct 2025
 
 industry.add_tile(
     id="cider_mill_tile_1",
