@@ -18,6 +18,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_SMELTER)",
     fund_cost_multiplier="200",
     sprites_complete=False,
+    animated_tiles_fixed=False,
 )
 
 # currently unused

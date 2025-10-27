@@ -111,6 +111,7 @@
                     <th nowrap="true" class="number">Map Colour</th>
                     <th nowrap="true">Station Name</th>
                     <th nowrap="true">Sprites Done?</th>
+                    <th nowrap="true">Animated Tiles Fixed?</th>
                 </tr>
             </thead>
             <tbody>
@@ -136,6 +137,7 @@
                             </td>
                             <td>${doc_helper.get_nearby_station_name(industry)}</td>
                             <td>${industry.sprites_complete}</td>
+                            <td>${industry.animated_tiles_fixed}</td>
                         </tr>
                     </tal:industry>
                 </tal:industries>

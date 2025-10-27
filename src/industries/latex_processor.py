@@ -18,6 +18,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_SHARP_STREET)",
     fund_cost_multiplier="95",
     sprites_complete=False,
+    animated_tiles_fixed=False,
 )
 
 # industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

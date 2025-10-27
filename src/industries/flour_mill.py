@@ -18,6 +18,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="50",
     provides_snow=True,
     sprites_complete=True,
+    animated_tiles_fixed=False,
 )
 
 industry.enable_in_economy("BASIC_TROPIC")

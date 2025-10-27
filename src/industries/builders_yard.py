@@ -18,6 +18,7 @@ industry = IndustryTertiary(
     fund_cost_multiplier="16",
     provides_snow=True,
     sprites_complete=True,
+    animated_tiles_fixed=False,
 )
 
 

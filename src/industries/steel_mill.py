@@ -19,6 +19,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="120",
     pollution_and_squalor_factor=2,
     sprites_complete=True,
+    animated_tiles_fixed=False,
 )
 
 industry.add_tile(

@@ -12,6 +12,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_BASE)",
     fund_cost_multiplier="110",
     sprites_complete=True,
+    animated_tiles_fixed=False,
 )
 
 industry.enable_in_economy(

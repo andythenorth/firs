@@ -22,6 +22,7 @@ industry = IndustryTertiary(
     fund_cost_multiplier="15",
     provides_snow=True,
     sprites_complete=False,
+    animated_tiles_fixed=False,
 )
 
 industry.add_tile(

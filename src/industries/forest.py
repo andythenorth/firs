@@ -20,6 +20,7 @@ industry = IndustryPrimaryOrganic(
     provides_snow=True,
     primary_production_random_factor_set="wide_range",
     sprites_complete=True,
+    animated_tiles_fixed=False,
 )
 
 industry.enable_in_economy(

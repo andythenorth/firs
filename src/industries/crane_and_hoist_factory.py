@@ -21,6 +21,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_CRANE_AND_HOIST)",
     fund_cost_multiplier="145",
     sprites_complete=False,
+    animated_tiles_fixed=False,
 )
 
 """

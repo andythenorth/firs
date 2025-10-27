@@ -20,6 +20,7 @@ industry = IndustrySecondary(
     intro_year="1900",
     provides_snow=True,
     sprites_complete=False,
+    animated_tiles_fixed=False,
 )
 
 

@@ -29,6 +29,7 @@ industry = IndustrySecondary(
     pollution_and_squalor_factor=1,
     provides_snow=False,
     sprites_complete=False,
+    animated_tiles_fixed=False,
 )
 
 industry.enable_in_economy(

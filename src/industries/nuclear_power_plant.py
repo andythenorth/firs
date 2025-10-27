@@ -22,6 +22,7 @@ industry = IndustryPrimaryPort(
     fund_cost_multiplier="15",
     primary_production_random_factor_set="wide_range",
     sprites_complete=False,
+    animated_tiles_fixed=False,
 )
 
 industry.add_tile(

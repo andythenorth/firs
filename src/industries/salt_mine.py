@@ -17,6 +17,7 @@ industry = IndustryPrimaryExtractive(
     fund_cost_multiplier="180",
     primary_production_random_factor_set="wide_range",
     sprites_complete=False,
+    animated_tiles_fixed=False,
 )
 
 

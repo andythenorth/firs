@@ -15,6 +15,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_ELASTOMER_PLANT)",
     fund_cost_multiplier="45",
     sprites_complete=True,
+    animated_tiles_fixed=False,
 )
 
 industry.enable_in_economy(

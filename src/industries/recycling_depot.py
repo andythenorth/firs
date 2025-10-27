@@ -20,6 +20,7 @@ industry = IndustryTownProducerPopulationDependent(
     intro_year=1978,
     provides_snow=True,
     sprites_complete=False,
+    animated_tiles_fixed=False,
 )
 
 

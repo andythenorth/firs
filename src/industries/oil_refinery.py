@@ -19,6 +19,7 @@ industry = IndustrySecondary(
     name="TTD_STR_INDUSTRY_NAME_OIL_REFINERY",
     nearby_station_name="string(STR_STATION_REFINERY)",
     sprites_complete=True,
+    animated_tiles_fixed=False,
 )
 
 industry.add_tile(

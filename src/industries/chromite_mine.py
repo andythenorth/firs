@@ -14,6 +14,7 @@ industry = IndustryPrimaryExtractive(
     fund_cost_multiplier="252",
     primary_production_random_factor_set="wide_range",
     sprites_complete=False,
+    animated_tiles_fixed=False,
 )
 
 # industry.economy_variations['IN_A_HOT_COUNTRY'].enabled = True

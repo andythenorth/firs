@@ -16,6 +16,7 @@ industry = IndustryTertiary(
     nearby_station_name="string(STR_STATION_POWERHUNGRY)",
     fund_cost_multiplier="15",
     sprites_complete=True,
+    animated_tiles_fixed=False,
 )
 
 

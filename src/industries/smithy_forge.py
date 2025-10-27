@@ -20,6 +20,7 @@ industry = IndustrySecondary(
     expiry_year=1948,
     provides_snow=True,
     sprites_complete=False,
+    animated_tiles_fixed=False,
 )
 
 

@@ -30,6 +30,7 @@ industry.add_tile(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
     sprites_complete=False,
+    animated_tiles_fixed=False,
 )
 
 spriteset_ground = industry.add_spriteset(type="asphalt")

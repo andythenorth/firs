@@ -20,7 +20,8 @@ industry = IndustrySecondary(
     name="string(STR_IND_CONCRETE_PLANT)",
     nearby_station_name="string(STR_STATION_CONCRETE_PLANT)",
     fund_cost_multiplier="80",
-    sprites_complete=True,  # done enough for v5
+    sprites_complete=True,
+    animated_tiles_fixed=False,
 )
 
 

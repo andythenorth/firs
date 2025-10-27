@@ -14,6 +14,7 @@ industry = IndustryTownProducerPopulationDependent(
     fund_cost_multiplier="101",
     provides_snow=True,
     sprites_complete=True,
+    animated_tiles_fixed=False,
 )
 
 

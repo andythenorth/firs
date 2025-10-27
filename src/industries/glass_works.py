@@ -19,6 +19,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="95",
     provides_snow=True,
     sprites_complete=True,
+    animated_tiles_fixed=False,
 )
 
 industry.enable_in_economy(

@@ -1536,6 +1536,7 @@ class Industry(object):
         )
         self.provides_snow = kwargs.get("provides_snow", False)
         self.sprites_complete = kwargs["sprites_complete"]
+        self.animated_tiles_fixed = kwargs["animated_tiles_fixed"]
 
     def validate(self):
         # any post init checks we want to do can go here

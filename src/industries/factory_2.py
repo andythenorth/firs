@@ -20,6 +20,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_INDUSTRY_ESTATE_1)",
     fund_cost_multiplier="95",
     sprites_complete=False,
+    animated_tiles_fixed=False,
 )
 
 industry.add_tile(

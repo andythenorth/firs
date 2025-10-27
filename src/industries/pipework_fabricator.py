@@ -26,6 +26,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="145",
     intro_year=1790,
     sprites_complete=True,
+    animated_tiles_fixed=False,
 )
 
 industry.enable_in_economy(
