@@ -16,7 +16,7 @@ industry = IndustryTertiary(
     nearby_station_name="string(STR_STATION_POWERHUNGRY)",
     fund_cost_multiplier="15",
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 
@@ -27,6 +27,12 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="power_plant_tile_1",
+    location_checks=TileLocationChecks(
+        require_effectively_flat=True, disallow_industry_adjacent=True
+    ),
+)
+industry.add_tile(
+    id="power_plant_tile_2",
     animation_length=7,
     animation_looping=True,
     animation_speed=3,
@@ -38,6 +44,7 @@ industry.add_tile(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
 )
+
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
 sprite_ground_overlay = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
 sprite_1 = industry.add_sprite(sprite_number="2047")
@@ -59,7 +66,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="power_plant_spritelayout_large_building",
-    tile="power_plant_tile_1",
+    tile="power_plant_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_2],
