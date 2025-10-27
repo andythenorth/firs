@@ -213,7 +213,7 @@ class IndustryManager(list):
                         break
             if found == False:
                 utils.echo_message(
-                    "Not found: " + tile_id + " from global_constants"
+                    "Tile ID not used: " + tile_id + " from global_constants"
                 )
 
 
