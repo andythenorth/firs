@@ -126,6 +126,7 @@ class IndustryManager(list):
         self.provision_industries_per_accepted_cargo()
         self.provision_industries_per_produced_cargo()
         self.validate_industry_ids()
+        self.validate_industry_tile_ids()
         self.validate_object_ids()
 
     def get_industry_by_type(self, industry_id):
@@ -196,6 +197,25 @@ class IndustryManager(list):
                 utils.echo_message(
                     "Not found: " + industry_id + " from global_constants"
                 )
+
+    def validate_industry_tile_ids(self):
+        # guard against unused / wasted tile IDs
+        # n.b. sometimes there are valid unused IDs during development
+        for (
+            tile_id,
+            tile_numeric_id,
+        ) in global_constants.tile_numeric_ids.items():
+            found = False
+            for industry in industry_manager:
+                for tile in industry.tiles:
+                    if tile_id == tile.id:
+                        found = True
+                        break
+            if found == False:
+                utils.echo_message(
+                    "Not found: " + tile_id + " from global_constants"
+                )
+
 
     def validate_object_ids(self):
         # guard against (1) too many objects (2) invalid objects
