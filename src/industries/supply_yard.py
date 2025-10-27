@@ -12,7 +12,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_BASE)",
     fund_cost_multiplier="110",
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(
@@ -31,9 +31,6 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="supply_yard_tile_1",
-    animation_length=71,
-    animation_looping=True,
-    animation_speed=2,
     location_checks=TileLocationChecks(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
