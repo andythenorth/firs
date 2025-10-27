@@ -19,7 +19,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="95",
     provides_snow=True,
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(
@@ -54,6 +54,12 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="glass_works_tile_1",
+    location_checks=TileLocationChecks(
+        require_effectively_flat=True, disallow_industry_adjacent=True
+    ),
+)
+industry.add_tile(
+    id="glass_works_tile_2",
     animation_length=71,
     animation_looping=True,
     animation_speed=2,
@@ -119,7 +125,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="glass_works_spritelayout_3",
-    tile="glass_works_tile_1",
+    tile="glass_works_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay_3,
     building_sprites=[spriteset_3],
