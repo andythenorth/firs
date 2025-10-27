@@ -18,7 +18,7 @@ industry = IndustryPrimaryOrganic(
     fund_cost_multiplier="88",
     primary_production_random_factor_set="wide_range",
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(
@@ -27,6 +27,12 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="herding_coop_tile_1",
+    location_checks=TileLocationChecks(
+        disallow_desert=True, disallow_coast=True, disallow_industry_adjacent=True
+    ),
+)
+industry.add_tile(
+    id="herding_coop_tile_2",
     animation_length=71,
     animation_looping=True,
     animation_speed=2,
@@ -65,7 +71,7 @@ sprite_smoke_1 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="herding_coop_spritelayout_large_hut",
-    tile="herding_coop_tile_1",
+    tile="herding_coop_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
