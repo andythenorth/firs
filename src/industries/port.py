@@ -82,6 +82,9 @@ industry.enable_in_economy(
     ],
 )
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+industry.enable_in_economy(
     "STEELTOWN",
     # quite a lot of accepted types, this is intentional to provide flexibility in obtaining boost
     accept_cargo_types=[

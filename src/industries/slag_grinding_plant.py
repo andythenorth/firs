@@ -30,6 +30,9 @@ industry = IndustrySecondary(
 )
 
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+industry.enable_in_economy(
     "STEELTOWN",
     prob_in_game="0",  # do not build during gameplay
 )
