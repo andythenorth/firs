@@ -50,10 +50,15 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "MILD_MILD_WEST",
     accept_cargo_types=[
-        "FOOD",
+        "ZINC",
     ],
     prod_cargo_types_with_multipliers=[
-        ("FOOD", 12),
+        ("IORE", 18),
+        ("SALT", 14),
+        ("POTA", 14),
+        ("PULP", 14),
+        ("PHOS", 14),
+        ("ZORE", 14),
     ],
 )
 
