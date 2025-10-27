@@ -17,7 +17,7 @@ industry = IndustryPrimaryExtractive(
     provides_snow=True,
     primary_production_random_factor_set="wide_range",
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(
@@ -41,19 +41,6 @@ industry.add_tile(
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP)",
     },
 )
-"""
-item(FEAT_INDUSTRYTILES, oil_wells_tile_1, ${global_constants.tile_numeric_ids['oil_wells_tile_1']}) {
-	property {
-		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
-	}
-	graphics {
-		anim_control:       ${industry.id}_tile_oil_well_random_trigger;
-		random_trigger:     ${industry.id}_tile_oil_well_random_trigger;
-		${industry.id}_tile_fences;
-	}
-}
-
-"""
 industry.add_tile(
     id="oil_wells_tile_2",
     location_checks=TileLocationChecks(disallow_industry_adjacent=True),
