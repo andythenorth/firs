@@ -26,7 +26,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="95",
     pollution_and_squalor_factor=1,
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(
