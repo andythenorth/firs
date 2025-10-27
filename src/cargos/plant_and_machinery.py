@@ -23,5 +23,5 @@ cargo = Cargo(
     icon_indices=(14, 5),
     # used by FIRS GS
     vulcan_town_effect="VTE_GROWTH",
-    sprites_complete=False,
+    sprites_complete=True,
 )
