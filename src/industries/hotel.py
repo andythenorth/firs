@@ -23,7 +23,7 @@ industry = IndustryTertiary(
     # for IndustryTertiary, this property doesn't have to be set unless there's production
     primary_production_random_factor_set="wide_range",
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(

@@ -17,7 +17,7 @@ industry = IndustryPrimaryPort(
     override_default_construction_states=True,
     primary_production_random_factor_set="medium_range",
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(

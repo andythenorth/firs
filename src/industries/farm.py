@@ -19,7 +19,7 @@ industry = IndustryPrimaryOrganic(
     fund_cost_multiplier="49",
     primary_production_random_factor_set="wide_range",
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 # definitely not in Arctic Basic, farm has been added and removed more than once from that economy :P

@@ -17,7 +17,7 @@ industry = IndustryPrimaryOrganic(
     provides_snow=True,
     primary_production_random_factor_set="wide_range",
     sprites_complete=False,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.add_tile(
