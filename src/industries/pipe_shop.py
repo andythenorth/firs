@@ -26,7 +26,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="145",
     intro_year=1790,
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(
@@ -35,6 +35,12 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="pipe_shop_tile_1",
+    location_checks=TileLocationChecks(
+        require_effectively_flat=True, disallow_industry_adjacent=True
+    ),
+)
+industry.add_tile(
+    id="pipe_shop_tile_2",
     animation_length=71,
     animation_looping=True,
     animation_speed=2,
@@ -160,7 +166,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="pipe_shop_spritelayout_8",
-    tile="pipe_shop_tile_1",
+    tile="pipe_shop_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
