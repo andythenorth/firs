@@ -16,7 +16,7 @@ industry = IndustryPrimaryExtractive(
     provides_snow=True,
     primary_production_random_factor_set="wide_range",
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 
@@ -42,6 +42,12 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="coal_mine_tile_1",
+    location_checks=TileLocationChecks(
+        require_effectively_flat=True, disallow_industry_adjacent=True
+    ),
+)
+industry.add_tile(
+    id="coal_mine_tile_2",
     animation_length=81,
     animation_looping=True,
     animation_speed=1,
@@ -95,7 +101,7 @@ spriteset_6 = industry.add_spriteset(
 
 industry.add_spritelayout(
     id="coal_mine_spritelayout_1",
-    tile="coal_mine_tile_1",
+    tile="coal_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[spriteset_1],
