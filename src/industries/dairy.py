@@ -27,6 +27,11 @@ industry.enable_in_economy(
 )
 industry.enable_in_economy(
     "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("MILK", 4),
+        ("ENUM", 2),
+        ("PACK", 2),
+    ],
 )
 
 industry.add_tile(
