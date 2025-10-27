@@ -35,6 +35,8 @@ industry.enable_in_economy(
     ],
 )
 
+# !! remove the windill layout, then de-animate the tile
+
 industry.add_tile(
     id="flour_mill_tile_1",
     animation_length=6,
