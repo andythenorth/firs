@@ -23,7 +23,7 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_AUTOMOTIVE)",
     fund_cost_multiplier="145",
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(
@@ -32,9 +32,6 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="assembly_plant_tile_1",
-    animation_length=71,
-    animation_looping=True,
-    animation_speed=2,
     location_checks=TileLocationChecks(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
@@ -77,12 +74,6 @@ spriteset_11 = industry.add_spriteset(
 )
 spriteset_12 = industry.add_spriteset(
     sprites=[(640, 100, 64, 80, -31, -49)],
-)
-sprite_smoke = industry.add_smoke_sprite(
-    smoke_type="dark_smoke_small",
-    xoffset=13,
-    yoffset=0,
-    zoffset=73,
 )
 
 industry.add_spritelayout(
