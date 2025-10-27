@@ -30,6 +30,10 @@ industry.enable_in_economy(
 )
 industry.enable_in_economy(
     "MILD_MILD_WEST",
+    prod_cargo_types_with_multipliers=[
+        ("OIL_", 11),
+        ("ACAC", 7),
+    ],
 )
 
 industry.add_tile(

@@ -83,6 +83,16 @@ industry.enable_in_economy(
 )
 industry.enable_in_economy(
     "MILD_MILD_WEST",
+    accept_cargo_types=[
+        "KAOL",
+        "FOOD",
+    ],
+    prod_cargo_types_with_multipliers=[
+        ("GLAS", 14),
+        ("FMSP", 14),
+        ("ENSP", 17),
+        ("TIN_", 17),
+    ],
 )
 industry.enable_in_economy(
     "STEELTOWN",

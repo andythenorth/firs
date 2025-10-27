@@ -22,6 +22,9 @@ industry = IndustryPrimaryExtractive(
 
 industry.enable_in_economy(
     "MILD_MILD_WEST",
+    prod_cargo_types_with_multipliers=[
+        ("LIME", 18),
+    ],
 )
 industry.enable_in_economy(
     "STEELTOWN",
