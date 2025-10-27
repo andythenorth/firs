@@ -42,8 +42,8 @@ industry.add_tile(
 # tile with animation for smoke
 industry.add_tile(
     id="dairy_tile_2",
-    animation_length=7
-    * 6,  # animation length should have a common factor for all tiles in industry
+    # animation length should have a common factor for all tiles in industry - is this still true?
+    animation_length=7 * 6,
     animation_looping=True,
     animation_speed=3,
     custom_animation_control={
