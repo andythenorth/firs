@@ -28,7 +28,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="160",
     pollution_and_squalor_factor=2,
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(
@@ -37,6 +37,12 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="basic_oxygen_furnace_tile_1",
+    location_checks=TileLocationChecks(
+        require_effectively_flat=True, disallow_industry_adjacent=True
+    ),
+)
+industry.add_tile(
+    id="basic_oxygen_furnace_tile_2",
     animation_length=7,
     animation_looping=True,
     animation_speed=3,
@@ -49,7 +55,7 @@ industry.add_tile(
     ),
 )
 industry.add_tile(
-    id="basic_oxygen_furnace_tile_2",
+    id="basic_oxygen_furnace_tile_3",
     animation_length=36,
     animation_looping=True,
     animation_speed=4,  # 4 is intended, use 5 for slower frame testing when drawing sprites
@@ -243,7 +249,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_air_plant",
-    tile="basic_oxygen_furnace_tile_1",
+    tile="basic_oxygen_furnace_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_air_plant],
@@ -262,7 +268,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_casting_shed",
-    tile="basic_oxygen_furnace_tile_1",
+    tile="basic_oxygen_furnace_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_caster],
@@ -326,7 +332,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_animated_casting_front_part",
-    tile="basic_oxygen_furnace_tile_2",
+    tile="basic_oxygen_furnace_tile_3",
     ground_sprite=spriteset_ground_tile_animated_crane,
     ground_overlay=spriteset_ground_tile_animated_crane,
     building_sprites=[
@@ -340,7 +346,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_animated_casting_rear_part",
-    tile="basic_oxygen_furnace_tile_2",
+    tile="basic_oxygen_furnace_tile_3",
     ground_sprite=spriteset_ground_tile_animated_metal_run,
     ground_overlay=spriteset_ground_tile_animated_metal_run,
     building_sprites=[
