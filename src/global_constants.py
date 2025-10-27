@@ -318,7 +318,7 @@ tile_numeric_ids = dict(
     pyrite_smelter_tile_1=249,
     liquids_terminal_tile_1=250,
     liquids_terminal_tile_2=251,
-    ####UNUSED?####=252,
+    carbon_black_plant_tile_2=252,
     body_plant_tile_2=253,
     chemical_plant_tile_2=254,
 )
