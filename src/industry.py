@@ -1716,7 +1716,10 @@ class Industry(object):
 
     @property
     def numeric_id(self):
-        return global_constants.industry_numeric_ids[self.id]
+        try:
+            return global_constants.industry_numeric_ids[self.id]
+        except Exception as e:
+            raise Exception(f"Can't get numeric id for {self.id} - check `{self.id}` is in global_constants.industry_numeric_ids") from e
 
     @property
     def economies_enabled_for_industry(self):

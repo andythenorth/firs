@@ -28,6 +28,17 @@ industry.enable_in_economy(
     ],
 )
 # industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('CMNT', 8), ('PETR', 8), ('VEHI', 8), ('BOOM', 8), ('WDPR', 8)]
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("CMNT", 8),
+        ("VEHI", 8),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("ENSP", 4),
+        ("FMSP", 4),
+    ],
+)
 
 industry.add_tile(
     id="supply_yard_tile_1",

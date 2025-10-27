@@ -27,6 +27,9 @@ industry.enable_in_economy(
     ],
 )
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+industry.enable_in_economy(
     "STEELTOWN",
     prob_map_gen="10",
     vulcan_config={
