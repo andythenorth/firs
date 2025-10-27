@@ -319,7 +319,7 @@ tile_numeric_ids = dict(
     liquids_terminal_tile_1=250,
     liquids_terminal_tile_2=251,
     ####UNUSED?####=252,
-    ####UNUSED?####=253,
+    body_plant_tile_2=253,
     chemical_plant_tile_2=254,
 )
 
