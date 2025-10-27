@@ -25,6 +25,10 @@ industry = IndustryPrimaryPort(
     animated_tiles_fixed=False,
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+
 industry.add_tile(
     id="nuclear_power_plant_tile_1",
     animation_length=7,

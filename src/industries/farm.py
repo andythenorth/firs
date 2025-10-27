@@ -32,8 +32,10 @@ industry.enable_in_economy(
     ],
     prob_map_gen="14",
 )
-
 # ['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('MAIZ', 14), ('LVST', 13), ('NUTS', 14), ('WOOL', 10),]
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
 
 industry.enable_in_economy(
     "STEELTOWN",

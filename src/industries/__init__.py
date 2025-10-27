@@ -2,6 +2,7 @@
 # - for ease of maintaining
 # - object category sort order depends on them
 industry_module_names = [
+    "ammonia_plant",
     "appliance_factory",
     "arable_farm",
     "assembly_plant",
@@ -30,7 +31,11 @@ industry_module_names = [
     "elastomer_products_plant",
     "electric_arc_furnace",
     "engine_plant",
+    "factory_2",
+    "factory_3",
     "farm",
+    "feed_mill",
+    "fertiliser_plant",
     "fish_farm",
     "fishing_grounds",
     "fishing_harbour",
@@ -51,6 +56,8 @@ industry_module_names = [
     "manganese_mine",
     "metal_works",
     "nitrate_mine",
+    "nuclear_power_plant",
+    "oil_refinery",
     "oil_rig",
     "oil_wells",
     "orchard_piggery",
@@ -58,6 +65,7 @@ industry_module_names = [
     "peatlands",
     "petrol_pump",
     "phosphate_mine",
+    "phosphoric_acid_plant",
     "pipe_shop",
     "power_systems_factory",
     "plate_mill",
@@ -73,6 +81,7 @@ industry_module_names = [
     "sawmill",
     "scrap_yard",
     "section_and_bar_mill",
+    "sheep_farm",
     "slag_grinding_plant",
     "soda_ash_mine",
     "steel_forge_and_foundry",
@@ -80,6 +89,7 @@ industry_module_names = [
     "strip_mill",
     "supply_yard",
     "timber_yard",
+    "tinplate_works",
     "tracked_machine_factory",
     "trading_post",
     "tube_and_pipe_mill",
@@ -88,4 +98,5 @@ industry_module_names = [
     "vineyard",
     "wharf",
     "wire_rod_mill",
+    "zinc_smelter",
 ]

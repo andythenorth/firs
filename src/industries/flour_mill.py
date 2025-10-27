@@ -25,7 +25,9 @@ industry.enable_in_economy("BASIC_TROPIC")
 industry.economy_variations["BASIC_TROPIC"].accept_cargos_with_input_ratios = [
     ("GRAI", 6)
 ]
-
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
 
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
