@@ -3,7 +3,7 @@ from industry import IndustrySecondary, TileLocationChecks
 # fabricator of pressure-grade, assembled liquid-handling systems
 
 industry = IndustrySecondary(
-    id="pipework_fabricator",
+    id="pipe_shop",
     accept_cargos_with_input_ratios=[("STPP", 2), ("STPL", 2), ("PUMP", 2), ("COAT", 1), ("WELD", 1)],
     prod_cargo_types_with_output_ratios=[
         # high output production is unwanted
@@ -34,7 +34,7 @@ industry.enable_in_economy(
 )
 
 industry.add_tile(
-    id="pipework_fabricator_tile_1",
+    id="pipe_shop_tile_1",
     animation_length=71,
     animation_looping=True,
     animation_speed=2,
@@ -102,48 +102,48 @@ sprite_smoke = industry.add_smoke_sprite(
 )
 
 industry.add_spritelayout(
-    id="pipework_fabricator_spritelayout_1",
-    tile="pipework_fabricator_tile_1",
+    id="pipe_shop_spritelayout_1",
+    tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="pipework_fabricator_spritelayout_2",
-    tile="pipework_fabricator_tile_1",
+    id="pipe_shop_spritelayout_2",
+    tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="pipework_fabricator_spritelayout_3",
-    tile="pipework_fabricator_tile_1",
+    id="pipe_shop_spritelayout_3",
+    tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="pipework_fabricator_spritelayout_4",
-    tile="pipework_fabricator_tile_1",
+    id="pipe_shop_spritelayout_4",
+    tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="pipework_fabricator_spritelayout_5",
-    tile="pipework_fabricator_tile_1",
+    id="pipe_shop_spritelayout_5",
+    tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="pipework_fabricator_spritelayout_6",
-    tile="pipework_fabricator_tile_1",
+    id="pipe_shop_spritelayout_6",
+    tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     # building_sprites = [spriteset_6, spriteset_14], # commented due to spritesorter issues obscuring spriteset_14
@@ -151,16 +151,16 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="pipework_fabricator_spritelayout_7",
-    tile="pipework_fabricator_tile_1",
+    id="pipe_shop_spritelayout_7",
+    tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="pipework_fabricator_spritelayout_8",
-    tile="pipework_fabricator_tile_1",
+    id="pipe_shop_spritelayout_8",
+    tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
@@ -168,48 +168,48 @@ industry.add_spritelayout(
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="pipework_fabricator_spritelayout_9",
-    tile="pipework_fabricator_tile_1",
+    id="pipe_shop_spritelayout_9",
+    tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="pipework_fabricator_spritelayout_10",
-    tile="pipework_fabricator_tile_1",
+    id="pipe_shop_spritelayout_10",
+    tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_10],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="pipework_fabricator_spritelayout_11",
-    tile="pipework_fabricator_tile_1",
+    id="pipe_shop_spritelayout_11",
+    tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_11],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="pipework_fabricator_spritelayout_12",
-    tile="pipework_fabricator_tile_1",
+    id="pipe_shop_spritelayout_12",
+    tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_12],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="pipework_fabricator_spritelayout_13",
-    tile="pipework_fabricator_tile_1",
+    id="pipe_shop_spritelayout_13",
+    tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_13],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
-    id="pipework_fabricator_spritelayout_14",
-    tile="pipework_fabricator_tile_1",
+    id="pipe_shop_spritelayout_14",
+    tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[],
@@ -218,62 +218,62 @@ industry.add_spritelayout(
 
 # this industry needs outpost layout as there are lots of cargos
 industry.add_industry_outpost_layout(
-    id="pipework_fabricator_industry_outpost_layout_1",
+    id="pipe_shop_industry_outpost_layout_1",
     layout=[
         # test outpost layout
         (
             0,
             0,
-            "pipework_fabricator_spritelayout_1",
+            "pipe_shop_spritelayout_1",
         ),
         (
             0,
             1,
-            "pipework_fabricator_spritelayout_10",
+            "pipe_shop_spritelayout_10",
         ),
         (
             0,
             2,
-            "pipework_fabricator_spritelayout_12",
+            "pipe_shop_spritelayout_12",
         ),
         (
             1,
             0,
-            "pipework_fabricator_spritelayout_9",
+            "pipe_shop_spritelayout_9",
         ),
         (
             1,
             1,
-            "pipework_fabricator_spritelayout_8",
+            "pipe_shop_spritelayout_8",
         ),
         (
             1,
             2,
-            "pipework_fabricator_spritelayout_13",
+            "pipe_shop_spritelayout_13",
         ),
     ],
 )
 
 industry.add_industry_layout(
-    id="pipework_fabricator_industry_layout_1",
+    id="pipe_shop_industry_layout_1",
     layout=[
-        (0, 0, "pipework_fabricator_spritelayout_3"),
-        (0, 1, "pipework_fabricator_spritelayout_4"),
-        (0, 2, "pipework_fabricator_spritelayout_1"),
-        (0, 3, "pipework_fabricator_spritelayout_10"),
-        (0, 4, "pipework_fabricator_spritelayout_1"),
-        (0, 5, "pipework_fabricator_spritelayout_10"),
-        (1, 0, "pipework_fabricator_spritelayout_12"),
-        (1, 1, "pipework_fabricator_spritelayout_11"),
-        (1, 2, "pipework_fabricator_spritelayout_9"),
-        (1, 3, "pipework_fabricator_spritelayout_8"),
-        (1, 4, "pipework_fabricator_spritelayout_9"),
-        (1, 5, "pipework_fabricator_spritelayout_8"),
-        (2, 0, "pipework_fabricator_spritelayout_13"),
-        (2, 1, "pipework_fabricator_spritelayout_13"),
-        (2, 2, "pipework_fabricator_spritelayout_14"),
-        (2, 3, "pipework_fabricator_spritelayout_2"),
-        (2, 4, "pipework_fabricator_spritelayout_1"),
-        (2, 5, "pipework_fabricator_spritelayout_1"),
+        (0, 0, "pipe_shop_spritelayout_3"),
+        (0, 1, "pipe_shop_spritelayout_4"),
+        (0, 2, "pipe_shop_spritelayout_1"),
+        (0, 3, "pipe_shop_spritelayout_10"),
+        (0, 4, "pipe_shop_spritelayout_1"),
+        (0, 5, "pipe_shop_spritelayout_10"),
+        (1, 0, "pipe_shop_spritelayout_12"),
+        (1, 1, "pipe_shop_spritelayout_11"),
+        (1, 2, "pipe_shop_spritelayout_9"),
+        (1, 3, "pipe_shop_spritelayout_8"),
+        (1, 4, "pipe_shop_spritelayout_9"),
+        (1, 5, "pipe_shop_spritelayout_8"),
+        (2, 0, "pipe_shop_spritelayout_13"),
+        (2, 1, "pipe_shop_spritelayout_13"),
+        (2, 2, "pipe_shop_spritelayout_14"),
+        (2, 3, "pipe_shop_spritelayout_2"),
+        (2, 4, "pipe_shop_spritelayout_1"),
+        (2, 5, "pipe_shop_spritelayout_1"),
     ],
 )

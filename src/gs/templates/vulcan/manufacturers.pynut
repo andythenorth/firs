@@ -174,7 +174,7 @@ class VulcanManufacturers {
         }
         local cabbage_industries = {
             foo_1 = ["blast_furnace", "electric_arc_furnace", "basic_oxygen_furnace", "assembly_plant", "body_plant", "engine_plant"],
-            foo_2 = ["precision_parts_plant", "metal_works", "appliance_factory", "chlor_alkali_plant", "cryo_plant", "pipework_fabricator"],
+            foo_2 = ["precision_parts_plant", "metal_works", "appliance_factory", "chlor_alkali_plant", "cryo_plant", "pipe_shop"],
         }
 
         foreach (tier_id, cabbage_tier in cabbage_tiers) {
@@ -255,7 +255,7 @@ class TestManufacturerCabbage {
             automaker = ["assembly_plant", "body_plant", "engine_plant"],
             equipment_manufacturer = ["precision_parts_plant", "metal_works", "appliance_factory"],
             chemicals_manufacturer = ["chlor_alkali_plant", "cryo_plant"],
-            building_materials_manufacturer = ["concrete_plant", "pipework_fabricator"],
+            building_materials_manufacturer = ["concrete_plant", "pipe_shop"],
         };
         return anchors_temp[manufacturer["category"]];
     }

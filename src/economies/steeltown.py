@@ -109,7 +109,7 @@ economy = Economy(
                     "pipework",
                     "assembly_plant",
                     #"tracked_machine_factory",
-                    #"pipework_fabricator",
+                    #"pipe_shop",
                 ],
             ),
         ],

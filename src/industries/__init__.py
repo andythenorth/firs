@@ -58,7 +58,7 @@ industry_module_names = [
     "peatlands",
     "petrol_pump",
     "phosphate_mine",
-    "pipework_fabricator",
+    "pipe_shop",
     "power_systems_factory",
     "plate_mill",
     "port",
