@@ -9,7 +9,7 @@ industry = IndustrySecondary(
         ("NH3_", 2),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("PACH", 4),
+        ("PRCH", 4),
         ("ENUM", 4),
     ],
     prob_in_game="7",

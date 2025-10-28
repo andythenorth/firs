@@ -2,6 +2,7 @@
 # - for ease of maintaining
 # - object category sort order depends on them
 industry_module_names = [
+    "aluminium_plant",
     "ammonia_plant",
     "appliance_factory",
     "arable_farm",
@@ -31,7 +32,7 @@ industry_module_names = [
     "elastomer_products_plant",
     "electric_arc_furnace",
     "engine_plant",
-    "factory_2",
+    "packaging_factory",
     "factory_3",
     "farm",
     "feed_mill",
