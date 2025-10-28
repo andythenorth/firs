@@ -15,16 +15,22 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_ELASTOMER_PLANT)",
     fund_cost_multiplier="45",
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(
     "STEELTOWN",
 )
 
-# tile with animation for flag
 industry.add_tile(
     id="elastomer_products_plant_tile_1",
+    location_checks=TileLocationChecks(
+        require_effectively_flat=True, disallow_industry_adjacent=True
+    ),
+)
+# tile with animation for flag
+industry.add_tile(
+    id="elastomer_products_plant_tile_2",
     animation_length=6,
     animation_looping=True,
     animation_speed=3,
@@ -34,7 +40,7 @@ industry.add_tile(
 )
 # tile with animation for smoke
 industry.add_tile(
-    id="elastomer_products_plant_tile_2",
+    id="elastomer_products_plant_tile_3",
     animation_length=7
     * 6,  # animation length should have a common factor for all tiles in industry
     animation_looping=True,
@@ -116,7 +122,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="elastomer_products_plant_spritelayout_2",
-    tile="elastomer_products_plant_tile_1",
+    tile="elastomer_products_plant_tile_2",
     ground_sprite=spriteset_ground_anim,
     ground_overlay=spriteset_ground_overlay_anim,
     building_sprites=[spriteset_2, spriteset_flag_anim],
@@ -156,7 +162,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="elastomer_products_plant_spritelayout_7",
-    tile="elastomer_products_plant_tile_2",
+    tile="elastomer_products_plant_tile_3",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
