@@ -21,7 +21,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="190",
     pollution_and_squalor_factor=2,
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(
@@ -39,6 +39,12 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="blast_furnace_tile_1",
+    location_checks=TileLocationChecks(
+        require_effectively_flat=True, disallow_industry_adjacent=True
+    ),
+)
+industry.add_tile(
+    id="blast_furnace_tile_2",
     animation_length=7,
     animation_looping=True,
     animation_speed=3,
@@ -50,9 +56,8 @@ industry.add_tile(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
 )
-
 industry.add_tile(
-    id="blast_furnace_tile_2",
+    id="blast_furnace_tile_3",
     animation_length=30,
     animation_looping=True,
     animation_speed=4,
@@ -156,7 +161,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="blast_furnace_spritelayout_blast_furnace_1",
-    tile="blast_furnace_tile_1",
+    tile="blast_furnace_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_blast_furnace_1],
@@ -205,21 +210,21 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="blast_furnace_spritelayout_large_shed_rear_part",
-    tile="blast_furnace_tile_2",
+    tile="blast_furnace_tile_3",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_large_shed_rear_part],
 )
 industry.add_spritelayout(
     id="blast_furnace_spritelayout_large_shed_front_part",
-    tile="blast_furnace_tile_2",
+    tile="blast_furnace_tile_3",
     ground_sprite=spriteset_ground_tile_dark_animated,
     ground_overlay=spriteset_ground_tile_dark_animated,
     building_sprites=[spriteset_large_shed_front_part_animated],
 )
 industry.add_spritelayout(
     id="blast_furnace_spritelayout_casting_shed",
-    tile="blast_furnace_tile_1",
+    tile="blast_furnace_tile_3",
     ground_sprite=spriteset_ground_tile_dark_animated,
     ground_overlay=spriteset_ground_tile_dark_animated,
     building_sprites=[spriteset_casting_shed_animated],
