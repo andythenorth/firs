@@ -3,7 +3,9 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="aluminium_plant",
     accept_cargos_with_input_ratios=[
-        ("ALO_", 8),
+        ("ALO_", 4),
+        ("PRCH", 2),
+        ("PECO", 2),
     ],
     prod_cargo_types_with_output_ratios=[
         ("ALUM", 8),
@@ -20,7 +22,7 @@ industry = IndustrySecondary(
     animated_tiles_fixed=False,
 )
 
-# industry.enable_in_economy("MILD_MILD_WEST",)
+industry.enable_in_economy("MILD_MILD_WEST",)
 
 industry.add_tile(
     id="aluminium_plant_tile_1",

@@ -59,6 +59,7 @@ industry.enable_in_economy(
         ("PULP", 14),
         ("PHOS", 14),
         ("ZORE", 14),
+        ("ALO_", 14),
     ],
 )
 

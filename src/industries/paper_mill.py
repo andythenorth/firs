@@ -38,7 +38,7 @@ industry.enable_in_economy(
         ("KAOL", 2),
         ("WOOD", 2),
         ("PULP", 2),
-        ("PACH", 2),
+        ("PRCH", 2),
     ],
 )
 
