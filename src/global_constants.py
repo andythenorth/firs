@@ -107,7 +107,7 @@ industry_numeric_ids = dict(
     cider_mill=98,
     lime_kiln=99,
     metal_works=100,
-    factory_2 = 101,
+    packaging_factory = 101,
     factory_3 = 102,
     tube_and_pipe_mill=103,
     ###BLTC###solvay_plant = 104,
@@ -128,6 +128,7 @@ industry_numeric_ids = dict(
     concrete_plant=119,
     elastomer_products_plant=120,
     power_systems_factory=121,
+    aluminium_plant=122,
     # 127 left free for GarryG
 )
 # Definition of industry tile numeric IDs
@@ -192,7 +193,7 @@ tile_numeric_ids = dict(
     pipe_shop_tile_2=103,
     coke_oven_tile_3=104,
     metal_works_tile_1=105,
-    factory_2_tile_1=106,
+    packaging_factory_tile_1=106,
     factory_3_tile_1=107,
     soda_ash_mine_tile_3=108,
     basic_oxygen_furnace_tile_3=109,

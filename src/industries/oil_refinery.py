@@ -6,9 +6,7 @@ industry = IndustrySecondary(
         ("OIL_", 8),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("PETR", 3),
-        ("NAPH", 3),
-        ("BITU", 2),
+        ("PETR", 6),
     ],
     prob_in_game="3",
     prob_map_gen="5",
@@ -24,6 +22,12 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "MILD_MILD_WEST",
+    prod_cargo_types_with_output_ratios=[
+        ("NAPH", 3),
+        ("PETR", 2),
+        ("BITU", 2),
+        ("PECO", 1),
+    ],
 )
 
 industry.add_tile(
