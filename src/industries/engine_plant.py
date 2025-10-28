@@ -22,7 +22,7 @@ industry = IndustrySecondary(
     fund_cost_multiplier="120",
     pollution_and_squalor_factor=1,
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(
@@ -31,9 +31,6 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="engine_plant_tile_1",
-    animation_length=47,
-    animation_looping=True,
-    animation_speed=2,
     location_checks=TileLocationChecks(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
@@ -64,12 +61,6 @@ spriteset_6 = industry.add_spriteset(
 spriteset_7 = industry.add_spriteset(
     sprites=[(430, 60, 64, 31, -31, 0)],
 )
-sprite_smoke = industry.add_smoke_sprite(
-    smoke_type="dark_smoke_small",
-    xoffset=0,
-    yoffset=8,
-    zoffset=53,
-)
 
 industry.add_spritelayout(
     id="engine_plant_spritelayout_1",
@@ -77,7 +68,6 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
-    smoke_sprites=[sprite_smoke],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=1,
 )
