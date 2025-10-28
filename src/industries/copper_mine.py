@@ -17,7 +17,7 @@ industry = IndustryPrimaryExtractive(
     pollution_and_squalor_factor=1,
     primary_production_random_factor_set="wide_range",
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(
@@ -32,6 +32,10 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="copper_mine_tile_1",
+    location_checks=TileLocationChecks(disallow_industry_adjacent=True),
+)
+industry.add_tile(
+    id="copper_mine_tile_2",
     animation_length=71,
     animation_looping=True,
     animation_speed=2,
@@ -88,7 +92,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_mine_spritelayout_3_anim",
-    tile="copper_mine_tile_1",
+    tile="copper_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_3_anim],
@@ -104,7 +108,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="copper_mine_spritelayout_5",
-    tile="copper_mine_tile_1",
+    tile="copper_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=sprite_ground_overlay,
     building_sprites=[sprite_5],
