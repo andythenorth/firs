@@ -18,7 +18,7 @@ industry = IndustryPrimaryExtractive(
     pollution_and_squalor_factor=1,
     primary_production_random_factor_set="wide_range",
     sprites_complete=True,
-    animated_tiles_fixed=False,
+    animated_tiles_fixed=True,
 )
 
 industry.enable_in_economy(
@@ -30,6 +30,12 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="nitrate_mine_tile_1",
+    location_checks=TileLocationChecks(
+        require_effectively_flat=True, disallow_industry_adjacent=True
+    ),
+)
+industry.add_tile(
+    id="nitrate_mine_tile_2",
     animation_length=7,
     animation_looping=True,
     animation_speed=3,
@@ -80,7 +86,7 @@ sprite_smoke_1 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="nitrate_mine_spritelayout_chimney",
-    tile="nitrate_mine_tile_1",
+    tile="nitrate_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
