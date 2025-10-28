@@ -134,6 +134,7 @@ industry_numeric_ids = dict(
 # tiles 0-xxx currently vacant
 tile_numeric_ids = dict(
     # 0 left free for GarryG
+    dairy_tile_3=56,
     pyrite_mine_tile_4=57,
     potash_mine_tile_4=58,
     pyrite_smelter_tile_2=59,
