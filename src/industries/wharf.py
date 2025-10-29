@@ -56,7 +56,7 @@ industry.enable_in_economy(
         ("IORE", 18),
         ("SALT", 14),
         ("POTA", 14),
-        ("PULP", 14),
+        ("WOOD", 14),
         ("PHOS", 14),
         ("ZORE", 14),
         ("ALO_", 14),

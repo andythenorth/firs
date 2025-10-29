@@ -35,6 +35,7 @@ cargo_module_names = [
     "ferroalloys",
     "fertiliser",
     "fish",
+    "flour",
     "food",
     "food_additives",
     "forgings_and_castings",
@@ -56,6 +57,7 @@ cargo_module_names = [
     "molasses",
     "naphtha",
     "nitrates",
+    "nitric_acid",
     "nitrogen",
     "nuclear_fuel",
     "nuclear_waste",
@@ -115,7 +117,6 @@ cargo_module_names = [
     "vehicles",
     "welding_consumables",
     "wool",
-    "yeast",
     "zinc",
     "zinc_ore",
 ]

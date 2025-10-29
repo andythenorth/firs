@@ -1,13 +1,17 @@
 from industry import IndustrySecondary, TileLocationChecks
 
+# !! ID and files need changed to fermentation_plant
+
 industry = IndustrySecondary(
     id="feed_mill",
+    # !! CABBAGE - are these 6 values valid?  They sum to more than 8 !!
     accept_cargos_with_input_ratios=[
         ("GRAI", 6),
         ("MOLA", 6),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("FMSP", 8),
+        ("FMSP", 3),
+        ("ENUM", 3),
     ],
     prob_in_game="3",
     prob_map_gen="5",

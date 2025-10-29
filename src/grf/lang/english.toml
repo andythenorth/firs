@@ -216,6 +216,9 @@ base = "Farm Supplies"
 [STR_CARGO_NAME_FERTILISER]
 base = "Fertiliser"
 
+[STR_CARGO_NAME_FLOUR]
+base = "Flour"
+
 [STR_CARGO_NAME_FOOD_ADDITIVES]
 base = "Food Additives"
 
@@ -256,13 +259,16 @@ base = "Manganese"
 base = "Molasses"
 
 [STR_CARGO_NAME_NAPHTHA]
-base = "Naphtha"
+base = "Light Hydrocarbons"
 
 [STR_CARGO_NAME_NICKEL]
 base = "Nickel"
 
 [STR_CARGO_NAME_NITRATES]
 base = "Nitrates"
+
+[STR_CARGO_NAME_NITRIC_ACID]
+base = "Nitric Acid"
 
 [STR_CARGO_NAME_NITROGEN]
 base = "Nitrogen"
@@ -543,17 +549,20 @@ base = "{WEIGHT} of ferroalloys"
 [STR_CARGO_UNIT_FERTILISER]
 base = "{WEIGHT} of fertiliser"
 
+[STR_CARGO_UNIT_FISH]
+base = "{WEIGHT} of fish"
+
+[STR_CARGO_UNIT_FLOUR]
+base = "{WEIGHT} of flour"
+
+[STR_CARGO_UNIT_FMSP]
+base = "{SIGNED_WORD} crate{P 0 \"\" s} of farm supplies"
+
 [STR_CARGO_UNIT_FOOD_ADDITIVES]
 base = "{WEIGHT} of food additives"
 
 [STR_CARGO_UNIT_FORGINGS_AND_CASTINGS]
 base = "{WEIGHT} of forgings & castings"
-
-[STR_CARGO_UNIT_FISH]
-base = "{WEIGHT} of fish"
-
-[STR_CARGO_UNIT_FMSP]
-base = "{SIGNED_WORD} crate{P 0 \"\" s} of farm supplies"
 
 [STR_CARGO_UNIT_FRUITS]
 base = "{WEIGHT} of fruit"
@@ -589,13 +598,16 @@ base = "{VOLUME} of milk"
 base = "{VOLUME} of molasses"
 
 [STR_CARGO_UNIT_NAPHTHA]
-base = "{VOLUME} of naphtha"
+base = "{VOLUME} of light hydrocarbons"
 
 [STR_CARGO_UNIT_NICKEL]
 base = "{WEIGHT} of nickel"
 
 [STR_CARGO_UNIT_NITRATES]
 base = "{WEIGHT} of nitrates"
+
+[STR_CARGO_UNIT_NITRIC_ACID]
+base = "{VOLUME} of nitric acid"
 
 [STR_CARGO_UNIT_NITROGEN]
 base = "{VOLUME} of nitrogen"
@@ -888,6 +900,9 @@ base = "{TINYFONT}FL"
 [STR_CID_FISH]
 base = "{TINYFONT}FI"
 
+[STR_CID_FLOUR]
+base = "{TINYFONT}FL"
+
 [STR_CID_FOOD_ADDITIVES]
 base = "{TINYFONT}FV"
 
@@ -931,13 +946,16 @@ base = "{TINYFONT}MK"
 base = "{TINYFONT}MO"
 
 [STR_CID_NAPHTHA]
-base = "{TINYFONT}NA"
+base = "{TINYFONT}LH"
 
 [STR_CID_NICKEL]
 base = "{TINYFONT}NK"
 
 [STR_CID_NITRATES]
 base = "{TINYFONT}NI"
+
+[STR_CID_NITRIC_ACID]
+base = "{TINYFONT}NA"
 
 [STR_CID_NITROGEN]
 base = "{TINYFONT}N7"
@@ -1170,6 +1188,9 @@ base = "Assembly Plant"
 [STR_IND_SECTION_AND_BAR_MILL]
 base = "Section & Bar Mill"
 
+[STR_IND_BAKERY]
+base = "Bakery"
+
 [STR_IND_BASIC_OXYGEN_FURNACE]
 base = "Basic Oxygen Furnace"
 
@@ -1261,10 +1282,10 @@ base = "Fertiliser Plant"
 base = "Factory 1"
 
 [STR_IND_FACTORY_3]
-base = "Factory 3"
+base = "Specialty Chemicals Plant"
 
 [STR_IND_FEED_MILL]
-base = "Feed Mill"
+base = "Fermentation Plant"
 
 [STR_IND_FISH_FARM]
 base = "Fish Farm"
@@ -1357,7 +1378,7 @@ base = "Pipe Shop"
 base = "Plate Mill"
 
 [STR_IND_PLASTICS_PLANT]
-base = "PVC Plant"
+base = "Polymer Products Plant"
 
 [STR_IND_PORT]
 base = "Port"
@@ -1502,6 +1523,9 @@ base = "Electro Goods"
 
 [STR_STATION_AUTOMOTIVE]
 base = "Automotive"
+
+[STR_STATION_BAKERY]
+base = "Bakery"
 
 [STR_STATION_BAR_AND_SECTION_MILL]
 base = "Girders"

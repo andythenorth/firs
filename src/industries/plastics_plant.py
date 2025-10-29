@@ -3,12 +3,13 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="plastics_plant",
     accept_cargos_with_input_ratios=[
-        ("CHLO", 4),
-        ("C2H4", 4),
+        ("PLAS", 5),
+        ("KAOL", 2),
+        ("PRCH", 1),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("PLAS", 3),
-        ("COAT", 3),
+        ("GOOD", 4),
+        ("HWAR", 4),
     ],
     prob_in_game="3",
     prob_map_gen="5",
@@ -23,6 +24,9 @@ industry = IndustrySecondary(
     animated_tiles_fixed=False,
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
 
 industry.add_tile(
     id="plastics_plant_tile_1",

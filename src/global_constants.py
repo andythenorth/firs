@@ -23,17 +23,17 @@ industry_numeric_ids = dict(
     phosphate_mine=14,
     oil_wells=15,
     oil_rig=16,
-    oil_refinery = 17,
-    ###BLTC###plastics_plant = 18,
+    oil_refinery=17,
+    plastics_plant = 18,
     fish_farm=19,
     dredging_site=20,
-    nuclear_power_plant = 21,
+    nuclear_power_plant=21,
     glass_works=22,
     ####UNUSED?####recycling_plant = 23,
     ####UNUSED?####recycling_depot = 24,
     scrap_yard=25,
     arable_farm=26,
-    sheep_farm = 27,
+    sheep_farm=27,
     dairy_farm=28,
     farm=29,
     fruit_plantation=30,
@@ -46,7 +46,7 @@ industry_numeric_ids = dict(
     stockyard=37,
     tracked_machine_factory=38,
     ####UNUSED?####=39,
-    ammonia_plant = 40,
+    ammonia_plant=40,
     timber_yard=41,
     ###BLTC###textile_mill = 42,
     vineyard=43,
@@ -103,22 +103,22 @@ industry_numeric_ids = dict(
     integrated_steel_mill=94,
     section_and_bar_mill=95,
     body_plant=96,
-    tinplate_works = 97,
+    tinplate_works=97,
     cider_mill=98,
     lime_kiln=99,
     metal_works=100,
-    packaging_factory = 101,
-    factory_3 = 102,
+    packaging_factory=101,
+    factory_3=102,
     tube_and_pipe_mill=103,
     ###BLTC###solvay_plant = 104,
     ###BLTC###salt_mine = 105,
-    fertiliser_plant = 106,
+    fertiliser_plant=106,
     ###BLTC###civil_explosives_facility = 107,
-    phosphoric_acid_plant = 108,
+    phosphoric_acid_plant=108,
     ###BLTC###sulphuric_acid_plant = 109,
     ###BLTC###polypropylene_plant = 110,
     ###BLTC###polyethylene_plant = 111,
-    ###BLTC###ethylene_cracker = 112,
+    bakery=112,
     ##IAHC?##sugar_refinery = 113,
     steel_forge_and_foundry=114,
     wire_rod_mill=115,
@@ -135,6 +135,8 @@ industry_numeric_ids = dict(
 # tiles 0-xxx currently vacant
 tile_numeric_ids = dict(
     # 0 left free for GarryG
+    bakery_tile_1=46,
+    bakery_tile_2=47,
     nitrate_mine_tile_2=48,
     copper_smelter_tile_2=49,
     copper_mine_tile_2=50,
@@ -423,7 +425,6 @@ industry_colour_schemes = {
     # colours may be repeated to give them more weighting in the distribution
     # never use: white, orange, cream; these always look bad
     # names are just for memorability, and use rock stars etc, no semantics at all
-
     # default scheme is muted and removes red, yellow, standard blue, and two greens
     # includes grey, brown, mauve, purple, but at lower weighting
     "scheme_1_elton": [
@@ -653,7 +654,6 @@ industry_colour_schemes = {
         "COLOUR_PURPLE",
     ],
 }
-
 
 
 # valid industry map colours, derived from an algorithm to ensure contrast against green / dark green / purple minimaps

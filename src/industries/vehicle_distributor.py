@@ -24,6 +24,9 @@ industry = IndustryTertiary(
 )
 
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+industry.enable_in_economy(
     "STEELTOWN",
 )
 
