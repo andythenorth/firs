@@ -86,12 +86,14 @@ industry.enable_in_economy(
     accept_cargo_types=[
         "KAOL",
         "FOOD",
+        "BOOM",
     ],
     prod_cargo_types_with_multipliers=[
         ("GLAS", 14),
         ("FMSP", 14),
         ("ENSP", 17),
         ("TIN_", 17),
+        ("VEHI", 17),
     ],
 )
 industry.enable_in_economy(

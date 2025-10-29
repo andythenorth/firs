@@ -33,6 +33,7 @@ industry.enable_in_economy(
     accept_cargos_with_input_ratios=[
         ("CMNT", 8),
         ("VEHI", 8),
+        ("BOOM", 8),
     ],
     prod_cargo_types_with_output_ratios=[
         ("ENSP", 4),
