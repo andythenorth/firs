@@ -8,7 +8,8 @@ industry = IndustrySecondary(
         ("NAPH", 8),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("NH3_", 6),
+        ("NH3_", 5),
+        ("NIAC", 3),
     ],
     prob_in_game="3",
     prob_map_gen="5",
