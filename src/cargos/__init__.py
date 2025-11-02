@@ -48,6 +48,7 @@ cargo_module_names = [
     "kaolin",
     "livestock",
     "limestone",
+    "liquefied_petroleum_gas",
     "logs",
     "lye",
     "mail",

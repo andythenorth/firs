@@ -30,6 +30,7 @@ economy = Economy(
         "iron_ore",
         "kaolin",
         "limestone",
+        "liquefied_petroleum_gas",
         "livestock",
         "logs",
         "mail",
@@ -67,6 +68,20 @@ economy = Economy(
         "zinc_ore",
     ],
     cargoflow_graph_tuning={
+        "wormhole_industries": [
+            "liquids_terminal",
+            "port",
+            "wharf",
+        ],
+        "cargos_with_individual_produce_nodes": [
+            "livestock",
+        ],
+        "cargos_with_individual_accept_nodes": [
+            "limestone",
+            "naphtha",
+            "petrol",
+            "process_chemicals",
+        ],
         "group_edges_subgraphs": [],
         "ranking_subgraphs": [],
         "clusters": [
