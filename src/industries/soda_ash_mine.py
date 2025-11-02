@@ -54,9 +54,9 @@ industry.add_tile(
 )
 industry.add_tile(
     id="soda_ash_mine_tile_3",
-    animation_length=71,
+    animation_length=7,
     animation_looping=True,
-    animation_speed=2,
+    animation_speed=3,
     location_checks=TileLocationChecks(
         require_effectively_flat=True, disallow_industry_adjacent=True
     ),
