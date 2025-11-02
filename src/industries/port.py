@@ -92,6 +92,7 @@ industry.enable_in_economy(
         ("GLAS", 14),
         ("FMSP", 14),
         ("ENSP", 17),
+        ("MOLA", 14),
         ("TIN_", 17),
         ("VEHI", 17),
     ],

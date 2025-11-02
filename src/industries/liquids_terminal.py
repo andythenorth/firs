@@ -30,6 +30,7 @@ industry.enable_in_economy(
 )
 industry.enable_in_economy(
     "MILD_MILD_WEST",
+    accept_cargo_types=["CHIM", "PETR", "SUAC", "LPG_"],
     prod_cargo_types_with_multipliers=[
         ("OIL_", 11),
         ("ACAC", 7),
