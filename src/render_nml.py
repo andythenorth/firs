@@ -99,6 +99,7 @@ def main():
         "perm_storage_mappings",
         "randomise_primary_production_on_build",
         "terrain",
+        "water_objects",
         # items that depend on procedures defined above, so must be defined last
         "objects",
     ]
