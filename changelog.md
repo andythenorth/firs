@@ -2,6 +2,21 @@ Changelog
 =========
 
 --------------
+5.1.0 Release
+--------------
+
+**FIRS 5.1.0 is not savegame-compatible with any previous version of FIRS.**
+
+*Changes*
+
+- added FiXES to incompatible grfs
+
+*Fixes*
+
+- removed unnecessary animation handling from many non-animated tiles, this measurably improves OpenTTD performance in FIRS games
+
+
+--------------
 5.0.1 Release
 --------------
 
