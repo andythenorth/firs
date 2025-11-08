@@ -69,6 +69,8 @@
         switch(FEAT_OBJECTS, SELF, ${grf_object.id}_switch_graphics, [
                                             switch_tile_fences_object(),
                                             switch_terrain_object(),
+                                            STORE_TEMP(switch_object_built_on_water(), ${graphics_temp_storage.var_object_built_on_water}),
+                                            STORE_TEMP(switch_water_object_zoffset(), ${graphics_temp_storage.var_water_object_zoffset}),
                                             view
                                         ]) {
             <tal:views repeat="view_num range(len(grf_object.views))">
@@ -92,7 +94,7 @@
                         introduction_date:      date(1, 1, 1);
                         end_of_life_date:       date(${global_constants.max_game_date}, 1, 1);
                         /* Anything can overbuild the object, removing returns the money, we don't want foundations and we want to allow bridges */
-                        object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_ANIMATED);
+                        object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_ANIMATED, OBJ_FLAG_ON_WATER);
                         height:                 6;
                         num_views:              ${len(grf_object.views)};
                         // name derived from industry currently
