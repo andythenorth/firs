@@ -56,6 +56,7 @@ spriteset_2 = industry.add_spriteset(
 )
 spriteset_3 = industry.add_spriteset(
     sprites=[(150, 10, 64, 78, -31, -45)],
+    always_draw=True,
 )
 
 industry.add_spritelayout(

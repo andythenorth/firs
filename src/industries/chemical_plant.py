@@ -108,6 +108,7 @@ spriteset_vertical_tanks = industry.add_spriteset(
 )
 spriteset_barrels = industry.add_spriteset(
     sprites=[(710, 10, 64, 66, -31, -35)],
+    always_draw=True,
 )
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type="white_smoke_big",

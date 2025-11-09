@@ -57,18 +57,22 @@ spriteset_3 = industry.add_spriteset(
 )
 spriteset_4 = industry.add_spriteset(
     sprites=[(220, 10, 64, 55, -31, -24)],
+    always_draw=True,
 )
 spriteset_5 = industry.add_spriteset(
     sprites=[(290, 10, 64, 55, -31, -24)],
+    always_draw=True,
 )
 spriteset_6 = industry.add_spriteset(
     sprites=[(360, 10, 64, 55, -31, -24)],
+    always_draw=True,
 )
 spriteset_7 = industry.add_spriteset(
     sprites=[(430, 10, 64, 55, -31, -24)],
 )
 spriteset_8 = industry.add_spriteset(
     sprites=[(500, 10, 64, 55, -31, -24)],
+    always_draw=True,
 )
 spriteset_9 = industry.add_spriteset(
     sprites=[(570, 10, 64, 55, -31, -24)],

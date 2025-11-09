@@ -78,15 +78,19 @@ spriteset_tanks = industry.add_spriteset(
 )
 spriteset_small_office = industry.add_spriteset(
     sprites=[(570, 10, 64, 64, -31, -33)],
+    always_draw=True,
 )
 spriteset_coils_1 = industry.add_spriteset(
     sprites=[(360, 80, 64, 31, -31, 0)],
+    always_draw=True,
 )
 spriteset_coils_2 = industry.add_spriteset(
     sprites=[(430, 80, 64, 31, -31, 0)],
+    always_draw=True,
 )
 spriteset_forklift_1 = industry.add_spriteset(
     sprites=[(500, 80, 64, 31, -31, -10)],
+    always_draw=True,
 )
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type="white_smoke_small",

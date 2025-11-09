@@ -133,9 +133,11 @@ spriteset_ore_truck = industry.add_spriteset(
 )
 spriteset_joined_ore_front = industry.add_spriteset(
     sprites=[(220, 10, 64, 122, -31, -90)],
+    always_draw=True,
 )
 spriteset_joined_ore_rear = industry.add_spriteset(
     sprites=[(290, 10, 64, 122, -31, -90)],
+    always_draw=True,
 )
 spriteset_winding_house = industry.add_spriteset(
     sprites=[(360, 10, 64, 122, -31, -90)],

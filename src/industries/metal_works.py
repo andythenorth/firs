@@ -74,9 +74,11 @@ spriteset_small_building_1 = industry.add_spriteset(
 )
 spriteset_greeble_1 = industry.add_spriteset(
     sprites=[(430, 10, 64, 80, -31, -50)],
+    always_draw=True,
 )
 spriteset_greeble_2 = industry.add_spriteset(
     sprites=[(500, 10, 64, 80, -31, -50)],
+    always_draw=True,
 )
 spriteset_small_building_2 = industry.add_spriteset(
     sprites=[(570, 10, 64, 80, -31, -50)],

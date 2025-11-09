@@ -77,15 +77,19 @@ spriteset_jetty_slope_sw_ne = industry.add_spriteset(
 )
 spriteset_tank_1 = industry.add_spriteset(
     sprites=[(10, 110, 64, 31, -31, 0)],
+    always_draw=True,
 )
 spriteset_tank_2 = industry.add_spriteset(
     sprites=[(80, 110, 64, 31, -31, 0)],
+    always_draw=True,
 )
 spriteset_tank_3 = industry.add_spriteset(
     sprites=[(150, 110, 64, 31, -31, 0)],
+    always_draw=True,
 )
 spriteset_tank_4 = industry.add_spriteset(
     sprites=[(220, 110, 64, 31, -31, 0)],
+    always_draw=True,
 )
 spriteset_station_bouy = industry.add_spriteset(
     sprites=[(290, 110, 64, 31, -31, -32)],

@@ -53,6 +53,7 @@ spriteset_shed_2 = industry.add_spriteset(
 )
 spriteset_shed_metal_1 = industry.add_spriteset(
     sprites=[(150, 10, 64, 64, -31, -35)],
+    always_draw=True,
 )
 industry.add_spritelayout(
     id="plate_mill_spritelayout_shed_1",

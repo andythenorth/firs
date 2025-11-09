@@ -43,12 +43,14 @@ spriteset_ground = industry.add_spriteset(
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 shed_1_interior = industry.add_spriteset(
     sprites=[(10, 10, 64, 84, -31, -53)],
+    always_draw=True,
 )
 shed_1 = industry.add_spriteset(
     sprites=[(80, 10, 64, 84, -31, -53)],
 )
 overhead_crane_ground_blocks = industry.add_spriteset(
     sprites=[(150, 10, 64, 84, -31, -53)],
+    always_draw=True,
 )
 overhead_crane_rails_front = industry.add_spriteset(
     sprites=[(220, 10, 64, 84, -31, -53)],
@@ -67,24 +69,31 @@ aggregate_handling_1 = industry.add_spriteset(
 )
 aggregate_handling_2 = industry.add_spriteset(
     sprites=[(570, 10, 64, 84, -31, -53)],
+    always_draw=True,
 )
 mostly_empty = industry.add_spriteset(
     sprites=[(640, 10, 64, 84, -31, -53)],
+    always_draw=True,
 )
 blocks_1 = industry.add_spriteset(
     sprites=[(10, 100, 64, 56, -31, -26)],
+    always_draw=True,
 )
 blocks_2 = industry.add_spriteset(
     sprites=[(80, 100, 64, 56, -31, -26)],
+    always_draw=True,
 )
 pipes_1 = industry.add_spriteset(
     sprites=[(150, 100, 64, 56, -31, -26)],
+    always_draw=True,
 )
 pipes_2 = industry.add_spriteset(
     sprites=[(220, 100, 64, 56, -31, -26)],
+    always_draw=True,
 )
 travelling_crane_rails_and_blocks = industry.add_spriteset(
     sprites=[(290, 100, 64, 56, -31, -26)],
+    always_draw=True,
 )
 travelling_crane_rear = industry.add_spriteset(
     sprites=[(360, 100, 64, 56, -31, -26)],

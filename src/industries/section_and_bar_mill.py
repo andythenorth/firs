@@ -86,12 +86,15 @@ spriteset_6 = industry.add_spriteset(
 )
 spriteset_7 = industry.add_spriteset(
     sprites=[(430, 10, 64, 31, -31, 0)],
+    always_draw=True,
 )
 spriteset_8 = industry.add_spriteset(
     sprites=[(430, 43, 64, 51, -31, -21)],
+    always_draw=True,
 )
 spriteset_9 = industry.add_spriteset(
     sprites=[(500, 43, 64, 51, -31, -21)],
+    always_draw=True,
 )
 spriteset_gantry_non_animated = industry.add_spriteset(
     sprites=[(570, 30, 64, 64, -31, -33)],
@@ -119,6 +122,7 @@ spriteset_rolling_line_metal_animated = industry.add_spriteset(
 )
 spriteset_rolling_line_stand_animated = industry.add_spriteset(
     sprites=[(10, 160, 64, 64, -31, -33)],
+    always_draw=True,
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_rolling_line_metal_animated.sprites),
 )

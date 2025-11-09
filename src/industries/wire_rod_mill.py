@@ -79,9 +79,11 @@ spriteset_7 = industry.add_spriteset(
 )
 spriteset_8 = industry.add_spriteset(
     sprites=[(500, 10, 64, 31, -31, 0)],
+    always_draw=True,
 )
 spriteset_9 = industry.add_spriteset(
     sprites=[(570, 10, 64, 31, -31, 0)],
+    always_draw=True,
 )
 spriteset_10 = industry.add_spriteset(
     sprites=[(500, 60, 64, 51, -31, -21)],

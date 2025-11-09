@@ -96,9 +96,11 @@ spriteset_12 = industry.add_spriteset(
 )
 spriteset_13 = industry.add_spriteset(
     sprites=[(570, 80, 64, 31, -31, 0)],
+    always_draw=True,
 )
 spriteset_14 = industry.add_spriteset(
     sprites=[(640, 80, 64, 31, -31, 0)],
+    always_draw=True,
 )
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type="white_smoke_small",

@@ -63,6 +63,7 @@ spriteset_ground = industry.add_spriteset(
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 stacks_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 56, -31, -26)],
+    always_draw=True,
 )
 shed = industry.add_spriteset(
     sprites=[(80, 10, 64, 56, -31, -26)],
@@ -72,6 +73,7 @@ silo = industry.add_spriteset(
 )
 stacks_2 = industry.add_spriteset(
     sprites=[(150, 10, 64, 56, -31, -26)],
+    always_draw=True,
 )
 industry.add_spritelayout(
     id="builders_yard_spritelayout_1",

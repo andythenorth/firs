@@ -84,9 +84,11 @@ spriteset_conveyors_2 = industry.add_spriteset(
 )
 spriteset_slag_dump_1 = industry.add_spriteset(
     sprites=[(360, 10, 64, 120, -31, -89)],
+    always_draw=True,
 )
 spriteset_slag_dump_2 = industry.add_spriteset(
     sprites=[(430, 10, 64, 120, -31, -89)],
+    always_draw=True,
 )
 # non-standard offsets to position crane over slag pit, may be regrettable
 spriteset_crane = industry.add_spriteset(
@@ -97,9 +99,11 @@ spriteset_office = industry.add_spriteset(
 )
 spriteset_slag_dump_extra_1 = industry.add_spriteset(
     sprites=[(640, 10, 64, 120, -31, -89)],
+    always_draw=True,
 )
 spriteset_slag_dump_extra_2 = industry.add_spriteset(
     sprites=[(710, 10, 64, 120, -31, -89)],
+    always_draw=True,
 )
 spriteset_gatehouse = industry.add_spriteset(
     sprites=[(780, 10, 64, 120, -31, -89)],
@@ -135,6 +139,7 @@ spriteset_animated_ground_overlay = industry.add_spriteset(
 )
 spriteset_animated_slag_dump_1 = industry.add_spriteset(
     sprites=[(360, 10, 64, 120, -31, -89)],
+    always_draw=True,
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_animated_dozer.sprites),
 )

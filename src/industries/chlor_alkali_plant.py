@@ -89,6 +89,7 @@ spriteset_vertical_tanks = industry.add_spriteset(
 )
 spriteset_barrels = industry.add_spriteset(
     sprites=[(150, 140, 64, 66, -31, -35)],
+    always_draw=True,
 )
 spriteset_salt_handling = industry.add_spriteset(
     sprites=[(220, 140, 64, 66, -31, -35)],

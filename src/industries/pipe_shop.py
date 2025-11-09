@@ -59,9 +59,11 @@ spriteset_ground = industry.add_spriteset(
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 31, -31, 0)],
+    always_draw=True,
 )
 spriteset_2 = industry.add_spriteset(
     sprites=[(80, 10, 64, 31, -31, 0)],
+    always_draw=True,
 )
 spriteset_3 = industry.add_spriteset(
     sprites=[(150, 10, 64, 78, -25, -12)],
@@ -89,9 +91,11 @@ spriteset_10 = industry.add_spriteset(
 )
 spriteset_11 = industry.add_spriteset(
     sprites=[(780, 10, 64, 31, -35, 2)],
+    always_draw=True,
 )
 spriteset_12 = industry.add_spriteset(
     sprites=[(850, 10, 64, 31, -35, 2)],
+    always_draw=True,
 )
 spriteset_13 = industry.add_spriteset(
     sprites=[(920, 10, 64, 49, -39, -15)],
@@ -99,6 +103,7 @@ spriteset_13 = industry.add_spriteset(
 # out of sequence for historical reasons
 spriteset_14 = industry.add_spriteset(
     sprites=[(710, 10, 64, 31, -28, -1)],
+    always_draw=True,
 )
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type="dark_smoke_small",
