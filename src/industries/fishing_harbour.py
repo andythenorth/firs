@@ -55,11 +55,11 @@ sprite_ground = industry.add_sprite(sprite_number="GROUNDSPRITE_WATER")
 spriteset_ground_empty = industry.add_spriteset(type="empty")
 spriteset_concrete = industry.add_spriteset(
     sprites=[(10, 10, 64, 39, -31, -8)],
-    always_draw=1,
+    always_draw=True,
 )
 spriteset_jetty_se_nw = industry.add_spriteset(
     sprites=[(10, 60, 64, 39, -31, -7)],
-    always_draw=1,
+    always_draw=True,
 )
 spriteset_jetty_ne_sw = industry.add_spriteset(
     sprites=[(80, 60, 64, 39, -31, -7)], always_draw=1

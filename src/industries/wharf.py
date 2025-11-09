@@ -96,11 +96,11 @@ industry.add_tile(
 
 spriteset_crane_rails_nw_se = industry.add_spriteset(
     sprites=[(80, 10, 64, 39, -31, -8)],
-    always_draw=1,
+    always_draw=True,
 )
 spriteset_crane_rails_ne_sw = industry.add_spriteset(
     sprites=[(150, 10, 64, 39, -31, -8)],
-    always_draw=1,
+    always_draw=True,
 )
 spriteset_warehouse_half_nw_se = industry.add_spriteset(
     sprites=[(440, 10, 64, 84, -31, -61)],

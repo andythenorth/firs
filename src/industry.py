@@ -329,7 +329,7 @@ class Sprite(object):
         xextent=16,
         yextent=16,
         zextent=16,
-        always_draw=0,
+        always_draw=False,
     ):
         # there are few shorthand constants for specific sprite numbers (legacy from CPP templating, kind of useful to keep)
         sprite_constants = {"GROUNDTILE_MUD_TRACKS": 2022, "GROUNDTILE_SLABS": 1420}
@@ -347,7 +347,12 @@ class Sprite(object):
         self.xextent = xextent
         self.yextent = yextent
         self.zextent = zextent
-        self.always_draw = always_draw
+        self._always_draw = always_draw
+
+    @property
+    def always_draw(self):
+        # handle converting bool to int for nml
+        return int(self._always_draw)
 
 
 class SmokeSprite(object):
@@ -408,7 +413,7 @@ class Spriteset(object):
         yextent=16,
         animation_rate=0,
         custom_sprite_selector=None,
-        always_draw=0,
+        always_draw=False,
         num_sprites_to_autofill=1,
     ):
         self.id = id
@@ -427,7 +432,12 @@ class Spriteset(object):
         self.xextent = xextent  # set extents to x/y/z sizes of largest sprite in spriteset, or omit for default (16)
         self.yextent = yextent
         self.zextent = 32  # it's of limited use setting zextent, just make it 32 and be done with it
-        self.always_draw = always_draw
+        self._always_draw = always_draw
+
+    @property
+    def always_draw(self):
+        # handle converting bool to int for nml
+        return int(self._always_draw)
 
 
 class SpriteLayout(object):
