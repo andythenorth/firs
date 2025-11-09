@@ -476,7 +476,7 @@ class SpriteLayout(object):
         # optionally spritelayouts can cause objects to be defined
         self.add_to_object_num = add_to_object_num
         if getattr(self.ground_overlay, "type", "None") not in ["empty", "None"]:
-            print(self.id, getattr(self.ground_overlay, "type", "None"))
+            print(self.id, self.ground_overlay.id)
 
     def resolve_tile(self, industry):
         for tile in industry.tiles:
