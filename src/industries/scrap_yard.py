@@ -84,6 +84,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_1],
+    add_to_object_num=1,
 )
 industry.add_spritelayout(
     id="scrap_yard_spritelayout_2",
@@ -99,6 +100,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_3],
+    add_to_object_num=3,
 )
 industry.add_spritelayout(
     id="scrap_yard_spritelayout_4",
@@ -106,7 +108,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_4],
-    add_to_object_num=1,
+    add_to_object_num=4,
 )
 industry.add_spritelayout(
     id="scrap_yard_spritelayout_5",
@@ -114,7 +116,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
-    add_to_object_num=1,
+    add_to_object_num=5,
 )
 industry.add_spritelayout(
     id="scrap_yard_spritelayout_6",
@@ -122,7 +124,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_6],
-    add_to_object_num=1,
+    add_to_object_num=6,
 )
 industry.add_spritelayout(
     id="scrap_yard_spritelayout_7",
@@ -130,7 +132,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_7],
-    add_to_object_num=3,
+    add_to_object_num=7,
 )
 industry.add_spritelayout(
     id="scrap_yard_spritelayout_8",
@@ -138,7 +140,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_8],
-    add_to_object_num=1,
+    add_to_object_num=8,
 )
 industry.add_spritelayout(
     id="scrap_yard_spritelayout_9",
@@ -146,6 +148,7 @@ industry.add_spritelayout(
     ground_sprite=sprite_ground,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_9],
+    add_to_object_num=9,
 )
 
 industry.add_industry_layout(
