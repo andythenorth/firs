@@ -5,13 +5,13 @@
             <tal:spritelayout define="spritelayout x_y_spritelayout[2]">
                 spritelayout ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index} {
                     <tal:ground_sprite switch="spritelayout.terrain_aware_ground">
-                        <tal:case_terrain case="True">
+                        <tal:terrain_aware_ground case="True">
                             <!--! ground sprite from terrain -->
                             ground {
                                 sprite: (LOAD_TEMP(${graphics_temp_storage.var_terrain_sprite}));
                             }
-                        </tal:case_terrain>
-                        <tal:case_industry case="False">
+                        </tal:terrain_aware_ground>
+                        <tal:terrain_aware_ground case="False">
                             <!--! explicit ground sprite from industry, if not empty -->
                             <tal:not_empty condition="getattr(spritelayout.ground_sprite, 'type', None) != 'empty'">
                                 childsprite {
@@ -26,7 +26,7 @@
                                     always_draw: 1;
                                 }
                             </tal:not_empty>
-                        </tal:case_industry>
+                        </tal:terrain_aware_ground>
                     </tal:ground_sprite>
 
                     <tal:optional_fence condition="'ne' in spritelayout.fences">

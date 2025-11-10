@@ -1,13 +1,13 @@
 <tal:spritelayouts repeat="spritelayout python:industry.spritelayouts">
     spritelayout ${spritelayout.id} {
         <tal:ground_sprite switch="spritelayout.terrain_aware_ground">
-            <tal:case_terrain case="True">
+            <tal:terrain_aware_ground case="True">
                 <!--! ground sprite from terrain -->
                 ground {
                     sprite: (LOAD_TEMP(${graphics_temp_storage.var_terrain_sprite}));
                 }
-            </tal:case_terrain>
-            <tal:case_industry case="False">
+            </tal:terrain_aware_ground>
+            <tal:terrain_aware_ground case="False">
                 <!--! explicit ground sprite from industry, if not empty -->
                 <tal:not_empty condition="getattr(spritelayout.ground_sprite, 'type', None) != 'empty'">
                     childsprite {
@@ -22,7 +22,7 @@
                         always_draw: 1;
                     }
                 </tal:not_empty>
-            </tal:case_industry>
+            </tal:terrain_aware_ground>
         </tal:ground_sprite>
 
         <!--! industry ground overlay, if not empty -->
