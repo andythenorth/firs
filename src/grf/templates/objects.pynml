@@ -59,10 +59,16 @@
         }
 
         <tal:view repeat="view grf_object.views">
-            switch(FEAT_OBJECTS, SELF, ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout, relative_pos) {
-                <tal:spritelayouts repeat="x_y_spritelayout view">
-                    relative_coord(${x_y_spritelayout[0]}, ${x_y_spritelayout[1]}): ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index};
-                </tal:spritelayouts>
+            <tal:land_or_water repeat="land_or_water ['land', 'water']">
+                switch(FEAT_OBJECTS, SELF, ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout_${land_or_water}, relative_pos) {
+                    <tal:spritelayouts repeat="x_y_spritelayout view">
+                        relative_coord(${x_y_spritelayout[0]}, ${x_y_spritelayout[1]}): ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index}_${land_or_water};
+                    </tal:spritelayouts>
+                }
+            </tal:land_or_water>
+            switch(FEAT_OBJECTS, SELF, ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout_land_or_water, switch_object_built_on_water()) {
+                1: ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout_water;
+                ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout_land;
             }
         </tal:view>
 
@@ -70,11 +76,10 @@
                                             switch_tile_fences_object(),
                                             switch_terrain_object(),
                                             STORE_TEMP(switch_object_built_on_water(), ${graphics_temp_storage.var_object_built_on_water}),
-                                            STORE_TEMP(switch_water_object_zoffset(), ${graphics_temp_storage.var_water_object_zoffset}),
                                             view
                                         ]) {
             <tal:views repeat="view_num range(len(grf_object.views))">
-                ${view_num}: ${grf_object.id}_view_${view_num}_switch_graphics_layout;
+                ${view_num}: ${grf_object.id}_view_${view_num}_switch_graphics_layout_land_or_water;
             </tal:views>
         }
 

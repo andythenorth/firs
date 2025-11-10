@@ -4,8 +4,3 @@ switch (FEAT_OBJECTS, SELF, switch_object_built_on_water, nearby_tile_water_clas
     WATER_CLASS_NONE: return 0;
     return 1;
 }
-
-switch (FEAT_OBJECTS, SELF, switch_water_object_zoffset, switch_object_built_on_water()) {
-    1: return 8;
-    return 0;
-}

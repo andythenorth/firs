@@ -394,8 +394,10 @@ graphics_temp_storage = dict(
     var_hide_building=18,  # hide a building in spritelayout, must be set to 1 (true) or 0 (false)
     var_hide_building_snow=19,  # hide a snow building in spritelayout, must be set to 1 (true) or 0 (false)
     var_object_built_on_water=20, # bool for object is built on water
-    var_water_object_zoffset=21, # a zoffset applied to object built on water
 )  # max register number must be 235; registers 236-255 are reserved for building sprite hide/show values
+
+# trivial constant
+water_object_zoffset = 8;
 
 # used to magically extend ground spritesets for animated tiles, add a count for each industry animation length
 animated_ground_tile_frame_counts = [1, 3, 6, 7, 10, 12, 31, 32]

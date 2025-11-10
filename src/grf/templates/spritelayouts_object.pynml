@@ -3,7 +3,9 @@
     <tal:view repeat="view grf_object.views">
         <tal:spritelayouts repeat="x_y_spritelayout view">
             <tal:spritelayout define="spritelayout x_y_spritelayout[2]">
-                spritelayout ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index} {
+
+                <!--! dedicated spritelayout for tiles on land -->
+                spritelayout ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index}_land {
 
                     <tal:ground_sprite switch="spritelayout.terrain_aware_ground">
                         <tal:terrain_aware_ground case="True">
@@ -29,22 +31,6 @@
                             </tal:not_empty>
                         </tal:terrain_aware_ground>
                     </tal:ground_sprite>
-                    <!--!<tal:jetty_foundations condition="spritelayout.jetty_foundations"> CABBAGE-->
-                        <!--! handling of jetty foundations (for water objects) -->
-                        building {
-                            sprite: spriteset_jetty_foundations_and_surface_1(slope_to_sprite_offset(nearby_tile_slope(0,0)));
-                            hide_sprite: !LOAD_TEMP(${graphics_temp_storage.var_object_built_on_water});
-                            recolour_mode: RECOLOUR_REMAP;
-                            palette: PALETTE_USE_DEFAULT;
-                            xoffset: 0;
-                            yoffset: 0;
-                            zoffset: LOAD_TEMP(${graphics_temp_storage.var_water_object_zoffset});
-                            xextent: 16;
-                            yextent: 16;
-                            zextent: 8;
-                            always_draw: 1;
-                        }
-                    <!--!</tal:jetty_foundations> CABBAGE-->
 
                     <tal:optional_fence condition="'ne' in spritelayout.fences">
                         <!--! fences NE -->
@@ -55,7 +41,7 @@
                             </tal:hide_sprite>
                             xoffset:  0;
                             yoffset:  0;
-                            zoffset:  (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_ne}) * 8) + LOAD_TEMP(${graphics_temp_storage.var_water_object_zoffset});
+                            zoffset:  (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_ne}) * 8);
                             xextent: 1;
                             yextent: 16;
                             zextent: 6;
@@ -72,7 +58,7 @@
                             </tal:hide_sprite>
                             xoffset:  0;
                             yoffset:  0;
-                            zoffset:  (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_nw}) * 8) + LOAD_TEMP(${graphics_temp_storage.var_water_object_zoffset});
+                            zoffset:  (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_nw}) * 8);
                             xextent: 16;
                             yextent: 1;
                             zextent: 6;
@@ -88,7 +74,7 @@
                             palette: PALETTE_USE_DEFAULT;
                             xoffset: ${building_sprite.xoffset};
                             yoffset: ${building_sprite.yoffset};
-                            zoffset: ${building_sprite.zoffset} + LOAD_TEMP(${graphics_temp_storage.var_water_object_zoffset});
+                            zoffset: ${building_sprite.zoffset};
                             xextent: ${building_sprite.xextent};
                             yextent: ${building_sprite.yextent};
                             zextent: ${building_sprite.zextent};
@@ -101,7 +87,7 @@
                             palette: PALETTE_USE_DEFAULT;
                             xoffset: ${building_sprite.xoffset};
                             yoffset: ${building_sprite.yoffset};
-                            zoffset: ${building_sprite.zoffset} + LOAD_TEMP(${graphics_temp_storage.var_water_object_zoffset});
+                            zoffset: ${building_sprite.zoffset};
                             xextent: ${building_sprite.xextent};
                             yextent: ${building_sprite.yextent};
                             zextent: ${building_sprite.zextent};
@@ -118,7 +104,7 @@
                             palette: PALETTE_USE_DEFAULT;
                             xoffset: ${smoke_sprite.xoffset};
                             yoffset: ${smoke_sprite.yoffset};
-                            zoffset: ${smoke_sprite.zoffset} + LOAD_TEMP(${graphics_temp_storage.var_water_object_zoffset});
+                            zoffset: ${smoke_sprite.zoffset};
                             xextent: ${smoke_sprite.xextent};
                             yextent: ${smoke_sprite.yextent};
                             zextent: ${smoke_sprite.zextent};
@@ -135,7 +121,7 @@
                             </tal:hide_sprite>
                             xoffset: 0;
                             yoffset:  16;
-                            zoffset:  (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_se}) * 8) + LOAD_TEMP(${graphics_temp_storage.var_water_object_zoffset});
+                            zoffset:  (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_se}) * 8);
                             xextent: 16;
                             yextent: 1;
                             zextent: 6;
@@ -152,7 +138,7 @@
                             </tal:hide_sprite>
                             xoffset: 16;
                             yoffset:  0;
-                            zoffset:  (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_sw}) * 8) + LOAD_TEMP(${graphics_temp_storage.var_water_object_zoffset});
+                            zoffset:  (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_sw}) * 8);
                             xextent: 1;
                             yextent: 16;
                             zextent: 6;
@@ -160,6 +146,102 @@
                             palette:       PALETTE_USE_DEFAULT;
                         }
                     </tal:optional_fence>
+                }
+
+                <!--! dedicated spritelayout for tiles on water -->
+                spritelayout ${grf_object.id}_view_${repeat.view.index}_spritelayout_${repeat.x_y_spritelayout.index}_water {
+
+                    <!--! no groundsprite provided - appears to be unnecessary for this context -->
+
+                    <!--! handling of jetty foundations (for water objects) -->
+                    building {
+                        sprite: spriteset_jetty_foundations_and_surface_1(slope_to_sprite_offset(nearby_tile_slope(0,0)));
+                        hide_sprite: !LOAD_TEMP(${graphics_temp_storage.var_object_built_on_water});
+                        recolour_mode: RECOLOUR_REMAP;
+                        palette: PALETTE_USE_DEFAULT;
+                        xoffset: 0;
+                        yoffset: 0;
+                        zoffset: ${global_constants.water_object_zoffset};
+                        xextent: 16;
+                        yextent: 16;
+                        zextent: 1; <!--! seems wrong (should be 8?), but appears to work so far -->
+                        always_draw: 1;
+                    }
+
+                    <!--! place the 'ground' on top of jetty foundation - as building not groundsprite -->
+                    building {
+                        sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
+                        hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow});
+                        xoffset: 0;
+                        yoffset: 0;
+                        zoffset: ${global_constants.water_object_zoffset};
+                        xextent: 16;
+                        yextent: 16;
+                        zextent: 1;
+                        always_draw: 1;
+                    }
+                    <!--! ...explicit ground sprite from industry with snow -->
+                    building {
+                        sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite, snow_overlay=True)};
+                        hide_sprite: !LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow});
+                        xoffset: 0;
+                        yoffset: 0;
+                        zoffset: ${global_constants.water_object_zoffset};
+                        xextent: 16;
+                        yextent: 16;
+                        zextent: 1;
+                        always_draw: 1;
+                    }
+
+                    <!--! no fences on sea -->
+
+                    <tal:building_sprites repeat="building_sprite spritelayout.building_sprites">
+                        building {
+                            sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3)};
+                            recolour_mode: RECOLOUR_REMAP;
+                            palette: PALETTE_USE_DEFAULT;
+                            xoffset: ${building_sprite.xoffset};
+                            yoffset: ${building_sprite.yoffset};
+                            zoffset: ${building_sprite.zoffset} + ${global_constants.water_object_zoffset};
+                            xextent: ${building_sprite.xextent};
+                            yextent: ${building_sprite.yextent};
+                            zextent: ${building_sprite.zextent};
+                            hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow});
+                            always_draw: ${building_sprite.always_draw};
+                        }
+                        building {
+                            sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3, snow_overlay=True)};
+                            recolour_mode: RECOLOUR_REMAP;
+                            palette: PALETTE_USE_DEFAULT;
+                            xoffset: ${building_sprite.xoffset};
+                            yoffset: ${building_sprite.yoffset};
+                            zoffset: ${building_sprite.zoffset} + ${global_constants.water_object_zoffset};
+                            xextent: ${building_sprite.xextent};
+                            yextent: ${building_sprite.yextent};
+                            zextent: ${building_sprite.zextent};
+                            hide_sprite: !LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow});
+                            always_draw: ${building_sprite.always_draw};
+                        }
+                    </tal:building_sprites>
+
+                    <tal:optional_smoke repeat="smoke_sprite spritelayout.smoke_sprites">
+                        <!--! smoke sprites -->
+                        building {
+                            sprite: ${smoke_sprite.sprite_number};
+                            recolour_mode: RECOLOUR_REMAP;
+                            palette: PALETTE_USE_DEFAULT;
+                            xoffset: ${smoke_sprite.xoffset};
+                            yoffset: ${smoke_sprite.yoffset};
+                            zoffset: ${smoke_sprite.zoffset} + ${global_constants.water_object_zoffset};
+                            xextent: ${smoke_sprite.xextent};
+                            yextent: ${smoke_sprite.yextent};
+                            zextent: ${smoke_sprite.zextent};
+                            hide_sprite: ${smoke_sprite.hide_sprite};
+                        }
+                    </tal:optional_smoke>
+
+                    <!--! no fences on sea -->
+
                 }
             </tal:spritelayout>
         </tal:spritelayouts>
