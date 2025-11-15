@@ -9,12 +9,7 @@
             </tal:terrain_aware_ground>
             <tal:terrain_aware_ground case="False">
                 <!--! explicit ground sprite from industry, if not empty -->
-                <!--! CABBAGE FOUNDATIONS?? -->
-                <tal:conditional_ground condition="
-                    (spritelayout.ground_sprite != None)
-                    and
-                    (spritelayout.jetty_foundations == False)
-                ">
+                <tal:conditional_ground condition="spritelayout.ground_sprite != None">
                     childsprite {
                         sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
                         hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
@@ -31,7 +26,6 @@
         </tal:ground_sprite>
 
         <!--! industry ground overlay, if not empty -->
-        <!--! CABBAGE is this enough check? -->
         <tal:not_empty condition="spritelayout.ground_overlay != None">
             childsprite {
                 sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay)};
