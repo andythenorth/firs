@@ -1,3 +1,4 @@
+<!--! we don't split industry spritelayouts for land and water, unlike objects, industry tiles can't be built on both types of tile -->
 <tal:spritelayouts repeat="spritelayout python:industry.spritelayouts">
     spritelayout ${spritelayout.id} {
         <tal:ground_sprite switch="spritelayout.terrain_aware_ground">
