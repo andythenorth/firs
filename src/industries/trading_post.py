@@ -42,7 +42,6 @@ industry.add_tile(
     location_checks=TileLocationChecks(always_allow_founder=False, require_coast=True),
 )
 sprite_ground = industry.add_sprite(sprite_number="GROUNDSPRITE_WATER")
-spriteset_ground_empty = industry.add_spriteset(type="empty")
 spriteset_concrete = industry.add_spriteset(
     sprites=[(10, 10, 64, 39, -31, -8)],
     always_draw=True,
@@ -107,7 +106,7 @@ spriteset_small_warehouse = industry.add_spriteset(
 industry.add_spritelayout(
     id="trading_post_spritelayout_11",
     tile="trading_post_tile_1",
-    ground_sprite=spriteset_ground_empty,
+    ground_sprite=None,
     ground_overlay=None,
     building_sprites=[
         spriteset_jetty_se_nw,
@@ -118,7 +117,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="trading_post_spritelayout_12",
     tile="trading_post_tile_1",
-    ground_sprite=spriteset_ground_empty,
+    ground_sprite=None,
     ground_overlay=None,
     building_sprites=[
         spriteset_jetty_ne_sw,
@@ -129,7 +128,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="trading_post_spritelayout_13",
     tile="trading_post_tile_1",
-    ground_sprite=spriteset_ground_empty,
+    ground_sprite=None,
     ground_overlay=None,
     building_sprites=[
         spriteset_jetty_se_nw,
@@ -191,7 +190,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="trading_post_spritelayout_29",
     tile="trading_post_tile_1",
-    ground_sprite=spriteset_ground_empty,
+    ground_sprite=None,
     ground_overlay=None,
     building_sprites=[
         spriteset_jetty_se_nw,
@@ -203,7 +202,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="trading_post_spritelayout_30",
     tile="trading_post_tile_1",
-    ground_sprite=spriteset_ground_empty,
+    ground_sprite=None,
     ground_overlay=None,
     building_sprites=[
         spriteset_jetty_se_nw,
@@ -217,7 +216,7 @@ industry.add_magic_spritelayout(
     base_id="trading_post_spritelayout_coast_small_warehouse",
     tile="trading_post_tile_2",
     config={
-        "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
+        "ground_sprite": None,
         "building_sprites": [spriteset_concrete, spriteset_small_warehouse],
         "foundation_sprites": {
             "ne_sw": spriteset_jetty_ne_sw,
@@ -234,7 +233,7 @@ industry.add_magic_spritelayout(
     base_id="trading_post_spritelayout_coast_large_warehouse",
     tile="trading_post_tile_2",
     config={
-        "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
+        "ground_sprite": None,
         "building_sprites": [spriteset_concrete, spriteset_large_warehouse],
         "foundation_sprites": {
             "ne_sw": spriteset_jetty_ne_sw,

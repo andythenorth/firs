@@ -58,7 +58,6 @@ industry.add_tile(
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDSPRITE_WATER")
-spriteset_ground_empty = industry.add_spriteset(type="empty")
 spriteset_small_tanks = industry.add_spriteset(
     sprites=[(440, 110, 64, 84, -31, -43)],
     zoffset=18,

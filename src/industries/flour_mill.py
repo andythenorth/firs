@@ -78,11 +78,6 @@ spriteset_windmill_anim = industry.add_spriteset(
     ],
     animation_rate=1,
 )
-spriteset_ground_windmill = industry.add_spriteset(
-    type="empty",
-    # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
-    num_sprites_to_autofill=len(spriteset_windmill_anim.sprites),
-)
 spriteset_ground_overlay_windmill = industry.add_spriteset(
     sprites=[(150, 160, 64, 31, -31, 0)],
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
@@ -149,7 +144,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="flour_mill_spritelayout_windmill_anim",
     tile="flour_mill_tile_1",
-    ground_sprite=spriteset_ground_windmill,
+    ground_sprite=None,
     ground_overlay=spriteset_ground_overlay_windmill,
     building_sprites=[spriteset_windmill_anim],
     fences=["nw", "ne", "se", "sw"],
@@ -158,7 +153,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="flour_mill_spritelayout_windmill_granary",
     tile="flour_mill_tile_1",
-    ground_sprite=spriteset_ground_windmill,
+    ground_sprite=None,
     ground_overlay=spriteset_ground_overlay_windmill_granary,
     building_sprites=[spriteset_windmill_granary],
     fences=["nw", "ne", "se", "sw"],
@@ -167,7 +162,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="flour_mill_spritelayout_windmill_shed",
     tile="flour_mill_tile_1",
-    ground_sprite=spriteset_ground_windmill,
+    ground_sprite=None,
     ground_overlay=spriteset_ground_overlay_windmill_shed,
     building_sprites=[spriteset_windmill_shed],
     fences=["nw", "ne", "se", "sw"],
@@ -176,7 +171,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="flour_mill_spritelayout_windmill_greeble",
     tile="flour_mill_tile_1",
-    ground_sprite=spriteset_ground_windmill,
+    ground_sprite=None,
     ground_overlay=spriteset_ground_overlay_windmill_greeble,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],

@@ -9,8 +9,9 @@
             </tal:terrain_aware_ground>
             <tal:terrain_aware_ground case="False">
                 <!--! explicit ground sprite from industry, if not empty -->
+                <!--! CABBAGE FOUNDATIONS?? -->
                 <tal:conditional_ground condition="
-                    (getattr(spritelayout.ground_sprite, 'type', None) != 'empty')
+                    (spritelayout.ground_sprite != None)
                     and
                     (spritelayout.jetty_foundations == False)
                 ">
@@ -30,8 +31,8 @@
         </tal:ground_sprite>
 
         <!--! industry ground overlay, if not empty -->
-        <!--! CABBAGE LEGACY 'empty' check -->
-        <tal:not_empty condition="getattr(spritelayout.ground_overlay, 'type', None) != 'empty' and spritelayout.ground_overlay != None">
+        <!--! CABBAGE is this enough check? -->
+        <tal:not_empty condition="spritelayout.ground_overlay != None">
             childsprite {
                 sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay)};
                 recolour_mode: RECOLOUR_REMAP;

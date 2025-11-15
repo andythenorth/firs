@@ -89,11 +89,6 @@ spriteset_ground_pigs = industry.add_spriteset(
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_iron_pigs_anim.sprites),
 )
-spriteset_ground_overlay_pigs = industry.add_spriteset(
-    type="empty",
-    # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
-    num_sprites_to_autofill=len(spriteset_iron_pigs_anim.sprites),
-)
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type="dark_smoke_small",
     xoffset=0,
@@ -126,7 +121,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="iron_works_spritelayout_iron_pigs_anim",
     ground_sprite=spriteset_ground_pigs,
-    ground_overlay=spriteset_ground_overlay_pigs,
+    ground_overlay=None,
     building_sprites=[spriteset_iron_pigs_anim],
     fences=["nw", "ne", "se", "sw"],
 )

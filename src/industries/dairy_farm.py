@@ -43,7 +43,6 @@ industry.add_tile(
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-spriteset_ground_empty = industry.add_spriteset(type="empty")
 spriteset_barn1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 52, -31, -21)],
 )
@@ -90,7 +89,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="dairy_farm_spritelayout_house",
     tile="dairy_farm_tile_1",
-    ground_sprite=spriteset_ground_empty,
+    ground_sprite=None,
     ground_overlay=None,
     building_sprites=[spriteset_house],
     terrain_aware_ground=True,
@@ -98,7 +97,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="dairy_farm_spritelayout_cows_bw",
     tile="dairy_farm_tile_1",
-    ground_sprite=spriteset_ground_empty,
+    ground_sprite=None,
     ground_overlay=None,
     building_sprites=[spriteset_cows_bw],
     terrain_aware_ground=True,
@@ -106,7 +105,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="dairy_farm_spritelayout_cows_brown",
     tile="dairy_farm_tile_1",
-    ground_sprite=spriteset_ground_empty,
+    ground_sprite=None,
     ground_overlay=None,
     building_sprites=[spriteset_cows_brown],
     terrain_aware_ground=True,

@@ -482,7 +482,7 @@ class SpriteLayout(object):
         # optionally spritelayouts can cause objects to be defined
         self.add_to_object_num = add_to_object_num
         if self.ground_overlay is not None:
-            if getattr(self.ground_overlay, 'type', None):
+            if hasattr(self.ground_overlay, 'type'):
                 print("'empty' in spritelayout:", self.id, self.ground_overlay.type)
 
     def resolve_tile(self, industry):
@@ -569,19 +569,16 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
     def __init__(self, industry, base_id, tile, config, **kwargs):
         self.tile = tile
         self.auto_orient = True
-        #ground_sprite = industry.add_sprite(sprite_number="GROUNDSPRITE_WATER")
-        ground_sprite = industry.add_spriteset(type="empty")
-        ground_overlay = industry.add_spriteset(type="empty")
         for coast_direction in ["se", "sw", "nw", "ne"]:
             building_sprites = []
             building_sprites.extend(config["building_sprites"][coast_direction])
             industry.add_spritelayout(
                 id=base_id + "_" + coast_direction,
-                ground_sprite=ground_sprite,
-                ground_overlay=ground_overlay,
+                ground_sprite=None,
+                ground_overlay=None,
                 building_sprites=building_sprites,
                 jetty_foundations=config["jetty_foundations"],
-                jetty_surface=ground_overlay,
+                #jetty_surface=ground_overlay,
                 tile=self.tile,
             )
 

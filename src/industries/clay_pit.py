@@ -55,7 +55,6 @@ industry.add_tile(
     ),
 )
 
-spriteset_ground = industry.add_spriteset(type="empty")
 spriteset_animated_dozer = industry.add_spriteset(
     sprites=[
         (440, 90, 64, 31, -31, 0),
@@ -73,11 +72,6 @@ spriteset_animated_dozer = industry.add_spriteset(
     ],
     animation_rate=1,
     custom_sprite_selector="(animation_frame < 36) ? (animation_frame % 12) : 0",
-)
-spriteset_ground_animated_tile = industry.add_spriteset(
-    type="empty",
-    # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
-    num_sprites_to_autofill=len(spriteset_animated_dozer.sprites),
 )
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 90, 64, 31, -31, 0)],
@@ -224,7 +218,7 @@ spriteset_crusher = industry.add_spriteset(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_1",
     tile="clay_pit_tile_2",
-    ground_sprite=spriteset_ground_animated_tile,
+    ground_sprite=None,
     ground_overlay=spriteset_1,
     building_sprites=[],
     terrain_aware_ground=True,
@@ -233,7 +227,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_2",
     tile="clay_pit_tile_2",
-    ground_sprite=spriteset_ground_animated_tile,
+    ground_sprite=None,
     ground_overlay=spriteset_2,
     building_sprites=[spriteset_pit_conveyor_0],
     terrain_aware_ground=True,
@@ -242,7 +236,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_4",
     tile="clay_pit_tile_2",
-    ground_sprite=spriteset_ground_animated_tile,
+    ground_sprite=None,
     ground_overlay=spriteset_4,
     building_sprites=[],
     terrain_aware_ground=True,
@@ -251,7 +245,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_animated_crane",
     tile="clay_pit_tile_2",
-    ground_sprite=spriteset_ground_animated_tile,
+    ground_sprite=None,
     ground_overlay=spriteset_5,
     building_sprites=[spriteset_crane_1, spriteset_pile],
     terrain_aware_ground=True,
@@ -260,7 +254,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_6",
     tile="clay_pit_tile_2",
-    ground_sprite=spriteset_ground_animated_tile,
+    ground_sprite=None,
     ground_overlay=spriteset_6,
     building_sprites=[],
     terrain_aware_ground=True,
@@ -269,7 +263,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_7",
     tile="clay_pit_tile_2",
-    ground_sprite=spriteset_ground_animated_tile,
+    ground_sprite=None,
     ground_overlay=spriteset_7,
     building_sprites=[],
     terrain_aware_ground=True,
@@ -278,7 +272,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_animated_dozer",
     tile="clay_pit_tile_2",
-    ground_sprite=spriteset_ground_animated_tile,
+    ground_sprite=None,
     ground_overlay=spriteset_8,
     building_sprites=[spriteset_animated_dozer],
     terrain_aware_ground=True,
@@ -287,7 +281,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_inner_1",
     tile="clay_pit_tile_1",
-    ground_sprite=spriteset_ground_animated_tile,
+    ground_sprite=None,
     ground_overlay=spriteset_10,
     building_sprites=[],
     terrain_aware_ground=True,
@@ -296,7 +290,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_inner_2",
     tile="clay_pit_tile_1",
-    ground_sprite=spriteset_ground_animated_tile,
+    ground_sprite=None,
     ground_overlay=spriteset_11,
     building_sprites=[],
     terrain_aware_ground=True,
@@ -305,7 +299,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_12",
     tile="clay_pit_tile_2",
-    ground_sprite=spriteset_ground_animated_tile,
+    ground_sprite=None,
     ground_overlay=spriteset_12,
     building_sprites=[],
     terrain_aware_ground=True,
@@ -314,7 +308,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_19",
     tile="clay_pit_tile_2",
-    ground_sprite=spriteset_ground_animated_tile,
+    ground_sprite=None,
     ground_overlay=spriteset_19,
     building_sprites=[],
     terrain_aware_ground=True,
@@ -323,7 +317,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_20",
     tile="clay_pit_tile_2",
-    ground_sprite=spriteset_ground_animated_tile,
+    ground_sprite=None,
     ground_overlay=spriteset_20,
     building_sprites=[spriteset_pit_conveyor_1],
     terrain_aware_ground=True,
@@ -332,7 +326,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_22",
     tile="clay_pit_tile_2",
-    ground_sprite=spriteset_ground_animated_tile,
+    ground_sprite=None,
     ground_overlay=spriteset_22,
     building_sprites=[spriteset_pit_conveyor_2],
     terrain_aware_ground=True,
@@ -341,7 +335,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_23",
     tile="clay_pit_tile_2",
-    ground_sprite=spriteset_ground_animated_tile,
+    ground_sprite=None,
     ground_overlay=spriteset_23,
     building_sprites=[spriteset_pit_conveyor_3],
     terrain_aware_ground=True,
@@ -350,7 +344,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_24",
     tile="clay_pit_tile_2",
-    ground_sprite=spriteset_ground_animated_tile,
+    ground_sprite=None,
     ground_overlay=spriteset_24,
     building_sprites=[spriteset_pit_conveyor_4],
     terrain_aware_ground=True,
@@ -359,7 +353,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_processor_front",
     tile="clay_pit_tile_1",
-    ground_sprite=spriteset_ground,
+    ground_sprite=None,
     ground_overlay=spriteset_39,
     building_sprites=[spriteset_silo],
     terrain_aware_ground=True,
@@ -368,7 +362,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_processor_middle",
     tile="clay_pit_tile_1",
-    ground_sprite=spriteset_ground,
+    ground_sprite=None,
     ground_overlay=spriteset_40,
     building_sprites=[spriteset_conveyor_2],
     terrain_aware_ground=True,
@@ -377,7 +371,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="clay_pit_spritelayout_processor_rear",
     tile="clay_pit_tile_1",
-    ground_sprite=spriteset_ground,
+    ground_sprite=None,
     ground_overlay=spriteset_41,
     building_sprites=[spriteset_crusher],
     terrain_aware_ground=True,

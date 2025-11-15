@@ -48,7 +48,6 @@ industry.add_tile(
 sprite_ground = industry.add_sprite(
     sprite_number="GROUNDSPRITE_WATER",
 )
-spriteset_ground_empty = industry.add_spriteset(type="empty")
 spriteset_concrete = industry.add_spriteset(
     sprites=[(10, 10, 64, 39, -31, -8)],
     always_draw=True,
@@ -128,7 +127,7 @@ industry.add_magic_spritelayout(
     base_id="fish_farm_spritelayout_coast_warehouse",
     tile="fish_farm_tile_2",
     config={
-        "ground_sprite": spriteset_ground_empty,  # should always be empty for this magic spritelayout
+        "ground_sprite": None,
         "building_sprites": [spriteset_concrete, spriteset_warehouse],
         "foundation_sprites": {
             "ne_sw": spriteset_jetty_ne_sw,

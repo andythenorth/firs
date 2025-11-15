@@ -26,7 +26,7 @@
         spritelayout ${grf_object.id}_spritelayout_purchase {
             <tal:ground repeat="ground grf_object.multi_tile_ground">
                 // ${ground[2]}
-                <tal:not_empty condition="getattr(ground[2], 'type', None) != 'empty'"> <!--! CABBAGE HACKS -->
+                <tal:not_empty condition="ground[2] != None"> <!--! CABBAGE HACKS -->
                     building {
                         sprite: ${industry.unpack_sprite_or_spriteset(ground[2])};
                         <!--! this offset adjustment is a crude hack that appears to remarkably work
