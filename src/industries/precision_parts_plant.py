@@ -43,7 +43,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="asphalt",
 )
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 60, 64, 100, -31, -66)],
 )
@@ -70,7 +69,7 @@ industry.add_spritelayout(
     id="precision_parts_plant_spritelayout_large_building_1",
     tile="precision_parts_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -78,7 +77,7 @@ industry.add_spritelayout(
     id="precision_parts_plant_spritelayout_large_building_2",
     tile="precision_parts_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -86,7 +85,7 @@ industry.add_spritelayout(
     id="precision_parts_plant_spritelayout_large_building_3",
     tile="precision_parts_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -94,7 +93,7 @@ industry.add_spritelayout(
     id="precision_parts_plant_spritelayout_4",
     tile="precision_parts_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se"],
 )
@@ -102,7 +101,7 @@ industry.add_spritelayout(
     id="precision_parts_plant_spritelayout_5",
     tile="precision_parts_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[
         spriteset_6
     ],  # out of order spriteset number, due to historical crap, can fix by tidying spritesheet

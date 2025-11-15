@@ -45,7 +45,6 @@ industry.add_tile(
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(sprites=[(80, 10, 64, 64, -31, -40)])
 spriteset_2 = industry.add_spriteset(sprites=[(150, 10, 64, 64, -31, -34)])
 # no spriteset 3 for this industry, historical reasons
@@ -65,7 +64,7 @@ industry.add_spritelayout(
     id="timber_yard_spritelayout_1",
     tile="timber_yard_tile_2",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -73,7 +72,7 @@ industry.add_spritelayout(
     id="timber_yard_spritelayout_2",
     tile="timber_yard_tile_2",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     smoke_sprites=[sprite_smoke],
     fences=["nw", "ne", "se", "sw"],
@@ -83,7 +82,7 @@ industry.add_spritelayout(
     id="timber_yard_spritelayout_4",
     tile="timber_yard_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=1,
@@ -92,7 +91,7 @@ industry.add_spritelayout(
     id="timber_yard_spritelayout_5",
     tile="timber_yard_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=3,
@@ -101,7 +100,7 @@ industry.add_spritelayout(
     id="timber_yard_spritelayout_6",
     tile="timber_yard_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=4,
@@ -110,7 +109,7 @@ industry.add_spritelayout(
     id="timber_yard_spritelayout_7",
     tile="timber_yard_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_7],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -118,7 +117,7 @@ industry.add_spritelayout(
     id="timber_yard_spritelayout_8",
     tile="timber_yard_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_8],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=5,
@@ -127,7 +126,7 @@ industry.add_spritelayout(
     id="timber_yard_spritelayout_empty",
     tile="timber_yard_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=6,

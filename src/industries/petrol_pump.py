@@ -39,9 +39,6 @@ industry.add_tile(
 sprite_ground = industry.add_sprite(
     sprite_number="GROUNDTILE_SLABS",
 )
-sprite_ground_overlay = industry.add_sprite(
-    sprite_number="GROUNDTILE_SLABS",
-)
 spriteset_1 = industry.add_spriteset(sprites=[(10, 60, 64, 59, -31, -28)])
 spriteset_2 = industry.add_spriteset(sprites=[(80, 60, 64, 59, -31, -28)])
 
@@ -49,14 +46,14 @@ industry.add_spritelayout(
     id="petrol_pump_spritelayout_1",
     tile="petrol_pump_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
 )
 industry.add_spritelayout(
     id="petrol_pump_spritelayout_2",
     tile="petrol_pump_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
 )
 

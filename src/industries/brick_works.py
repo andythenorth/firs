@@ -42,10 +42,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="gravel",
 )
-spriteset_ground_overlay = industry.add_spriteset(
-    type="empty",
-)
-
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 101, -31, -64)],
 )
@@ -80,7 +76,7 @@ sprite_smoke_kiln = industry.add_smoke_sprite(
 industry.add_spritelayout(
     id="brick_works_spritelayout_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     smoke_sprites=[sprite_smoke_boilerhouse],
     fences=["nw", "ne", "se", "sw"],
@@ -88,14 +84,14 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="brick_works_spritelayout_2",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="brick_works_spritelayout_3",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     smoke_sprites=[sprite_smoke_kiln],
     fences=["nw", "ne", "se", "sw"],
@@ -103,21 +99,21 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="brick_works_spritelayout_4",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="brick_works_spritelayout_sand_staithe",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_sand_staithe],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="brick_works_spritelayout_clay_staithe",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_clay_staithe],
     fences=["nw", "ne", "se", "sw"],
 )

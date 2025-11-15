@@ -43,7 +43,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="asphalt",
 )
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 31, -31, 0)],
 )
@@ -98,7 +97,7 @@ industry.add_spritelayout(
     id="crane_and_hoist_factory_spritelayout_1",
     tile="crane_and_hoist_factory_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -106,7 +105,7 @@ industry.add_spritelayout(
     id="crane_and_hoist_factory_spritelayout_2",
     tile="crane_and_hoist_factory_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -114,7 +113,7 @@ industry.add_spritelayout(
     id="crane_and_hoist_factory_spritelayout_3",
     tile="crane_and_hoist_factory_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -122,7 +121,7 @@ industry.add_spritelayout(
     id="crane_and_hoist_factory_spritelayout_4",
     tile="crane_and_hoist_factory_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -130,7 +129,7 @@ industry.add_spritelayout(
     id="crane_and_hoist_factory_spritelayout_5",
     tile="crane_and_hoist_factory_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -138,7 +137,7 @@ industry.add_spritelayout(
     id="crane_and_hoist_factory_spritelayout_6",
     tile="crane_and_hoist_factory_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     # building_sprites = [spriteset_6, spriteset_14], # commented due to spritesorter issues obscuring spriteset_14
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
@@ -147,7 +146,7 @@ industry.add_spritelayout(
     id="crane_and_hoist_factory_spritelayout_7",
     tile="crane_and_hoist_factory_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_7],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -155,7 +154,7 @@ industry.add_spritelayout(
     id="crane_and_hoist_factory_spritelayout_8",
     tile="crane_and_hoist_factory_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_8],
     smoke_sprites=[sprite_smoke],
     fences=["nw", "ne", "se", "sw"],
@@ -164,7 +163,7 @@ industry.add_spritelayout(
     id="crane_and_hoist_factory_spritelayout_9",
     tile="crane_and_hoist_factory_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_9],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -172,7 +171,7 @@ industry.add_spritelayout(
     id="crane_and_hoist_factory_spritelayout_10",
     tile="crane_and_hoist_factory_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_10],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -180,7 +179,7 @@ industry.add_spritelayout(
     id="crane_and_hoist_factory_spritelayout_11",
     tile="crane_and_hoist_factory_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_11],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -188,7 +187,7 @@ industry.add_spritelayout(
     id="crane_and_hoist_factory_spritelayout_12",
     tile="crane_and_hoist_factory_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_12],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -196,7 +195,7 @@ industry.add_spritelayout(
     id="crane_and_hoist_factory_spritelayout_13",
     tile="crane_and_hoist_factory_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_13],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -204,7 +203,7 @@ industry.add_spritelayout(
     id="crane_and_hoist_factory_spritelayout_14",
     tile="crane_and_hoist_factory_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
 )

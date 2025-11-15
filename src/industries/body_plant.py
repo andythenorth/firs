@@ -50,7 +50,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="asphalt",
 )
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 60, 64, 70, -31, -35)],
 )
@@ -80,7 +79,7 @@ industry.add_spritelayout(
     id="body_plant_spritelayout_1",
     tile="body_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -88,7 +87,7 @@ industry.add_spritelayout(
     id="body_plant_spritelayout_2",
     tile="body_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -96,7 +95,7 @@ industry.add_spritelayout(
     id="body_plant_spritelayout_3",
     tile="body_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=2,
@@ -105,7 +104,7 @@ industry.add_spritelayout(
     id="body_plant_spritelayout_4",
     tile="body_plant_tile_2",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_4],
     smoke_sprites=[sprite_smoke],
     fences=["nw", "ne", "se", "sw"],
@@ -115,7 +114,7 @@ industry.add_spritelayout(
     id="body_plant_spritelayout_5",
     tile="body_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=4,
@@ -124,7 +123,7 @@ industry.add_spritelayout(
     id="body_plant_spritelayout_6",
     tile="body_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=5,
@@ -133,7 +132,7 @@ industry.add_spritelayout(
     id="body_plant_spritelayout_empty",
     tile="body_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=6,

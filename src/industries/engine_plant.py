@@ -39,7 +39,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="asphalt",
 )
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 60, 64, 70, -31, -39)],
 )
@@ -66,7 +65,7 @@ industry.add_spritelayout(
     id="engine_plant_spritelayout_1",
     tile="engine_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=1,
@@ -75,7 +74,7 @@ industry.add_spritelayout(
     id="engine_plant_spritelayout_2",
     tile="engine_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -83,7 +82,7 @@ industry.add_spritelayout(
     id="engine_plant_spritelayout_3",
     tile="engine_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se"],
     add_to_object_num=2,
@@ -92,7 +91,7 @@ industry.add_spritelayout(
     id="engine_plant_spritelayout_4",
     tile="engine_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se"],
     add_to_object_num=3,
@@ -101,7 +100,7 @@ industry.add_spritelayout(
     id="engine_plant_spritelayout_5",
     tile="engine_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se"],
     add_to_object_num=4,
@@ -110,7 +109,7 @@ industry.add_spritelayout(
     id="engine_plant_spritelayout_6",
     tile="engine_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -118,7 +117,7 @@ industry.add_spritelayout(
     id="engine_plant_spritelayout_7",
     tile="engine_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_7],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -126,7 +125,7 @@ industry.add_spritelayout(
     id="engine_plant_spritelayout_empty",
     tile="engine_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=5,

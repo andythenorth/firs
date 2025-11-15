@@ -481,8 +481,9 @@ class SpriteLayout(object):
         assert self.tile != None, f"{self.id} {self.tile}"
         # optionally spritelayouts can cause objects to be defined
         self.add_to_object_num = add_to_object_num
-        if getattr(self.ground_overlay, "type", "None") not in ["empty", "None"]:
-            print(self.id, self.ground_overlay.id)
+        if self.ground_overlay is not None:
+            if getattr(self.ground_overlay, 'type', None):
+                print("'empty' in spritelayout:", self.id, self.ground_overlay.type)
 
     def resolve_tile(self, industry):
         for tile in industry.tiles:

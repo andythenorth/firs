@@ -108,7 +108,7 @@ industry.add_spritelayout(
     id="trading_post_spritelayout_11",
     tile="trading_post_tile_1",
     ground_sprite=spriteset_ground_empty,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[
         spriteset_jetty_se_nw,
         spriteset_concrete,
@@ -119,7 +119,7 @@ industry.add_spritelayout(
     id="trading_post_spritelayout_12",
     tile="trading_post_tile_1",
     ground_sprite=spriteset_ground_empty,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[
         spriteset_jetty_ne_sw,
         spriteset_concrete,
@@ -130,7 +130,7 @@ industry.add_spritelayout(
     id="trading_post_spritelayout_13",
     tile="trading_post_tile_1",
     ground_sprite=spriteset_ground_empty,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[
         spriteset_jetty_se_nw,
         spriteset_jetty_ne_sw,
@@ -142,49 +142,49 @@ industry.add_spritelayout(
     id="trading_post_spritelayout_21",
     tile="trading_post_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[spriteset_11],
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_22",
     tile="trading_post_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[spriteset_12],
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_23",
     tile="trading_post_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[spriteset_13],
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_24",
     tile="trading_post_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[spriteset_14],
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_25",
     tile="trading_post_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[spriteset_14],
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_26",
     tile="trading_post_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[],
 )
 industry.add_spritelayout(
     id="trading_post_spritelayout_27",
     tile="trading_post_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[],
 )
 # trading_post_spritelayout_28 fell out of use and was removed
@@ -192,7 +192,7 @@ industry.add_spritelayout(
     id="trading_post_spritelayout_29",
     tile="trading_post_tile_1",
     ground_sprite=spriteset_ground_empty,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[
         spriteset_jetty_se_nw,
         spriteset_jetty_ne_sw,
@@ -204,7 +204,7 @@ industry.add_spritelayout(
     id="trading_post_spritelayout_30",
     tile="trading_post_tile_1",
     ground_sprite=spriteset_ground_empty,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[
         spriteset_jetty_se_nw,
         spriteset_jetty_ne_sw,

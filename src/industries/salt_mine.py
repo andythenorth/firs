@@ -47,8 +47,6 @@ industry.add_tile(
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-sprite_ground_overlay = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-
 spriteset_headgear_animated = industry.add_spriteset(
     sprites=[
         (10, 160, 64, 122, -31, -88),
@@ -116,69 +114,69 @@ sprite_smoke_4 = industry.add_smoke_sprite(
 industry.add_spritelayout(
     id="salt_mine_spritelayout_tile_empty",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_headgear_animated",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_headgear_animated],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_silos",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_exit_trestle],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_crusher_front_part",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_crusher_front_part],
     smoke_sprites=[sprite_smoke_1, sprite_smoke_2],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_crusher_rear_part",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_crusher_rear_part],
     smoke_sprites=[sprite_smoke_3, sprite_smoke_4],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_misc_building_tanks",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_misc_building_tanks],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_ore_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_ore_1],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_ore_2",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_ore_2],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_winding_house",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_winding_house],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_silo_conveyor",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_exit_silo_conveyor],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_truck",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_truck],
 )
 

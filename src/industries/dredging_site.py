@@ -41,11 +41,6 @@ industry.add_tile(
 sprite_ground = industry.add_sprite(
     sprite_number="GROUNDSPRITE_WATER",
 )
-
-spriteset_ground_overlay = industry.add_spriteset(
-    type="empty",
-)
-
 spriteset_platform = industry.add_spriteset(
     sprites=[(10, 10, 64, 100, -31, -67)],
 )

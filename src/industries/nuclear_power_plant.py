@@ -39,7 +39,6 @@ industry.add_tile(
     ),
 )
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-sprite_ground_overlay = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
 sprite_1 = industry.add_sprite(sprite_number="2047")
 sprite_2 = industry.add_sprite(sprite_number="2050")
 sprite_3 = industry.add_sprite(sprite_number="2053")
@@ -51,14 +50,14 @@ sprite_smoke_1 = industry.add_smoke_sprite(
 industry.add_spritelayout(
     id="nuclear_power_plant_sprite_layout_cooling_tower",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[sprite_1],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="nuclear_power_plant_sprite_layout_large_building",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[sprite_2],
     smoke_sprites=[sprite_smoke_1],
     fences=["nw", "ne", "se", "sw"],
@@ -66,14 +65,14 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="nuclear_power_plant_sprite_layout_small_building",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[sprite_3],
     fences=["nw", "ne", "se", "sw"],
 )
 industry.add_spritelayout(
     id="nuclear_power_plant_sprite_layout_substation",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[sprite_4],
     fences=["nw", "ne", "se", "sw"],
 )

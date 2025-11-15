@@ -46,7 +46,6 @@ industry.add_tile(
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-sprite_ground_overlay = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
 sprite_1 = industry.add_sprite(sprite_number="2047")
 sprite_2 = industry.add_sprite(sprite_number="2050")
 sprite_3 = industry.add_sprite(sprite_number="2053")
@@ -59,7 +58,7 @@ industry.add_spritelayout(
     id="power_plant_spritelayout_cooling_tower",
     tile="power_plant_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[sprite_1],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=1,
@@ -68,7 +67,7 @@ industry.add_spritelayout(
     id="power_plant_spritelayout_large_building",
     tile="power_plant_tile_2",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[sprite_2],
     smoke_sprites=[sprite_smoke_1],
     fences=["nw", "ne", "se", "sw"],
@@ -78,7 +77,7 @@ industry.add_spritelayout(
     id="power_plant_spritelayout_small_building",
     tile="power_plant_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[sprite_3],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=3,
@@ -87,7 +86,7 @@ industry.add_spritelayout(
     id="power_plant_spritelayout_substation",
     tile="power_plant_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[sprite_4],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=4,
@@ -96,7 +95,7 @@ industry.add_spritelayout(
     id="power_plant_spritelayout_empty",
     tile="power_plant_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=5,

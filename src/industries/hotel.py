@@ -55,9 +55,6 @@ industry.add_tile(
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDSPRITE_CLEARED")
-spriteset_ground_overlay = industry.add_spriteset(
-    type="empty",
-)
 sprite_building_1 = industry.add_sprite(
     sprite_number="(terrain_type == TILETYPE_SNOW) ? 4583 : 4475"
 )
@@ -69,14 +66,14 @@ industry.add_spritelayout(
     id="hotel_spritelayout_1",
     tile="hotel_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[sprite_building_1],
 )
 industry.add_spritelayout(
     id="hotel_spritelayout_2",
     tile="hotel_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[sprite_building_2],
 )
 

@@ -53,10 +53,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="asphalt",
 )
-spriteset_ground_overlay = industry.add_spriteset(
-    type="empty",
-)
-
 spriteset_horizontal_tanks = industry.add_spriteset(
     sprites=[(10, 10, 64, 114, -31, -83)],
 )
@@ -152,7 +148,7 @@ industry.add_spritelayout(
     id="chlor_alkali_plant_spritelayout_horizontal_tanks",
     tile="chlor_alkali_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_horizontal_tanks],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=3,
@@ -161,7 +157,7 @@ industry.add_spritelayout(
     id="chlor_alkali_plant_spritelayout_frac_columns",
     tile="chlor_alkali_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_frac_columns],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=4,
@@ -170,7 +166,7 @@ industry.add_spritelayout(
     id="chlor_alkali_plant_spritelayout_drop_tower_and_thin_chimney",
     tile="chlor_alkali_plant_tile_2",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_drop_tower_and_thin_chimney],
     smoke_sprites=[sprite_smoke_1],
     fences=["nw", "ne", "se", "sw"],
@@ -180,7 +176,7 @@ industry.add_spritelayout(
     id="chlor_alkali_plant_spritelayout_large_building",
     tile="chlor_alkali_plant_tile_3",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_large_building],
     smoke_sprites=[sprite_smoke_2, sprite_smoke_3, sprite_smoke_4, sprite_smoke_5],
     fences=["nw", "ne", "se", "sw"],
@@ -190,7 +186,7 @@ industry.add_spritelayout(
     id="chlor_alkali_plant_spritelayout_fat_chimney",
     tile="chlor_alkali_plant_tile_3",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_fat_chimney],
     smoke_sprites=[sprite_smoke_6, sprite_smoke_7, sprite_smoke_8, sprite_smoke_9],
     fences=["nw", "ne", "se", "sw"],
@@ -200,7 +196,7 @@ industry.add_spritelayout(
     id="chlor_alkali_plant_spritelayout_spherical_tanks",
     tile="chlor_alkali_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_spherical_tanks],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=1,
@@ -209,7 +205,7 @@ industry.add_spritelayout(
     id="chlor_alkali_plant_spritelayout_vertical_tanks",
     tile="chlor_alkali_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_vertical_tanks],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=2,
@@ -218,7 +214,7 @@ industry.add_spritelayout(
     id="chlor_alkali_plant_spritelayout_barrels",
     tile="chlor_alkali_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_barrels],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=8,
@@ -227,21 +223,21 @@ industry.add_spritelayout(
     id="chlor_alkali_plant_spritelayout_extra_pipe_huts_front",
     tile="chlor_alkali_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_extra_pipe_huts_front],
 )
 industry.add_spritelayout(
     id="chlor_alkali_plant_spritelayout_extra_pipe_huts_rear",
     tile="chlor_alkali_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_extra_pipe_huts_rear],
 )
 industry.add_spritelayout(
     id="chlor_alkali_plant_spritelayout_extra_tanks",
     tile="chlor_alkali_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_extra_tanks],
     add_to_object_num=10,
 )
@@ -249,7 +245,7 @@ industry.add_spritelayout(
     id="chlor_alkali_plant_spritelayout_salt_handling",
     tile="chlor_alkali_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_salt_handling],
     add_to_object_num=11,
 )
@@ -257,7 +253,7 @@ industry.add_spritelayout(
     id="chlor_alkali_plant_spritelayout_empty",
     tile="chlor_alkali_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     add_to_object_num=12,
 )

@@ -99,21 +99,21 @@ industry.add_spritelayout(
     id="fish_farm_spritelayout_1",
     tile="fish_farm_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[spriteset_tank_1],
 )
 industry.add_spritelayout(
     id="fish_farm_spritelayout_2",
     tile="fish_farm_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[spriteset_tank_2],
 )
 industry.add_spritelayout(
     id="fish_farm_spritelayout_3",
     tile="fish_farm_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[spriteset_tank_3],
 )
 industry.add_spritelayout(

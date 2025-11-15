@@ -60,7 +60,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="asphalt",
 )
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 stacks_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 56, -31, -26)],
     always_draw=True,
@@ -79,7 +78,7 @@ industry.add_spritelayout(
     id="builders_yard_spritelayout_1",
     tile="builders_yard_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[stacks_1],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -87,21 +86,21 @@ industry.add_spritelayout(
     id="builders_yard_spritelayout_2",
     tile="builders_yard_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[shed],
 )
 industry.add_spritelayout(
     id="builders_yard_spritelayout_3",
     tile="builders_yard_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[silo],
 )
 industry.add_spritelayout(
     id="builders_yard_spritelayout_4",
     tile="builders_yard_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[stacks_2],
 )
 

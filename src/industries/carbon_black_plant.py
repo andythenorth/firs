@@ -54,10 +54,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="asphalt",
 )
-spriteset_ground_overlay = industry.add_spriteset(
-    type="empty",
-)
-
 spriteset_boiler = industry.add_spriteset(
     sprites=[(10, 10, 64, 114, -31, -83)],
 )
@@ -96,7 +92,7 @@ industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_empty",
     tile="carbon_black_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     add_to_object_num=6,
 )
@@ -104,7 +100,7 @@ industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_boiler",
     tile="carbon_black_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_boiler],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=4,
@@ -113,7 +109,7 @@ industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_chimneys",
     tile="carbon_black_plant_tile_2",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_chimneys],
     smoke_sprites=[sprite_smoke_1, sprite_smoke_2, sprite_smoke_3],
     fences=["nw", "ne", "se", "sw"],
@@ -123,7 +119,7 @@ industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_tanks_group",
     tile="carbon_black_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_tanks_group],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=3,
@@ -132,7 +128,7 @@ industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_silos",
     tile="carbon_black_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_silos],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=2,
@@ -141,7 +137,7 @@ industry.add_spritelayout(
     id="carbon_black_plant_spritelayout_silos_with_office",
     tile="carbon_black_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_silos_with_office],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=1,

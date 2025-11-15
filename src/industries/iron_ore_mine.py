@@ -87,8 +87,6 @@ industry.add_tile(
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-sprite_ground_overlay = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-
 spriteset_headgear_animated = industry.add_spriteset(
     sprites=[
         (10, 310, 64, 122, -31, -88),
@@ -166,7 +164,7 @@ industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_tile_empty",
     tile="iron_ore_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     add_to_object_num=9,
 )
@@ -174,7 +172,7 @@ industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_headgear_animated",
     tile="iron_ore_mine_tile_2",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_headgear_animated],
     add_to_object_num=1,
 )
@@ -182,28 +180,28 @@ industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_exit_trestle_animated",
     tile="iron_ore_mine_tile_4",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_exit_trestle_animated],
 )
 industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_crusher_front_part",
     tile="iron_ore_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_crusher_front_part],
 )
 industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_crusher_rear_part",
     tile="iron_ore_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_crusher_rear_part],
 )
 industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_ore_truck",
     tile="iron_ore_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_ore_truck],
     add_to_object_num=8,
 )
@@ -211,21 +209,21 @@ industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_joined_ore_front",
     tile="iron_ore_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_joined_ore_front],
 )
 industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_joined_ore_rear",
     tile="iron_ore_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_joined_ore_rear],
 )
 industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_boiler_house",
     tile="iron_ore_mine_tile_3",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_boiler_house],
     smoke_sprites=[sprite_smoke_1, sprite_smoke_2],
     add_to_object_num=5,
@@ -234,7 +232,7 @@ industry.add_spritelayout(
     id="iron_ore_mine_spritelayout_winding_house",
     tile="iron_ore_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_winding_house],
     add_to_object_num=6,
 )
@@ -243,7 +241,7 @@ industry.add_spritelayout(
     # tile has to match trestle for multi-tile object case
     tile="iron_ore_mine_tile_4",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_exit_shed_rear],
 )
 

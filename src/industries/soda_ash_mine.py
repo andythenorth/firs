@@ -63,8 +63,6 @@ industry.add_tile(
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-sprite_ground_overlay = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-
 spriteset_headgear_animated = industry.add_spriteset(
     sprites=[
         (10, 160, 64, 122, -31, -88),
@@ -135,14 +133,14 @@ industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_tile_empty",
     tile="soda_ash_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_headgear_animated",
     tile="soda_ash_mine_tile_2",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_headgear_animated],
     add_to_object_num=1,
 )
@@ -150,7 +148,7 @@ industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_silos",
     tile="soda_ash_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_exit_trestle],
     add_to_object_num=3,
 )
@@ -158,7 +156,7 @@ industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_crusher_front_part",
     tile="soda_ash_mine_tile_3",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_crusher_front_part],
     smoke_sprites=[sprite_smoke_1, sprite_smoke_2],
 )
@@ -166,14 +164,14 @@ industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_crusher_middle_part",
     tile="soda_ash_mine_tile_3",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_crusher_rear_part",
     tile="soda_ash_mine_tile_3",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_crusher_rear_part],
     smoke_sprites=[sprite_smoke_3, sprite_smoke_4],
 )
@@ -181,7 +179,7 @@ industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_misc_building_tanks",
     tile="soda_ash_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_misc_building_tanks],
     add_to_object_num=5,
 )
@@ -189,28 +187,28 @@ industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_ore_1",
     tile="soda_ash_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_ore_1],
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_ore_2",
     tile="soda_ash_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_ore_2],
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_winding_house",
     tile="soda_ash_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_winding_house],
 )
 industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_silo_conveyor",
     tile="soda_ash_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_exit_silo_conveyor],
     add_to_object_num=4,
 )
@@ -218,7 +216,7 @@ industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_truck",
     tile="soda_ash_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_truck],
     add_to_object_num=7,
 )
@@ -226,7 +224,7 @@ industry.add_spritelayout(
     id="soda_ash_mine_spritelayout_empty",
     tile="soda_ash_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     add_to_object_num=8,
 )

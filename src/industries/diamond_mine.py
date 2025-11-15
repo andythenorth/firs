@@ -62,8 +62,6 @@ industry.add_tile(
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-sprite_ground_overlay = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-
 spriteset_headgear_animated = industry.add_spriteset(
     sprites=[
         (10, 160, 64, 122, -31, -88),
@@ -99,7 +97,7 @@ industry.add_spritelayout(
     id="diamond_mine_spritelayout_tile_empty",
     tile="diamond_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=6,
@@ -108,7 +106,7 @@ industry.add_spritelayout(
     id="diamond_mine_spritelayout_headgear_animated",
     tile="diamond_mine_tile_2",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_headgear_animated],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=1,
@@ -117,7 +115,7 @@ industry.add_spritelayout(
     id="diamond_mine_spritelayout_crusher_front_part",
     tile="diamond_mine_tile_3",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_crusher_front_part],
     smoke_sprites=[sprite_smoke_1],
     fences=["nw", "ne", "se", "sw"],
@@ -126,7 +124,7 @@ industry.add_spritelayout(
     id="diamond_mine_spritelayout_crusher_mid_part",
     tile="diamond_mine_tile_3",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -134,7 +132,7 @@ industry.add_spritelayout(
     id="diamond_mine_spritelayout_crusher_rear_part",
     tile="diamond_mine_tile_3",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_crusher_rear_part],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -142,7 +140,7 @@ industry.add_spritelayout(
     id="diamond_mine_spritelayout_misc_building",
     tile="diamond_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_misc_building],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=5,
@@ -151,7 +149,7 @@ industry.add_spritelayout(
     id="diamond_mine_spritelayout_vents_shed",
     tile="diamond_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_vents_shed],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=4,
@@ -160,7 +158,7 @@ industry.add_spritelayout(
     id="diamond_mine_spritelayout_winding_house",
     tile="diamond_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_winding_house],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=2,

@@ -61,9 +61,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="gravel",
 )
-spriteset_ground_overlay = industry.add_spriteset(
-    type="empty",
-)
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 70, -31, -40)],
 )
@@ -107,7 +104,7 @@ sprite_smoke = industry.add_smoke_sprite(
 industry.add_spritelayout(
     id="iron_works_spritelayout_furnace_anim",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     smoke_sprites=[sprite_smoke],
     fences=["nw", "ne", "se", "sw"],
@@ -115,14 +112,14 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="iron_works_spritelayout_large_shed",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     fences=[],
 )
 industry.add_spritelayout(
     id="iron_works_spritelayout_large_shed_clerestory_roof",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     fences=[],
 )
@@ -136,21 +133,21 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="iron_works_spritelayout_staithes",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_4],
     fences=["nw", "ne"],
 )
 industry.add_spritelayout(
     id="iron_works_spritelayout_logs",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se"],
 )
 industry.add_spritelayout(
     id="iron_works_spritelayout_empty",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     fences=["nw", "ne", "se"],
 )

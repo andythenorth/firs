@@ -68,8 +68,6 @@ industry.add_tile(
 sprite_ground = industry.add_spriteset(
     type="gravel",
 )
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
-
 spriteset_silo = industry.add_spriteset(
     sprites=[(10, 10, 64, 122, -31, -91)],
 )
@@ -154,7 +152,7 @@ industry.add_spritelayout(
     id="coke_oven_spritelayout_empty",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     add_to_object_num=14,
 )
@@ -163,7 +161,7 @@ industry.add_spritelayout(
     # tile id has to match larry car spritelayout for the multiple-view object case
     tile="coke_oven_tile_3",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_oven_battery],
     add_to_object_num=2,
 )
@@ -171,7 +169,7 @@ industry.add_spritelayout(
     id="coke_oven_spritelayout_oven_battery_larry_car",
     tile="coke_oven_tile_3",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_oven_battery_larry_car],
     smoke_sprites=[sprite_smoke_small_1, sprite_smoke_small_2],
     add_to_object_num=2,
@@ -180,7 +178,7 @@ industry.add_spritelayout(
     id="coke_oven_spritelayout_silo",
     tile="coke_oven_tile_2",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_silo],
     smoke_sprites=[sprite_smoke_big_1],
     add_to_object_num=1,
@@ -189,7 +187,7 @@ industry.add_spritelayout(
     id="coke_oven_spritelayout_pusher_rails_empty",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_pusher_rails_base, spriteset_pipe_gantry],
     add_to_object_num=5,
 )
@@ -197,7 +195,7 @@ industry.add_spritelayout(
     id="coke_oven_spritelayout_pusher_rails_with_car",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[
         spriteset_pusher_rails_base,
         spriteset_pusher_car,
@@ -209,7 +207,7 @@ industry.add_spritelayout(
     id="coke_oven_spritelayout_pusher_rails_with_house",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_pusher_rails_base, spriteset_pipe_gantry_house],
     add_to_object_num=4,
 )
@@ -217,7 +215,7 @@ industry.add_spritelayout(
     id="coke_oven_spritelayout_quench_tower",
     tile="coke_oven_tile_2",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_quench_tower],
     smoke_sprites=[sprite_smoke_big_2],
     add_to_object_num=3,
@@ -226,7 +224,7 @@ industry.add_spritelayout(
     id="coke_oven_spritelayout_gas_plant_1",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_gas_plant_1],
     add_to_object_num=7,
 )
@@ -234,49 +232,49 @@ industry.add_spritelayout(
     id="coke_oven_spritelayout_coal_handling_front",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_coal_handling_front],
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_coal_handling_rear",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_coal_handling_rear],
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_extra_coal_front",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_extra_coal_front],
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_extra_coal_rear",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_extra_coal_rear],
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_extra_pipe_huts_front",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_extra_pipe_huts_front],
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_extra_pipe_huts_rear",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_extra_pipe_huts_rear],
 )
 industry.add_spritelayout(
     id="coke_oven_spritelayout_tar_tanks",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_tile_tar_tanks],
     add_to_object_num=8,
 )
@@ -284,7 +282,7 @@ industry.add_spritelayout(
     id="coke_oven_spritelayout_extra_pipe_gantry_plain",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_pipe_gantry],
     add_to_object_num=9,
 )
@@ -292,7 +290,7 @@ industry.add_spritelayout(
     id="coke_oven_spritelayout_extra_pipe_gantry_fancy",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_pipe_gantry_angled],
     add_to_object_num=10,
 )
@@ -300,7 +298,7 @@ industry.add_spritelayout(
     id="coke_oven_spritelayout_mostly_empty",
     tile="coke_oven_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_mostly_empty],
     add_to_object_num=13,
 )

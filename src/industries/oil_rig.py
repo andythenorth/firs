@@ -42,7 +42,6 @@ industry.add_tile(
 sprite_ground = industry.add_sprite(
     sprite_number="GROUNDSPRITE_WATER",
 )
-spriteset_ground_empty = industry.add_spriteset(type="empty")
 sprite_1 = industry.add_sprite(sprite_number="2096")
 sprite_2 = industry.add_sprite(sprite_number="2097")
 sprite_3 = industry.add_sprite(sprite_number="2098")
@@ -52,28 +51,28 @@ industry.add_spritelayout(
     id="oil_rig_spritelayout_1",
     tile="oil_rig_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[sprite_1],
 )
 industry.add_spritelayout(
     id="oil_rig_spritelayout_2",
     tile="oil_rig_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[sprite_2],
 )
 industry.add_spritelayout(
     id="oil_rig_spritelayout_3",
     tile="oil_rig_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[sprite_3],
 )
 industry.add_spritelayout(
     id="oil_rig_spritelayout_4",
     tile="oil_rig_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_empty,
+    ground_overlay=None,
     building_sprites=[sprite_4],
 )
 

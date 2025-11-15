@@ -47,7 +47,6 @@ industry.add_tile(
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 78, -31, -45)],
 )
@@ -63,14 +62,14 @@ industry.add_spritelayout(
     id="forest_equipment_spritelayout",
     tile="forest_tile_2",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1, spriteset_2],
 )
 industry.add_spritelayout(
     id="forest_wood_stack_spritelayout",
     tile="forest_tile_2",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
 )
 industry.add_magic_spritelayout(

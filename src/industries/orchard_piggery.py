@@ -49,7 +49,6 @@ industry.add_tile(
 
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 59, -31, -28)],
 )
@@ -58,7 +57,7 @@ industry.add_spritelayout(
     id="orchard_piggery_house_spritelayout",
     tile="orchard_piggery_tile_2",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     add_to_object_num=1,
 )

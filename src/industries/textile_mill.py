@@ -39,7 +39,6 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(type="asphalt")
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_large_chimney = industry.add_spriteset(
     sprites=[(10, 60, 64, 103, -31, -74)],
 )
@@ -66,7 +65,7 @@ industry.add_spritelayout(
     id="textile_mill_spritelayout_1_anim",
     tile="textile_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_large_chimney],
     smoke_sprites=[sprite_smoke],
     fences=["nw", "ne", "se", "sw"],
@@ -75,7 +74,7 @@ industry.add_spritelayout(
     id="textile_mill_spritelayout_2",
     tile="textile_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_large_building_lh_part],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -83,7 +82,7 @@ industry.add_spritelayout(
     id="textile_mill_spritelayout_3",
     tile="textile_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_large_building_rh_part],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -91,7 +90,7 @@ industry.add_spritelayout(
     id="textile_mill_spritelayout_4",
     tile="textile_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_crates_greeble],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -99,7 +98,7 @@ industry.add_spritelayout(
     id="textile_mill_spritelayout_5",
     tile="textile_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_small_warehouse],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -107,7 +106,7 @@ industry.add_spritelayout(
     id="textile_mill_spritelayout_6",
     tile="textile_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
 )

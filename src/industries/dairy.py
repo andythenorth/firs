@@ -64,7 +64,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="asphalt",
 )
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 94, -31, -63)],
 )
@@ -81,11 +80,6 @@ spriteset_flag_anim = industry.add_spriteset(
 )
 spriteset_ground_anim = industry.add_spriteset(
     type="asphalt",
-    # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
-    num_sprites_to_autofill=len(spriteset_flag_anim.sprites),
-)
-spriteset_ground_overlay_anim = industry.add_spriteset(
-    type="empty",
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_flag_anim.sprites),
 )
@@ -123,7 +117,7 @@ industry.add_spritelayout(
     id="dairy_spritelayout_1",
     tile="dairy_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -131,7 +125,7 @@ industry.add_spritelayout(
     id="dairy_spritelayout_2",
     tile="dairy_tile_2",
     ground_sprite=spriteset_ground_anim,
-    ground_overlay=spriteset_ground_overlay_anim,
+    ground_overlay=None,
     building_sprites=[spriteset_2, spriteset_flag_anim],
     fences=["nw", "ne", "se"],
 )
@@ -139,7 +133,7 @@ industry.add_spritelayout(
     id="dairy_spritelayout_3",
     tile="dairy_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -147,7 +141,7 @@ industry.add_spritelayout(
     id="dairy_spritelayout_4",
     tile="dairy_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -155,7 +149,7 @@ industry.add_spritelayout(
     id="dairy_spritelayout_5",
     tile="dairy_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -163,7 +157,7 @@ industry.add_spritelayout(
     id="dairy_spritelayout_6",
     tile="dairy_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -171,7 +165,7 @@ industry.add_spritelayout(
     id="dairy_spritelayout_7",
     tile="dairy_tile_3",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_7],
     smoke_sprites=[sprite_smoke],
     fences=["nw", "ne", "se", "sw"],
@@ -180,7 +174,7 @@ industry.add_spritelayout(
     id="dairy_spritelayout_8",
     tile="dairy_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_8],
     fences=["nw", "ne", "se", "sw"],
 )

@@ -39,7 +39,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="asphalt",
 )
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(sprites=[(10, 60, 64, 59, -31, -28)])
 spriteset_2 = industry.add_spriteset(sprites=[(80, 60, 64, 59, -31, -28)])
 
@@ -47,7 +46,7 @@ industry.add_spritelayout(
     id="vehicle_distributor_spritelayout_1",
     tile="vehicle_distributor_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -55,7 +54,7 @@ industry.add_spritelayout(
     id="vehicle_distributor_spritelayout_2",
     tile="vehicle_distributor_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
 )

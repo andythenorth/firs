@@ -64,9 +64,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="gravel",
 )
-spriteset_ground_overlay = industry.add_spriteset(
-    type="empty",
-)
 spriteset_ground_tile_dark = industry.add_spriteset(
     sprites=[(500, 10, 64, 122, -31, -91)],
 )
@@ -142,7 +139,7 @@ industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_empty",
     tile="integrated_steel_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     add_to_object_num=8,
 )
@@ -150,7 +147,7 @@ industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_greeble",
     tile="integrated_steel_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_greeble],
     add_to_object_num=6,
 )
@@ -158,7 +155,7 @@ industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_integrated_steel_mill_1",
     tile="integrated_steel_mill_tile_2",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_integrated_steel_mill_1],
     smoke_sprites=[sprite_smoke],
     add_to_object_num=2,
@@ -167,7 +164,7 @@ industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_integrated_steel_mill_2",
     tile="integrated_steel_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_integrated_steel_mill_2],
     add_to_object_num=1,
 )
@@ -175,7 +172,7 @@ industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_small_shed",
     tile="integrated_steel_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_small_shed],
     add_to_object_num=5,
 )
@@ -183,7 +180,7 @@ industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_ladle_transporter",
     tile="integrated_steel_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_ladle_transporter],
     add_to_object_num=7,
 )
@@ -191,7 +188,7 @@ industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_brick_building",
     tile="integrated_steel_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_brick_building],
     add_to_object_num=4,
 )
@@ -199,7 +196,7 @@ industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_small_tanks",
     tile="integrated_steel_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_small_tanks],
     add_to_object_num=3,
 )
@@ -207,7 +204,7 @@ industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_large_shed_rear_part",
     tile="integrated_steel_mill_tile_3",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_large_shed_rear_part],
 )
 industry.add_spritelayout(

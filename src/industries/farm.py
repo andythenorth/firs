@@ -65,7 +65,6 @@ industry.add_tile(
 
 spriteset_ground = industry.add_spriteset(type="empty")
 sprite_ground_dirt = industry.add_sprite(sprite_number="GROUNDSPRITE_CLEARED")
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 52, -31, -21)],
 )
@@ -138,7 +137,7 @@ industry.add_spritelayout(
     id="farm_spritelayout_5",
     tile="farm_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_5],
     terrain_aware_ground=True,
 )
@@ -146,7 +145,7 @@ industry.add_spritelayout(
     id="farm_spritelayout_6",
     tile="farm_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_6],
     terrain_aware_ground=True,
 )
@@ -154,7 +153,7 @@ industry.add_spritelayout(
     id="farm_spritelayout_7",
     tile="farm_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_7],
     terrain_aware_ground=True,
 )
@@ -162,7 +161,7 @@ industry.add_spritelayout(
     id="farm_spritelayout_8",
     tile="farm_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_8],
     terrain_aware_ground=True,
 )

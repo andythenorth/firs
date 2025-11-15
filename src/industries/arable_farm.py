@@ -54,7 +54,6 @@ industry.add_tile(
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
 spriteset_ground_empty = industry.add_spriteset(type="empty")
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 59, -31, -28)],
 )
@@ -75,7 +74,7 @@ industry.add_spritelayout(
     id="arable_farm_spritelayout_1",
     tile="arable_farm_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     add_to_object_num=1,
 )
@@ -83,7 +82,7 @@ industry.add_spritelayout(
     id="arable_farm_spritelayout_2",
     tile="arable_farm_tile_1",
     ground_sprite=spriteset_ground_empty,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     terrain_aware_ground=True,
 )
@@ -91,7 +90,7 @@ industry.add_spritelayout(
     id="arable_farm_spritelayout_3",
     tile="arable_farm_tile_1",
     ground_sprite=spriteset_ground_empty,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     terrain_aware_ground=True,
 )
@@ -99,7 +98,7 @@ industry.add_spritelayout(
     id="arable_farm_spritelayout_4",
     tile="arable_farm_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_4],
     add_to_object_num=2,
 )
@@ -107,7 +106,7 @@ industry.add_spritelayout(
     id="arable_farm_spritelayout_5",
     tile="arable_farm_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_5],
     add_to_object_num=3,
 )

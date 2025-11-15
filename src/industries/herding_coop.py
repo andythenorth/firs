@@ -43,7 +43,6 @@ industry.add_tile(
 
 spriteset_ground = industry.add_spriteset(type="empty")
 sprite_ground_dirt = industry.add_sprite(sprite_number=3943)
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 52, -31, -21)],
 )
@@ -73,7 +72,7 @@ industry.add_spritelayout(
     id="herding_coop_spritelayout_large_hut",
     tile="herding_coop_tile_2",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     smoke_sprites=[sprite_smoke_1],
     terrain_aware_ground=True,
@@ -82,7 +81,7 @@ industry.add_spritelayout(
     id="herding_coop_spritelayout_brown_hut",
     tile="herding_coop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     terrain_aware_ground=True,
 )
@@ -90,7 +89,7 @@ industry.add_spritelayout(
     id="herding_coop_spritelayout_two_brown_huts",
     tile="herding_coop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     terrain_aware_ground=True,
 )
@@ -114,7 +113,7 @@ industry.add_spritelayout(
     id="herding_coop_spritelayout_small_hut_logs",
     tile="herding_coop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_6],
     terrain_aware_ground=True,
 )

@@ -56,7 +56,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="asphalt",
 )
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 31, -31, 0)],
     always_draw=True,
@@ -116,7 +115,7 @@ industry.add_spritelayout(
     id="pipe_shop_spritelayout_1",
     tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -124,7 +123,7 @@ industry.add_spritelayout(
     id="pipe_shop_spritelayout_2",
     tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -132,7 +131,7 @@ industry.add_spritelayout(
     id="pipe_shop_spritelayout_3",
     tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -140,7 +139,7 @@ industry.add_spritelayout(
     id="pipe_shop_spritelayout_4",
     tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -148,7 +147,7 @@ industry.add_spritelayout(
     id="pipe_shop_spritelayout_5",
     tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -156,7 +155,7 @@ industry.add_spritelayout(
     id="pipe_shop_spritelayout_6",
     tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     # building_sprites = [spriteset_6, spriteset_14], # commented due to spritesorter issues obscuring spriteset_14
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
@@ -165,7 +164,7 @@ industry.add_spritelayout(
     id="pipe_shop_spritelayout_7",
     tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_7],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -173,7 +172,7 @@ industry.add_spritelayout(
     id="pipe_shop_spritelayout_8",
     tile="pipe_shop_tile_2",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_8],
     smoke_sprites=[sprite_smoke],
     fences=["nw", "ne", "se", "sw"],
@@ -182,7 +181,7 @@ industry.add_spritelayout(
     id="pipe_shop_spritelayout_9",
     tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_9],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -190,7 +189,7 @@ industry.add_spritelayout(
     id="pipe_shop_spritelayout_10",
     tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_10],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -198,7 +197,7 @@ industry.add_spritelayout(
     id="pipe_shop_spritelayout_11",
     tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_11],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -206,7 +205,7 @@ industry.add_spritelayout(
     id="pipe_shop_spritelayout_12",
     tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_12],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -214,7 +213,7 @@ industry.add_spritelayout(
     id="pipe_shop_spritelayout_13",
     tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_13],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -222,7 +221,7 @@ industry.add_spritelayout(
     id="pipe_shop_spritelayout_14",
     tile="pipe_shop_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     fences=[],
 )

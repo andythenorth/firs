@@ -30,7 +30,8 @@
         </tal:ground_sprite>
 
         <!--! industry ground overlay, if not empty -->
-        <tal:not_empty condition="getattr(spritelayout.ground_overlay, 'type', None) != 'empty'">
+        <!--! CABBAGE LEGACY 'empty' check -->
+        <tal:not_empty condition="getattr(spritelayout.ground_overlay, 'type', None) != 'empty' and spritelayout.ground_overlay != None">
             childsprite {
                 sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay)};
                 recolour_mode: RECOLOUR_REMAP;

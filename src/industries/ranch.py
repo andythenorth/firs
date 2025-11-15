@@ -33,7 +33,6 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(type="empty")
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 52, -31, -21)],
 )
@@ -54,7 +53,7 @@ industry.add_spritelayout(
     id="ranch_spritelayout_1",
     tile="ranch_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     terrain_aware_ground=True,
 )
@@ -62,7 +61,7 @@ industry.add_spritelayout(
     id="ranch_spritelayout_2",
     tile="ranch_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     terrain_aware_ground=True,
 )
@@ -70,7 +69,7 @@ industry.add_spritelayout(
     id="ranch_spritelayout_3",
     tile="ranch_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     terrain_aware_ground=True,
 )
@@ -78,7 +77,7 @@ industry.add_spritelayout(
     id="ranch_spritelayout_4",
     tile="ranch_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_4],
     terrain_aware_ground=True,
 )
@@ -86,7 +85,7 @@ industry.add_spritelayout(
     id="ranch_spritelayout_5",
     tile="ranch_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_5],
     terrain_aware_ground=True,
 )

@@ -64,8 +64,6 @@ industry.add_tile(
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-sprite_ground_overlay = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-
 spriteset_headgear_animated = industry.add_spriteset(
     sprites=[
         (10, 310, 64, 122, -31, -88),
@@ -136,62 +134,62 @@ sprite_smoke_2 = industry.add_smoke_sprite(
 industry.add_spritelayout(
     id="chromite_mine_spritelayout_tile_empty",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
 )
 industry.add_spritelayout(
     id="chromite_mine_spritelayout_headgear_animated",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_headgear_animated],
 )
 industry.add_spritelayout(
     id="chromite_mine_spritelayout_exit_trestle_animated",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_exit_trestle_animated],
 )
 industry.add_spritelayout(
     id="chromite_mine_spritelayout_crusher_front_part",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_crusher_front_part],
 )
 industry.add_spritelayout(
     id="chromite_mine_spritelayout_crusher_rear_part",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_crusher_rear_part],
 )
 industry.add_spritelayout(
     id="chromite_mine_spritelayout_hut_vents",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_hut_vents],
 )
 industry.add_spritelayout(
     id="chromite_mine_spritelayout_ore_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_ore_1],
 )
 industry.add_spritelayout(
     id="chromite_mine_spritelayout_ore_2",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_ore_2],
 )
 industry.add_spritelayout(
     id="chromite_mine_spritelayout_winding_house",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_winding_house],
     smoke_sprites=[sprite_smoke_1, sprite_smoke_2],
 )
 industry.add_spritelayout(
     id="chromite_mine_spritelayout_exit_shed_rear",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_exit_shed_rear],
 )
 

@@ -48,8 +48,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="asphalt",
 )
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
-
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 106, -31, -73)],
 )
@@ -73,7 +71,7 @@ industry.add_spritelayout(
     id="cryo_plant_spritelayout_separation_tower",
     tile="cryo_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=4,
@@ -82,7 +80,7 @@ industry.add_spritelayout(
     id="cryo_plant_spritelayout_large_shed",
     tile="cryo_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=6,
@@ -91,7 +89,7 @@ industry.add_spritelayout(
     id="cryo_plant_spritelayout_purification_unit",
     tile="cryo_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=5,
@@ -100,7 +98,7 @@ industry.add_spritelayout(
     id="cryo_plant_spritelayout_horizontal_tanks",
     tile="cryo_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=3,
@@ -109,7 +107,7 @@ industry.add_spritelayout(
     id="cryo_plant_spritelayout_storage_tank_blue",
     tile="cryo_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=2,
@@ -118,7 +116,7 @@ industry.add_spritelayout(
     id="cryo_plant_spritelayout_storage_tank_yellow",
     tile="cryo_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=1,
@@ -127,7 +125,7 @@ industry.add_spritelayout(
     id="cryo_plant_spritelayout_empty",
     tile="cryo_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     add_to_object_num=7,
 )

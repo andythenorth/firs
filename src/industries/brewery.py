@@ -57,7 +57,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="asphalt",
 )
-spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 60, 64, 91, -31, -60)],
 )
@@ -78,11 +77,6 @@ spriteset_ground_anim = industry.add_spriteset(
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_2_anim.sprites),
 )
-spriteset_ground_overlay_anim = industry.add_spriteset(
-    type="empty",
-    # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
-    num_sprites_to_autofill=len(spriteset_2_anim.sprites),
-)
 spriteset_3 = industry.add_spriteset(
     sprites=[(150, 60, 64, 91, -31, -60)],
 )
@@ -97,7 +91,7 @@ industry.add_spritelayout(
     id="brewery_spritelayout_1_anim",
     tile="brewery_tile_2",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     smoke_sprites=[sprite_smoke],
     fences=["nw", "ne", "se", "sw"],
@@ -106,7 +100,7 @@ industry.add_spritelayout(
     id="brewery_spritelayout_2",
     tile="brewery_tile_1",
     ground_sprite=spriteset_ground_anim,
-    ground_overlay=spriteset_ground_overlay_anim,
+    ground_overlay=None,
     building_sprites=[spriteset_2_anim],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -114,7 +108,7 @@ industry.add_spritelayout(
     id="brewery_spritelayout_3",
     tile="brewery_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
 )

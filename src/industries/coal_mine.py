@@ -62,8 +62,6 @@ industry.add_tile(
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-sprite_ground_overlay = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
-
 spriteset_1 = industry.add_spriteset(
     sprites=[
         (10, 10, 64, 110, -31, -70),
@@ -103,7 +101,7 @@ industry.add_spritelayout(
     id="coal_mine_spritelayout_1",
     tile="coal_mine_tile_2",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     add_to_object_num=1,
 )
@@ -111,7 +109,7 @@ industry.add_spritelayout(
     id="coal_mine_spritelayout_2",
     tile="coal_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     add_to_object_num=2,
 )
@@ -119,7 +117,7 @@ industry.add_spritelayout(
     id="coal_mine_spritelayout_3",
     tile="coal_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     add_to_object_num=3,
 )
@@ -127,7 +125,7 @@ industry.add_spritelayout(
     id="coal_mine_spritelayout_4",
     tile="coal_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_4],
     add_to_object_num=4,
 )
@@ -135,21 +133,21 @@ industry.add_spritelayout(
     id="coal_mine_spritelayout_5",
     tile="coal_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_5],
 )
 industry.add_spritelayout(
     id="coal_mine_spritelayout_6",
     tile="coal_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_6],
 )
 industry.add_spritelayout(
     id="coal_mine_spritelayout_empty",
     tile="coal_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     add_to_object_num=6,
 )

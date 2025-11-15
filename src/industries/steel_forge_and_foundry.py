@@ -73,9 +73,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="asphalt",
 )
-spriteset_ground_overlay = industry.add_spriteset(
-    type="empty",
-)
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 70, -31, -40)],
 )
@@ -113,11 +110,6 @@ spriteset_ground_pigs = industry.add_spriteset(
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_iron_pigs_anim.sprites),
 )
-spriteset_ground_overlay_pigs = industry.add_spriteset(
-    type="empty",
-    # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
-    num_sprites_to_autofill=len(spriteset_iron_pigs_anim.sprites),
-)
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type="dark_smoke_small",
     xoffset=0,
@@ -129,7 +121,7 @@ industry.add_spritelayout(
     id="foundry_spritelayout_furnace_anim",
     tile="steel_forge_and_foundry_tile_2",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     smoke_sprites=[sprite_smoke],
     fences=["nw", "ne", "se", "sw"],
@@ -139,7 +131,7 @@ industry.add_spritelayout(
     id="foundry_spritelayout_iron_pigs_anim",
     tile="steel_forge_and_foundry_tile_3",
     ground_sprite=spriteset_ground_pigs,
-    ground_overlay=spriteset_ground_overlay_pigs,
+    ground_overlay=None,
     building_sprites=[spriteset_iron_pigs_anim],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=2,
@@ -148,7 +140,7 @@ industry.add_spritelayout(
     id="foundry_spritelayout_large_chimney",
     tile="steel_forge_and_foundry_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=3,
@@ -157,7 +149,7 @@ industry.add_spritelayout(
     id="foundry_spritelayout_large_shed",
     tile="steel_forge_and_foundry_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     fences=[],
     add_to_object_num=4,
@@ -166,7 +158,7 @@ industry.add_spritelayout(
     id="foundry_spritelayout_large_shed_alt",
     tile="steel_forge_and_foundry_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_4],
     fences=[],
     add_to_object_num=5,
@@ -175,7 +167,7 @@ industry.add_spritelayout(
     id="foundry_spritelayout_silos",
     tile="steel_forge_and_foundry_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_5],
     fences=[],
     add_to_object_num=6,
@@ -184,7 +176,7 @@ industry.add_spritelayout(
     id="foundry_spritelayout_store_shed",
     tile="steel_forge_and_foundry_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_6],
     fences=["nw", "ne"],
     add_to_object_num=7,
@@ -193,7 +185,7 @@ industry.add_spritelayout(
     id="foundry_spritelayout_ingots",
     tile="steel_forge_and_foundry_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_7],
     fences=[],
     add_to_object_num=8,
@@ -202,7 +194,7 @@ industry.add_spritelayout(
     id="foundry_spritelayout_ingots_and_gatehouse",
     tile="steel_forge_and_foundry_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_8],
     fences=[],
     add_to_object_num=9,
@@ -211,7 +203,7 @@ industry.add_spritelayout(
     id="foundry_spritelayout_empty",
     tile="steel_forge_and_foundry_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=10,

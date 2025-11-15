@@ -61,9 +61,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="asphalt",
 )
-spriteset_ground_overlay = industry.add_spriteset(
-    type="empty",
-)
 spriteset_1 = industry.add_spriteset(
     sprites=[(80, 10, 64, 113, -31, -82)],
 )
@@ -90,11 +87,6 @@ spriteset_5 = industry.add_spriteset(
 )
 spriteset_ground_anim = industry.add_spriteset(
     type="asphalt",
-    # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
-    num_sprites_to_autofill=len(spriteset_5.sprites),
-)
-spriteset_ground_overlay_anim = industry.add_spriteset(
-    type="empty",
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_5.sprites),
 )
@@ -137,7 +129,7 @@ industry.add_spritelayout(
     id="cement_plant_spritelayout_1",
     tile="cement_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_1],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -145,7 +137,7 @@ industry.add_spritelayout(
     id="cement_plant_spritelayout_2",
     tile="cement_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_2],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -153,7 +145,7 @@ industry.add_spritelayout(
     id="cement_plant_spritelayout_3",
     tile="cement_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_3],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -161,7 +153,7 @@ industry.add_spritelayout(
     id="cement_plant_spritelayout_4",
     tile="cement_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_4],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -169,7 +161,7 @@ industry.add_spritelayout(
     id="cement_plant_spritelayout_5",
     tile="cement_plant_tile_2",
     ground_sprite=spriteset_ground_anim,
-    ground_overlay=spriteset_ground_overlay_anim,
+    ground_overlay=None,
     building_sprites=[spriteset_5],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -177,7 +169,7 @@ industry.add_spritelayout(
     id="cement_plant_spritelayout_6",
     tile="cement_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_6],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -185,7 +177,7 @@ industry.add_spritelayout(
     id="cement_plant_spritelayout_7",
     tile="cement_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_7],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -193,7 +185,7 @@ industry.add_spritelayout(
     id="cement_plant_spritelayout_8",
     tile="cement_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_8],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -201,7 +193,7 @@ industry.add_spritelayout(
     id="cement_plant_spritelayout_9",
     tile="cement_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_9],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -209,7 +201,7 @@ industry.add_spritelayout(
     id="cement_plant_spritelayout_10",
     tile="cement_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_10],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -217,7 +209,7 @@ industry.add_spritelayout(
     id="cement_plant_spritelayout_11",
     tile="cement_plant_tile_2",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_11],
     smoke_sprites=[sprite_smoke_2, sprite_smoke_1],
     fences=["nw", "ne", "se", "sw"],
@@ -226,7 +218,7 @@ industry.add_spritelayout(
     id="cement_plant_spritelayout_clay_staithe",
     tile="cement_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_clay_staithe],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -234,7 +226,7 @@ industry.add_spritelayout(
     id="cement_plant_spritelayout_stone_staithe",
     tile="cement_plant_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_stone_staithe],
     fences=["nw", "ne", "se", "sw"],
 )

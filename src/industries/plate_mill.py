@@ -42,9 +42,6 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="gravel",
 )
-spriteset_ground_overlay = industry.add_spriteset(
-    type="empty",
-)
 spriteset_shed_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 64, -31, -35)],
 )
@@ -59,7 +56,7 @@ industry.add_spritelayout(
     id="plate_mill_spritelayout_shed_1",
     tile="plate_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_shed_1],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=1,
@@ -68,7 +65,7 @@ industry.add_spritelayout(
     id="plate_mill_spritelayout_shed_2",
     tile="plate_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_shed_2],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=2,
@@ -77,7 +74,7 @@ industry.add_spritelayout(
     id="plate_mill_spritelayout_metal_1",
     tile="plate_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[spriteset_shed_metal_1],
     fences=["nw", "ne", "se", "sw"],
     add_to_object_num=3,
@@ -86,7 +83,7 @@ industry.add_spritelayout(
     id="plate_mill_spritelayout_empty",
     tile="plate_mill_tile_1",
     ground_sprite=spriteset_ground,
-    ground_overlay=spriteset_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     fences=[],
     add_to_object_num=4,

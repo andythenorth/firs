@@ -49,7 +49,6 @@ industry.add_tile(
 sprite_ground = industry.add_sprite(
     sprite_number="GROUNDTILE_MUD_TRACKS"  # ground tile same as overlay tile
 )
-sprite_ground_overlay = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
 sprite_1 = industry.add_sprite(
     sprite_number=2039,
 )
@@ -78,7 +77,7 @@ industry.add_spritelayout(
     id="copper_mine_spritelayout_1",
     tile="copper_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[sprite_1],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -86,7 +85,7 @@ industry.add_spritelayout(
     id="copper_mine_spritelayout_2",
     tile="copper_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -94,7 +93,7 @@ industry.add_spritelayout(
     id="copper_mine_spritelayout_3_anim",
     tile="copper_mine_tile_2",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[sprite_3_anim],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -102,7 +101,7 @@ industry.add_spritelayout(
     id="copper_mine_spritelayout_4",
     tile="copper_mine_tile_1",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[sprite_4],
     fences=["nw", "ne", "se", "sw"],
 )
@@ -110,7 +109,7 @@ industry.add_spritelayout(
     id="copper_mine_spritelayout_5",
     tile="copper_mine_tile_2",
     ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground_overlay,
+    ground_overlay=None,
     building_sprites=[sprite_5],
     smoke_sprites=[sprite_smoke],
     fences=["nw", "ne", "se", "sw"],
