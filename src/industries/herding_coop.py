@@ -95,7 +95,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="herding_coop_spritelayout_paddock_1",
     tile="herding_coop_tile_1",
-    ground_sprite=sprite_ground_dirt,
+    ground_sprite=None,
     ground_overlay=sprite_ground_dirt,
     building_sprites=[spriteset_4],
     terrain_aware_ground=True,
@@ -103,7 +103,7 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="herding_coop_spritelayout_paddock_2",
     tile="herding_coop_tile_1",
-    ground_sprite=sprite_ground_dirt,
+    ground_sprite=None,
     ground_overlay=sprite_ground_dirt,
     building_sprites=[spriteset_5],
     terrain_aware_ground=True,

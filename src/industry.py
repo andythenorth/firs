@@ -475,6 +475,8 @@ class SpriteLayout(object):
         else:
             self.jetty_surface = jetty_surface
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
+        if self.terrain_aware_ground:
+            assert self.ground_sprite == None, f"{self.id} sets both ground_sprite and terrain_aware_ground - can't set both"
         # as of September 2022, spritelayouts can define which tile they use
         # - this is optional as a migration strategy, but is intended to be the only supported approach in future
         self.tile = tile
@@ -579,6 +581,7 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
                 building_sprites=building_sprites,
                 jetty_foundations=config["jetty_foundations"],
                 #jetty_surface=ground_overlay,
+                terrain_aware_ground=True,
                 tile=self.tile,
             )
 

@@ -48,9 +48,6 @@ industry.add_tile(
     ),
 )
 
-sprite_ground = industry.add_sprite(
-    sprite_number="GROUNDSPRITE_WATER",
-)
 spriteset_1 = industry.add_spriteset(
     sprites=[(10, 10, 64, 31, -31, 0)],
 )
@@ -70,30 +67,34 @@ spriteset_5 = industry.add_spriteset(
 industry.add_spritelayout(
     id="fishing_grounds_spritelayout_1",
     tile="fishing_grounds_tile_1",
-    ground_sprite=sprite_ground,
+    ground_sprite=None,
     ground_overlay=None,
     building_sprites=[spriteset_1],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_grounds_spritelayout_2",
     tile="fishing_grounds_tile_1",
-    ground_sprite=sprite_ground,
+    ground_sprite=None,
     ground_overlay=None,
     building_sprites=[spriteset_2],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_grounds_spritelayout_3",
     tile="fishing_grounds_tile_1",
-    ground_sprite=sprite_ground,
+    ground_sprite=None,
     ground_overlay=None,
     building_sprites=[spriteset_3],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_grounds_spritelayout_4",
     tile="fishing_grounds_tile_1",
-    ground_sprite=sprite_ground,
+    ground_sprite=None,
     ground_overlay=spriteset_5,
     building_sprites=[spriteset_4],
+    terrain_aware_ground=True,
 )
 
 industry.add_industry_layout(

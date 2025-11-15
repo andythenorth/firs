@@ -51,7 +51,6 @@ industry.add_tile(
     location_checks=TileLocationChecks(always_allow_founder=False, require_coast=True),
 )
 
-sprite_ground = industry.add_sprite(sprite_number="GROUNDSPRITE_WATER")
 spriteset_concrete = industry.add_spriteset(
     sprites=[(10, 10, 64, 39, -31, -8)],
     always_draw=True,
@@ -126,141 +125,158 @@ spriteset_empty = industry.add_spriteset(
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_1",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[spriteset_jetty_se_nw, spriteset_concrete, spriteset_empty],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_2",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[spriteset_jetty_ne_sw, spriteset_concrete, spriteset_empty],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_11",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[spriteset_jetty_se_nw, spriteset_concrete, spriteset_shed],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_12",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[spriteset_jetty_ne_sw, spriteset_concrete, spriteset_shed],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_13",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[
         spriteset_jetty_se_nw,
         spriteset_jetty_ne_sw,
         spriteset_concrete,
         spriteset_shed,
     ],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_21",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[spriteset_trawler_sw_ne],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_22",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[spriteset_trawler_ne_sw],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_23",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[spriteset_trawler_nw_se],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_24",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[spriteset_trawler_nw_se],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_25",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[spriteset_trawler_nw_se],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_26",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[spriteset_ship_ne_sw],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_27",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[spriteset_ship_nw_se],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_28",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[
         spriteset_jetty_se_nw,
         spriteset_jetty_ne_sw,
         spriteset_concrete,
         spriteset_crane_1a,
     ],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_29",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[
         spriteset_jetty_se_nw,
         spriteset_jetty_ne_sw,
         spriteset_concrete,
         spriteset_crane_2,
     ],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_30",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[
         spriteset_jetty_se_nw,
         spriteset_jetty_ne_sw,
         spriteset_concrete,
         spriteset_crane_1b,
     ],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_31",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[spriteset_ramp_rear],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fishing_harbour_spritelayout_32",
     tile="fishing_harbour_tile_1",
-    ground_sprite=sprite_ground,
-    ground_overlay=sprite_ground,
+    ground_sprite=None,
+    ground_overlay=None,
     building_sprites=[spriteset_ramp_front],
+    terrain_aware_ground=True,
 )
 industry.add_magic_spritelayout(
     type="jetty_coast_foundations",

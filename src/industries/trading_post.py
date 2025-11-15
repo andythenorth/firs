@@ -41,6 +41,7 @@ industry.add_tile(
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     location_checks=TileLocationChecks(always_allow_founder=False, require_coast=True),
 )
+# CABBAGE - need to replace sprite_ground with None etc
 sprite_ground = industry.add_sprite(sprite_number="GROUNDSPRITE_WATER")
 spriteset_concrete = industry.add_spriteset(
     sprites=[(10, 10, 64, 39, -31, -8)],

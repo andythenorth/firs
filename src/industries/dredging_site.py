@@ -38,9 +38,6 @@ industry.add_tile(
     ),
 )
 
-sprite_ground = industry.add_sprite(
-    sprite_number="GROUNDSPRITE_WATER",
-)
 spriteset_platform = industry.add_spriteset(
     sprites=[(10, 10, 64, 100, -31, -67)],
 )
@@ -54,9 +51,10 @@ spriteset_crane_animated = industry.add_spriteset(
 industry.add_spritelayout(
     id="dredging_site_spritelayout_1",
     tile="dredging_site_tile_1",
-    ground_sprite=sprite_ground,
+    ground_sprite=None,
     ground_overlay=spriteset_platform,
     building_sprites=[spriteset_crane_animated, spriteset_greeble],
+    terrain_aware_ground=True,
 )
 
 industry.add_industry_layout(

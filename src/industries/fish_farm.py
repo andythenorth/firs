@@ -45,9 +45,6 @@ industry.add_tile(
     location_checks=TileLocationChecks(always_allow_founder=False, require_coast=True),
 )
 
-sprite_ground = industry.add_sprite(
-    sprite_number="GROUNDSPRITE_WATER",
-)
 spriteset_concrete = industry.add_spriteset(
     sprites=[(10, 10, 64, 39, -31, -8)],
     always_draw=True,
@@ -97,30 +94,34 @@ spriteset_station_bouy = industry.add_spriteset(
 industry.add_spritelayout(
     id="fish_farm_spritelayout_1",
     tile="fish_farm_tile_1",
-    ground_sprite=sprite_ground,
+    ground_sprite=None,
     ground_overlay=None,
     building_sprites=[spriteset_tank_1],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fish_farm_spritelayout_2",
     tile="fish_farm_tile_1",
-    ground_sprite=sprite_ground,
+    ground_sprite=None,
     ground_overlay=None,
     building_sprites=[spriteset_tank_2],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fish_farm_spritelayout_3",
     tile="fish_farm_tile_1",
-    ground_sprite=sprite_ground,
+    ground_sprite=None,
     ground_overlay=None,
     building_sprites=[spriteset_tank_3],
+    terrain_aware_ground=True,
 )
 industry.add_spritelayout(
     id="fish_farm_spritelayout_4",
     tile="fish_farm_tile_1",
-    ground_sprite=sprite_ground,
+    ground_sprite=None,
     ground_overlay=spriteset_station_bouy,
     building_sprites=[spriteset_tank_4],
+    terrain_aware_ground=True,
 )
 industry.add_magic_spritelayout(
     type="jetty_coast_foundations",
