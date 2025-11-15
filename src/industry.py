@@ -454,6 +454,7 @@ class SpriteLayout(object):
         perma_fences=[],
         magic_trees=[],
         jetty_foundations=False,
+        jetty_surface=None,
         terrain_aware_ground=False,
         tile=None,
         add_to_object_num=None,
@@ -469,6 +470,10 @@ class SpriteLayout(object):
         self.perma_fences = perma_fences
         self.magic_trees = magic_trees
         self.jetty_foundations = jetty_foundations
+        if jetty_surface is None:
+            self.jetty_surface = self.ground_sprite
+        else:
+            self.jetty_surface = jetty_surface
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
         # as of September 2022, spritelayouts can define which tile they use
         # - this is optional as a migration strategy, but is intended to be the only supported approach in future
@@ -563,7 +568,8 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
     def __init__(self, industry, base_id, tile, config, **kwargs):
         self.tile = tile
         self.auto_orient = True
-        ground_sprite = industry.add_sprite(sprite_number="GROUNDSPRITE_WATER")
+        #ground_sprite = industry.add_sprite(sprite_number="GROUNDSPRITE_WATER")
+        ground_sprite = industry.add_spriteset(type="empty")
         ground_overlay = industry.add_spriteset(type="empty")
         for coast_direction in ["se", "sw", "nw", "ne"]:
             building_sprites = []
@@ -574,6 +580,7 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
                 ground_overlay=ground_overlay,
                 building_sprites=building_sprites,
                 jetty_foundations=config["jetty_foundations"],
+                jetty_surface=ground_overlay,
                 tile=self.tile,
             )
 

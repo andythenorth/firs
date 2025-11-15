@@ -1,6 +1,0 @@
-<!--! for *objects* that can be built on both water or land -->
-
-switch (FEAT_OBJECTS, SELF, switch_object_built_on_water, nearby_tile_water_class(0, 0)) {
-    WATER_CLASS_NONE: return 0;
-    return 1;
-}

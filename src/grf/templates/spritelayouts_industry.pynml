@@ -9,7 +9,11 @@
             </tal:terrain_aware_ground>
             <tal:terrain_aware_ground case="False">
                 <!--! explicit ground sprite from industry, if not empty -->
-                <tal:not_empty condition="getattr(spritelayout.ground_sprite, 'type', None) != 'empty'">
+                <tal:conditional_ground condition="
+                    (getattr(spritelayout.ground_sprite, 'type', None) != 'empty')
+                    and
+                    (spritelayout.jetty_foundations == False)
+                ">
                     childsprite {
                         sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
                         hide_sprite: (LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
@@ -21,7 +25,7 @@
                         hide_sprite: (!LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow}));
                         always_draw: 1;
                     }
-                </tal:not_empty>
+                </tal:conditional_ground>
             </tal:terrain_aware_ground>
         </tal:ground_sprite>
 

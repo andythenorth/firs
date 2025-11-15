@@ -25,14 +25,17 @@
         </tal:buildings>
         spritelayout ${grf_object.id}_spritelayout_purchase {
             <tal:ground repeat="ground grf_object.multi_tile_ground">
-                building {
-                    sprite: ${industry.unpack_sprite_or_spriteset(ground[2])};
-                    <!--! this offset adjustment is a crude hack that appears to remarkably work
-                          if we want to tweak further, provide some constants that can also adjust the building sprites beyond the positions passed from the industry
-                          note that these are tile xy offsets (from NW/NE edge) not screen xy offsets, can be confusing -->
-                    xoffset: 16 * ${ground[0]};
-                    yoffset: 16 * ${ground[1]};
-                }
+                // ${ground[2]}
+                <tal:not_empty condition="getattr(ground[2], 'type', None) != 'empty'"> <!--! CABBAGE HACKS -->
+                    building {
+                        sprite: ${industry.unpack_sprite_or_spriteset(ground[2])};
+                        <!--! this offset adjustment is a crude hack that appears to remarkably work
+                              if we want to tweak further, provide some constants that can also adjust the building sprites beyond the positions passed from the industry
+                              note that these are tile xy offsets (from NW/NE edge) not screen xy offsets, can be confusing -->
+                        xoffset: 16 * ${ground[0]};
+                        yoffset: 16 * ${ground[1]};
+                    }
+                </tal:not_empty>
             </tal:ground>
             <tal:buildings repeat="x_y_spritelayout grf_object.multi_tile_buildings">
                 <tal:building_single_baseset_sprite condition="getattr(x_y_spritelayout[2], 'sprite_number', None) is not None">
@@ -66,7 +69,7 @@
                     </tal:spritelayouts>
                 }
             </tal:land_or_water>
-            switch(FEAT_OBJECTS, SELF, ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout_land_or_water, switch_object_built_on_water()) {
+            switch(FEAT_OBJECTS, SELF, ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout_land_or_water, switch_object_tile_is_water()) {
                 1: ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout_water;
                 ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout_land;
             }
@@ -75,7 +78,7 @@
         switch(FEAT_OBJECTS, SELF, ${grf_object.id}_switch_graphics, [
                                             switch_tile_fences_object(),
                                             switch_terrain_object(),
-                                            STORE_TEMP(switch_object_built_on_water(), ${graphics_temp_storage.var_object_built_on_water}),
+                                            STORE_TEMP(switch_object_tile_is_water(), ${graphics_temp_storage.var_object_built_on_water}),
                                             view
                                         ]) {
             <tal:views repeat="view_num range(len(grf_object.views))">
