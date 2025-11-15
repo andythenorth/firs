@@ -473,6 +473,7 @@ class SpriteLayout(object):
         # as of September 2022, spritelayouts can define which tile they use
         # - this is optional as a migration strategy, but is intended to be the only supported approach in future
         self.tile = tile
+        assert self.tile != None, f"{self.id} {self.tile}"
         # optionally spritelayouts can cause objects to be defined
         self.add_to_object_num = add_to_object_num
         if getattr(self.ground_overlay, "type", "None") not in ["empty", "None"]:
@@ -521,7 +522,7 @@ class MagicSpritelayoutJettyFoundations(object):
         "8": ["slope_se_nw", "slope_sw_ne"],
     }
 
-    def __init__(self, industry, base_id, tile, config):
+    def __init__(self, industry, base_id, tile, config, **kwargs):
         self.tile = tile
         for spritelayout_num, foundations in self.spritelayout_foundations.items():
             building_sprites = [
@@ -538,6 +539,7 @@ class MagicSpritelayoutJettyFoundations(object):
                     "ground_sprite"
                 ],  # should always be empty sprite for this magic layout
                 building_sprites=building_sprites,
+                tile=self.tile,
             )
         id_slope_mapping = {
             slope: base_id + str(spritelayout_num)
@@ -558,7 +560,7 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
     This one provides tiles for jetties that automatically orient to the coast direction, fine-grained configurable per spritelayout.
     """
 
-    def __init__(self, industry, base_id, tile, config):
+    def __init__(self, industry, base_id, tile, config, **kwargs):
         self.tile = tile
         self.auto_orient = True
         ground_sprite = industry.add_sprite(sprite_number="GROUNDSPRITE_WATER")
@@ -572,7 +574,36 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
                 ground_overlay=ground_overlay,
                 building_sprites=building_sprites,
                 jetty_foundations=config["jetty_foundations"],
+                tile=self.tile,
             )
+
+        # handle addition of objects separately, don't interleave with industry handling
+        # we infer the need to add objects from 'can build on' for land and/or water
+        if len(config.get("objects_can_build_on", [])) > 0:
+            for spritelayout in self.get_unique_spritelayouts_for_objects(industry):
+                # when adding spritelayouts this way, all views will be single tile, 0-indexed
+                view = [(0, 0, spritelayout)]
+                new_object_num = len(industry.objects) + 1
+                allow_on_land = "land" in config["objects_can_build_on"]
+                allow_on_water = "water" in config["objects_can_build_on"]
+                industry.add_view_for_object(
+                    view,
+                    add_to_object_num=new_object_num,
+                    allow_on_land=allow_on_land,
+                    allow_on_water=allow_on_water,
+                )
+
+    def get_unique_spritelayouts_for_objects(self, industry):
+        # spritelayouts for ne, sw, nw, ne orientations may or may not be unique, depending on whether spritesets are unique per direction, or reused
+        result = []
+        # unique *lists* of spritesets as this is significant
+        seen_building_sprite_lists = []
+        # take the last 4 spritelayouts added, correspondign to 4 coast directions
+        for spritelayout in industry.spritelayouts[-4:]:
+            if spritelayout.building_sprites not in seen_building_sprite_lists:
+                result.append(spritelayout)
+                seen_building_sprite_lists.append(spritelayout.building_sprites)
+        return result
 
 
 class MagicSpritelayoutSlopeAwareTrees(object):
@@ -817,7 +848,7 @@ class MagicSpritelayoutSlopeAwareTrees(object):
         ),
     }  # done
 
-    def __init__(self, industry, base_id, tile, config):
+    def __init__(self, industry, base_id, tile, config, **kwargs):
         self.tile = tile
         # !! ground sprites are slaved to sprite numbers currently, needs extending for spritesets
         ground_sprite = industry.add_sprite(
@@ -875,6 +906,7 @@ class MagicSpritelayoutSlopeAwareTrees(object):
                     for tree_num in range(num_trees)
                 ],
                 building_sprites=[],
+                tile=self.tile,
             )
 
         id_slope_mapping = {
@@ -892,7 +924,7 @@ class MagicSpritelayoutSlopeAwareTrees(object):
 class GRFObject(object):
     """Stubby class to hold objects - GRFObject to avoid conflating with built-in python classname"""
 
-    def __init__(self, industry, add_to_object_num):
+    def __init__(self, industry, add_to_object_num, **kwargs):
         # note spacing numeric part of id to add a leading 0 if needed, otherwise python lexical sort returns 'foo_1, foo_10, foo_2' etc
         self.id = f"{industry.id}_object_{add_to_object_num:02}"
         # we allocate up a range of up to 100 object numeric IDs per industry, using the industry numeric ID
@@ -908,6 +940,9 @@ class GRFObject(object):
         self.numeric_id = (industry.numeric_id * 100) + add_to_object_num
         self.views = []
         self.industry = industry
+        # default to allowing both land and water, suppress explicitly when necessary
+        self.allow_on_land = kwargs.get("allow_on_land", True)
+        self.allow_on_water = kwargs.get("allow_on_water", True)
 
     def add_view(self, spritelayout):
         self.views.append(spritelayout)
@@ -921,10 +956,7 @@ class GRFObject(object):
             )
         # validation for case of too many views - shouldn't happen but eh
         if len(self.views) > 4:
-            utils.echo_message(self.views)
-            raise BaseException(
-                self.id, "has too many views defined"
-            )  # yair could do better?
+            raise BaseException(f"{self.id} has too many views defined \n {self.views}")
 
     @property
     def tile(self):
@@ -957,6 +989,15 @@ class GRFObject(object):
             for building_sprite in spritelayout.building_sprites:
                 result.append([x, y, building_sprite])
         return result
+
+    @property
+    def object_flags(self):
+        tile_type_flags = []
+        if self.allow_on_land == False:
+            tile_type_flags.append("OBJ_FLAG_NOT_ON_LAND")
+        if self.allow_on_water:
+            tile_type_flags.append("OBJ_FLAG_ON_WATER")
+        return f"bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_ANIMATED, OBJ_FLAG_ON_WATER, {",".join(tile_type_flags)})"
 
     @property
     def animation_triggers(self):
@@ -1571,7 +1612,10 @@ class Industry(object):
             # - prevents possibly incorrect combinatorial production maths
             if self.economy_variations[economy.id].enabled:
                 for cargo_label in self.get_accepted_cargo_labels_by_economy(economy):
-                    if firs.cargo_manager.cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
+                    if (
+                        firs.cargo_manager.cargo_label_id_mapping[cargo_label]
+                        not in economy.cargo_ids
+                    ):
                         utils.echo_message(
                             " ".join(
                                 [
@@ -1586,7 +1630,10 @@ class Industry(object):
                             )
                         )
                 for cargo_label, amount in self.get_prod_cargo_types(economy):
-                    if firs.cargo_manager.cargo_label_id_mapping[cargo_label] not in economy.cargo_ids:
+                    if (
+                        firs.cargo_manager.cargo_label_id_mapping[cargo_label]
+                        not in economy.cargo_ids
+                    ):
                         utils.echo_message(
                             " ".join(
                                 [
@@ -1654,20 +1701,20 @@ class Industry(object):
         # returning the new spritelayout isn't essential, but permits the caller giving it a reference for use elsewhere
         return new_spritelayout
 
-    def add_magic_spritelayout(self, type, base_id, tile, config):
+    def add_magic_spritelayout(self, type, base_id, tile, config, **kwargs):
         # sometimes magic is the only way
         # this is for very specific spritelayout patterns that repeat across multiple industries and require long declarations and extra switches
         if type == "slope_aware_trees":
             magic_spritelayout = MagicSpritelayoutSlopeAwareTrees(
-                self, base_id, tile, config
+                self, base_id, tile, config, **kwargs
             )
         if type == "jetty_coast_foundations":
             magic_spritelayout = MagicSpritelayoutJettyFoundations(
-                self, base_id, tile, config
+                self, base_id, tile, config, **kwargs
             )
         if type == "jetty_auto_orient_to_coast_direction":
             magic_spritelayout = MagicSpritelayoutJettyAutoOrientToCoastDirection(
-                self, base_id, tile, config
+                self, base_id, tile, config, **kwargs
             )
         # we do have to book-keep the magic, as there are Magic taxes that must be paid
         self.magic_spritelayouts_by_id[base_id] = magic_spritelayout
@@ -1700,7 +1747,7 @@ class Industry(object):
         add_to_object_num = kwargs["add_to_object_num"]
         # create object with this num if it doesn't exist
         if add_to_object_num not in self.objects.keys():
-            self.objects[add_to_object_num] = GRFObject(self, add_to_object_num)
+            self.objects[add_to_object_num] = GRFObject(self, **kwargs)
         self.objects[add_to_object_num].add_view(view)
 
     def add_multi_tile_object(self, **kwargs):
@@ -2116,7 +2163,11 @@ class Industry(object):
             elif int(max_ratio / len(accept_cargos_with_ratios)) == 3:
                 # rare case of 3 out of n cargos being required
                 # to prevent surprises we guard on known industry ids
-                if self.id not in ["precision_parts_plant", "appliance_factory", "power_systems_factory"]:
+                if self.id not in [
+                    "precision_parts_plant",
+                    "appliance_factory",
+                    "power_systems_factory",
+                ]:
                     raise Exception(
                         "get_extra_text_string: "
                         + self.id
@@ -2238,7 +2289,6 @@ class Industry(object):
         for cargo_label, input_ratio in self.get_prod_cargo_types(economy):
             result.append(cargo_label)
         return result
-
 
     def get_prod_cargo_types(self, economy):
         # stub, this should be handled in Industry subclasses
@@ -2813,8 +2863,8 @@ class Vulcan(object):
         result = {}
         for economy in self.industry.economies_enabled_for_industry:
             economy_config = {}
-            economy_config["accept_cargo_types"] = self.industry.get_accepted_cargo_labels_by_economy(
-                economy
+            economy_config["accept_cargo_types"] = (
+                self.industry.get_accepted_cargo_labels_by_economy(economy)
             )
             economy_config["vulcan_config"] = self.industry.get_property(
                 "vulcan_config", economy

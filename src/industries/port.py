@@ -137,7 +137,7 @@ industry.add_tile(
     id="port_tile_3",
     # this is a totally flat tile for ships or other pure water features, so do not allow on coast slopes
     land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",
-    # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
+    # we'll draw our own foundations as needed - this also conveniently adjusts the z offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
     autoslope="return CB_RESULT_NO_AUTOSLOPE",
@@ -286,6 +286,7 @@ industry.add_magic_spritelayout(
                 spriteset_shed_half_ne_sw,
             ],
         },
+        # no objects, by design, would duplicate others
     },
 )
 industry.add_magic_spritelayout(
@@ -308,6 +309,7 @@ industry.add_magic_spritelayout(
                 spriteset_shed_full_ne_sw,
             ],
         },
+        # no objects, by design, would duplicate others
     },
 )
 
@@ -331,6 +333,7 @@ industry.add_magic_spritelayout(
                 spriteset_crane_rails_ne_sw,
             ],
         },
+        "objects_can_build_on": ["land", "water"],
     },
 )
 industry.add_magic_spritelayout(
@@ -353,6 +356,7 @@ industry.add_magic_spritelayout(
                 spriteset_crane_rails_nw_se,
             ],
         },
+        # no objects, by design, would duplicate port_spritelayout_crane_rails_parallel
     },
 )
 industry.add_magic_spritelayout(
@@ -379,6 +383,7 @@ industry.add_magic_spritelayout(
                 spriteset_large_crane_ne_sw,
             ],
         },
+        "objects_can_build_on": ["land", "water"],
     },
 )
 industry.add_magic_spritelayout(
@@ -405,6 +410,7 @@ industry.add_magic_spritelayout(
                 spriteset_large_crane_se_nw,
             ],
         },
+        # no objects, by design, would duplicate port_spritelayout_crane_parallel
     },
 )
 industry.add_magic_spritelayout(
@@ -427,6 +433,7 @@ industry.add_magic_spritelayout(
                 spriteset_crawler_crane_nw_se,
             ],
         },
+        "objects_can_build_on": ["land", "water"],
     },
 )
 industry.add_magic_spritelayout(
@@ -449,6 +456,7 @@ industry.add_magic_spritelayout(
                 spriteset_tanks_sphere,
             ],
         },
+        "objects_can_build_on": ["land", "water"],
     },
 )
 industry.add_magic_spritelayout(
@@ -471,6 +479,7 @@ industry.add_magic_spritelayout(
                 spriteset_silos_sw_ne,
             ],
         },
+        "objects_can_build_on": ["land", "water"],
     },
 )
 industry.add_magic_spritelayout(
@@ -493,6 +502,7 @@ industry.add_magic_spritelayout(
                 spriteset_bulk_handling_sw_ne,
             ],
         },
+        "objects_can_build_on": ["land", "water"],
     },
 )
 industry.add_magic_spritelayout(
@@ -515,6 +525,7 @@ industry.add_magic_spritelayout(
                 spriteset_warehouse_half_sw_ne,
             ],
         },
+        "objects_can_build_on": ["land", "water"],
     },
 )
 industry.add_magic_spritelayout(
@@ -537,6 +548,7 @@ industry.add_magic_spritelayout(
                 spriteset_warehouse_half_ne_sw,
             ],
         },
+        # no objects, by design, would duplicate port_spritelayout_crane_rails_parallel
     },
 )
 industry.add_magic_spritelayout(
@@ -559,6 +571,7 @@ industry.add_magic_spritelayout(
                 spriteset_warehouse_full_ne_sw,
             ],
         },
+        "objects_can_build_on": ["land", "water"],
     },
 )
 industry.add_magic_spritelayout(
@@ -581,6 +594,7 @@ industry.add_magic_spritelayout(
                 spriteset_shed_half_sw_ne,
             ],
         },
+        "objects_can_build_on": ["land", "water"],
     },
 )
 industry.add_magic_spritelayout(
@@ -604,6 +618,7 @@ industry.add_magic_spritelayout(
                 spriteset_shed_half_ne_sw,
             ],
         },
+        # no objects, by design, would duplicate port_spritelayout_shed_half_1
     },
 )
 industry.add_magic_spritelayout(
@@ -626,6 +641,7 @@ industry.add_magic_spritelayout(
                 spriteset_shed_full_ne_sw,
             ],
         },
+        "objects_can_build_on": ["land", "water"],
     },
 )
 industry.add_magic_spritelayout(
@@ -648,6 +664,7 @@ industry.add_magic_spritelayout(
                 spriteset_ship_1_sw_ne,
             ],
         },
+        "objects_can_build_on": ["water"],
     },
 )
 industry.add_magic_spritelayout(
@@ -670,6 +687,7 @@ industry.add_magic_spritelayout(
                 spriteset_ship_2_sw_ne,
             ],
         },
+        "objects_can_build_on": ["water"],
     },
 )
 

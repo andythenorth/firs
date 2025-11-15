@@ -99,7 +99,7 @@
                         introduction_date:      date(1, 1, 1);
                         end_of_life_date:       date(${global_constants.max_game_date}, 1, 1);
                         /* Anything can overbuild the object, removing returns the money, we don't want foundations and we want to allow bridges */
-                        object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_ANIMATED, OBJ_FLAG_ON_WATER);
+                        object_flags:           ${grf_object.object_flags};
                         height:                 6;
                         num_views:              ${len(grf_object.views)};
                         // name derived from industry currently
