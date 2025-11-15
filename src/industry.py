@@ -456,6 +456,8 @@ class SpriteLayout(object):
         jetty_foundations=False,
         jetty_surface=None,
         terrain_aware_ground=False,
+        land_object_zoffset=0,
+        water_object_zoffset=8,
         tile=None,
         add_to_object_num=None,
     ):
@@ -477,6 +479,8 @@ class SpriteLayout(object):
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
         if self.terrain_aware_ground:
             assert self.ground_sprite == None, f"{self.id} sets both ground_sprite and terrain_aware_ground - can't set both"
+        self.land_object_zoffset = land_object_zoffset
+        self.water_object_zoffset = water_object_zoffset
         # as of September 2022, spritelayouts can define which tile they use
         # - this is optional as a migration strategy, but is intended to be the only supported approach in future
         self.tile = tile
@@ -582,6 +586,9 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
                 jetty_foundations=config["jetty_foundations"],
                 #jetty_surface=ground_overlay,
                 terrain_aware_ground=True,
+                # to avoid overcomplicating industry spritelayout, we make adjustments to object spritelayout
+                land_object_zoffset=-8,
+                water_object_zoffset=0,
                 tile=self.tile,
             )
 

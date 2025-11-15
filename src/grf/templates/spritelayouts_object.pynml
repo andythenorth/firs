@@ -39,14 +39,14 @@
                             <tal:hide_sprite condition="'ne' not in spritelayout.perma_fences">
                                 hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_use_fence_ne}) == 0;
                             </tal:hide_sprite>
-                            xoffset:  0;
-                            yoffset:  0;
-                            zoffset:  (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_ne}) * 8);
+                            xoffset: 0;
+                            yoffset: 0;
+                            zoffset: (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_ne}) * 8);
                             xextent: 1;
                             yextent: 16;
                             zextent: 6;
                             recolour_mode: RECOLOUR_REMAP;
-                            palette:       PALETTE_USE_DEFAULT;
+                            palette: PALETTE_USE_DEFAULT;
                         }
                     </tal:optional_fence>
                     <tal:optional_fence condition="'nw' in spritelayout.fences">
@@ -56,14 +56,14 @@
                             <tal:hide_sprite condition="'nw' not in spritelayout.perma_fences">
                                 hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_use_fence_nw}) == 0;
                             </tal:hide_sprite>
-                            xoffset:  0;
-                            yoffset:  0;
-                            zoffset:  (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_nw}) * 8);
+                            xoffset: 0;
+                            yoffset: 0;
+                            zoffset: (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_nw}) * 8);
                             xextent: 16;
                             yextent: 1;
                             zextent: 6;
                             recolour_mode: RECOLOUR_REMAP;
-                            palette:       PALETTE_USE_DEFAULT;
+                            palette: PALETTE_USE_DEFAULT;
                         }
                     </tal:optional_fence>
 
@@ -74,7 +74,7 @@
                             palette: PALETTE_USE_DEFAULT;
                             xoffset: ${building_sprite.xoffset};
                             yoffset: ${building_sprite.yoffset};
-                            zoffset: ${building_sprite.zoffset};
+                            zoffset: ${building_sprite.zoffset} + ${spritelayout.land_object_zoffset};
                             xextent: ${building_sprite.xextent};
                             yextent: ${building_sprite.yextent};
                             zextent: ${building_sprite.zextent};
@@ -87,7 +87,7 @@
                             palette: PALETTE_USE_DEFAULT;
                             xoffset: ${building_sprite.xoffset};
                             yoffset: ${building_sprite.yoffset};
-                            zoffset: ${building_sprite.zoffset};
+                            zoffset: ${building_sprite.zoffset} + ${spritelayout.land_object_zoffset};
                             xextent: ${building_sprite.xextent};
                             yextent: ${building_sprite.yextent};
                             zextent: ${building_sprite.zextent};
@@ -104,7 +104,7 @@
                             palette: PALETTE_USE_DEFAULT;
                             xoffset: ${smoke_sprite.xoffset};
                             yoffset: ${smoke_sprite.yoffset};
-                            zoffset: ${smoke_sprite.zoffset};
+                            zoffset: ${smoke_sprite.zoffset} + ${spritelayout.land_object_zoffset};
                             xextent: ${smoke_sprite.xextent};
                             yextent: ${smoke_sprite.yextent};
                             zextent: ${smoke_sprite.zextent};
@@ -120,8 +120,8 @@
                                 hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_use_fence_se}) == 0;
                             </tal:hide_sprite>
                             xoffset: 0;
-                            yoffset:  16;
-                            zoffset:  (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_se}) * 8);
+                            yoffset: 16;
+                            zoffset: (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_se}) * 8);
                             xextent: 16;
                             yextent: 1;
                             zextent: 6;
@@ -137,8 +137,8 @@
                                 hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_use_fence_sw}) == 0;
                             </tal:hide_sprite>
                             xoffset: 16;
-                            yoffset:  0;
-                            zoffset:  (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_sw}) * 8);
+                            yoffset: 0;
+                            zoffset: (LOAD_TEMP(${graphics_temp_storage.var_fence_offset_sw}) * 8);
                             xextent: 1;
                             yextent: 16;
                             zextent: 6;
@@ -164,7 +164,7 @@
                         palette: PALETTE_USE_DEFAULT;
                         xoffset: 0;
                         yoffset: 0;
-                        zoffset: ${global_constants.water_object_zoffset};
+                        zoffset: 8; <!--! note z offset must be set here -->
                         xextent: 16;
                         yextent: 16;
                         zextent: 1; <!--! seems wrong (should be 8?), but appears to work so far -->
@@ -178,7 +178,7 @@
                             hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow});
                             xoffset: 0;
                             yoffset: 0;
-                            zoffset: ${global_constants.water_object_zoffset};
+                            zoffset: ${spritelayout.water_object_zoffset};
                             xextent: 16;
                             yextent: 16;
                             zextent: 1;
@@ -196,7 +196,7 @@
                             palette: PALETTE_USE_DEFAULT;
                             xoffset: ${building_sprite.xoffset};
                             yoffset: ${building_sprite.yoffset};
-                            zoffset: ${building_sprite.zoffset} + ${global_constants.water_object_zoffset};
+                            zoffset: ${building_sprite.zoffset} + ${spritelayout.water_object_zoffset};
                             xextent: ${building_sprite.xextent};
                             yextent: ${building_sprite.yextent};
                             zextent: ${building_sprite.zextent};
@@ -209,7 +209,7 @@
                             palette: PALETTE_USE_DEFAULT;
                             xoffset: ${building_sprite.xoffset};
                             yoffset: ${building_sprite.yoffset};
-                            zoffset: ${building_sprite.zoffset} + ${global_constants.water_object_zoffset};
+                            zoffset: ${building_sprite.zoffset} + ${spritelayout.water_object_zoffset};
                             xextent: ${building_sprite.xextent};
                             yextent: ${building_sprite.yextent};
                             zextent: ${building_sprite.zextent};
@@ -226,7 +226,7 @@
                             palette: PALETTE_USE_DEFAULT;
                             xoffset: ${smoke_sprite.xoffset};
                             yoffset: ${smoke_sprite.yoffset};
-                            zoffset: ${smoke_sprite.zoffset} + ${global_constants.water_object_zoffset};
+                            zoffset: ${smoke_sprite.zoffset} + ${spritelayout.water_object_zoffset};
                             xextent: ${smoke_sprite.xextent};
                             yextent: ${smoke_sprite.yextent};
                             zextent: ${smoke_sprite.zextent};
