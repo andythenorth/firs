@@ -57,6 +57,30 @@ class SpriteLayout(object):
                 return tile
 
 
+class MagicSpritelayoutFactory(object):
+    """
+    Basic factory pattern for making magic spritelayouts.
+    This is for very specific spritelayout patterns that repeat across multiple industries and require long declarations and extra switches.
+    """
+
+    # don't need __init__
+
+    def produce(self, industry, type, base_id, tile, config, **kwargs):
+        if type == "slope_aware_trees":
+            magic_spritelayout = MagicSpritelayoutSlopeAwareTrees(
+                industry, base_id, tile, config, **kwargs
+            )
+        if type == "jetty_coast_foundations":
+            magic_spritelayout = MagicSpritelayoutJettyFoundations(
+                industry, base_id, tile, config, **kwargs
+            )
+        if type == "jetty_auto_orient_to_coast_direction":
+            magic_spritelayout = MagicSpritelayoutJettyAutoOrientToCoastDirection(
+                industry, base_id, tile, config, **kwargs
+            )
+        return magic_spritelayout
+
+
 class MagicSpritelayoutJettyFoundations(object):
     """
     Occasionally we need magic.  If we're going magic, let's go full on magic.

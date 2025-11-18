@@ -26,9 +26,7 @@ from grf.object import GRFObject
 from grf.perm_storage_mappings import register_perm_storage_mapping, get_perm_num
 from grf.spritelayout import (
     SpriteLayout,
-    MagicSpritelayoutSlopeAwareTrees,
-    MagicSpritelayoutJettyFoundations,
-    MagicSpritelayoutJettyAutoOrientToCoastDirection,
+    MagicSpritelayoutFactory,
     GraphicsSwitchSlopes,
 )
 from grf.sprite_spriteset import SmokeSprite, Sprite, Spriteset
@@ -680,19 +678,8 @@ class Industry(object):
     def add_magic_spritelayout(self, type, base_id, tile, config, **kwargs):
         # sometimes magic is the only way
         # this is for very specific spritelayout patterns that repeat across multiple industries and require long declarations and extra switches
-        if type == "slope_aware_trees":
-            magic_spritelayout = MagicSpritelayoutSlopeAwareTrees(
-                self, base_id, tile, config, **kwargs
-            )
-        if type == "jetty_coast_foundations":
-            magic_spritelayout = MagicSpritelayoutJettyFoundations(
-                self, base_id, tile, config, **kwargs
-            )
-        if type == "jetty_auto_orient_to_coast_direction":
-            magic_spritelayout = MagicSpritelayoutJettyAutoOrientToCoastDirection(
-                self, base_id, tile, config, **kwargs
-            )
         # we do have to book-keep the magic, as there are Magic taxes that must be paid
+        magic_spritelayout = MagicSpritelayoutFactory().produce(self, type, base_id, tile, config, **kwargs)
         self.magic_spritelayouts_by_id[base_id] = magic_spritelayout
 
     def add_slope_graphics_switch(self, *args, **kwargs):
