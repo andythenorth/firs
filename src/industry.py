@@ -5,10 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from collections import deque
-import copy
 import os.path
-import json
 
 currentdir = os.curdir
 
@@ -26,7 +23,12 @@ templates = PageTemplateLoader(
 import firs
 
 from grf.perm_storage_mappings import register_perm_storage_mapping, get_perm_num
-from grf.spritelayout import SpriteLayout, MagicSpritelayoutSlopeAwareTrees, MagicSpritelayoutJettyFoundations, MagicSpritelayoutJettyAutoOrientToCoastDirection
+from grf.spritelayout import (
+    SpriteLayout,
+    MagicSpritelayoutSlopeAwareTrees,
+    MagicSpritelayoutJettyFoundations,
+    MagicSpritelayoutJettyAutoOrientToCoastDirection,
+)
 from grf.tile import Tile, TileLocationChecks
 
 

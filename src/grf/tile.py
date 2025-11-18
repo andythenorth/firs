@@ -12,6 +12,7 @@ templates = PageTemplateLoader(
     os.path.join(currentdir, "src", "grf", "templates"), format="text"
 )
 
+
 class Tile(object):
     """Base class to hold industry tiles"""
 
@@ -298,5 +299,3 @@ class TileLocationCheckFounder(TileLocationCheck):
         self.switch_result = "return CB_RESULT_LOCATION_ALLOW"  # default result, value may also be id for next switch
         self.switch_entry_point = None
         self.macro_name = "allow_player"
-
-

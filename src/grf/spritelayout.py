@@ -36,7 +36,9 @@ class SpriteLayout(object):
             self.jetty_surface_overlay = jetty_surface_overlay
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
         if self.terrain_aware_ground:
-            assert self.ground_sprite == None, f"{self.id} sets both ground_sprite and terrain_aware_ground - can't set both"
+            assert (
+                self.ground_sprite == None
+            ), f"{self.id} sets both ground_sprite and terrain_aware_ground - can't set both"
         self.land_object_zoffset = land_object_zoffset
         self.water_object_zoffset = water_object_zoffset
         # as of September 2022, spritelayouts can define which tile they use
@@ -46,7 +48,7 @@ class SpriteLayout(object):
         # optionally spritelayouts can cause objects to be defined
         self.add_to_object_num = add_to_object_num
         if self.ground_overlay is not None:
-            if hasattr(self.ground_overlay, 'type'):
+            if hasattr(self.ground_overlay, "type"):
                 print("'empty' in spritelayout:", self.id, self.ground_overlay.type)
 
     def resolve_tile(self, industry):
@@ -506,6 +508,3 @@ class MagicTree(object):
         self.tropic = trees["tropic"][tree_num]
         self.xoffset = offsets[tree_num][0]
         self.yoffset = offsets[tree_num][1]
-
-
-
