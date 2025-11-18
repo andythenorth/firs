@@ -524,5 +524,3 @@ class GraphicsSwitchSlopes(GraphicsSwitch):
         super().__init__(id)
         self.slope_spritelayout_mapping = slope_spritelayout_mapping
         self.default_result = default_result
-
-
