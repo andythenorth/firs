@@ -454,7 +454,7 @@ class SpriteLayout(object):
         perma_fences=[],
         magic_trees=[],
         jetty_foundations=False,
-        jetty_surface=None,
+        jetty_surface_overlay=None,
         terrain_aware_ground=False,
         land_object_zoffset=0,
         water_object_zoffset=8,
@@ -472,10 +472,10 @@ class SpriteLayout(object):
         self.perma_fences = perma_fences
         self.magic_trees = magic_trees
         self.jetty_foundations = jetty_foundations
-        if jetty_surface is None:
-            self.jetty_surface = self.ground_sprite
+        if jetty_surface_overlay is None:
+            self.jetty_surface_overlay = self.ground_sprite
         else:
-            self.jetty_surface = jetty_surface
+            self.jetty_surface_overlay = jetty_surface_overlay
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
         if self.terrain_aware_ground:
             assert self.ground_sprite == None, f"{self.id} sets both ground_sprite and terrain_aware_ground - can't set both"
@@ -575,6 +575,9 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
     def __init__(self, industry, base_id, tile, config, **kwargs):
         self.tile = tile
         self.auto_orient = True
+        jetty_surface_overlay = industry.add_spriteset(
+            type="asphalt",
+        )
         for coast_direction in ["se", "sw", "nw", "ne"]:
             building_sprites = []
             building_sprites.extend(config["building_sprites"][coast_direction])
@@ -584,7 +587,7 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
                 ground_overlay=None,
                 building_sprites=building_sprites,
                 jetty_foundations=config["jetty_foundations"],
-                #jetty_surface=ground_overlay,
+                jetty_surface_overlay=jetty_surface_overlay,
                 terrain_aware_ground=True,
                 # to avoid overcomplicating industry spritelayout, we make adjustments to object spritelayout
                 land_object_zoffset=-8,

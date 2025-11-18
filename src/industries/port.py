@@ -646,6 +646,21 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
+    base_id="port_spritelayout_empty",
+    tile="port_tile_1",
+    config={
+        "jetty_foundations": True,
+        "building_sprites": {
+            "se": [],
+            "sw": [],
+            "nw": [],
+            "ne": [],
+        },
+        "objects_can_build_on": ["land", "water"],
+    },
+)
+industry.add_magic_spritelayout(
+    type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_water_ship_1",
     tile="port_tile_3",
     config={
