@@ -508,3 +508,21 @@ class MagicTree(object):
         self.tropic = trees["tropic"][tree_num]
         self.xoffset = offsets[tree_num][0]
         self.yoffset = offsets[tree_num][1]
+
+
+class GraphicsSwitch(object):
+    """base class for extra graphics switches"""
+
+    def __init__(self, id, **kwargs):
+        self.id = id
+
+
+class GraphicsSwitchSlopes(GraphicsSwitch):
+    """Class from which a slope-checking graphics switch can be generated, routing to appropriate spritelayout per slope type"""
+
+    def __init__(self, id, slope_spritelayout_mapping, default_result):
+        super().__init__(id)
+        self.slope_spritelayout_mapping = slope_spritelayout_mapping
+        self.default_result = default_result
+
+

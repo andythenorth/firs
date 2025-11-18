@@ -29,25 +29,10 @@ from grf.spritelayout import (
     MagicSpritelayoutSlopeAwareTrees,
     MagicSpritelayoutJettyFoundations,
     MagicSpritelayoutJettyAutoOrientToCoastDirection,
+    GraphicsSwitchSlopes,
 )
 from grf.sprite_spriteset import SmokeSprite, Sprite, Spriteset
 from grf.tile import Tile, TileLocationChecks
-
-
-class GraphicsSwitch(object):
-    """base class for extra graphics switches"""
-
-    def __init__(self, id, **kwargs):
-        self.id = id
-
-
-class GraphicsSwitchSlopes(GraphicsSwitch):
-    """Class from which a slope-checking graphics switch can be generated, routing to appropriate spritelayout per slope type"""
-
-    def __init__(self, id, slope_spritelayout_mapping, default_result):
-        super().__init__(id)
-        self.slope_spritelayout_mapping = slope_spritelayout_mapping
-        self.default_result = default_result
 
 
 class IndustryLayout(object):
