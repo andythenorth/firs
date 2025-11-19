@@ -271,7 +271,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_gate_shed_coast_part",
     tile="port_tile_2",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_shed_half_se_nw,
@@ -294,7 +293,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_gate_shed_sea_part",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_shed_full_nw_se,
@@ -318,7 +316,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_crane_rails_parallel",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_crane_rails_nw_se,
@@ -333,7 +330,7 @@ industry.add_magic_spritelayout(
                 spriteset_crane_rails_ne_sw,
             ],
         },
-        "objects_can_build_on": ["land", "water"],
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -341,7 +338,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_crane_rails_orthogonal",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_crane_rails_ne_sw,
@@ -364,7 +360,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_crane_parallel",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_crane_rails_nw_se,
@@ -383,7 +378,7 @@ industry.add_magic_spritelayout(
                 spriteset_large_crane_ne_sw,
             ],
         },
-        "objects_can_build_on": ["land", "water"],
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -391,7 +386,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_crane_orthogonal",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_crane_rails_ne_sw,
@@ -418,7 +412,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_crawler_crane_orthogonal",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_crawler_crane_ne_sw,
@@ -433,7 +426,7 @@ industry.add_magic_spritelayout(
                 spriteset_crawler_crane_nw_se,
             ],
         },
-        "objects_can_build_on": ["land", "water"],
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -441,7 +434,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_tanks_sphere",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_tanks_sphere,
@@ -456,7 +448,7 @@ industry.add_magic_spritelayout(
                 spriteset_tanks_sphere,
             ],
         },
-        "objects_can_build_on": ["land", "water"],
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -464,7 +456,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_silos",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_silos_nw_se,
@@ -479,7 +470,7 @@ industry.add_magic_spritelayout(
                 spriteset_silos_sw_ne,
             ],
         },
-        "objects_can_build_on": ["land", "water"],
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -487,7 +478,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_bulk_handling",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_bulk_handling_nw_se,
@@ -502,7 +492,7 @@ industry.add_magic_spritelayout(
                 spriteset_bulk_handling_sw_ne,
             ],
         },
-        "objects_can_build_on": ["land", "water"],
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -510,7 +500,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_warehouse_half_1",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_warehouse_half_nw_se,
@@ -525,7 +514,7 @@ industry.add_magic_spritelayout(
                 spriteset_warehouse_half_sw_ne,
             ],
         },
-        "objects_can_build_on": ["land", "water"],
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -533,7 +522,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_warehouse_half_2",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_warehouse_half_se_nw,
@@ -556,7 +544,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_warehouse_full",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_warehouse_full_nw_se,
@@ -571,7 +558,7 @@ industry.add_magic_spritelayout(
                 spriteset_warehouse_full_ne_sw,
             ],
         },
-        "objects_can_build_on": ["land", "water"],
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -579,7 +566,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_shed_half_1",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_shed_half_nw_se,
@@ -594,7 +580,7 @@ industry.add_magic_spritelayout(
                 spriteset_shed_half_sw_ne,
             ],
         },
-        "objects_can_build_on": ["land", "water"],
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -602,7 +588,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_shed_half_2",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         # reversed variant of the half-shed for alternate end of the shed
         "building_sprites": {
             "se": [
@@ -626,7 +611,6 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_shed_full",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_shed_full_nw_se,
@@ -641,7 +625,7 @@ industry.add_magic_spritelayout(
                 spriteset_shed_full_ne_sw,
             ],
         },
-        "objects_can_build_on": ["land", "water"],
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -649,22 +633,20 @@ industry.add_magic_spritelayout(
     base_id="port_spritelayout_empty",
     tile="port_tile_1",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [],
             "sw": [],
             "nw": [],
             "ne": [],
         },
-        "objects_can_build_on": ["land", "water"],
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
-    type="jetty_auto_orient_to_coast_direction",
+    type="water_feature_auto_orient_to_coast_direction",
     base_id="port_spritelayout_water_ship_1",
     tile="port_tile_3",
     config={
-        "jetty_foundations": False,
         "building_sprites": {
             "se": [
                 spriteset_ship_1_nw_se,
@@ -679,15 +661,13 @@ industry.add_magic_spritelayout(
                 spriteset_ship_1_sw_ne,
             ],
         },
-        "objects_can_build_on": ["water"],
     },
 )
 industry.add_magic_spritelayout(
-    type="jetty_auto_orient_to_coast_direction",
+    type="water_feature_auto_orient_to_coast_direction",
     base_id="port_spritelayout_water_ship_2",
     tile="port_tile_3",
     config={
-        "jetty_foundations": False,
         "building_sprites": {
             "se": [
                 spriteset_ship_2_nw_se,
@@ -702,7 +682,7 @@ industry.add_magic_spritelayout(
                 spriteset_ship_2_sw_ne,
             ],
         },
-        "objects_can_build_on": ["water"],
+        "add_objects": True,
     },
 )
 

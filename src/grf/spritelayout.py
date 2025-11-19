@@ -11,7 +11,7 @@ class SpriteLayout(object):
         fences=[],
         perma_fences=[],
         magic_trees=[],
-        jetty_foundations=False,
+        jetty_foundations=True,
         jetty_surface_overlay=None,
         terrain_aware_ground=False,
         land_object_zoffset=0,
@@ -63,22 +63,15 @@ class MagicSpritelayoutFactory(object):
     This is for very specific spritelayout patterns that repeat across multiple industries and require long declarations and extra switches.
     """
 
-    # don't need __init__
-
     def produce(self, industry, type, base_id, tile, config, **kwargs):
-        if type == "slope_aware_trees":
-            magic_spritelayout = MagicSpritelayoutSlopeAwareTrees(
-                industry, base_id, tile, config, **kwargs
-            )
-        if type == "jetty_coast_foundations":
-            magic_spritelayout = MagicSpritelayoutJettyFoundations(
-                industry, base_id, tile, config, **kwargs
-            )
-        if type == "jetty_auto_orient_to_coast_direction":
-            magic_spritelayout = MagicSpritelayoutJettyAutoOrientToCoastDirection(
-                industry, base_id, tile, config, **kwargs
-            )
-        return magic_spritelayout
+        class_map = {
+            "slope_aware_trees": MagicSpritelayoutSlopeAwareTrees,
+            "jetty_coast_foundations": MagicSpritelayoutJettyFoundations,
+            "jetty_auto_orient_to_coast_direction": MagicSpritelayoutJettyAutoOrientToCoastDirection,
+            "water_feature_auto_orient_to_coast_direction": MagicSpritelayoutWaterFeatureAutoOrientToCoastDirection,
+        }
+        cls = class_map[type]
+        return cls(industry, base_id, tile, config, **kwargs)
 
 
 class MagicSpritelayoutJettyFoundations(object):
@@ -170,7 +163,7 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
                 ground_sprite=None,
                 ground_overlay=None,
                 building_sprites=building_sprites,
-                jetty_foundations=config["jetty_foundations"],
+                jetty_foundations=True,
                 jetty_surface_overlay=jetty_surface_overlay,
                 terrain_aware_ground=True,
                 # to avoid overcomplicating industry spritelayout, we make adjustments to object spritelayout
@@ -181,18 +174,71 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
 
         # handle addition of objects separately, don't interleave with industry handling
         # we infer the need to add objects from 'can build on' for land and/or water
-        if len(config.get("objects_can_build_on", [])) > 0:
+        if config.get("add_objects", False):
             for spritelayout in self.get_unique_spritelayouts_for_objects(industry):
                 # when adding spritelayouts this way, all views will be single tile, 0-indexed
                 view = [(0, 0, spritelayout)]
                 new_object_num = len(industry.objects) + 1
-                allow_on_land = "land" in config["objects_can_build_on"]
-                allow_on_water = "water" in config["objects_can_build_on"]
                 industry.add_view_for_object(
                     view,
                     add_to_object_num=new_object_num,
-                    allow_on_land=allow_on_land,
-                    allow_on_water=allow_on_water,
+                    allow_on_land=True,
+                    allow_on_water=True,
+                )
+
+    def get_unique_spritelayouts_for_objects(self, industry):
+        # spritelayouts for ne, sw, nw, ne orientations may or may not be unique, depending on whether spritesets are unique per direction, or reused
+        result = []
+        # unique *lists* of spritesets as this is significant
+        seen_building_sprite_lists = []
+        # take the last 4 spritelayouts added, correspondign to 4 coast directions
+        for spritelayout in industry.spritelayouts[-4:]:
+            if spritelayout.building_sprites not in seen_building_sprite_lists:
+                result.append(spritelayout)
+                seen_building_sprite_lists.append(spritelayout.building_sprites)
+        return result
+
+
+class MagicSpritelayoutWaterFeatureAutoOrientToCoastDirection(object):
+    """
+    Occasionally we need magic.  If we're going magic, let's go full on magic.
+    This one provides tiles for jetties that automatically orient to the coast direction, fine-grained configurable per spritelayout.
+    """
+
+    def __init__(self, industry, base_id, tile, config, **kwargs):
+        self.tile = tile
+        self.auto_orient = True
+        jetty_surface_overlay = industry.add_spriteset(
+            type="asphalt",
+        )
+        for coast_direction in ["se", "sw", "nw", "ne"]:
+            building_sprites = []
+            building_sprites.extend(config["building_sprites"][coast_direction])
+            industry.add_spritelayout(
+                id=base_id + "_" + coast_direction,
+                ground_sprite=None,
+                ground_overlay=None,
+                building_sprites=building_sprites,
+                terrain_aware_ground=True,
+                jetty_foundations=False,
+                # to avoid overcomplicating industry spritelayout, we make adjustments to object spritelayout
+                land_object_zoffset=-8,
+                water_object_zoffset=0,
+                tile=self.tile,
+            )
+
+        # handle addition of objects separately, don't interleave with industry handling
+        # we infer the need to add objects from 'can build on' for land and/or water
+        if config.get("add_objects", False):
+            for spritelayout in self.get_unique_spritelayouts_for_objects(industry):
+                # when adding spritelayouts this way, all views will be single tile, 0-indexed
+                view = [(0, 0, spritelayout)]
+                new_object_num = len(industry.objects) + 1
+                industry.add_view_for_object(
+                    view,
+                    add_to_object_num=new_object_num,
+                    allow_on_land=False,
+                    allow_on_water=True,
                 )
 
     def get_unique_spritelayouts_for_objects(self, industry):

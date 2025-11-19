@@ -41,6 +41,7 @@ switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_switch_graphics, [
                                     switch_terrain_industry(),
                                     switch_tile_buildings(),
                                     ${'switch_magic_trees(),' if industry.uses_magic_trees else ''}
+                                    STORE_TEMP(switch_industry_tile_is_water(), ${graphics_temp_storage.var_tile_is_built_on_water}),
                                     STORE_TEMP(random_bits, ${graphics_temp_storage.var_random_bits})
                                  ]) {
     ${industry.id}_industry_construction_state_graphics_switch;

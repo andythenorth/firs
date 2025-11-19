@@ -86,7 +86,7 @@
         switch(FEAT_OBJECTS, SELF, ${grf_object.id}_switch_graphics, [
                                             switch_tile_fences_object(),
                                             switch_terrain_object(),
-                                            STORE_TEMP(switch_object_tile_is_water(), ${graphics_temp_storage.var_object_built_on_water}),
+                                            STORE_TEMP(switch_object_tile_is_water(), ${graphics_temp_storage.var_tile_is_built_on_water}),
                                             view
                                         ]) {
             <tal:views repeat="view_num range(len(grf_object.views))">

@@ -33,10 +33,12 @@
                         <tal:jetty_object_built_on_land condition="spritelayout.jetty_foundations">
                             <!--! if it's an object designed for water, but built on land, then we need to provide the jetty surface as ground -->
                             <!--! snow is not handled for this case currently -->
+                            <!--! CABBAGE
                             childsprite {
                                 sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.jetty_surface_overlay)};
                                 always_draw: 1;
                             }
+                            -->
                         </tal:jetty_object_built_on_land>
                     </tal:ground_sprite>
 
@@ -164,11 +166,11 @@
                         sprite: GROUNDSPRITE_WATER;
                     }
 
-                    <!--!<tal:jetty_object_built_on_water condition="spritelayout.jetty_foundations">-->
+                    <tal:jetty_object_built_on_water condition="spritelayout.jetty_foundations">
                         <!--! handling of jetty foundations (for water objects) -->
                         building {
                             sprite: spriteset_jetty_foundations_and_surface_1(slope_to_sprite_offset(nearby_tile_slope(0,0)));
-                            hide_sprite: !LOAD_TEMP(${graphics_temp_storage.var_object_built_on_water});
+                            hide_sprite: !LOAD_TEMP(${graphics_temp_storage.var_tile_is_built_on_water});
                             recolour_mode: RECOLOUR_REMAP;
                             palette: PALETTE_USE_DEFAULT;
                             xoffset: 0;
@@ -185,6 +187,7 @@
                                 - do we want the logic in the SpriteLayout class, or the spritelayout template?
                                 - currently we have both mixed up, and tied to ground_sprite in a not very clean way
                         -->
+                        <!--! CABBAGE
                         building {
                             sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.jetty_surface_overlay)};
                             hide_sprite: LOAD_TEMP(${graphics_temp_storage.var_terrain_is_snow});
@@ -196,8 +199,9 @@
                             zextent: 1;
                             always_draw: 1;
                         }
+                        -->
                         <!--! we don't handle snow on jetty surface currently -->
-                    <!--!</tal:jetty_object_built_on_water>-->
+                    </tal:jetty_object_built_on_water>
 
                     <!--! no fences on sea -->
 
