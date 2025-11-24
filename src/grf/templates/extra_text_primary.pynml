@@ -21,7 +21,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, [
         switch (FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_subtype_display_cargo_${cargo}_economy_${economy.numeric_id}, [
                 LOAD_PERM(${get_perm_num("supplied_cycles_remaining_cargo_" + str(repeat.cargo.number))})
             ]) {
-            0: return 0x3800 + string(STR_EMPTY);
+            0: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_OPTIONAL_FLAG);
             return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_SUPPLIED_FLAG);
         }
     </tal:cargos>

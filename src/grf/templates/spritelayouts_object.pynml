@@ -33,12 +33,10 @@
                         <tal:jetty_object_built_on_land condition="spritelayout.jetty_foundations">
                             <!--! if it's an object designed for water, but built on land, then we need to provide the jetty surface as ground -->
                             <!--! snow is not handled for this case currently -->
-                            <!--! CABBAGE
                             childsprite {
                                 sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.jetty_surface_overlay)};
                                 always_draw: 1;
                             }
-                            -->
                         </tal:jetty_object_built_on_land>
                     </tal:ground_sprite>
 
