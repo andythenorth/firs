@@ -1,10 +1,10 @@
 # Various needed programs
 GIT = git
-PYTHON3 = python3
+PYTHON3 = home/reinier/venvttd/bin/python3
 SED = sed
 ZIP = zip
 
-NMLC = nmlc
+NMLC = home/reinier/venvttd/bin/nmlc
 GRFID = grfid
 
 GIT_INFO = $(PYTHON3) src/polar_fox/git_info.py
@@ -67,7 +67,7 @@ html_docs: $(HTML_DOCS)
 gs: $(GS_DIR)
 
 # remove the @ for more verbose output (@ suppresses command output)
-_V ?= @
+_V ?= 
 
 $(NML_LANG_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.pylng --ext=.toml src)
 	$(_V) $(PYTHON3) src/render_lang.py $(ARGS) "grf"

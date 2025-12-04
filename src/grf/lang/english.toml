@@ -114,6 +114,12 @@ base = "{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level
 [STR_CARGO_NAME_ACID]
 base = "Acid"
 
+[STR_CARGO_NAME_ADVASSMATS]
+base = "Advanced Assembly Materials"
+
+[STR_CARGO_NAME_ADVVEHICLES]
+base = "Advanced Vehicles"
+
 [STR_CARGO_NAME_AGGREGATES]
 base = "Aggregates"
 
@@ -129,8 +135,17 @@ base = "Aluminia"
 [STR_CARGO_NAME_AMMONIA]
 base = "Ammonia"
 
+[STR_CARGO_NAME_ARTYSHELLS]
+base = "Artillery Shells"
+
+[STR_CARGO_NAME_BASASSMAT]
+base = "Basic Assembly Materials"
+
 [STR_CARGO_NAME_BEANS]
 base = "Beans"
+
+[STR_CARGO_NAME_BMATS]
+base= "Basic Materials"
 
 [STR_CARGO_NAME_BUILDING_MATERIALS]
 base = "Building Materials"
@@ -162,6 +177,9 @@ base = "Clay"
 [STR_CARGO_NAME_CLEANING_AGENTS]
 base = "Cleaning Agents"
 
+[STR_CARGO_NAME_CMATS]
+base = "Construction Materials"
+
 [STR_CARGO_NAME_COFFEE]
 base = "Coffee"
 
@@ -171,6 +189,9 @@ base = "Coal Tar"
 [STR_CARGO_NAME_COKE]
 base = "Coke"
 
+[STR_CARGO_NAME_COMPONENTS]
+base = "Components"
+
 [STR_CARGO_NAME_CONCRETE_PRODUCTS]
 base = "Concrete Products"
 
@@ -179,6 +200,9 @@ base = "Copper"
 
 [STR_CARGO_NAME_COPPER_CONCENTRATE]
 base = "Copper Concentrate"
+
+[STR_CARGO_NAME_DIESEL]
+base = "Diesel"
 
 [STR_CARGO_NAME_EDIBLE_OIL]
 base = "Edible Oil"
@@ -191,6 +215,12 @@ base = "Engineering Supplies"
 
 [STR_CARGO_NAME_EXPLOSIVES]
 base = "Explosives"
+
+[STR_CARGO_NAME_EXPLOSIVE_POWDER]
+base = "Explosive Powder"
+
+[STR_CARGO_NAME_EXOIL]
+base = "Enriched Oil"
 
 [STR_CARGO_NAME_FERROALLOYS]
 base = "Ferroalloys"
@@ -210,6 +240,9 @@ base = "Food Additives"
 [STR_CARGO_NAME_FORGINGS_AND_CASTINGS]
 base = "Forgings & Castings"
 
+[STR_CARGO_NAME_FRONTSUP]
+base = "Frontline Supplies"
+
 [STR_CARGO_NAME_FRUITS]
 base = "Fruit"
 
@@ -218,6 +251,12 @@ base = "Glass"
 
 [STR_CARGO_NAME_HARDWARE]
 base = "Hardware"
+
+[STR_CARGO_NAME_HIGH_EXPLOSIVE_POWDER]
+base = "High Explosive Powder"
+
+[STR_CARGO_NAME_ICRATES]
+base = "Item Crates"
 
 [STR_CARGO_NAME_KAOLIN]
 base = "China Clay"
@@ -261,6 +300,9 @@ base = "Oxygen"
 [STR_CARGO_NAME_PAINTS_AND_COATINGS]
 base = "Paints & Coatings"
 
+[STR_CARGO_NAME_PCMATS]
+base = "Processed Construction Materials"
+
 [STR_CARGO_NAME_PEAT]
 base = "Peat"
 
@@ -303,8 +345,14 @@ base = "Raw Latex"
 [STR_CARGO_NAME_REBAR]
 base = "Rebar"
 
+[STR_CARGO_NAME_RMATS]
+base = "Refined Materials"
+
 [STR_CARGO_NAME_SALT]
 base = "Salt"
+
+[STR_CARGO_NAME_SALVAGE]
+base = "Salvage"
 
 [STR_CARGO_NAME_SAND]
 base = "Sand"
@@ -314,6 +362,9 @@ base = "Scrap Metal"
 
 [STR_CARGO_NAME_SEALS_HOSES_AND_BELTS]
 base = "Seals, Hoses & Belts"
+
+[STR_CARGO_NAME_SHIPPABLES]
+base = "Shippables"
 
 [STR_CARGO_NAME_SLAG]
 base = "Slag"
@@ -405,6 +456,12 @@ base = "Zinc"
 [STR_CARGO_UNIT_ACID]
 base = "{VOLUME} of acid"
 
+[STR_CARGO_UNIT_ADVASSMATS]
+base = "{WEIGHT} of Advanced Assembly Materials"
+
+[STR_CARGO_UNIT_ADVVEHICLES]
+base = "{WEIGHT} of advanced vehicles"
+
 [STR_CARGO_UNIT_AGGREGATES]
 base = "{WEIGHT} of aggregates"
 
@@ -420,8 +477,17 @@ base = "{WEIGHT} of aluminium"
 [STR_CARGO_UNIT_AMMONIA]
 base = "{VOLUME} of ammonia"
 
+[STR_CARGO_UNIT_ARTYSHELLS]
+base = "{SIGNED_WORD} crate{P 0 \"\" s} of artillery shells"
+
+[STR_CARGO_UNIT_BASASSMAT]
+base = "{WEIGHT} of Basic Assembly Materials"
+
 [STR_CARGO_UNIT_BEANS]
 base = "{WEIGHT} of beans"
+
+[STR_CARGO_UNIT_BMATS]
+base = "{WEIGHT} of bmats"
 
 [STR_CARGO_UNIT_BUILDING_MATERIALS]
 base = "{WEIGHT} of building materials"
@@ -453,6 +519,9 @@ base = "{WEIGHT} of clay"
 [STR_CARGO_UNIT_CLEANING_AGENTS]
 base = "{WEIGHT} of cleaning agents"
 
+[STR_CARGO_UNIT_CMATS]
+base= "{WEIGHT} of Cmats"
+
 [STR_CARGO_UNIT_COAL_TAR]
 base = "{VOLUME} of coal tar"
 
@@ -462,6 +531,9 @@ base = "{SIGNED_WORD} sack{P 0 \"\" s} of coffee"
 [STR_CARGO_UNIT_COKE]
 base = "{WEIGHT} of coke"
 
+[STR_CARGO_UNIT_COMPONENTS]
+base = "{WEIGHT} of components"
+
 [STR_CARGO_UNIT_CONCRETE_PRODUCTS]
 base = "{WEIGHT} of concrete products"
 
@@ -470,6 +542,9 @@ base = "{WEIGHT} of copper"
 
 [STR_CARGO_UNIT_COPPER_CONCENTRATE]
 base = "{WEIGHT} of copper concentrate"
+
+[STR_CARGO_UNIT_DIESEL]
+base = "{VOLUME} of diesel"
 
 [STR_CARGO_UNIT_EDIBLE_OIL]
 base = "{VOLUME} of edible oil"
@@ -483,6 +558,12 @@ base = "{SIGNED_WORD} crate{P 0 \"\" s} of engineering supplies"
 [STR_CARGO_UNIT_EXPLOSIVES]
 base = "{SIGNED_WORD} crate{P 0 \"\" s} of explosives"
 
+[STR_CARGO_UNIT_EXPLOSIVE_POWDER]
+base = "{WEIGHT} of Epowder"
+
+[STR_CARGO_UNIT_EXOIL]
+base = "{VOLUME} of enriched oil"
+
 [STR_CARGO_UNIT_FERROALLOYS]
 base = "{WEIGHT} of ferroalloys"
 
@@ -494,6 +575,9 @@ base = "{WEIGHT} of food additives"
 
 [STR_CARGO_UNIT_FORGINGS_AND_CASTINGS]
 base = "{WEIGHT} of forgings & castings"
+
+[STR_CARGO_UNIT_FRONTSUP]
+base = "{SIGNED_WORD} crate{P 0 \"\" s} of logi deliveries"
 
 [STR_CARGO_UNIT_FISH]
 base = "{WEIGHT} of fish"
@@ -509,6 +593,12 @@ base = "{WEIGHT} of glass"
 
 [STR_CARGO_UNIT_HARDWARE]
 base = "{WEIGHT} of hardware"
+
+[STR_CARGO_UNIT_HIGH_EXPLOSIVE_POWDER]
+base = "{WEIGHT} of HEpowder"
+
+[STR_CARGO_UNIT_ICRATES]
+base = "{SIGNED_WORD} crate{P 0 \"\" s} of equipment"
 
 [STR_CARGO_UNIT_KAOLIN]
 base = "{WEIGHT} of china clay"
@@ -552,6 +642,9 @@ base = "{VOLUME} of oxygen"
 [STR_CARGO_UNIT_PAINTS_AND_COATINGS]
 base = "{VOLUME} of paints & coatings"
 
+[STR_CARGO_UNIT_PCMATS]
+base = "{WEIGHT} of PCmats"
+
 [STR_CARGO_UNIT_PEAT]
 base = "{WEIGHT} of peat"
 
@@ -594,8 +687,14 @@ base = "{VOLUME} of raw latex"
 [STR_CARGO_UNIT_REBAR]
 base = "{WEIGHT} of rebar"
 
+[STR_CARGO_UNIT_RMATS]
+base = "{WEIGHT} of Rmats"
+
 [STR_CARGO_UNIT_SALT]
 base = "{WEIGHT} of salt"
+
+[STR_CARGO_UNIT_SALVAGE]
+base = "{WEIGHT} of salvage"
 
 [STR_CARGO_UNIT_SAND]
 base = "{WEIGHT} of sand"
@@ -605,6 +704,9 @@ base = "{WEIGHT} of scrap metal"
 
 [STR_CARGO_UNIT_SEALS_HOSES_AND_BELTS]
 base = "{WEIGHT} of seals, hoses & belts"
+
+[STR_CARGO_UNIT_SHIPPABLES]
+base = "{WEIGHT} of shippables"
 
 [STR_CARGO_UNIT_SLAG]
 base = "{WEIGHT} of slag"
@@ -699,6 +801,12 @@ base = "{WEIGHT} of zinc"
 [STR_CID_ACID]
 base = "{TINYFONT}AC"
 
+[STR_CID_ADVASSMATS]
+base = "{TINYFONT}AA"
+
+[STR_CID_ADVVEHICLES]
+base = "{TINYFONT}AV"
+
 [STR_CID_AGGREGATES]
 base = "{TINYFONT}AG"
 
@@ -714,8 +822,17 @@ base = "{TINYFONT}AM"
 [STR_CID_AMMONIA]
 base = "{TINYFONT}AO"
 
+[STR_CID_ARTYSHELLS]
+base = "{TINYFONT}AR"
+
+[STR_CID_BASASSMAT]
+base = "{TINYFONT}BA"
+
 [STR_CID_BEANS]
 base = "{TINYFONT}BN"
+
+[STR_CID_BMATS]
+base= "{TINYFONT}BM"
 
 [STR_CID_BUILDING_MATERIALS]
 base = "{TINYFONT}BM"
@@ -747,6 +864,9 @@ base = "{TINYFONT}CY"
 [STR_CID_CLEANING_AGENTS]
 base = "{TINYFONT}CN"
 
+[STR_CID_CMATS]
+base = "{TINYFONT}CM"
+
 [STR_CID_COFFEE]
 base = "{TINYFONT}CF"
 
@@ -756,6 +876,9 @@ base = "{TINYFONT}CT"
 [STR_CID_COKE]
 base = "{TINYFONT}CK"
 
+[STR_CID_COMPONENTS]
+base= "{TINYFONT}CM"
+
 [STR_CID_CONCRETE_PRODUCTS]
 base = "{TINYFONT}CP"
 
@@ -764,6 +887,9 @@ base = "{TINYFONT}CR"
 
 [STR_CID_COPPER_CONCENTRATE]
 base = "{TINYFONT}CC"
+
+[STR_CID_DIESEL]
+base = "{TINYFONT}DI"
 
 [STR_CID_EDIBLE_OIL]
 base = "{TINYFONT}EO"
@@ -779,6 +905,12 @@ base = "{TINYFONT}EY"
 
 [STR_CID_EXPLOSIVES]
 base = "{TINYFONT}EX"
+
+[STR_CID_EXPLOSIVE_POWDER]
+base = "{TINYFONT}EM"
+
+[STR_CID_EXOIL]
+base = "{TINYFONT}EL"
 
 [STR_CID_FARM_SUPPLIES]
 base = "{TINYFONT}FS"
@@ -798,6 +930,9 @@ base = "{TINYFONT}FV"
 [STR_CID_FORGINGS_AND_CASTINGS]
 base = "{TINYFONT}FO"
 
+[STR_CID_FRONTSUP]
+base = "{TINYFONT}FR"
+
 [STR_CID_FURNITURE]
 base = "{TINYFONT}FU"
 
@@ -806,6 +941,12 @@ base = "{TINYFONT}GL"
 
 [STR_CID_HARDWARE]
 base = "{TINYFONT}HW"
+
+[STR_CID_HIGH_EXPLOSIVE_POWDER]
+base = "{TINYFONT}HE"
+
+[STR_CID_ICRATES]
+base = "{TINYFONT}IC"
 
 [STR_CID_KAOLIN]
 base = "{TINYFONT}KA"
@@ -850,6 +991,9 @@ base = "{TINYFONT}NT"
 base = "{TINYFONT}O2"
 
 [STR_CID_PAINTS_AND_COATINGS]
+base = "{TINYFONT}PC"
+
+[STR_CID_PCMATS]
 base = "{TINYFONT}PC"
 
 [STR_CID_PEAT]
@@ -897,8 +1041,14 @@ base = "{TINYFONT}RL"
 [STR_CID_REBAR]
 base = "{TINYFONT}RB"
 
+[STR_CID_RMATS]
+base = "{TINYFONT}RM"
+
 [STR_CID_SALT]
 base = "{TINYFONT}NA"
+
+[STR_CID_SALVAGE]
+base = "{TINYFONT}SL"
 
 [STR_CID_SAND]
 base = "{TINYFONT}SA"
@@ -908,6 +1058,9 @@ base = "{TINYFONT}SM"
 
 [STR_CID_SEALS_HOSES_AND_BELTS]
 base = "{TINYFONT}EL"
+
+[STR_CID_SHIPPABLES]
+base = "{TINYFONT}SH"
 
 [STR_CID_SLAG]
 base = "{TINYFONT}SG"
@@ -1068,6 +1221,9 @@ base = "Builders Yard"
 [STR_IND_BULK_TERMINAL]
 base = "Bulk Terminal"
 
+[STR_IND_BUNKER_BASE]
+base = "Bunker Base"
+
 [STR_IND_CARBON_BLACK_PLANT]
 base = "Carbon Black Plant"
 
@@ -1094,6 +1250,9 @@ base = "Coke Oven"
 
 [STR_IND_CONCRETE_PLANT]
 base = "Concrete Plant"
+
+[STR_IND_CONSTRUCTION_YARD]
+base = "Construction Yard"
 
 [STR_IND_COPPER_CONCENTRATOR]
 base = "Copper Concentrator"
@@ -1140,6 +1299,21 @@ base = "Factory 2"
 [STR_IND_FACTORY_3]
 base = "Factory 3"
 
+[STR_IND_FACTORY_WAR]
+base = "Equipment Factory"
+
+[STR_IND_FIELD_COAL]
+base = "Coal Field"
+
+[STR_IND_FIELD_COMPONENTS]
+base = "Component Field"
+
+[STR_IND_FIELD_SALVAGE]
+base = "Salvage Field"
+
+[STR_IND_FIELD_SULPHUR]
+base = "Sulphur Field"
+
 [STR_IND_FISH_FARM]
 base = "Fish Farm"
 
@@ -1160,6 +1334,9 @@ base = "Steel Forge & Foundry"
 
 [STR_IND_FURNITURE_FACTORY]
 base = "Furniture Factory"
+
+[STR_IND_GARAGE]
+base = "Garage"
 
 [STR_IND_GENERAL_STORE]
 base = "General Store"
@@ -1182,6 +1359,9 @@ base = "Steel Mill"
 [STR_IND_SCRAP_YARD]
 base = "Scrap Yard"
 
+[STR_IND_STORAGE_DEPOT]
+base = "Storage Depot"
+
 [STR_IND_LATEX_PROCESSOR]
 base = "Latex Processor"
 
@@ -1196,6 +1376,9 @@ base = "Liquids Terminal"
 
 [STR_IND_MANGANESE_MINE]
 base = "Manganese Mine"
+
+[STR_IND_MASS_PRODUCTION_FACTORY]
+base = "Mass Production Factory"
 
 [STR_IND_METAL_WORKS]
 base = "Metal Works"
@@ -1253,6 +1436,18 @@ base = "Quarry"
 
 [STR_IND_RANCH]
 base = "Ranch"
+
+[STR_IND_REF_SALV]
+base = "Salvage Refinery"
+
+[STR_IND_REF_COMP]
+base = "Component Refinery"
+
+[STR_IND_REF_SULPH]
+base = "Sulphur Refinery"
+
+[STR_IND_SEAPORT]
+base = "Seaport"
 
 [STR_IND_SHEEPFARM]
 base = "Sheep Farm"

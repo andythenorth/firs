@@ -1,0 +1,23 @@
+from cargo import Cargo
+
+cargo = Cargo(
+    id="advvehicles",
+    type_name="string(STR_CARGO_NAME_ADVVEHICLES)",
+    unit_name="string(STR_CARGO_NAME_ADVVEHICLES)",
+    type_abbreviation="string(STR_CID_ADVVEHICLES)",
+    sprite="NEW_CARGO_SPRITE",
+    weight="1.0",
+    is_freight="1",
+    cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED", "CC_NON_POTABLE"],
+    cargo_label="AVEH",
+    units_of_cargo="TTD_STR_TONS",
+    items_of_cargo="string(STR_CARGO_UNIT_ADVVEHICLES)",
+    penalty_lowerbound="15",
+    single_penalty_length="128",
+    price_factor=185,
+    capacity_multiplier="1",
+    icon_indices=(15, 2),
+    # used by FIRS GS
+    vulcan_town_effect="VTE_HAPPINESS",
+    sprites_complete=True,
+)

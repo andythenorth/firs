@@ -74,7 +74,7 @@ class GRFObject(object):
             tile_type_flags.append("OBJ_FLAG_NOT_ON_LAND")
         if self.allow_on_water:
             tile_type_flags.append("OBJ_FLAG_ON_WATER")
-        return f"bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_ANIMATED, OBJ_FLAG_ON_WATER, {",".join(tile_type_flags)})"
+        return f"bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_ANIMATED, OBJ_FLAG_ON_WATER, {','.join(tile_type_flags)})"
 
     @property
     def animation_triggers(self):

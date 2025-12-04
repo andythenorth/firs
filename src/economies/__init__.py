@@ -8,4 +8,5 @@ economy_module_names = [
     "basic_tropic",
     "steeltown",
     "in_a_hot_country",
+    "war_economy",
 ]
