@@ -13,7 +13,7 @@ FIND_FILES = bin/find-files
 MK_ARCHIVE = bin/mk-archive
 
 # Project details
-PROJECT_NAME = firs
+PROJECT_NAME = firs-wareco
 
 NML_LANG_DIR = generated/lang
 NML_FILE = generated/firs.nml
