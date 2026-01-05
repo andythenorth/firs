@@ -2,6 +2,15 @@ Changelog
 =========
 
 --------------
+5.1.1 Release
+--------------
+
+*Fixes*
+
+- removed requirement for Chemical Plant to locate near Wharf or Port, as it's far too often not possible at map gen time
+
+
+--------------
 5.1.0 Release
 --------------
 
