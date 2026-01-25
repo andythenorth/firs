@@ -11,7 +11,7 @@ cargo = Cargo(
     # very generic organic and inorganic chemicals, wide refits
     cargo_classes = ["CC_LIQUID_BULK", "CC_GAS_BULK", "CC_COVERED_BULK", "CC_POWDER_BULK", "CC_PIECE_GOODS", "CC_NON_POTABLE"],
     cargo_label="CHEM",
-    units_of_cargo="TTD_STR_LITERS",
+    units_of_cargo="TTD_STR_TONS",
     items_of_cargo="string(STR_CARGO_UNIT_CHEMICALS)",
     penalty_lowerbound="20",
     single_penalty_length="255",
