@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <title>
             
-        FRAX for Vehicle Authors | Polar Fox
+        FRAX for Vehicle GRFs | Polar Fox
     
         </title>
         <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -94,7 +94,7 @@
         <div class="hero fox-bg-blue">
             <div class="container pt-3 pb-1">
                 <h1 class="display-6">FRAX Cargo Class Scheme</h1>
-                <p><small><i>FRAX Routes all Xenon etc</i></small></p>
+                <p><small><i>Cargo classes for OpenTTD GRFs</i></small></p>
             </div>
         </div>
         <nav class="navbar navbar-expand-lg fox-bg-blue" style="border-bottom: solid 1px black;">
@@ -106,11 +106,11 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light text-decoration-underline"
-                           href="vehicle_frax.html">For Vehicle Authors</a>
+                           href="vehicle_frax.html">Guide for Vehicle GRFs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light text-decoration-underline"
-                           href="industry_frax.html">For Industry Authors</a>
+                           href="industry_frax.html">Guide for Cargo/Industry GRFs</a>
                     </li>
                 </ul>
             </div>
@@ -122,34 +122,33 @@
         <div class="flex-grow-1 container pt-5 pb-5">
             <div>
         <div>
-
-        <h1>Guide for Vehicle Authors</h1>
-
         <div class="pt-3 pb-3">
-            <p>Sections:</p>
-            <ul>
-                <li><a href="#guide">Guide</a></li>
-                <li><a href="#example-vehicles-table">Example Vehicles - Table</a></li>
-                <li><a href="#example-vehicles-details">Example Vehicles - Details</a></li>
-            </ul>
-        </div>
-
-        <hr />
-
-        <div class="pt-3 pb-3">
-
             <div class="row">
+
                 <div class="col-sm-8 offset-2">
                     <div class="pt-3">
-                        <h2 id="guide">Guide</h2>
+                        <h1 class="mb-4">Guide for Vehicle GRFs</h1>
                         <p>
-                            There are three categories of vehicle:
-                            <a href="#passenger_vehicle">passenger</a>,
-                            <a href="#mail_vehicle">mail</a>, and
-                            <a href="#freight_vehicle">freight</a>.
+                            This page explains how to apply refittable and non-refittable classes for:
                         </p>
-                    </div>
-                    <div class="ps-1">
+                        <ul>
+                            <li><a href="#passenger_vehicle">Passenger vehicles</a></li>
+                            <li><a href="#mail_vehicle">Mail vehicles</a></li>
+                            <li><a href="#freight_vehicle">Freight vehicles</a></li>
+                        </ul>
+                        <p>Vehicles that don't carry cargo don't need to set any cargo classes.</p>
+                        <p>
+                            This page also provides examples of vehicles with appropriate classes:
+                        </p>
+                        <ul class="mb-0">
+                            <li><a href="#example-vehicles-table">Example vehicles - table</a></li>
+                            <li><a href="#example-vehicles-details">Example vehicles - details</a></li>
+                        </ul>
+
+                        <div class="guide-section-link-block">
+                            <hr />
+                        </div>
+
                         <div class="guide-section">
                             <h3 id="passenger_vehicle" class="guide-heading mb-0">Passenger Vehicle</h3>
 
@@ -159,7 +158,7 @@
                                 <h4 class="guide-heading guide-step-heading">
                                     <span class="guide-step-marker">1</span> Refittable Classes
                                 </h4>
-                                <h5>It's just passengers folks</h5>
+                                <h5>It's just passengers</h5>
                                 <p>Set CC_PASSENGERS.  Don't set anything else.</p>
                             </div>
 
@@ -170,7 +169,7 @@
                                     <span class="guide-step-marker">2</span> Non-Refittable Classes
                                 </h4>
                                 <h5>No exclusions</h5>
-                                <p>Non-refittable classes are not required for passengers.</p>
+                                <p>Non-refittable classes are not required for passenger vehicles.</p>
                             </div>
                         </div>
 
@@ -188,7 +187,7 @@
                                     <span class="guide-step-marker">1</span> Refittable Classes
                                 </h4>
                                 <h5>Mail, maybe express</h5>
-                                <p>Set CC_MAIL for regular mail vehicles.</p>
+                                <p>Set CC_MAIL for ordinary mail vehicles.</p>
                                 <p>Some mail vehicles are also suitable for CC_EXPRESS and/or CC_ARMOURED.</p>
                             </div>
 
@@ -199,7 +198,7 @@
                                     <span class="guide-step-marker">2</span> Non-Refittable Classes
                                 </h4>
                                 <h5>No exclusions</h5>
-                                <p>Non-refittable classes are not required for mail.</p>
+                                <p>Non-refittable classes are not required for mail vehicles.</p>
                             </div>
                         </div>
 
@@ -236,11 +235,11 @@
                                             <li class="guide-list-group-item">CC_GAS_BULK</li>
                                         
                                     </ul>
-                                    <p>Most vehicles should set <strong>one</strong> basic handling class. In most cases setting more than one is not helpful, but there may be exceptions, for example, intermodal container vehicles.</p>
-                                    <p>Some specialised types might not set any basic handling class, for example:</p>
+                                    <p>Most freight vehicles should set <strong>one</strong> basic handling class. In most cases setting more than one is not helpful, but there may be exceptions, for example, intermodal container vehicles.</p>
+                                    <p>Some specialised freight vehicles might not set any basic handling class, for example:</p>
                                     <ul>
                                         <li>Armoured vehicles or refrigerated vehicles might set only a <strong>special handling</strong> class.</li>
-                                        <li>Some highly specialised types might refit only to specific <strong>cargo labels</strong>, for example nuclear fuel transporters or livestock vans.</li>
+                                        <li>Some highly specialised freight vehicles might refit only to specific <strong>cargo labels</strong>, for example nuclear fuel transporters or livestock vans.</li>
                                     </ul>
                                 </div>
 
@@ -261,7 +260,7 @@
                                             <li class="guide-list-group-item">CC_WEIRD</li>
                                         
                                     </ul>
-                                    <p>These classes mostly relate to specific types of vehicles.</p>
+                                    <p>These classes mostly relate to specific types of freight vehicle.</p>
                                 </div>
 
                                 <div class="pb-3">
@@ -284,7 +283,7 @@
                                     <h5>
                                         Set potable status
                                     </h5>
-                                    <p>Some vehicles should set <strong>one</strong> of the <strong>potable status</strong> clases.</p>
+                                    <p>Some freight vehicles should set <strong>one</strong> of the <strong>potable status</strong> clases as non-refittable.</p>
                                     <ul class="guide-list-group">
                                         
                                             <li class="guide-list-group-item">CC_POTABLE</li>
@@ -293,10 +292,9 @@
                                         
                                     </ul>
 
-                                    <p>Some vehicles are suitable for both potable and non-potable cargos, and do not need to set any potable status classes, for example vehicles that handle packaged cargo via CC_PIECE_GOODS.</p>
+                                    <p>If a freight vehicle is suitable for both potable and non-potable cargos, do not set any potable status classes. For example vehicles that handle packaged cargo via CC_PIECE_GOODS.</p>
                                     <p><strong>Never</strong> set both potable status classes.</p>
                                     <p><strong>Never</strong> set potable status classes as refittable, they are exclude-only.</p>
-                                    <p>Some highly specialised vehicles may not need to set any potable status classes, and may instead depend on refitting to specific cargo labels.</p>
                                     <details>
                                         <summary>Why we use non-refittable classes for potable status</summary>
                                         <div class="details-inner-container">
@@ -311,17 +309,18 @@
                                             </p>
                                         </div>
                                     </details>
+                                    <p>Some highly specialised freight vehicles may not need to set any potable status classes, and may instead depend on refitting to specific cargo labels.</p>
                                 </div>
                                 <div class="pb-3">
                                     <h5>
                                         Optionally exclude some cargo classes
                                     </h5>
-                                    <p>Sometimes it's helpful to be able to exclude cargos from some vehicles. For example, authors may choose to exclude CC_WEIRD from some general cargo vehicles. The details for CC_WEIRD provide more advice on this.</p>
+                                    <p>Occasionally it's helpful to be able to exclude a cargo class from a freight vehicle. This should be used sparingly, as it can cause unwanted results.</p>
                                     <details>
-                                        <summary>More about exclusions</summary>
+                                        <summary>Why non-refittable classes should be used sparingly</summary>
                                         <div class="details-inner-container">
                                             <p>
-                                                Exclusions can be unpredictable because industry GRF authors might assign unexpected classes to their cargos, potentially reducing vehicle compatibility.
+                                                Exclusions via non-refittable classes can be unpredictable because industry GRF authors might assign unexpected classes to their cargos, potentially reducing vehicle compatibility.
                                             </p>
                                             <p>
                                                 Boolean logic in exclusions can also complicate refittability, making it harder to predict and increasing the chance of unintended results.
@@ -331,6 +330,7 @@
                                             </p>
                                         </div>
                                     </details>
+                                    <p>For example, authors may choose to exclude CC_WEIRD from some general cargo vehicles. The details for CC_WEIRD provide more advice on this.</p>
                                 </div>
                             </div>
                         </div>

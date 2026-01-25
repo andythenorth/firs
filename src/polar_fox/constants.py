@@ -140,6 +140,7 @@ cargo_labels = [
     "STBR",
     "STSW",
     "STPL",
+    "CHEM",
     #
     "NULL",
 ]
@@ -302,6 +303,7 @@ allowed_refits_by_label = {
         "CERE",
         "FERT",
         "FMSP",
+        "FOOD",
         "FRUT",
         "GRAI",
         "JAVA",
