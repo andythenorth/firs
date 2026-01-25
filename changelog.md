@@ -2,8 +2,20 @@ Changelog
 =========
 
 --------------
+5.2.0 Release
+--------------
+
+
+*Codechanges*
+
+- changed cargo label for Chemicals to CHEM, rather than using RFPR label which originated outside FIRS and is intended for Refined Products cargo
+- expanded cargo classes for Chemicals, as it's a very generic cargo
+
+
+--------------
 5.1.1 Release
 --------------
+
 
 *Fixes*
 
@@ -13,6 +25,7 @@ Changelog
 --------------
 5.1.0 Release
 --------------
+
 
 **FIRS 5.1.0 is not savegame-compatible with any previous version of FIRS.**
 

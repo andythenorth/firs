@@ -32,7 +32,7 @@ industry.enable_in_economy(
     prod_cargo_types_with_multipliers=[
         ("ENSP", 19),
         ("FMSP", 7),
-        ("RFPR", 19),
+        ("CHEM", 19),
     ],
     prob_map_gen="10",
 )
@@ -59,7 +59,7 @@ industry.enable_in_economy(
         "JAVA",
         "WOOL",
         "BEER",
-        "RFPR",
+        "CHEM",
         "FOOD",
     ],
     prod_cargo_types_with_multipliers=[

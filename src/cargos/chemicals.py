@@ -6,10 +6,11 @@ cargo = Cargo(
     unit_name="string(STR_CARGO_NAME_CHEMICALS)",
     type_abbreviation="string(STR_CID_CHEMICALS)",
     sprite="NEW_CARGO_SPRITE",
-    weight="1.2",  # extra realism, per forum suggestion Nov 2017
+    weight="1.0",
     is_freight="1",
-    cargo_classes = ["CC_LIQUID_BULK", "CC_PIECE_GOODS", "CC_GAS_BULK", "CC_NON_POTABLE"],
-    cargo_label="RFPR",
+    # very generic organic and inorganic chemicals, wide refits
+    cargo_classes = ["CC_LIQUID_BULK", "CC_GAS_BULK", "CC_COVERED_BULK", "CC_POWDER_BULK", "CC_PIECE_GOODS", "CC_NON_POTABLE"],
+    cargo_label="CHEM",
     units_of_cargo="TTD_STR_LITERS",
     items_of_cargo="string(STR_CARGO_UNIT_CHEMICALS)",
     penalty_lowerbound="20",

@@ -7,7 +7,7 @@ industry = IndustrySecondary(
         ("NITR", 4),  # !!!
     ],
     prod_cargo_types_with_output_ratios=[
-        ("RFPR", 8),
+        ("CHEM", 8),
     ],
     prob_in_game="3",
     prob_map_gen="5",

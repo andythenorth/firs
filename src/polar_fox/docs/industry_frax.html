@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <title>
             
-        FRAX for Industry Authors | Polar Fox
+        FRAX for Cargo/Industry GRFs | Polar Fox
     
         </title>
         <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -94,7 +94,7 @@
         <div class="hero fox-bg-blue">
             <div class="container pt-3 pb-1">
                 <h1 class="display-6">FRAX Cargo Class Scheme</h1>
-                <p><small><i>FRAX Routes all Xenon etc</i></small></p>
+                <p><small><i>Cargo classes for OpenTTD GRFs</i></small></p>
             </div>
         </div>
         <nav class="navbar navbar-expand-lg fox-bg-blue" style="border-bottom: solid 1px black;">
@@ -106,11 +106,11 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light text-decoration-underline"
-                           href="vehicle_frax.html">For Vehicle Authors</a>
+                           href="vehicle_frax.html">Guide for Vehicle GRFs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light text-decoration-underline"
-                           href="industry_frax.html">For Industry Authors</a>
+                           href="industry_frax.html">Guide for Cargo/Industry GRFs</a>
                     </li>
                 </ul>
             </div>
@@ -122,34 +122,32 @@
         <div class="flex-grow-1 container pt-5 pb-5">
             <div>
         <div>
-
-        <h1>Guide for Industry Authors</h1>
-
-        <div class="pt-3 pb-3">
-            <p>Sections:</p>
-            <ul>
-                <li><a href="#guide">Guide</a></li>
-                <li><a href="#example-cargos-table">Example Cargos - Table</a></li>
-                <li><a href="#example-cargos-details">Example Cargos - Details</a></li>
-            </ul>
-        </div>
-
-        <hr />
-
         <div class="pt-3 pb-3">
             <div class="row">
-                <div class="col-sm-8 offset-2">
-                    <div class="pt-3 pb-3">
-                        <h2 id="guide">Guide</h2>
-                        <p>
-                            There are three categories of cargo:
-                            <a href="#passenger_cargo">passenger</a>,
-                            <a href="#mail_cargo">mail</a>, and
-                            <a href="#freight_cargo">freight</a>.
-                        </p>
-                    </div>
 
-                    <div class="ps-1">
+                <div class="col-sm-8 offset-2">
+                    <div class="pt-3">
+                        <h1 class="mb-4">Guide for Cargo/Industry GRFs</h1>
+                        <p>
+                            This page explains how to apply classes for:
+                        </p>
+                        <ul>
+                            <li><a href="#passenger_cargo">Passenger cargos</a></li>
+                            <li><a href="#mail_cargo">Mail cargos</a></li>
+                            <li><a href="#freight_cargo">Freight cargos</a></li>
+                        </ul>
+                        <p>
+                            This page also provides examples of cargos and their classes:
+                        </p>
+                        <ul class="mb-0">
+                            <li><a href="#example-cargos-table">Example cargos - table</a></li>
+                            <li><a href="#example-cargos-details">Example cargos - details</a></li>
+                        </ul>
+
+                        <div class="guide-section-link-block">
+                            <hr />
+                        </div>
+
                         <div class="guide-section">
                             <h3 id="passenger_cargo" class="guide-heading mb-0">Passenger Cargo</h3>
 
@@ -191,7 +189,7 @@
 
                             <div class="guide-sub-section">
                                 <h4 class="guide-heading guide-step-heading">
-                                    <span class="guide-step-marker">1</span> Potable Status
+                                    <span class="guide-step-marker">1</span> Freight - Potable Status
                                 </h4>
                                 <h5>Set <strong>potable status</strong></h5>
                                 <ul class="guide-list-group">
@@ -209,7 +207,7 @@
 
                             <div class="guide-sub-section">
                                 <h4 class="guide-heading guide-step-heading">
-                                    <span class="guide-step-marker">2</span> Basic Handling
+                                    <span class="guide-step-marker">2</span> Freight - Basic Handling
                                 </h4>
                                 <h5>Set any <strong>basic handling</strong> classes that apply.</h5>
                                 <ul class="guide-list-group">
@@ -227,7 +225,7 @@
                                         <li class="guide-list-group-item">CC_GAS_BULK</li>
                                     
                                 </ul>
-                                <p><em>Most</em> cargos should <strong>include at least one basic handling class</strong>.</p>
+                                <p><em>Most</em> freight cargos should <strong>include at least one basic handling class</strong>.</p>
                                 <p>You can assign multiple basic handling classes if the cargo is transported in different forms. Be sure to include all applicable classes.</p>
                                 <p>For better compatibility with vehicle GRFs, consider adding CC_PIECE_GOODS, as many cargos can be transported this way. Refer to the CC_PIECE_GOODS section for detailed guidance.</p>
                                 <p><em>Some</em> unique or non-standard cargos may not use any basic handling classes and instead rely solely on special handling classes.</p>
@@ -237,7 +235,7 @@
 
                             <div class="guide-sub-section">
                                 <h4 class="guide-heading guide-step-heading">
-                                    <span class="guide-step-marker">3</span> Special Handling
+                                    <span class="guide-step-marker">3</span> Freight - Special Handling
                                 </h4>
                                 <h5>Set any <strong>special handling</strong> classes that apply.</h5>
                                 <ul class="guide-list-group">
@@ -254,12 +252,15 @@
                                     
                                 </ul>
                                 <p>
-                                    These classes are designed for less common, specialized vehicles and highlight which cargos are best suited to them.
-                                    They represent a recommendation—'should use' rather than 'can use.'
-                                    For example, while steel could technically be transported in a refrigerated vehicle, it doesn’t need refrigeration.
-                                    Similarly, diamonds should be marked as armoured because they require secure transport. However, marking diamonds as flatbed cargo would be inappropriate and unhelpful.
+                                    These classes represent a recommendation — 'suitable for' rather than 'must use.'
                                 </p>
-                                <p>Assign as many special handling classes as genuinely necessary for the cargo.</p>
+                                <p>
+                                    For example, diamonds should be marked as armoured because they are suited to secure transport. Diamonds <em>could</em> also be transported as flatbed cargo, but that wouldn't be very useful.
+                                </p>
+                                <p>
+                                    Steel is suited to flatbed transport. Steel <em>could</em> also be transported in a refrigerated vehicle, but it doesn’t need refrigeration.
+                                </p>
+                                <p><strong>Assign as many special handling classes as genuinely necessary for the cargo.</strong></p>
                             </div>
                         </div>
                     </div>
