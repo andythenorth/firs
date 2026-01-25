@@ -274,7 +274,7 @@ allowed_refits_by_label = {
         "PHOS",
         "POTA",
         "QLME",
-        "RFPR",
+        "CHEM",
         "SALT",
         "SAND",
         "SASH",
