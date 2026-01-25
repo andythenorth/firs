@@ -24,7 +24,7 @@ industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     accept_cargo_types=["EOIL", "OIL_"],
     prod_cargo_types_with_multipliers=[
-        ("RFPR", 11),
+        ("CHEM", 11),
         ("PETR", 7),
     ],
 )
