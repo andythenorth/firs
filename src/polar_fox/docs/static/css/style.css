@@ -32,7 +32,7 @@ img {
 }
 
 code a {
-    color: var(--bs-red);
+    color: var(--bs-blue);
     text-decoration: underline;
     text-underline-offset: 4px;
     text-decoration-thickness: 2px; /* thicker to obscure underscores */
@@ -75,8 +75,6 @@ code a:hover {
 
 /* guide stuff */
 .guide-section {
-    border-left: solid 4px var(--fox-fact-dark-blue);
-    padding-left: 2em;
     padding-bottom: 1em;
 }
 .guide-sub-section {
@@ -87,10 +85,8 @@ code a:hover {
 }
 
 .guide-section-link-block {
-    border-left: solid 4px var(--fox-fact-dark-blue);
     height: 6em;
     padding-top: 2em;
-    padding-left: 2em;
     width: 100%;
 }
 .guide-section-link-block hr {
@@ -119,18 +115,6 @@ code a:hover {
   border-left: 16px solid transparent; /* Half of the triangle's width */
   border-right: 16px solid transparent; /* Half of the triangle's width */
   border-top: 16px solid var(--fox-fact-mid-blue); /* Color of the triangle */
-}
-
-/* Add a stubby line before each h2 section */
-.guide-section h3::before {
-    content: "";
-    display: block;
-    position: relative;
-    top: 0.7em;
-    left: -1.2em; /* This positions the line on the left side of the border */
-    width: 0.8em; /* Length of the horizontal line */
-    height: 4px; /* Height of the line */
-    background-color: var(--fox-fact-dark-blue); /* Line color */
 }
 
 .guide-heading {
