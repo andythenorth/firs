@@ -23,7 +23,7 @@ industry.enable_in_economy(
     prod_cargo_types_with_output_ratios=[("BDMT", 8)],
     accept_cargos_with_input_ratios=[
         ("WDPR", 6),
-        ("RFPR", 2),
+        ("CHEM", 2),
     ],
 )
 

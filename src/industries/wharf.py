@@ -42,7 +42,7 @@ industry.enable_in_economy(
         "BDMT",
     ],
     prod_cargo_types_with_multipliers=[
-        ("RFPR", 12),
+        ("CHEM", 12),
         ("FMSP", 12),
     ],
 )

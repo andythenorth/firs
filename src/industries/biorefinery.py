@@ -7,7 +7,7 @@ industry = IndustrySecondary(
         ("SGBT", 6),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("RFPR", 4),
+        ("CHEM", 4),
         ("PETR", 4),
     ],
     prob_in_game="3",
