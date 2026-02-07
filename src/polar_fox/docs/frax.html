@@ -72,6 +72,8 @@
                 var elements = document.querySelectorAll('body *');
 
                 elements.forEach(function(element) {
+                    // Skip anything inside a <pre>
+                    if (element.closest('pre')) return;
                     element.childNodes.forEach(function(child) {
                         if (child.nodeType === Node.TEXT_NODE) {
                             var matches = child.nodeValue.match(regex);
@@ -147,33 +149,63 @@
                         <li class="guide-list-group-item"><strong>Cargo labels</strong></li>
                         <li class="guide-list-group-item"><strong>Cargo classes</strong></li>
                     </ul>
+                    <p>Cargo labels are unique per cargo, and can be used to precisely control which cargos a vehicle can refit to.</p>
+                    <p>
+                        However this precision comes at a cost: over 20+ years, industry GRFs have defined many cargos,
+                        and using labels alone, a vehicle GRF author would need to work with long lists of labels when setting what a vehicle can refit to.
+                    </p>
+                    <p>
+                        Additionally, when an industry GRF adds a cargo with a new label, vehicle GRFs would have to be updated to support the new cargo.
+                    </p>
+                    <p>
+                        For this reason, cargo classes are the preferred approach for most refittability.
+                        Cargo classes are broad categories for cargos, defined in advance, and shared across GRFs.
+                    </p>
+                    <p>
+                        The classes for a cargo are set by industry GRFs when the cargo is defined.
+                        Vehicle GRF authors can then use the classes to decide which broad categories of cargo are suitable for a vehicle to refit to.
+                    </p>
+                    <p>
+                        There are some situations where specific labels are more suitable, but generally cargo classes are the starting point for vehicle refittability.
+                    </p>
                     <div class="bd-callout bd-callout-warning">
                         <p>
                             The <a href="https://newgrf-specs.tt-wiki.net/">GRFSpecs wiki</a> has more details about both cargo labels and classes.
+                        </p>
+                        <p>
+                            FRAX diverges from the cargo classes listed in the GRFSpecs wiki (as of 2024).  Whilst many of those classes work well, some are not so helpful.
+                        </p>
+                        <p>
+                            FRAX keeps the best of the existing cargo classes, clarifying some, and replaces some largely unused classes with more useful definitions.
                         </p>
                     </div>
                     <p>
                         The <strong>FRAX Cargo Class Scheme</strong> is used by:
                     </p>
                     <ul class="guide-list-group">
-                        <li class="guide-list-group-item">industry GRFs such as <a href="https://grf.farm/firs/latest.html">FIRS</a></li>
-                        <li class="guide-list-group-item">vehicle GRFs such as <a href="https://grf.farm/iron-horse/latest.html">Iron Horse</a></li>
+                        <li class="guide-list-group-item">industry GRFs such as <a href="https://grf.farm/firs/latest.html">FIRS</a>, AXIS and Improved Town Industries (ITI)</li>
+                        <li class="guide-list-group-item">vehicle GRFs such as <a href="https://grf.farm/iron-horse/latest.html">Iron Horse</a> and Sunshine Trains</li>
                     </ul>
                     <p>Frax includes</p>
                     <ul class="guide-list-group">
+                        <li class="guide-list-group-item">
+                            <a href="vehicle_frax.html">
+                                <strong>Guide for vehicle GRFs</strong>
+                            </a>
+                        </li>
+                        <li class="guide-list-group-item">
+                            <a href="industry_frax.html">
+                                <strong>Guide for industry GRFs</strong>
+                            </a>
+                        </li>
                         <li class="guide-list-group-item">
                             <a href="#cargo-classes-table">
                                 Definitions for cargo classes
                             </a>
                         </li>
                         <li class="guide-list-group-item">
-                            <a href="vehicle_frax.html">
-                                Guide for vehicle GRFs
-                            </a>
-                        </li>
-                        <li class="guide-list-group-item">
-                            <a href="industry_frax.html">
-                                Guide for industry GRFs
+                            <a href="#nml-constants">
+                                NML code to add FRAX classes to a project
                             </a>
                         </li>
                     </ul>
@@ -333,7 +365,7 @@
 
                                 </td>
                                 <td>CC_FLATBED</td>
-                                <td>Freight: Special Handling</td>
+                                <td>Freight: Basic Handling</td>
                                 <td><code>10</code></td>
                             </tr>
                         
@@ -406,6 +438,46 @@
                 </tbody>
             </table>
         </div>
+
+        <div class="pt-4 pb-3">
+            <div class="row">
+                <div class="col-sm-10 offset-1">
+                    <h2 id="nml-constants">Get FRAX</h2>
+                    <p>Copy this and add it near the top of your NML file or project.  Without this, FRAX won't work and your NML might not compile.</p>
+                    <script>
+function copyCode(button) {
+  const code = button.parentElement.querySelector("code").innerText;
+  navigator.clipboard.writeText(code);
+}
+</script>
+<div class="bg-light border rounded p-3 mb-3 position-relative">
+  <button
+    class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-2"
+    onclick="copyCode(this)">
+    Copy code
+  </button>
+
+<pre class="mb-0">
+<code>
+// extra NML constants for Polar Fox 2024 cargo class names
+// these replace legacy NML cargo class names
+// add these near the top of your NML file, before using any cargo classes
+const CC_OPEN_BULK = 4; // remaps legacy NML class: CC_BULK
+const CC_COVERED_BULK = 9; // remaps legacy NML class: CC_COVERED
+const CC_POWDER_BULK = 11; // remaps legacy NML class: CC_POWDERIZED
+const CC_LIQUID_BULK = 6; // remaps legacy NML class: CC_LIQUID
+const CC_GAS_BULK = 8; // remaps legacy NML class: CC_HAZARDOUS
+const CC_FLATBED = 10; // remaps legacy NML class: CC_OVERSIZED
+const CC_WEIRD = 12; // remaps legacy NML class: CC_NON_POURABLE
+</code>
+</pre>
+</div>
+
+                </div>
+            </div>
+        </div>
+
+        <hr />
 
         <div class="pt-4 pb-3">
             <div class="row">
@@ -795,6 +867,13 @@
                                                 
                                                     
                                                         
+                                                            <a href="industry_frax.html#CARGO_DIAMONDS">Diamonds</a>,
+                                                        
+                                                        
+                                                    
+                                                
+                                                    
+                                                        
                                                             <a href="industry_frax.html#CARGO_EXPLOSIVES">Explosives</a>,
                                                         
                                                         
@@ -823,7 +902,21 @@
                                                 
                                                     
                                                         
+                                                            <a href="industry_frax.html#CARGO_NUCLEAR_FUEL">Nuclear fuel</a>,
+                                                        
+                                                        
+                                                    
+                                                
+                                                    
+                                                        
                                                             <a href="industry_frax.html#CARGO_OIL">Oil</a>,
+                                                        
+                                                        
+                                                    
+                                                
+                                                    
+                                                        
+                                                            <a href="industry_frax.html#CARGO_OXYGEN">Oxygen</a>,
                                                         
                                                         
                                                     
@@ -1032,6 +1125,20 @@
                                                     
                                                         
                                                             <a href="industry_frax.html#CARGO_GRAIN">Grain</a>,
+                                                        
+                                                        
+                                                    
+                                                
+                                                    
+                                                        
+                                                            <a href="industry_frax.html#CARGO_LIVESTOCK">Livestock</a>,
+                                                        
+                                                        
+                                                    
+                                                
+                                                    
+                                                        
+                                                            <a href="industry_frax.html#CARGO_OXYGEN">Oxygen</a>,
                                                         
                                                         
                                                     
@@ -1389,6 +1496,13 @@
                                                 
                                                     
                                                         
+                                                            <a href="industry_frax.html#CARGO_CEMENT">Cement</a>,
+                                                        
+                                                        
+                                                    
+                                                
+                                                    
+                                                        
                                                             <a href="industry_frax.html#CARGO_FLOUR">Flour</a>,
                                                         
                                                         
@@ -1732,7 +1846,14 @@
                                                 
                                                     
                                                         
-                                                            <a href="industry_frax.html#CARGO_SODIUM_HYDROXIDE">Sodium Hydroxide</a>
+                                                            <a href="industry_frax.html#CARGO_SODIUM_HYDROXIDE">Sodium Hydroxide</a>,
+                                                        
+                                                        
+                                                    
+                                                
+                                                    
+                                                        
+                                                            <a href="industry_frax.html#CARGO_SULPHUR">Sulphur</a>
                                                         
                                                         
                                                     
@@ -2000,7 +2121,7 @@
                                             <th>Category</th>
                                             <td>
                                                 Freight:
-                                                <strong>Special Handling</strong>.
+                                                <strong>Basic Handling</strong>.
                                             </td>
                                        </tr>
                                         <tr>
@@ -2178,6 +2299,13 @@
                                                     
                                                         
                                                             <a href="industry_frax.html#CARGO_FOOD">Food</a>,
+                                                        
+                                                        
+                                                    
+                                                
+                                                    
+                                                        
+                                                            <a href="industry_frax.html#CARGO_GOODS">Goods</a>,
                                                         
                                                         
                                                     
