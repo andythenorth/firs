@@ -43,15 +43,11 @@
     <div id="cargos">
         <h3>Cargos (${len(firs.cargo_manager)}) <small>Code Reference</small></h3>
         <p>
-            Don't rely on the classes for detailed vehicle support, they might change with no warning.  Use labels instead.
-        </p>
+            For cargo class names, FIRS 4 and newer uses FRAX, an improved standard for cargo classes.
+            <a href="https://grf.farm/polar_fox/frax_latest.html">&#187; Reference for FRAX cargo classes</a>
         <p>
-            Effective October 2024 FIRS 4 will use Polar Fox cargo class names, not NML class names.
-            <a href="https://grf.farm/polar_fox/index.html">&#187; Reference for Polar Fox cargo class names</a>
         <p>
-        </p>
-            Cargo classes have never worked quite as intended, and they need to evolve.
-            The implementation of cargo classes is just via bits, so not using the NML class names doesn't affect how the grf works, it's just semantics.
+            FRAX classes are the preferred method for vehicle refittability support.  There are some detailed cases where authors may find it helpful to set vehicle refittablity using cargo labels instead.
         </p>
         <p><small>* Price Factor is a base value, will be automatically adjusted per economy to ensure no prices overlap.</small></p>
         <p><small>** Town growth effects: apart from TOWNGROWTH_PASSENGERS and TOWNGROWTH_MAIL, FIRS does not set any town growth effects; this has the intended effect of disabling food / water requirements for towns in desert and above snowline.</small></p>
