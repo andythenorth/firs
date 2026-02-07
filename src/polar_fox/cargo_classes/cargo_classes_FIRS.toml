@@ -171,7 +171,7 @@ cargo_class_description = [
 cargo_grf_advice = [
     "Any cargo suited to flatbed transport, but specifically including long products, unitised cargos such as machinery, and rolling or wheeled cargo.",
 ]
-cargo_class_taxonomy_tags = ["Freight", "Special Handling"]
+cargo_class_taxonomy_tags = ["Freight", "Basic Handling"]
 fallback_to_piece_goods = true
 vehicle_grf_advice = [
     "Enables flatbed vehicles to refit to a more specific set of general cargos than CC_PIECE_GOODS.",
@@ -282,7 +282,7 @@ cargo_classes = ["CC_COVERED_BULK", "CC_PIECE_GOODS", "CC_POTABLE"]
 [CARGO_CEMENT]
 name = "Cement"
 cargo_description = "Cement is transported by bulk powder vehicles, and packaged in bags, sacks etc."
-cargo_classes = ["CC_POWDER_BULK", "CC_PIECE_GOODS", "CC_NON_POTABLE"]
+cargo_classes = ["CC_POWDER_BULK", "CC_PIECE_GOODS", "CC_COVERED_BULK", "CC_NON_POTABLE"]
 
 [CARGO_CHLORINE]
 name = "Chlorine"
@@ -297,7 +297,7 @@ cargo_classes = ["CC_OPEN_BULK", "CC_NON_POTABLE"]
 [CARGO_DIAMONDS]
 name = "Diamonds"
 cargo_description = "Diamonds are armoured, and that's probably all that's needed.  CC_NON_POTABLE could be set, but is probably not necessary for Diamonds."
-cargo_classes = ["CC_ARMOURED"]
+cargo_classes = ["CC_ARMOURED", "CC_NON_POTABLE"]
 
 [CARGO_EXPLOSIVES]
 name = "Explosives"
@@ -326,8 +326,8 @@ cargo_classes = ["CC_COVERED_BULK", "CC_PIECE_GOODS", "CC_POTABLE"]
 
 [CARGO_GOODS]
 name = "Goods"
-cargo_description = "Goods is a generic cargo, and is transported using general cargo vehicles, or flatbed vehicles."
-cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED", "CC_NON_POTABLE"]
+cargo_description = "Goods is a generic cargo, and is transported using general cargo vehicles, or flatbed vehicles. CC_EXPRESS is set because there is a long history of setting this class for Goods in OpenTTD."
+cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED", "CC_NON_POTABLE", "CC_EXPRESS"]
 
 [CARGO_IRON_ORE]
 name = "Iron Ore"
@@ -336,8 +336,8 @@ cargo_classes = ["CC_OPEN_BULK", "CC_NON_POTABLE"]
 
 [CARGO_LIVESTOCK]
 name = "Livestock"
-cargo_description = "Livestock is a unique cargo, and vehicles should handle it using the cargo label LVST. CC_WEIRD also set to flag that this cargo is non-standard and should be handled using a label.  The base game sets livestock to CC_PIECE_GOODS, but this is not considered helpful for grfs."
-cargo_classes = ["CC_WEIRD", "CC_NON_POTABLE"]
+cargo_description = "Livestock is a unique cargo, and vehicles should handle it using the cargo label LVST. CC_WEIRD also set to flag that this cargo is non-standard and should be handled using a label.  CC_PIECE_GOODS is set because OpenTTD sets this class for Livestock."
+cargo_classes = ["CC_WEIRD", "CC_PIECE_GOODS", "CC_NON_POTABLE"]
 
 [CARGO_MAIL]
 name = "Mail"
@@ -356,7 +356,7 @@ cargo_description = """
     CC_WEIRD is set to indicate that the cargo should be handled directly by label.
     CC_ARMOURED is set because nuclear fuel is valuable and should be protected from theft. This provides a fallback, but means vehicle grfs may need to exclude nuclear fuel from armoured vehicles.
 """
-cargo_classes = ["CC_WEIRD", "CC_ARMOURED"]
+cargo_classes = ["CC_WEIRD", "CC_ARMOURED", "CC_NON_POTABLE"]
 
 [CARGO_OIL]
 name = "Oil"
@@ -366,7 +366,7 @@ cargo_classes = ["CC_LIQUID_BULK", "CC_NON_POTABLE"]
 [CARGO_OXYGEN]
 name = "Oxygen"
 cargo_description = "Oxygen is transported as a gas under pressure. CC_PIECE_GOODS is set as some vehicle grfs may not provide pressurised tankers, so a fallback is needed (representing ammonia in portable tanks)."
-cargo_classes = ["CC_GAS_BULK"]
+cargo_classes = ["CC_GAS_BULK", "CC_PIECE_GOODS", "CC_NON_POTABLE"]
 
 [CARGO_PAPER]
 name = "Paper"
@@ -411,7 +411,7 @@ cargo_classes = ["CC_PIECE_GOODS", "CC_FLATBED", "CC_NON_POTABLE"]
 [CARGO_SULPHUR]
 name = "Sulphur"
 cargo_description = "Sulphur is transported using covered bulk and open bulk vehicles."
-cargo_classes = ["CC_OPEN_BULK", "CC_COVERED_BULK", "CC_NON_POTABLE"]
+cargo_classes = ["CC_OPEN_BULK", "CC_COVERED_BULK", "CC_LIQUID_BULK", "CC_NON_POTABLE"]
 
 [CARGO_TIMBER]
 name = "Timber"

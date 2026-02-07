@@ -11,7 +11,7 @@ class CargoClassManager(object):
     def __init__(self):
         self.cargo_class_scheme = CargoClassScheme("cargo_classes_FIRS")
 
-    def render_nml(self):
+    def render_nml(self, save_file_flag):
         # render out nml with `const foo = bar` for currend scheme
         nml_template = PageTemplateLoader(current_dir, format="text")[
             "nml_cargo_class_constants.pt"
@@ -24,6 +24,7 @@ class CargoClassManager(object):
         output_file_path = os.path.join(current_dir, "cargo_class_constants.nml")
         with open(output_file_path, "w", encoding="utf-8") as nml_file:
             nml_file.write(rendered_nml)
+        return(rendered_nml)
 
 class CargoClassScheme(object):
 

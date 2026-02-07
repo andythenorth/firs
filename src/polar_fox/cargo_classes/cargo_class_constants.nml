@@ -1,4 +1,6 @@
-// extra nml constants for Polar Fox 2024 cargo class names that substitute legacy NML class names
+// extra NML constants for Polar Fox 2024 cargo class names
+// these replace legacy NML cargo class names
+// add these near the top of your NML file, before using any cargo classes
 const CC_OPEN_BULK = 4; // remaps legacy NML class: CC_BULK
 const CC_COVERED_BULK = 9; // remaps legacy NML class: CC_COVERED
 const CC_POWDER_BULK = 11; // remaps legacy NML class: CC_POWDERIZED
