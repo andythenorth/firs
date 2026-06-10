@@ -21,11 +21,11 @@ class FIRS {
 
         /* initial configuration of cargo properties */
         firs.cargos <- {};
+        // cargo props are simple as of April 2023, provide a Vulcan spec later if needed
+        // note that cargo.numeric ID is not provided by FIRS as the grflocal numeric ID is economy-specific
+        // we store cargos indexed on the label, as that's the most convenient way to look them up in GS
         <tal:cargos repeat="cargo firs.cargo_manager">
-            // cargo props are simple as of April 2023, provide a Vulcan spec later if needed
-            // note that cargo.numeric ID is not provided by FIRS as the grflocal numeric ID is economy-specific
             local cargo = ${gs_helper.gs_table_repr(cargo.properties_for_gs)};
-            // we store cargos indexed on the label, as that's the most convenient way to look them up in GS
             firs.cargos["${cargo.cargo_label}"] <- cargo;
         </tal:cargos>
 
