@@ -961,6 +961,16 @@ container_piece_cargo_maps = {
     "steel_slab_1": piece_sprites_to_cargo_labels_maps["steel_slab_1"],
 }
 
+# for containers (intermodal)
+# explicit control over contested cargo_labels, by specifying which container type should be used (there can only be one type for label based support)
+container_contested_cargo_labels = {
+    "CHLO": "cryo_tank",
+    "FOOD": "reefer",
+    "N7__": "cryo_tank",
+    "RFPR": "chemicals_tank",
+    "SULP": "tank",
+}
+
 # indexes into the DOS palette for a company colour name
 # find these from https://github.com/frosch123/TTDViewer/blob/master/src/recolor.xml#L186
 company_colour_maps = {
