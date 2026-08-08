@@ -40,6 +40,7 @@ industry.enable_in_economy(
         "MNO2",
         "PHOS",
         "BDMT",
+        "EOIL",
     ],
     prod_cargo_types_with_multipliers=[
         ("CHEM", 12),

@@ -1,7 +1,10 @@
 from industry import IndustryPrimaryPort, TileLocationChecks
 
+# Oil terminal is the understood term for oil, petrol, petrochemicals port
+# as of August 2026, non-petroleum liquids are no longer handled (moved to port or wharf)
+
 industry = IndustryPrimaryPort(
-    id="liquids_terminal",
+    id="oil_terminal",
     accept_cargo_types=[],
     prod_cargo_types_with_multipliers=[],
     prob_in_game="2",
@@ -11,7 +14,7 @@ industry = IndustryPrimaryPort(
     special_flags=["IND_FLAG_BUILT_ON_WATER"],
     location_checks=dict(same_type_distance=16),
     prospect_chance="0.75",
-    name="string(STR_IND_LIQUIDS_TERMINAL)",
+    name="string(STR_IND_OIL_TERMINAL)",
     nearby_station_name="string(STR_STATION_TANK_FARM)",
     fund_cost_multiplier="152",
     override_default_construction_states=True,
@@ -22,7 +25,7 @@ industry = IndustryPrimaryPort(
 
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
-    accept_cargo_types=["EOIL", "OIL_"],
+    accept_cargo_types=["OIL_"],
     prod_cargo_types_with_multipliers=[
         ("CHEM", 11),
         ("PETR", 7),
@@ -31,7 +34,7 @@ industry.enable_in_economy(
 # industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('NH3_', 16)]
 
 industry.add_tile(
-    id="liquids_terminal_tile_1",
+    id="oil_terminal_tile_1",
     # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     # supporting autoslope for the water tiles produces too many edge cases which are difficult to handle, so ban it
@@ -39,7 +42,7 @@ industry.add_tile(
     location_checks=TileLocationChecks(always_allow_founder=False),
 )
 industry.add_tile(
-    id="liquids_terminal_tile_2",
+    id="oil_terminal_tile_2",
     # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
@@ -47,7 +50,7 @@ industry.add_tile(
     location_checks=TileLocationChecks(always_allow_founder=False, require_coast=True),
 )
 industry.add_tile(
-    id="liquids_terminal_tile_3",
+    id="oil_terminal_tile_3",
     # this is a totally flat tile for ships or other pure water features, so do not allow on coast slopes
     land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",
     # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
@@ -97,8 +100,8 @@ spriteset_barge_2_se_nw = industry.add_spriteset(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="liquids_terminal_spritelayout_coast_office",
-    tile="liquids_terminal_tile_2",
+    base_id="oil_terminal_spritelayout_coast_office",
+    tile="oil_terminal_tile_2",
     config={
         "jetty_foundations": True,
         "building_sprites": {
@@ -119,8 +122,8 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="liquids_terminal_spritelayout_sphere_tank",
-    tile="liquids_terminal_tile_1",
+    base_id="oil_terminal_spritelayout_sphere_tank",
+    tile="oil_terminal_tile_1",
     config={
         "jetty_foundations": True,
         "building_sprites": {
@@ -141,8 +144,8 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="liquids_terminal_spritelayout_small_tanks",
-    tile="liquids_terminal_tile_1",
+    base_id="oil_terminal_spritelayout_small_tanks",
+    tile="oil_terminal_tile_1",
     config={
         "jetty_foundations": True,
         "building_sprites": {
@@ -163,8 +166,8 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="liquids_terminal_spritelayout_large_tank",
-    tile="liquids_terminal_tile_1",
+    base_id="oil_terminal_spritelayout_large_tank",
+    tile="oil_terminal_tile_1",
     config={
         "jetty_foundations": True,
         "building_sprites": {
@@ -186,8 +189,8 @@ industry.add_magic_spritelayout(
 
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="liquids_terminal_spritelayout_water_barge_1",
-    tile="liquids_terminal_tile_3",
+    base_id="oil_terminal_spritelayout_water_barge_1",
+    tile="oil_terminal_tile_3",
     config={
         "jetty_foundations": False,
         "building_sprites": {
@@ -208,8 +211,8 @@ industry.add_magic_spritelayout(
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
-    base_id="liquids_terminal_spritelayout_water_barge_2",
-    tile="liquids_terminal_tile_3",
+    base_id="oil_terminal_spritelayout_water_barge_2",
+    tile="oil_terminal_tile_3",
     config={
         "jetty_foundations": False,
         "building_sprites": {
@@ -232,47 +235,47 @@ industry.add_magic_spritelayout(
 # 2 jetty layouts which will be combined for different coast angles
 # by convention, the jetty layout definitions are aligned to the SE coast
 industry.add_industry_jetty_layout(
-    id="liquids_terminal_industry_layout_1",
+    id="oil_terminal_industry_layout_1",
     layout=[
-        (0, 0, "liquids_terminal_spritelayout_coast_office"),
-        (0, 1, "liquids_terminal_spritelayout_large_tank"),
-        (0, 2, "liquids_terminal_spritelayout_large_tank"),
-        (0, 3, "liquids_terminal_spritelayout_small_tanks"),
+        (0, 0, "oil_terminal_spritelayout_coast_office"),
+        (0, 1, "oil_terminal_spritelayout_large_tank"),
+        (0, 2, "oil_terminal_spritelayout_large_tank"),
+        (0, 3, "oil_terminal_spritelayout_small_tanks"),
         (0, 4, "spritelayout_null_water"),
-        (1, 0, "liquids_terminal_spritelayout_sphere_tank"),
-        (1, 1, "liquids_terminal_spritelayout_sphere_tank"),
-        (1, 2, "liquids_terminal_spritelayout_water_barge_2"),
+        (1, 0, "oil_terminal_spritelayout_sphere_tank"),
+        (1, 1, "oil_terminal_spritelayout_sphere_tank"),
+        (1, 2, "oil_terminal_spritelayout_water_barge_2"),
         (1, 3, "spritelayout_null_water"),
         (1, 4, "spritelayout_null_water"),
-        (2, 0, "liquids_terminal_spritelayout_large_tank"),
-        (2, 1, "liquids_terminal_spritelayout_large_tank"),
-        (2, 2, "liquids_terminal_spritelayout_small_tanks"),
-        (2, 3, "liquids_terminal_spritelayout_small_tanks"),
+        (2, 0, "oil_terminal_spritelayout_large_tank"),
+        (2, 1, "oil_terminal_spritelayout_large_tank"),
+        (2, 2, "oil_terminal_spritelayout_small_tanks"),
+        (2, 3, "oil_terminal_spritelayout_small_tanks"),
         (2, 4, "spritelayout_null_water"),
         # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
         (2, 5, "spritelayout_null_water"),
-        (3, 0, "liquids_terminal_spritelayout_large_tank"),
-        (3, 1, "liquids_terminal_spritelayout_large_tank"),
-        (3, 2, "liquids_terminal_spritelayout_water_barge_1"),
+        (3, 0, "oil_terminal_spritelayout_large_tank"),
+        (3, 1, "oil_terminal_spritelayout_large_tank"),
+        (3, 2, "oil_terminal_spritelayout_water_barge_1"),
         (3, 3, "spritelayout_null_water"),
     ],
 )
 
 industry.add_industry_jetty_layout(
-    id="liquids_terminal_industry_layout_2",
+    id="oil_terminal_industry_layout_2",
     layout=[
-        (0, 0, "liquids_terminal_spritelayout_large_tank"),
-        (0, 1, "liquids_terminal_spritelayout_large_tank"),
-        (1, 0, "liquids_terminal_spritelayout_large_tank"),
-        (1, 1, "liquids_terminal_spritelayout_large_tank"),
-        (1, 2, "liquids_terminal_spritelayout_small_tanks"),
-        (1, 3, "liquids_terminal_spritelayout_small_tanks"),
+        (0, 0, "oil_terminal_spritelayout_large_tank"),
+        (0, 1, "oil_terminal_spritelayout_large_tank"),
+        (1, 0, "oil_terminal_spritelayout_large_tank"),
+        (1, 1, "oil_terminal_spritelayout_large_tank"),
+        (1, 2, "oil_terminal_spritelayout_small_tanks"),
+        (1, 3, "oil_terminal_spritelayout_small_tanks"),
         (1, 4, "spritelayout_null_water"),
         # additional spacing at end of jetty (for better clearance in map edge context), only one tile needed for this
         (1, 5, "spritelayout_null_water"),
-        (2, 0, "liquids_terminal_spritelayout_coast_office"),
-        (2, 1, "liquids_terminal_spritelayout_sphere_tank"),
-        (2, 2, "liquids_terminal_spritelayout_water_barge_1"),
+        (2, 0, "oil_terminal_spritelayout_coast_office"),
+        (2, 1, "oil_terminal_spritelayout_sphere_tank"),
+        (2, 2, "oil_terminal_spritelayout_water_barge_1"),
         (2, 3, "spritelayout_null_water"),
         (2, 4, "spritelayout_null_water"),
     ],

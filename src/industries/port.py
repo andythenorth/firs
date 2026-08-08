@@ -75,6 +75,7 @@ industry.enable_in_economy(
         "COPR",
         "FRUT",
         "WDPR",
+        "EOIL",
     ],
     prod_cargo_types_with_multipliers=[
         ("GOOD", 14),
