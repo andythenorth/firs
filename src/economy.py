@@ -12,10 +12,6 @@ class Economy(object):
         self.numeric_id = kwargs.get("numeric_id")
         self.cargo_ids = kwargs.get("cargos")
         self.cargoflow_graph_tuning = kwargs.get("cargoflow_graph_tuning")
-        self.biomes = []
-
-    def add_biome(self, biome_id, **kwargs):
-        self.biomes.append(Biome(biome_id, **kwargs))
 
     def validate_economy_cargo_ids(self):
         for cargo_id in self.cargo_ids:
@@ -151,17 +147,3 @@ class Economy(object):
             else:
                 result[cargo.id] = cargo.price_factor
         return result
-
-
-class Biome(object):
-    """
-    class to hold definitions of map biomes, optionally used for cases like industry location rules
-    they're not really 'biomes', but it's an easy way to avoid clash with 'regions' for other purposes
-    """
-
-    def __init__(self, id, **kwargs):
-        self.id = id
-        self.min_x_percent = kwargs["min_x_percent"]
-        self.max_x_percent = kwargs["max_x_percent"]
-        self.min_y_percent = kwargs["min_y_percent"]
-        self.max_y_percent = kwargs["max_y_percent"]

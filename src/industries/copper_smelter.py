@@ -26,9 +26,6 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "BASIC_TROPIC",
-    locate_in_specific_biomes=[
-        "more_west",
-    ],
 )
 
 industry.enable_in_economy("IN_A_HOT_COUNTRY")

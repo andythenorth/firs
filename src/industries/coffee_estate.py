@@ -32,9 +32,6 @@ industry.enable_in_economy(
         ("JAVA", 9),
         ("FRUT", 9),
     ],
-    locate_in_specific_biomes=[
-        "less_west",
-    ],
 )
 
 industry.add_tile(

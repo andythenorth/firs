@@ -25,9 +25,6 @@ industry.enable_in_economy(
 )
 industry.enable_in_economy(
     "BASIC_TROPIC",
-    locate_in_specific_biomes=[
-        "more_west",
-    ],
 )
 
 industry.add_tile(

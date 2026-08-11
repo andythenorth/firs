@@ -213,7 +213,7 @@ class IndustryLocationChecks(object):
                 "near_at_least_one_of_these_keystone_industries set by",
                 industry.id,
                 "- should be in economy location checks only",
-                "(unsupported - see economy_biome_checks as an equivalent economy-specific check)",
+                "(unsupported)",
                 message_type="info",
             )
         self.require_cluster = location_args.get("require_cluster", None)
@@ -230,8 +230,6 @@ class IndustryLocationChecks(object):
         self.flour_mill_layouts_by_date = location_args.get(
             "flour_mill_layouts_by_date", None
         )
-        # economies may optionally define specific biomes which industries must locate in for that economy
-        self.economy_biome_checks = {}
 
     def get_pre_player_founding_checks(self, incompatible_industries):
         result = []
@@ -324,18 +322,6 @@ class IndustryLocationChecks(object):
                     )
                 )
         result.append(keystone_industries)
-
-        economy_specific_biomes = {
-            "OR_group_name": "economy_specific_biomes",
-            "location_checks": [],
-            "next_switch_name": "",
-        }
-        for economy_id, biome_list in self.economy_biome_checks.items():
-            for biome_id in biome_list:
-                economy_specific_biomes["location_checks"].append(
-                    IndustryLocationCheckEconomySpecificBiome(economy_id, biome_id)
-                )
-        result.append(economy_specific_biomes)
 
         for counter, group in enumerate(result):
             if counter == 0:
@@ -443,14 +429,6 @@ class IndustryLocationCheckCoastDistance(IndustryLocationCheck):
 
     def __init__(self):
         self.procedure_name = "disallow_too_far_from_coast"
-        self.params = []
-
-
-class IndustryLocationCheckEconomySpecificBiome(IndustryLocationCheck):
-    """Check for a biome specific to the economy"""
-
-    def __init__(self, economy_id, biome_id):
-        self.procedure_name = "economy_biome_test_" + economy_id + "_" + biome_id
         self.params = []
 
 
@@ -626,20 +604,17 @@ class Industry(object):
         self.economy_variations[economy_id].enabled = True
         for kwarg_name, kwarg_value in kwargs.items():
             # special case for location checks, which must be appended to the dedicated IndustryLocationChecks instance holding the standard checks for the industry
-            if kwarg_name == "locate_in_specific_biomes":
-                self.location_checks.economy_biome_checks[economy_id] = kwarg_value
+            if hasattr(self.economy_variations[economy_id], kwarg_name):
+                setattr(
+                    self.economy_variations[economy_id], kwarg_name, kwarg_value
+                )
             else:
-                if hasattr(self.economy_variations[economy_id], kwarg_name):
-                    setattr(
-                        self.economy_variations[economy_id], kwarg_name, kwarg_value
-                    )
-                else:
-                    raise NameError(
-                        "unknown economy variation kwarg '"
-                        + kwarg_name
-                        + "' declared by "
-                        + self.id
-                    )
+                raise NameError(
+                    "unknown economy variation kwarg '"
+                    + kwarg_name
+                    + "' declared by "
+                    + self.id
+                )
 
     def add_tile(self, *args, **kwargs):
         new_tile = Tile(self.id, *args, **kwargs)
