@@ -102,6 +102,7 @@ class EconomyManager(list):
             if economy.id == id:
                 return economy
 
+
 class IndustryManager(list):
     """
     It's convenient to have a structure for working with industries.
@@ -162,7 +163,9 @@ class IndustryManager(list):
         for industry in self:
             accepted = []
             for economy in economy_manager:
-                for cargo_label in industry.get_accepted_cargo_labels_by_economy(economy):
+                for cargo_label in industry.get_accepted_cargo_labels_by_economy(
+                    economy
+                ):
                     accepted.append(cargo_label)
             for cargo_label in set(accepted):
                 self.industries_per_accepted_cargo[cargo_label].append(industry)
@@ -215,7 +218,6 @@ class IndustryManager(list):
                 utils.echo_message(
                     "Tile ID not used: " + tile_id + " from global_constants"
                 )
-
 
     def validate_object_ids(self):
         # guard against (1) too many objects (2) invalid objects

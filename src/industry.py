@@ -605,9 +605,7 @@ class Industry(object):
         for kwarg_name, kwarg_value in kwargs.items():
             # special case for location checks, which must be appended to the dedicated IndustryLocationChecks instance holding the standard checks for the industry
             if hasattr(self.economy_variations[economy_id], kwarg_name):
-                setattr(
-                    self.economy_variations[economy_id], kwarg_name, kwarg_value
-                )
+                setattr(self.economy_variations[economy_id], kwarg_name, kwarg_value)
             else:
                 raise NameError(
                     "unknown economy variation kwarg '"
@@ -654,7 +652,9 @@ class Industry(object):
         # sometimes magic is the only way
         # this is for very specific spritelayout patterns that repeat across multiple industries and require long declarations and extra switches
         # we do have to book-keep the magic, as there are Magic taxes that must be paid
-        magic_spritelayout = MagicSpritelayoutFactory().produce(self, type, base_id, tile, config, **kwargs)
+        magic_spritelayout = MagicSpritelayoutFactory().produce(
+            self, type, base_id, tile, config, **kwargs
+        )
         self.magic_spritelayouts_by_id[base_id] = magic_spritelayout
 
     def add_slope_graphics_switch(self, *args, **kwargs):
