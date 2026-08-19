@@ -7,7 +7,8 @@ industry = IndustrySecondary(
     ],
     prod_cargo_types_with_output_ratios=[
         ("CMNT", 5),
-        ("FMSP", 3),
+        ("ENSP", 1),
+        ("FMSP", 2),
     ],
     prob_in_game="3",
     prob_map_gen="5",

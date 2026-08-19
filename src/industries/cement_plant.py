@@ -32,7 +32,10 @@ industry.enable_in_economy(
         ("CLAY", 2),
         ("GRVL", 4),
     ],
-    prod_cargo_types_with_output_ratios=[("BDMT", 8)],
+    prod_cargo_types_with_output_ratios=[
+        ("BDMT", 7),
+        ("ENSP", 1),
+    ],
 )
 
 # ['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('COAL', 2), ('CLAY', 2), ('GRVL', 4)]
