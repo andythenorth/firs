@@ -236,10 +236,13 @@ class DocHelper(object):
 
     def get_cargoflow_supply_cargos(self):
         return [
-            "farm_supplies",
             "engineering_supplies",
-            "welding_consumables",
+            "farm_supplies",
+            "food_additives",
+            "packaging",
+            "process_chemicals",
             "seals_belts_and_hoses",
+            "welding_consumables",
         ]
 
     def get_cargoflow_wormhole_cargos(self, economy):

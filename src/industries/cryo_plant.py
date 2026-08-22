@@ -3,12 +3,7 @@ from industry import IndustryPrimaryNoSupplies, TileLocationChecks
 industry = IndustryPrimaryNoSupplies(
     id="cryo_plant",
     accept_cargo_types=[],
-    prod_cargo_types_with_multipliers=[
-        ("O2__", 15),
-        # realism suggests that oxygen and nitrogen might be roughly equal in output, but gameplay eh
-        ("N7__", 10),
-        ("WELD", 6),
-    ],
+    prod_cargo_types_with_multipliers=[],
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="189",
@@ -28,7 +23,27 @@ industry = IndustryPrimaryNoSupplies(
 )
 
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    prod_cargo_types_with_multipliers=[
+        ("INGA", 20),
+        ("ENUM", 6),
+    ],
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["chemical_plant", "civil_explosives_facility", "electric_arc_furnace", "factory_3", "integrated_steel_mill"],
+            "companion_industries_ratio": 1,
+        }
+    },
+)
+industry.enable_in_economy(
     "STEELTOWN",
+    prod_cargo_types_with_multipliers=[
+        ("O2__", 15),
+        # realism suggests that oxygen and nitrogen might be roughly equal in output, but gameplay eh
+        ("N7__", 10),
+        ("WELD", 6),
+    ],
     vulcan_config={
         "map_curator": {
             "curation_function": "MinimumRatioToCompanionIndustryTypes",

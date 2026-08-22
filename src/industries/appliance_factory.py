@@ -2,6 +2,37 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="appliance_factory",
+    accept_cargos_with_input_ratios=[],
+    prod_cargo_types_with_output_ratios=[],
+    prob_in_game="3",
+    prob_map_gen="5",
+    map_colour="194",
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
+    name="string(STR_IND_APPLIANCE_FACTORY)",
+    nearby_station_name="string(STR_STATION_APPLIANCE_FACTORY)",
+    fund_cost_multiplier="120",
+    pollution_and_squalor_factor=1,
+    sprites_complete=True,
+    animated_tiles_fixed=True,
+)
+
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        # MMW is 'all', whereas Steeltown is 'any 3'
+        ("STEL", 2),
+        ("PLAS", 2),
+        ("PCMP", 3),
+        ("PRCH", 1),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("GOOD", 3),
+        ("PLNT", 3),
+        ("ENSP", 2),
+    ],
+)
+industry.enable_in_economy(
+    "STEELTOWN",
     accept_cargos_with_input_ratios=[
         # lots of inputs, but only 3 are required (see industry.py for the kludge to make that work)
         # all input ratios *must* be 3
@@ -17,20 +48,6 @@ industry = IndustrySecondary(
         ("PLNT", 3),
         ("ENSP", 2),
     ],
-    prob_in_game="3",
-    prob_map_gen="5",
-    map_colour="194",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
-    name="string(STR_IND_APPLIANCE_FACTORY)",
-    nearby_station_name="string(STR_STATION_APPLIANCE_FACTORY)",
-    fund_cost_multiplier="120",
-    pollution_and_squalor_factor=1,
-    sprites_complete=True,
-    animated_tiles_fixed=True,
-)
-
-industry.enable_in_economy(
-    "STEELTOWN",
 )
 
 industry.add_tile(

@@ -30,6 +30,17 @@ industry = IndustryPrimaryOrganic(
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToTowns",
+            "min_population": 0,
+            "max_population": 0,
+            "industry_town_ratio": 0.33,
+        }
+    },
+)
 
 industry.add_tile(
     id="dairy_farm_tile_1",

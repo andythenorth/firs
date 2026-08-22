@@ -32,6 +32,16 @@ industry.enable_in_economy(
         ("SULP", 2),
     ],
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("WOOD", 5),
+        ("CHIM", 3),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("WDPP", 7),
+    ],
+)
 
 industry.add_tile(
     id="paper_mill_tile_1",

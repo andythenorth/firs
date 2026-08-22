@@ -4,10 +4,11 @@ industry = IndustrySecondary(
     id="phosphoric_acid_plant",
     accept_cargos_with_input_ratios=[
         ("PHOS", 4),
-        ("SUAC", 4),
+        ("SULP", 4),
     ],
     prod_cargo_types_with_output_ratios=[
         ("PHAC", 4),
+        ("SUAC", 4),
     ],
     prob_in_game="3",
     prob_map_gen="5",
@@ -20,6 +21,12 @@ industry = IndustrySecondary(
     sprites_complete=False,
     animated_tiles_fixed=False,
 )
+
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+
+# CABBAGE - needs non-animated tile for performance?
 
 industry.add_tile(
     id="phosphoric_acid_plant_tile_1",
@@ -127,6 +134,7 @@ sprite_smoke_9 = industry.add_smoke_sprite(
 )
 industry.add_spritelayout(
     id="phosphoric_acid_plant_spritelayout_horizontal_tanks",
+    tile="phosphoric_acid_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_horizontal_tanks],
@@ -134,6 +142,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="phosphoric_acid_plant_spritelayout_frac_columns",
+    tile="phosphoric_acid_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_frac_columns],
@@ -141,6 +150,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="phosphoric_acid_plant_spritelayout_drop_tower_and_thin_chimney",
+    tile="phosphoric_acid_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_drop_tower_and_thin_chimney],
@@ -149,6 +159,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="phosphoric_acid_plant_spritelayout_large_building",
+    tile="phosphoric_acid_plant_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_large_building],
@@ -157,6 +168,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="phosphoric_acid_plant_spritelayout_fat_chimney",
+    tile="phosphoric_acid_plant_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_fat_chimney],
@@ -165,6 +177,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="phosphoric_acid_plant_spritelayout_spherical_tanks",
+    tile="phosphoric_acid_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_spherical_tanks],
@@ -172,6 +185,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="phosphoric_acid_plant_spritelayout_vertical_tanks",
+    tile="phosphoric_acid_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_vertical_tanks],
@@ -179,6 +193,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="phosphoric_acid_plant_spritelayout_barrels",
+    tile="phosphoric_acid_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_barrels],
@@ -192,13 +207,11 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_fat_chimney",
         ),
         (
             0,
             1,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_fat_chimney",
         ),
         (
@@ -210,13 +223,11 @@ industry.add_industry_layout(
         (
             1,
             0,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_large_building",
         ),
         (
             1,
             1,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_large_building",
         ),
         (
@@ -299,13 +310,11 @@ industry.add_industry_layout(
         (
             0,
             3,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_fat_chimney",
         ),
         (
             0,
             4,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_fat_chimney",
         ),
         (
@@ -329,13 +338,11 @@ industry.add_industry_layout(
         (
             1,
             3,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_large_building",
         ),
         (
             1,
             4,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_large_building",
         ),
         (
@@ -376,13 +383,11 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_fat_chimney",
         ),
         (
             0,
             1,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_fat_chimney",
         ),
         (
@@ -406,13 +411,11 @@ industry.add_industry_layout(
         (
             1,
             0,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_large_building",
         ),
         (
             1,
             1,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_large_building",
         ),
         (
@@ -436,31 +439,26 @@ industry.add_industry_layout(
         (
             2,
             0,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_spherical_tanks",
         ),
         (
             2,
             1,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_barrels",
         ),
         (
             2,
             2,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_barrels",
         ),
         (
             2,
             3,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_vertical_tanks",
         ),
         (
             2,
             4,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_vertical_tanks",
         ),
     ],
@@ -507,25 +505,21 @@ industry.add_industry_layout(
         (
             3,
             0,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_fat_chimney",
         ),
         (
             3,
             1,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_fat_chimney",
         ),
         (
             4,
             0,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_large_building",
         ),
         (
             4,
             1,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_large_building",
         ),
         (
@@ -572,13 +566,11 @@ industry.add_industry_layout(
         (
             0,
             2,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_fat_chimney",
         ),
         (
             0,
             3,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_fat_chimney",
         ),
         (
@@ -596,13 +588,11 @@ industry.add_industry_layout(
         (
             1,
             2,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_large_building",
         ),
         (
             1,
             3,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_large_building",
         ),
         (
@@ -661,7 +651,6 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_fat_chimney",
         ),
         (
@@ -685,7 +674,6 @@ industry.add_industry_layout(
         (
             1,
             0,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_large_building",
         ),
         (
@@ -709,7 +697,6 @@ industry.add_industry_layout(
         (
             2,
             0,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_fat_chimney",
         ),
         (
@@ -733,7 +720,6 @@ industry.add_industry_layout(
         (
             3,
             0,
-            "phosphoric_acid_plant_tile_2",
             "phosphoric_acid_plant_spritelayout_large_building",
         ),
         (

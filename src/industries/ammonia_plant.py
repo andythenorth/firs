@@ -5,11 +5,14 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="ammonia_plant",
     accept_cargos_with_input_ratios=[
-        ("NAPH", 8),
+        ("NAPH", 6),
+        ("MEOH", 2),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("NH3_", 6),
-        ("NIAC", 2),
+        ("NH3_", 5),
+        ("PLAS", 2),
+        ("ENUM", 1), # primarily CO2 (dry ice, carbonation)
+        # FMSP considered and rejected, overlaps too much with Fertiliser Plant, no shortage of FMSP on map already
     ],
     prob_in_game="3",
     prob_map_gen="5",
@@ -22,6 +25,12 @@ industry = IndustrySecondary(
     sprites_complete=False,
     animated_tiles_fixed=False,
 )
+
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+
+# CABBAGE - needs non-animated tile for performance?
 
 industry.add_tile(
     id="ammonia_plant_tile_1",
@@ -82,6 +91,7 @@ sprite_smoke_2 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="ammonia_plant_spritelayout_1",
+    tile="ammonia_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_1],
@@ -90,6 +100,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ammonia_plant_spritelayout_2",
+    tile="ammonia_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_2],
@@ -97,6 +108,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ammonia_plant_spritelayout_3",
+    tile="ammonia_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_3],
@@ -104,6 +116,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ammonia_plant_spritelayout_4",
+    tile="ammonia_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_4],
@@ -111,6 +124,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ammonia_plant_spritelayout_5",
+    tile="ammonia_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_5],
@@ -118,6 +132,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ammonia_plant_spritelayout_6",
+    tile="ammonia_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_6],
@@ -125,6 +140,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ammonia_plant_spritelayout_7",
+    tile="ammonia_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_7],
@@ -132,6 +148,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ammonia_plant_spritelayout_8",
+    tile="ammonia_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_8],
@@ -139,6 +156,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ammonia_plant_spritelayout_9",
+    tile="ammonia_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_9],
@@ -146,6 +164,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ammonia_plant_spritelayout_10",
+    tile="ammonia_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_10],
@@ -153,6 +172,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="ammonia_plant_spritelayout_concrete",
+    tile="ammonia_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[],
@@ -162,120 +182,120 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="ammonia_plant_industry_layout_1",
     layout=[
-        (0, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_1"),
-        (0, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_4"),
-        (0, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_8"),
-        (1, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_6"),
-        (1, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_3"),
-        (1, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_9"),
-        (2, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_5"),
-        (2, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_2"),
-        (2, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_7"),
-        (3, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_10"),
-        (3, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_concrete"),
-        (3, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_7"),
+        (0, 0, "ammonia_plant_spritelayout_1"),
+        (0, 1, "ammonia_plant_spritelayout_4"),
+        (0, 2, "ammonia_plant_spritelayout_8"),
+        (1, 0, "ammonia_plant_spritelayout_6"),
+        (1, 1, "ammonia_plant_spritelayout_3"),
+        (1, 2, "ammonia_plant_spritelayout_9"),
+        (2, 0, "ammonia_plant_spritelayout_5"),
+        (2, 1, "ammonia_plant_spritelayout_2"),
+        (2, 2, "ammonia_plant_spritelayout_7"),
+        (3, 0, "ammonia_plant_spritelayout_10"),
+        (3, 1, "ammonia_plant_spritelayout_concrete"),
+        (3, 2, "ammonia_plant_spritelayout_7"),
     ],
 )
 industry.add_industry_layout(
     id="ammonia_plant_industry_layout_2",
     layout=[
-        (0, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_1"),
-        (0, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_6"),
-        (1, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_4"),
-        (1, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_5"),
-        (2, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_3"),
-        (2, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_10"),
-        (3, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_2"),
-        (3, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_7"),
-        (4, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_8"),
-        (4, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_9"),
+        (0, 0, "ammonia_plant_spritelayout_1"),
+        (0, 1, "ammonia_plant_spritelayout_6"),
+        (1, 0, "ammonia_plant_spritelayout_4"),
+        (1, 1, "ammonia_plant_spritelayout_5"),
+        (2, 0, "ammonia_plant_spritelayout_3"),
+        (2, 1, "ammonia_plant_spritelayout_10"),
+        (3, 0, "ammonia_plant_spritelayout_2"),
+        (3, 1, "ammonia_plant_spritelayout_7"),
+        (4, 0, "ammonia_plant_spritelayout_8"),
+        (4, 1, "ammonia_plant_spritelayout_9"),
     ],
 )
 industry.add_industry_layout(
     id="ammonia_plant_industry_layout_3",
     layout=[
-        (0, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_4"),
-        (1, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_8"),
-        (1, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_3"),
-        (1, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_7"),
-        (1, 3, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_6"),
-        (2, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_9"),
-        (2, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_2"),
-        (2, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_1"),
-        (2, 3, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_5"),
+        (0, 1, "ammonia_plant_spritelayout_4"),
+        (1, 0, "ammonia_plant_spritelayout_8"),
+        (1, 1, "ammonia_plant_spritelayout_3"),
+        (1, 2, "ammonia_plant_spritelayout_7"),
+        (1, 3, "ammonia_plant_spritelayout_6"),
+        (2, 0, "ammonia_plant_spritelayout_9"),
+        (2, 1, "ammonia_plant_spritelayout_2"),
+        (2, 2, "ammonia_plant_spritelayout_1"),
+        (2, 3, "ammonia_plant_spritelayout_5"),
     ],
 )
 industry.add_industry_layout(
     id="ammonia_plant_industry_layout_4",
     layout=[
-        (0, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_4"),
-        (1, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_1"),
-        (1, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_3"),
-        (1, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_6"),
-        (1, 3, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_8"),
-        (2, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_7"),
-        (2, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_2"),
-        (2, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_5"),
-        (2, 3, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_9"),
+        (0, 1, "ammonia_plant_spritelayout_4"),
+        (1, 0, "ammonia_plant_spritelayout_1"),
+        (1, 1, "ammonia_plant_spritelayout_3"),
+        (1, 2, "ammonia_plant_spritelayout_6"),
+        (1, 3, "ammonia_plant_spritelayout_8"),
+        (2, 0, "ammonia_plant_spritelayout_7"),
+        (2, 1, "ammonia_plant_spritelayout_2"),
+        (2, 2, "ammonia_plant_spritelayout_5"),
+        (2, 3, "ammonia_plant_spritelayout_9"),
     ],
 )
 industry.add_industry_layout(
     id="ammonia_plant_industry_layout_5",
     layout=[
-        (0, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_4"),
-        (0, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_7"),
-        (1, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_3"),
-        (1, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_7"),
-        (2, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_2"),
-        (2, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_6"),
-        (3, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_1"),
-        (3, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_5"),
-        (4, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_8"),
-        (4, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_6"),
-        (5, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_8"),
-        (5, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_5"),
-        (6, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_9"),
-        (6, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_10"),
+        (0, 0, "ammonia_plant_spritelayout_4"),
+        (0, 1, "ammonia_plant_spritelayout_7"),
+        (1, 0, "ammonia_plant_spritelayout_3"),
+        (1, 1, "ammonia_plant_spritelayout_7"),
+        (2, 0, "ammonia_plant_spritelayout_2"),
+        (2, 1, "ammonia_plant_spritelayout_6"),
+        (3, 0, "ammonia_plant_spritelayout_1"),
+        (3, 1, "ammonia_plant_spritelayout_5"),
+        (4, 0, "ammonia_plant_spritelayout_8"),
+        (4, 1, "ammonia_plant_spritelayout_6"),
+        (5, 0, "ammonia_plant_spritelayout_8"),
+        (5, 1, "ammonia_plant_spritelayout_5"),
+        (6, 0, "ammonia_plant_spritelayout_9"),
+        (6, 1, "ammonia_plant_spritelayout_10"),
     ],
 )
 industry.add_industry_layout(
     id="ammonia_plant_industry_layout_6",
     layout=[
-        (0, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_4"),
-        (0, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_8"),
-        (0, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_8"),
-        (1, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_3"),
-        (1, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_6"),
-        (1, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_6"),
-        (2, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_2"),
-        (2, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_5"),
-        (2, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_5"),
-        (3, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_1"),
-        (3, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_10"),
-        (3, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_concrete"),
-        (4, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_7"),
-        (4, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_7"),
-        (4, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_9"),
+        (0, 0, "ammonia_plant_spritelayout_4"),
+        (0, 1, "ammonia_plant_spritelayout_8"),
+        (0, 2, "ammonia_plant_spritelayout_8"),
+        (1, 0, "ammonia_plant_spritelayout_3"),
+        (1, 1, "ammonia_plant_spritelayout_6"),
+        (1, 2, "ammonia_plant_spritelayout_6"),
+        (2, 0, "ammonia_plant_spritelayout_2"),
+        (2, 1, "ammonia_plant_spritelayout_5"),
+        (2, 2, "ammonia_plant_spritelayout_5"),
+        (3, 0, "ammonia_plant_spritelayout_1"),
+        (3, 1, "ammonia_plant_spritelayout_10"),
+        (3, 2, "ammonia_plant_spritelayout_concrete"),
+        (4, 0, "ammonia_plant_spritelayout_7"),
+        (4, 1, "ammonia_plant_spritelayout_7"),
+        (4, 2, "ammonia_plant_spritelayout_9"),
     ],
 )
 industry.add_industry_layout(
     id="ammonia_plant_industry_layout_7",
     layout=[
-        (0, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_4"),
-        (0, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_1"),
-        (0, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_8"),
-        (0, 3, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_10"),
-        (1, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_3"),
-        (1, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_6"),
-        (1, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_8"),
-        (1, 3, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_6"),
-        (2, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_2"),
-        (2, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_5"),
-        (2, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_9"),
-        (2, 3, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_5"),
-        (3, 0, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_7"),
-        (3, 1, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_7"),
-        (3, 2, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_9"),
-        (3, 3, "ammonia_plant_tile_1", "ammonia_plant_spritelayout_10"),
+        (0, 0, "ammonia_plant_spritelayout_4"),
+        (0, 1, "ammonia_plant_spritelayout_1"),
+        (0, 2, "ammonia_plant_spritelayout_8"),
+        (0, 3, "ammonia_plant_spritelayout_10"),
+        (1, 0, "ammonia_plant_spritelayout_3"),
+        (1, 1, "ammonia_plant_spritelayout_6"),
+        (1, 2, "ammonia_plant_spritelayout_8"),
+        (1, 3, "ammonia_plant_spritelayout_6"),
+        (2, 0, "ammonia_plant_spritelayout_2"),
+        (2, 1, "ammonia_plant_spritelayout_5"),
+        (2, 2, "ammonia_plant_spritelayout_9"),
+        (2, 3, "ammonia_plant_spritelayout_5"),
+        (3, 0, "ammonia_plant_spritelayout_7"),
+        (3, 1, "ammonia_plant_spritelayout_7"),
+        (3, 2, "ammonia_plant_spritelayout_9"),
+        (3, 3, "ammonia_plant_spritelayout_10"),
     ],
 )

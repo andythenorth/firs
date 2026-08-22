@@ -30,6 +30,16 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["paper_mill", "sawmill", "board_mill"],
+            "companion_industries_ratio": 3,
+        }
+    },
+)
 
 industry.add_tile(
     id="forest_tile_1",

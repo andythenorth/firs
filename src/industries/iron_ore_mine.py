@@ -24,6 +24,16 @@ industry.enable_in_economy(
     "BASIC_TEMPERATE",
 )
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["integrated_steel_mill"],
+            "companion_industries_ratio": 4,
+        }
+    },
+)
+industry.enable_in_economy(
     "STEELTOWN",
     prob_map_gen="10",
     vulcan_config={

@@ -3,8 +3,8 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 industry = IndustryPrimaryExtractive(
     id="salt_mine",
     prod_cargo_types_with_multipliers=[
-        ("SALT", 22),
-        ("ENUM", 4),
+        ("SALT", 16),
+        ("ENUM", 5),
     ],
     prob_in_game="4",
     prob_map_gen="7",
@@ -13,13 +13,23 @@ industry = IndustryPrimaryExtractive(
     location_checks=dict(require_cluster=[70, 3]),
     prospect_chance="0.75",
     name="string(STR_IND_SALT_MINE)",
-    nearby_station_name="string(STR_STATION_TRONA_BEDS)",
+    nearby_station_name="string(STR_STATION_BRINE_WORKS)",
     fund_cost_multiplier="180",
     primary_production_random_factor_set="wide_range",
     sprites_complete=False,
     animated_tiles_fixed=False,
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["chemical_plant"],
+            "companion_industries_ratio": 1.5,
+        }
+    },
+)
 
 industry.add_tile(
     id="salt_mine_tile_1",
@@ -113,24 +123,28 @@ sprite_smoke_4 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="salt_mine_spritelayout_tile_empty",
+    tile="salt_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=None,
     building_sprites=[],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_headgear_animated",
+    tile="salt_mine_tile_1",
     ground_sprite=sprite_ground,
     ground_overlay=None,
     building_sprites=[spriteset_headgear_animated],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_silos",
+    tile="salt_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=None,
     building_sprites=[spriteset_exit_trestle],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_crusher_front_part",
+    tile="salt_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=None,
     building_sprites=[spriteset_crusher_front_part],
@@ -138,6 +152,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_crusher_rear_part",
+    tile="salt_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=None,
     building_sprites=[spriteset_crusher_rear_part],
@@ -145,36 +160,42 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_misc_building_tanks",
+    tile="salt_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=None,
     building_sprites=[spriteset_misc_building_tanks],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_ore_1",
+    tile="salt_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=None,
     building_sprites=[spriteset_ore_1],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_ore_2",
+    tile="salt_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=None,
     building_sprites=[spriteset_ore_2],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_winding_house",
+    tile="salt_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=None,
     building_sprites=[spriteset_winding_house],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_silo_conveyor",
+    tile="salt_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=None,
     building_sprites=[spriteset_exit_silo_conveyor],
 )
 industry.add_spritelayout(
     id="salt_mine_spritelayout_truck",
+    tile="salt_mine_tile_2",
     ground_sprite=sprite_ground,
     ground_overlay=None,
     building_sprites=[spriteset_truck],
@@ -183,82 +204,82 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="salt_mine_industry_layout_1",
     layout=[
-        (0, 0, "salt_mine_tile_2", "salt_mine_spritelayout_crusher_rear_part"),
-        (0, 1, "salt_mine_tile_1", "salt_mine_spritelayout_headgear_animated"),
-        (0, 2, "salt_mine_tile_2", "salt_mine_spritelayout_winding_house"),
-        (1, 0, "salt_mine_tile_2", "salt_mine_spritelayout_tile_empty"),
-        (1, 1, "salt_mine_tile_2", "salt_mine_spritelayout_ore_2"),
-        (1, 2, "salt_mine_tile_2", "salt_mine_spritelayout_misc_building_tanks"),
-        (2, 0, "salt_mine_tile_2", "salt_mine_spritelayout_crusher_front_part"),
-        (2, 1, "salt_mine_tile_2", "salt_mine_spritelayout_ore_1"),
-        (2, 2, "salt_mine_tile_2", "salt_mine_spritelayout_tile_empty"),
-        (3, 0, "salt_mine_tile_2", "salt_mine_spritelayout_silos"),
-        (3, 1, "salt_mine_tile_2", "salt_mine_spritelayout_silo_conveyor"),
-        (3, 2, "salt_mine_tile_2", "salt_mine_spritelayout_truck"),
+        (0, 0, "salt_mine_spritelayout_crusher_rear_part"),
+        (0, 1, "salt_mine_spritelayout_headgear_animated"),
+        (0, 2, "salt_mine_spritelayout_winding_house"),
+        (1, 0, "salt_mine_spritelayout_tile_empty"),
+        (1, 1, "salt_mine_spritelayout_ore_2"),
+        (1, 2, "salt_mine_spritelayout_misc_building_tanks"),
+        (2, 0, "salt_mine_spritelayout_crusher_front_part"),
+        (2, 1, "salt_mine_spritelayout_ore_1"),
+        (2, 2, "salt_mine_spritelayout_tile_empty"),
+        (3, 0, "salt_mine_spritelayout_silos"),
+        (3, 1, "salt_mine_spritelayout_silo_conveyor"),
+        (3, 2, "salt_mine_spritelayout_truck"),
     ],
 )
 
 industry.add_industry_layout(
     id="salt_mine_industry_layout_2",
     layout=[
-        (0, 0, "salt_mine_tile_2", "salt_mine_spritelayout_crusher_rear_part"),
-        (0, 1, "salt_mine_tile_1", "salt_mine_spritelayout_headgear_animated"),
-        (0, 2, "salt_mine_tile_2", "salt_mine_spritelayout_winding_house"),
-        (0, 3, "salt_mine_tile_1", "salt_mine_spritelayout_headgear_animated"),
-        (0, 4, "salt_mine_tile_2", "salt_mine_spritelayout_winding_house"),
-        (1, 0, "salt_mine_tile_2", "salt_mine_spritelayout_tile_empty"),
-        (1, 1, "salt_mine_tile_2", "salt_mine_spritelayout_ore_2"),
-        (1, 2, "salt_mine_tile_2", "salt_mine_spritelayout_misc_building_tanks"),
-        (1, 3, "salt_mine_tile_2", "salt_mine_spritelayout_truck"),
-        (1, 4, "salt_mine_tile_2", "salt_mine_spritelayout_ore_2"),
-        (2, 0, "salt_mine_tile_2", "salt_mine_spritelayout_crusher_front_part"),
-        (2, 1, "salt_mine_tile_2", "salt_mine_spritelayout_ore_1"),
-        (2, 2, "salt_mine_tile_2", "salt_mine_spritelayout_silos"),
-        (2, 3, "salt_mine_tile_2", "salt_mine_spritelayout_silo_conveyor"),
-        (2, 4, "salt_mine_tile_2", "salt_mine_spritelayout_ore_1"),
+        (0, 0, "salt_mine_spritelayout_crusher_rear_part"),
+        (0, 1, "salt_mine_spritelayout_headgear_animated"),
+        (0, 2, "salt_mine_spritelayout_winding_house"),
+        (0, 3, "salt_mine_spritelayout_headgear_animated"),
+        (0, 4, "salt_mine_spritelayout_winding_house"),
+        (1, 0, "salt_mine_spritelayout_tile_empty"),
+        (1, 1, "salt_mine_spritelayout_ore_2"),
+        (1, 2, "salt_mine_spritelayout_misc_building_tanks"),
+        (1, 3, "salt_mine_spritelayout_truck"),
+        (1, 4, "salt_mine_spritelayout_ore_2"),
+        (2, 0, "salt_mine_spritelayout_crusher_front_part"),
+        (2, 1, "salt_mine_spritelayout_ore_1"),
+        (2, 2, "salt_mine_spritelayout_silos"),
+        (2, 3, "salt_mine_spritelayout_silo_conveyor"),
+        (2, 4, "salt_mine_spritelayout_ore_1"),
     ],
 )
 
 industry.add_industry_layout(
     id="salt_mine_industry_layout_3",
     layout=[
-        (0, 0, "salt_mine_tile_1", "salt_mine_spritelayout_headgear_animated"),
-        (0, 1, "salt_mine_tile_2", "salt_mine_spritelayout_winding_house"),
-        (1, 0, "salt_mine_tile_2", "salt_mine_spritelayout_silos"),
-        (1, 1, "salt_mine_tile_2", "salt_mine_spritelayout_silo_conveyor"),
-        (1, 2, "salt_mine_tile_2", "salt_mine_spritelayout_misc_building_tanks"),
-        (2, 0, "salt_mine_tile_2", "salt_mine_spritelayout_misc_building_tanks"),
-        (2, 1, "salt_mine_tile_1", "salt_mine_spritelayout_headgear_animated"),
-        (2, 2, "salt_mine_tile_2", "salt_mine_spritelayout_winding_house"),
-        (3, 0, "salt_mine_tile_2", "salt_mine_spritelayout_crusher_rear_part"),
-        (3, 1, "salt_mine_tile_2", "salt_mine_spritelayout_crusher_rear_part"),
-        (3, 2, "salt_mine_tile_2", "salt_mine_spritelayout_ore_2"),
-        (4, 0, "salt_mine_tile_2", "salt_mine_spritelayout_tile_empty"),
-        (4, 1, "salt_mine_tile_2", "salt_mine_spritelayout_tile_empty"),
-        (4, 2, "salt_mine_tile_2", "salt_mine_spritelayout_ore_1"),
-        (5, 0, "salt_mine_tile_2", "salt_mine_spritelayout_crusher_front_part"),
-        (5, 1, "salt_mine_tile_2", "salt_mine_spritelayout_crusher_front_part"),
-        (5, 2, "salt_mine_tile_2", "salt_mine_spritelayout_truck"),
+        (0, 0, "salt_mine_spritelayout_headgear_animated"),
+        (0, 1, "salt_mine_spritelayout_winding_house"),
+        (1, 0, "salt_mine_spritelayout_silos"),
+        (1, 1, "salt_mine_spritelayout_silo_conveyor"),
+        (1, 2, "salt_mine_spritelayout_misc_building_tanks"),
+        (2, 0, "salt_mine_spritelayout_misc_building_tanks"),
+        (2, 1, "salt_mine_spritelayout_headgear_animated"),
+        (2, 2, "salt_mine_spritelayout_winding_house"),
+        (3, 0, "salt_mine_spritelayout_crusher_rear_part"),
+        (3, 1, "salt_mine_spritelayout_crusher_rear_part"),
+        (3, 2, "salt_mine_spritelayout_ore_2"),
+        (4, 0, "salt_mine_spritelayout_tile_empty"),
+        (4, 1, "salt_mine_spritelayout_tile_empty"),
+        (4, 2, "salt_mine_spritelayout_ore_1"),
+        (5, 0, "salt_mine_spritelayout_crusher_front_part"),
+        (5, 1, "salt_mine_spritelayout_crusher_front_part"),
+        (5, 2, "salt_mine_spritelayout_truck"),
     ],
 )
 
 industry.add_industry_layout(
     id="salt_mine_industry_layout_4",
     layout=[
-        (0, 0, "salt_mine_tile_1", "salt_mine_spritelayout_headgear_animated"),
-        (0, 1, "salt_mine_tile_2", "salt_mine_spritelayout_winding_house"),
-        (0, 2, "salt_mine_tile_2", "salt_mine_spritelayout_crusher_rear_part"),
-        (0, 3, "salt_mine_tile_2", "salt_mine_spritelayout_crusher_rear_part"),
-        (0, 4, "salt_mine_tile_2", "salt_mine_spritelayout_ore_2"),
-        (1, 0, "salt_mine_tile_2", "salt_mine_spritelayout_misc_building_tanks"),
-        (1, 1, "salt_mine_tile_2", "salt_mine_spritelayout_tile_empty"),
-        (1, 2, "salt_mine_tile_2", "salt_mine_spritelayout_tile_empty"),
-        (1, 3, "salt_mine_tile_2", "salt_mine_spritelayout_tile_empty"),
-        (1, 4, "salt_mine_tile_2", "salt_mine_spritelayout_ore_1"),
-        (2, 0, "salt_mine_tile_2", "salt_mine_spritelayout_silos"),
-        (2, 1, "salt_mine_tile_2", "salt_mine_spritelayout_silo_conveyor"),
-        (2, 2, "salt_mine_tile_2", "salt_mine_spritelayout_crusher_front_part"),
-        (2, 3, "salt_mine_tile_2", "salt_mine_spritelayout_crusher_front_part"),
-        (2, 4, "salt_mine_tile_2", "salt_mine_spritelayout_truck"),
+        (0, 0, "salt_mine_spritelayout_headgear_animated"),
+        (0, 1, "salt_mine_spritelayout_winding_house"),
+        (0, 2, "salt_mine_spritelayout_crusher_rear_part"),
+        (0, 3, "salt_mine_spritelayout_crusher_rear_part"),
+        (0, 4, "salt_mine_spritelayout_ore_2"),
+        (1, 0, "salt_mine_spritelayout_misc_building_tanks"),
+        (1, 1, "salt_mine_spritelayout_tile_empty"),
+        (1, 2, "salt_mine_spritelayout_tile_empty"),
+        (1, 3, "salt_mine_spritelayout_tile_empty"),
+        (1, 4, "salt_mine_spritelayout_ore_1"),
+        (2, 0, "salt_mine_spritelayout_silos"),
+        (2, 1, "salt_mine_spritelayout_silo_conveyor"),
+        (2, 2, "salt_mine_spritelayout_crusher_front_part"),
+        (2, 3, "salt_mine_spritelayout_crusher_front_part"),
+        (2, 4, "salt_mine_spritelayout_truck"),
     ],
 )

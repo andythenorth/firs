@@ -21,12 +21,12 @@ industry = IndustrySecondary(
     animated_tiles_fixed=False,
 )
 
-industry.enable_in_economy("BASIC_TROPIC")
-industry.economy_variations["BASIC_TROPIC"].accept_cargos_with_input_ratios = [
-    ("GRAI", 6)
-]
-
-
+industry.enable_in_economy(
+    "BASIC_TROPIC",
+    accept_cargos_with_input_ratios = [
+        ("GRAI", 6)
+    ],
+)
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     accept_cargos_with_input_ratios=[
@@ -34,8 +34,17 @@ industry.enable_in_economy(
         ("MAIZ", 6),
     ],
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("GRAI", 6),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("BAKE", 8),
+    ],
+)
 
-# !! remove the windill layout, then de-animate the tile
+# !! CABBAGE remove the windill layout, then de-animate the tile
 
 industry.add_tile(
     id="flour_mill_tile_1",

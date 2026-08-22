@@ -3,7 +3,7 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="tinplate_works",
     accept_cargos_with_input_ratios=[
-        ("STSH", 4),
+        ("STEL", 4),
         ("TIN_", 2),
         ("SUAC", 2),
     ],
@@ -11,7 +11,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="160",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton", # tile="tinplate_works_tile_1" needs checked
     name="string(STR_IND_TINPLATE_WORKS)",
     nearby_station_name="string(STR_STATION_HEAVY_INDUSTRY_2)",
     fund_cost_multiplier="120",
@@ -19,7 +19,12 @@ industry = IndustrySecondary(
     animated_tiles_fixed=False,
 )
 
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
 # Tinplate is *not* in Steeltown because it fragments the consumers of Acid too much.  Maybe Better Living Through Chemistry?
+
+# CABBAGE - needs non-animated tile for performance?
 
 industry.add_tile(
     id="tinplate_works_tile_1",
@@ -65,6 +70,7 @@ sprite_smoke = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="tinplate_works_spritelayout_1",
+    tile="tinplate_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_1],
@@ -72,6 +78,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="tinplate_works_spritelayout_2",
+    tile="tinplate_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_2],
@@ -79,6 +86,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="tinplate_works_spritelayout_3",
+    tile="tinplate_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_3],
@@ -86,6 +94,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="tinplate_works_spritelayout_4",
+    tile="tinplate_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_4],
@@ -94,6 +103,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="tinplate_works_spritelayout_5",
+    tile="tinplate_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_5],
@@ -101,6 +111,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="tinplate_works_spritelayout_6",
+    tile="tinplate_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_6],
@@ -108,6 +119,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="tinplate_works_spritelayout_7",
+    tile="tinplate_works_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_7],
@@ -117,60 +129,60 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="tinplate_works_industry_layout_1",
     layout=[
-        (0, 0, "tinplate_works_tile_1", "tinplate_works_spritelayout_3"),
-        (0, 1, "tinplate_works_tile_1", "tinplate_works_spritelayout_3"),
-        (0, 2, "tinplate_works_tile_1", "tinplate_works_spritelayout_4"),
-        (0, 3, "tinplate_works_tile_1", "tinplate_works_spritelayout_6"),
-        (0, 4, "tinplate_works_tile_1", "tinplate_works_spritelayout_5"),
-        (1, 0, "tinplate_works_tile_1", "tinplate_works_spritelayout_3"),
-        (1, 1, "tinplate_works_tile_1", "tinplate_works_spritelayout_3"),
-        (1, 2, "tinplate_works_tile_1", "tinplate_works_spritelayout_7"),
-        (1, 3, "tinplate_works_tile_1", "tinplate_works_spritelayout_6"),
-        (1, 4, "tinplate_works_tile_1", "tinplate_works_spritelayout_5"),
-        (2, 0, "tinplate_works_tile_1", "tinplate_works_spritelayout_3"),
-        (2, 1, "tinplate_works_tile_1", "tinplate_works_spritelayout_1"),
-        (2, 2, "tinplate_works_tile_1", "tinplate_works_spritelayout_2"),
-        (2, 3, "tinplate_works_tile_1", "tinplate_works_spritelayout_7"),
-        (2, 4, "tinplate_works_tile_1", "tinplate_works_spritelayout_6"),
+        (0, 0, "tinplate_works_spritelayout_3"),
+        (0, 1, "tinplate_works_spritelayout_3"),
+        (0, 2, "tinplate_works_spritelayout_4"),
+        (0, 3, "tinplate_works_spritelayout_6"),
+        (0, 4, "tinplate_works_spritelayout_5"),
+        (1, 0, "tinplate_works_spritelayout_3"),
+        (1, 1, "tinplate_works_spritelayout_3"),
+        (1, 2, "tinplate_works_spritelayout_7"),
+        (1, 3, "tinplate_works_spritelayout_6"),
+        (1, 4, "tinplate_works_spritelayout_5"),
+        (2, 0, "tinplate_works_spritelayout_3"),
+        (2, 1, "tinplate_works_spritelayout_1"),
+        (2, 2, "tinplate_works_spritelayout_2"),
+        (2, 3, "tinplate_works_spritelayout_7"),
+        (2, 4, "tinplate_works_spritelayout_6"),
     ],
 )
 industry.add_industry_layout(
     id="tinplate_works_industry_layout_2",
     layout=[
-        (0, 2, "tinplate_works_tile_1", "tinplate_works_spritelayout_3"),
-        (0, 3, "tinplate_works_tile_1", "tinplate_works_spritelayout_3"),
-        (1, 0, "tinplate_works_tile_1", "tinplate_works_spritelayout_1"),
-        (1, 1, "tinplate_works_tile_1", "tinplate_works_spritelayout_2"),
-        (1, 2, "tinplate_works_tile_1", "tinplate_works_spritelayout_3"),
-        (1, 3, "tinplate_works_tile_1", "tinplate_works_spritelayout_3"),
-        (2, 0, "tinplate_works_tile_1", "tinplate_works_spritelayout_7"),
-        (2, 1, "tinplate_works_tile_1", "tinplate_works_spritelayout_7"),
-        (2, 2, "tinplate_works_tile_1", "tinplate_works_spritelayout_6"),
-        (2, 3, "tinplate_works_tile_1", "tinplate_works_spritelayout_6"),
-        (3, 0, "tinplate_works_tile_1", "tinplate_works_spritelayout_4"),
-        (3, 1, "tinplate_works_tile_1", "tinplate_works_spritelayout_5"),
-        (3, 2, "tinplate_works_tile_1", "tinplate_works_spritelayout_5"),
-        (3, 3, "tinplate_works_tile_1", "tinplate_works_spritelayout_5"),
+        (0, 2, "tinplate_works_spritelayout_3"),
+        (0, 3, "tinplate_works_spritelayout_3"),
+        (1, 0, "tinplate_works_spritelayout_1"),
+        (1, 1, "tinplate_works_spritelayout_2"),
+        (1, 2, "tinplate_works_spritelayout_3"),
+        (1, 3, "tinplate_works_spritelayout_3"),
+        (2, 0, "tinplate_works_spritelayout_7"),
+        (2, 1, "tinplate_works_spritelayout_7"),
+        (2, 2, "tinplate_works_spritelayout_6"),
+        (2, 3, "tinplate_works_spritelayout_6"),
+        (3, 0, "tinplate_works_spritelayout_4"),
+        (3, 1, "tinplate_works_spritelayout_5"),
+        (3, 2, "tinplate_works_spritelayout_5"),
+        (3, 3, "tinplate_works_spritelayout_5"),
     ],
 )
 industry.add_industry_layout(
     id="tinplate_works_industry_layout_3",
     layout=[
-        (0, 0, "tinplate_works_tile_1", "tinplate_works_spritelayout_3"),
-        (0, 1, "tinplate_works_tile_1", "tinplate_works_spritelayout_3"),
-        (0, 2, "tinplate_works_tile_1", "tinplate_works_spritelayout_3"),
-        (0, 3, "tinplate_works_tile_1", "tinplate_works_spritelayout_5"),
-        (1, 0, "tinplate_works_tile_1", "tinplate_works_spritelayout_3"),
-        (1, 1, "tinplate_works_tile_1", "tinplate_works_spritelayout_3"),
-        (1, 2, "tinplate_works_tile_1", "tinplate_works_spritelayout_3"),
-        (1, 3, "tinplate_works_tile_1", "tinplate_works_spritelayout_6"),
-        (2, 0, "tinplate_works_tile_1", "tinplate_works_spritelayout_5"),
-        (2, 1, "tinplate_works_tile_1", "tinplate_works_spritelayout_1"),
-        (2, 2, "tinplate_works_tile_1", "tinplate_works_spritelayout_2"),
-        (2, 3, "tinplate_works_tile_1", "tinplate_works_spritelayout_7"),
-        (3, 0, "tinplate_works_tile_1", "tinplate_works_spritelayout_5"),
-        (3, 1, "tinplate_works_tile_1", "tinplate_works_spritelayout_4"),
-        (3, 2, "tinplate_works_tile_1", "tinplate_works_spritelayout_7"),
-        (3, 3, "tinplate_works_tile_1", "tinplate_works_spritelayout_6"),
+        (0, 0, "tinplate_works_spritelayout_3"),
+        (0, 1, "tinplate_works_spritelayout_3"),
+        (0, 2, "tinplate_works_spritelayout_3"),
+        (0, 3, "tinplate_works_spritelayout_5"),
+        (1, 0, "tinplate_works_spritelayout_3"),
+        (1, 1, "tinplate_works_spritelayout_3"),
+        (1, 2, "tinplate_works_spritelayout_3"),
+        (1, 3, "tinplate_works_spritelayout_6"),
+        (2, 0, "tinplate_works_spritelayout_5"),
+        (2, 1, "tinplate_works_spritelayout_1"),
+        (2, 2, "tinplate_works_spritelayout_2"),
+        (2, 3, "tinplate_works_spritelayout_7"),
+        (3, 0, "tinplate_works_spritelayout_5"),
+        (3, 1, "tinplate_works_spritelayout_4"),
+        (3, 2, "tinplate_works_spritelayout_7"),
+        (3, 3, "tinplate_works_spritelayout_6"),
     ],
 )

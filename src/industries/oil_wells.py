@@ -26,6 +26,16 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["oil_refinery"],
+            "companion_industries_ratio": 2,
+        }
+    },
+)
 
 industry.add_tile(
     id="oil_wells_tile_1",

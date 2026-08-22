@@ -1,13 +1,16 @@
 from industry import IndustrySecondary, TileLocationChecks
 
+# nitration plant
 industry = IndustrySecondary(
     id="civil_explosives_facility",
     accept_cargos_with_input_ratios=[
-        ("NH3_", 4),
-        ("SUAC", 4),
+        ("NH3_", 3),
+        ("SUAC", 3),
+        ("WDPP", 2),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("BOOM", 8),
+        ("BOOM", 4), # CABBAGE - REMOVE?
+        ("ENSP", 4),
     ],
     prob_in_game="3",
     prob_map_gen="5",
@@ -21,7 +24,9 @@ industry = IndustrySecondary(
     animated_tiles_fixed=False,
 )
 
-# industry.enable_in_economy("MILD_MILD_WEST",)
+industry.enable_in_economy("MILD_MILD_WEST",)
+
+# CABBAGE - needs non-animated tile for performance?
 
 industry.add_tile(
     id="civil_explosives_facility_tile_1",
@@ -129,6 +134,7 @@ sprite_smoke_9 = industry.add_smoke_sprite(
 )
 industry.add_spritelayout(
     id="civil_explosives_facility_spritelayout_horizontal_tanks",
+    tile="civil_explosives_facility_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_horizontal_tanks],
@@ -136,6 +142,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="civil_explosives_facility_spritelayout_frac_columns",
+    tile="civil_explosives_facility_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_frac_columns],
@@ -143,6 +150,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="civil_explosives_facility_spritelayout_drop_tower_and_thin_chimney",
+    tile="civil_explosives_facility_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_drop_tower_and_thin_chimney],
@@ -151,6 +159,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="civil_explosives_facility_spritelayout_large_building",
+    tile="civil_explosives_facility_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_large_building],
@@ -159,6 +168,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="civil_explosives_facility_spritelayout_fat_chimney",
+    tile="civil_explosives_facility_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_fat_chimney],
@@ -167,6 +177,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="civil_explosives_facility_spritelayout_spherical_tanks",
+    tile="civil_explosives_facility_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_spherical_tanks],
@@ -174,6 +185,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="civil_explosives_facility_spritelayout_vertical_tanks",
+    tile="civil_explosives_facility_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_vertical_tanks],
@@ -181,6 +193,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="civil_explosives_facility_spritelayout_barrels",
+    tile="civil_explosives_facility_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_barrels],
@@ -194,91 +207,76 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_fat_chimney",
         ),
         (
             0,
             1,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_fat_chimney",
         ),
         (
             0,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_spherical_tanks",
         ),
         (
             1,
             0,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_large_building",
         ),
         (
             1,
             1,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_large_building",
         ),
         (
             1,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_barrels",
         ),
         (
             2,
             0,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             2,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             2,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_barrels",
         ),
         (
             3,
             0,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_frac_columns",
         ),
         (
             3,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_frac_columns",
         ),
         (
             3,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_vertical_tanks",
         ),
         (
             4,
             0,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_drop_tower_and_thin_chimney",
         ),
         (
             4,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             4,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_vertical_tanks",
         ),
     ],
@@ -289,85 +287,71 @@ industry.add_industry_layout(
         (
             0,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_drop_tower_and_thin_chimney",
         ),
         (
             0,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             0,
             3,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_fat_chimney",
         ),
         (
             0,
             4,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_fat_chimney",
         ),
         (
             1,
             0,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             1,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_frac_columns",
         ),
         (
             1,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             1,
             3,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_large_building",
         ),
         (
             1,
             4,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_large_building",
         ),
         (
             2,
             0,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_vertical_tanks",
         ),
         (
             2,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_vertical_tanks",
         ),
         (
             2,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_barrels",
         ),
         (
             2,
             3,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_spherical_tanks",
         ),
         (
             2,
             4,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_spherical_tanks",
         ),
     ],
@@ -378,91 +362,76 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_fat_chimney",
         ),
         (
             0,
             1,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_fat_chimney",
         ),
         (
             0,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             0,
             3,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_frac_columns",
         ),
         (
             0,
             4,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             1,
             0,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_large_building",
         ),
         (
             1,
             1,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_large_building",
         ),
         (
             1,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             1,
             3,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_frac_columns",
         ),
         (
             1,
             4,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_drop_tower_and_thin_chimney",
         ),
         (
             2,
             0,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_spherical_tanks",
         ),
         (
             2,
             1,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_barrels",
         ),
         (
             2,
             2,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_barrels",
         ),
         (
             2,
             3,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_vertical_tanks",
         ),
         (
             2,
             4,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_vertical_tanks",
         ),
     ],
@@ -473,85 +442,71 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_vertical_tanks",
         ),
         (
             0,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_vertical_tanks",
         ),
         (
             1,
             0,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_frac_columns",
         ),
         (
             1,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_frac_columns",
         ),
         (
             2,
             0,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             2,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             3,
             0,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_fat_chimney",
         ),
         (
             3,
             1,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_fat_chimney",
         ),
         (
             4,
             0,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_large_building",
         ),
         (
             4,
             1,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_large_building",
         ),
         (
             5,
             0,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_drop_tower_and_thin_chimney",
         ),
         (
             5,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_barrels",
         ),
         (
             6,
             0,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_spherical_tanks",
         ),
         (
             6,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_spherical_tanks",
         ),
     ],
@@ -562,97 +517,81 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             0,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             0,
             2,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_fat_chimney",
         ),
         (
             0,
             3,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_fat_chimney",
         ),
         (
             1,
             0,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_drop_tower_and_thin_chimney",
         ),
         (
             1,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_frac_columns",
         ),
         (
             1,
             2,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_large_building",
         ),
         (
             1,
             3,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_large_building",
         ),
         (
             2,
             0,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             2,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             2,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_barrels",
         ),
         (
             2,
             3,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_spherical_tanks",
         ),
         (
             3,
             0,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_vertical_tanks",
         ),
         (
             3,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_vertical_tanks",
         ),
         (
             3,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_barrels",
         ),
         (
             3,
             3,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_spherical_tanks",
         ),
     ],
@@ -663,97 +602,81 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_fat_chimney",
         ),
         (
             0,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_frac_columns",
         ),
         (
             0,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_vertical_tanks",
         ),
         (
             0,
             3,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_vertical_tanks",
         ),
         (
             1,
             0,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_large_building",
         ),
         (
             1,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             1,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_drop_tower_and_thin_chimney",
         ),
         (
             1,
             3,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             2,
             0,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_fat_chimney",
         ),
         (
             2,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             2,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_frac_columns",
         ),
         (
             2,
             3,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_horizontal_tanks",
         ),
         (
             3,
             0,
-            "civil_explosives_facility_tile_2",
             "civil_explosives_facility_spritelayout_large_building",
         ),
         (
             3,
             1,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_barrels",
         ),
         (
             3,
             2,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_spherical_tanks",
         ),
         (
             3,
             3,
-            "civil_explosives_facility_tile_1",
             "civil_explosives_facility_spritelayout_spherical_tanks",
         ),
     ],

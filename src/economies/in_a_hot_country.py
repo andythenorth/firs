@@ -28,7 +28,7 @@ economy = Economy(
         "nuts",
         "oil",
         "passengers",
-        "petrol",
+        "petroleum_fuels",
         "phosphate",
         "rubber",
         "sand",

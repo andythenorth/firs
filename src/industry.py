@@ -1102,9 +1102,15 @@ class Industry(object):
                 # rare case of 3 out of n cargos being required
                 # to prevent surprises we guard on known industry ids
                 if self.id not in [
-                    "precision_parts_plant",
                     "appliance_factory",
+                    "engineering_works",
+                    "frozen_food_plant",
+                    "packaging_factory",
                     "power_systems_factory",
+                    "precision_parts_plant",
+                    "factory_3", # CABABGE - process chemicals plant
+                    "soup_factory",
+                    "nitrochemicals_plant",
                 ]:
                     raise Exception(
                         "get_extra_text_string: "

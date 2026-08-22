@@ -12,7 +12,7 @@ industry = IndustrySecondary(
     colour_scheme_name="scheme_1_elton", # cabbage needs checked
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[
-            ["arable_farm", "fruit_plantation", "coffee_estate", "vineyard"],
+            ["arable_farm", "fruit_plantation", "coffee_estate", "vineyard", "orchard_piggery"],
             72,
         ]
     ),
@@ -30,7 +30,6 @@ industry.enable_in_economy(
         ("FRUT", 6),
     ],
 )
-
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     accept_cargos_with_input_ratios=[
@@ -40,6 +39,19 @@ industry.enable_in_economy(
     prod_cargo_types_with_output_ratios=[
         ("EOIL", 4),
         ("FOOD", 4),
+    ],
+)
+print("CABBAGE food processor MMW combinatorial behaviour needs checked!!")
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("AAPL", 3),
+        ("VEG_", 3),
+        ("ENUM", 1),
+        ("PACK", 1),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("FOOD", 8),
     ],
 )
 

@@ -34,7 +34,6 @@ industry.enable_in_economy(
         ("CHEM", 8),
     ],
 )
-
 industry.enable_in_economy(
     "BASIC_ARCTIC",
     accept_cargos_with_input_ratios=[
@@ -48,6 +47,20 @@ industry.enable_in_economy(
         ("BOOM", 4),
     ],
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("SALT", 2),
+        ("NAPH", 3),
+        ("MEOH", 2), # needed for flavour, deliberately imported to make an easy-ish start
+        ("INGA", 1),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("CHIM", 6),
+        ("PLAS", 2),
+    ],
+)
+
 
 industry.add_tile(
     id="chemical_plant_tile_1",

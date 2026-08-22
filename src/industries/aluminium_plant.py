@@ -3,7 +3,9 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="aluminium_plant",
     accept_cargos_with_input_ratios=[
-        ("ALO_", 8),
+        ("ALO_", 4),
+        ("PRCH", 2),
+        ("PECO", 2),
     ],
     prod_cargo_types_with_output_ratios=[
         ("ALUM", 8),
@@ -20,7 +22,9 @@ industry = IndustrySecondary(
     animated_tiles_fixed=False,
 )
 
-# industry.enable_in_economy("MILD_MILD_WEST",)
+industry.enable_in_economy("MILD_MILD_WEST",)
+
+# CABBAGE - needs non-animated tile for performance?
 
 industry.add_tile(
     id="aluminium_plant_tile_1",
@@ -80,6 +84,7 @@ sprite_smoke = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_1",
+    tile="aluminium_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_1],
@@ -87,6 +92,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_2",
+    tile="aluminium_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_2],
@@ -94,6 +100,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_3",
+    tile="aluminium_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_3],
@@ -101,6 +108,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_4",
+    tile="aluminium_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_4],
@@ -109,6 +117,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_5",
+    tile="aluminium_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_5],
@@ -116,6 +125,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_6",
+    tile="aluminium_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_6],
@@ -123,6 +133,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_7",
+    tile="aluminium_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_7],
@@ -130,6 +141,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_8",
+    tile="aluminium_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_8],
@@ -137,6 +149,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_9",
+    tile="aluminium_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_9],
@@ -144,6 +157,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_10",
+    tile="aluminium_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_10],
@@ -151,6 +165,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_11",
+    tile="aluminium_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_11],
@@ -158,6 +173,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_concrete",
+    tile="aluminium_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[],
@@ -165,6 +181,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="aluminium_plant_spritelayout_transformer",
+    tile="aluminium_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[sprite_transformer],
@@ -174,80 +191,80 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="aluminium_plant_industry_layout_1",
     layout=[
-        (0, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_transformer"),
-        (0, 2, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_concrete"),
-        (0, 3, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_11"),
-        (1, 2, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_9"),
-        (1, 3, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_10"),
-        (2, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_3"),
-        (2, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (2, 2, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_5"),
-        (2, 3, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_6"),
-        (3, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_4"),
-        (3, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (3, 2, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_concrete"),
-        (3, 3, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_8"),
-        (4, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (4, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (4, 2, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (4, 3, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_2"),
-        (5, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (5, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (5, 2, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (5, 3, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_7"),
+        (0, 1, "aluminium_plant_spritelayout_transformer"),
+        (0, 2, "aluminium_plant_spritelayout_concrete"),
+        (0, 3, "aluminium_plant_spritelayout_11"),
+        (1, 2, "aluminium_plant_spritelayout_9"),
+        (1, 3, "aluminium_plant_spritelayout_10"),
+        (2, 0, "aluminium_plant_spritelayout_3"),
+        (2, 1, "aluminium_plant_spritelayout_1"),
+        (2, 2, "aluminium_plant_spritelayout_5"),
+        (2, 3, "aluminium_plant_spritelayout_6"),
+        (3, 0, "aluminium_plant_spritelayout_4"),
+        (3, 1, "aluminium_plant_spritelayout_1"),
+        (3, 2, "aluminium_plant_spritelayout_concrete"),
+        (3, 3, "aluminium_plant_spritelayout_8"),
+        (4, 0, "aluminium_plant_spritelayout_1"),
+        (4, 1, "aluminium_plant_spritelayout_1"),
+        (4, 2, "aluminium_plant_spritelayout_1"),
+        (4, 3, "aluminium_plant_spritelayout_2"),
+        (5, 0, "aluminium_plant_spritelayout_1"),
+        (5, 1, "aluminium_plant_spritelayout_1"),
+        (5, 2, "aluminium_plant_spritelayout_1"),
+        (5, 3, "aluminium_plant_spritelayout_7"),
     ],
 )
 industry.add_industry_layout(
     id="aluminium_plant_industry_layout_2",
     layout=[
-        (0, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (0, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_concrete"),
-        (0, 2, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (0, 3, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_concrete"),
-        (0, 4, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_11"),
-        (1, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (1, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_4"),
-        (1, 2, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (1, 3, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_9"),
-        (1, 4, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_10"),
-        (2, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (2, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_3"),
-        (2, 2, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (2, 3, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_5"),
-        (2, 4, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_6"),
-        (3, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (3, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_concrete"),
-        (3, 2, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (3, 3, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_8"),
-        (3, 4, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_concrete"),
-        (4, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (4, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_transformer"),
-        (4, 2, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (4, 3, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_2"),
-        (4, 4, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_7"),
+        (0, 0, "aluminium_plant_spritelayout_1"),
+        (0, 1, "aluminium_plant_spritelayout_concrete"),
+        (0, 2, "aluminium_plant_spritelayout_1"),
+        (0, 3, "aluminium_plant_spritelayout_concrete"),
+        (0, 4, "aluminium_plant_spritelayout_11"),
+        (1, 0, "aluminium_plant_spritelayout_1"),
+        (1, 1, "aluminium_plant_spritelayout_4"),
+        (1, 2, "aluminium_plant_spritelayout_1"),
+        (1, 3, "aluminium_plant_spritelayout_9"),
+        (1, 4, "aluminium_plant_spritelayout_10"),
+        (2, 0, "aluminium_plant_spritelayout_1"),
+        (2, 1, "aluminium_plant_spritelayout_3"),
+        (2, 2, "aluminium_plant_spritelayout_1"),
+        (2, 3, "aluminium_plant_spritelayout_5"),
+        (2, 4, "aluminium_plant_spritelayout_6"),
+        (3, 0, "aluminium_plant_spritelayout_1"),
+        (3, 1, "aluminium_plant_spritelayout_concrete"),
+        (3, 2, "aluminium_plant_spritelayout_1"),
+        (3, 3, "aluminium_plant_spritelayout_8"),
+        (3, 4, "aluminium_plant_spritelayout_concrete"),
+        (4, 0, "aluminium_plant_spritelayout_1"),
+        (4, 1, "aluminium_plant_spritelayout_transformer"),
+        (4, 2, "aluminium_plant_spritelayout_1"),
+        (4, 3, "aluminium_plant_spritelayout_2"),
+        (4, 4, "aluminium_plant_spritelayout_7"),
     ],
 )
 industry.add_industry_layout(
     id="aluminium_plant_industry_layout_3",
     layout=[
-        (0, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_transformer"),
-        (1, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_3"),
-        (1, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_2"),
-        (2, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_4"),
-        (2, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_8"),
-        (3, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (3, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (4, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (4, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (5, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (5, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_1"),
-        (6, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_7"),
-        (6, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_7"),
-        (7, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_9"),
-        (7, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_11"),
-        (8, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_9"),
-        (8, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_10"),
-        (9, 0, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_5"),
-        (9, 1, "aluminium_plant_tile_1", "aluminium_plant_spritelayout_6"),
+        (0, 0, "aluminium_plant_spritelayout_transformer"),
+        (1, 0, "aluminium_plant_spritelayout_3"),
+        (1, 1, "aluminium_plant_spritelayout_2"),
+        (2, 0, "aluminium_plant_spritelayout_4"),
+        (2, 1, "aluminium_plant_spritelayout_8"),
+        (3, 0, "aluminium_plant_spritelayout_1"),
+        (3, 1, "aluminium_plant_spritelayout_1"),
+        (4, 0, "aluminium_plant_spritelayout_1"),
+        (4, 1, "aluminium_plant_spritelayout_1"),
+        (5, 0, "aluminium_plant_spritelayout_1"),
+        (5, 1, "aluminium_plant_spritelayout_1"),
+        (6, 0, "aluminium_plant_spritelayout_7"),
+        (6, 1, "aluminium_plant_spritelayout_7"),
+        (7, 0, "aluminium_plant_spritelayout_9"),
+        (7, 1, "aluminium_plant_spritelayout_11"),
+        (8, 0, "aluminium_plant_spritelayout_9"),
+        (8, 1, "aluminium_plant_spritelayout_10"),
+        (9, 0, "aluminium_plant_spritelayout_5"),
+        (9, 1, "aluminium_plant_spritelayout_6"),
     ],
 )

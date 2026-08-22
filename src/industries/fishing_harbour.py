@@ -37,6 +37,18 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "BASIC_ARCTIC",
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("FISH", 6),
+        ("ENUM", 1),
+        ("PACK", 1),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("FOOD", 4),
+        ("CLAM", 4),
+    ],
+)
 
 # ['IN_A_HOT_COUNTRY'].enabled = True
 

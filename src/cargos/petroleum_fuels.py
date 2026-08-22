@@ -1,16 +1,15 @@
 from cargo import Cargo
 
-# the EN GB lang string for this was changed to 'Petroleum Fuels' Jan 2016, it feels more widely usable as a cargo
-
 cargo = Cargo(
-    id="petrol",
-    type_name="string(STR_CARGO_NAME_PETROL)",
-    unit_name="string(STR_CARGO_NAME_PETROL)",
-    type_abbreviation="string(STR_CID_PETROL)",
+    id="petroleum_fuels",
+    type_name="string(STR_CARGO_NAME_PETROLEUM_FUELS)",
+    unit_name="string(STR_CARGO_NAME_PETROLEUM_FUELS)",
+    type_abbreviation="string(STR_CID_PETROLEUM_FUELS)",
     sprite="NEW_CARGO_SPRITE",
     weight="0.8",
     is_freight="1",
-    cargo_classes = ["CC_LIQUID_BULK", "CC_NON_POTABLE"],
+    # gas bulk included to cover LPG (butane etc) which petroleum fuels encompasses
+    cargo_classes = ["CC_LIQUID_BULK", "CC_GAS_BULK", "CC_NON_POTABLE"],
     cargo_label="PETR",
     units_of_cargo="TTD_STR_LITERS",
     items_of_cargo="string(STR_CARGO_UNIT_PETROL)",

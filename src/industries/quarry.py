@@ -21,6 +21,20 @@ industry = IndustryPrimaryExtractive(
 
 
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    prod_cargo_types_with_multipliers=[
+        ("LIME", 18),
+        ("GRVL", 14),
+    ],
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["integrated_steel_mill", "lime_kiln", "cement_plant"],
+            "companion_industries_ratio": 1,
+        }
+    },
+)
+industry.enable_in_economy(
     "STEELTOWN",
     prod_cargo_types_with_multipliers=[
         # generally we want a lot of sand and limestone

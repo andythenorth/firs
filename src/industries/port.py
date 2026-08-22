@@ -83,6 +83,29 @@ industry.enable_in_economy(
     ],
 )
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargo_types=[
+        "DAIR",
+        "MEAT",
+        "CLAM",
+        "BEER",
+        "KAOL",
+    ],
+    prod_cargo_types_with_multipliers=[
+        ("ENSP", 12),
+        ("PCMP", 16),
+        ("ENUM", 12),
+        ("GRAI", 14),
+    ],
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["feed_mill", "packaging_factory"],
+            "companion_industries_ratio": 1,
+        }
+    },
+)
+industry.enable_in_economy(
     "STEELTOWN",
     # quite a lot of accepted types, this is intentional to provide flexibility in obtaining boost
     accept_cargo_types=[
