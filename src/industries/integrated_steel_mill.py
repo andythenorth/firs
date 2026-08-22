@@ -21,11 +21,23 @@ industry = IndustrySecondary(
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
     intro_year=1800,
-    name="string(STR_IND_INTEGRATED_STEEL_MILL)",  # use the simpler name in Basic Temperate to aid players new to FIRS
     accept_cargos_with_input_ratios=[
         ("IORE", 3),
         ("COAL", 2),
         ("SCMT", 3),
+    ],
+)
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("IORE", 3),
+        ("COKE", 2),
+        ("LIME", 2),
+        ("INGA", 1),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("STEL", 6),
+        ("SLAG", 2),
     ],
 )
 

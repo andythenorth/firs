@@ -12,11 +12,11 @@ industry = IndustrySecondary(
     colour_scheme_name="scheme_1_elton", # cabbage needs checked
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[
-            ["arable_farm", "fruit_plantation", "coffee_estate", "vineyard"],
+            ["arable_farm", "fruit_plantation", "coffee_estate", "vineyard", "orchard_piggery"],
             72,
         ]
     ),
-    name="TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT",
+    name="string(STR_IND_FOOD_PROCESSOR)",
     nearby_station_name="string(STR_STATION_FOOD_CORPORATION)",
     fund_cost_multiplier="65",
     sprites_complete=True,
@@ -30,7 +30,6 @@ industry.enable_in_economy(
         ("FRUT", 6),
     ],
 )
-
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     accept_cargos_with_input_ratios=[

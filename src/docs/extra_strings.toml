@@ -118,20 +118,23 @@ base = "Gravel, sand, crushed stone and similar materials used in construction."
 [CARGO_INFO_ALCOHOL]
 base = "Wine, beer, cider, spirits."
 
+[CARGO_INFO_ALUMINIA]
+base = "White powder refined from bauxite ore, used to produce aluminium metal."
+
 [CARGO_INFO_ALUMINIUM]
 base = "Refined Aluminium metal, in coils, ingots, slabs etc."
 
-[CARGO_INFO_AMMONIA]
-base = "Widely used industrial chemical. Transported as liquid or cryogenically as liquified compressed gas."
+[CARGO_INFO_AMMONIA_AND_NITRIC_PRODUCTS]
+base = "Industrial chemicals derived from ammonia, such as ammonia, nitric acid and urea. Transported as liquids, cryogenically as liquified gas, or as dry bulk."
 
 [CARGO_INFO_BASE_METALS]
 base = "Non-ferrous metals, such as copper, nickel, zinc and lead."
 
-[CARGO_INFO_BAUXITE]
-base = "Bauxite ore / alumina."
-
 [CARGO_INFO_BEANS]
 base = "Common beans, fava beans, soybeans and similar edible legumes."
+
+[CARGO_INFO_BITUMEN]
+base = "Thick petroleum product used mainly for road surfacing and roofing."
 
 [CARGO_INFO_BUILDING_MATERIALS]
 base = "Cement, glass, metal components, wood products, pipes and similar construction materials."
@@ -150,6 +153,9 @@ base = "Billets, blooms, ingots and slabs."
 
 [CARGO_INFO_CEMENT]
 base = "Dry cement in powder or clinker form."
+
+[CARGO_INFO_CHEMICAL_INTERMEDIATES]
+base = "Intermediate chemical products used as feedstocks for further industrial processing."
 
 [CARGO_INFO_CHEMICALS]
 base = "Generic organic and inorganic chemicals, handled as liquid, gas, covered bulk, powder, or as piece goods."
@@ -171,6 +177,9 @@ base = "Raw or roasted coffee beans."
 
 [CARGO_INFO_COKE]
 base = "Coal that has been heated in a coke oven, producing a fuel that is nearly pure carbon."
+
+[CARGO_INFO_COMPONENTS]
+base = "High-value engineering components such as electrical equipment, motors, transformers, control gear, hydraulics, pneumatics, pumps, valves and powertrain equipment."
 
 [CARGO_INFO_CONCRETE_PRODUCTS]
 base = "Cast products such as blocks, beams and panels. Can also be handled as ready-mix concrete in mixer trucks."
@@ -205,8 +214,17 @@ base = "Used in steel production. Alloys of iron and other elements including ma
 [CARGO_INFO_FERROCHROME]
 base = "Used in alloy and stainless steel production, an alloy of chromium and iron.  Grey lumps, similar in size and shape to coal lumps."
 
+[CARGO_INFO_FLOUR]
+base = "Powdered cereal products such as flour and starch, transported bagged or in covered bulk."
+
 [CARGO_INFO_FORGINGS_AND_CASTINGS]
 base = "Metal parts for assembly into larger items."
+
+[CARGO_INFO_FOOD_ADDITIVES]
+base = "Ingredients used in food processing, such as preservatives, flavourings, colourings and processing aids."
+
+[CARGO_INFO_FROZEN_FOOD]
+base = "Foods kept frozen during transport and storage."
 
 [CARGO_INFO_FRUITS]
 base = "Fresh and dried fruit, such as bananas, citrus, grapes, berries, pineapple, raisins and similar."
@@ -217,8 +235,17 @@ base = "Wheat, barley etc."
 [CARGO_INFO_HARDWARE]
 base = "For household and construction use. Tools, utensils, fixtures, fittings, in metal and other materials."
 
+[CARGO_INFO_INDUSTRIAL_CARBONS]
+base = "Speciality carbon materials such as calcined petroleum coke, pitch, high-value tars and carbon black, used in metallurgical and chemical processes."
+
+[CARGO_INFO_INDUSTRIAL_GASES]
+base = "Industrial gases used in chemical processing, metalworking and welding, transported in cylinders or pressure tankers."
+
 [CARGO_INFO_LIFTING_EQUIPMENT]
 base = "Drums, winches, shackles, hooks, pulleys, hydraulic rams and other parts for cranes, hoists, elevators etc."
+
+[CARGO_INFO_LIGHT_HYDROCARBONS]
+base = "Light petroleum fractions used as chemical feedstocks, transported as bulk liquids."
 
 [CARGO_INFO_LIVESTOCK]
 base = "Mostly cows, pigs and sheep for meat production.  Other animals may also be eaten."
@@ -226,20 +253,11 @@ base = "Mostly cows, pigs and sheep for meat production.  Other animals may also
 [CARGO_INFO_LYE]
 base = "Industrial chemical. Also known as Lye or Caustic Soda. Usually transported as liquid."
 
-[SEALS_HOSES_AND_BELTS]
-base = "Flexible seals, gaskets, hoses, belts, mats, bushings, etc, made from rubber or similar materials."
-
-[CARGO_INFO_TIMBER]
-base = "Processed wood products from a sawmill."
-
 [CARGO_INFO_KAOLIN]
 base = "Industrial mineral, also known as Kaolin, used primarily in paper and plastics production."
 
 [CARGO_INFO_MANGANESE]
 base = "Manganese ore, used primarily in steel production."
-
-[CARGO_INFO_PACKAGING]
-base = "Boxes, bottles, jars, cans, etc."
 
 [CARGO_INFO_MARINE_SUPPLIES]
 base = "Machinery, parts, fuel, construction materials and other supplies for harbours, docks and similar industries."
@@ -247,14 +265,32 @@ base = "Machinery, parts, fuel, construction materials and other supplies for ha
 [CARGO_INFO_METAL]
 base = "Generic metal, such as steel, aluminium or other common metals."
 
+[CARGO_INFO_METHANOL]
+base = "Industrial alcohol used as a chemical feedstock and fuel, transported as bulk liquid."
+
+[CARGO_INFO_MOLASSES]
+base = "Thick syrupy by-product of sugar processing, used in fermentation and other industrial processes."
+
 [CARGO_INFO_NITROGEN]
 base = "Industrial gas. Transported cryogenically as liquified compressed gas."
+
+[CARGO_INFO_OIL]
+base = "Crude, unrefined petroleum transported as bulk liquid."
 
 [CARGO_INFO_OXYGEN]
 base = "Industrial gas. Transported cryogenically as liquified compressed gas."
 
+[CARGO_INFO_PACKAGING]
+base = "Boxes, bottles, jars, cans, etc."
+
 [CARGO_INFO_PEAT]
 base = "Biomass from peat bogs, extracted for fuel and horticulture."
+
+[CARGO_INFO_PETROLEUM_FUELS]
+base = "Refined petroleum products such as petrol, diesel, kerosene, LPG, fuel oil and bunker fuel, transported as bulk liquids or liquefied gas."
+
+[CARGO_INFO_PHOSPHORIC_ACID]
+base = "Industrial acid used mainly in fertiliser and chemical production, transported as bulk liquid."
 
 [CARGO_INFO_PIG_IRON]
 base = "Basic iron from a blast furnace, as molten liquid or solid ingots."
@@ -274,6 +310,9 @@ base = "Raw plastic for futher processing. Usually transported as resin beads."
 [CARGO_INFO_PIPEWORK]
 base = "Storage tanks, pressure vessels, silos, gas cylinders, and pipe assemblies, for use in town buildings, industries and farms."
 
+[CARGO_INFO_PROCESS_CHEMICALS]
+base = "Industrial chemicals used in manufacturing and processing, transported as liquids, powders, gases or packaged goods."
+
 [CARGO_INFO_PYRITE_ORE]
 base = "Sulfide minerals, smelted to produce a variety of industrial products."
 
@@ -291,6 +330,9 @@ base = "Widely used industrial chemical. Usually transported as bulk cargo that 
 
 [CARGO_INFO_SAND]
 base = "Coarse sand for construction, or fine silica sand for glass-making and metal casting. Transported as bulk or powder."
+
+[CARGO_INFO_SEALS_BELTS_AND_HOSES]
+base = "Flexible seals, gaskets, hoses, belts, mats, bushings, etc, made from rubber or similar materials."
 
 [CARGO_INFO_SLAG]
 base = "Waste product from iron and steel production."
@@ -334,8 +376,14 @@ base = "Structural-grade steel as rolled sections (I beams, H beams etc), or as 
 [CARGO_INFO_SULPHUR]
 base = "Widely used industrial chemical. Bright yellow, in powder or liquid form."
 
+[CARGO_INFO_TIMBER]
+base = "Processed wood products from a sawmill or similar industries."
+
 [CARGO_INFO_TIN]
 base = "Ingots."
+
+[CARGO_INFO_TINPLATE]
+base = "Thin steel sheet coated with tin for corrosion resistance, used mainly for cans, containers and other packaging."
 
 [CARGO_INFO_TYRE_CORD]
 base = "Fine wire used to reinforce tyres. Transported as coil."
@@ -357,6 +405,9 @@ base = "Supplies for cutting and welding metal, such as welding rods, tools, and
 
 [CARGO_INFO_WOOD]
 base = "Logs from a forest."
+
+[CARGO_INFO_WOOD_PULP]
+base = "Processed wood fibre used mainly for paper production, transported as bales or bulk pulp."
 
 [CARGO_INFO_WOOL]
 base = "Bales."

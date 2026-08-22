@@ -4,7 +4,7 @@ economy = Economy(
     id="BASIC_ARCTIC",
     numeric_id=1,
     cargos=[
-        "ammonia",
+        "ammonia_and_nitric_products",
         "engineering_supplies",
         "explosives",
         "farm_supplies",

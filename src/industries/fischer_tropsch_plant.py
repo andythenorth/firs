@@ -6,7 +6,7 @@ industry = IndustrySecondary(
         ("COAL", 6),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("NH3_", 2),
+        ("ANPR", 2),
         ("PETR", 6),
     ],
     prob_in_game="3",

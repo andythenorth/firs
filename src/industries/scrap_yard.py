@@ -21,6 +21,17 @@ industry = IndustryTownProducerPopulationDependent(
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToTowns",
+            "min_population": 400,
+            "max_population": 0,
+            "industry_town_ratio": 0.5,
+        }
+    },
+)
 
 industry.enable_in_economy(
     "STEELTOWN",

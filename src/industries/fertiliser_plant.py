@@ -3,9 +3,10 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="fertiliser_plant",
     accept_cargos_with_input_ratios=[
-        ("NH3_", 3),
-        ("PHAC", 3),
-        ("POTA", 2),
+        # CABBAGE - RATIOS?  OPTIONAL?
+        ("ANPR", 3),
+        ("PHAC", 2),
+        ("POTA", 3),
     ],
     prod_cargo_types_with_output_ratios=[
         ("FMSP", 8),
@@ -14,13 +15,19 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     prod_multiplier="[0, 0]",
     map_colour="191",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     name="string(STR_IND_FERTILISER_PLANT)",
-    #nearby_station_name="string(STR_STATION_BRINE_WORKS)",
+    nearby_station_name="string(STR_STATION_PLANT)",
     fund_cost_multiplier="170",
     sprites_complete=False,
     animated_tiles_fixed=False,
 )
+
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
+
+# CABBAGE - needs non-animated tile for performance?
 
 industry.add_tile(
     id="fertiliser_plant_tile_1",
@@ -128,6 +135,7 @@ sprite_smoke_9 = industry.add_smoke_sprite(
 )
 industry.add_spritelayout(
     id="fertiliser_plant_spritelayout_horizontal_tanks",
+    tile="fertiliser_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_horizontal_tanks],
@@ -135,6 +143,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="fertiliser_plant_spritelayout_frac_columns",
+    tile="fertiliser_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_frac_columns],
@@ -142,6 +151,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="fertiliser_plant_spritelayout_drop_tower_and_thin_chimney",
+    tile="fertiliser_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_drop_tower_and_thin_chimney],
@@ -150,6 +160,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="fertiliser_plant_spritelayout_large_building",
+    tile="fertiliser_plant_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_large_building],
@@ -158,6 +169,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="fertiliser_plant_spritelayout_fat_chimney",
+    tile="fertiliser_plant_tile_2",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_fat_chimney],
@@ -166,6 +178,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="fertiliser_plant_spritelayout_spherical_tanks",
+    tile="fertiliser_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_spherical_tanks],
@@ -173,6 +186,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="fertiliser_plant_spritelayout_vertical_tanks",
+    tile="fertiliser_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_vertical_tanks],
@@ -180,6 +194,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="fertiliser_plant_spritelayout_barrels",
+    tile="fertiliser_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_barrels],
@@ -190,64 +205,55 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="fertiliser_plant_industry_layout_1",
     layout=[
-        (0, 0, "fertiliser_plant_tile_2", "fertiliser_plant_spritelayout_fat_chimney"),
-        (0, 1, "fertiliser_plant_tile_2", "fertiliser_plant_spritelayout_fat_chimney"),
+        (0, 0, "fertiliser_plant_spritelayout_fat_chimney"),
+        (0, 1, "fertiliser_plant_spritelayout_fat_chimney"),
         (
             0,
             2,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_spherical_tanks",
         ),
         (
             1,
             0,
-            "fertiliser_plant_tile_2",
             "fertiliser_plant_spritelayout_large_building",
         ),
         (
             1,
             1,
-            "fertiliser_plant_tile_2",
             "fertiliser_plant_spritelayout_large_building",
         ),
-        (1, 2, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_barrels"),
+        (1, 2, "fertiliser_plant_spritelayout_barrels"),
         (
             2,
             0,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
         (
             2,
             1,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
-        (2, 2, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_barrels"),
-        (3, 0, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_frac_columns"),
-        (3, 1, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_frac_columns"),
+        (2, 2, "fertiliser_plant_spritelayout_barrels"),
+        (3, 0, "fertiliser_plant_spritelayout_frac_columns"),
+        (3, 1, "fertiliser_plant_spritelayout_frac_columns"),
         (
             3,
             2,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_vertical_tanks",
         ),
         (
             4,
             0,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_drop_tower_and_thin_chimney",
         ),
         (
             4,
             1,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
         (
             4,
             2,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_vertical_tanks",
         ),
     ],
@@ -258,65 +264,55 @@ industry.add_industry_layout(
         (
             0,
             1,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_drop_tower_and_thin_chimney",
         ),
         (
             0,
             2,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
-        (0, 3, "fertiliser_plant_tile_2", "fertiliser_plant_spritelayout_fat_chimney"),
-        (0, 4, "fertiliser_plant_tile_2", "fertiliser_plant_spritelayout_fat_chimney"),
+        (0, 3, "fertiliser_plant_spritelayout_fat_chimney"),
+        (0, 4, "fertiliser_plant_spritelayout_fat_chimney"),
         (
             1,
             0,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
-        (1, 1, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_frac_columns"),
+        (1, 1, "fertiliser_plant_spritelayout_frac_columns"),
         (
             1,
             2,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
         (
             1,
             3,
-            "fertiliser_plant_tile_2",
             "fertiliser_plant_spritelayout_large_building",
         ),
         (
             1,
             4,
-            "fertiliser_plant_tile_2",
             "fertiliser_plant_spritelayout_large_building",
         ),
         (
             2,
             0,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_vertical_tanks",
         ),
         (
             2,
             1,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_vertical_tanks",
         ),
-        (2, 2, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_barrels"),
+        (2, 2, "fertiliser_plant_spritelayout_barrels"),
         (
             2,
             3,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_spherical_tanks",
         ),
         (
             2,
             4,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_spherical_tanks",
         ),
     ],
@@ -324,64 +320,55 @@ industry.add_industry_layout(
 industry.add_industry_layout(
     id="fertiliser_plant_industry_layout_3",
     layout=[
-        (0, 0, "fertiliser_plant_tile_2", "fertiliser_plant_spritelayout_fat_chimney"),
-        (0, 1, "fertiliser_plant_tile_2", "fertiliser_plant_spritelayout_fat_chimney"),
+        (0, 0, "fertiliser_plant_spritelayout_fat_chimney"),
+        (0, 1, "fertiliser_plant_spritelayout_fat_chimney"),
         (
             0,
             2,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
-        (0, 3, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_frac_columns"),
+        (0, 3, "fertiliser_plant_spritelayout_frac_columns"),
         (
             0,
             4,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
         (
             1,
             0,
-            "fertiliser_plant_tile_2",
             "fertiliser_plant_spritelayout_large_building",
         ),
         (
             1,
             1,
-            "fertiliser_plant_tile_2",
             "fertiliser_plant_spritelayout_large_building",
         ),
         (
             1,
             2,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
-        (1, 3, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_frac_columns"),
+        (1, 3, "fertiliser_plant_spritelayout_frac_columns"),
         (
             1,
             4,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_drop_tower_and_thin_chimney",
         ),
         (
             2,
             0,
-            "fertiliser_plant_tile_2",
             "fertiliser_plant_spritelayout_spherical_tanks",
         ),
-        (2, 1, "fertiliser_plant_tile_2", "fertiliser_plant_spritelayout_barrels"),
-        (2, 2, "fertiliser_plant_tile_2", "fertiliser_plant_spritelayout_barrels"),
+        (2, 1, "fertiliser_plant_spritelayout_barrels"),
+        (2, 2, "fertiliser_plant_spritelayout_barrels"),
         (
             2,
             3,
-            "fertiliser_plant_tile_2",
             "fertiliser_plant_spritelayout_vertical_tanks",
         ),
         (
             2,
             4,
-            "fertiliser_plant_tile_2",
             "fertiliser_plant_spritelayout_vertical_tanks",
         ),
     ],
@@ -392,60 +379,51 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_vertical_tanks",
         ),
         (
             0,
             1,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_vertical_tanks",
         ),
-        (1, 0, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_frac_columns"),
-        (1, 1, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_frac_columns"),
+        (1, 0, "fertiliser_plant_spritelayout_frac_columns"),
+        (1, 1, "fertiliser_plant_spritelayout_frac_columns"),
         (
             2,
             0,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
         (
             2,
             1,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
-        (3, 0, "fertiliser_plant_tile_2", "fertiliser_plant_spritelayout_fat_chimney"),
-        (3, 1, "fertiliser_plant_tile_2", "fertiliser_plant_spritelayout_fat_chimney"),
+        (3, 0, "fertiliser_plant_spritelayout_fat_chimney"),
+        (3, 1, "fertiliser_plant_spritelayout_fat_chimney"),
         (
             4,
             0,
-            "fertiliser_plant_tile_2",
             "fertiliser_plant_spritelayout_large_building",
         ),
         (
             4,
             1,
-            "fertiliser_plant_tile_2",
             "fertiliser_plant_spritelayout_large_building",
         ),
         (
             5,
             0,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_drop_tower_and_thin_chimney",
         ),
-        (5, 1, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_barrels"),
+        (5, 1, "fertiliser_plant_spritelayout_barrels"),
         (
             6,
             0,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_spherical_tanks",
         ),
         (
             6,
             1,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_spherical_tanks",
         ),
     ],
@@ -456,72 +434,61 @@ industry.add_industry_layout(
         (
             0,
             0,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
         (
             0,
             1,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
-        (0, 2, "fertiliser_plant_tile_2", "fertiliser_plant_spritelayout_fat_chimney"),
-        (0, 3, "fertiliser_plant_tile_2", "fertiliser_plant_spritelayout_fat_chimney"),
+        (0, 2, "fertiliser_plant_spritelayout_fat_chimney"),
+        (0, 3, "fertiliser_plant_spritelayout_fat_chimney"),
         (
             1,
             0,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_drop_tower_and_thin_chimney",
         ),
-        (1, 1, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_frac_columns"),
+        (1, 1, "fertiliser_plant_spritelayout_frac_columns"),
         (
             1,
             2,
-            "fertiliser_plant_tile_2",
             "fertiliser_plant_spritelayout_large_building",
         ),
         (
             1,
             3,
-            "fertiliser_plant_tile_2",
             "fertiliser_plant_spritelayout_large_building",
         ),
         (
             2,
             0,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
         (
             2,
             1,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
-        (2, 2, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_barrels"),
+        (2, 2, "fertiliser_plant_spritelayout_barrels"),
         (
             2,
             3,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_spherical_tanks",
         ),
         (
             3,
             0,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_vertical_tanks",
         ),
         (
             3,
             1,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_vertical_tanks",
         ),
-        (3, 2, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_barrels"),
+        (3, 2, "fertiliser_plant_spritelayout_barrels"),
         (
             3,
             3,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_spherical_tanks",
         ),
     ],
@@ -529,75 +496,64 @@ industry.add_industry_layout(
 industry.add_industry_layout(
     id="fertiliser_plant_industry_layout_6",
     layout=[
-        (0, 0, "fertiliser_plant_tile_2", "fertiliser_plant_spritelayout_fat_chimney"),
-        (0, 1, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_frac_columns"),
+        (0, 0, "fertiliser_plant_spritelayout_fat_chimney"),
+        (0, 1, "fertiliser_plant_spritelayout_frac_columns"),
         (
             0,
             2,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_vertical_tanks",
         ),
         (
             0,
             3,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_vertical_tanks",
         ),
         (
             1,
             0,
-            "fertiliser_plant_tile_2",
             "fertiliser_plant_spritelayout_large_building",
         ),
         (
             1,
             1,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
         (
             1,
             2,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_drop_tower_and_thin_chimney",
         ),
         (
             1,
             3,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
-        (2, 0, "fertiliser_plant_tile_2", "fertiliser_plant_spritelayout_fat_chimney"),
+        (2, 0, "fertiliser_plant_spritelayout_fat_chimney"),
         (
             2,
             1,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
-        (2, 2, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_frac_columns"),
+        (2, 2, "fertiliser_plant_spritelayout_frac_columns"),
         (
             2,
             3,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_horizontal_tanks",
         ),
         (
             3,
             0,
-            "fertiliser_plant_tile_2",
             "fertiliser_plant_spritelayout_large_building",
         ),
-        (3, 1, "fertiliser_plant_tile_1", "fertiliser_plant_spritelayout_barrels"),
+        (3, 1, "fertiliser_plant_spritelayout_barrels"),
         (
             3,
             2,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_spherical_tanks",
         ),
         (
             3,
             3,
-            "fertiliser_plant_tile_1",
             "fertiliser_plant_spritelayout_spherical_tanks",
         ),
     ],

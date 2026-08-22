@@ -46,7 +46,7 @@ industry.enable_in_economy(
     ],
     prod_cargo_types_with_multipliers=[
         ("KAOL", 16),
-        ("NH3_", 17),
+        ("ANPR", 17),
         ("ENSP", 9),
         ("FMSP", 9),
     ],
@@ -81,6 +81,30 @@ industry.enable_in_economy(
         ("GOOD", 14),
         ("ENSP", 17),
     ],
+)
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargo_types=[
+        "FOOD",
+        "FRZN",
+        "TINP",
+        "BEER",
+        "KAOL",
+        "FMSP",
+    ],
+    prod_cargo_types_with_multipliers=[
+        ("ENSP", 12),
+        ("PCMP", 16),
+        ("ENUM", 12),
+        ("FRUT", 14),
+    ],
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["fermentation_plant", "bottle_and_can_factory"],
+            "companion_industries_ratio": 1,
+        }
+    },
 )
 industry.enable_in_economy(
     "STEELTOWN",

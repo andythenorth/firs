@@ -28,24 +28,37 @@ industry = IndustryTertiary(
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
 )
-
 industry.enable_in_economy(
     "BASIC_ARCTIC",
     accept_cargo_types=[
         "FOOD",
     ],
 )
-
 industry.enable_in_economy(
     "BASIC_TROPIC",
 )
-
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     prob_map_gen="14",
 )
 # industry.economy_variations['IN_A_HOT_COUNTRY'].accept_cargo_types = ['FOOD', 'GOOD', 'BEER', 'TEXT']
-
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargo_types=[
+        "FOOD",
+        "GOOD",
+        "BEER",
+        "HWAR",
+    ],
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToTowns",
+            "min_population": 50,
+            "max_population": 0,
+            "industry_town_ratio": 1,
+        }
+    },
+)
 industry.enable_in_economy(
     "STEELTOWN",
     accept_cargo_types=[

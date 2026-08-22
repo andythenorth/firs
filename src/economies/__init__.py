@@ -6,6 +6,7 @@ economy_module_names = [
     "basic_temperate",
     "basic_arctic",
     "basic_tropic",
-    "steeltown",
+    "mild_mild_west",
     "in_a_hot_country",
+    "steeltown",
 ]

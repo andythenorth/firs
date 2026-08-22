@@ -27,6 +27,7 @@ class VulcanIndustryCargoStatsManager {
         // this can filter on caller_type if needed, see VulcanTownControl for examples
         local industry_list = GSIndustryList();
         VulcanIndustryCargoStatsManager.CheckForUntrackedIndustries(industry_list);
+        Log.Info("CABBAGE");
         VulcanIndustryCargoStatsManager.UpdatedIndustryStats(industry_list);
         VulcanIndustryCargoStatsManager.CheckForDeletedIndustries(industry_list);
         Log.Info("Industry cargo stats periodic processing done. Elapsed time: " + (GSDate.GetSystemTime() - time_start), Log.CLASS_VULCAN_INDUSTRY_CARGO_STATS);

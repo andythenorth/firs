@@ -49,6 +49,31 @@ industry.enable_in_economy(
 )
 
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargo_types=[
+        "ZINC",
+        "BOOM",
+        "CMNT",
+        "PLNT",
+        "FRZN",
+        "FOOD",
+    ],
+    prod_cargo_types_with_multipliers=[
+        ("PHOS", 20),
+        ("ALO_", 20),
+        ("GLAS", 16),
+        ("MOLA", 14),
+    ],
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["aluminium_plant", "fertiliser_plant", "zinc_smelter"],
+            "companion_industries_ratio": 1,
+        }
+    },
+)
+
+industry.enable_in_economy(
     "STEELTOWN",
     # quite a lot of accepted types, this is intentional to provide flexibility in obtaining boost
     # NO steel strip, no structural steel, not fitting

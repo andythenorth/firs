@@ -227,14 +227,14 @@ class IndustryLocationChecks(object):
             "location_check_industry_disallow_too_far_from_coast", None
         )
         # this is custom to grain mill, can be made generic if needed
-        self.flour_mill_layouts_by_date = location_args.get(
-            "flour_mill_layouts_by_date", None
+        self.grain_mill_layouts_by_date = location_args.get(
+            "grain_mill_layouts_by_date", None
         )
 
     def get_pre_player_founding_checks(self, incompatible_industries):
         result = []
 
-        if self.flour_mill_layouts_by_date:
+        if self.grain_mill_layouts_by_date:
             result.append(IndustryLocationCheckGrainMillLayoutsByDate())
 
         return result
@@ -436,7 +436,7 @@ class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
     """Custom check for Grain mill, layouts are restricted by date; this is a one-off, but could be made generic if needed"""
 
     def __init__(self):
-        self.procedure_name = "flour_mill_layouts_by_date"
+        self.procedure_name = "grain_mill_layouts_by_date"
         self.params = []
 
 
@@ -1102,9 +1102,15 @@ class Industry(object):
                 # rare case of 3 out of n cargos being required
                 # to prevent surprises we guard on known industry ids
                 if self.id not in [
-                    "precision_parts_plant",
                     "appliance_factory",
+                    "bakery", # CABBAGE
+                    "engineering_works",
+                    "frozen_food_plant",
+                    "bottle_and_can_factory",
                     "power_systems_factory",
+                    "precision_parts_plant",
+                    "process_chemicals_plant", # CABBAGE - process chemicals plant
+                    "industrial_chemicals_plant",
                 ]:
                     raise Exception(
                         "get_extra_text_string: "

@@ -38,6 +38,16 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "BASIC_ARCTIC",
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["fishing_harbour"],
+            "companion_industries_ratio": 4,
+        }
+    },
+)
 
 # ['IN_A_HOT_COUNTRY'].enabled = True
 

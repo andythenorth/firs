@@ -2,7 +2,7 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="dairy",
-    accept_cargos_with_input_ratios=[],
+    accept_cargos_with_input_ratios=[("MILK", 6)],
     prod_cargo_types_with_output_ratios=[
         ("FOOD", 8),
     ],
@@ -24,8 +24,16 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
+)
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
     accept_cargos_with_input_ratios=[
         ("MILK", 6),
+        ("ENUM", 1),
+        ("PACK", 1),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("FOOD", 8),
     ],
 )
 

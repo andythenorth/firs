@@ -22,6 +22,20 @@ industry = IndustryPrimaryExtractive(
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
 )
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    prod_cargo_types_with_multipliers=[
+        ("KAOL", 16),
+        ("GRVL", 10),
+    ],
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["paper_mill", "polymer_products_plant"],
+            "companion_industries_ratio": 1,
+        }
+    },
+)
 
 # 2 tiles for this industry: pit outer tile cannot be on slopes; pit inner tiles and processor tiles can be
 # cases for both tiles ensure that tiles can only be built at same height as north tile

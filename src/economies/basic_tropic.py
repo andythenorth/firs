@@ -30,7 +30,7 @@ economy = Economy(
         "group_edges_subgraphs": [],
         "ranking_subgraphs": [
             ("same", ["nitrate_mine", "coffee_estate", "ranch", "arable_farm"]),
-            ("same", ["food_processor", "stockyard", "flour_mill"]),
+            ("same", ["food_processor", "stockyard", "grain_mill"]),
             ("same", ["port", "food", "fishing_harbour", "fish"]),
         ],
         "clusters": [

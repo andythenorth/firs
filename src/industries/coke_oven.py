@@ -24,6 +24,13 @@ industry = IndustrySecondary(
 )
 
 industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    prod_cargo_types_with_output_ratios=[
+        ("COKE", 7),
+        ("INCA", 1),
+    ],
+)
+industry.enable_in_economy(
     "STEELTOWN",
     prod_cargo_types_with_output_ratios=[
         ("COKE", 6),

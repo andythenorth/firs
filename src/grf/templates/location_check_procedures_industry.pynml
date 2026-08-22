@@ -67,23 +67,23 @@ switch (FEAT_INDUSTRIES, PARENT, location_check_industry_require_town_min_popula
     This could be made more generic if needed -->
 
 <!--! After 1900, windmills will only be built during map generation, not during gameplay (fake history). -->
-switch (FEAT_INDUSTRIES, SELF, location_check_industry_flour_mill_layouts_by_date_brick_layouts_only_check_layout, layout_num) {
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_grain_mill_layouts_by_date_brick_layouts_only_check_layout, layout_num) {
     3..5: return 0;
     return 1;
 }
-switch (FEAT_INDUSTRIES, SELF, location_check_industry_flour_mill_layouts_by_date_brick_layouts_only, extra_callback_info2) {
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_grain_mill_layouts_by_date_brick_layouts_only, extra_callback_info2) {
     IND_CREATION_GENERATION: return 1;
-    location_check_industry_flour_mill_layouts_by_date_brick_layouts_only_check_layout;
+    location_check_industry_grain_mill_layouts_by_date_brick_layouts_only_check_layout;
 }
 <!--! Before 1870, only windmills will be built. -->
-switch (FEAT_INDUSTRIES, SELF, location_check_industry_flour_mill_layouts_by_date_windmill_layout_only, layout_num) {
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_grain_mill_layouts_by_date_windmill_layout_only, layout_num) {
     3..5: return 1;
     return 0;
 }
 <!--! Both types of layouts can appear between 1870 and 1900.
       Update the docs if changing graphics dates -->
-switch (FEAT_INDUSTRIES, SELF, location_check_industry_flour_mill_layouts_by_date, current_year) {
-    0..1869: location_check_industry_flour_mill_layouts_by_date_windmill_layout_only;
+switch (FEAT_INDUSTRIES, SELF, location_check_industry_grain_mill_layouts_by_date, current_year) {
+    0..1869: location_check_industry_grain_mill_layouts_by_date_windmill_layout_only;
     1870..1900: return 1;
-    location_check_industry_flour_mill_layouts_by_date_brick_layouts_only;
+    location_check_industry_grain_mill_layouts_by_date_brick_layouts_only;
 }

@@ -25,6 +25,18 @@ industry = IndustrySecondary(
     animated_tiles_fixed=True,
 )
 
+
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    accept_cargos_with_input_ratios=[
+        ("COAL", 4),
+        ("LIME", 4),
+    ],
+    prod_cargo_types_with_output_ratios=[
+        ("CMNT", 7),
+        ("ENSP", 1),
+    ],
+)
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     accept_cargos_with_input_ratios=[
