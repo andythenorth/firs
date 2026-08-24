@@ -101,7 +101,7 @@ class Cargo(object):
             if cargo_class in [
                 "CC_GAS",
                 "CC_COVERED_BULK",
-                "CC_POWDERIZED",
+                "CC_POWDER_BULK",
                 "CC_FLATBED",
             ]:
                 if (
