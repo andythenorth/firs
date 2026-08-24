@@ -40,7 +40,6 @@ industry_module_names = [
     "fruit_plantation",
     "general_store",
     "glass_works",
-    "hardware_store",
     "herding_coop",
     "hotel",
     "integrated_steel_mill",

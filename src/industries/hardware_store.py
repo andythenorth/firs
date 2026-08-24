@@ -21,6 +21,7 @@ industry = IndustryTertiary(
     animated_tiles_fixed=True,
 )
 
+"""
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
     accept_cargo_types=["GOOD", "BDMT"],
@@ -37,7 +38,7 @@ industry.enable_in_economy(
         }
     },
 )
-
+"""
 
 industry.add_tile(
     id="hardware_store_tile_1",

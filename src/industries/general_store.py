@@ -51,6 +51,7 @@ industry.enable_in_economy(
     accept_cargo_types=[
         "FOOD",
         "GOOD",
+        "HWAR",
     ],
     vulcan_config={
         "map_curator": {
