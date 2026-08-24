@@ -111,7 +111,7 @@ class Cargo(object):
                 ):
                     raise BaseException(
                         self.id
-                        + " should have a fallback set (CC_PIECE_GOODS, CC_OPEN_BULK or CC_LIQUID"
+                        + " should have a fallback set (CC_PIECE_GOODS, CC_OPEN_BULK or CC_LIQUID)"
                     )
             if cargo_class in ["CC_FLATBED", "CC_REFRIGERATED"]:
                 if ("CC_PIECE_GOODS" not in self.cargo_classes) and (
@@ -119,62 +119,7 @@ class Cargo(object):
                 ):
                     raise BaseException(
                         self.id
-                        + " should have a fallback set (CC_PIECE_GOODS or CC_EXPRESS"
-                    )
-
-    def validate_cargo_classes(self):
-        # crude, not intended to solve everything
-        disallowed_pairs = [("CC_POTABLE", "CC_NON_POTABLE")]
-        for disallowed_pair in disallowed_pairs:
-            if (disallowed_pair[0] in self.cargo_classes) and (
-                disallowed_pair[1] in self.cargo_classes
-            ):
-                raise BaseException(
-                    self.id
-                    + " sets both "
-                    + disallowed_pair[0]
-                    + " and "
-                    + disallowed_pair[1]
-                    + " which is not supported"
-                )
-        for cargo_class in self.cargo_classes:
-            # CC_GAS doesn't bother validating for food-grade bits as of 2024, food-grade gases tends to not be relevant
-            if cargo_class in [
-                "CC_EXPRESS",
-                "CC_PIECE_GOODS",
-                "CC_OPEN_BULK",
-                "CC_COVERED_BULK",
-                "CC_LIQUID",
-                "CC_POWDERIZED",
-            ]:
-                if ("CC_POTABLE" not in self.cargo_classes) and (
-                    "CC_NON_POTABLE" not in self.cargo_classes
-                ):
-                    raise BaseException(
-                        self.id + " should set one of CC_POTABLE or CC_NON_POTABLE"
-                    )
-            if cargo_class in [
-                "CC_GAS",
-                "CC_COVERED_BULK",
-                "CC_POWDERIZED",
-                "CC_FLATBED",
-            ]:
-                if (
-                    ("CC_PIECE_GOODS" not in self.cargo_classes)
-                    and ("CC_OPEN_BULK" not in self.cargo_classes)
-                    and ("CC_LIQUID" not in self.cargo_classes)
-                ):
-                    raise BaseException(
-                        self.id
-                        + " should have a fallback set (CC_PIECE_GOODS, CC_OPEN_BULK or CC_LIQUID"
-                    )
-            if cargo_class in ["CC_FLATBED", "CC_REFRIGERATED"]:
-                if ("CC_PIECE_GOODS" not in self.cargo_classes) and (
-                    "CC_EXPRESS" not in self.cargo_classes
-                ):
-                    raise BaseException(
-                        self.id
-                        + " should have a fallback set (CC_PIECE_GOODS or CC_EXPRESS"
+                        + " should have a fallback set (CC_PIECE_GOODS or CC_EXPRESS)"
                     )
 
     def get_numeric_id(self, economy):
