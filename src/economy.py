@@ -3,6 +3,7 @@ import utils
 # firs is imported, but main is not called in this module, this relies on firs already being present in the context
 import firs
 
+logger = utils.get_logger(__file__)
 
 class Economy(object):
     """class to hold economies, this comment is pointless eh?"""
@@ -111,39 +112,40 @@ class Economy(object):
 
         return result
 
-    def forcibly_space_cargo_price_factors(self, registered_cargos):
-        # check for overlapping price factors (and adjust if necessary) to ensure they're all unique per economy
-        # prevents cargos overlapping on the payment curves chart in-game
-        cargos_by_price_factor = []
-        for cargo_id in self.cargo_ids:
-            for cargo in registered_cargos:
-                if cargo_id == cargo.id:
-                    cargos_by_price_factor.append(cargo)
-        cargos_by_price_factor = sorted(
-            cargos_by_price_factor, key=lambda cargo: cargo.price_factor
-        )
+    def get_cargo_price_factors(self, registered_cargos):
+        cargos_by_price_factor = {}
 
-        result = {}
-        for counter, cargo in enumerate(cargos_by_price_factor):
-            if counter > 0:
-                previous_cargo = cargos_by_price_factor[counter - 1]
-                if result[previous_cargo.id] >= cargo.price_factor:
-                    # if this is seen, usually just one cargo needs a different price factor set
-                    # however be aware that it could produce ping-pong where changes for one economy trigger warnings in another
-                    # also the message might cascade as it checks the *adjusted* prices, not the base
-                    utils.echo_message(
-                        "Cargo "
-                        + cargo.id
-                        + " has overlapping price_factor with "
-                        + previous_cargo.id
-                        + " in economy "
-                        + self.id
-                        + "; automatically adjusting (this may or not need changing).",
-                        "info",
-                    )
-                    result[cargo.id] = result[previous_cargo.id] + 1
-                else:
-                    result[cargo.id] = cargo.price_factor
-            else:
-                result[cargo.id] = cargo.price_factor
-        return result
+        for cargo in registered_cargos:
+            if cargo.id in self.cargo_ids:
+                cargos_by_price_factor.setdefault(cargo.price_factor, []).append(cargo)
+
+        for price_factor, cargos in sorted(cargos_by_price_factor.items()):
+            # no more than 2 cargos on the same price factor in this economy
+            # this is purely to space out the payment charts a bit in game
+            # if there are more than 2, manual adjustment is needed
+            # ...although this can lead to unfortunate tail-chasing across economies
+            if len(cargos) > 2:
+                message = (
+                    f"Economy {self.id}: price_factor {price_factor} has "
+                    f"{len(cargos)} cargos: "
+                    + ", ".join(cargo.id for cargo in cargos)
+                )
+
+                utils.echo_message(message, "warning")
+                logger.warning(message)
+            # log but don't warn if there are 2 cargos, this just aids manual adjustment
+            if len(cargos) == 2:
+                message = (
+                    f"Economy {self.id}: price_factor {price_factor} has "
+                    f"{len(cargos)} cargos: "
+                    + ", ".join(cargo.id for cargo in cargos)
+                )
+
+                logger.info(message)
+
+
+        return {
+            cargo.id: cargo.price_factor
+            for cargo in registered_cargos
+            if cargo.id in self.cargo_ids
+        }

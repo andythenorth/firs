@@ -92,3 +92,98 @@ class LiteralGrfID(object):
     def __init__(self, grfid):
         # grfid should be passed using r"literal", to avoid python interpreting \ chars as escapes
         self.grfid = grfid
+
+
+# move logger to Polar Fox?
+import logging
+import os
+import sys
+import re
+
+# ANSI escape codes
+COLOR_CODES = {
+    "reset": "\033[0m",
+    "cyan": "\033[96m",
+    "red": "\033[91m",
+    "green": "\033[92m",
+    "yellow": "\033[93m",
+    "aquamarine": "\033[38;5;122m",
+    # Add more as needed
+}
+
+ANSI_ESCAPE_RE = re.compile(r"\x1b\[[0-9;]*m")
+
+
+class ColoredLogger(logging.Logger):
+    def __init__(self, name):
+        super().__init__(name)
+        self._current_colour = None
+
+    def set_colour(self, colour_name):
+        if colour_name in COLOR_CODES:
+            self._current_colour = COLOR_CODES[colour_name]
+        else:
+            raise ValueError(f"Unknown colour: {colour_name}")
+
+    def reset_colour(self):
+        self._current_colour = None
+
+    def get_colour(self):
+        return self._current_colour
+
+
+class ColorizingFormatter(logging.Formatter):
+    """Applies colour only in console formatter, not in log files."""
+
+    def __init__(self, get_colour_fn, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._get_colour = get_colour_fn
+
+    def format(self, record):
+        msg = super().format(record)
+        colour = self._get_colour()
+        if colour:
+            return f"{colour}{msg}{COLOR_CODES['reset']}"
+        return msg
+
+
+class StrippingFormatter(logging.Formatter):
+    """Strips ANSI codes from log file output."""
+
+    def format(self, record):
+        msg = super().format(record)
+        return ANSI_ESCAPE_RE.sub("", msg)
+
+
+def get_logger(module_name):
+    logging.setLoggerClass(ColoredLogger)
+    logger = logging.getLogger(module_name)
+
+    if not logger.handlers:
+        logger.setLevel(logging.DEBUG)
+
+        # Ensure log dir exists
+        os.makedirs("build_logs", exist_ok=True)
+        log_filename = os.path.join(
+            "build_logs", os.path.basename(module_name) + ".log"
+        )
+
+        # File handler — strip ANSI
+        file_handler = logging.FileHandler(log_filename, mode="a", encoding="utf-8")
+        file_handler.setLevel(logging.DEBUG)
+        file_formatter = StrippingFormatter(
+            "%(asctime)s [%(levelname)s] %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
+        )
+        file_handler.setFormatter(file_formatter)
+        logger.addHandler(file_handler)
+
+        # Console handler — apply ANSI
+        console_handler = logging.StreamHandler(sys.stdout)
+        console_handler.setLevel(logging.INFO)
+        console_formatter = ColorizingFormatter(logger.get_colour, "%(message)s")
+        console_handler.setFormatter(console_formatter)
+        logger.addHandler(console_handler)
+
+    return logger
+
+
