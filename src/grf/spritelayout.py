@@ -47,9 +47,11 @@ class SpriteLayout(object):
         assert self.tile != None, f"{self.id} {self.tile}"
         # optionally spritelayouts can cause objects to be defined
         self.add_to_object_num = add_to_object_num
+        # this is to support migrations of spritelayout ground tile handling
         if self.ground_overlay is not None:
-            if hasattr(self.ground_overlay, "type"):
-                print("'empty' in spritelayout:", self.id, self.ground_overlay.type)
+            if getattr(self.ground_overlay, "type", "") != "":
+                # not all warnings might be valid, but as of Aug 2026, migration unfinished
+                print("ground_overlay with type defined in spritelayout, probably incorrect?:", self.id, "type:", self.ground_overlay.type)
 
     def resolve_tile(self, industry):
         for tile in industry.tiles:
