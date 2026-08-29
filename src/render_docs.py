@@ -1,4 +1,3 @@
-import codecs  # used for writing files - more unicode friendly than standard open() module
 import tomllib
 import shutil
 import sys
@@ -88,10 +87,11 @@ def render_docs(
         else:
             subdir = ""
         # save the results of templating
-        doc_file = codecs.open(
+        doc_file = open(
             os.path.join(docs_output_path, subdir, doc_name + "." + file_type),
             "w",
-            "utf8",
+            encoding="utf-8",
+            newline="",
         )
         doc_file.write(doc)
         doc_file.close()
@@ -167,8 +167,11 @@ def main():
         template = docs_templates["cargoflow_wrapper.pt"]
         result = template(economy=economy, doc_helper=doc_helper)
         doc_name = "cargoflow_" + doc_helper.get_economy_name_char_safe(economy)
-        doc_file = codecs.open(
-            os.path.join(docs_output_path, "html", doc_name + ".html"), "w", "utf8"
+        doc_file = open(
+            os.path.join(docs_output_path, "html", doc_name + ".html"),
+            "w",
+            encoding="utf-8",
+            newline="",
         )
         doc_file.write(result)
         doc_file.close()

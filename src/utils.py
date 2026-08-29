@@ -1,5 +1,4 @@
 import os.path
-import codecs  # used for writing files - more unicode friendly than standard open() module
 import tomllib
 
 currentdir = os.curdir

@@ -1,4 +1,3 @@
-import codecs  # used for writing files - more unicode friendly than standard open() module
 
 import sys
 import os
@@ -48,7 +47,12 @@ def render_header_item_nml(header_item):
     # ! clunky split to get rid of the extension - temporary artefact of migrating away from CPP
     header_item_name = header_item.split(".")[0]
     nml_file = os.path.join(generated_nml_path, header_item_name + ".nml")
-    nml = codecs.open(nml_file, "w", "utf8")
+    nml = open(
+        nml_file,
+        "w",
+        encoding="utf-8",
+        newline="",
+    )
     nml.write(result)
     nml.close()
     # also return the nml directly for writing to the concatenated nml, don't faff around opening the generated nml files from disk
@@ -62,8 +66,11 @@ def render_industry_nml(industry):
     else:
         result = ""
     # write the nml per vehicle to disk, it aids debugging
-    nml_file = codecs.open(
-        os.path.join(generated_nml_path, industry.id + ".nml"), "w", "utf8"
+    nml_file = open(
+        os.path.join(generated_nml_path, industry.id + ".nml"),
+        "w",
+        encoding="utf-8",
+        newline="",
     )
     nml_file.write(result)
     nml_file.close()
@@ -77,8 +84,11 @@ def main():
 
     firs.main()
 
-    grf_nml = codecs.open(
-        os.path.join(firs.generated_files_path, "firs.nml"), "w", "utf8"
+    grf_nml = open(
+        os.path.join(firs.generated_files_path, "firs.nml"),
+        "w",
+        encoding="utf-8",
+        newline="",
     )
     header_items = [
         # items that must be defined first
