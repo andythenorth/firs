@@ -219,15 +219,15 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="integrated_steel_mill_spritelayout_large_shed_front_part",
     tile="integrated_steel_mill_tile_3",
-    ground_sprite=spriteset_ground_tile_dark_animated,
-    ground_overlay=spriteset_ground_tile_dark_animated,
+    ground_sprite=spriteset_ground_tile_dark,
+    ground_overlay=None,
     building_sprites=[spriteset_large_shed_front_part_animated],
 )
 industry.add_spritelayout(
     tile="integrated_steel_mill_tile_3",
     id="integrated_steel_mill_spritelayout_casting_shed",
-    ground_sprite=spriteset_ground_tile_dark_animated,
-    ground_overlay=spriteset_ground_tile_dark_animated,
+    ground_sprite=spriteset_ground_tile_dark,
+    ground_overlay=None,
     building_sprites=[spriteset_casting_shed_animated],
 )
 
