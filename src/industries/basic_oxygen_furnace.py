@@ -155,11 +155,6 @@ spriteset_caster_gantry_overlay_animated = industry.add_spriteset(
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_caster_crane_animated.sprites),
 )
-spriteset_ground_tile_animated_crane = industry.add_spriteset(
-    type="gravel",
-    # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
-    num_sprites_to_autofill=len(spriteset_caster_crane_animated.sprites),
-)
 spriteset_caster_metal_run_animated = industry.add_spriteset(
     sprites=[
         # repeat the empty frame until the 1 frame after the crane pour starts
@@ -205,11 +200,6 @@ spriteset_caster_machinery_animated = industry.add_spriteset(
     sprites=[
         (10, 340, 64, 64, -31, -33),
     ],
-    # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
-    num_sprites_to_autofill=len(spriteset_caster_metal_run_animated.sprites),
-)
-spriteset_ground_tile_animated_metal_run = industry.add_spriteset(
-    type="gravel",
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_caster_metal_run_animated.sprites),
 )
@@ -330,8 +320,8 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_animated_casting_front_part",
     tile="basic_oxygen_furnace_tile_3",
-    ground_sprite=spriteset_ground_tile_animated_crane,
-    ground_overlay=spriteset_ground_tile_animated_crane,
+    ground_sprite=spriteset_ground,
+    ground_overlay=None,
     building_sprites=[
         spriteset_caster_gantry_animated,
         spriteset_caster_crane_animated,
@@ -344,8 +334,8 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="basic_oxygen_furnace_spritelayout_animated_casting_rear_part",
     tile="basic_oxygen_furnace_tile_3",
-    ground_sprite=spriteset_ground_tile_animated_metal_run,
-    ground_overlay=spriteset_ground_tile_animated_metal_run,
+    ground_sprite=spriteset_ground,
+    ground_overlay=None,
     building_sprites=[
         spriteset_caster_machinery_animated,
         spriteset_caster_metal_run_animated,

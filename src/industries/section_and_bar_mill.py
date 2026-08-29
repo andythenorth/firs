@@ -130,11 +130,6 @@ spriteset_rolling_line_roof_animated = industry.add_spriteset(
     # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
     num_sprites_to_autofill=len(spriteset_rolling_line_metal_animated.sprites),
 )
-spriteset_ground_tile_animated_rolling_line = industry.add_spriteset(
-    type="asphalt",
-    # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
-    num_sprites_to_autofill=len(spriteset_rolling_line_metal_animated.sprites),
-)
 sprite_smoke_1 = industry.add_smoke_sprite(
     # smoke position has to be faffed with to prevent spritesorter issues on adjacent rolling line tile
     smoke_type="white_smoke_big",
@@ -237,8 +232,8 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="section_and_bar_mill_spritelayout_sw_ne_rolling_line",
     tile="section_and_bar_mill_tile_3",
-    ground_sprite=spriteset_ground_tile_animated_rolling_line,
-    ground_overlay=spriteset_ground_tile_animated_rolling_line,
+    ground_sprite=spriteset_ground,
+    ground_overlay=None,
     building_sprites=[
         spriteset_rolling_line_stand_animated,
         spriteset_rolling_line_metal_animated,
