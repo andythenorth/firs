@@ -23,7 +23,6 @@ industry = IndustrySecondary(
     animated_tiles_fixed=True,
 )
 
-print("CABBAGE food processor MMW combinatorial behaviour needs checked!!")
 industry.enable_in_economy(
     "MILD_MILD_WEST",
     accept_cargos_with_input_ratios=[
