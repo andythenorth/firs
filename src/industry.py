@@ -1103,13 +1103,13 @@ class Industry(object):
                 # to prevent surprises we guard on known industry ids
                 if self.id not in [
                     "appliance_factory",
-                    "bakery", # CABBAGE
                     "engineering_works",
                     "frozen_food_plant",
                     "bottle_and_can_factory",
                     "power_systems_factory",
                     "precision_parts_plant",
-                    "process_chemicals_plant", # CABBAGE - process chemicals plant
+                    "process_chemicals_plant",
+                    "produce_packer",
                     "industrial_chemicals_plant",
                 ]:
                     raise Exception(

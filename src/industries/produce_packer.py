@@ -27,11 +27,10 @@ print("CABBAGE food processor MMW combinatorial behaviour needs checked!!")
 industry.enable_in_economy(
     "MILD_MILD_WEST",
     accept_cargos_with_input_ratios=[
-        ("AAPL", 2),
-        ("VEG_", 2),
-        ("FRUT", 2),
-        #("ENUM", 1), # CABBAGE - DROPPED?
-        ("PACK", 2),
+        ("AAPL", 3),
+        ("VEG_", 3),
+        ("FRUT", 3),
+        ("PACK", 3),
     ],
     prod_cargo_types_with_output_ratios=[
         ("FOOD", 8),
