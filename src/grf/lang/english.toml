@@ -114,9 +114,6 @@ base = "{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this leve
 [STR_PORT_PRODUCTION_4X]
 base = "{BLACK}Current production: {YELLOW}Gung-ho {}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} units of cargo at least once every three minutes."
 
-[STR_CARGO_NAME_ACETIC_ACID]
-base = "Acetic Acid"
-
 [STR_CARGO_NAME_ACID]
 base = "Acid"
 
@@ -168,8 +165,9 @@ base = "Chemicals"
 [STR_CARGO_NAME_CHLORINE]
 base = "Chlorine"
 
-[STR_CARGO_NAME_CHROMITE_ORE]
-base = "Chromite Ore"
+# unused
+#[STR_CARGO_NAME_CHROMITE_ORE]
+#base = "Chromite Ore"
 
 [STR_CARGO_NAME_CLAY]
 base = "Clay"
@@ -195,8 +193,9 @@ base = "Concrete Products"
 [STR_CARGO_NAME_COPPER]
 base = "Copper"
 
-[STR_CARGO_NAME_COPPER_CONCENTRATE]
-base = "Copper Concentrate"
+# unused
+#[STR_CARGO_NAME_COPPER_CONCENTRATE]
+#base = "Copper Concentrate"
 
 [STR_CARGO_NAME_EDIBLE_OIL]
 base = "Edible Oil"
@@ -258,9 +257,6 @@ base = "Light Hydrocarbons"
 [STR_CARGO_NAME_LIMESTONE]
 base = "Limestone"
 
-[STR_CARGO_NAME_LIQUEFIED_PETROLEUM_GAS]
-base = "Liquefied Petroleum Gas"
-
 [STR_CARGO_NAME_LOGS]
 base = "Logs"
 
@@ -282,23 +278,23 @@ base = "Meat"
 [STR_CARGO_NAME_MOLASSES]
 base = "Molasses"
 
-[STR_CARGO_NAME_NICKEL]
-base = "Nickel"
+# unused
+#[STR_CARGO_NAME_NICKEL]
+#base = "Nickel"
 
 [STR_CARGO_NAME_NITRATES]
 base = "Nitrates"
 
-[STR_CARGO_NAME_NITRIC_ACID]
-base = "Nitric Acid"
-
 [STR_CARGO_NAME_NITROGEN]
 base = "Nitrogen"
 
-[STR_CARGO_NAME_NUCLEAR_FUEL]
-base = "Nuclear Fuel"
+# unused
+#[STR_CARGO_NAME_NUCLEAR_FUEL]
+#base = "Nuclear Fuel"
 
-[STR_CARGO_NAME_NUCLEAR_WASTE]
-base = "Nuclear Waste"
+# unused
+#[STR_CARGO_NAME_NUCLEAR_WASTE]
+#base = "Nuclear Waste"
 
 [STR_CARGO_NAME_NUTS]
 base = "Nuts"
@@ -342,9 +338,6 @@ base = "Potash"
 [STR_CARGO_NAME_PROCESS_CHEMICALS]
 base = "Process Chemicals"
 
-[STR_CARGO_NAME_PULP_WOOD]
-base = "Pulp Wood"
-
 [STR_CARGO_NAME_PUMPS_AND_VALVES]
 base = "Pumps & Valves"
 
@@ -354,8 +347,9 @@ base = "Pyrite Ore"
 [STR_CARGO_NAME_QUICKLIME]
 base = "Quicklime"
 
-[STR_CARGO_NAME_RAW_LATEX]
-base = "Raw Latex"
+# unused
+#[STR_CARGO_NAME_RAW_LATEX]
+#base = "Raw Latex"
 
 [STR_CARGO_NAME_REBAR]
 base = "Rebar"
@@ -368,9 +362,6 @@ base = "Sand"
 
 [STR_CARGO_NAME_SCRAP_METAL]
 base = "Scrap Metal"
-
-[STR_CARGO_NAME_SEAFOOD_PRODUCTS]
-base = "Seafood Products"
 
 [STR_CARGO_NAME_SEALS_HOSES_AND_BELTS]
 base = "Seals, Hoses & Belts"
@@ -420,8 +411,9 @@ base = "Sulphur"
 [STR_CARGO_NAME_SULPHURIC_ACID]
 base = "Sulphuric Acid"
 
-[STR_CARGO_NAME_TEXTILES]
-base = "Textiles"
+# unused
+#[STR_CARGO_NAME_TEXTILES]
+#base = "Textiles"
 
 [STR_CARGO_NAME_TIMBER]
 base = "Timber Products"
@@ -462,20 +454,11 @@ base = "Wood Pulp"
 [STR_CARGO_NAME_WOOL]
 base = "Wool"
 
-[STR_CARGO_NAME_YARN]
-base = "Yarn"
-
-[STR_CARGO_NAME_YEAST]
-base = "Yeast"
-
 [STR_CARGO_NAME_ZINC]
 base = "Zinc"
 
 [STR_CARGO_NAME_ZINC_ORE]
 base = "Zinc Ore"
-
-[STR_CARGO_UNIT_ACETIC_ACID]
-base = "{VOLUME} of acetic acid"
 
 [STR_CARGO_UNIT_ACID]
 base = "{VOLUME} of acid"
@@ -528,8 +511,9 @@ base = "{VOLUME} of chemicals"
 [STR_CARGO_UNIT_CHLORINE]
 base = "{VOLUME} of chlorine"
 
-[STR_CARGO_UNIT_CHROMITE_ORE]
-base = "{WEIGHT} of chromite ore"
+# unused
+#[STR_CARGO_UNIT_CHROMITE_ORE]
+#base = "{WEIGHT} of chromite ore"
 
 [STR_CARGO_UNIT_CLAY]
 base = "{WEIGHT} of clay"
@@ -555,8 +539,9 @@ base = "{WEIGHT} of concrete products"
 [STR_CARGO_UNIT_COPPER]
 base = "{WEIGHT} of copper"
 
-[STR_CARGO_UNIT_COPPER_CONCENTRATE]
-base = "{WEIGHT} of copper concentrate"
+# unused
+#[STR_CARGO_UNIT_COPPER_CONCENTRATE]
+#base = "{WEIGHT} of copper concentrate"
 
 [STR_CARGO_UNIT_FROZEN_FOOD]
 base = "{WEIGHT} of frozen food"
@@ -615,9 +600,6 @@ base = "{VOLUME} of light hydrocarbons"
 [STR_CARGO_UNIT_LIMESTONE]
 base = "{WEIGHT} of limestone"
 
-[STR_CARGO_UNIT_LIQUEFIED_PETROLEUM_GAS]
-base = "{VOLUME} of liquefied petroleum gas"
-
 [STR_CARGO_UNIT_LOGS]
 base = "{WEIGHT} of logs"
 
@@ -639,23 +621,23 @@ base = "{VOLUME} of milk"
 [STR_CARGO_UNIT_MOLASSES]
 base = "{VOLUME} of molasses"
 
-[STR_CARGO_UNIT_NICKEL]
-base = "{WEIGHT} of nickel"
+# unused
+#[STR_CARGO_UNIT_NICKEL]
+#base = "{WEIGHT} of nickel"
 
 [STR_CARGO_UNIT_NITRATES]
 base = "{WEIGHT} of nitrates"
 
-[STR_CARGO_UNIT_NITRIC_ACID]
-base = "{VOLUME} of nitric acid"
-
 [STR_CARGO_UNIT_NITROGEN]
 base = "{VOLUME} of nitrogen"
 
-[STR_CARGO_UNIT_NUCLEAR_FUEL]
-base = "{WEIGHT} of nuclear fuel"
+# unused
+#[STR_CARGO_UNIT_NUCLEAR_FUEL]
+#base = "{WEIGHT} of nuclear fuel"
 
-[STR_CARGO_UNIT_NUCLEAR_WASTE]
-base = "{WEIGHT} of nuclear waste"
+# unused
+#[STR_CARGO_UNIT_NUCLEAR_WASTE]
+#base = "{WEIGHT} of nuclear waste"
 
 [STR_CARGO_UNIT_NUTS]
 base = "{SIGNED_WORD} sack{P 0 \"\" s}  of nuts"
@@ -705,17 +687,15 @@ base = "{WEIGHT} of process chemicals"
 [STR_CARGO_UNIT_PYRITE_ORE]
 base = "{WEIGHT} of pyrite ore"
 
-[STR_CARGO_UNIT_PULP_WOOD]
-base = "{WEIGHT} of pulp wood"
-
 [STR_CARGO_UNIT_PUMPS_AND_VALVES]
 base = "{WEIGHT} of pumps & valves"
 
 [STR_CARGO_UNIT_QUICKLIME]
 base = "{WEIGHT} of quicklime"
 
-[STR_CARGO_UNIT_RAW_LATEX]
-base = "{VOLUME} of raw latex"
+# unused
+#[STR_CARGO_UNIT_RAW_LATEX]
+#base = "{VOLUME} of raw latex"
 
 [STR_CARGO_UNIT_REBAR]
 base = "{WEIGHT} of rebar"
@@ -728,9 +708,6 @@ base = "{WEIGHT} of sand"
 
 [STR_CARGO_UNIT_SCRAP_METAL]
 base = "{WEIGHT} of scrap metal"
-
-[STR_CARGO_UNIT_SEAFOOD_PRODUCTS]
-base = "{WEIGHT} of seafood products"
 
 [STR_CARGO_UNIT_SEALS_HOSES_AND_BELTS]
 base = "{WEIGHT} of seals, hoses & belts"
@@ -780,8 +757,9 @@ base = "{WEIGHT} of sulphur"
 [STR_CARGO_UNIT_SULPHURIC_ACID]
 base = "{VOLUME} of sulphuric acid"
 
-[STR_CARGO_UNIT_TEXTILES]
-base = "{WEIGHT} of textiles"
+# unused
+#[STR_CARGO_UNIT_TEXTILES]
+#base = "{WEIGHT} of textiles"
 
 [STR_CARGO_UNIT_TIMBER]
 base = "{WEIGHT} of timber products"
@@ -797,9 +775,6 @@ base = "{WEIGHT} of tyre cord"
 
 [STR_CARGO_UNIT_TYRES]
 base = "{WEIGHT} of tyres"
-
-[STR_CARGO_UNIT_UREA]
-base = "{WEIGHT} of urea"
 
 [STR_CARGO_UNIT_VEGETABLES]
 base = "{WEIGHT} of vegetables"
@@ -825,20 +800,11 @@ base = "{WEIGHT} of wood pulp"
 [STR_CARGO_UNIT_WOOL]
 base = "{SIGNED_WORD} bale{P 0 \"\" s} of wool"
 
-[STR_CARGO_UNIT_YARN]
-base = "{SIGNED_WORD} bale{P 0 \"\" s} of yarn"
-
-[STR_CARGO_UNIT_YEAST]
-base = "{WEIGHT} of yeast"
-
 [STR_CARGO_UNIT_ZINC]
 base = "{WEIGHT} of zinc"
 
 [STR_CARGO_UNIT_ZINC_ORE]
 base = "{WEIGHT} of zinc ore"
-
-[STR_CID_ACETIC_ACID]
-base = "{TINYFONT}AA"
 
 [STR_CID_ACID]
 base = "{TINYFONT}AC"
@@ -888,8 +854,9 @@ base = "{TINYFONT}OC"
 [STR_CID_CHEMICALS]
 base = "{TINYFONT}CH"
 
-[STR_CID_CHROMITE_ORE]
-base = "{TINYFONT}CO"
+# unused
+#[STR_CID_CHROMITE_ORE]
+#base = "{TINYFONT}CO"
 
 [STR_CID_CHLORINE]
 base = "{TINYFONT}CH"
@@ -918,8 +885,9 @@ base = "{TINYFONT}CP"
 [STR_CID_COPPER]
 base = "{TINYFONT}CR"
 
-[STR_CID_COPPER_CONCENTRATE]
-base = "{TINYFONT}CC"
+# unused
+#[STR_CID_COPPER_CONCENTRATE]
+#base = "{TINYFONT}CC"
 
 [STR_CID_EDIBLE_OIL]
 base = "{TINYFONT}EO"
@@ -929,9 +897,6 @@ base = "{TINYFONT}EP"
 
 [STR_CID_ENGINEERING_SUPPLIES]
 base = "{TINYFONT}ES"
-
-[STR_CID_ETHYLENE]
-base = "{TINYFONT}EY"
 
 [STR_CID_EXPLOSIVES]
 base = "{TINYFONT}EX"
@@ -957,9 +922,6 @@ base = "{TINYFONT}FV"
 [STR_CID_FORGINGS_AND_CASTINGS]
 base = "{TINYFONT}FO"
 
-[STR_CID_FURNITURE]
-base = "{TINYFONT}FU"
-
 [STR_CID_GLASS]
 base = "{TINYFONT}GL"
 
@@ -978,9 +940,6 @@ base = "{TINYFONT}LH"
 [STR_CID_LIMESTONE]
 base = "{TINYFONT}LS"
 
-[STR_CID_LIQUEFIED_PETROLEUM_GAS]
-base = "{TINYFONT}LP"
-
 [STR_CID_LOGS]
 base = "{TINYFONT}LG"
 
@@ -989,9 +948,6 @@ base = "{TINYFONT}SY"
 
 [STR_CID_MANGANESE]
 base = "{TINYFONT}MN"
-
-[STR_CID_METHANE]
-base = "{TINYFONT}MA"
 
 [STR_CID_METHANOL]
 base = "{TINYFONT}ML"
@@ -1002,23 +958,23 @@ base = "{TINYFONT}MK"
 [STR_CID_MOLASSES]
 base = "{TINYFONT}MO"
 
-[STR_CID_NICKEL]
-base = "{TINYFONT}NK"
+# unused
+#[STR_CID_NICKEL]
+#base = "{TINYFONT}NK"
 
 [STR_CID_NITRATES]
 base = "{TINYFONT}NI"
 
-[STR_CID_NITRIC_ACID]
-base = "{TINYFONT}NA"
-
 [STR_CID_NITROGEN]
 base = "{TINYFONT}N7"
 
-[STR_CID_NUCLEAR_FUEL]
-base = "{TINYFONT}NU"
+# unused
+#[STR_CID_NUCLEAR_FUEL]
+#base = "{TINYFONT}NU"
 
-[STR_CID_NUCLEAR_WASTE]
-base = "{TINYFONT}NW"
+# unused
+#[STR_CID_NUCLEAR_WASTE]
+#base = "{TINYFONT}NW"
 
 [STR_CID_NUTS]
 base = "{TINYFONT}NT"
@@ -1065,12 +1021,6 @@ base = "{TINYFONT}PA"
 [STR_CID_PROCESS_CHEMICALS]
 base = "{TINYFONT}PC"
 
-[STR_CID_PROPYLENE]
-base = "{TINYFONT}PR"
-
-[STR_CID_PULP_WOOD]
-base = "{TINYFONT}PW"
-
 [STR_CID_PUMPS_AND_VALVES]
 base = "{TINYFONT}PV"
 
@@ -1080,8 +1030,9 @@ base = "{TINYFONT}PY"
 [STR_CID_QUICKLIME]
 base = "{TINYFONT}QL"
 
-[STR_CID_RAW_LATEX]
-base = "{TINYFONT}RL"
+# unused
+#[STR_CID_RAW_LATEX]
+#base = "{TINYFONT}RL"
 
 [STR_CID_REBAR]
 base = "{TINYFONT}RB"
@@ -1143,8 +1094,9 @@ base = "{TINYFONT}SU"
 [STR_CID_SULPHURIC_ACID]
 base = "{TINYFONT}SD"
 
-[STR_CID_TEXTILES]
-base = "{TINYFONT}TX"
+# unused
+#[STR_CID_TEXTILES]
+#base = "{TINYFONT}TX"
 
 [STR_CID_TIMBER]
 base = "{TINYFONT}LU"
@@ -1185,12 +1137,6 @@ base = "{TINYFONT}WP"
 [STR_CID_WOOL]
 base = "{TINYFONT}WL"
 
-[STR_CID_YARN]
-base = "{TINYFONT}YN"
-
-[STR_CID_YEAST]
-base = "{TINYFONT}YE"
-
 [STR_CID_ZINC]
 base = "{TINYFONT}ZN"
 
@@ -1215,17 +1161,20 @@ base = "{ORANGE}E04: {YELLOW}Incompatible version: {ORANGE}Total Town Replacemen
 [STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE]
 base = "must be placed below the snow line."
 
-[STR_ERR_LOCATION_NOT_ON_WATER]
-base = "must be placed on dry land."
+# unused
+#[STR_ERR_LOCATION_NOT_ON_WATER]
+#base = "must be placed on dry land."
 
-[STR_ERR_LOCATION_NOT_IN_DESERT]
-base = "must not be placed in the desert."
+# unused
+#[STR_ERR_LOCATION_NOT_IN_DESERT]
+#base = "must not be placed in the desert."
 
 [STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE]
 base = "cannot be placed on steep slopes."
 
-[STR_ERR_LOCATION_LIMIT_1_PER_TOWN]
-base = "only one industry of this type allowed per town."
+# unused
+#[STR_ERR_LOCATION_LIMIT_1_PER_TOWN]
+#base = "only one industry of this type allowed per town."
 
 [STR_IND_ALUMINIUM_PLANT]
 base = "Aluminium Plant"
@@ -1245,9 +1194,6 @@ base = "Assembly Plant"
 [STR_IND_SECTION_AND_BAR_MILL]
 base = "Section & Bar Mill"
 
-[STR_IND_BAKERY]
-base = "Biscuit Factory"
-
 [STR_IND_BASIC_OXYGEN_FURNACE]
 base = "Basic Oxygen Furnace"
 
@@ -1266,14 +1212,12 @@ base = "Brewery"
 [STR_IND_CIDER_MILL]
 base = "Cider Mill"
 
-[STR_IND_BRICK_WORKS]
-base = "Brick Works"
+# unused
+#[STR_IND_BRICK_WORKS]
+#base = "Brick Works"
 
 [STR_IND_BUILDERS_YARD]
 base = "Construction Yard" # CABBAGE
-
-[STR_IND_BULK_TERMINAL]
-base = "Bulk Terminal"
 
 [STR_IND_CARBON_BLACK_PLANT]
 base = "Carbon Black Plant"
@@ -1293,8 +1237,9 @@ base = "Explosives Factory"
 [STR_IND_CHLOR_ALKALI_PLANT]
 base = "Chlor-alkali Plant"
 
-[STR_IND_CHROMITE_MINE]
-base = "Chromite Mine"
+# unused
+#[STR_IND_CHROMITE_MINE]
+#base = "Chromite Mine"
 
 [STR_IND_CLAY_PIT]
 base = "Clay Pit"
@@ -1308,8 +1253,9 @@ base = "Coke Oven"
 [STR_IND_CONCRETE_PLANT]
 base = "Concrete Plant"
 
-[STR_IND_COPPER_CONCENTRATOR]
-base = "Copper Concentrator"
+# unused
+#[STR_IND_COPPER_CONCENTRATOR]
+#base = "Copper Concentrator"
 
 [STR_IND_COPPER_SMELTER]
 base = "Copper Smelter"
@@ -1341,14 +1287,12 @@ base = "Engineering Works"
 [STR_IND_FARM]
 base = "Farm"
 
-[STR_IND_FERROCHROME_SMELTER]
-base = "Ferrochrome Smelter"
+# unused
+#[STR_IND_FERROCHROME_SMELTER]
+#base = "Ferrochrome Smelter"
 
 [STR_IND_FERTILISER_PLANT]
 base = "Fertiliser Plant"
-
-[STR_IND_FACTORY_1]
-base = "Factory 1"
 
 [STR_IND_PROCESS_CHEMICALS_PLANT]
 base = "Process Chemicals Plant"
@@ -1386,9 +1330,6 @@ base = "General Store"
 [STR_IND_GLASS_WORKS]
 base = "Glass Works"
 
-[STR_IND_HARDWARE_STORE]
-base = "Hardware Store"
-
 [STR_IND_HERDING_COOP]
 base = "Herding Co-op"
 
@@ -1404,8 +1345,9 @@ base = "Steel Mill"
 [STR_IND_SCRAP_YARD]
 base = "Scrap Yard"
 
-[STR_IND_LATEX_PROCESSOR]
-base = "Latex Processor"
+# unused
+#[STR_IND_LATEX_PROCESSOR]
+#base = "Latex Processor"
 
 [STR_IND_LIME_KILN]
 base = "Lime Kiln"
@@ -1425,11 +1367,13 @@ base = "Nitrate Mine"
 [STR_IND_INDUSTRIAL_CHEMICALS_PLANT]
 base = "Industrial Chemicals Plant"
 
-[STR_IND_NUCLEAR_FUEL_COMPLEX]
-base = "Nuclear Fuel Complex"
+# unused
+#[STR_IND_NUCLEAR_FUEL_COMPLEX]
+#base = "Nuclear Fuel Complex"
 
-[STR_IND_NUCLEAR_POWER_PLANT]
-base = "Nuclear Power Plant"
+# unused
+#[STR_IND_NUCLEAR_POWER_PLANT]
+#base = "Nuclear Power Plant"
 
 [STR_IND_OIL_TERMINAL]
 base = "Oil Terminal"
@@ -1509,14 +1453,8 @@ base = "Grazing Farm"
 [STR_IND_SLAG_GRINDING_PLANT]
 base = "Slag Grinding Plant"
 
-[STR_IND_SMITHY_FORGE]
-base = "Smithy Forge"
-
 [STR_IND_SODA_ASH_MINE]
 base = "Soda Ash Mine"
-
-[STR_IND_SOLVAY_PLANT]
-base = "Solvay Plant"
 
 [STR_IND_CONVENIENCE_FOODS_FACTORY]
 base = "Convenience Foods Factory"
@@ -1527,17 +1465,16 @@ base = "Stockyard"
 [STR_IND_STRIP_MILL]
 base = "Strip Mill"
 
-[STR_IND_SUGAR_REFINERY]
-base = "Sugar Refinery"
-
-[STR_IND_SULPHURIC_ACID_PLANT]
-base = "Sulphuric Acid Plant"
+# unused
+#[STR_IND_SUGAR_REFINERY]
+#base = "Sugar Refinery"
 
 [STR_IND_SUPPLY_YARD]
 base = "Supply Yard"
 
-[STR_IND_TEXTILE_MILL]
-base = "Textile Mill"
+# unused
+#[STR_IND_TEXTILE_MILL]
+#base = "Textile Mill"
 
 [STR_IND_TIMBER_YARD]
 base = "Timber Yard"
@@ -1611,8 +1548,9 @@ base = "{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts."
 [STR_FUND_AVAILABLE_FROM]
 base = "{}{BLACK}Available from: {YELLOW}{COMMA}"
 
-[STR_FUND_AVAILABLE_UNTIL]
-base = "{}{BLACK}Not available after: {YELLOW}{COMMA}"
+# unused
+#[STR_FUND_AVAILABLE_UNTIL]
+#base = "{}{BLACK}Not available after: {YELLOW}{COMMA}"
 
 [STR_TOWN]
 base = "{STRING}"
@@ -1731,9 +1669,6 @@ base = "Reinder Pens"
 [STR_STATION_INDUSTRY_ESTATE_1]
 base = "Industrial Park"
 
-[STR_STATION_INDUSTRY_HARBOUR_1]
-base = "Tidal Yard"
-
 [STR_STATION_INDUSTRY_HARBOUR_2]
 base = "Waterside"
 
@@ -1775,9 +1710,6 @@ base = "Field"
 
 [STR_STATION_ORCHARDS]
 base = "Orchards"
-
-[STR_STATION_PIES]
-base = "Pies"
 
 [STR_STATION_PIPEWORK_FABRICATOR]
 base = "Flowline"
@@ -1851,17 +1783,15 @@ base = "Soups"
 [STR_STATION_STRIP_MILL]
 base = "Coil line"
 
-[STR_STATION_SUGAR_COMPANY]
-base = "Sugar Company"
+# unused
+#[STR_STATION_SUGAR_COMPANY]
+#base = "Sugar Company"
 
 [STR_STATION_TANK_FARM]
 base = "Tank Farm"
 
 [STR_STATION_TAPPERS_SHED]
 base = "Tappers Shed"
-
-[STR_STATION_TOWN_1]
-base = "Old Town Hall"
 
 [STR_STATION_TOWN_3]
 base = "Stores"
@@ -1892,6 +1822,3 @@ base = "Works"
 
 [STR_STATION_VEHICLE_DISTRIBUTOR]
 base = "Truck Lot"
-
-[STR_GENERIC_NEWLINE]
-base = "{}"
