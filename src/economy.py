@@ -40,6 +40,7 @@ class Economy(object):
                 result.append(industry)
         return result
 
+    # CABBAGE stopped calling this in August 2026, was experimental only, consider moving to branch
     def detect_cargo_flow(self, cargo_label):
         """
         Intended for use with GS Manufacturers.

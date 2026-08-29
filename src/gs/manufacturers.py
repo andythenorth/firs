@@ -1,3 +1,5 @@
+# EXPERIMENTAL - CABBAGE commented out August 2026, consider moving to branch
+
 # firs is imported, but main is not called in this module, this relies on firs already being present in the context
 import firs
 

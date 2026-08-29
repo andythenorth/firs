@@ -10,7 +10,7 @@ import firs
 import global_constants
 import utils
 from gs.gs_helper import GSHelper
-from gs import manufacturers
+# from gs import manufacturers # nerfed off August 2026, unfinished CABBAGE
 from polar_fox import git_info
 
 from chameleon import PageTemplateLoader  # chameleon used in most template cases
@@ -58,7 +58,7 @@ def render_nuts(nuts_by_subdir):
                     gs_helper=GSHelper(),
                     makefile_args=makefile_args,
                     git_info=git_info,
-                    manufacturers=manufacturers,
+                    #manufacturers=manufacturers,
                     utils=utils,
                 )
             )
@@ -95,7 +95,7 @@ def main():
     print("[RENDER GS]")
 
     firs.main()
-    manufacturers.main()
+    #manufacturers.main() # nerfed off August 2026, CABBAGE
 
     if os.path.exists(gs_dst):
         shutil.rmtree(gs_dst)
@@ -138,8 +138,8 @@ def main():
             "industry_spec",
             "log",
             "map_curator",
-            "manufacturers",
-            "manufacturers_story_book",
+            #"manufacturers", # nerfed off August 2026 as unfinished, CABBAGE
+            #"manufacturers_story_book", # nerfed off August 2026 as unfinished, CABBAGE
             "town_control",
             "town_story_book",
         ],
