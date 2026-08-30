@@ -8,7 +8,8 @@ cargo = Cargo(
     sprite="NEW_CARGO_SPRITE",
     weight="1.0",
     is_freight="1",
-    cargo_classes = ["CC_EXPRESS", "CC_REFRIGERATED", "CC_POTABLE"],  # CC_EXPRESS has to be provided for compatibility with base vehicles
+    # CC_EXPRESS *must* be provided for compatibility with vehicle sets, assume ice boxes or something
+    cargo_classes = ["CC_EXPRESS", "CC_REFRIGERATED", "CC_POTABLE"],
     cargo_label="FRZN",
     # apart from TOWNGROWTH_PASSENGERS and TOWNGROWTH_MAIL, FIRS does not set any town growth effects; this has the intended effect of disabling food / water requirements for towns in desert and above     snowline
     units_of_cargo="TTD_STR_TONS", # CABBAGE
