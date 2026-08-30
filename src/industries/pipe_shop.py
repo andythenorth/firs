@@ -15,12 +15,6 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="160",
     colour_scheme_name="scheme_10_wyclef",
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[
-            ["tube_and_pipe_mill", "precision_parts_plant", "plate_mill"],
-            84,
-        ],
-    ),
     name="string(STR_IND_PIPEWORK_FABRICATOR)",
     nearby_station_name="string(STR_STATION_PIPEWORK_FABRICATOR)",
     fund_cost_multiplier="145",
@@ -30,6 +24,13 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "STEELTOWN",
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[
+            ["tube_and_pipe_mill", "precision_parts_plant", "plate_mill"],
+            84,
+        ],
+    ),
 )
 
 industry.add_tile(

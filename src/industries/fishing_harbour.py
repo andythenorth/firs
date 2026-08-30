@@ -13,6 +13,8 @@ industry = IndustrySecondary(
     map_colour="169",
     colour_scheme_name="scheme_1_elton", # cabbage needs checked
     special_flags=["IND_FLAG_BUILT_ON_WATER"],
+    # CABBAGE
+    # location checks must be per economy when keystone industries are used
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[
             ["fishing_grounds", "fish_farm"],

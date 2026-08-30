@@ -11,10 +11,6 @@ industry = IndustrySecondary(
     substitute="14",
     map_colour="164",
     colour_scheme_name="scheme_3_hendrix", # cabbage needs checked
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[["forest"], 96],
-        same_type_distance=96,
-    ),
     fund_cost_multiplier="120",
     nearby_station_name="string(STR_STATION_MILL)",
     name="TTD_STR_INDUSTRY_NAME_PAPER_MILL",
@@ -30,6 +26,11 @@ industry.enable_in_economy(
         ("WOOD", 4),
         ("SULP", 2),
     ],
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[["forest"], 96],
+        same_type_distance=96,
+    ),
 )
 industry.enable_in_economy(
     "MILD_MILD_WEST",
@@ -40,6 +41,11 @@ industry.enable_in_economy(
     prod_cargo_types_with_output_ratios=[
         ("WDPP", 7),
     ],
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[["forest"], 96],
+        same_type_distance=96,
+    ),
 )
 
 industry.add_tile(

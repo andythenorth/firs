@@ -11,12 +11,6 @@ industry = IndustrySecondary(
     map_colour="64",
     colour_scheme_name="scheme_13_whitney",
     name="string(STR_IND_COPPER_SMELTER)",
-    # if copper concentrator is added in some economies, using copper mine as keystone will be a problem as the location checks are not economy-specific
-    # (and location checks probably shouldn't be economy-specific to avoid complexity)
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[["copper_mine"], 96],
-        same_type_distance=96,
-    ),
     nearby_station_name="string(STR_STATION_SMELTER)",
     fund_cost_multiplier="200",
     sprites_complete=True,
@@ -25,6 +19,11 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "BASIC_TROPIC",
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[["copper_mine"], 96],
+        same_type_distance=96,
+    ),
 )
 
 industry.enable_in_economy("IN_A_HOT_COUNTRY")

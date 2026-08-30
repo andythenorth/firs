@@ -12,10 +12,6 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="194",
     colour_scheme_name="scheme_1_elton",
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[["forest"], 72],
-        same_type_distance=72,
-    ),
     name="TTD_STR_INDUSTRY_NAME_SAWMILL",
     nearby_station_name="string(STR_STATION_MILL)",
     fund_cost_multiplier="97",
@@ -25,12 +21,27 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[["forest"], 72],
+        same_type_distance=72,
+    ),
 )
 industry.enable_in_economy(
     "BASIC_ARCTIC",
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[["forest"], 72],
+        same_type_distance=72,
+    ),
 )
 industry.enable_in_economy(
     "MILD_MILD_WEST",
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[["forest"], 72],
+        same_type_distance=72,
+    ),
 )
 
 industry.add_tile(

@@ -17,12 +17,6 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="166",
     colour_scheme_name="scheme_2_dylan",
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[
-            ["basic_oxygen_furnace", "electric_arc_furnace"],
-            56,
-        ],
-    ),
     name="string(STR_IND_FORGE_AND_FOUNDRY)",
     nearby_station_name="string(STR_STATION_FORGE_AND_FOUNDRY)",
     fund_cost_multiplier="63",
@@ -32,6 +26,13 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "STEELTOWN",
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[
+            ["basic_oxygen_furnace", "electric_arc_furnace"],
+            56,
+        ],
+    ),
 )
 
 # not animated tiles

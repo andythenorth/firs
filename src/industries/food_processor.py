@@ -10,6 +10,8 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="181",
     colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    # CABBAGE
+    # location checks must be per economy when keystone industries are used
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[
             ["arable_farm", "fruit_plantation", "coffee_estate", "vineyard", "orchard_piggery"],

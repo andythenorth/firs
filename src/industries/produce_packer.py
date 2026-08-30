@@ -10,12 +10,6 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="181",
     colour_scheme_name="scheme_1_elton", # cabbage needs checked
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[
-            ["farm", "orchard_piggery"],
-            72,
-        ]
-    ),
     name="string(STR_IND_PRODUCE_PACKER)",
     nearby_station_name="string(STR_STATION_FOOD_CORPORATION)",
     fund_cost_multiplier="65",
@@ -34,6 +28,13 @@ industry.enable_in_economy(
     prod_cargo_types_with_output_ratios=[
         ("FOOD", 8),
     ],
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[
+            ["farm", "orchard_piggery"],
+            72,
+        ]
+    ),
 )
 
 industry.add_tile(

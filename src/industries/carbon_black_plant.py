@@ -14,11 +14,6 @@ industry = IndustrySecondary(
     map_colour="69",
     colour_scheme_name="scheme_7_bowie",
     special_flags=["IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE"],
-    # it's rare to force co-location of secondaries, but this one is near coke oven by design
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[["coke_oven"], 72],
-        same_type_distance=72,
-    ),
     name="string(STR_IND_CARBON_BLACK_PLANT)",
     nearby_station_name="string(STR_STATION_SOOT_FURNACE)",
     fund_cost_multiplier="120",
@@ -28,6 +23,11 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "STEELTOWN",
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[["coke_oven"], 72],
+        same_type_distance=72,
+    ),
 )
 
 industry.add_tile(

@@ -19,10 +19,6 @@ industry = IndustrySecondary(
     map_colour="49",
     colour_scheme_name="scheme_6_bruce",
     special_flags=["IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE"],
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[["blast_furnace"], 56],
-        same_type_distance=72,
-    ),
     name="string(STR_IND_BASIC_OXYGEN_FURNACE)",
     nearby_station_name="string(STR_STATION_FURNACE)",
     fund_cost_multiplier="160",
@@ -32,6 +28,11 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "STEELTOWN",
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[["blast_furnace"], 56],
+        same_type_distance=72,
+    ),
 )
 
 industry.add_tile(

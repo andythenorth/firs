@@ -15,6 +15,8 @@ industry = IndustrySecondary(
     map_colour="19",
     colour_scheme_name="scheme_10_wyclef",
     special_flags=["IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE"],
+    # CABBAGE
+    # location checks must be per economy when keystone industries are used
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[
             ["blast_furnace", "basic_oxygen_furnace", "electric_arc_furnace"],
