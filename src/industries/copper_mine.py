@@ -29,7 +29,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="copper_mine_tile_1",
-    location_checks=TileLocationChecks(disallow_industry_adjacent=True),
+    location_checks=TileLocationChecks(),
 )
 industry.add_tile(
     id="copper_mine_tile_2",
@@ -40,7 +40,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(disallow_industry_adjacent=True),
+    location_checks=TileLocationChecks(),
 )
 
 sprite_ground = industry.add_sprite(

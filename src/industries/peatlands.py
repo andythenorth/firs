@@ -33,7 +33,6 @@ industry.add_tile(
         disallow_slopes=True,
         disallow_desert=True,
         disallow_coast=True,
-        disallow_industry_adjacent=True,
     ),
 )
 

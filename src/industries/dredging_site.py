@@ -38,9 +38,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="dredging_site_tile_1",
-    location_checks=TileLocationChecks(
-        disallow_industry_adjacent=True, disallow_slopes=True
-    ),
+    location_checks=TileLocationChecks(disallow_slopes=True),
 )
 
 spriteset_platform = industry.add_spriteset(

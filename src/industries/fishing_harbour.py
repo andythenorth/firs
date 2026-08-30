@@ -53,8 +53,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="fishing_harbour_tile_1",
-    land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",
-    location_checks=TileLocationChecks(always_allow_founder=False),
+    location_checks=TileLocationChecks(always_allow_founder=False, disallow_slopes=True),
 )
 industry.add_tile(
     id="fishing_harbour_tile_2",

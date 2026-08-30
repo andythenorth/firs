@@ -45,7 +45,6 @@ industry.add_tile(
     location_checks=TileLocationChecks(
         require_houses_nearby=True,
         require_effectively_flat=True,
-        disallow_industry_adjacent=True,
     ),
 )
 

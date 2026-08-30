@@ -27,7 +27,7 @@ industry.enable_in_economy(
 industry.add_tile(
     id="pyrite_mine_tile_1",
     location_checks=TileLocationChecks(
-        require_effectively_flat=True, disallow_industry_adjacent=True
+        require_effectively_flat=True
     ),
 )
 industry.add_tile(
@@ -41,7 +41,7 @@ industry.add_tile(
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP)",
     },
     location_checks=TileLocationChecks(
-        require_effectively_flat=True, disallow_industry_adjacent=True
+        require_effectively_flat=True
     ),
 )
 industry.add_tile(
@@ -54,7 +54,7 @@ industry.add_tile(
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
     location_checks=TileLocationChecks(
-        require_effectively_flat=True, disallow_industry_adjacent=True
+        require_effectively_flat=True
     ),
 )
 industry.add_tile(
@@ -68,7 +68,7 @@ industry.add_tile(
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP)",
     },
     location_checks=TileLocationChecks(
-        require_effectively_flat=True, disallow_industry_adjacent=True
+        require_effectively_flat=True
     ),
 )
 

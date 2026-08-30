@@ -18,22 +18,11 @@ class Tile(object):
 
     def __init__(self, industry_id, id, **kwargs):
         self.id = id
+        # don't fail this silently, tile id must be defined
         self.numeric_id = global_constants.tile_numeric_ids[
             self.id
-        ]  # don't fail this silently, tile id must be defined
-        self.land_shape_flags = kwargs.get("land_shape_flags", "0")
+        ]
         self.location_checks = kwargs.get("location_checks")
-        # check for setting both land_shape_flags and location_checks
-        # it's a cause of coder-error when I forget that land_shape_flags will be ignored when location_check is used
-        if (
-            self.land_shape_flags != "0"
-            and len(self.location_checks.get_render_tree(self.id, industry_id)) > 0
-        ):
-            raise Exception(
-                "Tile "
-                + self.id
-                + ": land_shape_flags are set but will be ignored because the tile also uses location_checks cb.  Only set one of these attributes."
-            )
         self._special_flags = kwargs.get("special_flags", [])
         self.foundations = kwargs.get("foundations", None)
         self.autoslope = kwargs.get("autoslope", None)
@@ -82,14 +71,14 @@ class TileLocationChecks(object):
     """Class to hold location checks for a tile"""
 
     def __init__(self, **kwargs):
+        # always disallow adjacent industry
+        self.disallow_industry_adjacent = True
+        # occasionally this needs to be set False, e.g. for tiles that demand specific land shape
         self.always_allow_founder = kwargs.get(
             "always_allow_founder", True
-        )  # occasionally this needs to be set False, e.g. for tiles that demand specific land shape
+        )
         self.disallow_slopes = kwargs.get("disallow_slopes", False)
         self.disallow_steep_slopes = kwargs.get("disallow_steep_slopes", False)
-        self.disallow_industry_adjacent = kwargs.get(
-            "disallow_industry_adjacent", False
-        )
         self.require_effectively_flat = kwargs.get("require_effectively_flat", False)
         self.require_houses_nearby = kwargs.get("require_houses_nearby", False)
         self.require_road_adjacent = kwargs.get("require_road_adjacent", False)

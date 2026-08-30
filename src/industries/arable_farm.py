@@ -45,7 +45,6 @@ industry.add_tile(
         disallow_slopes=True,
         disallow_above_snowline=True,
         disallow_desert=True,
-        disallow_industry_adjacent=True,
     ),
 )
 

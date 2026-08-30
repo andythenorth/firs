@@ -34,9 +34,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="oil_rig_tile_1",
-    location_checks=TileLocationChecks(
-        disallow_industry_adjacent=True, disallow_slopes=True
-    ),
+    location_checks=TileLocationChecks(disallow_slopes=True),
 )
 
 sprite_1 = industry.add_sprite(sprite_number="2096")

@@ -59,13 +59,11 @@ industry.add_tile(
 )
 industry.add_tile(
     id="oil_terminal_tile_3",
-    # this is a totally flat tile for ships or other pure water features, so do not allow on coast slopes
-    land_shape_flags="bitmask(LSF_ONLY_ON_FLAT_LAND)",
     # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
     autoslope="return CB_RESULT_NO_AUTOSLOPE",
-    location_checks=TileLocationChecks(always_allow_founder=False),
+    location_checks=TileLocationChecks(always_allow_founder=False, disallow_slopes=True),
 )
 
 spriteset_small_tanks = industry.add_spriteset(

@@ -53,9 +53,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="fishing_grounds_tile_1",
-    location_checks=TileLocationChecks(
-        disallow_industry_adjacent=True, disallow_slopes=True
-    ),
+    location_checks=TileLocationChecks(disallow_slopes=True),
 )
 
 spriteset_1 = industry.add_spriteset(

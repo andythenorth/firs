@@ -46,13 +46,13 @@ industry.add_tile(
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     autoslope="return CB_RESULT_NO_AUTOSLOPE",
     location_checks=TileLocationChecks(
-        disallow_desert=True, disallow_coast=True, disallow_industry_adjacent=True
+        disallow_desert=True, disallow_coast=True
     ),
 )
 industry.add_tile(
     id="forest_tile_2",
     location_checks=TileLocationChecks(
-        disallow_desert=True, disallow_coast=True, disallow_industry_adjacent=True
+        disallow_desert=True, disallow_coast=True
     ),
 )
 

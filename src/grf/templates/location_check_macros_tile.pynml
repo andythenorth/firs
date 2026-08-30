@@ -75,6 +75,32 @@
 </metal:require_slope>
 
 
+<metal:require_effectively_flat metal:define-macro="require_effectively_flat">
+    <!--!
+        Check whether highest corner of a tile is same as highest corner of industry north tile
+        The check looks really complex, but is simple:
+        - get the tile height of n tile (lowest corner), add 0, 1, or 2 depending on slope (flat, slope, steep slope)
+        - do same for current tile
+        - if the results match, allow building
+        The stacked ternary operators make it look more complicated than it is.
+    -->
+    switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point},
+                (
+                nearby_tile_height(-relative_x, -relative_y)
+                + (nearby_tile_slope(-relative_x, -relative_y)
+                == SLOPE_FLAT ? 0 :
+                nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1
+                )) == (nearby_tile_height(0, 0)
+                + (nearby_tile_slope(0, 0)
+                == SLOPE_FLAT ? 0 :
+                nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+                ) {
+        1: ${location_check.switch_result};
+        return CB_RESULT_LOCATION_DISALLOW;
+    }
+</metal:require_effectively_flat>
+
+
 <metal:require_road_adjacent metal:define-macro="require_road_adjacent">
     <!--!  Check whether an industry *tile* is adjacent to at least 1 road tile -->
     <!--!
@@ -197,29 +223,3 @@
         ${location_check.switch_result};
     }
 </metal:disallow_desert>
-
-
-<metal:require_effectively_flat metal:define-macro="require_effectively_flat">
-    <!--!
-        Check whether highest corner of a tile is same as highest corner of industry north tile
-        The check looks really complex, but is simple:
-        - get the tile height of n tile (lowest corner), add 0, 1, or 2 depending on slope (flat, slope, steep slope)
-        - do same for current tile
-        - if the results match, allow building
-        The stacked ternary operators make it look more complicated than it is.
-    -->
-    switch (FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point},
-                (
-                nearby_tile_height(-relative_x, -relative_y)
-                + (nearby_tile_slope(-relative_x, -relative_y)
-                == SLOPE_FLAT ? 0 :
-                nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1
-                )) == (nearby_tile_height(0, 0)
-                + (nearby_tile_slope(0, 0)
-                == SLOPE_FLAT ? 0 :
-                nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
-                ) {
-        1: ${location_check.switch_result};
-        return CB_RESULT_LOCATION_DISALLOW;
-    }
-</metal:require_effectively_flat>

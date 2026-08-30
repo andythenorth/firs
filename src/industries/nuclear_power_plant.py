@@ -42,7 +42,7 @@ industry.add_tile(
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
     location_checks=TileLocationChecks(
-        require_effectively_flat=True, disallow_industry_adjacent=True
+        require_effectively_flat=True
     ),
 )
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")

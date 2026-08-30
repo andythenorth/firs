@@ -44,7 +44,7 @@ industry.enable_in_economy(
 industry.add_tile(
     id="integrated_steel_mill_tile_1",
     location_checks=TileLocationChecks(
-        require_effectively_flat=True, disallow_industry_adjacent=True
+        require_effectively_flat=True
     ),
 )
 industry.add_tile(
@@ -57,7 +57,7 @@ industry.add_tile(
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
     location_checks=TileLocationChecks(
-        require_effectively_flat=True, disallow_industry_adjacent=True
+        require_effectively_flat=True
     ),
 )
 industry.add_tile(
@@ -66,7 +66,7 @@ industry.add_tile(
     animation_looping=True,
     animation_speed=4,
     location_checks=TileLocationChecks(
-        require_effectively_flat=True, disallow_industry_adjacent=True
+        require_effectively_flat=True
     ),
 )
 

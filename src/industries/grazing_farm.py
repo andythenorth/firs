@@ -35,7 +35,7 @@ industry.enable_in_economy(
 industry.add_tile(
     id="grazing_farm_tile_1",
     location_checks=TileLocationChecks(
-        disallow_coast=True, disallow_industry_adjacent=True
+        disallow_coast=True
     ),
 )
 

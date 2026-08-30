@@ -28,7 +28,7 @@ industry.enable_in_economy(
 industry.add_tile(
     id="herding_coop_tile_1",
     location_checks=TileLocationChecks(
-        disallow_desert=True, disallow_coast=True, disallow_industry_adjacent=True
+        disallow_desert=True, disallow_coast=True
     ),
 )
 industry.add_tile(
@@ -37,7 +37,7 @@ industry.add_tile(
     animation_looping=True,
     animation_speed=2,
     location_checks=TileLocationChecks(
-        disallow_desert=True, disallow_coast=True, disallow_industry_adjacent=True
+        disallow_desert=True, disallow_coast=True
     ),
 )
 

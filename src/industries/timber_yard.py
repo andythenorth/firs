@@ -30,7 +30,7 @@ industry.enable_in_economy(
 # non-animated tile, allowed on slopes
 industry.add_tile(
     id="timber_yard_tile_1",
-    location_checks=TileLocationChecks(disallow_industry_adjacent=True),
+    location_checks=TileLocationChecks(),
 )
 
 # animated kiln-building tile, graphics break if built on slopes
@@ -40,7 +40,7 @@ industry.add_tile(
     animation_looping=True,
     animation_speed=2,
     location_checks=TileLocationChecks(
-        require_effectively_flat=True, disallow_industry_adjacent=True
+        require_effectively_flat=True
     ),
 )
 
