@@ -36,7 +36,7 @@ industry.enable_in_economy(
     vulcan_config={
         "map_curator": {
             "curation_function": "MinimumRatioToTowns",
-            "min_population": 400,  # we force GS-placed builders yards into larger towns, smaller towns get hardware stores
+            "min_population": 400,  # we force GS-placed builders yards into larger towns, smaller towns get general stores
             "max_population": 0,
             "industry_town_ratio": 1,
         }
@@ -56,7 +56,7 @@ industry.enable_in_economy(
     vulcan_config={
         "map_curator": {
             "curation_function": "MinimumRatioToTowns",
-            "min_population": 400,  # we force GS-placed builders yards into larger towns, smaller towns get hardware stores
+            "min_population": 400,  # we force GS-placed builders yards into larger towns, smaller towns get general stores
             "max_population": 0,
             "industry_town_ratio": 1,
         }

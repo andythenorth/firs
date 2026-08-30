@@ -32,7 +32,7 @@ industry.enable_in_economy(
     vulcan_config={
         "map_curator": {
             "curation_function": "MinimumRatioToTowns",
-            "min_population": 800,  # we force GS-placed roadstone plants into largest towns, smaller towns get hardware stores
+            "min_population": 800,  # we force GS-placed roadstone plants into larger towns only
             "max_population": 0,
             "industry_town_ratio": 1,
         }
