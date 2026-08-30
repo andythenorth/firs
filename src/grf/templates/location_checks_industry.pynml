@@ -48,7 +48,6 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_location_post_player_foundin
 
 <!--!
     generally *always* allow player to found industries (tile location checks still apply)
-    but there may be prior checks to e.g. to restrict layouts by date
 -->
 switch (FEAT_INDUSTRIES, SELF,${industry.id}_check_location_allow_player_founding, (
             (extra_callback_info2 == IND_CREATION_FUND) ||

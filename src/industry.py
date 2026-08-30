@@ -226,17 +226,10 @@ class IndustryLocationChecks(object):
         self.location_check_industry_disallow_too_far_from_coast = location_args.get(
             "location_check_industry_disallow_too_far_from_coast", None
         )
-        # this is custom to grain mill, can be made generic if needed
-        self.grain_mill_layouts_by_date = location_args.get(
-            "grain_mill_layouts_by_date", None
-        )
 
     def get_pre_player_founding_checks(self, incompatible_industries):
+        # no-op, as of August 2026, possibly could be removed
         result = []
-
-        if self.grain_mill_layouts_by_date:
-            result.append(IndustryLocationCheckGrainMillLayoutsByDate())
-
         return result
 
     def get_post_player_founding_checks_AND(self, incompatible_industries):
@@ -429,14 +422,6 @@ class IndustryLocationCheckCoastDistance(IndustryLocationCheck):
 
     def __init__(self):
         self.procedure_name = "disallow_too_far_from_coast"
-        self.params = []
-
-
-class IndustryLocationCheckGrainMillLayoutsByDate(IndustryLocationCheck):
-    """Custom check for Grain mill, layouts are restricted by date; this is a one-off, but could be made generic if needed"""
-
-    def __init__(self):
-        self.procedure_name = "grain_mill_layouts_by_date"
         self.params = []
 
 
