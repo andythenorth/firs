@@ -7,7 +7,8 @@ industry = IndustryPrimaryExtractive(
         ("PASS", 4),
     ],
     prob_in_game="6",
-    prob_map_gen="6",
+    # due to wanting 1960 date check, these will have to be probability 0 at map gen (implementation detail)
+    prob_map_gen="0",
     substitute="5",
     map_colour="151",
     colour_scheme_name="scheme_1_elton", # cabbage needs checked
