@@ -6,7 +6,7 @@ industry = IndustrySecondary(
     prod_cargo_types_with_output_ratios=[
         ("STEL", 8),
     ],
-    prob_in_game="3",
+    prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",
     map_colour="10",
     colour_scheme_name="scheme_1_elton", # cabbage needs checked

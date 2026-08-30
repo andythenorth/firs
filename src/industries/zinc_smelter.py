@@ -10,7 +10,7 @@ industry = IndustrySecondary(
         ("ZINC", 3),
         ("SUAC", 5), # sulphuric acid is higher volume coproduct IRL and also needed for gameplay
     ],
-    prob_in_game="3",
+    prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",
     map_colour="19",
     colour_scheme_name="scheme_1_elton", # cabbage needs checked

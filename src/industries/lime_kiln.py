@@ -7,7 +7,7 @@ industry = IndustrySecondary(
         ("QLME", 6),
         ("FMSP", 2),
     ],
-    prob_in_game="3",
+    prob_in_game="1",  # low probability of build during gameplay
     prob_map_gen="5",
     map_colour="119",
     colour_scheme_name="scheme_10_wyclef",
@@ -38,7 +38,6 @@ industry.enable_in_economy(
     accept_cargos_with_input_ratios=[
         ("LIME", 8)
     ],  # no fuel source, at least in Steeltown, it's better for gameplay - assume natural gas fuel
-    prob_in_game="1",  # low probability of build during gameplay
 )
 
 industry.add_tile(

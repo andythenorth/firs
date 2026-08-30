@@ -11,7 +11,7 @@ industry = IndustrySecondary(
         ("PACK", 5),
         ("GOOD", 3),
     ],
-    prob_in_game="3",
+    prob_in_game="1",
     prob_map_gen="5",
     map_colour="151",
     colour_scheme_name="scheme_3_hendrix",

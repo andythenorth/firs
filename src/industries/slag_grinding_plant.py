@@ -10,7 +10,7 @@ industry = IndustrySecondary(
         ("ENSP", 1),
         ("FMSP", 2),
     ],
-    prob_in_game="3",
+    prob_in_game="1",
     prob_map_gen="5",
     map_colour="19",
     colour_scheme_name="scheme_10_wyclef",

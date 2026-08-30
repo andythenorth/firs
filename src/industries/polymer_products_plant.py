@@ -13,7 +13,7 @@ industry = IndustrySecondary(
         ("HWAR", 3),
         ("PACK", 2),
     ],
-    prob_in_game="3",
+    prob_in_game="1",
     prob_map_gen="5",
     map_colour="209",
     colour_scheme_name="scheme_1_elton", # cabbage needs checked

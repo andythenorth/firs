@@ -10,7 +10,7 @@ industry = IndustrySecondary(
         ("PHAC", 4),
         ("SUAC", 4),
     ],
-    prob_in_game="3",
+    prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",
     map_colour="191",
     colour_scheme_name="scheme_1_elton",  # cabbage needs checked

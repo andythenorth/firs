@@ -9,7 +9,7 @@ industry = IndustrySecondary(
     prod_cargo_types_with_output_ratios=[
         ("GOOD", 8),
     ],
-    prob_in_game="7",
+    prob_in_game="1",
     prob_map_gen="8",
     map_colour="186",
     colour_scheme_name="scheme_1_elton", # cabbage needs checked

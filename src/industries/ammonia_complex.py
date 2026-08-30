@@ -14,7 +14,7 @@ industry = IndustrySecondary(
         ("ENUM", 1), # primarily CO2 (dry ice, carbonation)
         # FMSP considered and rejected, overlaps too much with Fertiliser Plant, no shortage of FMSP on map already
     ],
-    prob_in_game="3",
+    prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",
     map_colour="173",
     colour_scheme_name="scheme_1_elton", # cabbage needs checked

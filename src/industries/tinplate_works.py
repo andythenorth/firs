@@ -8,7 +8,7 @@ industry = IndustrySecondary(
         ("SUAC", 2),
     ],
     prod_cargo_types_with_output_ratios=[("TINP", 8)],
-    prob_in_game="3",
+    prob_in_game="1",
     prob_map_gen="5",
     map_colour="160",
     colour_scheme_name="scheme_1_elton", # tile="tinplate_works_tile_1" needs checked
