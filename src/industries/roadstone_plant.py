@@ -12,7 +12,6 @@ industry = IndustryTertiary(
     map_colour="169",
     colour_scheme_name="scheme_3_hendrix",
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
-    prospect_chance="0.75",  # yeah delete this, it's not required for tertiary
     name="string(STR_IND_ROADSTONE_PLANT)",
     nearby_station_name="string(STR_STATION_BUILDERS_YARD)",
     fund_cost_multiplier="16",

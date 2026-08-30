@@ -11,7 +11,6 @@ industry = IndustryTertiary(
     colour_scheme_name="scheme_1_elton",
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
     town_industry_for_cargoflow=False,
-    prospect_chance="0.75",
     name="string(STR_IND_POWER_PLANT)",
     nearby_station_name="string(STR_STATION_POWERHUNGRY)",
     fund_cost_multiplier="15",

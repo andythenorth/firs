@@ -15,7 +15,6 @@ industry = IndustryTertiary(
     colour_scheme_name="scheme_1_elton", # cabbage needs checked
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
     location_checks=dict(same_type_distance=16),
-    prospect_chance="0.75",
     name="string(STR_IND_PETROLPUMP)",
     nearby_station_name="string(STR_STATION_PUMPS)",
     fund_cost_multiplier="8",

@@ -16,7 +16,6 @@ industry = IndustryTertiary(
     colour_scheme_name="scheme_3_hendrix",
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
     location_checks=dict(same_type_distance=16),
-    prospect_chance="0.75",
     name="string(STR_IND_HOTEL)",
     nearby_station_name="string(STR_STATION_BAR_GRILL_AND_ROOMS)",
     fund_cost_multiplier="101",

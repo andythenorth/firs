@@ -14,7 +14,6 @@ industry = IndustryTertiary(
     location_checks=dict(
         same_type_distance=32,
     ),
-    prospect_chance="0.75",
     name="string(STR_IND_VEHICLE_DISTRIBUTOR)",
     nearby_station_name="string(STR_STATION_VEHICLE_DISTRIBUTOR)",
     fund_cost_multiplier="8",

@@ -16,7 +16,6 @@ industry = IndustryPrimaryPort(
     colour_scheme_name="scheme_1_elton", # cabbage needs checked
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
     town_industry_for_cargoflow=False,
-    prospect_chance="0.75",
     name="string(STR_IND_NUCLEAR_POWER_PLANT)",
     nearby_station_name="string(STR_STATION_POWERHUNGRY)",
     fund_cost_multiplier="15",
