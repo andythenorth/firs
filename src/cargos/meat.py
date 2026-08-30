@@ -20,5 +20,5 @@ cargo = Cargo(
     icon_indices=(2, 7),
     # used by FIRS GS
     vulcan_town_effect="VTE_HAPPINESS", # CABBAGE
-    sprites_complete=False, # CABBAGE
+    sprites_complete=True,
 )
