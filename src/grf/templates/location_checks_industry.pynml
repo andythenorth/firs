@@ -13,7 +13,7 @@
             I believe the AND arose during conversion to use procedures, and looked like it gave the most terse possible switch expression at the time, avoiding chained switches
             but then multiple OR groups were needed anyway, so it's probably moot - Jan 2022
         -->
-        <tal:location_checks_industry repeat="location_check industry.location_checks.get_post_player_founding_checks_AND(incompatible_industries)">
+        <tal:location_checks_industry repeat="location_check industry.get_location_checks(economy=economy).get_post_player_founding_checks_AND(economy, incompatible_industries)">
             ${location_check.procedure_name_and_params_as_nml_string}
             ${'&&' if not repeat.location_check.end else ''}
         </tal:location_checks_industry>
@@ -22,7 +22,7 @@
         return CB_RESULT_LOCATION_DISALLOW;
     }
 
-    <tal:OR_groups repeat="OR_group industry.location_checks.get_post_player_founding_checks_OR(incompatible_industries)">
+    <tal:OR_groups repeat="OR_group industry.get_location_checks(economy=economy).get_post_player_founding_checks_OR(economy, incompatible_industries)">
         switch (FEAT_INDUSTRIES, SELF, ${industry.id}_${economy.id}_check_location_post_player_founding_checks_OR_${OR_group['OR_group_name']},
             [
             <!--!
@@ -49,7 +49,7 @@
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_location_switch_economy, economy) {
     <tal:build_economies repeat="economy industry.economies_enabled_for_industry">
-        ${economy.numeric_id}: ${industry.id}_${economy.id}_check_location_post_player_founding_checks_OR_${industry.location_checks.get_post_player_founding_checks_OR(incompatible_industries)[-1]['OR_group_name']};
+        ${economy.numeric_id}: ${industry.id}_${economy.id}_check_location_post_player_founding_checks_OR_${industry.get_location_checks(economy=economy).get_post_player_founding_checks_OR(economy, incompatible_industries)[-1]['OR_group_name']};
     </tal:build_economies>
 }
 
@@ -65,14 +65,15 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_location_allow_player_foundi
     ${industry.id}_check_location_switch_economy;
 }
 <!--! checks that apply to both player and game constructing the industry, e.g. date restricted layouts -->
+<!--! !! this first check is not economy aware as it didn't need to be as of August 2026 - if that changes, move all checks inside an economy loop -->
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_location,
     [
     <!--! assumes all checks return 1 for allow and 0 otherwise, then we just AND all the results -->
-    <tal:location_checks_industry repeat="location_check industry.location_checks.get_pre_player_founding_checks(incompatible_industries)">
+    <tal:location_checks_industry repeat="location_check industry.get_location_checks(economy=None).get_pre_player_founding_checks(incompatible_industries)">
         ${location_check.procedure_name_and_params_as_nml_string}
         ${'&&' if not repeat.location_check.end else ''}
     </tal:location_checks_industry>
-    <tal:fallback condition="len(industry.location_checks.get_pre_player_founding_checks(incompatible_industries)) == 0">
+    <tal:fallback condition="len(industry.get_location_checks(economy=None).get_pre_player_founding_checks(incompatible_industries)) == 0">
         <!--! if the list of checks is empty, nml will barf, so fallback to '1' -->
         1
     </tal:fallback>

@@ -202,18 +202,17 @@ class IndustryLayout(object):
 class IndustryLocationChecks(object):
     """Class to hold location checks for an industry"""
 
-    def __init__(self, industry, location_args={}):
+    def __init__(self, industry, economy_id, location_args):
         self.industry = industry
         self.same_type_distance = location_args.get("same_type_distance", None)
         self.near_at_least_one_of_these_keystone_industries = location_args.get(
             "near_at_least_one_of_these_keystone_industries", None
         )
-        if self.near_at_least_one_of_these_keystone_industries is not None:
+        if self.near_at_least_one_of_these_keystone_industries is not None and economy_id is None:
             utils.echo_message(
-                "near_at_least_one_of_these_keystone_industries set by",
+                "near_at_least_one_of_these_keystone_industries set in default location checks by",
                 industry.id,
                 "- should be in economy location checks only",
-                "(unsupported)",
                 message_type="info",
             )
         self.require_cluster = location_args.get("require_cluster", None)
@@ -228,11 +227,12 @@ class IndustryLocationChecks(object):
         )
 
     def get_pre_player_founding_checks(self, incompatible_industries):
+        # !! get_pre_player_founding_checks are not economy aware at the caller (economy=None) used
         # no-op, as of August 2026, possibly could be removed
         result = []
         return result
 
-    def get_post_player_founding_checks_AND(self, incompatible_industries):
+    def get_post_player_founding_checks_AND(self, economy, incompatible_industries):
         # checks where all conditions must be satisfied
         result = []
 
@@ -279,7 +279,7 @@ class IndustryLocationChecks(object):
 
         return result
 
-    def get_post_player_founding_checks_OR(self, incompatible_industries):
+    def get_post_player_founding_checks_OR(self, economy, incompatible_industries):
         # checks structured in OR groups
         # within each OR group, satisyfing any one of the conditions is enough
         result = []
@@ -487,6 +487,7 @@ class IndustryProperties(object):
             )
 
 
+
 class Industry(object):
     """Base class for all types of industry"""
 
@@ -509,16 +510,16 @@ class Industry(object):
         self.economy_variations = {}
         for economy in firs.economy_manager:
             self.add_economy_variation(economy)
+        self.default_location_checks = IndustryLocationChecks(self, economy_id=None, location_args=kwargs.get("location_checks", {}))
+        self.location_checks = {}
         # Vulcan is used to configure FIRS GS compile-time properties, and holds Vulcan-specific properties and methods
         self.vulcan = Vulcan(self)
         # template will be set by subcass, and/or by individual industry instances
         self.template = kwargs.get("template", None)
-        self.location_checks = IndustryLocationChecks(
-            self, kwargs.get("location_checks", {})
-        )
         self.provides_snow = kwargs.get("provides_snow", False)
         self.sprites_complete = kwargs["sprites_complete"]
         self.animated_tiles_fixed = kwargs["animated_tiles_fixed"]
+
 
     def validate(self):
         # any post init checks we want to do can go here
@@ -580,8 +581,10 @@ class Industry(object):
     def enable_in_economy(self, economy_id, **kwargs):
         self.economy_variations[economy_id].enabled = True
         for kwarg_name, kwarg_value in kwargs.items():
-            # special case for location checks, which must be appended to the dedicated IndustryLocationChecks instance holding the standard checks for the industry
-            if hasattr(self.economy_variations[economy_id], kwarg_name):
+            # special case for location checks
+            if kwarg_name == "location_checks":
+                self.add_economy_location_checks(economy_id, kwargs["location_checks"])
+            elif hasattr(self.economy_variations[economy_id], kwarg_name):
                 setattr(self.economy_variations[economy_id], kwarg_name, kwarg_value)
             else:
                 raise NameError(
@@ -656,6 +659,9 @@ class Industry(object):
 
     def add_economy_variation(self, economy):
         self.economy_variations[economy.id] = IndustryProperties()
+
+    def add_economy_location_checks(self, economy_id, location_args):
+        self.location_checks[economy_id] = IndustryLocationChecks(self, economy_id=economy_id, location_args=location_args)
 
     def add_view_for_object(self, view, **kwargs):
         # view is a list of tuples as [(x, y, spritelayout)], similar to industry layouts, but there's no need for a stubby class for view
@@ -1118,6 +1124,12 @@ class Industry(object):
             return
         else:
             return property_name + ": " + value + ";"
+
+    def get_location_checks(self, economy):
+        if (economy is not None) and (economy.id in self.location_checks):
+            return self.location_checks[economy.id]
+        else:
+            return self.default_location_checks
 
     @property
     def nearby_station_name_as_nml_property(self):
