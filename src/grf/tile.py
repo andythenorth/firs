@@ -1,4 +1,3 @@
-from collections import deque
 import os.path
 
 currentdir = os.curdir
@@ -90,22 +89,36 @@ class TileLocationChecks(object):
 
     def get_render_tree(self, tile_id, industry_id):
         switch_prefix = tile_id + "_lc_"
-        result = deque([])
 
-        if self.always_allow_founder:
-            result.appendleft(TileLocationCheckFounder())
+        # order of checks will be order of append (append first => checked first)
+        result = []
 
-        if self.disallow_slopes:
-            result.appendleft(TileLocationCheckDisallowSlopes())
+        if self.disallow_coast:
+            result.append(TileLocationCheckDisallowCoast())
+
+        if self.disallow_desert:
+            result.append(TileLocationCheckDisallowDesert())
+
+        if self.disallow_below_snowline:
+            result.append(TileLocationCheckDisallowBelowSnowline())
+
+        if self.disallow_above_snowline:
+            result.append(TileLocationCheckDisallowAboveSnowline())
+
+        if self.require_effectively_flat:
+            result.append(TileLocationCheckRequireEffectivelyFlat())
 
         if self.disallow_steep_slopes:
-            result.appendleft(TileLocationCheckDisallowSteepSlopes())
+            result.append(TileLocationCheckDisallowSteepSlopes())
+
+        if self.disallow_slopes:
+            result.append(TileLocationCheckDisallowSlopes())
 
         if self.disallow_industry_adjacent:
             result.append(TileLocationCheckDisallowIndustryAdjacent())
 
-        if self.require_effectively_flat:
-            result.appendleft(TileLocationCheckRequireEffectivelyFlat())
+        if self.always_allow_founder:
+            result.append(TileLocationCheckFounder())
 
         if self.require_coast:
             result.append(TileLocationCheckRequireSea())
@@ -124,18 +137,6 @@ class TileLocationChecks(object):
 
         if self.require_road_adjacent:
             result.append(TileLocationCheckRequireRoadAdjacent())
-
-        if self.disallow_above_snowline:
-            result.appendleft(TileLocationCheckDisallowAboveSnowline())
-
-        if self.disallow_below_snowline:
-            result.appendleft(TileLocationCheckDisallowBelowSnowline())
-
-        if self.disallow_desert:
-            result.appendleft(TileLocationCheckDisallowDesert())
-
-        if self.disallow_coast:
-            result.appendleft(TileLocationCheckDisallowCoast())
 
         # walk the tree, setting entry points and results (id of next switch) for each switch
         for count, lc in enumerate(result):
