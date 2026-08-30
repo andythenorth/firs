@@ -26,7 +26,6 @@ industry = IndustrySecondary(
     name="string(STR_IND_POWER_SYSTEMS_FACTORY)",
     nearby_station_name="string(STR_STATION_POWER_SYSTEMS_FACTORY)",
     fund_cost_multiplier="35",
-    pollution_and_squalor_factor=1,
     provides_snow=False,
     sprites_complete=False,
     animated_tiles_fixed=True,

@@ -14,7 +14,6 @@ industry = IndustryPrimaryExtractive(
     name="TTD_STR_INDUSTRY_NAME_COPPER_ORE_MINE",
     nearby_station_name="string(STR_STATION_COPPER_LODE)",
     fund_cost_multiplier="238",
-    pollution_and_squalor_factor=1,
     primary_production_random_factor_set="wide_range",
     sprites_complete=True,
     animated_tiles_fixed=True,

@@ -20,7 +20,6 @@ industry = IndustrySecondary(
     name="string(STR_IND_CEMENT_PLANT)",
     nearby_station_name="string(STR_STATION_SILO)",
     fund_cost_multiplier="203",
-    pollution_and_squalor_factor=2,
     sprites_complete=True,
     animated_tiles_fixed=True,
 )

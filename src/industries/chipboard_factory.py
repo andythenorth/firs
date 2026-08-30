@@ -19,7 +19,6 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_MILL)",
     name="string(STR_IND_CHIPBOARD_FACTORY)",
     override="14",
-    pollution_and_squalor_factor=2,
     sprites_complete=False,
     animated_tiles_fixed=True,
 )

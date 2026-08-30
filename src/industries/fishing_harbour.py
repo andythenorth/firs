@@ -23,7 +23,6 @@ industry = IndustrySecondary(
     nearby_station_name="string(STR_STATION_FISHMARKET)",
     fund_cost_multiplier="150",
     override_default_construction_states=True,
-    pollution_and_squalor_factor=1,
     sprites_complete=True,
     animated_tiles_fixed=True,
 )

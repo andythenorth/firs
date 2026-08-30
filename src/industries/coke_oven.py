@@ -18,7 +18,6 @@ industry = IndustrySecondary(
     name="string(STR_IND_COKE_OVEN)",
     nearby_station_name="string(STR_STATION_BANK_TOP)",
     fund_cost_multiplier="120",
-    pollution_and_squalor_factor=2,
     sprites_complete=True,
     animated_tiles_fixed=True,
 )

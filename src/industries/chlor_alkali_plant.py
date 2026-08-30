@@ -12,7 +12,6 @@ industry = IndustrySecondary(
     name="string(STR_IND_CHLOR_ALKALI_PLANT)",
     nearby_station_name="string(STR_STATION_BRINE_WORKS)",
     fund_cost_multiplier="170",
-    pollution_and_squalor_factor=2,
     sprites_complete=True,
     animated_tiles_fixed=True,
 )

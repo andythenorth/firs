@@ -21,7 +21,6 @@ industry = IndustrySecondary(
     name="string(STR_IND_WIRE_ROD_MILL)",
     nearby_station_name="string(STR_STATION_ROD_MILL)",
     fund_cost_multiplier="120",
-    pollution_and_squalor_factor=1,
     sprites_complete=True,
     animated_tiles_fixed=True,
 )

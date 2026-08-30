@@ -20,7 +20,6 @@ industry = IndustrySecondary(
     name="string(STR_IND_FROZEN_FOOD_PLANT)",
     nearby_station_name="string(STR_STATION_FREEZERS)",
     fund_cost_multiplier="120",
-    pollution_and_squalor_factor=1,
     sprites_complete=False,
     animated_tiles_fixed=True,
 )

@@ -21,7 +21,6 @@ industry = IndustryPrimaryOrganic(
     extra_text_fund="string(STR_FUND_DAIRY_FARM)",
     nearby_station_name="string(STR_STATION_FARM_2)",
     fund_cost_multiplier="60",
-    pollution_and_squalor_factor=1,
     primary_production_random_factor_set="wide_range",
     sprites_complete=True,
     animated_tiles_fixed=True,

@@ -22,7 +22,6 @@ industry = IndustryPrimaryExtractive(
     fund_cost_multiplier="255",
     override="5",
     intro_year=1967,
-    pollution_and_squalor_factor=1,
     primary_production_random_factor_set="wide_range",
     sprites_complete=True,
     animated_tiles_fixed=True,

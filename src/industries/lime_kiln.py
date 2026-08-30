@@ -21,7 +21,6 @@ industry = IndustrySecondary(
     name="string(STR_IND_LIME_KILN)",
     nearby_station_name="string(STR_STATION_KILNS)",
     fund_cost_multiplier="85",
-    pollution_and_squalor_factor=2,
     provides_snow=True,
     sprites_complete=True,
     animated_tiles_fixed=True,

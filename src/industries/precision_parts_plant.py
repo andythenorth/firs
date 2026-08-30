@@ -24,7 +24,6 @@ industry = IndustrySecondary(
     name="string(STR_IND_PRECISION_PARTS_PLANT)",
     nearby_station_name="string(STR_STATION_COMPONENTS)",
     fund_cost_multiplier="95",
-    pollution_and_squalor_factor=1,
     sprites_complete=True,
     animated_tiles_fixed=True,
 )

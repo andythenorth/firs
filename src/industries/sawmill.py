@@ -19,7 +19,6 @@ industry = IndustrySecondary(
     name="TTD_STR_INDUSTRY_NAME_SAWMILL",
     nearby_station_name="string(STR_STATION_MILL)",
     fund_cost_multiplier="97",
-    pollution_and_squalor_factor=1,
     sprites_complete=True,
     animated_tiles_fixed=True,
 )

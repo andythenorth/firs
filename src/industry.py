@@ -502,12 +502,6 @@ class IndustryProperties(object):
             raise Exception(
                 "Don't set conflicting_ind_types property; use the FIRS location checks for conflicting industry (these are more flexible)."
             )
-        self.basic_needs_and_luxuries_factor = kwargs.get(
-            "basic_needs_and_luxuries_factor", 0
-        )
-        self.pollution_and_squalor_factor = kwargs.get(
-            "pollution_and_squalor_factor", 0
-        )
 
 
 class Industry(object):
@@ -1279,16 +1273,6 @@ class Industry(object):
         flags = ["IND_FLAG_LONG_CARGO_TYPE_LISTS"]
         flags.extend(self.get_property("_special_flags", None))
         return "bitmask(" + ",".join(flags) + ")"
-
-    @property
-    def basic_needs_and_luxuries_score(self):
-        # handled via a method so that multipliers can be applied to adjust scoring, this might not be necessary
-        return 0
-
-    @property
-    def pollution_and_squalor_score(self):
-        # handled via a method so that multipliers can be applied to adjust scoring, this might not be necessary
-        return self.get_property("pollution_and_squalor_factor", None)
 
     def validate_map_colour(self, value):
         # we need to guard against map colours that have poor contrast with the green, dark green and purple maps
