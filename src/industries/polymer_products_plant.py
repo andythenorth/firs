@@ -20,7 +20,6 @@ industry = IndustrySecondary(
     name="string(STR_IND_POLYMER_PRODUCTS_PLANT)",
     nearby_station_name="string(STR_STATION_MOULDINGS)",
     fund_cost_multiplier="125",
-    intro_year="1900",
     provides_snow=True,
     sprites_complete=False,
     animated_tiles_fixed=False,

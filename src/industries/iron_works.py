@@ -17,7 +17,6 @@ industry = IndustrySecondary(
     name="string(STR_IND_IRON_WORKS)",
     nearby_station_name="string(STR_STATION_FURNACE)",
     fund_cost_multiplier="69",
-    expiry_year=1901,
     provides_snow=True,
     sprites_complete=False,
     animated_tiles_fixed=False,

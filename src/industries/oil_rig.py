@@ -14,6 +14,7 @@ industry = IndustryPrimaryExtractive(
     special_flags=[
         "IND_FLAG_BUILT_ON_WATER",
         "IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES",
+        "IND_FLAG_BUILT_ONLY_AFTER_1960",
     ],
     location_checks=dict(location_check_industry_disallow_too_far_from_coast=True),
     prospect_chance="0.75",
@@ -21,7 +22,6 @@ industry = IndustryPrimaryExtractive(
     nearby_station_name="string(STR_STATION_OIL_RIG)",
     fund_cost_multiplier="255",
     override="5",
-    intro_year=1967,
     primary_production_random_factor_set="wide_range",
     sprites_complete=True,
     animated_tiles_fixed=True,

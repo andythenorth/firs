@@ -28,8 +28,6 @@
 
 <tal:include metal:use-macro="load: produce_primary.pynml" />
 
-<tal:include metal:use-macro="load: availability.pynml" />
-
 <tal:include metal:use-macro="load: location_checks_industry.pynml" />
 
 <tal:include metal:use-macro="load: properties_industry.pynml" />
@@ -39,7 +37,6 @@
     if (economy==${economy.numeric_id}) {
         item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
             graphics {
-                construction_probability: ${industry.id}_check_availability;
                 produce_cargo_arrival:    ${industry.id}_produce_cargo_arrival;
                 produce_256_ticks:        ${industry.id}_produce_256_ticks;
                 monthly_prod_change:      ${industry.id}_monthly_prod_change;

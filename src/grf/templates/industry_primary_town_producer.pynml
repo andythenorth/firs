@@ -25,8 +25,6 @@
 
 <tal:include metal:use-macro="load: produce_primary_town_producer.pynml" />
 
-<tal:include metal:use-macro="load: availability.pynml" />
-
 <tal:include metal:use-macro="load: location_checks_industry.pynml" />
 
 <tal:include metal:use-macro="load: properties_industry.pynml" />
@@ -37,7 +35,6 @@
         item(FEAT_INDUSTRIES, ${industry.id}, ${industry.numeric_id}) {
             graphics {
                 produce_256_ticks:       ${industry.id}_produce;
-                construction_probability:${industry.id}_check_availability;
                 location_check:          ${industry.id}_check_location;
                 monthly_prod_change:     ${industry.id}_monthly_prod_change;
                 random_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;

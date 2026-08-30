@@ -453,8 +453,6 @@ class IndustryProperties(object):
         )  # industries should only set this explicitly when re-using a default industry, otherwise '0' is a safe default
         self.name = kwargs.get("name", None)
         self.nearby_station_name = kwargs.get("nearby_station_name", None)
-        self.intro_year = kwargs.get("intro_year", None)
-        self.expiry_year = kwargs.get("expiry_year", None)
         self.min_cargo_distr = "1"  # just use the most common value from default OTTD industries, this property needs set but has little use
         #  input multipliers must be explicitly 0 unless set, don't rely on sensible defaults
         self.input_multiplier_1 = kwargs.get("input_multiplier_1", "[0, 0]")
@@ -1031,18 +1029,6 @@ class Industry(object):
         result = (
             []
         )  # use a list, because I want to warn if industry tries to set more than one result
-        if self.get_intro_year(economy) != 0:
-            result.append(
-                "string(STR_FUND_AVAILABLE_FROM, "
-                + str(self.get_intro_year(economy))
-                + ")"
-            )
-        if self.get_expiry_year(economy) != global_constants.max_game_date:
-            result.append(
-                "string(STR_FUND_AVAILABLE_UNTIL, "
-                + str(self.get_expiry_year(economy))
-                + ")"
-            )
 
         if self.get_property("extra_text_fund", economy) is not None:
             result.append(self.get_property("extra_text_fund", economy))
@@ -1053,11 +1039,6 @@ class Industry(object):
                 "Industry "
                 + self.id
                 + " wants more than one string for extra_text_fund, only one is supported currently"
-            )
-            utils.echo_message(
-                str(self.get_intro_year(economy))
-                + " "
-                + str(self.get_expiry_year(economy))
             )
 
         # if no text is needed...
@@ -1123,22 +1104,6 @@ class Industry(object):
                     )
                 extra_text_string = "STR_EXTRA_TEXT_SECONDARY_COMBINATORY_ANY_TWO"
         return "string(" + extra_text_string + ")"
-
-    def get_intro_year(self, economy):
-        # simple wrapper to get_property(), which sanitises intro_year from None to 0 if unspecified by economy
-        result = self.get_property("intro_year", economy)
-        if result == None:
-            return 0
-        else:
-            return result
-
-    def get_expiry_year(self, economy):
-        # simple wrapper to get_property(), which sanitises expiry from None to max game date if unspecified by economy
-        result = self.get_property("expiry_year", economy)
-        if result == None:
-            return global_constants.max_game_date
-        else:
-            return result
 
     def get_property(self, property_name, economy):
         # does magic to get the property from the defaults if not set

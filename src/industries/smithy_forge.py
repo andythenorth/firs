@@ -17,7 +17,6 @@ industry = IndustrySecondary(
     name="string(STR_IND_SMITHY_FORGE)",
     nearby_station_name="string(STR_STATION_FORGE)",
     fund_cost_multiplier="63",
-    expiry_year=1948,
     provides_snow=True,
     sprites_complete=False,
     animated_tiles_fixed=False,

@@ -20,7 +20,6 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
-    intro_year=1800,
     accept_cargos_with_input_ratios=[
         ("IORE", 3),
         ("COAL", 2),

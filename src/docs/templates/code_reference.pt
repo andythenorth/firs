@@ -118,7 +118,6 @@
                                 <a href="industries.html#${industry.id}">${' / '.join(doc_helper.get_industry_all_names(industry))}</a>
                             </td>
                             <td class="number">${global_constants.industry_numeric_ids[industry.id]}</td>
-                            <td class="number">${industry.get_intro_year(None)}</td>
                             <td class="number">
                                 ${industry.get_property('map_colour', None)}
                                 <span style="background-color:rgb${doc_helper.get_industry_colour(industry)};

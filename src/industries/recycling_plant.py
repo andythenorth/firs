@@ -16,7 +16,6 @@ industry = IndustrySecondary(
     name="string(STR_IND_RECYCLING_PLANT)",
     nearby_station_name="string(STR_STATION_INDUSTRY_ESTATE_1)",
     fund_cost_multiplier="118",
-    intro_year=1978,
     provides_snow=True,
 )
 
