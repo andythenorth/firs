@@ -19,15 +19,6 @@ grf {
 			};
 		}
 	}
-	param 2 {
-	    <!--! legacy use of bit 2 as other bool params were deleted from here -->
-		restrict_open_during_gameplay {
-			name: string(STR_PARAM_NAME_NO_OPENINGS);
-			desc: string(STR_PARAM_DESC_NO_OPENINGS);
-			type: bool;
-			bit: 2;
-		}
-	}
 	param 7 {
 		primary_level1_produced_percent {
 			name: string(STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS);
