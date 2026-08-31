@@ -142,7 +142,7 @@ industry.enable_in_economy(
 # industry.economy_variations['IN_A_HOT_COUNTRY'].prod_cargo_types_with_multipliers = [('GOOD', 14), ('SASH', 12)]
 
 industry.add_tile(
-    id="port_tile_1",
+    id="port_tile_sea_or_land",
     # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     # supporting autoslope for the water tiles produces too many edge cases which are difficult to handle, so ban it
@@ -150,7 +150,7 @@ industry.add_tile(
     location_checks=TileLocationChecks(always_allow_founder=False),
 )
 industry.add_tile(
-    id="port_tile_2",
+    id="port_tile_coast_only",
     # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
@@ -158,7 +158,7 @@ industry.add_tile(
     location_checks=TileLocationChecks(always_allow_founder=False, require_coast=True),
 )
 industry.add_tile(
-    id="port_tile_3",
+    id="port_tile_flat_water_only",
     # we'll draw our own foundations as needed - this also conveniently adjusts the z offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
@@ -291,7 +291,7 @@ spriteset_ship_2_se_nw = industry.add_spriteset(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_gate_shed_coast_part",
-    tile="port_tile_2",
+    tile="port_tile_coast_only",
     config={
         "building_sprites": {
             "se": [
@@ -313,7 +313,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_gate_shed_sea_part",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         "building_sprites": {
             "se": [
@@ -336,7 +336,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_crane_rails_parallel",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         "building_sprites": {
             "se": [
@@ -358,7 +358,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_crane_rails_orthogonal",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         "building_sprites": {
             "se": [
@@ -380,7 +380,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_crane_parallel",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         "building_sprites": {
             "se": [
@@ -406,7 +406,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_crane_orthogonal",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         "building_sprites": {
             "se": [
@@ -432,7 +432,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_crawler_crane_orthogonal",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         "building_sprites": {
             "se": [
@@ -454,7 +454,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_tanks_sphere",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         "building_sprites": {
             "se": [
@@ -476,7 +476,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_silos",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         "building_sprites": {
             "se": [
@@ -498,7 +498,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_bulk_handling",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         "building_sprites": {
             "se": [
@@ -520,7 +520,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_warehouse_half_1",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         "building_sprites": {
             "se": [
@@ -542,7 +542,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_warehouse_half_2",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         "building_sprites": {
             "se": [
@@ -564,7 +564,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_warehouse_full",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         "building_sprites": {
             "se": [
@@ -586,7 +586,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_shed_half_1",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         "building_sprites": {
             "se": [
@@ -608,7 +608,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_shed_half_2",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         # reversed variant of the half-shed for alternate end of the shed
         "building_sprites": {
@@ -631,7 +631,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_shed_full",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         "building_sprites": {
             "se": [
@@ -653,7 +653,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="port_spritelayout_empty",
-    tile="port_tile_1",
+    tile="port_tile_sea_or_land",
     config={
         "building_sprites": {
             "se": [],
@@ -667,7 +667,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="water_feature_auto_orient_to_coast_direction",
     base_id="port_spritelayout_water_ship_1",
-    tile="port_tile_3",
+    tile="port_tile_flat_water_only",
     config={
         "building_sprites": {
             "se": [
@@ -688,7 +688,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="water_feature_auto_orient_to_coast_direction",
     base_id="port_spritelayout_water_ship_2",
-    tile="port_tile_3",
+    tile="port_tile_flat_water_only",
     config={
         "building_sprites": {
             "se": [

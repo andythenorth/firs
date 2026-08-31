@@ -42,7 +42,7 @@ industry.enable_in_economy(
 )
 
 industry.add_tile(
-    id="oil_terminal_tile_1",
+    id="oil_terminal_tile_sea_or_land",
     # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     # supporting autoslope for the water tiles produces too many edge cases which are difficult to handle, so ban it
@@ -50,7 +50,7 @@ industry.add_tile(
     location_checks=TileLocationChecks(always_allow_founder=False),
 )
 industry.add_tile(
-    id="oil_terminal_tile_2",
+    id="oil_terminal_tile_coast_only",
     # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
@@ -58,7 +58,7 @@ industry.add_tile(
     location_checks=TileLocationChecks(always_allow_founder=False, require_coast=True),
 )
 industry.add_tile(
-    id="oil_terminal_tile_3",
+    id="oil_terminal_tile_flat_water_only",
     # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
@@ -107,7 +107,7 @@ spriteset_barge_2_se_nw = industry.add_spriteset(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="oil_terminal_spritelayout_coast_office",
-    tile="oil_terminal_tile_2",
+    tile="oil_terminal_tile_coast_only",
     config={
         "jetty_foundations": True,
         "building_sprites": {
@@ -129,7 +129,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="oil_terminal_spritelayout_sphere_tank",
-    tile="oil_terminal_tile_1",
+    tile="oil_terminal_tile_sea_or_land",
     config={
         "jetty_foundations": True,
         "building_sprites": {
@@ -151,7 +151,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="oil_terminal_spritelayout_small_tanks",
-    tile="oil_terminal_tile_1",
+    tile="oil_terminal_tile_sea_or_land",
     config={
         "jetty_foundations": True,
         "building_sprites": {
@@ -173,7 +173,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="oil_terminal_spritelayout_large_tank",
-    tile="oil_terminal_tile_1",
+    tile="oil_terminal_tile_sea_or_land",
     config={
         "jetty_foundations": True,
         "building_sprites": {
@@ -196,7 +196,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="oil_terminal_spritelayout_water_barge_1",
-    tile="oil_terminal_tile_3",
+    tile="oil_terminal_tile_flat_water_only",
     config={
         "jetty_foundations": False,
         "building_sprites": {
@@ -218,7 +218,7 @@ industry.add_magic_spritelayout(
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
     base_id="oil_terminal_spritelayout_water_barge_2",
-    tile="oil_terminal_tile_3",
+    tile="oil_terminal_tile_flat_water_only",
     config={
         "jetty_foundations": False,
         "building_sprites": {

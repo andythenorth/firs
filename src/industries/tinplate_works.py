@@ -21,10 +21,15 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "MILD_MILD_WEST",
+    # location checks must be per economy when keystone industries are used
+    # generally deeper secondaries don't use keystone locations, but in this case we want to be near a steel mill
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[
+            ["integrated_steel_mill", "electric_arc_furnace"],
+            128,
+        ]
+    ),
 )
-# Tinplate is *not* in Steeltown because it fragments the consumers of Acid too much.  Maybe Better Living Through Chemistry?
-
-# CABBAGE - needs non-animated tile for performance?
 
 industry.add_tile(
     id="tinplate_works_tile_1",
