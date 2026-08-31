@@ -37,7 +37,7 @@ industry.enable_in_economy(
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[
             ["fishing_grounds"],
-            72,
+            96,
         ]
     ),
 )
@@ -47,7 +47,7 @@ industry.enable_in_economy(
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[
             ["fishing_grounds", "fish_farm"],
-            72,
+            96,
         ]
     ),
 )
@@ -65,7 +65,7 @@ industry.enable_in_economy(
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[
             ["fishing_grounds"],
-            72,
+            96,
         ]
     ),
 )
