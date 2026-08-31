@@ -15,15 +15,6 @@ industry = IndustrySecondary(
     map_colour="19",
     colour_scheme_name="scheme_10_wyclef",
     special_flags=["IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE"],
-    # CABBAGE
-    # location checks must be per economy when keystone industries are used
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[
-            ["blast_furnace", "basic_oxygen_furnace", "electric_arc_furnace"],
-            56,
-        ],
-        same_type_distance=72,
-    ),
     name="string(STR_IND_SLAG_GRINDING_PLANT)",
     nearby_station_name="string(STR_STATION_SILO)",
     fund_cost_multiplier="100 ",
@@ -33,10 +24,26 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "MILD_MILD_WEST",
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[
+            ["integrated_steel_mill", "electric_arc_furnace"],
+            56,
+        ],
+        same_type_distance=72,
+    ),
 )
 industry.enable_in_economy(
     "STEELTOWN",
     prob_in_game="0",  # do not build during gameplay
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[
+            ["blast_furnace", "basic_oxygen_furnace", "electric_arc_furnace"],
+            56,
+        ],
+        same_type_distance=72,
+    ),
 )
 
 industry.add_tile(

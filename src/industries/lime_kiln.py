@@ -11,15 +11,6 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="119",
     colour_scheme_name="scheme_10_wyclef",
-    # CABBAGE
-    # location checks must be per economy when keystone industries are used
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[
-            ["quarry", "limestone_mine"],
-            72,
-        ],
-        same_type_distance=72,
-    ),
     name="string(STR_IND_LIME_KILN)",
     nearby_station_name="string(STR_STATION_KILNS)",
     fund_cost_multiplier="85",
@@ -34,12 +25,28 @@ industry.enable_in_economy(
         ("LIME", 4),
         ("PETR", 4),
     ],
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[
+            ["quarry"],
+            72,
+        ],
+        same_type_distance=72,
+    ),
 )
 industry.enable_in_economy(
     "STEELTOWN",
     accept_cargos_with_input_ratios=[
         ("LIME", 8)
     ],  # no fuel source, at least in Steeltown, it's better for gameplay - assume natural gas fuel
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[
+            ["quarry", "limestone_mine"],
+            72,
+        ],
+        same_type_distance=72,
+    ),
 )
 
 industry.add_tile(

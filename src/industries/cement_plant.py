@@ -8,16 +8,6 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="19",
     colour_scheme_name="scheme_17_natalie",
-    # CABBAGE
-    # location checks must be per economy when keystone industries are used
-    # the keystones are quite specific to IAHC, and location checks aren't economy specific, so this might need adjusted if other economies gain cement plant
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[
-            ["quarry", "phosphate_mine"],
-            96,
-        ],
-        same_type_distance=96,
-    ),
     special_flags=["IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE"],
     name="string(STR_IND_CEMENT_PLANT)",
     nearby_station_name="string(STR_STATION_SILO)",
@@ -37,6 +27,14 @@ industry.enable_in_economy(
         ("CMNT", 7),
         ("ENSP", 1),
     ],
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[
+            ["quarry"],
+            96,
+        ],
+        same_type_distance=96,
+    ),
 )
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
@@ -49,6 +47,14 @@ industry.enable_in_economy(
         ("BDMT", 7),
         ("ENSP", 1),
     ],
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[
+            ["quarry", "phosphate_mine"],
+            96,
+        ],
+        same_type_distance=96,
+    ),
 )
 
 # ['IN_A_HOT_COUNTRY'].accept_cargos_with_input_ratios = [('COAL', 2), ('CLAY', 2), ('GRVL', 4)]

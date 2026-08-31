@@ -8,15 +8,6 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="183",
     colour_scheme_name="scheme_9_shania",
-    # CABBAGE
-    # location checks must be per economy when keystone industries are used
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[
-            ["blast_furnace", "coal_mine"],
-            72,
-        ],
-        same_type_distance=72,
-    ),
     name="string(STR_IND_COKE_OVEN)",
     nearby_station_name="string(STR_STATION_BANK_TOP)",
     fund_cost_multiplier="120",
@@ -30,6 +21,14 @@ industry.enable_in_economy(
         ("COKE", 7),
         ("INCA", 1),
     ],
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[
+            ["integrated_steel_mill", "coal_mine"], # not zinc smelter, by design
+            72,
+        ],
+        same_type_distance=72,
+    ),
 )
 industry.enable_in_economy(
     "STEELTOWN",
@@ -38,6 +37,14 @@ industry.enable_in_economy(
         ("CTAR", 1),
         ("SULP", 1),
     ],
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[
+            ["blast_furnace", "coal_mine"],
+            72,
+        ],
+        same_type_distance=72,
+    ),
 )
 
 industry.add_tile(

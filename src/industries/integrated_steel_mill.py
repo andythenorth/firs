@@ -38,6 +38,13 @@ industry.enable_in_economy(
         ("STEL", 6),
         ("SLAG", 2),
     ],
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[
+            ["iron_ore_mine"],
+            128,
+        ]
+    ),
 )
 
 industry.add_tile(
