@@ -16,7 +16,7 @@ industry = IndustryTertiary(
     nearby_station_name="string(STR_STATION_BUILDERS_YARD)",
     fund_cost_multiplier="16",
     provides_snow=False,
-    sprites_complete=True,
+    sprites_complete=False,
     animated_tiles_fixed=True,
 )
 

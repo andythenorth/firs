@@ -28,6 +28,10 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "MILD_MILD_WEST",
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[["oil_refinery", "oil_terminal"], 96],
+        same_type_distance=128,
+    ),
 )
 
 # CABBAGE - needs non-animated tile for performance?

@@ -13,7 +13,7 @@ industry = IndustrySecondary(
     name="string(STR_IND_PRODUCE_PACKER)",
     nearby_station_name="string(STR_STATION_FOOD_CORPORATION)",
     fund_cost_multiplier="65",
-    sprites_complete=True,
+    sprites_complete=False,
     animated_tiles_fixed=True,
 )
 

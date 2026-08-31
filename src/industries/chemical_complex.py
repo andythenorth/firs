@@ -8,14 +8,6 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     map_colour="191",
     colour_scheme_name="scheme_8_haddaway",
-    # it's rare to force co-location of secondaries, but this one is near port by design
-    # !! this will fail if port is not available in economy
-    # wharf was added to avoid pathological case in Arctic Basic where checking for only port would often fail to yield a location (for reasons I didn't fully understand eh)
-    # ?? might have been due to industry ID ordering issue, but really not sure about that
-    location_checks=dict(
-        # near_at_least_one_of_these_keystone_industries=[["port", "wharf"], 96], # !! nerfed off for now as it's just not placing reliably - Jan 2026
-        same_type_distance=128,
-    ),
     name="string(STR_IND_CHEMICAL_COMPLEX)",
     nearby_station_name="string(STR_STATION_HEAVY_INDUSTRY_2)",
     fund_cost_multiplier="170",
@@ -32,6 +24,9 @@ industry.enable_in_economy(
     prod_cargo_types_with_output_ratios=[
         ("CHEM", 8),
     ],
+    location_checks=dict(
+        same_type_distance=128,
+    ),
 )
 industry.enable_in_economy(
     "BASIC_ARCTIC",
@@ -45,6 +40,9 @@ industry.enable_in_economy(
         ("FERT", 4),
         ("BOOM", 4),
     ],
+    location_checks=dict(
+        same_type_distance=128,
+    ),
 )
 industry.enable_in_economy(
     "MILD_MILD_WEST",
@@ -58,6 +56,10 @@ industry.enable_in_economy(
         ("CHIM", 6),
         ("PLAS", 2),
     ],
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[["oil_refinery", "oil_terminal", "salt_works"], 96],
+        same_type_distance=128,
+    ),
 )
 
 
