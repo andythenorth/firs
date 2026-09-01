@@ -17,9 +17,6 @@ industry = IndustryPrimaryOrganic(
         "IND_FLAG_NO_PRODUCTION_INCREASE",
         "IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES",
     ],
-    location_checks=dict(
-        cluster=[60, 5], location_check_industry_disallow_too_far_from_coast=True
-    ),
     prospect_chance="0.75",
     name="string(STR_IND_FISH_FARM)",
     nearby_station_name="string(STR_STATION_SEAFOOD)",  # appears to not work - maybe water industries don't accept station names?
@@ -31,6 +28,13 @@ industry = IndustryPrimaryOrganic(
 
 industry.enable_in_economy(
     "BASIC_ARCTIC",
+    # location checks must be per economy when keystone industries are used
+    location_checks=dict(
+        near_at_least_one_of_these_keystone_industries=[
+            ["fishing_harbour"],
+            144,
+        ]
+    ),
 )
 
 industry.add_tile(

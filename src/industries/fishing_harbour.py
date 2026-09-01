@@ -23,33 +23,12 @@ industry = IndustrySecondary(
 
 industry.enable_in_economy(
     "BASIC_TEMPERATE",
-    # location checks must be per economy when keystone industries are used
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[
-            ["fishing_grounds"],
-            72,
-        ]
-    ),
 )
 industry.enable_in_economy(
     "BASIC_TROPIC",
-    # location checks must be per economy when keystone industries are used
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[
-            ["fishing_grounds"],
-            96,
-        ]
-    ),
 )
 industry.enable_in_economy(
     "BASIC_ARCTIC",
-    # location checks must be per economy when keystone industries are used
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[
-            ["fishing_grounds", "fish_farm"],
-            96,
-        ]
-    ),
 )
 industry.enable_in_economy(
     "MILD_MILD_WEST",
@@ -61,13 +40,6 @@ industry.enable_in_economy(
     prod_cargo_types_with_output_ratios=[
         ("FOOD", 8),
     ],
-    # location checks must be per economy when keystone industries are used
-    location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[
-            ["fishing_grounds"],
-            96,
-        ]
-    ),
 )
 
 # ['IN_A_HOT_COUNTRY'].enabled = True
@@ -81,6 +53,7 @@ industry.add_tile(
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     location_checks=TileLocationChecks(always_allow_founder=False, require_coast=True),
 )
+# port, wharf have 3 tiles, only 2 defined here?  artefact of trying to migrate those to new spritelayouts?
 
 spriteset_concrete = industry.add_spriteset(
     sprites=[(10, 10, 64, 39, -31, -8)],
