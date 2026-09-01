@@ -10,7 +10,8 @@ cargo = Cargo(
     sprite="NEW_CARGO_SPRITE",
     weight="0.8",
     is_freight="1",
-    cargo_classes = ["CC_LIQUID_BULK", "CC_NON_POTABLE"],
+    # gas bulk included to cover lightest hydrocarbons which are transported as liquified gas under pressure
+    cargo_classes = ["CC_LIQUID_BULK", "CC_GAS_BULK", "CC_NON_POTABLE"],
     cargo_label="LHYC",
     units_of_cargo="TTD_STR_LITERS",
     items_of_cargo="string(STR_CARGO_UNIT_LIGHT_HYDROCARBONS)",
