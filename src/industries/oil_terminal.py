@@ -33,7 +33,7 @@ industry.enable_in_economy(
 )
 industry.enable_in_economy(
     "MILD_MILD_WEST",
-    accept_cargo_types=["CHIM", "PETR", "BITU", "ANPR"],
+    accept_cargo_types=["PHAC", "PETR", "BITU", "ANPR", "CHIM"],
     prod_cargo_types_with_multipliers=[
         ("OIL_", 24), # has to be high due to petrochemical dependence of economy
         ("MEOH", 16),
