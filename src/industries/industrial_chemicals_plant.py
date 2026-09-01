@@ -7,14 +7,13 @@ industry = IndustrySecondary(
         ("ANPR", 3),
         ("SUAC", 3),
         ("CHIM", 3),
-        ("PHAC", 3),
         ("QLME", 3),
         ("INGA", 3),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("PRCH", 5),
-        ("ENSP", 2),
-        ("FMSP", 1),
+        ("PRCH", 6), # broad industrial process chemistry
+        ("ENSP", 2), # specialist heavy-industry / mining supplies
+        #("FMSP", 1), # DROPPED - lots of FMSP already, would represent agrochemicals / crop-protection products
     ],
     prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",
