@@ -239,6 +239,7 @@ class DocHelper(object):
             "engineering_supplies",
             "farm_supplies",
             "food_additives",
+            "industrial_gases",
             "packaging",
             "process_chemicals",
             "seals_belts_and_hoses",
