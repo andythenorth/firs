@@ -41,7 +41,6 @@ industry_module_names = [
     "explosives_factory",
     "farm",
     "fermentation_plant",
-    "fertiliser_plant",
     "fish_farm",
     "fishing_grounds",
     "fishing_harbour",

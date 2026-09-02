@@ -3,10 +3,10 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="fertiliser_plant",
     accept_cargos_with_input_ratios=[
-        # CABBAGE - RATIOS?  OPTIONAL?
-        ("ANPR", 3),
-        ("PHAC", 2),
-        ("POTA", 3),
+    # two-cargo production boost - combined ratios of any two cargos must always be at least 8
+        ("ANPR", 6),
+        ("PHAC", 6),
+        ("POTA", 6),
     ],
     prod_cargo_types_with_output_ratios=[
         ("FMSP", 8),
@@ -23,9 +23,11 @@ industry = IndustrySecondary(
     animated_tiles_fixed=False,
 )
 
+"""
 industry.enable_in_economy(
     "MILD_MILD_WEST",
 )
+"""
 
 # CABBAGE - needs non-animated tile for performance?
 

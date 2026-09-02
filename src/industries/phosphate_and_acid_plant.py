@@ -3,12 +3,14 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="phosphate_and_acid_plant",
     accept_cargos_with_input_ratios=[
-        ("PHOS", 4),
-        ("SULP", 4),
+        ("PHOS", 3),
+        ("SULP", 2),
+        ("ANPR", 3),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("PHAC", 4),
-        ("SUAC", 4),
+        ("PHAC", 3),
+        ("SUAC", 2),
+        ("FMSP", 3),
     ],
     prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",

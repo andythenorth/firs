@@ -2,12 +2,7 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(
     id="potash_mine",
-    # small amount of FMSP as a freebie for farm boost
-    prod_cargo_types_with_multipliers=[
-        ("POTA", 20),
-        ("SALT", 15),
-        ("FMSP", 5),
-    ],
+    prod_cargo_types_with_multipliers=[],
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="125",
@@ -25,20 +20,16 @@ industry = IndustryPrimaryExtractive(
 # exists in Steeltown primarily to give a direct cargo to Bulk Terminal
 industry.enable_in_economy(
     "STEELTOWN",
+    # small amount of FMSP as a freebie for farm boost
+    prod_cargo_types_with_multipliers=[
+        ("POTA", 20),
+        ("SALT", 15),
+        ("FMSP", 5),
+    ],
     vulcan_config={
         "map_curator": {
             "curation_function": "MinimumRatioToCompanionIndustryTypes",
             "companion_industries": ["chlor_alkali_plant"],
-            "companion_industries_ratio": 1,
-        }
-    },
-)
-industry.enable_in_economy(
-    "MILD_MILD_WEST",
-    vulcan_config={
-        "map_curator": {
-            "curation_function": "MinimumRatioToCompanionIndustryTypes",
-            "companion_industries": ["fertiliser_plant"],
             "companion_industries_ratio": 1,
         }
     },
