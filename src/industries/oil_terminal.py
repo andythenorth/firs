@@ -39,6 +39,13 @@ industry.enable_in_economy(
         ("MEOH", 16),
         ("SULP", 12),
     ],
+    vulcan_config={
+        "map_curator": {
+            "curation_function": "MinimumRatioToCompanionIndustryTypes",
+            "companion_industries": ["ammonia_complex", "chemical_complex"],
+            "companion_industries_ratio": 0.66,
+        }
+    },
 )
 
 industry.add_tile(

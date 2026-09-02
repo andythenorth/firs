@@ -67,8 +67,8 @@ industry.enable_in_economy(
     vulcan_config={
         "map_curator": {
             "curation_function": "MinimumRatioToCompanionIndustryTypes",
-            "companion_industries": ["aluminium_plant", "fertiliser_plant", "zinc_smelter"],
-            "companion_industries_ratio": 1,
+            "companion_industries": ["aluminium_plant", "phosphate_and_acid_plant", "fermentation_plant", "bottle_and_can_factory"],
+            "companion_industries_ratio": 0.66,
         }
     },
 )

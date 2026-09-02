@@ -90,6 +90,7 @@ industry.enable_in_economy(
         "BEER",
         "KAOL",
         "FMSP",
+        "STEL",
     ],
     prod_cargo_types_with_multipliers=[
         ("ENSP", 12),
@@ -100,8 +101,8 @@ industry.enable_in_economy(
     vulcan_config={
         "map_curator": {
             "curation_function": "MinimumRatioToCompanionIndustryTypes",
-            "companion_industries": ["fermentation_plant", "bottle_and_can_factory"],
-            "companion_industries_ratio": 1,
+            "companion_industries": ["appliance_factory", "engineering_works"],
+            "companion_industries_ratio": 0.66,
         }
     },
 )
