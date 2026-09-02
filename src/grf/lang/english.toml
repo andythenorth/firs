@@ -270,7 +270,7 @@ base = "Manganese"
 base = "Meat"
 
 [STR_CARGO_NAME_MOLASSES]
-base = "Molasses"
+base = "Raw Sugar & Molasses"
 
 # unused
 #[STR_CARGO_NAME_NICKEL]
@@ -613,7 +613,7 @@ base = "{VOLUME} of methanol"
 base = "{VOLUME} of milk"
 
 [STR_CARGO_UNIT_MOLASSES]
-base = "{VOLUME} of molasses"
+base = "{WEIGHT} of raw sugar & molasses"
 
 # unused
 #[STR_CARGO_UNIT_NICKEL]
@@ -1457,8 +1457,8 @@ base = "Stockyard"
 base = "Strip Mill"
 
 # unused
-#[STR_IND_SUGAR_REFINERY]
-#base = "Sugar Refinery"
+[STR_IND_SUGAR_REFINERY]
+base = "Sugar Refinery"
 
 [STR_IND_SUPPLY_YARD]
 base = "Supply Yard"
@@ -1772,8 +1772,8 @@ base = "Soups"
 base = "Coil line"
 
 # unused
-#[STR_STATION_SUGAR_COMPANY]
-#base = "Sugar Company"
+[STR_STATION_SUGAR_COMPANY]
+base = "Sugar Company"
 
 [STR_STATION_TANK_FARM]
 base = "Tank Farm"

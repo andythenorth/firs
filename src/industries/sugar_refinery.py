@@ -3,11 +3,11 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="sugar_refinery",
     accept_cargos_with_input_ratios=[
-        ("MNSP", 3),
-        ("SGBT", 5),
+        ("MOLA", 6),
+        ("PHAC", 2),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("FOOD", 8),
+        ("ENUM", 8),
     ],
     prob_in_game="3",
     prob_map_gen="5",
@@ -20,6 +20,10 @@ industry = IndustrySecondary(
     provides_snow=True,
     sprites_complete=False,
     animated_tiles_fixed=False,
+)
+
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
 )
 
 industry.add_tile(
@@ -73,6 +77,7 @@ sprite_smoke_2 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id="sugar_refinery_spritelayout_1",
+    tile="sugar_refinery_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_1],
@@ -80,6 +85,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="sugar_refinery_spritelayout_2",
+    tile="sugar_refinery_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_2],
@@ -87,6 +93,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="sugar_refinery_spritelayout_3",
+    tile="sugar_refinery_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_3],
@@ -94,6 +101,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="sugar_refinery_spritelayout_4",
+    tile="sugar_refinery_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_4],
@@ -101,6 +109,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="sugar_refinery_spritelayout_5",
+    tile="sugar_refinery_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_5],
@@ -108,6 +117,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="sugar_refinery_spritelayout_6",
+    tile="sugar_refinery_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_6],
@@ -116,6 +126,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="sugar_refinery_spritelayout_7",
+    tile="sugar_refinery_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_7],
@@ -123,6 +134,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="sugar_refinery_spritelayout_8",
+    tile="sugar_refinery_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_8],
@@ -130,6 +142,7 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id="sugar_refinery_spritelayout_9",
+    tile="sugar_refinery_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[],
@@ -139,17 +152,17 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id="sugar_refinery_industry_layout_1",
     layout=[
-        (0, 0, "sugar_refinery_tile_1", "sugar_refinery_spritelayout_4"),
-        (0, 1, "sugar_refinery_tile_1", "sugar_refinery_spritelayout_4"),
-        (0, 2, "sugar_refinery_tile_1", "sugar_refinery_spritelayout_4"),
-        (1, 0, "sugar_refinery_tile_1", "sugar_refinery_spritelayout_8"),
-        (1, 1, "sugar_refinery_tile_1", "sugar_refinery_spritelayout_3"),
-        (1, 2, "sugar_refinery_tile_1", "sugar_refinery_spritelayout_1"),
-        (2, 0, "sugar_refinery_tile_1", "sugar_refinery_spritelayout_6"),
-        (2, 1, "sugar_refinery_tile_1", "sugar_refinery_spritelayout_9"),
-        (2, 2, "sugar_refinery_tile_1", "sugar_refinery_spritelayout_2"),
-        (3, 0, "sugar_refinery_tile_1", "sugar_refinery_spritelayout_7"),
-        (3, 1, "sugar_refinery_tile_1", "sugar_refinery_spritelayout_7"),
-        (3, 2, "sugar_refinery_tile_1", "sugar_refinery_spritelayout_5"),
+        (0, 0, "sugar_refinery_spritelayout_4"),
+        (0, 1, "sugar_refinery_spritelayout_4"),
+        (0, 2, "sugar_refinery_spritelayout_4"),
+        (1, 0, "sugar_refinery_spritelayout_8"),
+        (1, 1, "sugar_refinery_spritelayout_3"),
+        (1, 2, "sugar_refinery_spritelayout_1"),
+        (2, 0, "sugar_refinery_spritelayout_6"),
+        (2, 1, "sugar_refinery_spritelayout_9"),
+        (2, 2, "sugar_refinery_spritelayout_2"),
+        (3, 0, "sugar_refinery_spritelayout_7"),
+        (3, 1, "sugar_refinery_spritelayout_7"),
+        (3, 2, "sugar_refinery_spritelayout_5"),
     ],
 )

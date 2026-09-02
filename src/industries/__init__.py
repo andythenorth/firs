@@ -102,6 +102,7 @@ industry_module_names = [
     "steel_forge_and_foundry",
     "stockyard",
     "strip_mill",
+    "sugar_refinery",
     "supply_yard",
     "timber_yard",
     "tin_mine",
