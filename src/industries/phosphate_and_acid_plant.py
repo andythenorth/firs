@@ -1,5 +1,7 @@
 from industry import IndustrySecondary, TileLocationChecks
 
+# CABBAGE - name and ID - it's fertiliser & acid now
+
 industry = IndustrySecondary(
     id="phosphate_and_acid_plant",
     accept_cargos_with_input_ratios=[
