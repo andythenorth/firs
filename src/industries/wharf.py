@@ -56,6 +56,7 @@ industry.enable_in_economy(
         "PLNT",
         "FRZN",
         "FOOD",
+        "WDPR",
     ],
     prod_cargo_types_with_multipliers=[
         ("PHOS", 20),
