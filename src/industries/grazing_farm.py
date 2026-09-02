@@ -19,7 +19,7 @@ industry = IndustryPrimaryOrganic(
     sprites_complete=False,
     animated_tiles_fixed=True,
 )
-
+"""
 industry.enable_in_economy(
     "MILD_MILD_WEST",
     vulcan_config={
@@ -31,7 +31,7 @@ industry.enable_in_economy(
         }
     },
 )
-
+"""
 industry.add_tile(
     id="grazing_farm_tile_1",
     location_checks=TileLocationChecks(
