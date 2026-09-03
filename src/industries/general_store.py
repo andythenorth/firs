@@ -45,8 +45,9 @@ industry.enable_in_economy(
     "MILD_MILD_WEST",
     accept_cargo_types=[
         "FOOD",
-        "GOOD",
+        "FRZN",
         "BEER",
+        "GOOD",
         "HWAR",
     ],
     vulcan_config={
