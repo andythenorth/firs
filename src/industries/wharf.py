@@ -68,7 +68,7 @@ industry.enable_in_economy(
         "map_curator": {
             "curation_function": "MinimumRatioToCompanionIndustryTypes",
             "companion_industries": ["aluminium_plant", "phosphate_and_acid_plant", "fermentation_plant", "bottle_and_can_factory"],
-            "companion_industries_ratio": 0.66,
+            "companion_industries_ratio": 0.33,
         }
     },
 )
