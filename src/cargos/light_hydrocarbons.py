@@ -8,7 +8,7 @@ cargo = Cargo(
     unit_name="string(STR_CARGO_NAME_LIGHT_HYDROCARBONS)",
     type_abbreviation="string(STR_CID_LIGHT_HYDROCARBONS)",
     sprite="NEW_CARGO_SPRITE",
-    weight="0.8",
+    weight="1.0",
     is_freight="1",
     # gas bulk included to cover lightest hydrocarbons which are transported as liquified gas under pressure
     cargo_classes = ["CC_LIQUID_BULK", "CC_GAS_BULK", "CC_NON_POTABLE"],

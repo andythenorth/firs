@@ -8,7 +8,7 @@ cargo = Cargo(
     unit_name="string(STR_CARGO_NAME_AMMONIA_AND_NITRIC_PRODUCTS)",
     type_abbreviation="string(STR_CID_AMMONIA_AND_NITRIC_PRODUCTS)",
     sprite="NEW_CARGO_SPRITE",
-    weight="0.60",  # extra realism per forum suggestion
+    weight="1.0",
     is_freight="1",
     # mostly liquid, gas, but urea is dry bulk
     cargo_classes = ["CC_COVERED_BULK", "CC_LIQUID_BULK", "CC_GAS_BULK", "CC_PIECE_GOODS", "CC_NON_POTABLE"],
