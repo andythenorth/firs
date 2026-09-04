@@ -6,7 +6,7 @@ cargo = Cargo(
     unit_name="string(STR_CARGO_NAME_EXPLOSIVES)",
     type_abbreviation="string(STR_CID_EXPLOSIVES)",
     sprite="NEW_CARGO_SPRITE",
-    weight="0.25",
+    weight="1.0",
     is_freight="1",
     # armoured is a deliberate choice for explosives, tested with 10 of the major vehicle grfs in 2024, worked well
     cargo_classes = ["CC_EXPRESS", "CC_PIECE_GOODS", "CC_ARMOURED", "CC_NON_POTABLE"],
