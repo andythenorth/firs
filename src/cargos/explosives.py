@@ -11,7 +11,7 @@ cargo = Cargo(
     # armoured is a deliberate choice for explosives, tested with 10 of the major vehicle grfs in 2024, worked well
     cargo_classes = ["CC_EXPRESS", "CC_PIECE_GOODS", "CC_ARMOURED", "CC_NON_POTABLE"],
     cargo_label="BOOM",
-    units_of_cargo="TTD_STR_CRATES",
+    units_of_cargo="TTD_STR_TONS",
     items_of_cargo="string(STR_CARGO_UNIT_EXPLOSIVES)",
     penalty_lowerbound="6",
     single_penalty_length="42",
