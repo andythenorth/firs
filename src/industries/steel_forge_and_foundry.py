@@ -38,9 +38,7 @@ industry.enable_in_economy(
 # not animated tiles
 industry.add_tile(
     id="steel_forge_and_foundry_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 # animated tiles
 industry.add_tile(
@@ -52,9 +50,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="steel_forge_and_foundry_tile_3",
@@ -65,9 +61,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 

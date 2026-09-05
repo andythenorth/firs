@@ -143,7 +143,11 @@ industry.add_spritelayout(
     tile="concrete_plant_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=None,
-    building_sprites=[overhead_crane_ground_blocks, overhead_crane_rails_rear, overhead_crane_rails_front],
+    building_sprites=[
+        overhead_crane_ground_blocks,
+        overhead_crane_rails_rear,
+        overhead_crane_rails_front,
+    ],
     fences=["nw", "ne", "se"],
     add_to_object_num=4,
 )

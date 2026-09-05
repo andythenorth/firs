@@ -31,7 +31,14 @@ industry.enable_in_economy(
     vulcan_config={
         "map_curator": {
             "curation_function": "MinimumRatioToCompanionIndustryTypes",
-            "companion_industries": ["chemical_complex", "electric_arc_furnace", "engineering_works", "process_chemicals_plant", "integrated_steel_mill", "industrial_chemicals_plant"],
+            "companion_industries": [
+                "chemical_complex",
+                "electric_arc_furnace",
+                "engineering_works",
+                "process_chemicals_plant",
+                "integrated_steel_mill",
+                "industrial_chemicals_plant",
+            ],
             "companion_industries_ratio": 1,
         }
     },
@@ -55,9 +62,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="cryo_plant_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

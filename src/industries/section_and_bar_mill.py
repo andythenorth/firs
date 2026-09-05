@@ -30,9 +30,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="section_and_bar_mill_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="section_and_bar_mill_tile_2",
@@ -43,9 +41,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="section_and_bar_mill_tile_3",
@@ -56,9 +52,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

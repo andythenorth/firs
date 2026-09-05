@@ -11,7 +11,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="191",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     special_flags=["IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE"],
     fund_cost_multiplier="200",
     name="TTD_STR_INDUSTRY_NAME_OIL_REFINERY",
@@ -23,7 +23,7 @@ industry = IndustrySecondary(
 industry.enable_in_economy(
     "MILD_MILD_WEST",
     prod_cargo_types_with_output_ratios=[
-        ("LHYC", 4), # needed in high volume for balance
+        ("LHYC", 4),  # needed in high volume for balance
         ("PETR", 2),
         ("BITU", 1),
         ("INCA", 1),
@@ -34,9 +34,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="oil_refinery_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

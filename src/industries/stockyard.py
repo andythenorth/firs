@@ -51,18 +51,14 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="stockyard_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="stockyard_tile_2",
     animation_length=7,
     animation_looping=True,
     animation_speed=3,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(type="asphalt")

@@ -8,7 +8,7 @@ industry = IndustryPrimaryOrganic(
     prob_in_game="4",
     prob_map_gen="11",
     map_colour="168",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     location_checks=dict(require_cluster=[72, 4]),
     prospect_chance="0.75",
     name="string(STR_IND_SHEEPFARM)",
@@ -34,9 +34,7 @@ industry.enable_in_economy(
 """
 industry.add_tile(
     id="grazing_farm_tile_1",
-    location_checks=TileLocationChecks(
-        disallow_coast=True
-    ),
+    location_checks=TileLocationChecks(disallow_coast=True),
 )
 
 spriteset_1 = industry.add_spriteset(

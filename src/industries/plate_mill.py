@@ -33,9 +33,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="plate_mill_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

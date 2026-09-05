@@ -10,7 +10,10 @@ industry = IndustrySecondary(
     prod_cargo_types_with_output_ratios=[
         # high strip mill production is unwanted
         ("STSH", 5),
-        ("STPL", 2), # plate-from-coil is common, let's feature it even if it looks a bit odd as of July 2025
+        (
+            "STPL",
+            2,
+        ),  # plate-from-coil is common, let's feature it even if it looks a bit odd as of July 2025
     ],
     # do not build during gameplay
     prob_in_game="0",
@@ -31,9 +34,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="strip_mill_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="strip_mill_tile_2",
@@ -44,9 +45,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 

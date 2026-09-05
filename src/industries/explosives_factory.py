@@ -9,13 +9,13 @@ industry = IndustrySecondary(
         ("WDPP", 2),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("BOOM", 4), # CABBAGE - REMOVE?
+        ("BOOM", 4),  # CABBAGE - REMOVE?
         ("ENSP", 4),
     ],
     prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",
     map_colour="191",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     location_checks=dict(same_type_distance=128),
     name="string(STR_IND_EXPLOSIVES_FACTORY)",
     nearby_station_name="string(STR_STATION_HEAVY_INDUSTRY_2)",
@@ -24,7 +24,9 @@ industry = IndustrySecondary(
     animated_tiles_fixed=False,
 )
 
-industry.enable_in_economy("MILD_MILD_WEST",)
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
 
 # CABBAGE - needs non-animated tile for performance?
 
@@ -33,9 +35,7 @@ industry.add_tile(
     animation_length=7,
     animation_looping=True,
     animation_speed=3,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="explosives_factory_tile_2",
@@ -46,9 +46,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

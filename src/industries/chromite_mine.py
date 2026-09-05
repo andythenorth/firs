@@ -6,7 +6,7 @@ industry = IndustryPrimaryExtractive(
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="181",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     location_checks=dict(require_cluster=[70, 3]),
     prospect_chance="0.75",
     name="string(STR_IND_CHROMITE_MINE)",
@@ -29,9 +29,7 @@ industry.add_tile(
         "macro": "first_frame_is_0",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 industry.add_tile(
@@ -43,9 +41,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 industry.add_tile(
@@ -58,9 +54,7 @@ industry.add_tile(
         "macro": "first_frame_is_0",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")

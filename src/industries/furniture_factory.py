@@ -12,7 +12,7 @@ industry = IndustrySecondary(
     prob_in_game="1",
     prob_map_gen="8",
     map_colour="186",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     name="string(STR_IND_FURNITURE_FACTORY)",
     nearby_station_name="string(STR_STATION_FACTORY)",
     fund_cost_multiplier="95",
@@ -35,9 +35,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="furniture_factory_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 

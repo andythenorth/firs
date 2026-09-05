@@ -47,9 +47,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="iron_ore_mine_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="iron_ore_mine_tile_2",
@@ -61,9 +59,7 @@ industry.add_tile(
         "macro": "first_frame_is_0",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="iron_ore_mine_tile_3",
@@ -74,9 +70,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="iron_ore_mine_tile_4",
@@ -88,9 +82,7 @@ industry.add_tile(
         "macro": "first_frame_is_0",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")

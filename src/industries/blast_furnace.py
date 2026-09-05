@@ -15,7 +15,7 @@ industry = IndustrySecondary(
     prob_in_game="0",  # do not build during gameplay
     prob_map_gen="3",
     map_colour="10",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     name="string(STR_IND_BLAST_FURNACE)",
     nearby_station_name="string(STR_STATION_FURNACE)",
     fund_cost_multiplier="190",
@@ -35,9 +35,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="blast_furnace_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="blast_furnace_tile_2",
@@ -48,18 +46,14 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="blast_furnace_tile_3",
     animation_length=30,
     animation_looping=True,
     animation_speed=4,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

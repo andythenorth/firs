@@ -8,7 +8,7 @@ industry = IndustryPrimaryOrganic(
     prob_in_game="14",
     prob_map_gen="14",
     map_colour="207",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     special_flags=["IND_FLAG_NO_PRODUCTION_INCREASE"],
     # herding_coop doesn't cluster, by design - no industry location checks needed
     prospect_chance="0.75",
@@ -27,18 +27,14 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="herding_coop_tile_1",
-    location_checks=TileLocationChecks(
-        disallow_desert=True, disallow_coast=True
-    ),
+    location_checks=TileLocationChecks(disallow_desert=True, disallow_coast=True),
 )
 industry.add_tile(
     id="herding_coop_tile_2",
     animation_length=71,
     animation_looping=True,
     animation_speed=2,
-    location_checks=TileLocationChecks(
-        disallow_desert=True, disallow_coast=True
-    ),
+    location_checks=TileLocationChecks(disallow_desert=True, disallow_coast=True),
 )
 
 sprite_ground_dirt = industry.add_sprite(sprite_number=3943)

@@ -2,7 +2,6 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="engineering_works",
-
     accept_cargos_with_input_ratios=[
         ("STEL", 3),
         ("ALUM", 3),
@@ -19,7 +18,7 @@ industry = IndustrySecondary(
     prob_in_game="1",
     prob_map_gen="5",
     map_colour="49",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     name="string(STR_IND_ENGINEERING_WORKS)",
     nearby_station_name="string(STR_STATION_WORKS)",
     fund_cost_multiplier="145",
@@ -33,9 +32,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="engineering_works_factory_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

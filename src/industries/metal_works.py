@@ -60,9 +60,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="metal_works_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

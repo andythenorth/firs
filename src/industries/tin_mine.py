@@ -3,10 +3,10 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 industry = IndustryPrimaryExtractive(
     id="tin_mine",
     prod_cargo_types_with_multipliers=[
-        ("TIN_", 11), # tin is low volume, more akin to diamonds etc
+        ("TIN_", 11),  # tin is low volume, more akin to diamonds etc
     ],
     map_colour="69",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     prospect_chance="0.75",
     prob_map_gen="4",
     prob_in_game="7",
@@ -33,9 +33,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="tin_mine_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="tin_mine_tile_2",
@@ -47,9 +45,7 @@ industry.add_tile(
         "macro": "first_frame_is_0",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="tin_mine_tile_3",
@@ -60,9 +56,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")

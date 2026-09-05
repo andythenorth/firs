@@ -11,13 +11,13 @@ industry = IndustrySecondary(
     prod_cargo_types_with_output_ratios=[
         ("ANPR", 5),
         ("PLAS", 2),
-        ("ENUM", 1), # primarily CO2 (dry ice, carbonation)
+        ("ENUM", 1),  # primarily CO2 (dry ice, carbonation)
         # FMSP considered and rejected, overlaps too much with Fertiliser Plant, no shortage of FMSP on map already
     ],
     prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",
     map_colour="173",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     name="string(STR_IND_AMMONIA_AND_NITRIC_PRODUCTS_PLANT)",
     nearby_station_name="string(STR_STATION_HEAVY_INDUSTRY_2)",
     fund_cost_multiplier="170",
@@ -29,7 +29,10 @@ industry = IndustrySecondary(
 industry.enable_in_economy(
     "MILD_MILD_WEST",
     location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[["oil_refinery", "oil_terminal"], 96],
+        near_at_least_one_of_these_keystone_industries=[
+            ["oil_refinery", "oil_terminal"],
+            96,
+        ],
         same_type_distance=128,
     ),
 )
@@ -41,9 +44,7 @@ industry.add_tile(
     animation_length=7,
     animation_looping=True,
     animation_speed=3,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

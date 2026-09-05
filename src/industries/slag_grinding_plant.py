@@ -48,18 +48,14 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="slag_grinding_plant_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="slag_grinding_plant_tile_2",
     animation_length=7,
     animation_looping=True,
     animation_speed=3,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="slag_grinding_plant_tile_3",
@@ -70,9 +66,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(
@@ -266,7 +260,7 @@ industry.add_spritelayout(
     ground_sprite=spriteset_ground,
     ground_overlay=None,
     building_sprites=[spriteset_gatehouse],
-    fences=[], # no fences, entrance tile
+    fences=[],  # no fences, entrance tile
     add_to_object_num=8,
 )
 industry.add_multi_tile_object(

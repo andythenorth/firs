@@ -12,7 +12,7 @@ industry = IndustrySecondary(
     prob_in_game="7",
     prob_map_gen="7",
     map_colour="164",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     name="string(STR_IND_RECYCLING_PLANT)",
     nearby_station_name="string(STR_STATION_INDUSTRY_ESTATE_1)",
     fund_cost_multiplier="118",
@@ -25,9 +25,7 @@ industry.add_tile(
     animation_length=71,
     animation_looping=True,
     animation_speed=2,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
     sprites_complete=False,
     animated_tiles_fixed=False,
 )

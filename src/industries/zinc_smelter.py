@@ -8,20 +8,23 @@ industry = IndustrySecondary(
     ],
     prod_cargo_types_with_output_ratios=[
         ("ZINC", 3),
-        ("SUAC", 5), # sulphuric acid is higher volume coproduct IRL and also needed for gameplay
+        (
+            "SUAC",
+            5,
+        ),  # sulphuric acid is higher volume coproduct IRL and also needed for gameplay
     ],
     prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",
     map_colour="19",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     location_checks=dict(
         # BORKED :(
-        #near_at_least_one_of_these_keystone_industries=[
-            #[
-                #"wharf",
-            #],  # assumes zinc ore from wharf in MMW
-            #56,
-        #],
+        # near_at_least_one_of_these_keystone_industries=[
+        # [
+        # "wharf",
+        # ],  # assumes zinc ore from wharf in MMW
+        # 56,
+        # ],
         same_type_distance=100,
     ),
     special_flags=["IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE"],
@@ -47,9 +50,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(type="gravel")

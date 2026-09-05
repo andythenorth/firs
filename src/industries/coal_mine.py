@@ -48,9 +48,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="coal_mine_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="coal_mine_tile_2",
@@ -62,9 +60,7 @@ industry.add_tile(
         "macro": "first_frame_is_0",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")

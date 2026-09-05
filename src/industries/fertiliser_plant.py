@@ -3,7 +3,7 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="fertiliser_plant",
     accept_cargos_with_input_ratios=[
-    # two-cargo production boost - combined ratios of any two cargos must always be at least 8
+        # two-cargo production boost - combined ratios of any two cargos must always be at least 8
         ("ANPR", 6),
         ("PHAC", 6),
         ("POTA", 6),
@@ -36,9 +36,7 @@ industry.add_tile(
     animation_length=7,
     animation_looping=True,
     animation_speed=3,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="fertiliser_plant_tile_2",
@@ -49,9 +47,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

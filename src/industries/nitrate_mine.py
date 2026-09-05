@@ -9,7 +9,7 @@ industry = IndustryPrimaryExtractive(
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="121",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     location_checks=dict(require_cluster=[70, 3]),
     prospect_chance="0.75",
     name="string(STR_IND_NITRATE_MINE)",
@@ -26,18 +26,14 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="nitrate_mine_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="nitrate_mine_tile_2",
     animation_length=7,
     animation_looping=True,
     animation_speed=3,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 sprite_ground = industry.add_sprite(

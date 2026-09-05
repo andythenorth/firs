@@ -13,7 +13,7 @@ industry = IndustryPrimaryPort(
     prob_map_gen="5",
     prod_multiplier="[0, 0]",
     map_colour="168",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     life_type="IND_LIFE_TYPE_BLACK_HOLE",
     town_industry_for_cargoflow=False,
     name="string(STR_IND_NUCLEAR_POWER_PLANT)",
@@ -40,9 +40,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
 sprite_1 = industry.add_sprite(sprite_number="2047")

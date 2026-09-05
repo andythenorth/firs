@@ -10,7 +10,7 @@ industry = IndustrySecondary(
     prob_map_gen="5",
     substitute="14",
     map_colour="164",
-    colour_scheme_name="scheme_3_hendrix", # cabbage needs checked
+    colour_scheme_name="scheme_3_hendrix",  # cabbage needs checked
     fund_cost_multiplier="120",
     nearby_station_name="string(STR_STATION_MILL)",
     name="string(STR_IND_CHIPBOARD_FACTORY)",
@@ -37,18 +37,14 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="chipboard_factory_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="chipboard_factory_tile_2",
     animation_length=7,
     animation_looping=True,
     animation_speed=3,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(type="asphalt")

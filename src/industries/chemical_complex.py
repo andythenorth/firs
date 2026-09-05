@@ -49,7 +49,10 @@ industry.enable_in_economy(
     accept_cargos_with_input_ratios=[
         ("SALT", 2),
         ("LHYC", 3),
-        ("MEOH", 2), # needed for flavour, deliberately imported to make an easy-ish start
+        (
+            "MEOH",
+            2,
+        ),  # needed for flavour, deliberately imported to make an easy-ish start
         ("INGA", 1),
     ],
     prod_cargo_types_with_output_ratios=[
@@ -57,7 +60,10 @@ industry.enable_in_economy(
         ("PLAS", 2),
     ],
     location_checks=dict(
-        near_at_least_one_of_these_keystone_industries=[["oil_refinery", "oil_terminal", "salt_works"], 96],
+        near_at_least_one_of_these_keystone_industries=[
+            ["oil_refinery", "oil_terminal", "salt_works"],
+            96,
+        ],
         same_type_distance=128,
     ),
 )
@@ -65,18 +71,14 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="chemical_complex_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="chemical_complex_tile_2",
     animation_length=7,
     animation_looping=True,
     animation_speed=3,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="chemical_complex_tile_3",
@@ -87,9 +89,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

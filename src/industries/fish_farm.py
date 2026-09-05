@@ -39,7 +39,9 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="fish_farm_tile_1",
-    location_checks=TileLocationChecks(always_allow_founder=False, disallow_slopes=True),
+    location_checks=TileLocationChecks(
+        always_allow_founder=False, disallow_slopes=True
+    ),
 )
 industry.add_tile(
     id="fish_farm_tile_2",

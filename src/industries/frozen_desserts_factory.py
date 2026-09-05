@@ -20,13 +20,13 @@ industry.enable_in_economy(
     "MILD_MILD_WEST",
     accept_cargos_with_input_ratios=[
         ("MILK", 2),
-        ("FRUT", 2), # CABBAGE
-        ("BAKE", 2), # CABBAGE
+        ("FRUT", 2),  # CABBAGE
+        ("BAKE", 2),  # CABBAGE
         ("ENUM", 1),
         ("PACK", 1),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("FRZN", 8), # CABBAGE
+        ("FRZN", 8),  # CABBAGE
     ],
 )
 

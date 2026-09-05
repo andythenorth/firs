@@ -14,7 +14,7 @@ industry = IndustryPrimaryPort(
     prob_in_game="2",
     prob_map_gen="6",
     map_colour="177",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     special_flags=["IND_FLAG_BUILT_ON_WATER"],
     location_checks=dict(same_type_distance=16),
     name="string(STR_IND_TRADING_POST)",
@@ -32,7 +32,9 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="trading_post_tile_1",
-    location_checks=TileLocationChecks(always_allow_founder=False, disallow_slopes=True),
+    location_checks=TileLocationChecks(
+        always_allow_founder=False, disallow_slopes=True
+    ),
 )
 industry.add_tile(
     id="trading_post_tile_2",

@@ -9,7 +9,7 @@ industry = IndustryPrimaryExtractive(
     prob_in_game="4",
     prob_map_gen="7",
     map_colour="169",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     location_checks=dict(require_cluster=[70, 3]),
     prospect_chance="0.75",
     name="string(STR_IND_SALT_WORKS)",
@@ -41,9 +41,7 @@ industry.add_tile(
         "macro": "first_frame_is_0",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 industry.add_tile(
@@ -51,9 +49,7 @@ industry.add_tile(
     animation_length=71,
     animation_looping=True,
     animation_speed=2,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")

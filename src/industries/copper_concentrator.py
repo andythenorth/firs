@@ -13,7 +13,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="64",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     name="string(STR_IND_COPPER_CONCENTRATOR)",
     nearby_station_name="string(STR_STATION_SMELTER)",
     fund_cost_multiplier="200",
@@ -32,9 +32,7 @@ industry.add_tile(
     animation_length=47,
     animation_looping=True,
     animation_speed=2,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")

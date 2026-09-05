@@ -32,18 +32,14 @@ industry.enable_in_economy("IN_A_HOT_COUNTRY")
 
 industry.add_tile(
     id="copper_smelter_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="copper_smelter_tile_2",
     animation_length=47,
     animation_looping=True,
     animation_speed=2,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

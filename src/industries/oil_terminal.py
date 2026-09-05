@@ -10,7 +10,7 @@ industry = IndustryPrimaryPort(
     prob_in_game="2",
     prob_map_gen="6",
     map_colour="164",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     special_flags=["IND_FLAG_BUILT_ON_WATER"],
     location_checks=dict(same_type_distance=16),
     prospect_chance="0.75",
@@ -35,7 +35,7 @@ industry.enable_in_economy(
     "MILD_MILD_WEST",
     accept_cargo_types=["PHAC", "PETR", "BITU", "ANPR", "CHIM"],
     prod_cargo_types_with_multipliers=[
-        ("OIL_", 24), # has to be high due to petrochemical dependence of economy
+        ("OIL_", 24),  # has to be high due to petrochemical dependence of economy
         ("MEOH", 16),
         ("SULP", 12),
     ],
@@ -70,7 +70,9 @@ industry.add_tile(
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
     autoslope="return CB_RESULT_NO_AUTOSLOPE",
-    location_checks=TileLocationChecks(always_allow_founder=False, disallow_slopes=True),
+    location_checks=TileLocationChecks(
+        always_allow_founder=False, disallow_slopes=True
+    ),
 )
 
 spriteset_small_tanks = industry.add_spriteset(

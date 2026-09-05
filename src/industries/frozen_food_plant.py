@@ -16,7 +16,7 @@ industry = IndustrySecondary(
     prob_in_game="0",
     prob_map_gen="5",
     map_colour="177",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     name="string(STR_IND_FROZEN_FOOD_PLANT)",
     nearby_station_name="string(STR_STATION_FREEZERS)",
     fund_cost_multiplier="120",
@@ -30,9 +30,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="frozen_food_plant_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

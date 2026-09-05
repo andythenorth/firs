@@ -27,9 +27,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="ranch_tile_1",
-    location_checks=TileLocationChecks(
-        disallow_coast=True
-    ),
+    location_checks=TileLocationChecks(disallow_coast=True),
 )
 
 spriteset_1 = industry.add_spriteset(

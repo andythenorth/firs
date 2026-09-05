@@ -164,7 +164,9 @@ industry.add_tile(
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
     autoslope="return CB_RESULT_NO_AUTOSLOPE",
-    location_checks=TileLocationChecks(always_allow_founder=False, disallow_slopes=True),
+    location_checks=TileLocationChecks(
+        always_allow_founder=False, disallow_slopes=True
+    ),
 )
 
 spriteset_crane_rails_nw_se = industry.add_spriteset(

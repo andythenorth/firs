@@ -24,7 +24,7 @@ industry.enable_in_economy(
     # location checks must be per economy when keystone industries are used
     location_checks=dict(
         near_at_least_one_of_these_keystone_industries=[
-            ["integrated_steel_mill", "coal_mine"], # not zinc smelter, by design
+            ["integrated_steel_mill", "coal_mine"],  # not zinc smelter, by design
             72,
         ],
         same_type_distance=72,
@@ -49,9 +49,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="coke_oven_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="coke_oven_tile_2",
@@ -62,9 +60,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="coke_oven_tile_3",
@@ -75,9 +71,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 sprite_ground = industry.add_spriteset(

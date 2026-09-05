@@ -37,9 +37,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="basic_oxygen_furnace_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="basic_oxygen_furnace_tile_2",
@@ -50,18 +48,14 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="basic_oxygen_furnace_tile_3",
     animation_length=36,
     animation_looping=True,
     animation_speed=4,  # 4 is intended, use 5 for slower frame testing when drawing sprites
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

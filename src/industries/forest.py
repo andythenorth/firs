@@ -45,15 +45,11 @@ industry.add_tile(
     id="forest_tile_1",
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     autoslope="return CB_RESULT_NO_AUTOSLOPE",
-    location_checks=TileLocationChecks(
-        disallow_desert=True, disallow_coast=True
-    ),
+    location_checks=TileLocationChecks(disallow_desert=True, disallow_coast=True),
 )
 industry.add_tile(
     id="forest_tile_2",
-    location_checks=TileLocationChecks(
-        disallow_desert=True, disallow_coast=True
-    ),
+    location_checks=TileLocationChecks(disallow_desert=True, disallow_coast=True),
 )
 
 sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")

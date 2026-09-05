@@ -36,9 +36,7 @@ industry.enable_in_economy(
 # cases for both tiles ensure that tiles can only be built at same height as north tile
 industry.add_tile(
     id="phosphate_mine_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="phosphate_mine_tile_2",
@@ -51,9 +49,7 @@ industry.add_tile(
     },
     foundations="return CB_RESULT_NO_FOUNDATIONS",  # might not be needed, cargo-culted from previous code, didn't test; may be needed to stop rear foundations showing in some cases?
     autoslope="return CB_RESULT_NO_AUTOSLOPE",
-    location_checks=TileLocationChecks(
-        disallow_slopes=True, disallow_coast=True
-    ),
+    location_checks=TileLocationChecks(disallow_slopes=True, disallow_coast=True),
 )
 
 spriteset_animated_dozer = industry.add_spriteset(

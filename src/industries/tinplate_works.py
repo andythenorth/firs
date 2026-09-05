@@ -11,7 +11,7 @@ industry = IndustrySecondary(
     prob_in_game="1",
     prob_map_gen="5",
     map_colour="160",
-    colour_scheme_name="scheme_1_elton", # tile="tinplate_works_tile_1" needs checked
+    colour_scheme_name="scheme_1_elton",  # tile="tinplate_works_tile_1" needs checked
     name="string(STR_IND_TINPLATE_WORKS)",
     nearby_station_name="string(STR_STATION_HEAVY_INDUSTRY_2)",
     fund_cost_multiplier="120",
@@ -36,9 +36,7 @@ industry.add_tile(
     animation_length=71,
     animation_looping=True,
     animation_speed=2,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 

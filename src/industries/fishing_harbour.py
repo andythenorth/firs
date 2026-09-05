@@ -11,7 +11,7 @@ industry = IndustrySecondary(
     prob_in_game="10",
     prob_map_gen="10",
     map_colour="169",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     special_flags=["IND_FLAG_BUILT_ON_WATER"],
     name="string(STR_IND_FISHING_HARBOUR)",
     nearby_station_name="string(STR_STATION_FISHMARKET)",
@@ -46,7 +46,9 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="fishing_harbour_tile_1",
-    location_checks=TileLocationChecks(always_allow_founder=False, disallow_slopes=True),
+    location_checks=TileLocationChecks(
+        always_allow_founder=False, disallow_slopes=True
+    ),
 )
 industry.add_tile(
     id="fishing_harbour_tile_2",

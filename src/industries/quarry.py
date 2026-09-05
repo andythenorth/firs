@@ -28,7 +28,11 @@ industry.enable_in_economy(
     vulcan_config={
         "map_curator": {
             "curation_function": "MinimumRatioToCompanionIndustryTypes",
-            "companion_industries": ["integrated_steel_mill", "lime_kiln", "cement_plant"],
+            "companion_industries": [
+                "integrated_steel_mill",
+                "lime_kiln",
+                "cement_plant",
+            ],
             "companion_industries_ratio": 1,
         }
     },
@@ -44,7 +48,11 @@ industry.enable_in_economy(
     vulcan_config={
         "map_curator": {
             "curation_function": "MinimumRatioToCompanionIndustryTypes",
-            "companion_industries": ["engine_plant", "glass_works", "steel_forge_and_foundry"],
+            "companion_industries": [
+                "engine_plant",
+                "glass_works",
+                "steel_forge_and_foundry",
+            ],
             "companion_industries_ratio": 0.5,
         }
     },

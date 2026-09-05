@@ -67,7 +67,12 @@ industry.enable_in_economy(
     vulcan_config={
         "map_curator": {
             "curation_function": "MinimumRatioToCompanionIndustryTypes",
-            "companion_industries": ["aluminium_plant", "phosphate_and_acid_plant", "fermentation_plant", "bottle_and_can_factory"],
+            "companion_industries": [
+                "aluminium_plant",
+                "phosphate_and_acid_plant",
+                "fermentation_plant",
+                "bottle_and_can_factory",
+            ],
             "companion_industries_ratio": 0.33,
         }
     },
@@ -115,7 +120,9 @@ industry.add_tile(
     foundations="return CB_RESULT_NO_FOUNDATIONS",
     # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
     autoslope="return CB_RESULT_NO_AUTOSLOPE",
-    location_checks=TileLocationChecks(always_allow_founder=False, disallow_slopes=True),
+    location_checks=TileLocationChecks(
+        always_allow_founder=False, disallow_slopes=True
+    ),
 )
 
 spriteset_crane_rails_nw_se = industry.add_spriteset(

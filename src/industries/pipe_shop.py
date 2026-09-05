@@ -4,7 +4,13 @@ from industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="pipe_shop",
-    accept_cargos_with_input_ratios=[("STPP", 2), ("STPL", 2), ("PUMP", 2), ("COAT", 1), ("WELD", 1)],
+    accept_cargos_with_input_ratios=[
+        ("STPP", 2),
+        ("STPL", 2),
+        ("PUMP", 2),
+        ("COAT", 1),
+        ("WELD", 1),
+    ],
     prod_cargo_types_with_output_ratios=[
         # high output production is unwanted
         ("PPWK", 4),
@@ -35,9 +41,7 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="pipe_shop_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 industry.add_tile(
     id="pipe_shop_tile_2",
@@ -48,9 +52,7 @@ industry.add_tile(
         "macro": "random_first_frame",
         "animation_triggers": "bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)",
     },
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

@@ -13,7 +13,7 @@ industry = IndustrySecondary(
     prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",
     map_colour="19",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     name="string(STR_IND_ALUMINIUM_PLANT)",
     nearby_station_name="string(STR_STATION_SMELTER)",
     fund_cost_multiplier="200",
@@ -22,7 +22,9 @@ industry = IndustrySecondary(
     animated_tiles_fixed=False,
 )
 
-industry.enable_in_economy("MILD_MILD_WEST",)
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+)
 
 # CABBAGE - needs non-animated tile for performance?
 
@@ -31,9 +33,7 @@ industry.add_tile(
     animation_length=47,
     animation_looping=True,
     animation_speed=2,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(

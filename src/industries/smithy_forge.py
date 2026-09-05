@@ -12,7 +12,7 @@ industry = IndustrySecondary(
     prob_in_game="2",
     prob_map_gen="5",
     map_colour="143",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     special_flags=["IND_FLAG_ONLY_IN_TOWNS"],
     name="string(STR_IND_SMITHY_FORGE)",
     nearby_station_name="string(STR_STATION_FORGE)",
@@ -28,9 +28,7 @@ industry.add_tile(
     animation_length=47,
     animation_looping=True,
     animation_speed=2,
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 sprite_ground = industry.add_sprite(

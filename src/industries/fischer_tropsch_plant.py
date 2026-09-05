@@ -12,7 +12,7 @@ industry = IndustrySecondary(
     prob_in_game="3",
     prob_map_gen="5",
     map_colour="191",
-    colour_scheme_name="scheme_1_elton", # cabbage needs checked
+    colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     special_flags=["IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE"],
     fund_cost_multiplier="200",
     name="string(STR_IND_FISCHER_TROPSCH_PLANT)",
@@ -25,9 +25,7 @@ industry = IndustrySecondary(
 
 industry.add_tile(
     id="fischer_tropsch_plant_tile_1",
-    location_checks=TileLocationChecks(
-        require_effectively_flat=True
-    ),
+    location_checks=TileLocationChecks(require_effectively_flat=True),
 )
 
 spriteset_ground = industry.add_spriteset(
