@@ -5,7 +5,6 @@ industry = IndustryTertiary(
     accept_cargo_types=[
         "FOOD",
         "GOOD",
-        "BEER",
     ],
     prod_cargo_types=[],
     prob_in_game="12",
@@ -46,7 +45,6 @@ industry.enable_in_economy(
     accept_cargo_types=[
         "FOOD",
         "FRZN",
-        "BEER",
         "GOOD",
         "HWAR",
     ],

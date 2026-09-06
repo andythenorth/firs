@@ -2,7 +2,6 @@
 cargo_module_names = [
     "acid",
     "aggregates",
-    "alcohol",
     "aluminia",
     "aluminium",
     "ammonia_and_nitric_products",
@@ -37,7 +36,7 @@ cargo_module_names = [
     "fertiliser",
     "fish",
     "flour",
-    "food",
+    "food_and_beverages",
     "food_additives",
     "forgings_and_castings",
     "fruits",

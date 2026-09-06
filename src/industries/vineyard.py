@@ -3,7 +3,7 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks
 industry = IndustryPrimaryOrganic(
     id="vineyard",
     prod_cargo_types_with_multipliers=[
-        ("BEER", 9),
+        ("FOOD", 9),
         ("FRUT", 9),
     ],
     map_colour="85",

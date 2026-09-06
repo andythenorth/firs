@@ -1,18 +1,20 @@
 from cargo import Cargo
 
+# expansion of standard food to explicitly include beverages, allowing alcohol to be dropped in FIRS 6
+
 cargo = Cargo(
-    id="food",
-    type_name="TTD_STR_CARGO_PLURAL_FOOD",
-    unit_name="TTD_STR_CARGO_SINGULAR_FOOD",
+    id="food_and_beverages",
+    type_name="string(STR_CARGO_NAME_FOOD_AND_BEVERAGES)",
+    unit_name="string(STR_CARGO_NAME_FOOD_AND_BEVERAGES)",
     type_abbreviation="TTD_STR_ABBREV_FOOD",
     sprite="NEW_CARGO_SPRITE",
     weight="1.0",
     is_freight="1",
     cargo_classes = ["CC_EXPRESS", "CC_COVERED_BULK", "CC_PIECE_GOODS", "CC_LIQUID_BULK", "CC_POTABLE", "CC_REFRIGERATED"],
-    cargo_label="FOOD",
+    cargo_label="FOOD", # reuse standard FOOD for compatibility
     # apart from TOWNGROWTH_PASSENGERS and TOWNGROWTH_MAIL, FIRS does not set any town growth effects; this has the intended effect of disabling food / water requirements for towns in desert and above     snowline
     units_of_cargo="TTD_STR_TONS",
-    items_of_cargo="TTD_STR_QUANTITY_FOOD",
+    items_of_cargo="string(STR_CARGO_UNIT_FOOD_AND_BEVERAGES)",
     penalty_lowerbound="0",
     single_penalty_length="20",
     price_factor=168,

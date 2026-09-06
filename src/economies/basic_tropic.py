@@ -4,7 +4,6 @@ economy = Economy(
     id="BASIC_TROPIC",
     numeric_id=4,
     cargos=[
-        "alcohol",
         "beans",
         "chemicals",
         "coffee",
@@ -13,7 +12,7 @@ economy = Economy(
         "engineering_supplies",
         "farm_supplies",
         "fish",
-        "food",
+        "food_and_beverages",
         "fruits",
         "goods",
         "grain",
@@ -31,14 +30,14 @@ economy = Economy(
         "ranking_subgraphs": [
             ("same", ["nitrate_mine", "coffee_estate", "ranch", "arable_farm"]),
             ("same", ["food_processor", "stockyard", "grain_mill"]),
-            ("same", ["port", "food", "fishing_harbour", "fish"]),
+            ("same", ["port", "food_and_beverages", "fishing_harbour", "fish"]),
         ],
         "clusters": [
             {"nodes": ["chemicals", "copper_ore"], "rank": "", "color": "white"},
             {"nodes": ["nitrates", "oil"], "rank": "same", "color": "white"},
             {"nodes": ["fruits", "beans"], "rank": "same", "color": "white"},
             {
-                "nodes": ["wool", "coffee", "alcohol", "copper"],
+                "nodes": ["wool", "coffee", "copper"],
                 "rank": "same",
                 "color": "white",
             },

@@ -5,7 +5,6 @@ economy = Economy(
     numeric_id=3,
     cargos=[
         "aggregates",
-        "alcohol",
         "building_materials",
         "cassava",
         "chemicals",
@@ -17,7 +16,7 @@ economy = Economy(
         "edible_oil",
         "engineering_supplies",
         "farm_supplies",
-        "food",
+        "food_and_beverages",
         "fruits",
         "goods",
         "livestock",

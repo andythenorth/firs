@@ -10,7 +10,7 @@ economy = Economy(
         "carbon_black",
         "cast_iron",
         "cement",
-        "food",
+        "food_and_beverages",
         "chlorine",
         "cleaning_agents",
         "coal",
@@ -101,7 +101,7 @@ economy = Economy(
             (
                 "sink",
                 [
-                    "food",
+                    "food_and_beverages",
                     "farm",
                     "hardware",
                     "goods",

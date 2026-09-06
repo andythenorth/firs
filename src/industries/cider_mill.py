@@ -4,7 +4,7 @@ industry = IndustrySecondary(
     id="cider_mill",
     accept_cargos_with_input_ratios=[],
     prod_cargo_types_with_output_ratios=[
-        ("BEER", 8),
+        ("FOOD", 8),
     ],
     prob_in_game="3",
     prob_map_gen="5",

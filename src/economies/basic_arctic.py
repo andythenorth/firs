@@ -10,7 +10,7 @@ economy = Economy(
         "farm_supplies",
         "fertiliser",
         "fish",
-        "food",
+        "food_and_beverages",
         "kaolin",
         "logs",
         "mail",

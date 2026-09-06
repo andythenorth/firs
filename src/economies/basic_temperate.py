@@ -4,7 +4,6 @@ economy = Economy(
     id="BASIC_TEMPERATE",
     numeric_id=0,
     cargos=[
-        "alcohol",
         "chemicals",
         "coal",
         "engineering_supplies",
@@ -13,7 +12,7 @@ economy = Economy(
         "fruits",
         "goods",
         "iron_ore",
-        "food",
+        "food_and_beverages",
         "kaolin",
         "livestock",
         "mail",

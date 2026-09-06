@@ -4,7 +4,6 @@ industry = IndustryTertiary(
     id="hotel",
     accept_cargo_types=[
         "FOOD",
-        "BEER",
         "PASS",
     ],
     prod_cargo_types_with_multipliers=[

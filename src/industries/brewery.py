@@ -7,7 +7,7 @@ industry = IndustrySecondary(
         ("MAIZ", 4),
     ],
     prod_cargo_types_with_output_ratios=[
-        ("BEER", 8),
+        ("FOOD", 8),
     ],
     prob_in_game="3",
     prob_map_gen="5",
