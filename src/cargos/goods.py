@@ -15,7 +15,7 @@ cargo = Cargo(
     penalty_lowerbound="10",
     single_penalty_length="56",
     price_factor=169,
-    capacity_multiplier="2",
+    capacity_multiplier="1",
     icon_indices=(5, 0),
     # used by FIRS GS
     vulcan_town_effect="VTE_HAPPINESS",
