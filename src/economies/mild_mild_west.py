@@ -51,7 +51,7 @@ economy = Economy(
         "phosphoric_acid",
         "plastics",
         "plant_and_machinery",
-        "diamonds", # CABBAGE - removed, savegame compatibility issues
+        "mineral_additives", # CABBAGE - out of order, savegame compatibility issues
         "process_chemicals",
         "quicklime",
         "salt",

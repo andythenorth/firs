@@ -7,11 +7,8 @@ industry = IndustrySecondary(
         ("CHIM", 3),
         ("PHAC", 3),
         ("ANPR", 3),
-        # salt removed, as it shortcuts the chain with chemical intermediates in a strange way
-        # and was only added to get food additives, which can be derived directly from salt works, more consistent
-        # ("SALT", 3),
         ("BAKE", 3),
-        ("INCA", 3),
+        ("MADD", 3),
         ("INGA", 3),
     ],
     prod_cargo_types_with_output_ratios=[
