@@ -6,7 +6,7 @@ industry = IndustrySecondary(
         ("PLAS", 5),
         ("PRCH", 1),
         ("INCA", 1),
-        ("KAOL", 1),
+        ("MADD", 1),
     ],
     prod_cargo_types_with_output_ratios=[
         ("GOOD", 3),
