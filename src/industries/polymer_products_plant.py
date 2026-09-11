@@ -4,9 +4,9 @@ industry = IndustrySecondary(
     id="polymer_products_plant",
     accept_cargos_with_input_ratios=[
         ("PLAS", 5),
-        ("PRCH", 1),
-        ("INCA", 1),
         ("MADD", 1),
+        ("INCA", 1),
+        ("PRCH", 1),
     ],
     prod_cargo_types_with_output_ratios=[
         ("GOOD", 3),
