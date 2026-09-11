@@ -5,7 +5,7 @@ economy = Economy(
     numeric_id=6,
     cargos=[
         "aggregates",
-        "diamonds", # CABBAGE - potash removed, savegame compatibility issues
+        "diamonds", # CABBAGE - removed, savegame compatibility issues
         "aluminia",
         "aluminium",
         "ammonia_and_nitric_products",
@@ -51,7 +51,7 @@ economy = Economy(
         "phosphoric_acid",
         "plastics",
         "plant_and_machinery",
-        "diamonds", # CABBAGE - potash removed, savegame compatibility issues
+        "diamonds", # CABBAGE - removed, savegame compatibility issues
         "process_chemicals",
         "quicklime",
         "salt",
