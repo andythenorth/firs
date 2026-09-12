@@ -4,6 +4,7 @@ industry = IndustryPrimaryExtractive(
     id="zinc_ore_mine",
     prod_cargo_types_with_multipliers=[
         ("ZORE", 20),
+        ("MADD", 7),  # mineral additives from gangue, in low volumes
     ],
     prob_in_game="4",
     prob_map_gen="7",
