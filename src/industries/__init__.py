@@ -4,6 +4,7 @@
 industry_module_names = [
     "aluminium_plant",
     "ammonia_complex",
+    "anhydrite_mine",
     "appliance_factory",
     "arable_farm",
     "assembly_plant",
