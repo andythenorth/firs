@@ -9,7 +9,6 @@ industry = IndustryPrimaryExtractive(
     prob_in_game="6",
     # due to wanting 1960 date check, these will have to be probability 0 at map gen (implementation detail)
     prob_map_gen="0",
-    substitute="5",
     map_colour="151",
     colour_scheme_name="scheme_1_elton",  # cabbage needs checked
     special_flags=[
@@ -22,7 +21,6 @@ industry = IndustryPrimaryExtractive(
     name="TTD_STR_INDUSTRY_NAME_OIL_RIG",
     nearby_station_name="string(STR_STATION_OIL_RIG)",
     fund_cost_multiplier="255",
-    override="5",
     primary_production_random_factor_set="wide_range",
     sprites_complete=True,
     animated_tiles_fixed=True,
@@ -31,7 +29,16 @@ industry = IndustryPrimaryExtractive(
 industry.enable_in_economy(
     "IN_A_HOT_COUNTRY",
 )
-
+"""
+# offshore gas well?  Irish Sea?
+industry.enable_in_economy(
+    "MILD_MILD_WEST",
+    prod_cargo_types_with_multipliers=[
+        ("LHYC", 20),
+        ("PETR", 10),
+    ],
+)
+"""
 industry.add_tile(
     id="oil_rig_tile_1",
     location_checks=TileLocationChecks(disallow_slopes=True),
