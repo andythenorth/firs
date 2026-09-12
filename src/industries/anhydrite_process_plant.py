@@ -4,9 +4,8 @@ industry = IndustrySecondary(
     id="anhydrite_process_plant",
     accept_cargos_with_input_ratios=[
         ("ANHY", 4),
-        ("COKE", 1),
+        ("COKE", 2),
         ("PHOS", 2),
-        ("MADD", 1),
     ],
     prod_cargo_types_with_output_ratios=[
         ("CMNT", 3),

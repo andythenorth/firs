@@ -4,7 +4,6 @@ industry = IndustryPrimaryExtractive(
     id="tin_mine",
     prod_cargo_types_with_multipliers=[
         ("TIN_", 11),  # tin is low volume, more akin to diamonds etc
-        ("MADD", 7),  # mineral additives from gangue, in low volumes
     ],
     map_colour="69",
     colour_scheme_name="scheme_1_elton",  # cabbage needs checked

@@ -8,7 +8,7 @@ industry = IndustrySecondary(
         ("PHAC", 3),
         ("ANPR", 3),
         ("BAKE", 3),
-        ("MADD", 3),
+        ("INCA", 3),
         ("INGA", 3),
     ],
     prod_cargo_types_with_output_ratios=[

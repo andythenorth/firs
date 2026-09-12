@@ -85,9 +85,10 @@ industry.enable_in_economy(
     accept_cargo_types=[
         "FOOD",
         "FRZN",
-        "TINP",
-        "KAOL",
         "FMSP",
+        "KAOL",
+        "MADD",
+        "TINP",
         "STEL",
     ],
     prod_cargo_types_with_multipliers=[

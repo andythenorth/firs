@@ -25,7 +25,6 @@ industry.enable_in_economy(
     "MILD_MILD_WEST",
     prod_cargo_types_with_multipliers=[
         ("KAOL", 16),
-        ("MADD", 8),
         ("GRVL", 10),
     ],
     vulcan_config={
