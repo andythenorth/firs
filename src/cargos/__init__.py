@@ -5,6 +5,7 @@ cargo_module_names = [
     "aluminia",
     "aluminium",
     "ammonia_and_nitric_products",
+    "anhydrite",
     "apples",
     "beans",
     "bitumen",

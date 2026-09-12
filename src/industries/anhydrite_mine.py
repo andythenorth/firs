@@ -3,7 +3,7 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks
 industry = IndustryPrimaryExtractive(
     id="anhydrite_mine",
     prod_cargo_types_with_multipliers=[
-        ("MADD", 17),
+        ("ANHY", 17),
     ],
     prob_in_game="4",
     prob_map_gen="7",
