@@ -42,7 +42,7 @@ economy = Economy(
         "meat",
         "methanol",
         "milk",
-        "molasses",
+        "molasses_and_raw_sugar",
         "oil",
         "packaging",
         "passengers",

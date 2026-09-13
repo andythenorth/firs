@@ -1,14 +1,14 @@
 from cargo import Cargo
 
 cargo = Cargo(
-    id="molasses",
+    id="molasses_and_raw_sugar",
     type_name="string(STR_CARGO_MOLASSES_NAME)",
     unit_name="string(STR_CARGO_MOLASSES_NAME)",
     type_abbreviation="string(STR_CARGO_MOLASSES_CID)",
     sprite="NEW_CARGO_SPRITE",
     weight="1.0",
     is_freight="1",
-    cargo_classes = ["CC_LIQUID_BULK", "CC_PIECE_GOODS", "CC_NON_POTABLE"], # molasses treated as non-potable, as it's primarily an animal feed cargo, suitable for transport in chemical product tankers
+    cargo_classes = ["CC_COVERED_BULK", "CC_LIQUID_BULK", "CC_PIECE_GOODS", "CC_POTABLE"],
     cargo_label="MOLA",
     # apart from TOWNGROWTH_PASSENGERS and TOWNGROWTH_MAIL, FIRS does not set any town growth effects; this has the intended effect of disabling food / water requirements for towns in desert and above snowline
     town_growth_effect="TOWNGROWTH_NONE",

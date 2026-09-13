@@ -59,7 +59,7 @@ cargo_module_names = [
     "meat",
     "methanol",
     "milk",
-    "molasses",
+    "molasses_and_raw_sugar",
     "light_hydrocarbons",
     "nitrates",
     "nitrogen",
