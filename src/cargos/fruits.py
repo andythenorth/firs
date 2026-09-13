@@ -2,8 +2,8 @@ from cargo import Cargo
 
 cargo = Cargo(
     id="fruits",
-    type_name="string(STR_CARGO_NAME_FRUITS)",
-    unit_name="string(STR_CARGO_NAME_FRUITS)",
+    type_name="string(STR_CARGO_FRUITS_NAME)",
+    unit_name="string(STR_CARGO_FRUITS_NAME)",
     type_abbreviation="TTD_STR_ABBREV_FRUIT",
     sprite="NEW_CARGO_SPRITE",
     weight="1.0",
@@ -11,7 +11,7 @@ cargo = Cargo(
     cargo_classes = ["CC_EXPRESS", "CC_PIECE_GOODS", "CC_REFRIGERATED", "CC_COVERED_BULK", "CC_POTABLE"],
     cargo_label="FRUT",
     units_of_cargo="TTD_STR_TONS",
-    items_of_cargo="string(STR_CARGO_UNIT_FRUITS)",
+    items_of_cargo="string(STR_CARGO_FRUITS_CARGO_UNIT)",
     penalty_lowerbound="0",
     single_penalty_length="26",
     price_factor=124,

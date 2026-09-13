@@ -2,9 +2,9 @@ from cargo import Cargo
 
 cargo = Cargo(
     id="flour",
-    type_name="string(STR_CARGO_NAME_FLOUR)",
-    unit_name="string(STR_CARGO_NAME_FLOUR)",
-    type_abbreviation="string(STR_CID_FLOUR)",
+    type_name="string(STR_CARGO_FLOUR_NAME)",
+    unit_name="string(STR_CARGO_FLOUR_NAME)",
+    type_abbreviation="string(STR_CARGO_FLOUR_CID)",
     sprite="NEW_CARGO_SPRITE",
     weight="1.0",
     is_freight="1",
@@ -14,7 +14,7 @@ cargo = Cargo(
     town_growth_effect="TOWNGROWTH_NONE",
     town_growth_multiplier="1.0",
     units_of_cargo="TTD_STR_TONS",
-    items_of_cargo="string(STR_CARGO_UNIT_FLOUR)",
+    items_of_cargo="string(STR_CARGO_FLOUR_CARGO_UNIT)",
     penalty_lowerbound="0",
     single_penalty_length="26",
     price_factor=173,

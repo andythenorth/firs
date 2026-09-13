@@ -2,9 +2,9 @@ from cargo import Cargo
 
 cargo = Cargo(
     id="explosives",
-    type_name="string(STR_CARGO_NAME_EXPLOSIVES)",
-    unit_name="string(STR_CARGO_NAME_EXPLOSIVES)",
-    type_abbreviation="string(STR_CID_EXPLOSIVES)",
+    type_name="string(STR_CARGO_EXPLOSIVES_NAME)",
+    unit_name="string(STR_CARGO_EXPLOSIVES_NAME)",
+    type_abbreviation="string(STR_CARGO_EXPLOSIVES_CID)",
     sprite="NEW_CARGO_SPRITE",
     weight="1.0",
     is_freight="1",
@@ -12,7 +12,7 @@ cargo = Cargo(
     cargo_classes = ["CC_EXPRESS", "CC_PIECE_GOODS", "CC_ARMOURED", "CC_NON_POTABLE"],
     cargo_label="BOOM",
     units_of_cargo="TTD_STR_TONS",
-    items_of_cargo="string(STR_CARGO_UNIT_EXPLOSIVES)",
+    items_of_cargo="string(STR_CARGO_EXPLOSIVES_CARGO_UNIT)",
     penalty_lowerbound="6",
     single_penalty_length="42",
     price_factor=180,

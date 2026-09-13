@@ -43,8 +43,16 @@ def get_docs_url():
 
 
 def get_lang_data(target, lang):
+    allowed_lang_attrs = {
+        "base",
+        "name",
+        "cargo_unit",
+        "cid",
+    }
+
     global_pragma = {}
     lang_strings = {}
+
     with open(
         os.path.join(currentdir, "src", target, "lang", lang + ".toml"), "rb"
     ) as fp:
@@ -52,17 +60,36 @@ def get_lang_data(target, lang):
 
     for node_name, node_value in lang_source.items():
         if node_name == "GLOBAL_PRAGMA":
-            # explicit handling of global pragma items
             global_pragma["grflangid"] = node_value["grflangid"]
             global_pragma["plural"] = node_value["plural"]
+
             if node_value.get("gender", False):
                 global_pragma["gender"] = node_value["gender"]
+
             if node_value.get("case", False):
                 global_pragma["case"] = node_value["case"]
-        else:
-            lang_strings[node_name] = node_value["base"]
 
-    return {"global_pragma": global_pragma, "lang_strings": lang_strings}
+            continue
+
+        unexpected_attrs = set(node_value) - allowed_lang_attrs
+        if unexpected_attrs:
+            raise ValueError(
+                f"{lang}: {node_name} has unexpected attrs: "
+                f"{sorted(unexpected_attrs)}"
+            )
+
+        for attr_name, value in node_value.items():
+            if attr_name == "base":
+                token = node_name
+            else:
+                token = f"{node_name}_{attr_name.upper()}"
+
+            lang_strings[token] = value
+
+    return {
+        "global_pragma": global_pragma,
+        "lang_strings": lang_strings,
+    }
 
 
 class DwordGrfID(object):

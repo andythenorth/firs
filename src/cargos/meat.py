@@ -2,8 +2,8 @@ from cargo import Cargo
 
 cargo = Cargo(
     id="meat",
-    type_name="string(STR_CARGO_NAME_MEAT)",
-    unit_name="string(STR_CARGO_NAME_MEAT)",
+    type_name="string(STR_CARGO_MEAT_NAME)",
+    unit_name="string(STR_CARGO_MEAT_NAME)",
     type_abbreviation="TTD_STR_ABBREV_FOOD", # CABBAGE
     sprite="NEW_CARGO_SPRITE",
     weight="1.0",
@@ -12,7 +12,7 @@ cargo = Cargo(
     cargo_label="MEAT",
     # apart from TOWNGROWTH_PASSENGERS and TOWNGROWTH_MAIL, FIRS does not set any town growth effects; this has the intended effect of disabling food / water requirements for towns in desert and above     snowline
     units_of_cargo="TTD_STR_TONS", # CABBAGE
-    items_of_cargo="string(STR_CARGO_UNIT_MEAT)",
+    items_of_cargo="string(STR_CARGO_MEAT_CARGO_UNIT)",
     penalty_lowerbound="0",
     single_penalty_length="20",
     price_factor=151,

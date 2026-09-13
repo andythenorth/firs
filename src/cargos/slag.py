@@ -2,16 +2,16 @@ from cargo import Cargo
 
 cargo = Cargo(
     id="slag",
-    type_name="string(STR_CARGO_NAME_SLAG)",
-    unit_name="string(STR_CARGO_NAME_SLAG)",
-    type_abbreviation="string(STR_CID_SLAG)",
+    type_name="string(STR_CARGO_SLAG_NAME)",
+    unit_name="string(STR_CARGO_SLAG_NAME)",
+    type_abbreviation="string(STR_CARGO_SLAG_CID)",
     sprite="NEW_CARGO_SPRITE",
     weight="1.0",
     is_freight="1",
     cargo_classes = ["CC_OPEN_BULK", "CC_NON_POTABLE"],
     cargo_label="SLAG",
     units_of_cargo="TTD_STR_TONS",
-    items_of_cargo="string(STR_CARGO_UNIT_SLAG)",
+    items_of_cargo="string(STR_CARGO_SLAG_CARGO_UNIT)",
     penalty_lowerbound="64",
     single_penalty_length="255",
     price_factor=85,  # deliberately low, needed to space out cargo payments to allow unique rates

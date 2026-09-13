@@ -2,16 +2,16 @@ from cargo import Cargo
 
 cargo = Cargo(
     id="hardware",
-    type_name="string(STR_CARGO_NAME_HARDWARE)",
-    unit_name="string(STR_CARGO_NAME_HARDWARE)",
-    type_abbreviation="string(STR_CID_HARDWARE)",
+    type_name="string(STR_CARGO_HARDWARE_NAME)",
+    unit_name="string(STR_CARGO_HARDWARE_NAME)",
+    type_abbreviation="string(STR_CARGO_HARDWARE_CID)",
     sprite="NEW_CARGO_SPRITE",
     weight="1.0",
     is_freight="1",
     cargo_classes = ["CC_PIECE_GOODS", "CC_EXPRESS", "CC_NON_POTABLE"],  # express because delivered to towns
     cargo_label="HWAR",
     units_of_cargo="TTD_STR_TONS",
-    items_of_cargo="string(STR_CARGO_UNIT_HARDWARE)",
+    items_of_cargo="string(STR_CARGO_HARDWARE_CARGO_UNIT)",
     penalty_lowerbound="7",
     single_penalty_length="255",
     price_factor=164,

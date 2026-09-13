@@ -2,16 +2,16 @@ from cargo import Cargo
 
 cargo = Cargo(
     id="acid",
-    type_name="string(STR_CARGO_NAME_ACID)",
-    unit_name="string(STR_CARGO_NAME_ACID)",
-    type_abbreviation="string(STR_CID_ACID)",
+    type_name="string(STR_CARGO_ACID_NAME)",
+    unit_name="string(STR_CARGO_ACID_NAME)",
+    type_abbreviation="string(STR_CARGO_ACID_CID)",
     sprite="NEW_CARGO_SPRITE",
     weight="1.0", # IRL acid has higher specific gravity, maybe 1.5, but just confusing in game
     is_freight="1",
     cargo_classes = ["CC_LIQUID_BULK", "CC_PIECE_GOODS", "CC_NON_POTABLE"],
     cargo_label="ACID",
     units_of_cargo="TTD_STR_LITERS",
-    items_of_cargo="string(STR_CARGO_UNIT_ACID)",
+    items_of_cargo="string(STR_CARGO_ACID_CARGO_UNIT)",
     penalty_lowerbound="24",
     single_penalty_length="48",
     price_factor=109,
