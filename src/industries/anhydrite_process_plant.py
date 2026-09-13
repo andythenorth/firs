@@ -11,6 +11,7 @@ industry = IndustrySecondary(
         ("CMNT", 3),
         ("PHAC", 2),
         ("SUAC", 2),
+        ("ENSP", 1), # consistent with other cement producers
     ],
     prob_in_game="0",  # do not build during gameplay
     prob_map_gen="5",
