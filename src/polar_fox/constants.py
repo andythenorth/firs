@@ -139,6 +139,8 @@ cargo_labels = [
     "NUKF",
     "NUKW",
     "INCA",
+    "ENUM",
+    "MOLA",
     #
     "NULL",
 ]
@@ -244,16 +246,9 @@ allowed_refits_by_label = {
         "TYCO",
         "ZINC",
     ],
-    # box cars get some extended cargos for older (pre-FRAX) cargos that don't set piece goods
-    "legacy_box_freight": [
-        "BEAN",
-        "CMNT",
-        "FRUT",
-        "GRAI",
-        "MAIL",
-        "MAIZ",
-        "NITR",
-        "WHEA",
+    # some food grade cargos have non-food uses and can also be transported by non-food tankers
+    "allowed_tanker_products": [
+        "MOLA",
     ],
     # this covers all of
     # - farm covered hoppers
@@ -268,18 +263,31 @@ allowed_refits_by_label = {
         "BAKE",
         "BEAN",
         "CERE",
+        "ENUM",
         "FMSP",
         "FOOD",
         "FRUT",
         "GRAI",
         "JAVA",
         "MAIZ",
+        "MOLA",
         "NUTS",
         "OLSD",
         "SEED",
         "SGBT",
         "SUGR",
         "TATO",
+        "WHEA",
+    ],
+    # box cars get some extended cargos for older (pre-FRAX) cargos that don't set piece goods
+    "legacy_box_freight": [
+        "BEAN",
+        "CMNT",
+        "FRUT",
+        "GRAI",
+        "MAIL",
+        "MAIZ",
+        "NITR",
         "WHEA",
     ],
     # covered hoppers (excluding farm hoppers)
@@ -498,6 +506,7 @@ default_cargos = {
     "dump_scrap": ["SCMT", "COAL"],
     "edibles_tank": ["WATR", "MILK", "BEER"],
     # ENSP was tried as default for express, but confusing when attached express cars for mail to pax trains
+    # many of these cargos tend to have weight adjustments (1 unit != 1t), which can be annoying for refits and hp/ton, but eh, it is what it is
     "express": [
         "MAIL",
         "ENSP",
