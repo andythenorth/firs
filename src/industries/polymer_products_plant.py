@@ -11,7 +11,8 @@ industry = IndustrySecondary(
     prod_cargo_types_with_output_ratios=[
         ("GOOD", 3),
         ("HWAR", 3),
-        ("PACK", 2),
+        ("PCMP", 2),
+        # dropped packaging, it doesn't need the clay and carbon inputs, and plastic packaging is available elsewhere
     ],
     prob_in_game="1",
     prob_map_gen="5",
