@@ -4,7 +4,7 @@ industry = IndustryPrimaryExtractive(
     id="zinc_ore_mine",
     prod_cargo_types_with_multipliers=[
         ("ZORE", 20),
-        ("MADD", 7),
+        ("BYFL", 7), # barytes and fluorspar are often co-occuring with zinc ore
     ],
     prob_in_game="4",
     prob_map_gen="7",

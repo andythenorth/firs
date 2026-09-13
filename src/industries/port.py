@@ -84,7 +84,7 @@ industry.enable_in_economy(
     "MILD_MILD_WEST",
     accept_cargo_types=[
         "KAOL",
-        "MADD",
+        "BYFL",
         "STEL",
         "TINP",
         "FMSP",
