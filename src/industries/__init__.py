@@ -55,7 +55,7 @@ industry_module_names = [
     "general_store",
     "glass_works",
     "grain_mill",
-    "grazing_farm",
+    #"grazing_farm",
     "herding_coop",
     "hotel",
     "industrial_chemicals_plant",
