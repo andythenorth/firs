@@ -83,13 +83,13 @@ industry.enable_in_economy(
 industry.enable_in_economy(
     "MILD_MILD_WEST",
     accept_cargo_types=[
-        "FOOD",
-        "FRZN",
-        "FMSP",
         "KAOL",
         "MADD",
-        "TINP",
         "STEL",
+        "TINP",
+        "FMSP",
+        "FOOD",
+        "FRZN",
     ],
     prod_cargo_types_with_multipliers=[
         ("ENSP", 12),

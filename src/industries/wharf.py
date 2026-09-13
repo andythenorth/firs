@@ -51,12 +51,12 @@ industry.enable_in_economy(
     "MILD_MILD_WEST",
     accept_cargo_types=[
         "ZINC",
-        "BOOM",
         "CMNT",
-        "PLNT",
-        "FRZN",
-        "FOOD",
         "WDPR",
+        "BOOM",
+        "PLNT",
+        "FOOD",
+        "FRZN",
     ],
     prod_cargo_types_with_multipliers=[
         ("PHOS", 20),
