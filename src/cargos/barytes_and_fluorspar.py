@@ -18,6 +18,6 @@ cargo = Cargo(
     single_penalty_length="255",
     price_factor=118,
     capacity_multiplier="1",
-    icon_indices=(8, 3), # CABBAGE
-    sprites_complete=False,
+    icon_indices=(4, 8),
+    sprites_complete=True,
 )
