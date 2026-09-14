@@ -67,6 +67,7 @@ economy = Economy(
         "wood_pulp",
         "zinc",
         "zinc_ore",
+        "mineral_fillers", # CABBAGE - out of order, savegame compatibility issues
     ],
     cargoflow_graph_tuning={
         "wormhole_industries": [

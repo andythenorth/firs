@@ -94,7 +94,7 @@ industry.enable_in_economy(
     prod_cargo_types_with_multipliers=[
         ("ENSP", 12),
         ("PCMP", 16),
-        ("ENUM", 12),
+        ("MIFI", 10),
         ("FRUT", 14),
     ],
     vulcan_config={

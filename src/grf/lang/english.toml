@@ -440,10 +440,15 @@ name = "Meat"
 cargo_unit = "{WEIGHT} of meat"
 # MISSING: source node STR_CID_MEAT
 
-[STR_CARGO_BARYTES_AND_FLUORSPAR]
+[STR_CARGO_BARYTES_AND_FLUORSPAR] # CABBAGE out of order
 name = "Barytes & Fluorspar"
 cargo_unit = "{WEIGHT} of barytes & fluorspar"
 cid = "{TINYFONT}MA"
+
+[STR_CARGO_MINERAL_FILLERS]
+name = "Mineral Fillers"
+cargo_unit = "{WEIGHT} of mineral fillers"
+cid = "{TINYFONT}MF"
 
 [STR_CARGO_MOLASSES]
 name = "Raw Sugar & Molasses"
@@ -914,6 +919,9 @@ base = "Manganese Mine"
 
 [STR_IND_METAL_WORKS]
 base = "Metal Works"
+
+[STR_IND_MINERAL_FILLERS_PLANT]
+base = "Mineral Fillers Plant"
 
 [STR_IND_NITRATE_MINE]
 base = "Nitrate Mine"

@@ -1077,6 +1077,7 @@ class Industry(object):
                     "process_chemicals_plant",
                     "produce_packer",
                     "industrial_chemicals_plant",
+                    "mineral_fillers_plant",
                 ]:
                     raise Exception(
                         "get_extra_text_string: "

@@ -65,6 +65,7 @@ industry_module_names = [
     "limestone_mine",
     "manganese_mine",
     "metal_works",
+    "mineral_fillers_plant",
     "nitrate_mine",
     # "nuclear_fuel_complex",
     # "nuclear_power_plant",
