@@ -381,8 +381,8 @@ cargo_unit = "{WEIGHT} of glass products"
 cid = "{TINYFONT}GL"
 
 [STR_CARGO_HARDWARE]
-name = "Hardware"
-cargo_unit = "{WEIGHT} of hardware"
+name = "Hardware & Finishes"
+cargo_unit = "{WEIGHT} of hardware & finishes"
 cid = "{TINYFONT}HW"
 
 [STR_CARGO_INDUSTRIAL_CARBONS]
@@ -819,6 +819,9 @@ base = "Concrete Plant"
 #[STR_IND_COPPER_CONCENTRATOR]
 #base = "Copper Concentrator"
 
+[STR_IND_CONSUMER_CHEMICALS_PLANT]
+base = "Batch Chemical Works"
+
 [STR_IND_COPPER_SMELTER]
 base = "Copper Smelter"
 
@@ -971,7 +974,7 @@ base = "Pipe Shop"
 base = "Plate Mill"
 
 [STR_IND_POLYMER_PRODUCTS_PLANT]
-base = "Polymer Products Plant"
+base = "Plastic Mouldings Factory"
 
 [STR_IND_PORT]
 base = "Port"

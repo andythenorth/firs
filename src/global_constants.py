@@ -80,7 +80,7 @@ industry_numeric_ids = dict(
     pyrite_mine=71,
     pyrite_smelter=72,
     paper_mill=73,
-    #unused=74,
+    consumer_chemicals_plant=74,
     manganese_mine=75,
     potash_mine=76,
     plate_mill=77,
@@ -139,6 +139,7 @@ industry_numeric_ids = dict(
 # max ID 511 as of OpenTTD 16
 tile_numeric_ids = dict(
     # 0 left free for GarryG
+    consumer_chemicals_plant_tile_1=18,
     produce_packer_tile_1=19,
     frozen_desserts_factory_tile_1=20,
     paper_products_factory_tile_1=21,

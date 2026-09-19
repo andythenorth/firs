@@ -28,6 +28,7 @@ industry_module_names = [
     "coke_oven",
     "commercial_bakery",
     "concrete_plant",
+    "consumer_chemicals_plant",
     "convenience_foods_factory",
     "copper_mine",
     "copper_smelter",

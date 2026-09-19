@@ -9,7 +9,7 @@ industry = IndustrySecondary(
         ("QLME", 3),
         ("BYFL", 3),
         ("ANHY", 3),
-        ("PRCH", 3),
+        ("CHIM", 3), # CHIM not PRCH, avoids a loopback where some PRCH producers accept MIFI
     ],
     prod_cargo_types_with_output_ratios=[
         ("MIFI", 8),

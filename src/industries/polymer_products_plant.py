@@ -3,10 +3,10 @@ from industry import IndustrySecondary, TileLocationChecks
 industry = IndustrySecondary(
     id="polymer_products_plant",
     accept_cargos_with_input_ratios=[
-        ("PLAS", 5),
-        ("MIFI", 1),
-        ("INCA", 1),
-        ("PRCH", 1),
+        ("PLAS", 4),
+        ("MIFI", 2),
+        ("INCA", 2),
+        # ("PRCH", 1), # removed for graph balance of PRCH; only 1% of inputs to extrusion IRL
     ],
     prod_cargo_types_with_output_ratios=[
         ("GOOD", 3),

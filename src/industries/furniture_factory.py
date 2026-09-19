@@ -26,7 +26,7 @@ industry.enable_in_economy(
     accept_cargos_with_input_ratios=[
         ("WDPR", 4),
         ("PLAS", 2),
-        ("HWAR", 2),
+        ("PRCH", 2),
     ],
     prod_cargo_types_with_output_ratios=[
         ("GOOD", 8),

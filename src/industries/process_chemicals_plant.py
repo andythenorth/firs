@@ -7,14 +7,14 @@ industry = IndustrySecondary(
         ("CHIM", 3),
         ("PHAC", 3),
         ("ANPR", 3),
+        ("MIFI", 3),
         ("BAKE", 3),
-        ("INCA", 3),
         ("INGA", 3),
     ],
     prod_cargo_types_with_output_ratios=[
         ("PRCH", 3),
         ("ENUM", 3),
-        ("GOOD", 2),
+        #("GOOD", 2), # CABBAGE - moved to other process chemicals plant?
     ],
     prob_in_game="0",  # do not build during gameplay
     prob_map_gen="8",
