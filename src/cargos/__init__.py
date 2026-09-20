@@ -2,7 +2,7 @@
 cargo_module_names = [
     "acid",
     "aggregates",
-    "aluminia",
+    "alumina",
     "aluminium",
     "ammonia_and_nitric_products",
     "anhydrite",
