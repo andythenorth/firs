@@ -30,7 +30,7 @@ industry.enable_in_economy(
     vulcan_config={
         "map_curator": {
             "curation_function": "MinimumRatioToCompanionIndustryTypes",
-            "companion_industries": ["paper_mill", "polymer_products_plant"],
+            "companion_industries": ["paper_products_factory", "mineral_fillers_plant"],
             "companion_industries_ratio": 1,
         }
     },
