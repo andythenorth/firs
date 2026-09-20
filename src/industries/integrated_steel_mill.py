@@ -31,8 +31,9 @@ industry.enable_in_economy(
     accept_cargos_with_input_ratios=[
         ("IORE", 3),
         ("COKE", 2),
-        ("LIME", 2),
+        ("LIME", 1),
         ("INGA", 1),
+        ("PRCH", 1),
     ],
     prod_cargo_types_with_output_ratios=[
         ("STEL", 6),
