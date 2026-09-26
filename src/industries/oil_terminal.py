@@ -199,11 +199,10 @@ industry.add_magic_spritelayout(
 )
 
 industry.add_magic_spritelayout(
-    type="jetty_auto_orient_to_coast_direction",
+    type="water_feature_auto_orient_to_coast_direction",
     base_id="oil_terminal_spritelayout_water_barge_1",
     tile="oil_terminal_tile_flat_water_only",
     config={
-        "jetty_foundations": False,
         "building_sprites": {
             "se": [
                 spriteset_barge_1_nw_se,
@@ -221,11 +220,10 @@ industry.add_magic_spritelayout(
     },
 )
 industry.add_magic_spritelayout(
-    type="jetty_auto_orient_to_coast_direction",
+    type="water_feature_auto_orient_to_coast_direction",
     base_id="oil_terminal_spritelayout_water_barge_2",
     tile="oil_terminal_tile_flat_water_only",
     config={
-        "jetty_foundations": False,
         "building_sprites": {
             "se": [
                 spriteset_barge_2_nw_se,

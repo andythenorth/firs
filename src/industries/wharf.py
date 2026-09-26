@@ -486,11 +486,10 @@ industry.add_magic_spritelayout(
     },
 )
 industry.add_magic_spritelayout(
-    type="jetty_auto_orient_to_coast_direction",
+    type="water_feature_auto_orient_to_coast_direction",
     base_id="wharf_spritelayout_water_ship_1",
     tile="wharf_tile_flat_water_only",
     config={
-        "jetty_foundations": False,
         "building_sprites": {
             "se": [
                 spriteset_ship_1_ne_sw,
@@ -508,11 +507,10 @@ industry.add_magic_spritelayout(
     },
 )
 industry.add_magic_spritelayout(
-    type="jetty_auto_orient_to_coast_direction",
+    type="water_feature_auto_orient_to_coast_direction",
     base_id="wharf_spritelayout_water_ship_2",
     tile="wharf_tile_flat_water_only",
     config={
-        "jetty_foundations": False,
         "building_sprites": {
             "se": [
                 spriteset_ship_2_ne_sw,
