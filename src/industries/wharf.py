@@ -230,7 +230,6 @@ industry.add_magic_spritelayout(
     base_id="wharf_spritelayout_coast_building",
     tile="wharf_tile_coast_only",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_gatehouse,
@@ -252,7 +251,6 @@ industry.add_magic_spritelayout(
     base_id="wharf_spritelayout_crane_rails_parallel",
     tile="wharf_tile_sea_or_land",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_crane_rails_nw_se,
@@ -274,7 +272,6 @@ industry.add_magic_spritelayout(
     base_id="wharf_spritelayout_crane_rails_orthogonal",
     tile="wharf_tile_sea_or_land",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_crane_rails_ne_sw,
@@ -296,7 +293,6 @@ industry.add_magic_spritelayout(
     base_id="wharf_spritelayout_crane_parallel",
     tile="wharf_tile_sea_or_land",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_crane_rails_nw_se,
@@ -322,7 +318,6 @@ industry.add_magic_spritelayout(
     base_id="wharf_spritelayout_crane_orthogonal",
     tile="wharf_tile_sea_or_land",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_crane_rails_ne_sw,
@@ -348,7 +343,6 @@ industry.add_magic_spritelayout(
     base_id="wharf_spritelayout_tanks_1",
     tile="wharf_tile_sea_or_land",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_tanks_medium,
@@ -370,7 +364,6 @@ industry.add_magic_spritelayout(
     base_id="wharf_spritelayout_tanks_2",
     tile="wharf_tile_sea_or_land",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_tanks_sphere,
@@ -392,7 +385,6 @@ industry.add_magic_spritelayout(
     base_id="wharf_spritelayout_silo_1",
     tile="wharf_tile_sea_or_land",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_silo_1_nw_se,
@@ -414,7 +406,6 @@ industry.add_magic_spritelayout(
     base_id="wharf_spritelayout_silo_2",
     tile="wharf_tile_sea_or_land",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_silo_2_nw_se,
@@ -436,7 +427,6 @@ industry.add_magic_spritelayout(
     base_id="wharf_spritelayout_warehouse_1",
     tile="wharf_tile_sea_or_land",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_warehouse_half_ne_sw,
@@ -458,7 +448,6 @@ industry.add_magic_spritelayout(
     base_id="wharf_spritelayout_warehouse_2",
     tile="wharf_tile_sea_or_land",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_warehouse_full_ne_sw,
@@ -480,7 +469,6 @@ industry.add_magic_spritelayout(
     base_id="wharf_spritelayout_shed_1",
     tile="wharf_tile_sea_or_land",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_shed_nw_se,

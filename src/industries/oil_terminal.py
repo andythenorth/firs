@@ -118,7 +118,6 @@ industry.add_magic_spritelayout(
     base_id="oil_terminal_spritelayout_coast_office",
     tile="oil_terminal_tile_coast_only",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_office,
@@ -140,7 +139,6 @@ industry.add_magic_spritelayout(
     base_id="oil_terminal_spritelayout_sphere_tank",
     tile="oil_terminal_tile_sea_or_land",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_sphere_tank,
@@ -162,7 +160,6 @@ industry.add_magic_spritelayout(
     base_id="oil_terminal_spritelayout_small_tanks",
     tile="oil_terminal_tile_sea_or_land",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_small_tanks,
@@ -184,7 +181,6 @@ industry.add_magic_spritelayout(
     base_id="oil_terminal_spritelayout_large_tank",
     tile="oil_terminal_tile_sea_or_land",
     config={
-        "jetty_foundations": True,
         "building_sprites": {
             "se": [
                 spriteset_large_cylinder_tank,
