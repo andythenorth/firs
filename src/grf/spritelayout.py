@@ -204,7 +204,7 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
 class MagicSpritelayoutWaterFeatureAutoOrientToCoastDirection(object):
     """
     Occasionally we need magic.  If we're going magic, let's go full on magic.
-    This one provides tiles for jetties that automatically orient to the coast direction, fine-grained configurable per spritelayout.
+    This one provides water tiles that automatically orient to the coast direction, fine-grained configurable per spritelayout.
     """
 
     def __init__(self, industry, base_id, tile, config, **kwargs):

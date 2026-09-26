@@ -58,6 +58,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_platform,
     building_sprites=[spriteset_crane_animated, spriteset_greeble],
     terrain_aware_ground=True,
+    jetty_foundations=False,
 )
 
 industry.add_industry_layout(

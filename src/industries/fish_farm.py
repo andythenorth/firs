@@ -102,6 +102,7 @@ industry.add_spritelayout(
     ground_overlay=None,
     building_sprites=[spriteset_tank_1],
     terrain_aware_ground=True,
+    jetty_foundations=False,
 )
 industry.add_spritelayout(
     id="fish_farm_spritelayout_2",
@@ -110,6 +111,7 @@ industry.add_spritelayout(
     ground_overlay=None,
     building_sprites=[spriteset_tank_2],
     terrain_aware_ground=True,
+    jetty_foundations=False,
 )
 industry.add_spritelayout(
     id="fish_farm_spritelayout_3",
@@ -118,6 +120,7 @@ industry.add_spritelayout(
     ground_overlay=None,
     building_sprites=[spriteset_tank_3],
     terrain_aware_ground=True,
+    jetty_foundations=False,
 )
 industry.add_spritelayout(
     id="fish_farm_spritelayout_4",
@@ -126,6 +129,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_station_bouy,
     building_sprites=[spriteset_tank_4],
     terrain_aware_ground=True,
+    jetty_foundations=False,
 )
 industry.add_magic_spritelayout(
     type="jetty_coast_foundations",

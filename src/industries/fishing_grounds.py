@@ -104,6 +104,7 @@ industry.add_spritelayout(
     ground_overlay=None,
     building_sprites=[spriteset_1],
     terrain_aware_ground=True,
+    jetty_foundations=False,
 )
 industry.add_spritelayout(
     id="fishing_grounds_spritelayout_2",
@@ -112,6 +113,7 @@ industry.add_spritelayout(
     ground_overlay=None,
     building_sprites=[spriteset_2],
     terrain_aware_ground=True,
+    jetty_foundations=False,
 )
 industry.add_spritelayout(
     id="fishing_grounds_spritelayout_3",
@@ -120,6 +122,7 @@ industry.add_spritelayout(
     ground_overlay=None,
     building_sprites=[spriteset_3],
     terrain_aware_ground=True,
+    jetty_foundations=False,
 )
 industry.add_spritelayout(
     id="fishing_grounds_spritelayout_4",
@@ -128,6 +131,7 @@ industry.add_spritelayout(
     ground_overlay=spriteset_5,
     building_sprites=[spriteset_4],
     terrain_aware_ground=True,
+    jetty_foundations=False,
 )
 
 industry.add_industry_layout(
