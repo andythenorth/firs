@@ -18,11 +18,10 @@
 <!--! Location check macros -->
 
 <metal:require_sea_tile metal:define-macro="require_sea_tile">
-    <!--! Check that the tile has water class sea (or none, for reasons that aren't clear tbh) -->
-    <!--! why is NONE an acceptable water class result for this check?  Related to coast tile checks? -->
+    <!--! Check that the tile has water class sea (but not river or canal -->
     switch(FEAT_INDUSTRYTILES, SELF, ${location_check.switch_entry_point}, nearby_tile_water_class(0,0)) {
         WATER_CLASS_SEA: ${location_check.switch_result};
-        WATER_CLASS_NONE: ${location_check.switch_result};
+        <!--! WATER_CLASS_NONE: ${location_check.switch_result}; --> <!--! CABBAGE - unclear why NONE is checked, something to do with coasts? bulldozed coasts? NONE is not just land, it's also undefined-->
         return CB_RESULT_LOCATION_DISALLOW;
     }
 </metal:require_sea_tile>
