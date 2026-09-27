@@ -12,11 +12,11 @@ class SpriteLayout(object):
         perma_fences=[],
         magic_trees=[],
         jetty_foundations=True,
-        jetty_surface_overlay=None,
+        jetty_deck_overlay=None,
+        jetty_surface_on_land=None,
         terrain_aware_ground=False,
-        land_object_zoffset=0, # deprecate
-        water_object_zoffset=8, # deprecate
-        cabbage_water_zoffset=0,
+        cabbage_coast_zoffset=0,
+        cabbage_water_zoffset=8,
         tile=None,
         add_to_object_num=None,
     ):
@@ -31,18 +31,18 @@ class SpriteLayout(object):
         self.perma_fences = perma_fences
         self.magic_trees = magic_trees
         self.jetty_foundations = jetty_foundations
-        if jetty_surface_overlay is None:
-            self.jetty_surface_overlay = self.ground_sprite
+        if jetty_deck_overlay is None:
+            self.jetty_deck_overlay = self.ground_sprite
         else:
-            self.jetty_surface_overlay = jetty_surface_overlay
+            self.jetty_deck_overlay = jetty_deck_overlay
+        self.jetty_surface_on_land = jetty_surface_on_land
         self.terrain_aware_ground = terrain_aware_ground  # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
         if self.terrain_aware_ground:
             assert (
                 self.ground_sprite == None
             ), f"{self.id} sets both ground_sprite and terrain_aware_ground - can't set both"
-        self.land_object_zoffset = land_object_zoffset # deprecate
-        self.water_object_zoffset = water_object_zoffset # deprecate
         self.cabbage_water_zoffset = cabbage_water_zoffset
+        self.cabbage_coast_zoffset = cabbage_coast_zoffset
         # as of September 2022, spritelayouts can define which tile they use
         # - this is optional as a migration strategy, but is intended to be the only supported approach in future
         self.tile = tile
@@ -156,7 +156,7 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
     def __init__(self, industry, base_id, tile, config, **kwargs):
         self.tile = tile
         self.auto_orient = True
-        jetty_surface_overlay = industry.add_spriteset(
+        jetty_surface_on_land = industry.add_spriteset(
             type="asphalt",
         )
         for coast_direction in ["se", "sw", "nw", "ne"]:
@@ -168,11 +168,9 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
                 ground_overlay=None,
                 building_sprites=building_sprites,
                 jetty_foundations=True,
-                jetty_surface_overlay=jetty_surface_overlay,
+                jetty_surface_on_land=jetty_surface_on_land,
                 terrain_aware_ground=True,
-                # to avoid overcomplicating industry spritelayout, we make adjustments to object spritelayout
-                land_object_zoffset=-8, # deprecate
-                water_object_zoffset=0, # deprecate
+                cabbage_coast_zoffset=0,
                 cabbage_water_zoffset=8,
                 tile=self.tile,
             )
@@ -226,9 +224,6 @@ class MagicSpritelayoutWaterFeatureAutoOrientToCoastDirection(object):
                 building_sprites=building_sprites,
                 terrain_aware_ground=True,
                 jetty_foundations=False,
-                # to avoid overcomplicating industry spritelayout, we make adjustments to object spritelayout
-                land_object_zoffset=-8, # deprecate
-                water_object_zoffset=0, # deprecate
                 tile=self.tile,
             )
 
