@@ -128,7 +128,12 @@
         </tal:optional_construction_sprites>
 
         <tal:jetty_foundations condition="spritelayout.jetty_foundations">
-            <!--! optional manual handling of jetty foundations (for water industries) -->
+            <!--!
+                Optional manual handling of jetties for water industries.
+                These sprites are pre-composed whole-tile graphics containing both
+                the jetty foundation and its surface; no separate surface overlay
+                is required here.
+            -->
             building {
                 sprite: spriteset_jetty_foundations_and_surface_1(slope_to_sprite_offset(nearby_tile_slope(0,0)));
                 recolour_mode: RECOLOUR_REMAP;
@@ -140,7 +145,7 @@
                 yextent: 16;
                 zextent: 8;
                 always_draw: 1;
-                hide_sprite: !(LOAD_TEMP(${graphics_temp_storage.var_tile_is_built_on_water}));
+                hide_sprite: !(LOAD_TEMP(${graphics_temp_storage.var_tile_is_built_on_water}) || LOAD_TEMP(${graphics_temp_storage.var_tile_is_built_on_coast}));
             }
         </tal:jetty_foundations>
 
