@@ -14,8 +14,9 @@ class SpriteLayout(object):
         jetty_foundations=True,
         jetty_surface_overlay=None,
         terrain_aware_ground=False,
-        land_object_zoffset=0,
-        water_object_zoffset=8,
+        land_object_zoffset=0, # deprecate
+        water_object_zoffset=8, # deprecate
+        cabbage_water_zoffset=0,
         tile=None,
         add_to_object_num=None,
     ):
@@ -39,8 +40,9 @@ class SpriteLayout(object):
             assert (
                 self.ground_sprite == None
             ), f"{self.id} sets both ground_sprite and terrain_aware_ground - can't set both"
-        self.land_object_zoffset = land_object_zoffset
-        self.water_object_zoffset = water_object_zoffset
+        self.land_object_zoffset = land_object_zoffset # deprecate
+        self.water_object_zoffset = water_object_zoffset # deprecate
+        self.cabbage_water_zoffset = cabbage_water_zoffset
         # as of September 2022, spritelayouts can define which tile they use
         # - this is optional as a migration strategy, but is intended to be the only supported approach in future
         self.tile = tile
@@ -169,8 +171,9 @@ class MagicSpritelayoutJettyAutoOrientToCoastDirection(object):
                 jetty_surface_overlay=jetty_surface_overlay,
                 terrain_aware_ground=True,
                 # to avoid overcomplicating industry spritelayout, we make adjustments to object spritelayout
-                land_object_zoffset=-8,
-                water_object_zoffset=0,
+                land_object_zoffset=-8, # deprecate
+                water_object_zoffset=0, # deprecate
+                cabbage_water_zoffset=8,
                 tile=self.tile,
             )
 
@@ -224,8 +227,8 @@ class MagicSpritelayoutWaterFeatureAutoOrientToCoastDirection(object):
                 terrain_aware_ground=True,
                 jetty_foundations=False,
                 # to avoid overcomplicating industry spritelayout, we make adjustments to object spritelayout
-                land_object_zoffset=-8,
-                water_object_zoffset=0,
+                land_object_zoffset=-8, # deprecate
+                water_object_zoffset=0, # deprecate
                 tile=self.tile,
             )
 

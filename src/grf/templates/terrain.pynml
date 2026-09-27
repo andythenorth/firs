@@ -97,13 +97,21 @@
         }
 
         <!--! check if tile is water - this switch might also be used in other contexts -->
-        switch (${feature}, SELF, switch_${feature_suffix}_tile_is_water, nearby_tile_water_class(0, 0)) {
-            WATER_CLASS_NONE: return 0;
-            return 1;
+        switch (${feature}, SELF, switch_${feature_suffix}_tile_is_flat_sea, [
+                    (
+                        nearby_tile_water_class(0, 0) == WATER_CLASS_SEA
+                    )
+                    &&
+                    (
+                        nearby_tile_slope(0,0) == SLOPE_FLAT
+                    )
+                ]) {
+            1: return 1;
+            return 0;
         }
 
         switch (${feature}, SELF, switch_terrain_${feature_suffix}, [
-                        switch_${feature_suffix}_tile_is_water()
+                        switch_${feature_suffix}_tile_is_flat_sea()
                     ]) {
             1: switch_terrain_${feature_suffix}_water;
             switch_terrain_${feature_suffix}_land;

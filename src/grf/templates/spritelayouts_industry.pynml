@@ -140,12 +140,12 @@
                 palette: PALETTE_USE_DEFAULT;
                 xoffset: 0;
                 yoffset: 0;
-                zoffset: 8;
+                zoffset: ${spritelayout.cabbage_water_zoffset} * (LOAD_TEMP(${graphics_temp_storage.var_tile_is_built_on_flat_sea}) || LOAD_TEMP(${graphics_temp_storage.var_tile_is_built_on_coast}));
                 xextent: 16;
                 yextent: 16;
                 zextent: 8;
                 always_draw: 1;
-                hide_sprite: !(LOAD_TEMP(${graphics_temp_storage.var_tile_is_built_on_water}) || LOAD_TEMP(${graphics_temp_storage.var_tile_is_built_on_coast}));
+                hide_sprite: !(LOAD_TEMP(${graphics_temp_storage.var_tile_is_built_on_flat_sea}) || LOAD_TEMP(${graphics_temp_storage.var_tile_is_built_on_coast}));
             }
         </tal:jetty_foundations>
 
