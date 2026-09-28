@@ -258,7 +258,7 @@ industry.add_magic_spritelayout(
                 spriteset_crane_rails_ne_sw,
             ],
         },
-        # no objects, by design, would duplicate others
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -306,7 +306,7 @@ industry.add_magic_spritelayout(
                 spriteset_large_crane_ne_sw,
             ],
         },
-        "add_objects": True,
+        # no objects, by design, would duplicate port_spritelayout_crane_parallel
     },
 )
 industry.add_magic_spritelayout(
@@ -332,6 +332,7 @@ industry.add_magic_spritelayout(
                 spriteset_large_crane_se_nw,
             ],
         },
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -484,6 +485,20 @@ industry.add_magic_spritelayout(
             "ne": [
                 spriteset_shed_ne_sw,
             ],
+        },
+        "add_objects": True,
+    },
+)
+industry.add_magic_spritelayout(
+    type="jetty_auto_orient_to_coast_direction",
+    base_id="wharf_spritelayout_empty",
+    tile="wharf_tile_sea_or_land",
+    config={
+        "building_sprites": {
+            "se": [],
+            "sw": [],
+            "nw": [],
+            "ne": [],
         },
         "add_objects": True,
     },
