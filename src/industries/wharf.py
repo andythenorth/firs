@@ -100,25 +100,17 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="wharf_tile_sea_or_land",
-    # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
-    foundations="return CB_RESULT_NO_FOUNDATIONS",
-    # supporting autoslope for the water tiles produces too many edge cases which are difficult to handle, so ban it
-    autoslope="return CB_RESULT_NO_AUTOSLOPE",
     location_checks=TileLocationChecks(always_allow_founder=False),
 )
 industry.add_tile(
     id="wharf_tile_coast_only",
-    # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
-    foundations="return CB_RESULT_NO_FOUNDATIONS",
-    # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
-    autoslope="return CB_RESULT_NO_AUTOSLOPE",
     location_checks=TileLocationChecks(always_allow_founder=False, require_coast=True),
 )
 industry.add_tile(
     id="wharf_tile_flat_water_only",
-    # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
+    # no foundations on flat sea tiles - this also conveniently adjusts the z offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
-    # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
+    # no autoslope for flat sea tiles produces - this might be overkill as they're at level 0 anyway, but eh, explicitly declare this anyway
     autoslope="return CB_RESULT_NO_AUTOSLOPE",
     location_checks=TileLocationChecks(
         always_allow_founder=False, disallow_slopes=True
@@ -126,104 +118,104 @@ industry.add_tile(
 )
 
 spriteset_crane_rails_nw_se = industry.add_spriteset(
-    sprites=[(80, 10, 64, 39, -31, -8)],
+    sprites=[(80, 10, 64, 39, -31, 0)],
     always_draw=True,
 )
 spriteset_crane_rails_ne_sw = industry.add_spriteset(
-    sprites=[(150, 10, 64, 39, -31, -8)],
+    sprites=[(150, 10, 64, 39, -31, 0)],
     always_draw=True,
 )
 spriteset_warehouse_half_nw_se = industry.add_spriteset(
-    sprites=[(440, 10, 64, 84, -31, -61)],
+    sprites=[(440, 10, 64, 84, -31, -53)],
 )
 spriteset_warehouse_half_ne_sw = industry.add_spriteset(
-    sprites=[(510, 10, 64, 84, -31, -61)],
+    sprites=[(510, 10, 64, 84, -31, -53)],
 )
 spriteset_warehouse_full_nw_se = industry.add_spriteset(
-    sprites=[(580, 10, 64, 84, -31, -61)],
+    sprites=[(580, 10, 64, 84, -31, -53)],
 )
 spriteset_warehouse_full_ne_sw = industry.add_spriteset(
-    sprites=[(650, 10, 64, 84, -31, -61)],
+    sprites=[(650, 10, 64, 84, -31, -53)],
 )
 spriteset_shed_nw_se = industry.add_spriteset(
-    sprites=[(440, 310, 64, 84, -31, -61)],
+    sprites=[(440, 310, 64, 84, -31, -53)],
 )
 spriteset_shed_ne_sw = industry.add_spriteset(
-    sprites=[(510, 310, 64, 84, -31, -61)],
+    sprites=[(510, 310, 64, 84, -31, -53)],
 )
 spriteset_tanks_medium = industry.add_spriteset(
-    sprites=[(720, 210, 64, 84, -31, -61)],
+    sprites=[(720, 210, 64, 84, -31, -53)],
 )
 spriteset_tanks_sphere = industry.add_spriteset(
-    sprites=[(790, 210, 64, 84, -31, -61)],
+    sprites=[(790, 210, 64, 84, -31, -53)],
 )
 spriteset_gatehouse = industry.add_spriteset(
-    sprites=[(580, 310, 64, 84, -31, -61)],
+    sprites=[(580, 310, 64, 84, -31, -53)],
 )
 spriteset_silo_1_nw_se = industry.add_spriteset(
-    sprites=[(440, 110, 64, 84, -31, -61)],
+    sprites=[(440, 110, 64, 84, -31, -53)],
 )
 spriteset_silo_1_ne_sw = industry.add_spriteset(
-    sprites=[(580, 110, 64, 84, -31, -61)],
+    sprites=[(580, 110, 64, 84, -31, -53)],
 )
 spriteset_silo_1_se_nw = industry.add_spriteset(
-    sprites=[(510, 110, 64, 84, -31, -61)],
+    sprites=[(510, 110, 64, 84, -31, -53)],
 )
 spriteset_silo_1_sw_ne = industry.add_spriteset(
-    sprites=[(650, 110, 64, 84, -31, -61)],
+    sprites=[(650, 110, 64, 84, -31, -53)],
 )
 spriteset_silo_2_nw_se = industry.add_spriteset(
-    sprites=[(510, 110, 64, 84, -31, -61)],
+    sprites=[(510, 110, 64, 84, -31, -53)],
 )
 spriteset_silo_2_ne_sw = industry.add_spriteset(
-    sprites=[(650, 110, 64, 84, -31, -61)],
+    sprites=[(650, 110, 64, 84, -31, -53)],
 )
 spriteset_silo_2_se_nw = industry.add_spriteset(
-    sprites=[(440, 110, 64, 84, -31, -61)],
+    sprites=[(440, 110, 64, 84, -31, -53)],
 )
 spriteset_silo_2_sw_ne = industry.add_spriteset(
-    sprites=[(580, 110, 64, 84, -31, -61)],
+    sprites=[(580, 110, 64, 84, -31, -53)],
 )
 spriteset_large_crane_ne_sw = industry.add_spriteset(
-    sprites=[(440, 210, 64, 84, -31, -43)],
+    sprites=[(440, 210, 64, 84, -31, -35)],
     zoffset=18,
 )
 spriteset_large_crane_nw_se = industry.add_spriteset(
-    sprites=[(510, 210, 64, 84, -31, -43)],
+    sprites=[(510, 210, 64, 84, -31, -35)],
     zoffset=18,
 )
 spriteset_large_crane_se_nw = industry.add_spriteset(
-    sprites=[(580, 210, 64, 84, -31, -43)],
+    sprites=[(580, 210, 64, 84, -31, -35)],
     zoffset=18,
 )
 spriteset_large_crane_sw_ne = industry.add_spriteset(
-    sprites=[(650, 210, 64, 84, -31, -43)],
+    sprites=[(650, 210, 64, 84, -31, -35)],
     zoffset=18,
 )
 # there are 2 variations of the ship, (reversed, unreversed) with coast appropriate offsets for each
 spriteset_ship_1_ne_sw = industry.add_spriteset(
-    sprites=[(10, 110, 64, 39, -40, -18)],
+    sprites=[(10, 110, 64, 39, -40, -10)],
 )
 spriteset_ship_1_nw_se = industry.add_spriteset(
-    sprites=[(80, 110, 64, 39, -22, -18)],
+    sprites=[(80, 110, 64, 39, -22, -10)],
 )
 spriteset_ship_1_sw_ne = industry.add_spriteset(
-    sprites=[(150, 110, 64, 39, -30, -22)],
+    sprites=[(150, 110, 64, 39, -30, -14)],
 )
 spriteset_ship_1_se_nw = industry.add_spriteset(
-    sprites=[(220, 110, 64, 39, -27, -20)],
+    sprites=[(220, 110, 64, 39, -27, -12)],
 )
 spriteset_ship_2_ne_sw = industry.add_spriteset(
-    sprites=[(150, 110, 64, 39, -40, -18)],
+    sprites=[(150, 110, 64, 39, -40, -10)],
 )
 spriteset_ship_2_nw_se = industry.add_spriteset(
-    sprites=[(220, 110, 64, 39, -22, -18)],
+    sprites=[(220, 110, 64, 39, -22, -10)],
 )
 spriteset_ship_2_sw_ne = industry.add_spriteset(
-    sprites=[(10, 110, 64, 39, -30, -22)],
+    sprites=[(10, 110, 64, 39, -30, -14)],
 )
 spriteset_ship_2_se_nw = industry.add_spriteset(
-    sprites=[(80, 110, 64, 39, -27, -20)],
+    sprites=[(80, 110, 64, 39, -27, -12)],
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",

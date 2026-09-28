@@ -50,25 +50,17 @@ industry.enable_in_economy(
 
 industry.add_tile(
     id="oil_terminal_tile_sea_or_land",
-    # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
-    foundations="return CB_RESULT_NO_FOUNDATIONS",
-    # supporting autoslope for the water tiles produces too many edge cases which are difficult to handle, so ban it
-    autoslope="return CB_RESULT_NO_AUTOSLOPE",
     location_checks=TileLocationChecks(always_allow_founder=False),
 )
 industry.add_tile(
     id="oil_terminal_tile_coast_only",
-    # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
-    foundations="return CB_RESULT_NO_FOUNDATIONS",
-    # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
-    autoslope="return CB_RESULT_NO_AUTOSLOPE",
     location_checks=TileLocationChecks(always_allow_founder=False, require_coast=True),
 )
 industry.add_tile(
     id="oil_terminal_tile_flat_water_only",
-    # we'll draw our own foundations as needed - this also conveniently adjusts the y offsets on the tile to where we want them
+    # no foundations on flat sea tiles - this also conveniently adjusts the z offsets on the tile to where we want them
     foundations="return CB_RESULT_NO_FOUNDATIONS",
-    # supporting autoslope for water tiles produces too many edge cases which are difficult to handle, so ban it
+    # no autoslope for flat sea tiles produces - this might be overkill as they're at level 0 anyway, but eh, explicitly declare this anyway
     autoslope="return CB_RESULT_NO_AUTOSLOPE",
     location_checks=TileLocationChecks(
         always_allow_founder=False, disallow_slopes=True
@@ -76,42 +68,42 @@ industry.add_tile(
 )
 
 spriteset_small_tanks = industry.add_spriteset(
-    sprites=[(440, 110, 64, 84, -31, -43)],
+    sprites=[(440, 110, 64, 84, -31, -35)],
     zoffset=18,
 )
 spriteset_office = industry.add_spriteset(
-    sprites=[(440, 10, 64, 84, -31, -43)], zoffset=18
+    sprites=[(440, 10, 64, 84, -31, -35)], zoffset=18
 )
 spriteset_sphere_tank = industry.add_spriteset(
-    sprites=[(510, 10, 64, 84, -31, -60)],
+    sprites=[(510, 10, 64, 84, -31, -52)],
 )
 spriteset_large_cylinder_tank = industry.add_spriteset(
-    sprites=[(510, 110, 64, 84, -31, -43)],
+    sprites=[(510, 110, 64, 84, -31, -35)],
     zoffset=18,
 )
 spriteset_barge_1_ne_sw = industry.add_spriteset(
-    sprites=[(10, 110, 64, 39, -22, 0)],
+    sprites=[(10, 110, 64, 39, -22, 8)],
 )
 spriteset_barge_1_nw_se = industry.add_spriteset(
-    sprites=[(80, 110, 64, 39, -23, -13)],
+    sprites=[(80, 110, 64, 39, -23, -5)],
 )
 spriteset_barge_1_sw_ne = industry.add_spriteset(
-    sprites=[(150, 110, 64, 39, -38, -13)],
+    sprites=[(150, 110, 64, 39, -38, -5)],
 )
 spriteset_barge_1_se_nw = industry.add_spriteset(
-    sprites=[(220, 110, 64, 39, -47, -1)],
+    sprites=[(220, 110, 64, 39, -47, 7)],
 )
 spriteset_barge_2_ne_sw = industry.add_spriteset(
-    sprites=[(150, 110, 64, 39, -22, 0)],
+    sprites=[(150, 110, 64, 39, -22, 8)],
 )
 spriteset_barge_2_nw_se = industry.add_spriteset(
-    sprites=[(220, 110, 64, 39, -23, -13)],
+    sprites=[(220, 110, 64, 39, -23, -5)],
 )
 spriteset_barge_2_sw_ne = industry.add_spriteset(
-    sprites=[(10, 110, 64, 39, -38, -13)],
+    sprites=[(10, 110, 64, 39, -38, -5)],
 )
 spriteset_barge_2_se_nw = industry.add_spriteset(
-    sprites=[(80, 110, 64, 39, -47, -1)],
+    sprites=[(80, 110, 64, 39, -47, 7)],
 )
 industry.add_magic_spritelayout(
     type="jetty_auto_orient_to_coast_direction",
