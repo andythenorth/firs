@@ -124,6 +124,7 @@ industry.add_magic_spritelayout(
                 spriteset_office,
             ],
         },
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -145,6 +146,7 @@ industry.add_magic_spritelayout(
                 spriteset_sphere_tank,
             ],
         },
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -166,6 +168,7 @@ industry.add_magic_spritelayout(
                 spriteset_small_tanks,
             ],
         },
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -187,6 +190,7 @@ industry.add_magic_spritelayout(
                 spriteset_large_cylinder_tank,
             ],
         },
+        "add_objects": True,
     },
 )
 
@@ -209,6 +213,7 @@ industry.add_magic_spritelayout(
                 spriteset_barge_1_sw_ne,
             ],
         },
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -230,6 +235,7 @@ industry.add_magic_spritelayout(
                 spriteset_barge_2_sw_ne,
             ],
         },
+        # no objects, by design, would duplicate others
     },
 )
 

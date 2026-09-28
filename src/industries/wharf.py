@@ -236,6 +236,7 @@ industry.add_magic_spritelayout(
                 spriteset_gatehouse,
             ],
         },
+        # no objects, by design, would duplicate others
     },
 )
 industry.add_magic_spritelayout(
@@ -257,6 +258,7 @@ industry.add_magic_spritelayout(
                 spriteset_crane_rails_ne_sw,
             ],
         },
+        # no objects, by design, would duplicate others
     },
 )
 industry.add_magic_spritelayout(
@@ -278,6 +280,7 @@ industry.add_magic_spritelayout(
                 spriteset_crane_rails_nw_se,
             ],
         },
+        # no objects, by design, would duplicate wharf_spritelayout_crane_rails_parallel
     },
 )
 industry.add_magic_spritelayout(
@@ -303,6 +306,7 @@ industry.add_magic_spritelayout(
                 spriteset_large_crane_ne_sw,
             ],
         },
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -349,6 +353,7 @@ industry.add_magic_spritelayout(
                 spriteset_tanks_medium,
             ],
         },
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -370,6 +375,7 @@ industry.add_magic_spritelayout(
                 spriteset_tanks_sphere,
             ],
         },
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -391,6 +397,7 @@ industry.add_magic_spritelayout(
                 spriteset_silo_1_sw_ne,
             ],
         },
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -412,6 +419,7 @@ industry.add_magic_spritelayout(
                 spriteset_silo_2_sw_ne,
             ],
         },
+        # no objects, by design, would duplicate others
     },
 )
 industry.add_magic_spritelayout(
@@ -433,6 +441,7 @@ industry.add_magic_spritelayout(
                 spriteset_warehouse_half_nw_se,
             ],
         },
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -454,6 +463,7 @@ industry.add_magic_spritelayout(
                 spriteset_warehouse_full_nw_se,
             ],
         },
+        # no objects, by design, would duplicate others
     },
 )
 industry.add_magic_spritelayout(
@@ -475,6 +485,7 @@ industry.add_magic_spritelayout(
                 spriteset_shed_ne_sw,
             ],
         },
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -496,6 +507,7 @@ industry.add_magic_spritelayout(
                 spriteset_ship_1_se_nw,
             ],
         },
+        "add_objects": True,
     },
 )
 industry.add_magic_spritelayout(
@@ -517,6 +529,7 @@ industry.add_magic_spritelayout(
                 spriteset_ship_2_se_nw,
             ],
         },
+        # no objects, by design, would duplicate others
     },
 )
 
