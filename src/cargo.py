@@ -5,6 +5,8 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
+import importlib
+
 import global_constants as global_constants
 import utils as utils
 
@@ -160,3 +162,47 @@ class Cargo(object):
         result["id"] = self.id
         result["vulcan_town_effect"] = self.vulcan_town_effect
         return result
+
+
+class CargoManager(list):
+    """
+    It's convenient to have a structure for working with cargos.
+    This is a class to manage that, intended for use as a singleton, which can be passed to templates etc.
+    Extends default python list, as it's a convenient behaviour (the instantiated class instance behaves like a list object).
+    """
+
+    def add_cargo(self, cargo_module_name):
+        cargo_module = importlib.import_module(
+            "." + cargo_module_name, package="cargos"
+        )
+        self.append(cargo_module.cargo)
+
+    def post_init_actions(self):
+        for cargo in self:
+            cargo.validate_cargo_classes()
+        self.validate_icon_indices()
+
+    def validate_icon_indices(self):
+        # guard against overlapping icon indices, icons should be unique per cargo
+        # if two cargos use same icon (1) don't, copy-paste, then adjust some pixels for one of them (2) see 1
+        seen = {}
+        for cargo in self:
+            if cargo.icon_indices in seen.keys():
+                utils.echo_message(
+                    "Cargo "
+                    + cargo.id
+                    + " has overlapping icon_indices with cargo(s) "
+                    + str([cargo.id for cargo in seen[cargo.icon_indices]])
+                )
+            if not cargo.icon_indices in seen.keys():
+                seen[cargo.icon_indices] = []
+            seen[cargo.icon_indices].append(cargo)
+
+    @property
+    def cargo_ids(self):
+        return [cargo.id for cargo in self]
+
+    @property
+    def cargo_label_id_mapping(self):
+        return {cargo.cargo_label: cargo.id for cargo in self}
+
