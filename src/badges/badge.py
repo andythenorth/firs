@@ -70,6 +70,7 @@ class BadgeManager(list):
             self.add_badge(
                 label=badge_class_label,
                 name=badge_class_properties.get("name", None),
+                sprite=badge_class_properties.get("sprite", None), # CABBAGE TEMP - unclear if this is best approach
             )
             # then create the badges for the class
             for sublabel, sublabel_properties in badge_class_properties.get(
@@ -78,6 +79,7 @@ class BadgeManager(list):
                 self.add_badge(
                     label=badge_class_label + "/" + sublabel,
                     name=sublabel_properties.get("name", None),
+                    sprite=badge_class_properties.get("sprite", None), # CABBAGE TEMP - takes parent badge
                 )
 
     """

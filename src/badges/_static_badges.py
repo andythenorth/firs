@@ -8,5 +8,6 @@ static_badges = {
             "B": {},
             "C": {},
         },
+        "sprite": "test_badge",
     },
 }

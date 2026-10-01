@@ -12,6 +12,12 @@ badgetable {
 </tal:spritesets>
 -->
 
+<!--! CABBAGE - temp -->
+spriteset (spriteset_test_badge, "./src/graphics/badges/test.png") {
+    [10, 10, 14, 8, 0, 0]
+}
+
+
 <tal:badges repeat="badge badge_manager.badges_in_table_order">
     item (FEAT_BADGES, ${utils.nml_safe_id(badge.label)}) {
         property {
