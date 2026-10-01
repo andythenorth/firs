@@ -18,47 +18,8 @@ generated_files_path = os.path.join(currentdir, global_constants.generated_files
 import cargos
 from cargo import CargoManager
 import economies
+from economy import EconomyManager
 import industries
-
-class EconomyManager(list):
-    """
-    It's convenient to have a structure for working with economies.
-    This is a class to manage that, intended for use as a singleton, which can be passed to templates etc.
-    Extends default python list, as it's a convenient behaviour (the instantiated class instance behaves like a list object).
-    """
-
-    def add_economy(self, economy_module_name):
-        economy_module = importlib.import_module(
-            "." + economy_module_name, package="economies"
-        )
-        self.append(economy_module.economy)
-
-    def post_init_actions(self):
-        self.validate_economy_ids()
-        self.validate_economies_cargo_ids()
-
-    def validate_economy_ids(self):
-        # guard, duplicate numeric IDs don't work :P
-        seen = {}
-        for economy in self:
-            if economy.numeric_id in seen.keys():
-                raise Exception(
-                    "Economy "
-                    + economy.id
-                    + " has same numeric ID as economy "
-                    + seen[economy.numeric_id].id
-                )
-            seen[economy.numeric_id] = economy
-
-    def validate_economies_cargo_ids(self):
-        for economy in self:
-            economy.validate_economy_cargo_ids()
-
-    def get_economy_by_id(self, id):
-        for economy in self:
-            if economy.id == id:
-                return economy
-
 
 class IndustryManager(list):
     """
