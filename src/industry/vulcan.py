@@ -13,7 +13,8 @@ class Vulcan(object):
 
     @property
     def default_vulcan_config(self):
-        vulcan_config = self.industry.get_property("vulcan_config", None)
+        # CABBAGE unclear why vulcan_config was fetched but not used
+        # vulcan_config = self.industry.get_property("vulcan_config", None)
         result = {}
         result["allow_production_change_from_gs"] = getattr(
             self.industry, "allow_production_change_from_gs", False
