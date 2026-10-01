@@ -31,8 +31,14 @@ from grf.spritelayout import (
     GraphicsSwitchSlopes,
 )
 from grf.sprite_spriteset import SmokeSprite, Sprite, Spriteset
+
+# tile classes imported here to simplify exposing these to Industry instances
 from grf.tile import Tile, TileLocationChecks
 
+__all__ = [
+    "Tile",
+    "TileLocationChecks",
+]
 
 class IndustryLayout(object):
     """Base class to hold industry layouts"""
