@@ -21,6 +21,7 @@ from economy import EconomyManager
 import economies
 from industry.manager import IndustryManager
 import industries
+from badges.badge import BadgeManager
 
 def main():
     # exist_ok=True is used for case with parallel make (`make -j 2` or similar), don't fail with error if dir already exists
@@ -30,6 +31,7 @@ def main():
     globals()["economy_manager"] = EconomyManager()
     globals()["cargo_manager"] = CargoManager()
     globals()["industry_manager"] = IndustryManager()
+    globals()["badge_manager"] = BadgeManager()
 
     # economies
     for economy_module_name in economies.economy_module_names:
@@ -47,3 +49,6 @@ def main():
     economy_manager.post_init_actions()
     cargo_manager.post_init_actions()
     industry_manager.post_init_actions(cargo_manager, economy_manager)
+
+    # badges, done after cargos, industries etd sa badges can be either static (global), or dynamically created (from other items)
+    badge_manager.produce_badges()

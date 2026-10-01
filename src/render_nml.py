@@ -37,6 +37,7 @@ def render_header_item_nml(header_item):
             incompatible_grfs=incompatible_grfs,
             global_constants=global_constants,
             graphics_temp_storage=global_constants.graphics_temp_storage,  # convenience measure
+            badge_manager=firs.badge_manager,
             makefile_args=makefile_args,
             utils=utils,
             sys=sys,
@@ -96,6 +97,7 @@ def main():
         "checks",
         "parameters",
         "sprite_templates",
+        "badges",
         # items for which order is not significant, so alphabetise for simplicity
         "buildings",
         "cargos",
