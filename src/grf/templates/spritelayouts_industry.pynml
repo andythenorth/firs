@@ -146,7 +146,7 @@
                 is required here.
             -->
             building {
-                sprite: spriteset_jetty_foundations_and_surface_1(slope_to_sprite_offset(nearby_tile_slope(0,0)));
+                sprite: spriteset_jetty_foundations_and_surface_1(LOAD_TEMP(${graphics_temp_storage.var_jetty_sprite_num_for_slope}));
                 recolour_mode: RECOLOUR_REMAP;
                 palette: PALETTE_USE_DEFAULT;
                 xoffset: 0;

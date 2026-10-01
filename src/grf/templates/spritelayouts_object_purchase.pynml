@@ -1,0 +1,179 @@
+<!--!
+    Dedicated object purchase spritelayouts.
+
+    Purchase graphics are resolved once rather than once per on-map object tile,
+    so the first object view is flattened explicitly into one spritelayout.
+
+    Purchase rendering uses a canonical environment:
+    - if an object can be built on land, show it on flat normal land;
+    - otherwise, show it on flat sea;
+    - coast is never represented in purchase graphics;
+    - fences are deliberately omitted;
+    - no runtime tile/object variables are required.
+-->
+<tal:objects repeat="grf_object industry.objects.values()">
+
+    <!--!
+        Purchase building spritesets.
+        Keep these dedicated to the purchase spritelayout: purchase flattens all
+        tiles into one layout rather than using the normal per-tile object layouts.
+    -->
+    <tal:tiles repeat="x_y_spritelayout grf_object.views[0]">
+        <tal:spritelayout define="spritelayout x_y_spritelayout[2]">
+            <tal:building_sprites repeat="building_sprite spritelayout.building_sprites">
+                <tal:spriteset repeat="sprite getattr(building_sprite, 'sprites', None)">
+                    spriteset(${grf_object.id}_spriteset_purchase_${repeat.x_y_spritelayout.index}_${repeat.building_sprite.index}_${repeat.sprite.index}) {
+                        [${sprite[0]}, ${sprite[1]}, ${sprite[2]}, ${sprite[3]}, ${sprite[4]}, ${sprite[5]}, ANIM | NOCROP, ${industry.get_graphics_file_path()}]
+                    }
+                </tal:spriteset>
+            </tal:building_sprites>
+        </tal:spritelayout>
+    </tal:tiles>
+
+    spritelayout ${grf_object.id}_spritelayout_purchase {
+
+        <!--!
+            Flatten every tile in view 0 into this single purchase spritelayout.
+            x/y offsets below are tile-coordinate translations, not screen-pixel
+            offsets of the source sprite.
+        -->
+        <tal:tiles repeat="x_y_spritelayout grf_object.views[0]">
+            <tal:spritelayout define="spritelayout x_y_spritelayout[2]">
+
+                <!--! canonical ground: land wins whenever the object permits land -->
+                <tal:purchase_land condition="grf_object.allow_on_land">
+
+                    <tal:terrain_aware_ground condition="spritelayout.terrain_aware_ground">
+                        building {
+                            sprite: GROUNDSPRITE_NORMAL;
+                            xoffset: 16 * ${x_y_spritelayout[0]};
+                            yoffset: 16 * ${x_y_spritelayout[1]};
+                        }
+                    </tal:terrain_aware_ground>
+
+                    <tal:explicit_ground condition="not spritelayout.terrain_aware_ground and spritelayout.ground_sprite != None">
+                        building {
+                            sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
+                            xoffset: 16 * ${x_y_spritelayout[0]};
+                            yoffset: 16 * ${x_y_spritelayout[1]};
+                        }
+                    </tal:explicit_ground>
+
+                    <!--! purchase menu is canonical non-snow terrain -->
+                    <tal:ground_overlay condition="spritelayout.ground_overlay != None">
+                        building {
+                            sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay)};
+                            recolour_mode: RECOLOUR_REMAP;
+                            palette: PALETTE_USE_DEFAULT;
+                            xoffset: 16 * ${x_y_spritelayout[0]};
+                            yoffset: 16 * ${x_y_spritelayout[1]};
+                        }
+                    </tal:ground_overlay>
+
+                    <!--!
+                        A normally-water/jetty layout shown on land needs the
+                        explicit land representation of its jetty surface.
+                    -->
+                    <tal:jetty_surface_on_land condition="spritelayout.jetty_surface_on_land != None">
+                        building {
+                            sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.jetty_surface_on_land)};
+                            recolour_mode: RECOLOUR_REMAP;
+                            palette: PALETTE_USE_DEFAULT;
+                            xoffset: 16 * ${x_y_spritelayout[0]};
+                            yoffset: 16 * ${x_y_spritelayout[1]};
+                        }
+                    </tal:jetty_surface_on_land>
+
+                </tal:purchase_land>
+
+                <!--! sea-only objects use canonical flat sea -->
+                <tal:purchase_sea condition="not grf_object.allow_on_land">
+                    building {
+                        sprite: GROUNDSPRITE_WATER;
+                        xoffset: 16 * ${x_y_spritelayout[0]};
+                        yoffset: 16 * ${x_y_spritelayout[1]};
+                    }
+
+                    <!--!
+                        Flat-sea jetty preview.  The foundation sprites are
+                        pre-composed whole-tile foundation + deck graphics.
+                        Flat slope uses sprite offset 0.
+                    -->
+                    <tal:jetty_foundations condition="spritelayout.jetty_foundations">
+                        building {
+                            sprite: spriteset_jetty_foundations_and_surface_1(0);
+                            recolour_mode: RECOLOUR_REMAP;
+                            palette: PALETTE_USE_DEFAULT;
+                            xoffset: 16 * ${x_y_spritelayout[0]};
+                            yoffset: 16 * ${x_y_spritelayout[1]};
+                            zoffset: ${spritelayout.cabbage_water_zoffset};
+                            xextent: 16;
+                            yextent: 16;
+                            zextent: 8;
+                            always_draw: 1;
+                        }
+
+                        <tal:jetty_deck_overlay condition="spritelayout.jetty_deck_overlay != None">
+                            building {
+                                sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.jetty_deck_overlay)};
+                                recolour_mode: RECOLOUR_REMAP;
+                                palette: PALETTE_USE_DEFAULT;
+                                xoffset: 16 * ${x_y_spritelayout[0]};
+                                yoffset: 16 * ${x_y_spritelayout[1]};
+                                zoffset: ${spritelayout.cabbage_water_zoffset};
+                                xextent: 16;
+                                yextent: 16;
+                                zextent: 8;
+                                always_draw: 1;
+                            }
+                        </tal:jetty_deck_overlay>
+                    </tal:jetty_foundations>
+                </tal:purchase_sea>
+
+                <!--! buildings: canonical completed, non-snow state -->
+                <tal:building_sprites repeat="building_sprite spritelayout.building_sprites">
+                    <tal:building_single_baseset_sprite condition="getattr(building_sprite, 'sprite_number', None) is not None">
+                        building {
+                            sprite: ${getattr(building_sprite, 'sprite_number', None)};
+                            recolour_mode: RECOLOUR_REMAP;
+                            palette: PALETTE_USE_DEFAULT;
+                            xoffset: ${building_sprite.xoffset} + (16 * ${x_y_spritelayout[0]});
+                            yoffset: ${building_sprite.yoffset} + (16 * ${x_y_spritelayout[1]});
+                            zoffset: ${building_sprite.zoffset} + (${spritelayout.cabbage_water_zoffset} * ${0 if grf_object.allow_on_land else 1});
+                            xextent: ${building_sprite.xextent};
+                            yextent: ${building_sprite.yextent};
+                            zextent: ${building_sprite.zextent};
+                            always_draw: ${building_sprite.always_draw};
+                        }
+                    </tal:building_single_baseset_sprite>
+
+                    <tal:building_multiple_realsprites repeat="sprite getattr(building_sprite, 'sprites', None)">
+                        building {
+                            sprite: ${grf_object.id}_spriteset_purchase_${repeat.x_y_spritelayout.index}_${repeat.building_sprite.index}_${repeat.sprite.index};
+                            recolour_mode: RECOLOUR_REMAP;
+                            palette: PALETTE_USE_DEFAULT;
+                            xoffset: ${building_sprite.xoffset} + (16 * ${x_y_spritelayout[0]});
+                            yoffset: ${building_sprite.yoffset} + (16 * ${x_y_spritelayout[1]});
+                            zoffset: ${building_sprite.zoffset} + (${spritelayout.cabbage_water_zoffset} * ${0 if grf_object.allow_on_land else 1});
+                            xextent: ${building_sprite.xextent};
+                            yextent: ${building_sprite.yextent};
+                            zextent: ${building_sprite.zextent};
+                            always_draw: ${building_sprite.always_draw};
+                        }
+                    </tal:building_multiple_realsprites>
+                </tal:building_sprites>
+
+            </tal:spritelayout>
+        </tal:tiles>
+    }
+
+    <!--!
+        Purchase has no on-map object/tile context.  The dedicated spritelayout
+        above bakes in the canonical state, so this switch does not call terrain,
+        fence, coast, slope, relative_pos, or view resolvers.
+    -->
+    switch(FEAT_OBJECTS, SELF, ${grf_object.id}_switch_graphics_purchase, 0) {
+        return ${grf_object.id}_spritelayout_purchase;
+    }
+
+</tal:objects>

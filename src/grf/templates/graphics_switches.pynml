@@ -43,7 +43,9 @@ switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_switch_graphics, [
                                     ${'switch_magic_trees(),' if industry.uses_magic_trees else ''}
                                     STORE_TEMP(switch_industry_tile_is_flat_sea(), ${graphics_temp_storage.var_tile_is_built_on_flat_sea}),
                                     STORE_TEMP(switch_industry_tile_is_coast(), ${graphics_temp_storage.var_tile_is_built_on_coast}),
-                                    STORE_TEMP(random_bits, ${graphics_temp_storage.var_random_bits})
+                                    <!--! we store tile slope here, as we need spritelayout to not directly access any tile vars in the purchase context -->
+                                    STORE_TEMP(slope_to_sprite_offset(nearby_tile_slope(0,0)), ${graphics_temp_storage.var_jetty_sprite_num_for_slope}),
+                                    STORE_TEMP(random_bits, ${graphics_temp_storage.var_random_bits}) <!--! CABBAGE - random stored bits unused?? -->
                                  ]) {
     ${industry.id}_industry_construction_state_graphics_switch;
 }

@@ -2,6 +2,7 @@
     <!--! note that object category order depends on industry module import order, that's not ideal, but is most workable implementation as of July 2025 -->
 
     <tal:include metal:use-macro="load: spritelayouts_object.pynml" />
+    <tal:include metal:use-macro="load: spritelayouts_object_purchase.pynml" />
 
     <!--! the 'tiles' for all objects for the industry are resolved to a single set, and a shared set of animation switches provided -->
     <tal:include define="animation_context 'object';
@@ -10,64 +11,6 @@
 
     <!--! grf_object not object in case it conflicts with python 'object' at any point (might not, but who wants to test that? -->
     <tal:objects repeat="grf_object industry.objects.values()">
-
-        <!--! multi-tile objects need dedicated purchase sprite;
-              - did consider automating purchase sprite generation for multi-tile objects, but not something that was pursued as of Sept 2022
-              - be better to avoid multi-tile objects where possible
-              - only one view supported for multi-tile objects
-        -->
-        <tal:buildings repeat="x_y_spritelayout grf_object.multi_tile_buildings">
-            <tal:spriteset repeat="sprite getattr(x_y_spritelayout[2], 'sprites', None)">
-                spriteset(${grf_object.id}_spriteset_purchase_${repeat.x_y_spritelayout.index}_${repeat.sprite.index}) {
-                    [${sprite[0]}, ${sprite[1]}, ${sprite[2]}, ${sprite[3]}, ${sprite[4]}, ${sprite[5]}, ANIM | NOCROP, ${industry.get_graphics_file_path()}]
-                }
-            </tal:spriteset>
-        </tal:buildings>
-        spritelayout ${grf_object.id}_spritelayout_purchase {
-            <tal:ground repeat="ground grf_object.multi_tile_ground">
-                // ${ground[2]}
-                <tal:empty condition="ground[2] == None"> <!--! CABBAGE HACKS -->
-                    building {
-                        sprite: spriteset_ground_tile_asphalt_1;
-                        xoffset: 16;
-                        yoffset: 16;
-                        zoffset: 40;
-                    }
-                </tal:empty>
-                <tal:not_empty condition="ground[2] != None"> <!--! CABBAGE HACKS -->
-                    building {
-                        sprite: ${industry.unpack_sprite_or_spriteset(ground[2])};
-                        <!--! this offset adjustment is a crude hack that appears to remarkably work
-                              if we want to tweak further, provide some constants that can also adjust the building sprites beyond the positions passed from the industry
-                              note that these are tile xy offsets (from NW/NE edge) not screen xy offsets, can be confusing -->
-                        xoffset: 16 * ${ground[0]};
-                        yoffset: 16 * ${ground[1]};
-                    }
-                </tal:not_empty>
-            </tal:ground>
-            <tal:buildings repeat="x_y_spritelayout grf_object.multi_tile_buildings">
-                <tal:building_single_baseset_sprite condition="getattr(x_y_spritelayout[2], 'sprite_number', None) is not None">
-                    building {
-                        sprite: ${getattr(x_y_spritelayout[2], 'sprite_number', None)};
-                        recolour_mode: RECOLOUR_REMAP;
-                        palette:       PALETTE_USE_DEFAULT;
-                        <!--! note that these are tile xy offsets (from NW/NE edge) not screen xy offsets, can be confusing -->
-                        xoffset: 16 * ${x_y_spritelayout[0]};
-                        yoffset: 16 * ${x_y_spritelayout[1]};
-                    }
-                </tal:building_single_baseset_sprite>
-                <tal:building_multiple_realsprites repeat="sprites getattr(x_y_spritelayout[2], 'sprites', None)">
-                    building {
-                        sprite: ${grf_object.id}_spriteset_purchase_${repeat.x_y_spritelayout.index}_${repeat.sprites.index};
-                        recolour_mode: RECOLOUR_REMAP;
-                        palette:       PALETTE_USE_DEFAULT;
-                        <!--! note that these are tile xy offsets (from NW/NE edge) not screen xy offsets, can be confusing -->
-                        xoffset: 16 * ${x_y_spritelayout[0]};
-                        yoffset: 16 * ${x_y_spritelayout[1]};
-                    }
-                </tal:building_multiple_realsprites>
-            </tal:buildings>
-        }
 
         <tal:view repeat="view grf_object.views">
             switch(FEAT_OBJECTS, SELF, ${grf_object.id}_view_${repeat.view.index}_switch_graphics_layout, relative_pos) {
@@ -82,6 +25,8 @@
             switch_terrain_object(),
             STORE_TEMP(switch_object_tile_is_flat_sea(), ${graphics_temp_storage.var_tile_is_built_on_flat_sea}),
             STORE_TEMP(switch_object_tile_is_coast(), ${graphics_temp_storage.var_tile_is_built_on_coast}),
+            <!--! we store tile slope here, as we need spritelayout to not directly access any tile vars in the purchase context -->
+            STORE_TEMP(slope_to_sprite_offset(nearby_tile_slope(0,0)), ${graphics_temp_storage.var_jetty_sprite_num_for_slope}),
             view
         ]) {
             <tal:views repeat="view_num range(len(grf_object.views))">
@@ -119,7 +64,7 @@
                         animation_triggers:     ${grf_object.animation_triggers};
                     }
                     graphics {
-                        colour:                 switch_colour_object_${industry.colour_scheme_name}(${industry.numeric_id});
+                        colour:              switch_colour_object_${industry.colour_scheme_name}(${industry.numeric_id});
                         <tal:anim_next_frame condition="grf_object.tile.custom_animation_next_frame">
                             anim_next_frame: return ${grf_object.tile.custom_animation_next_frame};
                         </tal:anim_next_frame>
@@ -133,7 +78,7 @@
                                 anim_control: ${grf_object.tile.id}_object_anim_control;
                             </tal:block>
                         </tal:anim_control>
-                        purchase:               ${grf_object.id}_spritelayout_purchase;
+                        purchase:             ${grf_object.id}_switch_graphics_purchase;
                         ${grf_object.id}_switch_graphics;
                     }
                 }

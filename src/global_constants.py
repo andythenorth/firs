@@ -432,6 +432,7 @@ graphics_temp_storage = dict(
     var_hide_building_snow=19,  # hide a snow building in spritelayout, must be set to 1 (true) or 0 (false)
     var_tile_is_built_on_flat_sea=20,  # bool for tile that has been built on water
     var_tile_is_built_on_coast=21,  # bool for tile that has been built on coast
+    var_jetty_sprite_num_for_slope=22,  # index into spriteset, to get correct sprites for tile slope
 )  # max register number must be 235; registers 236-255 are reserved for building sprite hide/show values
 
 # used to magically extend ground spritesets for animated tiles, add a count for each industry animation length
