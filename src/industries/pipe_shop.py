@@ -1,4 +1,4 @@
-from industry import IndustrySecondary, TileLocationChecks
+from industry.industry import IndustrySecondary, TileLocationChecks
 
 # fabricator of pressure-grade, assembled liquid-handling systems
 

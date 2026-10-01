@@ -1,4 +1,4 @@
-from industry import IndustryPrimaryExtractive, TileLocationChecks
+from industry.industry import IndustryPrimaryExtractive, TileLocationChecks
 
 industry = IndustryPrimaryExtractive(
     id="potash_mine",

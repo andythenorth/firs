@@ -1,4 +1,4 @@
-from industry import IndustryPrimaryPort, TileLocationChecks
+from industry.industry import IndustryPrimaryPort, TileLocationChecks
 
 industry = IndustryPrimaryPort(
     id="port",

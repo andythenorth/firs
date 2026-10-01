@@ -1,4 +1,4 @@
-from industry import IndustryPrimaryPort, TileLocationChecks
+from industry.industry import IndustryPrimaryPort, TileLocationChecks
 
 # Oil terminal is the understood term for oil, petrol, petrochemicals port
 # as of August 2026, non-petroleum liquids are no longer handled (moved to port or wharf)

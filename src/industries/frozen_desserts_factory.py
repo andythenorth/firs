@@ -1,4 +1,4 @@
-from industry import IndustrySecondary, TileLocationChecks
+from industry.industry import IndustrySecondary, TileLocationChecks
 
 industry = IndustrySecondary(
     id="frozen_desserts_factory",

@@ -1,4 +1,4 @@
-from industry import IndustryPrimaryOrganic, TileLocationChecks
+from industry.industry import IndustryPrimaryOrganic, TileLocationChecks
 
 industry = IndustryPrimaryOrganic(
     id="arable_farm",

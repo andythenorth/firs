@@ -1,4 +1,4 @@
-from industry import IndustrySecondary, TileLocationChecks
+from industry.industry import IndustrySecondary, TileLocationChecks
 
 # dropped 'pipe' from the name July 2025, consistent with Plate Mill which also produces pipe
 

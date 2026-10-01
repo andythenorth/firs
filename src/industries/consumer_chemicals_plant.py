@@ -1,4 +1,4 @@
-from industry import IndustrySecondary, TileLocationChecks
+from industry.industry import IndustrySecondary, TileLocationChecks
 
 # can't find a good short name, but a formulation / blending plant producing any of
 # - paint & coatings

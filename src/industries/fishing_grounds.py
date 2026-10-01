@@ -1,4 +1,4 @@
-from industry import IndustryPrimaryNoSupplies, TileLocationChecks
+from industry.industry import IndustryPrimaryNoSupplies, TileLocationChecks
 
 industry = IndustryPrimaryNoSupplies(
     id="fishing_grounds",

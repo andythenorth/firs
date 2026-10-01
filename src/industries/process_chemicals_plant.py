@@ -1,4 +1,4 @@
-from industry import IndustrySecondary, TileLocationChecks
+from industry.industry import IndustrySecondary, TileLocationChecks
 
 # !! layout names will need set correctly
 industry = IndustrySecondary(

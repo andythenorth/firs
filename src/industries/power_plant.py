@@ -1,4 +1,4 @@
-from industry import IndustryTertiary, TileLocationChecks
+from industry.industry import IndustryTertiary, TileLocationChecks
 
 industry = IndustryTertiary(
     id="power_plant",

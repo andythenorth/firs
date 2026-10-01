@@ -1,4 +1,4 @@
-from industry import IndustryPrimaryPort, TileLocationChecks
+from industry.industry import IndustryPrimaryPort, TileLocationChecks
 
 # !! Jan 2022 hax that this uses IndustryPrimaryPort, just to get it into game
 # intent is produce NWST even if unsupplied, increase if supplied??

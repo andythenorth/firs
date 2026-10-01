@@ -1,4 +1,4 @@
-from industry import IndustryTownProducerPopulationDependent, TileLocationChecks
+from industry.industry import IndustryTownProducerPopulationDependent, TileLocationChecks
 
 industry = IndustryTownProducerPopulationDependent(
     id="scrap_yard",

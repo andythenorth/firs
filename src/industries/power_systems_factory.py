@@ -1,4 +1,4 @@
-from industry import IndustrySecondary, TileLocationChecks
+from industry.industry import IndustrySecondary, TileLocationChecks
 
 # CABBAGE - now some sort of plant & machinery manufacturer
 # portable power systems, pumps, compressors etc
