@@ -69,12 +69,15 @@ class GRFObject(object):
                 result.append([x, y, building_sprite])
         return result
 
-
     @property
-    def test_badges(self):
+    def land_and_sea_badges(self):
+        # specific to land and sea, rename to terrain badges if anything more complex needed
         result = []
-        result.append(f"test")
-        result.append(f"test/A")
+        if self.allow_on_land:
+            result.append(f"LAND")
+        # CABBAGE this isn't actually the sea constraint?  does it matter?
+        if self.allow_on_water:
+            result.append(f"SEA")
         return result
 
     @cached_property
@@ -82,8 +85,7 @@ class GRFObject(object):
         # badges can be set on an object for diverse reasons
         result = []
         # order isn't significant here, so just alphabetise the calls for ease
-        result.extend(self.test_badges)
-
+        result.extend(self.land_and_sea_badges)
         # 1. badge display order in OpenTTD is *not* guaranteed (as of April 2025)....so just do a basic alpha sort for now
         # 2. alpha sort is better than default append order
         # 3. alpha also makes badge order in the generated nml easier to read for debugging
