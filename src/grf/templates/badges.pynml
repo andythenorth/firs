@@ -1,0 +1,30 @@
+badgetable {
+<tal:badgetable repeat="badge badge_manager.badges_in_table_order">
+    "${badge.label}",
+</tal:badgetable>
+}
+
+<!--!
+<tal:spritesets repeat="livery_name livery_supplier.livery_names_with_badge_sprites">
+    spriteset (spriteset_livery_${livery_name.lower()}, "${graphics_path}badges/livery_${livery_name.lower()}.png") {
+        [10, 10, 14, 8, 0, 0]
+    }
+</tal:spritesets>
+-->
+
+<tal:badges repeat="badge badge_manager.badges_in_table_order">
+    item (FEAT_BADGES, ${utils.nml_safe_id(badge.label)}) {
+        property {
+            label: "${badge.label}";
+            <tal:name condition="badge.name is not None">
+                name: string(${badge.name});
+            </tal:name>
+            flags: bitmask(${badge.flags});
+        }
+        <tal:sprite condition="badge.sprite is not None">
+            graphics {
+                default: spriteset_${badge.sprite};
+            }
+        </tal:sprite>
+    }
+</tal:badges>

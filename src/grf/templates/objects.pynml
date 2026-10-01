@@ -43,6 +43,7 @@
                         -->
                         class                   :"${'F' + str(industry.numeric_id).zfill(3)}";
                         classname:              ${industry.get_property('name', None)};
+                        badges:                 ${grf_object.badges_as_nml_prop};
                         climates_available:     ALL_CLIMATES;
                         size:                   ${grf_object.size};
                         build_cost_multiplier:  0;

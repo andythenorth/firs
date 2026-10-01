@@ -49,3 +49,6 @@ def main():
     economy_manager.post_init_actions()
     cargo_manager.post_init_actions()
     industry_manager.post_init_actions(cargo_manager, economy_manager)
+
+    # badges, done after cargos, industries etd sa badges can be either static (global), or dynamically created (from other items)
+    badge_manager.produce_badges()

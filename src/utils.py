@@ -121,6 +121,18 @@ class LiteralGrfID(object):
         self.grfid = grfid
 
 
+def nml_safe_id(s: str) -> str:
+    NML_SAFE_REPLACEMENTS = {
+        "/": "_",
+        "-": "_minus_",
+        "!": "_shebang_",
+        # add more here as needed
+    }
+    for bad_char, replacement in NML_SAFE_REPLACEMENTS.items():
+        s = s.replace(bad_char, replacement)
+    return s
+
+
 # move logger to Polar Fox?
 import logging
 import os

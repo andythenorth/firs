@@ -1,3 +1,5 @@
+from functools import cached_property
+
 class GRFObject(object):
     """Stubby class to hold objects - GRFObject to avoid conflating with built-in python classname"""
 
@@ -66,6 +68,30 @@ class GRFObject(object):
             for building_sprite in spritelayout.building_sprites:
                 result.append([x, y, building_sprite])
         return result
+
+
+    @property
+    def test_badges(self):
+        result = []
+        result.append(f"test")
+        result.append(f"test/A")
+        return result
+
+    @cached_property
+    def badges(self):
+        # badges can be set on an object for diverse reasons
+        result = []
+        # order isn't significant here, so just alphabetise the calls for ease
+        result.extend(self.test_badges)
+
+        # 1. badge display order in OpenTTD is *not* guaranteed (as of April 2025)....so just do a basic alpha sort for now
+        # 2. alpha sort is better than default append order
+        # 3. alpha also makes badge order in the generated nml easier to read for debugging
+        return sorted(result)
+
+    @property
+    def badges_as_nml_prop(self):
+        return "[" + ",".join(f'"{badge}"' for badge in self.badges) + "]"
 
     @property
     def object_flags(self):

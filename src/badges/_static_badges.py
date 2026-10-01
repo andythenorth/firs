@@ -4,9 +4,9 @@ static_badges = {
     "test": {
         "name": "STR_BADGE_TEST",
         "sublabels": {
-            "dual_voltage": {},
-            "electro_diesel": {},
-            "electric": {},
+            "A": {},
+            "B": {},
+            "C": {},
         },
     },
 }
