@@ -1,0 +1,12 @@
+[size=150]${structure: project_name} ${structure: version} now on Bananas[/size]
+
+[b]${structure: version} Release[/b]
+
+<tal:event repeat="event events"><tal:warning
+    condition="event['kind'] == 'warning'">[b][color=#FF0000]${structure: event['text']}[/color][/b]</tal:warning><tal:section
+    condition="event['kind'] == 'section'">[i]${structure: event['text']}[/i]</tal:section><tal:paragraph
+    condition="event['kind'] == 'paragraph'">${structure: event['text']}</tal:paragraph><tal:list_open
+    condition="event['kind'] == 'list_open'">[list]</tal:list_open><tal:item
+    condition="event['kind'] == 'item'">[*]${structure: event['text']}</tal:item><tal:list_close
+    condition="event['kind'] == 'list_close'">[/list]</tal:list_close>
+</tal:event>
