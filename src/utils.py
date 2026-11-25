@@ -78,11 +78,16 @@ def get_lang_data(target, lang):
                 f"{sorted(unexpected_attrs)}"
             )
 
+        base_node_name, separator, case = node_name.partition(".")
+
         for attr_name, value in node_value.items():
             if attr_name == "base":
-                token = node_name
+                token = base_node_name
             else:
-                token = f"{node_name}_{attr_name.upper()}"
+                token = f"{base_node_name}_{attr_name.upper()}"
+
+            if separator:
+                token = f"{token}.{case}"
 
             lang_strings[token] = value
 
